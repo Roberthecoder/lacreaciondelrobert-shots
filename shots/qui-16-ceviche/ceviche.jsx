@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #16 · Ese ceviche no está cocido (el limón desdobla proteínas, pero no esteriliza) — NARRADO (N1 por dentro + N5).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const PEZ_CRUDO = '#f2a3a6', PEZ_BLANCO = '#fbf6ee', LIMA = '#7cc242', LIMA_OSC = '#3f8a1f', JUGO = '#e9f5b0', LARVA = '#f3ead6';

@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #33 · Ese crac no es el plástico (barras de luz y quimioluminiscencia) — NARRADO (N5 el experimento + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (moléculas, barras, vasos y manos).
 const VERDE = '#7dff5a', VIDRIO = 'rgba(235,248,255,.75)', PIEL = '#f1b48f', OXA = '#fff3b0';

@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #30 · Tu noche en la ciudad es más caliente que la del rancho (isla de calor urbana) — NARRADO (N2 el número + N1 por dentro).
 // Datos: EPA de EE. UU. ("What Are Heat Islands?", "Benefits of Trees and Vegetation") y Jáuregui (1997), Atmospheric Environment 31(22).
 // Ver guion.md y verificacion.md. Todo el dibujo es esquemático (la "cámara térmica" y el mapa del Valle de México son esquemas).

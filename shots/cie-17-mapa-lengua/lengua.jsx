@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #17 · El mapa de los sabores de la lengua es un mito — NARRADO (N2 mito tachado + N1 "Por dentro": la papila).
 // Datos: Hänig 1901, Boring 1942 (Wolfe et al.; Spence 2022; Munger 2017), Chandrashekar et al. 2006. Ver guion.md y verificacion.md.
 // Dibujo esquemático: la lengua, las papilas y las gráficas no van a escala. En el centro hay menos papilas que en los bordes.

@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #30 · La hormona de crecimiento que dejó de salir de cadáveres — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático. Tono serio: sin sustos ni chistes en la parte de CJD.
 const HGH = '#ff8a1f', PRION = '#ff3b2f', NORMAL = '#5fd3ff', VIDRIO = 'rgba(255,255,255,.22)';

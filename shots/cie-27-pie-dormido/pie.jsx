@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #27 · Tu pie no se duerme: tus nervios hacen corto — NARRADO (N1 "Por dentro": la pierna con su nervio).
 // Datos: NHS y Cleveland Clinic (pins and needles / parestesia), Cleveland Clinic y McGill (nervio cubital, "funny bone").
 // Ver guion.md y verificacion.md. El dibujo es esquemático (nervio, pierna y codo). Sin cifras en pantalla.

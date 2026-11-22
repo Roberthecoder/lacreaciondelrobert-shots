@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #15 · Tu voz se clona con segundos — NARRADO (N6 "Guía en pasos").
 // Datos: Wang et al. 2023 (VALL-E, Microsoft, arXiv:2301.02111); Mai et al. 2023 (PLOS ONE, UCL); FTC 2023; FBI/IC3 2024;
 // Guardia Nacional/SEP 2026. Ver guion.md y verificacion.md. El dibujo es esquemático.

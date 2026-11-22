@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #32 · El abogado que citó seis casos que inventó ChatGPT (Mata contra Avianca) — NARRADO (N6 "Guía irónica en pasos").
 // Datos: Mata v. Avianca, Inc., 22-cv-1461 (PKC), S.D.N.Y., Opinion and Order on Sanctions (ECF 54, 22 jun 2023);
 // base de datos AI Hallucination Cases de Damien Charlotin (28 oct 2026). Ver guion.md y verificacion.md. El dibujo es esquemático.

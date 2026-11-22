@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #34 · El limpiapeceras que se comió la pesca de El Infiernillo (pez diablo) — NARRADO (N1 por dentro + toque N2).
 // Datos: CONABIO, Biodiversitas 70 (Mendoza et al. 2007) y Cano-Salgado et al. (Ciência Rural, 2021). Ver guion.md y verificacion.md.
 // Dibujos esquemáticos; el pleco (Pterygoplichthys) con su morfología real: cuerpo acorazado de placas en filas, vientre plano,
@@ -185,7 +184,7 @@ function PezDiabloShot() {
         {svg(<>
           {(() => { const seca = kprog(T, K.Ai + 3.0, K.Ai + 4.2, kEase.suave); const nivel = klerp(540, 980, seca); const burb = kprog(T, K.Ai + 0.8, K.Ai + 2.2);
             return <>
-              <rect x={0} y={nivel} width={KW} height={KH} fill="#14364e" opacity={0.55} />
+              <rect x={0} y={nivel} width={KW} height={KH} fill="#1f5d80" opacity={0.55} />
               <line x1={0} y1={nivel} x2={KW} y2={nivel} stroke="#9fe3ff" strokeWidth={5} strokeDasharray="20 12" />
               <path d={`M 0 1060 Q 300 1030 540 1060 T 1080 1050 L 1080 1200 L 0 1200 Z`} fill={mixHex('#3b2a17', '#7a5a35', seca)} stroke={KC.ink} strokeWidth={5} />
               {seca > 0.6 && Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${120 + i * 160} 1080 l 20 30 l -12 30`} stroke={KC.ink} strokeWidth={4} fill="none" opacity={(seca - 0.6) * 2.5} />)}

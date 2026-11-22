@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #32 · Ese cerillo no trae el fuego en la cabeza (el fósforo está en la caja) — NARRADO (N1 por dentro + N5 histórico).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const P_ROJO = '#c0392b', CAB = '#d7263d', MADERA = '#e8c48a', TIRA = '#6b3a1e', P_BLANCO = '#fbf6dc', VERDOSO = '#b6ff9e';
@@ -164,8 +163,8 @@ function Cerillo32() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} seed={9} color="rgba(255,190,120,.25)" />
         <SvgCapa>
-          <rect x={0} y={810} width={KW} height={400} fill="#593c24" opacity={0.9} />
-          <rect x={0} y={810} width={KW} height={14} fill="#6e5438" />
+          <rect x={0} y={810} width={KW} height={400} fill="#a8692c" opacity={0.9} />
+          <rect x={0} y={810} width={KW} height={14} fill="#d39a55" />
           {vidrios.map(([x, y, r, k], i) => <path key={i} d={`M ${-k} ${k * 0.6} L ${k * 0.2} ${-k} L ${k} ${k * 0.4} Z`} transform={`translate(${x} ${y}) rotate(${r})`} fill="rgba(200,240,255,.75)" stroke="#e8fbff" strokeWidth={3} />)}
           {granos.map(([x, y, r, ph], i) => { const ci = conv.indexOf(i); const c = ci >= 0 ? kprog(T, K.Fr + 2.2 + ci * 0.45, K.Fr + 2.8 + ci * 0.45) : 0;
             return <g key={i}>{c < 1 && <path d={`M ${x - r} ${y} Q ${x - r} ${y - r} ${x} ${y - r} Q ${x + r * 1.1} ${y - r * 0.8} ${x + r} ${y} Q ${x + r * 0.8} ${y + r} ${x} ${y + r} Q ${x - r * 1.1} ${y + r * 0.7} ${x - r} ${y} Z`} fill={P_ROJO} stroke={KC.ink} strokeWidth={4} opacity={1 - c} />}</g>; })}

@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #33 · La medicina de un solo bebé (KJ y la edición de bases) — NARRADO (N1 por dentro + toque N6 en pasos).
 // Guion y fuentes: guion.md · verificación: verificacion.md. Todos los dibujos son esquemáticos y no están a escala.
 // Letras del ADN esquemáticas: la variante corregida es c.1003C>T (Q335X) del gen CPS1; el editor regresa la T a C.

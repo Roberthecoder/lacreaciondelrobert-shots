@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #34 · Una nube pesa como cien elefantes — NARRADO (N2 "El número" + N1 "Por dentro").
 // Datos: LeMone (NCAR) vía Mental Floss 2013 y USGS; física de nubes (Stull; SciAm). Ver guion.md y verificacion.md.
 // Dibujo esquemático: la nube, los elefantes, las gotitas y el cubo no van a escala.
@@ -41,7 +40,7 @@ function Ciudad({ y = 1440 }) {
       <rect x={x} y={y + 200 - h} width={150} height={h + 400} fill={c} stroke={KC.ink} strokeWidth={8} />
       {Array.from({ length: 6 }, (_, k) => <rect key={k} x={x + 22 + (k % 2) * 62} y={y + 230 - h + Math.floor(k / 2) * 70} width={42} height={42} rx={6} fill="#fff6c8" stroke={KC.ink} strokeWidth={4} />)}
     </g>)}
-    <rect x={0} y={y + 330} width={KW} height={300} fill="#323848" stroke={KC.ink} strokeWidth={8} />
+    <rect x={0} y={y + 330} width={KW} height={300} fill="#5a6075" stroke={KC.ink} strokeWidth={8} />
   </g>;
 }
 // Báscula gigante de piso con pantalla. p = 0..1 (aguja), texto en la pantalla.

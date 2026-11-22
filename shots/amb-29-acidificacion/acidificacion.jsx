@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #29 · El mar no se vuelve ácido: se vuelve menos básico — NARRADO (N1 por dentro + N5 el experimento).
 // Datos: NOAA (Ocean acidification, 2026), EEA (indicador Ocean acidification, 2026), NOAA PMEL (A primer on pH) y
 // Bednaršek et al. 2012 (Nature Geoscience). Ver guion.md y verificacion.md. Moléculas, mapa y mariposa de mar son esquemas.
@@ -294,7 +293,7 @@ function AcidificacionShot() {
       {/* 10 · el experimento: agua como la esperada para 2100, 45 días */}
       <Escena T={T} a={K.Ex} b={K.C}>
         <FondoLunares color={KC.orange} />
-        {svg(<><rect x={0} y={1120} width={KW} height={800} fill="#523d30" stroke={KC.ink} strokeWidth={8} />
+        {svg(<><rect x={0} y={1120} width={KW} height={800} fill="#9a6b45" stroke={KC.ink} strokeWidth={8} />
           <rect x={300} y={560} width={480} height={560} rx={40} fill="rgba(95,182,239,.6)" stroke={KC.ink} strokeWidth={9} />
           <rect x={340} y={520} width={400} height={54} rx={12} fill="#e9eef5" stroke={KC.ink} strokeWidth={7} />
           <rect x={360} y={1000} width={360} height={70} rx={10} fill={KC.paper} stroke={KC.ink} strokeWidth={5} />

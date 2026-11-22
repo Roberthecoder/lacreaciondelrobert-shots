@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #30 · Esa crema no es un espejo: es una esponja (cómo funciona el protector solar) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const UV = '#8a3ffc', UVB = '#c13bd6', PIEL = '#eaa27a', PIEL2 = '#d98a63', CREMA = '#fffaf0', CALOR = '#ff7a1f';

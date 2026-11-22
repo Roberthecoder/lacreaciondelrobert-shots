@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #35 · Tu cuerpo es un poquito radiactivo — NARRADO (N2 "El número" + N1 "Por dentro").
 // Datos: HPS "Are our bodies naturally radioactive?", Ministerio del Medio Ambiente de Japón / UNSCEAR 2008, NIST (abundancia K-40),
 // NUBASE2020 (K-40 → Ca-40), EPA FGR 13 / Eisenbud y Gesell (homeostasis), Nie et al. 2023 Science (K-40 de supernovas).
@@ -278,7 +277,7 @@ function Radiactivo() {
       {/* 9 · viene de estrellas que explotaron */}
       <Escena T={T} a={K.Viejo} b={K.Cierre} fondo={KC.violet} zoom={0.03}>
         <Lienzo>
-          <rect width={KW} height={KH} fill="#0e0c25" />
+          <rect width={KW} height={KH} fill="#120a2e" />
           <EstrellasFondo T={T} n={80} seed={35} />
           {T < sn + 0.4 && <g transform={`translate(540 700) scale(${1 + 0.15 * kprog(T, K.Viejo, sn) + 0.05 * Math.sin(T * 14)})`}>
             <circle r={150} fill="#ffb347" opacity=".25" /><circle r={95} fill="#ffd23a" stroke={KC.ink} strokeWidth={9} /></g>}

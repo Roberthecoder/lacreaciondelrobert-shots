@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #26 · La papaya que se defendió con un pedacito del virus (PRSV, Rainbow) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const PV = { verde:'#3fae4a', verdeOsc:'#1f7a35', hoja:'#4cc35a', hojaOsc:'#2b8f3d', tronco:'#b9b08f', troncoOsc:'#8a8166',

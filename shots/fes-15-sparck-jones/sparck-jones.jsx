@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Festivo #15 · Día Internacional de la Mujer y la Niña en la Ciencia · IA: la idea de Karen Spärck Jones (IDF, 1972)
 // NARRADO (N4 "La imagen que se llena" + un poco de N2). Guion, fuentes y verificación: guion.md / verificacion.md.
 // El dibujo es esquemático: la pared de páginas, las pesitas, la balanza y el asistente de IA son ilustrativos.

@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #16 · Creían que la IA los hacía más rápidos: tardaron 19 % más — NARRADO (N2 "El número").
 // Datos: Becker, Rush, Barnes y Rein (METR), arXiv:2507.09089 (2025); METR, actualización del 24 feb 2026;
 // Peng, Kalliamvakou, Cihon y Demirer, arXiv:2302.06590 (2023). Ver guion.md y verificacion.md. Dibujo esquemático.
@@ -52,7 +51,7 @@ function BarrasTiempo({ T, at, until, filas, top = 700 }) {
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'sube');
   return <div style={{ position:'absolute', left:60, top, width:960, zIndex:40, opacity:e.o }}>
-    <div style={{ position:'absolute', left:480, top:-20, bottom:0, width:8, marginLeft:-4, background:CINE.borde, borderRadius:4 }}></div>
+    <div style={{ position:'absolute', left:480, top:-20, bottom:0, width:8, marginLeft:-4, background:KC.ink, borderRadius:4 }}></div>
     <div style={{ position:'absolute', left:0, top:-74, width:470, textAlign:'right', font:`700 28px ${KF.mono}`, color:KC.ink }}>◀ menos tiempo</div>
     <div style={{ position:'absolute', left:490, top:-74, width:470, font:`700 28px ${KF.mono}`, color:KC.ink }}>más tiempo ▶</div>
     {filas.map((f, i) => { const g = kprog(T, f.at + 0.1, f.at + 0.9, kEase.sale), w = 14 * f.valor * g, izq = f.valor < 0;

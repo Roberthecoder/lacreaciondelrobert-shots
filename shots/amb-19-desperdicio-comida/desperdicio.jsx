@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #19 · Casi una quinta parte de la comida del mundo se va a la basura — NARRADO (N4 la imagen que se llena + N2).
 // Datos: UNEP, Food Waste Index Report 2024 (datos de 2022) e IPCC 2019 (SRCCL). Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático (el refri es una metáfora de toda la comida que llega a tiendas, restaurantes y casas).

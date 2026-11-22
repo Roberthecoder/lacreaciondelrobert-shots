@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #17 · Esto no es una roca: es un animal (corales y blanqueamiento) — NARRADO (N1 "Por dentro").
 // Datos: NOAA Ocean Service, Davy et al. 2012, NOAA NESDIS (2 jun 2026), GCRMN. Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático. Corales pétreos: pólipos con tentáculos y septos en múltiplos de 6 (aquí 12).
@@ -206,7 +205,7 @@ function CoralesShot() {
       {/* 3 · un pólipo de lado sobre su esqueleto de caliza */}
       <Escena T={T} a={K.E} b={K.A}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><rect x={0} y={1060} width={KW} height={860} fill="#6c6c6a" /><line x1={0} y1={1060} x2={KW} y2={1060} stroke={KC.ink} strokeWidth={8} />
+        {svg(<><rect x={0} y={1060} width={KW} height={860} fill="#cfc9b8" /><line x1={0} y1={1060} x2={KW} y2={1060} stroke={KC.ink} strokeWidth={8} />
           <PolipoLado x={360} y={1080} s={1.05} T={T} piel={1 - 0.55 * kprog(T, K.E + 1.2, K.E + 2.0)} /></>)}
       </Escena>
       <Lupa T={T} at={K.E + 1.4} until={K.A - 0.2} x={790} y={930} r={160} fx={360} fy={960} tinte={KC.cyan} etiqueta="CALIZA" interior={(t, r) => <CopaArriba r={r} />} />

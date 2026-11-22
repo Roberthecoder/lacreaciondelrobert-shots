@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #29 · El traductor que convierte a la ingeniera en «él» — NARRADO (N5 "El experimento" + N2 "El número").
 // Datos: Prates, Avelar y Lamb, Neural Computing and Applications 32:6363–6381 (en línea 2019; experimentos de 2018);
 // blog de Google (6 dic 2018) y Google Research (22 abr 2020); Stanovsky, Smith y Zettlemoyer, ACL 2019. Ver guion.md y verificacion.md.
@@ -11,7 +10,7 @@ function Traductor({ T, x = 360, y = 880, s = 0.8, origen = 'HÚNGARO', destino 
   const late = parpadea ? 0.55 + 0.45 * Math.abs(Math.sin(T * 4.2)) : 1;
   return <div style={{ position:'absolute', left:x + dx, top:y, width:560, height:820, transform:`translate(-50%,-50%) scale(${s})`, zIndex:20, opacity:o,
     background:'#f7f8fb', border:`12px solid ${KC.ink}`, borderRadius:70, boxShadow:'0 30px 60px rgba(0,0,0,.35)', overflow:'hidden' }}>
-    <div style={{ position:'absolute', left:180, top:14, width:200, height:34, borderRadius:20, background:CINE.borde }}></div>
+    <div style={{ position:'absolute', left:180, top:14, width:200, height:34, borderRadius:20, background:KC.ink }}></div>
     <div style={{ position:'absolute', left:0, right:0, top:62, height:76, display:'flex', alignItems:'center', gap:14, padding:'0 34px', borderBottom:'4px solid #dfe3ec' }}>
       <div style={{ width:52, height:52, borderRadius:14, background:AZUL, color:'#fff', display:'flex', alignItems:'center', justifyContent:'center', font:`900 26px ${KF.texto}` }}>文A</div>
       <div style={{ font:`900 34px ${KF.texto}`, color:KC.ink }}>Traductor</div>
@@ -30,7 +29,7 @@ function Traductor({ T, x = 360, y = 880, s = 0.8, origen = 'HÚNGARO', destino 
           <div style={{ font:`800 48px/1.2 ${KF.texto}`, color:'#1b2a6b' }}>{sa.partes.map((p, k) => <span key={k} style={{ position:'relative', display:'inline-block', opacity:p.o == null ? 1 : p.o,
             background: p.color ? p.color : 'transparent', color: p.color ? '#fff' : 'inherit', borderRadius:10, padding: p.color ? '0 10px' : 0,
             boxShadow: p.color && p.late !== false ? `0 0 ${30 * late}px ${p.color}` : 'none', marginRight: p.color ? 8 : 0 }}>{p.t}
-            {p.tachado > 0 && <span style={{ position:'absolute', left:-6, top:'52%', height:8, width:`calc(${p.tachado * 100}% + 12px)`, background:CINE.borde, borderRadius:4, transform:'rotate(-8deg)' }}></span>}</span>)}</div>
+            {p.tachado > 0 && <span style={{ position:'absolute', left:-6, top:'52%', height:8, width:`calc(${p.tachado * 100}% + 12px)`, background:KC.ink, borderRadius:4, transform:'rotate(-8deg)' }}></span>}</span>)}</div>
         </div>; })}
     </div>
   </div>;

@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #23 · La IA que lee labios mejor que los expertos — NARRADO (N5 "El experimento").
 // Datos: Chung, Senior, Vinyals y Zisserman, CVPR 2017 · Shillingford et al., arXiv:1807.05162 (2018) · Fernandez-Lopez y Sukno, arXiv:1704.08035 (2017).
 // Ver guion.md y verificacion.md. Todo es esquemático.

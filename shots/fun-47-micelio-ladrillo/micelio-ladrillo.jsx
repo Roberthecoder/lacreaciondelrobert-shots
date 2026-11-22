@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #47 · Esto no es unicel: es un hongo — NARRADO (gancho 1 "Esto no es X: es Y" + N1 "Por dentro").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
@@ -216,7 +215,7 @@ function MicelioShot() {
       <Escena T={T} a={K.R} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={1080} width={KW} height={900} fill="#654c33" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1080} width={KW} height={900} fill="#c08a4a" stroke={KC.ink} strokeWidth={8} />
           <MataSeca x={130} y={1090} s={1.0} T={T} seed={1} />
           <MataSeca x={250} y={1095} s={0.8} T={T} seed={2} />
           <Tazon x={600} y={960} s={0.95} nivel={kprog(T, K.R + 0.5, K.R + 4.4)} blanco={kprog(T, K.R + 3.0, K.R + 4.8) * 0.35} />
@@ -230,7 +229,7 @@ function MicelioShot() {
       <Escena T={T} a={K.M} b={K.H} zoom={0.12} origen="50% 55%">
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <rect x={0} y={1120} width={KW} height={900} fill="#42342b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1120} width={KW} height={900} fill="#7a5a3a" stroke={KC.ink} strokeWidth={8} />
           <Molde x={210} y={1100} tipo="L" lleno={kprog(T, K.M + 0.2, K.M + 1.0)} prensa={kprog(T, K.M + 1.2, K.M + 1.6) * (1 - kprog(T, K.M + 2.0, K.M + 2.4))} />
           <Molde x={540} y={1100} tipo="ladrillo" lleno={kprog(T, K.M + 0.4, K.M + 1.2)} prensa={kprog(T, K.M + 1.4, K.M + 1.8) * (1 - kprog(T, K.M + 2.1, K.M + 2.5))} />
           <Molde x={860} y={1100} tipo="charola" lleno={kprog(T, K.M + 0.6, K.M + 1.4)} prensa={kprog(T, K.M + 1.6, K.M + 2.0) * (1 - kprog(T, K.M + 2.2, K.M + 2.6))} />
@@ -253,7 +252,7 @@ function MicelioShot() {
       <Escena T={T} a={K.B} b={K.O} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <rect x={0} y={1120} width={KW} height={900} fill="#42342b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1120} width={KW} height={900} fill="#7a5a3a" stroke={KC.ink} strokeWidth={8} />
           <Molde x={540} y={1100} tipo="ladrillo" lleno={1} blanco={blancoB} />
           {kprog(T, K.B + 2.3, K.B + 3.0) > 0 && <g transform={`translate(540 ${1020 - 260 * kprog(T, K.B + 2.3, K.B + 3.0, kEase.sale)})`}>
             <rect x={-100} y={-80} width={200} height={160} rx={10} fill={ML.crema} stroke={KC.ink} strokeWidth={7} /></g>}

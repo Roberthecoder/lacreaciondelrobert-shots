@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #23 · El helio no cambia tu nota: cambia tu timbre — NARRADO (N1 "Por dentro" + N2 casi 3 veces más rápido).
 // Datos: UNSW (Wolfe, "Speech and helium speech"), Sprott (Wisconsin), HKUST Science Focus, Missouri Poison Center. Ver guion.md y verificacion.md.
 // Dibujo esquemático: las gráficas de picos, las ondas y el tubo no van a escala.

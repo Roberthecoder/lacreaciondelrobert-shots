@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #24 · Las gotas de lluvia no tienen forma de lágrima — NARRADO (N3 "Capítulos y medidores").
 // Datos: USGS Water Science School (forma de la gota), NASA GPM, Gunn y Kinzer 1949 (≈ 9 m/s), NWS (llovizna). Ver guion.md y verificacion.md.
 // Dibujo esquemático y exagerado: las formas y los tamaños no van a escala.

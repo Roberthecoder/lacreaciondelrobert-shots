@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #20 · Ese cajón de cables viejos no es basura: es una mina — NARRADO (N2 el número + N4 la imagen que se llena).
 // Datos: The Global E-waste Monitor 2024 (ITU y UNITAR, datos de 2022) y U.S. EPA (baterías de litio). Ver guion.md y verificacion.md.
 // Todos los dibujos son esquemáticos.

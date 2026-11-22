@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #25 · El maíz que fabrica su propio insecticida (maíz Bt) — NARRADO (N1 por dentro + N5).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático y no está a escala.
 const VERDE = '#3fbf4a', VERDE2 = '#2b8f3a', VERDE_CL = '#8fe07a', CRY = '#F4C25A', TIERRA = '#7a5230', TIERRA2 = '#5e3d22';

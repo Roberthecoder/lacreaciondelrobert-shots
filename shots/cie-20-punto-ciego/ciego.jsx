@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #20 · Tienes un hoyo en tu vista y tu cerebro lo rellena — NARRADO (prueba del punto ciego + N1 "Por dentro": la retina).
 // Datos: Mariotte 1668, Komatsu et al. 2000 (J Neurosci), Komatsu 2006 (Nat Rev Neurosci), Hanke y Kelber 2020 (Front Physiol). Ver guion.md y verificacion.md.
 // LA PRUEBA TIENE QUE FUNCIONAR EN UN CELULAR: de Prueba a Desaparece el fondo es amarillo liso y quieto, la cruz (x 180) y el punto rojo

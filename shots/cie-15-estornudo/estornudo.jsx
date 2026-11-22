@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #15 · Tu estornudo no sale como bala — NARRADO (N2 "El número" + N5 el experimento).
 // Datos: Tang et al. 2013 (PLoS ONE 8: e59970), Tang et al. 2011 (PLoS ONE 6: e21392), CDC. Ver guion.md y verificacion.md.
 // Dibujo esquemático: la nube, las ondas de la técnica de sombras y las distancias no van a escala exacta.

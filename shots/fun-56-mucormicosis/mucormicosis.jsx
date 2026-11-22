@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #56 · El "hongo negro" no es negro: mucormicosis — NARRADO (gancho 1 "Esto no es X: es Y" + N1 "Por dentro").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático (sin fotos de pacientes). No es consejo médico.
 
@@ -287,8 +286,8 @@ function MucorShot() {
       <Escena T={T} a={K.Fe} b={K.Ma} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {fsvg(<>
-          <rect x={0} y={620} width={KW} height={420} fill="#2a101a" />
-          <rect x={0} y={600} width={KW} height={20} fill="#784d59" /><rect x={0} y={1040} width={KW} height={20} fill="#784d59" />
+          <rect x={0} y={620} width={KW} height={420} fill="#4a1019" />
+          <rect x={0} y={600} width={KW} height={20} fill="#e58b96" /><rect x={0} y={1040} width={KW} height={20} fill="#e58b96" />
           {Array.from({ length: 10 }, (_, i) => { const p = kprog(T, K.Fe + 0.3 + i * 0.1, K.Fe + 0.6 + i * 0.1, kEase.rebote); return p > 0 ? <Glucosa key={i} x={90 + i * 95} y={660 + (i % 2) * 40 + Math.sin(T * 2 + i) * 6} s={p} /> : null; })}
           {[[200, 820], [420, 900], [640, 800], [330, 980], [560, 990]].map(([x, y], i) => <Transferrina key={i} x={x} y={y + Math.sin(T * 2 + i) * 5} abre={fAbre} conHierro={fAbre < 0.9 ? 1 : 0} />)}
           {fAbre > 0.9 && [[200, 820], [420, 900], [640, 800], [330, 980], [560, 990]].map(([x, y], i) => { const u = kprog(fVuela, i * 0.1, 0.6 + i * 0.1);

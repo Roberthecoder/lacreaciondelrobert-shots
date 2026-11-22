@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #21 · Ese foco no es una lámpara: es un calentador (focos LED) — NARRADO (N1 por dentro + medidores N3).
 // Datos: DOE (EE. UU.) 2021, Premio Nobel de Física 2014 y NOM-028-ENER-2017 (DOF 9 mar 2018). Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático (foco, filamento, chip por capas).

@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #17 · Ese anillo verde no es huevo echado a perder (sulfuro ferroso en el huevo cocido) — NARRADO (N3 capítulos y medidores + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (moléculas, granos de FeS y capas no están a escala).
 const YEMA = '#ffc21a', CLARA = '#fbf8f0', FES = '#3f4a32', VERDE = '#6f7d4a', FE_C = '#c0602e', H2S_C = '#c8e65a';

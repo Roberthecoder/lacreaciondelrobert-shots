@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #37 · La Luna no es más grande en el horizonte — NARRADO (N2 mito + participación: tápala con la uña del meñique).
 // Datos: NASA Science 2023 (fotos del mismo ancho, prueba con el dedo, sin explicación sólida), Kaufman y Kaufman 2000 (PNAS),
 // Ross 2019 / Ross y Plug 2002 (más de 2,000 años, cielo aplanado), Wikipedia «Moon illusion» (≈ 1.5 % más lejos). Ver guion.md y
@@ -93,7 +92,7 @@ function NocheCiudad({ T, children, frente }) {
     <EstrellasFondo T={T} n={80} seed={37} alto={1000} />
     {children}
     <CiudadLH base={1200} T={T} />
-    <rect x={0} y={1190} width={KW} height={KH - 1190} fill="#121228" stroke={KC.ink} strokeWidth={8} />
+    <rect x={0} y={1190} width={KW} height={KH - 1190} fill="#1a1433" stroke={KC.ink} strokeWidth={8} />
     {frente}
   </g>;
 }
@@ -142,7 +141,7 @@ function LunaHorizonte() {
           {mS > 0.02 && mS < 0.98 && <path d={`M 260 1010 Q 380 720 600 690`} stroke="#fff" strokeWidth={6} strokeDasharray="4 16" strokeLinecap="round" fill="none" opacity=".7" />}
           <LunaH x={mX} y={mY} r={mR} halo={0.6} />
           <CiudadLH base={1180} T={T} color="#4b3a86" ventanas={false} esc={0.45} />
-          <rect x={0} y={1170} width={KW} height={KH - 1170} fill="#221e44" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1170} width={KW} height={KH - 1170} fill="#3a2c6b" stroke={KC.ink} strokeWidth={8} />
           <MideLuna x={mX} y={mY} r={mR} o={kprog(T, K.Medida + 0.4, K.Medida + 0.8)} />
         </Lienzo>
         <Etq T={T} at={K.Medida + 1.2} until={K.Foto - 0.1} x={360} y={1000} texto="en el horizonte" lado="der" color={KC.ink} tam={36} />
@@ -211,7 +210,7 @@ function LunaHorizonte() {
       <Escena T={T} a={K.Hipotesis} b={K.Lejos} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <rect x={0} y={1150} width={KW} height={KH - 1150} fill="#1c6144" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1150} width={KW} height={KH - 1150} fill="#2fb36b" stroke={KC.ink} strokeWidth={8} />
           <path d="M 80 1150 A 460 340 0 0 1 1000 1150" fill="rgba(255,255,255,.18)" stroke={KC.ink} strokeWidth={10} pathLength={1}
             strokeDasharray={`${kprog(T, K.Hipotesis + 0.8, K.Hipotesis + 2.2, kEase.suave)} 1`} />
           <path d="M 80 1150 A 460 340 0 0 1 1000 1150" fill="none" stroke="#fff" strokeWidth={4} pathLength={1}

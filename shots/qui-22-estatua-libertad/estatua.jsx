@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #22 · Esa estatua no nació verde (la pátina de la Estatua de la Libertad) — NARRADO (N1 por dentro + toque N5).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (silueta respetuosa, sin rostro detallado).
 const COBRE = '#e48a5a', CAFE = '#8f5631', VERDE = '#6cc3a8', VERDE_OSC = '#3f8f78', CUPRITA = '#5b2a1e', PIEDRA = '#e3d7bf';
@@ -272,8 +271,8 @@ function Estatua22() {
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
           <g transform={`translate(230 470) rotate(${T * 30})`}>{Array.from({ length: 8 }, (_, i) => <line key={i} x1={0} y1={-90} x2={0} y2={-120} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" transform={`rotate(${i * 45})`} />)}<circle r={70} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} /></g>
-          <rect x={0} y={1010} width={KW} height={200} fill="#7c7872" stroke={KC.ink} strokeWidth={8} />
-          <rect x={0} y={970} width={KW} height={44} fill="#726b60" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1010} width={KW} height={200} fill="#efe2c8" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={970} width={KW} height={44} fill="#d9c7a3" stroke={KC.ink} strokeWidth={8} />
           {/* tinaco */}
           <rect x={740} y={660} width={180} height={250} rx={30} fill="#2b2f36" stroke={KC.ink} strokeWidth={8} />
           <ellipse cx={830} cy={662} rx={90} ry={22} fill="#3d424b" stroke={KC.ink} strokeWidth={6} />

@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #27 · La IA que le devolvió la voz a Ann — NARRADO (N1 "Por dentro" + N3 medidor de palabras por minuto).
 // Datos: Metzger et al., Nature 620:1037 (2023, UCSF) · Willett et al., Nature 620:1031 (2023, Stanford) · Card et al., NEJM 391:609 (2024, UC Davis).
 // Ver guion.md y verificacion.md. Todo el dibujo es esquemático.

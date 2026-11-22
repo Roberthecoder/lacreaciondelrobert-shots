@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #35 · El mosco que trae una bacteria contra el dengue (Wolbachia) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (no a escala, salvo la barra de escala).
 const WOL = '#7CFF6B', WOL2 = '#2fbf4a', VIRUS = '#ff4f9a', PIEL = '#f1b48f', PIEL2 = '#dd9670';
@@ -165,8 +164,8 @@ function Barrio({ T, frac = 0, n = 26 }) {
   for (let r = 0; r < 4; r++) for (let c = 0; c < 4; c++) casas.push([110 + c * 230, 620 + r * 190, ['#f4efe4', '#ffd6e4', '#d9f7ff', '#fff3b0'][(r + c) % 4], [KC.coral, KC.blue, KC.teal, KC.orange][(r * 3 + c) % 4]]);
   const ms = Array.from({ length: n }, (_, i) => ({ x0: 100 + R() * 880, y0: 600 + R() * 760, ph: R() * 6, rad: 30 + R() * 60, k: R() }));
   return <g>
-    <rect x={0} y={560} width={KW} height={840} fill="#647968" />
-    {[0, 1, 2, 3, 4].map((i) => <rect key={'h' + i} x={0} y={590 + i * 190} width={KW} height={22} fill="#525968" />)}
+    <rect x={0} y={560} width={KW} height={840} fill="#bfe3b4" />
+    {[0, 1, 2, 3, 4].map((i) => <rect key={'h' + i} x={0} y={590 + i * 190} width={KW} height={22} fill="#9aa3b5" />)}
     {[0, 1, 2, 3, 4].map((i) => <rect key={'v' + i} x={70 + i * 230} y={560} width={22} height={840} fill="#9aa3b5" />)}
     {casas.map(([x, y, c, t], i) => <Casa key={i} x={x} y={y} w={150} h={130} color={c} techo={t} />)}
     {ms.map((m, i) => { const verde = m.k < frac; const x = m.x0 + Math.cos(T * 1.3 + m.ph) * m.rad, y = m.y0 + Math.sin(T * 1.7 + m.ph) * m.rad * 0.7;
@@ -271,7 +270,7 @@ function Wolbachia35() {
         <FondoLunares color={KC.pink} />
         <SvgCapa>
           <rect x={0} y={1000} width={KW} height={420} fill={PIEL} stroke={KC.ink} strokeWidth={10} />
-          <rect x={0} y={1000} width={KW} height={40} fill="#806e67" />
+          <rect x={0} y={1000} width={KW} height={40} fill="#f7cdb2" />
           <Mosco T={T} x={595} y={555} s={1.6} rot={-71} vuela={0.3} wol={kprog(T, K.Sa + 1.5, K.Sa + 2.0)} />
           {[0, 1, 2].map((i) => { const ti = K.Sa + 0.4 + i * 1.1, u = ((T - ti) % 3.3) / 3.3; if (T < ti) return null; const yy = klerp(1070, 1220, u);
             const quita = kprog(T, K.Sa + 1.8, K.Sa + 2.8);

@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #15 · El sargazo de Quintana Roo no es basura (N2 el número + N1 por dentro) — NARRADO.
 // Datos: Wang et al. 2019 (Science), boletín USF jul 2025 (vía CARICOOS), CONANP Puerto Morelos 2015, Jung et al. 2025 (Nature Geoscience),
 // EPA (H2S), Rodríguez-Martínez et al. 2019, NOAA. Ver guion.md y verificacion.md. Mapa, coral y microbios son esquemáticos.
@@ -51,8 +50,8 @@ function Playa({ T, mar = 760, ola = 1, cielo = '#7fdcff' }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
     <rect width={KW} height={mar - 200} fill={cielo} />
     <circle cx={160} cy={420} r={70} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />
-    <rect y={mar - 200} width={KW} height={260} fill="#126972" />
-    <rect y={mar - 200} width={KW} height={60} fill="#0c4f6a" />
+    <rect y={mar - 200} width={KW} height={260} fill="#19c3c9" />
+    <rect y={mar - 200} width={KW} height={60} fill="#0f8fb8" />
     {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${((i * 190 + T * 40) % 1240) - 120} ${mar - 120 + (i % 3) * 50} q 30 -14 60 0 t 60 0`} stroke="#d9fbff" strokeWidth={6} fill="none" strokeLinecap="round" />)}
     <path d={`M 0 ${mar + 60} Q 270 ${mar + 30} 540 ${mar + 60} T 1080 ${mar + 60} L 1080 1920 L 0 1920 Z`} fill="#f6e7bf" stroke={KC.ink} strokeWidth={6} />
     {ola < 1 && <path d={`M 0 ${mar + 60 + ola * 260} Q 270 ${mar + 20 + ola * 260} 540 ${mar + 60 + ola * 260} T 1080 ${mar + 60 + ola * 260} L 1080 ${mar + 40} L 0 ${mar + 40} Z`} fill="#bff6f2" opacity={0.85 * (1 - ola * 0.6)} stroke="#fff" strokeWidth={8} />}
@@ -283,7 +282,7 @@ function SargazoShot() {
       <Escena T={T} a={K.C} b={FIN}>
         <Playa T={T} mar={1000} cielo="#9be6ff" />
         {svg(<>
-          <rect x={0} y={560} width={KW} height={300} fill="#144f76" stroke={KC.ink} strokeWidth={6} />
+          <rect x={0} y={560} width={KW} height={300} fill="#1f8fd0" stroke={KC.ink} strokeWidth={6} />
           <path d="M 0 560 q 60 -14 120 0 t 120 0 t 120 0 t 120 0 t 120 0 t 120 0 t 120 0 t 120 0 t 120 0" stroke="#d9fbff" strokeWidth={6} fill="none" />
           {[0, 1, 2, 3, 4].map((i) => <Sargazo key={i} x={210 + i * 70} y={600} s={0.3} rot={180} seed={50 + i} T={T} />)}
           <rect x={170} y={548} width={380} height={26} rx={13} fill={SG_CAFE} stroke={KC.ink} strokeWidth={4} />

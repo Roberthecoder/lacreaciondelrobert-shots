@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #31 · Ese negro en tu plata no es mugre (sulfuro de plata y el truco del aluminio) — NARRADO (N5 experimento + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const PLATA = '#c9ced6', PLATA_B = '#f2f4f8', NEGRO_AG = '#26221f', AL = '#b9c7d6', AZUFRE = '#ffe11a';

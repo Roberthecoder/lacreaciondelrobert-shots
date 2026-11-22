@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #25 · El "robot" que jugaba ajedrez era una persona escondida — NARRADO (N1 "Por dentro").
 // El Turco de Kempelen (muñeco sentado TRAS una caja, tablero encima de la caja) y el Mechanical Turk de Amazon (2005–2026).
 // Fuentes y verificación: guion.md y verificacion.md. Todo el dibujo es esquemático.

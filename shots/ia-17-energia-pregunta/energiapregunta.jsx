@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #17 · Tu pregunta a una IA: nueve segundos de tele — NARRADO (N2 "El número" + N4 "La imagen que se llena").
 // Datos: Elsworth et al. (Google), arXiv:2508.15734 (2025) y Google Cloud Blog (21 ago 2025); AIE, Energy and AI (2025). Ver guion.md y verificacion.md.
 const AZUL = '#2f6dff';

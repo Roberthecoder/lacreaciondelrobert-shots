@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #39 · Los puntos del hongo de los cuentos son un cascarón roto: Amanita muscaria — NARRADO (N1 "Por dentro").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es consejo médico: no se come.
 

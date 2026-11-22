@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #30 · Tu teclado aprende de ti sin llevarse lo que escribes — NARRADO (N1 "Por dentro").
 // Datos: Hard et al. (Google, arXiv:1811.03604, 2018) · McMahan y Ramage (blog de Google, 2017) · Apple, "Learning with Privacy at Scale" (2017)
 // · Zhu, Liu y Han, "Deep Leakage from Gradients" (MIT, NeurIPS 2019). Ver guion.md y verificacion.md. Todo el dibujo es esquemático.
@@ -44,7 +43,7 @@ function Telefono({ T, x, y, s = 1, texto = '', tecla = null, sugs = null, sugOn
   if (o <= 0.001) return null;
   return <div style={{ position:'absolute', left:x, top:y, width:520, height:960, transform:`translate(-50%,-50%) scale(${s})`, zIndex:20, opacity:o,
     background:'#f7f5f0', border:`12px solid ${KC.ink}`, borderRadius:66, boxShadow:'18px 22px 0 rgba(0,0,0,.35)', overflow:'hidden' }}>
-    <div style={{ position:'absolute', left:170, top:14, width:156, height:30, borderRadius:16, background:CINE.borde }}></div>
+    <div style={{ position:'absolute', left:170, top:14, width:156, height:30, borderRadius:16, background:KC.ink }}></div>
     {/* chat */}
     <div style={{ position:'absolute', left:22, right:22, top:70, height:330, display:'flex', flexDirection:'column', justifyContent:'flex-end', gap:14 }}>
       {chat.filter((m) => T >= m.at).map((m, i) => { const e = kprog(T, m.at, m.at + 0.35, kEase.sale);

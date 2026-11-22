@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #35 · Los cachalotes tienen un "alfabeto" de clics (y ninguna IA lo tradujo) — NARRADO (N1 "Por dentro" + N4 "La imagen que se llena").
 // Datos: Sharma, Gero, Payne, Gruber, Rus, Torralba y Andreas, Nature Communications 15:3617 (2024) y Beguš et al., Open Mind 9 (2025).
 // Ver guion.md y verificacion.md. Los colores azul/naranja de las dos ballenas siguen la figura 1 del artículo. Dibujo esquemático.

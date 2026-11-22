@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #19 · La sal no hace que tu agua hierva antes (5 centésimas de grado) — NARRADO (N2 el número + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const AGUA = '#7fc8ff', AGUA_OSC = '#3d8fd6', SAL = '#ffffff', NA = '#b18cff', CL = '#7ee36b', ACERO = '#c9d2dc';
@@ -199,7 +198,7 @@ function Hervir() {
         <div style={{ position:'absolute', inset:0, background:'#0f2a44' }}></div>
         <SvgCapa>
           <Ambiente T={T} n={24} color="rgba(127,200,255,.25)" />
-          <rect x={0} y={0} width={KW} height={430} fill="#142c47" />
+          <rect x={0} y={0} width={KW} height={430} fill="#1d4a72" />
           <path d={`M 0 430 ${Array.from({ length: 13 }, (_, i) => `Q ${i * 90 + 45} ${430 + Math.sin(T * 3 + i) * 10} ${(i + 1) * 90} 430`).join(' ')}`} stroke="#7fc8ff" strokeWidth={8} fill="none" />
           <GranoNucleacion T={T} x={360} y={1000} s={1.1} t0={K.B + 0.4} />
           {[[150, 1100, 0.35], [560, 1120, 0.3], [260, 860, 0.25]].map(([gx, gy, gs], i) => <GranoNucleacion key={i} T={T} x={gx} y={gy} s={gs} t0={K.B + 0.8 + i * 0.3} seed={20 + i} />)}
@@ -244,7 +243,7 @@ function Hervir() {
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
           <Montana x={720} y={1000} s={1.0} />
-          <rect x={0} y={1290} width={KW} height={KH - 1290} fill="#1a4776" />
+          <rect x={0} y={1290} width={KW} height={KH - 1290} fill="#2a7fd0" />
           <Olla T={T} x={200} y={1070} s={0.42} hierve={1} vapor={0.8} />
           <Olla T={T} x={780} y={590} s={0.42} hierve={1} vapor={0.8} />
           <g opacity={kprog(T, K.A + 1.6, K.A + 2.1)}>

@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #38 · La IA que transcribe tu voz a veces escribe lo que nadie dijo — NARRADO (N5 "El experimento" + N1 "Por dentro").
 // Datos: Koenecke, Choi, Mei, Schellmann y Sloane, "Careless Whisper: Speech-to-Text Hallucination Harms", ACM FAccT 2024
 // (pruebas de abril–mayo de 2023) y AP (Burke y Schellmann, 26 oct 2024). Ver guion.md y verificacion.md.
@@ -46,7 +45,7 @@ function HojaT({ T, at = 0, y = 760, tipo1 = 0, tipo2 = 0, brilla = 0, ok1 = 0, 
     <div style={{ position:'relative', font:`900 50px/1.18 ${KF.texto}`, color: tacha2 > 0.5 ? '#a49a8e' : KC.red, display:'inline-block',
       background:`rgba(255,59,47,${0.12 + 0.2 * glow})`, borderRadius:12, padding:'2px 10px', margin:'0 -10px' }}>
       {tipo2 ? tl(L2, tipo2[0], tipo2[1]) : L2}
-      {tacha2 > 0 && <div style={{ position:'absolute', left:-6, top:'50%', height:10, width:`calc(${tacha2 * 100}% + 12px)`, background:CINE.borde, borderRadius:5, transform:'rotate(-3deg)' }}></div>}
+      {tacha2 > 0 && <div style={{ position:'absolute', left:-6, top:'50%', height:10, width:`calc(${tacha2 * 100}% + 12px)`, background:KC.ink, borderRadius:5, transform:'rotate(-3deg)' }}></div>}
     </div>
     {nota > 0 && <div style={{ font:`700 24px ${KF.mono}`, color:'#7a7064', marginTop:14, opacity:nota }}>ejemplo real del estudio (traducido)</div>}
     {sello > 0 && <div style={{ position:'absolute', left:330, top:-62, transform:`rotate(-6deg) scale(${klerp(2.2, 1, kEase.sale(sello))})`, opacity:Math.min(1, sello * 2),

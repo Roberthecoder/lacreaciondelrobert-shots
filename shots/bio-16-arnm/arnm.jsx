@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #16 · La vacuna de ARNm: tu brazo fabrica la pieza — NARRADO (N1 "Por dentro").
 // Guion y fuentes: guion.md · verificación: verificacion.md. Todos los dibujos son esquemáticos y no están a escala entre sí.
 const PIEL = '#f1b48f', PIEL2 = '#d98f6b', MEMB = '#ff9fbf', ARN = '#ffd43b', ESP = '#ff5a4f', INMUNE = '#b18cff', ANTI = '#4dd4ff', PSI = '#E8A62A';

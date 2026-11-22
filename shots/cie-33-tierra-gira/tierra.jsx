@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #33 · Ahora mismo vas a más de 1,500 km/h — NARRADO (N2 "El número" + mapa del globo).
 // Datos: NASA NSSDC Earth Fact Sheet (radio y rotación) + cálculo con cos(latitud); Almanac; Linda Hall (Foucault 1851). Ver guion.md y verificacion.md.
 const OCEANO = '#2f7df6', TIERRA = '#7bd36b', TIERRA2 = '#ffe9a8', ORO = KC.gold2;
@@ -129,7 +128,7 @@ function Reloj({ x, y, r = 80, v = 0, color = KC.gold2 }) {
 // El cuarto del gancho (y del cierre). curvo 0..1: el piso se vuelve la Tierra que gira.
 function Cuarto({ T, curvo = 0, v = 1 }) {
   return <g>
-    <rect x={0} y={1140} width={KW} height={800} fill="#6a4c3b" opacity={1 - curvo} />
+    <rect x={0} y={1140} width={KW} height={800} fill="#c98a5a" opacity={1 - curvo} />
     <line x1={0} y1={1140} x2={KW} y2={1140} stroke={KC.ink} strokeWidth={8} opacity={1 - curvo} />
     {curvo > 0 && <g opacity={curvo}><Globo x={540} y={1140 + 1300} R={1300} lon0={-100 - 40 * T / 61.5} lat0={-30} id="cuarto" /></g>}
     <PersonaSentada x={330} y={950} s={0.95} T={T} cara={curvo > 0.5 ? 'sonrie' : 'normal'} />
@@ -153,7 +152,7 @@ function Grafica({ x, y, w = 820, h = 250, f, p = 1, color = KC.yellow, titulo }
 // Avión por dentro: ventanilla con nubes que pasan y un vaso de agua quieto.
 function AvionDentro({ T }) {
   return <g>
-    <rect x={0} y={0} width={KW} height={KH} fill="#797a86" />
+    <rect x={0} y={0} width={KW} height={KH} fill="#e8e4f0" />
     <path d="M 0 300 Q 540 220 1080 300 L 1080 1300 L 0 1300 Z" fill="#f4f1ea" stroke={KC.ink} strokeWidth={8} />
     <g transform="translate(560 640)">
       <rect x={-200} y={-250} width={400} height={500} rx={190} fill="#cfd6e0" stroke={KC.ink} strokeWidth={12} />
@@ -194,7 +193,7 @@ function PoloArriba({ T, a0, x = 540, y = 800, R = 330 }) {
 function Pendulo({ T, a0 }) {
   const t = T - a0, giro = t * 14, sw = Math.sin(t * 2.4), bx = 540 + sw * 330, by = 1030 - (1 - Math.cos(sw * 0.5)) * 90;
   return <g>
-    <rect x={0} y={0} width={KW} height={300} fill="#7a7670" />
+    <rect x={0} y={0} width={KW} height={300} fill="#e9dcc4" />
     <path d="M 340 300 Q 540 120 740 300 Z" fill="#d8c6a6" stroke={KC.ink} strokeWidth={8} />
     <g transform="translate(540 1060)">
       <ellipse rx={420} ry={130} fill="#c9b48e" stroke={KC.ink} strokeWidth={9} />

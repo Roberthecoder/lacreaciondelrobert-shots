@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #18 · El filtro de tu cigarro no es algodón: es plástico (colillas) — NARRADO (N1 "Por dentro").
 // Datos: Ocean Conservancy, informe ICC 2026 (datos 2025); Slaughter et al. 2011, Tobacco Control; WHO FCTC/PNUMA 2022; Fiocruz/WHO FCTC 2025.
 // Ver guion.md y verificacion.md. Todo el dibujo es esquemático.

@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #26 · La IA que encontró 303 figuras escondidas en Nazca — NARRADO (N4 "La imagen que se llena" + N2 de apoyo).
 // Datos: Sakai et al., "AI-accelerated Nazca survey nearly doubles the number of known figurative geoglyphs…", PNAS 121(40) e2407652121 (2024);
 // actualización: comunicado de la Universidad de Yamagata, 28 jul 2025 (160 figurativas más; total 893). Ver guion.md y verificacion.md.
@@ -186,7 +185,7 @@ function Nazca() {
               return <rect key={q} x={Math.floor(cx / 66) * 66 + dx * 66} y={420 + Math.floor((cy - 420) / 66) * 66 + dy * 66} width={66} height={66} fill={w > 0.6 ? KC.red : KC.yellow} opacity={0.25 + 0.45 * w} />; })}
             <rect x={Math.floor(cx / 66) * 66 - 80} y={420 + Math.floor((cy - 420) / 66) * 66 - 80} width={226} height={226} fill="none" stroke={KC.cyan} strokeWidth={7} rx={8} />
           </g>)}
-          <rect x={0} y={yScan - 6} width={KW} height={12} fill={cineMix(KC.cyan, CINE.fondo, 0.55)} opacity={barrido < 1 ? 0.85 : 0} />
+          <rect x={0} y={yScan - 6} width={KW} height={12} fill={KC.cyan} opacity={barrido < 1 ? 0.85 : 0} />
           <Robotito x={900} y={960} s={0.42} T={T} cara="seguro" />
         </>)}
       </Escena>

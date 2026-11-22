@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #38 · ¿Sin abejas nos morimos de hambre? Lo que le pasa a tu desayuno — NARRADO (N4 la imagen que se vacía).
 // Datos: IPBES 2016 (evaluación de polinizadores), Klein et al. 2007, Cooley y Vallejo-Marín 2021, Dymond et al. 2021. Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático (tamaños y cantidades del plato no son a escala).

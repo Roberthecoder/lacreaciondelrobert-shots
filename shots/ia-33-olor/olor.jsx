@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #33 · La IA que sabe a qué huele una molécula sin olerla — NARRADO (N4 "La imagen que se llena" + N1 "Por dentro").
 // Datos: Lee, Mayhew… Mainland y Wiltschko, "A principal odor map unifies diverse tasks in olfactory perception", Science 381:999 (2023);
 // carvona: Friedman y Miller, Science 172:1044 (1971). Ver guion.md y verificacion.md. Todo el dibujo es esquemático.

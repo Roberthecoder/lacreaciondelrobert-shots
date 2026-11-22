@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #38 · Tu genoma en una pantalla (y lo que cuesta leerlo) — NARRADO (N4 la imagen que se llena + N2 el número).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático: las letras son de ejemplo, no una secuencia real.
 const BASE = { A: '#2fe0a8', T: '#ff2d78', C: '#00d2ff', G: '#ffe11a' };

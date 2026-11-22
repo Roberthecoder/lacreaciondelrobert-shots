@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #31 · Respiras más por un lado de la nariz, y se turnan — NARRADO (N1 "Por dentro" + participación).
 // Datos: Pendolino et al. 2018 (Rhinology Online), Hasegawa y Kern 1977 (Mayo Clin. Proc.), Eccles 1996 (Acta Otolaryngol.).
 // Ver guion.md y verificacion.md. Dibujo esquemático: los cornetes, la sangre y el aire no van a escala.

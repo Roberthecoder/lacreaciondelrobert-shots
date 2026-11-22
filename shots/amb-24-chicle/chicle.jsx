@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #24 · Ese chicle no es chicle: es plástico — NARRADO (N1 "Por dentro").
 // Datos: FDA 21 CFR 172.615; patente Wrigley US10492512B2; Satari et al. 2020 (Sci Rep); Nciri et al. 2021 (Polymers);
 // gov.wales 2022; El Pilar (UCSB); DOF 15 feb 2024 (IMPI, Chicle Maya); Chicza. Ver guion.md y verificacion.md.
@@ -13,8 +12,8 @@ function Banqueta({ T, manchas = 0, limpio = 0, seed = 7 }) {
   for (let i = 0; i < 9; i++) { const y = 780 + Math.pow(i / 8, 1.5) * 460; lineas.push(<line key={'h' + i} x1={0} y1={y} x2={KW} y2={y} stroke="#b9b2a7" strokeWidth={3 + i * 0.6} />); }
   for (let i = -6; i <= 6; i++) lineas.push(<line key={'v' + i} x1={540 + i * 70} y1={780} x2={540 + i * 260} y2={1260} stroke="#b9b2a7" strokeWidth={4} />);
   return <g>
-    <rect x={0} y={760} width={KW} height={KH - 760} fill="#777678" />
-    <rect x={0} y={740} width={KW} height={34} fill="#6c6b6c" stroke={KC.ink} strokeWidth={5} />
+    <rect x={0} y={760} width={KW} height={KH - 760} fill="#e4ded4" />
+    <rect x={0} y={740} width={KW} height={34} fill="#cfc7bb" stroke={KC.ink} strokeWidth={5} />
     {lineas}
     {sp.slice(0, manchas).map((p, i) => {
       const d = limpio > 0 ? kclamp(1 - Math.hypot(p.x - 600, p.y - 1000) / (limpio * 900), 0, 1) : 0;

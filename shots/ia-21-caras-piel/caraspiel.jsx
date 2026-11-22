@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #21 · La misma app de caras falla más con unas que con otras — NARRADO (N2 "El número").
 // Datos: Buolamwini y Gebru, "Gender Shades", PMLR 81 (2018); Raji y Buolamwini, AIES 2019; NIST FRVT parte 3, NISTIR 8280 (2019);
 // ACLU, Williams v. City of Detroit (2020–2024). Ver guion.md y verificacion.md. Caras y escenas esquemáticas.

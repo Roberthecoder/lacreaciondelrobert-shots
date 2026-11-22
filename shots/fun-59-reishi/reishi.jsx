@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #59 · Ese frasco de reishi no siempre trae lo que dice — NARRADO (gancho 4 "un número que contradice" + mito vs dato con sellos).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es consejo médico.
 

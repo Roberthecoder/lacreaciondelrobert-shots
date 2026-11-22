@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #36 · Esa ventana no es una pared para un pájaro: es cielo — NARRADO (N1 por dentro + toque de N5).
 // Datos: Loss et al. 2014 (The Condor) y guía del U.S. Fish and Wildlife Service (2021). Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático (rayos de luz, separación de rayas y golpe en la cabeza no están a escala).

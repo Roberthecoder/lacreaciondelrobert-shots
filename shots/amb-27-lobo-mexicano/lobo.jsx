@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #27 · Todos los lobos mexicanos vienen de solo siete — NARRADO (N4 la imagen que se llena + N2 el número).
 // Datos: USFWS (historia 2023, "Fostering 101", estadísticas al 31 dic 2025), CONABIO Biodiversitas 119 (2015), Hedrick et al. 1997.
 // Ver guion.md y verificacion.md. Todo el dibujo es esquemático.
@@ -173,7 +172,7 @@ function LoboShot() {
       {/* 2 · EE. UU.: el último confirmado, 1970 */}
       <Escena T={T} a={K.U} b={K.R}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><rect x={0} y={860} width={KW} height={KH} fill="#7a705e" /><rect x={0} y={0} width={KW} height={860} fill="rgba(255,255,255,.12)" />
+        {svg(<><rect x={0} y={860} width={KW} height={KH} fill="#e9d2a0" /><rect x={0} y={0} width={KW} height={860} fill="rgba(255,255,255,.12)" />
           <line x1={0} y1={860} x2={KW} y2={860} stroke={KC.ink} strokeWidth={7} strokeDasharray="26 16" />
           <text x={60} y={650} style={{ font:`400 66px ${KF.titulo}` }} fill={KC.ink}>EE. UU.</text>
           <text x={60} y={940} style={{ font:`400 66px ${KF.titulo}` }} fill={KC.ink}>MÉXICO</text>

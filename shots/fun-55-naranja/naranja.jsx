@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #55 · Ese polvo verde de tu naranja no es polvo: el moho verde (Penicillium digitatum) — NARRADO (N1 "Por dentro", gancho 1).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
@@ -255,7 +254,7 @@ function NaranjaShot() {
         <FondoLunares color={KC.mint} />
         {fsvg(<>
           {corte < 1 && <g opacity={1 - corte}>
-            <rect x={0} y={1100} width={KW} height={300} fill="#6a4d33" stroke={KC.ink} strokeWidth={8} />
+            <rect x={0} y={1100} width={KW} height={300} fill="#c98b4a" stroke={KC.ink} strokeWidth={8} />
             <path d="M 700 1100 L 760 1040 L 820 1100 Z" fill="#9aa3ad" stroke={KC.ink} strokeWidth={6} />
             <Naranja x={klerp(380, 640, caida)} y={klerp(500, 950, caida)} r={150} seed={8} raspon={kprog(T, K.H + 0.6, K.H + 0.8)} mpos={[0.2, 0.6]} rot={caida * 90} />
           </g>}

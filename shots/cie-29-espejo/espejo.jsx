@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #29 · El espejo no te invierte izquierda y derecha — NARRADO (N3 capítulos + participación).
 // Física del espejo plano: invierte la dirección perpendicular a su superficie (adelante-atrás). Ver guion.md y verificacion.md.
 // Dibujo esquemático. Reglas del dibujo (para que la física quede bien):

@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #37 · Ese «yodada» en tu sal no es adorno (yodo, tiroides y bocio) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (tiroides, hipófisis, moléculas, bebé).
 const YODO = '#8e44ad', YODO2 = '#c39bd3', PIEL = '#f1b48f', PIEL2 = '#d98f6c', TIRO = '#e8505b';
@@ -204,7 +203,7 @@ function SalYodada() {
       <Escena T={T} a={K.G} b={K.Ti} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <rect x={0} y={1250} width={KW} height={670} fill="#78593b" /><rect x={0} y={1250} width={KW} height={14} fill={CINE.borde} />
+          <rect x={0} y={1250} width={KW} height={670} fill="#e7a35a" /><rect x={0} y={1250} width={KW} height={14} fill={KC.ink} />
           <PaqueteSal x={770} y={980} s={0.95} hl={hlG} T={T} />
           <Plato x={300} y={1150} s={0.9} granos={granosG} />
           <Granos T={T} x={300} y0={800} y1={1140} desde={K.G + 0.1} hasta={K.G + 2.5} />
@@ -259,7 +258,7 @@ function SalYodada() {
       <Escena T={T} a={K.Re} b={K.Mx}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <rect x={0} y={1130} width={KW} height={12} fill={CINE.borde} />
+          <rect x={0} y={1130} width={KW} height={12} fill={KC.ink} />
           {[[300, 27.6, KC.red, 'sin yodo'], [760, 0.2, KC.mint, 'con yodo']].map(([cx, v, c, et], i) => { const h = Math.max(6, v * 15 * barras);
             return <g key={i}>
               <rect x={cx - 120} y={1130 - h} width={240} height={h} rx={14} fill={c} stroke={KC.ink} strokeWidth={8} />
@@ -304,7 +303,7 @@ function SalYodada() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <rect x={0} y={1250} width={KW} height={670} fill="#78593b" /><rect x={0} y={1250} width={KW} height={14} fill={CINE.borde} />
+          <rect x={0} y={1250} width={KW} height={670} fill="#e7a35a" /><rect x={0} y={1250} width={KW} height={14} fill={KC.ink} />
           <PaqueteSal x={770} y={980} s={0.95} hl={1} T={T} />
           <Plato x={300} y={1150} s={0.9} granos={1} />
           <Salero x={300} y={960} s={0.95} inclina={0} />

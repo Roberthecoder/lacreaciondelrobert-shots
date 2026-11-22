@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #57 · El tronco de 8 metros que quizá no era hongo: Prototaxites — NARRADO (gancho 1 "Esto no es X" + N1/N5).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático (reconstrucción simplificada).
 
@@ -195,7 +194,7 @@ function ProtoShot() {
         {fsvg(<>
           <defs><clipPath id="lente57"><circle cx={540} cy={860} r={430} /></clipPath></defs>
           <g clipPath="url(#lente57)">
-            <rect x={0} y={400} width={KW} height={900} fill="#151214" />
+            <rect x={0} y={400} width={KW} height={900} fill="#20160d" />
             <Tubos g={kprog(T, K.Tu - 0.2, K.Tu + 2.2)} gris={kprog(T, K.H + 2.6, K.H + 3.2) * 0.6} />
             {T > K.H + 2.4 && <g opacity={kprog(T, K.H + 2.6, K.H + 3.2)}><RedHifas T={T} x={540} y={880} g={kprog(T, K.H + 2.6, K.H + 4.4)} seed={7} n={260} escala={0.42} color={FK.hifa} ancho={4} brillo={0.6} /></g>}
           </g>

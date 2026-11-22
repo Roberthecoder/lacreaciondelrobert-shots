@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #28 · La IA de sepsis que no vio 2 de cada 3 casos — NARRADO (N2 "El número").
 // Datos: Wong et al., JAMA Internal Medicine 181(8):1065-1070 (2021) · OMS, hoja "Sepsis" · Adams et al., Nature Medicine 28:1455-1460 (2022).
 // Ver guion.md y verificacion.md. Todo es esquemático y función de T.

@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #25 · El Sol que ves es el de hace 8 minutos — NARRADO (N3 "Capítulos y medidores" + N4 el cielo como máquina del tiempo).
 // Datos: NASA (1 UA ≈ 150 millones de km, 8 min 20 s), BIPM/NIST (≈ 300,000 km/s), NASA Moon Facts (≈ 1.3 s), NASA/Hubble (Sirio ≈ 8.6 años luz),
 // AAO (no mirar el Sol). Ver guion.md y verificacion.md. Dibujo esquemático: tamaños y distancias NO van a escala; el Sol que se apaga es un experimento mental.

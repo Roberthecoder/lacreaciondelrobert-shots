@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #38 · Las estrellas no parpadean: es el aire — NARRADO (N1 "Por dentro": el camino de la luz por la atmósfera).
 // Datos: EarthSky, Scientific American, ESO, NASA Hubble (ver guion.md y verificacion.md). Sin cifras.
 // Dibujo esquemático: capas de aire, ángulos y tamaños NO van a escala; los temblores están exagerados para que se vean.

@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #52 · Esto no es una piedra: es una trufa — NARRADO (gancho 1 "Esto no es X: es Y" + N1 Por dentro + N5 El experimento).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
@@ -256,7 +255,7 @@ function TrufasShot() {
             {[[130, 1060], [330, 1100], [480, 1010], [650, 1060]].map(([tx, ty], i) => kprog(T, K.R + 1.6 + i * 0.15, K.R + 2.0 + i * 0.15) > 0 ? <Trufa key={i} x={tx} y={ty} s={0.22 * kprog(T, K.R + 1.6 + i * 0.15, K.R + 2.0 + i * 0.15, kEase.rebote)} seed={i + 3} /> : null)}
           </g>
           {zoomR > 0 && <g opacity={zoomR}>
-            <rect x={0} y={0} width={KW} height={KH} fill={cineMix(KC.noche, CINE.fondo, 0.55)} />
+            <rect x={0} y={0} width={KW} height={KH} fill={KC.noche} />
             <PuntaMicorriza T={T} x={520} y={880} s={1.5} rot={-8} g={kprog(T, K.R + 3.6, K.R + 5.2)} />
             {kprog(T, K.R + 4.4, K.R + 5.0) > 0 && <g opacity={kprog(T, K.R + 4.4, K.R + 5.0)}>
               <path d="M 820 1110 Q 760 1060 700 1000" stroke={KC.mint} strokeWidth={12} fill="none" markerEnd="" strokeLinecap="round" />

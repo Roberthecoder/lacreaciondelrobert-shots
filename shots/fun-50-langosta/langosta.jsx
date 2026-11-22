@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #50 · La langosta con fiebre: el hongo que frena plagas (Metarhizium acridum) — NARRADO.
 // Formato N1 "Por dentro" + gancho 1 "Esto no es X: es Y". Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
@@ -112,18 +111,18 @@ function MundoCuticula({ T, K, pan }) {
   const az = Array.from({ length: 12 }, () => [100 + r() * 880, HEMO + 100 + r() * 680, r() * 180]);
   return <g transform={`translate(0 ${-pan})`}>
     {/* hemolinfa */}
-    <rect x={0} y={HEMO} width={KW} height={1100} fill="#10242b" />
+    <rect x={0} y={HEMO} width={KW} height={1100} fill="#163a3a" />
     {az.map(([ax, ay, ar], i) => <Trehalosa key={i} x={ax + mece(T, i, 0.3) * 14} y={ay + mece(T, i + 9, 0.3) * 10} rot={ar + T * 10} o={1 - kclamp(comer * 1.4 - i / 12, 0, 1)} />)}
     {hb.slice(0, nHB).map(([hx, hy, hr], i) => <CuerpoLevadura key={i} x={hx + mece(T, i, 0.4) * 12} y={hy + mece(T, i + 4, 0.4) * 10} rot={hr + T * 8} s={kprog(T, K.Ad + 0.3 + i * 0.13, K.Ad + 0.6 + i * 0.13, kEase.rebote)} yema={(Math.sin(T * 2 + i) + 1) / 2} />)}
     {/* epidermis */}
-    <rect x={0} y={EPI} width={KW} height={HEMO - EPI} fill="#724e43" stroke={KC.ink} strokeWidth={5} />
+    <rect x={0} y={EPI} width={KW} height={HEMO - EPI} fill="#d98c6a" stroke={KC.ink} strokeWidth={5} />
     {Array.from({ length: 12 }, (_, i) => <g key={i}><line x1={i * 90} y1={EPI} x2={i * 90} y2={HEMO} stroke={KC.ink} strokeWidth={3} /><circle cx={i * 90 + 45} cy={(EPI + HEMO) / 2} r={11} fill="#7a3a2a" /></g>)}
     {/* endocutícula y exocutícula en capas */}
-    <rect x={0} y={SUP + 20} width={KW} height={EPI - SUP - 20} fill="#79684b" stroke={KC.ink} strokeWidth={5} />
-    <rect x={0} y={SUP + 20} width={KW} height={110} fill="#62432b" />
+    <rect x={0} y={SUP + 20} width={KW} height={EPI - SUP - 20} fill="#e8c27a" stroke={KC.ink} strokeWidth={5} />
+    <rect x={0} y={SUP + 20} width={KW} height={110} fill="#b9773a" />
     {Array.from({ length: 9 }, (_, i) => <path key={i} d={`M 0 ${SUP + 40 + i * 30} Q 270 ${SUP + 34 + i * 30} 540 ${SUP + 40 + i * 30} T 1080 ${SUP + 40 + i * 30}`} stroke={i < 3 ? '#8a5226' : '#c79a52'} strokeWidth={3} fill="none" />)}
     {/* capa de cera (epicutícula) */}
-    <rect x={0} y={SUP} width={KW} height={20} fill={cineMix(KC.gold2, CINE.fondo, 0.55)} stroke={KC.ink} strokeWidth={5} />
+    <rect x={0} y={SUP} width={KW} height={20} fill={KC.gold2} stroke={KC.ink} strokeWidth={5} />
     {/* zona disuelta por las enzimas alrededor de la punta */}
     {peg > 0 && <path d={`M ${AX - 30} ${SUP} Q ${AX - 46} ${(SUP + PY) / 2} ${AX - 22} ${PY} L ${AX + 22} ${PY} Q ${AX + 46} ${(SUP + PY) / 2} ${AX + 30} ${SUP} Z`} fill="#f8ecc8" opacity=".85" />}
     {peg > 0 && <path d={`M ${AX} ${SUP - 10} L ${AX} ${PY}`} stroke={KC.ink} strokeWidth={22} strokeLinecap="round" />}
@@ -262,7 +261,7 @@ function LangostaShot() {
       <Escena T={T} a={K.H} b={K.Es} zoom={0.06}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <rect x={0} y={1140} width={KW} height={800} fill="#71644a" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1140} width={KW} height={800} fill="#d8b878" stroke={KC.ink} strokeWidth={8} />
           <Langosta T={T} x={330} y={1000} s={0.75} />
           <Chapulin T={T} x={760} y={1150} s={0.5} seed={3} />
           {Array.from({ length: 14 }, (_, i) => { const u = kprog(T, K.H + 0.3 + i * 0.12, K.H + 2.2 + i * 0.12); const tx = i % 2 ? 330 + (i - 7) * 18 : 760 + (i - 7) * 10, ty = i % 2 ? 900 : 1090;
@@ -303,7 +302,7 @@ function LangostaShot() {
       <Escena T={T} a={K.E} b={K.L} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={900} width={KW} height={1100} fill="#76684b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={900} width={KW} height={1100} fill="#e2c27a" stroke={KC.ink} strokeWidth={8} />
           {Array.from({ length: 9 }, (_, i) => <path key={i} d={`M ${40 + i * 125} 920 q 30 -60 60 0 q 20 -40 40 0`} fill={KC.leaf} stroke={KC.ink} strokeWidth={5} />)}
           {campo.map(([cx, cy], i) => { const m = muerta(i); return <Langosta key={i} T={T} x={cx} y={cy} s={0.2} rot={m * 90} gris={m} seed={i} flip={i % 3 === 0} />; })}
           <MapaAfrica T={T} x={300} y={420} k={8.4} p={kprog(T, K.E + 1.4, K.E + 1.8) * (1 - kprog(T, K.E + 3.0, K.E + 3.4))} punto={kprog(T, K.E + 2.0, K.E + 2.4, kEase.rebote)} />
@@ -320,7 +319,7 @@ function LangostaShot() {
           <rect x={60} y={710} width={600} height={200} rx={30} fill="rgba(255,255,255,.85)" stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.L + 0.9, K.L + 1.2)} />
           <text x={90} y={790} style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.L + 0.9, K.L + 1.2)}>el hongo</text>
           <text x={90} y={870} style={{ font:`700 40px ${KF.mono}` }} fill={KC.leaf} opacity={kprog(T, K.L + 1.3, K.L + 1.6)}>tarda días o semanas</text>
-          <rect x={0} y={1000} width={KW} height={950} fill="#76684b" stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.L + 2.2, K.L + 2.6)} />
+          <rect x={0} y={1000} width={KW} height={950} fill="#e2c27a" stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.L + 2.2, K.L + 2.6)} />
           {[0, 1, 2, 3].map((i) => kprog(T, K.L + 2.4, K.L + 2.6) > 0 ? <Hormiga key={i} T={T} x={140 + i * 90 + ((T * 30) % 60)} y={1050 + (i % 2) * 30} s={1.1} seed={i} /> : null)}
           {kprog(T, K.L + 2.8, K.L + 3.0) > 0 && <AveVuelo T={T} x={klerp(1150, 760, kprog(T, K.L + 2.8, K.L + 3.6, kEase.sale))} y={960} s={1.2} seed={2} />}
           {[[480, 1100], [960, 1100]].map(([cx, cy], i) => { const k = kprog(T, K.L + 3.0 + i * 0.3, K.L + 3.3 + i * 0.3, kEase.rebote); return k > 0 ? <g key={i} transform={`translate(${cx} ${cy - 90}) scale(${k})`}><circle r={40} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} /><path d="M -18 0 L -5 14 L 20 -12" stroke="#fff" strokeWidth={9} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g> : null; })}
@@ -330,7 +329,7 @@ function LangostaShot() {
       <Escena T={T} a={K.C} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <rect x={0} y={1010} width={KW} height={1000} fill="#76684b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1010} width={KW} height={1000} fill="#e2c27a" stroke={KC.ink} strokeWidth={8} />
           {Array.from({ length: 7 }, (_, i) => { const u = kprog(T, K.C + 0.2 + i * 0.25, K.C + 2.2 + i * 0.25, kEase.sale); const izq = i % 2 === 0;
             return u > 0 ? <AveVuelo key={i} T={T} x={klerp(izq ? -120 : 1200, 160 + i * 120, u)} y={klerp(380, 560 + (i % 3) * 110, u) + mece(T, i, 0.6) * 20} s={0.7 + (i % 3) * 0.15} seed={i} color={i % 3 ? '#6e5a40' : '#8a8f99'} /> : null; })}
           <rect x={250} y={960} width={30} height={70} fill="#8a5a34" stroke={KC.ink} strokeWidth={6} />

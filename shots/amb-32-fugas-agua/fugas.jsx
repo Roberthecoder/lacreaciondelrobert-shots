@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #32 · De cada diez cubetas, unas cuatro se pierden en la calle (fugas de agua) — NARRADO (N4 la imagen que se llena + N2 el número).
 // Datos: SACMEX / IPDP CDMX (2022), Gobierno de Jalisco (2025), Liemberger y Wyatt (2018), EPA WaterSense. Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático (calle, tubería, suelo, lago, ciudad y globo).
@@ -142,9 +141,9 @@ function FugasShot() {
       </Escena>
       {/* 2 · fugas en la red, en la calle */}
       <Escena T={T} a={K.F} b={K.Tu}>
-        <div style={{ position:'absolute', inset:0, background:cineMix(KC.cyan, CINE.fondo, 0.8) }} />
+        <div style={{ position:'absolute', inset:0, background:KC.cyan }} />
         {svg(<>
-          <rect x={0} y={700} width={KW} height={60} fill="#3c434f" stroke={KC.ink} strokeWidth={6} />
+          <rect x={0} y={700} width={KW} height={60} fill="#6f7782" stroke={KC.ink} strokeWidth={6} />
           {[0, 1, 2, 3, 4, 5].map((i) => <rect key={i} x={40 + i * 190} y={724} width={90} height={10} fill={KC.yellow} />)}
           <rect x={0} y={760} width={KW} height={520} fill={TIERRA} />
           {Array.from({ length: 30 }, (_, i) => { const r = krng(i + 3); return <circle key={i} cx={r() * KW} cy={790 + r() * 460} r={4 + r() * 8} fill={TIERRA2} />; })}
@@ -170,9 +169,9 @@ function FugasShot() {
       </Escena>
       {/* 4 · el suelo se mueve de forma dispareja: el tubo se agrieta */}
       <Escena T={T} a={K.S} b={K.P}>
-        <div style={{ position:'absolute', inset:0, background:cineMix(KC.orange, CINE.fondo, 0.8) }} />
+        <div style={{ position:'absolute', inset:0, background:KC.orange }} />
         {svg(<>
-          <rect x={0} y={640} width={KW} height={60} fill="#3c434f" stroke={KC.ink} strokeWidth={6} />
+          <rect x={0} y={640} width={KW} height={60} fill="#6f7782" stroke={KC.ink} strokeWidth={6} />
           <rect x={0} y={700} width={540} height={560} fill={TIERRA} stroke={KC.ink} strokeWidth={6} />
           <g transform={`translate(0 ${hunde * 110})`}>
             <rect x={540} y={700} width={540} height={560} fill={TIERRA2} stroke={KC.ink} strokeWidth={6} />

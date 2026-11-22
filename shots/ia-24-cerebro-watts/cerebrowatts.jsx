@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #24 · Tu cerebro piensa con 20 watts; una tarjeta de IA, con 700 — NARRADO (N2 "El número").
 // Datos: Balasubramanian 2021 (PNAS) · Azevedo et al. 2009 · Boyd 2008 (Sci. Am.) · NVIDIA H100 · Llama 3 Herd of Models (2024) ·
 // Levy y Calvert 2021 (PNAS) · Intel Hala Point (2024). Ver guion.md y verificacion.md. Todo el dibujo es esquemático.

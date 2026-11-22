@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #34 · El libro quemado por un volcán que la IA leyó sin abrirlo — NARRADO (N1 "Por dentro": Lupa sobre el rollo).
 // Datos: Vesuvius Challenge (scrollprize.org/grandprize 2024, /firstletters 2023), U. de Kentucky 2019, CNN/Bodleian 2025. Ver guion.md y verificacion.md.
 // Todo es esquemático: el texto griego de las columnas es de adorno; ΠΟΡΦΥΡΑϹ y ΦΙΛΟΔΗΜΟΥ ΠΕΡΙ ΚΑΚΙΩΝ son las palabras reales.
@@ -73,7 +72,7 @@ function Vesubio({ T, p = 0 }) {
   const r = krng(5);
   const nubes = Array.from({ length: 14 }, (_, i) => ({ dx: (r() * 2 - 1) * (40 + i * 16), dy: -i * 46, rr: 50 + i * 9 + r() * 20 }));
   return <g>
-    <rect x={0} y={1120} width={KW} height={300} fill="#685a43" />
+    <rect x={0} y={1120} width={KW} height={300} fill="#c7a46a" />
     <path d="M -40 1130 L 380 590 Q 450 560 520 600 L 560 590 Q 640 560 700 600 L 1120 1130 Z" fill="#7a5a48" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
     <path d="M 380 590 L 300 700 M 700 600 L 790 720 M 520 600 L 470 760" stroke="#5b4334" strokeWidth={10} fill="none" strokeLinecap="round" />
     {p > 0 && <path d={`M 520 600 q -20 ${120 * p} -60 ${240 * p} M 600 590 q 30 ${110 * p} 70 ${230 * p}`} stroke={KC.orange} strokeWidth={14} fill="none" strokeLinecap="round" />}

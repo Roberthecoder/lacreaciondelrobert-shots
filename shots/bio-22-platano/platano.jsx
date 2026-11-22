@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #22 · Ese plátano no es único: es un clon (Cavendish, Fusarium TR4 y QCAV-4) — NARRADO (N1 por dentro + N5).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (formas reales, tamaños aproximados).
 const AMAR = '#ffd93b', AMAR_OSC = '#e0a91c', PULPA = '#f7ecc8', HOJA = '#3fbf4a', HOJA_SECA = '#c9a23a', CAFE = '#7a4a22';

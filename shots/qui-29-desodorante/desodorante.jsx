@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #29 · Ese olor no es tu sudor (desodorante vs. antitranspirante) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const PIEL = '#f1b48f', PIEL2 = '#e8a07c', CORY = KC.mint, HOMI = KC.lilac, AUR = '#a7adb8', ENZ = '#9b5de5', OLOR = '#9bd23c', SUDOR = '#7fc8ff';
@@ -207,7 +206,7 @@ function Desodorante() {
       <Escena T={T} a={K.An} b={K.Pr} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          <rect x={0} y={640} width={KW} height={KH} fill="#724f47" />
+          <rect x={0} y={640} width={KW} height={KH} fill="#d98f72" />
           <path d={`M 0 640 L ${KW} 640`} stroke={KC.ink} strokeWidth={10} />
           <rect x={495} y={640} width={90} height={500} fill="#2a3550" stroke={KC.ink} strokeWidth={8} />
           <path d="M 540 1140 q -120 20 -100 80 q 30 60 100 30 q 80 -30 120 30 q -20 70 -120 50" stroke="#2a3550" strokeWidth={70} fill="none" strokeLinecap="round" />

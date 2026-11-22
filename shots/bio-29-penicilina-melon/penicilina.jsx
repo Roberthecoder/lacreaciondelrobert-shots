@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #29 · Esa penicilina no salió del moho de Fleming: salió de un melón podrido — NARRADO (N1 + N2 + N5).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (melón, moho, tanque, lámparas y cepas).
 const MOHO = '#3d9b8a', MOHO2 = '#7fd1bd', CASCARA = '#d2b47a', RED_M = '#f3e6c2', PENI = '#f4c25a', MAIZ = '#e0b23a';

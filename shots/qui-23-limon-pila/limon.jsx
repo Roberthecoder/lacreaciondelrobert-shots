@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #23 · Ese limón no te da electricidad (la pila de limón) — NARRADO (N5 experimento + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const ZN = '#b9c2cc', ZN_GASTO = '#959ca4', ACERO = '#5d646c', CU = '#d8793a', CU_OSC = '#a9531f', LIMON = '#ffd21a', JUGO = '#fff4a8', ELEC = '#ffe11a';

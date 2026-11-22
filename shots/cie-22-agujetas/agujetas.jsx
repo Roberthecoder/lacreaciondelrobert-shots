@@ -1,4 +1,3 @@
-// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #22 · Las agujetas no son ácido láctico — NARRADO (N5 "El experimento" + N1 "Por dentro").
 // Datos: Schwane et al. 1983 (Phys. Sportsmed.; MSSE), Cheung et al. 2003, Hotfiel et al. 2018, McHugh 2003. Ver guion.md y verificacion.md.
 // Todas las barras son ilustrativas (sin números).
