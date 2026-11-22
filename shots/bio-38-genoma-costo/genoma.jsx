@@ -185,12 +185,12 @@ function Genoma() {
       <Escena T={T} a={K.Letras} b={K.Leer} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          {LETRAS.map((L, i) => { const e = kprog(T, K.Letras + i * 0.25, K.Letras + i * 0.25 + 0.4, kEase.rebote); return <g key={L} transform={`translate(${190 + i * 233} ${640}) scale(${e}) rotate(${Math.sin(T * 3 + i) * 5})`}>
+          {LETRAS.map((L, i) => { const e = kprog(T, K.Letras + i * 0.25, K.Letras + i * 0.25 + 0.4, kEase.rebote); return <g key={L} transform={`translate(${190 + i * 233} ${770}) scale(${e}) rotate(${Math.sin(T * 3 + i) * 5})`}>
             <rect x={-95} y={-95} width={190} height={190} rx={30} fill={BASE[L]} stroke={KC.ink} strokeWidth={10} />
             <text x={0} y={48} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.ink}>{L}</text></g>; })}
-          <ADNHebra T={T} x={90} y={1040} largo={900} alto={240} vueltas={3} colores={[BASE.A, BASE.T, BASE.C, BASE.G]} grosor={10} />
+          <ADNHebra T={T} x={90} y={1150} largo={900} alto={260} vueltas={3} colores={[BASE.A, BASE.T, BASE.C, BASE.G]} grosor={10} />
         </SvgCapa>
-        <Etq T={T} at={K.Letras + 0.8} until={K.Leer - 0.2} x={300} y={1260} texto="A con T · C con G" tam={40} color={KC.ink} />
+        <Etq T={T} at={K.Letras + 0.8} until={K.Leer - 0.2} x={300} y={1385} texto="A con T · C con G" tam={40} color={KC.ink} />
       </Escena>
       {/* 2 · más de 90 años leyendo */}
       <Escena T={T} a={K.Leer} b={K.Proyecto} zoom={0.04}>
@@ -238,7 +238,7 @@ function Genoma() {
       {/* 6 · re-gancho: ¿y el tuyo? */}
       <Escena T={T} a={K.Pregunta} b={K.Antes} zoom={0.06}>
         <FondoLunares color={KC.pink} />
-        <SvgCapa><Pantalla T={T} x={230} y={300} w={620} h={920} fs={48} llenado={1} signo={kprog(T, K.Pregunta + 0.2, K.Pregunta + 0.6)} /></SvgCapa>
+        <SvgCapa><Pantalla T={T} x={215} y={470} w={650} h={965} fs={50} llenado={1} signo={kprog(T, K.Pregunta + 0.2, K.Pregunta + 0.6)} /></SvgCapa>
       </Escena>
       {/* 7 · antes: cada pedacito en su tubito */}
       <Escena T={T} a={K.Antes} b={K.Paralelo} zoom={0.04}>
@@ -259,8 +259,8 @@ function Genoma() {
       {/* 9 · 2022: unos 525 dólares */}
       <Escena T={T} a={K.Hoy} b={K.Estudio} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
-        <SvgCapa><Grafica T={T} p={pGraf} y={450} marca2008={kprog(T, K.Hoy + 1.0, K.Hoy + 1.4)} /></SvgCapa>
-        <NumeroGigante T={T} at={K.Hoy + 2.8} until={K.Estudio - 0.3} valor={525} dur={0.8} prefijo="≈ $" etiqueta="mayo de 2022" x={540} y={1360} tam={150} color={KC.mint} />
+        <SvgCapa><Grafica T={T} p={pGraf} y={540} marca2008={kprog(T, K.Hoy + 1.0, K.Hoy + 1.4)} /></SvgCapa>
+        <NumeroGigante T={T} at={K.Hoy + 2.8} until={K.Estudio - 0.3} valor={525} dur={0.8} prefijo="≈ $" etiqueta="mayo de 2022" x={540} y={1450} tam={150} color={KC.mint} />
       </Escena>
       {/* 10 · T2T, Science 2022 */}
       <Escena T={T} a={K.Estudio} b={K.Faltaba} zoom={0.03}>
@@ -281,12 +281,12 @@ function Genoma() {
       <Escena T={T} a={K.Repetidos} b={K.Cierre} zoom={0.03}>
         <FondoMarca patron="oscuro" />
         <SvgCapa>
-          <Cromosoma T={T} x={150} y={500} largo={780} alto={160} cen={0.45} telo={1} centro={0.6 + 0.4 * Math.sin(T * 4)} />
-          <path d={`M ${150 + 780 * 0.45} 590 L 540 850`} stroke={KC.gold2} strokeWidth={5} strokeDasharray="12 8" />
-          <Repetido T={T} t0={K.Repetidos} y={1000} alt={1.9} />
+          <Cromosoma T={T} x={130} y={630} largo={820} alto={190} cen={0.45} telo={1} centro={0.6 + 0.4 * Math.sin(T * 4)} />
+          <path d={`M ${130 + 820 * 0.45} 735 L 540 990`} stroke={KC.gold2} strokeWidth={5} strokeDasharray="12 8" />
+          <Repetido T={T} t0={K.Repetidos} y={1140} alt={1.9} />
         </SvgCapa>
-        <Etq T={T} at={K.Repetidos + 0.4} until={K.Cierre - 0.2} x={560} y={690} texto="centrómero" tam={30} color={KC.gold2} />
-        <Chip T={T} at={K.Repetidos + 1.3} until={K.Cierre - 0.2} texto="una lectura larguísima lo cruza" y={1350} tam={36} borde={KC.gold2} />
+        <Etq T={T} at={K.Repetidos + 0.4} until={K.Cierre - 0.2} x={560} y={860} texto="centrómero" tam={30} color={KC.gold2} />
+        <Chip T={T} at={K.Repetidos + 1.3} until={K.Cierre - 0.2} texto="una lectura larguísima lo cruza" y={1450} tam={36} borde={KC.gold2} />
       </Escena>
       {/* 13 · cierre: la pantalla del inicio, ya con el precio nuevo */}
       <Escena T={T} a={K.Cierre} b={FIN} zoom={0.04}>
