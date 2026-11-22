@@ -39,7 +39,7 @@ function Cinta({ x0, y, largo, p = 1, texto, tam = 40 }) {
     <rect x={x0} y={y - 16} width={L} height={32} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
     {Array.from({ length: Math.floor(L / 24) }, (_, i) => <line key={i} x1={x0 + 12 + i * 24} y1={y - 16} x2={x0 + 12 + i * 24} y2={y - (i % 4 === 0 ? 0 : 6)} stroke={KC.ink} strokeWidth={3} />)}
     <rect x={x0 + L - 10} y={y - 30} width={34} height={60} rx={8} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
-    {texto && p > 0.95 && <text x={x0 + largo / 2} y={y - 34} textAnchor="middle" style={{ font:`400 ${tam}px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">{texto}</text>}
+    {texto && p > 0.95 && <text x={x0 + largo / 2} y={y - 34} textAnchor="middle" style={{ font:`400 ${tam}px ${KF.titulo}` }} fill={KC.yellow} stroke="#0b1020" strokeWidth={8} paintOrder="stroke">{texto}</text>}
   </g>;
 }
 
@@ -53,8 +53,8 @@ function Cota({ x1, y1, x2, y2, p = 1, texto, tam = 36, color = KC.ink, lado = -
     <path d={fl(x1, y1, ang + Math.PI)} stroke={color} strokeWidth={6} fill="none" strokeLinecap="round" />
     {p > 0.98 && <path d={fl(x2, y2, ang)} stroke={color} strokeWidth={6} fill="none" strokeLinecap="round" />}
     {p > 0.98 && texto && (hor
-      ? <text x={(x1 + x2) / 2} y={y1 + lado * 22 + (lado > 0 ? tam * 0.8 : 0)} textAnchor="middle" style={{ font:`400 ${tam}px ${KF.titulo}` }} fill={KC.paper} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">{texto}</text>
-      : <text x={x1 + lado * 22} y={(y1 + y2) / 2 + tam * 0.35} textAnchor={lado < 0 ? 'end' : 'start'} style={{ font:`400 ${tam}px ${KF.titulo}` }} fill={KC.paper} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">{texto}</text>)}
+      ? <text x={(x1 + x2) / 2} y={y1 + lado * 22 + (lado > 0 ? tam * 0.8 : 0)} textAnchor="middle" style={{ font:`400 ${tam}px ${KF.titulo}` }} fill="#ffffff" stroke="#0b1020" strokeWidth={8} paintOrder="stroke">{texto}</text>
+      : <text x={x1 + lado * 22} y={(y1 + y2) / 2 + tam * 0.35} textAnchor={lado < 0 ? 'end' : 'start'} style={{ font:`400 ${tam}px ${KF.titulo}` }} fill="#ffffff" stroke="#0b1020" strokeWidth={8} paintOrder="stroke">{texto}</text>)}
   </g>;
 }
 
@@ -128,7 +128,7 @@ function SupPoros({ x, y, r = 150, T = 0 }) {
 function CapasTubos({ x, y, w = 760, hCapa = 50, n = 8 }) {
   return <g transform={`translate(${x} ${y})`}>
     <rect x={0} y={-60} width={w} height={60} fill={GX.madera} stroke={KC.ink} strokeWidth={7} />
-    <text x={w / 2} y={-18} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.paper}>madera</text>
+    <text x={w / 2} y={-18} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill="#f3e6c4">madera</text>
     {Array.from({ length: 8 }, (_, i) => { const p = kclamp(n - i, 0, 1); if (p <= 0) return null; const yy = i * hCapa;
       return <g key={i} opacity={p} transform={`translate(0 ${(1 - p) * -20})`}>
         <rect x={0} y={yy} width={w} height={hCapa} fill={i % 2 ? GX.costra : GX.costra2} stroke={KC.ink} strokeWidth={4} />
@@ -183,9 +183,9 @@ function GiganteShot() {
         <FondoLunares color={KC.mint} />
         {fsvg(<>
           <g transform={`translate(0 ${klerp(-60, 0, giro)})`}>
-            <TroncoCaido T={T} x={70} y={820} w={960} h={170} abajo={10 + 110 * giro} costra={kprog(T, K.G + 0.2, K.G + 1.4, kEase.sale)} />
+            <TroncoCaido T={T} x={70} y={780} w={960} h={240} abajo={10 + 160 * giro} costra={kprog(T, K.G + 0.2, K.G + 1.4, kEase.sale)} />
           </g>
-          <Cinta x0={110} y={790} largo={860} p={kprog(T, K.G + 1.8, K.G + 3.0, kEase.suave)} texto="≈ 11 m" tam={60} />
+          <Cinta x0={110} y={750} largo={860} p={kprog(T, K.G + 1.8, K.G + 3.0, kEase.suave)} texto="≈ 11 m" tam={60} />
         </>)}
       </Escena>
       {/* 2 · el hallazgo: mapa de Hainan y luego dos micólogos que pasan sin reconocerlo */}
@@ -193,9 +193,9 @@ function GiganteShot() {
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
           <g opacity={1 - kprog(T, K.E + 3.0, K.E + 3.4)}>
-            <MapaHainan x={160} y={470} s={1} p={kprog(T, K.E + 0.4, K.E + 1.2, kEase.rebote)} T={T} />
+            <MapaHainan x={46} y={590} s={1.3} p={kprog(T, K.E + 0.4, K.E + 1.2, kEase.rebote)} T={T} />
           </g>
-          {T > K.E + 3.0 && <g opacity={kprog(T, K.E + 3.0, K.E + 3.4)}>
+          {T > K.E + 3.0 && <g opacity={kprog(T, K.E + 3.0, K.E + 3.4)} transform="translate(0 260)">
             {[180, 420, 860].map((cx, i) => <Conifera key={i} x={cx} y={800} s={0.8} T={T} seed={i + 2} />)}
             <TroncoCaido T={T} x={60} y={780} w={960} h={150} abajo={90} costra={1} />
             {[0, 1].map((i) => { const u = kprog(T, K.E + 3.2, K.M, null); return <Persona key={i} x={klerp(-80, 1150, u) - i * 90} y={1150} alto={150} paso={T * 9 + i} />; })}
@@ -205,9 +205,9 @@ function GiganteShot() {
       {/* 3 · medidas: 10.85 m, 84 cm, 5 cm, con una persona para comparar */}
       <Escena T={T} a={K.M} b={K.P} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 190)">
           <TroncoCaido T={T} x={110} y={560} w={860} h={150} abajo={100} costra={1} />
-          <Persona x={70} y={810} alto={1.7 * PXM} color="#3a2a5a" />
+          <Persona x={70} y={810} alto={1.7 * PXM} color="#c9b8f0" />
           <Cota x1={150} y1={830} x2={150 + 10.85 * PXM - 50} y2={830} p={kprog(T, K.M + 0.4, K.M + 1.6, kEase.sale)} texto="10.85 m" tam={52} lado={1} />
           {/* bloque de la costra en perspectiva: ancho 84 cm y grosor 5 cm (vista de cerca) */}
           <g opacity={kprog(T, K.M + 2.2, K.M + 2.6)} transform="translate(160 1030)">
@@ -218,35 +218,35 @@ function GiganteShot() {
           </g>
           <Cota x1={160} y1={1082} x2={580} y2={1082} p={kprog(T, K.M + 2.6, K.M + 3.4, kEase.sale)} texto="84 cm de ancho" tam={40} lado={1} />
           <Cota x1={740} y1={940} x2={740} y2={966} p={kprog(T, K.M + 3.9, K.M + 4.4, kEase.sale)} texto="5 cm de grueso" tam={40} lado={1} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 4 · peso: báscula */}
       <Escena T={T} a={K.P} b={K.Es}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<Bascula x={540} y={960} r={260} T={T} aguja={600 * 0.75 * kprog(T, K.P + 0.3, K.P + 1.6, kEase.rebote)} franja={kprog(T, K.P + 1.4, K.P + 1.9)} />)}
+        {fsvg(<><g opacity=".38"><TroncoCaido T={T} x={110} y={520} w={860} h={150} abajo={100} costra={1} /></g><Bascula x={540} y={1190} r={330} T={T} aguja={600 * 0.75 * kprog(T, K.P + 0.3, K.P + 1.6, kEase.rebote)} franja={kprog(T, K.P + 1.4, K.P + 1.9)} /></>)}
       </Escena>
       {/* 5 · especie: láminas no, poros sí */}
       <Escena T={T} a={K.Es} b={K.Po}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <ConLaminas x={270} y={1010} s={1.0} />
-          {T > K.Es + 1.6 && <Sello T={T} at={K.Es + 1.6} x={270} y={790} texto="NO" color={KC.red} r={80} />}
-          <g opacity={kprog(T, K.Es + 2.0, K.Es + 2.4)}><SupPoros x={790} y={860} r={170} T={T} /></g>
-          {T > K.Es + 2.8 && <Sello T={T} at={K.Es + 2.8} x={930} y={700} texto="SÍ" color="#118a3a" r={70} rot={8} />}
+          <ConLaminas x={290} y={1190} s={1.6} />
+          {T > K.Es + 1.6 && <Sello T={T} at={K.Es + 1.6} x={290} y={870} texto="NO" color={KC.red} r={90} />}
+          <g opacity={kprog(T, K.Es + 0.3, K.Es + 0.7)}><g transform="translate(790 960) scale(1.41) translate(-790 -960)"><SupPoros x={790} y={960} r={170} T={T} /></g></g>
+          {T > K.Es + 2.8 && <Sello T={T} at={K.Es + 2.8} x={960} y={760} texto="SÍ" color="#118a3a" r={80} rot={8} />}
         </>)}
       </Escena>
       {/* 6 · poros al microscopio: 49 en 1 mm² → ≈ 452 millones */}
       <Escena T={T} a={K.Po} b={K.Pr} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
-        {fsvg(<g transform="translate(110 430) scale(0.86)">
+        {fsvg(<g transform="translate(134 464) scale(1.45)">
           <rect x={-10} y={-10} width={580} height={580} fill={GX.costra2} stroke={KC.gold2} strokeWidth={6} strokeDasharray="18 10" />
           {Array.from({ length: 49 }, (_, i) => { const on = kprog(T, K.Po + 0.3 + i * 0.045, K.Po + 0.45 + i * 0.045, kEase.rebote);
             const cx = 40 + (i % 7) * 80 + (Math.floor(i / 7) % 2) * 10, cy = 40 + Math.floor(i / 7) * 80;
             return <g key={i}><circle cx={cx} cy={cy} r={28} fill={GX.poro} stroke={GX.costra3} strokeWidth={4} />
               {on > 0 && <circle cx={cx} cy={cy} r={28 * on} fill="none" stroke={KC.yellow} strokeWidth={6} opacity={1 - kprog(T, K.Po + 3.0, K.Po + 3.4) * 0.6} />}</g>; })}
         </g>)}
-        {T < K.Po + 3.0 && <Contador T={T} at={K.Po + 0.3} desde={0} hasta={49} dur={2.2} x={540} y={1050} tam={64} color={KC.yellow} sufijo=" poros en 1 mm²" />}
+        {T < K.Po + 3.0 && <Contador T={T} at={K.Po + 0.3} desde={0} hasta={49} dur={2.2} x={540} y={1400} tam={64} color={KC.yellow} sufijo=" poros en 1 mm²" />}
       </Escena>
       {/* 7 · re-gancho */}
       <Escena T={T} a={K.Pr} b={K.Pe} zoom={0.1}>
@@ -256,41 +256,41 @@ function GiganteShot() {
       {/* 8 · perenne: capas de tubos que se apilan */}
       <Escena T={T} a={K.Pe} b={K.Ed}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<CapasTubos x={160} y={560} w={760} hCapa={52} n={kprog(T, K.Pe + 0.6, K.Pe + 3.6) * 8} />)}
+        {fsvg(<g transform="translate(46 780) scale(1.3)"><CapasTubos x={0} y={0} w={760} hCapa={52} n={kprog(T, K.Pe + 0.3, K.Pe + 3.3) * 8} /></g>)}
       </Escena>
       {/* 9 · edad: ~20 años comiendo madera (pudrición blanca) */}
       <Escena T={T} a={K.Ed} b={K.Sp}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<RodajaPodrida T={T} x={540} y={900} r={240} p={kprog(T, K.Ed + 0.6, K.Ed + 3.4)} />)}
-        <NumeroGigante T={T} at={K.Ed + 0.2} until={K.Sp - 0.2} valor={20} dur={1.6} prefijo="≈ " sufijo=" años" x={700} y={470} tam={120} color={KC.yellow} />
+        {fsvg(<RodajaPodrida T={T} x={540} y={1000} r={330} p={kprog(T, K.Ed + 0.6, K.Ed + 3.4)} />)}
+        <NumeroGigante T={T} at={K.Ed + 0.2} until={K.Sp - 0.2} valor={20} dur={1.6} prefijo="≈ " sufijo=" años" x={700} y={520} tam={120} color={KC.yellow} />
       </Escena>
       {/* 10 · esporas elipsoides (al microscopio) */}
       <Escena T={T} a={K.Sp} b={K.C} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          <EsporaElip x={540} y={820} L={300} rot={-18} o={kprog(T, K.Sp + 0.3, K.Sp + 0.9)} />
-          {[[200, 600, 90, 30], [880, 620, 80, -40], [170, 980, 85, 60], [910, 1000, 95, 10], [720, 540, 70, 80]].map(([ex, ey, L, r], i) =>
-            <EsporaElip key={i} x={ex + Math.sin(T * 0.8 + i) * 14} y={ey + Math.cos(T * 0.7 + i) * 12} L={L} rot={r + T * 8} o={kprog(T, K.Sp + 0.6 + i * 0.15, K.Sp + 1.1 + i * 0.15)} />)}
-          <Cota x1={540 - 143} y1={1000} x2={540 + 143} y2={1000} p={kprog(T, K.Sp + 2.0, K.Sp + 2.6, kEase.sale)} texto="≈ 5 µm" tam={44} color={KC.texto} lado={1} />
+          <EsporaElip x={540} y={960} L={420} rot={-18} o={kprog(T, K.Sp + 0.2, K.Sp + 0.6)} />
+          {[[170, 700, 126, 30], [910, 720, 112, -40], [150, 1170, 119, 60], [930, 1200, 133, 10], [760, 600, 98, 80]].map(([ex, ey, L, r], i) =>
+            <EsporaElip key={i} x={ex + Math.sin(T * 0.8 + i) * 14} y={ey + Math.cos(T * 0.7 + i) * 12} L={L} rot={r + T * 8} o={kprog(T, K.Sp + 0.2 + i * 0.08, K.Sp + 0.6 + i * 0.08)} />)}
+          <Cota x1={540 - 200} y1={1190} x2={540 + 200} y2={1190} p={kprog(T, K.Sp + 2.0, K.Sp + 2.6, kEase.sale)} texto="≈ 5 µm" tam={44} color={KC.texto} lado={1} />
         </>)}
       </Escena>
       {/* 11 · contraste: el hongo más grande está bajo tierra (Armillaria, Oregón) */}
       <Escena T={T} a={K.C} b={K.Ci}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2d4257 0 36%, #1b171b 36% 100%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2d4257 0 45%, #1b171b 45% 100%)' }}></div>
         {fsvg(<>
-          {[90, 250, 420, 600, 780, 950].map((cx, i) => <Conifera key={i} x={cx} y={700} s={0.7} T={T} seed={i + 5} />)}
-          <rect x={0} y={690} width={1080} height={20} fill="#3a7a2a" />
-          <defs><clipPath id="gxSuelo"><rect x={0} y={712} width={1080} height={1208} /></clipPath></defs>
-          <g clipPath="url(#gxSuelo)"><RedHifas T={T} x={540} y={940} g={kprog(T, K.C + 0.5, K.C + 3.5)} seed={7} n={360} escala={0.42} color={KC.gold2} ancho={4} brillo={1} circ /></g>
+          {[90, 250, 420, 600, 780, 950].map((cx, i) => <Conifera key={i} x={cx} y={870} s={0.8} T={T} seed={i + 5} />)}
+          <rect x={0} y={860} width={1080} height={20} fill="#3a7a2a" />
+          <defs><clipPath id="gxSuelo"><rect x={0} y={882} width={1080} height={1038} /></clipPath></defs>
+          <g clipPath="url(#gxSuelo)"><RedHifas T={T} x={540} y={1180} g={kprog(T, K.C + 0.5, K.C + 3.5)} seed={7} n={360} escala={0.42} color={KC.gold2} ancho={4} brillo={1} circ /></g>
         </>)}
       </Escena>
       {/* 12 · cierre: el mismo tronco del inicio, ya medido y con su récord */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <TroncoCaido T={T} x={70} y={820} w={960} h={170} abajo={120} costra={1} />
-          <Cinta x0={110} y={790} largo={860} p={1} texto="10.85 m" tam={60} />
+          <TroncoCaido T={T} x={70} y={780} w={960} h={240} abajo={170} costra={1} />
+          <Cinta x0={110} y={750} largo={860} p={1} texto="10.85 m" tam={60} />
           <g opacity={kprog(T, K.Ci + 0.8, K.Ci + 1.2)}><Bascula x={250} y={560} r={120} T={T} aguja={450} franja={1} mini /></g>
           {T > K.Ci + 1.6 && <Medalla x={560} y={560} s={klerp(1.8, 1.1, kprog(T, K.Ci + 1.6, K.Ci + 2.0, kEase.rebote))} T={T} />}
         </>)}
@@ -298,27 +298,27 @@ function GiganteShot() {
 
       {/* textos */}
       <Chip T={T} at={K.G + 1.0} until={K.E - 0.3} texto="no es corteza" x={300} y={560} tam={44} borde={KC.red} />
-      <Etq T={T} at={K.G + 1.4} until={K.E - 0.3} x={330} y={1150} texto="la costra: el hongo" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.E + 1.0} until={K.E + 3.0} texto="2010 · Hainan, China" x={540} y={1000} tam={44} borde={KC.gold} />
-      <Etq T={T} at={K.E + 1.2} until={K.E + 3.0} x={690} y={860} texto="isla de Hainan" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.E + 4.2} until={K.M - 0.3} texto="ni lo reconocieron" x={360} y={560} tam={42} borde={KC.red} />
-                  <Chip T={T} at={K.P + 0.2} until={K.Es - 0.3} texto="¿cuánto pesa?" x={330} y={470} tam={42} borde={KC.ink} />
-      <Chip T={T} at={K.P + 1.6} until={K.Es - 0.3} texto="400–500 kg (estimado)" x={540} y={1170} tam={50} borde={KC.red} />
-      <Etq T={T} at={K.Es + 0.3} until={K.Po - 0.3} x={60} y={470} texto="Phellinus ellipsoideus" it tam={44} color={KC.ink} />
-      <Etq T={T} at={K.Es + 0.7} until={K.Po - 0.3} x={60} y={530} texto="(antes Fomitiporia ellipsoidea)" it tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Es + 1.2} until={K.Po - 0.3} x={110} y={1080} texto="láminas" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Es + 2.2} until={K.Po - 0.3} x={660} y={1080} texto="poros" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Po + 0.1} until={K.Pr - 0.3} texto="AL MICROSCOPIO · 1 mm²" x={400} y={370} tam={32} borde={KC.cyan} mono />
-      <NumeroGigante T={T} at={K.Po + 3.0} until={K.Pr - 0.2} valor={452} dur={1.2} prefijo="≈ " sufijo=" millones" etiqueta="de poros en total" x={540} y={1070} tam={110} color={KC.yellow} />
-      <Chip T={T} at={K.Pe + 0.2} until={K.Ed - 0.3} texto="perenne: capa sobre capa" x={540} y={420} tam={44} borde={KC.gold} />
-      <Etq T={T} at={K.Pe + 1.4} until={K.Ed - 0.3} x={60} y={1050} texto="capas de tubos (cada una con sus poros)" tam={28} color={KC.ink} />
-            <Etq T={T} at={K.Ed + 1.6} until={K.Sp - 0.3} x={600} y={590} texto="pudrición blanca" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.G + 1.4} until={K.E - 0.3} x={330} y={1250} texto="la costra: el hongo" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.E + 1.0} until={K.E + 3.0} texto="2010 · Hainan, China" x={540} y={470} tam={44} borde={KC.gold} />
+      <Etq T={T} at={K.E + 1.2} until={K.E + 3.0} x={700} y={1290} texto="isla de Hainan" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.E + 4.2} until={K.M - 0.3} texto="ni lo reconocieron" x={360} y={400} tam={42} borde={KC.red} />
+                  <Chip T={T} at={K.P + 0.2} until={K.Es - 0.3} texto="¿cuánto pesa?" x={540} y={430} tam={42} borde={KC.ink} />
+      <Chip T={T} at={K.P + 1.6} until={K.Es - 0.3} texto="400–500 kg (estimado)" x={540} y={1400} tam={50} borde={KC.red} />
+      <Etq T={T} at={K.Es + 0.3} until={K.Po - 0.3} x={60} y={540} texto="Phellinus ellipsoideus" it tam={44} color={KC.ink} />
+      <Etq T={T} at={K.Es + 0.7} until={K.Po - 0.3} x={60} y={600} texto="(antes Fomitiporia ellipsoidea)" it tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Es + 1.2} until={K.Po - 0.3} x={130} y={1260} texto="láminas" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Es + 2.2} until={K.Po - 0.3} x={660} y={1260} texto="poros" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Po + 0.1} until={K.Pr - 0.3} texto="AL MICROSCOPIO · 1 mm²" x={400} y={385} tam={32} borde={KC.cyan} mono />
+      <NumeroGigante T={T} at={K.Po + 3.0} until={K.Pr - 0.2} valor={452} dur={1.2} prefijo="≈ " sufijo=" millones" etiqueta="de poros en total" x={540} y={1420} tam={110} color={KC.yellow} />
+      <Chip T={T} at={K.Pe + 0.2} until={K.Ed - 0.3} texto="perenne: capa sobre capa" x={540} y={560} tam={44} borde={KC.gold} />
+      <Etq T={T} at={K.Pe + 1.4} until={K.Ed - 0.3} x={60} y={1390} texto="capas de tubos (cada una con sus poros)" tam={28} color={KC.ink} />
+            <Etq T={T} at={K.Ed + 1.6} until={K.Sp - 0.3} x={640} y={630} texto="pudrición blanca" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Sp + 0.2} until={K.C - 0.3} texto="AL MICROSCOPIO · ESPORAS" x={540} y={360} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Sp + 1.2} until={K.C - 0.3} x={60} y={450} texto="ellipsoideus = elipsoide (ovalada)" it tam={30} color={KC.texto} />
-      <Chip T={T} at={K.C + 0.3} until={K.Ci - 0.3} texto="el hongo más grande: bajo tierra" x={540} y={760} tam={38} borde={KC.gold} />
-      <Etq T={T} at={K.C + 1.2} until={K.Ci - 0.3} x={60} y={1080} texto="Armillaria ostoyae" it tam={36} color={KC.texto} />
-      <Etq T={T} at={K.C + 1.6} until={K.Ci - 0.3} x={60} y={1130} texto="Oregón (EE. UU.) · 965 ha de micelio" tam={28} color={KC.texto} />
-      <Chip T={T} at={K.Ci + 2.2} until={K.Ou} texto="el cuerpo de hongo más grande documentado" x={540} y={1130} tam={32} borde={KC.gold} />
+      <Etq T={T} at={K.Sp + 1.2} until={K.C - 0.3} x={60} y={470} texto="ellipsoideus = elipsoide (ovalada)" it tam={30} color={KC.texto} />
+      <Chip T={T} at={K.C + 0.3} until={K.Ci - 0.3} texto="el hongo más grande: bajo tierra" x={540} y={940} tam={38} borde={KC.gold} />
+      <Etq T={T} at={K.C + 1.2} until={K.Ci - 0.3} x={60} y={1250} texto="Armillaria ostoyae" it tam={36} color={KC.texto} />
+      <Etq T={T} at={K.C + 1.6} until={K.Ci - 0.3} x={60} y={1300} texto="Oregón (EE. UU.) · 965 ha de micelio" tam={28} color={KC.texto} />
+      <Chip T={T} at={K.Ci + 2.2} until={K.Ou} texto="el cuerpo de hongo más grande documentado" x={540} y={1260} tam={32} borde={KC.gold} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.E} texto="1 m" largo={79} y={1440} />
@@ -326,11 +326,11 @@ function GiganteShot() {
       <BarraEscala T={T} at={K.E + 3.1} until={K.M} texto="1 m" largo={79} y={1440} />
       <BarraEscala T={T} at={K.M} until={K.P} texto="1 m" largo={79} y={1440} />
       <BarraEscala T={T} at={K.Es} until={K.Po} texto="esquemático" largo={0} y={1440} />
-      <BarraEscala T={T} at={K.Po} until={K.Pr} texto="0.5 mm" largo={241} y={1440} />
+      <BarraEscala T={T} at={K.Po} until={K.Pr} texto="0.5 mm" largo={420} y={1440} />
       <BarraEscala T={T} at={K.Pr} until={K.Pe} texto="1 m" largo={44} y={1440} />
-      <BarraEscala T={T} at={K.Pe} until={K.Ed} texto="1 cm (esquemático)" largo={80} y={1440} />
-      <BarraEscala T={T} at={K.Ed} until={K.Sp} texto="10 cm (esquemático)" largo={100} y={1440} />
-      <BarraEscala T={T} at={K.Sp} until={K.C} texto="5 µm" largo={272} y={1440} />
+      <BarraEscala T={T} at={K.Pe} until={K.Ed} texto="1 cm (esquemático)" largo={104} y={1440} />
+      <BarraEscala T={T} at={K.Ed} until={K.Sp} texto="10 cm (esquemático)" largo={138} y={1440} />
+      <BarraEscala T={T} at={K.Sp} until={K.C} texto="5 µm" largo={381} y={1440} />
       <BarraEscala T={T} at={K.C} until={K.Ci} texto="esquemático" largo={0} y={1440} />
       <BarraEscala T={T} at={K.Ci} until={K.Ou} texto="1 m" largo={79} y={1440} />
 
