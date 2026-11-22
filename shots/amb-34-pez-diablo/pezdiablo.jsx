@@ -124,8 +124,8 @@ function PezDiabloShot() {
       {/* 1 · gancho: la pecera de sala y el "limpiapeceras" */}
       <Escena T={T} a={K.G} b={K.O}>
         <FondoLunares color={KC.cyan} />
-        {svg(<Pecera x={40} y={610} w={1000} h={800} T={T} limpio={(klerp(250, 690, avG) + 180) / 1000}>
-          <Pleco x={klerp(250, 690, avG)} y={640} s={0.7} T={T} boca={raspa(K.G)} flip={true} />
+        {svg(<Pecera x={30} y={560} w={1020} h={980} T={T} limpio={(klerp(420, 700, avG) + 260) / 1020}>
+          <Pleco x={klerp(420, 700, avG)} y={830} s={1.0} T={T} boca={raspa(K.G)} flip={true} />
         </Pecera>)}
       </Escena>
       {/* 2 · origen: el pleco con su morfología, del Amazonas */}
@@ -144,38 +144,38 @@ function PezDiabloShot() {
       {/* 3 · suelta: crece a medio metro; escapa de granjas o lo sueltan */}
       <Escena T={T} a={K.S} b={K.A}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>
+        {svg(<g transform="translate(540 1000) scale(1.22) translate(-540 -800)">
           <Pecera x={260} y={420} w={420} h={250} T={T} seed={7}>
             <Pleco x={210 + crece * 40} y={150} s={klerp(0.3, 0.95, crece)} T={T} />
           </Pecera>
-          <g transform="translate(130 760)" opacity={kprog(T, K.S + 0.3, K.S + 0.8)}>
+          <g transform="translate(95 760)" opacity={kprog(T, K.S + 0.3, K.S + 0.8)}>
             <rect x={0} y={0} width={klerp(240, 640, crece)} height={44} fill="#fff6d0" stroke={KC.ink} strokeWidth={5} />
             {Array.from({ length: 11 }, (_, i) => <line key={i} x1={i * klerp(240, 640, crece) / 10} y1={0} x2={i * klerp(240, 640, crece) / 10} y2={i % 5 === 0 ? 30 : 18} stroke="#0b1020" strokeWidth={3} />)}
             <text x={klerp(240, 640, crece) + 20} y={36} style={{ font:`400 54px ${KF.titulo}` }} fill={KC.ink}>{kformato(klerp(10, 50, crece))} cm</text>
           </g>
           {/* río */}
           <path d="M 0 1110 Q 270 1060 540 1110 T 1080 1100 L 1080 1200 Q 800 1160 540 1200 T 0 1190 Z" fill={PD.aguaO} stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.S + 1.6, K.S + 2.0)} />
-          <g opacity={kprog(T, K.S + 1.8, K.S + 2.2)} transform="translate(170 950)">
+          <g opacity={kprog(T, K.S + 1.8, K.S + 2.2)} transform="translate(260 950)">
             {[0, 1].map((i) => <rect key={i} x={-110 + i * 120} y={-40} width={100} height={60} rx={10} fill={PD.agua} stroke={KC.ink} strokeWidth={5} />)}
             <text x={0} y={-60} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>granja de ornato</text>
           </g>
-          <Flecha x1={220} y1={990} x2={330} y2={1110} p={kprog(T, K.S + 2.2, K.S + 2.8)} />
-          <g opacity={kprog(T, K.S + 2.8, K.S + 3.2)} transform={`translate(880 950) rotate(${kprog(T, K.S + 3.2, K.S + 3.8) * 40})`}>
+          <Flecha x1={300} y1={990} x2={400} y2={1110} p={kprog(T, K.S + 2.2, K.S + 2.8)} />
+          <g opacity={kprog(T, K.S + 2.8, K.S + 3.2)} transform={`translate(810 950) rotate(${kprog(T, K.S + 3.2, K.S + 3.8) * 40})`}>
             <path d="M -60 -60 L 60 -60 L 45 50 L -45 50 Z" fill="#ff6b5a" stroke={KC.ink} strokeWidth={6} />
             <path d="M -60 -60 Q 0 -130 60 -60" stroke={KC.ink} strokeWidth={5} fill="none" />
           </g>
-          <Flecha x1={850} y1={1010} x2={760} y2={1110} p={kprog(T, K.S + 3.4, K.S + 4.0)} />
-        </>)}
+          <Flecha x1={780} y1={1010} x2={690} y2={1110} p={kprog(T, K.S + 3.4, K.S + 4.0)} />
+        </g>)}
       </Escena>
       {/* 4 · armadura: placas de hueso y espinas; casi nadie se lo come */}
       <Escena T={T} a={K.A} b={K.Ai}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<>
-          <Pleco x={470} y={960} s={1.05} T={T} espinas={kprog(T, K.A + 2.6, K.A + 3.0, kEase.sale)} vela={1} />
-          <PezNativo x={klerp(1250, 930, kprog(T, K.A + 1.6, K.A + 2.6, kEase.sale)) + kprog(T, K.A + 3.2, K.A + 4.2) * 400} y={1120} s={0.8} flip={kprog(T, K.A + 3.0, K.A + 3.2) < 0.5 ? false : true} />
+          <Pleco x={440} y={1090} s={1.4} T={T} espinas={kprog(T, K.A + 2.6, K.A + 3.0, kEase.sale)} vela={1} />
+          <PezNativo x={klerp(1250, 950, kprog(T, K.A + 1.6, K.A + 2.6, kEase.sale)) + kprog(T, K.A + 3.2, K.A + 4.2) * 400} y={1290} s={1.0} flip={kprog(T, K.A + 3.0, K.A + 3.2) < 0.5 ? false : true} />
         </>)}
       </Escena>
-      <Lupa T={T} at={K.A + 0.5} until={K.Ai - 0.25} x={760} y={560} r={170} fx={540} fy={960} tinte={KC.orange} etiqueta="POR DENTRO · PLACAS"
+      <Lupa T={T} at={K.A + 0.5} until={K.Ai - 0.25} x={760} y={590} r={185} fx={560} fy={1080} tinte={KC.orange} etiqueta="POR DENTRO · PLACAS"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#1c140c" />
           {Array.from({ length: 6 }, (_, f) => Array.from({ length: 6 }, (_, i) => { const px = i * 68 + (f % 2) * 34, py = f * 62 + 10; return <path key={f + '-' + i} d={`M ${px - 32} ${py} L ${px} ${py - 30} L ${px + 32} ${py} L ${px} ${py + 30} Z`} fill="#e9dcc0" stroke="#8a6a3f" strokeWidth={4} />; }))}
           {Array.from({ length: 6 }, (_, f) => Array.from({ length: 6 }, (_, i) => <circle key={'s' + f + i} cx={i * 68 + (f % 2) * 34} cy={f * 62 + 10} r={4} fill="#8a6a3f" />))}
@@ -183,12 +183,12 @@ function PezDiabloShot() {
       {/* 5 · aire: el estómago funciona como pulmón; aguanta cuando el agua se seca (fondo oscuro, esquema) */}
       <Escena T={T} a={K.Ai} b={K.P}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 45% 45%, #13233a 0%, #0d1424 70%)' }}></div>
-        {svg(<>
+        {svg(<g transform="translate(540 1000) scale(1.3) translate(-540 -880)">
           {(() => { const seca = kprog(T, K.Ai + 3.0, K.Ai + 4.2, kEase.suave); const nivel = klerp(540, 980, seca); const burb = kprog(T, K.Ai + 0.8, K.Ai + 2.2);
             return <>
               <rect x={0} y={nivel} width={KW} height={KH} fill="#14364e" opacity={0.55} />
               <line x1={0} y1={nivel} x2={KW} y2={nivel} stroke="#9fe3ff" strokeWidth={5} strokeDasharray="20 12" />
-              <path d={`M 0 1060 Q 300 1030 540 1060 T 1080 1050 L 1080 1200 L 0 1200 Z`} fill={mixHex('#3b2a17', '#7a5a35', seca)} stroke={KC.ink} strokeWidth={5} />
+              <path d={`M 0 1060 Q 300 1030 540 1060 T 1080 1050 L 1080 1500 L 0 1500 Z`} fill={mixHex('#3b2a17', '#7a5a35', seca)} stroke={KC.ink} strokeWidth={5} />
               {seca > 0.6 && Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${120 + i * 160} 1080 l 20 30 l -12 30`} stroke={KC.ink} strokeWidth={4} fill="none" opacity={(seca - 0.6) * 2.5} />)}
               <g opacity={0.95}><Pleco x={500} y={klerp(840, 990, seca)} s={0.95} T={T} o={0.35} /></g>
               {/* estómago vascularizado en corte */}
@@ -199,7 +199,7 @@ function PezDiabloShot() {
               {/* burbuja de aire que baja de la superficie a la boca */}
               {burb > 0 && burb < 1 && seca < 0.1 && <circle cx={klerp(240, 230, burb)} cy={klerp(540, 880, burb)} r={18} fill="none" stroke="#e8fbff" strokeWidth={5} />}
             </>; })()}
-        </>)}
+        </g>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.texto} />
       </Escena>
       {/* 6 · pregunta */}
@@ -214,13 +214,13 @@ function PezDiabloShot() {
       {/* 7 · El Infiernillo: casi 20 mil toneladas de tilapia y carpa al año (años ochenta) */}
       <Escena T={T} a={K.I} b={K.R}>
         <FondoLunares color={KC.cyan} />
-        {svg(<MapaMexico x={110} y={700} ancho={880} conCA={false}>
+        {svg(<MapaMexico x={20} y={860} ancho={1040} conCA={false}>
           {(() => { const [px, py] = mxProy(-101.9, 18.3); const late = 1 + 0.2 * Math.sin(T * 6); return <g>
             <circle cx={px} cy={py} r={34 * late} fill="none" stroke={KC.red} strokeWidth={8} />
             <circle cx={px} cy={py} r={14} fill={KC.red} stroke={KC.ink} strokeWidth={4} />
           </g>; })()}
         </MapaMexico>)}
-        {svg(<g opacity={kprog(T, K.I + 2.6, K.I + 3.2)}>{Array.from({ length: 6 }, (_, i) => <Tilapia key={i} x={170 + (i % 3) * 120} y={600 - Math.floor(i / 3) * 60} s={0.55} o={kprog(T, K.I + 2.6 + i * 0.12, K.I + 2.9 + i * 0.12)} />)}</g>)}
+        {svg(<g opacity={kprog(T, K.I + 2.6, K.I + 3.2)}>{Array.from({ length: 6 }, (_, i) => <Tilapia key={i} x={170 + (i % 3) * 120} y={770 - Math.floor(i / 3) * 62} s={0.6} o={kprog(T, K.I + 2.6 + i * 0.12, K.I + 2.9 + i * 0.12)} />)}</g>)}
       </Escena>
       {/* 8 · redes: del 70 al 80 % de la pesca de tilapia ya eran plecos */}
       <Escena T={T} a={K.R} b={K.Tu}>
@@ -277,20 +277,20 @@ function PezDiabloShot() {
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Pecera x={70} y={790} w={600} h={330} T={T} limpio={1} seed={4}>
-            <Pleco x={320} y={200} s={0.95} T={T} boca={raspa(K.C) * 0.4} />
+          <Pecera x={40} y={800} w={670} h={380} T={T} limpio={1} seed={4}>
+            <Pleco x={350} y={225} s={1.07} T={T} boca={raspa(K.C) * 0.4} />
           </Pecera>
           {/* río (tachado) y acuario */}
-          <path d="M 700 1010 Q 860 980 1080 1010 L 1080 1080 Q 860 1050 700 1080 Z" fill={PD.aguaO} stroke={KC.ink} strokeWidth={5} opacity={1 - giro * 0.5} />
-          <Flecha x1={640} y1={940} x2={840} y2={1000} p={kprog(T, K.C + 0.4, K.C + 1.2) * (1 - giro)} color={KC.ink} />
-          {giro > 0 && <g><line x1={720} y1={900} x2={860} y2={1040} stroke={KC.red} strokeWidth={16} strokeLinecap="round" opacity={giro} /><line x1={860} y1={900} x2={720} y2={1040} stroke={KC.red} strokeWidth={16} strokeLinecap="round" opacity={giro} /></g>}
+          <path d="M 730 1020 Q 880 990 1080 1020 L 1080 1090 Q 880 1060 730 1090 Z" fill={PD.aguaO} stroke={KC.ink} strokeWidth={5} opacity={1 - giro * 0.5} />
+          <Flecha x1={680} y1={950} x2={870} y2={1010} p={kprog(T, K.C + 0.4, K.C + 1.2) * (1 - giro)} color={KC.ink} />
+          {giro > 0 && <g><line x1={760} y1={910} x2={900} y2={1050} stroke={KC.red} strokeWidth={16} strokeLinecap="round" opacity={giro} /><line x1={900} y1={910} x2={760} y2={1050} stroke={KC.red} strokeWidth={16} strokeLinecap="round" opacity={giro} /></g>}
           <g opacity={giro} transform="translate(850 560)">
             <path d="M -120 0 L 0 -80 L 120 0 Z" fill={KC.pink} stroke={KC.ink} strokeWidth={6} />
             <rect x={-105} y={0} width={210} height={150} fill="#fff" stroke={KC.ink} strokeWidth={6} />
             <rect x={-80} y={40} width={160} height={80} fill={PD.agua} stroke={KC.ink} strokeWidth={4} />
             <text x={0} y={30} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill="#0b1020">ACUARIO</text>
           </g>
-          <Flecha x1={560} y1={760} x2={720} y2={640} p={kprog(T, K.C + 2.2, K.C + 2.8)} color={KC.leaf} w={12} />
+          <Flecha x1={580} y1={770} x2={730} y2={650} p={kprog(T, K.C + 2.2, K.C + 2.8)} color={KC.leaf} w={12} />
         </>)}
       </Escena>
 
@@ -302,12 +302,12 @@ function PezDiabloShot() {
       <Etq T={T} at={K.O + 1.4} until={K.S - 0.2} x={240} y={1195} texto="boca de ventosa" lado="der" tam={28} color={KC.ink} />
       <Etq T={T} at={K.O + 1.8} until={K.S - 0.2} x={600} y={1185} texto="placas de hueso" lado="der" tam={28} color={KC.ink} />
       <Etq T={T} at={K.O + 2.2} until={K.S - 0.2} x={330} y={745} texto="Pterygoplichthys" it lado="der" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.S + 2.0} until={K.A - 0.2} texto="escapan de granjas · los sueltan" x={540} y={1440} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.S + 2.0} until={K.A - 0.2} texto="escapan de granjas · los sueltan" x={540} y={330} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.A + 3.2} until={K.Ai - 0.2} texto="pocos depredadores" x={540} y={1440} tam={36} borde={KC.orange} />
-      <Etq T={T} at={K.Ai + 0.6} until={K.Ai + 3.0} x={560} y={760} texto="estómago = pulmón" lado="der" tam={30} />
+      <Etq T={T} at={K.Ai + 0.6} until={K.Ai + 3.0} x={560} y={1000} texto="estómago = pulmón" lado="der" tam={30} />
       <Chip T={T} at={K.Ai + 3.4} until={K.P - 0.2} texto="resiste varios días si el agua se seca" x={540} y={1440} tam={30} borde={KC.cyan} />
-      <NumeroGigante T={T} at={K.I + 1.6} until={K.R - 0.2} valor={20000} dur={1.8} prefijo="≈" sufijo=" t" etiqueta="tilapia y carpa al año:" x={330} y={430} tam={110} color={KC.yellow} />
-      <Etq T={T} at={K.I + 0.6} until={K.R - 0.2} x={500} y={1110} texto="presa El Infiernillo" lado="der" tam={30} color={KC.ink} />
+      <NumeroGigante T={T} at={K.I + 1.6} until={K.R - 0.2} valor={20000} dur={1.8} prefijo="≈" sufijo=" t" etiqueta="tilapia y carpa al año:" x={330} y={560} tam={110} color={KC.yellow} />
+      <Etq T={T} at={K.I + 0.6} until={K.R - 0.2} x={470} y={1330} texto="presa El Infiernillo" lado="der" tam={30} color={KC.ink} />
       <Chip T={T} at={K.I + 4.4} until={K.R - 0.2} texto="años 80 · 119 comunidades vivían de esta pesca" x={540} y={1440} tam={26} borde={KC.ink} />
       <NumeroGigante T={T} at={K.R + 1.8} until={K.Tu - 0.2} valor={80} desde={70} dur={2.2} prefijo="70–" sufijo=" %" etiqueta="de la pesca de tilapia:" x={640} y={400} tam={100} color={KC.yellow} />
       <Chip T={T} at={K.R + 2.6} until={K.Tu - 0.2} texto="CONABIO, 2007" x={540} y={1440} tam={34} borde={KC.ink} />
