@@ -1,1 +1,2 @@
 - bio-34-cerdo-rinon: disolvencias limpias (Gancho→Espera, Slayman→Andrews, Andrews→Días, Días→Puente, Puente→Cierre): ya no se enciman números, calendarios ni dos pacientes; Espera: la cuadrícula de 160 lugares se ve desde el inicio (antes era invisible sobre oscuro)
+- fun-93-hongo-sal: Pregunta: velo oscuro sobre la escena anterior para que la célula del hongo y el «?» no se encimen con la célula seca; Genoma: el hongo ya está en cuadro desde el inicio y la escena se disuelve antes de que entre el bacalao (sin encimarse sobre las barras)
