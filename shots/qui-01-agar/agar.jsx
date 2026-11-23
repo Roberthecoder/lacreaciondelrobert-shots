@@ -130,7 +130,7 @@ function AgarNarrado() {
         <CurvaAgar T={T} temp={tempT} fase={T < K.Tp + 2.85 ? 'sube' : 'baja'} y={470} h={540} />
         {(() => { const liq = T < K.Tp + 2.85 ? tempT >= 85 : tempT > 35;
           return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-            <g transform={`translate(540 1285) scale(${liq ? 1 + 0.012 * Math.sin(T * 9) : 1}, ${liq ? 1 - 0.012 * Math.sin(T * 9) : 1})`}>
+            <g transform={`translate(540 1290) scale(${1.15 * (liq ? 1 + 0.012 * Math.sin(T * 9) : 1)}, ${1.15 * (liq ? 1 - 0.012 * Math.sin(T * 9) : 1)})`}>
               <PlacaPetri x={0} y={0} r={235} agar={liq ? '#ffe9b8' : AGAR} id="ptp">
                 {liq && Array.from({ length: 10 }, (_, i) => <circle key={i} cx={Math.cos(T * 3 + i) * 130} cy={Math.sin(T * 2 + i) * 100} r={14} fill="#fff" opacity=".7" />)}</PlacaPetri>
             </g>
@@ -164,7 +164,7 @@ function AgarNarrado() {
           <Postre T={T} x={330} y={1010} s={1.5} />
           <path d="M 610 900 Q 770 900 772 1040" fill="none" stroke={KC.ink} strokeWidth={12} strokeLinecap="round" opacity={kprog(T, K.E + 3.8, K.E + 4.2)} />
           <path d="M 742 1012 L 772 1052 L 802 1012" fill="none" stroke={KC.ink} strokeWidth={12} opacity={kprog(T, K.E + 3.8, K.E + 4.2)} strokeLinejoin="round" strokeLinecap="round" />
-          <g opacity={0.28 + 0.72 * kprog(T, K.E + 4.2, K.E + 4.7)}><PlacaPetri x={770} y={1300} r={220} agar={AGAR} id="pes"><g transform="scale(1.3)"><Colonias g={kprog(T, K.E + 4.4, K.E + 6)} n={8} R={150} /></g></PlacaPetri></g>
+          <g opacity={0.65 + 0.35 * kprog(T, K.E + 4.2, K.E + 4.7)}><PlacaPetri x={740} y={1290} r={250} agar={AGAR} id="pes"><g transform="scale(1.3)"><Colonias g={0.35 + 0.65 * kprog(T, K.E + 4.4, K.E + 6)} n={8} R={150} /></g></PlacaPetri></g>{/* belleza (2.ª pasada): la placa con colonias visible desde el inicio (antes un círculo rojizo apagado) */}
         </svg>
         <div style={{ position:'absolute', left:0, top:0, width:KW * 2, height:KH, transform:'scale(.78)', transformOrigin:'0 0' }}>
           <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="1881" quien="Fanny Hesse" revista="se lo sugiere a Walther Hesse · lab. de Robert Koch" x={840} y={520} /></div>
