@@ -2,3 +2,4 @@
 - amb-39-manglares: Capas (estaba marcada como lámina, 2.0 %) y Pregunta: el mangle rojo (el sujeto) sobre su columna de lodo, capas en tonos más claros con borde de luz para que se lean, chip arriba sin tapar la copa. Resto ya cumplía (orilla, hoja con bacterias, hectárea, mapa y cierre llenan el cuadro). Láminas y encuadre bien.
 - amb-39-manglares: (ajuste) Capas y Pregunta: columna y mangle 100 px más abajo y columna un poco más baja (el mangle encima cargaba el dibujo arriba); etiquetas y chip reacomodados. Láminas y encuadre bien.
 - fun-107-semilla-hongo: Lotes: el diagrama placa → frascos → bolsas 1.1× y centrado, barra 10 cm recalculada (110→121 px). Esporas: agar con degradado de profundidad. Resto ya cumplía (frasco, lupa, champiñones, autoclave, frascos del estudio, olla y cierre llenan el cuadro). Láminas y encuadre bien.
+GRUPO TERMINADO
