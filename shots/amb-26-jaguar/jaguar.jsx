@@ -45,7 +45,10 @@ function Jaguar({ x, y, s = 1, T = 0, paso = 0, seed = 7, espejo = false, ir = f
   const cola = Math.sin(T * 2.2 + seed) * 10;
   const colaD = `M -232 -40 Q -320 -10 -350 ${70 + cola} Q -362 ${118 + cola} -330 ${132 + cola}`;
   return <g transform={`translate(${x} ${y}) scale(${espejo ? -s : s} ${s})`} opacity={o}>
-    <defs><clipPath id={id}><path d={JG_TORSO} /></clipPath></defs>
+    <defs><clipPath id={id}><path d={JG_TORSO} /></clipPath>
+      <linearGradient id="jgVol" x1="0" y1="0" x2="0.25" y2="1"><stop offset="0" stopColor="#fff" stopOpacity="0.28" /><stop offset="0.45" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.32" /></linearGradient>
+      <radialGradient id="jgSuelo" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stopColor="#000" stopOpacity="0.5" /><stop offset="1" stopColor="#000" stopOpacity="0" /></radialGradient></defs>
+    <ellipse cx={0} cy={150} rx={300} ry={30} fill="url(#jgSuelo)" />
     {pata(-150, paso + Math.PI, true)}{pata(160, paso, true)}
     <path d={colaD} stroke={KC.ink} strokeWidth={34} strokeLinecap="round" fill="none" />
     <path d={colaD} stroke={c.piel} strokeWidth={22} strokeLinecap="round" fill="none" />
@@ -54,12 +57,13 @@ function Jaguar({ x, y, s = 1, T = 0, paso = 0, seed = 7, espejo = false, ir = f
     <g clipPath={`url(#${id})`}>
       <path d="M -220 40 Q -40 90 190 40 L 190 90 L -220 90 Z" fill={c.vientre} />
       {R.pts.map((p, i) => <Roseta key={i} {...p} c={c} />)}
+      <rect x={-260} y={-140} width={520} height={240} fill="url(#jgVol)" />
     </g>
     {pata(-180, paso, false)}{pata(185, paso + Math.PI, false)}
     <path d={JG_CABEZA} fill={c.piel} stroke={KC.ink} strokeWidth={8} />
     <circle cx={238} cy={-170} r={20} fill={c.piel} stroke={KC.ink} strokeWidth={7} /><circle cx={238} cy={-170} r={8} fill={c.mancha} />
     <circle cx={292} cy={-186} r={18} fill={c.piel} stroke={KC.ink} strokeWidth={7} /><circle cx={292} cy={-186} r={7} fill={c.mancha} />
-    <path d={JG_CABEZA} fill="none" stroke={KC.ink} strokeWidth={8} />
+    <path d={JG_CABEZA} fill="url(#jgVol)" stroke={KC.ink} strokeWidth={8} />
     <path d="M 300 -110 Q 340 -112 352 -88 Q 340 -64 300 -66 Z" fill={c.vientre} />
     {[[250, -150], [266, -128], [240, -112], [262, -96], [282, -160], [228, -132]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={5 + (i % 2) * 2} fill={c.mancha} />)}
     {ojos ? <><circle cx={318} cy={-134} r={22} fill="#eafff4" opacity={0.35} /><circle cx={318} cy={-134} r={11} fill="#eafff4" /></>
@@ -326,7 +330,7 @@ function JaguarShot() {
             <g transform="translate(950 960)" opacity={kprog(T, K.L + 1.4, K.L + 1.8)} stroke={KC.ink} strokeWidth={6} fill={KC.red}><rect x={-60} y={-34} width={120} height={22} rx={8} /><rect x={-60} y={12} width={120} height={22} rx={8} /><path d="M 18 -76 L 34 -70 L -18 76 L -34 70 Z" /></g></>)}
         </div>}
         {T > K.L + 3.0 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.L + 3.0, K.L + 3.4) }}>
-          {svg(<g transform="translate(540 900) scale(1.4) translate(-540 -875)"><rect x={-200} y={790} width={KW + 400} height={170} fill="#6a5843" stroke={KC.ink} strokeWidth={6} />
+          {svg(<g transform="translate(540 930) scale(1.85) translate(-540 -875)"><rect x={-200} y={790} width={KW + 400} height={170} fill="#6a5843" stroke={KC.ink} strokeWidth={6} />
             <circle cx={540} cy={640} r={70} fill="#6b4a2b" stroke={KC.ink} strokeWidth={6} /><circle cx={540} cy={1110} r={70} fill="#6b4a2b" stroke={KC.ink} strokeWidth={6} />
             <CamaraTrampa x={540} y={700} s={0.55} T={T} flash={flashEn(T, tfL)} /><CamaraTrampa x={540} y={1050} s={0.55} T={T} flash={flashEn(T, tfL)} />
             <Jaguar x={klerp(1180, 560, kprog(T, K.L + 3.0, tfL, kEase.sale))} y={885} s={0.3} T={T} paso={T < tfL ? (T - K.L) * 7 : 0.6} seed={7} espejo={true} /></g>)}
@@ -335,7 +339,7 @@ function JaguarShot() {
       </Escena>
       <Etq T={T} at={K.L + 0.4} until={K.L + 3.0} x={70} y={520} texto="derecho" tam={30} color={KC.ink} />
       <Etq T={T} at={K.L + 0.9} until={K.L + 3.0} x={70} y={1320} texto="izquierdo" tam={30} color={KC.ink} />
-      <Chip T={T} at={tfL + 0.2} until={K.C - 0.2} texto="2 cámaras: foto de cada lado" x={540} y={440} tam={32} borde={KC.ink} />
+      <Chip T={T} at={tfL + 0.2} until={K.C - 0.2} texto="2 cámaras: foto de cada lado" x={540} y={290} tam={32} borde={KC.ink} />
       {/* 11 · cierre: regreso a la cámara del inicio */}
       <Escena T={T} a={K.C} b={FIN}>
         <SelvaNoche T={T} />

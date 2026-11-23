@@ -1,0 +1,1 @@
+- amb-26-jaguar: Jaguar con volumen (luz arriba y sombra en el vientre y la cabeza, sombra en el suelo) en todas las escenas; Lados: la escena de las 2 cámaras en par agrandada ×1.32 (jaguar, troncos y cámaras), chip subido a y 290.
