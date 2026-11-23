@@ -1,0 +1,1 @@
+- fun-103-crear-cepa: Monocarion: las dos hifas más gruesas (46→60), más grandes (×1.07) y separadas para llenar el centro (y 610–1165), esporas más grandes, chip «sin grapas» abajo; todas las hifas (también el dicarión) con volumen de tubo (luz arriba, sombra abajo).
