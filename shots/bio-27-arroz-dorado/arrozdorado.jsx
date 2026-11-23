@@ -28,9 +28,12 @@ function Plato({ T = 0, x, y, s = 1, dorado = 0, seed = 3, vapor = 0 }) {
   granos.sort((p, q) => p[1] - q[1]);
   const c = mixHex(BLANCO_ARROZ, ORO, dorado);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <ellipse cx={0} cy={40} rx={330} ry={90} fill="#ffffff" stroke={KC.ink} strokeWidth={9} />
+    <defs><linearGradient id="adzPlato" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#ffffff" /><stop offset="1" stopColor="#c9d2dc" /></linearGradient>
+      <radialGradient id={`adzMonte${seed}`} cx="38%" cy="20%" r="85%"><stop offset="0" stopColor={mixHex('#fffaf0', '#ffc24a', dorado)} /><stop offset="1" stopColor={mixHex('#d9cfb6', '#c96f0c', dorado)} /></radialGradient></defs>
+    <ellipse cx={0} cy={78} rx={340} ry={60} fill="#000" opacity={0.35} />
+    <ellipse cx={0} cy={40} rx={330} ry={90} fill="url(#adzPlato)" stroke={KC.ink} strokeWidth={9} />
     <ellipse cx={0} cy={34} rx={250} ry={58} fill="#e9eef3" stroke={KC.ink} strokeWidth={4} opacity=".9" />
-    <path d="M -260 30 Q -230 -150 0 -160 Q 230 -150 260 30 Z" fill={mixHex('#efe8d6', '#e8901a', dorado)} stroke={KC.ink} strokeWidth={7} />
+    <path d="M -260 30 Q -230 -150 0 -160 Q 230 -150 260 30 Z" fill={`url(#adzMonte${seed})`} stroke={KC.ink} strokeWidth={7} />
     {granos.map(([gx, gy, r, l], i) => <Grano key={i} x={gx} y={gy} l={l} rot={r} color={c} g={3} />)}
     {vapor > 0 && [-120, 0, 120].map((vx, i) => { const u = ((T * 0.6 + i * 0.33) % 1);
       return <path key={i} d={`M ${vx} ${-170 - u * 160} q 30 -40 0 -80 q -30 -40 0 -80`} stroke="#fff" strokeWidth={14} fill="none" strokeLinecap="round" opacity={vapor * Math.sin(Math.PI * u) * 0.8} />; })}
@@ -67,7 +70,9 @@ function PlantaArroz({ T, x, y, s = 1, naranja = 0, granoGris = 0 }) {
 function Zanahoria({ x, y, s = 1, rot = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     {[-30, 0, 30].map((a, i) => <path key={i} d={`M 0 -130 q ${a} -70 ${a * 1.6} -120`} stroke={HOJA2} strokeWidth={16} fill="none" strokeLinecap="round" />)}
-    <path d="M -55 -130 Q 0 -150 55 -130 Q 30 60 0 200 Q -30 60 -55 -130 Z" fill={NARANJA} stroke={KC.ink} strokeWidth={8} />
+    <defs><linearGradient id="adzZan" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#ffa24d" /><stop offset="0.55" stopColor={NARANJA} /><stop offset="1" stopColor="#c2561a" /></linearGradient></defs>
+    <path d="M -55 -130 Q 0 -150 55 -130 Q 30 60 0 200 Q -30 60 -55 -130 Z" fill="url(#adzZan)" stroke={KC.ink} strokeWidth={8} />
+    <path d="M -34 -110 Q -24 0 -8 120" stroke="#ffd2a6" strokeWidth={7} fill="none" strokeLinecap="round" opacity={0.5} />
     {[-80, -30, 20, 70].map((yy, i) => <path key={i} d={`M ${-40 + i * 6} ${yy} l 24 6`} stroke="#c2561a" strokeWidth={5} strokeLinecap="round" />)}
   </g>;
 }
@@ -140,7 +145,8 @@ function Interruptor({ x, y, on = 0 }) {
 // Célula del intestino (enterocito) con microvellosidades arriba.
 function Enterocito({ x, y, w = 200, h = 300, color = '#f39ab6' }) {
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={-w / 2} y={0} width={w} height={h} rx={28} fill={color} stroke={KC.ink} strokeWidth={7} />
+    <defs><linearGradient id="adzEnt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#f9c3d4" /><stop offset="0.6" stopColor={color} /><stop offset="1" stopColor="#c86a8c" /></linearGradient></defs>
+    <rect x={-w / 2} y={0} width={w} height={h} rx={28} fill="url(#adzEnt)" stroke={KC.ink} strokeWidth={7} />
     {Array.from({ length: 8 }, (_, i) => <rect key={i} x={-w / 2 + 12 + i * (w - 24) / 8} y={-30} width={14} height={40} rx={7} fill={color} stroke={KC.ink} strokeWidth={4} />)}
     <ellipse cx={0} cy={h * 0.65} rx={44} ry={36} fill="#b04a78" stroke={KC.ink} strokeWidth={5} />
   </g>;
@@ -159,8 +165,11 @@ function Tijeras({ x, y, s = 1, abre = 0 }) {
 function Ojo({ T, x, y, s = 1, nube = 0 }) {
   const parp = Math.max(0, 1 - Math.abs(((T * 0.5) % 4) - 3.9) * 12);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -300 0 Q 0 -230 300 0 Q 0 230 -300 0 Z" fill="#fff" stroke={KC.ink} strokeWidth={10} />
-    <circle r={120} fill="#5b3a1e" stroke={KC.ink} strokeWidth={8} />
+    <defs><radialGradient id="adzEsc" cx="50%" cy="50%" r="60%"><stop offset="0.55" stopColor="#ffffff" /><stop offset="1" stopColor="#c7cfdb" /></radialGradient>
+      <radialGradient id="adzIris" cx="50%" cy="50%" r="50%"><stop offset="0.45" stopColor="#3a2410" /><stop offset="0.75" stopColor="#7a4e26" /><stop offset="1" stopColor="#4a2e14" /></radialGradient></defs>
+    <path d="M -300 0 Q 0 -230 300 0 Q 0 230 -300 0 Z" fill="url(#adzEsc)" stroke={KC.ink} strokeWidth={10} />
+    <circle r={120} fill="url(#adzIris)" stroke={KC.ink} strokeWidth={8} />
+    {Array.from({ length: 16 }, (_, i) => { const a = i * Math.PI / 8; return <line key={i} x1={Math.cos(a) * 66} y1={Math.sin(a) * 66} x2={Math.cos(a) * 112} y2={Math.sin(a) * 112} stroke="#a8743e" strokeWidth={4} opacity={0.45} />; })}
     <circle r={60} fill="#111" />
     <circle cx={-40} cy={-44} r={22} fill="#fff" opacity={1 - nube * 0.8} />
     <circle r={128} fill="#e9eef3" opacity={nube * 0.85} />
@@ -171,6 +180,7 @@ function Ojo({ T, x, y, s = 1, nube = 0 }) {
 function Nino({ x, y, s = 1, color = KC.yellow }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <circle cy={-30} r={18} fill={color} stroke={KC.ink} strokeWidth={4} />
+    <circle cx={-6} cy={-36} r={5} fill="#fff" opacity={0.45} />
     <path d="M -22 30 Q -22 -6 0 -6 Q 22 -6 22 30 Z" fill={color} stroke={KC.ink} strokeWidth={4} />
   </g>;
 }
@@ -200,12 +210,12 @@ function Mazo({ x, y, rot = 0 }) {
     <rect x={90} y={-80} width={30} height={70} rx={8} fill="#d9a35a" stroke={KC.ink} strokeWidth={5} />
   </g>;
 }
-function Sello({ T, at, until, x, y, texto, color = KC.red, rot = -8 }) {
+function Sello({ T, at, until, x, y, texto, color = KC.red, rot = -8, tam = 64 }) {
   if (T < at || (until != null && T > until + 0.3)) return null;
   const sale = until == null ? 0 : kprog(T, until, until + 0.3);
   const e = kprog(T, at, at + 0.3, kEase.rebote), s = klerp(2.2, 1, e);
   return <div style={{ position:'absolute', left:x, top:y, zIndex:43, transform:`translate(-50%,-50%) rotate(${rot}deg) scale(${s})`, opacity:kprog(T, at, at + 0.15) * (1 - sale),
-    border:`8px solid ${color}`, color, borderRadius:18, padding:'10px 30px', font:`400 64px/1 ${KF.titulo}`, background:'rgba(255,255,255,.88)', whiteSpace:'nowrap', letterSpacing:'.02em' }}>{texto}</div>;
+    border:`8px solid ${color}`, color, borderRadius:18, padding:'10px 30px', font:`400 ${tam}px/1 ${KF.titulo}`, background:'rgba(255,255,255,.88)', whiteSpace:'nowrap', letterSpacing:'.02em' }}>{texto}</div>;
 }
 // Grano grande "por dentro": contorno del grano con la línea de ensamble. dorado: 0..1 se llena de amarillo desde afuera.
 function GranoPorDentro({ T, cx, cy, r, on = 0, dorado = 0 }) {
@@ -314,12 +324,12 @@ function ArrozDorado() {
       <Escena T={T} a={K.Oj} b={K.Ni} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:mixHex('#1f3f80', '#060912', noche) }}></div>
         <Capa>
-          <circle cx={860} cy={1320} r={70} fill="#fff6c8" opacity={0.25 + 0.75 * (1 - noche)} />
-          {[[120, 1290, 160], [300, 1250, 200], [520, 1300, 150]].map(([hx, hy, hw], i) => <g key={i} opacity={1 - noche * 0.85}>
-            <rect x={hx} y={hy} width={hw} height={1400 - hy} fill="#ffcf8a" stroke={KC.ink} strokeWidth={6} />
+          <circle cx={860} cy={1370} r={70} fill="#fff6c8" opacity={0.25 + 0.75 * (1 - noche)} />
+          {[[120, 1330, 160], [300, 1290, 200], [520, 1340, 150]].map(([hx, hy, hw], i) => <g key={i} opacity={1 - noche * 0.85}>
+            <rect x={hx} y={hy} width={hw} height={1450 - hy} fill="#ffcf8a" stroke={KC.ink} strokeWidth={6} />
             <path d={`M ${hx - 20} ${hy} L ${hx + hw / 2} ${hy - 70} L ${hx + hw + 20} ${hy} Z`} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
           </g>)}
-          <Ojo T={T} x={540} y={830} s={1.45} nube={nube} />
+          <Ojo T={T} x={540} y={930} s={1.6} nube={nube} />
         </Capa>
       </Escena>
       {/* 8 · 190 millones de niños (OMS, datos 1995–2005): cada figura = 2 millones */}
@@ -327,7 +337,7 @@ function ArrozDorado() {
         <FondoLunares color={KC.lilac} />
         <Capa>
           {Array.from({ length: 95 }, (_, i) => { const c = i % 10, f = Math.floor(i / 10), on = T > K.Ni + 0.4 + i * 0.03;
-            return <Nino key={i} x={130 + c * 91} y={490 + f * 70} s={on ? 1 : 0.8} color={on ? KC.yellow : 'rgba(255,255,255,.35)'} />; })}
+            return <Nino key={i} x={130 + c * 91} y={575 + f * 70} s={on ? 1 : 0.8} color={on ? KC.yellow : 'rgba(255,255,255,.35)'} />; })}
         </Capa>
       </Escena>
       {/* 9 · Golden Rice 2: gen de maíz, hasta 23 veces más pigmento */}
@@ -387,8 +397,8 @@ function ArrozDorado() {
       <Etq T={T} at={K.G + 1.0} until={K.H - 0.2} x={1040} y={1420} texto="arroz dorado" lado="izq" tam={34} color={KC.ink} />
       <Etq T={T} at={K.H + 0.4} until={K.Gr - 0.2} x={1040} y={1420} lado="izq" texto="Oryza sativa" it tam={36} color={KC.texto} />
       <Chip T={T} at={K.H + 1.4} until={K.Gr - 0.2} texto="betacaroteno: en las hojas" y={1500} tam={42} borde={NARANJA} />
-      <Etq T={T} at={K.H + 1.6} until={K.Gr - 0.2} x={260} y={1240} texto="el mismo pigmento" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.H + 3.6} until={K.Gr - 0.2} texto="en el grano: no" x={790} y={720} tam={38} borde={KC.red} />
+      <Etq T={T} at={K.H + 1.6} until={K.Gr - 0.2} x={40} y={1320} texto="el mismo pigmento" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.H + 3.6} until={K.Gr - 0.2} texto="en el grano: no" x={790} y={790} tam={38} borde={KC.red} />
       <Chip T={T} at={K.Gr + 1.0} until={K.Ge - 0.2} texto="fábrica: APAGADA" y={1500} tam={44} borde="#8a8f99" />
       <Chip T={T} at={K.Ge + 0.3} until={K.Ca - 0.2} texto="2000 · Potrykus y Beyer · Science" y={1500} tam={38} borde={KC.gold} />
       <Etq T={T} at={K.Ge + 0.6} until={K.Ca - 0.2} x={60} y={1175} texto="narciso" tam={34} color={KC.texto} />
@@ -403,15 +413,15 @@ function ArrozDorado() {
       <Etq T={T} at={K.In + 0.2} until={K.Oj - 0.2} x={60} y={1380} texto="células del intestino" tam={30} color={KC.texto} />
       <Chip T={T} at={K.Oj + 0.8} until={K.Oj + 2.4} texto="1ª señal: no ver de noche" y={1500} tam={42} borde={KC.cyan} />
       <Chip T={T} at={K.Oj + 2.6} until={K.Ni - 0.2} texto="causa prevenible de ceguera infantil" y={1500} tam={34} borde={KC.red} />
-      <NumeroGigante T={T} at={K.Ni + 0.6} until={K.Ma - 0.2} valor={190} dur={2.2} sufijo=" millones" y={1270} tam={150} color={KC.yellow} />
-      <Chip T={T} at={K.Ni + 1.2} until={K.Ma - 0.2} texto="niños preescolares · OMS · datos 1995–2005" y={1430} tam={30} borde={KC.gold} />
-      <Etq T={T} at={K.Ni + 2.0} until={K.Ma - 0.2} x={130} y={410} texto="cada figura = 2 millones" tam={30} color={KC.ink} />
+      <NumeroGigante T={T} at={K.Ni + 0.6} until={K.Ma - 0.2} valor={190} dur={2.2} sufijo=" millones" y={1345} tam={150} color={KC.yellow} />
+      <Chip T={T} at={K.Ni + 1.2} until={K.Ma - 0.2} texto="niños preescolares · OMS · datos 1995–2005" y={1490} tam={30} borde={KC.gold} />
+      <Etq T={T} at={K.Ni + 2.0} until={K.Ma - 0.2} x={130} y={495} texto="cada figura = 2 millones" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Ma + 0.4} until={K.Es - 0.2} texto="Golden Rice 2 · 2005" y={1460} tam={40} borde={KC.gold} />
       <Etq T={T} at={K.Ma + 1.4} until={K.Es - 0.2} x={460} y={600} texto="gen de maíz" tam={34} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.9} anio="2009" quien="Publicado en 2009 · Boston" revista="Universidad Tufts · 5 voluntarios" x={540} y={600} />
       <Chip T={T} at={K.Es + 3.2} until={K.Fi - 0.2} texto="5 voluntarios → vitamina A" y={1420} tam={42} borde={ORO2} />
-      <Sello T={T} at={K.Fi + 0.6} until={K.Ci - 0.2} x={720} y={1385} texto="2021 · SE APRUEBA" color={KC.teal} rot={-5} />
-      <Sello T={T} at={K.Fi + 2.2} until={K.Ci - 0.2} x={540} y={1490} texto="2024 · UN TRIBUNAL LO FRENA" color={KC.red} rot={4} />
+      <Sello T={T} at={K.Fi + 0.6} until={K.Ci - 0.2} x={640} y={1345} texto="2021 · SE APRUEBA" color={KC.teal} rot={-4} tam={52} />
+      <Sello T={T} at={K.Fi + 2.2} until={K.Ci - 0.2} x={540} y={1480} texto="2024 · UN TRIBUNAL LO FRENA" color={KC.red} rot={3} tam={46} />
       <Etq T={T} at={K.Fi + 0.3} until={K.Ci - 0.2} x={480} y={520} texto="Filipinas" tam={36} color={KC.ink} />
       <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="no es pintura: es betacaroteno" y={1450} tam={40} borde={ORO2} />
 
