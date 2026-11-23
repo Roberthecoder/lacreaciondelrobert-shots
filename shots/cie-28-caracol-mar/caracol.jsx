@@ -124,9 +124,9 @@ function Cama({ x, y, s = 1 }) {
 // Panel de espuma (cuarto muy silencioso): cuñas grises.
 function Espuma({ x, y, w, h, o = 1 }) {
   const c = 70, filas = Math.ceil(h / c), cols = Math.ceil(w / c);
-  return <g opacity={o}><rect x={x} y={y} width={w} height={h} fill="#4c4766" />
+  return <g opacity={o}><rect x={x} y={y} width={w} height={h} fill="#2a2740" />
     {Array.from({ length: filas * cols }, (_, i) => { const cx = x + (i % cols) * c, cy = y + Math.floor(i / cols) * c, v = (i + Math.floor(i / cols)) % 2;
-      return <path key={i} d={v ? `M ${cx} ${cy} L ${cx + c} ${cy} L ${cx + c / 2} ${cy + c} Z` : `M ${cx} ${cy + c} L ${cx + c} ${cy + c} L ${cx + c / 2} ${cy} Z`} fill={v ? '#5d5880' : '#3f3a59'} stroke="#2b2740" strokeWidth={2} />; })}</g>;
+      return <path key={i} d={v ? `M ${cx} ${cy} L ${cx + c} ${cy} L ${cx + c / 2} ${cy + c} Z` : `M ${cx} ${cy + c} L ${cx + c} ${cy + c} L ${cx + c / 2} ${cy} Z`} fill={v ? '#38344f' : '#232036'} stroke="#17152a" strokeWidth={2} />; })}</g>;
 }
 
 // Cabeza del inicio y del cierre (perfil a la derecha) con el caracol en la oreja.
@@ -161,7 +161,7 @@ function CaracolMar() {
           {T > K.Gancho + 4.2 && [0, 1, 2].map((i) => { const f = ((T * 0.9 + i / 3) % 1); return <circle key={i} cx={OREJA[0] - 140} cy={OREJA[1] - 30} r={30 + f * 150} fill="none" stroke={KC.yellow} strokeWidth={9} opacity={(1 - f) * kprog(T, K.Gancho + 4.2, K.Gancho + 4.6)} />; })}
           <TextoSvg x={400} y={480} tam={110} color={KC.yellow} rot={-5} s={klerp(0.5, 1, kprog(T, K.Gancho + 0.05, K.Gancho + 0.45, kEase.rebote))} o={1 - kprog(T, K.Gancho + 2.8, K.Gancho + 3.1)}>¿EL MAR?</TextoSvg>
           {T > K.Gancho + 2.1 && <line x1={190} y1={445} x2={klerp(190, 620, kprog(T, K.Gancho + 2.1, K.Gancho + 2.35))} y2={klerp(445, 420, kprog(T, K.Gancho + 2.1, K.Gancho + 2.35))} stroke={KC.red} strokeWidth={22} strokeLinecap="round" opacity={1 - kprog(T, K.Gancho + 2.8, K.Gancho + 3.1)} />}
-          <TextoSvg x={400} y={480} tam={92} color={KC.texto} rot={-5} s={klerp(0.5, 1, kprog(T, K.Gancho + 2.9, K.Gancho + 3.3, kEase.rebote))} o={kprog(T, K.Gancho + 2.9, K.Gancho + 3.1)}>¡ES TU RUIDO!</TextoSvg>
+          <TextoSvg x={470} y={480} tam={80} color={KC.texto} rot={-5} s={klerp(0.5, 1, kprog(T, K.Gancho + 2.9, K.Gancho + 3.3, kEase.rebote))} o={kprog(T, K.Gancho + 2.9, K.Gancho + 3.1)}>¡ES TU RUIDO!</TextoSvg>
         </g></Lienzo>
         <Etq T={T} at={K.Gancho + 4.3} until={K.Ruido - 0.2} x={319} y={1263} texto="rebota adentro" lado="der" color={KC.texto} />
       </Escena>
@@ -172,7 +172,7 @@ function CaracolMar() {
         <Lienzo><g transform={zg(545, 820, 1.15, 540, 980)}>
           <rect x={-100} y={1150} width={KW + 200} height={KH - 1150} fill="#3b2d1f" stroke={KC.ink} strokeWidth={9} />
           <defs><clipPath id="caVentana"><rect x={630} y={420} width={380} height={300} /></clipPath></defs>
-          <rect x={630} y={420} width={380} height={300} fill="#9fe3ff" />
+          <rect x={630} y={420} width={380} height={300} fill="#5f9fc2" />
           <g clipPath="url(#caVentana)">
             <rect x={630} y={640} width={380} height={80} fill="#555b66" />
             <Coche x={520 + ((T - K.Ruido) * 160) % 620} y={690} s={0.45} T={T} color={KC.red} />
@@ -186,7 +186,7 @@ function CaracolMar() {
           <path d="M 330 700 L 400 730 L 400 1180 L 330 1150 Z" fill="#a8703f" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
           <Refri x={170} y={1150} s={0.95} />
           {[0, 1].map((i) => { const f = ((T - K.Ruido) * 0.35 + i / 2) % 1; return <Globo key={i} x={440 + f * 60} y={760 - f * 110} s={0.42} o={(1 - f) * kprog(T, K.Ruido + 0.4, K.Ruido + 0.8)} texto="bla" />; })}
-          <PersonaSimple x={740} yPies={1210} alto={470} color={KC.cyan} />
+          <PersonaSimple x={740} yPies={1210} alto={470} color="#3f8fb0" />
           <Caracol x={808} y={798} s={0.36} voltea rot={8} />
           <OndasArco x={280} y={880} ang={-12} T={T} color={KC.cyan} largo={330} o={0.4 + 0.6 * kprog(T, K.Ruido + 4.1, K.Ruido + 4.4)} />
           <OndasArco x={520} y={780} ang={0} T={T * 0.9} color={KC.pink} largo={200} o={0.4 + 0.6 * kprog(T, K.Ruido + 3.2, K.Ruido + 3.5)} />
@@ -268,7 +268,7 @@ function CaracolMar() {
           <rect x={0} y={1339} width={KW} height={KH - 1339} fill={T > K.Sangre + 3.6 ? '#3a3552' : '#2e2740'} stroke={KC.ink} strokeWidth={9} />
           {[0, 1, 2].map((i) => <OndasArco key={i} x={[100, 980, 540][i]} y={[880, 820, 560][i]} ang={[10, 170, 90][i]} T={T * (1 + i * 0.2)} color={CA_SONIDOS[i]} largo={200} n={3} o={1 - kprog(T, K.Sangre + 3.3, K.Sangre + 3.8)} />)}
           <g transform={zg(540, 1210, 1.35, 540, 1420)}>
-          <PersonaSimple x={540} yPies={1210} alto={520} color={KC.pink} />
+          <PersonaSimple x={540} yPies={1210} alto={520} color="#a8496e" />
           <Caracol x={609} y={758} s={0.4} voltea rot={8} />
           <Corazon x={540} y={960} s={0.45} late={late(T)} />
           </g>
