@@ -236,7 +236,7 @@ function PanDeMuerto() {
       <Escena T={T} a={K.Ge} b={K.D} fondo={KC.noche}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {svgFull(<>
-          <g transform="translate(530 760) scale(1.3)">
+          <g transform="translate(530 870) scale(1.3)" opacity={1 - kprog(T, K.D - 0.05, K.D + 0.3)}>
             <ellipse rx={360} ry={280} fill="#f3dfa6" stroke={KC.ink} strokeWidth={6} />
             <circle cx={30} cy={10} r={170} fill="#d9b880" stroke={KC.ink} strokeWidth={5} />
             {Array.from({ length: 8 }, (_, i) => { const at = K.Ge + 0.05 + i * 0.12; return <Cromosoma key={i} x={30 + Math.cos(i * 0.8) * 95} y={10 + Math.sin(i * 1.3) * 95} s={0.55 * kprog(T, at, at + 0.4, kEase.rebote)} rot={i * 40 + T * 10} color={[KC.pink, KC.mint, KC.blue, KC.orange][i % 4]} />; })}
@@ -282,8 +282,8 @@ function PanDeMuerto() {
       <Etq T={T} at={K.M + 1.3} until={K.E - 0.3} x={60} y={640} texto="hoyitos = burbujas de CO₂" tam={40} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.3} until={K.Ge - 0.3} anio="1996" quien="Goffeau et al. · unos 600 científicos" revista="Europa, Norteamérica y Japón · Science" y={335} />
       <Etq T={T} at={K.E + 1.4} until={K.Ge - 0.3} x={70} y={1150} texto="cada punto: un científico (esquemático)" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Ge + 0.4} until={K.D - 0.3} texto="1.er genoma completo de un ser con núcleo" y={285} tam={36} borde={KC.mint} />
-      <NumeroGigante T={T} at={K.Ge + 1.6} until={K.D - 0.3} valor={6000} dur={1.6} etiqueta="genes de la levadura" y={1370} tam={160} color={KC.mint} />
+      <Chip T={T} at={K.Ge + 0.4} until={K.D - 0.3} texto="1.er genoma completo de un ser con núcleo" y={420} tam={36} borde={KC.mint} />
+      <NumeroGigante T={T} at={K.Ge + 1.6} until={K.D - 0.3} valor={6000} dur={1.6} etiqueta="genes de la levadura" y={1410} tam={160} color={KC.mint} />
       <Comparativa T={T} at={K.D + 0.1} until={K.D + 2.8} izq={{ valor:6000, texto:'≈6,000', etiqueta:'levadura', color:KC.yellow }} der={{ valor:20000, texto:'≈20,000', etiqueta:'tú', color:KC.pink }} max={20000} y={330} alto={440} />
       <Etq T={T} at={K.D + 3.3} until={K.D + 4.3} x={585} y={1316} texto="gen humano" tam={38} color="#9dbcff" />
       <Chip T={T} at={K.D + 4.6} until={K.C - 0.3} texto="¡funciona! · Kachroo et al. 2015" y={1440} tam={36} borde={KC.leaf} />
