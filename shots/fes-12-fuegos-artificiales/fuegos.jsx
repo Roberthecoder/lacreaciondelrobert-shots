@@ -96,6 +96,8 @@ function Escalon({ T, x, yb, yt, ancho = 240, color, sube, baja, simbolo, etique
   const up = kprog(T, sube, sube + 0.6, kEase.suave), dn = kprog(T, baja, baja + 0.25, (p) => p * p);
   const ey = klerp(yb, klerp(yt, yb, dn), up), arriba = up > 0.95 && dn < 0.05;
   return <g>
+    <defs><linearGradient id={'esc' + color.slice(1)} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={color} stopOpacity={0.42} /><stop offset="1" stopColor={color} stopOpacity={0.06} /></linearGradient></defs>
+    <rect x={x - ancho / 2} y={yt} width={ancho} height={yb - yt} fill={`url(#esc${color.slice(1)})`} />
     <line x1={x - ancho / 2} y1={yb} x2={x + ancho / 2} y2={yb} stroke={KC.texto} strokeWidth={8} strokeLinecap="round" />
     <line x1={x - ancho / 2} y1={yt} x2={x + ancho / 2} y2={yt} stroke={KC.texto} strokeWidth={8} strokeLinecap="round" opacity={0.85} />
     <line x1={x - ancho / 2 - 20} y1={yb} x2={x - ancho / 2 - 20} y2={yt} stroke={color} strokeWidth={4} strokeDasharray="10 8" />
@@ -257,19 +259,19 @@ function Fuegos() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={26} color="rgba(255,160,90,.25)" />
         {svg(<>
-          <Flamas T={T} x={540} y={1150} ancho={900} fuerza={1.6 * kprog(T, K.Ca + 0.3, K.Ca + 1.5)} n={9} />
-          <g transform={`translate(${Math.sin(T * 30) * 4 * kprog(T, K.Ca + 1.2, K.Ca + 2)} 0)`}><Zg k={2} cx={540} cy={780} ty={740}>
+          <Flamas T={T} x={540} y={1330} ancho={900} fuerza={1.6 * kprog(T, K.Ca + 0.3, K.Ca + 1.5)} n={9} />
+          <g transform={`translate(${Math.sin(T * 30) * 4 * kprog(T, K.Ca + 1.2, K.Ca + 2)} 0)`}><Zg k={2.1} cx={540} cy={780} ty={900}>
             <circle cx={630} cy={780} r={60} fill={CLORO} stroke={KC.ink} strokeWidth={5} />
             <text x={630} y={798} textAnchor="middle" style={{ font:`400 48px ${KF.titulo}` }} fill="#0b1020">Cl</text>
             <Atomo T={T} x={470} y={780} r={120} salto={kprog(T, K.Ca + 2.2, K.Ca + 3.0, kEase.rebote)} brillo={kprog(T, K.Ca + 1.0, K.Ca + 2.4)} vel={1 + kprog(T, K.Ca + 0.5, K.Ca + 2.5) * 2} />
           </Zg></g>
-          {T > K.Ca + 1.6 && [0, 1, 2].map((k) => { const u = ((T - K.Ca - 1.6) * 0.9 + k / 3) % 1; return <path key={k} d={`M ${400 + k * 70} ${1060 - u * 120} l 0 -60 m -18 18 l 18 -18 l 18 18`} stroke={KC.orange} strokeWidth={8} fill="none" strokeLinecap="round" opacity={1 - u} />; })}
+          {T > K.Ca + 1.6 && [0, 1, 2].map((k) => { const u = ((T - K.Ca - 1.6) * 0.9 + k / 3) % 1; return <path key={k} d={`M ${400 + k * 70} ${1240 - u * 120} l 0 -60 m -18 18 l 18 -18 l 18 18`} stroke={KC.orange} strokeWidth={8} fill="none" strokeLinecap="round" opacity={1 - u} />; })}
         </>)}
       </Escena>
       {/* 5 · escalones de energía: sube, baja y suelta luz */}
       <Escena T={T} a={K.Es} b={K.H} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {svg(<Zg k={1.3} cx={460} cy={880}>
+        {svg(<Zg k={1.45} cx={460} cy={880} ty={1000}>
           <line x1={150} y1={1090} x2={150} y2={600} stroke={KC.gold2} strokeWidth={8} /><path d="M 126 630 L 150 590 L 174 630" stroke={KC.gold2} strokeWidth={8} fill="none" strokeLinejoin="round" />
           <text x={120} y={880} textAnchor="middle" transform="rotate(-90 120 880)" style={{ font:`700 30px ${KF.mono}` }} fill={KC.gold2}>energía</text>
           {T <= K.Es + 2.9 && <Escalon T={T} x={540} yb={1060} yt={700} ancho={520} color={ROJO} sube={K.Es + 0.4} baja={K.Es + 2.0} />}
@@ -280,20 +282,20 @@ function Fuegos() {
       {/* 6 · cada metal, sus escalones, su color */}
       <Escena T={T} a={K.H} b={K.P} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {svg(<>
+        {svg(<Zg k={1.08} cx={540} cy={800} ty={960}>
           <Escalon T={T} x={200} yb={1080} yt={772} ancho={260} color={ROJO} sube={K.H - 0.6} baja={K.H + 0.7} simbolo="Sr" etiqueta="chico" />
           <Escalon T={T} x={540} yb={1080} yt={688} ancho={260} color={VERDE} sube={K.H - 0.6} baja={K.H + 1.7} simbolo="Ba" etiqueta="mediano" />
           <Escalon T={T} x={880} yb={1080} yt={604} ancho={260} color={AZUL} sube={K.H - 0.6} baja={K.H + 2.7} simbolo="Cu" etiqueta="grande" />
-          {[[200, ROJO, 0.7], [540, VERDE, 1.7], [880, AZUL, 2.7]].map(([x, c, d], i) => <Estallido key={i} T={T} at={K.H + d + 0.5} x={x} y={430} color={c} r={120} n={24} seed={40 + i} queda />)}
-        </>)}
+          {[[200, ROJO, 0.7], [540, VERDE, 1.7], [880, AZUL, 2.7]].map(([x, c, d], i) => <Estallido key={i} T={T} at={K.H + d + 0.5} x={x} y={430} color={c} r={150} n={28} seed={40 + i} queda />)}
+        </Zg>)}
       </Escena>
       {/* 7 · re-gancho: ¿y el azul? */}
       <Escena T={T} a={K.P} b={K.A} zoom={0.08}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <g transform="translate(0 0)"><rect x={190} y={540} width={700} height={620} rx={40} fill="#1e0b52" stroke={KC.ink} strokeWidth={8} /></g>
-          <Estallido T={T} at={K.P + 0.2} x={540} y={850} color={AZUL} r={230} n={32} seed={12} queda palido={0.75} />
-          <text x={250} y={1420} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 250 1240)`}>?</text>
+          <g transform="translate(0 110)"><rect x={190} y={540} width={700} height={620} rx={40} fill="#1e0b52" stroke={KC.ink} strokeWidth={8} /></g>
+          <Estallido T={T} at={K.P + 0.2} x={540} y={960} color={AZUL} r={230} n={32} seed={12} queda palido={0.75} />
+          <text x={540} y={1600} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 1420)`}>?</text>
         </>)}
       </Escena>
       {/* 8 · el azul: CuCl; si se calienta de más, se rompe */}
@@ -302,7 +304,7 @@ function Fuegos() {
         <Ambiente T={T} n={22} color="rgba(90,130,255,.28)" />
         {svg(<>
           <Estallido T={T} at={K.A + 0.1} x={330} y={450} color={AZUL} r={180} n={26} seed={14} queda palido={lava * 0.85} />
-          <Zg k={1.3} cx={480} cy={900} ty={900}><CuCl T={T} x={480} y={900} rompe={romp} brillo={kprog(T, K.A + 0.2, K.A + 0.8)} /></Zg>
+          <Zg k={1.25} cx={480} cy={900} tx={540} ty={900}><CuCl T={T} x={480} y={900} rompe={romp} brillo={kprog(T, K.A + 0.2, K.A + 0.8)} /></Zg>
           <g opacity={kprog(T, K.A + 2.3, K.A + 2.7)}><Termo x={960} y={1380} nivel={0.25 + 0.75 * calor} />
             <Flamas T={T} x={500} y={1320} ancho={760} fuerza={0.5 + calor * 1.0} n={7} /></g>
         </>)}
@@ -364,7 +366,7 @@ function Fuegos() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <Cielo T={T} />
         {svg(<>
-          <Estallido T={T} at={K.Ci + 0.15} x={380} y={700} color={ROJO} r={300} n={44} seed={3} queda />
+          <Estallido T={T} at={K.Ci + 0.15} x={380} y={700} color={ROJO} r={360} n={56} seed={3} queda />
           {[[VERDE, 860, 520, 0.7], [AZUL, 160, 380, 1.2], [AMARI, 880, 900, 1.7], [NARAN, 170, 1020, 2.2]].map(([c, x, y, d], i) =>
             <Estallido key={i} T={T} at={K.Ci + d} x={x} y={y} color={c} r={140} n={24} seed={30 + i} queda />)}
         </>)}
@@ -391,14 +393,17 @@ function Fuegos() {
       <Chip T={T} at={K.Co + 1.4} until={K.Cl - 0.2} texto="sales de metales" x={540} y={1505} tam={44} borde={KC.ink} />
       <Etq T={T} at={K.Cl + 4.2} until={K.Ca - 0.3} x={70} y={1460} texto="a veces brilla el metal unido a un cloro:" tam={26} />
       <Etq T={T} at={K.Cl + 4.2} until={K.Ca - 0.3} x={70} y={1510} texto="SrCl · BaCl · CuCl" tam={34} color={KC.gold2} />
-      <Etq T={T} at={K.Ca + 0.6} until={K.Es - 0.3} x={70} y={330} texto="estroncio + cloro (SrCl)" tam={30} />
+      <Etq T={T} at={K.Ca + 0.6} until={K.Es - 0.3} x={70} y={420} texto="estroncio + cloro (SrCl)" tam={30} />
       <Chip T={T} at={K.Ca + 2.4} until={K.Es - 0.2} texto="¡empujón!" x={540} y={1520} tam={46} borde={KC.orange} />
-      {T > K.Ca - 0.3 && T < K.Es + 0.2 && <Escala T={T} z={2} pxPorMm={6e8} objetivo={600} x={60} y={1600} />}
-      <Etq T={T} at={K.Es + 0.6} until={K.Es + 1.9} x={960} y={610} texto="sube" tam={38} color={KC.yellow} lado="izq" />
+      {/* barra de escala fija: 6e8 px/mm (enlace Sr–Cl ≈ 0.27 nm) × 2.1 de agrandado → 0.5 nm = 630 px. La Escala automática redondeaba 0.5 nm a «1 nm». */}
+      {T > K.Ca - 0.3 && T < K.Es + 0.2 && <div style={{ position:'absolute', left:60, top:1500, zIndex:40, color:KC.texto, font:`700 26px ${KF.mono}`, textShadow:KSOMBRA, opacity:kprog(T, K.Ca - 0.3, K.Ca + 0.1) * (1 - kprog(T, K.Es - 0.2, K.Es + 0.2)) }}>
+        <div style={{ marginBottom:8 }}>0.5 nm</div>
+        <div style={{ width:0.5e-6 * 6e8 * 2.1, height:8, background:KC.texto, borderRadius:4, boxShadow:'0 3px 0 rgba(0,0,0,.7)' }}></div></div>}
+      <Etq T={T} at={K.Es + 0.6} until={K.Es + 1.9} x={985} y={690} texto="sube" tam={38} color={KC.yellow} lado="izq" />
       <Chip T={T} at={K.Es + 2.2} until={K.H - 0.2} texto="baja = luz" x={540} y={1520} tam={50} borde={ROJO} />
-      <Etq T={T} at={K.Es + 0.2} until={K.H - 0.3} x={70} y={430} texto="niveles de energía (esquema)" tam={26} />
-      <Etq T={T} at={K.H + 0.6} until={K.P - 0.3} x={70} y={1390} texto="escalón más grande → luz más azul" tam={26} />
-      <Chip T={T} at={K.H + 2.8} until={K.P - 0.2} texto="cada metal, su color" x={540} y={1490} tam={46} borde={KC.gold} />
+      <Etq T={T} at={K.Es + 0.2} until={K.H - 0.3} x={70} y={500} texto="niveles de energía (esquema)" tam={26} />
+      <Etq T={T} at={K.H + 0.6} until={K.P - 0.3} x={70} y={1435} texto="escalón más grande → luz más azul" tam={26} />
+      <Chip T={T} at={K.H + 2.8} until={K.P - 0.2} texto="cada metal, su color" x={540} y={1530} tam={46} borde={KC.gold} />
       <Etq T={T} at={K.A + 0.6} until={K.A + 4.6} x={70} y={1460} texto="cobre + cloro = CuCl" tam={36} color={KC.cyan} />
       <Etq T={T} at={K.A + 2.8} until={K.A + 4.8} x={950} y={1090} texto="más calor" tam={30} color={KC.red} lado="izq" />
       <Chip T={T} at={K.A + 5.1} until={K.E - 0.2} texto="se rompe: el azul se deslava" x={540} y={1520} tam={42} borde={DESLAVA} />
@@ -410,7 +415,7 @@ function Fuegos() {
       <Etq T={T} at={K.Cs + 2.6} until={K.D - 0.3} x={580} y={830} texto="dos líneas azules" tam={28} color={KC.ink} />
       <Chip T={T} at={K.D + 3.8} until={K.Ci - 0.2} texto="segundos ÷ 3 = km" x={540} y={1520} tam={48} borde={KC.ink} />
       <Etq T={T} at={K.D + 0.6} until={K.D + 3.3} x={70} y={1460} texto="la luz llega casi al instante" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Ci + 3.0} until={K.Ou} texto="no es pintura: es estroncio" x={350} y={480} tam={36} borde={ROJO} />
+      <Chip T={T} at={K.Ci + 3.0} until={K.Ou} texto="no es pintura: es estroncio" x={600} y={290} tam={36} borde={ROJO} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Co - 0.1} texto="No es pintura: *es estroncio.*" />
