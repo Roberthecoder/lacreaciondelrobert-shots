@@ -198,7 +198,8 @@ function SargazoShot() {
       {/* 1 · gancho: la playa de Quintana Roo con el montón de sargazo que apesta */}
       <Escena T={T} a={K.G - 1} b={K.Ci}>
         <Playa T={T} ola={ola} />
-        {svg(<><Monton x={540} y={1110} s={1.75} T={T} llega={ola} /><Olor T={T} x={540} y={880} o={kprog(T, K.G + 0.4, K.G + 1.0)} /></>, 2)}
+        {/* belleza: el montón de sargazo más grande y más abajo (antes quedaba chico con la arena vacía abajo) */}
+        {svg(<><Monton x={540} y={1195} s={2.05} T={T} llega={ola} /><Olor T={T} x={540} y={860} o={kprog(T, K.G + 0.4, K.G + 1.0)} /></>, 2)}
       </Escena>
       <Lupa T={T} at={K.Al + 0.1} until={K.Ci - 0.25} x={450} y={700} r={320} fx={540} fy={1040} tinte={KC.yellow}
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0f4d7a" />
@@ -245,7 +246,8 @@ function SargazoShot() {
       {/* 7 · microbios del alga que fijan nitrógeno (fondo oscuro, esquema) */}
       <Escena T={T} a={K.N} b={K.Pl}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 50%, #12305a 0%, ${KC.noche} 75%)` }}></div>
-        {svg(<g transform="translate(0 140)">
+        {/* belleza: la hoja con sus microbios ×1.25 (antes era una franja delgada en medio del cuadro vacío) */}
+        {svg(<g transform="translate(540 960) scale(1.25) translate(-540 -960) translate(0 140)">
           <g transform="translate(60 960)"><path d={sgHoja(960, 120)} fill={SG_CAFE} stroke={KC.ink} strokeWidth={8} /><line x1={30} y1={0} x2={930} y2={0} stroke={SG_CAFE2} strokeWidth={8} /></g>
           {Array.from({ length: 7 }, (_, i) => <Microbio key={i} x={170 + i * 120} y={850 + (i % 2) * 10} rot={-10 + (i % 3) * 8} T={T} seed={i} />)}
           {Array.from({ length: 6 }, (_, i) => { const u = kclamp(((T - K.N) * 0.5 + i / 6) % 1, 0, 1); return <N2 key={i} x={210 + i * 130} y={560 + u * 260} s={0.9} o={Math.sin(Math.PI * u)} />; })}
@@ -258,7 +260,7 @@ function SargazoShot() {
       {/* 8 · de regreso a la playa: 48 h pudriéndose → ácido sulfhídrico */}
       <Escena T={T} a={K.Pl} b={K.M}>
         <Playa T={T} />
-        {svg(<><Monton x={540} y={1110} s={1.6} T={T} podrido={pod} />
+        {svg(<><Monton x={540} y={1190} s={1.95} T={T} podrido={pod} />
           <Olor T={T} x={540} y={880} n={5} o={0.4 + pod * 0.6} color={mixHex('#7fbf3a', '#5a7a20', pod)} />
           {Array.from({ length: 6 }, (_, i) => { const u = ((T * 0.45 + i / 6) % 1); return <g key={i} opacity={pod * Math.sin(Math.PI * u)} transform={`translate(${300 + i * 90} ${900 - u * 300})`}>
             <circle r={34} fill="rgba(200,230,120,.85)" stroke={KC.ink} strokeWidth={4} /><text y={9} textAnchor="middle" style={{ font:`900 22px ${KF.texto}` }} fill={KC.ink}>H₂S</text></g>; })}
@@ -271,7 +273,8 @@ function SargazoShot() {
       </Escena>
       {/* 9 · el agua de la orilla: poco oxígeno, 78 especies muertas (2018) */}
       <Escena T={T} a={K.M} b={K.C}>
-        <div style={{ position:'absolute', inset:0, background:`linear-gradient(${mixHex('#1a5566', '#3d3018', 1 - ox * 0.6)}, ${mixHex('#0b2a36', '#1a1409', 1 - ox * 0.5)})` }}></div>
+        <div style={{ position:'absolute', inset:0, background:`radial-gradient(ellipse 90% 60% at 50% 46%, ${mixHex('#163f4c', '#2c2312', 1 - ox * 0.6)} 0%, ${mixHex('#081a22', '#100c06', 1 - ox * 0.5)} 70%, #05080d 100%)` }}></div>
+        <Ambiente T={T} n={22} color="rgba(223,231,255,.18)" />
         {svg(<g transform="translate(540 1020) scale(1.18) translate(-540 -840)">
           <g transform="translate(200 1080)"><rect x={-60} y={-480} width={120} height={480} rx={20} fill="rgba(255,255,255,.75)" stroke={KC.ink} strokeWidth={7} />
             <rect x={-50} y={-470 * (0.15 + 0.85 * ox)} width={100} height={470 * (0.15 + 0.85 * ox) - 10} rx={14} fill={ox > 0.4 ? '#4fc3ff' : KC.red} />
@@ -313,9 +316,9 @@ function SargazoShot() {
       <Chip T={T} at={K.Cf + 2.8} until={K.H - 0.2} texto="+20 millones de toneladas · jun 2018" y={1440} x={540} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.H + 2.8} until={K.P - 0.2} texto="áreas medidas distintas" y={430} x={360} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.E + 0.3} until={K.Pl - 0.2} texto="propuesta (hipótesis): fósforo + nitrógeno" y={1440} x={540} tam={30} borde={KC.pink} />
-      <Etq T={T} at={K.N + 0.4} until={K.Pl - 0.2} x={760} y={1250} texto="hoja del alga" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.N + 0.8} until={K.Pl - 0.2} x={80} y={920} texto="microbios (esquema)" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.N + 0.6} until={K.Pl - 0.2} x={80} y={640} texto="N₂ del aire" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.N + 0.4} until={K.Pl - 0.2} x={760} y={1380} texto="hoja del alga" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.N + 0.8} until={K.Pl - 0.2} x={80} y={850} texto="microbios (esquema)" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.N + 0.6} until={K.Pl - 0.2} x={80} y={600} texto="N₂ del aire" tam={28} color={KC.texto} />
       <Chip T={T} at={K.Pl + 1.2} until={K.M - 0.2} texto="H₂S · ácido sulfhídrico" y={1440} x={540} tam={34} borde={KC.leaf} />
       <NumeroGigante T={T} at={K.M + 1.2} until={K.C - 0.2} valor={78} dur={2.2} sufijo=" especies" x={420} y={540} tam={100} color={KC.yellow} />
       <Chip T={T} at={K.M + 0.5} until={K.C - 0.2} texto="Caribe mexicano · 2018" y={1440} x={540} tam={34} borde={KC.ink} />
