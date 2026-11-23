@@ -36,7 +36,7 @@ function Monitor({ x, y, s = 1, T = 0, habla = 0, onda = 0, sonrie = 0.3, globo 
     </g>
     {globo && <g transform="translate(150 -300)">
       <path d="M -150 -70 H 150 Q 180 -70 180 -40 V 30 Q 180 60 150 60 H -40 L -90 110 L -80 60 H -150 Q -180 60 -180 30 V -40 Q -180 -70 -150 -70 Z" fill="#fff" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
-      <text x={0} y={14} textAnchor="middle" style={{ font:`900 52px ${KF.texto}` }} fill={KC.ink}>{globo}</text>
+      <text x={0} y={14} textAnchor="middle" style={{ font:`900 52px ${KF.texto}` }} fill="#0b1020">{globo}</text>
     </g>}
   </g>;
 }
@@ -60,8 +60,8 @@ function Persona({ x, y, s = 1, T = 0, pelo = PELO_ANN, corto = false, puerto = 
   </g>;
 }
 // Cable del puerto al monitor con pulsos que viajan.
-function Cable({ x1, y1, x2, y2, T, p = 1, curva = -160, color = KC.yellow }) {
-  const mx = (x1 + x2) / 2, my = (y1 + y2) / 2 + curva, d = `M ${x1} ${y1} Q ${mx} ${my} ${x2} ${y2}`;
+function Cable({ x1, y1, x2, y2, T, p = 1, curva = -160, color = KC.yellow, cx = null, cy = null }) {
+  const mx = cx != null ? cx : (x1 + x2) / 2, my = cy != null ? cy : (y1 + y2) / 2 + curva, d = `M ${x1} ${y1} Q ${mx} ${my} ${x2} ${y2}`;
   const pt = (u) => [(1 - u) * (1 - u) * x1 + 2 * (1 - u) * u * mx + u * u * x2, (1 - u) * (1 - u) * y1 + 2 * (1 - u) * u * my + u * u * y2];
   return <g opacity={p}>
     <path d={d} stroke={KC.ink} strokeWidth={16} fill="none" strokeLinecap="round" /><path d={d} stroke="#4a5266" strokeWidth={8} fill="none" strokeLinecap="round" />
@@ -73,10 +73,12 @@ function Cerebro({ x, y, s = 1, T = 0, lamina = 0, brilla = 0, oscuro = false })
   const gir = ['M -200 -40 Q -150 -110 -60 -80 Q 0 -150 80 -100', 'M -230 40 Q -160 -10 -90 30 Q -20 -30 60 10 Q 130 -60 210 -10', 'M -180 110 Q -110 70 -40 110 Q 40 60 120 90',
     'M -120 -150 Q -60 -120 -20 -170', 'M 40 -170 Q 100 -130 160 -150', 'M 150 -60 Q 200 -30 240 40', 'M -60 160 Q 20 140 80 170'];
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <defs><radialGradient id="cer-grad" cx="35%" cy="30%" r="80%"><stop offset="0" stopColor="#ffd3df" /><stop offset=".6" stopColor="#f3a2b8" /><stop offset="1" stopColor="#c86f8b" /></radialGradient></defs>
+    <ellipse cx={0} cy={235} rx={230} ry={26} fill="#000" opacity=".28" />
     <path d="M -250 30 Q -270 -120 -140 -190 Q 0 -260 150 -190 Q 280 -120 260 20 Q 250 110 170 150 Q 160 210 90 200 Q 20 230 -60 200 Q -200 200 -240 120 Q -262 80 -250 30 Z"
-      fill={oscuro ? '#3a1f3f' : '#ffb3c7'} stroke={oscuro ? KC.pink : KC.ink} strokeWidth={9} strokeLinejoin="round" />
+      fill={oscuro ? '#3a1f3f' : 'url(#cer-grad)'} stroke={oscuro ? KC.pink : KC.ink} strokeWidth={9} strokeLinejoin="round" />
     <path d="M 90 200 Q 120 240 110 300" stroke={oscuro ? KC.pink : KC.ink} strokeWidth={22} fill="none" strokeLinecap="round" />
-    <path d="M 90 200 Q 120 240 110 300" stroke={oscuro ? '#3a1f3f' : '#ffb3c7'} strokeWidth={10} fill="none" strokeLinecap="round" />
+    <path d="M 90 200 Q 120 240 110 300" stroke={oscuro ? '#3a1f3f' : '#e996ad'} strokeWidth={10} fill="none" strokeLinecap="round" />
     {gir.map((d, i) => <path key={i} d={d} stroke={oscuro ? 'rgba(255,45,120,.55)' : 'rgba(150,40,80,.55)'} strokeWidth={7} fill="none" strokeLinecap="round" />)}
     {brilla > 0 && <ellipse cx={-110} cy={50} rx={95} ry={70} fill={KC.yellow} opacity={brilla * (0.35 + 0.25 * Math.sin(T * 8))} />}
     {lamina > 0 && <g transform={`translate(-110 50) rotate(-12) scale(${klerp(1.6, 1, kEase.sale(lamina))})`} opacity={Math.min(1, lamina * 2)}>
@@ -90,10 +92,13 @@ function Cerebro({ x, y, s = 1, T = 0, lamina = 0, brilla = 0, oscuro = false })
 function LaminaGrande({ x, y, n, T }) {
   const out = [];
   for (let i = 0; i < 253; i++) { const c = i % 23, r = Math.floor(i / 23), on = i < n;
-    out.push(<circle key={i} cx={x + 32 + c * 32} cy={y + 32 + r * 32} r={11} fill={on ? KC.gold : '#d9d2c4'} stroke={KC.ink} strokeWidth={3} />); }
+    out.push(<circle key={i} cx={x + 32 + c * 32} cy={y + 32 + r * 32} r={11} fill={on ? 'url(#lam-on)' : '#3b4560'} stroke={on ? '#ffe7a3' : '#6b7796'} strokeWidth={on ? 3 : 2} />); }
   return <g>
-    <rect x={x + 6} y={y + 6} width={32 * 23 + 32} height={32 * 11 + 32} rx={22} fill={KC.ink} />
-    <rect x={x} y={y} width={32 * 23 + 32} height={32 * 11 + 32} rx={22} fill="#fbf7ee" stroke={KC.ink} strokeWidth={7} />
+    <defs><linearGradient id="lam-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#2c3756" /><stop offset="1" stopColor="#141a2c" /></linearGradient>
+      <radialGradient id="lam-on" cx="35%" cy="35%" r="70%"><stop offset="0" stopColor="#fff1b8" /><stop offset=".5" stopColor="#f2b631" /><stop offset="1" stopColor="#b47a12" /></radialGradient></defs>
+    <rect x={x + 10} y={y + 18} width={32 * 23 + 32} height={32 * 11 + 32} rx={22} fill="#000" opacity=".35" />
+    <rect x={x} y={y} width={32 * 23 + 32} height={32 * 11 + 32} rx={22} fill="url(#lam-grad)" stroke={KC.ink} strokeWidth={6} />
+    <rect x={x + 14} y={y + 10} width={32 * 23} height={10} rx={5} fill="#fff" opacity=".08" />
     {out}
   </g>;
 }
@@ -122,19 +127,21 @@ function Chispas({ T, x1, y1, x2, y2, curva = 0, tope = 1, n = 3, color = KC.yel
   </g>;
 }
 // Velocímetro de palabras por minuto (0–180).
-function Velocimetro({ T, x, y, r = 300, valor, o = 1 }) {
+function Velocimetro({ T, x, y, r = 300, valor, o = 1, numO = 1 }) {
   const ang = (v) => Math.PI * (1 - v / 180), P = (v, rr) => [x + rr * Math.cos(ang(v)), y - rr * Math.sin(ang(v))];
   const arco = (a, b, col) => { const [x1, y1] = P(a, r), [x2, y2] = P(b, r); return <path d={`M ${x1} ${y1} A ${r} ${r} 0 0 1 ${x2} ${y2}`} stroke={col} strokeWidth={46} fill="none" />; };
   const [nx, ny] = P(valor, r - 60);
   return <g opacity={o}>
-    <path d={`M ${x - r - 40} ${y + 30} A ${r + 40} ${r + 40} 0 0 1 ${x + r + 40} ${y + 30} Z`} fill="#fbf7ee" stroke={KC.ink} strokeWidth={9} />
+    <defs><radialGradient id="vel-grad" cx="40%" cy="20%" r="90%"><stop offset="0" stopColor="#26314f" /><stop offset="1" stopColor="#0e1424" /></radialGradient></defs>
+    <ellipse cx={x} cy={y + 52} rx={r + 30} ry={22} fill="#000" opacity=".35" />
+    <path d={`M ${x - r - 40} ${y + 30} A ${r + 40} ${r + 40} 0 0 1 ${x + r + 40} ${y + 30} Z`} fill="url(#vel-grad)" stroke={KC.ink} strokeWidth={7} />
     {arco(0, 40, KC.red)}{arco(40, 100, KC.yellow)}{arco(100, 180, KC.mint)}
     <path d={`M ${P(0, r + 23)[0]} ${P(0, r + 23)[1]} A ${r + 23} ${r + 23} 0 0 1 ${P(180, r + 23)[0]} ${P(180, r + 23)[1]}`} stroke={KC.ink} strokeWidth={6} fill="none" />
     {Array.from({ length: 10 }, (_, i) => { const v = i * 20, [a1, b1] = P(v, r - 30), [a2, b2] = P(v, r - 60), [tx, ty] = P(v, r - 95);
       return <g key={i}><line x1={a1} y1={b1} x2={a2} y2={b2} stroke={KC.ink} strokeWidth={6} /><text x={tx} y={ty + 12} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{v}</text></g>; })}
     <line x1={x} y1={y} x2={nx} y2={ny} stroke={KC.ink} strokeWidth={18} strokeLinecap="round" /><line x1={x} y1={y} x2={nx} y2={ny} stroke={KC.red} strokeWidth={9} strokeLinecap="round" />
     <circle cx={x} cy={y} r={30} fill={KC.ink} /><circle cx={x} cy={y} r={14} fill={KC.gold} />
-    <text x={x} y={y - r - 70} textAnchor="middle" style={{ font:`400 130px ${KF.titulo}` }} fill={KC.ink}>{Math.round(valor)}</text>
+    <text x={x} y={y - r - 70} textAnchor="middle" style={{ font:`400 130px ${KF.titulo}` }} fill={KC.ink} opacity={numO}>{Math.round(valor)}</text>
     <text x={x} y={y + 80} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>palabras por minuto</text>
   </g>;
 }
@@ -225,6 +232,15 @@ function Sello({ x, y, p, texto, color = KC.red }) {
   </g>;
 }
 
+// Gancho y cierre: el monitor grande arriba y Ann abajo a la derecha, unidos por el cable (la misma imagen al inicio y al final).
+function EscenaAnn({ T, habla = 0, sonrie = 0.3, onda = 0, globo = null, encendido = 1, cara = 'neutra' }) {
+  return <g>
+    <Cable x1={881} y1={1137} x2={760} y2={1030} cx={1070} cy={1130} T={T} />
+    <Monitor x={470} y={880} s={1.2} T={T} habla={habla} sonrie={sonrie} onda={onda} globo={globo} encendido={encendido} />
+    <Persona x={850} y={1280} s={0.85} T={T} cara={cara} />
+  </g>;
+}
+
 function VozDevuelta() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, I: CUES.Implante, O: CUES.Ordenes, IA: CUES.IA, R: CUES.Rapidez, P: CUES.Pregunta, B: CUES.Boda, E: CUES.Estudio, L: CUES.Lagrimas, Oj: CUES.Ojo, C: CUES.Cierre, Ou: CUES.Outro };
@@ -240,13 +256,9 @@ function VozDevuelta() {
       {/* 1 · gancho: la cara en la pantalla la mueve el cerebro de Ann */}
       <Escena T={T} a={K.G} b={K.I}>
         <FondoLunares color={KC.pink} />
-        {svg(<g transform="translate(525 960) scale(1.12) translate(-488 -826)">
-          <Cable x1={846} y1={784} x2={460} y2={940} T={T} curva={-150} />
-          <Monitor x={320} y={720} s={0.9} T={T} habla={habla0} encendido={kprog(T, 0, 0.3)} />
-          <Persona x={820} y={900} s={0.8} T={T} />
-        </g>)}
+        {svg(<EscenaAnn T={T} habla={habla0} encendido={kprog(T, 0, 0.3)} />)}
       </Escena>
-      <Chip T={T} at={K.G + 3.0} until={K.I - 0.2} texto="Ann · infarto cerebral (2005)" x={330} y={520} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.G + 3.0} until={K.I - 0.2} texto="Ann · infarto cerebral (2005)" x={380} y={1420} tam={36} borde={KC.ink} />
       {/* 2 · la lámina de 253 electrodos */}
       <Escena T={T} a={K.I} b={K.O}>
         <FondoLunares color={KC.yellow} />
@@ -260,18 +272,18 @@ function VozDevuelta() {
       <Escena T={T} a={K.O} b={K.IA}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(255,45,120,.25)" />
-        {svg(<g transform="translate(540 960) scale(1.1) translate(-553 -700)">
-          <Cerebro x={330} y={560} s={0.9} T={T} oscuro brilla={kprog(T, K.O + 0.3, K.O + 0.8)} />
-          {[[230, 960], [540, 960], [850, 960]].map(([tx, ty], i) => <Chispas key={i} T={T} x1={230} y1={610} x2={tx} y2={ty - 90} curva={i * 60} tope={0.62} n={3} vel={0.55} desde={K.O + 0.6 + i * 0.25} />)}
+        {svg(<g transform="translate(540 960) scale(1.1) translate(-540 -680)">
+          <Cerebro x={540} y={470} s={1.15} T={T} oscuro brilla={kprog(T, K.O + 0.3, K.O + 0.8)} />
+          {[[230, 1040], [540, 1040], [850, 1040]].map(([tx, ty], i) => <Chispas key={i} T={T} x1={414} y1={528} x2={tx} y2={ty - 90} curva={i * 40 - 40} tope={0.75} n={3} vel={0.55} desde={K.O + 0.6 + i * 0.25} />)}
           <g opacity={kprog(T, K.O + 2.2, K.O + 2.6)}>
-            <rect x={110} y={780} width={860} height={26} rx={13} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
-            {[0, 1, 2, 3, 4, 5, 6].map((k) => <line key={k} x1={150 + k * 120} y1={780} x2={180 + k * 120} y2={806} stroke={KC.ink} strokeWidth={6} />)}
+            <rect x={110} y={850} width={860} height={26} rx={13} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
+            {[0, 1, 2, 3, 4, 5, 6].map((k) => <line key={k} x1={150 + k * 120} y1={850} x2={180 + k * 120} y2={876} stroke={KC.ink} strokeWidth={6} />)}
           </g>
-          <Labios x={230} y={960} s={0.9} /><Lengua x={540} y={960} s={0.9} /><Mandibula x={850} y={960} s={0.9} />
+          <Labios x={230} y={1040} s={0.9} /><Lengua x={540} y={1040} s={0.9} /><Mandibula x={850} y={1040} s={0.9} />
         </g>)}
       </Escena>
-      <Etq T={T} at={K.O + 2.4} until={K.IA - 0.2} x={295} y={1120} texto="el infarto corta el paso" color={KC.coral} tam={30} />
-      <Chip T={T} at={K.O + 1.2} until={K.IA - 0.2} texto="labios · lengua · mandíbula" x={540} y={1389} tam={34} borde={KC.pink} />
+      <Etq T={T} at={K.O + 2.4} until={K.IA - 0.2} x={150} y={1212} texto="el infarto corta el paso" color={KC.coral} tam={34} />
+      <Chip T={T} at={K.O + 1.2} until={K.IA - 0.2} texto="labios · lengua · mandíbula" x={540} y={1495} tam={34} borde={KC.pink} />
       {/* 4 · la IA traduce */}
       <Escena T={T} a={K.IA} b={K.R}>
         <FondoCircuito T={T} />
@@ -285,33 +297,32 @@ function VozDevuelta() {
       {/* 5 · rapidez: velocímetro */}
       <Escena T={T} a={K.R} b={K.P}>
         <FondoLunares color={KC.mint} />
-        {svg(<Velocimetro T={T} x={540} y={1080} r={380} valor={vel} />)}
+        {svg(<Velocimetro T={T} x={540} y={1130} r={380} valor={vel} numO={1 - kprog(T, K.P, K.P + 0.4)} />)}
       </Escena>
-      <Chip T={T} at={K.R + 0.6} until={K.R + 2.5} texto="su aparato para escribir: 14" x={540} y={1240} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.R + 2.7} until={K.P - 0.2} texto="implante + IA: unas 78" x={540} y={1240} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.R + 0.6} until={K.R + 2.5} texto="su aparato para escribir: 14" x={540} y={1290} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.R + 2.7} until={K.P - 0.2} texto="implante + IA: unas 78" x={540} y={1290} tam={40} borde={KC.leaf} />
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.B} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<><Velocimetro T={T} x={540} y={1080} r={380} valor={78} o={0.35} />
-          <text x={330} y={1330} textAnchor="middle" style={{ font:`400 640px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 330 1110)`}>?</text></>)}
+        {svg(<text x={540} y={1440} textAnchor="middle" style={{ font:`400 640px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 1390)`}>?</text>)}
       </Escena>
       {/* 7 · la boda */}
       <Escena T={T} a={K.B} b={K.E}>
         <FondoLunares color={KC.lilac} />
-        {svg(<g transform="translate(540 900) scale(1.15) translate(-530 -590)">
-          <TeleVieja x={320} y={620} s={0.85} T={T} />
-          <OndaViaja T={T} x1={440} y1={600} x2={720} y2={640} p={kprog(T, K.B + 0.6, K.B + 1.8, kEase.sale)} />
-          <g opacity={kprog(T, K.B + 1.0, K.B + 1.4)}><Monitor x={820} y={640} s={0.5} T={T} habla={kprog(T, K.B + 1.8, K.B + 2.0)} onda={kprog(T, K.B + 1.8, K.B + 2.2)} /></g>
+        {svg(<g>
+          <TeleVieja x={330} y={790} s={1.05} T={T} />
+          <OndaViaja T={T} x1={590} y1={740} x2={790} y2={990} p={kprog(T, K.B + 0.6, K.B + 1.8, kEase.sale)} />
+          <g opacity={kprog(T, K.B + 0.4, K.B + 0.9)}><Monitor x={790} y={1130} s={0.62} T={T} habla={kprog(T, K.B + 1.8, K.B + 2.0)} onda={kprog(T, K.B + 1.8, K.B + 2.2)} /></g>
         </g>)}
       </Escena>
-      <Chip T={T} at={K.B + 0.4} until={K.E - 0.2} texto="un video de su boda" x={552} y={1205} tam={36} borde={KC.ink} />
-      <Cita T={T} at={K.B + 2.2} until={K.E - 0.2} y={1370} texto="«Es como oír a una vieja amiga.»" quien="Ann, al oír su voz sintetizada (UCSF, 2023)" />
+      <Chip T={T} at={K.B + 0.4} until={K.E - 0.2} texto="un video de su boda" x={330} y={1075} tam={36} borde={KC.ink} />
+      <Cita T={T} at={K.B + 2.2} until={K.E - 0.2} y={1450} texto="«Es como oír a una vieja amiga.»" quien="Ann, al oír su voz sintetizada (UCSF, 2023)" />
       {/* 8 · el estudio: el mismo día, Stanford */}
       <Escena T={T} a={K.E} b={K.L}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Monitor x={300} y={1190} s={0.6} T={T} habla={kprog(T, K.E + 3.0, K.E + 3.4)} onda={kprog(T, K.E + 3.0, K.E + 3.4)} />
-          <Persona x={790} y={1160} s={0.62} T={T} pelo="#c9c3bb" camisa={KC.cyan} />
+          <Monitor x={790} y={1150} s={0.6} T={T} habla={kprog(T, K.E + 3.0, K.E + 3.4)} onda={kprog(T, K.E + 3.0, K.E + 3.4)} />
+          <g opacity={kprog(T, K.E + 0.2, K.E + 0.6)}><Persona x={300} y={1160} s={0.62} T={T} pelo="#c9c3bb" camisa={KC.cyan} /></g>
         </>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="2023" quien="Stanford y UCSF · el mismo día" revista="Willett et al. y Metzger et al. · Nature · 23 ago 2023" y={480} />
@@ -337,7 +348,7 @@ function VozDevuelta() {
         {svg(<>
           {[[200, PELO_ANN, false, KC.lilac], [540, '#c9c3bb', false, KC.cyan], [880, '#4a3424', true, KC.orange]].map(([px, pel, cor, cam], i) =>
             <g key={i} opacity={kprog(T, K.Oj + 0.2 + i * 0.3, K.Oj + 0.5 + i * 0.3)}><Persona x={px} y={860} s={0.8} T={T} pelo={pel} corto={cor} camisa={cam} /></g>)}
-          <Sello x={540} y={1270} p={kprog(T, K.Oj + 2.4, K.Oj + 2.8)} texto="EN INVESTIGACIÓN" />
+          <g opacity={1 - kprog(T, K.C - 0.3, K.C + 0.3)}><Sello x={540} y={1270} p={kprog(T, K.Oj + 2.4, K.Oj + 2.8)} texto="EN INVESTIGACIÓN" /></g>
         </>)}
       </Escena>
       {[['Ann', 200], ['Pat', 540], ['Casey', 880]].map(([n, px], i) => <Chip key={n} T={T} at={K.Oj + 0.4 + i * 0.3} until={K.C - 0.2} texto={`${n} · 1 persona`} x={px} y={1145} tam={28} borde={KC.ink} />)}
@@ -345,13 +356,9 @@ function VozDevuelta() {
       {/* 11 · cierre: la misma cara, ya con su voz */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.pink} />
-        {svg(<g transform="translate(525 1040) scale(1.12) translate(-488 -826)">
-          <Cable x1={846} y1={784} x2={460} y2={940} T={T} curva={-150} />
-          <Monitor x={320} y={720} s={0.9} T={T} habla={1} sonrie={0.8} onda={1} globo={T > K.C + 1.2 ? '¡Hola!' : null} />
-          <Persona x={820} y={900} s={0.8} T={T} cara="feliz" />
-        </g>)}
+        {svg(<EscenaAnn T={T} habla={1} sonrie={0.8} onda={1} globo={T > K.C + 1.2 ? '¡Hola!' : null} cara="feliz" />)}
       </Escena>
-      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="el implante se retiró en 2024" x={865} y={830} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="el implante se retiró en 2024" x={380} y={1420} tam={28} borde={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.I - 0.1} texto="Esa cara *la mueve su cerebro.*" />
