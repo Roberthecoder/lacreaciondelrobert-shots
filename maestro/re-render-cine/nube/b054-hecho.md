@@ -1,3 +1,4 @@
 - qui-23-limon-pila: sin cambios: revisadas las 10 escenas en hoja de cuadros; limón, vaso y multímetro grandes y centrados, sin textos cortados ni encimados. Auditores: sin láminas, encuadre bien.
 - fun-64-hongos-mercado: Cierre: el aviso «Nunca comas hongos silvestres sin un experto» sube 80 px (antes se enciman con la barra de 10 cm). Resto ya cumplía. Auditores: sin láminas, encuadre bien.
 - ia-23-lee-labios: sin cambios: revisadas las 9 escenas en hoja de cuadros; boca, tele, red y cama grandes y centradas, sin textos cortados ni encimados. Auditores: sin láminas, encuadre bien.
+GRUPO TERMINADO
