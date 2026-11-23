@@ -194,7 +194,7 @@ function CarasPiel() {
       {/* 3 · los números */}
       <Escena T={T} a={K.N} b={K.P}>
         <FondoLunares color={KC.mint} />
-        {svg(duo(K.N - 3, false, 1230, 0.85, false))}
+        {svg(duo(K.N - 3, false, 1130, 0.9, false))}
       </Escena>
       <Chip T={T} at={K.N + 0.2} until={K.P - 0.2} texto="error al adivinar el género" x={340} y={400} tam={36} borde={KC.ink} />
       <Barras T={T} at={K.N + 0.4} until={K.P - 0.2} top={490} max={40} filas={[
@@ -205,8 +205,8 @@ function CarasPiel() {
       <Escena T={T} a={K.P} b={K.D} zoom={0.1}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <text x={430} y={1180} textAnchor="middle" style={{ font:`400 820px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={18} transform={`rotate(${Math.sin(T * 3) * 6} 430 900)`}>?</text>
-          <g transform={`translate(760 1250)`}><Robotito x={0} y={0} s={1.0} T={T} cara="duda" /></g>
+          <text x={300} y={960} textAnchor="middle" style={{ font:`400 820px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={18} transform={`rotate(${Math.sin(T * 3) * 6} 300 700)`}>?</text>
+          <g transform={`translate(760 1150)`}><Robotito x={0} y={0} s={1.25} T={T} cara="duda" /></g>
         </>)}
       </Escena>
 
@@ -260,16 +260,16 @@ function CarasPiel() {
             <path d="M 470 760 L 560 760" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" /><path d="M 545 735 L 575 760 L 545 785" stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" />
             <Licencia x={790} y={760} s={0.85} T={T} />
           </g>
-          {T > K.W + 1.8 && <g transform={`translate(790 760) rotate(-12) scale(${klerp(2, 1, kprog(T, K.W + 1.8, K.W + 2.1, kEase.sale))})`}>
-            <rect x={-200} y={-46} width={400} height={92} rx={14} fill="rgba(255,59,47,.15)" stroke={KC.red} strokeWidth={9} />
-            <text y={22} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.red}>COINCIDENCIA</text>
+          {T > K.W + 1.8 && <g transform={`translate(730 770) rotate(-12) scale(${klerp(2, 1, kprog(T, K.W + 1.8, K.W + 2.1, kEase.sale))})`}>
+            <rect x={-215} y={-46} width={430} height={92} rx={14} fill="rgba(12,16,30,.8)" stroke="#e8707a" strokeWidth={8} />
+            <text y={20} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill="#f3a0a6">COINCIDENCIA</text>
           </g>}
           <g opacity={kprog(T, K.W + 2.5, K.W + 2.9)}><Reloj x={300} y={1060} s={0.75} horas={horas} /></g>
         </g>)}
       </Escena>
       <Chip T={T} at={K.W + 0.2} until={K.C - 0.2} texto="Detroit · enero de 2020" x={330} y={540} tam={36} borde={KC.ink} />
       {T >= K.W + 2.5 && T < K.C + 0.3 && <div style={{ position:'absolute', left:450, top:1130, zIndex:41, font:`400 110px ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`4px ${KC.ink}`, opacity:kprog(T, K.W + 2.5, K.W + 2.9) * (1 - kprog(T, K.C - 0.1, K.C + 0.3)) }}>{Math.round(horas)} horas</div>}
-      <Chip T={T} at={K.W + 5.2} until={K.C - 0.2} texto="2024: prohibido arrestar solo por esto" x={540} y={1036} tam={30} borde={KC.leaf} />
+      <Chip T={T} at={K.W + 5.2} until={K.C - 0.2} texto="2024: prohibido arrestar solo por esto" x={540} y={1340} tam={30} borde={KC.leaf} />
 
       {/* 9 · cierre: las mismas dos caras */}
       <Escena T={T} a={K.C} b={FIN}>
