@@ -121,9 +121,9 @@ function Amebocito({ x, y, r = 22 }) {
 // Sello rectangular (palabras largas como HIPÓTESIS).
 function SelloRect({ T, at, x, y, texto, color = KC.red, tam = 70, rot = -8 }) {
   if (T < at) return null;
-  const k = kprog(T, at, at + 0.35, kEase.rebote), w = texto.length * tam * 0.5 + 60;
+  const k = kprog(T, at, at + 0.35, kEase.rebote), w = texto.length * tam * 0.62 + 70; // belleza: el texto ya cabe en el sello
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${klerp(2.2, 1, k)})`} opacity={kprog(T, at, at + 0.15)}>
-    <rect x={-w / 2} y={-tam * 0.85} width={w} height={tam * 1.5} rx={14} fill="rgba(255,255,255,.75)" stroke={color} strokeWidth={10} />
+    <rect x={-w / 2} y={-tam * 0.85} width={w} height={tam * 1.5} rx={14} fill="rgba(16,20,40,.82)" stroke={color} strokeWidth={10} />
     <text y={tam * 0.3} textAnchor="middle" style={{ font:`400 ${tam}px ${KF.titulo}`, letterSpacing:2 }} fill={color}>{texto}</text>
   </g>;
 }
@@ -171,6 +171,24 @@ function Arbol({ x, y, p = 1 }) {
     </g>)}
     <line x1={1.5 * dx} y1={-180} x2={9.5 * dx} y2={-180} stroke={KC.ink} strokeWidth={5} />
     {[0, 1, 2].map((k) => <line key={'w' + k} x1={k * 4 * dx + 1.5 * dx} y1={-180} x2={k * 4 * dx + 1.5 * dx} y2={-180} />)}
+  </g>;
+}
+// belleza: el mismo árbol, más alto (k veces en vertical), con ramas que crecen desde la raíz y hojas con volumen.
+function ArbolAlto({ x, y, p = 1, k = 2.2 }) {
+  const dx = 74, L = (x1, y1, x2, y2, key, t0) => { const q = kclamp((p - t0) * 4, 0, 1);
+    return <line key={key} x1={x1} y1={y1 * k} x2={klerp(x1, x2, q)} y2={klerp(y1, y2, q) * k} stroke={KC.ink} strokeWidth={7} strokeLinecap="round" />; };
+  return <g transform={`translate(${x} ${y})`} opacity={kclamp(p * 2, 0, 1)}>
+    <defs><radialGradient id="hojaVol" cx=".35" cy=".3" r=".8"><stop offset="0" stopColor="#fff" stopOpacity=".45" /><stop offset=".5" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".35" /></radialGradient></defs>
+    {L(1.5 * dx, -180, 9.5 * dx, -180, 'r', 0)}
+    {[0, 1, 2].map((m) => <g key={'s' + m}>{L(m * 4 * dx + 1.5 * dx, -180, m * 4 * dx + 1.5 * dx, -110, 'a', 0.1)}{L(m * 4 * dx + dx / 2, -110, m * 4 * dx + 2.5 * dx, -110, 'b', 0.2)}
+      {L(m * 4 * dx + 2.5 * dx, -140, m * 4 * dx + 2.5 * dx, -110, 'c', 0.2)}</g>)}
+    {[0, 1, 2, 3, 4, 5].map((m) => <g key={'v' + m}>{L(m * 2 * dx + dx / 2, -110 - (m % 2) * 30, m * 2 * dx + dx / 2, -60, 'v', 0.3)}{L(m * 2 * dx, -60, m * 2 * dx + dx, -60, 'h', 0.4)}</g>)}
+    {HOJAS.map((t, i) => { const lx = i * dx, o = kclamp(p * 3 - 1.2 - i * 0.08, 0, 1), c = t === 'a' ? AX.fan : '#c98a4b';
+      return <g key={i}>
+        {L(lx, -60, lx, 0, 'l', 0.5)}
+        <g opacity={o}><circle cx={lx} cy={30} r={44} fill={c} opacity=".18" />
+          <circle cx={lx} cy={30} r={28} fill={c} stroke={KC.ink} strokeWidth={5} /><circle cx={lx} cy={30} r={26} fill="url(#hojaVol)" /></g>
+      </g>; })}
   </g>;
 }
 // Muestra de polvo (filtro redondo) con ✗.
@@ -298,24 +316,24 @@ function AbanicoShot() {
       <Escena T={T} a={K.Po} b={K.F} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         {/* pase a mano: mapa oscuro y 70 px más abajo (centrado); tarjetas arriba, fuera del mapa; árbol 1.15× sobre panel oscuro */}
-        {fsvg(<g transform="translate(0 70)">
+        {fsvg(<g transform="translate(0 130)">{/* belleza (encuadre): el mapa baja 60 px más (estaba ARRIBA) */}
           <g opacity={1 - kprog(T, K.Co + 2.6, K.Co + 3.1)}>
             <MapaAtlantico />
             <NubePolvo T={T} p={kprog(T, K.Po + 0.5, K.Po + 3.5)} />
-            <SelloRect T={T} at={K.Po + 0.3} x={540} y={470} texto="HIPÓTESIS" color={KC.red} tam={64} />
+            <SelloRect T={T} at={K.Po + 0.3} x={540} y={1130} texto="HIPÓTESIS" color={KC.red} tam={64} />
             {T > K.Co && <><Filtro x={780} y={700} tache={kprog(T, K.Co + 0.6, K.Co + 0.9)} /><Filtro x={850} y={760} tache={kprog(T, K.Co + 0.8, K.Co + 1.1)} />
               <Filtro x={560} y={880} tache={kprog(T, K.Co + 1.0, K.Co + 1.3)} /><Filtro x={620} y={940} tache={kprog(T, K.Co + 1.2, K.Co + 1.5)} /></>}
           </g>
           {T > K.Co + 2.6 && <g opacity={kprog(T, K.Co + 2.6, K.Co + 3.1)}>
             <rect x={0} y={380} width={1080} height={900} fill="#141d33" />
-            <g transform="translate(540 850) scale(1.15) translate(-540 -830)"><Arbol x={133} y={900} p={kprog(T, K.Co + 2.8, K.Co + 3.8)} /></g>
+            <g transform="translate(540 1020) scale(1.02) translate(-540 -1000)"><ArbolAlto x={133} y={1000} k={2.3} p={kprog(T, K.Co + 2.8, K.Co + 4.2)} /></g>
           </g>}
         </g>)}
       </Escena>
       {/* 10–11 · Florida y Yucatán */}
       <Escena T={T} a={K.F} b={K.Hu} zoom={0.03}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<g transform="translate(0 70)">
+        {fsvg(<g transform="translate(0 130)">{/* belleza (encuadre): el mapa baja 60 px más (estaba ARRIBA) */}
           <MapaCaribe flo={kprog(T, K.F + 0.3, K.F + 0.9)} yuc={kprog(T, K.Y + 0.2, K.Y + 0.8)} />
           {T > K.F && T < K.Y && (() => { const v = kprog(T, K.F + 2.2, K.F + 3.8, kEase.suave); return <g transform="translate(850 1180)">
             <g opacity={1 - v * 0.75}><MiniAbanico x={0} y={0} s={1.3} /></g>
@@ -367,15 +385,15 @@ function AbanicoShot() {
       <TarjetaEstudio T={T} at={K.Co + 0.1} until={K.Co + 2.5} anio="2008" quien="Rypien · Cornell" revista="7 muestras · sin A. sydowii" x={330} y={300} />
       <Etq T={T} at={K.Co + 1.6} until={K.Co + 2.5} x={60} y={1400} texto="no lo descarta del todo" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Co + 3.0} until={K.F - 0.3} texto="muchas entradas desde tierra" x={540} y={560} tam={40} borde={AX.tierra} />
-      <Etq T={T} at={K.Co + 3.4} until={K.F - 0.3} x={60} y={1140} texto="● abanico" tam={30} color={AX.fan} />
-      <Etq T={T} at={K.Co + 3.6} until={K.F - 0.3} x={330} y={1140} texto="● ambiente (suelo, aire…)" tam={30} color="#c98a4b" />
-      <Etq T={T} at={K.Co + 3.8} until={K.F - 0.3} x={60} y={690} texto="árbol genético (esquemático)" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Co + 3.4} until={K.F - 0.3} x={60} y={1260} texto="● abanico" tam={30} color={AX.fan} />
+      <Etq T={T} at={K.Co + 3.6} until={K.F - 0.3} x={330} y={1260} texto="● ambiente (suelo, aire…)" tam={30} color="#c98a4b" />
+      <Etq T={T} at={K.Co + 3.8} until={K.F - 0.3} x={60} y={1320} texto="árbol genético (esquemático)" tam={26} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.F + 0.6} until={K.F + 2.1} anio="2004" quien="Kim y Harvell · Cayos de Florida" revista="Am. Naturalist · datos 1997–2003" x={400} y={300} />
       <NumeroGigante T={T} at={K.F + 2.2} until={K.Y - 0.2} valor={50} dur={1.2} prefijo="> " sufijo=" %" etiqueta="del tejido, perdido" x={540} y={300} tam={150} color={KC.red} />
       <NumeroGigante T={T} at={K.Y + 1.9} until={K.Hu - 0.2} valor={8} dur={0.5} prefijo="1 de cada " x={540} y={320} tam={110} color={AX.fan} />
-      <Etq T={T} at={K.Y + 2.6} until={K.Hu - 0.2} x={40} y={1410} texto="enfermos: 12.85 % en 2002 · 5.26 % en 2004" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Y + 2.6} until={K.Hu - 0.2} x={40} y={1445} texto="enfermos: 12.85 % en 2002 · 5.26 % en 2004" tam={26} color={KC.ink} />
       <Etq T={T} at={K.Hu + 0.6} until={K.C - 0.3} x={560} y={700} texto="Aspergillus sydowii" it tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Y + 2.9} until={K.Hu - 0.2} x={40} y={1455} texto="Ward y colegas · Dis. Aquat. Org., 2006" tam={22} color={KC.ink} />
+      <Etq T={T} at={K.Y + 2.9} until={K.Hu - 0.2} x={40} y={1482} texto="Ward y colegas · Dis. Aquat. Org., 2006" tam={22} color={KC.ink} />
       <Chip T={T} at={K.Hu + 1.2} until={K.C - 0.3} texto="misma especie, también en personas" x={540} y={330} tam={32} borde={KC.ink} />
       <Etq T={T} at={K.Hu + 1.8} until={K.C - 0.3} x={60} y={440} texto="muestreo genético mundial, 2008" tam={26} color={KC.ink} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="los casos bajaron (1997–2003)" x={400} y={290} tam={34} borde={KC.mint} />
