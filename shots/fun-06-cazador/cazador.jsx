@@ -87,9 +87,9 @@ function Cazador() {
       {/* 8 · olores que atraen: los gusanos van hacia el hongo */}
       <Escena T={T} a={K.O} b={K.Pe}>
         <FondoLunares color={KC.mint} />
-        {/* belleza: todo el conjunto baja 150 px (antes arriba; el auditor marcaba ARRIBA) */}
-        {fsvg(<g transform="translate(300 1150) scale(1.5) translate(-250 -920)">
-          <circle cx={250} cy={920} r={170} fill="#2e2613" stroke={KC.ink} strokeWidth={5} />
+        {/* belleza: todo el conjunto baja 100 px (antes arriba; el auditor marcaba ARRIBA) */}
+        {fsvg(<g transform="translate(300 1100) scale(1.5) translate(-250 -920)">
+          <circle cx={250} cy={920} r={170} fill="#3a311a" stroke={KC.ink} strokeWidth={7} />
           <RedHifas T={T} x={250} y={920} g={1} seed={2} n={200} escala={0.09} ancho={2.2} color="#e9dcc0" circ={true} />
           {[0, 1, 2, 3].map((k) => { const u = ((T - K.O) * 0.45 + k / 4) % 1; return <circle key={k} cx={250} cy={920} r={180 + u * 520} fill="none" stroke={KC.violet} strokeWidth={8} strokeDasharray="30 22" opacity={(1 - u) * 0.7} />; })}
           <g opacity={kprog(T, K.O + 0.8, K.O + 1.2)}><circle cx={430} cy={560} r={34} fill={KC.leaf} stroke={KC.ink} strokeWidth={5} /><rect x={410} y={548} width={40} height={24} rx={12} fill="#fff" opacity=".6" /></g>
@@ -134,8 +134,8 @@ function Cazador() {
       <Etq T={T} at={K.E + 3.5} until={K.Es - 0.2} x={60} y={470} texto="moléculas de gusano (ascarósidos)" tam={30} />
       <Chip T={T} at={K.Es + 0.6} until={K.O - 0.3} texto="0 gusanos → trampas" x={540} y={440} tam={42} borde={KC.yellow} />
       <Chip T={T} at={K.O + 0.3} until={K.O + 2.8} texto="2017 · eLife" x={300} y={320} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.O + 1.0} until={K.Pe - 0.3} x={640} y={610} texto="olor a comida" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.O + 2.4} until={K.Pe - 0.3} x={730} y={790} texto="¿pareja?" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.O + 1.0} until={K.Pe - 0.3} x={640} y={560} texto="olor a comida" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.O + 2.4} until={K.Pe - 0.3} x={730} y={740} texto="¿pareja?" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Pe + 0.8} until={K.D - 0.2} x={520} y={725} texto="atraviesa la cutícula" tam={32} />
       <Etq T={T} at={K.D + 0.4} until={K.Da - 0.3} x={600} y={1115} texto="enzimas: lo digiere" tam={32} color={KC.cyan} />
       <NumeroGigante T={T} at={K.Da + 0.2} until={K.C - 0.3} valor={200} prefijo="+" dur={1.0} etiqueta="especies que atacan gusanos" x={420} y={520} tam={170} />
