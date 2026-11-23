@@ -251,15 +251,15 @@ function Xantana() {
             <Vaso x={540} y={1150} s={0.9} nivel={kprog(T, K.Al, A1) * 0.5} liquido="#efe1b0" />
           </Zg></g>}
           {T >= A1 && T < A2 + 0.3 && <g opacity={kprog(T, A1, A1 + 0.3) * (1 - kprog(T, A2, A2 + 0.3))}><Zg k={1.4} cx={500} cy={900} tx={520} ty={940}>
-            <Vaso x={540} y={980} s={1.3} nivel={0.55 + 0.2 * kprog(T, A1 + 0.3, A1 + 1.3)} liquido="#efe1b0">
+            <Vaso x={540} y={1000} s={1.7} nivel={0.55 + 0.2 * kprog(T, A1 + 0.3, A1 + 1.3)} liquido="#efe1b0">
               {Array.from({ length: 9 }, (_, i) => { const k = kprog(T, A1 + 0.6 + i * 0.1, A1 + 1.6 + i * 0.1); return <path key={i} d={`M ${-100 + i * 25} 60 q 20 ${-40 * k} 0 ${-90 * k} q -18 -30 6 ${-50 * k}`} stroke="#fff" strokeWidth={9} fill="none" strokeLinecap="round" opacity={k} />; })}
             </Vaso>
-            <g transform={`translate(330 640) rotate(${klerp(20, 75, kprog(T, A1 + 0.1, A1 + 0.5))})`}>
+            <g transform={`translate(300 545) rotate(${klerp(20, 75, kprog(T, A1 + 0.1, A1 + 0.5))})`}>
               <rect x={-50} y={-160} width={100} height={200} rx={20} fill="#e8f6ff" stroke={KC.ink} strokeWidth={8} />
               <rect x={-24} y={-200} width={48} height={44} rx={8} fill={KC.blue} stroke={KC.ink} strokeWidth={6} />
               <text x={0} y={-50} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>OH</text>
             </g>
-            {T < A1 + 1.4 && <path d={`M 400 650 Q 480 680 ${520 + Math.sin(T * 18) * 4} 800`} stroke="#e8f6ff" strokeWidth={14} fill="none" strokeLinecap="round" />}
+            {T < A1 + 1.4 && <path d={`M 370 555 Q 470 600 ${520 + Math.sin(T * 18) * 4} 780`} stroke="#e8f6ff" strokeWidth={14} fill="none" strokeLinecap="round" />}
           </Zg></g>}
           {T >= A2 && <g opacity={kprog(T, A2, A2 + 0.3)}><Zg k={1.4} cx={540} cy={860} ty={940}>
             <ellipse cx={540} cy={1060} rx={270} ry={50} fill="rgba(0,0,0,.15)" />
@@ -285,12 +285,12 @@ function Xantana() {
       <Escena T={T} a={K.Ca} b={K.R} zoom={0.03}>
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={30} color="rgba(120,200,255,.25)" />
-        <SvgX><CadenaX T={T} x={70} y={940} n={10} p={kprog(T, K.Ca + 0.2, K.Ca + 2.2)} paso={80} s={1.32} /></SvgX>
+        <SvgX><CadenaX T={T} x={70} y={990} n={10} p={kprog(T, K.Ca, K.Ca + 1.3)} paso={80} s={1.32} /></SvgX>
       </Escena>
       {/* 8 · en reposo: la red frena el agua */}
       <Escena T={T} a={K.R} b={K.Ag} zoom={0.03}>
         <FondoMarca patron="oscuro" />
-        <SvgX><g transform="translate(0 90)"><GotasAgua T={T} vel={0.15} /><RedCadenas T={T} orden={0} o={kprog(T, K.R, K.R + 0.5)} /></g></SvgX>
+        <SvgX><g transform="translate(0 190)"><GotasAgua T={T} vel={0.15} /><RedCadenas T={T} orden={0} o={kprog(T, K.R, K.R + 0.5)} /></g></SvgX>
       </Escena>
       {/* 9 · si agitas: el frasco y, por dentro, las cadenas alineadas */}
       <Escena T={T} a={K.Ag} b={K.Es} zoom={0.02}>
