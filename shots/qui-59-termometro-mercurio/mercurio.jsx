@@ -331,22 +331,22 @@ function Mercurio() {
           </g>}
           {T > PS[4] && <g opacity={kprog(T, PS[4], PS[4] + 0.3)}><Reloj T={T} x={560} y={800} r={165} vel={2000} texto="≥ 24 h" /></g>}
         </SvgCapa>
-        <div style={{ position:'absolute', left:0, right:0, top:1600, display:'flex', justifyContent:'center', gap:22, zIndex:41 }}>
+        <div style={{ position:'absolute', left:0, right:0, top:1325, display:'flex', justifyContent:'center', gap:22, zIndex:41 }}>
           {[0, 1, 2, 3, 4].map((k) => <div key={k} style={{ width:46, height:46, borderRadius:23, border:`5px solid ${KC.ink}`, background: k < paso ? KC.yellow : 'rgba(255,255,255,.12)', display:'flex', alignItems:'center', justifyContent:'center', font:`900 28px ${KF.texto}`, color: k < paso ? '#0b1020' : KC.ink }}>{k < paso ? '✓' : k + 1}</div>)}
         </div>
-        <div style={{ position:'absolute', left:0, right:0, top:1680, textAlign:'center', font:`700 30px ${KF.mono}`, color:KC.ink, zIndex:41 }}>Fuente: EPA (EE. UU.)</div>
+        <div style={{ position:'absolute', left:0, right:0, top:1500, textAlign:'center', font:`700 30px ${KF.mono}`, color:KC.ink, zIndex:41 }}>Fuente: EPA (EE. UU.)</div>
       </Escena>
       {/* 8 · el vapor se queda abajo */}
       <Escena T={T} a={K.D} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(0 190)">
           <rect x={0} y={1160} width={KW} height={KH - 1160} fill="#241c17" />
           <rect x={0} y={1160 - 150 * kprog(T, K.D + 0.6, K.D + 2.0)} width={KW} height={150 * kprog(T, K.D + 0.6, K.D + 2.0)} fill="rgba(200,225,255,.26)" />
           <Vapor T={T} x={600} y={420} w={860} h={720} n={46} seed={14} vel={140} o={1} r={11} color="rgba(255,255,255,.9)" dir={1} />
           <Adulto x={400} y={1160} s={1.4} color={KC.blue} />
           <Nino x={770} y={1160} s={1.3} T={T} />
           <line x1={0} y1={1010} x2={KW} y2={1010} stroke="#fff" strokeWidth={5} strokeDasharray="16 12" opacity={kprog(T, K.D + 1.6, K.D + 2.0)} />
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 9 · cierre: el piso del inicio, ya limpio y ventilado */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
@@ -354,17 +354,17 @@ function Mercurio() {
           <rect x={110} y={250} width={640} height={120} fill="#e9f8ff" stroke={KC.ink} strokeWidth={9} />
           <rect x={430} y={240} width={320} height={140} fill="#5aa9e6" stroke={KC.ink} strokeWidth={8} />
           <Vapor T={T} x={300} y={650} w={300} h={290} n={26} seed={21} vel={170} o={1} r={13} color="rgba(255,138,31,.95)" />
-          <BolsaHg x={430} y={960} s={1.75} />
-          <TermoHg x={900} y={930} s={0.5} rot={-70} roto={1} />
-          <g transform="translate(500 1470) scale(.62)"><Escoba x={-140} y={60} s={1} rot={-20} /><SenalNo x={-140} y={-40} r={170} /></g>
-          <g transform="translate(590 1470) scale(.56)"><Aspiradora T={T} x={300} y={0} s={1} manguera={false} /><SenalNo x={300} y={0} r={240} /></g>
+          <BolsaHg x={430} y={890} s={1.75} />
+          <TermoHg x={900} y={860} s={0.5} rot={-70} roto={1} />
+          <g transform="translate(500 1390) scale(.62)"><Escoba x={-140} y={60} s={1} rot={-20} /><SenalNo x={-140} y={-40} r={170} /></g>
+          <g transform="translate(590 1390) scale(.56)"><Aspiradora T={T} x={300} y={0} s={1} manguera={false} /><SenalNo x={300} y={0} r={240} /></g>
         </SvgCapa>
       </Escena>
 
       {/* textos */}
       <Chip T={T} at={K.Q + 0.4} until={K.Q + 2.6} texto="Hg · mercurio: metal líquido" y={1480} tam={42} borde={HG} />
       <Chip T={T} at={K.Q + 2.8} until={K.P - 0.3} texto="gas sin color · sin olor" y={1480} tam={42} borde="#bfe8ff" />
-      <Chip T={T} at={K.Q + 1.2} until={K.P - 0.3} texto="ambiente: 20–25 °C" y={1590} tam={38} borde={KC.orange} />
+      <Chip T={T} at={K.Q + 1.2} until={K.P - 0.3} texto="ambiente: 20–25 °C" y={1548} tam={38} borde={KC.orange} />
       <Medidor T={T} at={K.P + 2.0} until={K.E - 0.3} valor={(t) => klerp(0, 0.85, kprog(t, K.P + 2.2, K.P + 3.6, kEase.sale))} etiqueta="vapor que absorbe un adulto" texto={(v) => v < 0.69 ? Math.round(v * 100) + ' %' : '69–85 %'} y={1440} color={KC.orange} />
       <Etq T={T} at={K.P + 2.6} until={K.E - 0.3} x={90} y={1560} texto="ATSDR 2024 · adultos" tam={30} color={KC.texto} />
       <Chip T={T} at={K.E + 2.0} until={K.A - 0.3} texto="gotitas chicas → más vapor" y={1500} tam={42} borde={KC.red} />
@@ -375,13 +375,13 @@ function Mercurio() {
       <Chip T={T} at={GAR + 0.3} until={K.H - 0.3} texto="ENE 2004 → 3 FEB 2004" x={760} y={470} tam={36} borde={KC.gold} mono />
       <Chip T={T} at={GAR + 1.3} until={K.H - 0.3} texto="garaje: −7 a −1 °C" x={760} y={570} tam={36} borde="#bfe8ff" />
       <Chip T={T} at={K.Es + 6.6} until={K.Es + 9.6} texto="2000 ng/m³ junto a la aspiradora" y={1500} tam={36} borde={KC.yellow} mono />
-      <Chip T={T} at={K.Es + 9.8} until={K.H - 0.3} texto="Salud de Michigan: inutilizarla y tirarla" y={1720} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.H + 0.2} until={PS[0] - 0.2} texto="sin pánico" y={1480} tam={46} borde={KC.gold} />
+      <Chip T={T} at={K.Es + 9.8} until={K.H - 0.3} texto="Salud de Michigan: inutilizarla y tirarla" y={1500} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.H + 0.2} until={PS[0] - 0.2} texto="sin pánico" y={1445} tam={46} borde={KC.gold} />
       {['que salgan todos (y las mascotas)', 'abre las ventanas', 'ponte guantes', 'cartón y gotero', 'ventila al menos 24 h'].map((t, k) =>
-        <Chip key={k} T={T} at={PS[k]} until={(PS[k + 1] || K.D) - 0.15} texto={`${k + 1} · ${t}`} y={1480} tam={k === 0 ? 36 : 42} borde={KC.blue} />)}
+        <Chip key={k} T={T} at={PS[k]} until={(PS[k + 1] || K.D) - 0.15} texto={`${k + 1} · ${t}`} y={1445} tam={k === 0 ? 36 : 42} borde={KC.blue} />)}
       <Chip T={T} at={K.D + 1.6} until={K.Ci - 0.2} texto="↓ más pesado que el aire" y={1500} tam={42} borde="#bfe8ff" />
-      <Etq T={T} at={K.D + 2.2} until={K.Ci - 0.2} x={1060} y={985} texto="nariz del niño" lado="izq" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Ci + 0.6} until={K.Ou} texto="bolsa hermética · nunca de vidrio" y={1720} tam={34} borde={KC.blue} />
+      <Etq T={T} at={K.D + 2.2} until={K.Ci - 0.2} x={1060} y={1175} texto="nariz del niño" lado="izq" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Ci + 0.6} until={K.Ou} texto="bolsa hermética · nunca de vidrio" y={1545} tam={34} borde={KC.blue} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Q - 0.1} texto="¿Por qué *NO barrer ni aspirar?*" />
