@@ -1,2 +1,4 @@
 - cie-34-nube-pesa: Cuenta: la nube, sus gotas, el «≈ 500 t» y «de agua» bajan 100 px (antes cargado arriba con el tercio de abajo vacío); Lluvia por dentro: las gotas que chocan y se juntan 1.4× más grandes (escala 1.45→2), al centro. Auditores: sin láminas · encuadre bien.
 - qui-34-brilla-oscuridad: Cierre: la lupa «luz guardada» baja al centro y crece (r 210→250) sobre el techo de estrellitas (antes todo cargado arriba). El resto ya cumplía (revisadas todas las escenas). Auditores: sin láminas · encuadre bien.
+- fun-94-hongo-antartida: Para: Marte gana volumen (degradado radial de luz arriba-izquierda y sombra abajo-derecha) en vez de círculo plano. El resto ya cumplía (revisadas todas las escenas). Auditores: sin láminas · encuadre bien.
+GRUPO TERMINADO
