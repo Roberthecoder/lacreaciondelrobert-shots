@@ -1,0 +1,1 @@
+- amb-10-microfibras: Drenaje (×1.22, centrada), Planta y Pregunta (bajadas 150 px con medidor y chips), Lodos (campo y tractor ×1.35, tractor ya no se sale, fichas sin encimarse), Estudio (cifra de la barra chica ya no se corta, lavadora más grande), Sirve (tarjetas bajadas al centro), Filtro (×1.2 y centrado, medidor y etiqueta recolocados).

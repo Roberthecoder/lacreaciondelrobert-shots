@@ -183,7 +183,7 @@ function MicrofibrasShot() {
       {/* 4 · drenaje */}
       <Escena T={T} a={K.D} b={K.Pl}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<Zg k={1.25} cx={545} cy={950} ty={950}>
+        {svg(<Zg k={1.22} cx={531} cy={950} ty={1020}>
           <Lavadora T={T} x={300} y={800} s={0.75} giro={giro} hilos={0.6} id="lv3" />
           <path d="M 460 960 Q 760 980 780 1060" stroke="#6b7785" strokeWidth={34} fill="none" strokeLinecap="round" />
           <path d="M 460 960 Q 760 980 780 1060" stroke="#8d97a3" strokeWidth={20} fill="none" strokeLinecap="round" />
@@ -196,7 +196,7 @@ function MicrofibrasShot() {
       {/* 5 · planta de tratamiento en Escocia: atrapa casi todo, pero suelta 65 millones al día */}
       <Escena T={T} a={K.Pl} b={K.P}>
         <FondoLunares color={KC.mint} />
-        {svg(<g transform="translate(0 110)">
+        {svg(<g transform="translate(0 260)">
           <Planta T={T} x={40} y={700} lodo={kprog(T, K.Pl + 0.5, K.Pl + 4)} />
           <Rio T={T} y={1000} x0={600} x1={KW + 20} alto={80} />
           <Corriente T={T} p0={[1000, 780]} p1={[1000, 930]} p2={[880, 1030]} n={4} vel={0.6} seed={7} />
@@ -206,17 +206,18 @@ function MicrofibrasShot() {
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.Lo} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><text x={290} y={820} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 640)`}>?</text>
-          <g transform="translate(40 860)"><Planta T={T} lodo={1} /></g></>)}
+        {svg(<g transform="translate(0 100)"><text x={290} y={820} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 640)`}>?</text>
+          <g transform="translate(40 860)"><Planta T={T} lodo={1} /></g></g>)}
       </Escena>
       {/* 7 · lodos → abono en el campo; en Chile 9 de cada 10 microplásticos del lodo eran fibras */}
       <Escena T={T} a={K.Lo} b={K.E}>
         <FondoLunares color={KC.orange} />
-        {svg(<g transform="translate(0 160)">
+        {svg(<g><Zg k={1.35} cx={540} cy={1000} ty={1080}>
           <Campo T={T} y={900} lodo={kprog(T, K.Lo + 0.8, K.Lo + 4)} />
-          <Tractor T={T} x={klerp(260, 1000, kprog(T, K.Lo + 0.8, K.Lo + 4.2))} y={930} />
+          <Tractor T={T} x={klerp(300, 720, kprog(T, K.Lo + 0.8, K.Lo + 4.2))} y={930} />
+          </Zg>
           {Array.from({ length: 10 }, (_, i) => { const on = kprog(T, K.Lo + 3.8 + i * 0.08, K.Lo + 4.1 + i * 0.08, kEase.sale);
-            return <g key={i} transform={`translate(${100 + i * 98} 620) scale(${1.45 * on})`}><circle r={30} fill={KC.paper} stroke={KC.ink} strokeWidth={5} />
+            return <g key={i} transform={`translate(${100 + i * 98} 640) scale(${1.45 * on})`}><circle r={30} fill={KC.paper} stroke={KC.ink} strokeWidth={5} />
               {i < 9 ? <Hilito x={0} y={0} len={44} rot={-20} color={MF_SUETER} w={6} T={T} seed={i} /> : <rect x={-12} y={-12} width={24} height={24} fill={KC.cyan} stroke={KC.ink} strokeWidth={3} transform="rotate(20)" />}</g>; })}
         </g>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
@@ -224,13 +225,13 @@ function MicrofibrasShot() {
       {/* 8 · el estudio de Plymouth (2016): fibras por 6 kg de ropa */}
       <Escena T={T} a={K.E} b={K.S}>
         <FondoLunares color={KC.cyan} />
-        {svg(<g><Lavadora T={T} x={540} y={1250} s={0.8} giro={giro} hilos={0.6} id="lv6" />{barras.map(([n, v, c], i) => { const g = kprog(T, K.E + 2.2 + i * 0.4, K.E + 3.2 + i * 0.4, kEase.sale), w = 880 * v / 728789 * g;
+        {svg(<g><Lavadora T={T} x={540} y={1262} s={0.95} giro={giro} hilos={0.6} id="lv6" />{barras.map(([n, v, c], i) => { const g = kprog(T, K.E + 2.2 + i * 0.4, K.E + 3.2 + i * 0.4, kEase.sale), w = 880 * v / 728789 * g;
           return <g key={n} transform={`translate(90 ${650 + i * 115})`}>
             <rect x={0} y={0} width={Math.max(w, 1)} height={64} rx={14} fill={c} stroke={KC.ink} strokeWidth={6} />
             <text x={14} y={-10} style={{ font:`900 32px ${KF.texto}` }} fill={KC.ink}>{n}</text>
-            <text x={Math.max(w, 1) - 16} y={48} textAnchor="end" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink} opacity={g > 0.6 ? 1 : 0}>{kformato(v * g)}</text>
+            <text x={w < 300 ? w + 16 : Math.max(w, 1) - 16} y={48} textAnchor={w < 300 ? 'start' : 'end'} style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink} opacity={g > 0.6 ? 1 : 0}>{kformato(v * g)}</text>
           </g>; })}
-          <text x={300} y={924} style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.E + 3.4, K.E + 3.8)}>fibras por 6 kg (estimado)</text></g>)}
+          <text x={90} y={990} style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.E + 3.4, K.E + 3.8)}>fibras por 6 kg (estimado)</text></g>)}
       </Escena>
       {/* 9 · qué ayuda */}
       <Escena T={T} a={K.S} b={K.Fi}>
@@ -240,7 +241,7 @@ function MicrofibrasShot() {
       {/* 10 · filtro en la salida de la lavadora (2020) */}
       <Escena T={T} a={K.Fi} b={K.C}>
         <FondoLunares color={KC.yellow} />
-        {svg(<Zg k={1.2} cx={520} cy={960} ty={980}>
+        {svg(<Zg k={1.2} cx={481} cy={960} ty={1060}>
           <Lavadora T={T} x={270} y={900} s={0.8} giro={giro} hilos={0.6} id="lv4" />
           <path d="M 440 1060 Q 600 1080 640 900" stroke="#6b7785" strokeWidth={30} fill="none" strokeLinecap="round" />
           <Filtro T={T} x={760} y={900} lleno={kprog(T, K.Fi + 0.5, K.Fi + 4.2)} />
@@ -267,26 +268,26 @@ function MicrofibrasShot() {
       <Chip T={T} at={K.N + 1.4} until={K.F - 0.2} texto="6 kg de ropa acrílica" y={1330} x={540} tam={34} borde={KC.pink} />
       <Chip T={T} at={K.F + 1.0} until={K.D - 0.2} texto="promedio ≈ 5–8 mm de largo" y={290} x={540} tam={32} borde={KC.mint} />
       <Chip T={T} at={K.F + 2.2} until={K.D - 0.2} texto="promedio < 0.02 mm de grueso" y={365} x={540} tam={32} borde={KC.mint} />
-      <Etq T={T} at={K.D + 0.4} until={K.Pl - 0.2} x={734} y={1025} texto="drenaje" lado="izq" tam={34} color={KC.ink} />
-      <Medidor T={T} at={K.Pl + 0.6} until={K.P - 0.2} valor={(t) => 0.9841 * kprog(t, K.Pl + 0.8, K.Pl + 2.6, kEase.sale)} etiqueta="microplásticos atrapados" x={60} y={430} ancho={600} color={KC.leaf}
+      <Etq T={T} at={K.D + 0.4} until={K.Pl - 0.2} x={746} y={1093} texto="drenaje" lado="izq" tam={34} color={KC.ink} />
+      <Medidor T={T} at={K.Pl + 0.6} until={K.P - 0.2} valor={(t) => 0.9841 * kprog(t, K.Pl + 0.8, K.Pl + 2.6, kEase.sale)} etiqueta="microplásticos atrapados" x={60} y={620} ancho={600} color={KC.leaf}
         texto={(v) => (v > 0.97 ? '98 %' : Math.round(v * 100) + ' %')} />
-      <Chip T={T} at={K.Pl + 0.3} until={K.P - 0.2} texto="Escocia · estudio de 2016" y={570} x={360} tam={30} borde={KC.ink} />
-      {T < K.P - 0.1 && <Contador T={T} at={K.Pl + 4.0} hasta={65} dur={1.6} sufijo=" millones al día" x={800} y={1065} tam={38} color={KC.texto} />}
-      <Etq T={T} at={K.Pl + 3.6} until={K.P - 0.2} x={1050} y={1160} texto="al río" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Pl + 2.4} until={K.P - 0.2} x={300} y={1070} texto="lodo" lado="izq" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Pl + 0.3} until={K.P - 0.2} texto="Escocia · estudio de 2016" y={760} x={360} tam={30} borde={KC.ink} />
+      {T < K.P - 0.1 && <Contador T={T} at={K.Pl + 4.0} hasta={65} dur={1.6} sufijo=" millones al día" x={800} y={1215} tam={38} color={KC.texto} />}
+      <Etq T={T} at={K.Pl + 3.6} until={K.P - 0.2} x={1050} y={1310} texto="al río" lado="izq" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Pl + 2.4} until={K.P - 0.2} x={300} y={1220} texto="lodo" lado="izq" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Lo + 0.5} until={K.E - 0.2} texto="lodo → abono" y={440} x={330} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.Lo + 4.3} until={K.E - 0.2} texto="Chile · 2019: 90 % de los microplásticos del lodo, fibras" y={1340} x={540} tam={25} borde={KC.ink} />
-      <Etq T={T} at={K.Lo + 4.5} until={K.E - 0.2} x={90} y={720} texto="9 de 10" tam={36} color={KC.ink} />
+      <Chip T={T} at={K.Lo + 4.3} until={K.E - 0.2} texto="Chile · 2019: 90 % de los microplásticos del lodo, fibras" y={1350} x={540} tam={26} borde={KC.ink} />
+      <Etq T={T} at={K.Lo + 4.5} until={K.E - 0.2} x={90} y={540} texto="9 de 10" tam={36} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.S - 0.2} anio="2016" quien="Napper y Thompson" revista="Universidad de Plymouth" x={340} y={400} />
-      <Chip T={T} at={K.S + 0.2} until={K.Fi - 0.2} texto="¿Qué ayuda?" y={330} x={540} tam={48} borde={KC.ink} />
-      <Consejo T={T} at={K.S + 1.0} until={K.Fi - 0.2} x={300} y={760} texto="en frío" icono={<g><rect x={-14} y={-55} width={28} height={80} rx={14} fill="#fff" stroke={KC.ink} strokeWidth={5} /><circle cy={38} r={22} fill={KC.cyan} stroke={KC.ink} strokeWidth={5} /><rect x={-6} y={0} width={12} height={36} fill={KC.cyan} /></g>} />
-      <Consejo T={T} at={K.S + 1.5} until={K.Fi - 0.2} x={780} y={760} texto="ciclo corto" icono={<g><circle r={52} fill="#fff" stroke={KC.ink} strokeWidth={6} /><line x1={0} y1={0} x2={0} y2={-36} stroke={KC.ink} strokeWidth={6} strokeLinecap="round" /><line x1={0} y1={0} x2={26} y2={10} stroke={KC.ink} strokeWidth={6} strokeLinecap="round" /><path d="M 0 -52 A 52 52 0 0 1 45 26 L 0 0 Z" fill={KC.mint} opacity={0.6} /></g>} />
-      <Consejo T={T} at={K.S + 2.1} until={K.Fi - 0.2} x={300} y={1090} texto="carga llena" icono={<g><circle r={56} fill="#c9d2de" stroke={KC.ink} strokeWidth={6} /><circle r={44} fill={MF_SUETER} stroke={KC.ink} strokeWidth={4} />{[-20, 0, 20].map((d) => <path key={d} d={`M ${d - 12} ${-10} L ${d} 4 L ${d + 12} -10`} stroke="rgba(0,0,0,.35)" strokeWidth={4} fill="none" />)}</g>} />
-      <Consejo T={T} at={K.S + 3.4} until={K.Fi - 0.2} x={780} y={1090} bien={false} texto="ciclo delicado" icono={<g><circle r={56} fill="#c9d2de" stroke={KC.ink} strokeWidth={6} /><circle r={44} fill="#5f9fc9" /><Sueter x={0} y={14} s={0.14} /><path d="M -44 -6 q 22 -12 44 0 t 44 0" stroke="#bfe7ff" strokeWidth={5} fill="none" /></g>} />
-      <Medidor T={T} at={K.Fi + 0.6} until={K.C - 0.2} valor={(t) => 0.78 * kprog(t, K.Fi + 0.8, K.Fi + 4.0, kEase.sale)} etiqueta="fibras atrapadas" x={60} y={430} ancho={600} color={KC.pink}
+      <Chip T={T} at={K.S + 0.2} until={K.Fi - 0.2} texto="¿Qué ayuda?" y={450} x={540} tam={48} borde={KC.ink} />
+      <Consejo T={T} at={K.S + 1.0} until={K.Fi - 0.2} x={300} y={850} texto="en frío" icono={<g><rect x={-14} y={-55} width={28} height={80} rx={14} fill="#fff" stroke={KC.ink} strokeWidth={5} /><circle cy={38} r={22} fill={KC.cyan} stroke={KC.ink} strokeWidth={5} /><rect x={-6} y={0} width={12} height={36} fill={KC.cyan} /></g>} />
+      <Consejo T={T} at={K.S + 1.5} until={K.Fi - 0.2} x={780} y={850} texto="ciclo corto" icono={<g><circle r={52} fill="#fff" stroke={KC.ink} strokeWidth={6} /><line x1={0} y1={0} x2={0} y2={-36} stroke={KC.ink} strokeWidth={6} strokeLinecap="round" /><line x1={0} y1={0} x2={26} y2={10} stroke={KC.ink} strokeWidth={6} strokeLinecap="round" /><path d="M 0 -52 A 52 52 0 0 1 45 26 L 0 0 Z" fill={KC.mint} opacity={0.6} /></g>} />
+      <Consejo T={T} at={K.S + 2.1} until={K.Fi - 0.2} x={300} y={1180} texto="carga llena" icono={<g><circle r={56} fill="#c9d2de" stroke={KC.ink} strokeWidth={6} /><circle r={44} fill={MF_SUETER} stroke={KC.ink} strokeWidth={4} />{[-20, 0, 20].map((d) => <path key={d} d={`M ${d - 12} ${-10} L ${d} 4 L ${d + 12} -10`} stroke="rgba(0,0,0,.35)" strokeWidth={4} fill="none" />)}</g>} />
+      <Consejo T={T} at={K.S + 3.4} until={K.Fi - 0.2} x={780} y={1180} bien={false} texto="ciclo delicado" icono={<g><circle r={56} fill="#c9d2de" stroke={KC.ink} strokeWidth={6} /><circle r={44} fill="#5f9fc9" /><Sueter x={0} y={14} s={0.14} /><path d="M -44 -6 q 22 -12 44 0 t 44 0" stroke="#bfe7ff" strokeWidth={5} fill="none" /></g>} />
+      <Medidor T={T} at={K.Fi + 0.6} until={K.C - 0.2} valor={(t) => 0.78 * kprog(t, K.Fi + 0.8, K.Fi + 4.0, kEase.sale)} etiqueta="fibras atrapadas" x={60} y={520} ancho={600} color={KC.pink}
         texto={(v) => (v > 0.77 ? '≈ 78 %' : Math.round(v * 100) + ' %')} />
-      <Chip T={T} at={K.Fi + 0.3} until={K.C - 0.2} texto="Plymouth · 2020 · el mejor de 6" y={560} x={360} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.Fi + 1.2} until={K.C - 0.2} x={950} y={656} texto="filtro" lado="izq" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Fi + 0.3} until={K.C - 0.2} texto="Plymouth · 2020 · el mejor de 6" y={650} x={360} tam={30} borde={KC.ink} />
+      <Etq T={T} at={K.Fi + 1.2} until={K.C - 0.2} x={940} y={720} texto="filtro" lado="izq" tam={34} color={KC.ink} />
       <Chip T={T} at={K.C + 0.4} until={K.C + 2.8} texto="también al traerlo puesto" y={440} x={360} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.C + 3.2} until={K.Ou - 0.1} texto="poco a poco, se va con el agua" y={1470} x={540} tam={36} borde={KC.pink} />
 
