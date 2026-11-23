@@ -1,4 +1,4 @@
-# Segunda pasada de belleza (24)
+# Segunda pasada (24) + pendientes del bloque 3 (26)
 bio-07-polio
 fun-22-arrieras
 amb-13-tortugas-arena
@@ -23,3 +23,29 @@ amb-58-mancha-pacifico
 bio-59-b12
 cie-59-calor-cabeza
 ia-48-exoplaneta
+fun-08-pie-atleta
+fun-117-cacao-monilia
+fun-119-planta-defensa
+fun-120-temporada-hongos
+fun-121-oxido-nitroso
+fun-124-sequia-suelo
+fun-125-hongo-azul-corte
+fun-126-madera-verde
+fun-127-olor-hongo
+fun-128-umami-seco
+fun-129-hongo-maple
+fun-130-espuma-rio
+fun-131-abanico-mar
+fun-132-tortuga-huevos
+fun-133-lascaux
+fun-135-bassi
+fun-136-nistatina
+fun-137-reino
+fun-139-potter
+fun-140-lavar
+fun-142-plantas
+fun-144-recalentar
+fun-145-pululano
+fun-147-madera-espalteada
+fun-148-tintes-hongos
+ia-46-halicina
