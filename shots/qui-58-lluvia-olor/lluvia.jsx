@@ -202,25 +202,28 @@ function Lluvia58() {
             const out = [];
             for (let i = 0; i < 200; i++) { const c = i % 10, r = Math.floor(i / 10), t0 = K.Cu + 1.6 + i * 0.008;
               const o = i === 0 ? 1 : kprog(T, t0, t0 + 0.15);
-              const gx = 100 + c * 88, gy = 470 + r * 36;
-              const X = i === 0 ? klerp(60, gx, lejos) : gx, Y = i === 0 ? klerp(560, gy, lejos) : gy, W = i === 0 ? klerp(960, 80, lejos) : 80, H = i === 0 ? klerp(520, 30, lejos) : 30;
+              const gx = 100 + c * 88, gy = 560 + r * 36;   // belleza: la cuadrícula y la alberca bajan 90-100 px al centro
+              const X = i === 0 ? klerp(60, gx, lejos) : gx, Y = i === 0 ? klerp(660, gy, lejos) : gy, W = i === 0 ? klerp(960, 80, lejos) : 80, H = i === 0 ? klerp(520, 30, lejos) : 30;
               if (o > 0) out.push(<Alberca key={i} x={X} y={Y} w={W} h={H} o={o} />); }
             return <g>{out}
-              {big > 0.05 && <g opacity={big}><Cucharita x={580} y={klerp(480, 790, kprog(T, K.Cu + 0.1, K.Cu + 0.6, kEase.sale))} s={1.5} rot={klerp(0, 35, kprog(T, K.Cu + 0.6, K.Cu + 0.9))} />
-                {T > K.Cu + 0.9 && <circle cx={520} cy={klerp(815, 880, kprog(T, K.Cu + 0.9, K.Cu + 1.1))} r={klerp(16, 56, kprog(T, K.Cu + 1.1, K.Cu + 1.5))} fill="none" stroke="#fff" strokeWidth={5} opacity={1 - kprog(T, K.Cu + 1.1, K.Cu + 1.5)} />}</g>}
+              {big > 0.05 && <g opacity={big}><Cucharita x={580} y={klerp(580, 890, kprog(T, K.Cu + 0.1, K.Cu + 0.6, kEase.sale))} s={1.5} rot={klerp(0, 35, kprog(T, K.Cu + 0.6, K.Cu + 0.9))} />
+                {T > K.Cu + 0.9 && <circle cx={520} cy={klerp(915, 980, kprog(T, K.Cu + 0.9, K.Cu + 1.1))} r={klerp(16, 56, kprog(T, K.Cu + 1.1, K.Cu + 1.5))} fill="none" stroke="#fff" strokeWidth={5} opacity={1 - kprog(T, K.Cu + 1.1, K.Cu + 1.5)} />}</g>}
             </g>; })()}
         </SvgCapa>
-        <NumeroGigante T={T} at={K.Cu + 2.2} until={K.Pr - 0.2} valor={200} desde={1} dur={1.0} prefijo="×" y={1330} tam={150} color={KC.yellow} />
+        <NumeroGigante T={T} at={K.Cu + 2.2} until={K.Pr - 0.2} valor={200} desde={1} dur={1.0} prefijo="×" y={1410} tam={150} color={KC.yellow} />
       </Escena>
       {/* 4 · pregunta */}
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
+          {/* belleza: grano, camino y nariz bajan al centro y crecen ×1.25 */}
+          <g transform="translate(480 1000) scale(1.25) translate(-260 -800)">
           <Grano x={200} y={1080} r={90} color="#a8743f" seed={7} />
           <Geosmina x={200} y={1050} s={0.5} rot={Math.sin(T * 3) * 10} />
           <path d="M 260 990 Q 520 820 300 560" stroke={KC.ink} strokeWidth={9} fill="none" strokeDasharray="26 18" strokeDashoffset={-T * 60} strokeLinecap="round" />
           <Nariz x={240} y={420} s={0.5} />
           <text x={330} y={920} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 330 800)`}>?</text>
+          </g>
         </SvgCapa>
       </Escena>
       {/* 5 · MIT 2015: cámara rápida y gotas sobre tierra */}
@@ -280,13 +283,16 @@ function Lluvia58() {
       <Escena T={T} a={K.Ll} b={K.Co} zoom={0.02}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          {/* belleza: los dos paneles y sus marcas bajan 180 px al centro (los chips con ellos) */}
+          <g transform="translate(0 180)">
           <PanelLluvia T={T} x={40} w={480} desde={K.Ll - 0.3} hasta={K.Co + 0.5} rapido={false} color="#2c5878" />
           <PanelLluvia T={T} x={560} w={480} desde={K.Ll - 0.3} hasta={K.Co + 0.5} rapido color="#39465c" />
           <Marca x={280} y={1100} ok s={0.8} o={kprog(T, K.Ll + 0.6, K.Ll + 1.0)} />
           <Marca x={800} y={1100} ok={false} s={0.8} o={kprog(T, K.Ll + 2.0, K.Ll + 2.4)} />
+          </g>
         </SvgCapa>
-        <Chip T={T} at={K.Ll + 0.1} until={K.Co - 0.2} texto="llovizna · < 4 m/s" x={280} y={470} tam={32} borde={KC.cyan} />
-        <Chip T={T} at={K.Ll + 1.4} until={K.Co - 0.2} texto="aguacero · > 7 m/s" x={800} y={470} tam={32} borde={KC.red} />
+        <Chip T={T} at={K.Ll + 0.1} until={K.Co - 0.2} texto="llovizna · < 4 m/s" x={280} y={650} tam={32} borde={KC.cyan} />
+        <Chip T={T} at={K.Ll + 1.4} until={K.Co - 0.2} texto="aguacero · > 7 m/s" x={800} y={650} tam={32} borde={KC.red} />
       </Escena>
       {/* 9 · colémbolos: la geosmina los atrae y reparten esporas */}
       <Escena T={T} a={K.Co} b={K.Ci} zoom={0.03}>
@@ -332,7 +338,7 @@ function Lluvia58() {
       <Etq T={T} at={K.Q + 1.6} until={K.N - 0.3} x={1030} y={500} texto="cadenas de esporas" lado="izq" tam={32} color="#f4f0e0" />
       <Chip T={T} at={K.Q + 2.6} until={K.N - 0.3} texto="geosmina · C₁₂H₂₂O" y={1500} tam={44} borde={GEO} />
       <Chip T={T} at={K.N + 1.6} until={K.Cu - 0.3} texto="1 ng = 0.000 000 001 g" y={1500} tam={40} borde={KC.violet} mono />
-      <Chip T={T} at={K.Cu + 2.4} until={K.Pr - 0.2} texto="1 cucharadita · 200 albercas olímpicas" y={1500} tam={34} borde={KC.blue} />
+      <Chip T={T} at={K.Cu + 2.4} until={K.Pr - 0.2} texto="1 cucharadita · 200 albercas olímpicas" y={1540} tam={34} borde={KC.blue} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.0} anio="2015" quien="Joung y Buie · MIT, EUA" revista="Nature Communications · cámara rápida" x={400} y={300} />
       <Chip T={T} at={K.Es + 3.3} until={K.Bu - 0.2} texto="gotas sobre 16 suelos y otros materiales" y={1500} tam={32} borde={KC.gold} />
       <Etq T={T} at={K.Bu + 1.4} until={K.Bu + 2.7} x={640} y={800} texto="burbujita de aire" tam={28} color={KC.texto} />
@@ -340,7 +346,7 @@ function Lluvia58() {
       <Etq T={T} at={K.Ae + 0.4} until={K.Ll - 0.3} x={60} y={360} texto="aerosol" tam={38} color={KC.texto} />
       <Etq T={T} at={K.Ae + 0.8} until={K.Ll - 0.3} x={60} y={1075} texto="pedacitos de suelo" tam={32} color="#e2b07a" />
       <Chip T={T} at={K.Ae + 2.6} until={K.Ll - 0.2} texto="hipótesis: ¿así viaja el olor?" y={1500} tam={38} borde={KC.orange} />
-      <Chip T={T} at={K.Ll + 2.6} until={K.Co - 0.2} texto="aerosoles: llovizna sí, aguacero no" y={1500} tam={34} borde={KC.mint} />
+      <Chip T={T} at={K.Ll + 2.6} until={K.Co - 0.2} texto="aerosoles: llovizna sí, aguacero no" y={1530} tam={34} borde={KC.mint} />
       <TarjetaEstudio T={T} at={K.Co + 0.3} until={K.Co + 3.1} anio="2020" quien="Becher et al. · Nat. Microbiology" revista="Univ. de Lund y equipo internacional" x={540} y={330} />
       <Chip T={T} at={K.Co + 3.4} until={K.Ci - 0.2} texto="come la colonia → reparte esporas" y={1500} tam={36} borde={KC.mint} />
       <Etq T={T} at={K.Ci + 0.6} until={K.Ou - 0.1} x={640} y={900} texto="geosmina" tam={38} color={KC.ink} />
