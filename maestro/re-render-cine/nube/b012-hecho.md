@@ -1,1 +1,2 @@
 - amb-08-vaquita: volumen con degradados en vaquita, totoaba (escamas y línea lateral), manos, bloques (textura) y barcos (sin azul chillón, ventanas); Quién: la vaquita entra centrada y sube al llegar el mapa; Vejiga→Caída: la red se disuelve antes y las barras ya no se enciman; Caída: barras en tonos sobrios y conjunto más centrado
+- fun-21-anillo-hadas: Japón: hongo, matraz y pasto más grandes y bajados al centro (el suelo ya no se come la mitad del cuadro), etiqueta y barra de escala recalculadas (4 cm, ×1.5/1.45); demás escenas ya cumplían
