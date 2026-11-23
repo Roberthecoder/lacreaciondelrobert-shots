@@ -1,0 +1,1 @@
+- bio-34-cerdo-rinon: disolvencias limpias (Gancho→Espera, Slayman→Andrews, Andrews→Días, Días→Puente, Puente→Cierre): ya no se enciman números, calendarios ni dos pacientes; Espera: la cuadrícula de 160 lugares se ve desde el inicio (antes era invisible sobre oscuro)

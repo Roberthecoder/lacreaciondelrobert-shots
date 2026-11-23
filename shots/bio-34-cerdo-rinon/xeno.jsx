@@ -199,7 +199,7 @@ function Xeno() {
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: el riñón en la charola y el cerdito detrás */}
-      <Escena T={T} a={K.G} b={K.E} zoom={0.06}>
+      <Escena T={T} a={K.G} b={K.E - 0.5} zoom={0.06}>
         <FondoMarca color={KC.pink} T={T} />
         <XSvg>
           {/* pase a mano: el conjunto 1.3x para que llene el cuadro (la barra de escala va en la misma proporción) */}
@@ -215,7 +215,7 @@ function Xeno() {
         <FondoMarca color={KC.yellow} T={T} />
         <XSvg>
           {Array.from({ length: 160 }, (_, i) => { const on = i / 160 < llenaGente; const cx = 104 + (i % 20) * 46, cy = 900 + Math.floor(i / 20) * 44;
-            return <MiniPersona key={i} x={cx} y={cy} s={1.1} color={on ? KC.ink : 'rgba(22,18,15,.15)'} />; })}
+            return <MiniPersona key={i} x={cx} y={cy} s={1.1} color={on ? KC.ink : 'rgba(223,231,255,.2)'} />; })}
         </XSvg>
       </Escena>
       {/* 2 · rechazo: un riñón de cerdo sin editar se pone morado */}
@@ -273,7 +273,7 @@ function Xeno() {
         </XSvg>
       </Escena>
       {/* 8 · Slayman, 2024 */}
-      <Escena T={T} a={K.S} b={K.A} zoom={0.03}>
+      <Escena T={T} a={K.S} b={K.A - 0.5} zoom={0.03}>
         <FondoMarca color={KC.lilac} T={T} />
         <XSvg>
           {/* pase a mano: el paciente con su riñón de cerdo está en cuadro toda la escena (antes era solo tarjeta y barra) */}
@@ -289,12 +289,12 @@ function Xeno() {
         </XSvg>
       </Escena>
       {/* 9 · Andrews, enero de 2025: Lupa POR DENTRO del abdomen */}
-      <Escena T={T} a={K.A} b={K.D} zoom={0.03}>
+      <Escena T={T} a={K.A} b={K.D - 0.5} zoom={0.03}>
         <FondoMarca color={KC.cyan} T={T} />
         <XSvg><Persona x={330} y={1040} s={1.0} /></XSvg>
       </Escena>
       {/* 10 · 271 días sin diálisis */}
-      <Escena T={T} a={K.D} b={K.Pu} zoom={0.03}>
+      <Escena T={T} a={K.D} b={K.Pu - 0.5} zoom={0.03}>
         <FondoMarca color={KC.yellow} T={T} />
         <XSvg>
           <Calendario x={330} y={930} s={1.05} dia={271 * diasP} />
@@ -303,7 +303,7 @@ function Xeno() {
         </XSvg>
       </Escena>
       {/* 11 · el puente */}
-      <Escena T={T} a={K.Pu} b={K.C} zoom={0.03}>
+      <Escena T={T} a={K.Pu} b={K.C - 0.5} zoom={0.03}>
         <FondoMarca color={KC.mint} T={T} />
         <XSvg><g transform="translate(540 930) scale(1.15) translate(-540 -900)">
           <Dialisis x={190} y={1020} s={0.7} on={1} T={T} />
