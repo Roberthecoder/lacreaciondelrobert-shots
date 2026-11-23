@@ -6,11 +6,19 @@ const HUESO = '#f4ecd8', CART = '#7fc8ff', MEMB = '#f6b9a2';
 const colorPieza = (u) => mixHex(CART, HUESO, kclamp(u, 0, 1));
 
 // Hueso largo de (x1,y1) a (x2,y2): caña + dos extremos. u = 0 extremos separados y de cartílago; 1 = un solo hueso.
+// Pase de belleza: luz de volumen (claro arriba-izquierda, sombra abajo-derecha) para poner encima de piezas planas.
+function HuDefs() {
+  return <defs><radialGradient id="hu-luz" cx=".32" cy=".26" r=".85">
+    <stop offset="0" stopColor="#ffffff" stopOpacity=".45" /><stop offset=".42" stopColor="#ffffff" stopOpacity="0" />
+    <stop offset=".78" stopColor="#000000" stopOpacity=".08" /><stop offset="1" stopColor="#000000" stopOpacity=".3" />
+  </radialGradient></defs>;
+}
 function HuesoLargo({ x1, y1, x2, y2, w = 26, u = 1, sep = 18, sw = 5 }) {
   const a = Math.atan2(y2 - y1, x2 - x1), L = Math.hypot(x2 - x1, y2 - y1), g = sep * (1 - u);
   const caña = mixHex('#e8c9a0', HUESO, u);
   return <g transform={`translate(${x1} ${y1}) rotate(${a * 180 / Math.PI})`}>
     <rect x={w * 0.55} y={-w / 2} width={Math.max(4, L - w * 1.1)} height={w} rx={w / 2.4} fill={caña} stroke={KC.ink} strokeWidth={sw} />
+    <line x1={w * 0.9} y1={-w * 0.22} x2={Math.max(w * 0.9, L - w * 0.9)} y2={-w * 0.22} stroke="#ffffff" strokeWidth={w * 0.18} strokeLinecap="round" opacity={0.55} />
     <ellipse cx={-g} cy={0} rx={w * 0.72} ry={w * 0.85} fill={colorPieza(u)} stroke={KC.ink} strokeWidth={sw} />
     <ellipse cx={L + g} cy={0} rx={w * 0.72} ry={w * 0.85} fill={colorPieza(u)} stroke={KC.ink} strokeWidth={sw} />
   </g>;
@@ -43,6 +51,7 @@ function Cuerpo({ x = 0, yPies = 0, alto = 600, k = 0, u = 0, sale = 1, T = 0, p
     </g>
     <rect x={-sw - 10} y={sy - 10} width={(sw + 10) * 2} height={hipY - sy + 90} rx={klerp(110, 70, k)} fill="none" stroke={KC.ink} strokeWidth={8} opacity={0.5} />
     <circle cx={0} cy={hy} r={hr} fill={piel} stroke={KC.ink} strokeWidth={9} />
+    <HuDefs /><circle cx={0} cy={hy} r={hr - 5} fill="url(#hu-luz)" />
     {/* columna */}
     {vert.map((vy, i) => <P key={'v' + i} cx={0} cy={vy}><rect x={-20} y={vy - 11} width={40} height={22} rx={9} fill={HUESO} stroke={KC.ink} strokeWidth={4} /></P>)}
     {/* costillas */}
@@ -121,6 +130,7 @@ function CraneoArriba({ x, y, s = 1, T = 0, aprieta = 0, cerebro = 0, cierraAtra
       {marca === 'atras' && gp > 0.02 && <circle cx={0} cy={222} r={64} fill="none" stroke={KC.yellow} strokeWidth={9} strokeDasharray="18 12" strokeDashoffset={-T * 40} />}
       {/* rizo de pelo */}
       <path d="M -30 -330 q 40 -50 70 -10 q -30 -10 -40 20" fill="none" stroke={CPELO} strokeWidth={12} strokeLinecap="round" />
+      <HuDefs /><ellipse cx={0} cy={0} rx={290} ry={345} fill="url(#hu-luz)" opacity={0.6} />
     </g>
     {/* dedo que toca (con cuidado) la fontanela de arriba */}
     {toque > 0 && <g transform={`translate(${klerp(420, 46, toque)} ${klerp(260, -40, toque)}) rotate(-32)`}>
@@ -136,8 +146,9 @@ function CraneoArriba({ x, y, s = 1, T = 0, aprieta = 0, cerebro = 0, cierraAtra
 // Pelvis de frente: 3 piezas por lado + sacro de 5 piezas. u 0..1 se van uniendo.
 function Pelvis({ x, y, s = 1, u = 0 }) {
   const g = 26 * (1 - u), c = colorPieza(u);
-  const hueso = (d, fill = HUESO) => <path d={d} fill={fill} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />;
+  const hueso = (d, fill = HUESO) => <g><path d={d} fill={fill} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" /><path d={d} fill="url(#hu-luz)" /></g>;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <HuDefs />
     {/* vértebras lumbares */}
     {[0, 1, 2].map((i) => <rect key={i} x={-60} y={-330 + i * 70} width={120} height={56} rx={18} fill={HUESO} stroke={KC.ink} strokeWidth={8} />)}
     {/* sacro: 5 piezas */}
@@ -177,9 +188,12 @@ function RotulaDentro({ r, u = 0, T = 0 }) {
 function PiernaBebe({ x, y, s = 1, T = 0 }) {
   const p = Math.sin(T * 2) * 4;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <HuDefs />
     <path d={`M -520 -40 C -300 -120 -80 -110 0 -40 C 40 0 30 60 0 80 C -120 60 -330 70 -520 140 Z`} fill={CPIEL} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+    <path d={`M -520 -40 C -300 -120 -80 -110 0 -40 C 40 0 30 60 0 80 C -120 60 -330 70 -520 140 Z`} fill="url(#hu-luz)" />
     <g transform={`rotate(${p} 0 0)`}>
       <path d={`M -40 30 C 20 40 70 60 70 120 L 90 420 C 90 470 30 480 0 460 L -60 120 Z`} fill={CPIEL} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+      <path d={`M -40 30 C 20 40 70 60 70 120 L 90 420 C 90 470 30 480 0 460 L -60 120 Z`} fill="url(#hu-luz)" />
       <path d={`M -10 440 C 60 420 170 430 200 470 C 220 510 150 530 60 520 C 0 520 -30 490 -10 440 Z`} fill={CPIEL} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
     </g>
     {/* pliegues gorditos */}

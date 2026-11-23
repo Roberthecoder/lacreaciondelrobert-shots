@@ -1,0 +1,1 @@
+- cie-48-bebes-huesos: composición ya cumplía (encuadre bien, sin láminas); pase de riqueza: luz radial de volumen en cabezas, cráneo visto desde arriba (efecto de domo), alas de la pelvis y la pierna del bebé, y brillo a lo largo de cada hueso largo. Auditores: sin láminas, encuadre bien.
