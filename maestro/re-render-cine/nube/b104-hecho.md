@@ -1,1 +1,2 @@
 - fun-117-cacao-monilia: Número: «MILLONES» de 160 a 112 px (antes se salía del cuadro por la derecha y se leía «MILLONI»); el resto ya cumplía (revisadas las 12 escenas). Auditores: sin láminas · encuadre bien.
+- bio-43-hemo: Tanque: se ocultó el fondo turquesa con puntos del mundo del kit (queda el fondo oscuro del modo cine); el resto ya cumplía (revisadas las 13 escenas). Auditores: sin láminas · encuadre bien.

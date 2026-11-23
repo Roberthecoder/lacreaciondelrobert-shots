@@ -303,7 +303,10 @@ function HemoShot() {
       </Escena>
       {/* 8 · tanque de fermentación: el caldo se pone rojo */}
       <Escena T={T} a={K.Tanque} b={K.Sabor} zoom={0.03}>
-        <MundoBiorreactor T={T} turbio={0.25} burbujas={1} fondo={KC.cyan} />
+        {/* belleza: se oculta el fondo turquesa con puntos del mundo del kit (queda el fondo oscuro del modo cine) */}
+        <FondoLunares color={KC.cyan} />
+        <style>{'.hm-tanque > div > div:first-child{display:none}'}</style>
+        <div className="hm-tanque"><MundoBiorreactor T={T} turbio={0.25} burbujas={1} fondo={KC.cyan} /></div>
         <SvgH>
           <clipPath id="hemoCaldo"><rect x={258} y={700} width={564} height={792} rx={64} /></clipPath>
           <rect x={250} y={690} width={580} height={810} fill={ROJO_CRUDO} opacity={0.7 * tinte} clipPath="url(#hemoCaldo)" />
