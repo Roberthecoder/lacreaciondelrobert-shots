@@ -1,0 +1,1 @@
+- qui-23-limon-pila: sin cambios: revisadas las 10 escenas en hoja de cuadros; limón, vaso y multímetro grandes y centrados, sin textos cortados ni encimados. Auditores: sin láminas, encuadre bien.
