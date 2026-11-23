@@ -1,0 +1,1 @@
+- cie-27-pie-dormido: nombre y pregunta: «PARESTESIA» ya no se sale por los dos lados (170→126 px); médico: el pie entumido pasa a ser el sujeto (grande, a la derecha, ya no fantasma en la orilla) y alerta → flecha → cruz → «médico» en columna a la izquierda, chips arriba (antes la escena era una alerta chica sobre fondo vacío). Sin láminas · encuadre bien.
