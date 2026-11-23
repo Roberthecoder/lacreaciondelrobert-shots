@@ -200,8 +200,8 @@ function PoloArriba({ T, a0, x = 540, y = 800, R = 330 }) {
 // Péndulo de Foucault: el plano de oscilación queda fijo y el piso (con su círculo de marcas) gira debajo.
 function Pendulo({ T, a0 }) {
   const t = T - a0, giro = t * 14, sw = Math.sin(t * 2.4), bx = 540 + sw * 330, by = 1030 - (1 - Math.cos(sw * 0.5)) * 90;
-  return <g transform="translate(0 110)">
-    <rect x={-60} y={-300} width={KW + 120} height={600} fill="#2b2927" />
+  return <g transform="translate(0 220)">
+    <rect x={-60} y={-400} width={KW + 120} height={700} fill="#2b2927" />
     <path d="M 340 300 Q 540 120 740 300 Z" fill="#8c7d64" stroke={KC.ink} strokeWidth={8} />
     <g transform="translate(540 1060)">
       <ellipse rx={420} ry={130} fill="#c9b48e" stroke={KC.ink} strokeWidth={9} />
@@ -331,9 +331,9 @@ function Tierra() {
       <Escena T={T} a={K.Pendulo} b={K.Cierre} fondo={KC.lilac} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <Lienzo><Pendulo T={T} a0={K.Pendulo} /></Lienzo>
-        <TarjetaEstudio T={T} at={K.Pendulo + 0.2} until={K.Pendulo + 2.4} anio="1851" quien="Léon Foucault · París" revista="un péndulo enorme" x={540} y={275} />
-        <Chip T={T} at={K.Pendulo + 2.8} until={K.Cierre - 0.1} texto="el piso gira debajo" x={540} y={1410} tam={42} borde={KC.red} />
-        <Etq T={T} at={K.Pendulo + 3.4} until={K.Cierre - 0.1} x={600} y={670} texto="el péndulo no gira" color={KC.ink} tam={30} />
+        <TarjetaEstudio T={T} at={K.Pendulo + 0.2} until={K.Pendulo + 2.4} anio="1851" quien="Léon Foucault · París" revista="un péndulo enorme" x={870} y={300} />
+        <Chip T={T} at={K.Pendulo + 2.8} until={K.Cierre - 0.1} texto="el piso gira debajo" x={540} y={1530} tam={42} borde={KC.red} />
+        <Etq T={T} at={K.Pendulo + 3.4} until={K.Cierre - 0.1} x={600} y={780} texto="el péndulo no gira" color={KC.ink} tam={30} />
       </Escena>
       {/* 10 · cierre: la misma silla, ahora sobre la Tierra que gira */}
       <Escena T={T} a={K.Cierre} b={FIN} zoom={-0.04}>
