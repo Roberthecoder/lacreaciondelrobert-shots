@@ -38,6 +38,9 @@ function Regadera({ T, moho = 1, rosa = 0, limpio = 0, gira = 0, gotas = 1 }) {
     <rect x={x0} y={y0} width={x1 - x0} height={y1 - y0} fill={cineMix(MB.junta, '#0a0f1c', 0.4)} stroke={KC.ink} strokeWidth={8} />
     {Array.from({ length: cols * filas }, (_, i) => { const c = i % cols, f = Math.floor(i / cols); return <rect key={i} x={x0 + c * paso + 5} y={y0 + f * paso + 5} width={paso - 10} height={paso - 10} rx={6} fill={cineMix(MB.azulejo, '#0a0f1c', 0.3)} />; })}
     {Array.from({ length: cols * filas }, (_, i) => { const c = i % cols, f = Math.floor(i / cols); return <rect key={'b' + i} x={x0 + c * paso + 16} y={y0 + f * paso + 14} width={30} height={8} rx={4} fill="#e4e9ee" />; })}
+    <defs><linearGradient id="mb-vol" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stopColor="#fff" stopOpacity=".16" /><stop offset=".5" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".28" /></linearGradient></defs>
+    <rect x={x0} y={y0} width={x1 - x0} height={y1 - y0} fill="url(#mb-vol)" />
     {/* gotas que escurren */}
     {gotas > 0 && [[250, 0.0], [520, 0.4], [760, 0.9], [900, 0.2]].map(([x, f], i) => { const u = ((T * 0.18 + f) % 1); return <ellipse key={i} cx={x} cy={klerp(y0 + 300, y1 - 20, u)} rx={9} ry={13} fill={MB.agua} stroke={KC.ink} strokeWidth={2.5} opacity={gotas * 0.85} />; })}
     {/* moho en las juntas */}
@@ -117,7 +120,9 @@ function Tablaroca({ T, x, y, crece = 0 }) {
 function Cara({ T, x, y, estornudo = 0 }) {
   const sac = Math.sin(kclamp(estornudo, 0, 1) * Math.PI) * 14;
   return <g transform={`translate(${x + sac} ${y})`}>
+    <defs><radialGradient id="mb-cara" cx=".35" cy=".3" r=".8"><stop offset="0" stopColor="#fff" stopOpacity=".3" /><stop offset=".55" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#5a2a10" stopOpacity=".35" /></radialGradient></defs>
     <circle r={210} fill="#f2c29b" stroke={KC.ink} strokeWidth={8} />
+    <circle r={206} fill="url(#mb-cara)" />
     <path d="M 190 -40 Q 290 20 200 60 Z" fill="#f2c29b" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     <circle cx={205} cy={45} r={7} fill={KC.ink} />
     <path d={estornudo > 0.3 && estornudo < 0.9 ? 'M 60 -70 L 120 -60' : 'M 60 -80 Q 95 -100 125 -78'} stroke={KC.ink} strokeWidth={8} fill="none" strokeLinecap="round" />
@@ -175,6 +180,8 @@ function Mancha({ x, y, r = 70, color, seed = 1, s = 1 }) {
     {Array.from({ length: 8 }, (_, i) => <circle key={i} cx={(g() - 0.5) * r * 1.2} cy={(g() - 0.5) * r * 1.2} r={4 + g() * 6} fill="rgba(255,255,255,.18)" />)}</g>;
 }
 
+const RG = 'translate(540 940) scale(1.12) translate(-540 -760)';
+const rgX = (x) => 540 + 1.12 * (x - 540), rgY = (y) => 940 + 1.12 * (y - 760);
 function MohoBanoShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, E: CUES.Esporas, Cl: CUES.Cladosporium, R: CUES.Rosa, P: CUES.Pregunta, St: CUES.Stachybotrys, Mi: CUES.Mito, Al: CUES.Alergia, Es: CUES.Estudio, S: CUES.Sirve, Ta: CUES.Tallar, C: CUES.Cierre, Ou: CUES.Outro };
@@ -187,17 +194,17 @@ function MohoBanoShot() {
       {/* 1 · gancho: la mancha negra de la regadera; la esponja no la quita */}
       <Escena T={T} a={K.G} b={K.E} zoom={0.05} origen="40% 55%">
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform={RG}>
           <Regadera T={T} moho={klerp(0.85, 1, kprog(T, K.G, K.E))} />
           {esp > 0 && esp < 1 && <Esponja x={klerp(220, 760, 0.5 - 0.5 * Math.cos(esp * Math.PI * 3))} y={MURO.y0 + 5 * MURO.paso + 10} />}
           {bur > 0 && Array.from({ length: 7 }, (_, i) => { const u = kclamp(bur * 1.6 - i * 0.09, 0, 1); if (u <= 0 || u >= 1) return null; const x = klerp(250, 330 + i * 80, u), y = klerp(760, 960 + (i % 3) * 60, u) - Math.sin(u * Math.PI) * 120; return <circle key={i} cx={x} cy={y} r={26 * (1 - u * 0.7)} fill="rgba(255,255,255,.7)" stroke={KC.ink} strokeWidth={3} />; })}
           <Sello T={T} at={K.G + 2.4} x={300} y={640} texto="MOHO" color={KC.ink} r={105} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 2 · esporas en el aire: solo germinan donde hay agua */}
       <Escena T={T} a={K.E} b={K.Cl} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
+        {fsvg(<g transform={RG}>
           <Regadera T={T} moho={0.25} gotas={0} />
           {[[300, 1040], [520, 1100], [700, 1020], [880, 1110]].map(([x, y], i) => { const g = kprog(T, K.E + 1.6 + i * 0.25, K.E + 3.4 + i * 0.25); return <g key={i}>
             <ellipse cx={x} cy={y} rx={34} ry={22} fill={MB.agua} stroke={KC.ink} strokeWidth={3} opacity=".9" />
@@ -207,23 +214,23 @@ function MohoBanoShot() {
           <Esporas T={T} n={36} o={kprog(T, K.E - 0.3, K.E + 0.6)} area={[0, 340, KW, 1150]} />
           {/* esporas que caen en seco y no hacen nada */}
           {[[420, 620], [820, 700]].map(([x, y], i) => <g key={i} opacity={kprog(T, K.E + 2.4, K.E + 2.8)}><ellipse cx={x} cy={y} rx={8} ry={11} fill={MB.oliva} stroke={KC.ink} strokeWidth={2} /><path d={`M ${x - 26} ${y - 26} L ${x + 26} ${y + 26} M ${x + 26} ${y - 26} L ${x - 26} ${y + 26}`} stroke={KC.red} strokeWidth={6} strokeLinecap="round" /></g>)}
-        </>)}
+        </g>)}
       </Escena>
       {/* 3 · al microscopio: Cladosporium (oliva-café) */}
       <Escena T={T} a={K.Cl} b={K.R} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1330) scale(1.12) translate(-540 -1180)">
           <path d="M 0 1180 Q 300 1150 540 1175 T 1080 1170 L 1080 1300 L 0 1300 Z" fill="#2a2f3a" stroke={KC.ink} strokeWidth={6} />
           <Cladosporium T={T} x={330} y={1180} s={1.2} crece={0.2 + 0.8 * kprog(T, K.Cl - 0.2, K.Cl + 3.2)} seed={2} />
           <Cladosporium T={T} x={760} y={1185} s={1.15} crece={0.2 + 0.8 * kprog(T, K.Cl + 0.4, K.Cl + 4.0)} seed={9} />
           <Cladosporium T={T} x={560} y={1190} s={0.85} crece={0.2 + 0.8 * kprog(T, K.Cl + 1.0, K.Cl + 4.6)} seed={4} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 4 · la mancha rosa: Serratia marcescens (bacteria) */}
       <Escena T={T} a={K.R} b={K.P} zoom={0.04} origen="80% 60%">
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform={RG}>
           <Regadera T={T} moho={0.6} rosa={kprog(T, K.R + 0.2, K.R + 1.0)} />
           {(() => { const z = kprog(T, K.R + 1.2, K.R + 1.8, kEase.sale); return z > 0 ? <g opacity={z}>
             <line x1={940} y1={1110} x2={420} y2={860} stroke={KC.white} strokeWidth={6} strokeDasharray="14 10" />
@@ -234,16 +241,17 @@ function MohoBanoShot() {
               {Array.from({ length: 11 }, (_, i) => { const g = krng(40 + i); return <Bacteria key={i} T={T} seed={i} x={200 + g() * 290} y={660 + g() * 320} rot={g() * 180} s={0.62} color={i % 3 ? '#e8335a' : '#ff6f61'} flagelo={false} />; })}
             </g>
           </g> : null; })()}
-        </>)}
+        </g>)}
       </Escena>
       {/* 5 · re-gancho: ¿el famoso moho negro tóxico? */}
       <Escena T={T} a={K.P} b={K.St} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Interrogacion T={T} x={270} y={1400} />
-          <g transform={`translate(540 ${720 + Math.sin(T * 14) * 3}) rotate(${Math.sin(T * 9) * 1.5})`} opacity={kprog(T, K.P, K.P + 0.3)}>
-            <text textAnchor="middle" style={{ font:`400 118px ${KF.titulo}` }} fill="#9be15d" stroke={KC.ink} strokeWidth={10} paintOrder="stroke">MOHO NEGRO TÓXICO</text>
-            {[-300, -120, 80, 260].map((dx, i) => <path key={i} d={`M ${dx} 10 Q ${dx + 8} ${40 + 30 * ((T * 0.8 + i * 0.3) % 1)} ${dx} ${60 + 40 * ((T * 0.8 + i * 0.3) % 1)}`} stroke="#9be15d" strokeWidth={12} strokeLinecap="round" fill="none" />)}
+          <Interrogacion T={T} x={540} y={1400} />
+          <g transform={`translate(540 ${960 + Math.sin(T * 14) * 3}) rotate(${Math.sin(T * 9) * 1.5})`} opacity={kprog(T, K.P, K.P + 0.3)}>
+            <text y={-70} textAnchor="middle" style={{ font:`400 116px ${KF.titulo}` }} fill="#9be15d" stroke={KC.ink} strokeWidth={10} paintOrder="stroke">MOHO NEGRO</text>
+            <text y={60} textAnchor="middle" style={{ font:`400 116px ${KF.titulo}` }} fill="#9be15d" stroke={KC.ink} strokeWidth={10} paintOrder="stroke">TÓXICO</text>
+            {[-150, -40, 70, 160].map((dx, i) => <path key={i} d={`M ${dx} 80 Q ${dx + 8} ${110 + 30 * ((T * 0.8 + i * 0.3) % 1)} ${dx} ${130 + 40 * ((T * 0.8 + i * 0.3) % 1)}`} stroke="#9be15d" strokeWidth={12} strokeLinecap="round" fill="none" />)}
           </g>
         </>)}
       </Escena>
@@ -269,10 +277,12 @@ function MohoBanoShot() {
       <Escena T={T} a={K.Al} b={K.Es} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
+          <g transform="translate(0 90)">
           <g transform="translate(300 960) scale(1.35) translate(-300 -940)"><Cara T={T} x={300} y={940} estornudo={kprog(T, K.Al + 1.5, K.Al + 2.3)} /></g>
           {(() => { const g = krng(12); return Array.from({ length: 14 }, (_, i) => { const d = g(), u = ((T - K.Al) * 0.35 + d) % 1; return <ellipse key={i} cx={klerp(1070, 690, u)} cy={klerp(760 + g() * 340, 990, u)} rx={7} ry={10} fill={MB.oliva} stroke={KC.ink} strokeWidth={2} opacity={kprog(T, K.Al, K.Al + 0.4)} />; }); })()}
           {kprog(T, K.Al + 1.6, K.Al + 2.4) > 0 && kprog(T, K.Al + 1.6, K.Al + 2.4) < 1 && <text x={620} y={1330} style={{ font:`400 96px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={8} paintOrder="stroke" transform={`rotate(-8 700 1130)`}>¡ACHÚ!</text>}
           {T > K.Al + 3.0 && <Inhalador x={880} y={1200} s={1.3 * kprog(T, K.Al + 3.0, K.Al + 3.4, kEase.rebote)} />}
+          </g>
         </>)}
       </Escena>
       {/* 9 · el estudio de Osaka: con jabón crecen, en seco no */}
@@ -292,75 +302,75 @@ function MohoBanoShot() {
       {/* 10 · lo que sí sirve: extractor, ventana y humedad abajo de 50 % */}
       <Escena T={T} a={K.S} b={K.Ta} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform={RG}>
           <Regadera T={T} moho={0.6} gira={1} gotas={0} />
           {Array.from({ length: 8 }, (_, i) => { const u = ((T - K.S) * 0.5 + i / 8) % 1; return <circle key={i} cx={klerp(560 + (i % 4) * 90, 190, u)} cy={klerp(1000 - (i % 3) * 80, 470, u)} r={60 * (1 - u * 0.6)} fill="rgba(255,255,255,.75)" opacity={(1 - u) * kprog(T, K.S, K.S + 0.5) * (1 - kprog(T, K.S + 2.4, K.S + 2.9))} />; })}
           {T > K.S + 2.4 && <g opacity={kprog(T, K.S + 2.4, K.S + 2.9)}>
             <rect x={60} y={360} width={960} height={800} fill="rgba(58,52,18,.9)" />
-            <Higrometro x={300} y={960} valor={klerp(80, 50, kprog(T, K.S + 2.7, K.S + 4.0, kEase.suave))} r={170} />
+            <Higrometro x={300} y={800} valor={klerp(80, 50, kprog(T, K.S + 2.7, K.S + 4.0, kEase.suave))} r={170} />
           </g>}
-        </>)}
+        </g>)}
       </Escena>
       {/* 11 · tállalo: quitarlo, no solo matarlo */}
       <Escena T={T} a={K.Ta} b={K.C} zoom={0.04} origen="50% 60%">
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
+        {fsvg(<g transform={RG}>
           <Regadera T={T} moho={0.6} limpio={kprog(T, K.Ta + 0.3, K.Ta + 3.8)} gotas={0} />
           {(() => { const u = kprog(T, K.Ta + 0.2, K.Ta + 3.8); return u > 0 && u < 1 ? <Cepillo x={klerp(160, 900, 0.5 - 0.5 * Math.cos(u * Math.PI * 5))} y={MURO.y0 + 5 * MURO.paso - 10} /> : null; })()}
           {(() => { const g = krng(77); return Array.from({ length: 12 }, (_, i) => { const t0 = K.Ta + 0.6 + g() * 3, u = kprog(T, t0, t0 + 2.2); if (u <= 0 || u >= 1) return null; const x = 160 + g() * 760, y = klerp(1000, 640, u);
             return <g key={i} opacity={Math.sin(u * Math.PI)}><ellipse cx={x} cy={y} rx={9} ry={12} fill="#8a8f99" stroke={KC.ink} strokeWidth={2} /><path d={`M ${x - 8} ${y - 8} L ${x + 8} ${y + 8} M ${x + 8} ${y - 8} L ${x - 8} ${y + 8}`} stroke={KC.ink} strokeWidth={3} /></g>; }); })()}
-        </>)}
+        </g>)}
       </Escena>
       {/* 12 · cierre: la misma regadera, limpia, seca y con el extractor encendido */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="40% 55%">
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform={RG}>
           <Regadera T={T} moho={0.6} limpio={1} gira={1} gotas={0} />
           <Sello T={T} at={K.C + 0.8} x={300} y={640} texto="SECO" color={KC.leaf} r={105} />
-        </>)}
+        </g>)}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.G + 2.4} texto="¿mugre?" x={300} y={640} tam={56} />
-      <Chip T={T} at={K.G + 2.8} until={K.E - 0.3} texto="algunos comen restos de jabón" x={380} y={1070} tam={30} borde={KC.yellow} />
-      <Etq T={T} at={K.E + 0.6} until={K.Cl - 0.3} x={60} y={330} texto="esporas en el aire" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.E + 2.0} until={K.Cl - 0.3} texto="sin agua, no crecen" x={360} y={560} tam={38} borde={KC.red} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.G + 2.4} texto="¿mugre?" x={rgX(300)} y={rgY(640)} tam={56} />
+      <Chip T={T} at={K.G + 2.8} until={K.E - 0.3} texto="algunos comen restos de jabón" x={rgX(380)} y={rgY(1070)} tam={30} borde={KC.yellow} />
+      <Etq T={T} at={K.E + 0.6} until={K.Cl - 0.3} x={60} y={455} texto="esporas en el aire" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.E + 2.0} until={K.Cl - 0.3} texto="sin agua, no crecen" x={rgX(360)} y={rgY(560)} tam={38} borde={KC.red} />
       <NumeroGigante T={T} at={K.Cl + 0.3} until={K.Cl + 2.8} valor={113} dur={1.2} etiqueta="muestras de baños · estudio de 2010" x={540} y={350} tam={200} color={KC.gold2} />
-      <Chip T={T} at={K.Cl + 0.6} until={K.Cl + 2.8} texto="Países Bajos · Alemania · Austria" x={540} y={1330} tam={28} borde={KC.gold} />
-      <Etq T={T} at={K.Cl + 3.0} until={K.R - 0.3} x={60} y={1265} texto="Cladosporium" it tam={44} color={MB.oliva2} />
-      <Etq T={T} at={K.Cl + 3.3} until={K.R - 0.3} x={60} y={1325} texto="moho negro" tam={30} />
-      <Chip T={T} at={K.Cl + 3.6} until={K.R - 0.3} texto="el más frecuente en cultivo directo" x={540} y={1420} tam={28} borde={KC.gold} />
-      <Etq T={T} at={K.Cl + 2.4} until={K.R - 0.3} x={1040} y={820} lado="izq" texto="conidios en cadena" tam={26} color={KC.gold2} />
-      <Etq T={T} at={K.R + 1.8} until={K.P - 0.3} x={110} y={1110} texto="Serratia marcescens" it tam={36} color={KC.ink} />
-      <Etq T={T} at={K.R + 2.2} until={K.P - 0.3} x={110} y={1160} texto="bacteria, no hongo" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.R + 2.6} until={K.P - 0.3} texto="pigmento: prodigiosina" x={340} y={530} tam={30} borde={MB.rosa} />
+      <Chip T={T} at={K.Cl + 0.6} until={K.Cl + 2.8} texto="Países Bajos · Alemania · Austria" x={540} y={1500} tam={28} borde={KC.gold} />
+      <Etq T={T} at={K.Cl + 3.0} until={K.R - 0.3} x={60} y={1420} texto="Cladosporium" it tam={44} color={MB.oliva2} />
+      <Etq T={T} at={K.Cl + 3.3} until={K.R - 0.3} x={60} y={1480} texto="moho negro" tam={30} />
+      <Chip T={T} at={K.Cl + 3.6} until={K.R - 0.3} texto="el más frecuente en cultivo directo" x={600} y={1545} tam={28} borde={KC.gold} />
+      <Etq T={T} at={K.Cl + 2.9} until={K.R - 0.3} x={1040} y={470} lado="izq" texto="conidios en cadena" tam={26} color={KC.gold2} />
+      <Etq T={T} at={K.R + 1.8} until={K.P - 0.3} x={rgX(110)} y={rgY(1110)} texto="Serratia marcescens" it tam={36} color={KC.ink} />
+      <Etq T={T} at={K.R + 2.2} until={K.P - 0.3} x={rgX(110)} y={rgY(1160)} texto="bacteria, no hongo" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.R + 2.6} until={K.P - 0.3} texto="pigmento: prodigiosina" x={rgX(340)} y={rgY(530)} tam={30} borde={MB.rosa} />
       <Etq T={T} at={K.St + 1.6} until={K.Mi - 0.3} x={70} y={345} texto="Stachybotrys chartarum" it tam={36} color={KC.ink} />
       <Chip T={T} at={K.St + 2.2} until={K.Mi - 0.3} texto="celulosa + agua constante" x={540} y={1460} tam={30} borde={MB.stachy} />
       <Etq T={T} at={K.St + 2.6} until={K.Mi - 0.3} x={640} y={1240} texto="papel mojado" tam={26} color={KC.ink} />
       <MitoTachado T={T} at={K.Mi + 0.2} tacharEn={K.Mi + 1.6} until={K.Al - 0.3} texto="MÁS PELIGROSO QUE LOS DEMÁS" x={540} y={740} tam={40} />
       <Chip T={T} at={K.Mi + 1.4} until={K.Al - 0.3} texto="no hay prueba que lo ligue a síntomas (CDC)" x={540} y={830} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.Mi + 3.6} until={K.Al - 0.3} texto="todo moho se trata igual" x={540} y={905} tam={30} borde={KC.leaf} />
-      <Chip T={T} at={K.Al + 0.6} until={K.Es - 0.3} texto="alergia (si eres sensible)" x={340} y={480} tam={30} borde={KC.yellow} />
-      <Chip T={T} at={K.Al + 3.0} until={K.Es - 0.3} texto="asma (si tienes asma y alergia)" x={340} y={570} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.Al + 0.6} until={K.Es - 0.3} texto="alergia (si eres sensible)" x={340} y={540} tam={30} borde={KC.yellow} />
+      <Chip T={T} at={K.Al + 3.0} until={K.Es - 0.3} texto="asma (si tienes asma y alergia)" x={340} y={630} tam={30} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.3} anio="2010" quien="Osaka, Japón" revista="Hamada y Abe · Biocontrol Science" y={560} />
       <Chip T={T} at={K.Es + 2.4} until={K.S - 0.3} texto="con jabón y champú" x={290} y={760} tam={28} borde={KC.leaf} />
       <Chip T={T} at={K.Es + 2.8} until={K.S - 0.3} texto="en seco" x={790} y={760} tam={28} borde={KC.red} />
-      <Chip T={T} at={K.S + 0.5} until={K.S + 2.4} texto="✓ extractor" x={330} y={620} tam={36} borde={KC.leaf} />
-      <Chip T={T} at={K.S + 1.2} until={K.S + 2.4} texto="✓ ventana al bañarte" x={360} y={720} tam={36} borde={KC.leaf} />
-      <NumeroGigante T={T} at={K.S + 2.8} until={K.Ta - 0.3} valor={50} desde={80} dur={1.2} sufijo=" %" etiqueta="humedad: abajo de" x={760} y={1000} tam={150} color={KC.mint} />
-      <Chip T={T} at={K.Ta + 0.8} until={K.C - 0.3} texto="quitarlo, no solo matarlo" x={370} y={560} tam={34} borde={KC.yellow} />
-      <Chip T={T} at={K.Ta + 2.6} until={K.C - 0.3} texto="muerto, todavía puede dar alergia" x={420} y={1080} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="le sobra agua" x={620} y={900} tam={44} borde={KC.cyan} />
+      <Chip T={T} at={K.S + 0.5} until={K.S + 2.4} texto="✓ extractor" x={rgX(330)} y={rgY(620)} tam={36} borde={KC.leaf} />
+      <Chip T={T} at={K.S + 1.2} until={K.S + 2.4} texto="✓ ventana al bañarte" x={rgX(360)} y={rgY(720)} tam={36} borde={KC.leaf} />
+      <NumeroGigante T={T} at={K.S + 2.8} until={K.Ta - 0.3} valor={50} desde={80} dur={1.2} sufijo=" %" etiqueta="humedad: abajo de" x={rgX(760)} y={rgY(800)} tam={150} color={KC.mint} />
+      <Chip T={T} at={K.Ta + 0.8} until={K.C - 0.3} texto="quitarlo, no solo matarlo" x={rgX(370)} y={rgY(560)} tam={34} borde={KC.yellow} />
+      <Chip T={T} at={K.Ta + 2.6} until={K.C - 0.3} texto="muerto, todavía puede dar alergia" x={rgX(420)} y={rgY(1080)} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="le sobra agua" x={rgX(620)} y={rgY(900)} tam={44} borde={KC.cyan} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Cl} texto="10 cm" largo={100} />
-      <BarraEscala T={T} at={K.Cl} until={K.R} texto="10 µm" largo={150} />
-      <BarraEscala T={T} at={K.R} until={K.P} texto="10 cm" largo={100} />
+      <BarraEscala T={T} at={K.G} until={K.Cl} texto="10 cm" largo={112} />
+      <BarraEscala T={T} at={K.Cl} until={K.R} texto="10 µm" largo={168} />
+      <BarraEscala T={T} at={K.R} until={K.P} texto="10 cm" largo={112} />
       <BarraEscala T={T} at={K.St} until={K.Mi} texto="50 cm" largo={280} />
       <BarraEscala T={T} at={K.Mi} until={K.Al} texto="5 cm" largo={240} />
       <BarraEscala T={T} at={K.Al} until={K.Es} texto="10 cm" largo={243} />
       <BarraEscala T={T} at={K.Es} until={K.S} texto="5 cm" largo={220} />
-      <BarraEscala T={T} at={K.S} until={K.Ou} texto="10 cm" largo={100} />
+      <BarraEscala T={T} at={K.S} until={K.Ou} texto="10 cm" largo={112} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.E - 0.1} texto="No es mugre: *es moho.*" />
