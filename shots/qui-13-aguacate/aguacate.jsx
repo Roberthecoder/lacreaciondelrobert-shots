@@ -8,12 +8,21 @@ const VERDE = '#86c443', VERDE2 = '#5f9a2c', CAFE = '#7a5226', ENZ = '#9b5de5', 
 function Molcajete({ x, y, s = 1, cafe = 0, raya = 0, hueco = 0, tapa = 0, T = 0 }) {
   const R = krng(13);
   const trozos = Array.from({ length: 26 }, () => { const a = R() * Math.PI * 2, d = Math.sqrt(R()); return [Math.cos(a) * d * 270, Math.sin(a) * d * 80, R()]; });
+  const gid = `mol${Math.round(x)}_${Math.round(y)}_${Math.round(s * 100)}`;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    {[-200, 0, 200].map((dx, i) => <path key={i} d={`M ${dx - 40} 200 L ${dx - 28} 290 L ${dx + 28} 290 L ${dx + 40} 200 Z`} fill={PIEDRA} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />)}
-    <path d="M -340 0 Q -330 250 0 260 Q 330 250 340 0 Z" fill={PIEDRA} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+    <defs>
+      <radialGradient id={gid + 'p'} cx="35%" cy="20%" r="85%"><stop offset="0" stopColor="#6c717b" /><stop offset="0.55" stopColor={PIEDRA} /><stop offset="1" stopColor="#2c2f35" /></radialGradient>
+      <radialGradient id={gid + 'g'} cx="40%" cy="30%" r="75%"><stop offset="0" stopColor="#a6dc63" /><stop offset="0.7" stopColor={VERDE} /><stop offset="1" stopColor="#5d9128" /></radialGradient>
+      <linearGradient id={gid + 'b'} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#2a2d33" /><stop offset="1" stopColor="#454951" /></linearGradient>
+    </defs>
+    <ellipse cx={0} cy={300} rx={330} ry={34} fill="#000" opacity={0.35} />
+    {[-200, 0, 200].map((dx, i) => <path key={i} d={`M ${dx - 40} 200 L ${dx - 28} 290 L ${dx + 28} 290 L ${dx + 40} 200 Z`} fill={`url(#${gid}p)`} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />)}
+    <path d="M -340 0 Q -330 250 0 260 Q 330 250 340 0 Z" fill={`url(#${gid}p)`} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+    <path d="M -300 40 Q -290 170 -150 215" stroke="#8a8f99" strokeWidth={10} fill="none" strokeLinecap="round" opacity={0.45} />
     {Array.from({ length: 18 }, (_, i) => <circle key={i} cx={-280 + (i * 97) % 560} cy={60 + (i * 53) % 160} r={5 + (i % 3) * 2} fill="#363940" />)}
-    <ellipse cx={0} cy={0} rx={340} ry={112} fill="#3a3d44" stroke={KC.ink} strokeWidth={10} />
-    <ellipse cx={0} cy={8} rx={300} ry={92} fill={VERDE} />
+    <ellipse cx={0} cy={0} rx={340} ry={112} fill={`url(#${gid}b)`} stroke={KC.ink} strokeWidth={10} />
+    <ellipse cx={0} cy={8} rx={300} ry={92} fill={`url(#${gid}g)`} />
+    <ellipse cx={-90} cy={-30} rx={120} ry={22} fill="#d8f5a8" opacity={0.22 * (1 - cafe)} />
     {trozos.map(([tx, ty, k], i) => <circle key={i} cx={tx} cy={ty + 8} r={k > 0.8 ? 11 : 7} fill={k > 0.86 ? '#e04a3a' : k > 0.72 ? '#f4f0dc' : VERDE2} opacity={0.9} />)}
     {cafe > 0 && <ellipse cx={0} cy={8} rx={300} ry={92} fill={CAFE} opacity={0.88 * cafe} />}
     {cafe > 0 && Array.from({ length: 10 }, (_, i) => <ellipse key={i} cx={-220 + i * 48} cy={(i % 3 - 1) * 30 + 8} rx={30} ry={12} fill="#5e3c18" opacity={0.6 * cafe} />)}
@@ -44,11 +53,18 @@ function Tejolote({ x, y, rot = 20, s = 1 }) {
 // Medio aguacate: cafe 0..1 oscurece la pulpa. hueso = con semilla.
 function MedioAguacate({ x, y, s = 1, cafe = 0, hueso = true, rot = 0 }) {
   const pulpa = mixHex('#d8ec8f', '#8a6a33', cafe), borde = mixHex('#9fcf4f', '#6a4a20', cafe);
+  const gid = `agu${Math.round(x)}_${Math.round(y)}`;
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
-    <path d="M 0 -170 Q 70 -170 90 -80 Q 150 20 120 100 Q 80 180 0 180 Q -80 180 -120 100 Q -150 20 -90 -80 Q -70 -170 0 -170 Z" fill="#2f4a1e" stroke={KC.ink} strokeWidth={9} />
+    <defs>
+      <radialGradient id={gid + 'c'} cx="35%" cy="25%" r="80%"><stop offset="0" stopColor="#4d7230" /><stop offset="1" stopColor="#1f3313" /></radialGradient>
+      <radialGradient id={gid + 'h'} cx="35%" cy="30%" r="75%"><stop offset="0" stopColor="#b07a42" /><stop offset="1" stopColor="#5e3a18" /></radialGradient>
+    </defs>
+    <ellipse cx={0} cy={196} rx={120} ry={18} fill="#000" opacity={0.3} />
+    <path d="M 0 -170 Q 70 -170 90 -80 Q 150 20 120 100 Q 80 180 0 180 Q -80 180 -120 100 Q -150 20 -90 -80 Q -70 -170 0 -170 Z" fill={`url(#${gid}c)`} stroke={KC.ink} strokeWidth={9} />
     <path d="M 0 -150 Q 58 -150 74 -72 Q 128 20 102 92 Q 68 160 0 160 Q -68 160 -102 92 Q -128 20 -74 -72 Q -58 -150 0 -150 Z" fill={borde} />
     <path d="M 0 -130 Q 46 -130 60 -64 Q 110 20 86 84 Q 58 142 0 142 Q -58 142 -86 84 Q -110 20 -60 -64 Q -46 -130 0 -130 Z" fill={pulpa} />
-    {hueso && <g><circle cx={0} cy={40} r={62} fill="#8b5a2b" stroke={KC.ink} strokeWidth={8} /><ellipse cx={-20} cy={20} rx={18} ry={10} fill="#c08a52" /></g>}
+    <path d="M -50 -100 Q -86 -20 -80 60" stroke="#fff" strokeWidth={8} fill="none" strokeLinecap="round" opacity={0.18} />
+    {hueso && <g><circle cx={0} cy={40} r={62} fill={`url(#${gid}h)`} stroke={KC.ink} strokeWidth={8} /><ellipse cx={-20} cy={20} rx={18} ry={10} fill="#c08a52" /></g>}
   </g>;
 }
 // Hueso suelto y pelota de golf.
@@ -64,6 +80,7 @@ function Limon({ x, y, s = 1, rot = 0, aprieta = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s * (1 + aprieta * 0.06)}, ${s * (1 - aprieta * 0.1)})`}>
     <ellipse rx={120} ry={92} fill="#5fbf2a" stroke={KC.ink} strokeWidth={9} />
     <ellipse cx={0} cy={10} rx={100} ry={74} fill="#d9f27a" />
+    <ellipse cx={0} cy={10} rx={100} ry={74} fill="none" stroke="#f4ffc4" strokeWidth={5} opacity={0.6} />
     {Array.from({ length: 8 }, (_, i) => { const a = i * Math.PI / 4; return <line key={i} x1={0} y1={10} x2={Math.cos(a) * 90} y2={10 + Math.sin(a) * 66} stroke="#a7cf3e" strokeWidth={6} />; })}
   </g>;
 }
@@ -71,7 +88,9 @@ function Limon({ x, y, s = 1, rot = 0, aprieta = 0 }) {
 function PPO({ x, y, s = 1, boca = 0, cobre = 0, rot = 0, dormida = false }) {
   const a = 18 + boca * 26, ra = a * Math.PI / 180;
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
-    <path d={`M 0 0 L ${Math.cos(ra) * 80} ${-Math.sin(ra) * 80} A 80 80 0 1 0 ${Math.cos(ra) * 80} ${Math.sin(ra) * 80} Z`} fill={ENZ} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <defs><radialGradient id="ppoGrad" cx="30%" cy="25%" r="85%"><stop offset="0" stopColor="#c39bf2" /><stop offset="0.6" stopColor={ENZ} /><stop offset="1" stopColor="#5e2fa0" /></radialGradient></defs>
+    <path d={`M 0 0 L ${Math.cos(ra) * 80} ${-Math.sin(ra) * 80} A 80 80 0 1 0 ${Math.cos(ra) * 80} ${Math.sin(ra) * 80} Z`} fill="url(#ppoGrad)" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <path d="M -58 -30 A 66 66 0 0 1 -20 -62" stroke="#efe2ff" strokeWidth={6} fill="none" strokeLinecap="round" opacity={0.5} />
     {dormida ? <path d="M -30 -38 q 10 8 20 0" stroke={KC.ink} strokeWidth={6} fill="none" strokeLinecap="round" />
       : <g><circle cx={-18} cy={-38} r={11} fill="#fff" /><circle cx={-15} cy={-38} r={5} fill={KC.ink} /></g>}
     {cobre > 0 && <g opacity={cobre}>
@@ -164,17 +183,17 @@ function Aguacate() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(160,220,120,.25)" />
         <SvgCapa>
-          <PPO x={400} y={900} s={3.0} boca={bocaEn} />
+          <PPO x={390} y={930} s={3.6} boca={bocaEn} />
           {ciclos.map((t0, i) => { const llega = kprog(T, t0 - 1.0, t0, kEase.suave), sale = kprog(T, t0 + 0.1, t0 + 1.1, kEase.sale);
             if (T < t0 - 1.0) return null;
-            const yy = 900 + (i - 1) * 50;
+            const yy = 930 + (i - 1) * 50;
             return <g key={i}>
               {sale === 0 && <Anillo x={klerp(1060, 650, llega)} y={yy} s={1.45} rot={T * 30} />}
               {sale === 0 && <Mol tipo="o2" x={klerp(720, 630, llega)} y={klerp(440, yy - 90, llega)} s={0.8} rot={T * 40} />}
               {sale > 0 && <Anillo x={klerp(650, 700 + i * 140, sale)} y={klerp(yy, 1200, sale)} s={1.35} color={KC.orange} oh={false} rot={T * 20} />}
             </g>; })}
         </SvgCapa>
-        <Etq T={T} at={K.En + 0.4} until={K.Me - 0.2} x={80} y={590} texto="polifenol oxidasa" color={ENZ} tam={34} />
+        <Etq T={T} at={K.En + 0.4} until={K.Me - 0.2} x={80} y={560} texto="polifenol oxidasa" color={ENZ} tam={34} />
         <Etq T={T} at={K.En + 0.8} until={K.En + 2.4} x={760} y={770} texto="polifenol" color="#ffd34d" tam={32} />
         <Etq T={T} at={K.En + 1.4} until={K.Me - 0.2} x={680} y={1300} texto="quinona" color={KC.orange} tam={32} lado="izq" />
       </Escena>
@@ -198,16 +217,23 @@ function Aguacate() {
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <Texto x={300} y={640} t="?" tam={260} color={KC.yellow} mono={false} />
-          <g transform="translate(300 900)">
-            <path d="M -240 -120 Q -240 200 0 210 Q 240 200 240 -120 Z" fill={PIEDRA} stroke={KC.ink} strokeWidth={10} />
-            <path d="M -210 -100 Q -205 170 0 178 Q 205 170 210 -100 Z" fill={VERDE} />
+          <Texto x={860} y={640} t="?" tam={200} color={KC.yellow} mono={false} />
+          <ellipse cx={540} cy={1330} rx={360} ry={36} fill="#000" opacity={0.35} />
+          <g transform="translate(540 970) scale(1.6)">
+            <defs>
+              <radialGradient id="pregP" cx="30%" cy="20%" r="90%"><stop offset="0" stopColor="#6c717b" /><stop offset="0.55" stopColor={PIEDRA} /><stop offset="1" stopColor="#2c2f35" /></radialGradient>
+              <linearGradient id="pregG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#a6dc63" /><stop offset="1" stopColor="#5d9128" /></linearGradient>
+            </defs>
+            <path d="M -240 -120 Q -240 200 0 210 Q 240 200 240 -120 Z" fill="url(#pregP)" stroke={KC.ink} strokeWidth={10} />
+            <path d="M -210 -100 Q -205 170 0 178 Q 205 170 210 -100 Z" fill="url(#pregG)" />
+            {[[-150, 20], [120, -20], [-60, 120], [150, 90], [-170, -50], [60, 150]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={i % 2 ? 7 : 5} fill={i % 3 ? '#5f9a2c' : '#e04a3a'} opacity={0.8} />)}
+            <path d="M -222 -60 Q -220 120 -120 182" stroke="#8a8f99" strokeWidth={7} fill="none" strokeLinecap="round" opacity={0.45} />
             <path d="M -210 -100 L 210 -100 L 210 -80 Q 0 -70 -210 -80 Z" fill={CAFE} opacity={kprog(T, K.Pr + 0.3, K.Pr + 1.2)} />
-            <PPO x={20} y={80} s={0.55} dormida={T > K.Pr + 2.6} />
-            {T > K.Pr + 2.8 && <Texto x={90} y={40 - ((T * 30) % 30)} t="z z z" tam={34} color={KC.texto} />}
+            <PPO x={0} y={70} s={0.6} dormida={T > K.Pr + 2.6} />
+            {T > K.Pr + 2.8 && <Texto x={80} y={10 - ((T * 30) % 30)} t="z z z" tam={26} color={KC.texto} />}
           </g>
         </SvgCapa>
-        <SvgCapa><LluviaO2 T={T} desde={K.Pr + 0.2} hasta={K.Es} xs={[140, 230, 320, 410]} y0={520} y1={790} cada={1.0} /></SvgCapa>
+        <SvgCapa><LluviaO2 T={T} desde={K.Pr + 0.2} hasta={K.Es} xs={[300, 440, 580, 720]} y0={480} y1={770} cada={1.0} /></SvgCapa>
         <Chip T={T} at={K.Pr + 3.0} until={K.Es - 0.2} texto="sin O₂, la enzima no trabaja" y={1500} tam={40} borde={ENZ} />
       </Escena>
       {/* 5 · 1975, Israel: tres variedades */}
@@ -263,7 +289,7 @@ function Aguacate() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(217,130,43,.3)" />
         <SvgCapa>
-          <PPO x={520} y={960} s={klerp(3.0, 4.0, kprog(T, K.Co, K.Co + 1.2, kEase.suave))} cobre={kprog(T, K.Co + 0.9, K.Co + 1.5)} boca={0.3} />
+          <PPO x={520} y={960} s={klerp(3.5, 4.2, kprog(T, K.Co, K.Co + 1.2, kEase.suave))} cobre={kprog(T, K.Co + 0.9, K.Co + 1.5)} boca={0.3} />
         </SvgCapa>
         <Etq T={T} at={K.Co + 1.6} until={K.Ci - 0.2} x={60} y={530} texto="2 átomos de cobre (Cu)" color={COBRE} tam={36} lado="der" />
       </Escena>

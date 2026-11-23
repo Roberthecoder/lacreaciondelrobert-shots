@@ -1,0 +1,1 @@
+- qui-13-aguacate: volumen en molcajete (degradado de piedra y guacamole, brillo de borde, sombra), medio aguacate (cáscara y hueso con degradado, sombra), enzima PPO (degradado y brillo) y limón; Pregunta: corte del molcajete 1.6× y centrado con textura; Enzima: PPO 3.0→3.6; Cobre: PPO arranca en 3.5. Auditores: sin láminas · encuadre bien.
