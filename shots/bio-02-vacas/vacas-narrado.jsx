@@ -45,7 +45,8 @@ function Intestino({ T, a }) {
 // --- Pase a mano del estilo cine: piezas propias de la versión narrada (los dibujos compartidos no se tocan) ---
 const NEGRO = '#0b1020';
 const VX = 455, VY = 960, VS = 1.02;      // vaca del gancho, del rumen y del cierre
-const MX = 410, MS = 0.94;                 // vaca del eructo y del biorreactor (deja lugar a la derecha)
+const MX = 410, MS = 0.94;
+const DY = 150;                            // belleza: rumen y cierre, vaca + lupa más abajo                 // vaca del eructo y del biorreactor (deja lugar a la derecha)
 // La misma vaca de vacas-comun.jsx, con manchas, ojo y nariz oscuros (en estilo cine KC.ink es claro y se perdían sobre
 // el cuerpo blanco) y con `dentro` (0..1): una ventana de rayos X en la panza que deja ver el estómago del shot.
 function VacaC({ T = 0, x = 0, y = 0, s = 1, mastica = 0, cola, eructo = 0, cabezaAbajo = 0, dentro = 0 }) {
@@ -137,11 +138,12 @@ function VacasNarrado() {
 
       {/* RUMEN: rayos X del estómago */}
       <Escena T={T} a={C.Rumen} b={C.Micro} zoom={0.03}>
-        <Pradera T={T} />
-        {vacaGancho({ dentro: 1 })}
-        <Lupa T={T} at={C.Rumen + 0.15} until={C.Micro - 0.2} x={480} y={440} r={225} fx={VX - 100 * VS} fy={VY - 20 * VS} interior={(t, r) => <Estomago T={t} r={r} />} etiqueta="POR DENTRO · estómago" />
-        <Etq T={T} at={C.Rumen + 0.8} until={C.Micro - 0.2} x={292} y={312} texto="rumen" lado="izq" color={KC.yellow} />
-        <Chip T={T} at={C.Rumen + 1.8} until={C.Micro - 0.2} texto="tibio · sin oxígeno" x={540} y={1340} borde={KC.cyan} tam={38} />
+        {/* belleza: vaca, horizonte y lupa bajados 150 px para centrar (antes ARRIBA) */}
+        <Pradera T={T} horizonte={1160 + DY} />
+        {vacaGancho({ dentro: 1 }, VX, VY + DY)}
+        <Lupa T={T} at={C.Rumen + 0.15} until={C.Micro - 0.2} x={480} y={440 + DY} r={225} fx={VX - 100 * VS} fy={VY + DY - 20 * VS} interior={(t, r) => <Estomago T={t} r={r} />} etiqueta="POR DENTRO · estómago" />
+        <Etq T={T} at={C.Rumen + 0.8} until={C.Micro - 0.2} x={292} y={312 + DY} texto="rumen" lado="izq" color={KC.yellow} />
+        <Chip T={T} at={C.Rumen + 1.8} until={C.Micro - 0.2} texto="tibio · sin oxígeno" x={540} y={1340 + DY} borde={KC.cyan} tam={38} />
       </Escena>
 
       {/* MICRO + PREGUNTA: adentro del rumen */}
@@ -176,11 +178,11 @@ function VacasNarrado() {
       <Escena T={T} a={C.Proteina} b={C.Estudio}>
         <FondoMarca T={T} color={KC.coral} patron="rayas" />
         {/* esquema (no a escala): el intestino se agranda 1.22× */}
-        <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transform:'scale(1.22)', transformOrigin:'540px 850px' }}>
+        <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transform:'translate(0px,140px) scale(1.22)', transformOrigin:'540px 850px' }}>
           <Intestino T={T} a={C.Proteina} />
         </div>
-        <Etq T={T} at={C.Proteina + 0.6} until={C.Estudio - 0.2} x={120} y={330} texto="intestino" color={KC.ink} />
-        <Chip T={T} at={C.Proteina + 2.4} until={C.Estudio - 0.2} texto="microbios = su proteína" y={1380} borde={KC.ink} tam={40} />
+        <Etq T={T} at={C.Proteina + 0.6} until={C.Estudio - 0.2} x={120} y={470} texto="intestino" color={KC.ink} />
+        <Chip T={T} at={C.Proteina + 2.4} until={C.Estudio - 0.2} texto="microbios = su proteína" y={1470} borde={KC.ink} tam={40} />
       </Escena>
 
       {/* ESTUDIO: Bergman 1990, y tú contra la vaca */}
@@ -216,9 +218,9 @@ function VacasNarrado() {
 
       {/* CIERRE: la misma vaca del inicio, ya por dentro */}
       <Escena T={T} a={C.Cierre} b={FIN} zoom={0.03}>
-        <Pradera T={T} />
-        {vacaGancho({ dentro: 1 })}
-        <Lupa T={T} at={C.Cierre + 0.1} x={480} y={440} r={225} fx={VX - 100 * VS} fy={VY - 20 * VS} interior={(t, r) => <Estomago T={t} r={r} />} etiqueta="sus microbios" tinte={KC.mint} />
+        <Pradera T={T} horizonte={1160 + DY} />
+        {vacaGancho({ dentro: 1 }, VX, VY + DY)}
+        <Lupa T={T} at={C.Cierre + 0.1} x={480} y={440 + DY} r={225} fx={VX - 100 * VS} fy={VY + DY - 20 * VS} interior={(t, r) => <Estomago T={t} r={r} />} etiqueta="sus microbios" tinte={KC.mint} />
       </Escena>
 
       {/* subtítulos */}

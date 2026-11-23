@@ -1,0 +1,1 @@
+- bio-02-vacas: rumen y cierre: vaca, horizonte del pasto, lupa del estómago y etiquetas bajados 150 px para centrar (antes la lupa cargaba todo arriba); proteína: intestino bajado 140 px con su etiqueta y chip. Sin láminas · encuadre bien (antes 3 escenas ARRIBA).
