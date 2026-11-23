@@ -210,7 +210,10 @@ function Citrico() {
       </Escena>
       {/* 4 · el tanque con agua y mucha azúcar; bolitas de moho */}
       <Escena T={T} a={K.Ta} b={K.Pr} zoom={0.04}>
-        <MundoBiorreactor T={T} turbio={klerp(0.15, 0.55, kprog(T, K.Ta, K.Pr))} burbujas={1} rpm={80} fondo={KC.cyan} />
+        <FondoLunares color={KC.cyan} />
+        {/* el fondo de color con puntos del kit es del estilo viejo: se oculta y queda el fondo del modo cine */}
+        <style>{'.c52SinFondo > div > div:first-child { display: none; }'}</style>
+        <div className="c52SinFondo"><MundoBiorreactor T={T} turbio={klerp(0.15, 0.55, kprog(T, K.Ta, K.Pr))} burbujas={1} rpm={80} fondo={KC.cyan} /></div>
         <CapaC>
           <clipPath id="c52tanque"><rect x={262} y={700} width={556} height={790} rx={60} /></clipPath>
           <g clipPath="url(#c52tanque)">{Array.from({ length: 14 }, (_, i) => { const g = krng(i + 40); return <Pellet key={i} T={T} x={300 + g() * 480 + mece(T, i, 0.3) * 20} y={760 + g() * 680 + mece(T, i + 5, 0.3) * 20} r={26 + g() * 10} seed={i + 1} />; })}</g>
@@ -281,7 +284,7 @@ function Citrico() {
         <FondoLunares color={KC.lilac} />
         <CapaC>
           {T < pfMitad + 0.3 && <g opacity={1 - kprog(T, pfMitad, pfMitad + 0.3)}><Planta T={T} x={540} y={1080} s={1.25} /></g>}
-          {T > pfMitad - 0.1 && <g opacity={kprog(T, pfMitad - 0.1, pfMitad + 0.3)}>
+          {T > pfMitad - 0.1 && <g opacity={kprog(T, pfMitad - 0.1, pfMitad + 0.3) * (1 - kprog(T, K.Ho - 0.2, K.Ho + 0.3))}>
             {(() => { const u = kprog(T, pfMitad, K.Ho - 0.4, kEase.suave), hL = klerp(440, 50, u), hM = klerp(50, 470, u);
               return <g transform="translate(540 1080) scale(1.3) translate(-540 -960)">
                 <rect x={230} y={1080 - hL} width={240} height={hL} fill={LIMON} stroke={KC.ink} strokeWidth={8} />
@@ -297,6 +300,7 @@ function Citrico() {
       <Escena T={T} a={K.Ho} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <div style={{ position:'absolute', left:245, top:605, width:590, height:590, background:'rgba(14,15,18,.75)', borderRadius:24 }}></div>
+        <Cuadricula T={T} cols={10} filas={10} llenado={(t) => kprog(t, K.Ho - 0.1, K.Ho + 2.7)} tramos={[{ desde: 0.99, hasta: 1, color: KC.yellow }]} lleno="#4a3a2c" x={260} y={620} ancho={560} alto={560} />
         <CapaC><ColoniaNegra T={T} x={540} y={1365} s={0.8} /></CapaC>
       </Escena>
       {/* 12 · cierre: la gomita del inicio, ya con su etiqueta */}
@@ -315,7 +319,6 @@ function Citrico() {
           <Conidioforo T={t} x={r * 0.62} y={r * 2.1} s={0.42} alto={520} cadenas={1} n={5} seed={4} />
           <Conidioforo T={t} x={r * 1.4} y={r * 2.2} s={0.36} alto={560} cadenas={1} n={5} seed={7} />
         </svg>} />}
-      {T > K.Ho - 0.2 && T < K.Ci + 0.3 && <Cuadricula T={T} cols={10} filas={10} llenado={(t) => kprog(t, K.Ho + 0.8, K.Ho + 3.0)} tramos={[{ desde: 0.99, hasta: 1, color: KC.yellow }]} lleno="#4a3a2c" x={260} y={620} ancho={560} alto={560} />}
       {((T > K.Mo + 0.5 && T < K.Ce - 0.1)) && <Escala T={T} z={1} pxPorMm={1690} x={60} y={1430} color={KC.ink} />}
 
       {/* textos */}
@@ -327,7 +330,7 @@ function Citrico() {
       <Etiqueta T={T} at={K.Mo + 2.0} until={K.Ce - 0.2} x={1050} y={1100} texto="esporas pardo-negras" lado="izq" tam={30} color={KC.texto} />
       <Chip T={T} at={K.Ce + 2.0} until={K.Ta - 0.2} texto="él o un primo muy cercano" x={420} y={1490} tam={40} borde={ESPORA} />
       <Chip T={T} at={K.Ta + 0.4} until={K.Pr - 0.2} texto="agua + mucha azúcar" y={1450} tam={44} borde={KC.white} />
-      <Chip T={T} at={K.Ta + 1.6} until={K.Pr - 0.2} texto="bolitas de moho" y={1530} tam={36} borde={ESPORA} />
+      <Chip T={T} at={K.Ta + 1.6} until={K.Pr - 0.2} texto="bolitas de moho" y={1530} tam={37} borde={ESPORA} />
       <Chip T={T} at={K.Kr + 0.2} until={K.Mn - 0.2} texto="POR DENTRO · una hifa" y={420} tam={38} borde={KC.mint} mono />
       <Etiqueta T={T} at={K.Kr + 1.6} until={K.Mn - 0.2} x={760} y={1250} texto="mitocondria: ciclo de Krebs" lado="izq" tam={30} color="#ffb199" />
       <Etiqueta T={T} at={K.Kr + 2.0} until={K.Bo - 0.2} x={700} y={815} texto="citrato" tam={32} color={CITRATO} />
@@ -337,7 +340,7 @@ function Citrico() {
       <Chip T={T} at={K.Pf + 0.3} until={pfMitad - 0.1} texto="1919 · planta piloto" y={1490} tam={46} borde={KC.gold} />
       <Chip T={T} at={pfMitad + 0.2} until={K.Ho - 0.2} texto="con los años: moho vs. limón" y={1490} tam={40} borde={ESPORA} />
       <NumeroGigante T={T} at={K.Ho + 0.3} until={K.Ci - 0.2} valor={99} dur={2.4} prefijo="≈" sufijo=" %" x={540} y={470} tam={170} color={KC.yellow} />
-      <Chip T={T} at={K.Ho + 1.4} until={K.Ci - 0.2} texto="microbios (sobre todo moho)" x={540} y={1240} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Ho + 1.4} until={K.Ci - 0.2} texto="microbios (sobre todo moho)" x={540} y={1240} tam={37} borde={KC.ink} />
       <Chip T={T} at={K.Ho + 2.0} until={K.Ci - 0.2} texto="revisión de 2010" y={1500} tam={40} borde={KC.gold} />
       <Chip T={T} at={K.Ci + 0.6} until={K.Ou} texto="hecho por un moho" x={380} y={1470} tam={44} borde={ESPORA} />
 
