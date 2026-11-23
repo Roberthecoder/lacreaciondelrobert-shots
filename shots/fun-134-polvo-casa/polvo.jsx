@@ -265,7 +265,8 @@ function PolvoShot() {
       <Escena T={T} a={K.A} b={K.Af} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
-        {fsvg(<g transform="translate(540 1000) scale(1.25) translate(-560 -960)">
+        {/* belleza: 50 px a la derecha: el tubo se cortaba en la orilla izquierda */}
+        {fsvg(<g transform="translate(590 1000) scale(1.25) translate(-560 -960)">
           <Tubo x={200} y={1000} s={1} lleno={kprog(T, K.A + 0.1, K.A + 0.8)} />
           <Hisopo x={200} y={klerp(560, 800, kprog(T, K.A, K.A + 0.7))} s={0.6} sucio={1} />
           <ADNHebra T={T} x={330} y={980} largo={660} alto={110} vueltas={3} vel={1.4} resalta={(u) => u < kprog(T, K.A + 0.6, K.A + 3.0)} />
@@ -289,7 +290,8 @@ function PolvoShot() {
       {/* 9 · las bacterias: quién vive ahí */}
       <Escena T={T} a={K.B} b={K.M} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<g transform="translate(500 1300) scale(1.45) translate(-500 -1150)">
+        {/* belleza: 1.45→1.32 y 40 px a la derecha: la persona y el perro se cortaban en las orillas */}
+        {fsvg(<g transform="translate(540 1300) scale(1.32) translate(-500 -1150)">
           <Persona x={250} y={1150} s={1} />
           <Perro x={660} y={1150} s={1.1} T={T} />
           {Array.from({ length: 8 }, (_, i) => { const q = kprog(T, K.B + 0.5 + i * 0.12, K.B + 1.5 + i * 0.12, kEase.sale); const fromDog = i % 2;
@@ -312,7 +314,8 @@ function PolvoShot() {
       {/* 11 · ciencia forense (propuesta) */}
       <Escena T={T} a={K.F} b={K.C} zoom={0.06}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<g transform="translate(520 1050) scale(1.35) translate(-520 -1050)">
+        {/* belleza: 30 px a la izquierda: la llave se cortaba en la orilla derecha */}
+        {fsvg(<g transform="translate(490 1050) scale(1.35) translate(-520 -1050)">
           <Playera x={330} y={1040} s={1.3} />
           <Llave x={700} y={1080} s={1} rot={-20} />
           <g transform={`translate(${klerp(980, 400, kprog(T, K.F + 0.2, K.F + 1.4, kEase.sale))} 990)`}>
@@ -383,7 +386,7 @@ function PolvoShot() {
       <BarraEscala T={T} at={K.H + 4.7} until={K.A} texto="1,000 km (esquemático)" largo={216} />
       <BarraEscala T={T} at={K.A} until={K.Af} texto="2 nm (ancho del ADN)" largo={75} />
       <BarraEscala T={T} at={K.Af} until={K.B} texto="10 µm (esporas)" largo={128} />
-      <BarraEscala T={T} at={K.B} until={K.M} texto="50 cm" largo={232} />
+      <BarraEscala T={T} at={K.B} until={K.M} texto="50 cm" largo={211} />
       <BarraEscala T={T} at={K.M} until={K.F} texto="100 km (esquemático)" largo={22} />
       <BarraEscala T={T} at={K.F} until={K.C} texto="10 cm" largo={149} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={240} y={1600} />
