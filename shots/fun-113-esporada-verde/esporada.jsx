@@ -102,7 +102,7 @@ function Letrero({ x, y, s = 1, texto = 'NO SE COME', p = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s * kEase.rebote(kclamp(p, 0, 1))})`}>
     <rect x={-10} y={-200} width={20} height={200} fill="#8a5a2b" stroke={KC.ink} strokeWidth={5} />
     <rect x={-150} y={-290} width={300} height={110} rx={12} fill="#d9a86a" stroke={KC.ink} strokeWidth={7} />
-    <text x={0} y={-218} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={KC.red}>{texto}</text>
+    <text x={0} y={-220} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.red}>{texto}</text>
   </g>;
 }
 // Reloj con el sector «de media hora a unas horas» que se colorea.
@@ -279,13 +279,13 @@ function EsporadaShot() {
       <Escena T={T} a={K.Cn} b={K.Ci}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <g opacity={1 - kprog(T, K.Cn + 2.6, K.Cn + 3.0)} transform="translate(540 950) scale(1.6) translate(-300 -900)">
+          <g opacity={1 - kprog(T, K.Cn + 2.9, K.Cn + 3.4)} transform="translate(540 950) scale(1.6) translate(-300 -900)">
             <circle cx={300} cy={900} r={200} fill="#fff" stroke={KC.ink} strokeWidth={8} />
             <circle cx={300} cy={900} r={150} fill="none" stroke="#d9d2c4" strokeWidth={6} />
             <g transform="translate(300 950) scale(.55)"><Molybdites x={0} y={0} abre={1} verde={0.3} sombra={false} /></g>
             <path d="M 140 740 L 460 1060" stroke={KC.red} strokeWidth={26} strokeLinecap="round" opacity={kprog(T, K.Cn + 0.6, K.Cn + 0.9)} />
           </g>
-          <Hospital x={540} y={1400} s={2.0} p={kprog(T, K.Cn + 3.0, K.Cn + 3.5)} />
+          <Hospital x={540} y={1400} s={2.0} p={kprog(T, K.Cn + 2.95, K.Cn + 3.4)} />
         </>)}
       </Escena>
       {/* 12 · cierre: el mismo jardín del inicio, ya «leído» */}
@@ -295,7 +295,7 @@ function EsporadaShot() {
           <Pasto T={T} sup={SUP} />
           <AnilloHadas T={T} cx={560} cy={SUP + 40} rx={470} ry={80} s={0.5} p={1} verde={0.7} />
           <Molybdites T={T} x={430} y={SUP + 20} s={1.9} abre={1} verde={0.7} rot={mece(T, 2, 0.4) * 1.5} />
-          <Letrero x={885} y={SUP + 60} s={1.1} p={kprog(T, K.Ci + 0.8, K.Ci + 1.3)} />
+          <Letrero x={815} y={SUP + 60} s={1.1} p={kprog(T, K.Ci + 0.8, K.Ci + 1.3)} />
         </>)}
       </Escena>
 
@@ -338,8 +338,8 @@ function EsporadaShot() {
       <Chip T={T} at={K.Cn + 3.2} until={K.Ci - 0.3} texto="¿te sientes mal? ve a urgencias" x={540} y={470} tam={38} borde={KC.red} />
       <Etq T={T} at={K.Cn + 3.8} until={K.Ci - 0.3} x={230} y={565} texto="lleva lo que sobró del hongo" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="ante la duda, no se come" x={480} y={440} tam={42} borde={KC.red} />
-      <Etq T={T} at={K.Ci + 2.4} until={K.Ou} x={60} y={1475} texto="No es guía de identificación. Si te sientes mal" tam={25} color={KC.ink} />
-      <Etq T={T} at={K.Ci + 2.4} until={K.Ou} x={60} y={1512} texto="después de comer un hongo, ve a urgencias." tam={25} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 2.4} until={K.Ou} x={200} y={1475} texto="No es guía de identificación. Si te sientes mal" tam={25} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 2.4} until={K.Ou} x={200} y={1512} texto="después de comer un hongo, ve a urgencias." tam={25} color={KC.ink} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.Ja} texto="10 cm" largo={292} />
