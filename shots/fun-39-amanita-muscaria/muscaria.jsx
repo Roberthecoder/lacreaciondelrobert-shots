@@ -45,12 +45,19 @@ function Muscaria({ T = 0, x, y, s = 1, g = 1, color = MU_ROJO, mece: m = 0, lav
     </g>;
   });
   const yr = -H * 0.84, an = kprog(gs, 0.45, 0.75);
+  const gid = String(color).replace(/[^a-z0-9]/gi, '');
   return <g transform={`translate(${x} ${y}) scale(${s}) rotate(${rot})`}>
+    {/* pase de belleza: volumen (claro arriba-izquierda, oscuro abajo-derecha) en sombrero, pie y bulbo */}
+    <defs>
+      <radialGradient id={`mu-cap-${gid}`} cx="0.36" cy="0.18" r="0.95"><stop offset="0" stopColor={mixHex(color, '#ffffff', 0.28)} /><stop offset="0.55" stopColor={color} /><stop offset="1" stopColor={mixHex(color, '#000000', 0.38)} /></radialGradient>
+      <linearGradient id="mu-pie" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#ffffff" /><stop offset="0.45" stopColor={MU_PIE} /><stop offset="1" stopColor={mixHex(MU_PIE, '#6b6250', 0.45)} /></linearGradient>
+    </defs>
+    <ellipse cx={0} cy={6} rx={a * 0.42} ry={14} fill="#000" opacity={0.3} />
     {/* bulbo con bandas del velo universal */}
-    <ellipse cx={0} cy={-bR * 0.62} rx={bR} ry={bR * 0.68} fill={MU_PIE} stroke={KC.ink} strokeWidth={6} />
+    <ellipse cx={0} cy={-bR * 0.62} rx={bR} ry={bR * 0.68} fill="url(#mu-pie)" stroke={KC.ink} strokeWidth={6} />
     {g > 0.25 && [0, 1, 2].map((k) => <path key={k} d={`M ${-bR * 0.92 + k * 6} ${-bR * 0.78 - k * 13} Q 0 ${-bR * 0.55 - k * 13} ${bR * 0.92 - k * 6} ${-bR * 0.78 - k * 13}`} stroke={KC.ink} strokeWidth={4} fill="none" opacity={kprog(g, 0.25, 0.5)} />)}
     {/* pie */}
-    <path d={`M -24 ${-bR * 1.05} L -17 ${-H} L 17 ${-H} L 24 ${-bR * 1.05} Z`} fill={MU_PIE} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
+    <path d={`M -24 ${-bR * 1.05} L -17 ${-H} L 17 ${-H} L 24 ${-bR * 1.05} Z`} fill="url(#mu-pie)" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
     {/* anillo alto, tipo faldita (velo parcial) */}
     {an > 0 && <g opacity={an}>
       <path d={`M -18 ${yr} Q -50 ${yr + 26} -46 ${yr + 50} Q -24 ${yr + 42} 0 ${yr + 48} Q 24 ${yr + 42} 46 ${yr + 50} Q 50 ${yr + 26} 18 ${yr} Z`} fill={MU_PIE} stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />
@@ -60,7 +67,7 @@ function Muscaria({ T = 0, x, y, s = 1, g = 1, color = MU_ROJO, mece: m = 0, lav
     <g transform={`translate(0 ${-H})`}>
       <path d={`M ${-a / 2 + 6} 2 Q 0 ${a * 0.1} ${a / 2 - 6} 2`} stroke={KC.ink} strokeWidth={18} fill="none" strokeLinecap="round" />
       <path d={`M ${-a / 2 + 6} 2 Q 0 ${a * 0.1} ${a / 2 - 6} 2`} stroke="#fffdf6" strokeWidth={10} fill="none" strokeLinecap="round" />
-      <path d={`M ${-a / 2} 0 Q ${-a / 2} ${-hc * 1.15} 0 ${-hc} Q ${a / 2} ${-hc * 1.15} ${a / 2} 0 Q 0 ${a * 0.07} ${-a / 2} 0 Z`} fill={color} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
+      <path d={`M ${-a / 2} 0 Q ${-a / 2} ${-hc * 1.15} 0 ${-hc} Q ${a / 2} ${-hc * 1.15} ${a / 2} 0 Q 0 ${a * 0.07} ${-a / 2} 0 Z`} fill={`url(#mu-cap-${gid})`} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
       <path d={`M ${-a * 0.32} ${-hc * 0.72} Q ${-a * 0.1} ${-hc * 0.98} ${a * 0.12} ${-hc * 0.92}`} stroke="rgba(255,255,255,.35)" strokeWidth={10} fill="none" strokeLinecap="round" />
       {verr}
     </g>
@@ -258,7 +265,8 @@ function MuscariaShot() {
       {/* 7 · ¿es venenoso? */}
       <Escena T={T} a={K.P} b={K.Tx} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<><Pasto T={T} /><g opacity={0.55}><Muscaria T={T} x={690} y={MU_SUELO + 10} s={S0} g={1} mece={1} /></g><Interrogacion T={T} x={230} y={1140} /><SelloLargo T={T} at={K.P + 0.75} x={330} y={430} texto="VENENOSO" /></>)}
+        <div style={{ position:'absolute', inset:0, background:'rgba(8,12,22,.6)' }}></div>
+        {fsvg(<><Pasto T={T} /><g opacity={0.8}><Muscaria T={T} x={690} y={MU_SUELO + 10} s={S0} g={1} mece={1} /></g><Interrogacion T={T} x={230} y={1140} /><SelloLargo T={T} at={K.P + 0.75} x={330} y={430} texto="VENENOSO" /></>)}
       </Escena>
       {/* 8 · en la sinapsis: iboténico (≈ glutamato) excita; muscimol (≈ GABA) frena. Luego, la olla. */}
       <Escena T={T} a={K.Tx} b={cocina} zoom={0.05}>
