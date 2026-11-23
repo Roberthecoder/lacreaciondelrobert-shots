@@ -434,29 +434,29 @@ function PolinizadoresShot() {
       {/* datos y etiquetas */}
       <MitoTachado T={T} at={K.G + 0.15} tacharEn={K.G + 2.3} until={K.Pl - 0.2} texto="sin abejas = hambre" x={540} y={235} tam={44} />
       {/* un solo nombre a la vez, arriba de las tazas; el aro rosa dice de cuál se habla */}
-      {NOMBRES_PLATO.map((n, i) => <Chip key={n} T={T} at={hlT[i]} until={i < 5 ? hlT[i + 1] : K.M - 0.2} texto={n} x={540} y={270} tam={36} borde={KC.pink} />)}
+      {NOMBRES_PLATO.map((n, i) => <Chip key={n} T={T} at={hlT[i]} until={i < 5 ? hlT[i + 1] - 0.15 : K.M - 0.2} texto={n} x={540} y={270} tam={36} borde={KC.pink} />)}
       <Etq T={T} at={K.M + 0.4} until={K.Ca - 0.2} x={470} y={400} texto="espiga: polen" tam={30} color={KC.ink} />
       <Etq T={T} at={K.M + 1.2} until={K.Ca - 0.2} x={585} y={820} texto="pelos del elote" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.M + 1.8} until={K.Ca - 0.2} texto="se quedan" x={870} y={1395} tam={32} borde={KC.leaf} />
-      <Etq T={T} at={K.Ca + 1.6} until={K.Cf - 0.2} x={600} y={430} texto="Theobroma cacao" it lado="izq" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Ca + 2.2} until={K.Cf - 0.2} x={615} y={575} texto="flores en el tronco" lado="izq" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Ca + 2.6} until={K.Cf - 0.2} texto="sin visitas: casi sin cacao" x={300} y={1440} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.M + 1.8} until={K.Ca - 0.2} texto="se quedan" x={870} y={1395} tam={37} borde={KC.leaf} />
+      <Etq T={T} at={K.Ca + 1.6} until={K.Cf - 0.2} x={600} y={430} texto="Theobroma cacao" it lado="izq" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 2.2} until={K.Cf - 0.2} x={615} y={575} texto="flores en el tronco" lado="izq" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Ca + 2.6} until={K.Cf - 0.2} texto="sin visitas: casi sin cacao" x={300} y={1440} tam={37} borde={KC.red} />
       <Etq T={T} at={K.Cf + 0.3} until={K.P - 0.2} x={70} y={330} texto="Coffea" it tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Cf + 1.2} until={K.P - 0.2} texto="rinde menos o peor calidad" x={540} y={1440} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Cf + 1.2} until={K.P - 0.2} texto="rinde menos o peor calidad" x={540} y={1440} tam={37} borde={KC.ink} />
       <Etq T={T} at={K.Z + 1.0} until={K.E - 0.3} x={440} y={910} texto="abejorro" lado="izq" tam={30} />
-      <Etq T={T} at={K.Z + 3.6} until={K.E - 0.3} x={60} y={1395} texto="abeja de la miel: no vibra" lado="der" tam={26} />
-      <Chip T={T} at={K.Z + 1.8} until={K.E - 0.3} texto="bzzz: polinización por zumbido" x={700} y={240} tam={30} borde={KC.yellow} />
+      <Etq T={T} at={K.Z + 3.6} until={K.E - 0.3} x={60} y={1395} texto="abeja de la miel: no vibra" lado="der" tam={30} />
+      <Chip T={T} at={K.Z + 1.8} until={K.E - 0.3} texto="bzzz: polinización por zumbido" x={700} y={240} tam={37} borde={KC.yellow} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.9} anio="2016" quien="IPBES · Kuala Lumpur, Malasia" revista="evaluación de polinizadores" x={540} y={300} />
-      <Chip T={T} at={K.E + 3.6} until={K.To - 0.2} texto="más de 3/4 de los cultivos principales" x={540} y={1350} tam={32} borde={KC.pink} />
-      <Chip T={T} at={K.E + 4.6} until={K.To - 0.2} texto="dependen en algún grado" x={540} y={1430} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.To + 1.3} until={K.Mo - 0.2} texto="cosecha mundial (por volumen)" x={600} y={250} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.To + 1.5} until={K.Mo - 0.2} x={60} y={1290} texto="60 %: no los necesitan" lado="der" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.To + 1.9} until={K.Mo - 0.2} x={60} y={1335} texto="(cereales, raíces)" lado="der" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.E + 3.6} until={K.To - 0.2} texto="más de 3/4 de los cultivos principales" x={540} y={1350} tam={37} borde={KC.pink} />
+      <Chip T={T} at={K.E + 4.6} until={K.To - 0.2} texto="dependen en algún grado" x={540} y={1430} tam={37} borde={KC.ink} />
+      <Chip T={T} at={K.To + 1.3} until={K.Mo - 0.2} texto="cosecha mundial (por volumen)" x={600} y={250} tam={37} borde={KC.ink} />
+      <Etq T={T} at={K.To + 1.5} until={K.Mo - 0.2} x={60} y={1290} texto="60 %: no los necesitan" lado="der" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.To + 1.9} until={K.Mo - 0.2} x={60} y={1335} texto="(cereales, raíces)" lado="der" tam={30} color={KC.ink} />
       <NumeroGigante T={T} at={K.To + 2.6} until={K.Mo - 0.2} valor={8} desde={5} dur={0.8} prefijo="5–" sufijo=" %" etiqueta="se perdería:" x={760} y={1420} tam={120} color={KC.red} />
       <Etq T={T} at={K.Mo + 0.9} until={K.C - 0.2} x={990} y={736} texto="mosca azul" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Mo + 1.3} until={K.C - 0.2} x={60} y={1346} texto="flor de aguacate" lado="der" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou - 0.1} texto="te quedan" x={340} y={1375} tam={30} borde={KC.leaf} />
-      <Chip T={T} at={K.C + 2.4} until={K.Ou - 0.1} texto="vitamina A · hierro · folato" x={310} y={PY + TZY * PS} tam={30} borde={KC.gold} fondo={`rgba(14,15,18,${0.82 - 0.4 * kprog(T, K.C + 4.0, K.C + 5.0)})`} color={mixHex('#F6F3EC', '#7a7a7a', kprog(T, K.C + 4.0, K.C + 5.0))} />
+      <Etq T={T} at={K.Mo + 1.3} until={K.C - 0.2} x={60} y={1346} texto="flor de aguacate" lado="der" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou - 0.1} texto="te quedan" x={340} y={1375} tam={37} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 2.4} until={K.Ou - 0.1} texto="vitamina A · hierro · folato" x={310} y={PY + TZY * PS} tam={37} borde={KC.gold} fondo={`rgba(14,15,18,${0.82 - 0.4 * kprog(T, K.C + 4.0, K.C + 5.0)})`} color={mixHex('#F6F3EC', '#7a7a7a', kprog(T, K.C + 4.0, K.C + 5.0))} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Pl - 0.1} texto="¿Sin abejas, *hambre?*" />

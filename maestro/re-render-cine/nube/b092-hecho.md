@@ -1,0 +1,1 @@
+- amb-38-polinizadores: Plato: los nombres de cada alimento ya no se enciman al cambiar; chips y etiquetas de 19–25 px subidos a ≥26 px; las demás escenas ya cumplían (sujeto grande y centrado, revisado cuadro por cuadro).
