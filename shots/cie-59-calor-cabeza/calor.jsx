@@ -116,9 +116,9 @@ function Carpeta({ x, y, s = 1, abre = 0 }) {
     <path d="M -360 -260 L -360 280 L 360 280 L 360 -230 L -60 -230 L -100 -290 L -330 -290 Q -360 -290 -360 -260 Z" fill="#c99a4b" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
     <g transform={`rotate(${-abre * 8} -340 280)`}>
       <rect x={-330} y={-200} width={640} height={460} rx={8} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
-      {[0, 1, 2, 3].map((i) => <rect key={i} x={-280} y={40 + i * 50} width={i === 3 ? 300 : 540} height={14} rx={7} fill="#cfc6b6" />)}
-      <g transform="translate(-150 -60) scale(0.32)"><Persona x={0} yPies={240} ropa="traje" /></g>
-      {[60, 150, 240].map((xx) => <rect key={xx} x={xx - 60} y={-170} width={120} height={14} rx={7} fill="#cfc6b6" />)}
+      {/* belleza (2.ª pasada): el voluntario con traje grande en la hoja (antes un muñequito casi invisible) */}
+      {[0, 1, 2, 3, 4, 5].map((i) => <rect key={i} x={-20} y={-120 + i * 56} width={i === 5 ? 180 : 300} height={16} rx={8} fill="#cfc6b6" />)}
+      <g transform="translate(-180 -10) scale(0.5)"><Persona x={0} yPies={240} ropa="traje" /></g>
     </g>
     <path d={`M -360 -120 L 360 -120 L 360 280 L -360 280 Z`} fill="#e0b25e" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round"
       transform={`translate(0 ${abre * 330}) `} opacity={1 - abre * 0.2} />
@@ -201,7 +201,7 @@ function CalorCabeza() {
         <FondoLunares color={KC.yellow} />
         <Lienzo>
           <g transform={`translate(0 ${(1 - kprog(T, K.Ejercito - 0.2, K.Ejercito + 0.4, kEase.rebote)) * 900})`}>
-            <Carpeta x={540} y={900} s={1.2} abre={kprog(T, K.Ejercito + 0.8, K.Ejercito + 1.5, kEase.sale)} />
+            <Carpeta x={540} y={930} s={1.3} abre={kprog(T, K.Ejercito + 0.2, K.Ejercito + 0.9, kEase.sale)} />
           </g>
           <TextoSvg x={540} y={1220} tam={50} color={KC.paper} o={kprog(T, K.Ejercito + 0.5, K.Ejercito + 0.8)}>VIEJAS PRUEBAS MILITARES</TextoSvg>
           <Sello T={T} at={K.Ejercito + 1.7} x={780} y={637} texto="EE. UU." tam={95} rot={10} color={KC.blue} />
