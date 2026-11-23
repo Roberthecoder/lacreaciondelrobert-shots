@@ -155,7 +155,8 @@ function Hepatocito({ x, y, s = 1, T = 0, brilla = 0 }) {
 /* ---------- laboratorio y otros ---------- */
 function Hielera({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-170} y={-120} width={340} height={230} rx={24} fill="#f6f3ec" stroke={KC.ink} strokeWidth={9} />
+    <defs><linearGradient id="hielera-g" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stopColor="#d4dce4" /><stop offset="1" stopColor="#7f8c99" /></linearGradient></defs>
+    <rect x={-170} y={-120} width={340} height={230} rx={24} fill="url(#hielera-g)" stroke={KC.ink} strokeWidth={9} />
     <rect x={-185} y={-150} width={370} height={52} rx={18} fill={KC.blue} stroke={KC.ink} strokeWidth={9} />
     <rect x={-50} y={-176} width={100} height={30} rx={12} fill={KC.blue} stroke={KC.ink} strokeWidth={7} />
     <text x={0} y={30} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.red}>ÓRGANO</text>
@@ -174,11 +175,11 @@ function Calendario({ T, x, y, a, s = 1 }) {
   const hojas = 6, cada = 0.42;
   const n = kclamp(Math.floor((T - a) / cada), 0, hojas);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-170} y={-170} width={340} height={360} rx={24} fill="#fff" stroke={KC.ink} strokeWidth={9} />
+    <rect x={-170} y={-170} width={340} height={360} rx={24} fill="#27303c" stroke={KC.ink} strokeWidth={9} />
     <rect x={-170} y={-170} width={340} height={90} rx={24} fill={KC.red} stroke={KC.ink} strokeWidth={9} />
     {[-100, 100].map((k) => <rect key={k} x={k - 10} y={-200} width={20} height={60} rx={8} fill={KC.ink} />)}
     <text x={0} y={-108} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill="#fff">MES</text>
-    <text x={0} y={100} textAnchor="middle" style={{ font:`400 200px ${KF.titulo}`, stroke:'none' }} fill={OSC}>{Math.max(1, n)}</text>
+    <text x={0} y={100} textAnchor="middle" style={{ font:`400 200px ${KF.titulo}`, stroke:'none' }} fill="#f4f1ea">{Math.max(1, n)}</text>
     {Array.from({ length: hojas }, (_, i) => { const t0 = a + i * cada, f = kprog(T, t0, t0 + 0.35, kEase.suave);
       if (f <= 0 || f >= 1) return null;
       return <rect key={i} x={-170} y={-80} width={340} height={270} rx={18} fill="#fffdf4" stroke={KC.ink} strokeWidth={6} opacity={1 - f}
