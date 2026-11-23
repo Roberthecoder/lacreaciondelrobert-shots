@@ -300,8 +300,8 @@ function BoulardiiShot() {
           <Cien T={T} at={K.Es + 3.6} ver={K.Es + 0.4} x={594} y={860} casos={8.5} color={KC.orange} paso={44} />
           {T > K.Es + 2.6 && <text x={288} y={810} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>sin S. boulardii</text>}
           {T > K.Es + 3.6 && <text x={792} y={810} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>con S. boulardii</text>}
-          {T > K.Es + 4.4 && <text x={288} y={1360} textAnchor="middle" style={{ font:`400 84px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={3}>18.7 de 100</text>}
-          {T > K.Es + 5.2 && <text x={792} y={1360} textAnchor="middle" style={{ font:`400 84px ${KF.titulo}` }} fill={KC.orange} stroke={KC.ink} strokeWidth={3}>8.5 de 100</text>}
+          {T > K.Es + 4.4 && <text x={288} y={1360} textAnchor="middle" style={{ font:`400 58px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={3}>18.7 de 100</text>}
+          {T > K.Es + 5.2 && <text x={792} y={1360} textAnchor="middle" style={{ font:`400 58px ${KF.titulo}` }} fill={KC.orange} stroke={KC.ink} strokeWidth={3}>8.5 de 100</text>}
         </>)}
       </Escena>
       {/* 10 · lo que no: C. difficile en adultos */}
@@ -309,8 +309,8 @@ function BoulardiiShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          <Cdiff x={540 + Math.sin(T) * 10} y={700} s={1.7 * kprog(T, K.Li, K.Li + 0.5, kEase.rebote)} rot={-6} />
-          <DZ k={1.15} de={[540, 950]} a={[540, 1110]}><Intervalo T={T} at={K.Li + 1.4} x={160} y={950} /></DZ>
+          <Cdiff x={540 + Math.sin(T) * 10} y={840} s={1.7 * kprog(T, K.Li, K.Li + 0.5, kEase.rebote)} rot={-6} />
+          <DZ k={1.1} de={[540, 950]} a={[540, 1150]}><Intervalo T={T} at={K.Li + 1.4} x={160} y={950} /></DZ>
         </>)}
       </Escena>
       {/* 11 · el riesgo raro: pacientes graves con catéter; abrir un sobre deja levadura en las manos */}
@@ -318,12 +318,12 @@ function BoulardiiShot() {
         <FondoLunares color="#bfe9ff" />
         {fsvg(<>
           <DZ k={1.2} de={[560, 800]} a={[540, 1000]}><Hospital T={T} x={560} y={1040} s={0.95} /></DZ>
-          {[[130, 560], [300, 560]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y}) scale(1.2)`}><ellipse rx={62} ry={44} fill={BC.piel} stroke={KC.ink} strokeWidth={6} />
+          {[[130, 670], [300, 670]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y}) scale(1.2)`}><ellipse rx={62} ry={44} fill={BC.piel} stroke={KC.ink} strokeWidth={6} />
             {T > K.R + 3.0 && [0, 1, 2, 3].map((k) => <circle key={k} cx={-26 + k * 17} cy={-10 + (k % 2) * 14} r={7} fill={BC.levadura2} stroke={KC.ink} strokeWidth={2} opacity={kprog(T, K.R + 3.0 + k * 0.2, K.R + 3.3 + k * 0.2)} />)}</g>)}
-          <g transform={`translate(215 370) rotate(-6)`}><Sobre T={T} x={0} y={0} s={0.66} abre={kprog(T, K.R + 2.2, K.R + 2.8, kEase.sale)} /></g>
+          <g transform={`translate(215 480) rotate(-6)`}><Sobre T={T} x={0} y={0} s={0.66} abre={kprog(T, K.R + 2.2, K.R + 2.8, kEase.sale)} /></g>
           {T > K.R + 2.6 && Array.from({ length: 20 }, (_, i) => { const gg = krng(i + 40); const u = kprog(T, K.R + 2.6 + gg() * 0.8, K.R + 4.4 + gg() * 0.8, kEase.suave);
-            const al = i % 4 === 0, tx = al ? 608 : 80 + gg() * 270, ty = al ? 1094 : 525 + gg() * 30;
-            return <circle key={i} cx={klerp(215, tx, u) + Math.sin(T * 3 + i) * 14 * (1 - u)} cy={klerp(240, ty, u) - Math.sin(u * Math.PI) * (al ? 200 : 60)} r={6} fill={BC.levadura2} stroke={KC.ink} strokeWidth={2} />; })}
+            const al = i % 4 === 0, tx = al ? 608 : 80 + gg() * 270, ty = al ? 1094 : 635 + gg() * 30;
+            return <circle key={i} cx={klerp(215, tx, u) + Math.sin(T * 3 + i) * 14 * (1 - u)} cy={klerp(350, ty, u) - Math.sin(u * Math.PI) * (al ? 200 : 60)} r={6} fill={BC.levadura2} stroke={KC.ink} strokeWidth={2} />; })}
         </>)}
       </Escena>
       {/* 12 · no se queda */}
@@ -365,8 +365,8 @@ function BoulardiiShot() {
       <Etq T={T} at={K.L + 1.4} until={K.Es - 0.3} x={60} y={1490} texto="levadura ≈ 5 µm · bacteria ≈ 1 µm" tam={28} color={KC.gold2} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.4} anio="2015" quien="Szajewska y Kołodziej · Varsovia" revista="21 ensayos · 4,780 personas · Aliment Pharmacol Ther" y={560} />
       <Chip T={T} at={K.Es + 2.6} until={K.Li - 0.3} texto="en gente con antibióticos" x={540} y={700} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.Li + 0.5} until={K.R - 0.3} x={60} y={470} texto="Clostridium difficile" it tam={34} color={KC.texto} />
-      <Chip T={T} at={K.Li + 2.2} until={K.R - 0.3} texto="adultos: sin efecto claro" x={540} y={1320} tam={36} borde={KC.red} />
+      <Etq T={T} at={K.Li + 0.5} until={K.R - 0.3} x={60} y={620} texto="Clostridium difficile" it tam={34} color={KC.texto} />
+      <Chip T={T} at={K.Li + 2.2} until={K.R - 0.3} texto="adultos: sin efecto claro" x={540} y={1420} tam={36} borde={KC.red} />
       <Chip T={T} at={K.R + 0.5} until={K.R + 3.0} texto="rara vez · pacientes graves" x={540} y={1460} tam={34} borde={KC.red} />
       <Etq T={T} at={K.R + 1.0} until={K.R + 3.0} x={640} y={1040} texto="catéter en la vena" tam={26} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.R + 3.3} until={K.N - 0.3} anio="2000" quien="París · 4 casos" revista="Hennequin et al. · Eur J Clin Microbiol Infect Dis" x={650} y={460} />
