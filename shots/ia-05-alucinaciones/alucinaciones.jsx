@@ -21,7 +21,11 @@ function Examen({ T, a, x = 540, y = 930 }) {
 function Tema({ T, at, x, y, texto, color, icono }) {
   if (T < at) return null; const e = kprog(T, at, at + 0.4, kEase.rebote);
   return <g transform={`translate(${x} ${y}) scale(${e})`}>
+    <ellipse cx={8} cy={128} rx={104} ry={18} fill="#000" opacity=".28" />
     <circle r={120} fill={color} stroke={KC.ink} strokeWidth={9} />
+    {/* belleza: volumen (luz arriba-izquierda, sombra abajo-derecha) y un brillo chico */}
+    <circle r={116} fill="url(#al-vol)" />
+    <ellipse cx={-48} cy={-62} rx={34} ry={20} fill="#fff" opacity=".35" transform="rotate(-35 -48 -62)" />
     <text y={30} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.ink}>{icono}</text>
     <text y={175} textAnchor="middle" style={{ font:`900 42px ${KF.texto}` }} fill={KC.ink}>{texto}</text>
   </g>;
@@ -36,7 +40,12 @@ function Chicle({ x, y, s = 1 }) {
 // Cabeza y torso de perfil (para tragar el chicle).
 function Torso({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -170 520 L -170 120 Q -170 40 -90 30 L -40 30 L -40 -40 Q -140 -60 -140 -170 Q -140 -300 -10 -300 Q 110 -300 110 -180 Q 110 -120 80 -90 L 100 -40 L 60 -30 L 60 30 L 110 30 Q 190 40 190 120 L 190 520 Z" fill="#f1b48f" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    <defs><linearGradient id="al-piel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#f6c7a6" /><stop offset=".55" stopColor="#e9a982" /><stop offset="1" stopColor="#c98764" /></linearGradient></defs>
+    <path d="M -170 520 L -170 120 Q -170 40 -90 30 L -40 30 L -40 -40 Q -140 -60 -140 -170 Q -140 -300 -10 -300 Q 110 -300 110 -180 Q 110 -120 80 -90 L 100 -40 L 60 -30 L 60 30 L 110 30 Q 190 40 190 120 L 190 520 Z" fill="url(#al-piel)" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    {/* belleza: sombra suave del cuello y de la mandíbula, y el brillo de la frente */}
+    <path d="M -40 -40 L -40 30 L 60 30 L 60 -30 Q 10 -10 -40 -40 Z" fill="#a8664a" opacity=".35" />
+    <ellipse cx={-50} cy={-220} rx={46} ry={26} fill="#fff" opacity=".22" transform="rotate(-25 -50 -220)" />
+    <path d="M -130 140 Q -130 80 -80 70" stroke="#fff" strokeWidth={10} opacity=".18" fill="none" strokeLinecap="round" />
     <circle cx={50} cy={-190} r={10} fill={KC.ink} />
   </g>;
 }
@@ -58,8 +67,9 @@ function BarrasH({ T, at, until, filas, top = 740 }) {
     {filas.map((f, i) => <div key={i} style={{ marginBottom:26 }}>
       <div style={{ font:`900 40px ${KF.texto}`, color:KC.ink, marginBottom:6 }}>{f.etiqueta}</div>
       <div style={{ display:'flex', alignItems:'center', gap:18 }}>
-        <div style={{ width:760 * f.valor / 100 * g, height:76, background:f.color, border:`6px solid ${KC.ink}`, borderRadius:16 }}></div>
-        <div style={{ font:`400 76px ${KF.titulo}`, color:f.color, WebkitTextStroke:`3px ${KC.ink}` }}>{Math.round(f.valor * g)} %</div>
+        {/* belleza: la barra cabe con su porcentaje en un renglón (antes «94» y «%» se partían) y lleva volumen */}
+        <div style={{ width:680 * f.valor / 100 * g, height:76, background:`linear-gradient(180deg, rgba(255,255,255,.28), rgba(255,255,255,0) 45%, rgba(0,0,0,.22)), ${f.color}`, border:`6px solid ${KC.ink}`, borderRadius:16, boxShadow:`0 0 26px ${f.color}55` }}></div>
+        <div style={{ font:`400 76px ${KF.titulo}`, color:f.color, WebkitTextStroke:`3px ${KC.ink}`, whiteSpace:'nowrap' }}>{Math.round(f.valor * g)} %</div>
       </div>
     </div>)}
   </div>;
@@ -96,6 +106,7 @@ function Alucinaciones() {
       <Escena T={T} a={K.Te} b={K.Ch}>
         <FondoLunares color={KC.cyan} />
         {svg(<g transform="translate(540 900) scale(1.35) translate(-540 -780)">
+          <defs><radialGradient id="al-vol" cx=".35" cy=".3" r=".8"><stop offset="0" stopColor="#fff" stopOpacity=".22" /><stop offset=".55" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".32" /></radialGradient></defs>
           <Tema T={T} at={K.Te + 0.3} x={300} y={600} texto="salud" color={KC.pink} icono="+" />
           <Tema T={T} at={K.Te + 0.8} x={780} y={600} texto="leyes" color={KC.yellow} icono="§" />
           <Tema T={T} at={K.Te + 1.3} x={300} y={920} texto="dinero" color={KC.mint} icono="$" />
@@ -155,7 +166,7 @@ function Alucinaciones() {
       <Escena T={T} a={K.Co} b={K.C}>
         <FondoLunares color={KC.pink} />
         <CelularChat T={T} x={500} y={1010} s={1.0} tam={38} mensajes={[{ at: K.Co + 0.2, yo: true, texto: '¿Es cierto que…?' }, { at: K.Co + 1.0, yo: false, texto: 'Sí, totalmente seguro.' }]} />
-        {svg(<g transform={`translate(${klerp(1260, 850, kprog(T, K.Co + 1.6, K.Co + 2.4, kEase.sale))} 800) rotate(-20) scale(1.4)`}><circle r={90} fill="rgba(191,239,255,.5)" stroke={KC.ink} strokeWidth={12} /><rect x={70} y={-16} width={150} height={32} rx={14} fill={KC.ink} transform="rotate(40)" /></g>)}
+        {<div style={{ position:'absolute', inset:0, zIndex:25 }}>{svg(<g transform={`translate(${klerp(1260, 560, kprog(T, K.Co + 1.6, K.Co + 2.4, kEase.sale))} 760) rotate(-20) scale(1.4)`}>{/* belleza: la lupa llega sobre la respuesta, dentro del cuadro (antes medio fuera a la derecha) */}<circle r={90} fill="rgba(191,239,255,.22)" stroke={KC.ink} strokeWidth={12} /><ellipse cx={-34} cy={-38} rx={26} ry={14} fill="#fff" opacity=".35" transform="rotate(-35 -34 -38)" /><rect x={70} y={-16} width={150} height={32} rx={14} fill={KC.ink} transform="rotate(40)" /></g>)}</div>}
       </Escena>
       {/* 12 · cierre: regresa la comparación del inicio */}
       <Escena T={T} a={K.C} b={FIN}>

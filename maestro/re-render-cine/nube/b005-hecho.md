@@ -1,0 +1,1 @@
+- ia-05-alucinaciones: gancho y cierre: barras con volumen y el «94 %» ya cabe en un renglón; temas: círculos con volumen, brillo y sombra; chicle y pregunta: torso con degradado de piel, sombra del cuello y brillos; consejo: la lupa llega sobre la respuesta, dentro del cuadro y encima del celular (antes medio fuera). Auditores: sin láminas, encuadre bien.
