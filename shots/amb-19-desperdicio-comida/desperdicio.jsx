@@ -185,10 +185,23 @@ function DesperdicioShot() {
       {/* 5 · seis de cada diez kilos, en casa */}
       <Escena T={T} a={K.Cs} b={K.Ki}>
         <FondoLunares color={KC.mint} />
-        {svg(<g transform="translate(0 190)">{Array.from({ length: 10 }, (_, i) => { const e = kilo(i); return <g key={i} transform={`translate(${135 + i * 90} 820) scale(${e})`}>
-            <rect x={-40} y={-90} width={80} height={130} rx={12} fill={colK(i)} stroke={KC.ink} strokeWidth={6} /><text y={-6} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>1 kg</text></g>; })}
-          <g opacity={kprog(T, K.Cs + 1.4, K.Cs + 1.8)}>
-            <path d="M 95 640 h 530" stroke={KC.ink} strokeWidth={6} /><path d="M 280 600 L 360 530 L 440 600 Z" fill={KC.orange} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" /><rect x={300} y={600} width={120} height={80} fill="#fff" stroke={KC.ink} strokeWidth={6} /><rect x={345} y={630} width={30} height={50} fill={KC.orange} stroke={KC.ink} strokeWidth={4} />
+        {/* belleza: los 10 kilos son columnas altas con volumen y la casa grande encima de sus 6 (antes una franja chica con una casita) */}
+        {svg(<g transform="translate(0 130)"><defs><linearGradient id="kgVol" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#fff" stopOpacity=".28" /><stop offset=".4" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".25" /></linearGradient></defs>
+          <ellipse cx={540} cy={1180} rx={500} ry={26} fill="#000" opacity=".3" />
+          {Array.from({ length: 10 }, (_, i) => { const e = kilo(i); return <g key={i} transform={`translate(${135 + i * 90} 1160) scale(1 ${e})`}>
+            <rect x={-40} y={-270} width={80} height={270} rx={12} fill={colK(i)} stroke={KC.ink} strokeWidth={6} /><rect x={-36} y={-266} width={72} height={262} rx={10} fill="url(#kgVol)" />
+            <text y={-122} transform="rotate(-90 0 -135)" textAnchor="middle" style={{ font:`900 40px ${KF.texto}`, letterSpacing:2 }} fill="#0b1020" opacity={kprog(e, 0.8, 1)}>1 kg</text></g>; })}
+          <g opacity={kprog(T, K.Cs + 1.4, K.Cs + 1.8)} transform={`translate(0 ${(1 - kprog(T, K.Cs + 1.4, K.Cs + 2.0, kEase.rebote)) * -60})`}>
+            <path d="M 95 870 h 530" stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
+            <ellipse cx={360} cy={850} rx={190} ry={16} fill="#000" opacity=".3" />
+            <path d="M 170 640 L 360 470 L 550 640 Z" fill={KC.orange} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+            <path d="M 200 628 L 360 486 L 360 640 L 200 640 Z" fill="#fff" opacity=".14" />
+            <rect x={210} y={640} width={300} height={210} fill="#f4efe6" stroke={KC.ink} strokeWidth={8} />
+            <rect x={214} y={644} width={292} height={202} fill="url(#kgVol)" />
+            <rect x={330} y={720} width={64} height={130} rx={6} fill={KC.orange} stroke={KC.ink} strokeWidth={6} /><circle cx={380} cy={790} r={6} fill={KC.ink} />
+            <rect x={240} y={680} width={66} height={60} rx={6} fill="#ffd98a" stroke={KC.ink} strokeWidth={5} /><path d="M 273 680 v 60 M 240 710 h 66" stroke={KC.ink} strokeWidth={4} />
+            <rect x={420} y={680} width={66} height={60} rx={6} fill="#ffd98a" stroke={KC.ink} strokeWidth={5} /><path d="M 453 680 v 60 M 420 710 h 66" stroke={KC.ink} strokeWidth={4} />
+            <rect x={450} y={520} width={40} height={80} fill="#9a6a4a" stroke={KC.ink} strokeWidth={6} />
           </g></g>)}
       </Escena>
       {/* 6 · 79 kg por persona al año, en casa */}
@@ -245,10 +258,10 @@ function DesperdicioShot() {
       <Etq T={T} at={K.Ca + 1.3} until={K.P - 0.25} x={630} y={670} texto="huesos" tam={34} color={KC.ink} />
       <Etq T={T} at={K.Ca + 1.6} until={K.P - 0.25} x={630} y={750} texto="+ comida buena" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Ca + 0.6} until={K.P - 0.25} texto="se cuentan partes no comestibles" y={1440} x={540} tam={32} borde={KC.yellow} />
-      <Etq T={T} at={K.Cs + 2.0} until={K.Ki - 0.2} x={385} y={1150} texto="casa 60 %" lado="izq" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Cs + 2.3} until={K.Ki - 0.2} x={630} y={1200} texto="restaurantes 28 %" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Cs + 2.6} until={K.Ki - 0.2} x={945} y={1250} texto="súper 12 %" lado="izq" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Cs + 0.3} until={K.Ki - 0.2} texto="de cada 10 kilos tirados" y={600} x={540} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.Cs + 2.0} until={K.Ki - 0.2} x={385} y={1370} texto="casa 60 %" lado="izq" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Cs + 2.3} until={K.Ki - 0.2} x={630} y={1425} texto="restaurantes 28 %" lado="izq" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Cs + 2.6} until={K.Ki - 0.2} x={945} y={1480} texto="súper 12 %" lado="izq" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Cs + 0.3} until={K.Ki - 0.2} texto="de cada 10 kilos tirados" y={400} x={540} tam={34} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Ki + 0.3} until={K.Mx - 0.2} valor={79} dur={2.1} sufijo=" kg" etiqueta="por persona al año" x={540} y={400} tam={150} color={KC.orange} />
       <Chip T={T} at={K.Ki + 1.2} until={K.Mx - 0.2} texto="en casa · promedio mundial · 2022" y={1440} x={540} tam={34} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Mx + 0.6} until={K.E - 0.2} valor={105} desde={79} dur={1.4} sufijo=" kg" etiqueta="México, por persona al año" x={600} y={1250} tam={150} color={KC.yellow} />

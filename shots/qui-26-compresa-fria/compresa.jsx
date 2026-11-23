@@ -47,9 +47,9 @@ function Compresa({ x, y, s = 1, rot = 0, frio = 0, corte = 0, rompe = 0, disuel
     </g>}
     {corte < 1 && <g opacity={1 - corte}>
       <rect x={-W + 30} y={-56} width={2 * W - 60} height={112} rx={18} fill={KC.blue} stroke={KC.ink} strokeWidth={6} />
-      <text x={30} y={18} textAnchor="middle" style={{ font:`400 52px ${KF.titulo}` }} fill="#fff">COMPRESA FRÍA</text>
-      <g transform="translate(-150 0)" stroke="#fff" strokeWidth={7} strokeLinecap="round">
-        {[0, 60, 120].map((a) => <line key={a} x1={-30 * Math.cos(a * Math.PI / 180)} y1={-30 * Math.sin(a * Math.PI / 180)} x2={30 * Math.cos(a * Math.PI / 180)} y2={30 * Math.sin(a * Math.PI / 180)} />)}
+      <text x={42} y={14} textAnchor="middle" style={{ font:`400 37px ${KF.titulo}` }} fill="#fff">COMPRESA FRÍA</text>
+      <g transform="translate(-154 0)" stroke="#fff" strokeWidth={6} strokeLinecap="round">
+        {[0, 60, 120].map((a) => <line key={a} x1={-22 * Math.cos(a * Math.PI / 180)} y1={-22 * Math.sin(a * Math.PI / 180)} x2={22 * Math.cos(a * Math.PI / 180)} y2={22 * Math.sin(a * Math.PI / 180)} />)}
       </g>
     </g>}
     {roto > 0 && <path d={`M ${W - 10} ${-H + 20} L ${W - 60} ${-H + 60} L ${W - 30} ${-H + 90} L ${W - 80} ${-H + 130}`} fill="none" stroke={KC.ink} strokeWidth={8} opacity={roto} />}
@@ -208,8 +208,8 @@ function Compresa26() {
       <Escena T={T} a={K.De} b={K.Te}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          {(() => { const ap = kprog(T, K.De + 0.6, K.De + 1.2, kEase.sale), tilt = 14 * kprog(T, K.De + 2.0, K.De + 2.9, kEase.rebote || kEase.sale);
-            return <g opacity={ap}>
+          {(() => { const ap = kprog(T, K.De - 0.1, K.De + 0.4, kEase.sale), tilt = 14 * kprog(T, K.De + 2.0, K.De + 2.9, kEase.rebote || kEase.sale);
+            return <g opacity={ap} transform="translate(540 960) scale(1.06) translate(-540 -875)">
               <rect x={70} y={620} width={440} height={400} rx={30} fill="rgba(255,255,255,.06)" stroke={KC.texto} strokeWidth={5} />
               <rect x={570} y={620} width={440} height={400} rx={30} fill="rgba(127,200,255,.25)" stroke={AGUA} strokeWidth={5} />
               {Array.from({ length: 12 }, (_, i) => <Ion key={i} x={150 + (i % 4) * 92} y={710 + Math.floor(i / 4) * 110} tipo={(i % 4 + Math.floor(i / 4)) % 2 ? 'no3' : 'nh4'} s={0.85} />)}
@@ -267,8 +267,8 @@ function Compresa26() {
       <Escena T={T} a={K.Ur} b={K.Ci}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Molecula {...UREA} x={300} y={960} s={2.0} rot={Math.sin(T) * 6} o={kprog(T, K.Ur, K.Ur + 0.5)} />
-          <text x={625} y={990} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Ur + 2.2, K.Ur + 2.6)}>=</text>
+          <Molecula {...UREA} x={345} y={960} s={1.85} rot={Math.sin(T) * 6} o={kprog(T, K.Ur, K.Ur + 0.5)} />
+          <text x={640} y={990} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Ur + 2.2, K.Ur + 2.6)}>=</text>
           <g opacity={kprog(T, K.Ur + 2.4, K.Ur + 3.0)}>
             <Rinon x={760} y={790} s={1.2} flip={-1} /><Rinon x={940} y={790} s={1.2} />
             <Frasco x={850} y={1150} s={1.35} />

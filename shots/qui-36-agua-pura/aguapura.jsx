@@ -73,17 +73,29 @@ function Suelo({ x, y, s = 1 }) {
     <path d="M 0 -30 Q -10 10 -30 40 M 0 -30 Q 15 5 35 30" stroke="#f2e3c6" strokeWidth={5} fill="none" />
   </g>;
 }
+// Pase de belleza: luz de volumen (claro arriba-izquierda, sombra abajo-derecha) para las piezas planas.
+function QpDefs() {
+  return <defs><radialGradient id="qp-luz" cx=".32" cy=".26" r=".85">
+    <stop offset="0" stopColor="#ffffff" stopOpacity=".42" /><stop offset=".42" stopColor="#ffffff" stopOpacity="0" />
+    <stop offset=".78" stopColor="#000000" stopOpacity=".1" /><stop offset="1" stopColor="#000000" stopOpacity=".34" />
+  </radialGradient></defs>;
+}
 function Persona({ x, y, s = 1, color = '#f1b48f' }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <QpDefs />
     <circle cx={0} cy={-300} r={90} fill={color} stroke={KC.ink} strokeWidth={10} />
-    <path d="M -150 300 L -150 -80 Q -150 -180 0 -180 Q 150 -180 150 -80 L 150 300 Z" fill={KC.blue} stroke={KC.ink} strokeWidth={10} />
+    <circle cx={0} cy={-300} r={86} fill="url(#qp-luz)" />
+    <path d="M -150 300 L -150 -80 Q -150 -180 0 -180 Q 150 -180 150 -80 L 150 300 Z" fill={mixHex(KC.blue, '#1b2340', 0.3)} stroke={KC.ink} strokeWidth={10} />
+    <path d="M -150 300 L -150 -80 Q -150 -180 0 -180 Q 150 -180 150 -80 L 150 300 Z" fill="url(#qp-luz)" />
     <path d="M 130 -120 Q 260 -110 300 -230" stroke={color} strokeWidth={60} fill="none" strokeLinecap="round" />
     <path d="M 130 -120 Q 260 -110 300 -230" stroke={KC.ink} strokeWidth={70} fill="none" strokeLinecap="round" opacity={0.0} />
   </g>;
 }
 function Enchufe({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <QpDefs />
     <rect x={-80} y={-110} width={160} height={220} rx={22} fill="#fffaf0" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-76} y={-106} width={152} height={212} rx={19} fill="url(#qp-luz)" />
     {[-45, 45].map((dy) => <g key={dy}><rect x={-30} y={dy - 22} width={12} height={36} rx={4} fill={KC.ink} /><rect x={18} y={dy - 22} width={12} height={36} rx={4} fill={KC.ink} /></g>)}
   </g>;
 }
@@ -96,8 +108,11 @@ function Lavabo({ x, y, s = 1, T, gotea = false }) {
 }
 function Secadora({ x, y, s = 1, rot = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
+    <QpDefs />
     <path d="M -120 -50 L 80 -50 Q 120 -50 120 0 Q 120 50 80 50 L -120 50 Z" fill={KC.pink} stroke={KC.ink} strokeWidth={8} />
+    <path d="M -120 -50 L 80 -50 Q 120 -50 120 0 Q 120 50 80 50 L -120 50 Z" fill="url(#qp-luz)" />
     <rect x={-60} y={40} width={60} height={150} rx={18} fill={KC.pink} stroke={KC.ink} strokeWidth={8} />
+    <rect x={-57} y={43} width={54} height={144} rx={16} fill="url(#qp-luz)" />
     <rect x={120} y={-36} width={30} height={72} rx={6} fill="#555" stroke={KC.ink} strokeWidth={6} />
     <path d="M -30 190 Q -40 260 -140 250" stroke={KC.ink} strokeWidth={8} fill="none" />
   </g>;
@@ -198,10 +213,10 @@ function AguaPura() {
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
           {/* pase a mano: el sujeto (el vaso con agua de la llave, con iones) está en pantalla desde el inicio */}
-          <g opacity={kprog(T, K.Re - 0.3, K.Re + 0.3)}><Barra y={1260} /><VasoElectrodos T={T} x={540} y={1250} s={1.05} liquido={AGUA_LLAVE} iones={0.5} seed={8} /></g>
+          <g opacity={kprog(T, K.Re - 0.3, K.Re + 0.3)}><Barra y={1300} /><VasoElectrodos T={T} x={540} y={1290} s={1.4} liquido={AGUA_LLAVE} iones={0.5} seed={8} /></g>
           {[['llave', 200, 0], ['alberca', 540, 1], ['suelo', 880, 2]].map(([t, x, k]) => { const at = K.Re + 0.3 + k * 1.7, e = kprog(T, at, at + 0.4, kEase.rebote);
             if (T < at) return null;
-            return <g key={t} transform={`translate(${x} ${600}) scale(${e * 0.88})`}>
+            return <g key={t} transform={`translate(${x} ${540}) scale(${e * 0.88})`}>
               <circle r={150} fill="#22304a" stroke={KC.ink} strokeWidth={8} />
               {k === 0 && <Llave x={-20} y={0} s={1.2} T={T} />}
               {k === 1 && <Alberca x={0} y={20} s={1.1} T={T} />}

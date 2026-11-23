@@ -488,8 +488,8 @@ function PudricionSecaShot() {
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
           <Interrogacion T={T} x={300} y={1320} tam={600} />
-          <g transform={`translate(540 ${720 + Math.sin(T * 10) * 4})`} opacity={kprog(T, K.P, K.P + 0.3)}>
-            <text textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} paintOrder="stroke">¿DE DÓNDE SALIÓ?</text>
+          <g transform={`translate(540 ${560 + Math.sin(T * 10) * 4})`} opacity={kprog(T, K.P, K.P + 0.3)}>
+            <text textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={10} paintOrder="stroke">¿DE DÓNDE SALIÓ?</text>
           </g>
         </>)}
       </Escena>

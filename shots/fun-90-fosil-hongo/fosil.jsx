@@ -180,7 +180,7 @@ function FosilShot() {
         <Ambiente T={T} n={22} />
         {fsvg(<g transform={`translate(540 ${klerp(1010, 760, kprog(T, K.Q, K.Q + 0.8))}) scale(${klerp(0.44, 1.1, zoomMicro) * klerp(1, 0.72 / 1.1, kprog(T, K.Q, K.Q + 0.8))})`}>
           <circle r={470} fill="#1d2233" stroke="#3a4560" strokeWidth={6} />
-          <Filamentos T={T} p={kprog(T, K.M + 0.3, K.M + 2.6)} color={T > K.Q + 0.4 ? mixHex(FO.ambar, KC.gold2, 0.5 + 0.5 * Math.sin(T * 5)) : FO.ambar} />
+          <Filamentos T={T} p={0.3 + 0.7 * kprog(T, K.M, K.M + 2.2)} color={T > K.Q + 0.4 ? mixHex(FO.ambar, KC.gold2, 0.5 + 0.5 * Math.sin(T * 5)) : FO.ambar} />
         </g>)}
         {fsvg(<g opacity={kprog(T, K.Q + 1.2, K.Q + 1.8)}>
           <Champinon x={800} y={1430} s={1.15} />
@@ -232,7 +232,7 @@ function FosilShot() {
       <Escena T={T} a={K.L} b={K.C} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.dark }}></div>
         <Ambiente T={T} n={16} />
-        {fsvg(<BurbujaLava T={T} x={540} y={940} r={400} p={kprog(T, K.L + 0.6, K.L + 3.0)} />)}
+        {fsvg(<BurbujaLava T={T} x={540} y={960} r={420} p={0.25 + 0.75 * kprog(T, K.L + 0.1, K.L + 2.6)} />)}
       </Escena>
       {/* 12 · cierre: la misma mano y la misma roca, la manchita encendida */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="45% 50%">

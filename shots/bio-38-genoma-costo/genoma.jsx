@@ -207,33 +207,33 @@ function Genoma() {
       <Escena T={T} a={K.Proyecto} b={K.Costo} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          {[0, 1, 2].map((i) => <Secuenciador key={i} T={T} x={220 + i * 320} y={1050} s={1.1} seed={i + 1} />)}
-          <Zm k={1.25} dx={-135} dy={-195}>
+          {[0, 1, 2].map((i) => <Secuenciador key={i} T={T} x={220 + i * 320} y={1160} s={1.1} seed={i + 1} />)}
+          <Zm k={1.3} dx={-162} dy={-130}>
           <rect x={360} y={420} width={360} height={260} rx={24} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
           <rect x={360} y={420} width={360} height={70} rx={24} fill={KC.red} stroke={KC.ink} strokeWidth={8} />
           <text x={540} y={640} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.ink}>{Math.round(klerp(1990, 2003, kprog(T, K.Proyecto + 0.4, K.Proyecto + 3.2)))}</text>
           </Zm>
         </SvgCapa>
-        <Chip T={T} at={K.Proyecto + 0.5} until={K.Costo - 0.2} texto="Proyecto Genoma Humano · 13 años" y={1370} tam={40} borde={KC.blue} />
+        <Chip T={T} at={K.Proyecto + 0.5} until={K.Costo - 0.2} texto="Proyecto Genoma Humano · 13 años" y={1470} tam={40} borde={KC.blue} />
       </Escena>
       {/* 4 · 2,700 millones para todo el proyecto */}
       <Escena T={T} a={K.Costo} b={K.Precio2001} zoom={0.04}>
         <FondoLunares color={KC.leaf} />
-        <SvgCapa><Zm k={1.4} dx={-405} dy={-500}>
+        <SvgCapa><Zm k={1.4} dx={-405} dy={-320}>
           {Array.from({ length: 4 }, (_, c) => Array.from({ length: 14 }, (_, r) => { const t0 = K.Costo + 0.2 + (c * 14 + r) * 0.045; if (T < t0) return null;
             const cae = kprog(T, t0, t0 + 0.3, kEase.sale); return <g key={c + '-' + r} transform={`translate(${450 + c * 150} ${klerp(300, 1150 - r * 40, cae)})`}>
               <rect x={-70} y={-18} width={140} height={36} rx={5} fill="#9fe39a" stroke={KC.ink} strokeWidth={4} />
               <circle r={11} fill="none" stroke="#2f7a34" strokeWidth={4} /></g>; }))}
         </Zm></SvgCapa>
-        <NumeroGigante T={T} at={K.Costo + 0.3} until={K.Precio2001 - 0.3} valor={2700} dur={1.6} prefijo="$" sufijo=" millones" etiqueta="EE. UU., todo el proyecto" y={1280} tam={110} />
-        <Chip T={T} at={K.Costo + 1.8} until={K.Precio2001 - 0.3} texto="mapas · tecnología · otros organismos" y={1420} tam={30} borde={KC.gold} />
+        <NumeroGigante T={T} at={K.Costo + 0.3} until={K.Precio2001 - 0.3} valor={2700} dur={1.6} prefijo="$" sufijo=" millones" etiqueta="EE. UU., todo el proyecto" y={1400} tam={110} />
+        <Chip T={T} at={K.Costo + 1.8} until={K.Precio2001 - 0.3} texto="mapas · tecnología · otros organismos" y={1530} tam={30} borde={KC.gold} />
       </Escena>
       {/* 5 · 2001: casi 100 millones por genoma */}
       <Escena T={T} a={K.Precio2001} b={K.Pregunta} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
-        <SvgCapa><Grafica T={T} p={1 / COSTO.length} y={450} /></SvgCapa>
-        <Etq T={T} at={K.Precio2001 + 0.5} until={K.Pregunta - 0.2} x={345} y={618} texto="sept. 2001 · ≈ $95 millones" tam={32} color={KC.ink} />
-        <Chip T={T} at={K.Precio2001 + 0.6} until={K.Pregunta - 0.2} texto="un solo genoma" y={1330} tam={44} borde={KC.pink} />
+        <SvgCapa><Grafica T={T} p={1 / COSTO.length} y={650} /></SvgCapa>
+        <Etq T={T} at={K.Precio2001 + 0.5} until={K.Pregunta - 0.2} x={345} y={818} texto="sept. 2001 · ≈ $95 millones" tam={32} color={KC.ink} />
+        <Chip T={T} at={K.Precio2001 + 0.6} until={K.Pregunta - 0.2} texto="un solo genoma" y={1500} tam={44} borde={KC.pink} />
       </Escena>
       {/* 6 · re-gancho: ¿y el tuyo? */}
       <Escena T={T} a={K.Pregunta} b={K.Antes} zoom={0.06}>
@@ -243,9 +243,9 @@ function Genoma() {
       {/* 7 · antes: cada pedacito en su tubito */}
       <Escena T={T} a={K.Antes} b={K.Paralelo} zoom={0.04}>
         <FondoMarca patron="oscuro" />
-        <SvgCapa><Capilares T={T} t0={K.Antes} x0={144} y0={390} paso={72} alto={800} /></SvgCapa>
-        <Chip T={T} at={K.Antes + 0.5} until={K.Paralelo - 0.2} texto="≈ 100 tubitos, un pedacito en cada uno" y={1400} tam={32} borde="#bfe8ff" />
-        <Etq T={T} at={K.Antes + 1.2} until={K.Paralelo - 0.2} x={140} y={1265} texto="secuenciación de Sanger" tam={30} color={KC.gold2} />
+        <SvgCapa><Capilares T={T} t0={K.Antes} x0={144} y0={480} paso={72} alto={820} /></SvgCapa>
+        <Chip T={T} at={K.Antes + 0.5} until={K.Paralelo - 0.2} texto="≈ 100 tubitos, un pedacito en cada uno" y={1460} tam={32} borde="#bfe8ff" />
+        <Etq T={T} at={K.Antes + 1.2} until={K.Paralelo - 0.2} x={140} y={1365} texto="secuenciación de Sanger" tam={30} color={KC.gold2} />
       </Escena>
       {/* 8 · millones a la vez */}
       <Escena T={T} a={K.Paralelo} b={K.Hoy} zoom={0.03}>

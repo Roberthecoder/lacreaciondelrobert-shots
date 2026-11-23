@@ -144,20 +144,32 @@ function Lata({ x, y, s = 1, T = 0, gira = 1 }) {
   const sx = 0.35 + 0.65 * Math.abs(Math.cos((1 - gira) * Math.PI * 0.5));
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <g transform={`scale(${sx} 1)`}>
-      <rect x={-150} y={-280} width={300} height={560} rx={40} fill="#e9eef5" stroke={KC.ink} strokeWidth={9} />
-      <rect x={-150} y={-200} width={300} height={400} fill={KC.red} stroke={KC.ink} strokeWidth={7} />
+      <defs><linearGradient id="tz-lata" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#ffffff" /><stop offset="0.35" stopColor="#e9eef5" /><stop offset="1" stopColor="#9aa3b2" /></linearGradient>
+        <linearGradient id="tz-rojo" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#e8524a" /><stop offset="0.4" stopColor="#d33a33" /><stop offset="1" stopColor="#8e1f1c" /></linearGradient></defs>
+      <rect x={-150} y={-280} width={300} height={560} rx={40} fill="url(#tz-lata)" stroke={KC.ink} strokeWidth={9} />
+      <rect x={-150} y={-200} width={300} height={400} fill="url(#tz-rojo)" stroke={KC.ink} strokeWidth={7} />
       <ellipse cx={0} cy={-280} rx={150} ry={34} fill="#cfd6df" stroke={KC.ink} strokeWidth={8} />
       <ellipse cx={30} cy={-284} rx={40} ry={12} fill="#9aa3b5" stroke={KC.ink} strokeWidth={4} />
-      <text x={0} y={-110} textAnchor="middle" style={{ font:`400 92px ${KF.titulo}` }} fill="#fff" stroke={KC.ink} strokeWidth={4}>LIGHT</text>
+      <text x={0} y={-110} textAnchor="middle" textLength={250} lengthAdjust="spacingAndGlyphs" style={{ font:`400 92px ${KF.titulo}` }} fill="#fff" stroke="#7a1010" strokeWidth={3} paintOrder="stroke">LIGHT</text>
       <rect x={-130} y={-20} width={260} height={170} rx={14} fill="#fff" stroke={KC.ink} strokeWidth={5} opacity={gira} />
       <g opacity={gira}>
-        <text x={0} y={30} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill="#3d4a68">contiene aspartame</text>
-        <text x={0} y={80} textAnchor="middle" style={{ font:`900 24px ${KF.texto}` }} fill="#3d4a68">FENILCETONÚRICOS:</text>
-        <text x={0} y={118} textAnchor="middle" style={{ font:`900 22px ${KF.texto}` }} fill="#3d4a68">CONTIENE FENILALANINA</text>
+        <line x1={-100} y1={56} x2={100} y2={56} stroke="#c9ced8" strokeWidth={3} />
+        {/* belleza: el texto de la etiqueta va en LataEtiqueta (HTML, sin el filtro de volumen que lo emborronaba) */}
       </g>
       <rect x={-118} y={-260} width={30} height={500} rx={15} fill="#fff" opacity={0.3} />
     </g>
   </g>;
+}
+
+// Texto de la etiqueta de la lata, en HTML encima del dibujo (mismas coordenadas que Lata: centro x, y, escala s).
+function LataEtiqueta({ x, y, s = 1, gira = 1 }) {
+  const sx = 0.35 + 0.65 * Math.abs(Math.cos((1 - gira) * Math.PI * 0.5));
+  const L = (t, f, top) => <div style={{ position:'absolute', left:0, right:0, top:top * s, textAlign:'center', font:f, color:'#1d2640', whiteSpace:'nowrap' }}>{t}</div>;
+  return <div style={{ position:'absolute', left:x - 130 * s, top:y - 20 * s, width:260 * s, height:170 * s, opacity:gira, transform:`scaleX(${sx})`, zIndex:5 }}>
+    {L('contiene aspartame', `700 ${Math.round(21 * s)}px ${KF.mono}`, 14)}
+    {L('FENILCETONÚRICOS:', `900 ${Math.round(21 * s)}px ${KF.texto}`, 78)}
+    {L('CONTIENE FENILALANINA', `900 ${Math.round(17 * s)}px ${KF.texto}`, 112)}
+  </div>;
 }
 
 // Interior de la Lupa: sangre seca sobre las fibras del papel (glóbulos rojos y Phe).
@@ -243,16 +255,19 @@ function Tamiz() {
       <Escena T={T} a={K.En} b={K.Pr} zoom={0.04}>
         <FondoMarca patron="oscuro" />
         <SvgCapa>
-          <rect x={-20} y={960} width={KW + 40} height={170} rx={60} fill="#5a0d17" stroke="#ff8fa3" strokeWidth={6} opacity={0.9} />
+          {/* belleza: vaso sanguíneo más ancho y con volumen; enzima y cerebro más grandes (las piezas eran chicas) */}
+          <defs><linearGradient id="tz-vaso" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#7a1622" /><stop offset="0.5" stopColor="#5a0d17" /><stop offset="1" stopColor="#3a0710" /></linearGradient></defs>
+          <rect x={-20} y={920} width={KW + 40} height={250} rx={80} fill="url(#tz-vaso)" stroke="#ff8fa3" strokeWidth={6} opacity={0.92} />
+          <rect x={-20} y={940} width={KW + 40} height={18} rx={9} fill="#ffb3c0" opacity={0.18} />
           {[[120, 1000], [380, 1080], [640, 990], [900, 1070]].map(([a, b], i) => <g key={i} transform={`translate(${(a + T * 40) % 1180 - 50} ${b}) rotate(${i * 30})`}><ellipse rx={44} ry={28} fill={SANGRE} stroke={KC.ink} strokeWidth={5} /><ellipse rx={20} ry={11} fill="#8a0e1e" /></g>)}
           {/* proteína: cadena de cuentas que se suelta */}
           {Array.from({ length: 9 }, (_, i) => { const suelta = kprog(T, K.En + 0.3 + i * 0.25, K.En + 0.9 + i * 0.25);
             return <circle key={i} cx={110 + i * 44 + suelta * 30} cy={760 + Math.sin(i + T * 2) * 16 + suelta * 60} r={20} fill={i % 3 === 1 ? PHE : '#7fc8ff'} stroke={KC.ink} strokeWidth={5} opacity={1 - suelta * 0.6} />; })}
-          <Enzima x={560} y={800} s={1} T={T} gas={0.3} />
+          <Enzima x={560} y={780} s={1.45} T={T} gas={0.3} />
           {pheEn.map((p, i) => { const v = kprog(T, p.t0, p.t0 + 1.2, kEase.suave); if (v <= 0) return null;
             const x = klerp(330, p.xx, v), y = klerp(780, p.yy, v);
             return <Phe key={i} x={x} y={y + Math.sin(T * 3 + i) * 5} s={0.55} rot={p.rot + T * 25} brillo={0.4} />; })}
-          <Cerebro x={930} y={620} s={0.65} T={T} alerta={kprog(T, K.En + 3.2, K.En + 3.8)} />
+          <Cerebro x={890} y={560} s={0.95} T={T} alerta={kprog(T, K.En + 3.2, K.En + 3.8)} />
         </SvgCapa>
         <Medidor T={T} at={K.En + 0.8} until={K.Pr - 0.3} valor={(t) => klerp(0.15, 0.95, kprog(t, K.En + 0.8, K.En + 5.0))} etiqueta="Phe en la sangre" texto={(v) => (v > 0.6 ? 'alta' : 'normal')} x={90} y={1430} color={KC.red} />
       </Escena>
@@ -324,6 +339,7 @@ function Tamiz() {
       <Escena T={T} a={K.Re} b={K.Mx} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         <SvgCapa><Lata x={540} y={900} s={1.6} T={T} gira={kprog(T, K.Re + 0.4, K.Re + 1.6, kEase.suave)} /></SvgCapa>
+        <LataEtiqueta x={540} y={900} s={1.6} gira={kprog(T, K.Re + 0.4, K.Re + 1.6, kEase.suave)} />
       </Escena>
       {/* 11 · México */}
       <Escena T={T} a={K.Mx} b={K.Ci} zoom={0.03}>
@@ -355,8 +371,8 @@ function Tamiz() {
       <Chip T={T} at={K.Bu + 0.2} until={K.Bu + 0.9} texto="tamiz metabólico neonatal" x={540} y={1100} tam={40} borde={KC.mint} />
       <Etq T={T} at={K.Bu + 1.8} until={K.En - 0.3} x={130} y={530} texto="fenilcetonuria (PKU)" tam={40} color={KC.texto} />
       <Etq T={T} at={K.En + 0.6} until={K.Pr - 0.3} x={110} y={690} texto="proteína" tam={30} color="#7fc8ff" />
-      <Etq T={T} at={K.En + 1.2} until={K.Pr - 0.3} x={330} y={670} texto="enzima a medio gas" tam={30} color={ENZ} />
-      <Etq T={T} at={K.En + 1.8} until={K.Pr - 0.3} x={60} y={1185} texto="fenilalanina (Phe) en la sangre" tam={30} color={PHE} />
+      <Etq T={T} at={K.En + 1.2} until={K.Pr - 0.3} x={300} y={600} texto="enzima a medio gas" tam={30} color={ENZ} />
+      <Etq T={T} at={K.En + 1.8} until={K.Pr - 0.3} x={60} y={1215} texto="fenilalanina (Phe) en la sangre" tam={30} color={PHE} />
       <TarjetaEstudio T={T} at={K.Gu + 0.2} until={K.Ag - 0.2} anio="1963" quien="Robert Guthrie y Ada Susi" revista="Pediatrics · Buffalo, EE. UU." x={540} y={400} />
       <Chip T={T} at={K.Gu + 1.4} until={K.Ag - 0.2} texto="¡otro Robert!" x={540} y={1550} tam={46} borde={KC.gold} />
       <Etq T={T} at={K.Ag + 0.4} until={K.Ha - 0.2} x={140} y={1410} texto="Bacillus subtilis" it tam={40} color={KC.texto} />

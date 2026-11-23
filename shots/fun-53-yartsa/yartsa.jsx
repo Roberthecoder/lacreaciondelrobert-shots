@@ -42,10 +42,24 @@ function Yartsa({ T = 0, x, y, angCuerpo = 40, angTallo = -130, largo = 260, anc
 // Mano abierta vista de frente (palma), centro de la palma en (x, y).
 function Mano({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    {/* belleza: volumen de la mano (luz arriba-izquierda, sombra abajo-derecha) y nudillos; antes piel plana */}
+    <defs>
+      <linearGradient id="dedoVol" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#fff" stopOpacity=".22" /><stop offset=".45" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#7a3f24" stopOpacity=".28" /></linearGradient>
+      <radialGradient id="palmaVol" cx=".38" cy=".3" r=".85"><stop offset="0" stopColor="#fff" stopOpacity=".2" /><stop offset=".5" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#7a3f24" stopOpacity=".35" /></radialGradient>
+    </defs>
     {[[-120, -150, -12], [-45, -185, -4], [35, -185, 4], [110, -160, 12]].map(([dx, dy, r], i) =>
-      <rect key={i} x={dx - 34} y={dy - 130} width={68} height={220} rx={34} fill={YC.piel} stroke={KC.ink} strokeWidth={7} transform={`rotate(${r} ${dx} ${dy})`} />)}
-    <rect x={-250} y={-60} width={70} height={200} rx={35} fill={YC.piel} stroke={KC.ink} strokeWidth={7} transform="rotate(-48 -215 40)" />
+      <g key={i} transform={`rotate(${r} ${dx} ${dy})`}>
+        <rect x={dx - 34} y={dy - 130} width={68} height={220} rx={34} fill={YC.piel} stroke={KC.ink} strokeWidth={7} />
+        <rect x={dx - 30} y={dy - 126} width={60} height={212} rx={30} fill="url(#dedoVol)" />
+        <path d={`M ${dx - 18} ${dy - 20} q 18 8 36 0 M ${dx - 16} ${dy + 40} q 16 7 32 0`} stroke={YC.piel2} strokeWidth={4} fill="none" strokeLinecap="round" opacity=".8" />
+        <rect x={dx - 20} y={dy - 122} width={40} height={34} rx={16} fill="#fff" opacity=".18" />
+      </g>)}
+    <g transform="rotate(-48 -215 40)">
+      <rect x={-250} y={-60} width={70} height={200} rx={35} fill={YC.piel} stroke={KC.ink} strokeWidth={7} />
+      <rect x={-246} y={-56} width={62} height={192} rx={31} fill="url(#dedoVol)" />
+    </g>
     <path d="M -175 -110 Q -190 120 -60 230 Q 60 280 150 210 Q 200 120 175 -110 Q 0 -150 -175 -110 Z" fill={YC.piel} stroke={KC.ink} strokeWidth={8} />
+    <path d="M -171 -106 Q -186 120 -60 226 Q 60 276 147 207 Q 196 120 171 -106 Q 0 -146 -171 -106 Z" fill="url(#palmaVol)" />
     <path d="M -110 40 Q -20 90 90 20" stroke={YC.piel2} strokeWidth={6} fill="none" strokeLinecap="round" />
     <path d="M -130 -40 Q 0 0 120 -60" stroke={YC.piel2} strokeWidth={5} fill="none" strokeLinecap="round" />
   </g>;
@@ -302,8 +316,9 @@ function YartsaShot() {
       <Chip T={T} at={K.Ta + 0.2} until={K.P - 0.3} texto="primavera · deshielo" x={330} y={330} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.Ta + 2.2} until={K.P - 0.3} x={575} y={480} texto="estroma (el tallo)" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Ta + 2.4} until={K.P - 0.3} x={600} y={1000} texto="sale de la cabeza" tam={30} />
-      <NumeroGigante T={T} at={K.Pr + 0.4} until={K.Pr + 2.9} valor={140000} dur={1.0} sufijo=" USD" etiqueta="más de… por kilo" x={540} y={620} tam={150} color={KC.yellow} />
-      <Chip T={T} at={K.Pr + 0.9} until={K.Pr + 2.9} texto="Pekín, 2017 · los mejores" x={540} y={800} tam={36} borde={KC.ink} />
+      {/* belleza: el número y su chip se van antes de que suban las barras (antes quedaba un 140,000 fantasma sobre ellas) */}
+      <NumeroGigante T={T} at={K.Pr + 0.4} until={K.Pr + 2.6} valor={140000} dur={1.0} sufijo=" USD" etiqueta="más de… por kilo" x={540} y={560} tam={150} color={KC.yellow} />
+      <Chip T={T} at={K.Pr + 0.9} until={K.Pr + 2.6} texto="Pekín, 2017 · los mejores" x={540} y={740} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.Pr + 3.6} until={K.Re - 0.3} texto="más del triple que el oro" x={540} y={340} tam={34} borde={KC.gold} />
       <Etq T={T} at={K.Pr + 4.0} until={K.Re - 0.3} x={60} y={440} texto="precio de 2017 (PNAS, 2018)" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Re + 0.3} until={K.E - 0.3} texto="cientos de miles de recolectores" x={360} y={480} tam={30} borde={KC.ink} />

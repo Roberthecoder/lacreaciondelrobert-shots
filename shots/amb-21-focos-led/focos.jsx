@@ -187,7 +187,7 @@ function FocosShot() {
       {/* 2 · 90 % calor, 10 % luz */}
       <Escena T={T} a={K.Ca} b={K.F}>
         <FondoLunares color={KC.yellow} />
-        {svg(<g transform="translate(0 180)">
+        {svg(<g transform="translate(0 240)">
           <rect x={90} y={760} width={900} height={96} rx={24} fill="rgba(255,255,255,.7)" stroke={KC.ink} strokeWidth={7} />
           <rect x={98} y={768} width={Math.max(0, 810 * rojo - 4)} height={80} rx={18} fill={KC.red} />
           <rect x={98 + 810} y={768} width={Math.max(0, 84 * amar)} height={80} rx={18} fill={KC.gold2} />
@@ -200,7 +200,7 @@ function FocosShot() {
             </g>; })}
           <text x={540} y={1130} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} opacity={cuadro(0)}>10 partes de energía</text>
         </g>)}
-        {svg(<FocoInc T={T} x={540} y={620} s={1.0} on={1} calor={1} />)}
+        {svg(<FocoInc T={T} x={540} y={590} s={1.4} on={1} calor={1} />)}
       </Escena>
       {/* 3 · el filamento por dentro: se calienta y se rompe */}
       <Escena T={T} a={K.F} b={K.P}>
@@ -221,7 +221,7 @@ function FocosShot() {
       {/* 5 · el chip LED por capas (fondo oscuro: adentro del chip) */}
       <Escena T={T} a={K.Ch} b={K.N}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 55%, #1a2440 0%, ${KC.noche} 70%)` }}></div>
-        {svg(<ChipCorte T={T} t0={K.Ch} x={110} y={790} w={860} />)}
+        {svg(<g transform="translate(540 1000) scale(1.12) translate(-540 -960)"><ChipCorte T={T} t0={K.Ch} x={110} y={790} w={860} /></g>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1500} color={KC.texto} />
       </Escena>
       {/* 6 · el LED azul: Nobel 2014 */}
@@ -237,7 +237,7 @@ function FocosShot() {
             {mez > 0 && <g opacity={mez} style={{ mixBlendMode:'screen' }}>
               <circle cx={480} cy={690} r={110} fill="#ff3b3b" opacity=".85" /><circle cx={600} cy={690} r={110} fill="#2f6bff" opacity=".85" /><circle cx={540} cy={600} r={110} fill="#2fe060" opacity=".85" />
               <circle cx={540} cy={660} r={56 * mez} fill="#fff" /></g>}
-            {mez > 0.5 && <text x={540} y={1200} textAnchor="middle" style={{ font:`400 60px ${KF.titulo}` }} fill="#fff">rojo + verde + azul = BLANCO</text>}
+            {mez > 0.5 && <text x={540} y={1200} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill="#fff">rojo + verde + azul = BLANCO</text>}
           </g>); })()}
       </Escena>
       {/* 7 · ahorro: 9 W = 75 W de luz, y dura hasta 25 veces más */}
@@ -254,6 +254,8 @@ function FocosShot() {
             <g opacity={0.4 + 0.6 * p1}>
               <FocoInc T={T} x={290} y={640} s={0.9} on={1} calor={1} />
               <FocoLED T={T} x={790} y={640} s={0.9} on={1} />
+            </g>
+            <g opacity={p1}>
               <text x={290} y={440} textAnchor="middle" style={{ font:`400 100px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={4}>75 W</text>
               <text x={790} y={440} textAnchor="middle" style={{ font:`400 100px ${KF.titulo}` }} fill={KC.leaf} stroke={KC.ink} strokeWidth={4}>9 W</text>
             </g>
@@ -285,7 +287,7 @@ function FocosShot() {
 
       {/* datos y etiquetas */}
       <Chip T={T} at={K.G + 1.4} until={K.Ca - 0.2} texto="¿lámpara o calentador?" y={1460} x={540} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.Ca + 0.7} until={K.F - 0.2} texto="DOE (EE. UU.), 2021" y={1440} x={540} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Ca + 0.7} until={K.F - 0.2} texto="DOE (EE. UU.), 2021" y={1490} x={540} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.F + 4.1} until={K.P - 0.2} texto="dura ≈ 1,000 horas" y={1460} x={540} tam={38} borde={KC.orange} />
       <Etq T={T} at={K.P + 0.5} until={K.Ch - 0.2} x={480} y={1300} texto="LED" lado="der" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Ch + 0.3} until={K.N - 0.2} texto="chip LED por dentro" y={430} x={380} tam={34} borde={KC.cyan} />

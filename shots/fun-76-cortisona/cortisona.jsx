@@ -11,11 +11,19 @@ const CX = { piel:'#f1b48f', piel2:'#d98f6b', roncha:'#e8434a', roncha2:'#ff8a8a
 function Brazo({ T, y = 1000, roncha = 1, crema = 0, rx = 560 }) {
   const r = 70 * (0.45 + 0.55 * roncha), late = 1 + 0.03 * Math.sin(T * 6) * roncha;
   return <g>
-    <path d={`M -40 ${y - 120} Q 540 ${y - 150} 1120 ${y - 105} L 1120 ${y + 125} Q 540 ${y + 150} -40 ${y + 120} Z`} fill={CX.piel} stroke={KC.ink} strokeWidth={9} />
+    <defs>
+      <linearGradient id="cxPiel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#f8c9aa" /><stop offset=".45" stopColor={CX.piel} /><stop offset="1" stopColor="#c98361" /></linearGradient>
+      <radialGradient id="cxRon" cx=".4" cy=".35" r=".7"><stop offset="0" stopColor="#ff7a7a" /><stop offset=".6" stopColor={CX.roncha} /><stop offset="1" stopColor="#a8272c" /></radialGradient>
+    </defs>
+    <ellipse cx={540} cy={y + 175} rx={620} ry={40} fill="#000" opacity=".28" />
+    <path d={`M -40 ${y - 120} Q 540 ${y - 150} 1120 ${y - 105} L 1120 ${y + 125} Q 540 ${y + 150} -40 ${y + 120} Z`} fill="url(#cxPiel)" stroke={KC.ink} strokeWidth={9} />
+    <path d={`M 20 ${y - 95} Q 540 ${y - 122} 1100 ${y - 82}`} stroke="#fff" strokeWidth={10} fill="none" opacity=".22" strokeLinecap="round" />
+    {Array.from({ length: 26 }, (_, i) => { const px = 40 + i * 41, py = y - 40 + ((i * 37) % 120); return <path key={'v' + i} d={`M ${px} ${py} q 8 -4 14 0`} stroke="#b97456" strokeWidth={3} fill="none" opacity=".35" strokeLinecap="round" />; })}
     <path d={`M 40 ${y + 70} Q 540 ${y + 100} 1060 ${y + 80}`} stroke={CX.piel2} strokeWidth={10} fill="none" opacity=".6" strokeLinecap="round" />
     <g transform={`translate(${rx} ${y}) scale(${late})`}>
       <circle r={r * 1.7} fill={CX.roncha2} opacity={0.35 * roncha + 0.1} />
-      <circle r={r} fill={mixHex(CX.piel2, CX.roncha, 0.35 + 0.65 * roncha)} stroke={KC.ink} strokeWidth={5} opacity={0.6 + 0.4 * roncha} />
+      <circle r={r} fill={roncha > 0.5 ? 'url(#cxRon)' : mixHex(CX.piel2, CX.roncha, 0.35 + 0.65 * roncha)} stroke={KC.ink} strokeWidth={5} opacity={0.6 + 0.4 * roncha} />
+      <ellipse cx={-r * 0.35} cy={-r * 0.4} rx={r * 0.28} ry={r * 0.16} fill="#fff" opacity={0.25 * roncha + 0.08} />
       <circle r={6} fill="#8a1f22" />
       {crema > 0 && <ellipse rx={r * 1.9 * crema} ry={r * 1.1 * crema} fill={CX.crema} opacity={0.55} stroke="#e6dccb" strokeWidth={3} />}
     </g>
@@ -26,13 +34,15 @@ function Tubo({ x, y, rot = 0, s = 1, aprieta = 0, children }) {
   const k = 1 - 0.18 * aprieta;
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     <g transform={`scale(1 ${k})`}>
-      <path d="M -470 -78 L -60 -78 L -10 -34 L -10 34 L -60 78 L -470 78 Z" fill={CX.tubo} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+      <defs><linearGradient id="cxTubo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#ffffff" /><stop offset=".35" stopColor={CX.tubo} /><stop offset="1" stopColor="#bdb6a6" /></linearGradient></defs>
+      <path d="M -470 -78 L -60 -78 L -10 -34 L -10 34 L -60 78 L -470 78 Z" fill="url(#cxTubo)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
       <rect x={-500} y={-86} width={40} height={172} rx={6} fill="#d9d2c2" stroke={KC.ink} strokeWidth={7} />
       {[-60, -30, 0, 30, 60].map((d) => <line key={d} x1={-494} y1={d} x2={-466} y2={d} stroke="#a89f8c" strokeWidth={4} />)}
       <rect x={-430} y={-78} width={60} height={156} fill={CX.banda} />
       <rect x={-350} y={-54} width={270} height={108} rx={10} fill="#fff" stroke={KC.ink} strokeWidth={5} />
       <text x={-215} y={-12} textAnchor="middle" style={{ font:`400 34px ${KF.titulo}` }} fill={KC.ink}>HIDROCORTISONA</text>
       <text x={-215} y={30} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#5a524a">crema</text>
+      <path d="M -460 -58 L -70 -58" stroke="#fff" strokeWidth={8} opacity=".5" strokeLinecap="round" />
       {children}
     </g>
     <rect x={-12} y={-22} width={40} height={44} rx={6} fill="#d9d2c2" stroke={KC.ink} strokeWidth={6} />
@@ -83,8 +93,10 @@ function MiniMatraz({ x, y, s = 1, color = KC.cyan, o = 1 }) {
 function Cuerpo({ x, y, s = 1, brillo = 0, T = 0 }) {
   const g = brillo * (0.75 + 0.25 * Math.sin(T * 6));
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <circle cx={0} cy={-470} r={78} fill="#ffd9c2" stroke={KC.ink} strokeWidth={8} />
-    <path d="M -150 -360 Q -175 -100 -120 140 L -60 140 L -40 300 L 40 300 L 60 140 L 120 140 Q 175 -100 150 -360 Q 0 -400 -150 -360 Z" fill="#ffd9c2" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <defs><radialGradient id="cxCuerpo" cx=".35" cy=".3" r=".85"><stop offset="0" stopColor="#ffe8da" /><stop offset=".55" stopColor="#f6c9ad" /><stop offset="1" stopColor="#cf9677" /></radialGradient></defs>
+    <ellipse cx={0} cy={330} rx={200} ry={26} fill="#000" opacity=".3" />
+    <circle cx={0} cy={-470} r={78} fill="url(#cxCuerpo)" stroke={KC.ink} strokeWidth={8} />
+    <path d="M -150 -360 Q -175 -100 -120 140 L -60 140 L -40 300 L 40 300 L 60 140 L 120 140 Q 175 -100 150 -360 Q 0 -400 -150 -360 Z" fill="url(#cxCuerpo)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     {[-1, 1].map((sd) => <g key={sd}>
       <path d={`M ${sd * 50} -80 Q ${sd * 100} -100 ${sd * 95} -30 Q ${sd * 92} 30 ${sd * 52} 10 Q ${sd * 70} -35 ${sd * 50} -80 Z`} fill="#b5523b" stroke={KC.ink} strokeWidth={5} />
       <path d={`M ${sd * 48} -86 L ${sd * 74} -128 L ${sd * 96} -92 Z`} fill={mixHex('#e2b25a', '#fff27a', g)} stroke={KC.ink} strokeWidth={4} style={g > 0 ? { filter:`drop-shadow(0 0 ${16 * g}px ${KC.yellow})` } : null} />
@@ -157,7 +169,10 @@ function Enzima({ T, x, y, s = 1, o = 1 }) {
 // Tanque de fermentación (esquemático) con ventana y pellets girando.
 function Tanque({ T, x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-180} y={-520} width={360} height={560} rx={70} fill="#c9d3dc" stroke={KC.ink} strokeWidth={9} />
+    <defs><linearGradient id="cxMetal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#8d99a6" /><stop offset=".3" stopColor="#e6edf3" /><stop offset=".55" stopColor="#c9d3dc" /><stop offset="1" stopColor="#7c8794" /></linearGradient></defs>
+    <ellipse cx={0} cy={140} rx={260} ry={22} fill="#000" opacity=".3" />
+    <rect x={-180} y={-520} width={360} height={560} rx={70} fill="url(#cxMetal)" stroke={KC.ink} strokeWidth={9} />
+    {[-440, -60].map((yy) => <line key={yy} x1={-176} y1={yy} x2={176} y2={yy} stroke="#7c8794" strokeWidth={5} opacity=".6" />)}
     <rect x={-120} y={-400} width={240} height={300} rx={40} fill={CX.caldo} stroke={KC.ink} strokeWidth={7} />
     <clipPath id="cxVent"><rect x={-120} y={-400} width={240} height={300} rx={40} /></clipPath>
     <g clipPath="url(#cxVent)">{Array.from({ length: 12 }, (_, i) => { const a = i * 2.2 + T * 2.2, rr = 30 + (i % 4) * 25; return <circle key={i} cx={Math.cos(a) * rr * 1.3} cy={-250 + Math.sin(a) * rr} r={13} fill={CX.hifa} stroke="#c9b98a" strokeWidth={3} />; })}</g>
@@ -168,7 +183,7 @@ function Tanque({ T, x, y, s = 1 }) {
 }
 
 /* ---------- el shot ---------- */
-const PASOS40 = Array.from({ length: 39 }, (_, i) => { const fila = Math.floor(i / 8), c = i % 8; const col = fila % 2 ? 7 - c : c; return [130 + col * 117, 760 + fila * 140]; });
+const PASOS40 = Array.from({ length: 39 }, (_, i) => { const fila = Math.floor(i / 8), c = i % 8; const col = fila % 2 ? 7 - c : c; return [130 + col * 117, 700 + fila * 140]; });
 const TRAMO11 = [9, 10, 11, 12, 13, 14];          // tramo ilustrativo: "oxígeno en el carbono 11" (varios pasos)
 
 function CortisonaShot() {
@@ -186,14 +201,14 @@ function CortisonaShot() {
       {/* 1–2 · gancho y crema: el tubo sobre la roncha (una sola escena continua) */}
       <Escena T={T} a={K.G} b={K.Co} zoom={0.06} origen="50% 55%">
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 100)">
           <Rhizopus x={820} y={600} s={1.0} crece={kprog(T, K.G + 1.4, K.G + 3.2)} nodos={[-90, 30]} />
           <g transform="translate(620 1000) scale(1.5) translate(-620 -1000)">
           <Brazo T={T} y={1020} roncha={1 - 0.6 * baja} crema={untada} rx={640} />
           {chorro > 0 && untada < 1 && <path d={`M 590 910 Q ${600 + 20 * chorro} ${930 + 30 * chorro} ${615 + 25 * chorro} ${950 + 50 * chorro}`} stroke={CX.crema} strokeWidth={30} strokeLinecap="round" fill="none" opacity={1 - untada} />}
           <Tubo x={590} y={880} rot={28} s={0.85} aprieta={aprieta} />
           </g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 3 · el cortisol que hace tu cuerpo */}
       <Escena T={T} a={K.Co} b={K.Es} zoom={0.05}>
@@ -204,37 +219,37 @@ function CortisonaShot() {
       <Escena T={T} a={K.Es} b={K.M} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.dark }}></div>
         <Ambiente T={T} n={22} />
-        {fsvg(<>
-          <Esteroide x={190} y={740} L={88} tam={44} variante="prog" p={kprog(T, K.Es + 0.1, K.Es + 1.1)} color={KC.texto} T={T} />
-          <Esteroide x={190} y={1240} L={88} tam={44} variante="hidro" p={kprog(T, K.Es + 1.0, K.Es + 2.0)} ox={kprog(T, K.Es + 2.2, K.Es + 2.8)} c11={kprog(T, K.Es + 3.2, K.Es + 3.6)} color={KC.texto} T={T} />
-        </>)}
+        {fsvg(<g opacity={1 - kprog(T, K.M - 0.1, K.M + 0.4)}>
+          <Esteroide x={320} y={840} L={88} tam={44} variante="prog" p={kprog(T, K.Es - 0.3, K.Es + 0.5)} color={KC.texto} T={T} />
+          <Esteroide x={320} y={1340} L={88} tam={44} variante="hidro" p={kprog(T, K.Es + 1.0, K.Es + 2.0)} ox={kprog(T, K.Es + 2.2, K.Es + 2.8)} c11={kprog(T, K.Es + 3.2, K.Es + 3.6)} color={KC.texto} T={T} />
+        </g>)}
       </Escena>
       {/* 5–6 · Merck: casi 40 pasos · re-gancho: el tramo del carbono 11 en un paso */}
       <Escena T={T} a={K.M} b={K.E} zoom={0.04}>
         <FondoLunares color={T < K.P ? KC.yellow : KC.orange} />
         {fsvg(<>
-          {PASOS40.map(([px, py], i) => { if (i >= pasos && T < K.P) return null; const tr = TRAMO11.indexOf(i);
+          {PASOS40.map(([px, py], i) => { if (i >= pasos && T < K.P) return <MiniMatraz key={i} x={px} y={py} s={1.5} color="#2a3550" o={0.45} />; const tr = TRAMO11.indexOf(i);
             const on = kprog(T, K.M + 0.6 + i * (4.6 / 39), K.M + 0.9 + i * (4.6 / 39), kEase.rebote);
             const enTramo = tr >= 0 && T > K.P + 0.1;
             const xx = enTramo ? klerp(px, 540, junta) : px, yy = enTramo ? klerp(py, 1080, junta) : py;
             const dim = T > K.P + 0.3 && tr < 0 ? 0.35 : 1;
             return <MiniMatraz key={i} x={xx} y={yy} s={1.5 * on * (enTramo ? klerp(1, 0.4, junta) : 1)} color={enTramo || (tr >= 0 && T > K.M + 5.6) ? KC.red : KC.cyan} o={dim * (enTramo ? 1 - junta * 0.9 : 1)} />; })}
-          {T > K.M + 5.0 && <g transform={`translate(965 1385) scale(${1.3 * kprog(T, K.M + 5.0, K.M + 5.4, kEase.rebote)})`} opacity={T > K.P + 0.3 ? 0.35 : 1}>
+          {T > K.M + 5.0 && <g transform={`translate(540 1440) scale(${1.5 * kprog(T, K.M + 5.0, K.M + 5.4, kEase.rebote)})`} opacity={T > K.P + 0.3 ? 0.35 : 1}>
             <rect x={-90} y={-20} width={180} height={30} rx={8} fill="#9aa6b2" stroke={KC.ink} strokeWidth={6} /><rect x={-20} y={10} width={40} height={50} fill="#9aa6b2" stroke={KC.ink} strokeWidth={6} />
             <circle cx={0} cy={-34} r={14} fill="#fff" stroke={KC.ink} strokeWidth={4} />
             <text x={0} y={-62} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>18 mg</text>
           </g>}
           {junta > 0.6 && <g transform={`translate(540 1130) scale(${kprog(T, K.P + 1.2, K.P + 1.6, kEase.rebote) * 3.4})`}><MiniMatraz x={0} y={0} color={KC.red} /></g>}
-          {junta > 0.7 && <Interrogacion T={T} x={540} y={900} tam={360} color={KC.yellow} />}
+          {junta > 0.7 && <g opacity={1 - kprog(T, K.E - 0.2, K.E + 0.3)}><Interrogacion T={T} x={540} y={900} tam={360} color={KC.yellow} /></g>}
         </>)}
       </Escena>
       {/* 7 · el experimento de Upjohn: progesterona a un moho en un matraz agitado */}
       <Escena T={T} a={K.E} b={K.En} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Matraz T={T} x={400} y={1390} s={1.6} pellets={kprog(T, K.E + 0.3, K.E + 2.0)} />
-          {(() => { const g = kprog(T, K.E + 4.2, K.E + 4.9); return g > 0 && g < 1 ? <circle cx={400} cy={klerp(560, 1000, g)} r={22} fill={KC.orange} stroke={KC.ink} strokeWidth={4} /> : null; })()}
-          {T > K.E + 5.6 && <g opacity={kprog(T, K.E + 5.6, K.E + 6.0)} transform="translate(830 725) scale(1.2) translate(-830 -725)">
+          <Matraz T={T} x={540} y={1480} s={1.5} pellets={kprog(T, K.E + 0.3, K.E + 2.0)} />
+          {(() => { const g = kprog(T, K.E + 4.2, K.E + 4.9); return g > 0 && g < 1 ? <circle cx={540} cy={klerp(600, 1180, g)} r={22} fill={KC.orange} stroke={KC.ink} strokeWidth={4} /> : null; })()}
+          {T > K.E + 5.6 && <g opacity={kprog(T, K.E + 5.6, K.E + 6.0)} transform="translate(820 540) translate(-830 -725)">
             <rect x={640} y={560} width={380} height={330} rx={24} fill="#fbf3dc" stroke={KC.ink} strokeWidth={7} />
             <rect x={640} y={820} width={380} height={70} fill="#e3c68e" stroke={KC.ink} strokeWidth={0} />
             <line x1={640} y1={820} x2={1020} y2={820} stroke={KC.ink} strokeWidth={5} />
@@ -252,10 +267,10 @@ function CortisonaShot() {
             <path d="M -40 960 Q 300 900 540 980 Q 800 1060 1120 990" stroke="#e9dcb4" strokeWidth={110} fill="none" strokeLinecap="round" />
             {[200, 470, 760].map((cx, i) => <ellipse key={i} cx={cx} cy={i === 1 ? 970 : 960 + i * 20} rx={46} ry={28} fill="#c9b98a" />)}
           </g>
-          <g opacity={kprog(T, K.En + 0.9, K.En + 1.3)}>
-            <Esteroide x={210} y={1330} L={92} tam={46} variante="11a" p={1} oh11={kprog(T, K.En + 2.4, K.En + 2.7)} c11={kprog(T, K.En + 1.4, K.En + 1.8)} color={KC.texto} T={T} />
-            <Enzima T={T} x={klerp(900, 300, kprog(T, K.En + 1.2, K.En + 2.2, kEase.sale)) + 500 * kprog(T, K.En + 3.0, K.En + 3.8, kEase.suave)} y={980 - 40 * kprog(T, K.En + 3.0, K.En + 3.8)} s={1.1} o={1 - kprog(T, K.En + 3.0, K.En + 3.8) * 0.7} />
-            {T > K.En + 2.4 && T < K.En + 3.2 && <circle cx={210 + 1.73 * 92} cy={1330 - 2 * 92} r={76 * kprog(T, K.En + 2.4, K.En + 2.8)} fill="none" stroke={KC.yellow} strokeWidth={8} opacity={1 - kprog(T, K.En + 2.8, K.En + 3.2)} />}
+          <g opacity={kprog(T, K.En + 0.9, K.En + 1.3) * (1 - kprog(T, K.B - 0.1, K.B + 0.3))}>
+            <Esteroide x={320} y={1310} L={92} tam={46} variante="11a" p={1} oh11={kprog(T, K.En + 2.4, K.En + 2.7)} c11={kprog(T, K.En + 1.4, K.En + 1.8)} color={KC.texto} T={T} />
+            <Enzima T={T} x={klerp(900, 410, kprog(T, K.En + 1.2, K.En + 2.2, kEase.sale)) + 500 * kprog(T, K.En + 3.0, K.En + 3.8, kEase.suave)} y={960 - 40 * kprog(T, K.En + 3.0, K.En + 3.8)} s={1.1} o={1 - kprog(T, K.En + 3.0, K.En + 3.8) * 0.7} />
+            {T > K.En + 2.4 && T < K.En + 3.2 && <circle cx={320 + 1.73 * 92} cy={1310 - 2 * 92} r={76 * kprog(T, K.En + 2.4, K.En + 2.8)} fill="none" stroke={KC.yellow} strokeWidth={8} opacity={1 - kprog(T, K.En + 2.8, K.En + 3.2)} />}
           </g>
         </>)}
       </Escena>
@@ -263,13 +278,13 @@ function CortisonaShot() {
       <Escena T={T} a={K.B} b={K.Pa} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <g opacity={0.9 * kprog(T, K.B - 0.3, K.B + 0.2)}><Esteroide x={210} y={1330} L={92} tam={46} variante="hidro" p={1} ox={1} c11={1} color={KC.texto} T={T} /></g>
+          <g opacity={0.9 * kprog(T, K.B - 0.3, K.B + 0.2)}><Esteroide x={320} y={1310} L={92} tam={46} variante="hidro" p={1} ox={1} c11={1} color={KC.texto} T={T} /></g>
           {(() => { const u = kprog(T, K.B + 2.4, K.B + 3.4, kEase.sale); return <>
-            <rect x={90} y={830} width={760} height={56} rx={28} fill={KC.cyan} stroke={KC.ink} strokeWidth={6} />
-            <rect x={90} y={930} width={klerp(760, 300, u)} height={56} rx={28} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
-            <g transform="translate(130 958) scale(.35)"><Rhizopus x={0} y={40} crece={1} nodos={[0]} color="#fff" /></g>
+            <rect x={90} y={810} width={760} height={56} rx={28} fill={KC.cyan} stroke={KC.ink} strokeWidth={6} />
+            <rect x={90} y={910} width={klerp(760, 300, u)} height={56} rx={28} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
+            <g transform="translate(130 938) scale(.35)"><Rhizopus x={0} y={40} crece={1} nodos={[0]} color="#fff" /></g>
           </>; })()}
-          {T > K.B + 3.4 && <g transform={`translate(${klerp(860, 560, kprog(T, K.B + 3.4, K.B + 3.9, kEase.sale))} 958)`}>
+          {T > K.B + 3.4 && <g transform={`translate(${klerp(860, 560, kprog(T, K.B + 3.4, K.B + 3.9, kEase.sale))} 938)`}>
             <path d="M -50 -40 L 40 -40 L 70 0 L 40 40 L -50 40 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={6} /><circle cx={-25} cy={0} r={9} fill={KC.ink} />
             <path d="M 110 -40 L 110 30 M 85 8 L 110 34 L 135 8" stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" />
           </g>}
@@ -279,56 +294,58 @@ function CortisonaShot() {
       <Escena T={T} a={K.Pa} b={K.H} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, transform:'translateY(190px) scale(1.1)', transformOrigin:'50% 50%' }}>
           <MundoPanMacro T={T} moho={kprog(T, K.Pa + 0.2, K.Pa + 1.8, kEase.sale)} fondo={KC.orange} />
+          <div style={{ position:'absolute', left:-400, top:-600, width:KW + 800, height:1835, background:'#0a0f1c', clipPath:`path(evenodd, 'M 0 0 H ${KW + 800} V 1835 H 0 Z M 590 1840 L 590 1240 C 550 1070 660 960 820 980 C 870 930 1010 930 1060 980 C 1220 960 1330 1070 1290 1240 L 1290 1840 Z')` }}><FondoLunares color={KC.orange} /></div>
           <div style={{ position:'absolute', left:-200, top:1245, width:KW + 400, height:290, background:'rgba(8,6,4,.5)' }}></div>
+          <div style={{ position:'absolute', left:-400, top:1535, width:KW + 800, height:900, background:'#0a0f1c' }}></div>
         </div>
       </Escena>
       {/* 11 · hoy: tanques de fermentación */}
       <Escena T={T} a={K.H} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        <div style={{ position:'absolute', left:0, top:1290, width:KW, height:40, background:'#4a4a52', borderTop:`8px solid ${KC.ink}`, borderBottom:`8px solid ${KC.ink}` }}></div>
+        <div style={{ position:'absolute', left:0, top:1430, width:KW, height:40, background:'#4a4a52', borderTop:`8px solid ${KC.ink}`, borderBottom:`8px solid ${KC.ink}` }}></div>
         {fsvg(<>
-          <Tanque T={T} x={330} y={1200} s={1.3} />
-          {Array.from({ length: 4 }, (_, i) => { const xx = ((T - K.H) * 140 + i * 130) % 520 + 640; return <g key={i} transform={`translate(${xx} 1282) rotate(-90) scale(.3)`}><Tubo x={0} y={0} rot={0} /></g>; })}
+          <Tanque T={T} x={340} y={1330} s={1.45} />
+          {Array.from({ length: 4 }, (_, i) => { const xx = ((T - K.H) * 140 + i * 130) % 520 + 790; return <g key={i} transform={`translate(${xx} 1422) rotate(-90) scale(.3)`}><Tubo x={0} y={0} rot={0} /></g>; })}
         </>)}
       </Escena>
       {/* 12 · cierre: el mismo brazo y la misma crema, ya "leída" */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04} origen="50% 55%">
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 100)">
           <g transform="translate(620 1000) scale(1.5) translate(-620 -1000)">
           <Brazo T={T} y={1020} roncha={0.25} crema={0} rx={640} />
           <Tubo x={590} y={880} rot={28} s={0.85}>
             <g opacity={kprog(T, K.C + 0.6, K.C + 1.2)}>
-              <rect x={-350} y={-54} width={270} height={108} rx={10} fill="#fffbe8" stroke={KC.ink} strokeWidth={5} />
-              <g transform="translate(-300 34) scale(.28)"><Rhizopus x={0} y={0} crece={1} nodos={[0]} color="#c9b98a" /></g>
-              <g transform="translate(-235 22) scale(.36)"><Esteroide x={0} y={0} L={56} variante="hidro" p={1} ox={1} c11={1} color={KC.ink} T={T} tam={34} /></g>
+              <rect x={-384} y={-62} width={322} height={124} rx={12} fill="#fffbe8" stroke={KC.ink} strokeWidth={5} />
+              <g transform="translate(-330 44) scale(.4)"><Rhizopus x={0} y={0} crece={1} nodos={[0]} color="#a8925a" /></g>
+              <g transform="translate(-250 30) scale(.44)"><Esteroide x={0} y={0} L={56} variante="hidro" p={1} ox={1} c11={1} color="#3a3328" T={T} tam={34} /></g>
             </g>
           </Tubo>
           </g>
-        </>)}
+        </g>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 1.6} until={K.Cr - 0.2} texto="no es pura química" x={540} y={1330} tam={40} borde={KC.yellow} />
-      <Etq T={T} at={K.G + 3.2} until={K.Co - 0.3} x={680} y={470} lado="izq" texto="Rhizopus" it tam={34} color={KC.texto} />
-      <Etq T={T} at={K.Cr + 0.4} until={K.Co - 0.3} x={620} y={715} texto="hidrocortisona" tam={40} color={KC.texto} />
-      <Etq T={T} at={K.Cr + 0.9} until={K.Co - 0.3} x={620} y={768} texto="corticoide · esteroide" tam={28} color={KC.texto} />
-      <Chip T={T} at={K.Cr + 2.0} until={K.Co - 0.3} texto="baja la hinchazón" x={540} y={1330} tam={36} borde={KC.mint} />
+      <Chip T={T} at={K.G + 1.6} until={K.Cr - 0.2} texto="no es pura química" x={540} y={1450} tam={40} borde={KC.yellow} />
+      <Etq T={T} at={K.G + 3.2} until={K.Co - 0.3} x={680} y={570} lado="izq" texto="Rhizopus" it tam={34} color={KC.texto} />
+      <Etq T={T} at={K.Cr + 0.4} until={K.Co - 0.3} x={620} y={815} texto="hidrocortisona" tam={40} color={KC.texto} />
+      <Etq T={T} at={K.Cr + 0.9} until={K.Co - 0.3} x={620} y={868} texto="corticoide · esteroide" tam={28} color={KC.texto} />
+      <Chip T={T} at={K.Cr + 2.0} until={K.Co - 0.3} texto="baja la hinchazón" x={540} y={1450} tam={36} borde={KC.mint} />
       <Chip T={T} at={K.Co + 0.2} until={K.Es - 0.3} texto="cortisol = hidrocortisona" x={470} y={275} tam={38} borde={KC.gold} />
       <Etq T={T} at={K.Co + 1.0} until={K.Es - 0.3} x={575} y={935} texto="glándulas suprarrenales" tam={28} color={KC.texto} />
       <Chip T={T} at={K.Es + 0.1} until={K.M - 0.3} texto="POR DENTRO · LA MOLÉCULA" x={420} y={360} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Es + 0.6} until={K.M - 0.3} x={640} y={800} texto="progesterona" tam={34} color={KC.texto} />
-      <Etq T={T} at={K.Es + 1.5} until={K.M - 0.3} x={640} y={1310} texto="hidrocortisona" tam={34} color={KC.texto} />
-      <Chip T={T} at={K.Es + 2.4} until={K.M - 0.3} texto="+3 oxígenos" x={880} y={1185} tam={36} borde={CX.oxi} />
-      <Etq T={T} at={K.Es + 3.4} until={K.M - 0.3} x={470} y={905} texto="carbono 11: difícil" tam={30} color={KC.yellow} />
-      <TarjetaEstudio T={T} at={K.M + 0.1} until={K.M + 3.4} anio="años 40" quien="Merck · Lewis Sarett" revista="desde un ácido de la bilis" x={540} y={470} />
+      <Etq T={T} at={K.Es + 0.6} until={K.M - 0.3} x={640} y={905} texto="progesterona" tam={34} color={KC.texto} />
+      <Etq T={T} at={K.Es + 1.5} until={K.M - 0.3} x={640} y={1400} texto="hidrocortisona" tam={34} color={KC.texto} />
+      <Chip T={T} at={K.Es + 2.4} until={K.M - 0.3} texto="+3 oxígenos" x={820} y={1480} tam={36} borde={CX.oxi} />
+      <Etq T={T} at={K.Es + 3.4} until={K.M - 0.3} x={470} y={990} texto="carbono 11: difícil" tam={30} color={KC.yellow} />
+      <TarjetaEstudio T={T} at={K.M + 0.1} until={K.M + 3.4} anio="años 40" quien="Merck · Lewis Sarett" revista="desde un ácido de la bilis" x={540} y={400} />
       <NumeroGigante T={T} at={K.M + 3.6} until={K.P - 0.2} valor={40} desde={40} dur={0.1} prefijo="casi " sufijo=" pasos" x={540} y={560} tam={110} color={KC.cyan} />
       <Chip T={T} at={K.P + 0.3} until={K.E - 0.3} texto="oxígeno en el carbono 11" x={540} y={520} tam={32} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 4.0} anio="1952" quien="Peterson y Murray · Upjohn" revista="publicado en J. Am. Chem. Soc. · patente desde 1950" x={540} y={420} />
       <Etq T={T} at={K.E + 0.9} until={K.E + 4.0} x={520} y={700} texto="Kalamazoo, Michigan" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.E + 4.2} until={K.En - 0.3} x={60} y={560} texto="progesterona" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.E + 2.0} until={K.En - 0.3} x={672} y={1230} texto={<><i>Rhizopus</i> en bolitas</>} tam={28} color={KC.texto} />
-      <Etq T={T} at={K.E + 6.0} until={K.En - 0.3} x={600} y={490} texto="en una superficie:" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.E + 4.2} until={K.En - 0.3} x={505} y={640} lado="izq" texto="progesterona" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.E + 2.0} until={K.En - 0.3} x={300} y={1535} texto={<><i>Rhizopus</i> en bolitas</>} tam={28} color={KC.texto} />
+      <Etq T={T} at={K.E + 6.0} until={K.En - 0.3} x={630} y={328} texto="en una superficie:" tam={26} color={KC.texto} />
       <Chip T={T} at={K.En + 0.1} until={K.En + 1.0} texto="POR DENTRO · LA HIFA" x={420} y={470} tam={32} borde={KC.cyan} mono />
       <Etq T={T} at={K.En + 0.3} until={K.En + 1.0} x={60} y={800} texto={<>hifa de <i>Rhizopus</i></>} tam={30} color={KC.texto} />
       <Etq T={T} at={K.En + 1.4} until={K.B - 0.3} x={60} y={760} texto="enzima P450 del hongo" tam={30} color={CX.enz} />
@@ -338,29 +355,29 @@ function CortisonaShot() {
       <Chip T={T} at={K.B + 1.4} until={K.Pa - 0.3} texto="11β-OH  (hidrocortisona)" x={540} y={640} tam={34} borde={KC.ink} mono />
       <Etq T={T} at={K.B + 0.5} until={K.Pa - 0.3} x={560} y={460} texto="↓ química" tam={28} color={KC.texto} />
       <Etq T={T} at={K.B + 1.1} until={K.Pa - 0.3} x={560} y={580} texto="↓ química" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.B + 2.0} until={K.Pa - 0.3} x={70} y={804} texto="solo química" tam={26} color={KC.texto} />
-      <Etq T={T} at={K.B + 2.4} until={K.Pa - 0.3} x={70} y={904} texto="hongo + química" tam={26} color={KC.texto} />
-      <Etq T={T} at={K.Pa + 0.8} until={K.H - 0.3} x={60} y={250} texto="moho negro del pan" tam={36} color={KC.texto} />
-      <Etq T={T} at={K.Pa + 1.2} until={K.H - 0.3} x={60} y={305} texto="Rhizopus stolonifer" it tam={34} color={KC.texto} />
-      <Chip T={T} at={K.Pa + 2.0} until={K.H - 0.3} texto={<>mismo género: <i>Rhizopus</i></>} x={540} y={395} tam={34} borde={KC.gold} />
-      <Chip T={T} at={K.H + 0.3} until={K.C - 0.3} texto="biotransformación: hongo + química" x={540} y={330} tam={32} borde={KC.gold} />
-      <Etq T={T} at={K.H + 1.0} until={K.C - 0.3} x={580} y={640} texto="tanque de fermentación" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.H + 1.6} until={K.C - 0.3} x={740} y={1070} texto="corticoides" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.B + 2.0} until={K.Pa - 0.3} x={70} y={784} texto="solo química" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.B + 2.4} until={K.Pa - 0.3} x={70} y={884} texto="hongo + química" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.Pa + 0.8} until={K.H - 0.3} x={160} y={300} texto="moho negro del pan" tam={36} color={KC.texto} />
+      <Etq T={T} at={K.Pa + 1.2} until={K.H - 0.3} x={160} y={352} texto="Rhizopus stolonifer" it tam={34} color={KC.texto} />
+      <Chip T={T} at={K.Pa + 2.0} until={K.H - 0.3} texto={<>mismo género: <i>Rhizopus</i></>} x={540} y={1520} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.H + 0.3} until={K.C - 0.3} texto="biotransformación: hongo + química" x={540} y={360} tam={32} borde={KC.gold} />
+      <Etq T={T} at={K.H + 1.0} until={K.C - 0.3} x={620} y={760} texto="tanque de fermentación" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.H + 1.6} until={K.C - 0.3} x={800} y={1220} texto="corticoides" tam={30} color={KC.texto} />
       <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="un moho le abrió el camino" x={460} y={300} tam={36} borde={KC.yellow} />
-      <Etq T={T} at={K.C + 1.6} until={K.Ou} x={560} y={600} texto={<>carbono 11 · <i>Rhizopus</i></>} tam={28} color={KC.texto} />
-      <Etq T={T} at={K.C + 2.2} until={K.Ou} x={60} y={1400} texto="No es consejo médico." tam={24} color={KC.texto} />
+      <Etq T={T} at={K.C + 1.6} until={K.Ou} x={560} y={700} texto={<>carbono 11 · <i>Rhizopus</i></>} tam={28} color={KC.texto} />
+      <Etq T={T} at={K.C + 2.2} until={K.Ou} x={60} y={1425} texto="No es consejo médico." tam={26} color={KC.texto} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.Co} texto="5 cm" largo={195} />
       <BarraEscala T={T} at={K.Co} until={K.Es} texto="20 cm" largo={180} />
       <BarraEscala T={T} at={K.Es} until={K.M} texto="1 nm · esquemático" largo={200} />
       <BarraEscala T={T} at={K.M} until={K.E} texto="esquemático: 1 matraz = 1 paso" largo={0} />
-      <BarraEscala T={T} at={K.E} until={K.En} texto="2 cm" largo={101} />
+      <BarraEscala T={T} at={K.E} until={K.En} texto="2 cm" largo={95} />
       <BarraEscala T={T} at={K.En} until={K.En + 1.0} texto="10 µm" largo={170} />
       <BarraEscala T={T} at={K.En + 1.0} until={K.B} texto="1 nm · esquemático" largo={192} />
       <BarraEscala T={T} at={K.B} until={K.Pa} texto="esquemático" largo={0} />
       <BarraEscala T={T} at={K.Pa} until={K.H} texto="2 cm" largo={62} />
-      <BarraEscala T={T} at={K.H} until={K.C} texto="2 m · esquemático" largo={219} />
+      <BarraEscala T={T} at={K.H} until={K.C} texto="2 m · esquemático" largo={244} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={195} y={1440} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

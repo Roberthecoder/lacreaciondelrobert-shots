@@ -164,6 +164,9 @@ function ArponShot() {
           </g>
         </>)}
       </Escena>
+      <Lupa T={T} at={K.Ve + 0.2} until={K.Ps - 0.2} x={760} y={375} r={135} fx={125} fy={1030} linea={false} tinte={KC.gold2} etiqueta="LA ESPORA · aumentada"
+        interior={(t, r) => <svg width={r * 2} height={r * 2} viewBox="0 0 600 600" style={{ display:'block' }}><rect width={600} height={600} fill="#0b0f18" />
+          <Espora T={t} x={150} y={300} s={1.15} tubo={kprog(t, K.Ve + 0.3, K.Ve + 1.13)} largo={900} onda={40} /></svg>} />
       {/* 10 · Pasteur y la seda */}
       <Escena T={T} a={K.Ps} b={K.Ge} zoom={0.04}>
         <FondoLunares color={KC.yellow} />

@@ -315,7 +315,10 @@ function Wolbachia35() {
       <Escena T={T} a={K.He} b={K.Tr}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <rect x={50} y={1110} width={980} height={330} fill="#122f48" stroke={KC.ink} strokeWidth={8} />
+          <defs><linearGradient id="wol-agua" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#24557a" /><stop offset="0.55" stopColor="#163a5a" /><stop offset="1" stopColor="#0c2236" /></linearGradient></defs>
+          <rect x={50} y={1110} width={980} height={330} fill="url(#wol-agua)" stroke={KC.ink} strokeWidth={8} />
+          {[0, 1, 2, 3].map((i) => <path key={i} d={`M ${110 + i * 230 + Math.sin(T * 1.5 + i) * 20} ${1190 + (i % 2) * 90} q 30 -10 60 0 t 60 0`} stroke="#7fc3ee" strokeWidth={4} fill="none" opacity={0.35} />)}
+          {Array.from({ length: 7 }, (_, i) => { const u = ((T * 0.35 + i / 7) % 1); return <circle key={i} cx={120 + i * 135 + Math.sin(T * 2 + i) * 10} cy={1420 - u * 290} r={5 + (i % 3) * 2} fill="none" stroke="#bfe6ff" strokeWidth={2.5} opacity={0.5 * (1 - u)} />; })}
           <path d={`M 50 1110 Q 540 ${1098 + Math.sin(T * 3) * 8} 1030 1110`} stroke="#bfe6ff" strokeWidth={7} fill="none" />
           <Mosco T={T} x={515} y={760} s={1.3} wol={1} vuela={0.2} />
           {Array.from({ length: 6 }, (_, i) => { const ti = K.He + 0.4 + i * 0.3, u = kprog(T, ti, ti + 0.45, kEase.sale);
@@ -357,8 +360,8 @@ function Wolbachia35() {
         <FondoLunares color={KC.pink} />
         <SvgCapa>
           <Zonas T={T} t0={K.Es} zonas={ZONAS} o={0.3} />
-          <text x={540} y={690} textAnchor="middle" style={{ font:`900 50px ${KF.texto}` }} fill={KC.ink} stroke="#0b1020" strokeWidth={10} paintOrder="stroke" opacity={kprog(T, K.Re + 0.4, K.Re + 0.7)}>dengue con síntomas</text>
-          <text x={540} y={1070} textAnchor="middle" style={{ font:`900 50px ${KF.texto}` }} fill={KC.ink} stroke="#0b1020" strokeWidth={10} paintOrder="stroke" opacity={kprog(T, K.Re + 2.8, K.Re + 3.1)}>hospitalizados por dengue</text>
+          <text x={540} y={830} textAnchor="middle" style={{ font:`900 50px ${KF.texto}` }} fill={KC.ink} stroke="#0b1020" strokeWidth={10} paintOrder="stroke" opacity={kprog(T, K.Re + 0.4, K.Re + 0.7) * (1 - kprog(T, K.Re + 2.4, K.Re + 2.7))}>dengue con síntomas</text>
+          <text x={540} y={830} textAnchor="middle" style={{ font:`900 50px ${KF.texto}` }} fill={KC.ink} stroke="#0b1020" strokeWidth={10} paintOrder="stroke" opacity={kprog(T, K.Re + 2.8, K.Re + 3.1) * (1 - kprog(T, K.Oj - 1.1, K.Oj - 0.8))}>hospitalizados por dengue</text>
         </SvgCapa>
       </Escena>
       {/* 11 · no es transgénico */}
@@ -398,8 +401,8 @@ function Wolbachia35() {
       <Medidor T={T} at={K.Ga + 0.2} until={K.Es - 0.3} valor={fracGana} etiqueta={`generación ${genera + 1}`} x={90} y={1440} color={WOL} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.4} anio="2017" quien="Yogyakarta, Indonesia" revista="ensayo AWED · 24 zonas al azar" y={300} />
       <Chip T={T} at={K.Es + 3.0} until={K.Re - 0.3} texto="12 zonas con huevos · 12 sin" y={1560} tam={40} borde={WOL2} />
-      <NumeroGigante T={T} at={K.Re + 0.4} until={K.Oj - 0.3} valor={77} sufijo=" %" prefijo="−" y={840} tam={240} color={KC.yellow} />
-      <NumeroGigante T={T} at={K.Re + 2.8} until={K.Oj - 0.3} valor={86} sufijo=" %" prefijo="−" y={1215} tam={220} color={WOL} />
+      <NumeroGigante T={T} at={K.Re + 0.4} until={K.Re + 2.6} valor={77} sufijo=" %" prefijo="−" y={1000} tam={240} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.Re + 2.8} until={K.Oj - 0.9} valor={86} sufijo=" %" prefijo="−" y={1000} tam={240} color={WOL} />
       <Chip T={T} at={K.Re + 1.0} until={K.Oj - 0.3} texto="NEJM 2021 · zonas con vs. sin Wolbachia" y={1560} tam={32} borde={KC.gold} />
       <MitoTachado T={T} at={K.Oj + 0.1} tacharEn={K.Oj + 1.0} until={K.Ci - 0.2} texto="mosco transgénico" x={540} y={560}  tam={44} />
       <Etq T={T} at={K.Ci + 0.6} until={K.Ou} x={110} y={640} texto="con Wolbachia" it tam={40} color={KC.ink} />

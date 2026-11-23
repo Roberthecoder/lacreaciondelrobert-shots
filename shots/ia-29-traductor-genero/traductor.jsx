@@ -10,24 +10,24 @@ function Traductor({ T, x = 360, y = 880, s = 0.8, origen = 'HÚNGARO', destino 
   const n = Math.round(texto.length * kclamp(escrito, 0, 1)), caret = escrito < 1 && (T * 2.5) % 1 < 0.6;
   const late = parpadea ? 0.55 + 0.45 * Math.abs(Math.sin(T * 4.2)) : 1;
   return <div style={{ position:'absolute', left:x + dx, top:y, width:560, height:820, transform:`translate(-50%,-50%) scale(${s})`, zIndex:20, opacity:o,
-    background:'#f7f8fb', border:`12px solid ${KC.ink}`, borderRadius:70, boxShadow:'0 30px 60px rgba(0,0,0,.35)', overflow:'hidden' }}>
+    background:'linear-gradient(160deg, #1d2333 0%, #121621 100%)', border:`12px solid ${KC.ink}`, borderRadius:70, boxShadow:'0 30px 60px rgba(0,0,0,.35)', overflow:'hidden' }}>
     <div style={{ position:'absolute', left:180, top:14, width:200, height:34, borderRadius:20, background:CINE.borde }}></div>
-    <div style={{ position:'absolute', left:0, right:0, top:62, height:76, display:'flex', alignItems:'center', gap:14, padding:'0 34px', borderBottom:'4px solid #dfe3ec' }}>
+    <div style={{ position:'absolute', left:0, right:0, top:62, height:76, display:'flex', alignItems:'center', gap:14, padding:'0 34px', borderBottom:'4px solid #2b3245' }}>
       <div style={{ width:52, height:52, borderRadius:14, background:AZUL, color:'#fff', display:'flex', alignItems:'center', justifyContent:'center', font:`900 26px ${KF.texto}` }}>文A</div>
       <div style={{ font:`900 34px ${KF.texto}`, color:KC.ink }}>Traductor</div>
     </div>
     <div style={{ position:'absolute', left:34, right:34, top:160 }}>
-      <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', font:`700 24px ${KF.mono}`, color:'#59607a' }}>
-        <span style={{ background:'#e7ebf5', borderRadius:12, padding:'4px 14px' }}>{origen}</span>
+      <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', font:`700 24px ${KF.mono}`, color:'#a9b2cc' }}>
+        <span style={{ background:'#262d3f', borderRadius:12, padding:'4px 14px' }}>{origen}</span>
         <span style={{ font:`900 30px ${KF.texto}`, color:AZUL }}>⇄</span>
-        <span style={{ background:'#e7ebf5', borderRadius:12, padding:'4px 14px' }}>{destino}</span>
+        <span style={{ background:'#262d3f', borderRadius:12, padding:'4px 14px' }}>{destino}</span>
       </div>
       <div style={{ marginTop:26, minHeight:130, font:`800 52px/1.2 ${KF.texto}`, color:KC.ink }}>{texto.slice(0, n)}<span style={{ opacity: caret ? 1 : 0, color:AZUL }}>|</span></div>
-      <div style={{ height:4, background:'#dfe3ec', margin:'10px 0 24px' }}></div>
+      <div style={{ height:4, background:'#2b3245', margin:'10px 0 24px' }}></div>
       {salidas.filter((sa) => T >= sa.at).map((sa, i) => { const e = kprog(T, sa.at, sa.at + 0.35, kEase.sale);
-        return <div key={i} style={{ opacity:e, transform:`translateY(${(1 - e) * 24}px)`, marginBottom:20, background:'#eef4ff', borderRadius:22, padding:'16px 20px' }}>
-          {sa.tag && <div style={{ font:`700 22px ${KF.mono}`, color:'#59607a', marginBottom:6 }}>{sa.tag}</div>}
-          <div style={{ font:`800 48px/1.2 ${KF.texto}`, color:'#1b2a6b' }}>{sa.partes.map((p, k) => <span key={k} style={{ position:'relative', display:'inline-block', opacity:p.o == null ? 1 : p.o,
+        return <div key={i} style={{ opacity:e, transform:`translateY(${(1 - e) * 24}px)`, marginBottom:20, background:'#1f2a44', borderRadius:22, padding:'16px 20px' }}>
+          {sa.tag && <div style={{ font:`700 22px ${KF.mono}`, color:'#a9b2cc', marginBottom:6 }}>{sa.tag}</div>}
+          <div style={{ font:`800 48px/1.2 ${KF.texto}`, color:'#e6ecff' }}>{sa.partes.map((p, k) => <span key={k} style={{ position:'relative', display:'inline-block', opacity:p.o == null ? 1 : p.o,
             background: p.color ? p.color : 'transparent', color: p.color ? '#fff' : 'inherit', borderRadius:10, padding: p.color ? '0 10px' : 0,
             boxShadow: p.color && p.late !== false ? `0 0 ${30 * late}px ${p.color}` : 'none', marginRight: p.color ? 8 : 0 }}>{p.t}
             {p.tachado > 0 && <span style={{ position:'absolute', left:-6, top:'52%', height:8, width:`calc(${p.tachado * 100}% + 12px)`, background:CINE.borde, borderRadius:4, transform:'rotate(-8deg)' }}></span>}</span>)}</div>
@@ -165,19 +165,19 @@ function Traduccion() {
       <Escena T={T} a={K.R} b={K.Q}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {/* pase a mano cine: las dos personas de la prueba («él» y «ella») a cuadro debajo de las barras; «ella» atenuada */}
-        {svg(<><Persona x={320} y={1230} s={1.15} color={AZUL} T={T} /><g opacity={klerp(0.3, 0.55, kprog(T, K.R + 2.9, K.R + 3.3))}><Persona x={760} y={1230} s={1.15} color={KC.pink} T={T} ph={1} /></g>
-          <text x={320} y={1450} textAnchor="middle" style={{ font:`900 54px ${KF.texto}` }} fill={KC.ink}>él</text>
-          <text x={760} y={1450} textAnchor="middle" style={{ font:`900 54px ${KF.texto}` }} fill={KC.ink} opacity={0.6}>ella</text></>)}
+        {svg(<><Persona x={310} y={1060} s={1.45} color={AZUL} T={T} /><g opacity={klerp(0.3, 0.55, kprog(T, K.R + 2.9, K.R + 3.3))}><Persona x={770} y={1060} s={1.45} color={KC.pink} T={T} ph={1} /></g>
+          <text x={310} y={1345} textAnchor="middle" style={{ font:`900 54px ${KF.texto}` }} fill={KC.ink}>él</text>
+          <text x={770} y={1345} textAnchor="middle" style={{ font:`900 54px ${KF.texto}` }} fill={KC.ink} opacity={0.6}>ella</text></>)}
       </Escena>
       <Chip T={T} at={K.R + 0.2} until={K.Q - 0.2} texto="ciencia y tecnología (STEM)" x={540} y={440} tam={42} borde={KC.ink} />
       <BarrasHT T={T} at={K.R + 0.4} until={K.Q - 0.2} top={520} filas={[{ valor: 71.6, texto:'72 %', etiqueta:'salió «él»', color: AZUL }, { valor: 4.2, texto:'4 %', etiqueta:'salió «ella»', color: KC.pink, at: K.R + 2.9 }]} />
-      <Chip T={T} at={K.R + 3.5} until={K.Q - 0.2} texto="el resto: neutro o sin pronombre" y={880} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.R + 3.5} until={K.Q - 0.2} texto="el resto: neutro o sin pronombre" y={855} tam={28} borde={KC.ink} />
       {/* 5 · pregunta */}
       <Escena T={T} a={K.Q} b={K.Re} zoom={0.1}>
         <FondoLunares color={KC.coral} />
         {/* pase a mano cine: «él» y «ella» de la escena anterior siguen a cuadro y el signo queda entre ellos */}
-        {svg(<><Persona x={320} y={1230} s={1.15} color={AZUL} T={T} /><g opacity={0.55}><Persona x={760} y={1230} s={1.15} color={KC.pink} T={T} ph={1} /></g>
-          <text x={540} y={1010} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 860)`}>?</text></>)}
+        {svg(<><Persona x={310} y={1060} s={1.45} color={AZUL} T={T} /><g opacity={0.55}><Persona x={770} y={1060} s={1.45} color={KC.pink} T={T} ph={1} /></g>
+          <text x={540} y={830} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={10} transform={`rotate(${Math.sin(T * 3) * 6} 540 730)`}>?</text></>)}
       </Escena>
       {/* 6 · la realidad: 12 % contra 36 % */}
       <Escena T={T} a={K.Re} b={K.Go}>

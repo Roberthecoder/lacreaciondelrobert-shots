@@ -376,26 +376,26 @@ function Herculano() {
       {/* 8 · el gran premio */}
       <Escena T={T} a={K.Pr} b={K.M}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<Columnas p={kprog(T, K.Pr + 0.3, K.Pr + 2.6)} x={60} y={440} w={960} h={480} tam={34} />)}
+        {svg(<Columnas p={kprog(T, K.Pr + 0.3, K.Pr + 2.6)} x={60} y={560} w={960} h={520} tam={36} />)}
       </Escena>
-      <Chip T={T} at={K.Pr + 0.6} until={K.Pr + 3.6} texto={`más de ${kformato(caracteres)} caracteres`} x={540} y={1070} tam={40} borde={KC.gold} />
-      <Chip T={T} at={K.Pr + 4.0} until={K.M - 0.2} texto="≈ 5 % del rollo (2023)" x={540} y={1070} tam={40} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Pr + 3.0} until={K.M - 0.2} valor={700000} prefijo="$" dur={1.0} x={540} y={1230} tam={180} color={KC.mint} />
-      <Chip T={T} at={K.Pr + 3.6} until={K.M - 0.2} texto="Youssef Nader · Luke Farritor · Julian Schilliger" x={540} y={1390} tam={29} borde={KC.ink} />
-      <div style={{ position:'absolute', right:70, top:948, zIndex:20, font:`700 22px ${KF.mono}`, color:'#9a8f84', opacity:kprog(T, K.Pr + 0.5, K.Pr + 0.9) * (1 - kprog(T, K.Pl - 0.2, K.Pl + 0.3)) }}>texto esquemático</div>
+      <Chip T={T} at={K.Pr + 0.6} until={K.Pr + 3.6} texto={`más de ${kformato(caracteres)} caracteres`} x={540} y={1170} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.Pr + 4.0} until={K.M - 0.2} texto="≈ 5 % del rollo (2023)" x={540} y={1170} tam={40} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Pr + 3.0} until={K.M - 0.2} valor={700000} prefijo="$" dur={1.0} x={540} y={1320} tam={170} color={KC.mint} />
+      <Chip T={T} at={K.Pr + 3.6} until={K.M - 0.2} texto="Youssef Nader · Luke Farritor · Julian Schilliger" x={540} y={1480} tam={29} borde={KC.ink} />
+      <div style={{ position:'absolute', right:70, top:1092, zIndex:20, font:`700 22px ${KF.mono}`, color:'#9a8f84', opacity:kprog(T, K.Pr + 0.5, K.Pr + 0.9) * (1 - kprog(T, K.Pl - 0.2, K.Pl + 0.3)) }}>texto esquemático</div>
 
       {/* 9 · el matiz: la IA marca, los expertos leen */}
       <Escena T={T} a={K.M} b={K.Pl}>
         <FondoLunares color={KC.mint} />
-        {svg(<g opacity=".55"><Columnas p={1} x={60} y={440} w={960} h={480} tam={34} /></g>)}
+        {svg(<g opacity=".55"><Columnas p={1} x={60} y={560} w={960} h={520} tam={36} /></g>)}
       </Escena>
-      <Tarjeta T={T} at={K.M + 0.3} until={K.Pl - 0.2} x={70} y={1110} h={400} titulo="la IA: dónde hay tinta ✔" color={KC.cyan}>
+      <Tarjeta T={T} at={K.M + 0.3} until={K.Pl - 0.2} x={70} y={1180} h={370} titulo="la IA: dónde hay tinta ✔" color={KC.cyan}>
         <Robotito x={220} y={190} s={0.8} T={T} cara="feliz" />
       </Tarjeta>
-      <Tarjeta T={T} at={K.M + 1.6} until={K.Pl - 0.2} x={570} y={1110} h={400} titulo="papirólogos: qué dice ✔" color={KC.yellow}>
+      <Tarjeta T={T} at={K.M + 1.6} until={K.Pl - 0.2} x={570} y={1180} h={370} titulo="papirólogos: qué dice ✔" color={KC.yellow}>
         <Papirologo x={200} y={130} s={0.95} T={T} />
       </Tarjeta>
-      <Chip T={T} at={K.M + 0.2} until={K.Pl - 0.2} texto="¿quién lee?" x={540} y={1045} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.M + 0.2} until={K.Pl - 0.2} texto="¿quién lee?" x={540} y={1120} tam={44} borde={KC.ink} />
 
       {/* 10 · qué decía: placeres */}
       <Escena T={T} a={K.Pl} b={K.Ti}>

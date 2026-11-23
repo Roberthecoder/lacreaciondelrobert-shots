@@ -100,7 +100,7 @@ function Conidioforo({ x, y, alto = 90, ancho = 22, ang = -90, crece = 1, conidi
 /* ---------- la ventana ---------- */
 // Ventana de casa vista desde adentro: marco claro, vidrio con cielo (tarde: 0 = de día, 1 = atardecer).
 function Ventana({ T, tarde = 0, sol = 0 }) {
-  const cielo1 = mixHex('#3f93c9', '#d97a3c', tarde), cielo2 = mixHex('#8cc9e6', '#e9b566', tarde);
+  const cielo1 = mixHex('#2c6e9e', '#b4602f', tarde), cielo2 = mixHex('#6aa5c6', '#cf9a55', tarde);
   return <g>
     <defs><linearGradient id="cieloV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={cielo1} /><stop offset="1" stopColor={cielo2} /></linearGradient>
       <clipPath id="vidrioV"><rect x={90} y={330} width={900} height={1040} /></clipPath></defs>
@@ -108,8 +108,8 @@ function Ventana({ T, tarde = 0, sol = 0 }) {
     <g clipPath="url(#vidrioV)">
       <circle cx={760} cy={klerp(470, 1120, sol)} r={110} fill={mixHex('#fff6c0', '#ffb347', tarde)} opacity={0.9} />
       {[[200, 520, 1], [620, 640, 0.8], [380, 760, 0.7]].map(([cx, cy, k], i) => <g key={i} opacity={0.85 - tarde * 0.3} transform={`translate(${(cx + T * 6 * k) % 1100 - 60} ${cy}) scale(${k})`}>
-        <ellipse cx={0} cy={0} rx={120} ry={40} fill="#e6eef6" /><ellipse cx={-50} cy={-26} rx={60} ry={40} fill="#e6eef6" /><ellipse cx={40} cy={-34} rx={70} ry={48} fill="#e6eef6" /></g>)}
-      <path d={`M 90 1220 Q 300 1150 520 1200 Q 760 1250 990 1170 L 990 1370 L 90 1370 Z`} fill={mixHex('#2f9440', '#6a4434', tarde * 0.6)} />
+        <ellipse cx={0} cy={0} rx={120} ry={40} fill="#c8d3df" /><ellipse cx={-50} cy={-26} rx={60} ry={40} fill="#c8d3df" /><ellipse cx={40} cy={-34} rx={70} ry={48} fill="#c8d3df" /></g>)}
+      <path d={`M 90 1220 Q 300 1150 520 1200 Q 760 1250 990 1170 L 990 1370 L 90 1370 Z`} fill={mixHex('#27773a', '#5a3a2c', tarde * 0.6)} />
       {/* reflejo del vidrio */}
       <path d="M 180 330 L 330 330 L 140 900 L 90 900 L 90 600 Z" fill="rgba(255,255,255,.18)" />
     </g>
@@ -168,7 +168,7 @@ function MoscaVentanaShot() {
   // sangre
   const iny = kprog(T, K.Sa + 0.5, K.Sa + 1.6), rastro = kprog(T, K.Sa + 1.8, K.Sa + 4.4);
   // bandas
-  const salen = kprog(T, K.B + 0.3, K.B + 2.0, kEase.sale);
+  const salen = kprog(T, K.B - 0.4, K.B + 1.4, kEase.sale);
   // halo
   const halo = kprog(T, K.H + 0.1, K.H + 2.6);
   // machos

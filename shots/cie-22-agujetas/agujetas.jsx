@@ -218,7 +218,8 @@ function Agujetas() {
         <FondoLunares color={KC.yellow} />
         <Lienzo><DZ k={1.5} de={[480, 820]} a={[480, 960]}>
           <Escalera {...ES} n={6} />
-          <BajaEscalera T={T} {...ES} k={1.0 + T * 0.5} cara="o" dolor={1} />
+          {/* belleza: arranca un escalón más abajo para que desde el cuadro 0 se vea completo (antes salía cortado a la izquierda) */}
+          <BajaEscalera T={T} {...ES} k={1.6 + T * 0.4} cara="o" dolor={1} />
           <Frasco x={730} y={1010} s={1.05} tacha={kprog(T, K.Gancho + 2.6, K.Gancho + 3.3)} />
           <Onomato T={T} at={K.Gancho + 0.2} dur={1.6} x={450} y={400} texto="¡AY!" color={KC.red} tam={140} rot={-10} />
         </DZ></Lienzo>

@@ -25,6 +25,14 @@ function Oveja({ T = 0, x, y, s = 1, cara = 'blanca', ubre = false, sombrero = f
   const resp = 1 + 0.012 * Math.sin(T * 2 + fase);
   const R = krng(7), rizos = Array.from({ length: 16 }, (_, i) => { const a = (i / 16) * Math.PI * 2; return [Math.cos(a) * 205, Math.sin(a) * 112, 60 + R() * 18]; });
   return <g transform={`translate(${x} ${y}) scale(${s})`} opacity={o}>
+    <defs>
+      <radialGradient id="dolly-lana-vol" cx="0.32" cy="0.26" r="0.85">
+        <stop offset="0" stopColor="#ffffff" stopOpacity="0.42" />
+        <stop offset="0.5" stopColor="#ffffff" stopOpacity="0" />
+        <stop offset="1" stopColor="#3a2f26" stopOpacity="0.32" />
+      </radialGradient>
+    </defs>
+    <ellipse cx={10} cy={262} rx={250} ry={24} fill="#000" opacity={0.28} />
     {/* patas */}
     {[-150, -95, 105, 160].map((px, i) => <g key={i} transform={`rotate(${Math.sin(T * 1.3 + i + fase) * 1.5} ${px} 90)`}>
       <rect x={px - 19} y={70} width={38} height={175} rx={16} fill={pata} stroke={KC.ink} strokeWidth={9} />
@@ -38,6 +46,8 @@ function Oveja({ T = 0, x, y, s = 1, cara = 'blanca', ubre = false, sombrero = f
       {rizos.map(([cx, cy, r], i) => <circle key={'l' + i} cx={cx} cy={cy} r={r} fill={lana} />)}
       <ellipse rx={215} ry={120} fill={lana} />
       {rizos.slice(0, 10).map(([cx, cy, r], i) => <path key={'s' + i} d={`M ${cx * 0.6 - 20} ${cy * 0.6} q 20 -22 40 0`} fill="none" stroke={lanaS} strokeWidth={7} strokeLinecap="round" />)}
+      <ellipse rx={232} ry={138} fill="url(#dolly-lana-vol)" />
+      <ellipse cx={-70} cy={-78} rx={70} ry={20} fill="#fff" opacity={0.28} />
       <circle cx={228} cy={-30} r={34} fill={KC.ink} /><circle cx={228} cy={-30} r={26} fill={lana} />
     </g>
     {collar && <g transform="translate(-175 -40) rotate(-20)"><rect x={-14} y={-70} width={28} height={110} rx={10} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
@@ -226,8 +236,10 @@ function Dolly() {
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
           <Pasto T={T} color="#4cc95a" />
+          <g transform="translate(0 100)">
           <EdificioRoslin x={440} y={870} s={1.1} T={T} />
-          <Oveja T={T} x={klerp(1300, 760, kprog(T, K.D, K.D + 1.2, kEase.sale))} y={1070} s={0.75} collar="DOLLY" fase={2} />
+          <Oveja T={T} x={klerp(1300, 760, kprog(T, K.D, K.D + 1.2, kEase.sale))} y={1090} s={0.8} collar="DOLLY" fase={2} />
+          </g>
         </SvgCapa>
       </Escena>
       {/* 2 · la donadora Finn Dorset, su ubre por dentro y el cultivo casi sin suero */}
@@ -307,7 +319,9 @@ function Dolly() {
               const o = esUno ? 1 : es29 ? 1 - 0.85 * e1 : 1 - 0.85 * e29;
               const col = esUno && e1 > 0.5 ? KC.mint : es29 && e29 > 0.5 ? KC.gold2 : KC.pink;
               const rr = esUno ? 19 + 12 * e1 + 4 * Math.sin(T * 8) * e1 : 19;
-              return <circle key={i} cx={x} cy={y} r={rr} fill={col} stroke={KC.ink} strokeWidth={4} opacity={o} />; })}
+              return <g key={i} opacity={o}><circle cx={x} cy={y} r={rr} fill={col} stroke={KC.ink} strokeWidth={4} />
+                <circle cx={x + rr * 0.18} cy={y + rr * 0.22} r={rr * 0.72} fill="#1a1030" opacity={0.18} />
+                <circle cx={x - rr * 0.32} cy={y - rr * 0.32} r={rr * 0.28} fill="#fff" opacity={0.45} /></g>; })}
           </g>}
         </SvgCapa>
         <TarjetaEstudio T={T} at={K.E + 0.1} until={K.E + 1.8} anio="1997" quien="Wilmut y su equipo · Roslin" revista="Nature · célula adulta de ubre" x={540} y={460} />
@@ -320,16 +334,18 @@ function Dolly() {
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
           <Pasto T={T} />
-          <Oveja T={T} x={250} y={900} s={0.6} cara="negra" fase={4} />
+          <g transform="translate(540 1010) scale(1.12) translate(-540 -900)">
+          <Oveja T={T} x={300} y={900} s={0.6} cara="negra" fase={4} />
           <Oveja T={T} x={560} y={985} s={0.4} fase={5} collar="DOLLY" />
-          <Oveja T={T} x={880} y={900} s={0.6} ubre fase={6} />
-          <text x={250} y={700} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>la madre que la parió</text>
-          <text x={880} y={700} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>la oveja de la ubre</text>
+          <Oveja T={T} x={830} y={900} s={0.6} ubre fase={6} />
+          <text x={300} y={700} textAnchor="middle" style={{ font:`900 28px ${KF.texto}` }} fill={KC.ink}>la madre que la parió</text>
+          <text x={820} y={700} textAnchor="middle" style={{ font:`900 28px ${KF.texto}` }} fill={KC.ink}>la oveja de la ubre</text>
           {T > K.R + 0.6 && <g opacity={kprog(T, K.R + 0.6, K.R + 1.0)}><ADNHebra T={T} x={500} y={830} largo={Math.max(1, 210 * kprog(T, K.R + 0.6, K.R + 1.4))} alto={40} vueltas={2} grosor={6} />
             <rect x={480} y={738} width={260} height={50} rx={14} fill={KC.paper} stroke={KC.ink} strokeWidth={5} /><text x={610} y={773} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>ADN del núcleo</text></g>}
           {T > K.R + 1.6 && <g transform={`translate(420 1000) scale(${kprog(T, K.R + 1.6, K.R + 2.0, kEase.rebote)})`}><path d="M -40 -40 L 40 40 M 40 -40 L -40 40" stroke={KC.red} strokeWidth={18} strokeLinecap="round" /></g>}
+          </g>
         </SvgCapa>
-        <Chip T={T} at={K.R + 2.4} until={K.Pa - 0.2} texto="sus mitocondrias: del óvulo" x={540} y={1380} tam={36} borde={KC.cyan} />
+        <Chip T={T} at={K.R + 2.4} until={K.Pa - 0.2} texto="sus mitocondrias: del óvulo" x={540} y={1460} tam={36} borde={KC.cyan} />
       </Escena>
       {/* 10 · el nombre: por Dolly Parton */}
       <Escena T={T} a={K.Pa} b={K.Cl} zoom={0.05}>
@@ -349,12 +365,13 @@ function Dolly() {
           <Pasto T={T} />
           {T < K.Cl + 2.0 && <g opacity={1 - kprog(T, K.Cl + 1.6, K.Cl + 2.0)}><Oveja T={T} x={600} y={930} s={1.25} gris={0.6 * kprog(T, K.Cl + 0.3, K.Cl + 1.0)} fase={8} /></g>}
           {T > K.Cl + 1.8 && ['Debbie', 'Denise', 'Dianna', 'Daisy'].map((n, i) => { const e = kprog(T, K.Cl + 1.8 + i * 0.2, K.Cl + 2.3 + i * 0.2, kEase.rebote);
-            return <g key={n}><Oveja T={T} x={170 + i * 255} y={1010} s={0.44 * e} fase={i * 1.7} />
-              <text x={150 + i * 255} y={1195} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} opacity={e}>{n}</text></g>; })}
+            const ox = [310, 800, 350, 840][i], oy = [930, 930, 1190, 1190][i], ty = i < 2 ? 760 : 1385;
+            return <g key={n}><Oveja T={T} x={ox} y={oy} s={0.6 * e} fase={i * 1.7} />
+              <text x={ox - 20} y={ty} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink} opacity={e}>{n}</text></g>; })}
         </SvgCapa>
         <Chip T={T} at={K.Cl + 0.2} until={K.Cl + 1.8} texto="Dolly murió en 2003" x={540} y={1420} tam={40} borde={KC.red} />
-        <TarjetaEstudio T={T} at={K.Cl + 1.9} until={K.C - 0.1} anio="2016" quien="Universidad de Nottingham" revista="Sinclair et al. · Nature Communications" x={540} y={620} />
-        <Chip T={T} at={K.Cl + 2.4} until={K.C - 0.1} texto="4 clones de Dolly · 8 años · presión ✓ azúcar ✓" x={540} y={1400} tam={32} borde={KC.mint} />
+        <TarjetaEstudio T={T} at={K.Cl + 1.9} until={K.C - 0.1} anio="2016" quien="Universidad de Nottingham" revista="Sinclair et al. · Nature Communications" x={540} y={430} />
+        <Chip T={T} at={K.Cl + 2.4} until={K.C - 0.1} texto="4 clones de Dolly · 8 años · presión ✓ azúcar ✓" x={540} y={1480} tam={32} borde={KC.mint} />
       </Escena>
       {/* 12 · cierre: la misma oveja, ahora sabemos de dónde salió */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
@@ -371,7 +388,7 @@ function Dolly() {
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 2.6} texto="¿un espermatozoide?" x={330} y={470} tam={42} />
       <Etiqueta T={T} at={K.G + 2.95} until={K.D - 0.3} x={60} y={520} texto="célula de ubre" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.D + 0.6} until={K.U - 0.2} texto="Dolly · Instituto Roslin, Escocia" x={540} y={1400} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.D + 0.6} until={K.U - 0.2} texto="Dolly · Instituto Roslin, Escocia" x={540} y={1480} tam={40} borde={KC.gold} />
       <Chip T={T} at={K.U + 0.2} until={K.U + 2.6} texto="oveja Finn Dorset · cara blanca" x={540} y={1420} tam={36} borde={KC.pink} />
       <Chip T={T} at={K.U + 4.8} until={K.Ov - 0.2} texto="células quietas: ya no se dividen" x={540} y={1440} tam={34} borde={KC.yellow} />
       <Etiqueta T={T} at={K.Ov + 0.3} until={K.Ch - 0.2} x={790} y={400} texto="Scottish Blackface" lado="izq" tam={28} color={KC.texto} />

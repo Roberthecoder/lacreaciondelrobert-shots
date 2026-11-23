@@ -29,11 +29,21 @@ const POS6 = [[205, 870], [540, 870], [875, 870], [205, 1150], [540, 1150], [875
 const POS6B = [[205, 1120], [540, 1120], [875, 1120], [205, 1370], [540, 1370], [875, 1370]];
 
 // Expediente (carpeta) con el nombre del caso y un sello rojo "NO EXISTE" (sello 0..1).
+// Sombreado de volumen (pase de belleza): luz arriba-izquierda, sombra abajo-derecha.
+function DefsAV() {
+  return <defs>
+    <linearGradient id="avVol" x1="0" y1="0" x2="0.5" y2="1"><stop offset="0" stopColor="#fff" stopOpacity="0.3" /><stop offset="0.5" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.28" /></linearGradient>
+    <linearGradient id="avMadera" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#c98a4e" /><stop offset="1" stopColor="#7a4a22" /></linearGradient>
+  </defs>;
+}
 function Expediente({ x, y, s = 1, rot = 0, nombre, contra, sello = 0, o = 1 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`} opacity={o}>
+    <DefsAV />
+    <rect x={-128} y={-78} width={280} height={182} rx={12} fill="rgba(0,0,0,.4)" />
     <path d="M -140 -95 L -140 -118 Q -140 -126 -132 -126 L -40 -126 Q -30 -126 -24 -116 L -16 -100 L 132 -100 Q 140 -100 140 -92 L 140 -80 Z" fill="#e0ad4f" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
     <rect x={-124} y={-112} width={248} height={120} rx={4} fill="#fffdf6" stroke={KC.ink} strokeWidth={4} transform="rotate(-3)" />
-    <rect x={-140} y={-92} width={280} height={182} rx={12} fill="#f3c86b" stroke={KC.ink} strokeWidth={7} />
+    <rect x={-140} y={-92} width={280} height={182} rx={12} fill="#efc062" stroke="#fff1c9" strokeOpacity={0.8} strokeWidth={5} />
+    <rect x={-140} y={-92} width={280} height={182} rx={12} fill="url(#avVol)" />
     <text x={0} y={-12} textAnchor="middle" style={{ font:`400 50px ${KF.titulo}` }} fill="#0b1020">{nombre}</text>
     <text x={0} y={30} textAnchor="middle" style={{ font:`italic 700 22px ${KF.mono}` }} fill="#5a3d10">{contra}</text>
     <line x1={-100} y1={58} x2={100} y2={58} stroke="#b8862f" strokeWidth={4} /><line x1={-100} y1={72} x2={60} y2={72} stroke="#b8862f" strokeWidth={4} />
@@ -130,11 +140,12 @@ function Mazo({ x, y, s = 1, T, th }) {
   const sube = kprog(T, th - 1.0, th - 0.35, kEase.sale), baja = kprog(T, th - 0.35, th, (p) => p * p);
   const ang = -48 * sube * (1 - baja) + (T > th ? Math.exp(-(T - th) * 8) * Math.sin((T - th) * 30) * -4 : 0);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <ellipse cx={40} cy={86} rx={150} ry={26} fill="rgba(0,0,0,.18)" />
-    <rect x={-50} y={50} width={180} height={40} rx={10} fill="#8a5a2b" stroke={KC.ink} strokeWidth={6} />
+    <DefsAV />
+    <ellipse cx={40} cy={86} rx={150} ry={26} fill="rgba(0,0,0,.35)" />
+    <rect x={-50} y={50} width={180} height={40} rx={10} fill="url(#avMadera)" stroke="#e5b98a" strokeOpacity={0.7} strokeWidth={4} />
     <g transform={`rotate(${ang} 200 40)`}>
-      <rect x={20} y={28} width={190} height={20} rx={8} fill="#a8703a" stroke={KC.ink} strokeWidth={6} />
-      <rect x={-10} y={-20} width={80} height={70} rx={14} fill="#a8703a" stroke={KC.ink} strokeWidth={7} />
+      <rect x={20} y={28} width={190} height={20} rx={8} fill="url(#avMadera)" stroke="#e5b98a" strokeOpacity={0.7} strokeWidth={4} />
+      <rect x={-10} y={-20} width={80} height={70} rx={14} fill="url(#avMadera)" stroke="#e5b98a" strokeOpacity={0.7} strokeWidth={4} />
       <rect x={-18} y={-10} width={14} height={50} rx={5} fill={KC.gold} stroke={KC.ink} strokeWidth={4} />
       <rect x={64} y={-10} width={14} height={50} rx={5} fill={KC.gold} stroke={KC.ink} strokeWidth={4} />
     </g>
@@ -258,7 +269,7 @@ function Avianca() {
       {/* 3 · paso 2: pídele casos a ChatGPT */}
       <Escena T={T} a={K.P2} b={K.P3}>
         <FondoLunares color={KC.lilac} />
-        {svg(<g opacity={klerp(0.28, 1, kprog(T, K.P2 + 2.6, K.P2 + 3.0))}><HojaFalsa x={805} y={1010} s={1.2} T={T} falta={kprog(T, K.P2 + 3.6, K.P2 + 4.2)} /></g>)}
+        {svg(<g opacity={klerp(0.6, 1, kprog(T, K.P2 + 2.6, K.P2 + 3.0))}><HojaFalsa x={805} y={1060} s={1.2} T={T} falta={kprog(T, K.P2 + 3.6, K.P2 + 4.2)} /></g>)}
       </Escena>
       {T > K.P2 - 0.45 && T < K.P3 + 0.45 && <div style={{ opacity: kprog(T, K.P2 - 0.45, K.P2 + 0.05) * (1 - kprog(T, K.P3 - 0.05, K.P3 + 0.45)) }}>
         <CelularChat T={T} x={300} y={1080} s={0.9} tam={40} mensajes={[
@@ -268,7 +279,7 @@ function Avianca() {
           { at: K.P2 + 2.6, texto: 'Petersen v. Iran Air (2012)…' }]} escribe={[K.P2 + 1.0, K.P2 + 1.5]} />
       </div>}
       <PasoN T={T} at={K.P2 + 0.05} until={K.P3 - 0.25} n={2} texto="Pídele casos a ChatGPT" />
-      <Chip T={T} at={K.P2 + 3.9} until={K.P3 - 0.25} texto="texto completo: ✗" x={805} y={1390} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.P2 + 3.9} until={K.P3 - 0.25} texto="texto completo: ✗" x={805} y={1450} tam={36} borde={KC.red} />
 
       {/* 4 · paso 3: no retires nada */}
       <Escena T={T} a={K.P3} b={K.Q}>

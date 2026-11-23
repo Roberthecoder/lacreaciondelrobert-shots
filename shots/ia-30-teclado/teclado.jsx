@@ -318,15 +318,15 @@ function Teclado() {
       {/* 10 · el matiz: no es privacidad perfecta */}
       <Escena T={T} a={K.M} b={K.C}>
         <FondoCircuito T={T} color={KC.red} />
-        <SVGL><Paquete x={540} y={790} s={2.7} T={T} candado={1} brillo={0.6} /></SVGL>
+        <SVGL><Paquete x={540} y={860} s={3.0} T={T} candado={1} brillo={0.6} /></SVGL>
         {(() => { let xx = 148; return frase.map((w, k) => { const tw = Math.max(70, w.length * 60 * 0.62 + 40), cx = xx + tw / 2; xx += tw + 22;
           const t0 = K.M + 1.8 + k * 0.5, e = kprog(T, t0, t0 + 0.4, kEase.rebote), rv = T > t0 + 1.4 + k * 0.4;
           const u = kprog(T, t0, t0 + 0.6, kEase.sale);
-          return e > 0 && <FichaT key={k} x={klerp(540, cx, u)} y={klerp(790, 1200, u)} s={e} texto={rv ? w : '?'} tam={60} color={rv ? KC.yellow : '#7f8ba3'} />; }); })()}
+          return e > 0 && <FichaT key={k} x={klerp(540, cx, u)} y={klerp(860, 1250, u)} s={e} texto={rv ? w : '?'} tam={60} color={rv ? KC.yellow : '#7f8ba3'} />; }); })()}
       </Escena>
-      <Chip T={T} at={K.M + 0.8} until={K.C - 0.2} texto="MIT · 2019" x={540} y={420} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.M + 4.4} until={K.C - 0.2} texto="en pruebas de laboratorio" x={540} y={1370} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.M + 4.8} until={K.C - 0.2} texto="frase de ejemplo" x={540} y={1455} tam={26} mono borde={KC.texto} />
+      <Chip T={T} at={K.M + 0.8} until={K.C - 0.2} texto="MIT · 2019" x={540} y={470} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.M + 4.4} until={K.C - 0.2} texto="en pruebas de laboratorio" x={540} y={1395} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.M + 4.8} until={K.C - 0.2} texto="frase de ejemplo" x={540} y={1475} tam={26} mono borde={KC.texto} />
 
       {/* 11 · cierre: el mismo celular del inicio */}
       <Escena T={T} a={K.C} b={FIN}><FondoLunares color={KC.yellow} /></Escena>

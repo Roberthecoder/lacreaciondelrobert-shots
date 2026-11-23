@@ -363,6 +363,10 @@ function Aves() {
       {/* 4 · pregunta */}
       <Escena T={T} a={K.P} b={K.V} zoom={0.1}>
         <FondoLunares color={KC.orange} />
+        {/* pase de belleza: la red que lee la «foto» del canto sigue a cuadro (a media luz) mientras suena la pregunta */}
+        <div style={{ position:'absolute', inset:0, background:'rgba(8,12,22,.85)' }}></div>
+        {svg(<g opacity={0.6}><Huella T={T} x={150} y={930} tipo="curva" at={K.F + 3.0} etiqueta="foto" s={0.72} /></g>)}
+        <RedNeuronal T={T} x={330} y={620} ancho={680} alto={620} capas={[5, 7, 7, 7, 3]} onda={((T - K.F - 3.2) * 0.7) % 1.2} o={0.6} color={KC.mint} />
         {svg(<text x={560} y={1400} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 560 1200)`}>?</text>)}
       </Escena>
       {/* 5 · los voluntarios */}
@@ -400,12 +404,12 @@ function Aves() {
         <FondoLunares color={KC.pink} />
         {svg(<>
           <g opacity={1 - kprog(T, K.Ge + 3.6, K.Ge + 4.1)} transform="translate(540 1010) scale(1.45) translate(-540 -930)"><Celulares T={T} at={K.Ge + 0.5} x0={240} y0={780} /></g>
-          {T > K.Ge + 3.6 && <MapaEuropa T={T} at={K.Ge + 3.6} rutaP={ruta} />}
+          {T > K.Ge + 3.6 && <g transform="translate(0 120)"><MapaEuropa T={T} at={K.Ge + 3.6} rutaP={ruta} /></g>}
         </>)}
       </Escena>
       <NumeroGigante T={T} at={K.Ge + 0.3} until={K.Ge + 3.6} valor={1.1} dec={1} dur={1.2} prefijo="+" sufijo=" millones" etiqueta="personas en 2020" x={540} y={500} tam={110} color={KC.yellow} />
-      <Rotulo T={T} at={K.Ge + 4.0} until={K.J - 0.2} normal="grulla común" it="Grus grus" y={440} />
-      <Chip T={T} at={K.Ge + 5.6} until={K.J - 0.2} texto="igual a su ruta ya conocida" x={540} y={525} tam={32} borde={KC.red} />
+      <Rotulo T={T} at={K.Ge + 4.0} until={K.J - 0.2} normal="grulla común" it="Grus grus" y={555} />
+      <Chip T={T} at={K.Ge + 5.6} until={K.J - 0.2} texto="igual a su ruta ya conocida" x={540} y={640} tam={32} borde={KC.red} />
       {/* 9 · el modelo de 2023 y tu jardín */}
       <Escena T={T} a={K.J} b={K.C}>
         <FondoLunares color={KC.lilac} />

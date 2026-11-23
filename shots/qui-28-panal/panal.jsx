@@ -165,9 +165,10 @@ function Panal28() {
       <Escena T={T} a={K.G} b={K.Q} zoom={0.06} origen="62% 50%">
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          <g transform="translate(0 110)">{/* belleza: la escena baja 110 px al centro del cuadro */}
           {/* la mesa (escenario oscuro, llena la parte de abajo) */}
           <rect x={-200} y={1256} width={1500} height={900} fill="#1b1510" /><line x1={-200} y1={1256} x2={1300} y2={1256} stroke="#5a4632" strokeWidth={6} />
-          <Panal T={T} x={215} y={1130} s={0.78} rot={-6} />
+          <Panal T={T} x={272} y={1130} s={0.78} rot={-6} />
           {/* cucharita que suelta el polvo */}
           <g transform={`translate(${610} ${520 - polvo * 20}) rotate(${-20 + polvo * 50}) scale(1.5)`} opacity={1 - kprog(T, K.G + 0.7, K.G + 1.0)}>
             <rect x={-200} y={-12} width={170} height={22} rx={10} fill="#c9ced6" stroke={KC.ink} strokeWidth={6} />
@@ -181,6 +182,7 @@ function Panal28() {
           <g opacity={1 - kprog(T, K.G + 2.1, K.G + 2.5)}><Botella x={900} y={500} s={0.9} inclina={klerp(-40, -110, vierte)} color="#e8f6ff" liquido={AGUA} tapa={KC.blue} /></g>
           <VasoGel T={T} x={610} y={980} s={1.75} nivel={Math.max(0.02, nivel)} gel={gel} giro={giro} />
           {giro >= 179 && <path d="M 360 1262 L 900 1262" stroke={KC.ink} strokeWidth={12} strokeLinecap="round" />}
+          </g>
         </SvgCapa>
       </Escena>
       {/* 1–5 · por dentro: la red del poliacrilato (una sola escena continua) */}
@@ -191,7 +193,8 @@ function Panal28() {
           {T < K.Q + 1.6 && <g opacity={1 - kprog(T, K.Q + 0.9, K.Q + 1.6)}>
             <circle cx={cx} cy={cy} r={klerp(150, 820, kprog(T, K.Q - 0.3, K.Q + 1.5, kEase.suave))} fill="#e9f2ff" stroke="#8aa0b8" strokeWidth={10} />
           </g>}
-          <g opacity={kprog(T, K.Q + 0.8, K.Q + 1.5)} transform={`translate(${cx} ${cy}) scale(1.1) translate(${-cx} ${-cy})`}>
+          {/* belleza: la red empieza más grande (1.3) y baja al centro; al estirarse queda en 1.1 como antes */}
+          <g opacity={kprog(T, K.Q + 0.8, K.Q + 1.5)} transform={`translate(${cx} ${cy + 60}) scale(${1.1 + 0.2 * (1 - kprog(T, K.Rp + 0.4, K.Rp + 3.0, kEase.suave))}) translate(${-cx} ${-cy})`}>
             {/* borde del gel y lo de afuera (ósmosis) */}
             {T > K.Os - 0.3 && T < K.Ge + 0.6 && <g opacity={kprog(T, K.Os - 0.3, K.Os + 0.4) * (1 - kprog(T, K.Ge, K.Ge + 0.5))}>
               <rect x={cx - 435} y={cy - 452} width={870} height={864} rx={70} fill="rgba(198,236,255,.07)" stroke={GEL} strokeWidth={6} strokeDasharray="22 14" />
@@ -257,7 +260,7 @@ function Panal28() {
       <Escena T={T} a={K.Sa} b={K.Pe} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          <g transform={`translate(${cx} ${cy}) scale(1.1) translate(${-cx} ${-cy})`}>
+          <g transform={`translate(${cx} ${cy + 60}) scale(1.1) translate(${-cx} ${-cy})`}>
           <Red T={T} cx={cx} cy={cy} abre={klerp(1, 0.72, kprog(T, K.Sa + 2.0, K.Sa + 4.0, kEase.suave))} cargas={1} sodio={1} apaga={kprog(T, K.Sa + 1.2, K.Sa + 3.0)} sal={kprog(T, K.Sa + 0.2, K.Sa + 2.4)} />
           {aguas.slice(0, 10).map(([u, v, r0], i) => { const sale = kprog(T, K.Sa + 2.4 + i * 0.12, K.Sa + 3.6 + i * 0.12, kEase.suave);
             return <Aguita key={i} x={cx + u * klerp(300, 900, sale)} y={cy + v * klerp(300, 900, sale)} s={0.9} rot={r0 + T * 40} o={1 - sale} />; })}
@@ -269,19 +272,21 @@ function Panal28() {
         <FondoLunares color={KC.orange} />
         <SvgCapa>
           <GranoAlmidon T={T} x={540} y={900} s={1.35} injerto={kprog(T, K.Pe + 2.6, K.Pe + 5.0)} />
-          <Letrero T={T} x={540} y={1450} e={kprog(T, K.Pe + 5.4, K.Pe + 5.9, kEase.rebote)} />
+          <Letrero T={T} x={540} y={1410} e={kprog(T, K.Pe + 5.4, K.Pe + 5.9, kEase.rebote)} />
         </SvgCapa>
       </Escena>
       {/* 10 · cierre: el vaso volteado del inicio, por dentro */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04} origen="62% 50%">
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          <g transform="translate(0 110)">{/* belleza: igual que el gancho, baja 110 px */}
           <rect x={-200} y={1256} width={1500} height={900} fill="#1b1510" /><line x1={-200} y1={1256} x2={1300} y2={1256} stroke="#5a4632" strokeWidth={6} />
-          <Panal T={T} x={215} y={1130} s={0.78} rot={-6} />
+          <Panal T={T} x={272} y={1130} s={0.78} rot={-6} />
           <VasoGel T={T} x={610} y={980} s={1.75} nivel={0.68} gel={1} giro={180} />
           <path d="M 360 1262 L 900 1262" stroke={KC.ink} strokeWidth={12} strokeLinecap="round" />
+          </g>
         </SvgCapa>
-        <Lupa T={T} at={K.Ci + 0.5} until={K.Ou - 0.2} x={290} y={440} r={230} fx={610} fy={980} tinte={KC.cyan} etiqueta="POR DENTRO · el gel"
+        <Lupa T={T} at={K.Ci + 0.5} until={K.Ou - 0.2} x={290} y={440} r={230} fx={610} fy={1090} tinte={KC.cyan} etiqueta="POR DENTRO · el gel"
           interior={(T2, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0d1424" />
             <g transform={`translate(${r} ${r}) scale(0.48) translate(${-540} ${-900})`}><Red T={T2} cx={540} cy={900} abre={1} cargas={1} sodio={1} />
               {aguas.map(([u, v, r0], i) => <Aguita key={i} x={540 + u * 360} y={900 + v * 330} s={1} rot={r0 + T2 * 40} />)}</g></svg>} />
@@ -290,23 +295,23 @@ function Panal28() {
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.2} until={K.G + 2.4} texto="¿gelatina?" x={270} y={520} tam={52} />
       <Chip T={T} at={K.G + 2.6} until={K.Q - 0.3} texto="unos segundos" x={270} y={520} tam={42} borde={KC.cyan} />
-      <Etq T={T} at={K.G + 0.8} until={K.Q - 0.3} x={60} y={1400} texto="polvito del pañal" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Q + 1.6} until={K.Ca - 0.2} texto="poliacrilato de sodio" x={540} y={1500} tam={46} borde={CADENA} />
-      <Etq T={T} at={K.Q + 2.6} until={K.Ca - 0.2} x={1030} y={1600} texto="amarres = red" lado="izq" tam={34} color={AMARRE} />
-      <Chip T={T} at={K.Ca + 0.4} until={K.Rp - 0.2} texto="–  carga negativa (COO⁻)" x={540} y={1500} tam={40} borde={CARGA} mono />
-      <Chip T={T} at={K.Ca + 2.0} until={K.Rp - 0.2} texto="+  ion de sodio (Na⁺)" x={540} y={1610} tam={40} borde={NA} mono />
+      <Etq T={T} at={K.G + 0.8} until={K.Q - 0.3} x={14} y={1010} texto="polvito del pañal" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Q + 1.6} until={K.Ca - 0.2} texto="poliacrilato de sodio" x={540} y={1470} tam={46} borde={CADENA} />
+      <Etq T={T} at={K.Q + 2.6} until={K.Ca - 0.2} x={1030} y={1550} texto="amarres = red" lado="izq" tam={34} color={AMARRE} />
+      <Chip T={T} at={K.Ca + 0.4} until={K.Rp - 0.2} texto="–  carga negativa (COO⁻)" x={540} y={1460} tam={40} borde={CARGA} mono />
+      <Chip T={T} at={K.Ca + 2.0} until={K.Rp - 0.2} texto="+  ion de sodio (Na⁺)" x={540} y={1545} tam={40} borde={NA} mono />
       <Chip T={T} at={K.Rp + 0.6} until={K.Os - 0.2} texto="las cargas se repelen" x={540} y={1500} tam={46} borde={KC.yellow} />
-      <SvgCapa z={44}><Onomato T={T} at={K.G + 3.4} until={K.Q - 0.2} x={800} y={1420} texto="¡no cae!" color={KC.cyan} tam={80} />
+      <SvgCapa z={44}><Onomato T={T} at={K.G + 3.4} until={K.Q - 0.2} x={800} y={1480} texto="¡no cae!" color={KC.cyan} tam={80} />
       <Onomato T={T} at={K.Rp + 1.6} until={K.Rp + 3.4} x={270} y={380} texto="¡boing!" color={KC.yellow} tam={90} /></SvgCapa>
       <Chip T={T} at={K.Os + 0.6} until={K.Ge - 0.2} texto="mucho Na⁺ adentro → entra agua" x={540} y={1500} tam={38} borde={NA} />
       <Chip T={T} at={K.Ge + 0.3} until={K.Pr - 0.2} texto="amarres: no se disuelve" x={540} y={1500} tam={44} borde={AMARRE} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.6} anio="2025" quien="Univ. de Coimbra, Portugal" revista="Simões et al. · Gels" x={540} y={470} />
-      <Chip T={T} at={K.Es + 4.4} until={K.Sa - 0.3} texto="veces su peso (g/g) · polvo de un pañal" x={540} y={1500} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.Sa + 0.5} until={K.Pe - 0.2} texto="la sal tapa las cargas" x={540} y={1500} tam={46} borde={CL} />
-      <Etq T={T} at={K.Sa + 0.8} until={K.Pe - 0.2} x={60} y={1600} texto="Na⁺ y Cl⁻ de la orina" tam={34} color={CL} />
+      <Chip T={T} at={K.Es + 4.4} until={K.Sa - 0.3} texto="veces su peso (g/g) · polvo de un pañal" x={540} y={1470} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Sa + 0.5} until={K.Pe - 0.2} texto="la sal tapa las cargas" x={540} y={1470} tam={46} borde={CL} />
+      <Etq T={T} at={K.Sa + 0.8} until={K.Pe - 0.2} x={60} y={1550} texto="Na⁺ y Cl⁻ de la orina" tam={34} color={CL} />
       <TarjetaEstudio T={T} at={K.Pe + 0.2} until={K.Pe + 2.6} anio="1973" quien="USDA · Peoria, Illinois" revista="almidón + cadenas injertadas" x={540} y={470} />
       <Etq T={T} at={K.Pe + 2.8} until={K.Ci - 0.2} x={50} y={1335} texto="grano de almidón" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Pe + 6.0} until={K.Ci - 0.2} texto="«el súper sorbedor»" x={540} y={1600} tam={44} borde={KC.pink} />
+      <Chip T={T} at={K.Pe + 6.0} until={K.Ci - 0.2} texto="«el súper sorbedor»" x={540} y={1545} tam={44} borde={KC.pink} />
       <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="agua atrapada en una red con cargas" x={540} y={1500} tam={36} borde={KC.cyan} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

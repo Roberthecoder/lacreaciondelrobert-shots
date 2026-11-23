@@ -297,7 +297,7 @@ function EscarabajoShot() {
       <Escena T={T} a={K.A} b={K.S} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <g opacity={1 - huerta}>
+          <g opacity={1 - kprog(T, K.A + 1.85, K.A + 2.2)}>
             <text x={540} y={660} textAnchor="middle" style={{ font:`900 54px ${KF.texto}` }} fill={KC.ink}>familia Lauraceae</text>
             <path d="M 540 690 L 540 740 M 290 740 L 790 740 M 290 740 L 290 800 M 790 740 L 790 800" stroke={KC.ink} strokeWidth={7} fill="none" strokeLinecap="round" />
             {[[290, 'laurel rojo', 0, 'Persea borbonia'], [790, 'aguacate', 1, 'Persea americana']].map(([cx, nom, k, sci]) => <g key={k} opacity={kprog(T, K.A + 0.3 + k * 0.5, K.A + 0.7 + k * 0.5)}>
@@ -309,7 +309,7 @@ function EscarabajoShot() {
               <text x={cx} y={1110} textAnchor="middle" style={{ font:`italic 700 26px ${KF.mono}` }} fill={KC.ink}>{sci}</text>
             </g>)}
           </g>
-          {huerta > 0 && <g opacity={huerta}>
+          {huerta > 0 && <g opacity={kprog(T, K.A + 2.15, K.A + 2.6)}>
             <path d="M 0 1200 Q 540 1170 1080 1200 L 1080 1920 L 0 1920 Z" fill="#18291a" stroke={KC.ink} strokeWidth={7} />
             <Aguacatero T={T} x={190} y={1230} s={0.72} seed={5} />
             <Aguacatero T={T} x={540} y={1240} s={0.72} seed={6} marchita={kprog(T, K.A + 2.8, K.A + 4.6, kEase.suave)} />
@@ -338,7 +338,7 @@ function EscarabajoShot() {
       {/* 12 · México: mayor productor de aguacate; sin registro de la plaga (Senasica, ficha 2019); vigilancia en 30 entidades (2024) */}
       <Escena T={T} a={K.Mx} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(490 990) scale(1.06) translate(-490 -780)">
           <MapaMexico x={40} y={560} ancho={900} conCA={false} color="#2f5a3a" />
           {T > K.Mx + 4.0 && <g opacity={kprog(T, K.Mx + 4.0, K.Mx + 4.4)}>
             <defs><clipPath id="mxClip"><rect x={40} y={540} width={900} height={460} /></clipPath></defs>
@@ -349,7 +349,7 @@ function EscarabajoShot() {
             <path d="M 0 -76 Q 46 -76 50 6 Q 54 82 0 84 Q -54 82 -50 6 Q -46 -76 0 -76 Z" fill={EC.aguacate} stroke={KC.ink} strokeWidth={6} />
             <path d="M -24 -30 Q -34 10 -22 40" stroke="rgba(255,255,255,.25)" strokeWidth={8} fill="none" strokeLinecap="round" />
           </g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 13 · cierre: el mismo tronco, el mismo puntito; ahora la lupa enseña el jardín de hongo y las larvas; y tu guacamole */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04} origen="40% 52%">
@@ -407,11 +407,11 @@ function EscarabajoShot() {
       <Etq T={T} at={K.S + 1.6} until={K.Mx - 0.2} x={620} y={1175} lado="izq" texto={<><i>X. volvulus</i></>} tam={28} color={KC.texto} />
       <Etq T={T} at={K.S + 1.7} until={K.Mx - 0.2} x={1040} y={1175} lado="izq" texto={<><i>X. bispinatus</i></>} tam={28} color={KC.texto} />
       <Nota T={T} at={K.Mx + 0.3} until={K.C - 0.2} x={50} y={400} lineas={['1.er productor mundial', 'de aguacate · Agricultura, 2026']} tam={28} />
-      {kvisible(T, K.Mx + 2.4, K.C - 0.2) && (() => { const e = kentrada(T, K.Mx + 2.4, K.C - 0.2, 'pop'); return <div style={{ position:'absolute', left:330, top:780, zIndex:43, opacity:e.o,
+      {kvisible(T, K.Mx + 2.4, K.C - 0.2) && (() => { const e = kentrada(T, K.Mx + 2.4, K.C - 0.2, 'pop'); return <div style={{ position:'absolute', left:330, top:1000, zIndex:43, opacity:e.o,
         transform:`translate(-50%,-50%) scale(${klerp(1.8, 1, kprog(T, K.Mx + 2.4, K.Mx + 2.75, kEase.rebote))}) rotate(-8deg)`, border:`8px solid ${KC.red}`, borderRadius:20, padding:'6px 24px', textAlign:'center', background:'rgba(16,23,40,.9)' }}>
         <div style={{ font:`400 62px/1.05 ${KF.titulo}`, color:KC.red }}>PLAGA AUSENTE</div>
         <div style={{ font:`700 24px ${KF.mono}`, color:KC.red }}>sin registros · Senasica (ficha 2019)</div></div>; })()}
-      <Nota T={T} at={K.Mx + 4.2} until={K.C - 0.2} x={50} y={1020} lineas={['vigilancia en 30 entidades', '(Senasica, 2024)']} tam={28} borde={KC.blue} />
+      <Nota T={T} at={K.Mx + 4.2} until={K.C - 0.2} x={50} y={1350} lineas={['vigilancia en 30 entidades', '(Senasica, 2024)']} tam={28} borde={KC.blue} />
       <Caja T={T} at={K.C + 1.0} until={K.Ou} x={50} y={1000} texto="un granjero diminuto" tam={30} />
       <Etq T={T} at={K.C + 1.8} until={K.Ou} x={1040} y={1268} lado="izq" texto="tu guacamole" tam={30} color={KC.ink} />
 

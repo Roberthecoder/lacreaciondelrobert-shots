@@ -53,6 +53,13 @@ const MS = { blanco:'#f3efe7', gris:'#c9c3b8', gris2:'#9c968c', lam:'#ddd3c2', m
 // ---------- piezas ----------
 // Abanico de Schizophyllum visto por ARRIBA: sombrerito en abanico, blanco-grisáceo, peludo, sin pie (base pegada a la madera en (0,0)).
 // seco 0..1: se encoge, se arruga y se pone más gris. abre = escala de aparición.
+// Volumen (pase de belleza): degradados de luz arriba a la izquierda.
+function MsDefs() {
+  return <defs>
+    <linearGradient id="ms-madera" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#a0703f" /><stop offset="0.45" stopColor={MS.madera} /><stop offset="1" stopColor="#3e2812" /></linearGradient>
+    <radialGradient id="ms-abanico" cx="0.4" cy="0.25" r="0.85"><stop offset="0" stopColor="#fff" stopOpacity="0.35" /><stop offset="0.6" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#5a5248" stopOpacity="0.35" /></radialGradient>
+  </defs>;
+}
 function Abanico({ T = 0, x, y, s = 1, rot = 0, seco = 0, abre = 1, seed = 1 }) {
   if (abre <= 0) return null;
   const R = 100 * (1 - 0.2 * seco), n = 7, g = krng(seed);
@@ -61,7 +68,9 @@ function Abanico({ T = 0, x, y, s = 1, rot = 0, seco = 0, abre = 1, seed = 1 }) 
   const d = 'M 0 6 ' + pts.map((p) => 'L ' + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ') + ' Z';
   const col = mixHex(MS.blanco, MS.gris2, seco * 0.7);
   return <g transform={`translate(${x} ${y}) rotate(${rot + mece(T, seed, 0.2) * 1.5}) scale(${s * kEase.rebote(kclamp(abre, 0, 1))})`}>
+    <MsDefs />
     <path d={d} fill={col} stroke={KC.ink} strokeWidth={6 / Math.max(1, s * 0.6)} strokeLinejoin="round" />
+    <path d={d} fill="url(#ms-abanico)" />
     {/* zonas concéntricas y vello */}
     {[0.75, 0.5].map((k, i) => <path key={i} d={`M ${-R * k * 0.92} ${-R * k * 0.3} Q 0 ${-R * k * 1.05} ${R * k * 0.92} ${-R * k * 0.3}`} stroke={MS.gris2} strokeWidth={1.8} fill="none" opacity=".6" />)}
     {Array.from({ length: 34 }, (_, i) => { const a = Math.PI * (-0.9 + 0.8 * g()), r = R * (0.25 + 0.7 * g()); const cx = Math.cos(a) * r, cy = Math.sin(a) * r * 0.82;
@@ -90,7 +99,9 @@ function Laminillas({ T = 0, x, y, R = 380, seco = 0 }) {
 // Tronco muerto horizontal con la cara del corte a la izquierda.
 function Tronco({ x, y, w = 900, h = 170 }) {
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={0} y={0} width={w} height={h} rx={30} fill={MS.madera} stroke={KC.ink} strokeWidth={8} />
+    <MsDefs />
+    <ellipse cx={w / 2} cy={h + 8} rx={w / 2} ry={18} fill="#000" opacity={0.35} />
+    <rect x={0} y={0} width={w} height={h} rx={30} fill="url(#ms-madera)" stroke={KC.ink} strokeWidth={8} />
     {[30, 70, 110, 140].filter((yy) => yy < h - 10).map((yy, i) => <path key={i} d={`M 60 ${yy} Q ${w * 0.4} ${yy - 14} ${w - 20} ${yy + 6}`} stroke={MS.madera2} strokeWidth={6} fill="none" />)}
     <ellipse cx={0} cy={h / 2} rx={52} ry={h / 2} fill={MS.corte} stroke={KC.ink} strokeWidth={8} />
     {[0.7, 0.45, 0.2].map((k, i) => <ellipse key={i} cx={0} cy={h / 2} rx={52 * k} ry={h / 2 * k} fill="none" stroke="#a8743c" strokeWidth={4} />)}
@@ -257,7 +268,12 @@ function MilSexosShot() {
   const FIN = K.Ou + 4;
   const TRON = { x: 70, y: 860, w: 900, h: 160 };
   // pase cine: el tronco del gancho y del cierre, 1.3× y centrado en el cuadro (la barra de 10 cm crece igual: 170 → 221 px)
-  const ZG = 'translate(-136 -210) scale(1.3)';
+  // belleza: 1.3 → 1.45 y el tronco centrado en y≈1000 (barra de 10 cm 221 → 247 px); un suelo de bosque llena el tercio de abajo
+  const ZG = 'translate(-40 -363) scale(1.45)';
+  const suelo = <g>
+    <rect x={-200} y={TRON.y + TRON.h - 30} width={1500} height={700} fill="#1c130b" stroke="#4a3520" strokeWidth={5} />
+    {Array.from({ length: 22 }, (_, i) => <ellipse key={i} cx={(i * 97 + 30) % 1100} cy={TRON.y + TRON.h + 10 + (i * 41) % 260} rx={26 + (i % 3) * 8} ry={9} fill={['#3a2614', '#4b3219', '#2c1d0f'][i % 3]} transform={`rotate(${(i * 37) % 60 - 30} ${(i * 97 + 30) % 1100} ${TRON.y + TRON.h + 10 + (i * 41) % 260})`} />)}
+  </g>;
   const abreGota = kprog(T, K.G + 0.35, K.G + 0.9, kEase.sale);   // la gota cae y el abanico seco se abre (antes del s 1)
   const caeGota = kprog(T, K.G, K.G + 0.4);
   // laminillas: se secan y se reabren con la lluvia
@@ -270,6 +286,7 @@ function MilSexosShot() {
       <Escena T={T} a={K.G} b={K.H} zoom={0.05} origen="50% 50%">
         <FondoLunares color={KC.yellow} />
         {fsvg(<g transform={ZG}>
+          {suelo}
           <Tronco {...TRON} />
           {ABS.map(([px, py, k, r], i) => <Abanico key={i} T={T} x={TRON.x + px} y={TRON.y + 20 + py} s={k} rot={r} seed={i + 1} seco={i === 2 ? 1 - abreGota : 0} />)}
           {caeGota < 1 && <path d="M 0 -26 Q 11 0 0 11 Q -11 0 0 -26 Z" transform={`translate(${TRON.x + 430} ${klerp(380, TRON.y - 40, caeGota * caeGota)})`} fill="#7fd0ff" stroke={KC.ink} strokeWidth={3} />}
@@ -278,18 +295,19 @@ function MilSexosShot() {
             <SimbSexo x={480} y={520} tipo="m" s={1 + 0.06 * Math.sin(T * 9 + 1)} color={KC.blue} />
             <path d="M 160 640 L 610 400" stroke={KC.red} strokeWidth={22} strokeLinecap="round" strokeDasharray="520" strokeDashoffset={520 * (1 - kprog(T, K.G + 0.6, K.G + 0.9))} />
           </g>}
-          <Plato x={700} y={1160} s={0.9} p={kprog(T, K.G + 3.6, K.G + 4.0)} />
-          {T > K.G + 3.8 && <Tenedor x={810} y={1080} rot={30 - 10 * kprog(T, K.G + 3.8, K.G + 4.3, kEase.sale)} />}
+          <Plato x={540} y={1160} s={0.9} p={kprog(T, K.G + 3.6, K.G + 4.0)} />
+          {T > K.G + 3.8 && <Tenedor x={650} y={1080} rot={30 - 10 * kprog(T, K.G + 3.8, K.G + 4.3, kEase.sale)} />}
         </g>)}
       </Escena>
       {/* 2 · el hongo de cerca: abanico peludo, sin pie, pegado a la madera */}
       <Escena T={T} a={K.H} b={K.L} zoom={0.06}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
-          <rect x={-40} y={560} width={300} height={800} rx={30} fill={MS.madera} stroke={KC.ink} strokeWidth={8} />
+        {/* belleza: madera y abanico bajan 100 px al centro (etiquetas con ellos) */}
+        {fsvg(<g transform="translate(0 100)">
+          <rect x={-40} y={560} width={300} height={800} rx={30} fill="url(#ms-madera)" stroke={KC.ink} strokeWidth={8} />
           {[660, 760, 880, 1010, 1150, 1260].map((yy, i) => <path key={i} d={`M 20 ${yy} Q 120 ${yy + 20} 240 ${yy - 6}`} stroke={MS.madera2} strokeWidth={6} fill="none" />)}
           <Abanico T={T} x={250} y={845} s={3.3} rot={90} seed={3} abre={kprog(T, K.H, K.H + 0.8)} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 3 · laminillas partidas: se secan con el sol, se reabren con la lluvia */}
       <Escena T={T} a={K.L} b={K.S} zoom={0.04}>
@@ -447,11 +465,12 @@ function MilSexosShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.04} origen="50% 50%">
         <FondoLunares color={KC.yellow} />
         {fsvg(<g transform={ZG}>
+          {suelo}
           <Tronco {...TRON} />
           {ABS.map(([px, py, k, r], i) => COSECHA.includes(i)
             ? <ellipse key={i} cx={TRON.x + px} cy={TRON.y + 24 + py} rx={18} ry={9} fill={MS.corte} stroke={KC.ink} strokeWidth={3} />
             : <Abanico key={i} T={T} x={TRON.x + px} y={TRON.y + 20 + py} s={k} rot={r} seed={i + 1} />)}
-          <Plato x={700} y={1160} s={0.9} p={kprog(T, K.C + 0.4, K.C + 0.8)} conMone />
+          <Plato x={600} y={1160} s={0.9} p={kprog(T, K.C + 0.4, K.C + 0.8)} conMone />
         </g>)}
       </Escena>
 
@@ -459,11 +478,11 @@ function MilSexosShot() {
       <NumeroGigante T={T} at={K.G + 1.2} until={K.H - 0.3} valor={TXT.numero} dur={1.6} x={300} y={480} tam={150} color={KC.pink} />
       <Pastilla T={T} at={K.G + 1.6} until={K.H - 0.3} x={40} y={605} texto={TXT.numEtq[0]} tam={30} />
       <Pastilla T={T} at={K.G + 1.9} until={K.H - 0.3} x={40} y={665} texto={TXT.numEtq[1]} tam={30} color={KC.gold2} />
-      <Chip T={T} at={K.G + 3.5} until={K.H - 0.3} texto={TXT.comen} x={720} y={1420} tam={38} borde={KC.ink} />
-      <Pastilla T={T} at={K.H + 0.9} until={K.L - 0.3} x={560} y={600} texto={TXT.comun} tam={44} puntero={{ lx: 560, ly: 600, px: 440, py: 640 }} />
-      <Pastilla T={T} at={K.H + 1.3} until={K.L - 0.3} x={560} y={690} texto={TXT.cient} it tam={36} color={KC.gold2} puntero={{ lx: 560, ly: 690, px: 470, py: 720 }} />
-      <Chip T={T} at={K.H + 2.2} until={K.L - 0.3} texto={TXT.tam} x={790} y={1030} tam={36} borde={KC.ink} />
-      <Pastilla T={T} at={K.H + 2.8} until={K.L - 0.3} x={560} y={900} texto={TXT.pegado} tam={30} puntero={{ lx: 560, ly: 900, px: 262, py: 860 }} />
+      <Chip T={T} at={K.G + 3.5} until={K.H - 0.3} texto={TXT.comen} x={540} y={1480} tam={38} borde={KC.ink} />
+      <Pastilla T={T} at={K.H + 0.9} until={K.L - 0.3} x={560} y={700} texto={TXT.comun} tam={44} puntero={{ lx: 560, ly: 700, px: 440, py: 740 }} />
+      <Pastilla T={T} at={K.H + 1.3} until={K.L - 0.3} x={560} y={790} texto={TXT.cient} it tam={36} color={KC.gold2} puntero={{ lx: 560, ly: 790, px: 470, py: 820 }} />
+      <Chip T={T} at={K.H + 2.2} until={K.L - 0.3} texto={TXT.tam} x={790} y={1130} tam={36} borde={KC.ink} />
+      <Pastilla T={T} at={K.H + 2.8} until={K.L - 0.3} x={560} y={1000} texto={TXT.pegado} tam={30} puntero={{ lx: 560, ly: 1000, px: 262, py: 960 }} />
       <Pastilla T={T} at={K.L + 0.2} until={K.S - 0.3} x={60} y={540} texto={TXT.laminas} tam={36} puntero={{ lx: 200, ly: 570, px: 300, py: 905 }} />
       <Chip T={T} at={K.L + 1.0} until={K.L + 2.4} texto={TXT.seco} x={300} y={440} tam={36} borde={KC.yellow} />
       <Chip T={T} at={K.L + 2.6} until={K.S - 0.3} texto={TXT.lluvia} x={320} y={440} tam={36} borde={KC.cyan} />
@@ -497,7 +516,7 @@ function MilSexosShot() {
       <NumeroGigante T={T} at={K.C + 1.6} until={K.Ou} valor={TXT.numero} desde={TXT.numero} dur={0.01} x={330} y={660} tam={100} color={KC.pink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="10 cm" largo={221} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="10 cm" largo={247} />
       <BarraEscala T={T} at={K.H} until={K.L} texto="1 cm" largo={150} />
       <BarraEscala T={T} at={K.L} until={K.S} texto="1 cm" largo={190} />
       <BarraEscala T={T} at={K.S} until={K.V} texto="10 µm (núcleo: esquemático)" largo={110} />
@@ -506,7 +525,7 @@ function MilSexosShot() {
       <BarraEscala T={T} at={K.F} until={K.P} texto="10 µm" largo={130} />
       <BarraEscala T={T} at={K.E} until={K.M} texto="mapa esquemático · 100 km" largo={110} />
       <BarraEscala T={T} at={K.M} until={K.C} texto="10 cm" largo={160} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={221} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={247} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <SubIt T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No tiene dos sexos: *más de 23 mil.*" />

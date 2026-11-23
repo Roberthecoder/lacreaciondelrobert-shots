@@ -177,7 +177,8 @@ function Nariz() {
         <FondoLunares color={KC.yellow} />
         <Lienzo>
           <NarizGrande T={T} x={NX} y={NY} s={NS} largo={NL} dl={d1} dr={d2} fl={0.12 + 0.3 * d2} fr={0.12 + 0.73 * d1} />
-          {[[985, 'lado 1', 0.85, 0, KC.cyan], [95, 'lado 2', 0.42, 0, KC.orange]].map(([x, lbl, v, on, col]) => { const at = lbl === 'lado 1' ? P + 0.9 : P + 3.3, k = kprog(T, at, at + 0.9, kEase.sale);
+          {/* belleza: los dos medidores 55 px más adentro (con la cámara, «lado 1» y «lado 2» se cortaban en las orillas) */}
+          {[[930, 'lado 1', 0.85, 0, KC.cyan], [150, 'lado 2', 0.42, 0, KC.orange]].map(([x, lbl, v, on, col]) => { const at = lbl === 'lado 1' ? P + 0.9 : P + 3.3, k = kprog(T, at, at + 0.9, kEase.sale);
             return <g key={lbl} opacity={kprog(T, P + 0.3, P + 0.6)}>
               <rect x={x - 45} y={1040} width={90} height={380} rx={40} fill="rgba(14,15,18,.75)" stroke={KC.ink} strokeWidth={8} />
               <rect x={x - 32} y={1410 - 360 * v * k} width={64} height={Math.max(0, 360 * v * k - 3)} rx={30} fill={col} />
@@ -185,7 +186,7 @@ function Nariz() {
             </g>; })}
         </Lienzo>
         <Chip T={T} at={P + 0.2} until={K.Cornetes - 0.1} texto="tápate un lado y respira" x={540} y={300} tam={44} borde={KC.ink} />
-        <Etq T={T} at={P + 4.0} until={K.Cornetes - 0.1} x={1034} y={1550} texto="pasa más aire" lado="izq" color={KC.texto} tam={34} />
+        <Etq T={T} at={P + 4.0} until={K.Cornetes - 0.1} x={975} y={1550} texto="pasa más aire" lado="izq" color={KC.texto} tam={34} />
       </Escena>
       {/* 2 · por dentro: los cornetes forrados de tejido que se llena de sangre */}
       <Escena T={T} a={K.Cornetes} b={K.Turno} zoom={0.06} origen="50% 40%">

@@ -240,7 +240,7 @@ function TikTok() {
   const E2 = (window.SUBS && window.SUBS[9]) ? window.SUBS[9].at : K.E + 112 / 17.6 + 0.35;
   const FIN = K.Ou + 4;
   // pase a mano: el celular, la bola y la urna del gancho y del cierre, ×1.15 y centrados (llenan el cuadro sin salirse)
-  const GC = 'matrix(1.15 0 0 1.15 -110 52)';
+  const GC = 'matrix(1.15 0 0 1.15 -70 52)';   // belleza: 40 px a la derecha (con la cámara del gancho el celular se cortaba a la izquierda)
   const svg = (c, z = 20) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{c}</svg>;
 
   // gancho: deslizamientos cada 1.1 s desde el cuadro 0
@@ -279,8 +279,8 @@ function TikTok() {
           {boletas(K.G + 2.3, K.S, 400, 760, 810, 960)}
         </g>)}
       </Escena>
-      <Chip T={T} at={K.G + 1.4} until={K.G + 2.9} texto="¿leer la mente?" x={820} y={1010} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.G + 3.1} until={K.S - 0.2} texto="terminado ✔ · saltado ✖" x={800} y={990} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.G + 1.4} until={K.G + 2.9} texto="¿leer la mente?" x={860} y={1010} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.G + 3.1} until={K.S - 0.2} texto="terminado ✔ · saltado ✖" x={840} y={990} tam={32} borde={KC.leaf} />
 
       {/* 2 · señales: fichas que entran al embudo */}
       <Escena T={T} a={K.S} b={K.Pe}>
@@ -310,7 +310,7 @@ function TikTok() {
         <FondoCircuito T={T} />
         {svg(<g transform="translate(630 980) scale(1.25) translate(-540 -820)">{RK.map((r, i) => {
           const pos = klerp(i, orden.indexOf(i), ordP), yy = 470 + pos * 145, top = orden.indexOf(i) === 0 && ordP > 0.95;
-          const ap = kprog(T, K.R + 0.2 + i * 0.15, K.R + 0.5 + i * 0.15);
+          const ap = kprog(T, K.R + 0.05 + i * 0.1, K.R + 0.35 + i * 0.1);   // belleza: los cinco entran en el primer segundo
           const g = kprog(T, K.R + 1.0, K.R + 2.0, kEase.sale);
           return <g key={i} opacity={ap} transform={`translate(0 ${(1 - ap) * 40})`}>
             <Mini x={160} y={yy + 55} w={84} h={124} tipo={r.t} T={T} borde={top ? KC.gold2 : KC.ink} />
@@ -344,19 +344,21 @@ function TikTok() {
         <Pulgar x={330} y={1120} fase={0} s={1.0} />
         <MenuPresion T={T} at={K.P1 + 0.9} x={790} y={1000} />
       </g>, 30)}
-      {T > K.P2 - 0.4 && T < K.P3 + 0.4 && svg(<g opacity={kprog(T, K.P2 - 0.4, K.P2) * (1 - kprog(T, K.P3, K.P3 + 0.4))}>
+      {T > K.P2 - 0.4 && T < K.P3 + 0.4 && svg(<g opacity={kprog(T, K.P2 - 0.4, K.P2) * (1 - kprog(T, K.P3, K.P3 + 0.4))}><g transform="translate(540 1000) scale(1.25) translate(-540 -880)">
+        {/* belleza: colador y fichas 1.25 veces más grandes y más abajo (antes todo quedaba en la mitad de arriba) */}
         <Colador x={480} y={1000} s={1.3} />
         {fichasP2.map((f, i) => { const a = K.P2 + f.d * 0.6, p = kprog(T, a, a + 1.3); if (p <= 0) return null;
           const yy = f.bad ? (p < 0.5 ? klerp(640, 930, p / 0.5) : 930 - Math.sin(Math.PI * (p - 0.5) / 0.5) * 300) : klerp(640, 1380, p);
           const xx = f.bad ? (p < 0.5 ? f.x - 200 : f.x - 200 - (p - 0.5) * 900) : f.x - 260;
           return <Ficha key={i} x={xx} y={yy} texto={f.t} color={f.bad ? KC.coral : KC.mint} s={1.15} rot={f.bad ? p * 40 : 0} o={p > 0.9 ? (1 - p) * 10 : 1} tam={38} />; })}
-      </g>, 30)}
+      </g></g>, 30)}
       {T > K.P3 - 0.4 && svg(<g opacity={kprog(T, K.P3 - 0.4, K.P3) * (1 - kprog(T, K.E - 0.1, K.E + 0.4))}>
-        <Refrescar x={540} y={880} s={1.3} ang={360 * kprog(T, K.P3 + 0.2, K.P3 + 1.6, kEase.suave)} />
+        {/* belleza: el ícono y los tres videos nuevos más grandes (antes s 1.3 y 150 px) */}
+        <Refrescar x={540} y={900} s={1.8} ang={360 * kprog(T, K.P3 + 0.2, K.P3 + 1.6, kEase.suave)} />
         {[0, 1, 2].map((k) => { const p = kprog(T, K.P3 + 1.4 + k * 0.3, K.P3 + 1.8 + k * 0.3, kEase.rebote);
-          return <Mini key={k} x={360 + k * 180} y={1230} w={150} h={220} tipo={[5, 4, 3][k]} T={T} o={p} />; })}
+          return <Mini key={k} x={320 + k * 220} y={1300} w={200} h={290} tipo={[5, 4, 3][k]} T={T} o={p} />; })}
       </g>, 30)}
-      <Chip T={T} at={K.P3 + 2.0} until={K.E - 0.2} texto="temas nuevos" x={540} y={1400} tam={36} borde={KC.mint} />
+      <Chip T={T} at={K.P3 + 2.0} until={K.E - 0.2} texto="temas nuevos" x={540} y={1510} tam={36} borde={KC.mint} />
 
       {/* 9 · el estudio */}
       <Escena T={T} a={K.E} b={K.X}>
@@ -367,8 +369,8 @@ function TikTok() {
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="2024" quien="EE. UU. · Alemania · Países Bajos" revista="Vombatkere et al. · The Web Conference (Singapur)" y={330} />
       <Chip T={T} at={K.E + 3.6} until={E2 - 0.2} texto="347 usuarios donaron sus datos" x={540} y={740} tam={40} borde={KC.ink} />
       <Datos347 T={T} at={K.E + 3.5} until={E2 - 0.3} x={120} y={830} />
-      {T > E2 - 0.3 && T < K.X + 0.3 && <div style={{ position:'absolute', inset:0, background:cineMix(KC.cyan, CINE.fondo, 0.8), opacity:0.8 * kprog(T, E2 - 0.3, E2) * (1 - kprog(T, K.X - 0.1, K.X + 0.3)), zIndex:35,
-        backgroundImage:'radial-gradient(circle, rgba(255,255,255,.07) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>}
+      {T > E2 - 0.3 && T < K.X + 0.3 && <div style={{ position:'absolute', inset:0, background:'rgba(8,12,22,.62)', opacity:kprog(T, E2 - 0.3, E2) * (1 - kprog(T, K.X - 0.1, K.X + 0.3)), zIndex:35 }}></div>}
+      {/* belleza: antes un panel turquesa con puntos tapaba todo (se veía lámina); ahora un velo oscuro y el celular sigue detrás */}
       <Chip T={T} at={E2 + 0.1} until={K.X - 0.2} texto="lo que más personalizaba" x={540} y={660} tam={38} borde={KC.ink} />
       <Impacto T={T} at={E2 + 0.4} until={K.X - 0.2} y={760} />
 
@@ -393,7 +395,7 @@ function TikTok() {
           {boletas(K.C + 1.0, K.Ou, 400, 760, 810, 960)}
         </g>)}
       </Escena>
-      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="tú se la enseñas ✔" x={810} y={990} tam={38} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="tú se la enseñas ✔" x={850} y={990} tam={38} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.S - 0.1} texto="No te lee la mente: *te mide.*" />

@@ -396,31 +396,31 @@ function FalsaMorillaShot() {
       <Chip T={T} at={K.G + 0.3} until={K.G + 2.6} texto="¿morilla?" x={400} y={540} tam={46} borde={KC.ink} />
       <Etq T={T} at={K.G + 2.6} until={K.Mo - 0.3} x={60} y={330} texto="falsa morilla" tam={40} color={KC.ink} />
       <Etq T={T} at={K.G + 2.9} until={K.Mo - 0.3} x={60} y={385} texto="Gyromitra esculenta" it tam={36} color={KC.ink} />
-      <Chip T={T} at={K.G + 3.5} until={K.Mo - 0.3} texto="también: combustible de cohete" x={370} y={490} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.G + 3.5} until={K.Mo - 0.3} texto="también: combustible de cohete" x={370} y={490} tam={36} borde={KC.red} />
 
       <Etq T={T} at={K.Mo + 0.6} until={K.F - 0.3} x={60} y={300} texto="morilla" tam={44} color={KC.ink} />
       <Etq T={T} at={K.Mo + 0.9} until={K.F - 0.3} x={60} y={352} texto="Morchella" it tam={38} color={KC.ink} />
       <Etq T={T} at={K.Mo + 1.2} until={K.F - 0.3} x={60} y={404} texto="panal: hoyos y costillas" tam={28} color={KC.ink} />
       <Etq T={T} at={K.Mo + 1.9} until={K.F - 0.3} x={395} y={1090} texto="pegado al pie" tam={24} color={KC.ink} />
       <Etq T={T} at={K.Mo + 2.0} until={K.F - 0.3} x={395} y={1130} texto="(casi siempre)" tam={24} color={KC.ink} />
-      <Chip T={T} at={K.Mo + 3.0} until={K.F - 0.3} texto="POR DENTRO · HUECA" x={810} y={425} tam={32} borde={KC.mint} mono />
+      <Chip T={T} at={K.Mo + 3.0} until={K.F - 0.3} texto="POR DENTRO · HUECA" x={810} y={425} tam={36} borde={KC.mint} mono />
 
       <Etq T={T} at={K.F + 0.5} until={K.Tx - 0.3} x={60} y={430} texto="falsa morilla" tam={44} color={KC.ink} />
       <Etq T={T} at={K.F + 0.8} until={K.Tx - 0.3} x={60} y={485} texto="Gyromitra esculenta" it tam={38} color={KC.ink} />
       <Etq T={T} at={K.F + 1.3} until={K.Tx - 0.3} x={60} y={545} texto="arrugada, lobulada, como cerebro" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.F + 3.1} until={K.Tx - 0.3} texto="POR DENTRO · CÁMARAS" x={795} y={665} tam={32} borde={KC.red} mono />
+      <Chip T={T} at={K.F + 3.1} until={K.Tx - 0.3} texto="POR DENTRO · CÁMARAS" x={795} y={665} tam={36} borde={KC.red} mono />
 
-      <Chip T={T} at={K.Tx + 0.1} until={K.N - 0.3} texto="POR DENTRO · LA TOXINA" x={400} y={420} tam={32} borde={KC.cyan} mono />
+      <Chip T={T} at={K.Tx + 0.1} until={K.N - 0.3} texto="POR DENTRO · LA TOXINA" x={400} y={420} tam={36} borde={KC.cyan} mono />
       <Etq T={T} at={K.Tx + 0.4} until={K.Tx + 2.2} x={60} y={500} texto="giromitrina" tam={40} color={KC.yellow} />
       <Etq T={T} at={K.Tx + 2.3} until={K.N - 0.3} x={60} y={500} texto="monometilhidrazina (MMH)" tam={32} color={KC.red} />
-      <Chip T={T} at={K.Tx + 4.0} until={K.N - 0.3} texto="combustible para maniobrar naves" x={400} y={1290} tam={32} borde={KC.gold} />
+      <Chip T={T} at={K.Tx + 4.0} until={K.N - 0.3} texto="combustible para maniobrar naves" x={400} y={1290} tam={36} borde={KC.gold} />
 
-      <Chip T={T} at={K.N + 0.1} until={K.S - 0.3} texto="AL MICROSCOPIO · NEURONA" x={400} y={330} tam={32} borde={KC.pink} mono />
+      <Chip T={T} at={K.N + 0.1} until={K.S - 0.3} texto="AL MICROSCOPIO · NEURONA" x={400} y={330} tam={36} borde={KC.pink} mono />
       <Medidor T={T} at={K.N + 0.5} until={K.S - 0.3} valor={(t) => 1 - 0.8 * kprog(t, K.N + 1.0, K.N + 3.0)} etiqueta="freno de la neurona (GABA)" texto={(v) => (v > 0.5 ? 'normal' : 'bajo')} x={60} y={400} ancho={600} color={KC.mint} />
       <Etq T={T} at={K.N + 1.2} until={K.S - 0.3} x={520} y={590} texto="vitamina B6 (se la llevan)" tam={28} color={KC.yellow} />
       <Chip T={T} at={K.N + 3.6} until={K.S - 0.3} texto="convulsiones" x={760} y={1210} tam={40} borde={KC.yellow} />
 
-      <Chip T={T} at={K.S + 0.3} until={K.H - 0.3} texto="horas después (≈ 5–12 h)" x={610} y={355} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.S + 0.3} until={K.H - 0.3} texto="horas después (≈ 5–12 h)" x={610} y={355} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.S + 1.3} until={K.H - 0.3} x={735} y={1020} texto="vómito, diarrea" tam={28} color={KC.ink} />
       <Etq T={T} at={K.S + 2.4} until={K.H - 0.3} x={180} y={1490} texto="si es grave: daño al hígado" tam={30} color={KC.ink} />
 
@@ -433,12 +433,12 @@ function FalsaMorillaShot() {
 
       <MitoTachado T={T} at={K.Fa + 0.2} tacharEn={K.Fa + 1.9} until={K.Fa + 2.6} texto="«en mi familia siempre la comimos»" x={540} y={470} tam={38} />
       <Etq T={T} at={K.Fa + 2.8} until={K.C - 0.3} x={60} y={620} texto="años sin problema…" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Fa + 4.7} until={K.C - 0.3} texto="…y un día, intoxicación" x={540} y={1440} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.Fa + 4.7} until={K.C - 0.3} texto="…y un día, intoxicación" x={540} y={1440} tam={36} borde={KC.red} />
 
-      <Chip T={T} at={K.C + 0.5} until={K.Ou} texto="Ante la duda: NO la comas" x={380} y={330} tam={34} borde={KC.red} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="pregunta a un micólogo" x={330} y={420} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.C + 3.0} until={K.Ou} texto="¿te sientes mal? → urgencias" x={380} y={510} tam={34} borde={KC.red} />
-      <Etq T={T} at={K.C + 3.4} until={K.Ou} x={60} y={600} texto="Esto no es una guía para identificar hongos." tam={22} color={KC.texto} />
+      <Chip T={T} at={K.C + 0.5} until={K.Ou} texto="Ante la duda: NO la comas" x={380} y={330} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="pregunta a un micólogo" x={330} y={420} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.C + 3.0} until={K.Ou} texto="¿te sientes mal? → urgencias" x={380} y={510} tam={36} borde={KC.red} />
+      <Etq T={T} at={K.C + 3.4} until={K.Ou} x={60} y={600} texto="Esto no es una guía para identificar hongos." tam={26} color={KC.texto} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.Mo} texto="5 cm" largo={308} />

@@ -135,6 +135,7 @@ function SalShot() {
       {/* 6 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Pa} zoom={0.06}>
         <FondoLunares color={KC.pink} />
+        <div style={{ position:'absolute', inset:0, background:'rgba(10,15,28,.72)' }}></div>
         {fsvg(<><CeluWal x={285} y={960} r={215} pared={17} /><Interrogacion T={T} x={790} y={1110} tam={460} /></>)}
       </Escena>
       {/* 7–8 · la armadura y los racimos */}
@@ -168,7 +169,7 @@ function SalShot() {
         {fsvg(<Pez x={540} y={980} s={2.4} manchas={kprog(T, K.Pe + 0.6, K.Pe + 2.0)} />)}
       </Escena>
       {/* 11 · genoma */}
-      <Escena T={T} a={K.Ge} b={K.C} zoom={0.03}>
+      <Escena T={T} a={K.Ge} b={K.C - 0.5} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {fsvg((() => { const q = kprog(T, K.Ge + 0.2, K.Ge + 1.6, kEase.sale), q2 = kprog(T, K.Ge + 1.4, K.Ge + 2.2, kEase.sale); return <g>
           <text x={80} y={760} style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto}>humano · ≈ 3,000 millones de letras</text>
@@ -177,7 +178,7 @@ function SalShot() {
           <text x={420} y={1010} style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto} opacity={q2}>· ≈ 9.6 millones</text>
           <rect x={80} y={1040} width={Math.max(6, 7 * q2)} height={80} rx={3} fill={KC.mint} stroke={KC.ink} strokeWidth={3} />
           {/* pase a mano: el hongo sigue en cuadro (antes eran solo barras) */}
-          <g opacity={kprog(T, K.Ge + 0.3, K.Ge + 0.9)}><Racimo2 T={T} x={600} y={1250} s={2.4} n={9} pared={7} /></g>
+          <g opacity={kprog(T, K.Ge - 0.4, K.Ge + 0.1)}><Racimo2 T={T} x={600} y={1250} s={2.4} n={9} pared={7} /></g>
         </g>; })())}
       </Escena>
       {/* 12 · cierre: el mismo bacalao, con las manchitas señaladas */}

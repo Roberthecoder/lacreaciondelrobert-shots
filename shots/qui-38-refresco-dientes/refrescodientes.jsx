@@ -181,6 +181,7 @@ function RefrescoDientes() {
         <div style={{ position:'absolute', inset:0, background:'#1b1030' }}></div>
         <SvgCapa>
           <path d="M -40 1120 Q 540 1060 1120 1120 L 1120 1990 L -40 1990 Z" fill="#274560" stroke="#7fc8ff" strokeWidth={6} />
+          {Array.from({ length: 15 }, (_, i) => { const x = 20 + i * 74, y0 = 1112 - 60 * Math.sin(Math.PI * x / 1080) * 0.95; return <line key={'cr' + i} x1={x} y1={y0 + 24} x2={x} y2={1900} stroke="rgba(127,200,255,.14)" strokeWidth={10} strokeLinecap="round" />; })}
           <path d="M -40 1120 Q 540 1060 1120 1120 L 1120 1030 Q 540 970 -40 1030 Z" fill="rgba(200,230,90,.35)" />
           {[0, 1, 2, 3, 4, 5, 6].map((i) => { const p = kprog(T, K.Az + 0.2 + i * 0.25, K.Az + 0.9 + i * 0.25, kEase.suave); const comido = kprog(T, K.Az + 1.2 + i * 0.25, K.Az + 1.6 + i * 0.25);
             return comido < 1 ? <Cubo key={i} x={120 + i * 140} y={klerp(470, 950, p)} s={1.5 * (1 - comido)} rot={i * 23 + T * 40} /> : null; })}
@@ -262,12 +263,12 @@ function RefrescoDientes() {
       <Etq T={T} at={K.E + 0.6} until={micro - 0.2} x={790} y={591} texto="esmalte" tam={36} color={KC.ink} />
       <Etq T={T} at={K.E + 1.0} until={micro - 0.2} x={725} y={1008} texto="dentina" tam={36} color={KC.ink} />
       <Chip T={T} at={micro + 0.4} until={K.C - 0.2} texto="hidroxiapatita Ca₁₀(PO₄)₆(OH)₂" y={1500} tam={36} borde="#7fc8ff" />
-      <Chip T={T} at={K.C + 3.2} until={K.A - 0.2} texto="bajo ≈5.5: se empiezan a disolver" y={1500} tam={34} borde={KC.orange} />
-      <Etq T={T} at={K.A + 0.6} until={K.Er + 0.1} x={40} y={405} texto="ácido fosfórico · colas" tam={30} color={KC.orange} />
+      <Chip T={T} at={K.C + 3.2} until={K.A - 0.2} texto="bajo ≈5.5: se empiezan a disolver" y={1500} tam={38} borde={KC.orange} />
+      <Etq T={T} at={K.A + 0.6} until={K.Er + 0.1} x={40} y={405} texto="ácido fosfórico · colas" tam={32} color={KC.orange} />
       <Etq T={T} at={K.A + 2.2} until={K.Er + 0.1} x={800} y={705} texto="ácido cítrico" lado="izq" tam={32} color={KC.yellow} />
       <PHMetro T={T} at={K.A + 0.4} until={K.Er + 0.2} x={930} y0={340} y1={730} valor={2.4} etiqueta="pH del refresco" linea55={false} />
       <Chip T={T} at={K.Er + 1.4} until={K.Az - 0.2} texto="erosión: el esmalte se ablanda" y={1500} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.Az + 0.3} until={K.P - 0.2} texto="azúcar → bacterias → ácido (caries)" y={1500} tam={34} borde={KC.mint} />
+      <Chip T={T} at={K.Az + 0.3} until={K.P - 0.2} texto="azúcar → bacterias → ácido (caries)" y={1500} tam={38} borde={KC.mint} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.E - 0.1} texto="No solo es dulce: *es ácido.*" />

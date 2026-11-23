@@ -233,7 +233,7 @@ function CarT() {
       <Escena T={T} a={K.Re} b={K.Mu} zoom={0.04}>
         <FondoMarca patron="oscuro" />
         <Capa>
-          <LinfocitoT T={T} x={T < K.Ba ? 540 : klerp(540, 270, kprog(T, K.Ba, K.Ba + 0.8, kEase.suave))} y={980} r={T < K.Ba ? 250 : klerp(250, 175, kprog(T, K.Ba, K.Ba + 0.8))} seed={1} car={kprog(T, K.Re + 0.4, K.Re + 2.6)} brillo={kprog(T, K.Re + 2.4, K.Re + 3)} />
+          <LinfocitoT T={T} x={T < K.Ba ? 540 : klerp(540, 270, kprog(T, K.Ba, K.Ba + 0.8, kEase.suave))} y={980} r={T < K.Ba ? 300 : klerp(300, 175, kprog(T, K.Ba, K.Ba + 0.8))} seed={1} car={kprog(T, K.Re + 0.4, K.Re + 2.6)} brillo={kprog(T, K.Re + 2.4, K.Re + 3)} />
           {T > K.Ba - 0.2 && <CelulaLeucemia T={T} x={klerp(1320, 800, kprog(T, K.Ba, K.Ba + 0.9, kEase.sale))} y={980} r={185} cd19={kprog(T, K.Ba + 0.6, K.Ba + 1.8)} />}
         </Capa>
         <Ambiente T={T} n={30} />
@@ -314,16 +314,17 @@ function CarT() {
       <Escena T={T} a={K.Ho} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <Capa>
-          {(() => { const p = kprog(T, K.Ho + 0.3, K.Ho + 2.4, kEase.suave); const x0 = 140, x1 = 940, yl = 1250; return <g>
+          {(() => { const p = kprog(T, K.Ho + 0.3, K.Ho + 2.4, kEase.suave); const x0 = 170, x1 = 900, yl = 1330; return <g>
             <line x1={x0} y1={yl} x2={x1} y2={yl} stroke={KC.ink} strokeWidth={20} strokeLinecap="round" />
             <line x1={x0} y1={yl} x2={klerp(x0, x1, p)} y2={yl} stroke={KC.mint} strokeWidth={12} strokeLinecap="round" />
             {Array.from({ length: 14 }, (_, i) => { const x = klerp(x0, x1, i / 13); return <circle key={i} cx={x} cy={yl} r={i / 13 <= p ? 20 : 13} fill={i / 13 <= p ? KC.mint : '#fff'} stroke={KC.ink} strokeWidth={4} />; })}
             <text x={x0 + 20} y={yl + 120} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.ink}>2012</text>
             <text x={x1 - 20} y={yl + 120} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(p, 0.9, 1)}>2025</text>
-            <Nina x={klerp(x0, x1, p)} y={yl - 152} s={0.8} color={NINA} />
+            {/* belleza: la niña (el sujeto) más grande sobre la línea de tiempo, que baja al centro; el número sube */}
+            <Nina x={klerp(x0 + 30, x1 - 70, p)} y={yl - 232} s={1.3} color={NINA} />
           </g>; })()}
         </Capa>
-        <NumeroGigante T={T} at={K.Ho + 0.6} until={K.Ci - 0.2} valor={13} dur={1.8} sufijo=" años" etiqueta="sin cáncer (dato de 2025)" y={620} tam={210} color={KC.mint} />
+        <NumeroGigante T={T} at={K.Ho + 0.6} until={K.Ci - 0.2} valor={13} dur={1.8} sufijo=" años" etiqueta="sin cáncer (dato de 2025)" y={470} tam={210} color={KC.mint} />
       </Escena>
       {/* 13 · cierre: la bolsa del inicio, ya vacía */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.05}>

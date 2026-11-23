@@ -282,7 +282,7 @@ function Hipo() {
       <Escena T={T} a={K.Pregunta} b={K.Hipotesis} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <g opacity={0.5}><Cuerpo x={660} y={1080} s={1.05} uid="pr" dentro={1} camisa={KC.yellow} glowD={0.4} /></g>
+          <g opacity={0.5}><Cuerpo x={540} y={1060} s={1.05} uid="pr" dentro={1} camisa={KC.yellow} glowD={0.4} /></g>
           <text x={330} y={1360} textAnchor="middle" fill={KC.yellow} stroke={KC.ink} strokeWidth={14}
             transform={`rotate(${Math.sin(T * 3) * 6} 330 1100) scale(${klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote))})`} style={{ font:`400 760px ${KF.titulo}`, transformOrigin:'330px 1100px' }}>?</text>
         </Lienzo>
@@ -332,14 +332,14 @@ function Hipo() {
           {[2.8, 3.8, 5.0, 6.2].map((t, i) => <Onomato key={i} T={T} at={K.Record + t} dur={0.7} x={i % 2 ? 980 : 590} y={820} texto="hip" tam={76} color={KC.yellow} rot={i % 2 ? 10 : -10} />)}
         </Lienzo>
         <Chip T={T} at={K.Record + 0.3} until={K.Record + 4.4} texto="el hipo más largo registrado" x={540} y={460} tam={42} borde={KC.ink} />
-        <NumeroGigante T={T} at={K.Record + 4.6} until={K.Remedios - 0.15} valor={68} desde={1} dur={1.6} prefijo="≈ " sufijo=" años" x={540} y={470} tam={150} color={KC.yellow} />
+        <NumeroGigante T={T} at={K.Record + 4.6} until={K.Remedios - 0.15} valor={68} desde={1} dur={1.6} prefijo="≈ " sufijo=" años" x={540} y={470} tam={96} color={KC.yellow} />
         <Chip T={T} at={K.Record + 3.2} until={K.Remedios - 0.15} texto="Charles Osborne · EE. UU." x={540} y={620} tam={40} borde={KC.blue} />
       </Escena>
       {/* 10 · se quita solo en minutos; más de 2 días → médico */}
       <Escena T={T} a={K.Remedios} b={K.Cierre}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <g transform="translate(560 1010) scale(1.1) translate(-560 -820)">
+          <g transform="translate(550 1070) scale(1.04) translate(-560 -820)">
           <Reloj x={300} y={800} r={190} vueltas={4 * kprog(T, K.Remedios + 0.3, K.Remedios + 2.3, kEase.suave)} />
           {[0.4, 1.0, 1.6].map((t, i) => <Onomato key={i} T={T} at={K.Remedios + t} dur={0.5} x={660 + i * 130} y={760 + i * 40} texto="hip" tam={70 - i * 14} color={KC.yellow} rot={-6 + i * 6} />)}
           {T > K.Remedios + 2.3 && <g transform={`translate(300 800) scale(${klerp(0.3, 1, kprog(T, K.Remedios + 2.3, K.Remedios + 2.7, kEase.rebote))})`}>

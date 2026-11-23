@@ -92,8 +92,14 @@ function Cuerpo({ x, y, T, p1 = 0, p2 = 0, p3 = 0 }) {
     const [ax, ay] = a(i), [bx, by] = b(i); return <circle key={seed + i} cx={klerp(ax, bx, u)} cy={klerp(ay, by, u)} r={11} fill={RB.pipi} stroke={KC.ink} strokeWidth={3} />; });
   const vej = kclamp(p3 * 1.2, 0, 1);
   return <g transform={`translate(${x} ${y})`}>
-    <circle cx={0} cy={-470} r={92} fill="#ffd9c7" stroke={KC.ink} strokeWidth={8} />
-    <path d="M -150 -350 Q -170 -360 -190 -320 L -230 40 Q -232 70 -200 70 L -170 70 L -150 -150 L -140 330 L -40 330 L 0 20 L 40 330 L 140 330 L 150 -150 L 170 70 L 200 70 Q 232 70 230 40 L 190 -320 Q 170 -360 150 -350 Z" fill="#ffd9c7" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    {/* belleza: piel con volumen (luz arriba a la izquierda) en vez de rosa plano */}
+    <defs>
+      <linearGradient id="rbPiel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#ffe3d4" /><stop offset=".5" stopColor="#e9b9a3" /><stop offset="1" stopColor="#9c6b5a" /></linearGradient>
+      <radialGradient id="rbCara" cx=".38" cy=".32" r=".75"><stop offset="0" stopColor="#ffe8dc" /><stop offset=".6" stopColor="#ebbfa9" /><stop offset="1" stopColor="#b07c68" /></radialGradient>
+    </defs>
+    <ellipse cx={10} cy={342} rx={200} ry={20} fill="#000" opacity=".3" />
+    <circle cx={0} cy={-470} r={92} fill="url(#rbCara)" stroke={KC.ink} strokeWidth={8} />
+    <path d="M -150 -350 Q -170 -360 -190 -320 L -230 40 Q -232 70 -200 70 L -170 70 L -150 -150 L -140 330 L -40 330 L 0 20 L 40 330 L 140 330 L 150 -150 L 170 70 L 200 70 Q 232 70 230 40 L 190 -320 Q 170 -360 150 -350 Z" fill="url(#rbPiel)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     {/* intestino (tubo enrollado) */}
     <path d="M -70 -40 Q -90 -90 -40 -90 L 50 -90 Q 90 -90 80 -50 Q 70 -10 20 -20 Q -30 -30 -40 0 Q -50 30 0 30 L 60 30" stroke="#e89a8a" strokeWidth={26} fill="none" strokeLinecap="round" />
     <path d="M -70 -40 Q -90 -90 -40 -90 L 50 -90 Q 90 -90 80 -50 Q 70 -10 20 -20 Q -30 -30 -40 0 Q -50 30 0 30 L 60 30" stroke={KC.ink} strokeWidth={4} fill="none" strokeDasharray="2 18" />
@@ -263,9 +269,15 @@ function PaqueteGenes({ x, y, s = 1, brillo = 0 }) {
 // Pastelito (cupcake) con betún amarillo.
 function Pastelito({ x, y, s = 1, T = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -130 -60 L -100 120 L 100 120 L 130 -60 Z" fill="#ff6b9a" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    {/* belleza: capacillo y betún con volumen (antes: rosa y amarillo planos chillones) */}
+    <defs>
+      <linearGradient id="rbCapa" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#f08aa9" /><stop offset=".5" stopColor="#cf5a80" /><stop offset="1" stopColor="#7d2b48" /></linearGradient>
+      <radialGradient id="rbBetun" cx=".35" cy=".3" r=".8"><stop offset="0" stopColor="#fff1a8" /><stop offset=".55" stopColor="#f2cf3a" /><stop offset="1" stopColor="#b88a12" /></radialGradient>
+    </defs>
+    <ellipse cx={8} cy={132} rx={120} ry={14} fill="#000" opacity=".35" />
+    <path d="M -130 -60 L -100 120 L 100 120 L 130 -60 Z" fill="url(#rbCapa)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     {[-80, -40, 0, 40, 80].map((xx) => <line key={xx} x1={xx * 1.15} y1={-56} x2={xx * 0.85} y2={116} stroke={KC.ink} strokeWidth={4} opacity=".4" />)}
-    <path d="M -150 -60 Q -170 -130 -100 -140 Q -90 -210 -10 -200 Q 40 -260 100 -200 Q 170 -190 150 -120 Q 180 -70 140 -56 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <path d="M -150 -60 Q -170 -130 -100 -140 Q -90 -210 -10 -200 Q 40 -260 100 -200 Q 170 -190 150 -120 Q 180 -70 140 -56 Z" fill="url(#rbBetun)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     <circle cx={10} cy={-236 + Math.sin(T * 4) * 3} r={24} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
   </g>;
 }
@@ -343,7 +355,7 @@ function RiboflavinaShot() {
         {fsvg(<g transform={zg(500, 880, 1.3, 560, 980)}>
           {[[130, 560, 0.2], [180, 600, -0.3], [150, 640, 0.5], [205, 548, 0.1], [235, 615, -0.6]].map(([a, b, r], i) =>
             <LevaduraCel key={i} x={a} y={b} rot={r * 60} s={1.3 * kEase.rebote(kprog(T, K.H + 0.1 + i * 0.08, K.H + 0.5 + i * 0.08))} yema={i % 2 ? 0.6 + 0.2 * Math.sin(T * 2 + i) : 0} />)}
-          <HifasY T={T} x={560} y={930} g={kprog(T, K.H + 0.4, K.H + 3.2)} s={0.75} rot={-8} />
+          <HifasY T={T} x={560} y={930} g={0.22 + 0.78 * kprog(T, K.H + 0.1, K.H + 2.8)} s={0.75} rot={-8} />
         </g>)}
       </Escena>
       {/* 6 · al dejar de crecer se llena de riboflavina (vacuolas) */}

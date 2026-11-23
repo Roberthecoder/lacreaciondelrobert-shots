@@ -147,7 +147,7 @@ function Tubo({ x, y0 = 640, y1 = 1040, llen = 0, color = PENI, arriba, abajo })
     <clipPath id={'tb' + x}><rect x={x - 62} y={y0 + 8} width={124} height={h - 16} rx={54} /></clipPath>
     <g clipPath={`url(#tb${x})`}><rect x={x - 70} y={nivel} width={140} height={h} fill={color} /><path d={`M ${x - 70} ${nivel} q 35 -10 70 0 t 70 0`} fill={color} stroke="rgba(255,255,255,.7)" strokeWidth={4} /></g>
     <path d={`M ${x - 40} ${y0 + 40} L ${x - 40} ${y1 - 50}`} stroke="rgba(255,255,255,.7)" strokeWidth={10} strokeLinecap="round" />
-    {arriba && llen > 0.02 && <text x={x} y={y0 - 26} textAnchor="middle" style={{ font:`400 74px ${KF.titulo}` }} fill={KC.ink}>{arriba}</text>}
+    {arriba && llen > 0.02 && <text x={x} y={y0 - 26} textAnchor="middle" style={{ font:`400 66px ${KF.titulo}` }} fill={KC.ink}>{arriba}</text>}
     {abajo && <text x={x} y={y1 + 46} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>{abajo}</text>}
   </g>;
 }
@@ -267,9 +267,9 @@ function Penicilina() {
         <FondoLunares color={KC.yellow} />
         {/* pase a mano cine: tubos 1.3× y centrados */}
         <Capa><g transform="translate(540 930) scale(1.15) translate(-540 -880)">
-          <Tubo x={240} llen={0.27 * kprog(T, e150, e150 + 0.8, kEase.sale)} color="#d9e8b0" arriba="60–150" abajo="silvestre" />
+          <Tubo x={280} llen={0.27 * kprog(T, e150, e150 + 0.8, kEase.sale)} color="#d9e8b0" arriba="60–150" abajo="silvestre" />
           <Tubo x={540} llen={0.55 * kprog(T, e300, e300 + 0.8, kEase.sale)} color={MAIZ} arriba="300" abajo="rayos X" />
-          <Tubo x={840} llen={1.0 * kprog(T, e550, e550 + 0.9, kEase.sale)} color={PENI} arriba="550" abajo="UV · Wisconsin" />
+          <Tubo x={800} llen={1.0 * kprog(T, e550, e550 + 0.9, kEase.sale)} color={PENI} arriba="550" abajo="UV · Wisconsin" />
         </g></Capa>
       </Escena>
       {/* 9 · Día D: la torre de dosis */}

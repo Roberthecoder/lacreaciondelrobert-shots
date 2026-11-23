@@ -449,9 +449,9 @@ function CueroShot() {
       <EtqR T={T} at={K.Hi + 1.8} until={K.Co - 0.3} x={395} y={950} color={KC.mint} tam={30}>glucanos</EtqR>
       <EtqR T={T} at={K.Hi + 2.1} until={K.Co - 0.3} x={395} y={1030} color={KC.gold2} tam={30}>quitina</EtqR>
       <EtqR T={T} at={K.Co + 0.2} until={K.Pr - 0.3} x={30} y={470} color={KC.texto} tam={30}>hongo: hifas</EtqR>
-      <EtqR T={T} at={K.Co + 0.2} until={K.Pr - 0.3} x={30} y={515} color={KC.mint} tam={24}>(quitina + glucanos)</EtqR>
+      <EtqR T={T} at={K.Co + 0.2} until={K.Pr - 0.3} x={30} y={515} color={KC.mint} tam={27}>(quitina + glucanos)</EtqR>
       <EtqR T={T} at={K.Co + 0.7} until={K.Pr - 0.3} x={560} y={470} color={KC.texto} tam={30}>vaca: colágeno</EtqR>
-      <EtqR T={T} at={K.Co + 0.7} until={K.Pr - 0.3} x={560} y={515} color={CM.colageno2} tam={24}>(una proteína)</EtqR>
+      <EtqR T={T} at={K.Co + 0.7} until={K.Pr - 0.3} x={560} y={515} color={CM.colageno2} tam={27}>(una proteína)</EtqR>
       <EtqR T={T} at={K.Pr + 0.3} until={K.Qu - 0.3} x={50} y={850} color={KC.ink} tam={26}>glicerina</EtqR>
       <EtqR T={T} at={K.Pr + 1.4} until={K.Qu - 0.3} x={420} y={850} color={KC.ink} tam={26}>curtido</EtqR>
       <EtqR T={T} at={K.Pr + 2.5} until={K.Qu - 0.3} x={740} y={850} color={KC.ink} tam={26}>prensa caliente</EtqR>
@@ -479,7 +479,7 @@ function CueroShot() {
       <Titulo T={T} at={K.Ci + 0.2} until={K.Ou} texto="SÍ ES DE HONGO" x={60} y={400} tam={96} />
       <EtqR T={T} at={K.Ci + 1.4} until={K.Ou} x={40} y={1220} color={KC.ink} tam={30}>hifas de hongo ✓</EtqR>
       <EtqR T={T} at={K.Ci + 2.4} until={K.Ou} x={40} y={1280} color={KC.ink} tam={28}>capita de plástico</EtqR>
-      <EtqR T={T} at={K.Ci + 2.4} until={K.Ou} x={40} y={1325} color={KC.ink} tam={24}>(muchas veces)</EtqR>
+      <EtqR T={T} at={K.Ci + 2.4} until={K.Ou} x={40} y={1325} color={KC.ink} tam={27}>(muchas veces)</EtqR>
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.He} texto="10 cm" largo={455} />

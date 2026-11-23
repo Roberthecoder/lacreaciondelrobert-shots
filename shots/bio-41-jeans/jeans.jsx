@@ -198,7 +198,7 @@ function Jeans41() {
   const cae = kprog(T, K.G + 0.05, K.G + 0.9, kEase.entra || ((p) => p * p));
   const rebota = kprog(T, K.G + 0.9, K.G + 1.6, kEase.sale);
   const hongo = kprog(T, K.G + 1.7, K.G + 2.8, kEase.sale);
-  const rodilla = { x: 433, y: 1080 };
+  const rodilla = { x: 429, y: 1180 };
   const mordida = kprog(T, K.Mo + 0.4, K.Gr - 0.3);
   const corta = (k) => kprog(T, K.Ce + 2.6 + k * 0.5, K.Ce + 3.2 + k * 0.5, kEase.sale);
   const enzX = (k) => klerp(-80, 330 + k * 184, kprog(T, K.Ce + 1.0 + k * 0.3, K.Ce + 2.6 + k * 0.5, kEase.suave));
@@ -208,14 +208,14 @@ function Jeans41() {
       <Escena T={T} a={K.G} b={K.An} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgJ>
-          <Tendedero y={360} />
-          <Jeans T={T} x={540} y={360} s={1.2} desgaste={klerp(0.15, 0.9, hongo)} id="j0" />
-          <HongoTricho T={T} x={rodilla.x} y={rodilla.y} s={1.2} crece={hongo} />
+          <Tendedero y={430} />
+          <Jeans T={T} x={540} y={430} s={1.25} desgaste={klerp(0.15, 0.9, hongo)} id="j0" />
+          <HongoTricho T={T} x={rodilla.x} y={rodilla.y} s={1.25} crece={hongo} />
           {rebota < 1 && <Pomez x={klerp(rodilla.x + 200, rodilla.x, cae) + rebota * 420} y={klerp(250, rodilla.y - 30, cae) - Math.sin(rebota * Math.PI) * 220 + rebota * 300} s={1.5} rot={T * 200} o={1 - rebota} seed={5} />}
         </SvgJ>
-        <Escala T={T} pxPorMm={1.2} x={60} y={1640} color={KC.ink} />
+        <Escala T={T} pxPorMm={1.25} x={60} y={1640} color={KC.ink} />
       </Escena>
-      <Lupa T={T} at={K.Hi + 0.05} until={K.An - 0.2} x={700} y={800} r={300} fx={rodilla.x} fy={rodilla.y} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · la mezclilla"
+      <Lupa T={T} at={K.Hi + 0.05} until={K.An - 0.2} x={700} y={860} r={300} fx={rodilla.x} fy={rodilla.y} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · la mezclilla"
         interior={(t, r) => <Sarga T={t} w={2 * r} h={2 * r} />} />
 
       {/* 2 · el hilo por dentro: anillo azul, centro blanco */}
@@ -336,18 +336,18 @@ function Jeans41() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgJ>
-          <Tendedero y={360} />
-          <Jeans T={T} x={540} y={360} s={1.2} desgaste={1} id="j1" />
-          <HongoTricho T={T} x={rodilla.x} y={rodilla.y} s={1.2} crece={1} />
+          <Tendedero y={430} />
+          <Jeans T={T} x={540} y={430} s={1.25} desgaste={1} id="j1" />
+          <HongoTricho T={T} x={rodilla.x} y={rodilla.y} s={1.25} crece={1} />
         </SvgJ>
-        <Escala T={T} pxPorMm={1.2} x={60} y={1640} color={KC.ink} />
+        <Escala T={T} pxPorMm={1.25} x={60} y={1640} color={KC.ink} />
       </Escena>
 
       {/* textos */}
       <Capitulo T={T} x={185} y={196} hasta={K.Es} caps={[{ at: K.Pi, titulo: 'La piedra' }, { at: K.Ce, titulo: 'La celulasa' }, { at: K.Ay, titulo: 'Las ayudantes' }]} />
       <MitoTachado T={T} at={K.G + 0.15} tacharEn={K.G + 1.5} until={K.G + 2.6} texto="¿piedra pómez?" x={300} y={240} tam={44} />
       <Chip T={T} at={K.G + 2.7} until={K.Hi - 0.2} texto="enzima de hongo" x={300} y={240} tam={40} borde={CEL} />
-      <Chip T={T} at={K.Hi + 0.5} until={K.An - 0.2} texto="azul: urdimbre · blanco: trama" y={1530} tam={34} borde={KC.cyan} />
+      <Chip T={T} at={K.Hi + 0.5} until={K.An - 0.2} texto="azul: urdimbre · blanco: trama" y={245} tam={32} borde={KC.cyan} />
       <Etiqueta T={T} at={K.An + 1.6} until={K.Pi - 0.3} x={440} y={446} texto="índigo" lado="der" tam={36} color={DESL} />
       <Etiqueta T={T} at={K.An + 2.2} until={K.Pi - 0.3} x={424} y={900} texto="centro sin teñir" lado="der" tam={34} />
       <Chip T={T} at={K.An + 2.6} until={K.Pi - 0.3} texto="el índigo se queda por fuera" y={1500} tam={38} borde={INDIGO} />
@@ -367,7 +367,7 @@ function Jeans41() {
       <Etiqueta T={T} at={K.Es + 4.6} until={K.Ti - 0.3} x={300} y={1455} texto="tela más clara" lado="der" tam={30} color={KC.ink} />
       <Etiqueta T={T} at={K.Ti + 1.0} until={K.Ci - 0.3} x={60} y={630} texto="Trichoderma reesei" it lado="der" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Ti + 1.6} until={K.Ci - 0.3} texto="Islas Salomón · 2.ª Guerra Mundial" y={1500} tam={36} borde={TRICHO} />
-      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="biostoning = deslavado con enzimas" y={1530} tam={34} borde={CEL} />
+      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="biostoning = deslavado con enzimas" y={1620} tam={34} borde={CEL} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Hi - 0.1} texto="¿Piedra? *Quizá un hongo.*" />

@@ -74,7 +74,10 @@ function VasoSopa({ T, x, y, s = 1, montoncito = 0, sello = 0 }) {
   const crist = Array.from({ length: 26 }, () => [(R() - 0.5) * 120 * (0.4 + R() * 0.6), -R() * 36, R() * 180]);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {[0, 1, 2].map((k) => { const ph = (T * 0.5 + k / 3) % 1; return <path key={k} d={`M ${-90 + k * 90} ${-260 - ph * 180} q 30 -40 0 -80 t 0 -80`} stroke="#fff" strokeWidth={12} fill="none" strokeLinecap="round" opacity={0.65 * Math.sin(ph * Math.PI)} />; })}
-    <path d="M -220 -230 L 220 -230 L 175 230 L -175 230 Z" fill="#f6f3ec" stroke={KC.ink} strokeWidth={12} strokeLinejoin="round" />
+    <defs><linearGradient id="vaso-g" x1="0" y1="0" x2="1" y2="0.35"><stop offset="0" stopColor="#fbf8f0" /><stop offset="0.55" stopColor="#e4ddcc" /><stop offset="1" stopColor="#a99f8b" /></linearGradient></defs>
+    <ellipse cx={0} cy={240} rx={200} ry={26} fill="rgba(0,0,0,.35)" />
+    <path d="M -220 -230 L 220 -230 L 175 230 L -175 230 Z" fill="url(#vaso-g)" stroke={KC.ink} strokeWidth={12} strokeLinejoin="round" />
+    <path d="M -168 -6 L -150 200" stroke="#fff" strokeWidth={14} strokeLinecap="round" opacity=".5" />
     <path d="M -205 -110 L 205 -110 L 195 -20 L -196 -20 Z" fill={KC.red} />
     <text x={0} y={-48} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill="#fff" letterSpacing="4">SOPA</text>
     <path d="M -186 80 L 186 80" stroke="#e2d9c6" strokeWidth={8} />
@@ -323,7 +326,7 @@ function Glutamato() {
         <SvgCapa>
           {[['bacterias', 'bacteria', 188], ['levaduras', 'levadura', 540], ['hongos', 'hongo', 892]].map(([t, tipo, x], i) => {
             const at = K.Es + 0.6 + i * 0.7, e = kprog(T, at, at + 0.4, kEase.rebote);
-            return e > 0 ? <g key={i} transform={`translate(${x} 930) scale(${e * 1.12})`}>
+            return e > 0 ? <g key={i} transform={`translate(${x} 1060) scale(${e * 1.12})`}>
               <PlacaPetri x={0} y={0} r={150} id={'pp' + i}><Colonias tipo={tipo} seed={i + 3} crece={kprog(T, at + 0.2, at + 2.5)} /></PlacaPetri>
               <text x={0} y={210} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>{t}</text>
             </g> : null; })}

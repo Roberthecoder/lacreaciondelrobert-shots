@@ -118,7 +118,8 @@ function Columna({ x, y, w, h, n = 8, capas = 8, T = 0, raices = true }) {
       const vis = kclamp(capas - k, 0, 1); if (vis <= 0) return null;
       const yk = y + h - (k + 1) * hh - (1 - kEase.sale(vis)) * 260;
       return <g key={k} opacity={kclamp(vis * 2, 0, 1)}>
-        <rect x={x} y={yk} width={w} height={hh + 1} fill={mixHex('#24170f', '#6b4a33', k / (n - 1))} stroke={KC.ink} strokeWidth={3} />
+        <rect x={x} y={yk} width={w} height={hh + 1} fill={mixHex('#3a2618', '#8a6447', k / (n - 1))} stroke={KC.ink} strokeWidth={3} />
+        <rect x={x} y={yk} width={w} height={6} fill="#fff" opacity=".12" />
         {puntos[k].map((p, i) => <circle key={i} cx={x + p.x} cy={yk + p.y} r={p.s} fill="#0b0b0b" stroke={KC.gold} strokeWidth={1.6} />)}
       </g>;
     })}
@@ -204,13 +205,15 @@ function ManglaresShot() {
       {/* 5 · capa sobre capa: el carbono se queda enterrado */}
       <Escena T={T} a={K.Ca} b={K.P} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:'#0E0F12' }}></div>
-        {svg(<Columna x={40} y={760} w={700} h={740} capas={5 + kprog(T, K.Ca + 0.1, K.Ca + 4.0) * 3} T={T} />)}
+        {/* belleza: el mangle (el sujeto) sobre su columna de lodo; capas más claras para que se lean */}
+        {svg(<><MangleRojo x={390} base={862} top={600} raices={1} T={T} s={0.9} />
+          <Columna x={40} y={860} w={700} h={660} capas={5 + kprog(T, K.Ca + 0.1, K.Ca + 4.0) * 3} T={T} /></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1565} color={KC.texto} />
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><Columna x={40} y={760} w={700} h={740} capas={8} T={T} />
+        {svg(<><MangleRojo x={390} base={862} top={600} raices={1} T={T} s={0.9} /><Columna x={40} y={860} w={700} h={660} capas={8} T={T} />
           <text x={905} y={1260} textAnchor="middle" style={{ font:`400 400px ${KF.titulo}` }} fill={KC.yellow} stroke="#0b1020" strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 905 1120)`}>?</text></>)}
       </Escena>
       {/* 7 · el estudio de 2011 y la hectárea que se llena */}
@@ -280,9 +283,9 @@ function ManglaresShot() {
       <Chip T={T} at={K.L + 3.0} until={K.Mi - 0.2} texto="casi sin oxígeno" y={1345} x={235} tam={36} borde={KC.yellow} />
       <Etq T={T} at={K.Mi + 0.6} until={K.Ca - 0.2} x={500} y={1215} texto="bacterias" tam={30} />
       <Chip T={T} at={K.Mi + 0.4} until={K.Ca - 0.2} texto="sin oxígeno: lentísimo" y={1330} x={540} tam={32} borde={KC.coral} />
-      <Chip T={T} at={K.Ca + 0.3} until={K.P - 0.2} texto="capa sobre capa" y={690} x={390} tam={38} borde={KC.gold} />
-      <Etq T={T} at={K.Ca + 3.6} until={K.P - 0.2} x={750} y={806} texto="capa nueva" tam={28} />
-      <Etq T={T} at={K.Ca + 1.0} until={K.P - 0.2} x={750} y={1454} texto="miles de años" tam={28} color={KC.gold2} />
+      <Chip T={T} at={K.Ca + 0.3} until={K.P - 0.2} texto="capa sobre capa" y={330} x={540} tam={38} borde={KC.gold} />
+      <Etq T={T} at={K.Ca + 3.6} until={K.P - 0.2} x={750} y={900} texto="capa nueva" tam={28} />
+      <Etq T={T} at={K.Ca + 1.0} until={K.P - 0.2} x={750} y={1478} texto="miles de años" tam={28} color={KC.gold2} />
       <TarjetaEstudio T={T} at={K.E + 0.7} until={K.E + 3.2} anio="2011" quien="25 manglares del Indo-Pacífico" revista="Donato et al. · Nature Geoscience" y={305} />
       <NumeroGigante T={T} at={K.E + 3.5} until={K.S - 0.2} valor={1023} dur={2.9} sufijo=" t" etiqueta="carbono por hectárea" x={540} y={1400} tam={130} color={KC.yellow} />
       <Chip T={T} at={K.S + 0.4} until={K.Mx - 0.2} texto="49–98 % en el suelo" y={450} x={420} tam={36} borde={KC.gold} />

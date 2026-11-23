@@ -204,14 +204,14 @@ function EnergiaPregunta() {
       {/* 3 · qué incluye: por dentro del centro de datos */}
       <Escena T={T} a={K.I} b={K.B}>
         <FondoCircuito T={T} />
-        {svgK(<>
+        {svgK(<g transform="translate(14 110) translate(540 770) scale(0.94) translate(-540 -770)">
           {[0, 1, 2, 3].map((k) => <g key={k} opacity={kprog(T, K.I + 0.1 + k * 0.12, K.I + 0.4 + k * 0.12)}><Rack x={150 + k * 190} y={770} s={0.97} T={T} seed={k + 2} calor={k < 2 ? 0.8 : 0} /></g>)}
           <g opacity={kprog(T, K.I + 2.6, K.I + 3.0)}><Ventilador x={925} y={700} s={0.9} T={T} /></g>
-        </>)}
+        </g>)}
       </Escena>
-      <Chip T={T} at={K.I + 0.3} until={K.B - 0.2} texto="dentro del centro de datos" x={540} y={430} tam={32} borde={KC.cyan} />
+      <Chip T={T} at={K.I + 0.3} until={K.B - 0.2} texto="dentro del centro de datos" x={540} y={500} tam={32} borde={KC.cyan} />
       {T >= K.I + 0.6 && T <= K.B + 0.4 && (() => { const o = kprog(T, K.I + 0.6, K.I + 1.0) * (1 - kprog(T, K.B - 0.1, K.B + 0.4)), a = kprog(T, K.I + 0.7, K.I + 1.5, kEase.sale), b = kprog(T, K.I + 1.6, K.I + 3.4, kEase.sale);
-        return <div style={{ position:'absolute', left:90, top:1080, width:900, zIndex:40, opacity:o }}>
+        return <div style={{ position:'absolute', left:90, top:1215, width:900, zIndex:40, opacity:o }}>
           <div style={{ display:'flex', height:90, border:`6px solid ${KC.texto}`, borderRadius:18, overflow:'hidden', background:'rgba(0,0,0,.4)' }}>
             <div style={{ width: 375 * a, background:KC.cyan }}></div>
             <div style={{ width: 513 * b, background:KC.orange }}></div>
@@ -250,10 +250,12 @@ function EnergiaPregunta() {
       <Escena T={T} a={K.O} b={K.S}>
         <FondoLunares color={KC.lilac} />
         {svgK(<>
+          {/* belleza: el celular de la pregunta sigue a media luz mientras entran las burbujas */}
+          <g opacity={0.4 * (1 - kprog(T, K.O + 1.2, K.O + 2.0))}><Celu x={540} y={1000} s={1.6} env={1} resp={1} T={T} /></g>
           <g opacity={1 - 0.75 * kprog(T, L6 - 0.3, L6 + 0.2)}>
             {Array.from({ length: 9 }, (_, i) => { const h = 60 + i * i * 9, w = 96, x = 80 + i * 115, a = K.O + 0.1 + i * 0.06, mid = i === 4;
               const res = kprog(T, K.O + 1.6, K.O + 2.0);
-              return <Burbuja key={i} x={x} y={1290} w={w} h={h} o={kprog(T, a, a + 0.25) * (mid ? 1 : 1 - 0.55 * res)} color={mid && res > 0 ? KC.yellow : KC.paper} />; })}
+              return <Burbuja key={i} x={x} y={1290} w={w} h={h} o={kprog(T, a, a + 0.25) * (mid ? 1 : 1 - 0.3 * res)} color={mid && res > 0 ? KC.yellow : KC.paper} />; })}
             <g opacity={kprog(T, K.O + 1.8, K.O + 2.2) * (1 - kprog(T, L6 - 0.3, L6 + 0.2))}><path d="M 540 880 L 540 1030" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" /><path d="M 513 1005 L 540 1042 L 567 1005" stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g>
           </g>
           <g opacity={kprog(T, L6 + 0.1, L6 + 0.4)}>
@@ -297,10 +299,10 @@ function EnergiaPregunta() {
         return <div style={{ position:'absolute', inset:0, zIndex:40, opacity:o }}>
           {fila('Centros de datos del mundo', '· 2030', 800, g1, KC.orange, icoDatos, 1000)}
           {fila('Japón entero', '· hoy', 760, g2, KC.coral, icoJapon, 1185)}
-          <div style={{ position:'absolute', left:790, top:1128, font:`900 28px ${KF.texto}`, color:KC.red, whiteSpace:'nowrap', opacity:kprog(T, K.A + 6.9, K.A + 7.3) }}>▲ un poco más</div>
+          <div style={{ position:'absolute', left:780, top:1188, font:`900 28px ${KF.texto}`, color:KC.red, whiteSpace:'nowrap', opacity:kprog(T, K.A + 6.9, K.A + 7.3) }}>▲ un poco más</div>
         </div>; })()}
 
-      {T >= L9 && T <= K.R + 0.4 && <div style={{ position:'absolute', inset:0, zIndex:44, opacity:1 - kprog(T, K.R - 0.1, K.R + 0.4) }}>{svgK(<><g transform={`translate(600 1082) rotate(-6) scale(${klerp(1.8, 1, kprog(T, L9, L9 + 0.35, kEase.sale))})`} opacity={kprog(T, L9, L9 + 0.25)}>
+      {T >= L9 && T <= K.R + 0.4 && <div style={{ position:'absolute', inset:0, zIndex:44, opacity:1 - kprog(T, K.R - 0.1, K.R + 0.4) }}>{svgK(<><g transform={`translate(640 1108) rotate(-6) scale(${klerp(1.8, 1, kprog(T, L9, L9 + 0.35, kEase.sale))})`} opacity={kprog(T, L9, L9 + 0.25)}>
             <rect x={-250} y={-60} width={500} height={120} rx={16} fill="rgba(255,59,47,.15)" stroke={KC.red} strokeWidth={10} />
             <text y={30} textAnchor="middle" style={{ font:`400 88px ${KF.titulo}` }} fill={KC.red}>PROYECCIÓN</text>
           </g></>)}</div>}

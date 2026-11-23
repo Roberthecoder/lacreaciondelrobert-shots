@@ -149,7 +149,7 @@ function Protector() {
       {/* 0 · gancho: tu brazo, la crema y el sol */}
       <Escena T={T} a={K.G} b={K.Fi} zoom={0.12} origen="45% 48%">
         <FondoLunares color={KC.yellow} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(0 130)">
           <Sol T={T} x={430} y={450} />
           <Brazo crema={unta} />
           <Lluvia T={T} t0={K.G + 0.15} rayos={raysG} per={0.8} />
@@ -160,15 +160,15 @@ function Protector() {
           {T > K.G + 3.6 && [0, 1, 2].map((i) => { const q = ((T - K.G - 3.6) * 0.9 + i / 3) % 1; return <Onda key={i} x0={380} y0={500} x1={200} y1={700} a={Math.max(0, q - 0.3)} b={q} fase={-T * 10} color={UV} ancho={7} />; })}
           <g transform="translate(70 1196)"><line x1={0} y1={0} x2={180} y2={0} stroke={KC.ink} strokeWidth={8} /><line x1={0} y1={-14} x2={0} y2={14} stroke={KC.ink} strokeWidth={8} /><line x1={180} y1={-14} x2={180} y2={14} stroke={KC.ink} strokeWidth={8} />
             <text x={90} y={-18} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>5 cm</text></g>
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
 
       {/* 1–3 · por dentro de la capa: filtros que se tragan el UV y lo sueltan como calor */}
       <Escena T={T} a={K.Fi} b={K.Pr} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        <SvgCapa>
-          <rect x={0} y={560} width={KW} height={500} fill="rgba(255,250,240,.10)" />
-          <line x1={0} y1={560} x2={KW} y2={560} stroke="rgba(255,250,240,.5)" strokeWidth={4} strokeDasharray="18 14" />
+        <SvgCapa><g transform="translate(540 1010) scale(1.1) translate(-540 -900)">
+          <rect x={-60} y={560} width={KW + 120} height={500} fill="rgba(255,250,240,.10)" />
+          <line x1={-60} y1={560} x2={KW + 60} y2={560} stroke="rgba(255,250,240,.5)" strokeWidth={4} strokeDasharray="18 14" />
           {Array.from({ length: 14 }, (_, i) => { const R = krng(30 + i); const x = R() * KW, y = 600 + R() * 420; return <circle key={i} cx={(x + T * 14) % KW} cy={y + Math.sin(T + i) * 8} r={10 + R() * 16} fill="rgba(255,250,240,.16)" />; })}
           {Array.from({ length: 8 }, (_, i) => <ellipse key={i} cx={70 + i * 135} cy={1140} rx={62} ry={44} fill={mixHex('#f2a0a8', '#f2a0a8', 0)} stroke={KC.ink} strokeWidth={5} />)}
           {Array.from({ length: 8 }, (_, i) => <circle key={i} cx={70 + i * 135} cy={1140} r={14} fill="#a8456a" />)}
@@ -191,9 +191,9 @@ function Protector() {
           <Calor T={T} x={AVO[0]} y={AVO[1] - 110} f={kprog(T, K.Ca + 0.2, K.Ca + 0.6) * (1 - kprog(T, K.Pr - 0.4, K.Pr))} />
           {/* el siguiente rayo: también se lo traga */}
           <Onda x0={OCT[0] - 60} y0={300} x1={OCT[0]} y1={OCT[1] - 40} a={Math.max(0, kprog(T, K.Ca + 1.9, K.Ca + 2.6) - 0.4)} b={kprog(T, K.Ca + 1.9, K.Ca + 2.6)} o={1 - kprog(T, K.Ca + 2.6, K.Ca + 2.65)} fase={-T * 10} />
-          <text x={60} y={1236} style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto} opacity={0.85}>tu piel</text>
-          <text x={1020} y={600} textAnchor="end" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto} opacity={0.75}>capa de crema</text>
-        </SvgCapa>
+          <text x={110} y={1236} style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto} opacity={0.85}>tu piel</text>
+          <text x={990} y={600} textAnchor="end" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto} opacity={0.75}>capa de crema</text>
+        </g></SvgCapa>
       </Escena>
 
       {/* 4 · ¿y los minerales? */}
@@ -230,7 +230,7 @@ function Protector() {
             if (r.tipo === 'pasa') return <g key={i}><Onda x0={x} y0={MY + 30} x1={x} y1={SY + SR - 20} a={Math.max(0, q - 0.4)} b={q} color={UV} ancho={8} fase={-T * 10} /><Destello x={x} y={SY + SR - 20} q={kprog(T, r.t + 0.95, r.t + 1.4)} r={30} color={UV} /></g>;
             return <g key={i}><Onda x0={x} y0={MY} x1={SX + 230} y1={SY - 180} a={Math.max(0, q - 0.4)} b={q} color={KC.yellow} ancho={9} fase={-T * 10} /><Destello x={SX + 230} y={SY - 180} q={kprog(T, r.t + 0.95, r.t + 1.5)} r={50} color={KC.yellow} /></g>; })}
         </SvgCapa>
-        {T > K.Es + 3.8 && <div style={{ position:'absolute', left:150, top:1440, width:780, zIndex:41 }}>
+        {T > K.Es + 3.8 && <div style={{ position:'absolute', left:150, top:1300, width:780, zIndex:41 }}>
           {[['reflejado (rebota): 4–5 %', 0.05, KC.yellow, 0], ['absorbido', 0.86, '#6b3fd6', 0.4]].map(([t, v, c, d], i) => { const p = kprog(T, K.Es + 4.0 + d, K.Es + 5.0 + d, kEase.sale);
             return <div key={i} style={{ marginBottom:16, opacity:kprog(T, K.Es + 3.8 + d, K.Es + 4.1 + d) }}>
               <div style={{ font:`700 32px ${KF.mono}`, color:KC.ink, marginBottom:6 }}>{t}</div>
@@ -253,7 +253,7 @@ function Protector() {
             return abs < 1 ? <path key={i} d={`M ${x} ${y - 18} L ${x} ${y + 10} M ${x - 10} ${y + 2} L ${x} ${y + 16} L ${x + 10} ${y + 2}`} stroke={UVB} strokeWidth={6} fill="none" strokeLinecap="round" opacity={ap * (1 - abs)} />
               : <circle key={i} cx={x} cy={y} r={9} fill={CREMA} stroke={KC.ink} strokeWidth={3} />; })}
         </SvgCapa>
-        <NumeroGigante T={T} at={K.Fp + 2.2} until={K.La - 0.2} valor={97} dur={1.2} sufijo=" %" etiqueta="de los rayos UVB, filtrados" y={1560} tam={150} color={KC.yellow} />
+        <NumeroGigante T={T} at={K.Fp + 2.2} until={K.La - 0.2} valor={97} dur={1.2} sufijo=" %" etiqueta="de los rayos UVB, filtrados" y={1380} tam={150} color={KC.yellow} />
       </Escena>
 
       {/* 7 · en laboratorio: 2 mg por cada cm² */}
@@ -295,7 +295,7 @@ function Protector() {
       <Escena T={T} a={K.Pl} b={K.Me} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:`linear-gradient(#0c1d33 0, #143552 760px, #1c4a8a 760px 860px, #4a3b1f 860px, #2e2414 100%)` }}></div>
         <SvgCapa>
-          <Sol T={T} x={560} y={420} r={60} />
+          <Sol T={T} x={560} y={530} r={60} />
           {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${i * 200 - 40 + (T * 30) % 200} 800 q 50 -24 100 0`} stroke="#bfe8ff" strokeWidth={6} fill="none" opacity={0.6} />)}
           {Array.from({ length: 42 }, (_, i) => { const c = i % 7, r = Math.floor(i / 7), on = kprog(T, K.Pl + 0.3 + i * 0.05, K.Pl + 0.5 + i * 0.05, kEase.rebote), fuera = 1 - kprog(T, K.Pl + 3.2, K.Pl + 3.5);
             return on > 0 ? <Personita key={i} x={95 + c * 118} y={890 + r * 100} s={1.4 * on} o={fuera} color={[KC.pink, KC.orange, KC.mint, KC.lilac, KC.cyan][i % 5]} /> : null; })}
@@ -344,13 +344,13 @@ function Protector() {
       {/* 10 · cierre: el mismo brazo, ahora con la capa completa (esponja) */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(0 130)">
           <Sol T={T} x={430} y={450} />
           <Brazo crema={1} grosor={42} />
           <Lluvia T={T} t0={K.Ci + 0.1} rayos={[150, 280, 410, 540, 670, 800].map((x1) => ({ x0: 430, y0: 450, x1, y1: 880 }))} per={0.8} />
           {[200, 450, 700].map((x, i) => <Calor key={i} T={T} x={x} y={870} f={kprog(T, K.Ci + 0.9 + i * 0.2, K.Ci + 1.3 + i * 0.2)} s={0.8} />)}
           <Esponja T={T} x={180} y={720} s={0.8} o={kprog(T, K.Ci + 1.0, K.Ci + 1.4)} brillo={1} />
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
 
       {/* textos */}
@@ -360,11 +360,11 @@ function Protector() {
       <Chip T={T} at={K.Ab + 1.0} until={K.Ca - 0.2} texto="absorben el UV → energía" y={1500} tam={42} borde={KC.yellow} />
       <Chip T={T} at={K.Ca + 0.4} until={K.Pr - 0.2} texto="energía → un poquito de calor" y={1500} tam={40} borde={CALOR} />
       <Chip T={T} at={K.Pr + 0.3} until={K.Es - 0.2} texto="óxido de zinc · dióxido de titanio" y={1500} tam={36} borde={KC.texto} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.3} anio="2016" quien="Cole, Shyr y Ou-Yang" revista="Nueva Jersey, EUA · esfera integradora" y={1590} />
-      <MitoTachado T={T} at={K.Es + 3.7} tacharEn={K.Es + 5.0} until={K.Fp - 0.2} texto="minerales = espejitos" y={1780} tam={40} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.3} anio="2016" quien="Cole, Shyr y Ou-Yang" revista="Nueva Jersey, EUA · esfera integradora" y={330} />
+      <MitoTachado T={T} at={K.Es + 3.7} tacharEn={K.Es + 5.0} until={K.Fp - 0.2} texto="minerales = espejitos" y={380} tam={40} />
       <Chip T={T} at={K.La + 3.6} until={K.Pl - 0.2} texto="así se mide la etiqueta (FDA)" y={1500} tam={40} borde={KC.gold} />
       <Chip T={T} at={K.La + 0.6} until={K.La + 3.4} texto="2 mg en cada cm² de piel" y={1500} tam={42} borde={KC.gold} />
-      <TarjetaEstudio T={T} at={K.Pl + 0.2} until={K.Pl + 3.1} anio="1992" quien="Bech-Thomsen y Wulf" revista="investigadores de Copenhague, Dinamarca" y={1590} />
+      <TarjetaEstudio T={T} at={K.Pl + 0.2} until={K.Pl + 3.1} anio="1992" quien="Bech-Thomsen y Wulf" revista="investigadores de Copenhague, Dinamarca" y={300} />
       <Chip T={T} at={K.Pl + 3.9} until={K.Me - 0.2} texto="¼ de lo del laboratorio" y={1500} tam={44} borde={KC.gold} />
       <Chip T={T} at={K.Me + 0.6} until={K.Ci - 0.2} texto="menos crema = menos protección" y={1500} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="absorbe UV → lo suelta como calor" y={1500} tam={38} borde={UV} />

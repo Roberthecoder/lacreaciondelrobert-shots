@@ -186,7 +186,7 @@ function Helio() {
           </g>
         </Lienzo>
         <Chip T={T} at={K.Cuerdas + 0.4} until={K.Cuerdas + 2.3} texto="POR DENTRO · TU GARGANTA" x={540} y={330} tam={36} borde={HE_AIRE} mono />
-        <Etq T={T} at={K.Cuerdas + 0.9} until={K.Tubo - 0.2} x={640} y={450} texto="cuerdas vocales" lado="der" color={KC.texto} />
+        <Etq T={T} at={K.Cuerdas + 0.9} until={K.Tubo - 0.2} x={560} y={450} texto="cuerdas vocales" lado="der" color={KC.texto} />
         <Chip T={T} at={K.Cuerdas + 2.4} until={K.Tubo - 0.1} texto="vibraciones por segundo = tono" x={540} y={330} tam={36} borde={KC.yellow} />
       </Escena>
 
@@ -215,7 +215,7 @@ function Helio() {
         <FondoLunares color={KC.lilac} />
         <Lienzo>
           <Espectro x={90} y={760} w={900} h={460} T={T} p={kprog(T, K.Timbre + 0.2, K.Timbre + 1.2, kEase.sale)} curva={kprog(T, K.Timbre + 1.2, K.Timbre + 2.4)} />
-          {T > K.Timbre + 2.6 && <TextoSvg x={680} y={710} tam={68} color={KC.yellow} s={klerp(0.4, 1, kprog(T, K.Timbre + 2.6, K.Timbre + 3, kEase.rebote))}>EL COLOR DE TU VOZ</TextoSvg>}
+          {T > K.Timbre + 2.6 && <TextoSvg x={540} y={710} tam={60} color={KC.yellow} s={klerp(0.4, 1, kprog(T, K.Timbre + 2.6, K.Timbre + 3, kEase.rebote))}>EL COLOR DE TU VOZ</TextoSvg>}
         </Lienzo>
         <Chip T={T} at={K.Timbre + 0.3} until={K.Timbre + 2.5} texto="frecuencias reforzadas" x={640} y={560} tam={40} borde={KC.yellow} />
         <Etq T={T} at={K.Timbre + 1.6} until={K.Helio - 0.2} x={560} y={860} texto="picos = timbre" lado="der" color={KC.yellow} />
@@ -247,8 +247,9 @@ function Helio() {
       {/* 6 · pregunta */}
       <Escena T={T} a={K.Pregunta} b={K.Igual} zoom={0.1}>
         <FondoLunares color={KC.orange} />
+        <div style={{ position:'absolute', inset:0, background:'#0a0e18', opacity:0.72 * kprog(T, K.Pregunta, K.Pregunta + 0.35) }}></div>
         <Lienzo>
-          <g opacity={0.6}><CabezaPerfil x={HC.x} y={HC.y} s={HC.s} boca={habla(K.Pregunta, K.Igual)} corte={0.25}>
+          <g opacity={0.95}><CabezaPerfil x={HC.x} y={HC.y} s={HC.s} boca={habla(K.Pregunta, K.Igual)} corte={0.25}>
             <TuboVoz T={T} o={1} luz={0.6} ondas={1} color={HE_HELIO} />
           </CabezaPerfil></g>
           <text x={820} y={1240} textAnchor="middle" fill={KC.yellow} stroke={KC.ink} strokeWidth={14}

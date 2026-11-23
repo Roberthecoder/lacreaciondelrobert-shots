@@ -155,7 +155,8 @@ function Hepatocito({ x, y, s = 1, T = 0, brilla = 0 }) {
 /* ---------- laboratorio y otros ---------- */
 function Hielera({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-170} y={-120} width={340} height={230} rx={24} fill="#f6f3ec" stroke={KC.ink} strokeWidth={9} />
+    <defs><linearGradient id="hielera-g" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stopColor="#d4dce4" /><stop offset="1" stopColor="#7f8c99" /></linearGradient></defs>
+    <rect x={-170} y={-120} width={340} height={230} rx={24} fill="url(#hielera-g)" stroke={KC.ink} strokeWidth={9} />
     <rect x={-185} y={-150} width={370} height={52} rx={18} fill={KC.blue} stroke={KC.ink} strokeWidth={9} />
     <rect x={-50} y={-176} width={100} height={30} rx={12} fill={KC.blue} stroke={KC.ink} strokeWidth={7} />
     <text x={0} y={30} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.red}>ÓRGANO</text>
@@ -174,11 +175,11 @@ function Calendario({ T, x, y, a, s = 1 }) {
   const hojas = 6, cada = 0.42;
   const n = kclamp(Math.floor((T - a) / cada), 0, hojas);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-170} y={-170} width={340} height={360} rx={24} fill="#fff" stroke={KC.ink} strokeWidth={9} />
+    <rect x={-170} y={-170} width={340} height={360} rx={24} fill="#27303c" stroke={KC.ink} strokeWidth={9} />
     <rect x={-170} y={-170} width={340} height={90} rx={24} fill={KC.red} stroke={KC.ink} strokeWidth={9} />
     {[-100, 100].map((k) => <rect key={k} x={k - 10} y={-200} width={20} height={60} rx={8} fill={KC.ink} />)}
     <text x={0} y={-108} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill="#fff">MES</text>
-    <text x={0} y={100} textAnchor="middle" style={{ font:`400 200px ${KF.titulo}`, stroke:'none' }} fill={OSC}>{Math.max(1, n)}</text>
+    <text x={0} y={100} textAnchor="middle" style={{ font:`400 200px ${KF.titulo}`, stroke:'none' }} fill="#f4f1ea">{Math.max(1, n)}</text>
     {Array.from({ length: hojas }, (_, i) => { const t0 = a + i * cada, f = kprog(T, t0, t0 + 0.35, kEase.suave);
       if (f <= 0 || f >= 1) return null;
       return <rect key={i} x={-170} y={-80} width={340} height={270} rx={18} fill="#fffdf4" stroke={KC.ink} strokeWidth={6} opacity={1 - f}
@@ -302,7 +303,7 @@ function BebeKJ() {
         <Capa><g transform="translate(0 150)">
           {/* el cerebro ya no se apaga: sube y queda atenuado detrás del 50 % */}
           <g opacity={1 - 0.5 * grave}>
-            <Cerebro T={T} x={540} y={klerp(850, 650, grave)} s={klerp(1.7, 1.35, grave)} alarma={kprog(T, K.Pe + 0.6, K.Pe + 1.6) * (1 - 0.6 * grave)} />
+            <Cerebro T={T} x={540} y={klerp(900, 760, grave)} s={klerp(1.7, 1.35, grave)} alarma={kprog(T, K.Pe + 0.6, K.Pe + 1.6) * (1 - 0.6 * grave)} />
           </g></g>
           <g opacity={1 - grave}>
             {Array.from({ length: 6 }, (_, i) => <NubeNH3 key={i} x={150 + i * 156} y={1250 - ((T - K.Pe) * 60 + i * 50) % 360} s={0.85} o={kprog(T, K.Pe + i * 0.2, K.Pe + i * 0.2 + 0.4)} />)}
@@ -444,8 +445,8 @@ function BebeKJ() {
       <Medidor T={T} at={K.Pe + 0.3} until={K.Pe + 2.8} valor={(t) => kprog(t, K.Pe + 0.4, K.Pe + 2.3) * 0.92} etiqueta="amoniaco · primeros 2 días"
         texto={(v) => (v > 0.9 ? 'más de 1,000' : kformato(Math.round(v * 1090))) + ' µmol/L'} x={90} y={1400} color={KC.red} />
       <Chip T={T} at={K.Pe + 1.0} until={K.Pe + 2.8} texto="normal: 9–33 µmol/L" y={1345} tam={32} borde={KC.mint} mono />
-      <NumeroGigante T={T} at={K.Pe + 3.0} until={K.Tr - 0.3} valor={50} dur={0.5} sufijo=" %" etiqueta="forma grave" x={540} y={1160} tam={280} color={KC.yellow} />
-      <Chip T={T} at={K.Pe + 3.3} until={K.Tr - 0.3} texto="mortalidad estimada en los primeros meses" y={1440} tam={32} borde={KC.red} />
+      <NumeroGigante T={T} at={K.Pe + 3.0} until={K.Tr - 0.3} valor={50} dur={0.5} sufijo=" %" etiqueta="forma grave" x={540} y={1240} tam={280} color={KC.yellow} />
+      <Chip T={T} at={K.Pe + 3.3} until={K.Tr - 0.3} texto="mortalidad estimada en los primeros meses" y={1480} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Tr + 0.3} until={K.Se - 0.3} texto="lo usual: trasplante de hígado" y={470} tam={40} borde={KC.blue} />
       <Etq T={T} at={K.Tr + 1.4} until={K.Se - 0.3} x={960} y={1480} texto="hay que crecer" lado="izq" tam={36} color={KC.ink} />
       <Chip T={T} at={K.Se + 0.8} until={K.Ed - 0.3} texto="CHOP + Penn · Filadelfia · ~6 meses" y={1470} tam={36} borde={KC.gold} />

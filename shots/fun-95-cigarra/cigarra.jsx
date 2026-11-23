@@ -376,7 +376,7 @@ function CigarraShot() {
           {flick > 0.2 && [0, 1, 2, 3, 4].map((k) => { const a = -1.9 + k * 0.35; const [px, py] = cPunto(ex, -60, -90); return <line key={k} x1={px + Math.cos(a) * 75} y1={py + Math.sin(a) * 75} x2={px + Math.cos(a) * (100 + 62 * flick)} y2={py + Math.sin(a) * (100 + 62 * flick)} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />; })}
           {T > K.M && <Cigarra T={T} {...sano} vuela={1 - llega} perdidos={0} id="m" />}
           {T > K.M + 1.6 && <Estela T={T} desde={K.M + 1.6} hasta={K.Ca} pos={(t) => { const [ax, ay] = cPunto(ex, COLA[0], COLA[1]); return [ax + 30 * Math.sin(t * 5), ay - 10]; }} cada={0.12} vida={1.2} seed={9} tam={1.3} />}
-          {T > K.Al + 1.2 && T < K.M + 0.2 && <g opacity={1 - kprog(T, K.M - 0.2, K.M + 0.2)}><Marcador T={T} at={K.Al + 1.2} x={70} y={250} n={25} si={23} cols={5} lado={44} cada={0.06} /></g>}
+          {T > K.Al + 1.2 && T < K.M + 0.2 && <g opacity={1 - kprog(T, K.M - 0.2, K.M + 0.2)}><Marcador T={T} at={K.Al + 1.2} x={70} y={330} n={25} si={23} cols={5} lado={44} cada={0.06} /></g>}
                   </>)}
       </Escena>
       {/* 10 · 2019: catinona en los tapones */}
@@ -450,9 +450,9 @@ function CigarraShot() {
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 1.9} anio="2002" quien="cantos en EE. UU." revista="Cooley, Marshall y Hill · Scientific Reports 2018" x={540} y={400} />
       <Etq T={T} at={K.E + 2.2} until={K.Al - 0.2} x={50} y={790} texto="canto de macho" tam={30} color={KC.ink} />
       <Senal T={T} at={K.E + 2.5} until={K.Al + 1.0} px={zE(cPunto(ex, -185, -10))[0]} py={zE(cPunto(ex, -185, -10))[1]}  tx={1030} ty={800} texto="macho con tapón" tam={30} ancla="der" />
-      {T > K.Al + 1.2 && T < K.M && <div style={{ position:'absolute', left:70, top:530, zIndex:42, font:`900 40px ${KF.texto}`, color:KC.ink, opacity:kprog(T, K.Al + 2.6, K.Al + 2.9) * (1 - kprog(T, K.M - 0.3, K.M)) }}>23 de 25 machos con tapón de conidios</div>}
-      {T > K.Al + 2.7 && T < K.M && <div style={{ position:'absolute', left:70, top:582, zIndex:42, font:`700 28px ${KF.mono}`, color:KC.ink, opacity:kprog(T, K.Al + 2.8, K.Al + 3.1) * (1 - kprog(T, K.M - 0.3, K.M)) }}>…respondieron con el aleteo de hembra</div>}
-      {T > K.Al + 3.3 && T < K.M && <div style={{ position:'absolute', left:70, top:628, zIndex:42, font:`700 28px ${KF.mono}`, color:KC.ink, opacity:kprog(T, K.Al + 3.3, K.Al + 3.6) * (1 - kprog(T, K.M - 0.3, K.M)) }}>con tapón de esporas de reposo: 0 de 17</div>}
+      {T > K.Al + 1.2 && T < K.M && <div style={{ position:'absolute', left:70, top:610, zIndex:42, font:`900 40px ${KF.texto}`, color:KC.ink, opacity:kprog(T, K.Al + 2.6, K.Al + 2.9) * (1 - kprog(T, K.M - 0.3, K.M)) }}>23 de 25 machos con tapón de conidios</div>}
+      {T > K.Al + 2.7 && T < K.M && <div style={{ position:'absolute', left:70, top:662, zIndex:42, font:`700 28px ${KF.mono}`, color:KC.ink, opacity:kprog(T, K.Al + 2.8, K.Al + 3.1) * (1 - kprog(T, K.M - 0.3, K.M)) }}>…respondieron con el aleteo de hembra</div>}
+      {T > K.Al + 3.3 && T < K.M && <div style={{ position:'absolute', left:70, top:708, zIndex:42, font:`700 28px ${KF.mono}`, color:KC.ink, opacity:kprog(T, K.Al + 3.3, K.Al + 3.6) * (1 - kprog(T, K.M - 0.3, K.M)) }}>con tapón de esporas de reposo: 0 de 17</div>}
       <Senal T={T} at={K.M + 1.8} until={K.Ca - 0.3} px={zE(cPunto(sano, 70, -30))[0]} py={zE(cPunto(sano, 70, -30))[1]} tx={1030} ty={800} texto="macho sano" tam={30} ancla="der" />
       <Chip T={T} at={K.M + 2.4} until={K.Ca - 0.3} texto="al parecer, por contacto" x={540} y={480} tam={38} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.Ca + 0.2} until={K.Ca + 2.1} anio="2019" quien="West Virginia University" revista="Boyce, Kasson y col. · Fungal Ecology" x={540} y={400} />

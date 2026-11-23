@@ -183,6 +183,8 @@ function AntartidaShot() {
           <g transform="translate(700 920) scale(1.32) translate(-760 -880)">
           <circle cx={760} cy={880} r={250} fill={AO.marte} stroke={KC.ink} strokeWidth={8} />
           {[[700, 800, 40], [840, 950, 30], [690, 990, 22]].map(([a, b, r], i) => <circle key={i} cx={a} cy={b} r={r} fill="#9a330a" />)}
+          <defs><radialGradient id="ao-marte-vol" cx=".36" cy=".32" r=".78"><stop offset="0" stopColor="#fff" stopOpacity=".28" /><stop offset=".5" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#1a0500" stopOpacity=".55" /></radialGradient></defs>
+          <circle cx={760} cy={880} r={250} fill="url(#ao-marte-vol)" />
           </g>
           <g opacity={kprog(T, K.Pa + 1.6, K.Pa + 2.0)}><Transbordador x={215} y={640} s={1.1} rot={60} /></g>
           <g opacity={kprog(T, K.Pa + 3.0, K.Pa + 3.4)} transform={`translate(225 1320) rotate(${T * 20}) scale(1.7)`}><path d="M -70 -40 L 20 -70 L 80 -10 L 50 60 L -40 70 L -80 10 Z" fill="#8a7a6a" stroke={KC.ink} strokeWidth={6} /></g>

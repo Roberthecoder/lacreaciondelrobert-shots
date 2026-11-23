@@ -118,7 +118,7 @@ function LupaHumo(n) {
 
 // Cabello (70 µm) contra una partícula fina (2.5 µm). 9 px = 1 µm (la barra de 10 µm mide 90 px).
 function CabelloPM({ T, a }) {
-  const y = 900, h = 630, ent = kprog(T, a + 0.1, a + 1.0, kEase.sale);
+  const y = 960, h = 630, ent = kprog(T, a + 0.1, a + 1.0, kEase.sale);   // belleza: el cabello baja al centro (antes y 900)
   return <g>
     <g transform={`translate(${(1 - ent) * -1100} 0)`}>
       <rect x={-40} y={y - h / 2} width={1160} height={h} fill="#6b4428" stroke={KC.ink} strokeWidth={8} />
@@ -130,8 +130,8 @@ function CabelloPM({ T, a }) {
       <line x1={45} y1={y - h / 2} x2={75} y2={y - h / 2} stroke={KC.yellow} strokeWidth={6} /><line x1={45} y1={y + h / 2} x2={75} y2={y + h / 2} stroke={KC.yellow} strokeWidth={6} />
     </g>
     <g opacity={kprog(T, a + 2.2, a + 2.6)}>
-      <circle cx={760} cy={1345} r={11} fill={HL_HOLLIN} stroke={KC.yellow} strokeWidth={2} />
-      <circle cx={760} cy={1345} r={40 + 6 * Math.sin(T * 6)} fill="none" stroke={KC.yellow} strokeWidth={5} />
+      <circle cx={760} cy={1405} r={11} fill={HL_HOLLIN} stroke={KC.yellow} strokeWidth={2} />
+      <circle cx={760} cy={1405} r={40 + 6 * Math.sin(T * 6)} fill="none" stroke={KC.yellow} strokeWidth={5} />
     </g>
   </g>;
 }
@@ -309,9 +309,9 @@ function HumoShot() {
       <Chip T={T} at={K.G + 1.4} until={K.F - 0.2} texto="no es solo olor" x={800} y={1090} tam={34} borde={KC.yellow} />
       <Etq T={T} at={K.F + 0.4} until={K.Ca - 0.2} x={800} y={1350} texto="leña a medio quemar" lado="izq" tam={30} color={KC.ink} />
       <Chip T={T} at={K.F + 1.0} until={K.Ca - 0.2} texto="combustión incompleta → partículas" x={540} y={300} tam={30} borde={KC.orange} />
-      <Etq T={T} at={K.Ca + 1.8} until={K.Pu - 0.2} x={90} y={540} texto="cabello ≈ 70 µm" tam={32} />
-      <Etq T={T} at={K.Ca + 2.4} until={K.Pu - 0.2} x={705} y={1345} texto="PM2.5: menos de 2.5 µm" lado="izq" tam={30} color={KC.yellow} />
-      <Chip T={T} at={K.Ca + 2.8} until={K.Pu - 0.2} texto="≈ 30 veces más finas" x={540} y={410} tam={34} borde={KC.yellow} />
+      <Etq T={T} at={K.Ca + 1.8} until={K.Pu - 0.2} x={90} y={600} texto="cabello ≈ 70 µm" tam={32} />
+      <Etq T={T} at={K.Ca + 2.4} until={K.Pu - 0.2} x={705} y={1405} texto="PM2.5: menos de 2.5 µm" lado="izq" tam={30} color={KC.yellow} />
+      <Chip T={T} at={K.Ca + 2.8} until={K.Pu - 0.2} texto="≈ 30 veces más finas" x={540} y={470} tam={34} borde={KC.yellow} />
       <Etq T={T} at={K.Pu + 0.3} until={K.Pu + 1.6} x={590} y={500} texto="tráquea" tam={30} lado="der" />
       <Etq T={T} at={K.Pu + 2.0} until={K.E - 0.2} x={670} y={585} texto="alvéolos" tam={30} />
       <Etq T={T} at={K.Pu + 2.6} until={K.E - 0.2} x={1010} y={1405} texto="capilar: sangre" lado="izq" tam={30} color={KC.coral} />

@@ -211,8 +211,8 @@ function Ballenas() {
       <Escena T={T} a={K.O} b={K.P}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <Cachalote x={540} y={640} s={1.1} T={T} halo={BAZUL} />
-          <g transform="translate(540 940) scale(1.15) translate(-460 -860)">
+          <Cachalote x={540} y={860} s={1.35} T={T} halo={BAZUL} />
+          <g transform="translate(540 1230) scale(1.25) translate(-460 -860)">
           <Coda x={90} y={860} ancho={190} pos={RITMOS[0].map((p) => p * 0.8)} color={BAZUL} r={13} />
           <Coda x={330} y={860} ancho={190} pos={RITMOS[0].map((p) => p * 0.8)} color={BAZUL} r={13} />
           <Coda x={590} y={860} ancho={240} pos={[0, .16, .32, .48, .64, .94]} color={BAZUL} r={15} n={T < K.O + 1.0 ? 5 : 6} brillo={T >= K.O + 1.0 ? 5 : -1} />
@@ -221,11 +221,11 @@ function Ballenas() {
         </>)}
       </Escena>
       <Chip T={T} at={K.O + 0.2} until={K.P - 0.2} texto="ornamento: un clic extra" x={540} y={330} tam={44} borde={KC.mint} />
-      <Chip T={T} at={K.O + 1.5} until={K.P - 0.2} texto="≈ 4 % de las codas en intercambios" x={540} y={1150} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.O + 1.5} until={K.P - 0.2} texto="≈ 4 % de las codas en intercambios" x={540} y={1450} tam={32} borde={KC.ink} />
       {/* 7 · pregunta */}
       <Escena T={T} a={K.P} b={K.Cb} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<text x={540} y={1180} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 540 1020)`}>?</text>)}
+        {svg(<text x={540} y={1090} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 540 960)`}>?</text>)}
       </Escena>
       {/* 8 · se combinan: de 21 a 143+ (la imagen que se llena) */}
       <Escena T={T} a={K.Cb} b={K.Oj}>
@@ -253,7 +253,7 @@ function Ballenas() {
       {/* 10 · vocales (2025, Berkeley) */}
       <Escena T={T} a={K.V} b={K.C}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {svg(<>
+        {svg(<g transform="translate(0 290)">
           <Cachalote x={380} y={480} s={1.1} T={T} halo={BAZUL} />
           <circle cx={850} cy={470} r={100 + 12 * Math.sin(T * 8)} fill="none" stroke={BAZUL} strokeWidth={9} opacity=".5" />
           <circle cx={850} cy={470} r={64} fill={BAZUL} stroke={KC.texto} strokeWidth={6} />
@@ -263,9 +263,9 @@ function Ballenas() {
           <Espectro T={T} at={K.V + 0.5} x={90} y={760} bandas={[0.5]} letra="a" color={KC.cyan} />
           <Espectro T={T} at={K.V + 1.2} x={590} y={760} bandas={[0.36, 0.66]} letra="i" color={KC.pink} />
           </g>
-        </>)}
+        </g>)}
       </Escena>
-      <Chip T={T} at={K.V + 2.4} until={K.C - 0.2} texto="2025 · UC Berkeley · Beguš et al. · Open Mind" x={540} y={1180} tam={28} borde={KC.cyan} />
+      <Chip T={T} at={K.V + 2.4} until={K.C - 0.2} texto="2025 · UC Berkeley · Beguš et al. · Open Mind" x={540} y={1490} tam={28} borde={KC.cyan} />
       {/* 11 · cierre: la misma tira, ahora con sus piezas */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />

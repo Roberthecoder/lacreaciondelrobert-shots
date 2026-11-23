@@ -395,12 +395,15 @@ function HongoYemaShot() {
       {/* 12 · la regla: ni foto, ni regla, ni app */}
       <Escena T={T} a={K.Re} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {/* (pase cine: el «huevo» del bosque sigue en cuadro, atenuado, detrás de los íconos; es la misma imagen del cierre) */}
-        <div style={{ position:'absolute', inset:0, opacity:0.3 }}>{fsvg(<><BosqueDibujo /><Huevo T={T} x={HV.x} y={HV.y} s={HV.s} grieta={1} /></>, 10)}</div>
+        {/* belleza: los dos «huevos» de la escena anterior siguen nítidos en el suelo (antes un huevo fantasma atenuado detrás
+            de los íconos) y los tres íconos tachados van arriba, sin encimarse con ellos */}
         {fsvg(<>
-          <IcoFoto x={200} y={950} s={1.55} /><IcoRegla x={540} y={950} s={1.55} /><IcoApp x={880} y={955} s={1.55} />
-          <Tache T={T} at={K.Re + 0.7} x={200} y={950} r={150} /><Tache T={T} at={K.Re + 1.2} x={540} y={950} r={150} /><Tache T={T} at={K.Re + 1.7} x={880} y={955} r={142} />
-        </>)}
+          <SueloBosque y0={1330} seed={13} />
+          <Huevo T={T} x={290} y={1330} s={3} />
+          <Huevo T={T} x={790} y={1330} s={3} />
+          <IcoFoto x={200} y={640} s={1.25} /><IcoRegla x={540} y={640} s={1.25} /><IcoApp x={880} y={645} s={1.25} />
+          <Tache T={T} at={K.Re + 0.7} x={200} y={640} r={122} /><Tache T={T} at={K.Re + 1.2} x={540} y={640} r={122} /><Tache T={T} at={K.Re + 1.7} x={880} y={645} r={116} />
+        </>, 15)}
       </Escena>
       {/* 13 · cierre: el mismo huevo del inicio, ya transformado (canasta, prima mortal al fondo) */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04} origen="50% 60%">
@@ -458,9 +461,9 @@ function HongoYemaShot() {
       <Chip T={T} at={K.I + 0.2} until={K.Re - 0.4} texto={TX.sinRegla} x={380} y={500} tam={34} borde={KC.red} />
       <EtqP T={T} at={K.I + 0.8} until={K.Re - 0.4} x={60} y={600} texto={TX.sinFuente} tam={30} />
       <EtqP T={T} at={K.I + 2.2} until={K.Re - 0.4} x={60} y={657} texto={TX.sinFolk} tam={30} />
-      <Chip T={T} at={K.Re + 0.2} until={K.C - 0.4} texto={TX.ningun} x={360} y={640} tam={30} borde={KC.red} />
-      <Chip T={T} at={K.Re + 2.4} until={K.C - 0.4} texto={TX.experto} x={540} y={1250} tam={40} borde={KC.leaf} />
-      <Chip T={T} at={K.Re + 3.0} until={K.C - 0.4} texto={TX.medico} x={540} y={1345} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.Re + 0.2} until={K.C - 0.4} texto={TX.ningun} x={360} y={380} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.Re + 2.4} until={K.C - 0.4} texto={TX.experto} x={540} y={1440} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.Re + 3.0} until={K.C - 0.4} texto={TX.medico} x={540} y={1522} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto={TX.cierre} x={330} y={400} tam={34} borde={KC.leaf} />
       <Aviso T={T} at={K.C + 0.3} until={K.Ou + 0.2} texto={TX.aviso} y={1400} />
 

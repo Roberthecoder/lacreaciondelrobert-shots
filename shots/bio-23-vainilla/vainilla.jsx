@@ -278,7 +278,7 @@ function Vainilla() {
           </g>; })()}
         </SvgV>
         <div style={{ position:'absolute', left:600, top:720, transform:`translate(-50%,-50%) scale(${klerp(0.4, 1, kprog(T, K.E + 0.4, K.E + 0.9, kEase.rebote))})`, opacity:kprog(T, K.E + 0.4, K.E + 0.7),
-          font:`400 230px/1 ${KF.titulo}`, color:KC.paper, WebkitTextStroke:`8px ${KC.ink}`, textShadow:`10px 10px 0 ${KC.ink}`, whiteSpace:'nowrap' }}>1–2 %</div>
+          font:`400 230px/1 ${KF.titulo}`, color:'#f6f3ec', WebkitTextStroke:'6px #0b1020', textShadow:'8px 8px 0 #0b1020, 0 0 30px rgba(0,0,0,.6)', whiteSpace:'nowrap' }}>1–2 %</div>
       </Escena>
       {/* 4 · la mayoría: química, del petróleo o de la madera */}
       <Escena T={T} a={K.S} b={K.P} zoom={0.04}>

@@ -255,7 +255,10 @@ function Persona({ T, x, y, s = 1, color = KC.teal, seed = 1, carga = true }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <line x1={-12} y1={-80} x2={-16 - p} y2={0} stroke={KC.ink} strokeWidth={18} strokeLinecap="round" />
     <line x1={12} y1={-80} x2={16 + p} y2={0} stroke={KC.ink} strokeWidth={18} strokeLinecap="round" />
+    <defs><linearGradient id="persTes" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#fff" stopOpacity=".25" /><stop offset=".45" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".28" /></linearGradient></defs>
+    <ellipse cx={0} cy={4} rx={48} ry={9} fill="#000" opacity=".3" />
     <rect x={-36} y={-200} width={72} height={130} rx={30} fill={color} stroke={KC.ink} strokeWidth={6} />
+    <rect x={-32} y={-196} width={64} height={122} rx={27} fill="url(#persTes)" />{/* belleza: volumen del cuerpo */}
     {carga ? <><line x1={-26} y1={-180} x2={-20} y2={-250} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" /><line x1={26} y1={-180} x2={22} y2={-250} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" /></>
       : <><line x1={-28} y1={-180} x2={-46} y2={-110} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" /><line x1={28} y1={-180} x2={46} y2={-110} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" /></>}
     <circle cx={0} cy={-232} r={30} fill="#8a5a3a" stroke={KC.ink} strokeWidth={6} />
@@ -453,10 +456,11 @@ function TesguinoShot() {
           {[0, 1, 2, 3, 4, 5].map((i) => <g key={i}><line x1={620 + i * 70} y1={1020} x2={620 + i * 70} y2={870} stroke="#6b3d1a" strokeWidth={14} strokeLinecap="round" /></g>)}
           <line x1={600} y1={900} x2={1000} y2={900} stroke="#6b3d1a" strokeWidth={12} /><line x1={600} y1={960} x2={1000} y2={960} stroke="#6b3d1a" strokeWidth={12} />
           {(() => { const avz = 40 + kprog(T, K.Te, K.Te + 3.5, kEase.suave) * 140; return <g transform={`translate(${avz} 0)`}>
-            <rect x={90} y={738} width={420} height={26} rx={12} fill="#8a5a2a" stroke={KC.ink} strokeWidth={6} />
-            <Persona T={T} x={150} y={1000} s={1} color={KC.teal} seed={1} />
-            <Persona T={T} x={300} y={1000} s={1} color={KC.coral} seed={2} />
-            <Persona T={T} x={450} y={1000} s={1} color={KC.blue} seed={3} />
+            {/* belleza: los tres cargadores ×1.35 (antes chiquitos en la franja de en medio); el palo sube a sus manos */}
+            <rect x={70} y={650} width={480} height={30} rx={14} fill="#8a5a2a" stroke={KC.ink} strokeWidth={6} />
+            <Persona T={T} x={140} y={1000} s={1.35} color={KC.teal} seed={1} />
+            <Persona T={T} x={310} y={1000} s={1.35} color={KC.coral} seed={2} />
+            <Persona T={T} x={480} y={1000} s={1.35} color={KC.blue} seed={3} />
           </g>; })()}
           <g opacity={kprog(T, K.Te + 2.0, K.Te + 2.5)}><Olla T={T} x={880} y={1160} s={0.45} burb={1} id="ot" /></g></Zg>
         </>)}
@@ -533,8 +537,8 @@ function TesguinoShot() {
       <Chip T={T} at={K.Pa + 2.6} until={K.Te - 0.3} texto={TX.sinEnzimas} x={740} y={520} tam={34} borde={KC.red} />
       <Rotulo T={T} at={K.Pa + 3.3} until={K.Te - 0.3} x={740} y={600} centro texto={TX.hipotesis} tam={24} color={KC.ink} fondo="rgba(255,255,255,.8)" />
 
-      <Chip T={T} at={K.Te + 0.4} until={K.R - 0.3} texto={TX.sagrada} x={330} y={540} tam={36} borde={KC.gold} />
-      <Chip T={T} at={K.Te + 1.6} until={K.R - 0.3} texto={TX.pago} x={420} y={630} tam={32} borde={KC.teal} />
+      <Chip T={T} at={K.Te + 0.4} until={K.R - 0.3} texto={TX.sagrada} x={330} y={420} tam={36} borde={KC.gold} />
+      <Chip T={T} at={K.Te + 1.6} until={K.R - 0.3} texto={TX.pago} x={420} y={500} tam={32} borde={KC.teal} />
 
       <Chip T={T} at={K.R + 2.4} until={K.C - 0.3} texto={TX.noSoyYo} x={600} y={450} tam={34} borde={KC.pink} />
       <Rotulo T={T} at={K.R + 3.9} until={K.C - 0.3} x={600} y={545} centro texto={TX.bye} tam={24} color={KC.ink} fondo="rgba(255,255,255,.88)" />
@@ -555,7 +559,7 @@ function TesguinoShot() {
       <BarraEscala T={T} at={K.O} until={K.E} texto="20 cm" largo={264} />
       <BarraEscala T={T} at={K.E} until={K.Pa} texto="caja de Petri: 9 cm" largo={234} />
       <BarraEscala T={T} at={K.Pa} until={K.Te} texto="5 cm" largo={240} />
-      <BarraEscala T={T} at={K.Te} until={K.R} texto="1 m" largo={212} />
+      <BarraEscala T={T} at={K.Te} until={K.R} texto="1 m" largo={286} />{/* belleza: las personas ×1.35, la barra también */}
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="20 cm" largo={269} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

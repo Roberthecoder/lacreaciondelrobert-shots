@@ -36,11 +36,13 @@ function Lengua({ id, x, y, s = 1, T = 0, mapa = 0, fronteras = 0, gruesa = fals
   const cid = 'lgc-' + id;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <defs><clipPath id={cid}><path d={LG_PATH} /></clipPath>
+      <radialGradient id={cid + 'v'} cx="36%" cy="28%" r="78%"><stop offset="0" stopColor={LG_LUZ} /><stop offset=".55" stopColor={LG_PIEL} /><stop offset="1" stopColor={LG_OSC} /></radialGradient>
       <linearGradient id={cid + 'g'} x1="0" y1="0" x2="1" y2="1">{[SAB.amargo, SAB.acido, SAB.umami, SAB.salado, SAB.dulce].map((c, i) => <stop key={i} offset={i / 4} stopColor={c} />)}</linearGradient></defs>
     <path d={LG_PATH} fill={KC.ink} transform="translate(10 16)" opacity=".35" />
-    <path d={LG_PATH} fill={LG_PIEL} />
+    <path d={LG_PATH} fill={`url(#${cid}v)`} />
     <g clipPath={`url(#${cid})`}>
       <ellipse cx={-90} cy={-120} rx={110} ry={200} fill={LG_LUZ} opacity=".35" />
+      <ellipse cx={-130} cy={-250} rx={36} ry={70} fill="#fff" opacity=".18" transform="rotate(-18 -130 -250)" />
       {mapa > 0.01 && LG_ZONAS.map(([k, d]) => <path key={k} d={d} fill={SAB[k]} opacity={mapa * 0.85 * (zonasOn ? zonasOn(k) : 1)} />)}
       <rect x={-400} y={-400} width={800} height={800} fill={`url(#${cid}g)`} opacity={brillo * (0.35 + 0.1 * Math.sin(T * 5))} />
       <path d="M 0 -330 C -8 -150 8 50 0 250" fill="none" stroke={LG_OSC} strokeWidth={14} strokeLinecap="round" opacity=".8" />
@@ -61,9 +63,11 @@ function Lengua({ id, x, y, s = 1, T = 0, mapa = 0, fronteras = 0, gruesa = fals
 function Poster({ x, y, s = 1, children, rot = -2, titulo = 'EL MAPA DE LA LENGUA' }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     <rect x={-330} y={-420} width={660} height={840} rx={14} fill={KC.ink} transform="translate(14 16)" />
-    <rect x={-330} y={-420} width={660} height={840} rx={14} fill={KC.paper} stroke={KC.ink} strokeWidth={9} />
+    <defs><linearGradient id={'pst' + titulo.length} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#1d2740" /><stop offset="1" stopColor="#0f1524" /></linearGradient></defs>
+    <rect x={-330} y={-420} width={660} height={840} rx={14} fill={`url(#pst${titulo.length})`} stroke={KC.ink} strokeWidth={9} />
     <rect x={-60} y={-445} width={120} height={46} fill="rgba(255,240,170,.85)" stroke={KC.ink} strokeWidth={4} transform="rotate(-4)" />
-    <text x={0} y={-345} textAnchor="middle" style={{ font:`400 60px ${KF.titulo}` }} fill={KC.ink}>{titulo}</text>
+    <text x={0} y={-345} textAnchor="middle" style={{ font:`400 ${titulo.length > 12 ? 46 : 60}px ${KF.titulo}` }} fill={KC.ink}
+      textLength={titulo.length > 12 ? 590 : undefined} lengthAdjust="spacingAndGlyphs">{titulo}</text>
     {children}
   </g>;
 }
@@ -79,8 +83,9 @@ function Sello({ T, at, x, y, s = 1, rot = -14 }) {
 }
 function Cuchara({ x, y, rot = 0, s = 1 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
-    <rect x={40} y={-16} width={330} height={32} rx={16} fill="#cfd6e0" stroke={KC.ink} strokeWidth={8} />
-    <ellipse cx={0} cy={0} rx={78} ry={56} fill="#e6ebf2" stroke={KC.ink} strokeWidth={9} />
+    <defs><linearGradient id="lg-cuch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#f2f5fa" /><stop offset="1" stopColor="#8f9aab" /></linearGradient></defs>
+    <rect x={40} y={-16} width={330} height={32} rx={16} fill="url(#lg-cuch)" stroke={KC.ink} strokeWidth={8} />
+    <ellipse cx={0} cy={0} rx={78} ry={56} fill="url(#lg-cuch)" stroke={KC.ink} strokeWidth={9} />
     <ellipse cx={-6} cy={-4} rx={52} ry={34} fill="#fff" opacity=".7" />
   </g>;
 }
@@ -107,13 +112,17 @@ function Tazon({ x, y, s = 1, T = 0, vapor = 0 }) {
       opacity={vapor * (0.4 + 0.4 * Math.sin(T * 3 + i * 2))} transform={`translate(${Math.sin(T * 2 + i) * 8} ${-((T * 30 + i * 20) % 40)})`} />)}
     <ellipse cx={0} cy={-40} rx={170} ry={40} fill="#c9762b" stroke={KC.ink} strokeWidth={9} />
     {[[-70, -44], [10, -30], [70, -48]].map(([cx, cy], i) => <circle key={i} cx={cx} cy={cy} r={16} fill={i === 1 ? KC.leaf : '#f2c14e'} stroke={KC.ink} strokeWidth={4} />)}
-    <path d="M -170 -40 Q -160 110 0 120 Q 160 110 170 -40 Q 0 -10 -170 -40 Z" fill="#fff" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    <defs><linearGradient id="lg-taz" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#ffffff" /><stop offset=".6" stopColor="#dfe5ee" /><stop offset="1" stopColor="#9aa6b8" /></linearGradient></defs>
+    <ellipse cx={0} cy={130} rx={150} ry={18} fill="#000" opacity=".3" />
+    <path d="M -170 -40 Q -160 110 0 120 Q 160 110 170 -40 Q 0 -10 -170 -40 Z" fill="url(#lg-taz)" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
     <path d="M -150 10 Q 0 40 150 10" fill="none" stroke={KC.cyan} strokeWidth={10} />
   </g>;
 }
 function Jitomate({ x, y, s = 1, rot = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
-    <ellipse cx={0} cy={0} rx={150} ry={128} fill={KC.red} stroke={KC.ink} strokeWidth={9} />
+    <defs><radialGradient id="lg-jit" cx="35%" cy="30%" r="75%"><stop offset="0" stopColor="#ff7a68" /><stop offset=".55" stopColor={KC.red} /><stop offset="1" stopColor="#9c1f18" /></radialGradient></defs>
+    <ellipse cx={0} cy={140} rx={130} ry={16} fill="#000" opacity=".3" />
+    <ellipse cx={0} cy={0} rx={150} ry={128} fill="url(#lg-jit)" stroke={KC.ink} strokeWidth={9} />
     <path d="M -60 -100 Q 0 -60 60 -100" fill="none" stroke="#c22a20" strokeWidth={7} />
     <ellipse cx={-60} cy={-40} rx={34} ry={22} fill="#fff" opacity=".35" transform="rotate(-30 -60 -40)" />
     <path d="M 0 -118 L -50 -150 L -18 -120 L -40 -96 L 0 -110 L 40 -96 L 18 -120 L 50 -150 Z" fill={KC.leaf} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
@@ -158,8 +167,9 @@ function Grafica({ T, x, y, w = 820, h = 560, estira = 1, p = 1 }) {
   const curva = (c) => { const pts = []; for (let i = 0; i <= 50; i++) { const f = i / 50; const v = 14 * Math.exp(-((f - picos[c]) ** 2) / 0.02);
     pts.push(`${(60 + f * (w - 100)).toFixed(1)},${(base - v * estira).toFixed(1)}`); } return pts.slice(0, Math.max(2, Math.ceil(p * pts.length))).join(' '); };
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={0} y={0} width={w} height={h} rx={16} fill="#fff" stroke={KC.ink} strokeWidth={8} />
-    {Array.from({ length: 9 }, (_, i) => <line key={i} x1={60} y1={40 + i * 55} x2={w - 40} y2={40 + i * 55} stroke="#cfe0ef" strokeWidth={3} />)}
+    <defs><linearGradient id="lg-graf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#1c2742" /><stop offset="1" stopColor="#111829" /></linearGradient></defs>
+    <rect x={0} y={0} width={w} height={h} rx={16} fill="url(#lg-graf)" stroke={KC.ink} strokeWidth={8} />
+    {Array.from({ length: 9 }, (_, i) => <line key={i} x1={60} y1={40 + i * 55} x2={w - 40} y2={40 + i * 55} stroke="rgba(160,190,230,.18)" strokeWidth={3} />)}
     <line x1={60} y1={30} x2={60} y2={h - 60} stroke={KC.ink} strokeWidth={7} /><line x1={60} y1={h - 60} x2={w - 30} y2={h - 60} stroke={KC.ink} strokeWidth={7} />
     <text x={70} y={h - 20} style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>punta</text>
     <text x={w - 40} y={h - 20} textAnchor="end" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>atrás</text>
@@ -177,12 +187,24 @@ function Lengua17() {
   const K = CUES, FIN = K.Outro + 4;
   const sab = (i) => K.Todos + 2.9 + i * 0.6;                 // cuándo se dice cada sabor
   const pegar = K.Gancho + 3.9;                               // sello «MITO» («está mal»)
+  // Disolvencias limpias: el dibujo de una escena se va en los 0.6 s después de que empieza la siguiente (no antes).
+  const sale = (b) => 1 - kprog(T, b + 0.05, b + 0.65, kEase.suave);
+  // La lengua viaja de una escena a la siguiente (mismo lugar al cruzarse): [x, y, s] desde → hasta.
+  const viaje = (a, de, ha) => { const f = kprog(T, a - 0.3, a + 0.7, kEase.suave); return de.map((v, i) => klerp(v, ha[i], f)); };
+  // Una sola ruta para la lengua de Prueba → Papilas → Todos → Hänig: al cruzarse dos escenas, las dos lenguas coinciden.
+  const RUTA = [[K.Prueba, [540, 960, 1.25]], [K.Papilas, [380, 1080, 1.0]], [K.Todos, [540, 1090, 1.05]], [K.Hanig, [540, 1010, 1.1]]];
+  const ruta = RUTA.reduce((cur, [a, ha]) => { const f = kprog(T, a - 0.3, a + 0.7, kEase.suave); return cur.map((v, i) => klerp(v, ha[i], f)); }, [540, 1045, 1.01]);
+  const [px_, py_, ps_] = ruta, [mx_, my_, ms_] = ruta, [tx_, ty_, ts_] = ruta, [hx_, hy_, hs_] = ruta;
+  // El dibujo nuevo entra mientras el anterior se va (no encima a toda opacidad).
+  const entra = (a) => kprog(T, a - 0.2, a + 0.35, kEase.suave);
+  const [ux_, uy_, us_] = viaje(K.Umami, [540 + 0.9 * 225, 970 + 0.9 * 10, 0.9 * 0.58], [300, 700, 0.66]);
   return (
     <div style={{ position:'absolute', inset:0, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: el mapa de la escuela y el sello MITO */}
       <Escena T={T} a={K.Gancho} b={K.Prueba}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
+          <g opacity={sale(K.Prueba)}>
           <g transform={`translate(0 ${(1 - kprog(T, 0, 0.5, kEase.rebote)) * -900})`}>
             <Poster x={540} y={980} s={1.3}>
               <Lengua id="g" x={0} y={50} s={0.78} T={T} mapa={1} fronteras={1} etiquetas={1}
@@ -190,13 +212,15 @@ function Lengua17() {
             </Poster>
           </g>
           <Sello T={T} at={pegar} x={540} y={1006} s={1.35} />
+          </g>
         </Lienzo>
       </Escena>
       {/* 1 · la prueba: azúcar en un lado */}
       <Escena T={T} a={K.Prueba} b={K.Papilas}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <Lengua id="p" x={540} y={960} s={1.25} T={T} fronteras={0.25}>
+          <g opacity={sale(K.Papilas)}>
+          <Lengua id="p" x={px_} y={py_} s={ps_} T={T} fronteras={0.25}>
             {T > K.Prueba + 2.6 && [0, 1, 2].map((i) => { const f = ((T - K.Prueba - 2.6) * 0.8 + i / 3) % 1;
               return <circle key={i} cx={190} cy={60} r={30 + f * 150} fill="none" stroke={KC.pink} strokeWidth={12} opacity={(1 - f) * kprog(T, K.Prueba + 2.6, K.Prueba + 2.9)} />; })}
             {T > K.Prueba + 1.5 && Array.from({ length: 9 }, (_, i) => { const t0 = K.Prueba + 1.5 + i * 0.08, f = kprog(T, t0, t0 + 0.45, (q) => q * q);
@@ -204,6 +228,7 @@ function Lengua17() {
           </Lengua>
           {(() => { const lle = kprog(T, K.Prueba + 0.3, K.Prueba + 1.3, kEase.sale), tilt = kprog(T, K.Prueba + 1.4, K.Prueba + 1.8), va = kprog(T, K.Prueba + 2.6, K.Prueba + 3.4, kEase.suave);
             return <Cuchara x={klerp(1300, 540 + 1.25 * 190 + 110, lle) + va * 600} y={klerp(600, 960 + 1.25 * 60 - 150, lle) - va * 200} rot={-20 + tilt * 35} s={1.45} />; })()}
+          </g>
         </Lienzo>
         <Chip T={T} at={K.Prueba + 2.8} until={K.Papilas - 0.1} texto="dulce ✓" x={300} y={420} tam={56} borde={KC.pink} />
       </Escena>
@@ -211,29 +236,31 @@ function Lengua17() {
       <Escena T={T} a={K.Papilas} b={K.Todos} fondo={KC.noche}>
         <Ambiente T={T} n={20} color="rgba(255,255,255,.14)" />
         <Lienzo>
-          <Lengua id="m" x={350} y={1060} s={0.98} T={T} papilas={kprog(T, K.Papilas + 0.2, K.Papilas + 2.6)} />
+          <g opacity={sale(K.Todos)}><Lengua id="m" x={mx_} y={my_} s={ms_} T={T} papilas={kprog(T, K.Papilas + 0.2, K.Papilas + 2.6)} /></g>
         </Lienzo>
         <Etq T={T} at={K.Papilas + 1.0} until={K.Todos - 0.2} x={40} y={600} texto="papilas gustativas" lado="der" color={KC.gold2} />
-        <Lupa T={T} at={K.Papilas + 1.9} until={K.Todos - 0.3} x={800} y={620} r={225} fx={350 + 0.98 * 215} fy={1060 + 0.98 * 40} tinte={KC.pink} etiqueta="AL MICROSCOPIO · PAPILA"
+        <Lupa T={T} at={K.Papilas + 1.9} until={K.Todos - 0.3} x={760} y={600} r={215} fx={380 + 1.0 * 215} fy={1080 + 1.0 * 40} tinte={KC.pink} etiqueta="AL MICROSCOPIO · PAPILA"
           interior={(t, r) => <BotonGustativo T={t} r={r} />} />
-        <Etq T={T} at={K.Papilas + 2.8} until={K.Todos - 0.2} x={660} y={960} texto="botón gustativo" lado="der" color={KC.texto} tam={30} />
-        <Etq T={T} at={K.Papilas + 3.4} until={K.Todos - 0.2} x={660} y={1015} texto="células del gusto" lado="der" color={KC.gold2} tam={30} />
+        <Etq T={T} at={K.Papilas + 2.8} until={K.Todos - 0.2} x={640} y={940} texto="botón gustativo" lado="der" color={KC.texto} tam={30} />
+        <Etq T={T} at={K.Papilas + 3.4} until={K.Todos - 0.2} x={640} y={995} texto="células del gusto" lado="der" color={KC.gold2} tam={30} />
       </Escena>
       {/* 3 · los cinco sabores en todas las zonas */}
       <Escena T={T} a={K.Todos} b={K.Pregunta}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <Lengua id="t" x={540} y={1090} s={1.05} T={T} papilas={1} brillo={kprog(T, sab(4) + 0.5, sab(4) + 1.2) * 0.6}>
+          <g opacity={sale(K.Hanig)}>
+          <Lengua id="t" x={tx_} y={ty_} s={ts_} T={T} papilas={1} brillo={kprog(T, sab(4) + 0.5, sab(4) + 1.2) * 0.6}>
             {SABORES.map((k, i) => T > sab(i) && SPOTS.map(([sx, sy], j) => { const f = kprog(T, sab(i) + j * 0.03, sab(i) + 0.9 + j * 0.03);
               return f < 1 && <circle key={k + j} cx={sx} cy={sy} r={20 + f * 90} fill={SAB[k]} fillOpacity={0.35 * (1 - f)} stroke={SAB[k]} strokeWidth={10} opacity={1 - f} />; }))}
           </Lengua>
-          {SABORES.map((k, i) => { const on = kprog(T, sab(i), sab(i) + 0.3, kEase.rebote), cx = 140 + i * 200, cy = 450, ap = kprog(T, K.Todos + 0.3 + i * 0.12, K.Todos + 0.7 + i * 0.12, kEase.sale);
-            return <g key={k} transform={`translate(${cx} ${cy}) scale(${ap * (1 + 0.15 * on * (1 - kprog(T, sab(i) + 0.3, sab(i) + 0.8)))})`}>
+          {SABORES.map((k, i) => { const on = kprog(T, sab(i), sab(i) + 0.3, kEase.rebote), cx = 180 + i * 180, cy = 460, ap = kprog(T, K.Todos + 0.3 + i * 0.12, K.Todos + 0.7 + i * 0.12, kEase.sale);
+            return <g key={k} transform={`translate(${cx} ${cy}) scale(${0.86 * ap * (1 + 0.15 * on * (1 - kprog(T, sab(i) + 0.3, sab(i) + 0.8)))})`}>
               <circle r={84} fill={on > 0.5 ? SAB[k] : 'rgba(255,255,255,.55)'} stroke={KC.ink} strokeWidth={8} />
               {on > 0 && <circle r={84 + 30 * kprog(T, sab(i), sab(i) + 0.6)} fill="none" stroke="#fff" strokeWidth={8} opacity={1 - kprog(T, sab(i), sab(i) + 0.6)} />}
               <g opacity={0.45 + 0.55 * on}><IconoSabor k={k} /></g>
               <text y={130} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">{NOMBRE[k]}</text>
             </g>; })}
+          </g>
         </Lienzo>
         <Chip T={T} at={K.Todos + 0.5} until={sab(0) - 0.1} texto="zonas con papilas" x={540} y={640} tam={40} borde={KC.gold2} />
       </Escena>
@@ -247,7 +274,8 @@ function Lengua17() {
       <Escena T={T} a={K.Hanig} b={K.Boring}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <Lengua id="h" x={540} y={1010} s={1.1} T={T} papilas={1}>
+          <g opacity={sale(K.Boring)}>
+          <Lengua id="h" x={hx_} y={hy_} s={hs_} T={T} papilas={1}>
             {[[0, 300, 3.2], [-200, 120, 4.1], [200, -150, 5.0]].map(([px, py, dt], i) => { const t0 = K.Hanig + dt, f = kprog(T, t0 + 0.3, t0 + 1.0);
               return T > t0 + 0.3 && <g key={i}><circle cx={px} cy={py} r={26 + f * 60} fill="none" stroke={KC.blue} strokeWidth={8} opacity={1 - f} />
                 <text x={px + 46} y={py - 30} style={{ font:`400 64px ${KF.titulo}` }} fill={KC.blue} stroke="#fff" strokeWidth={8} paintOrder="stroke" opacity={kprog(T, t0 + 0.3, t0 + 0.5)}>+</text></g>; })}
@@ -257,6 +285,7 @@ function Lengua17() {
               gx = klerp(i ? ps[i - 1][0] : 930, ps[i][0], f); gy = klerp(i ? ps[i - 1][1] : 760, ps[i][1], f); } }
             const toca = [0, 1, 2].some((i) => Math.abs(T - K.Hanig - ps[i][2] - 0.1) < 0.2) ? 18 : 0;
             return <Gotero x={gx} y={gy - 20 + toca} s={1.25} />; })()}
+          </g>
         </Lienzo>
         <TarjetaEstudio T={T} at={K.Hanig + 0.2} until={K.Hanig + 2.7} anio="1901" quien="David Hänig · Alemania" revista="midió la sensibilidad por zonas" x={540} y={330} />
         <Chip T={T} at={K.Hanig + 3.4} until={K.Boring - 0.1} texto="apenas un poco más sensibles" x={540} y={420} tam={42} borde={KC.blue} />
@@ -265,11 +294,11 @@ function Lengua17() {
       <Escena T={T} a={K.Boring} b={K.Libros}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <g opacity={1 - 0.7 * kprog(T, K.Boring + 2.6, K.Boring + 3.1)}>
+          <g opacity={(1 - 0.7 * kprog(T, K.Boring + 2.6, K.Boring + 3.1)) * sale(K.Libros)}>
             <Lengua id="bo" x={540} y={1010} s={1.1} T={T} papilas={1} />
           </g>
         </Lienzo>
-        <Lienzo o={kprog(T, K.Boring + 2.7, K.Boring + 3.1)}>
+        <Lienzo o={kprog(T, K.Boring + 2.7, K.Boring + 3.1) * sale(K.Libros)}>
           <Grafica T={T} x={130} y={700} w={820} h={600} p={kprog(T, K.Boring + 2.9, K.Boring + 3.8)} estira={klerp(1, 7, kprog(T, K.Boring + 4.4, K.Boring + 6.0, kEase.suave)) + 0.15 * Math.sin(T * 8) * kprog(T, K.Boring + 4.4, K.Boring + 6)} />
           {T > K.Boring + 4.4 && [300, 480, 690, 860].map((xx, i) => <g key={i} opacity={kprog(T, K.Boring + 4.4, K.Boring + 4.8) * (1 - kprog(T, K.Boring + 6.2, K.Boring + 6.6))}>
             <line x1={xx} y1={950 - Math.sin(T * 9 + i) * 20} x2={xx} y2={880 - Math.sin(T * 9 + i) * 20} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
@@ -282,12 +311,16 @@ function Lengua17() {
       <Escena T={T} a={K.Libros} b={K.Umami}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <g transform={`translate(540 970) scale(${klerp(0.7, 1.0, kprog(T, K.Libros, K.Libros + 0.5, kEase.rebote))}) translate(-540 -880)`}>
-            <path d="M 50 520 L 530 560 L 1030 520 L 1030 1220 L 530 1250 L 50 1220 Z" fill={KC.blue} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+          <g opacity={sale(K.Umami) * entra(K.Libros)} transform={`translate(540 970) scale(${klerp(0.65, 0.9, kprog(T, K.Libros, K.Libros + 0.5, kEase.rebote))}) translate(-540 -880)`}>
+            <defs><linearGradient id="lg-tapa" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#4a6fd6" /><stop offset="1" stopColor="#1d2f6e" /></linearGradient>
+              <linearGradient id="lg-hoja" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#323b5c" /><stop offset="1" stopColor="#1a2036" /></linearGradient></defs>
+            <ellipse cx={540} cy={1265} rx={470} ry={30} fill="#000" opacity=".35" />
+            <path d="M 50 520 L 530 560 L 1030 520 L 1030 1220 L 530 1250 L 50 1220 Z" fill="url(#lg-tapa)" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
             <path d="M 80 545 Q 300 520 530 575 L 530 1225 Q 300 1180 80 1200 Z" fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
-            <path d="M 1000 545 Q 770 520 530 575 L 530 1225 Q 770 1180 1000 1200 Z" fill="#fffaf0" stroke={KC.ink} strokeWidth={8} />
+            <path d="M 1000 545 Q 770 520 530 575 L 530 1225 Q 770 1180 1000 1200 Z" fill="url(#lg-hoja)" stroke={KC.ink} strokeWidth={8} />
+            <path d="M 530 575 L 530 1225" stroke="#000" strokeWidth={18} opacity=".25" />
             <text x={300} y={650} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>EL GUSTO</text>
-            {Array.from({ length: 10 }, (_, i) => <rect key={i} x={130} y={700 + i * 46} width={i % 4 === 3 ? 200 : 330} height={16} rx={8} fill="#bdb6a8" />)}
+            {Array.from({ length: 10 }, (_, i) => <rect key={i} x={130} y={700 + i * 46} width={i % 4 === 3 ? 200 : 330} height={16} rx={8} fill="#8f97ad" opacity=".75" />)}
             <Lengua id="b" x={765} y={890} s={0.58} T={T} mapa={1} etiquetas={1} gruesa fronteras={kprog(T, K.Libros + 0.6, K.Libros + 1.6)} />
             {[[765, 890 - 0.58 * 270, SAB.amargo], [765 - 0.58 * 210, 890 - 0.58 * 60, SAB.acido], [765 + 0.58 * 190, 890 + 0.58 * 140, SAB.salado], [765, 890 + 0.58 * 300, SAB.dulce]].map(([bx, by, c], i) =>
               <Bandera key={i} x={bx} y={by} color={c} p={kprog(T, K.Libros + 2.6 + i * 0.35, K.Libros + 3.0 + i * 0.35, kEase.rebote)} />)}
@@ -299,17 +332,19 @@ function Lengua17() {
       <Escena T={T} a={K.Umami} b={K.Diferencias}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
+          <g opacity={sale(K.Diferencias)}>
+          <Lengua id="u" x={ux_} y={uy_} s={us_} T={T} mapa={1} fronteras={1} etiquetas={1} gruesa={T < K.Umami + 0.5} />
           <g transform={`translate(0 ${(1 - kprog(T, K.Umami, K.Umami + 0.5, kEase.sale)) * -300})`}>
-            <Lengua id="u" x={300} y={690} s={0.62} T={T} mapa={1} fronteras={1} etiquetas={1} />
             <g transform={`translate(560 560) scale(1.15)`} opacity={kprog(T, K.Umami + 0.8, K.Umami + 1.2)}>
               <rect x={0} y={0} width={190} height={110} rx={20} fill="rgba(255,255,255,.35)" stroke={KC.ink} strokeWidth={6} strokeDasharray="16 10" />
               <text x={95} y={70} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>¿UMAMI?</text>
               {T > K.Umami + 1.4 && <path d="M 20 20 L 170 90 M 170 20 L 20 90" stroke={KC.red} strokeWidth={14 * kprog(T, K.Umami + 1.4, K.Umami + 1.6)} strokeLinecap="round" />}
             </g>
           </g>
-          <g transform={`translate(0 ${(1 - kprog(T, K.Umami + 2.0, K.Umami + 2.6, kEase.rebote)) * 700})`}>
+          <g opacity={kprog(T, K.Umami + 2.0, K.Umami + 2.3)} transform={`translate(0 ${(1 - kprog(T, K.Umami + 2.0, K.Umami + 2.6, kEase.rebote)) * 700})`}>
             <Tazon x={320} y={1200} s={1.15} T={T} vapor={1} />
             <Jitomate x={790} y={1190} s={1.02} rot={Math.sin(T * 2) * 4} />
+          </g>
           </g>
         </Lienzo>
         <Chip T={T} at={K.Umami + 1.4} until={K.Umami + 3.0} texto="no estaba en el mapa" x={640} y={420} tam={42} borde={KC.red} />
@@ -321,7 +356,8 @@ function Lengua17() {
       <Escena T={T} a={K.Diferencias} b={K.Cierre}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <g opacity={0.4}><Lengua id="d" x={540} y={1000} s={1.15} T={T} papilas={1} /></g>
+          <g opacity={sale(K.Cierre) * entra(K.Diferencias)}>
+          <g opacity={0.3}><Lengua id="d" x={540} y={1000} s={1.15} T={T} papilas={1} /></g>
           {[['punta', 0.8], ['lado izquierdo', 0.84], ['lado derecho', 0.82], ['atrás', 0.78]].map(([et, v], i) =>
             <g key={i} opacity={kprog(T, K.Diferencias + 0.2 + i * 0.25, K.Diferencias + 0.5 + i * 0.25)}>
               <BarraH x={140} y={740 + i * 150} ancho={800} v={v * kprog(T, K.Diferencias + 0.3 + i * 0.25, K.Diferencias + 1.5 + i * 0.25, kEase.sale)} color={[SAB.dulce, SAB.salado, SAB.acido, SAB.amargo][i]} etiqueta={et} />
@@ -331,6 +367,7 @@ function Lengua17() {
               <line x1={xs[1]} y1={700} x2={xs[1]} y2={1240} stroke={KC.red} strokeWidth={6} strokeDasharray="12 8" />
               <path d={`M ${xs[0]} 1260 L ${xs[1]} 1260`} stroke={KC.red} strokeWidth={8} /><circle cx={(xs[0] + xs[1]) / 2} cy={1260} r={60 + 6 * Math.sin(T * 6)} fill="none" stroke={KC.red} strokeWidth={7} /></g>; })()}
           <text x={540} y={1380} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>(barras ilustrativas)</text>
+          </g>
         </Lienzo>
         <Chip T={T} at={K.Diferencias + 2.0} until={K.Cierre - 0.1} texto="sí existen, pero pequeñitas" x={540} y={470} tam={42} borde={KC.red} />
       </Escena>
@@ -338,12 +375,14 @@ function Lengua17() {
       <Escena T={T} a={K.Cierre} b={FIN}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
+          <g opacity={entra(K.Cierre)}>
           <Poster x={540} y={980} s={1.3} titulo="TU LENGUA">
             <Lengua id="c" x={0} y={50} s={0.78} T={T} papilas={kprog(T, K.Cierre + 0.8, K.Cierre + 1.8)}
               mapa={1 - kprog(T, K.Cierre + 0.4, K.Cierre + 1.8)} etiquetas={1 - kprog(T, K.Cierre + 0.2, K.Cierre + 0.8)}
               fronteras={1 - kprog(T, K.Cierre + 0.2, K.Cierre + 1.2)} brillo={kprog(T, K.Cierre + 1.4, K.Cierre + 2.4)} />
           </Poster>
           <g opacity={1 - kprog(T, K.Cierre + 0.2, K.Cierre + 0.8)}><Sello T={T} at={K.Cierre - 1} x={540} y={1006} s={1.35} /></g>
+          </g>
           {/* goma que borra las fronteras */}
           {(() => { const f = kprog(T, K.Cierre + 0.2, K.Cierre + 1.3); if (f <= 0 || f >= 1) return null;
             const gx = 540 + Math.sin(f * Math.PI * 6) * 220, gy = klerp(700, 1350, f);

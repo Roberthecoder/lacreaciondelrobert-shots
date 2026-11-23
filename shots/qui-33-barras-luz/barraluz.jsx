@@ -257,7 +257,7 @@ function BarraLuzShot() {
         <FondoLunares color={KC.mint} />
         <SvgCapa>
           {/* la barra de luz (de eso son los casos) sigue en cuadro toda la escena; baja cuando entra la gráfica */}
-          <BarraLuz x={540} y={klerp(900, 1300, kprog(T, K.Da + 4.2, K.Da + 5.0, kEase.suave))} largo={880} ancho={120} rot={-7} curva={14} luz={0.85 + 0.08 * Math.sin(T * 3)} roto={1} />
+          <BarraLuz x={540} y={klerp(1040, 1300, kprog(T, K.Da + 4.2, K.Da + 5.0, kEase.suave))} largo={920} ancho={140} rot={-7} curva={14} luz={0.85 + 0.08 * Math.sin(T * 3)} roto={1} />
           <g opacity={kprog(T, K.Da + 4.6, K.Da + 5.0)} transform="translate(540 1090) scale(1.3) translate(-290 -1080)">
             <line x1={80} y1={1080} x2={500} y2={1080} stroke={KC.ink} strokeWidth={8} />
             <rect x={110} y={1080 - 80} width={150} height={80} fill={KC.paper} stroke={KC.ink} strokeWidth={7} />
@@ -270,7 +270,7 @@ function BarraLuzShot() {
           </g>
         </SvgCapa>
         <TarjetaEstudio T={T} at={K.Da + 0.2} until={K.Da + 3.2} anio="2018" quien="Centro toxicológico · Sídney, Australia" revista="Cairns et al. · Med J Aust · datos 2013–2017" y={400} />
-        <NumeroGigante T={T} at={K.Da + 3.3} until={K.Se - 0.3} valor={2918} dur={1.2} etiqueta="casos en 4 años" x={540} y={320} tam={150} color={KC.yellow} />
+        <NumeroGigante T={T} at={K.Da + 3.3} until={K.Se - 0.3} valor={2918} dur={1.2} etiqueta="casos en 4 años" x={540} y={klerp(640, 320, kprog(T, K.Da + 4.2, K.Da + 4.9, kEase.suave))} tam={150} color={KC.yellow} />
         <Chip T={T} at={K.Da + 6.0} until={K.Se - 0.3} texto="94 % niños de 14 años o menos" x={540} y={1490} tam={38} borde={KC.yellow} />
       </Escena>
       {/* 8 · seguridad: irrita, lávate con agua */}

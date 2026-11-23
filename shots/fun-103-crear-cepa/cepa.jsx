@@ -110,7 +110,9 @@ function Hifa({ x0, y, largo, p = 1, ancho = 46, paso = 210, nucleos = [CP.azul]
   const L = largo * kclamp(p, 0, 1); if (L < 4) return null;
   const n = Math.floor(L / paso);
   return <g>
+    <defs><linearGradient id="hifaVol" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#fff" stopOpacity="0.55" /><stop offset="0.35" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#3a5670" stopOpacity="0.45" /></linearGradient></defs>
     <rect x={x0} y={y - ancho / 2} width={L} height={ancho} rx={ancho / 2} fill={color} stroke={KC.ink} strokeWidth={6} />
+    <rect x={x0} y={y - ancho / 2} width={L} height={ancho} rx={ancho / 2} fill="url(#hifaVol)" />
     {Array.from({ length: n }, (_, i) => { const sx = x0 + (i + 1) * paso; return <g key={i}>
       <line x1={sx} y1={y - ancho / 2 + 4} x2={sx} y2={y + ancho / 2 - 4} stroke={KC.ink} strokeWidth={5} />
       {fibulas && <path d={`M ${sx - 34} ${y - ancho / 2 + 2} Q ${sx - 30} ${y - ancho / 2 - 38} ${sx} ${y - ancho / 2 - 36} Q ${sx + 22} ${y - ancho / 2 - 34} ${sx + 20} ${y - ancho / 2 + 2}`} fill={color} stroke={KC.ink} strokeWidth={5} />}
@@ -306,14 +308,14 @@ function CepaShot() {
         {fsvg(<>
           {POLVO.map(([ex, ey, es, er], i) => <g key={i} opacity=".15"><Espora x={ex + Math.sin(T * 0.5 + i) * 8} y={ey + Math.cos(T * 0.4 + i * 2) * 6} s={es} rot={er + T * 3} /></g>)}
           {(() => { const f = 1 - fus;   // los monocariones se desvanecen al fusionarse
-            return <Zm k={1.4} dx={-25} dy={-150}><g opacity={T < K.D ? 1 : klerp(1, 0.0, kprog(T, K.D + 0.9, K.D + 1.5))}>
-              <Espora x={110} y={620} s={1.6} rot={0} />
-              <Hifa x0={140} y={620} largo={470 + 60 * fus} p={pMonoA} nucleos={[CP.azul]} T={T} paso={200} />
-              <Espora x={110} y={880} s={1.6} rot={0} />
-              <Hifa x0={140} y={880} largo={470 + 60 * fus} p={pMonoB} nucleos={[CP.oro]} T={T} paso={200} />
+            return <Zm k={1.5} dx={-60} dy={-245}><g opacity={T < K.D ? 1 : klerp(1, 0.0, kprog(T, K.D + 0.9, K.D + 1.5))}>
+              <Espora x={110} y={570} s={2} rot={0} />
+              <Hifa x0={145} y={570} largo={470 + 60 * fus} p={pMonoA} nucleos={[CP.azul]} T={T} paso={200} ancho={60} />
+              <Espora x={110} y={940} s={2} rot={0} />
+              <Hifa x0={145} y={940} largo={470 + 60 * fus} p={pMonoB} nucleos={[CP.oro]} T={T} paso={200} ancho={60} />
               {/* las puntas se curvan y se tocan */}
-              {fus > 0 && <path d={`M 660 620 Q ${720} ${750} 660 880`} stroke="#eaf6ff" strokeWidth={46} fill="none" opacity={fus} strokeLinecap="round" />}
-              {fus > 0.8 && <circle cx={705} cy={750} r={40 + 10 * Math.sin(T * 8)} fill="#fff" opacity={0.5 * (1 - kprog(T, K.D + 1.0, K.D + 1.6))} style={{ filter:'drop-shadow(0 0 20px #fff)' }} />}
+              {fus > 0 && <path d={`M 665 570 Q ${745} ${755} 665 940`} stroke="#eaf6ff" strokeWidth={60} fill="none" opacity={fus} strokeLinecap="round" />}
+              {fus > 0.8 && <circle cx={715} cy={755} r={46 + 10 * Math.sin(T * 8)} fill="#fff" opacity={0.5 * (1 - kprog(T, K.D + 1.0, K.D + 1.6))} style={{ filter:'drop-shadow(0 0 20px #fff)' }} />}
               {void f}
             </g></Zm>; })()}
           {/* dicarión: hifa con un núcleo azul y uno dorado por compartimento y fíbulas en cada tabique */}
@@ -390,8 +392,8 @@ function CepaShot() {
       <Chip T={T} at={K.E + 0.3} until={K.M - 0.3} texto={TX.impresion} x={540} y={470} tam={36} borde={KC.gold} />
       <Chip T={T} at={K.E + 0.8} until={K.E + 1.9} texto={TX.horas} x={540} y={570} tam={30} borde={KC.ink} mono />
       <Lupa T={T} at={K.E + 2.4} until={K.M - 0.35} x={800} y={560} r={150} fx={600} fy={900} interior={(t, r) => LupaEsporas(t, r)} etiqueta={TX.lupaEsporas} tinte={KC.yellow} />
-      <Etq T={T} at={K.M + 1.2} until={K.D - 0.2} x={60} y={640} texto={TX.mono} tam={30} color={CP.azul} />
-      <Chip T={T} at={K.M + 2.4} until={K.D - 0.2} texto={TX.sinGrapas} x={360} y={1200} tam={30} borde={KC.lilac} mono />
+      <Etq T={T} at={K.M + 1.2} until={K.D - 0.2} x={60} y={520} texto={TX.mono} tam={30} color={CP.azul} />
+      <Chip T={T} at={K.M + 2.4} until={K.D - 0.2} texto={TX.sinGrapas} x={420} y={1390} tam={30} borde={KC.lilac} mono />
       <Etq T={T} at={K.D + 1.6} until={K.Es - 0.3} x={120} y={750} texto={TX.fibula} tam={30} color={KC.gold2} />
       <Etq T={T} at={K.D + 1.2} until={K.Es - 0.3} x={60} y={640} texto={TX.di} tam={34} color={KC.texto} />
       <Chip T={T} at={K.D + 2.6} until={K.Es - 0.3} texto={TX.reparte} x={400} y={1080} tam={30} borde={KC.gold} />

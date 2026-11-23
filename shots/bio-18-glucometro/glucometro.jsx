@@ -23,25 +23,36 @@ function Glucometro({ T, x, y, s = 1, pantalla = '- - -', unidad = '', lleno = 0
         <line x1={12} y1={-500} x2={12} y2={-262} stroke={ELEC} strokeWidth={14} strokeDasharray="18 22" strokeDashoffset={-T * 260 + 20} />
       </g>}
     </g>
-    {/* cuerpo */}
-    <rect x={-190} y={-280} width={380} height={560} rx={70} fill="#f6f3ec" stroke={KC.ink} strokeWidth={10} />
-    <rect x={-190} y={-280} width={380} height={70} rx={35} fill={KC.blue} stroke={KC.ink} strokeWidth={10} />
+    {/* cuerpo (modo cine: con degradado, sombra y brillo) */}
+    <defs>
+      <linearGradient id="glCuerpo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#ffffff" /><stop offset="0.55" stopColor="#f1ede4" /><stop offset="1" stopColor="#c9c3b6" /></linearGradient>
+      <linearGradient id="glAzul" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#6f8bff" /><stop offset="1" stopColor="#2441c9" /></linearGradient>
+      <linearGradient id="glPant" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stopColor="#d4f0c9" /><stop offset="1" stopColor="#9fcf92" /></linearGradient>
+      <radialGradient id="glBoton" cx="0.35" cy="0.3" r="0.75"><stop offset="0" stopColor="#fff" stopOpacity="0.55" /><stop offset="0.5" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.25" /></radialGradient>
+    </defs>
+    <ellipse cx={0} cy={318} rx={230} ry={30} fill="#000" opacity={0.35} />
+    <rect x={-190} y={-280} width={380} height={560} rx={70} fill="url(#glCuerpo)" stroke={KC.ink} strokeWidth={10} />
+    <rect x={-190} y={-280} width={380} height={70} rx={35} fill="url(#glAzul)" stroke={KC.ink} strokeWidth={10} />
     <rect x={-60} y={-292} width={120} height={30} rx={10} fill="#2b2f3a" stroke={KC.ink} strokeWidth={6} />
+    <path d="M 172 -200 L 172 220" stroke="#b5ae9f" strokeWidth={10} strokeLinecap="round" opacity={0.6} />
     {/* pantalla */}
-    <rect x={-150} y={-180} width={300} height={220} rx={24} fill="#bfe3b4" stroke={KC.ink} strokeWidth={9} />
+    <rect x={-150} y={-180} width={300} height={220} rx={24} fill="url(#glPant)" stroke={KC.ink} strokeWidth={9} />
     <rect x={-136} y={-166} width={272} height={40} rx={10} fill="rgba(255,255,255,.25)" />
     {on && <text x={unidad ? -10 : 0} y={-20} textAnchor="middle" style={{ font:`400 ${unidad ? 128 : 96}px ${KF.titulo}` }} fill="#1d3a1f">{pantalla}</text>}
     {unidad && <text x={112} y={14} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill="#1d3a1f">{unidad}</text>}
     {/* botones */}
     <circle cx={-70} cy={150} r={44} fill={KC.pink} stroke={KC.ink} strokeWidth={8} />
     <circle cx={70} cy={150} r={44} fill={KC.cyan} stroke={KC.ink} strokeWidth={8} />
+    <circle cx={-70} cy={150} r={40} fill="url(#glBoton)" /><circle cx={70} cy={150} r={40} fill="url(#glBoton)" />
     <path d="M -140 -240 Q -60 -262 30 -246" stroke="#fff" strokeWidth={10} fill="none" strokeLinecap="round" opacity=".7" />
   </g>;
 }
 // Dedo que apunta a la derecha: la yema queda en (x, y). gota 0..1.
 function Dedo({ x, y, s = 1, gota = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -700 -70 L -60 -70 Q 40 -70 40 0 Q 40 70 -60 70 L -700 70 Z" fill={PIEL} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+    <defs><linearGradient id="glPiel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#fbd2b3" /><stop offset="0.55" stopColor={PIEL} /><stop offset="1" stopColor="#c98262" /></linearGradient></defs>
+    <path d="M -700 -70 L -60 -70 Q 40 -70 40 0 Q 40 70 -60 70 L -700 70 Z" fill="url(#glPiel)" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+    <path d="M -640 -44 L -120 -44" stroke="#fff" strokeWidth={10} opacity={0.25} strokeLinecap="round" />
     <path d="M -150 -66 Q -60 -62 -30 -30 Q -10 -6 -40 6 L -150 6 Q -170 -30 -150 -66 Z" fill="#f8d5c2" stroke={KC.ink} strokeWidth={6} />
     {[-300, -330].map((cx) => <path key={cx} d={`M ${cx} -60 Q ${cx - 16} 0 ${cx} 60`} stroke="#c98a6b" strokeWidth={6} fill="none" />)}
     {gota > 0 && <path d={`M 0 ${50} Q ${34 * gota} ${50 + 50 * gota} 0 ${50 + 76 * gota} Q ${-34 * gota} ${50 + 50 * gota} 0 50 Z`} fill={SANGRE} stroke={KC.ink} strokeWidth={5} />}
@@ -87,9 +98,10 @@ function Mediador({ x, y, r = 22, lleva = false }) {
     {lleva && <Chispa x={r * 0.9} y={-r * 0.9} r={10} />}
   </g>;
 }
-function Electrodo({ T, y = 1130, flujo = 0 }) {
+function Electrodo({ T, y = 1130, flujo = 0, alto = 90 }) {
   return <g>
-    <rect x={-20} y={y} width={KW + 40} height={90} fill="url(#gOro)" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-20} y={y} width={KW + 40} height={alto} fill="url(#gOro)" stroke={KC.ink} strokeWidth={8} />
+    {alto > 100 && Array.from({ length: 24 }, (_, i) => <circle key={'a' + i} cx={20 + i * 45} cy={y + 110 + (i % 2) * 34} r={14} fill="none" stroke="#9c6a10" strokeWidth={3} opacity={0.5} />)}
     <defs><linearGradient id="gOro" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#ffe9a0" /><stop offset=".5" stopColor="#e8a62a" /><stop offset="1" stopColor="#9c6a10" /></linearGradient></defs>
     {flujo > 0 && Array.from({ length: 14 }, (_, i) => { const u = ((T * 0.9 + i / 14) % 1); return <Chispa key={i} x={u * (KW + 80) - 40} y={y + 45} r={12} o={flujo} />; })}
   </g>;
@@ -168,22 +180,22 @@ function Glucometro18() {
   const K = { G: CUES.Gancho, Go: CUES.Gota, En: CUES.Enzima, Pr: CUES.Prima, El: CUES.Electrones, Me: CUES.Mediador, Pq: CUES.Pregunta,
     Co: CUES.Corriente, Nu: CUES.Numero, Cl: CUES.Clark, Mx: CUES.Mexico, Ab: CUES.Abejas, Ci: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
-  const DX = 540, DY = 1120, DS = 1.15;            // centro y escala del glucómetro; punta de la tira en (DX, TIPY)
+  const DX = 540, DY = 1110, DS = 1.3;            // modo cine: el glucómetro más grande (antes 1.15)            // centro y escala del glucómetro; punta de la tira en (DX, TIPY)
   const TIPY = DY - 560 * DS;
   // dedo: llega, la lanceta pica, sale la gota, el dedo baja a la punta de la tira
   const pica = kprog(T, K.Go + 0.2, K.Go + 0.55, kEase.sale) * (1 - kprog(T, K.Go + 0.7, K.Go + 1.0));
   const gota = kprog(T, K.Go + 0.7, K.Go + 1.4, kEase.sale);
   const baja = kprog(T, K.Go + 1.5, K.Go + 2.3, kEase.suave);
   const absorbe = kprog(T, K.Go + 2.3, K.Go + 2.8);
-  const DEDO = DS / 0.9;                          // el dedo crece junto con el glucómetro
+  const DEDO = 1.25;                              // el dedo (no crece más para no tapar el logo)
   const fx = klerp(-60, DX, kprog(T, K.G + 2.6, K.Go + 0.2, kEase.sale)), fy = klerp(330, TIPY - 118 * DEDO, baja);
   // micro: 6 enzimas en fila; cada glucosa llega, la enzima le quita 2 e⁻, el mediador los baja al electrodo
-  const ENZ = [140, 320, 500, 680, 860, 1000].slice(0, 5).map((x, i) => [x + 40, 860 + (i % 2) * 40]);
+  const ENZ = [140, 320, 500, 680, 860, 1000].slice(0, 5).map((x, i) => [x + 40, 940 + (i % 2) * 40]);
   const ciclo = (i) => K.El + 0.4 + i * 0.75;
   // número en pantalla
   const cuenta = Math.round(klerp(0, 98, kprog(T, K.Nu + 0.4, K.Nu + 2.2, kEase.sale)));
   const R = krng(18);
-  const glucs = Array.from({ length: 12 }, () => [80 + R() * 920, 380 + R() * 260, R() * 360]);
+  const glucs = Array.from({ length: 12 }, () => [80 + R() * 920, 430 + R() * 300, R() * 360]);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0–3 · gancho, gota, enzima en la tira (macro rosa con Lupa) */}
@@ -198,11 +210,11 @@ function Glucometro18() {
           {T > K.Go + 0.4 && T < K.Go + 0.9 && <Chispa x={fx} y={fy + 30 * DEDO} r={22} o={1} />}
           {/* el moho que fabrica la enzima */}
           {T > K.En + 1.6 && <g opacity={kprog(T, K.En + 1.6, K.En + 2.2) * (1 - kprog(T, K.Pr - 0.3, K.Pr))}>
-            <rect x={10} y={1130} width={300} height={300} rx={40} fill="rgba(14,15,18,.8)" stroke={KC.ink} strokeWidth={6} />
-            <Aspergillus x={160} y={1400} s={0.85} crece={kprog(T, K.En + 1.8, K.En + 3.0, kEase.sale)} T={T} />
+            <rect x={84} y={1120} width={200} height={310} rx={36} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={6} />
+            <Aspergillus x={184} y={1400} s={0.7} crece={kprog(T, K.En + 1.8, K.En + 3.0, kEase.sale)} T={T} />
           </g>}
         </SvgCapa>
-        <Escala T={T} pxPorMm={8.3} x={720} y={1460} />
+        <Escala T={T} pxPorMm={9.38} x={720} y={1460} />
         <Lupa T={T} at={K.En + 0.15} until={K.El - 0.2} x={540} y={760} r={260} fx={DX} fy={TIPY + 30} tinte={GOX} etiqueta="POR DENTRO · LA TIRA"
           interior={(t, r) => <svg width={r * 2} height={r * 2}>
             <rect width={r * 2} height={r * 2} fill={KC.noche} />
@@ -220,26 +232,26 @@ function Glucometro18() {
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 40%, #1b2a44 0%, ${KC.noche} 75%)` }}></div>
         <Ambiente T={T} n={30} seed={9} color="rgba(120,180,255,.25)" />
         <SvgCapa>
-          <text x={60} y={380} style={{ font:`700 30px ${KF.mono}` }} fill="#9fb6d8">PLASMA DE TU GOTA</text>
+          <text x={60} y={400} style={{ font:`700 30px ${KF.mono}` }} fill="#9fb6d8">PLASMA DE TU GOTA</text>
           {glucs.map(([x, y, r], i) => <Glucosa key={i} x={x + Math.sin(T + i) * 14} y={y + Math.cos(T * 0.8 + i) * 10} r={22} rot={r + T * 20} o={0.55} />)}
-          <Electrodo T={T} y={1130} flujo={kprog(T, K.Pq, K.Pq + 0.8)} />
+          <Electrodo T={T} y={1210} alto={200} flujo={kprog(T, K.Pq, K.Pq + 0.8)} />
           {ENZ.map(([x, y], i) => {
             const c0 = ciclo(i), lleg = kprog(T, c0, c0 + 0.6, kEase.sale), quita = kprog(T, c0 + 0.6, c0 + 0.9);
             const carga = T > K.Me + 0.2 + i * 0.4 ? 0 : quita;
             const m0 = K.Me + 0.2 + i * 0.45, baja = kprog(T, m0, m0 + 1.0, kEase.suave);
             const loops = T > K.Pq ? ((T - K.Pq) * 1.2 + i * 0.2) % 1 : -1;
             return <g key={i}>
-              <EnzimaGOx x={x} y={y + Math.sin(T * 2 + i) * 6} s={0.8} rot={Math.sin(T + i) * 8} carga={carga} />
-              {T > c0 && quita < 1 && <Glucosa x={x} y={klerp(500, y - 40, lleg)} r={26} rot={T * 40} o={1 - quita} />}
+              <EnzimaGOx x={x} y={y + Math.sin(T * 2 + i) * 6} s={0.95} rot={Math.sin(T + i) * 8} carga={carga} />
+              {T > c0 && quita < 1 && <Glucosa x={x} y={klerp(560, y - 50, lleg)} r={28} rot={T * 40} o={1 - quita} />}
               {T > c0 + 0.6 && T < m0 && [0, 1].map((k) => <Chispa key={k} x={x - 40 + k * 80} y={y - 20 + Math.sin(T * 8 + k) * 6} r={14} t={k ? 'e⁻' : ''} />)}
-              {T > m0 - 0.6 && loops < 0 && <Mediador x={x + 90} y={klerp(y + 10, 1100, baja)} lleva={baja < 1} />}
-              {loops >= 0 && <Mediador x={x + 90} y={klerp(y + 10, 1100, Math.sin(Math.PI * loops))} lleva={loops < 0.5} />}
+              {T > m0 - 0.6 && loops < 0 && <Mediador x={x + 90} y={klerp(y + 10, 1185, baja)} lleva={baja < 1} />}
+              {loops >= 0 && <Mediador x={x + 90} y={klerp(y + 10, 1185, Math.sin(Math.PI * loops))} lleva={loops < 0.5} />}
             </g>; })}
         </SvgCapa>
-        <Etq T={T} at={K.El + 0.6} until={K.Me - 0.2} x={60} y={1010} texto="glucosa oxidasa" color={GOX} tam={36} />
-        <Etq T={T} at={K.Me + 0.5} until={K.Pq - 0.1} x={60} y={1060} texto="mediador" color={MED} tam={36} />
-        <Etq T={T} at={K.Me + 1.4} until={K.Co} x={1020} y={1095} texto="electrodo" lado="izq" color={KC.gold2} tam={36} />
-        <Escala T={T} pxPorMm={2e7} x={60} y={1460} />
+        <Etq T={T} at={K.El + 0.6} until={K.Me - 0.2} x={60} y={1100} texto="glucosa oxidasa" color={GOX} tam={36} />
+        <Etq T={T} at={K.Me + 0.5} until={K.Pq - 0.1} x={60} y={1150} texto="mediador" color={MED} tam={36} />
+        <Etq T={T} at={K.Me + 1.4} until={K.Co} x={1020} y={1160} texto="electrodo" lado="izq" color={KC.gold2} tam={36} />
+        <Escala T={T} pxPorMm={2.375e7} x={60} y={1460} />
       </Escena>
 
       {/* 7–8 · corriente → número (macro cian) */}
@@ -251,9 +263,9 @@ function Glucometro18() {
           {Array.from({ length: 8 }, (_, i) => { const u = ((T * 0.9 + i / 8) % 1); return <Chispa key={i} x={DX + (i % 2 ? 11 : -11)} y={TIPY + 40 + u * 190} r={12} o={Math.sin(Math.PI * u) * (T < K.Nu + 2.4 ? 1 : 0.4)} />; })}
           {T < K.Nu && Array.from({ length: 6 }, (_, i) => { const t0 = K.Co + 0.8 + i * 0.4, u = kprog(T, t0, t0 + 0.8); return u > 0 && u < 1 ? <Glucosa key={i} x={DX + 160 - u * 160} y={TIPY - 60 + u * 80} r={20} rot={T * 50} o={1 - u * 0.6} /> : null; })}
         </SvgCapa>
-        <Medidor T={T} at={K.Co + 1.0} until={K.Nu - 0.1} valor={(t) => klerp(0.15, 0.82, kprog(t, K.Co + 1.0, K.Co + 3.4))} etiqueta="corriente" texto={(v) => (v * 100 > 60 ? 'más azúcar' : 'poco azúcar')} y={330} color={ELEC} />
-        <Chip T={T} at={K.Nu + 2.4} until={K.Cl - 0.2} texto="número de ejemplo" x={800} y={1490} tam={32} borde={KC.white} />
-        <Escala T={T} pxPorMm={8.3} x={60} y={1460} />
+        <Medidor T={T} at={K.Co + 1.0} until={K.Nu - 0.1} valor={(t) => klerp(0.15, 0.82, kprog(t, K.Co + 1.0, K.Co + 3.4))} etiqueta="corriente" texto={(v) => (v * 100 > 60 ? 'más azúcar' : 'poco azúcar')} y={262} color={ELEC} />
+        <Chip T={T} at={K.Nu + 2.4} until={K.Cl - 0.2} texto="número de ejemplo" x={800} y={1530} tam={32} borde={KC.white} />
+        <Escala T={T} pxPorMm={9.38} x={60} y={1460} />
       </Escena>
 
       {/* 9 · Clark, 1962 (amarillo) */}
@@ -306,15 +318,15 @@ function Glucometro18() {
           <Glucometro T={T} x={DX} y={DY} s={DS} pantalla="98" unidad="mg/dL" lleno={1} brillo={1} />
           {Array.from({ length: 6 }, (_, i) => { const u = ((T * 0.8 + i / 6) % 1); return <Chispa key={i} x={DX + Math.sin(i * 2 + T * 3) * 40} y={TIPY + 30 + u * 200} r={14} o={Math.sin(Math.PI * u)} t={i === 3 ? 'e⁻' : ''} />; })}
         </SvgCapa>
-        <Chip T={T} at={K.Ci + 0.8} until={K.Ou - 0.1} texto="enzima → electrones → número" x={540} y={1490} tam={36} borde={ELEC} />
+        <Chip T={T} at={K.Ci + 0.8} until={K.Ou - 0.1} texto="enzima → electrones → número" x={540} y={1530} tam={36} borde={ELEC} />
       </Escena>
 
       {/* textos del gancho y la tira */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 2.1} texto="¿mide tu sangre?" x={540} y={1490} tam={46} />
-      <Chip T={T} at={K.G + 2.0} until={K.Go - 0.1} texto="mide electrones" x={540} y={1490} tam={40} borde={ELEC} />
-      <Chip T={T} at={K.En + 0.6} until={K.Pr - 0.2} texto="glucosa oxidasa" x={790} y={1490} tam={36} borde={GOX} />
-      <Etq T={T} at={K.En + 2.4} until={K.Pr - 0.3} x={20} y={1470} texto="Aspergillus niger" it tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Pr + 0.4} until={K.El - 0.2} texto="o glucosa deshidrogenasa" x={540} y={1490} tam={36} borde={GDH} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 2.1} texto="¿mide tu sangre?" x={540} y={1530} tam={46} />
+      <Chip T={T} at={K.G + 2.0} until={K.Go - 0.1} texto="mide electrones" x={540} y={1530} tam={40} borde={ELEC} />
+      <Chip T={T} at={K.En + 0.6} until={K.Pr - 0.2} texto="glucosa oxidasa" x={790} y={1530} tam={36} borde={GOX} />
+      <Etq T={T} at={K.En + 2.4} until={K.Pr - 0.3} x={90} y={1085} texto="Aspergillus niger" it tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Pr + 0.4} until={K.El - 0.2} texto="o glucosa deshidrogenasa" x={540} y={1530} tam={36} borde={GDH} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Go - 0.1} texto="No mide tu sangre: *mide electrones.*" />

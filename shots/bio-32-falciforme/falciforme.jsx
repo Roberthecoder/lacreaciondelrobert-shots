@@ -1,7 +1,7 @@
 // cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #32 · Esa célula no está rota: está doblada (anemia falciforme y Casgevy, el primer medicamento con CRISPR) — NARRADO (N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (las moléculas y las células no están a escala entre sí).
-const SANGRE = '#d7263d', SANGRE2 = '#a81a2e', HBF = '#2fe0a8', HBS = '#ff3b2f', PARED = '#e8336d', LUMEN = '#ffe3e6';
+const SANGRE = '#d7263d', SANGRE2 = '#a81a2e', HBF = '#2fe0a8', HBS = '#ff3b2f', PARED = '#a32a50', LUMEN = '#2c1019'; // modo cine: plasma oscuro y pared apagada (antes #ffe3e6 y #e8336d: un rectángulo claro a media pantalla)
 
 function SvgCapa({ children, z }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{children}</svg>;
@@ -12,7 +12,8 @@ function Disco({ x, y, s = 1, rot = 0, canto = 0, fetal = 0, aplasta = 1, brillo
   const R = krng(seed);
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     {brillo > 0 && <ellipse rx={rx + 26} ry={ry + 26} fill={HBF} opacity={0.35 * brillo} />}
-    <ellipse rx={rx} ry={ry} fill={SANGRE} stroke={KC.ink} strokeWidth={7} />
+    <defs><radialGradient id="faRbc" cx="0.38" cy="0.32" r="0.75"><stop offset="0" stopColor="#ff5a6e" /><stop offset="0.6" stopColor={SANGRE} /><stop offset="1" stopColor="#7d1222" /></radialGradient></defs>
+    <ellipse rx={rx} ry={ry} fill="url(#faRbc)" stroke={KC.ink} strokeWidth={7} />
     <ellipse rx={rx * 0.5} ry={ry * 0.5} fill={SANGRE2} opacity={0.75} />
     <ellipse cx={-rx * 0.35} cy={-ry * 0.45} rx={rx * 0.25} ry={ry * 0.14} fill="#fff" opacity={0.3} />
     {fetal > 0 && Array.from({ length: 8 }, (_, i) => { const a = R() * 6.28, d = R() * 0.7; return i / 8 < fetal ? <circle key={i} cx={Math.cos(a) * rx * d} cy={Math.sin(a) * ry * d} r={7} fill={HBF} stroke={KC.ink} strokeWidth={2.5} /> : null; })}
@@ -21,7 +22,8 @@ function Disco({ x, y, s = 1, rot = 0, canto = 0, fetal = 0, aplasta = 1, brillo
 // Glóbulo rojo falciforme: media luna tiesa con puntas (forma de hoz).
 function Hoz({ x, y, s = 1, rot = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
-    <path d="M -110 18 Q -60 -78 0 -80 Q 60 -78 110 18 Q 60 -34 0 -34 Q -60 -34 -110 18 Z" fill="#c81d34" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <defs><linearGradient id="faHoz" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#ef3a52" /><stop offset="1" stopColor="#7d1222" /></linearGradient></defs>
+    <path d="M -110 18 Q -60 -78 0 -80 Q 60 -78 110 18 Q 60 -34 0 -34 Q -60 -34 -110 18 Z" fill="url(#faHoz)" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     <path d="M -70 -30 Q -30 -62 20 -62" stroke="#fff" strokeWidth={7} fill="none" opacity={0.3} strokeLinecap="round" />
   </g>;
 }
@@ -37,9 +39,14 @@ function Vaso({ T, tf, cy = 980, h = 380, hx = 620, pila = 0, hoces = [], fetal 
   const estrecho = (xx) => angosto * 70 * Math.exp(-Math.pow((xx - hx - 40) / 120, 2));
   const pared = (lado) => { let d = ''; for (let xx = -20; xx <= 1100; xx += 20) { const yy = lado < 0 ? top + estrecho(xx) : bot - estrecho(xx); d += `${xx === -20 ? 'M' : 'L'} ${xx} ${yy} `; } return d; };
   return <g>
-    <path d={pared(-1) + ` L 1100 ${bot} L -20 ${bot} Z`} fill={LUMEN} />
-    <path d={pared(1) + ` L 1100 ${bot + 80} L -20 ${bot + 80} Z`} fill={PARED} opacity={0.9} />
-    <path d={pared(-1) + ` L 1100 ${top - 80} L -20 ${top - 80} Z`} fill={PARED} opacity={0.9} />
+    <defs><linearGradient id={'faLum' + cy} x1="0" y1={top} x2="0" y2={bot} gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#1a0910" /><stop offset="0.5" stopColor="#3d1826" /><stop offset="1" stopColor="#1a0910" /></linearGradient>
+      <linearGradient id={'faPar' + cy} x1="0" y1={top - 80} x2="0" y2={bot + 80} gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#c23a63" /><stop offset="0.12" stopColor={PARED} /><stop offset="0.88" stopColor={PARED} /><stop offset="1" stopColor="#6e1a35" /></linearGradient></defs>
+    <path d={pared(-1) + ` L 1100 ${bot} L -20 ${bot} Z`} fill={`url(#faLum${cy})`} />
+    <path d={pared(1) + ` L 1100 ${bot + 80} L -20 ${bot + 80} Z`} fill={`url(#faPar${cy})`} opacity={0.9} />
+    <path d={pared(-1) + ` L 1100 ${top - 80} L -20 ${top - 80} Z`} fill={`url(#faPar${cy})`} opacity={0.9} />
+    {Array.from({ length: 12 }, (_, i) => <g key={'e' + i} opacity={0.35}>
+      <ellipse cx={i * 100 + 20} cy={top - 40} rx={40} ry={13} fill="none" stroke="#f08aa8" strokeWidth={3} /><circle cx={i * 100 + 20} cy={top - 40} r={5} fill="#f08aa8" />
+      <ellipse cx={i * 100 + 70} cy={bot + 40} rx={40} ry={13} fill="none" stroke="#f08aa8" strokeWidth={3} /><circle cx={i * 100 + 70} cy={bot + 40} r={5} fill="#f08aa8" /></g>)}
     <path d={pared(-1)} stroke={KC.ink} strokeWidth={10} fill="none" />
     <path d={pared(1)} stroke={KC.ink} strokeWidth={10} fill="none" />
     {Array.from({ length: n }, (_, i) => {
@@ -171,7 +178,8 @@ function Falciforme() {
       <Escena T={T} a={K.Di} b={K.Ca} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa><g transform="translate(540 965) scale(1.4) translate(-540 -965)">
-          <rect x={-20} y={880} width={1120} height={170} fill={LUMEN} stroke={KC.ink} strokeWidth={10} />
+          <defs><linearGradient id="faLumD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#1a0910" /><stop offset="0.5" stopColor="#3d1826" /><stop offset="1" stopColor="#1a0910" /></linearGradient></defs>
+          <rect x={-20} y={880} width={1120} height={170} fill="url(#faLumD)" stroke={KC.ink} strokeWidth={10} />
           {[0, 1.1, 2.2].map((d, k) => { const u = kprog(T, K.Di - 0.6 + d, K.Di + 2.4 + d), xx = klerp(-120, 1200, u), dentro = Math.exp(-Math.pow((xx - 540) / 260, 2));
             return u > 0 && u < 1 ? <Disco key={k} x={xx} y={965} s={1.5} aplasta={klerp(1, 0.55, dentro)} rot={(1 - dentro) * 10 * Math.sin(T * 3 + k)} seed={k + 60} /> : null; })}
           <rect x={-20} y={720} width={1120} height={160} fill={PARED} stroke={KC.ink} strokeWidth={10} />
@@ -211,8 +219,9 @@ function Falciforme() {
       <Escena T={T} a={K.In} b={K.Pr} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Interruptor x={330} y={930} on={1 - kprog(T, K.In + 0.9, K.In + 1.3, kEase.sale)} etiqueta="hemoglobina fetal" />
-          <Disco x={800} y={930} s={2.1} fetal={1 - kprog(T, K.In + 1.2, K.In + 2.6)} seed={9} />
+          {/* modo cine: interruptor y glóbulo más grandes (antes 1 y 2.1) */}
+          <Interruptor x={300} y={960} s={1.3} on={1 - kprog(T, K.In + 0.9, K.In + 1.3, kEase.sale)} etiqueta="hemoglobina fetal" />
+          <Disco x={790} y={960} s={2.7} fetal={1 - kprog(T, K.In + 1.2, K.In + 2.6)} seed={9} />
         </SvgCapa>
       </Escena>
       {/* 6 · re-gancho: ¿y si la prendemos? */}

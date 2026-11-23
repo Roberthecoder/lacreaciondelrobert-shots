@@ -222,14 +222,14 @@ function BasuraShot() {
       {/* 2 · el montón mundial: 62 millones de toneladas */}
       <Escena T={T} a={K.Mo} b={K.Me} zoom={-0.04}>
         <FondoLunares color={KC.orange} />
-        {svg(<><Monton T={T} x={460} y={1330} s={1.45} crece={kprog(T, K.Mo, K.Mo + 3.0, kEase.suave)} />
+        {svg(<><Monton T={T} x={460} y={1330} s={1.45} crece={0.35 + 0.65 * kprog(T, K.Mo, K.Mo + 3.0, kEase.suave)} />
           <g opacity={kprog(T, K.Mo + 3.2, K.Mo + 3.7)}><PersonaBolsa x={830} y={1230} s={1.15} /></g></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 3 · los metales adentro: USD 91 mil millones */}
       <Escena T={T} a={K.Me} b={K.P}>
         <FondoLunares color={KC.violet} punto="rgba(255,255,255,.10)" />
-        {svg(<>{[[BE.cobre, 290, 1150, 0], [BE.oro, 540, 930, 0.5], [BE.hierro, 790, 1150, 1.0]].map(([c, x, y, d], i) => {
+        {svg(<>{[[BE.cobre, 290, 1270, 0], [BE.oro, 540, 1050, 0.5], [BE.hierro, 790, 1270, 1.0]].map(([c, x, y, d], i) => {
           const k = kprog(T, K.Me + 0.1 + d * 0.4, K.Me + 0.6 + d * 0.4, kEase.rebote);
           return <Lingote key={i} x={x} y={klerp(y + 220, y, k)} color={c} s={2.0} o={kprog(T, K.Me + 0.1 + d * 0.4, K.Me + 0.3 + d * 0.4)} brillo={kprog(T, K.Me + 2.2 + d, K.Me + 3.0 + d)} />; })}</>)}
       </Escena>
@@ -243,16 +243,18 @@ function BasuraShot() {
       <Escena T={T} a={K.R} b={K.B}>
         <FondoLunares color={KC.mint} />
         <div style={{ position:'absolute', left:150, top:620, width:780, height:780, background:'rgba(14,15,18,.85)', borderRadius:34, border:`6px solid ${KC.ink}`, opacity:kprog(T, K.R, K.R + 0.4) }}></div>
-        <div style={{ opacity:kprog(T, K.R, K.R + 0.4) * (0.45 + 0.55 * kprog(T, K.R + 2.2, K.R + 2.6)) }}><Cuadricula T={T} cols={10} filas={10} llenado={llen} x={175} y={645} ancho={730} alto={730} lleno={KC.leaf} vacio="rgba(255,255,255,.18)" /></div>
+        <div style={{ opacity:kprog(T, K.R, K.R + 0.4) * (0.45 + 0.55 * kprog(T, K.R + 2.2, K.R + 2.6)) }}><Cuadricula T={T} cols={10} filas={10} llenado={llen} x={175} y={645} ancho={730} alto={730} lleno={KC.leaf} vacio="rgba(255,255,255,.18)" />
+          <svg style={{ position:'absolute', left:175, top:645, zIndex:31 }} width={730} height={730}>{Array.from({ length: 100 }, (_, i) => { const cx = (i % 10) * 73 + 36.5, cy = Math.floor(i / 10) * 73 + 36.5;
+            return <g key={i}><rect x={cx - 12} y={cy - 21} width={24} height={42} rx={5} fill="none" stroke="rgba(10,12,16,.55)" strokeWidth={3} /><rect x={cx - 8} y={cy - 15} width={16} height={26} rx={2} fill="rgba(10,12,16,.35)" /></g>; })}</svg></div>
       </Escena>
       <TarjetaEstudio T={T} at={K.R + 0.2} until={K.R + 2.3} anio="2024" quien="Global E-waste Monitor" revista="ONU: UIT + UNITAR · datos de 2022" x={540} y={420} />
       {/* 6 · al bote y al relleno */}
       <Escena T={T} a={K.B} b={K.Mx}>
         <FondoLunares color={KC.cyan} />
         {svg(<><g opacity={1 - kprog(T, K.B + 3.0, K.B + 3.6)}>
-            <Bote x={540} y={960} s={1.2} abre={kprog(T, K.B + 0.1, K.B + 0.5, kEase.sale) * (1 - kprog(T, K.B + 2.4, K.B + 2.8))} />
-            {[0, 1, 2].map((i) => { const u = kprog(T, K.B + 0.6 + i * 0.5, K.B + 1.2 + i * 0.5, (p) => p * p); return u < 1 ? (i === 1 ? <Cargador key={i} x={500 + i * 30} y={klerp(380, 780, u)} s={0.6} rot={u * 200} cola={0.5} /> : <Celular key={i} x={480 + i * 40} y={klerp(380, 780, u)} s={0.6} rot={u * 300 + i * 40} />) : null; })}</g>
-          <g opacity={kprog(T, K.B + 3.0, K.B + 3.6)}><Relleno T={T} x={40} y={700} w={1000} baja={kprog(T, K.B + 3.8, K.B + 5.2, kEase.suave)} /></g></>)}
+            <Bote x={540} y={1080} s={1.2} abre={kprog(T, K.B + 0.1, K.B + 0.5, kEase.sale) * (1 - kprog(T, K.B + 2.4, K.B + 2.8))} />
+            {[0, 1, 2].map((i) => { const u = kprog(T, K.B + 0.6 + i * 0.5, K.B + 1.2 + i * 0.5, (p) => p * p); return u < 1 ? (i === 1 ? <Cargador key={i} x={500 + i * 30} y={klerp(440, 900, u)} s={0.6} rot={u * 200} cola={0.5} /> : <Celular key={i} x={480 + i * 40} y={klerp(440, 900, u)} s={0.6} rot={u * 300 + i * 40} />) : null; })}</g>
+          <g opacity={kprog(T, K.B + 3.0, K.B + 3.6)}><Relleno T={T} x={40} y={820} w={1000} baja={kprog(T, K.B + 3.8, K.B + 5.2, kEase.suave)} /></g></>)}
         <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 7 · México */}
@@ -287,28 +289,28 @@ function BasuraShot() {
       {/* 10 · cierre: el cajón del inicio, vaciado en la caja de acopio */}
       <Escena T={T} a={K.Ci} b={FIN}>
         <FondoLunares color={KC.yellow} />
-        {svg(<g transform="translate(520 1050) scale(1.1) translate(-517 -1000)"><Cajon x={300} y={1030} s={0.62} abierto={1}><ContenidoCajon T={T} sale={0} n={1 - vacia} /></Cajon>
-          {vacia > 0 && vacia < 1 && [0, 1, 2].map((i) => { const u = kclamp(vacia * 1.4 - i * 0.2, 0, 1); return u > 0 && u < 1 ? <Celular key={i} x={klerp(300, 760, u)} y={klerp(900, 820, u) - Math.sin(Math.PI * u) * 260} s={0.45} rot={u * 360} /> : null; })}
-          <CajaAcopio T={T} x={780} y={1000} s={0.75} brilla={kprog(T, K.Ci + 1.6, K.Ci + 2.4)} /></g>)}
+        {svg(<g transform="translate(540 1060) scale(1.2) translate(-500 -1000)"><Cajon x={300} y={1030} s={0.62} abierto={1}><ContenidoCajon T={T} sale={0} n={1 - vacia} /></Cajon>
+          {vacia > 0 && vacia < 1 && [0, 1, 2].map((i) => { const u = kclamp(vacia * 1.4 - i * 0.2, 0, 1); return u > 0 && u < 1 ? <Celular key={i} x={klerp(300, 720, u)} y={klerp(900, 820, u) - Math.sin(Math.PI * u) * 260} s={0.45} rot={u * 360} /> : null; })}
+          <CajaAcopio T={T} x={720} y={1000} s={0.75} brilla={kprog(T, K.Ci + 1.6, K.Ci + 2.4)} /></g>)}
       </Escena>
 
       {/* datos y etiquetas */}
       <Chip T={T} at={K.G + 1.9} until={K.Mo - 0.2} texto="no es basura: es una mina" y={1500} x={540} tam={40} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Mo + 0.3} until={K.Me - 0.2} valor={62} dur={1.4} sufijo=" millones de t" etiqueta="basura electrónica, 2022:" x={370} y={470} tam={84} color={KC.yellow} />
       <Chip T={T} at={K.Mo + 3.6} until={K.Me - 0.2} texto="7.8 kg por persona" y={1500} x={540} tam={38} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Me + 0.3} until={K.P - 0.2} valor={91} dur={1.2} prefijo="USD " sufijo=" mil millones" etiqueta="metales adentro (2022):" x={540} y={600} tam={100} color={KC.gold2} />
-      <Etq T={T} at={K.Me + 2.0} until={K.P - 0.2} x={110} y={1270} texto="cobre · 19" lado="der" tam={34} />
-      <Etq T={T} at={K.Me + 2.5} until={K.P - 0.2} x={400} y={810} texto="oro · 15" lado="der" tam={34} />
-      <Etq T={T} at={K.Me + 3.0} until={K.P - 0.2} x={620} y={1270} texto="hierro · 16" lado="der" tam={34} />
-      <Chip T={T} at={K.Me + 3.4} until={K.P - 0.2} texto="miles de millones de dólares" y={1420} x={540} tam={30} borde={KC.gold} mono />
+      <NumeroGigante T={T} at={K.Me + 0.3} until={K.P - 0.2} valor={91} dur={1.2} prefijo="USD " sufijo=" mil millones" etiqueta="metales adentro (2022):" x={540} y={660} tam={100} color={KC.gold2} />
+      <Etq T={T} at={K.Me + 2.0} until={K.P - 0.2} x={110} y={1390} texto="cobre · 19" lado="der" tam={34} />
+      <Etq T={T} at={K.Me + 2.5} until={K.P - 0.2} x={400} y={930} texto="oro · 15" lado="der" tam={34} />
+      <Etq T={T} at={K.Me + 3.0} until={K.P - 0.2} x={620} y={1390} texto="hierro · 16" lado="der" tam={34} />
+      <Chip T={T} at={K.Me + 3.4} until={K.P - 0.2} texto="miles de millones de dólares" y={1500} x={540} tam={30} borde={KC.gold} mono />
       <NumeroGigante T={T} at={K.R + 2.6} until={K.B - 0.2} valor={22.3} dec={1} dur={2.0} sufijo=" %" x={380} y={470} tam={120} color={KC.leaf} />
       <Chip T={T} at={K.R + 3.2} until={K.B - 0.2} texto="recolectado y reciclado formalmente" y={1460} x={540} tam={32} borde={KC.leaf} />
       <NumeroGigante T={T} at={K.B + 0.8} until={K.Mx - 0.2} valor={14} dur={1.2} sufijo=" millones de t" etiqueta="al bote de basura normal:" x={640} y={470} tam={80} color={KC.yellow} />
-      <Etq T={T} at={K.B + 4.2} until={K.Mx - 0.2} x={1000} y={830} texto="relleno sanitario" lado="izq" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.B + 4.2} until={K.Mx - 0.2} x={1000} y={950} texto="relleno sanitario" lado="izq" tam={30} color={KC.texto} />
       <NumeroGigante T={T} at={K.Mx + 0.5} until={K.C - 0.2} valor={1499} dur={1.4} sufijo=" millones de kg" etiqueta="México, 2022:" x={400} y={480} tam={66} color={KC.orange} />
       <Chip T={T} at={K.C + 0.4} until={K.L - 0.2} texto="lo chico se queda años guardado" y={500} x={650} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.L + 1.0} until={K.Ci - 0.2} texto="litio aplastado = riesgo de incendio" y={1450} x={540} tam={34} borde={KC.red} />
-      <Chip T={T} at={K.Ci + 2.2} until={K.Ou - 0.1} texto="al acopio, no al bote" y={470} x={400} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.Ci + 2.2} until={K.Ou - 0.1} texto="al acopio, no al bote" y={560} x={400} tam={40} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Mo - 0.1} texto="No es basura: *es una mina.*" />

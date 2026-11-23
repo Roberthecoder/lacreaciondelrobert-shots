@@ -246,14 +246,14 @@ function Lunares() {
       {/* 2 · por dentro del lunar → la foto que ve la IA */}
       <Escena T={T} a={K.L} b={K.P}>
         <FondoLunares color={KC.mint} />
-        {svg(<>
+        {svg(<g transform="translate(0 170)">{/* belleza: baja al centro */}
           <Antebrazo y={1080} largo={900} tono="oscura" lunarX={300} T={T} seed={3} />
           <g opacity={kprog(T, K.L + 2.4, K.L + 2.9)}><FotoPixeles x={600} y={640} lado={520} p={kprog(T, K.L + 2.4, K.L + 3.6)} /></g>
           {T > K.L + 2.4 && <line x1={300} y1={1074} x2={370} y2={910} stroke={KC.ink} strokeWidth={6} strokeDasharray="14 10" opacity={kprog(T, K.L + 2.4, K.L + 2.8)} />}
-        </>)}
+        </g>)}
       </Escena>
-      <Lupa T={T} at={K.L + 0.2} until={K.L + 2.3} x={620} y={690} r={250} fx={300} fy={1074} interior={(t, r) => <PielPorDentro T={t} r={r} />} etiqueta="AL MICROSCOPIO · células con pigmento" tinte={KC.cyan} />
-      <Chip T={T} at={K.L + 3.0} until={K.P - 0.2} texto="lo que ve la IA: pixeles" x={620} y={965} tam={34} borde={KC.cyan} />
+      <Lupa T={T} at={K.L + 0.2} until={K.L + 2.3} x={620} y={860} r={250} fx={300} fy={1244} interior={(t, r) => <PielPorDentro T={t} r={r} />} etiqueta="AL MICROSCOPIO · células con pigmento" tinte={KC.cyan} />
+      <Chip T={T} at={K.L + 3.0} until={K.P - 0.2} texto="lo que ve la IA: pixeles" x={620} y={1135} tam={34} borde={KC.cyan} />
       {/* 3 · la promesa de 2017 */}
       <Escena T={T} a={K.P} b={K.Q}>
         <FondoLunares color={KC.lilac} />
@@ -277,12 +277,13 @@ function Lunares() {
       {/* 4 · pregunta */}
       <Escena T={T} a={K.Q} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        <div style={{ position:'absolute', inset:0, transform:'scale(.62)', transformOrigin:'50% 0%', top:-120 }}>
+        <div style={{ position:'absolute', inset:0, background:'rgba(10,15,28,.72)' }}></div>
+        <div style={{ position:'absolute', inset:0, transform:'scale(.85)', transformOrigin:'50% 50%', top:40 }}>
           <Mosaico T={T} llegada={[K.Q - 2, K.Q - 1]} y={760} resalta={kprog(T, K.Q + 0.3, K.Q + 0.8)} />
         </div>
-        {svg(<text x={260} y={1150} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 260 980)`}>?</text>)}
+        {svg(<text x={260} y={1330} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 260 1160)`}>?</text>)}
       </Escena>
-      <Chip T={T} at={K.Q + 0.5} until={K.E - 0.1} texto="ilustrativo" x={540} y={250} tam={26} borde={KC.texto} />
+      <Chip T={T} at={K.Q + 0.5} until={K.E - 0.1} texto="ilustrativo" x={540} y={430} tam={26} borde={KC.texto} />
       {/* 5 · el estudio de 2022 */}
       <Escena T={T} a={K.E} b={K.R}>
         <FondoLunares color={KC.yellow} />
@@ -301,14 +302,14 @@ function Lunares() {
       <Escena T={T} a={K.R} b={K.D}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <FilaLunares T={T} y={790} tono="clara" encontrados={encClara} />
-          <FilaLunares T={T} y={1060} tono="oscura" encontrados={encOsc} />
+          <FilaLunares T={T} y={950} tono="clara" encontrados={encClara} />
+          <FilaLunares T={T} y={1220} tono="oscura" encontrados={encOsc} />
         </>)}
-        <div style={{ position:'absolute', left:80, top:640, font:`900 40px ${KF.texto}`, color:KC.ink }}>piel clara <span style={{ font:`400 64px ${KF.titulo}`, color:KC.leaf, WebkitTextStroke:`3px ${KC.ink}`, marginLeft:14, opacity:kprog(T, K.R + 1.2, K.R + 1.6) }}>{Math.round(69 * kprog(T, K.R + 1.2, K.R + 3.4, kEase.suave))} %</span></div>
-        <div style={{ position:'absolute', left:80, top:910, font:`900 40px ${KF.texto}`, color:KC.ink }}>piel oscura <span style={{ font:`400 64px ${KF.titulo}`, color:KC.red, WebkitTextStroke:`3px ${KC.ink}`, marginLeft:14, opacity:kprog(T, K.R + 3.8, K.R + 4.2) }}>{Math.round(23 * kprog(T, K.R + 3.8, K.R + 5.4, kEase.suave))} %</span></div>
+        <div style={{ position:'absolute', left:80, top:800, font:`900 40px ${KF.texto}`, color:KC.ink }}>piel clara <span style={{ font:`400 64px ${KF.titulo}`, color:KC.leaf, WebkitTextStroke:`3px ${KC.ink}`, marginLeft:14, opacity:kprog(T, K.R + 1.2, K.R + 1.6) }}>{Math.round(69 * kprog(T, K.R + 1.2, K.R + 3.4, kEase.suave))} %</span></div>
+        <div style={{ position:'absolute', left:80, top:1070, font:`900 40px ${KF.texto}`, color:KC.ink }}>piel oscura <span style={{ font:`400 64px ${KF.titulo}`, color:KC.red, WebkitTextStroke:`3px ${KC.ink}`, marginLeft:14, opacity:kprog(T, K.R + 3.8, K.R + 4.2) }}>{Math.round(23 * kprog(T, K.R + 3.8, K.R + 5.4, kEase.suave))} %</span></div>
       </Escena>
-      <Chip T={T} at={K.R + 0.2} until={K.D - 0.2} texto="cánceres detectados de cada 10" x={400} y={470} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.R + 0.6} until={K.D - 0.2} texto="IA hecha con los datos de 2017" x={400} y={545} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.R + 0.2} until={K.D - 0.2} texto="cánceres detectados de cada 10" x={400} y={630} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.R + 0.6} until={K.D - 0.2} texto="IA hecha con los datos de 2017" x={400} y={705} tam={28} borde={KC.ink} />
       {/* 7 · los dermatólogos también */}
       <Escena T={T} a={K.D} b={K.A}>
         <FondoLunares color={KC.pink} />
@@ -335,24 +336,24 @@ function Lunares() {
       {/* 9 · ABCDE */}
       <Escena T={T} a={K.B} b={K.C}>
         <FondoLunares color={KC.yellow} />
-        {T > B2 - 0.3 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, B2 - 0.3, B2 + 0.3) }}>{svg(<>
+        {T > B2 - 0.3 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, B2 - 0.3, B2 + 0.3) }}>{svg(<g transform="translate(0 150)">
           <Palma x={210} y={930} s={1} /><Aro x={228} y={960} T={T} p={kprog(T, B2 + 0.8, B2 + 1.3)} />
           <Planta x={540} y={950} s={1} /><Aro x={530} y={1010} T={T} p={kprog(T, B2 + 1.3, B2 + 1.8)} />
           <Una x={860} y={960} s={1} /><Aro x={860} y={858} T={T} p={kprog(T, B2 + 1.9, B2 + 2.4)} />
           <text x={210} y={1150} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>palmas</text>
           <text x={540} y={1150} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>plantas</text>
           <text x={860} y={1150} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>uñas</text>
-        </>)}</div>}
+        </g>)}</div>}
       </Escena>
       {T < B2 + 0.4 && <div style={{ position:'absolute', inset:0, zIndex:40, opacity:1 - kprog(T, B2 - 0.2, B2 + 0.3) }}>
-        <TarjetaABCDE T={T} at={K.B + 0.5} letra="A" palabra="asimetría" x={60} y={560} dibujo={dibA} />
-        <TarjetaABCDE T={T} at={K.B + 1.2} letra="B" palabra="borde irregular" x={390} y={560} dibujo={dibB} />
-        <TarjetaABCDE T={T} at={K.B + 2.4} letra="C" palabra="varios colores" x={720} y={560} dibujo={dibC} />
-        <TarjetaABCDE T={T} at={K.B + 3.4} letra="D" palabra="suele ser > 6 mm" x={225} y={880} dibujo={dibD} />
-        <TarjetaABCDE T={T} at={K.B + 5.2} letra="E" palabra="que cambie" x={555} y={880} dibujo={dibE} />
+        <TarjetaABCDE T={T} at={K.B + 0.5} letra="A" palabra="asimetría" x={60} y={720} dibujo={dibA} />
+        <TarjetaABCDE T={T} at={K.B + 1.2} letra="B" palabra="borde irregular" x={390} y={720} dibujo={dibB} />
+        <TarjetaABCDE T={T} at={K.B + 2.4} letra="C" palabra="varios colores" x={720} y={720} dibujo={dibC} />
+        <TarjetaABCDE T={T} at={K.B + 3.4} letra="D" palabra="suele ser > 6 mm" x={225} y={1040} dibujo={dibD} />
+        <TarjetaABCDE T={T} at={K.B + 5.2} letra="E" palabra="que cambie" x={555} y={1040} dibujo={dibE} />
       </div>}
-      <Chip T={T} at={K.B + 0.2} until={B2 - 0.3} texto="ABCDE · revisa tus lunares" x={540} y={460} tam={36} borde={KC.red} />
-      <Chip T={T} at={B2 + 0.2} until={K.C - 0.2} texto="en piel oscura, revisa también" x={640} y={470} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.B + 0.2} until={B2 - 0.3} texto="ABCDE · revisa tus lunares" x={540} y={600} tam={36} borde={KC.red} />
+      <Chip T={T} at={B2 + 0.2} until={K.C - 0.2} texto="en piel oscura, revisa también" x={640} y={620} tam={32} borde={KC.ink} />
       {/* 10 · cierre: la misma imagen, ahora con dermatólogo */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.mint} />

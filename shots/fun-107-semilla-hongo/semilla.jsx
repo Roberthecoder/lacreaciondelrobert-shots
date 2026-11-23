@@ -249,7 +249,8 @@ function SemillaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(Z(390, 1060, 1.55, 540, 1070, <>
-          <rect x={-400} y={1060} width={KW + 800} height={200} fill="#3a3528" opacity=".95" />
+          <defs><linearGradient id="se-agar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#5e5640" /><stop offset="1" stopColor="#2a261c" /></linearGradient></defs>
+          <rect x={-400} y={1060} width={KW + 800} height={200} fill="url(#se-agar)" opacity=".95" />
           <rect x={-400} y={1060} width={KW + 800} height={10} fill="#fff" opacity=".35" />
           <text x={680} y={1240} textAnchor="end" style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>agar</text>
           {ESP_CAEN.map((e, i) => { const u = kprog(T, K.Es + 0.2 + e.d, K.Es + 1.0 + e.d, kEase.sale); const yy = klerp(380, e.y + 40, u);
@@ -295,7 +296,8 @@ function SemillaShot() {
       {/* 7 · lotes cada vez más grandes */}
       <Escena T={T} a={K.Lo} b={K.P} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<>
+        {/* belleza: el diagrama placa → frascos → bolsas 1.1× y centrado */}
+        {fsvg(<g transform="translate(540 1040) scale(1.1) translate(-540 -1000)">
           <Petri x={160} y={770} r={90}><Colonia cx={0} cy={0} r={78} seed={6} /></Petri>
           <Flecha x1={270} y1={770} x2={340} y2={770} p={kprog(T, K.Lo + 0.2, K.Lo + 0.5)} />
           <FrascoGrano T={T} x={470} y={880} s={0.45} col={kprog(T, K.Lo + 0.4, K.Lo + 1.2)} id="fl0" />
@@ -309,7 +311,7 @@ function SemillaShot() {
             {T > K.Lo + 1.4 && <text x={290} y={1215}>3 frascos</text>}
             {T > K.Lo + 2.5 && <text x={825} y={860}>bolsas</text>}
           </g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 8 · re-gancho */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.08}>
@@ -400,7 +402,7 @@ function SemillaShot() {
       <BarraEscala T={T} at={E2} until={K.Cl} texto="5 cm" largo={110} color={KC.ink} />
       <BarraEscala T={T} at={K.Cl} until={K.R} texto="5 cm" largo={160} color={KC.ink} />
       <BarraEscala T={T} at={K.R} until={K.Lo} texto="50 cm" largo={300} color={KC.ink} />
-      <BarraEscala T={T} at={K.Lo} until={K.P} texto="10 cm" largo={110} color={KC.ink} />
+      <BarraEscala T={T} at={K.Lo} until={K.P} texto="10 cm" largo={121} color={KC.ink} />
       <BarraEscala T={T} at={K.P} until={K.E} texto="5 cm" largo={175} color={KC.ink} />
       <BarraEscala T={T} at={K.E} until={K.Ro} texto="esquemático" largo={0} />
       <BarraEscala T={T} at={K.Ro} until={K.D} texto="5 cm" largo={289} color={KC.ink} />

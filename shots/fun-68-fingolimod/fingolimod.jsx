@@ -13,10 +13,14 @@ function Capsula({ x, y, s = 1, rot = 0 }) {
 }
 function ManoAbierta({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -230 60 Q -260 -20 -180 -40 L 180 -40 Q 250 -30 240 40 Q 230 110 150 130 L -150 130 Q -220 120 -230 60 Z" fill={FG.piel} stroke={KC.ink} strokeWidth={9} />
-    {[-150, -60, 30, 120].map((fx, i) => <rect key={i} x={fx} y={-150 + (i === 0 || i === 3 ? 30 : 0)} width={70} height={150} rx={34} fill={FG.piel} stroke={KC.ink} strokeWidth={8} />)}
-    <path d="M -230 40 Q -320 -30 -300 -100 Q -270 -110 -240 -60" fill={FG.piel} stroke={KC.ink} strokeWidth={8} />
-    <rect x={-200} y={130} width={400} height={220} fill="#2a3aa8" stroke={KC.ink} strokeWidth={8} />
+    <defs><linearGradient id="gPielFG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fbd8bb" /><stop offset="0.55" stopColor={FG.piel} /><stop offset="1" stopColor="#c98a63" /></linearGradient>
+      <linearGradient id="gMangaFG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#3a4cc0" /><stop offset="0.4" stopColor="#2a3aa8" /><stop offset="1" stopColor="#18226a" /></linearGradient></defs>
+    <path d="M -230 60 Q -260 -20 -180 -40 L 180 -40 Q 250 -30 240 40 Q 230 110 150 130 L -150 130 Q -220 120 -230 60 Z" fill="url(#gPielFG)" stroke={KC.ink} strokeWidth={9} />
+    {[-150, -60, 30, 120].map((fx, i) => <g key={i}><rect x={fx} y={-150 + (i === 0 || i === 3 ? 30 : 0)} width={70} height={150} rx={34} fill="url(#gPielFG)" stroke={KC.ink} strokeWidth={8} />
+      <ellipse cx={fx + 35} cy={-118 + (i === 0 || i === 3 ? 30 : 0)} rx={18} ry={10} fill="rgba(255,255,255,.35)" /></g>)}
+    <path d="M -230 40 Q -320 -30 -300 -100 Q -270 -110 -240 -60" fill="url(#gPielFG)" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-200} y={130} width={400} height={220} fill="url(#gMangaFG)" stroke={KC.ink} strokeWidth={8} />
+    {[-120, -40, 40, 120].map((dx) => <line key={dx} x1={dx} y1={150} x2={dx + 8} y2={340} stroke="rgba(0,0,0,.2)" strokeWidth={6} />)}
   </g>;
 }
 function Cigarra({ x, y, s = 1, T = 0, hongo = 0 }) {
@@ -117,7 +121,7 @@ function FingoShot() {
       {/* 0 · gancho: la cápsula en la mano; no es de una planta */}
       <Escena T={T} a={K.G} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<><ManoAbierta x={470} y={1060} s={1.5} /><Capsula x={470} y={810 + Math.sin(T * 3) * 8} s={1.5} rot={capRot} />
+        {fsvg(<><ManoAbierta x={470} y={1000} s={1.5} /><Capsula x={470} y={750 + Math.sin(T * 3) * 8} s={1.5} rot={capRot} />
           {(() => { const p = kprog(T, K.G + 2.0, K.G + 2.6, kEase.rebote); return p > 0 ? <Cigarra x={860} y={640} s={0.95 * p} T={T} hongo={kprog(T, K.G + 2.6, K.G + 3.6)} /> : null; })()}</>)}
       </Escena>
       {/* 1 · Isaria sinclairii en la ninfa enterrada */}
@@ -126,7 +130,7 @@ function FingoShot() {
         {fsvg(<>
           <rect x={0} y={0} width={1080} height={560} fill="#18273f" /><rect x={0} y={540} width={1080} height={40} fill="#2f7a37" stroke={KC.ink} strokeWidth={6} />
           {Array.from({ length: 30 }, (_, i) => <circle key={i} cx={(i * 137) % 1080} cy={640 + (i * 71) % 560} r={6 + (i % 3) * 3} fill="#4a2e1a" />)}
-          <Ninfa x={560} y={1170} s={1.6} p={kprog(T, K.H + 0.3, K.H + 2.6)} T={T} />
+          <Ninfa x={430} y={1170} s={1.6} p={kprog(T, K.H + 0.3, K.H + 2.6)} T={T} />
         </>)}
       </Escena>
       {/* 2 · lo cultivaron en un caldo (Kioto) */}
@@ -216,27 +220,27 @@ function FingoShot() {
             <rect x={-8} y={80} width={16} height={90} fill="#aab" stroke={KC.ink} strokeWidth={3} /><rect x={-50} y={-200} width={100} height={24} rx={6} fill="#aab" stroke={KC.ink} strokeWidth={4} />
           </g>
           {(() => { const p = kprog(T, K.Or + 1.4, K.Or + 1.8, kEase.rebote); return p > 0 ? <g transform={`translate(790 900) scale(${p})`}><path d="M -110 -110 L 110 110 M 110 -110 L -110 110" stroke={KC.ink} strokeWidth={22} strokeLinecap="round" opacity=".7" /></g> : null; })()}
-          <Sello T={T} at={K.Or + 0.4} x={300} y={600} texto="FDA · 2010" color={KC.blue} r={100} />
+          <Sello T={T} at={K.Or + 0.4} x={370} y={610} texto="FDA · 2010" color={KC.blue} r={100} />
         </g>)}
       </Escena>
       {/* 12 · cierre: la misma mano; por dentro, la ninfa con el hongo */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<><ManoAbierta x={470} y={1060} s={1.5} /><Capsula x={470} y={810 + Math.sin(T * 3) * 8} s={1.5} rot={(T - K.C) * 40} /></>)}
-        <Lupa T={T} at={K.C + 0.4} until={K.Ou} x={790} y={520} r={220} fx={490} fy={810} interior={interiorNinfa} tinte={KC.gold2} etiqueta="POR DENTRO · su origen" />
+        {fsvg(<><ManoAbierta x={470} y={1000} s={1.5} /><Capsula x={470} y={750 + Math.sin(T * 3) * 8} s={1.5} rot={(T - K.C) * 40} /></>)}
+        <Lupa T={T} at={K.C + 0.4} until={K.Ou} x={800} y={440} r={210} fx={490} fy={750} interior={interiorNinfa} tinte={KC.gold2} etiqueta="POR DENTRO · su origen" />
       </Escena>
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 1.8} until={K.H - 0.2} texto="¿de una planta?" x={290} y={470} tam={42} />
       <Chip T={T} at={K.G + 2.2} until={K.H - 0.2} texto="de un hongo de cigarras" x={300} y={560} tam={36} borde={KC.gold} />
-      <Etq T={T} at={K.H + 0.5} until={K.Cl - 0.3} x={60} y={470} texto="Isaria sinclairii" it tam={40} color={KC.ink} />
-      <Etq T={T} at={K.H + 1.0} until={K.Cl - 0.3} x={60} y={525} texto="pariente de Cordyceps" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.H + 0.5} until={K.Cl - 0.3} x={1040} y={470} lado="izq" texto="Isaria sinclairii" it tam={40} color={KC.ink} />
+      <Etq T={T} at={K.H + 1.0} until={K.Cl - 0.3} x={1040} y={525} lado="izq" texto="pariente de Cordyceps" tam={30} color={KC.ink} />
       <Etq T={T} at={K.H + 1.8} until={K.Cl - 0.3} x={60} y={1420} texto="ninfa de cigarra (bajo tierra)" tam={28} color={KC.texto} />
-      <Chip T={T} at={K.Cl + 0.3} until={K.Mi - 0.3} texto="Universidad de Kioto · Fujita" x={540} y={380} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Cl + 0.3} until={K.Mi - 0.3} texto="Universidad de Kioto · Fujita" x={540} y={380} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.Cl + 1.2} until={K.Mi - 0.3} x={60} y={1410} texto="caldo de cultivo" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Mi + 0.4} until={K.To - 0.3} x={60} y={620} texto="miriocina" tam={36} color={FG.mol} />
+      <Etq T={T} at={K.Mi + 0.4} until={K.To - 0.3} x={60} y={575} texto="miriocina" tam={36} color={FG.mol} />
       <Chip T={T} at={K.Mi + 2.6} until={K.To - 0.3} texto="10 a 100 veces más potente" x={540} y={470} tam={36} borde={KC.gold} />
-      <Etq T={T} at={K.Mi + 0.8} until={K.To - 0.3} x={60} y={400} texto="Fujita et al., J Antibiot, 1994" tam={24} color={KC.texto} />
+      <Etq T={T} at={K.Mi + 0.8} until={K.To - 0.3} x={60} y={400} texto="Fujita et al., J Antibiot, 1994" tam={28} color={KC.texto} />
       <Chip T={T} at={K.To + 0.3} until={K.Cb - 0.3} texto="tóxica" x={300} y={470} tam={44} borde={KC.red} />
       <Chip T={T} at={K.To + 0.8} until={K.Cb - 0.3} texto="casi no se disolvía" x={300} y={560} tam={36} borde={KC.red} />
       <Etq T={T} at={K.Cb + 0.5} until={K.Na - 0.3} x={60} y={1170} texto="le quitaron partes" tam={30} color={KC.red} />
@@ -248,13 +252,13 @@ function FingoShot() {
       <Etq T={T} at={K.Me + 1.4} until={K.Ga - 0.3} x={60} y={1300} texto="mielina: cubierta del nervio" tam={28} color={FG.mielina} />
       <Etq T={T} at={K.Ga + 0.3} until={K.E - 0.3} x={60} y={930} texto="ganglio linfático" tam={28} color={KC.ink} />
       <Etq T={T} at={K.Ga + 0.6} until={K.E - 0.3} x={1060} y={1190} lado="izq" texto="cerebro y médula" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Ga + 1.0} until={K.E - 0.3} texto="receptor S1P" x={300} y={560} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Ga + 2.4} until={K.E - 0.3} texto="se cree: el mecanismo exacto no se conoce" x={540} y={420} tam={26} borde={KC.gold} />
+      <Chip T={T} at={K.Ga + 1.0} until={K.E - 0.3} texto="receptor S1P" x={300} y={560} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.Ga + 2.4} until={K.E - 0.3} texto="se cree: el mecanismo exacto no se conoce" x={540} y={420} tam={37} borde={KC.gold} />
       <TarjetaEstudio T={T} at={K.E + 0.15} until={K.Or - 0.2} anio="FREEDOMS" quien="1,272 pacientes · publicado en 2010" revista="Kappos et al., NEJM, 2010" y={430} />
       <Etq T={T} at={K.E + 1.4} until={K.Or - 0.3} x={1020} y={720} lado="izq" texto="recaídas por año" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Or + 0.8} until={K.C - 0.3} texto="primer tratamiento oral" x={330} y={1300} tam={36} borde={KC.gold} />
-      <Etq T={T} at={K.Or + 1.6} until={K.C - 0.3} x={1040} y={1300} lado="izq" texto="antes: inyectables" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="no es consejo médico" x={300} y={470} tam={30} borde={KC.red} />
+      <Etq T={T} at={K.Or + 1.6} until={K.C - 0.3} x={1040} y={1300} lado="izq" texto="antes: inyectables" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="no es consejo médico" x={330} y={310} tam={37} borde={KC.red} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.H} texto="dibujos no a escala" largo={0} />

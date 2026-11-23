@@ -22,12 +22,26 @@ function CelularCadena({ T, x, y, s = 1, rot = -6, vibra = 0, o = 1 }) {
     </div>
   </div>;
 }
+// Degradados de volumen (pase de belleza): luz arriba a la izquierda, sombra abajo a la derecha.
+function DefsSis() {
+  return <defs>
+    <linearGradient id="ssMapa" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fff1c4" /><stop offset="0.6" stopColor="#f2d98f" /><stop offset="1" stopColor="#c9a95e" /></linearGradient>
+    <linearGradient id="ssRoca1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#dca066" /><stop offset="1" stopColor="#9c6634" /></linearGradient>
+    <linearGradient id="ssRoca2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#b97c46" /><stop offset="1" stopColor="#7a4d26" /></linearGradient>
+    <linearGradient id="ssMetal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#7d879a" /><stop offset="0.5" stopColor="#5b6475" /><stop offset="1" stopColor="#3c4352" /></linearGradient>
+    <linearGradient id="ssBloque" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#e6eaf0" /><stop offset="0.6" stopColor="#c3c9d4" /><stop offset="1" stopColor="#959dab" /></linearGradient>
+    <linearGradient id="ssNaranja" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#ffb36b" /><stop offset="0.55" stopColor="#f08a2e" /><stop offset="1" stopColor="#b85d14" /></linearGradient>
+    <radialGradient id="ssTierra" cx="35%" cy="30%" r="80%"><stop offset="0" stopColor="#6f9dff" /><stop offset="0.6" stopColor="#2f6dff" /><stop offset="1" stopColor="#173a99" /></radialGradient>
+    <radialGradient id="ssBola" cx="35%" cy="30%" r="75%"><stop offset="0" stopColor="#efe4ff" /><stop offset="0.5" stopColor="#b18cff" /><stop offset="1" stopColor="#6a45b8" /></radialGradient>
+    <linearGradient id="ssBote" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#a5b0c4" /><stop offset="0.5" stopColor="#7f8ba3" /><stop offset="1" stopColor="#566078" /></linearGradient>
+  </defs>;
+}
 // Bola de cristal (la "predicción").
 function BolaCristal({ x, y, s = 1, T = 0, rota = 0 }) {
   const b = 0.5 + 0.5 * Math.sin(T * 4);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d="M -80 70 L 80 70 L 60 30 L -60 30 Z" fill={KC.violet} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
-    <circle cx={0} cy={-40} r={84} fill={mixHex('#b18cff', '#e8d9ff', b * 0.5)} stroke={KC.ink} strokeWidth={8} opacity=".95" />
+    <circle cx={0} cy={-40} r={84} fill="url(#ssBola)" stroke="#e8d9ff" strokeWidth={5} opacity={0.85 + 0.15 * b} />
     <path d="M -46 -80 Q -30 -100 -6 -104" stroke="#fff" strokeWidth={10} strokeLinecap="round" fill="none" opacity=".8" />
     <text x={0} y={-22} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.violet} opacity={0.4 + 0.5 * b}>?</text>
     {rota > 0 && <g opacity={rota}><line x1={-90} y1={-130} x2={90} y2={50} stroke={KC.red} strokeWidth={16} strokeLinecap="round" /><line x1={90} y1={-130} x2={-90} y2={50} stroke={KC.red} strokeWidth={16} strokeLinecap="round" /></g>}
@@ -88,9 +102,9 @@ function Falla({ x, y, s = 1, T = 0, tension = 0 }) {
   const j = tension * Math.sin(T * 40) * 4;
   const grieta = 'M 0 -230 L 30 -170 L -10 -110 L 26 -40 L -14 30 L 22 100 L -8 170 L 14 230';
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <g transform={`translate(${-j} ${j * 0.5})`}><path d={`M -260 -230 L 0 -230 L 30 -170 L -10 -110 L 26 -40 L -14 30 L 22 100 L -8 170 L 14 230 L -260 230 Z`} fill="#c98a4b" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <g transform={`translate(${-j} ${j * 0.5})`}><path d={`M -260 -230 L 0 -230 L 30 -170 L -10 -110 L 26 -40 L -14 30 L 22 100 L -8 170 L 14 230 L -260 230 Z`} fill="url(#ssRoca1)" stroke="#f0c595" strokeOpacity={0.7} strokeWidth={5} strokeLinejoin="round" />
       {[-170, -60, 50, 150].map((yy, i) => <path key={i} d={`M -240 ${yy} q 60 -18 120 0 t 110 0`} stroke="rgba(0,0,0,.25)" strokeWidth={6} fill="none" />)}</g>
-    <g transform={`translate(${j} ${-j * 0.5})`}><path d={`M 260 -230 L 0 -230 L 30 -170 L -10 -110 L 26 -40 L -14 30 L 22 100 L -8 170 L 14 230 L 260 230 Z`} fill="#a86d3a" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <g transform={`translate(${j} ${-j * 0.5})`}><path d={`M 260 -230 L 0 -230 L 30 -170 L -10 -110 L 26 -40 L -14 30 L 22 100 L -8 170 L 14 230 L 260 230 Z`} fill="url(#ssRoca2)" stroke="#e0ad7c" strokeOpacity={0.7} strokeWidth={5} strokeLinejoin="round" />
       {[-130, -20, 90, 190].map((yy, i) => <path key={i} d={`M 40 ${yy} q 60 -18 110 0 t 100 0`} stroke="rgba(0,0,0,.25)" strokeWidth={6} fill="none" />)}</g>
     <path d={grieta} stroke={KC.red} strokeWidth={6 + tension * 6} fill="none" opacity={tension} strokeLinejoin="round" />
   </g>;
@@ -101,15 +115,15 @@ function MaquinaFalla({ x, y, s = 1, T = 0, fase = 0, desliz = 0 }) {
   const baja = fase * 14, salto = desliz * 22, sacude = desliz * Math.sin(T * 80) * 5;
   const amp = 0.3 + fase * 0.9;
   return <g transform={`translate(${x + sacude} ${y}) scale(${s})`}>
-    <rect x={-300} y={-300} width={600} height={40} rx={10} fill="#5b6475" stroke={KC.ink} strokeWidth={7} />
-    <rect x={-300} y={-300} width={40} height={560} rx={10} fill="#5b6475" stroke={KC.ink} strokeWidth={7} />
-    <rect x={260} y={-300} width={40} height={560} rx={10} fill="#5b6475" stroke={KC.ink} strokeWidth={7} />
+    <rect x={-300} y={-300} width={600} height={40} rx={10} fill="url(#ssMetal)" stroke="#b9c3d4" strokeWidth={4} />
+    <rect x={-300} y={-300} width={40} height={560} rx={10} fill="url(#ssMetal)" stroke="#b9c3d4" strokeWidth={4} />
+    <rect x={260} y={-300} width={40} height={560} rx={10} fill="url(#ssMetal)" stroke="#b9c3d4" strokeWidth={4} />
     <rect x={-30} y={-260 + baja + salto} width={60} height={100} fill="#9aa3b5" stroke={KC.ink} strokeWidth={6} />
-    <rect x={-220} y={-110} width={150} height={340} rx={10} fill="#c9ced8" stroke={KC.ink} strokeWidth={7} />
-    <rect x={70} y={-110} width={150} height={340} rx={10} fill="#c9ced8" stroke={KC.ink} strokeWidth={7} />
-    <rect x={-70} y={-160 + baja + salto} width={140} height={330} rx={10} fill={KC.orange} stroke={KC.ink} strokeWidth={7} />
+    <rect x={-220} y={-110} width={150} height={340} rx={10} fill="url(#ssBloque)" stroke="#eef1f6" strokeWidth={4} />
+    <rect x={70} y={-110} width={150} height={340} rx={10} fill="url(#ssBloque)" stroke="#eef1f6" strokeWidth={4} />
+    <rect x={-70} y={-160 + baja + salto} width={140} height={330} rx={10} fill="url(#ssNaranja)" stroke="#ffd0a0" strokeWidth={4} />
     {[-110, -40, 30, 100].map((yy) => <g key={yy}><line x1={-70} y1={yy + baja + salto} x2={-56} y2={yy + 14 + baja + salto} stroke={KC.ink} strokeWidth={4} /><line x1={56} y1={yy + baja + salto} x2={70} y2={yy + 14 + baja + salto} stroke={KC.ink} strokeWidth={4} /></g>)}
-    <rect x={-300} y={230} width={600} height={40} rx={10} fill="#5b6475" stroke={KC.ink} strokeWidth={7} />
+    <rect x={-300} y={230} width={600} height={40} rx={10} fill="url(#ssMetal)" stroke="#b9c3d4" strokeWidth={4} />
     <g transform="translate(-220 40)"><rect x={-34} y={-22} width={34} height={44} rx={8} fill={KC.ink} /><circle cx={-48} r={22} fill="#2b3445" stroke={KC.ink} strokeWidth={5} /></g>
     {[0, 1, 2, 3].map((k) => <path key={k} d={`M ${-290 - k * 26} ${40 - 30 - k * 18} Q ${-310 - k * 34} 40 ${-290 - k * 26} ${40 + 30 + k * 18}`} stroke={KC.cyan} strokeWidth={6} fill="none" strokeLinecap="round"
       opacity={kclamp(amp * (0.3 + 0.7 * Math.max(0, Math.sin(T * 10 - k * 0.9))), 0, 1)} />)}
@@ -119,7 +133,7 @@ function MaquinaFalla({ x, y, s = 1, T = 0, fase = 0, desliz = 0 }) {
 function Tierra({ x, y, r = 300, T = 0 }) {
   const g = (T * 12) % 360;
   return <g transform={`translate(${x} ${y})`}>
-    <circle r={r} fill="#2f6dff" stroke={KC.ink} strokeWidth={10} />
+    <circle r={r} fill="url(#ssTierra)" stroke="#a9c4ff" strokeWidth={5} />
     <clipPath id="tierraClip"><circle r={r - 4} /></clipPath>
     <g clipPath="url(#tierraClip)"><g transform={`translate(${((g / 360) * r * 2) % (r * 2) - r} 0)`}>
       {[0, r * 2].map((ox) => <g key={ox} transform={`translate(${ox - r} 0)`}>
@@ -152,9 +166,9 @@ function MapaReplicas({ T, x, y, n = 11, celda = 56, on = 0, seed = 5 }) {
 // Bote de basura.
 function Basura({ x, y, s = 1, tapa = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -90 -60 L 90 -60 L 70 130 L -70 130 Z" fill="#7f8ba3" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <path d="M -90 -60 L 90 -60 L 70 130 L -70 130 Z" fill="url(#ssBote)" stroke="#d3d9e4" strokeWidth={5} strokeLinejoin="round" />
     {[-40, 0, 40].map((xx) => <line key={xx} x1={xx} y1={-30} x2={xx * 0.85} y2={104} stroke={KC.ink} strokeWidth={6} opacity=".5" />)}
-    <g transform={`rotate(${-tapa * 35} -100 -70)`}><rect x={-105} y={-86} width={210} height={26} rx={10} fill="#5b6475" stroke={KC.ink} strokeWidth={7} /><rect x={-26} y={-104} width={52} height={20} rx={8} fill="#5b6475" stroke={KC.ink} strokeWidth={6} /></g>
+    <g transform={`rotate(${-tapa * 35} -100 -70)`}><rect x={-105} y={-86} width={210} height={26} rx={10} fill="url(#ssMetal)" stroke="#b9c3d4" strokeWidth={4} /><rect x={-26} y={-104} width={52} height={20} rx={8} fill="#5b6475" stroke={KC.ink} strokeWidth={6} /></g>
   </g>;
 }
 // Audífonos para el robotito.
@@ -177,7 +191,7 @@ function Sismos() {
   const K = { G: CUES.Gancho, P: CUES.Predecir, A: CUES.Alerta, E: CUES.Escuchar, Q: CUES.Pregunta, L: CUES.Laboratorio, R: CUES.Replicas, N: CUES.Neurona, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   const L2 = K.L + (K.R - K.L) * 0.81;               // "Pero era una máquina, no la Tierra."
-  const svg = (c, z = 10) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{c}</svg>;
+  const svg = (c, z = 10) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}><DefsSis />{c}</svg>;
 
   // sismo del mapa (alerta)
   const tS = K.A + 2.0, [ex, ey] = pMapa(-100.1, 16.95), [cx, cy] = pMapa(-99.13, 19.43);
@@ -221,7 +235,7 @@ function Sismos() {
       <Escena T={T} a={K.A} b={K.E} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <MapaMexico x={OX_MAP} y={OY_MAP} ancho={1000 * S_MAP} color="#ffe9a8" />
+          <MapaMexico x={OX_MAP} y={OY_MAP} ancho={1000 * S_MAP} color="url(#ssMapa)" />
           {COSTA.map(([lo, la], i) => { const [px, py] = pMapa(lo, la), e = kprog(T, K.A + 0.3 + i * 0.05, K.A + 0.6 + i * 0.05, kEase.rebote);
             return <g key={i} transform={`translate(${px} ${py}) scale(${e})`}><rect x={-11} y={-11} width={22} height={22} rx={5} fill={KC.blue} stroke={KC.ink} strokeWidth={4} /></g>; })}
           {T > tS && <g>
@@ -290,15 +304,15 @@ function Sismos() {
       {/* 8 · una neurona contra 13 451 parámetros */}
       <Escena T={T} a={K.N} b={K.C}>
         <FondoLunares color={KC.teal} />
-        <RedNeuronal T={T} x={150} y={790} ancho={780} alto={400} capas={[4, 7, 7, 7, 1]} onda={(T * 0.6) % 1} o={klerp(0.55, 1, kprog(T, K.N + 3.2, K.N + 3.6))} />
-        {svg(<g opacity={klerp(0.6, 1, kprog(T, K.N + 1.8, K.N + 2.1))} transform="translate(320 600) scale(1.6) translate(-800 -482)">
+        <RedNeuronal T={T} x={130} y={880} ancho={820} alto={440} capas={[4, 7, 7, 7, 1]} onda={(T * 0.6) % 1} o={klerp(0.55, 1, kprog(T, K.N + 3.2, K.N + 3.6))} />
+        {svg(<g opacity={klerp(0.6, 1, kprog(T, K.N + 1.8, K.N + 2.1))} transform="translate(330 690) scale(1.7) translate(-800 -482)">
           <circle cx={800} cy={482} r={52 * (1 + 0.06 * Math.sin(T * 5))} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
           <line x1={670} y1={457} x2={750} y2={472} stroke={KC.ink} strokeWidth={7} /><line x1={670} y1={512} x2={750} y2={494} stroke={KC.ink} strokeWidth={7} /><line x1={852} y1={482} x2={930} y2={482} stroke={KC.ink} strokeWidth={7} />
         </g>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.N + 0.2} until={K.N + 1.8} anio="2019" quien="Mignan y Broccardo" revista="Nature · «Una neurona contra el aprendizaje profundo»" y={390} />
-      <NumeroGigante T={T} at={K.N + 1.9} until={K.C - 0.2} valor={2} etiqueta="parámetros" x={770} y={570} tam={120} color={KC.yellow} dur={0.3} />
-      <NumeroGigante T={T} at={K.N + 3.4} until={K.C - 0.2} valor={13} etiqueta="parámetros" x={540} y={1330} tam={110} color={KC.red} dur={0.01} sufijo=" 451" />
+      <NumeroGigante T={T} at={K.N + 1.9} until={K.C - 0.2} valor={2} etiqueta="parámetros" x={780} y={670} tam={120} color={KC.yellow} dur={0.3} />
+      <NumeroGigante T={T} at={K.N + 3.4} until={K.C - 0.2} valor={13} etiqueta="parámetros" x={540} y={1445} tam={110} color={KC.red} dur={0.01} sufijo=" 451" />
       <Chip T={T} at={K.N + 4.6} until={K.C - 0.2} texto="mismo acierto: 0.85 = 0.85" x={540} y={360} tam={34} borde={KC.leaf} />
       {/* 9 · cierre: el mismo celular, a la basura */}
       <Escena T={T} a={K.C} b={FIN}>

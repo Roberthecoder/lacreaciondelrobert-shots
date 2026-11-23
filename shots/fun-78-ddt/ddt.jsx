@@ -254,7 +254,7 @@ function DdtShot() {
   // pase a mano (cine): reencuadre de una escena; el punto (x0, y0) del dibujo viejo pasa a (X, Y) y todo crece k veces.
   const zg = (x0, y0, k, X, Y) => `translate(${X} ${Y}) scale(${k}) translate(${-x0} ${-y0})`;
   // la lista de 1985 en dos filas, más grande
-  const MOLP = [[200, 880], [540, 880], [880, 880], [370, 1230], [710, 1230]];
+  const MOLP = [[200, 860], [540, 860], [880, 860], [370, 1230], [710, 1230]];   // belleza: moléculas más grandes (0.8 → 1.0)
   // tiempos de golpe de enzimas y ruptura (ilustrativo)
   const hits = {}, splits = {};
   BLANCOS.forEach((i, k) => { hits[i] = K.En + 1.2 + k * 0.38; splits[i] = K.R + 0.25 + k * 0.32; });
@@ -320,11 +320,11 @@ function DdtShot() {
           </g>}
           {T > K.Ls - 0.3 && <g opacity={kprog(T, K.Ls - 0.3, K.Ls + 0.2)}>
             {MOLS.map((t, i) => { const on = kprog(T, K.Ls + 0.2 + i * 0.35, K.Ls + 0.6 + i * 0.35, kEase.rebote); const parte = kprog(T, K.Ls + 1.0 + i * 0.35, K.Ls + 3.0 + i * 0.35);
-              return <g key={i} opacity={on * (1 - parte * 0.4)}><MolLista tipo={t} x={MOLP[i][0]} y={MOLP[i][1]} s={0.8} T={T} /></g>; })}
+              return <g key={i} opacity={on * (1 - parte * 0.4)}><MolLista tipo={t} x={MOLP[i][0]} y={MOLP[i][1]} s={1.0} T={T} /></g>; })}
             {MOLS.map((t, i) => Array.from({ length: 4 }, (_, j) => { const t0 = K.Ls + 1.0 + i * 0.35 + j * 0.5; if (T < t0) return null; const u = kprog(T, t0, t0 + 2.2);
               if (u >= 1) return null; return <g key={i + '-' + j} opacity={1 - u}><circle cx={MOLP[i][0] + Math.sin(j * 2 + i) * 20} cy={MOLP[i][1] - 100 - u * 300} r={34} fill="rgba(255,255,255,.75)" stroke={KC.ink} strokeWidth={4} />
                 <text x={MOLP[i][0] + Math.sin(j * 2 + i) * 20} y={MOLP[i][1] - 92 - u * 300} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill={KC.ink}>CO₂</text></g>; }))}
-            {MOLN.map((n, i) => <text key={i} x={MOLP[i][0]} y={MOLP[i][1] + 150} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Ls + 0.4 + i * 0.35, K.Ls + 0.8 + i * 0.35)}>{n}</text>)}
+            {MOLN.map((n, i) => <text key={i} x={MOLP[i][0]} y={MOLP[i][1] + 150} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Ls + 0.4 + i * 0.35, K.Ls + 0.8 + i * 0.35)}>{n}</text>)}
           </g>}
         </>)}
       </Escena>
@@ -413,14 +413,14 @@ function DdtShot() {
       <Nota T={T} at={K.E + 2.6} until={K.Ls - 0.3} y={900} ancho={880} tam={30} borde={KC.gold} texto="con DDT: todo indica que usa sus enzimas de la lignina, fuera de la célula" />
       <Chip T={T} at={K.Ls + 0.2} until={K.S - 0.3} texto="pasaron a CO₂" x={540} y={430} tam={36} borde={KC.mint} />
       <Chip T={T} at={K.Ls + 2.6} until={K.S - 0.3} texto="parte, no todo" x={540} y={1470} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.S + 0.4} until={K.Lm - 0.3} texto="1987 · también mineralizó DDT · en laboratorio" x={540} y={760} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.S + 0.4} until={K.Lm - 0.3} texto="1987 · también mineralizó DDT · en laboratorio" x={540} y={760} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.S + 1.0} until={K.Lm - 0.3} x={60} y={850} texto="seta · Pleurotus ostreatus" it tam={32} color={KC.ink} />
       <Grande T={T} at={K.Lm + 0.3} until={K.Su - 0.3} x={330} y={530} texto="9–23 %" etiqueta="se volvió CO₂" tam={140} color={KC.mint} />
       <TarjetaEstudio T={T} at={K.Lm + 2.6} until={K.Su - 0.3} anio="1990" quien="lindano y clordano" revista="AEM, 1990 · 30–60 días" x={380} y={1000} />
-      <Chip T={T} at={K.Su + 0.2} until={K.C - 0.3} texto="2026 · PLOS ONE · sur de Suecia" x={350} y={510} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.Su + 0.2} until={K.Su + 2.8} texto="2026 · PLOS ONE · sur de Suecia" x={350} y={510} tam={36} borde={KC.ink} />{/* belleza: cede su lugar a las dos razones (sin chips encimados) */}
       <Chip T={T} at={K.Su + 2.0} until={K.C - 0.3} texto="sin baja medible" x={630} y={890} tam={34} borde={KC.red} />
-      <Chip T={T} at={K.Su + 3.0} until={K.C - 0.3} texto="DDT viejo: poco disponible" x={350} y={590} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.Su + 3.6} until={K.C - 0.3} texto="al hongo le costó colonizar el suelo" x={360} y={670} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.Su + 3.0} until={K.C - 0.3} texto="DDT viejo: poco disponible" x={350} y={510} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Su + 3.6} until={K.C - 0.3} texto="al hongo le costó colonizar el suelo" x={400} y={590} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.C + 1.8} until={K.Ou} texto="una pista para limpiar" x={780} y={430} tam={34} borde={KC.gold} />
       <Chip T={T} at={K.C + 2.6} until={K.Ou} texto="no es magia" x={780} y={510} tam={34} borde={KC.red} />
 

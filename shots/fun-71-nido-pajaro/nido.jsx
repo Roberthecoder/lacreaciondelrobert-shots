@@ -149,7 +149,7 @@ function NidoShot() {
   const golpe = K.Go + 1.25;
   const caeG = kprog(T, K.Go + 0.2, golpe, kEase.entra || ((p) => p * p));
   const vuela = Math.max(0, T - (golpe + 0.1));
-  const COPA_G = { x: 540, y: 1150, R: 150, H: 240, s: 1.7 };
+  const COPA_G = { x: 540, y: 1150, R: 150, H: 240, s: 2.1 };   // belleza: antes 1.7 (el nido quedaba chico)
   const borde = [COPA_G.x - COPA_G.R * COPA_G.s * 0.55, COPA_G.y - COPA_G.H * COPA_G.s];
   const hv = [borde[0] + 40 + vuela * 190, borde[1] - vuela * 760 + 0.5 * 900 * vuela * vuela];
   // VUELO: arco de 1 m (máximo estimado)
@@ -179,10 +179,12 @@ function NidoShot() {
       {/* 3 · dónde crece: tarjetas y mapa */}
       <Escena T={T} a={K.D} b={K.Hu} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
+        {/* belleza: el nido sobre su madera sigue a cuadro debajo de las tarjetas (antes eran solo tarjetas) */}
+        {T < K.D + 3.6 && fsvg(<g opacity={1 - kprog(T, K.D + 3.1, K.D + 3.5)}><Madera x={-40} y={1380} w={1160} h={150} /><Copa T={T} x={540} y={1390} s={1.6} R={150} H={240} /></g>)}
         {fsvg(<>
           {T < K.D + 3.6 && [0, 1, 2].map((i) => { const e = kprog(T, K.D + 0.2 + i * 0.8, K.D + 0.6 + i * 0.8, kEase.rebote); const out = kprog(T, K.D + 3.1, K.D + 3.5);
             if (e <= 0) return null;
-            return <Tarjeta key={i} x={45 + i * 340} y={790} w={310} h={360} s={e} o={1 - out} titulo={['madera podrida', 'estiércol viejo', 'astillas'][i]}>
+            return <Tarjeta key={i} x={45 + i * 340} y={470} w={310} h={360} s={e} o={1 - out} titulo={['madera podrida', 'estiércol viejo', 'astillas'][i]}>
               {i === 0 && <><rect x={30} y={190} width={250} height={70} rx={20} fill="#6b4a2a" stroke={KC.ink} strokeWidth={5} /><path d="M 50 210 L 120 205 M 160 230 L 250 222" stroke="#3b2a1c" strokeWidth={4} /></>}
               {i === 1 && <path d="M 30 255 Q 40 190 110 185 Q 160 160 210 185 Q 280 190 280 255 Z" fill="#6a5232" stroke={KC.ink} strokeWidth={5} />}
               {i === 2 && Array.from({ length: 14 }, (_, k) => <rect key={k} x={30 + (k % 7) * 36} y={205 + Math.floor(k / 7) * 26} width={34} height={16} rx={4} fill={k % 2 ? '#d9a35a' : '#b97f3c'} stroke={KC.ink} strokeWidth={3} transform={`rotate(${(k * 37) % 30 - 15} ${47 + (k % 7) * 36} ${213 + Math.floor(k / 7) * 26})`} />)}
@@ -215,25 +217,26 @@ function NidoShot() {
           <Copa T={T} x={COPA_G.x} y={COPA_G.y} s={COPA_G.s} R={COPA_G.R} H={COPA_G.H} huevos={T > golpe + 0.1 ? [1, 2, 3, 4, 5, 6] : [0, 1, 2, 3, 4, 5, 6]} tiembla={kprog(T, golpe, golpe + 0.1) * (1 - kprog(T, golpe + 0.2, golpe + 0.6))} />
           {T < golpe && <Gota x={borde[0] - 10} y={klerp(250, borde[1] - 30, caeG)} s={1.6} />}
           <Salpica x={borde[0]} y={borde[1]} p={kprog(T, golpe, golpe + 0.8)} s={1.3} />
-          {T > golpe + 0.1 && hv[1] > 380 && <g><Huevito x={hv[0]} y={hv[1]} s={2.2} rot={vuela * 400} /><Ovillo x={hv[0] - 18} y={hv[1] + 26} s={1.6} /></g>}
+          {T > golpe + 0.1 && hv[1] > 380 && <g><Huevito x={hv[0]} y={hv[1]} s={2.7} rot={vuela * 400} /><Ovillo x={hv[0] - 22} y={hv[1] + 32} s={2.0} /></g>}
           {T > golpe + 0.1 && <path d={Array.from({ length: 20 }, (_, i) => { const t = vuela * i / 19; return `${i ? 'L' : 'M'} ${(borde[0] + 40 + t * 190).toFixed(1)} ${(borde[1] - t * 760 + 450 * t * t).toFixed(1)}`; }).join(' ')} stroke="#fff" strokeWidth={5} strokeDasharray="10 12" fill="none" opacity=".8" />}
         </>)}
       </Escena>
       {/* 7 · vuelo: 1–5 m/s, hasta ≈ 1 m */}
       <Escena T={T} a={K.V} b={K.E} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<g transform="translate(0 190)">
-          <rect x={0} y={1010} width={KW} height={400} fill="#3a2c23" />
+        {/* belleza: el conjunto sube 80 px (el arco quedaba bajo y casi vacío el centro), arco con brillo, huevito y velocímetro más grandes */}
+        {fsvg(<g transform="translate(0 110)">
+          <rect x={0} y={1010} width={KW} height={520} fill="#3a2c23" />
           <line x1={0} y1={1010} x2={KW} y2={1010} stroke={KC.ink} strokeWidth={8} />
           <Copa T={T} x={150} y={1015} s={0.5} R={150} H={240} huevos={[1, 2, 3, 4, 5, 6]} />
-          <path d={Array.from({ length: 41 }, (_, i) => { const [a, b] = arco(i / 40 * uv); return `${i ? 'L' : 'M'} ${a.toFixed(1)} ${b.toFixed(1)}`; }).join(' ')} stroke="#fff" strokeWidth={6} strokeDasharray="12 12" fill="none" />
-          {(() => { const [a, b] = arco(uv); return <g><Huevito x={a} y={b - 8} s={1.4} rot={uv * 600} /><Ovillo x={a - 10} y={b + 10} s={1.1} /></g>; })()}
+          <path d={Array.from({ length: 41 }, (_, i) => { const [a, b] = arco(i / 40 * uv); return `${i ? 'L' : 'M'} ${a.toFixed(1)} ${b.toFixed(1)}`; }).join(' ')} stroke="#fff" strokeWidth={8} strokeDasharray="14 12" fill="none" style={{ filter:'drop-shadow(0 0 8px rgba(255,255,255,.55))' }} />
+          {(() => { const [a, b] = arco(uv); return <g><Huevito x={a} y={b - 12} s={2.0} rot={uv * 600} /><Ovillo x={a - 14} y={b + 14} s={1.5} /></g>; })()}
           {/* regla en el piso */}
           <g opacity={kprog(T, K.V + 2.4, K.V + 2.8)}>
             <rect x={170} y={1030} width={760 * kprog(T, K.V + 2.4, K.V + 3.0, kEase.sale)} height={40} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
             {Array.from({ length: 11 }, (_, i) => i / 10 <= kprog(T, K.V + 2.4, K.V + 3.0) ? <line key={i} x1={170 + i * 76} y1={1030} x2={170 + i * 76} y2={i % 5 ? 1050 : 1065} stroke={KC.ink} strokeWidth={4} /> : null)}
           </g>
-          <g opacity={kprog(T, K.V + 0.3, K.V + 0.7)}><Velocimetro x={800} y={560} v={0.2 + 0.6 * kprog(T, K.V + 0.5, K.V + 1.5, kEase.sale) + Math.sin(T * 9) * 0.02} /></g>
+          <g opacity={kprog(T, K.V + 0.3, K.V + 0.7)} transform="translate(800 560) scale(1.4) translate(-800 -560)"><Velocimetro x={800} y={560} v={0.2 + 0.6 * kprog(T, K.V + 0.5, K.V + 1.5, kEase.sale) + Math.sin(T * 9) * 0.02} /></g>
         </g>)}
       </Escena>
       {/* 8 · el estudio: cámara superlenta */}
@@ -296,7 +299,7 @@ function NidoShot() {
       <Etq T={T} at={K.H + 0.3} until={K.D - 0.3} x={60} y={400} texto="hongo nido de pájaro" tam={38} color={KC.ink} />
       <Etq T={T} at={K.H + 0.9} until={K.D - 0.3} x={60} y={470} texto="Cyathus" it tam={44} color={KC.ink} />
       <Etq T={T} at={K.H + 1.6} until={K.D - 0.3} x={410} y={1150} texto="7–10 mm de alto" lado="izq" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.D + 0.1} until={K.D + 3.3} texto="¿DÓNDE CRECE?" x={540} y={700} tam={38} borde={KC.ink} mono />
+      <Chip T={T} at={K.D + 0.1} until={K.D + 3.3} texto="¿DÓNDE CRECE?" x={540} y={400} tam={38} borde={KC.ink} mono />
       <Chip T={T} at={K.D + 3.5} until={K.Hu - 0.3} texto="algunos registros en México" x={540} y={560} tam={36} borde={NP.cafe} />
       <Etq T={T} at={K.D + 3.9} until={K.Hu - 0.3} x={242} y={726} texto="Sonora" tam={30} color={KC.ink} />
       <Etq T={T} at={K.D + 4.9} until={K.Hu - 0.3} x={701} y={1018} texto="Yucatán" tam={30} lado="izq" color={KC.ink} />
@@ -306,8 +309,8 @@ function NidoShot() {
       <Etq T={T} at={K.Hu + 3.4} until={K.P - 0.3} x={620} y={1474} texto="punta pegajosa" tam={30} color={KC.yellow} />
       <Chip T={T} at={K.Go + 2.0} until={K.V - 0.3} texto="el borde: el mejor golpe" x={540} y={1400} tam={36} borde={NP.gota} />
       <Etq T={T} at={K.Go + 0.4} until={golpe} x={borde[0] + 50} y={460} texto="gota de lluvia" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.V + 0.6} until={K.E - 0.3} texto="1–5 m/s" x={800} y={610} tam={48} borde={KC.red} />
-      <Etq T={T} at={K.V + 2.9} until={K.E - 0.3} x={170} y={1310} texto="hasta ≈ 1 m (máximo estimado)" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.V + 0.6} until={K.E - 0.3} texto="1–5 m/s" x={800} y={455} tam={48} borde={KC.red} />
+      <Etq T={T} at={K.V + 2.9} until={K.E - 0.3} x={170} y={1230} texto="hasta ≈ 1 m (máximo estimado)" tam={30} color={KC.texto} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.En - 0.3} anio="2013" quien="Miami University (Ohio)" revista="Fungal Biology, 2013 · video de alta velocidad" x={540} y={560} />
       <NumeroGigante T={T} at={K.En + 1.6} until={K.F - 0.3} valor={2} dur={0.4} prefijo="< " sufijo=" %" etiqueta="para lanzar el huevito" x={420} y={620} tam={170} color={KC.gold2} />
       <Etq T={T} at={K.F + 1.6} until={K.He - 0.2} x={ANC[0] + 30} y={ANC[1] + 100} texto="se pega" tam={30} color={KC.ink} />
@@ -320,7 +323,7 @@ function NidoShot() {
       <BarraEscala T={T} at={K.G} until={K.D} texto="1 cm" largo={484} />
       <BarraEscala T={T} at={K.Hu} until={K.P} texto="1 mm" largo={350} />
       <BarraEscala T={T} at={K.P} until={K.Go} texto="1 cm" largo={344} />
-      <BarraEscala T={T} at={K.Go} until={K.V} texto="1 cm" largo={330} />
+      <BarraEscala T={T} at={K.Go} until={K.V} texto="1 cm" largo={408} />
       <BarraEscala T={T} at={K.V} until={K.E} texto="10 cm" largo={76} />
       <BarraEscala T={T} at={K.D + 3.4} until={K.Hu} texto="mapa esquemático" largo={0} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 cm" largo={484} />

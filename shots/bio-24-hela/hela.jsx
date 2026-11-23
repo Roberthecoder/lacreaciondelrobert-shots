@@ -33,8 +33,8 @@ function FrascoCultivo({ T, x, y, s = 1, etiqueta = 'HeLa', etiqueta2, celulas =
     <rect x={318} y={-238} width={76} height={58} rx={10} transform="rotate(38 356 -209)" fill={KC.blue} stroke={KC.ink} strokeWidth={8} />
     {[0, 1, 2, 3].map((i) => <line key={i} x1={-250 + i * 120} y1={-110} x2={-250 + i * 120} y2={-96} stroke={KC.ink} strokeWidth={4} />)}
     <rect x={-210} y={-82} width={300} height={98} rx={10} fill={KC.white} stroke={KC.ink} strokeWidth={6} />
-    <text x={-60} y={-18} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>{etiqueta}</text>
-    {etiqueta2 && <text x={-60} y={12} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#5a524a">{etiqueta2}</text>}
+    <text x={-60} y={-18} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill="#0b1020">{etiqueta}</text>
+    {etiqueta2 && <text x={-60} y={12} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#3a3f46">{etiqueta2}</text>}
     <path d="M -270 -96 L -150 -96" stroke="rgba(255,255,255,.9)" strokeWidth={8} strokeLinecap="round" />
   </g>;
 }
@@ -153,10 +153,11 @@ function TuboCultivo({ x, y, s = 1, lleno = 1 }) {
 function Medalla({ x, y, s = 1, T = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${Math.sin(T * 2) * 4}) scale(${s})`}>
     <path d="M -90 -260 L -30 -40 L 30 -40 L 90 -260 L 40 -260 L 0 -120 L -40 -260 Z" fill={KC.blue} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
-    <circle r={150} fill={KC.gold} stroke={KC.ink} strokeWidth={10} />
+    <defs><radialGradient id="helaMed" cx=".35" cy=".3" r=".8"><stop offset="0" stopColor="#fff3c0" /><stop offset=".45" stopColor={KC.gold} /><stop offset="1" stopColor="#9a6408" /></radialGradient></defs>
+    <circle r={150} fill="url(#helaMed)" stroke={KC.ink} strokeWidth={10} />
     <circle r={118} fill="none" stroke="#b67c12" strokeWidth={6} />
-    <text y={-14} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>NOBEL</text>
-    <text y={56} textAnchor="middle" style={{ font:`400 74px ${KF.titulo}` }} fill={KC.ink}>2008</text>
+    <text y={-14} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill="#3a2405">NOBEL</text>
+    <text y={56} textAnchor="middle" style={{ font:`400 74px ${KF.titulo}` }} fill="#3a2405">2008</text>
   </g>;
 }
 function Persona({ x, y, s = 1, color = KC.gold, o = 1 }) {
@@ -167,9 +168,11 @@ function Persona({ x, y, s = 1, color = KC.gold, o = 1 }) {
 }
 function Carpeta({ x, y, s = 1, candado = 1, T = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <defs><linearGradient id="helaCarp" x1="0" x2=".5" y1="0" y2="1"><stop offset="0" stopColor="#fff" stopOpacity=".35" /><stop offset=".5" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#5a3a05" stopOpacity=".35" /></linearGradient></defs>
     <path d="M -200 -130 L -60 -130 L -30 -100 L 200 -100 L 200 150 L -200 150 Z" fill="#ffd27a" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
-    <text x={0} y={-30} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>GENOMA</text>
-    <text x={0} y={14} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>DE HeLa</text>
+    <path d="M -200 -130 L -60 -130 L -30 -100 L 200 -100 L 200 150 L -200 150 Z" fill="url(#helaCarp)" />
+    <text x={0} y={-30} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill="#3a2405">GENOMA</text>
+    <text x={0} y={14} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill="#3a2405">DE HeLa</text>
     <g transform={`translate(120 100) scale(${candado})`}>
       <path d="M -34 -10 L -34 -44 Q -34 -78 0 -78 Q 34 -78 34 -44 L 34 -10" fill="none" stroke={KC.ink} strokeWidth={12} />
       <rect x={-52} y={-14} width={104} height={84} rx={12} fill={KC.teal} stroke={KC.ink} strokeWidth={8} />
@@ -239,14 +242,14 @@ function Hela() {
       <Escena T={T} a={K.H} b={K.B} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Retrato x={540} y={800} s={1.2} T={T} />
+          <Retrato x={540} y={870} s={1.25} T={T} />
           {(() => { const he = kprog(T, K.H + 1.2, K.H + 1.6), eq = kprog(T, K.H + 2.0, K.H + 2.4);
-            return <g transform="translate(540 1300)" style={{ font:`400 80px ${KF.titulo}` }}>
+            return <g transform="translate(540 1385)" style={{ font:`400 80px ${KF.titulo}` }}>
               <text x={-24} textAnchor="end" fill={KC.ink}><tspan fill={he ? '#b67c12' : KC.ink}>He</tspan>nrietta</text>
               <text x={0} textAnchor="start" fill={KC.ink}><tspan fill={he ? '#b67c12' : KC.ink}>La</tspan>cks</text>
             </g>; })()}
         </SvgCapa>
-        <Chip T={T} at={K.H + 2.0} until={K.B - 0.2} texto="He + La = HeLa" x={540} y={350} tam={50} borde={KC.gold} />
+        <Chip T={T} at={K.H + 2.0} until={K.B - 0.2} texto="He + La = HeLa" x={540} y={380} tam={50} borde={KC.gold} />
       </Escena>
       {/* 2 · la biopsia en el hospital */}
       <Escena T={T} a={K.B} b={K.Ge} zoom={0.04}>
@@ -356,7 +359,7 @@ function Hela() {
         <FondoLunares color={KC.mint} />
         <SvgCapa>
           <g transform={GRANDE}><FrascoCultivo T={T} x={470} y={1000} s={1.15} celulas={1} etiqueta="HeLa" etiqueta2={T > K.C + 1.2 ? '= Henrietta Lacks' : undefined} /></g>
-          <Retrato x={250} y={560} s={0.42 * kprog(T, K.C + 1.4, K.C + 1.9, kEase.rebote)} T={T} />
+          <Retrato x={260} y={590} s={0.6 * kprog(T, K.C + 1.4, K.C + 1.9, kEase.rebote)} T={T} />
         </SvgCapa>
       </Escena>
 

@@ -299,13 +299,13 @@ function Turco() {
       {/* 8 · personas etiquetan datos */}
       <Escena T={T} a={K.E} b={K.Ce}>
         <FondoLunares color={KC.mint} />
-        {svg(<g transform="translate(540 960) scale(1.12) translate(-535 -905)">
+        {svg(<g transform="translate(540 890) scale(1.6) translate(-275 -295)">
           {[['gato', true], ['perro', false], ['gato', true], ['coche', false], ['gato', true], ['flor', false]].map(([tp, ok], i) =>
-            <Foto key={i} x={110 + (i % 3) * 300} y={720 + Math.floor(i / 3) * 210} tipo={tp} ok={ok} etq={kprog(T, K.E + 1.4 + i * 0.35, K.E + 1.7 + i * 0.35, kEase.sale)} />)}
+            <Foto key={i} x={(i % 2) * 300} y={Math.floor(i / 2) * 210} tipo={tp} ok={ok} etq={kprog(T, K.E + 1.4 + i * 0.35, K.E + 1.7 + i * 0.35, kEase.sale)} />)}
         </g>)}
       </Escena>
-      <Chip T={T} at={K.E + 0.3} until={K.Ce - 0.2} texto="personas etiquetan · la IA aprende" x={540} y={1290} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.E + 0.6} until={K.Ce - 0.2} texto="ejemplo ilustrativo" x={540} y={1375} tam={26} borde={KC.texto} />
+      <Chip T={T} at={K.E + 0.3} until={K.Ce - 0.2} texto="personas etiquetan · la IA aprende" x={540} y={1440} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.E + 0.6} until={K.Ce - 0.2} texto="ejemplo ilustrativo" x={540} y={1520} tam={26} borde={KC.texto} />
 
       {/* 9 · Amazon la cerró (30 sep 2026) */}
       <Escena T={T} a={K.Ce} b={K.C}>

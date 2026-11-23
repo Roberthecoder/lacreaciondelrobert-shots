@@ -66,8 +66,12 @@ function Maceta({ x, y, s = 1, relleno = 'tierra', bolsa = -1, T = 0, children }
     <rect x={-178} y={40} width={356} height={14} fill={CH.barro2} stroke={KC.ink} strokeWidth={6} />
     {children}
     {bolsa >= 0 && bolsa < 1 && <g transform={`translate(${bolsa * 60} ${-kEase.suave(bolsa) * 640}) rotate(${bolsa * 18})`} opacity={1 - kprog(bolsa, 0.6, 1)}>
-      <path d="M -200 360 Q -230 80 -170 -120 Q -60 -200 0 -170 Q 80 -210 170 -120 Q 230 80 200 360 Z" fill="#17161a" stroke={KC.ink} strokeWidth={8} />
-      <path d="M -130 -60 Q -150 100 -120 300" stroke="#55545c" strokeWidth={16} fill="none" strokeLinecap="round" opacity=".6" />
+      {/* belleza: bolsa de plástico con volumen (degradado, pliegues y brillo) en vez de una silueta negra plana */}
+      <defs><linearGradient id="chBolsa" x1="0" y1="0" x2="1" y2="0.3"><stop offset="0" stopColor="#4a4852" /><stop offset=".35" stopColor="#2a2930" /><stop offset="1" stopColor="#0f0e13" /></linearGradient></defs>
+      <path d="M -200 360 Q -230 80 -170 -120 Q -60 -200 0 -170 Q 80 -210 170 -120 Q 230 80 200 360 Z" fill="url(#chBolsa)" stroke={KC.ink} strokeWidth={8} />
+      {[[-60, -150, -80, 340], [40, -160, 70, 340], [120, -110, 150, 330], [-150, -80, -170, 300]].map(([x1, y1, x2, y2], i) => <path key={i} d={`M ${x1} ${y1} Q ${(x1 + x2) / 2 + (i % 2 ? 26 : -26)} ${(y1 + y2) / 2} ${x2} ${y2}`} stroke="#000" strokeWidth={10} fill="none" opacity=".35" strokeLinecap="round" />)}
+      <path d="M -130 -60 Q -150 100 -120 300" stroke="#8a8894" strokeWidth={16} fill="none" strokeLinecap="round" opacity=".6" />
+      <path d="M -40 -150 Q 0 -120 50 -152" stroke="#8a8894" strokeWidth={8} fill="none" strokeLinecap="round" opacity=".5" />
     </g>}
   </g>;
 }

@@ -92,10 +92,14 @@ function Icono({ x, y, tipo, on = 0 }) {
 }
 function FrascoMed({ x, y, s = 1, texto, color = KC.orange }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <defs><linearGradient id="auVol" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stopColor="#fff" stopOpacity=".25" /><stop offset=".4" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".35" /></linearGradient></defs>
+    <ellipse cx={0} cy={124} rx={90} ry={12} fill="rgba(0,0,0,.35)" />
     <rect x={-50} y={-150} width={100} height={40} rx={10} fill="#f4efe4" stroke={KC.ink} strokeWidth={6} />
     <rect x={-80} y={-115} width={160} height={230} rx={28} fill={color} stroke={KC.ink} strokeWidth={7} />
+    <rect x={-80} y={-115} width={160} height={230} rx={28} fill="url(#auVol)" />
+    <rect x={-66} y={-100} width={14} height={190} rx={7} fill="#fff" opacity=".35" />
     <rect x={-66} y={-50} width={132} height={90} rx={10} fill="#fff" stroke={KC.ink} strokeWidth={4} />
-    <text x={0} y={5} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>{texto}</text>
+    <text x={0} y={5} textAnchor="middle" textLength={texto.length > 9 ? 122 : undefined} lengthAdjust="spacingAndGlyphs" style={{ font:`700 22px ${KF.mono}` }} fill="#0b1020">{texto}</text>
   </g>;
 }
 function Camita({ x, y, on = 0 }) {
@@ -179,7 +183,7 @@ function AurisShot() {
       <Escena T={T} a={K.Re} b={K.Tr} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {fsvg(<>
-          <g opacity={0.2}><LevAuris x={540} y={960} s={9} T={T} yema={0.6} /></g>
+          <g opacity={0.3}><LevAuris x={540} y={940} s={9} T={T} yema={0.6} /></g>
           <line x1={100} y1={1250} x2={980} y2={1250} stroke="rgba(255,255,255,.6)" strokeWidth={6} />
           {[[180, 90, 'fluconazol', KC.red], [620, 30, 'anfotericina B', KC.orange]].map(([x, v, et, c], i) => { const p = fBar(i), h = v * 5.6 * p;
             return <g key={i}><rect x={x} y={1250 - h} width={280} height={h} rx={10} fill={c} stroke={KC.ink} strokeWidth={6} />
@@ -230,14 +234,20 @@ function AurisShot() {
         <FondoLunares color={KC.lilac} />
         {fsvg(<g transform="translate(540 990) scale(1.4) translate(-530 -940)">
           <g transform="translate(260 960)">
+            <ellipse cx={0} cy={190} rx={105} ry={14} fill="rgba(0,0,0,.35)" />
             <rect x={-90} y={-120} width={180} height={300} rx={30} fill={KC.cyan} stroke={KC.ink} strokeWidth={8} />
+            <rect x={-90} y={-120} width={180} height={300} rx={30} fill="url(#auVolD)" />
+            <defs><linearGradient id="auVolD" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stopColor="#fff" stopOpacity=".3" /><stop offset=".4" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".35" /></linearGradient></defs>
             <rect x={-40} y={-200} width={80} height={90} fill="#f4efe4" stroke={KC.ink} strokeWidth={6} /><rect x={30} y={-195} width={70} height={26} fill="#f4efe4" stroke={KC.ink} strokeWidth={6} />
             <rect x={-70} y={-40} width={140} height={120} rx={10} fill="#fff" stroke={KC.ink} strokeWidth={4} />
-            <text x={0} y={10} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill={KC.ink}>solo amonio</text>
-            <text x={0} y={40} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill={KC.ink}>cuaternario</text>
+            <text x={0} y={10} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#0b1020">solo amonio</text>
+            <text x={0} y={40} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#0b1020">cuaternario</text>
           </g>
           {(() => { const p = kprog(T, K.D + 0.5, K.D + 1.6); return p > 0 ? <g>{Array.from({ length: 14 }, (_, i) => <circle key={i} cx={klerp(360, 560 + (i % 5) * 60, p)} cy={klerp(780, 700 + (i * 37) % 260, p)} r={6} fill="#dff6ff" opacity={1 - p * 0.6} />)}</g> : null; })()}
+          {[600, 680, 760, 840, 920, 990].map((bx) => <rect key={bx} x={bx - 7} y={872} width={14} height={190} fill={AU.metal} stroke={KC.ink} strokeWidth={4} />)}
+          <rect x={560} y={1050} width={460} height={20} rx={10} fill={AU.metal} stroke={KC.ink} strokeWidth={5} />
           <rect x={560} y={860} width={440} height={24} rx={12} fill={AU.metal} stroke={KC.ink} strokeWidth={5} />
+          <rect x={572} y={864} width={400} height={6} rx={3} fill="#fff" opacity=".45" />
           <Puntos pts={[[600, 872], [680, 868], [760, 875], [840, 870], [920, 873], [980, 869]]} p={1} T={T} />
         </g>)}
       </Escena>

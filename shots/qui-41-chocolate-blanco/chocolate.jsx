@@ -175,7 +175,7 @@ function Chocolate() {
         </SvgCapa>
       </Escena>
       {/* 2 · 30 % es manteca de cacao */}
-      <Escena T={T} a={K.M} b={mCr}>
+      <Escena T={T} a={K.M} b={mCr + 0.9}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
           <g transform={`translate(${TX} ${TY + 40}) scale(${TS})`}>
@@ -191,7 +191,7 @@ function Chocolate() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} />
         <SvgCapa>
-          {[1, 2, 3, 4, 5, 6].map((n, i) => { const cx = 220 + (i % 3) * 320, cy = 740 + Math.floor(i / 3) * 400, t0 = mCr + 0.2 + i * 0.35;
+          {[1, 2, 3, 4, 5, 6].map((n, i) => { const cx = 220 + (i % 3) * 320, cy = 740 + Math.floor(i / 3) * 400, t0 = mCr - 0.1 + i * 0.3;
             return <g key={n}>
               <CristalForma n={n} x={cx} y={cy + Math.sin(T * 2 + i) * 6} s={2.2} o={kprog(T, t0, t0 + 0.4, kEase.rebote)} glow={n === 5 ? kprog(T, K.F, K.F + 0.4) : 0} T={T} />
               <text x={cx} y={cy + 205} textAnchor="middle" opacity={kprog(T, t0, t0 + 0.4) * (n === 5 || T < K.F ? 1 : 0.35)} style={{ font:`400 76px ${KF.titulo}` }} fill={n === 5 ? KC.gold2 : KC.texto}>{['I', 'II', 'III', 'IV', 'V', 'VI'][i]}</text></g>; })}

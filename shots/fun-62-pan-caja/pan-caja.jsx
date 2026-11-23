@@ -360,10 +360,12 @@ function PanCajaShot() {
       <Escena T={T} a={K.S} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <RebCaja x={540} y={1440} s={1.0} />
-          <Escudo x={540} y={1250} s={1.0} o={1} />
-          <Sello T={T} at={K.S + 0.4} x={300} y={640} texto="FDA" color={KC.ink} r={140} rot={-10} />
-          <Sello T={T} at={K.S + 2.4} x={780} y={660} texto="EFSA" color="#4d6bff" r={130} rot={8} />
+          <g transform="translate(540 1460) scale(1.3) translate(-540 -1440)">
+            <RebCaja x={540} y={1440} s={1.0} />
+            <Escudo x={540} y={1250} s={1.0} o={1} />
+          </g>
+          <Sello T={T} at={K.S + 0.4} x={290} y={590} texto="FDA" color={KC.ink} r={165} rot={-10} />
+          <Sello T={T} at={K.S + 2.4} x={790} y={610} texto="EFSA" color="#4d6bff" r={155} rot={8} />
         </>)}
       </Escena>
       {/* 13 · cierre: la misma mesa, una semana después (esquema) */}
@@ -413,8 +415,8 @@ function PanCajaShot() {
       <Etq T={T} at={K.Qu + 0.9} until={K.S - 0.2} x={330} y={680} texto="ácido propiónico" tam={26} color={KC.ink} />
       <Etq T={T} at={K.Qu + 2.2} until={K.S - 0.2} x={640} y={1190} texto="tu intestino:" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Qu + 2.5} until={K.S - 0.2} x={640} y={1240} texto="bacterias + fibra" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.S + 0.7} until={K.C - 0.2} texto="FDA 1984 · reconocido como seguro (GRAS)" x={540} y={860} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.S + 2.7} until={K.C - 0.2} texto="EFSA 2014 · sin riesgo en las dosis permitidas" x={540} y={930} tam={28} borde="#4d6bff" />
+      <Chip T={T} at={K.S + 0.7} until={K.C - 0.2} texto="FDA 1984 · reconocido como seguro (GRAS)" x={540} y={830} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.S + 2.7} until={K.C - 0.2} texto="EFSA 2014 · sin riesgo en las dosis permitidas" x={540} y={895} tam={28} borde="#4d6bff" />
       <Chip T={T} at={K.C + 0.1} until={K.Ou} texto="1 semana después (esquema)" x={320} y={440} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="no es inmortal: va frenado" x={330} y={560} tam={34} borde={KC.mint} />
       <Etq T={T} at={K.C + 0.3} until={K.Ou} x={50} y={1215} texto="pan de panadería" tam={30} color={KC.texto} />

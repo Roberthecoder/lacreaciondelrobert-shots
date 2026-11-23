@@ -163,13 +163,13 @@ function NubeShot() {
       <Escena T={T} a={K.Cuenta} b={K.Elefantes} fondo={KC.lilac}>
         <FondoLunares color={KC.lilac} />
         <Lienzo o={klerp(0.55, 1, kprog(T, K.Cuenta + 3.5, K.Cuenta + 3.9))}>
-          <Cumulo x={540} y={930} s={1.3} T={T} />
-          {Array.from({ length: 10 }, (_, i) => { const g = krng(200 + i), f = ((T * 0.9 + g()) % 1); return <Gota key={i} x={200 + g() * 680} y={1000 + f * 190} r={7 + g() * 5} o={1 - f} />; })}
+          <Cumulo x={540} y={1030} s={1.3} T={T} />
+          {Array.from({ length: 10 }, (_, i) => { const g = krng(200 + i), f = ((T * 0.9 + g()) % 1); return <Gota key={i} x={200 + g() * 680} y={1100 + f * 190} r={7 + g() * 5} o={1 - f} />; })}
         </Lienzo>
         <TarjetaEstudio T={T} at={K.Cuenta + 0.25} until={K.Cuenta + 3.6} anio="2013" quien="Peggy LeMone · meteoróloga" x={540} y={330} />
-        <NumeroGigante T={T} at={K.Cuenta + 3.9} until={K.Elefantes - 0.15} valor={500} desde={0} dur={1.2} prefijo="≈ " sufijo=" t" x={540} y={1230} tam={210} color={KC.yellow} />
+        <NumeroGigante T={T} at={K.Cuenta + 3.9} until={K.Elefantes - 0.15} valor={500} desde={0} dur={1.2} prefijo="≈ " sufijo=" t" x={540} y={1330} tam={210} color={KC.yellow} />
         <Lienzo z={42} o={kprog(T, K.Cuenta + 4.6, K.Cuenta + 5.0) * (1 - kprog(T, K.Elefantes - 0.3, K.Elefantes - 0.1))}>
-          <TextoSvg x={540} y={1410} tam={72} fuente="texto" color={KC.texto}>de agua</TextoSvg>
+          <TextoSvg x={540} y={1500} tam={72} fuente="texto" color={KC.texto}>de agua</TextoSvg>
         </Lienzo>
       </Escena>
       {/* 3 · cien elefantes flotando sobre tu cabeza */}
@@ -246,7 +246,7 @@ function NubeShot() {
         <FondoMarca patron="oscuro" />
         <Lienzo>
           {Array.from({ length: 50 }, (_, i) => { const g = krng(700 + i); return <Gota key={i} x={g() * KW} y={300 + g() * 1050 + Math.sin(T + i) * 10} r={6 + g() * 7} o={0.35} />; })}
-          <g transform="translate(540 900) scale(1.45) translate(-540 -820)">
+          <g transform="translate(540 940) scale(2) translate(-540 -820)">
           {T < M1 && <><Gota x={gx - 30 - acerca(L0, M1, 170)} y={gy0 - 140} r={rA} /><Gota x={gx + 30 + acerca(L0, M1, 170)} y={gy0 - 120} r={rB} /></>}
           {T >= M1 && T < M2 && <Gota x={gx} y={gy0 - 130 + 120 * kprog(T, M1, M2)} r={rC * klerp(1.25, 1, kprog(T, M1, M1 + 0.2))} />}
           {T < M2 && <Gota x={gx + 40 + acerca(L0 + 0.8, M2, 190)} y={gy0 + 10} r={rD} />}

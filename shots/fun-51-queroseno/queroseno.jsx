@@ -158,7 +158,9 @@ function QuerosenoShot() {
       {/* 7 · el daño: filtro tapado → ácidos en el aluminio → agujero en el ala */}
       <Escena T={T} a={K.D} b={K.E}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<g transform="translate(540 960) scale(1.15) translate(-540 -900)">
+        {/* pase de belleza: el avión (el sujeto) queda grande y atenuado detrás de los cortes, que crecen y bajan al centro */}
+        {fsvg(<g opacity={0.16}><AvionArriba T={T} x={540} y={1010} s={1.35} tanque={1} /></g>)}
+        {fsvg(<g transform="translate(540 1000) scale(1.24) translate(-540 -900)">
           {(() => { const a1 = 1 - kprog(T, K.D + 2.0, K.D + 2.4); if (a1 <= 0) return null; const tapa = kprog(T, K.D + 0.3, K.D + 1.6);
             return <g opacity={a1}>
               <rect x={120} y={760} width={840} height={200} rx={30} fill="#d9dde3" stroke={KC.ink} strokeWidth={9} />
@@ -217,8 +219,9 @@ function QuerosenoShot() {
           <rect x={0} y={1560} width={KW} height={400} fill="#343a46" />
           <rect x={470} y={1560} width={140} height={400} fill="#3c434b" />
           {Array.from({ length: 5 }, (_, i) => <rect key={i} x={532} y={1580 + i * 70} width={16} height={40} fill="#fff" />)}
-          {T > g0 - 0.3 && <AvionArriba T={T} x={540} y={klerp(1080, 760, desp) + 150 * vuelta * vuelta} s={klerp(0.6, 0.9, desp) - 0.3 * vuelta} rot={kclamp(vuelta * 2.2, 0, 1) * 0 + Math.sin(vuelta * Math.PI) * -22}
-            llama={kprog(T, g0 + 1.0, g0 + 1.3) * (1 - kprog(T, K.C - 1.0, K.C - 0.5))} aviso={kprog(T, g0 + 2.2, g0 + 2.6, kEase.rebote) * (1 - kprog(T, K.C - 1.0, K.C - 0.5))} />}
+          {/* pase de belleza: el avión está desde el inicio (atenuado bajo el número) y es más grande */}
+          {<g opacity={klerp(0.28, 1, kprog(T, g0 - 0.3, g0 + 0.2))}><AvionArriba T={T} x={540} y={klerp(1150, 820, desp) + 150 * vuelta * vuelta} s={klerp(0.85, 1.15, desp) - 0.35 * vuelta} rot={kclamp(vuelta * 2.2, 0, 1) * 0 + Math.sin(vuelta * Math.PI) * -22}
+            llama={kprog(T, g0 + 1.0, g0 + 1.3) * (1 - kprog(T, K.C - 1.0, K.C - 0.5))} aviso={kprog(T, g0 + 2.2, g0 + 2.6, kEase.rebote) * (1 - kprog(T, K.C - 1.0, K.C - 0.5))} /></g>}
         </>)}
       </Escena>
       {/* 11 · cierre: el mismo filtro del inicio, ahora con la lupa que deja ver hifas */}
@@ -284,10 +287,10 @@ function QuerosenoShot() {
       <BarraEscala T={T} at={K.Cr} until={K.Ag} texto="1 m" largo={170} y={1560} color={KC.ink} />
       <BarraEscala T={T} at={K.Ag} until={K.Fr} texto="50 cm" largo={300} color={KC.ink} y={1500} />
       <BarraEscala T={T} at={K.Fr} until={K.P} texto="10 µm" largo={60} y={1500} />
-      <BarraEscala T={T} at={K.D} until={K.E} texto="1 cm" largo={207} y={1500} color={KC.ink} />
+      <BarraEscala T={T} at={K.D} until={K.E} texto="1 cm" largo={223} y={1500} color={KC.ink} />
       <BarraEscala T={T} at={K.E} until={K.R} texto="5 cm" largo={154} y={1620} color={KC.ink} />
       <BarraEscala T={T} at={K.R} until={K.Ga} texto="10 cm" largo={156} y={1500} color={KC.ink} />
-      <BarraEscala T={T} at={K.Ga} until={K.C} texto="10 m" largo={140} y={1500} color={KC.ink} />
+      <BarraEscala T={T} at={K.Ga} until={K.C} texto="10 m" largo={189} y={1500} color={KC.ink} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={236} color={KC.ink} y={1600} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

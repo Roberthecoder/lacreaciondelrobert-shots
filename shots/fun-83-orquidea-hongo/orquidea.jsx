@@ -465,7 +465,7 @@ function OrquideaShot() {
         {fsvg(<>
           <g transform="translate(260 1360) scale(1.3333)"><Vainilla x={0} y={0} h={700} p={kprog(T, K.Va, K.Va + 1.5)} flor={kprog(T, K.Va + 1.2, K.Va + 1.7)} vainas={kprog(T, K.Va + 1.6, K.Va + 2.6)} T={T} /></g>
           <g opacity={kprog(T, K.Va + 1.8, K.Va + 2.4)}>
-            <MapaMexico x={590} y={980} ancho={450}>
+            <MapaMexico x={545} y={990} ancho={515}>
               {(() => { const [px, py] = mxProy(-97.45, 20.45); return <><circle cx={px} cy={py} r={34} fill={KC.red} opacity=".35" /><circle cx={px} cy={py} r={14} fill={KC.red} stroke={KC.ink} strokeWidth={4} /></>; })()}
             </MapaMexico>
           </g>
@@ -524,10 +524,10 @@ function OrquideaShot() {
       <NumeroGigante T={T} at={K.Re + 0.8} until={K.Va - 0.3} valor={TX.pct} prefijo={TX.pctPre} sufijo={TX.pctSuf} dur={1.0} x={330} y={440} tam={150} color={KC.mint} />
       <EtqP T={T} at={K.Re + 1.2} until={K.Va - 0.3} x={60} y={560} texto={TX.sobrevive} tam={34} />
       <Chip T={T} at={K.Re + 2.4} until={K.Va - 0.3} texto={TX.florecen} x={700} y={600} tam={40} borde={KC.gold} />
-      <EtqP T={T} at={K.Va + 0.6} until={K.C - 0.3} x={60} y={235} texto={TX.vainilla} it tam={32} linea={false} />
-      <EtqP T={T} at={K.Va + 1.0} until={K.C - 0.3} x={60} y={290} texto={TX.vainilla2} tam={30} linea={false} />
-      <EtqP T={T} at={K.Va + 2.2} until={K.C - 0.3} x={610} y={860} texto={TX.nativa1} tam={30} linea={false} />
-      <EtqP T={T} at={K.Va + 2.2} until={K.C - 0.3} x={610} y={912} texto={TX.nativa2} tam={30} linea={false} />
+      <EtqP T={T} at={K.Va + 0.6} until={K.C - 0.3} x={430} y={455} texto={TX.vainilla} it tam={30} linea={false} />
+      <EtqP T={T} at={K.Va + 1.0} until={K.C - 0.3} x={430} y={505} texto={TX.vainilla2} tam={28} linea={false} />
+      <EtqP T={T} at={K.Va + 2.2} until={K.C - 0.3} x={570} y={860} texto={TX.nativa1} tam={30} linea={false} />
+      <EtqP T={T} at={K.Va + 2.2} until={K.C - 0.3} x={570} y={912} texto={TX.nativa2} tam={30} linea={false} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto={TX.cierre} x={740} y={1040} tam={44} borde={KC.gold} />
 
       {/* ---------- barras de escala ---------- */}

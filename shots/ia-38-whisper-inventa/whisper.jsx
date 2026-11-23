@@ -132,7 +132,7 @@ function Whisper() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, W: CUES.Whisper, E: CUES.Estudio, Ci: CUES.Cifra, D: CUES.Danos, P: CUES.Pregunta, Pa: CUES.Pausas, S: CUES.Silencio, O: CUES.Otros, Co: CUES.Consulta, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
-  const CHIP_G = 1395;   // justo debajo de la hoja del gancho
+  const CHIP_G = 1530;   // belleza: todo el gancho bajó 140 px (antes el tercio de abajo quedaba vacío)   // justo debajo de la hoja del gancho
   const G2 = K.G + 5.9; // segunda frase del gancho («La IA le agregó una receta…»)
   const svg = (c, z) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{c}</svg>;
   // en el gancho: la voz se oye mientras se dice la frase 1; luego la onda queda plana (nadie habla)
@@ -145,11 +145,11 @@ function Whisper() {
       <Escena T={T} a={K.G} b={K.W}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <Microfono x={230} y={470} s={1.5} T={T} />
-          <Onda T={T} x={400} y={470} w={560} h={260} n={40} activo={0.15 + 0.85 * hablaG + 0.6 * (1 - kprog(T, K.G + 0.1, K.G + 1.2))} />
-          {T > K.G + 5.6 && <text x={680} y={700} textAnchor="middle" style={{ font:`700 42px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.G + 5.6, K.G + 6.0)}>(silencio)</text>}
+          <Microfono x={230} y={610} s={1.5} T={T} />
+          <Onda T={T} x={400} y={610} w={560} h={260} n={40} activo={0.15 + 0.85 * hablaG + 0.6 * (1 - kprog(T, K.G + 0.1, K.G + 1.2))} />
+          {T > K.G + 5.6 && <text x={680} y={840} textAnchor="middle" style={{ font:`700 42px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.G + 5.6, K.G + 6.0)}>(silencio)</text>}
         </>)}
-        <HojaT T={T} at={K.G} y={850} tipo1={[K.G, K.G + 0.55]} tipo2={[K.G + 0.5, K.G + 1.15]} sello={kprog(T, K.G + 1.0, K.G + 1.4)}
+        <HojaT T={T} at={K.G} y={990} tipo1={[K.G, K.G + 0.55]} tipo2={[K.G + 0.5, K.G + 1.15]} sello={kprog(T, K.G + 1.0, K.G + 1.4)}
           ok1={kprog(T, K.G + 3.3, K.G + 3.6)} brilla={kprog(T, G2, G2 + 0.3)} nota={kprog(T, G2 + 1.0, G2 + 1.4)} />
         {/* dentro de la escena: viaja con la cámara, pegado al renglón inventado */}
         <Chip T={T} at={G2 + 0.3} until={K.W - 0.2} texto="✨ lo agregó la IA" x={540} y={CHIP_G} tam={38} borde={KC.red} />

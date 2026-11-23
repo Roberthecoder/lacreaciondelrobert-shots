@@ -15,15 +15,19 @@ function HongoAzul({ T = 0, x, y, s = 1, corte = 0, leche = 0, verde = 0, crece 
   const c = kEase.sale(kclamp(crece, 0, 1));
   const gotas = [[-158, -150, 9], [-150, -128, 11], [-160, -112, 8], [-146, -160, 7], [-136, -118, 8]];
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s * c})`}>
+    {/* belleza: volumen con degradados (luz arriba-izquierda) y sombra al pie */}
+    <defs><linearGradient id="az-somb" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stopColor="#4f83cf" /><stop offset="1" stopColor="#1d427f" /></linearGradient>
+      <linearGradient id="az-pie" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#6d97d6" /><stop offset="1" stopColor="#30589a" /></linearGradient></defs>
+    <ellipse cx={0} cy={2} rx={90} ry={12} fill="rgba(0,0,0,.35)" />
     {/* pie corto, azul, con manchitas (hoyuelos) */}
-    <path d="M -34 0 Q -40 -60 -30 -112 L 30 -112 Q 40 -60 34 0 Z" fill={AZ.pie} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
+    <path d="M -34 0 Q -40 -60 -30 -112 L 30 -112 Q 40 -60 34 0 Z" fill="url(#az-pie)" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
     {[[-12, -40, 7], [14, -70, 6], [-6, -88, 5], [10, -24, 6]].map(([a, b, r], i) => <ellipse key={i} cx={a} cy={b} rx={r} ry={r * 1.3} fill="#2c5596" opacity=".7" />)}
     <path d="M -16 -6 Q -22 -60 -14 -104" stroke="#ffffff" strokeWidth={5} fill="none" opacity=".3" strokeLinecap="round" />
     {/* laminillas azules (vista de abajo, en perspectiva) */}
     <path d="M -172 -108 Q 0 -52 172 -108 Q 0 -98 -172 -108 Z" fill={AZ.lam} stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />
     {Array.from({ length: 17 }, (_, i) => { const u = -1 + i / 8; return <line key={i} x1={u * 26} y1={-104} x2={u * 168} y2={-108 + (1 - u * u) * 50} stroke="#2a4f8f" strokeWidth={3} />; })}
     {/* sombrero: centro algo hundido (embudo leve), zonas concéntricas más oscuras, brillo plateado */}
-    <path d="M -176 -106 Q -172 -178 -70 -192 Q -22 -176 0 -174 Q 22 -176 70 -192 Q 172 -178 176 -106 Q 0 -96 -176 -106 Z" fill={AZ.somb} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <path d="M -176 -106 Q -172 -178 -70 -192 Q -22 -176 0 -174 Q 22 -176 70 -192 Q 172 -178 176 -106 Q 0 -96 -176 -106 Z" fill="url(#az-somb)" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     {[0.86, 0.66, 0.46].map((k, i) => <path key={i} d={`M ${-176 * k} ${-106 - (1 - k) * 34} Q ${-172 * k} ${-178 + (1 - k) * 8} ${-70 * k} ${-190 + (1 - k) * 8} Q 0 ${-176 + (1 - k) * 6} ${70 * k} ${-190 + (1 - k) * 8} Q ${172 * k} ${-178 + (1 - k) * 8} ${176 * k} ${-106 - (1 - k) * 34}`}
       stroke={AZ.zona} strokeWidth={9 - i * 2} fill="none" opacity=".55" strokeLinecap="round" />)}
     <path d="M -120 -168 Q -60 -186 -20 -178" stroke={AZ.plata} strokeWidth={12} fill="none" opacity={0.45 + 0.15 * Math.sin(T * 2)} strokeLinecap="round" />
@@ -244,12 +248,13 @@ function AzulShot() {
       {/* 1–2 · gancho y nombre: el hongo se corta y suelta leche azul */}
       <Escena T={T} a={K.G} b={K.Me} zoom={0.06} origen="35% 55%">
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {/* belleza: todo el conjunto 110 px más abajo (el tercio de abajo quedaba vacío) */}
+        {fsvg(<g transform="translate(0 110)">
           <Tabla x={20} y={1250} w={1040} />
           <Escurre T={T} x={470 - 160 * 2.3} y0={1250 - 120 * 2.3} y1={1246} desde={K.G + 1.0} verde={verdeG} s={1.6} />
           <HongoAzul T={T} x={470} y={1250} s={2.3} corte={corte} leche={leche} verde={verdeG} />
           <Cuchillo x={120} y={900} p={kprog(T, K.G + 0.02, K.G + 0.75)} s={1.4} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 3 · mercado con lluvia → mapa */}
       <Escena T={T} a={K.Me} b={K.No} zoom={0.04}>
@@ -257,8 +262,9 @@ function AzulShot() {
         {fsvg(<>
           <g opacity={1 - kprog(T, tMapa - 0.4, tMapa)} transform="translate(540 1060) scale(1.15) translate(-540 -800)">
             <Nube x={240} y={420} s={0.9} />
-            <path d="M 70 640 L 1010 640 L 960 700 L 120 700 Z" fill="#ff5fa2" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
-            {Array.from({ length: 8 }, (_, i) => <path key={i} d={`M ${120 + i * 105} 700 L ${172 + i * 105} 700 L ${172 + i * 105 - 26} 744 Z`} fill={i % 2 ? '#ffffff' : '#ff5fa2'} stroke={KC.ink} strokeWidth={5} />)}
+            <defs><linearGradient id="az-toldo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#e0779f" /><stop offset="1" stopColor="#a8456c" /></linearGradient></defs>
+            <path d="M 70 640 L 1010 640 L 960 700 L 120 700 Z" fill="url(#az-toldo)" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+            {Array.from({ length: 8 }, (_, i) => <path key={i} d={`M ${120 + i * 105} 700 L ${172 + i * 105} 700 L ${172 + i * 105 - 26} 744 Z`} fill={i % 2 ? '#f1ece4' : '#c45a83'} stroke={KC.ink} strokeWidth={5} />)}
             <rect x={110} y={700} width={22} height={420} fill="#7a4a22" stroke={KC.ink} strokeWidth={5} />
             <rect x={950} y={700} width={22} height={420} fill="#7a4a22" stroke={KC.ink} strokeWidth={5} />
             <rect x={90} y={1060} width={900} height={60} rx={10} fill="#8a5a2a" stroke={KC.ink} strokeWidth={7} />
@@ -285,6 +291,8 @@ function AzulShot() {
       {/* 4 · 44 nombres */}
       <Escena T={T} a={K.No} b={K.L} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
+        {/* belleza: el hongo azul a cuadro (la escena era solo letreros y un número) */}
+        {fsvg(<g opacity={kprog(T, K.No - 0.3, K.No + 0.3)}><HongoAzul T={T} x={770} y={1450} s={1.45} rot={Math.sin(T * 1.5) * 2} /></g>)}
         {fsvg(<g transform="translate(340 960) scale(1.12) translate(-330 -825)">
           {[['hongo azul', 250, 600, -6, 380], ['añil', 230, 740, 5, 220], ['zuin', 470, 760, -8, 220], ['oreja azul', 300, 900, 4, 380], ['aticonzol', 290, 1050, -3, 360]].map(([t, x, y, r, w], i) =>
             <Carton key={i} T={T} at={K.No + 0.2 + i * 0.5} x={x} y={y} rot={r} texto={t} ancho={w} />)}
@@ -301,7 +309,7 @@ function AzulShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <Azuleno T={T} x={400} y={830} s={2.4} p={kprog(T, K.Pi + 0.2, K.Pi + 1.2)} />
+          <Azuleno T={T} x={400} y={830} s={2.4} p={kprog(T, K.Pi - 0.3, K.Pi + 0.7)} />
           {PALETA.map((c, i) => { const q = kEase.rebote(kprog(T, K.Pi + 1.6 + i * 0.07, K.Pi + 1.9 + i * 0.07)); const azul = i === PALETA.length - 1;
             return <g key={i} transform={`translate(${100 + i * 80} 1200) scale(${q * 1.15})`}>
               <rect x={-30} y={-30} width={60} height={60} rx={10} fill={c} stroke={azul ? '#ffffff' : KC.ink} strokeWidth={azul ? 7 : 5} style={azul ? { filter:'drop-shadow(0 0 14px #4f8dff)' } : null} />
@@ -377,12 +385,12 @@ function AzulShot() {
       <Chip T={T} at={K.G + 1.4} until={K.N - 0.2} texto="no es pintura" x={470} y={600} tam={44} borde={KC.red} />
       <Etq T={T} at={K.N + 0.2} until={K.Me - 0.3} x={60} y={560} texto="Lactarius indigo" it tam={46} color={KC.ink} />
       <Etq T={T} at={K.N + 0.9} until={K.Me - 0.3} x={60} y={630} texto="su nombre = «lechoso» (latín)" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.N + 1.5} until={K.Me - 0.3} x={30} y={1075} texto="látex azul" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.N + 1.5} until={K.Me - 0.3} x={30} y={1185} texto="látex azul" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Me + 0.7} until={tMapa - 0.3} texto="comestible" x={290} y={520} tam={40} borde={KC.mint} />
       <Chip T={T} at={tMapa + 1.2} until={K.No - 0.3} texto="sale con las lluvias" x={540} y={420} tam={40} borde={KC.cyan} />
       <BarraEscala T={T} at={tMapa} until={K.No} texto="mapa esquemático" largo={0} />
-      <NumeroGigante T={T} at={K.No + 1.2} until={K.L - 0.3} valor={44} dur={1.6} etiqueta="nombres locales" x={810} y={1020} tam={190} color={KC.yellow} />
-      <Etq T={T} at={K.No + 2.0} until={K.L - 0.3} x={640} y={1180} texto="registrados en México" tam={28} color={KC.ink} />
+      <NumeroGigante T={T} at={K.No + 1.2} until={K.L - 0.3} valor={44} dur={1.6} etiqueta="nombres locales" x={810} y={760} tam={190} color={KC.yellow} />
+      <Etq T={T} at={K.No + 2.0} until={K.L - 0.3} x={600} y={940} texto="registrados en México" tam={28} color={KC.ink} />
       <Chip T={T} at={K.L + 0.1} until={K.Pi - 0.3} texto="POR DENTRO · LA LECHE" x={420} y={560} tam={34} borde={KC.cyan} mono />
       <Etq T={T} at={K.L + 1.3} until={K.Pi - 0.3} x={60} y={650} texto="hifas lactíferas: llevan el látex" tam={30} color="#9fc0ff" />
       <Etq T={T} at={K.L + 2.9} until={K.Pi - 0.3} x={600} y={1280} texto="con el aire: verde" tam={30} color="#7fe0a0" />

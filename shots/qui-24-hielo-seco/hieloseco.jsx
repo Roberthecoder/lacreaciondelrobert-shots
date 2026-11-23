@@ -155,8 +155,8 @@ function HieloSeco() {
   const sueltaT = (k) => K.Su + 1.2 + ((k * 7) % 11) * 0.25;
   // nube: moléculas de agua que se juntan
   const R2 = krng(31);
-  const centros = [[450, 960], [690, 1010], [570, 830]];
-  const aguas = Array.from({ length: 24 }, (_, i) => [300 + R2() * 520, 700 + R2() * 380, R2() * 6, centros[i % 3]]);
+  const centros = [[450, 1080], [690, 1130], [570, 950]];
+  const aguas = Array.from({ length: 24 }, (_, i) => [300 + R2() * 520, 820 + R2() * 380, R2() * 6, centros[i % 3]]);
   const junta = kprog(T, K.Nu + 0.8, K.Nu + 3.0, kEase.suave), gota = kprog(T, K.Nu + 2.6, K.Nu + 3.3, kEase.rebote);
   const aleja = kprog(T, K.Nu + 4.0, K.Nu + 5.2, kEase.suave);
   // riesgo
@@ -199,7 +199,7 @@ function HieloSeco() {
           <Trozo x={370} y={960} s={4.4} rot={-6} />
           <Mol tipo="co2" x={370} y={960} s={1.25 * kprog(T, K.Q + 0.4, K.Q + 0.9, kEase.rebote)} rot={Math.sin(T * 2) * 8} />
           <Termometro x={850} y0={600} y1={1200} frac={klerp(0.82, 0.08, enfria)} />
-          <text x={850} y={555} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.blue} stroke={KC.ink} strokeWidth={3} paintOrder="stroke">{kformato(klerp(20, -78.5, enfria), 1)} °C</text>
+          <text x={850} y={555} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill="#ffffff" stroke="#0b1020" strokeWidth={6} paintOrder="stroke">{kformato(klerp(20, -78.5, enfria), 1)} °C</text>
           {enfria > 0.6 && [[790, 680], [910, 840], [800, 1000], [900, 1110]].map(([fx, fy], i) => <path key={i} d={`M ${fx - 14} ${fy} l 28 0 M ${fx} ${fy - 14} l 0 28 M ${fx - 10} ${fy - 10} l 20 20 M ${fx + 10} ${fy - 10} l -20 20`} stroke="#fff" strokeWidth={4} opacity={kprog(T, K.Q + 2.2 + i * 0.1, K.Q + 2.6 + i * 0.1)} />)}
         </SvgCapa>
       </Escena>
@@ -228,14 +228,14 @@ function HieloSeco() {
         <Ambiente T={T} n={50} seed={9} color="rgba(191,232,255,.35)" vel={-40} o={1 - aleja} />
         <SvgCapa>
           <g opacity={1 - aleja}>
-            <rect x={0} y={1080} width={KW} height={200} fill="rgba(120,200,255,.18)" />
-            {Array.from({ length: 7 }, (_, i) => { const u = (T * 0.5 + i / 7) % 1; return <path key={'f' + i} d={`M ${120 + i * 140} ${1090 - u * 260} q 10 -18 0 -36`} stroke="#8fd3ff" strokeWidth={5} fill="none" opacity={(1 - u) * 0.8} strokeLinecap="round" />; })}
-            {[180, 420, 660, 900].map((x, i) => <Mol key={i} tipo="co2" x={x + Math.sin(T * 2 + i) * 14} y={1150} s={0.5} rot={T * 30 + i * 40} o={0.35} />)}
+            <rect x={0} y={1200} width={KW} height={200} fill="rgba(120,200,255,.18)" />
+            {Array.from({ length: 7 }, (_, i) => { const u = (T * 0.5 + i / 7) % 1; return <path key={'f' + i} d={`M ${120 + i * 140} ${1210 - u * 260} q 10 -18 0 -36`} stroke="#8fd3ff" strokeWidth={5} fill="none" opacity={(1 - u) * 0.8} strokeLinecap="round" />; })}
+            {[180, 420, 660, 900].map((x, i) => <Mol key={i} tipo="co2" x={x + Math.sin(T * 2 + i) * 14} y={1270} s={0.5} rot={T * 30 + i * 40} o={0.35} />)}
             {aguas.map(([x, y, ph, [cx, cy]], i) => {
               const ang = i * 2.39, px = klerp(x + Math.sin(T * 1.6 + ph) * 40, cx + Math.cos(ang) * 46, junta), py = klerp(y + Math.cos(T * 1.3 + ph) * 40, cy + Math.sin(ang) * 46, junta);
               return <Mol key={i} tipo="agua" x={px} y={py} s={0.75} rot={T * (60 - junta * 55) + ph * 50} o={1 - gota * 0.75} />;
             })}
-            {Array.from({ length: 16 }, (_, i) => { const R3 = krng(70 + i), gx = 200 + R3() * 680, gy = 720 + R3() * 380, t0 = K.Nu + 1.0 + i * 0.3, g = kprog(T, t0, t0 + 0.5, kEase.rebote), d = Math.max(0, T - t0);
+            {Array.from({ length: 16 }, (_, i) => { const R3 = krng(70 + i), gx = 200 + R3() * 680, gy = 840 + R3() * 380, t0 = K.Nu + 1.0 + i * 0.3, g = kprog(T, t0, t0 + 0.5, kEase.rebote), d = Math.max(0, T - t0);
               return g > 0 ? <g key={'g' + i} transform={`translate(${gx + Math.sin(T * 2 + i) * 8} ${gy + d * 18})`}>
                 <circle r={60 * (1 - g) + 6} fill="none" stroke="#bfe8ff" strokeWidth={3} opacity={1 - g} />
                 <circle r={14 + 10 * g} fill="rgba(255,255,255,.9)" stroke="#bfe8ff" strokeWidth={3} /><circle cx={-5} cy={-6} r={4} fill="#fff" /></g> : null; })}
@@ -290,8 +290,10 @@ function HieloSeco() {
         <SvgCapa>
           <rect x={0} y={1150} width={KW} height={KH - 1150} fill="#2a2c37" />
           {Array.from({ length: 8 }, (_, i) => <rect key={i} x={((i * 260 - maneja) % 2080 + 2080) % 2080 - 300} y={1200} width={140} height={16} fill="#ffe11a" />)}
+          <g transform="translate(540 1110) scale(1.25) translate(-540 -1110)">
           <Pickup x={540} y={1050} giro={maneja * 0.8} puerta={abre} cabeza={desmayo} T={T} aire={abre * (1 - kprog(T, K.Th - 0.6, K.Th))} />
           {desmayo > 0.5 && <text x={480} y={820} style={{ font:`400 60px ${KF.titulo}` }} fill={KC.ink} opacity={desmayo}>z z z</text>}
+          </g>
         </SvgCapa>
         {T > K.Es + 3.0 && <div style={{ position:'absolute', left:190, top:1460, width:700, zIndex:41 }}>
           <div style={{ font:`700 30px ${KF.mono}`, color:KC.ink, marginBottom:8 }}>oxígeno en la cabina (esquema)</div>
@@ -313,7 +315,7 @@ function HieloSeco() {
       {/* 9 · la regla */}
       <Escena T={T} a={K.Re} b={K.Ci}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa><g transform="translate(540 990) scale(1.25) translate(-550 -930)">
+        <SvgCapa><Mesa y={1240} /><g transform="translate(540 990) scale(1.25) translate(-550 -930)">
           {T < cambio ? <g>
             <Frasco x={330} y={1000} s={1.1} />
             <Mano x={770} y={1050} s={1.2} /><Trozo x={770} y={1010} s={1} />
@@ -348,15 +350,15 @@ function HieloSeco() {
       <MitoTachado T={T} at={K.Su + 1.0} tacharEn={K.Su + 2.0} until={K.In - 0.2} texto="líquido" x={540} y={470} tam={48} />
       <Chip T={T} at={K.In + 0.3} until={K.Nu - 0.2} texto="sin color" x={340} y={1500} tam={44} borde={KC.mint} />
       <Chip T={T} at={K.In + 0.9} until={K.Nu - 0.2} texto="sin olor" x={740} y={1500} tam={44} borde={KC.mint} />
-      <Etq T={T} at={K.Nu + 1.1} until={K.Nu + 3.0} x={300} y={630} texto="vapor de agua del aire (H₂O)" color="#bfe8ff" tam={32} />
-      <Etq T={T} at={K.Nu + 0.8} until={K.Nu + 3.9} x={60} y={1050} texto="frío del CO₂" color="#8fd3ff" tam={30} />
-      <Etq T={T} at={K.Nu + 3.0} until={K.Nu + 3.9} x={640} y={1010} texto="gotita" color={KC.texto} tam={34} />
+      <Etq T={T} at={K.Nu + 1.1} until={K.Nu + 3.0} x={300} y={750} texto="vapor de agua del aire (H₂O)" color="#bfe8ff" tam={32} />
+      <Etq T={T} at={K.Nu + 0.8} until={K.Nu + 3.9} x={60} y={1170} texto="frío del CO₂" color="#8fd3ff" tam={30} />
+      <Etq T={T} at={K.Nu + 3.0} until={K.Nu + 3.9} x={640} y={1130} texto="gotita" color={KC.texto} tam={34} />
       <Chip T={T} at={K.Nu + 0.5} until={K.Nu + 3.9} texto="vapor del aire → gotitas" x={540} y={1500} tam={44} borde="#bfe8ff" />
       <Chip T={T} at={K.Nu + 4.4} until={K.Pr - 0.2} texto="millones de gotitas = niebla" x={540} y={1500} tam={40} borde="#bfe8ff" />
       <Chip T={T} at={K.Ri + 1.1} until={K.Ri + 2.4} texto="casi medio kilo → 250 litros de gas" x={540} y={1500} tam={36} borde={KC.blue} />
       <Chip T={T} at={K.Ri + 2.9} until={K.Ri + 5.0} texto="lugar cerrado: desplaza el oxígeno" x={540} y={1500} tam={36} borde={KC.red} />
       <Chip T={T} at={K.Ri + 5.5} until={K.Es - 0.3} texto="en la piel: quemadura por frío" x={540} y={1500} tam={38} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.0} anio="2004" quien="Mobile, Alabama · EUA" revista="CDC · MMWR 53(50)" x={540} y={600} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.0} anio="2004" quien="Mobile, Alabama · EUA" revista="CDC · MMWR 53(50)" x={540} y={400} />
       <Chip T={T} at={K.Es + 3.2} until={K.Es + 5.4} texto="45 kg de hielo seco · cabina cerrada" x={540} y={470} tam={34} borde={KC.coral} />
       <Chip T={T} at={K.Es + 5.6} until={K.Es + 7.5} texto="aire recirculando → se desmaya" x={540} y={470} tam={36} borde={KC.red} />
       <Chip T={T} at={K.Es + 7.7} until={K.Th - 0.3} texto="abren la puerta → despierta" x={540} y={470} tam={36} borde={KC.mint} />

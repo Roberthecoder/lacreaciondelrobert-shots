@@ -212,12 +212,12 @@ function Ceviche() {
       {/* 6 · 2010, Lima: bacterias en el ceviche */}
       <Escena T={T} a={K.L} b={K.C}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 1010) scale(1.08) translate(-540 -930)">
           <rect x={90} y={680} width={900} height={500} rx={60} fill={PEZ_BLANCO} opacity={0.16} stroke="rgba(255,255,255,.4)" strokeWidth={5} />
           {bact.map(([bx, by, r], i) => { const ap = kprog(T, K.L + 0.05 + i * 0.03, K.L + 0.4 + i * 0.03), muere = (i === 3 || i === 11) ? kprog(T, lima0 + 1.5, lima0 + 2.5) : 0;
             return <g key={i} opacity={ap}><Bacteria T={T} x={bx + Math.sin(T * 1.3 + i) * 8} y={by} rot={r + Math.sin(T + i) * 10} s={0.85} vida={1 - muere} color={[KC.mint, KC.pink, KC.cyan][i % 3]} seed={i} /></g>; })}
-          {T > lima0 && <Goteo T={T} x={540} y0={560} y1={700} cada={0.35} color={JUGO} desde={lima0} hasta={K.C} r={12} />}
-          <BarraEscala x={60} y={1470} px={130} texto="2 µm" color={KC.texto} />
+          {T > lima0 && <Goteo T={T} x={540} y0={560} y1={700} cada={0.35} color={JUGO} desde={lima0} hasta={K.C} r={12} />}</g>
+          <BarraEscala x={60} y={1470} px={140} texto="2 µm" color={KC.texto} />
         </SvgCapa>
       </Escena>
       {/* 7 · 2019, Croacia: larva en jugo de limón */}

@@ -189,8 +189,8 @@ function Gps() {
   // distancia
   const SAT3 = [[190, 720], [540, 620], [890, 720]], PCEL = [540, 1150];
   // velocidad: el satélite corre en su órbita
-  const aV = klerp(-28, 26, kprog(T, K.Velocidad - 0.4, K.Neto + 0.4)) * Math.PI / 180;
-  const VX = 540 + 1500 * Math.sin(aV), VY = 2300 - 1500 * Math.cos(aV);
+  const aV = klerp(-16, 16, kprog(T, K.Velocidad - 0.4, K.Neto + 0.4)) * Math.PI / 180;
+  const VX = 540 + 1500 * Math.sin(aV), VY = 2520 - 1500 * Math.cos(aV);
   // error: el puntito se desvía
   const deriva = kprog(T, K.Error + 3.4, K.Error + 6.4, kEase.suave);
   const PV = [300, 1100], PE = [klerp(300, 830, deriva), klerp(1100, 720, deriva) + Math.sin(deriva * 9) * 30 * deriva];
@@ -242,9 +242,9 @@ function Gps() {
       <Escena T={T} a={K.Relojes} b={K.Distancia} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <Satelite x={580} y={700 + Math.sin(T * 1.5) * 10} s={1.6} />
-          <line x1={540} y1={800} x2={380} y2={950} stroke={KC.ink} strokeWidth={6} strokeDasharray="12 10" opacity={kprog(T, K.Relojes + 0.4, K.Relojes + 0.8)} />
-          {T > K.Relojes + 0.4 && <g transform={`translate(330 1170) scale(${1.15 * klerp(0.3, 1, kprog(T, K.Relojes + 0.4, K.Relojes + 0.8, kEase.rebote))})`}>
+          <Satelite x={560} y={690 + Math.sin(T * 1.5) * 10} s={2.0} />
+          <line x1={520} y1={810} x2={380} y2={950} stroke={KC.ink} strokeWidth={6} strokeDasharray="12 10" opacity={kprog(T, K.Relojes + 0.4, K.Relojes + 0.8)} />
+          {T > K.Relojes + 0.4 && <g transform={`translate(330 1190) scale(${1.3 * klerp(0.3, 1, kprog(T, K.Relojes + 0.4, K.Relojes + 0.8, kEase.rebote))})`}>
             <circle r={200} fill={KC.noche} stroke={KC.ink} strokeWidth={10} />
             <RelojT x={0} y={0} r={150} ang={(T - K.Relojes) * 300} atomo={true} T={T} />
           </g>}
@@ -261,8 +261,8 @@ function Gps() {
         <Lienzo>
           {SAT3.map(([sx, sy], i) => { const d = Math.hypot(PCEL[0] - sx, PCEL[1] - sy), p = kprog(T, K.Distancia + 3.3 + i * 0.35, K.Distancia + 4.3 + i * 0.35, kEase.sale);
             return p > 0 && <circle key={'c' + i} cx={sx} cy={sy} r={d * p} fill="none" stroke={[KC.pink, KC.blue, KC.orange][i]} strokeWidth={9} strokeDasharray="22 14" />; })}
-          {SAT3.map(([sx, sy], i) => <Satelite key={i} x={sx} y={sy + Math.sin(T * 1.4 + i) * 8} s={0.6} />)}
-          <g transform={`translate(${PCEL[0]} ${PCEL[1] + 64}) scale(1.6)`}>
+          {SAT3.map(([sx, sy], i) => <Satelite key={i} x={sx} y={sy + Math.sin(T * 1.4 + i) * 8} s={0.8} />)}
+          <g transform={`translate(${PCEL[0]} ${PCEL[1] + 84}) scale(2.1)`}>
             <rect x={-80} y={-150} width={160} height={300} rx={26} fill="#22252e" stroke={KC.ink} strokeWidth={8} />
             <rect x={-66} y={-130} width={132} height={250} rx={12} fill={GP_MAPA} />
             <circle cx={0} cy={-40} r={16} fill="#2f7bff" stroke="#fff" strokeWidth={5} />
@@ -272,7 +272,7 @@ function Gps() {
         </Lienzo>
         <Chip T={T} at={K.Distancia + 0.4} until={K.Distancia + 3.1} texto="salió … llegó → tiempo de viaje" x={540} y={420} tam={38} borde={KC.ink} />
         <Chip T={T} at={K.Distancia + 3.3} until={K.Pregunta - 0.1} texto="distancia a cada satélite" x={540} y={420} tam={42} borde={KC.yellow} />
-        <Etq T={T} at={K.Distancia + 5.0} until={K.Pregunta - 0.1} x={400} y={1150} texto="aquí estás" lado="izq" color={KC.ink} tam={32} />
+        <Etq T={T} at={K.Distancia + 5.0} until={K.Pregunta - 0.1} x={360} y={1150} texto="aquí estás" lado="izq" color={KC.ink} tam={32} />
       </Escena>
 
       {/* 4 · pregunta */}
@@ -280,8 +280,8 @@ function Gps() {
         <FondoLunares color={KC.pink} />
         <Lienzo>
           <g opacity={0.5}>
-            {SAT3.map(([sx, sy], i) => <Satelite key={i} x={sx} y={sy + Math.sin(T * 1.4 + i) * 8} s={0.6} />)}
-            <g transform={`translate(${PCEL[0]} ${PCEL[1] + 64}) scale(1.6)`}>
+            {SAT3.map(([sx, sy], i) => <Satelite key={i} x={sx} y={sy + Math.sin(T * 1.4 + i) * 8} s={0.8} />)}
+            <g transform={`translate(${PCEL[0]} ${PCEL[1] + 84}) scale(2.1)`}>
               <rect x={-80} y={-150} width={160} height={300} rx={26} fill="#22252e" stroke={KC.ink} strokeWidth={8} />
               <rect x={-66} y={-130} width={132} height={250} rx={12} fill={GP_MAPA} />
               <circle cx={0} cy={-40} r={16} fill="#2f7bff" stroke="#fff" strokeWidth={5} />
@@ -321,11 +321,11 @@ function Gps() {
       <Escena T={T} a={K.Velocidad} b={K.Neto} fondo={KC.lilac}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <circle cx={540} cy={2300} r={1500} fill="none" stroke="rgba(255,255,255,.7)" strokeWidth={8} strokeDasharray="24 18" />
+          <circle cx={540} cy={2520} r={1500} fill="none" stroke="rgba(255,255,255,.7)" strokeWidth={8} strokeDasharray="24 18" />
           {[0, 1, 2, 3].map((i) => <line key={i} x1={VX - 200 - i * 30} y1={VY - 60 + i * 40} x2={VX - 330 - i * 50} y2={VY - 50 + i * 44} stroke="#fff" strokeWidth={10} strokeLinecap="round" opacity={0.7 - i * 0.12} />)}
-          <Satelite x={VX} y={VY} s={0.75} rot={aV * 57} />
-          <line x1={VX} y1={VY + 60} x2={VX} y2={VY + 120} stroke={KC.ink} strokeWidth={6} />
-          <RelojT x={VX} y={VY + 230} r={105} ang={(T - K.Velocidad) * 240 * klerp(1, 0.55, kprog(T, K.Velocidad + 3.4, K.Velocidad + 4.0))} aro={KC.yellow} />
+          <Satelite x={VX} y={VY} s={1.0} rot={aV * 57} />
+          <line x1={VX} y1={VY + 60} x2={VX} y2={VY + 130} stroke={KC.ink} strokeWidth={6} />
+          <RelojT x={VX} y={VY + 280} r={135} ang={(T - K.Velocidad) * 240 * klerp(1, 0.55, kprog(T, K.Velocidad + 3.4, K.Velocidad + 4.0))} aro={KC.yellow} />
         </Lienzo>
         <Chip T={T} at={K.Velocidad + 0.9} until={K.Neto - 0.1} texto="≈ 14,000 km/h" x={380} y={450} tam={54} borde={KC.yellow} />
         <NumeroGigante T={T} at={K.Velocidad + 3.4} until={K.Neto - 0.15} valor={7} desde={0} dur={0.6} prefijo="−" sufijo=" µs/día" x={400} y={650} tam={110} color={KC.cyan} etiqueta="se atrasa" />
@@ -335,7 +335,7 @@ function Gps() {
       <Escena T={T} a={K.Neto} b={K.Error} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          {(() => { const B = 1150, k = 8, g1 = kprog(T, K.Neto + 0.2, K.Neto + 0.8, kEase.sale), g2 = kprog(T, K.Neto + 0.9, K.Neto + 1.3, kEase.sale), g3 = kprog(T, K.Neto + 1.6, K.Neto + 2.3, kEase.sale);
+          {(() => { const B = 1290, k = 8, g1 = kprog(T, K.Neto + 0.2, K.Neto + 0.8, kEase.sale), g2 = kprog(T, K.Neto + 0.9, K.Neto + 1.3, kEase.sale), g3 = kprog(T, K.Neto + 1.6, K.Neto + 2.3, kEase.sale);
             const top1 = B - 45 * k, top3 = B - 38 * k;
             return <g>
               <line x1={90} y1={B} x2={990} y2={B} stroke={KC.ink} strokeWidth={10} />
@@ -346,11 +346,12 @@ function Gps() {
               {g2 > 0.9 && <TextoSvg x={535} y={top1 - 20} tam={70} color={KC.red}>−7</TextoSvg>}
               {g3 > 0 && <><line x1={630} y1={top3} x2={750} y2={top3} stroke={KC.ink} strokeWidth={5} strokeDasharray="10 8" />
                 <rect x={750} y={B - 38 * k * g3} width={190} height={38 * k * g3} fill={KC.gold} stroke={KC.ink} strokeWidth={8} /></>}
+              <g opacity={kprog(T, K.Neto + 1.6, K.Neto + 2.1)}><Satelite x={845} y={top3 - 110 + Math.sin(T * 1.5) * 8} s={0.55} /></g>
               {[['gravedad', 225, K.Neto + 0.2], ['velocidad', 535, K.Neto + 0.9], ['total', 845, K.Neto + 1.6]].map(([t, x, at]) =>
                 <text key={t} x={x} y={B + 50} textAnchor="middle" opacity={kprog(T, at, at + 0.3)} style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>{t}</text>)}
             </g>; })()}
         </Lienzo>
-        <NumeroGigante T={T} at={K.Neto + 2.0} until={K.Error - 0.15} valor={38} desde={0} dur={0.8} prefijo="+" sufijo=" µs" x={540} y={560} tam={190} color={KC.gold2} etiqueta="cada día, en el satélite" />
+        <NumeroGigante T={T} at={K.Neto + 2.0} until={K.Error - 0.15} valor={38} desde={0} dur={0.8} prefijo="+" sufijo=" µs" x={540} y={640} tam={190} color={KC.gold2} etiqueta="cada día, en el satélite" />
       </Escena>
 
       {/* 8 · error: sin corregir, el puntito se va > 10 km por día */}
@@ -371,7 +372,7 @@ function Gps() {
           </g>}
           <circle cx={PE[0]} cy={PE[1]} r={26} fill="#2f7bff" stroke="#fff" strokeWidth={8} />
           {T > K.Error + 5.2 && <Alerta x={PE[0] - 120} y={PE[1] - 30} s={klerp(0.3, 0.8, kprog(T, K.Error + 5.2, K.Error + 5.5, kEase.rebote))} />}
-          {T > K.Error + 5.0 && <TextoSvg x={560} y={1225} tam={110} color={KC.red} s={klerp(0.4, 1, kprog(T, K.Error + 5.0, K.Error + 5.4, kEase.rebote))}>{'> 10 KM POR DÍA'}</TextoSvg>}
+          {T > K.Error + 5.0 && <TextoSvg x={540} y={1300} tam={78} fuente="texto" color={KC.red} s={klerp(0.4, 1, kprog(T, K.Error + 5.0, K.Error + 5.4, kEase.rebote))}>{'> 10 KM POR DÍA'}</TextoSvg>}
         </Lienzo>
         <Chip T={T} at={K.Error + 0.6} until={K.Error + 3.3} texto="señal = velocidad de la luz" x={650} y={440} tam={36} borde={KC.yellow} />
         <Etq T={T} at={K.Error + 0.8} until={K.Error + 3.4}  x={330} y={1100} texto="donde estás" lado="der" color={KC.ink} tam={30} />
@@ -382,7 +383,7 @@ function Gps() {
       <Escena T={T} a={K.Correccion} b={K.Cierre} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          {T < fase2 + 0.6 && <g opacity={1 - subeSat}>
+          {T < fase2 + 0.6 && <g opacity={1 - subeSat} transform="translate(540 1000) scale(1.45) translate(-420 -930)">
             <rect x={150} y={1120} width={540} height={40} rx={10} fill="#7a7f8f" stroke={KC.ink} strokeWidth={7} />
             <line x1={420} y1={1120} x2={420} y2={760} stroke={KC.ink} strokeWidth={14} />
             <Satelite x={420} y={700} s={1.1} />
@@ -391,16 +392,16 @@ function Gps() {
             <line x1={560} y1={960} x2={560 + Math.sin(giroLlave / 20) * 40} y2={960 - Math.cos(giroLlave / 20) * 40} stroke={KC.ink} strokeWidth={10} strokeLinecap="round" />
             {T > K.Correccion + 0.7 && <Llave x={600} y={950} rot={-50 + giroLlave} s={0.9} />}
           </g>}
-          {T > fase2 - 0.2 && <g opacity={subeSat}>
+          {T > fase2 - 0.2 && <g opacity={subeSat} transform="translate(540 960) scale(1.12) translate(-540 -880)">
             <Satelite x={540} y={klerp(700, 630, subeSat)} s={klerp(1.1, 0.55, subeSat)} />
             <RelojT x={290} y={900} r={130} ang={(T - fase2) * 220} aro={KC.yellow} />
             <RelojT x={790} y={900} r={130} ang={(T - fase2) * 220} />
-            <TextoSvg x={540} y={940} tam={130} color={KC.paper}>=</TextoSvg>
+            <TextoSvg x={540} y={940} tam={130} fuente="texto" color="#ffffff">=</TextoSvg>
             <text x={290} y={1110} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>en órbita</text>
             <text x={790} y={1110} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>en la Tierra</text>
           </g>}
         </Lienzo>
-        <Etq T={T} at={K.Correccion + 1.0} until={fase2 - 0.3} x={620} y={1060} texto="frecuencia" lado="der" color={KC.ink} tam={30} />
+        <Etq T={T} at={K.Correccion + 1.0} until={fase2 - 0.3} x={700} y={1150} texto="frecuencia" lado="der" color={KC.ink} tam={30} />
         <Chip T={T} at={K.Correccion + 0.3} until={fase2 - 0.2} texto="antes del lanzamiento" x={400} y={440} tam={44} borde={KC.ink} />
         <Chip T={T} at={fase2 + 0.4} until={K.Cierre - 0.1} texto="marcan igual" x={400} y={440} tam={44} borde={KC.yellow} />
       </Escena>

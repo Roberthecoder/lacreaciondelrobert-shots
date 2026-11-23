@@ -144,7 +144,7 @@ function ReishiShot() {
       <Escena T={T} a={K.G} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <g transform="translate(310 1030) scale(1.5) translate(-300 -780)">
+          <g transform="translate(360 1100) scale(1.9) translate(-300 -780)">
           <Frasco x={300} y={780} s={0.95} rot={Math.sin(T * 5) * 3 * (1 - kprog(T, K.G + 1.2, K.G + 2))} tapa={tapa} />
           {caida > 0 && caida < 1 && <Capsula x={300 + caida * 170} y={440 - Math.sin(caida * Math.PI) * 160 + caida * 330} rot={caida * 540} />}
           {caida >= 1 && <Capsula x={470} y={770} rot={20} />}
@@ -166,15 +166,15 @@ function ReishiShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={24} />
         {fsvg(<>
-          <Triterpeno x={160} y={780} s={1.92} rot={Math.sin(T) * 4} p={kprog(T, K.Co + 0.2, K.Co + 1.0)} />
-          <Betaglucano x={130} y={1080} s={1.6} n={8} p={kprog(T, K.Co + 0.4, K.Co + 1.6)} />
+          <Triterpeno x={160} y={780} s={1.92} rot={Math.sin(T) * 4} p={kprog(T, K.Co - 0.3, K.Co + 0.5)} />
+          <Betaglucano x={130} y={1080} s={1.6} n={8} p={kprog(T, K.Co - 0.2, K.Co + 1.0)} />
         </>)}
       </Escena>
       {/* 4–5 · mito y dato del cáncer */}
       <Escena T={T} a={K.MC} b={K.J}>
         <FondoLunares color={T < K.DC ? KC.orange : KC.cyan} />
         {fsvg(<>
-          <Frasco x={330} y={1290} s={1.35} rot={Math.sin(T * 2) * 2} />
+          <Frasco x={330} y={1380} s={1.8} rot={Math.sin(T * 2) * 2} />
           {T < K.DC && <g opacity={1 - kprog(T, K.DC - 0.3, K.DC)}><Sello T={T} at={K.MC + 0.9} x={790} y={1060} texto="MITO" color={KC.red} r={110} /></g>}
           {T > K.DC - 0.2 && <g opacity={kprog(T, K.DC - 0.2, K.DC + 0.2)}><Sello T={T} at={K.DC + 0.1} x={790} y={1060} texto="DATO" color="#118a3a" r={120} rot={10} /></g>}
         </>)}
@@ -238,20 +238,20 @@ function ReishiShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <g transform="translate(310 1030) scale(1.5) translate(-300 -780)">
+          <g transform="translate(360 1100) scale(1.9) translate(-300 -780)">
           <Frasco x={300} y={780} s={0.95} etiqueta="REISHI?" />
           <g opacity={kprog(T, K.C + 0.6, K.C + 1.0)} transform="translate(300 780) scale(0.95)">
             <rect x={-104} y={-226} width={208} height={156} rx={12} fill="#fffbe8" stroke={KC.ink} strokeWidth={6} transform="rotate(-4)" />
             {['¿especie?', '¿relleno?', '¿pruebas?'].map((t, i) => <text key={i} x={-86} y={-186 + i * 44} transform="rotate(-4)" style={{ font:`700 34px ${KF.mono}` }} fill={i === 1 ? KC.red : KC.ink} opacity={kprog(T, K.C + 0.8 + i * 0.4, K.C + 1.1 + i * 0.4)}>{t}</text>)}
           </g></g>
-          <Sello T={T} at={K.C + 2.0} x={680} y={700} texto="MITO" color={KC.red} r={95} rot={-14} />
-          <Sello T={T} at={K.C + 2.4} x={760} y={920} texto="DATO" color="#118a3a" r={95} rot={10} />
+          <Sello T={T} at={K.C + 2.0} x={760} y={700} texto="MITO" color={KC.red} r={95} rot={-14} />
+          <Sello T={T} at={K.C + 2.4} x={830} y={920} texto="DATO" color="#118a3a" r={95} rot={10} />
           {FRB.map(([fx, fy], i) => <MiniFrasco key={i} x={fx} y={fy} s={0.9} tinte={SI5.includes(i) ? RX.verde : '#b9b2a6'} marca={SI5.includes(i) ? 'si' : null} />)}
         </>)}
       </Escena>
 
       {/* textos */}
-      <NumeroGigante T={T} at={K.G + 2.8} until={K.H - 0.3} valor={5} dur={0.5} sufijo=" de 19" etiqueta="cumplían su etiqueta" x={760} y={760} tam={140} color={RX.verde} />
+      <NumeroGigante T={T} at={K.G + 2.8} until={K.H - 0.3} valor={5} dur={0.5} sufijo=" de 19" etiqueta="cumplían su etiqueta" x={800} y={760} tam={140} color={RX.verde} />
       <Etq T={T} at={K.H + 1.3} until={K.Co - 0.3} x={60} y={520} texto="reishi · lingzhi" tam={42} color={KC.ink} />
       <Etq T={T} at={K.H + 1.8} until={K.Co - 0.3} x={60} y={580} texto="Ganoderma" it tam={40} color={KC.ink} />
       <Etq T={T} at={K.H + 2.3} until={K.Co - 0.3} x={430} y={1015} texto="pie lateral, brillante" tam={26} color={KC.ink} />
@@ -259,7 +259,7 @@ function ReishiShot() {
       <Etq T={T} at={K.Co + 0.4} until={K.MC - 0.3} x={60} y={640} texto="triterpenos · ácidos ganodéricos" tam={30} color={KC.yellow} />
       <Etq T={T} at={K.Co + 0.8} until={K.MC - 0.3} x={60} y={980} texto="polisacáridos · betaglucanos" tam={30} color={KC.mint} />
       <Chip T={T} at={K.Co + 2.0} until={K.MC - 0.3} texto="sí se estudian" x={760} y={1280} tam={36} borde={KC.mint} />
-      <MitoTachado T={T} at={K.MC + 0.2} tacharEn={K.MC + 0.9} until={K.DC - 0.3} texto="cura el cáncer" x={360} y={730} tam={50} />
+      <MitoTachado T={T} at={K.MC + 0.2} tacharEn={K.MC + 0.9} until={K.DC - 0.3} texto="cura el cáncer" x={360} y={670} tam={50} />
       <TarjetaEstudio T={T} at={K.MC + 1.8} until={K.DC - 0.3} anio="2016" quien="Cochrane · 5 ensayos · 373 personas" revista="Cochrane Database Syst. Rev., 2016" x={540} y={440} />
       <Chip T={T} at={K.DC + 0.5} until={K.J - 0.3} texto="¿Solo, como tratamiento?" x={440} y={430} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.DC + 1.2} until={K.J - 0.3} texto="pruebas insuficientes" x={440} y={515} tam={40} borde={KC.red} />
@@ -283,18 +283,18 @@ function ReishiShot() {
       <Etq T={T} at={K.L + 3.2} until={K.C - 0.3} x={60} y={1240} texto="● G. lingzhi: Asia" it tam={28} color={KC.ink} />
       <Chip T={T} at={K.L + 4.2} until={K.C - 0.3} texto="en esos: falla el nombre, no el hongo" x={420} y={700} tam={36} borde={KC.gold} />
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="no siempre trae lo que dice" x={540} y={400} tam={32} borde={KC.red} />
-      <Etq T={T} at={K.C + 2.8} until={K.Ou} x={60} y={1500} texto="No es consejo médico. Si tomas medicamentos o" tam={22} color={KC.ink} />
-      <Etq T={T} at={K.C + 2.8} until={K.Ou} x={60} y={1535} texto="estás en tratamiento, platícalo con tu médico." tam={22} color={KC.ink} />
+      <Etq T={T} at={K.C + 2.8} until={K.Ou} x={285} y={1490} texto="No es consejo médico. Si tomas medicamentos o" tam={22} color={KC.ink} />
+      <Etq T={T} at={K.C + 2.8} until={K.Ou} x={285} y={1525} texto="estás en tratamiento, platícalo con tu médico." tam={22} color={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={165} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={209} />
       <BarraEscala T={T} at={K.H} until={K.Co} texto="10 cm" largo={180} />
       <BarraEscala T={T} at={K.Co} until={K.MC} texto="1 nm" largo={384} />
       <BarraEscala T={T} at={K.P} until={K.E} texto="5 cm" largo={162} />
       <BarraEscala T={T} at={K.E} until={K.ME} texto="5 cm" largo={120} />
       <BarraEscala T={T} at={K.ME} until={K.L} texto="2 nm (ancho del ADN)" largo={110} />
       <BarraEscala T={T} at={K.L} until={K.C} texto="mapa esquemático" largo={0} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={165} y={1600} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={209} y={1600} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="Solo *5 de 19* cumplían su etiqueta." />

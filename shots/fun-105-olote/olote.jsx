@@ -315,7 +315,7 @@ function OloteShot() {
       {/* 4 · sembrar la semilla */}
       <Escena T={T} a={K.Se} b={K.Os} zoom={0.04}>
         <FondoLunares color={KC.orange} />
-        {fsvg(enc(1.25, 420, 900, 540, 960, <>
+        {fsvg(enc(1.35, 480, 975, 540, 960, <>
           <Bandeja x={600} y={1150} />
           <FrascoGrano x={330} y={880} rot={-inclina * 115} T={T} />
           {Array.from({ length: nGr }, (_, i) => { const t0 = K.Se + 0.9 + i * 0.08, u = kprog(T, t0, t0 + 0.6); if (u <= 0) return null;
@@ -470,7 +470,7 @@ function OloteShot() {
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.N} texto="10 cm" largo={260} />
       <BarraEscala T={T} at={K.Pr} until={K.Se} texto="10 cm" largo={154} />
-      <BarraEscala T={T} at={K.Se} until={K.Os} texto="5 cm" largo={112} />
+      <BarraEscala T={T} at={K.Se} until={K.Os} texto="5 cm" largo={121} />
       <BarraEscala T={T} at={K.Os} until={K.En} texto="10 cm" largo={208} />
       <BarraEscala T={T} at={K.En + 0.6} until={K.P} texto="10 µm (dentro de la lupa)" largo={138} />
       <BarraEscala T={T} at={K.P} until={K.Fr} texto="10 cm" largo={180} />

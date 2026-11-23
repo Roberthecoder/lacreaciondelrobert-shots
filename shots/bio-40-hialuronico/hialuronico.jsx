@@ -5,15 +5,27 @@ const GLCA = '#F4C25A', GLCNAC = '#00d2ff', AGUA = '#7fc8ff', ENZ = '#b18cff', P
 const HA_HILO = '#eaf6ff';
 
 function SvgCapa({ children, z }) {
-  return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z, overflow:'visible' }}>{children}</svg>;
+  return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z, overflow:'visible' }}><HDefs />{children}</svg>;
+}
+// Volumen: luz arriba-izquierda, sombra abajo-derecha (se pone encima de una pieza plana, del mismo contorno).
+function HDefs() {
+  return <defs>
+    <radialGradient id="hgVol" cx="34%" cy="28%" r="78%"><stop offset="0" stopColor="#fff" stopOpacity=".38" /><stop offset=".45" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".32" /></radialGradient>
+    <linearGradient id="hgVolL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fff" stopOpacity=".28" /><stop offset=".5" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".3" /></linearGradient>
+    <radialGradient id="hgSombra" cx="50%" cy="50%" r="50%"><stop offset="0" stopColor="#000" stopOpacity=".45" /><stop offset="1" stopColor="#000" stopOpacity="0" /></radialGradient>
+  </defs>;
 }
 // Dorso de una mano (vista desde arriba), dedos hacia arriba.
 function Mano({ x, y, s = 1 }) {
   const dedos = [[-120, -250, 64, 230, -8], [-40, -300, 66, 280, -3], [40, -290, 66, 270, 3], [115, -240, 60, 220, 9]];
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    {dedos.map(([dx, dy, w, h, r], i) => <rect key={i} x={dx - w / 2} y={dy} width={w} height={h + 40} rx={w / 2} fill={PIEL} stroke={KC.ink} strokeWidth={9} transform={`rotate(${r} ${dx} ${dy + h})`} />)}
+    {dedos.map(([dx, dy, w, h, r], i) => <g key={i} transform={`rotate(${r} ${dx} ${dy + h})`}><rect x={dx - w / 2} y={dy} width={w} height={h + 40} rx={w / 2} fill={PIEL} stroke={KC.ink} strokeWidth={9} />
+      <rect x={dx - w / 2} y={dy} width={w} height={h + 40} rx={w / 2} fill="url(#hgVolL)" />
+      <path d={`M ${dx - 14} ${dy + 14} q 14 -8 28 0 l -2 26 q -12 6 -24 0 Z`} fill="#f9d6bf" stroke={PIEL2} strokeWidth={3} opacity={0.85} /></g>)}
     <path d="M -175 -40 Q -270 -130 -300 -60 Q -310 0 -200 90" fill={PIEL} stroke={KC.ink} strokeWidth={9} />
     <path d="M -190 -60 Q -200 160 -120 300 L 140 300 Q 210 140 175 -60 Q 0 -90 -190 -60 Z" fill={PIEL} stroke={KC.ink} strokeWidth={9} />
+    <path d="M -190 -60 Q -200 160 -120 300 L 140 300 Q 210 140 175 -60 Q 0 -90 -190 -60 Z" fill="url(#hgVol)" />
+    {[[-60, 60], [20, 110], [80, 40], [-110, 170], [60, 200]].map(([px, py], i) => <path key={'v' + i} d={`M ${px} ${py} q 20 -6 34 4`} stroke={PIEL2} strokeWidth={3} fill="none" opacity={0.45} strokeLinecap="round" />)}
     {[-110, -35, 40, 110].map((dx, i) => <path key={i} d={`M ${dx - 18} -70 q 18 -12 36 0`} stroke={PIEL2} strokeWidth={6} fill="none" strokeLinecap="round" />)}
     <path d="M -100 220 L -60 300 M 100 220 L 70 300" stroke={PIEL2} strokeWidth={6} />
   </g>;
@@ -21,7 +33,9 @@ function Mano({ x, y, s = 1 }) {
 // Gotero de suero: frasco ámbar con pipeta y bulbo. etiqueta = texto de la etiqueta.
 function Gotero({ x, y, s = 1, etiqueta = 'SUERO', etq2, rot = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
+    <ellipse cx={0} cy={272} rx={120} ry={22} fill="url(#hgSombra)" />
     <rect x={-95} y={-40} width={190} height={300} rx={36} fill="#c8742b" stroke={KC.ink} strokeWidth={10} />
+    <rect x={-95} y={-40} width={190} height={300} rx={36} fill="url(#hgVolL)" />
     <rect x={-70} y={-20} width={36} height={240} rx={18} fill="rgba(255,255,255,.35)" />
     <rect x={-80} y={40} width={160} height={150} rx={14} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
     <text x={0} y={100} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>{etiqueta}</text>
@@ -48,8 +62,12 @@ function Gallo({ x, y, s = 1, brillo = 0, gris = 0 }) {
   const cresta = mixHex('#e0262f', '#ff6b5a', brillo);
   return <g transform={`translate(${x} ${y}) scale(${s})`} style={{ filter:`grayscale(${gris})` }} opacity={1 - gris * 0.35}>
     <path d="M -150 260 Q -190 60 -60 -10 Q 40 -60 80 20 Q 120 120 60 260 Z" fill="#f6eedf" stroke={KC.ink} strokeWidth={10} />
+    <path d="M -150 260 Q -190 60 -60 -10 Q 40 -60 80 20 Q 120 120 60 260 Z" fill="url(#hgVol)" />
+    {[[-90, 60], [-40, 30], [10, 60], [-110, 120], [30, 110]].map(([px, py], i) => <path key={i} d={`M ${px} ${py} q 18 16 36 0`} stroke="#d8c9ae" strokeWidth={4} fill="none" strokeLinecap="round" />)}
     <path d="M -150 260 Q -140 150 -60 120 Q 20 150 60 260 Z" fill="#c65a1e" stroke={KC.ink} strokeWidth={8} />
+    <path d="M -150 260 Q -140 150 -60 120 Q 20 150 60 260 Z" fill="url(#hgVol)" />
     <ellipse cx={20} cy={-30} rx={92} ry={80} fill="#f6eedf" stroke={KC.ink} strokeWidth={10} />
+    <ellipse cx={20} cy={-30} rx={92} ry={80} fill="url(#hgVol)" />
     <path d="M -60 -80 Q -70 -150 -30 -140 Q -20 -200 20 -170 Q 40 -220 70 -175 Q 110 -190 100 -130 Q 130 -110 90 -90 Z" fill={cresta} stroke={KC.ink} strokeWidth={9} />
     {brillo > 0 && <path d="M -60 -80 Q -70 -150 -30 -140 Q -20 -200 20 -170 Q 40 -220 70 -175 Q 110 -190 100 -130 Q 130 -110 90 -90 Z" fill="none" stroke={KC.yellow} strokeWidth={14 * brillo} opacity={0.7} />}
     <path d="M 105 -40 L 170 -18 L 105 4 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
@@ -60,15 +78,19 @@ function Gallo({ x, y, s = 1, brillo = 0, gris = 0 }) {
 // Silueta de persona (frente) con puntos encendidos: piel (brazo), articulación (rodilla) y ojo.
 function Persona({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <ellipse cx={0} cy={440} rx={210} ry={30} fill="url(#hgSombra)" />
     <circle cx={0} cy={-330} r={95} fill="#ffd9c0" stroke={KC.ink} strokeWidth={10} />
+    <circle cx={0} cy={-330} r={95} fill="url(#hgVol)" />
     <circle cx={-34} cy={-340} r={16} fill="#fff" stroke={KC.ink} strokeWidth={4} /><circle cx={34} cy={-340} r={16} fill="#fff" stroke={KC.ink} strokeWidth={4} />
     <circle cx={-34} cy={-340} r={7} fill={KC.ink} /><circle cx={34} cy={-340} r={7} fill={KC.ink} />
     <path d="M -36 -290 Q 0 -270 36 -290" stroke={KC.ink} strokeWidth={6} fill="none" strokeLinecap="round" />
     <path d="M -130 -220 Q 0 -250 130 -220 L 150 40 L -150 40 Z" fill={KC.blue} stroke={KC.ink} strokeWidth={10} />
+    <path d="M -130 -220 Q 0 -250 130 -220 L 150 40 L -150 40 Z" fill="url(#hgVol)" />
     <path d="M -130 -210 Q -220 -80 -230 60" stroke="#ffd9c0" strokeWidth={56} strokeLinecap="round" fill="none" />
     <path d="M -130 -210 Q -220 -80 -230 60" stroke={KC.ink} strokeWidth={66} strokeLinecap="round" fill="none" opacity={0} />
     <path d="M 130 -210 Q 220 -80 230 60" stroke="#ffd9c0" strokeWidth={56} strokeLinecap="round" fill="none" />
-    <path d="M -120 40 L -100 420 M 120 40 L 100 420" stroke="#3a3f6b" strokeWidth={80} strokeLinecap="round" />
+    <path d="M -120 40 L -100 420 M 120 40 L 100 420" stroke="#4a5590" strokeWidth={80} strokeLinecap="round" />
+    <path d="M -136 50 L -118 410 M 104 50 L 84 410" stroke="#7d89c4" strokeWidth={12} strokeLinecap="round" opacity={0.55} />
   </g>;
 }
 // Punto que late para señalar un sitio del cuerpo.
@@ -118,7 +140,8 @@ function Estreptococos({ T, x, y, n = 5, r = 40, color = '#ffb4c8', capa = 1, ro
     {capa > 0 && Array.from({ length: n }, (_, i) => { const cx = (i - (n - 1) / 2) * r * 1.8;
       const pts = Array.from({ length: 28 }, (_, k) => { const a = k / 28 * Math.PI * 2, rr = r * 1.75 + Math.sin(a * 5 + T * 2 + i + seed) * 7; return `${cx + Math.cos(a) * rr},${Math.sin(a) * rr}`; }).join(' ');
       return <polygon key={'c' + i} points={pts} fill="rgba(234,246,255,.22)" stroke={HA_HILO} strokeWidth={4} strokeDasharray="10 7" opacity={capa} />; })}
-    {Array.from({ length: n }, (_, i) => <circle key={i} cx={(i - (n - 1) / 2) * r * 1.8} cy={Math.sin(i + seed) * 4} r={r} fill={color} stroke={KC.ink} strokeWidth={6} />)}
+    {Array.from({ length: n }, (_, i) => <g key={i}><circle cx={(i - (n - 1) / 2) * r * 1.8} cy={Math.sin(i + seed) * 4} r={r} fill={color} stroke={KC.ink} strokeWidth={6} />
+      <circle cx={(i - (n - 1) / 2) * r * 1.8} cy={Math.sin(i + seed) * 4} r={r} fill="url(#hgVol)" /></g>)}
   </g>;
 }
 // Glóbulo blanco (fagocito): célula grande con núcleo de lóbulos y "brazos" (seudópodos).
@@ -126,13 +149,16 @@ function GlobuloBlanco({ T, x, y, s = 1 }) {
   const pts = Array.from({ length: 40 }, (_, k) => { const a = k / 40 * Math.PI * 2, rr = 150 + Math.sin(a * 4 + T * 2.4) * 18 + Math.sin(a * 7 - T * 1.7) * 8; return `${Math.cos(a) * rr},${Math.sin(a) * rr}`; }).join(' ');
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <polygon points={pts} fill="#e8e1ff" stroke={KC.ink} strokeWidth={7} />
-    {[[-40, -20], [20, -40], [40, 30], [-20, 40]].map(([dx, dy], i) => <circle key={i} cx={dx} cy={dy} r={38} fill="#8a63d2" stroke={KC.ink} strokeWidth={5} />)}
+    <polygon points={pts} fill="url(#hgVol)" />
+    {[[-90, 70], [70, -90], [100, 80], [-100, -70], [0, 110]].map(([dx, dy], i) => <circle key={'g' + i} cx={dx} cy={dy} r={7} fill="#b9a8e8" opacity={0.7} />)}
+    {[[-40, -20], [20, -40], [40, 30], [-20, 40]].map(([dx, dy], i) => <g key={i}><circle cx={dx} cy={dy} r={38} fill="#8a63d2" stroke={KC.ink} strokeWidth={5} /><circle cx={dx} cy={dy} r={38} fill="url(#hgVol)" /></g>)}
   </g>;
 }
 // Señal de alerta.
 function Alerta({ x, y, s = 1, o = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`} opacity={o}>
     <path d="M 0 -90 L 90 70 L -90 70 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+    <path d="M 0 -90 L 90 70 L -90 70 Z" fill="url(#hgVolL)" />
     <rect x={-9} y={-40} width={18} height={66} rx={8} fill="#0b1020" /><circle cx={0} cy={46} r={11} fill="#0b1020" />
   </g>;
 }
@@ -140,7 +166,7 @@ function Alerta({ x, y, s = 1, o = 1 }) {
 function Palomita({ x, y, s = 1, p = 1 }) {
   if (p <= 0) return null;
   return <g transform={`translate(${x} ${y}) scale(${s * kEase.sale(p)})`}>
-    <circle r={70} fill={KC.leaf} stroke={KC.ink} strokeWidth={8} />
+    <circle r={70} fill={KC.leaf} stroke={KC.ink} strokeWidth={8} /><circle r={70} fill="url(#hgVol)" />
     <path d="M -34 2 L -8 28 L 38 -26" fill="none" stroke="#fff" strokeWidth={16} strokeLinecap="round" strokeLinejoin="round" />
   </g>;
 }
@@ -169,6 +195,7 @@ function Hialuronico() {
   const K = { G: CUES.Gancho, Tu: CUES.Tuyo, Ga: CUES.Gallo, Ta: CUES.Tanque, En: CUES.Enzima, Hi: CUES.Hilo, Ag: CUES.Agua, Pr: CUES.Pregunta,
     Ca: CUES.Capa, Ri: CUES.Riesgo, Es: CUES.Estudio, Cr: CUES.Crema, Ci: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
+  const sal = (b) => 1 - kprog(T, b, b + 0.45);
   const V = MUNDO_BIORREACTOR.ventana;
   // gota del gancho: cae del gotero a la mano
   const caeG = kprog(T, K.G + 0.05, K.G + 0.8, (p) => p * p);
@@ -179,7 +206,7 @@ function Hialuronico() {
   const salta = kprog(T, K.Es + 3.4, K.Es + 4.6, kEase.suave);
   const genX = klerp(250, 730, salta), genY = klerp(1020, 980, salta) - Math.sin(salta * Math.PI) * 250;
   // persona de "tú ya lo traes": centro y escala (los puntos y etiquetas salen de aquí)
-  const PX = 540, PY = 1010, PS = 1.32;
+  const PX = 540, PY = 1075, PS = 1.3;
   // glóbulo blanco que se acerca y se resbala
   const acerca = kprog(T, K.Ca + 0.2, K.Ca + 2.0, kEase.suave), resbala = kprog(T, K.Ca + 2.2, K.Ca + 3.6, kEase.suave);
   return (
@@ -189,6 +216,7 @@ function Hialuronico() {
         <FondoLunares color={KC.pink} />
         <SvgCapa>
           {/* encuadre: la mano sube y se achica un poco para que no se corte abajo y el conjunto quede centrado */}
+          <g opacity={sal(K.Tu)}>
           <Mano x={540} y={1290} s={1.38} />
           <Gotero x={215} y={640} s={1.15} rot={-8} />
           {caeG < 1 ? <Gota x={540} y={klerp(780, 1036, caeG)} r={44} /> : <ellipse cx={540} cy={1056} rx={104 + Math.sin(T * 3) * 6} ry={37} fill="rgba(225,242,255,.9)" stroke={KC.ink} strokeWidth={6} />}
@@ -198,43 +226,50 @@ function Hialuronico() {
           <g opacity={kprog(T, K.G + 1.6, K.G + 2.2)} transform={`translate(0 ${(1 - kprog(T, K.G + 1.6, K.G + 2.2, kEase.sale)) * 60})`}>
             <Estreptococos T={T} x={870} y={990} n={3} r={46} color={KC.mint} rot={-20} />
           </g>
+          </g>
         </SvgCapa>
       </Escena>
       {/* 1 · tú ya lo traes */}
       <Escena T={T} a={K.Tu} b={K.Ga} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
+          <g opacity={sal(K.Ga)}>
           <Persona x={PX} y={PY} s={PS} />
           <PuntoLate T={T} x={PX + 34 * PS} y={PY - 340 * PS} at={K.Tu + 2.9} />
           <PuntoLate T={T} x={PX - 216 * PS} y={PY - 61 * PS} at={K.Tu + 1.6} />
           <PuntoLate T={T} x={PX - 104 * PS} y={PY + 348 * PS} at={K.Tu + 2.3} />
+          </g>
         </SvgCapa>
       </Escena>
       {/* 2 · crestas de gallo */}
       <Escena T={T} a={K.Ga} b={K.Ta} zoom={0.06}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Gallo x={400} y={950} s={1.5} brillo={kprog(T, K.Ga + 0.6, K.Ga + 1.2) * (0.6 + 0.4 * Math.sin(T * 8))} />
-          <FlechaCurva x1={520} y1={640} x2={850} y2={880} p={kprog(T, K.Ga + 1.0, K.Ga + 1.8)} color={KC.ink} curva={-90} />
-          <g opacity={kprog(T, K.Ga + 1.5, K.Ga + 2.0)}>
+          <g opacity={sal(K.Ta)}>
+          <Gallo x={380} y={990} s={2.1} brillo={kprog(T, K.Ga + 0.6, K.Ga + 1.2) * (0.6 + 0.4 * Math.sin(T * 8))} />
+          <FlechaCurva x1={560} y1={560} x2={860} y2={880} p={kprog(T, K.Ga + 1.0, K.Ga + 1.8)} color={KC.ink} curva={-90} />
+          <g opacity={kprog(T, K.Ga + 1.5, K.Ga + 2.0)} transform="translate(875 1135) scale(1.3) translate(-850 -1015)">
+            <ellipse cx={850} cy={1132} rx={110} ry={16} fill="url(#hgSombra)" />
             <rect x={760} y={900} width={180} height={230} rx={24} fill="rgba(240,230,210,.9)" stroke={KC.ink} strokeWidth={9} />
+            <rect x={760} y={900} width={180} height={230} rx={24} fill="url(#hgVolL)" />
             <rect x={780} y={870} width={140} height={40} rx={10} fill="#8b6b4a" stroke={KC.ink} strokeWidth={7} />
             <rect x={780} y={980} width={140} height={80} fill={KC.paper} stroke={KC.ink} strokeWidth={5} />
             <text x={850} y={1032} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>antes</text>
+          </g>
           </g>
         </SvgCapa>
       </Escena>
       {/* 3–5 · el tanque, y la Lupa: la enzima en la membrana y el hilo */}
       <Escena T={T} a={K.Ta} b={K.Ag} zoom={0.04}>
-        <MundoBiorreactor T={T} turbio={klerp(0.3, 0.85, kprog(T, K.Ta, K.Hi, kEase.suave))} burbujas={1} rpm={110} fondo="#0b2731" />
+        <div style={{ position:'absolute', inset:0, opacity:sal(K.Ag) }}><MundoBiorreactor T={T} turbio={klerp(0.3, 0.85, kprog(T, K.Ta, K.Hi, kEase.suave))} burbujas={1} rpm={110} fondo="#0b2731" /></div>
       </Escena>
       <Lupa T={T} at={K.En + 0.1} until={K.Ag - 0.2} x={540} y={760} r={330} fx={V.x} fy={V.y} tinte={KC.lilac} etiqueta="AL MICROSCOPIO · la bacteria"
         interior={(t, r) => { const n = Math.min(14, Math.floor(kprog(t, K.En + 0.6, K.Hi + 2.8) * 14));
           return <svg width={r * 2} height={r * 2}>
             <rect width={r * 2} height={r * 2} fill="#07131d" />
             <rect y={r * 1.12} width={r * 2} height={r} fill="#14283a" />
-            <text x={r * 1.55} y={r * 1.7} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#9fb3c8">adentro</text>
-            <text x={r * 1.55} y={r * 0.42} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#9fb3c8">afuera</text>
+            <text x={r * 1.55} y={r * 1.7} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill="#9fb3c8">adentro</text>
+            <text x={r * 1.55} y={r * 0.42} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill="#9fb3c8">afuera</text>
             <g transform={`translate(${r - 540 * 0.9} 0) scale(0.9)`}><Membrana T={t} y={r * 1.12 / 0.9} poro={540} /></g>
             {/* azúcares sueltos adentro que van hacia la enzima */}
             {Array.from({ length: 6 }, (_, i) => { const ph = ((t * 0.5 + i / 6) % 1); return <Azucar key={i} x={klerp(i % 2 ? r * 1.9 : r * 0.1, r, ph)} y={klerp(r * 1.85, r * 1.2, ph)} r={18} tipo={i % 2} rot={t * 40 + i * 30} o={1 - ph * 0.6} />; })}
@@ -266,9 +301,11 @@ function Hialuronico() {
         <SvgCapa>
           {/* encuadre: el conjunto baja y crece 1.15 (centro 820 → 1000) */}
           <g transform="translate(540 1000) scale(1.15) translate(-540 -820)">
-          <Estreptococos T={T} x={600} y={1100} n={5} r={72} color="#ffb4c8" rot={-8} />
-          <GlobuloBlanco T={T} x={klerp(40, 290, acerca) - resbala * 60} y={klerp(700, 750, acerca) - resbala * 260} s={1.5} />
-          {resbala > 0 && resbala < 1 && <path d={`M 470 960 q -70 -110 -210 -230`} fill="none" stroke="#fff" strokeWidth={7} strokeDasharray="14 11" opacity={1 - resbala} />}
+          <Estreptococos T={T} x={600} y={976} n={5} r={72} color="#ffb4c8" rot={-8} />
+          <g opacity={sal(K.Ri)}>
+          <GlobuloBlanco T={T} x={klerp(305, 335, acerca) - resbala * 60} y={klerp(470, 640, acerca) - resbala * 200} s={1.5} />
+          {resbala > 0 && resbala < 1 && <path d={`M 470 850 q -70 -110 -210 -230`} fill="none" stroke="#fff" strokeWidth={7} strokeDasharray="14 11" opacity={1 - resbala} />}
+          </g>
           </g>
         </SvgCapa>
       </Escena>
@@ -276,8 +313,10 @@ function Hialuronico() {
       <Escena T={T} a={K.Ri} b={K.Es} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Estreptococos T={T} x={540} y={900} n={5} r={70} color="#ffb4c8" rot={6} />
-          <Alerta x={540} y={1340} s={1.5} o={kprog(T, K.Ri + 2.2, K.Ri + 2.6)} />
+          <g opacity={sal(K.Es)}>
+          <Estreptococos T={T} x={609} y={1179} n={5} r={83} color="#ffb4c8" rot={-8} />
+          <Alerta x={540} y={790} s={1.6 * (0.85 + 0.15 * kprog(T, K.Ri + 0.2, K.Ri + 0.6, kEase.rebote) + 0.12 * Math.sin(kprog(T, K.Ri + 2.2, K.Ri + 2.8) * Math.PI))} o={kprog(T, K.Ri + 0.2, K.Ri + 0.6) * (0.5 + 0.5 * kprog(T, K.Ri + 2.2, K.Ri + 2.6))} />
+          </g>
         </SvgCapa>
       </Escena>
       {/* 10 · 2005: el gen de la enzima pasa a Bacillus subtilis */}
@@ -285,7 +324,7 @@ function Hialuronico() {
         <FondoLunares color={KC.mint} />
         <SvgCapa>
           {/* las dos bacterias están desde que empieza la escena (antes entraban a los 2.8 s y quedaba solo la tarjeta) */}
-          <g opacity={kprog(T, K.Es, K.Es + 0.4)}>
+          <g opacity={kprog(T, K.Es, K.Es + 0.4) * sal(K.Cr)}>
             <Estreptococos T={T} x={250} y={1020} n={3} r={60} color={KC.lilac} rot={-70} capa={0.6} seed={4} />
             <g transform={`translate(${730} ${980})`}>
               <Bacteria T={T} x={0} y={0} largo={480} ancho={175} rot={-10} color="#ffe08a" seed={3} />
@@ -315,18 +354,18 @@ function Hialuronico() {
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.Tu + 0.4} until={K.Ga - 0.3} texto="ácido hialurónico" x={540} y={1730} tam={50} borde={GLCA} />
+      <Chip T={T} at={K.Tu + 0.4} until={K.Ga - 0.3} texto="ácido hialurónico" x={540} y={400} tam={50} borde={GLCA} />
       <Etq T={T} at={K.Tu + 1.7} until={K.Ga - 0.3} x={PX - 216 * PS + 44} y={PY - 61 * PS} texto="piel" tam={36} color={KC.ink} />
       <Etq T={T} at={K.Tu + 2.4} until={K.Ga - 0.3} x={PX - 104 * PS + 44} y={PY + 348 * PS} texto="articulaciones (rodilla)" lado="der" tam={34} color={KC.ink} />
       <Etq T={T} at={K.Tu + 3.0} until={K.Ga - 0.3} x={PX + 34 * PS + 44} y={PY - 340 * PS} texto="ojo (humor vítreo)" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Ga + 0.4} until={K.Ta - 0.2} texto="antes: cresta de gallo" x={540} y={470} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.Ga + 0.4} until={K.Ta - 0.2} texto="antes: cresta de gallo" x={540} y={360} tam={44} borde={KC.red} />
       <Chip T={T} at={K.Ta + 0.4} until={K.En - 0.1} texto="hoy: fermentación" x={540} y={1690} tam={46} borde={KC.mint} />
-      <Etq T={T} at={K.En + 1.4} until={K.Hi - 0.1} x={610} y={800} texto="una sola enzima" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.En + 1.4} until={K.Hi - 0.1} x={640} y={880} texto="una sola enzima" tam={30} color={KC.texto} />
       <Chip T={T} at={K.En + 2.2} until={K.Ag - 0.3} texto="ácido glucurónico + N-acetilglucosamina" x={540} y={1490} tam={30} borde={GLCA} />
       <Chip T={T} at={K.Ag + 0.8} until={K.Pr - 0.3} texto="atrapa agua" x={540} y={470} tam={52} borde={AGUA} />
-      <Etq T={T} at={K.Ca + 0.6} until={K.Ri - 0.3} x={515} y={1535} texto="capa de hialurónico" tam={30} color={HA_HILO} />
-      <Etq T={T} at={K.Ca + 1.2} until={K.Ri - 0.3} x={549} y={850} texto="glóbulo blanco" lado="der" tam={32} color="#e8e1ff" />
-      <Etq T={T} at={K.Ri + 0.6} until={K.Es - 0.2} x={170} y={1090} texto="Streptococcus zooepidemicus" it lado="der" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 0.6} until={K.Ri - 0.3} x={515} y={1380} texto="capa de hialurónico" tam={30} color={HA_HILO} />
+      <Etq T={T} at={K.Ca + 1.2} until={K.Ri - 0.3} x={570} y={690} texto="glóbulo blanco" lado="der" tam={32} color="#e8e1ff" />
+      <Etq T={T} at={K.Ri + 0.6} until={K.Es - 0.2} x={150} y={1405} texto="Streptococcus zooepidemicus" it lado="der" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Ri + 0.4} until={K.Es - 0.2} texto="el más usado en las fábricas" x={540} y={520} tam={40} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.4} anio="2005" quien="Novozymes · Davis, California" revista="Appl Environ Microbiol · Widner et al." x={540} y={470} />
       <Etq T={T} at={K.Es + 3.0} until={K.Cr - 0.2} x={120} y={1275} texto="S. equisimilis" it lado="der" tam={32} color={KC.ink} />

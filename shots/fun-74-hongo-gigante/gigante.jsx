@@ -10,23 +10,31 @@ const GX = { costra:'#a5521c', costra2:'#c8702e', costra3:'#5e2f10', poro:'#3a1c
 function TroncoCaido({ T = 0, x, y, w = 960, h = 170, abajo = 90, costra = 1, seed = 3 }) {
   const g = krng(seed), poros = Array.from({ length: 70 }, () => [g(), g()]);
   const cw = (w - 70) * costra;
+  const gid = `gxT${Math.round(x)}_${Math.round(y)}_${Math.round(w)}`;
   return <g transform={`translate(${x} ${y})`}>
+    <defs>
+      <linearGradient id={gid + 'm'} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#a0683a" /><stop offset="0.45" stopColor={GX.madera} /><stop offset="1" stopColor="#4a2a10" /></linearGradient>
+      <linearGradient id={gid + 'c'} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#c46628" /><stop offset="1" stopColor="#7a3a12" /></linearGradient>
+      <radialGradient id={gid + 'r'} cx="40%" cy="35%" r="70%"><stop offset="0" stopColor="#f0c890" /><stop offset="1" stopColor="#b88648" /></radialGradient>
+    </defs>
+    <ellipse cx={w / 2} cy={h + abajo + 26} rx={w * 0.5} ry={26} fill="#000" opacity={0.32} />
     {/* cara de abajo (madera vieja) */}
     {abajo > 0 && <path d={`M 20 ${h - 10} L ${w - 10} ${h - 10} Q ${w + 6} ${h + abajo * 0.5} ${w - 30} ${h + abajo} L 50 ${h + abajo} Q 10 ${h + abajo * 0.5} 20 ${h - 10} Z`} fill={GX.madera2} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />}
     {/* la costra del hongo: pegada a la cara de abajo, café-óxido con poros */}
     {abajo > 0 && cw > 4 && <g>
-      <path d={`M 44 ${h - 4} L ${44 + cw} ${h - 4} Q ${54 + cw} ${h + abajo * 0.5} ${36 + cw} ${h + abajo - 6} L 64 ${h + abajo - 6} Q 34 ${h + abajo * 0.5} 44 ${h - 4} Z`} fill={GX.costra} stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />
+      <path d={`M 44 ${h - 4} L ${44 + cw} ${h - 4} Q ${54 + cw} ${h + abajo * 0.5} ${36 + cw} ${h + abajo - 6} L 64 ${h + abajo - 6} Q 34 ${h + abajo * 0.5} 44 ${h - 4} Z`} fill={`url(#${gid}c)`} stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />
       <path d={`M 60 ${h + abajo * 0.3} L ${30 + cw} ${h + abajo * 0.3}`} stroke={GX.costra2} strokeWidth={Math.max(4, abajo * 0.18)} strokeLinecap="round" opacity=".7" />
       {poros.map(([u, v], i) => u * (w - 70) < cw - 10 ? <circle key={i} cx={56 + u * (w - 80)} cy={h + 6 + v * (abajo - 18)} r={2.6} fill={GX.poro} opacity=".7" /> : null)}
       <path d={`M 80 ${h + abajo * 0.62} L ${cw * 0.7} ${h + abajo * 0.62}`} stroke={GX.brillo} strokeWidth={5} strokeLinecap="round" opacity={0.35 + 0.2 * Math.sin(T * 2)} />
     </g>}
     {/* cuerpo del tronco */}
-    <rect x={0} y={0} width={w} height={h} rx={34} fill={GX.madera} stroke={KC.ink} strokeWidth={8} />
+    <rect x={0} y={0} width={w} height={h} rx={34} fill={`url(#${gid}m)`} stroke={KC.ink} strokeWidth={8} />
+    <path d={`M 60 ${h * 0.14} L ${w - 40} ${h * 0.14}`} stroke="#d9a070" strokeWidth={Math.max(4, h * 0.04)} strokeLinecap="round" opacity={0.35} />
     {[28, 64, 100, 136].map((yy, i) => <path key={i} d={`M 70 ${yy} Q ${w * 0.45} ${yy - 12} ${w - 30} ${yy + 6}`} stroke={GX.madera2} strokeWidth={6} fill="none" />)}
     {/* musgo arriba */}
     {[0.12, 0.3, 0.55, 0.78].map((u, i) => <ellipse key={i} cx={w * u} cy={6} rx={46} ry={12} fill="#4f9a3a" stroke={KC.ink} strokeWidth={4} />)}
     {/* cara del corte */}
-    <ellipse cx={0} cy={h / 2 + abajo * 0.25} rx={50} ry={h / 2 + abajo * 0.25} fill={GX.corte} stroke={KC.ink} strokeWidth={8} />
+    <ellipse cx={0} cy={h / 2 + abajo * 0.25} rx={50} ry={h / 2 + abajo * 0.25} fill={`url(#${gid}r)`} stroke={KC.ink} strokeWidth={8} />
     {[0.72, 0.46, 0.22].map((k, i) => <ellipse key={i} cx={0} cy={h / 2 + abajo * 0.25} rx={50 * k} ry={(h / 2 + abajo * 0.25) * k} fill="none" stroke={GX.anillo} strokeWidth={4} />)}
   </g>;
 }
@@ -108,8 +116,12 @@ function Bascula({ x, y, r = 230, aguja = 0, T = 0, franja = 1, mini = false }) 
 // Champiñón de perfil con láminas (para comparar).
 function ConLaminas({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -22 0 L -16 -140 L 16 -140 L 22 0 Z" fill="#f3e6c4" stroke={KC.ink} strokeWidth={7} />
-    <path d="M -150 -140 Q -150 -260 0 -270 Q 150 -260 150 -140 Z" fill="#c98b2b" stroke={KC.ink} strokeWidth={7} />
+    <path d="M -22 0 L -16 -140 L 16 -140 L 22 0 Z" fill="url(#gxPie)" stroke={KC.ink} strokeWidth={7} />
+    <defs><radialGradient id="gxCap" cx="35%" cy="25%" r="80%"><stop offset="0" stopColor="#e6ad52" /><stop offset="0.6" stopColor="#c98b2b" /><stop offset="1" stopColor="#8a5a18" /></radialGradient>
+      <linearGradient id="gxPie" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#fff6dc" /><stop offset="1" stopColor="#c9b48a" /></linearGradient></defs>
+    <ellipse cx={0} cy={6} rx={90} ry={14} fill="#000" opacity={0.3} />
+    <path d="M -150 -140 Q -150 -260 0 -270 Q 150 -260 150 -140 Z" fill="url(#gxCap)" stroke={KC.ink} strokeWidth={7} />
+    <path d="M -110 -180 Q -90 -240 -20 -252" stroke="#ffe3a8" strokeWidth={9} fill="none" strokeLinecap="round" opacity={0.5} />
     <path d="M -150 -140 Q 0 -110 150 -140" fill="#f7efd9" stroke={KC.ink} strokeWidth={6} />
     {Array.from({ length: 13 }, (_, i) => { const u = -132 + i * 22; return <line key={i} x1={u} y1={-138} x2={u * 0.18} y2={-124} stroke="#a07a4a" strokeWidth={4} />; })}
   </g>;
@@ -118,8 +130,9 @@ function ConLaminas({ x, y, s = 1 }) {
 function SupPoros({ x, y, r = 150, T = 0 }) {
   const pts = []; for (let i = -6; i <= 6; i++) for (let j = -6; j <= 6; j++) { const px = i * 24 + (j % 2) * 12, py = j * 22; if (px * px + py * py < (r - 16) * (r - 16)) pts.push([px, py]); }
   return <g transform={`translate(${x} ${y})`}>
-    <circle r={r} fill={GX.costra2} stroke={KC.ink} strokeWidth={8} />
-    {pts.map(([px, py], i) => <circle key={i} cx={px} cy={py} r={7} fill={GX.poro} />)}
+    <defs><radialGradient id="gxSup" cx="35%" cy="30%" r="80%"><stop offset="0" stopColor="#e0904a" /><stop offset="0.6" stopColor={GX.costra2} /><stop offset="1" stopColor="#7a3a12" /></radialGradient></defs>
+    <circle r={r} fill="url(#gxSup)" stroke={KC.ink} strokeWidth={8} />
+    {pts.map(([px, py], i) => <g key={i}><circle cx={px} cy={py + 1.5} r={8} fill={GX.brillo} opacity={0.35} /><circle cx={px} cy={py} r={7} fill={GX.poro} /></g>)}
     <ellipse cx={-r * 0.35} cy={-r * 0.45} rx={r * 0.35} ry={r * 0.12} fill="#fff" opacity={0.3 + 0.1 * Math.sin(T * 2)} transform={`rotate(-30 ${-r * 0.35} ${-r * 0.45})`} />
   </g>;
 }
@@ -132,6 +145,8 @@ function CapasTubos({ x, y, w = 760, hCapa = 50, n = 8 }) {
     {Array.from({ length: 8 }, (_, i) => { const p = kclamp(n - i, 0, 1); if (p <= 0) return null; const yy = i * hCapa;
       return <g key={i} opacity={p} transform={`translate(0 ${(1 - p) * -20})`}>
         <rect x={0} y={yy} width={w} height={hCapa} fill={i % 2 ? GX.costra : GX.costra2} stroke={KC.ink} strokeWidth={4} />
+        <rect x={4} y={yy + 3} width={w - 8} height={hCapa * 0.22} fill="#f0b070" opacity={0.22} />
+        <rect x={4} y={yy + hCapa * 0.72} width={w - 8} height={hCapa * 0.26} fill="#000" opacity={0.15} />
         {Array.from({ length: 24 }, (_, k) => <line key={k} x1={16 + k * 31} y1={yy + 6} x2={16 + k * 31} y2={yy + hCapa - 6} stroke={GX.costra3} strokeWidth={5} strokeLinecap="round" />)}
       </g>; })}
   </g>;
@@ -251,7 +266,7 @@ function GiganteShot() {
       {/* 7 · re-gancho */}
       <Escena T={T} a={K.Pr} b={K.Pe} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><TroncoCaido T={T} x={40} y={960} w={520} h={110} abajo={70} costra={1} /><Interrogacion T={T} x={300} y={900} tam={420} /></>)}
+        {fsvg(<><TroncoCaido T={T} x={110} y={1010} w={900} h={190} abajo={110} costra={1} /><Interrogacion T={T} x={560} y={930} tam={420} /></>)}
       </Escena>
       {/* 8 · perenne: capas de tubos que se apilan */}
       <Escena T={T} a={K.Pe} b={K.Ed}>
@@ -269,10 +284,10 @@ function GiganteShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          <EsporaElip x={540} y={960} L={420} rot={-18} o={kprog(T, K.Sp + 0.2, K.Sp + 0.6)} />
-          {[[170, 700, 126, 30], [910, 720, 112, -40], [150, 1170, 119, 60], [930, 1200, 133, 10], [760, 600, 98, 80]].map(([ex, ey, L, r], i) =>
+          <EsporaElip x={540} y={940} L={560} rot={-18} o={kprog(T, K.Sp + 0.2, K.Sp + 0.6)} />
+          {[[150, 680, 168, 30], [900, 760, 149, -40], [160, 1290, 159, 60], [930, 1400, 177, 10], [640, 590, 131, 80]].map(([ex, ey, L, r], i) =>
             <EsporaElip key={i} x={ex + Math.sin(T * 0.8 + i) * 14} y={ey + Math.cos(T * 0.7 + i) * 12} L={L} rot={r + T * 8} o={kprog(T, K.Sp + 0.2 + i * 0.08, K.Sp + 0.6 + i * 0.08)} />)}
-          <Cota x1={540 - 200} y1={1190} x2={540 + 200} y2={1190} p={kprog(T, K.Sp + 2.0, K.Sp + 2.6, kEase.sale)} texto="≈ 5 µm" tam={44} color={KC.texto} lado={1} />
+          <Cota x1={540 - 267} y1={1250} x2={540 + 267} y2={1250} p={kprog(T, K.Sp + 2.0, K.Sp + 2.6, kEase.sale)} texto="≈ 5 µm" tam={44} color={KC.texto} lado={1} />
         </>)}
       </Escena>
       {/* 11 · contraste: el hongo más grande está bajo tierra (Armillaria, Oregón) */}
@@ -327,10 +342,10 @@ function GiganteShot() {
       <BarraEscala T={T} at={K.M} until={K.P} texto="1 m" largo={79} y={1440} />
       <BarraEscala T={T} at={K.Es} until={K.Po} texto="esquemático" largo={0} y={1440} />
       <BarraEscala T={T} at={K.Po} until={K.Pr} texto="0.5 mm" largo={420} y={1440} />
-      <BarraEscala T={T} at={K.Pr} until={K.Pe} texto="1 m" largo={44} y={1440} />
+      <BarraEscala T={T} at={K.Pr} until={K.Pe} texto="1 m" largo={83} y={1440} />
       <BarraEscala T={T} at={K.Pe} until={K.Ed} texto="1 cm (esquemático)" largo={104} y={1440} />
       <BarraEscala T={T} at={K.Ed} until={K.Sp} texto="10 cm (esquemático)" largo={138} y={1440} />
-      <BarraEscala T={T} at={K.Sp} until={K.C} texto="5 µm" largo={381} y={1440} />
+      <BarraEscala T={T} at={K.Sp} until={K.C} texto="5 µm" largo={508} y={1440} />
       <BarraEscala T={T} at={K.C} until={K.Ci} texto="esquemático" largo={0} y={1440} />
       <BarraEscala T={T} at={K.Ci} until={K.Ou} texto="1 m" largo={79} y={1440} />
 

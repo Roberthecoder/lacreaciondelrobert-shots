@@ -175,25 +175,25 @@ function BotrytisShot() {
       {/* 0 · gancho: a una fresa de la cajita le brota la pelusa gris */}
       <Escena T={T} a={K.G} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
+        {fsvg(<>{/* belleza: cajita y burbuja ×1.18 */}<g transform="translate(540 990) scale(1.18) translate(-520 -960)">
           <Cajita T={T} x={520} y={960} s={1.2} moho={[0, mohoG, 0, 0, 0]} />
-          {T > K.G + 2.9 && <g opacity={kprog(T, K.G + 2.9, K.G + 3.3)} transform={`translate(300 560) scale(${kprog(T, K.G + 2.9, K.G + 3.4, kEase.rebote)})`}>
+          {T > K.G + 2.9 && <g opacity={kprog(T, K.G + 2.9, K.G + 3.3)} transform={`translate(335 535) scale(${kprog(T, K.G + 2.9, K.G + 3.4, kEase.rebote)})`}>
             <circle r={160} fill={KC.mint} stroke={KC.ink} strokeWidth={9} />
             <FlorFresa T={T} x={0} y={0} s={1.05} punto={kprog(T, K.G + 3.5, K.G + 3.9)} />
           </g>}
-          {T > K.G + 2.9 && <path d={`M 360 715 Q 420 800 ${520} 860`} stroke={KC.ink} strokeWidth={6} strokeDasharray="14 12" fill="none" opacity={kprog(T, K.G + 3.2, K.G + 3.6)} />}
-        </>)}
+          {T > K.G + 2.9 && <path d={`M 420 680 Q 450 790 ${520} 860`} stroke={KC.ink} strokeWidth={6} strokeDasharray="14 12" fill="none" opacity={kprog(T, K.G + 3.2, K.G + 3.6)} />}
+        </g></>)}
       </Escena>
       {/* 1 · Botrytis cinerea ataca a cientos de plantas */}
       <Escena T={T} a={K.H} b={K.Es} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Fresa T={T} x={430} y={760} s={1.55} moho={0.75} lado={1} seed={9} />
+          <Fresa T={T} x={560} y={800} s={2.15} moho={0.75} lado={1} seed={9} />
           {[
-            [140, 1060, (k) => <RacimoUvas T={T} x={0} y={-50} s={0.38} moho={k} />],
-            [380, 1060, (k) => <g><circle r={62} fill={KC.red} stroke={KC.ink} strokeWidth={6} /><path d="M -20 -60 L 0 -76 L 20 -60" stroke={BC.caliz} strokeWidth={10} fill="none" /><circle cx={24} cy={8} r={26 * k} fill={BC.gris2} stroke={KC.ink} strokeWidth={k > 0 ? 3 : 0} /></g>],
-            [620, 1060, (k) => <g>{[[0, -30], [-24, -6], [24, -6], [-14, 20], [14, 20], [0, 44], [0, -2]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={20} fill="#d0204a" stroke={KC.ink} strokeWidth={4} />)}<circle cx={10} cy={0} r={28 * k} fill={BC.gris2} stroke={KC.ink} strokeWidth={k > 0 ? 3 : 0} /></g>],
-            [860, 1060, (k) => <g><ellipse rx={50} ry={70} fill="#ffd6e8" stroke={KC.ink} strokeWidth={6} transform="rotate(20)" /><circle cx={6} cy={10} r={30 * k} fill={BC.gris2} stroke={KC.ink} strokeWidth={k > 0 ? 3 : 0} /></g>],
+            [165, 1215, (k) => <RacimoUvas T={T} x={0} y={-50} s={0.38} moho={k} />],
+            [392, 1215, (k) => <g><circle r={62} fill={KC.red} stroke={KC.ink} strokeWidth={6} /><path d="M -20 -60 L 0 -76 L 20 -60" stroke={BC.caliz} strokeWidth={10} fill="none" /><circle cx={24} cy={8} r={26 * k} fill={BC.gris2} stroke={KC.ink} strokeWidth={k > 0 ? 3 : 0} /></g>],
+            [618, 1215, (k) => <g>{[[0, -30], [-24, -6], [24, -6], [-14, 20], [14, 20], [0, 44], [0, -2]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={20} fill="#d0204a" stroke={KC.ink} strokeWidth={4} />)}<circle cx={10} cy={0} r={28 * k} fill={BC.gris2} stroke={KC.ink} strokeWidth={k > 0 ? 3 : 0} /></g>],
+            [845, 1215, (k) => <g><ellipse rx={50} ry={70} fill="#ffd6e8" stroke={KC.ink} strokeWidth={6} transform="rotate(20)" /><circle cx={6} cy={10} r={30 * k} fill={BC.gris2} stroke={KC.ink} strokeWidth={k > 0 ? 3 : 0} /></g>],
           ].map(([px, py, f], i) => { const on = kprog(T, K.H + 1.4 + i * 0.35, K.H + 1.8 + i * 0.35, kEase.rebote); return on > 0 ? <g key={i} transform={`translate(${px} ${py}) scale(${on})`}>
             <circle r={96} fill="#fff" stroke={KC.ink} strokeWidth={6} opacity=".9" />{f(kprog(T, K.H + 1.8 + i * 0.35, K.H + 2.2 + i * 0.35))}</g> : null; })}
         </>)}
@@ -283,11 +283,11 @@ function BotrytisShot() {
       {/* 8 · contagia a las vecinas: por contacto y con esporas al aire */}
       <Escena T={T} a={K.V} b={K.E} zoom={0.05}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
+        {fsvg(<><g transform="translate(540 990) scale(1.18) translate(-520 -960)">
           <Cajita T={T} x={520} y={960} s={1.2} moho={[kprog(T, K.V + 1.6, K.V + 3.8) * 0.8, 1, kprog(T, K.V + 1.0, K.V + 3.2) * 0.8, kprog(T, K.V + 2.2, K.V + 4.2) * 0.7, kprog(T, K.V + 2.8, K.V + 4.4) * 0.5]} />
           {contagio > 0 && <g>{[[520, 900, 360, 920], [520, 900, 690, 920]].map(([x1, y1, x2, y2], i) => <path key={i} d={`M ${x1} ${y1} Q ${(x1 + x2) / 2} ${y1 - 40} ${klerp(x1, x2, contagio)} ${klerp(y1, y2, contagio)}`} stroke="#8d8d86" strokeWidth={9} fill="none" strokeLinecap="round" style={{ filter:'drop-shadow(0 0 3px #000) drop-shadow(0 0 2px #000)' }} />)}</g>}
           <Nube x={520} y={840} p={kprog(T, K.V + 2.2, K.V + 4.4)} />
-        </>)}
+        </g></>)}
       </Escena>
       {/* 9 · el estudio: Florida, 1999–2001. La flor es más vulnerable que la fresa verde */}
       <Escena T={T} a={K.E} b={K.E2} zoom={0.04}>
@@ -338,20 +338,20 @@ function BotrytisShot() {
       {/* 12 · cierre: la misma cajita, y en la fresa con pelusa aparece la flor de la que salió */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
+        {fsvg(<><g transform="translate(540 990) scale(1.18) translate(-520 -960)">
           <Cajita T={T} x={520} y={960} s={1.2} moho={[0, 1, 0, 0, 0]} />
           <g opacity={0.75 * kprog(T, K.C + 0.8, K.C + 1.6)} transform={`translate(520 ${880 - 30 * kprog(T, K.C + 0.8, K.C + 2.4)})`}>
             <FlorFresa T={T} x={0} y={0} s={0.9 * klerp(0.6, 1, kprog(T, K.C + 0.8, K.C + 1.6, kEase.rebote))} punto={1} />
           </g>
-        </>)}
+        </g></>)}
       </Escena>
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 2.1} until={K.G + 2.7} texto="¿llegó anoche?" x={330} y={520} tam={48} />
-      <Chip T={T} at={K.G + 3.6} until={K.H - 0.3} texto="desde la flor" x={300} y={760} tam={36} borde={KC.mint} />
+      <Chip T={T} at={K.G + 3.6} until={K.H - 0.3} texto="desde la flor" x={300} y={690} tam={36} borde={KC.mint} />
       <Etq T={T} at={K.H + 0.4} until={K.Es - 0.3} x={60} y={390} texto="moho gris" tam={40} color={KC.ink} />
       <Etq T={T} at={K.H + 0.8} until={K.Es - 0.3} x={60} y={448} texto="Botrytis cinerea" it tam={40} color={KC.ink} />
-      <Chip T={T} at={K.H + 2.4} until={K.Es - 0.3} texto="cientos de plantas" x={790} y={880} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.H + 2.4} until={K.Es - 0.3} texto="cientos de plantas" x={820} y={1060} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.Es + 0.6} until={K.Et - 0.3} x={60} y={700} texto="viento" tam={36} color={KC.ink} />
       <Etq T={T} at={K.Es + 1.6} until={K.Et - 0.3} x={1030} y={560} lado="izq" texto="salpicaduras" tam={36} color={KC.ink} />
       <Etq T={T} at={K.Es + 2.4} until={K.Et - 0.3} x={60} y={1290} texto="esporas que germinan" tam={30} color={KC.ink} />
@@ -387,20 +387,20 @@ function BotrytisShot() {
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="esperó desde la flor" x={400} y={500} tam={38} borde={KC.mint} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="1 cm" largo={98} />
-      <BarraEscala T={T} at={K.H} until={K.Es} texto="1 cm" largo={103} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="1 cm" largo={116} />{/* belleza ×1.18 */}
+      <BarraEscala T={T} at={K.H} until={K.Es} texto="1 cm" largo={143} />{/* belleza: fresa 1.55 → 2.15 */}
       <BarraEscala T={T} at={K.Es} until={K.Et} texto="1 cm" largo={221} />
       <BarraEscala T={T} at={K.Et} until={K.Sp} texto="1 mm" largo={158} color={KC.texto} />
       <BarraEscala T={T} at={K.Sp} until={K.P} texto="1 cm" largo={187} />
       <BarraEscala T={T} at={K.P} until={K.M} texto="1 cm" largo={187} />
       <BarraEscala T={T} at={K.M} until={micro} texto="1 cm" largo={184} />
       <BarraEscala T={T} at={micro} until={K.V} texto="20 µm" largo={104} />
-      <BarraEscala T={T} at={K.V} until={K.E} texto="1 cm" largo={98} />
+      <BarraEscala T={T} at={K.V} until={K.E} texto="1 cm" largo={116} />
       <BarraEscala T={T} at={K.E} until={K.E2} texto="1 cm" largo={84} />
       <BarraEscala T={T} at={K.E2} until={K.E2 + 2.0} texto="1 cm" largo={160} />
       <BarraEscala T={T} at={K.E2 + 2.0} until={K.N} texto="1 cm" largo={75} />
       <BarraEscala T={T} at={K.N} until={K.C} texto="1 cm" largo={94} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 cm" largo={98} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 cm" largo={116} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="Muchas veces *entró por la flor.*" />

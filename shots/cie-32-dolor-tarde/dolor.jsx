@@ -27,13 +27,15 @@ function Pie({ x, y, s = 1, rot = 0, corto = false, nervio = 0, rapida = null, l
   const pR = rapida != null ? dlPunto(DL_NERVIO, rapida) : null, pL = lenta != null ? dlPunto(DL_NERVIO, lenta) : null;
   const lat = 0.75 + 0.25 * Math.sin(T * 7);
   return <g transform={`translate(${x} ${y}) rotate(${rot} 0 100) scale(${s})`}>
-    {!corto && <rect x={-96} y={-1800} width={182} height={1180} fill="#3d5bd6" stroke={KC.ink} strokeWidth={9} />}
-    {!corto && <rect x={-100} y={-680} width={190} height={60} rx={14} fill="#2e47ad" stroke={KC.ink} strokeWidth={9} />}
-    <path d={`M -70 ${corto ? -170 : -622} L -66 -60 C -100 -20 -118 60 -96 104 L 262 112 C 306 112 318 74 296 52 C 262 26 140 -6 62 -48 L 62 ${corto ? -170 : -622} Z`} fill={CPIEL} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+    {!corto && <rect x={-96} y={-1800} width={182} height={1180} fill="url(#dlJean)" stroke="#9fb2ff" strokeOpacity={0.7} strokeWidth={5} />}
+    {!corto && <line x1={-40} y1={-1780} x2={-40} y2={-690} stroke="#7d95f0" strokeWidth={3} strokeDasharray="10 8" opacity={0.5} />}
+    {!corto && <rect x={-100} y={-680} width={190} height={60} rx={14} fill="url(#dlJean)" stroke="#9fb2ff" strokeOpacity={0.7} strokeWidth={5} />}
+    <path d={`M -70 ${corto ? -170 : -622} L -66 -60 C -100 -20 -118 60 -96 104 L 262 112 C 306 112 318 74 296 52 C 262 26 140 -6 62 -48 L 62 ${corto ? -170 : -622} Z`} fill="url(#dlPiel)" stroke="#ffd9c4" strokeOpacity={0.8} strokeWidth={6} strokeLinejoin="round" />
+    <path d={`M -40 ${corto ? -150 : -600} L -38 -90`} stroke="#fff" strokeWidth={10} opacity={0.18} strokeLinecap="round" />
     <path d="M -96 104 L 262 112" stroke={CPIEL2} strokeWidth={12} strokeLinecap="round" />
     <circle cx={4} cy={-14} r={20} fill="none" stroke={CPIEL2} strokeWidth={6} />
-    <ellipse cx={244} cy={70} rx={30} ry={26} fill={CPIEL} stroke={KC.ink} strokeWidth={7} />
-    <ellipse cx={284} cy={84} rx={30} ry={26} fill={CPIEL} stroke={KC.ink} strokeWidth={8} />
+    <ellipse cx={244} cy={70} rx={30} ry={26} fill="url(#dlDedo)" stroke="#ffd9c4" strokeOpacity={0.8} strokeWidth={5} />
+    <ellipse cx={284} cy={84} rx={30} ry={26} fill="url(#dlDedo)" stroke="#ffd9c4" strokeOpacity={0.8} strokeWidth={5} />
     <ellipse cx={300} cy={74} rx={11} ry={8} fill="#fde3d6" stroke={KC.ink} strokeWidth={4} />
     {sordo > 0.01 && <g opacity={sordo}>
       <circle cx={282} cy={84} r={110 * lat} fill="url(#dlGlow)" />
@@ -51,14 +53,22 @@ function Pie({ x, y, s = 1, rot = 0, corto = false, nervio = 0, rapida = null, l
   </g>;
 }
 function DefsDolor() {
-  return <defs><radialGradient id="dlGlow"><stop offset="0" stopColor="#ff3b2f" stopOpacity=".95" /><stop offset=".55" stopColor="#ff6b5a" stopOpacity=".45" /><stop offset="1" stopColor="#ff6b5a" stopOpacity="0" /></radialGradient></defs>;
+  return <defs><radialGradient id="dlGlow"><stop offset="0" stopColor="#ff3b2f" stopOpacity=".95" /><stop offset=".55" stopColor="#ff6b5a" stopOpacity=".45" /><stop offset="1" stopColor="#ff6b5a" stopOpacity="0" /></radialGradient>
+    {/* pase de belleza: volumen de piel, mezclilla y madera (luz desde la izquierda) */}
+    <linearGradient id="dlPiel" x1="0" y1="0" x2="1" y2="0.25"><stop offset="0" stopColor="#f8cdb0" /><stop offset="0.45" stopColor="#efb08b" /><stop offset="1" stopColor="#c98262" /></linearGradient>
+    <linearGradient id="dlDedo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#f8cdb0" /><stop offset="1" stopColor="#d48f6e" /></linearGradient>
+    <linearGradient id="dlJean" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#5b78ea" /><stop offset="0.5" stopColor="#3d5bd6" /><stop offset="1" stopColor="#273c99" /></linearGradient>
+    <linearGradient id="dlMadera" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#c8854f" /><stop offset="1" stopColor="#8a5129" /></linearGradient>
+    <linearGradient id="dlPata" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#a8693a" /><stop offset="1" stopColor="#5e3518" /></linearGradient>
+  </defs>;
 }
 // Mesa baja (la pata con la que chocas).
 function Mesa({ x = 600 }) {
   return <g>
-    <rect x={x - 30} y={820} width={600} height={56} rx={10} fill={DL_MAD} stroke={KC.ink} strokeWidth={9} />
-    <rect x={x} y={872} width={64} height={320} fill="#8a5129" stroke={KC.ink} strokeWidth={9} />
-    <rect x={x + 420} y={872} width={64} height={320} fill="#8a5129" stroke={KC.ink} strokeWidth={9} />
+    <rect x={x - 30} y={820} width={600} height={56} rx={10} fill="url(#dlMadera)" stroke="#e8b98c" strokeOpacity={0.7} strokeWidth={5} />
+    <rect x={x} y={872} width={64} height={320} fill="url(#dlPata)" stroke="#e8b98c" strokeOpacity={0.6} strokeWidth={5} />
+    <rect x={x + 420} y={872} width={64} height={320} fill="url(#dlPata)" stroke="#e8b98c" strokeOpacity={0.6} strokeWidth={5} />
+    <rect x={x - 30} y={876} width={600} height={14} fill="rgba(0,0,0,.35)" />
   </g>;
 }
 // Acercamiento: lleva el punto `de` al punto `a` y agranda k veces (pase a mano del estilo cine).
@@ -221,7 +231,7 @@ function Dolor() {
               {Array.from({ length: Math.floor((1180 - yT) / 42) }, (_, i) => <line key={i} x1={690} y1={1180 - i * 42} x2={690 + (i % 5 ? 22 : 40)} y2={1180 - i * 42} stroke={KC.ink} strokeWidth={4} />)}
             </g>; })()}
           </DZ>
-          {T > K.Distancia + 2.5 && <g transform={`translate(909 940) scale(${klerp(0.4, 1, kprog(T, K.Distancia + 2.5, K.Distancia + 2.9, kEase.rebote))})`}>
+          {T > K.Distancia + 2.5 && <g transform={`translate(800 330) scale(${klerp(0.4, 1, kprog(T, K.Distancia + 2.5, K.Distancia + 2.9, kEase.rebote))})`}>
             <TextoSvg x={0} y={0} tam={76} color={KC.yellow}>MÁS DE</TextoSvg>
             <TextoSvg x={0} y={114} tam={128} color={KC.yellow}>1 M</TextoSvg>
           </g>}
@@ -234,7 +244,7 @@ function Dolor() {
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Primer} color={KC.orange} />
       <Escena T={T} a={K.Pregunta} b={K.Primer} zoom={0}>
         <Lienzo>
-          {[DL_RAP, DL_LEN].map((c, i) => { const a = T * 3 + i * Math.PI; return <Senal key={i} x={330 + Math.cos(a) * 260} y={1020 + Math.sin(a) * 150} color={c} r={26} />; })}
+          {[DL_RAP, DL_LEN].map((c, i) => { const a = T * 3 + i * Math.PI; return <Senal key={i} x={430 + Math.cos(a) * 300} y={1180 + Math.sin(a) * 170} color={c} r={32} />; })}
         </Lienzo>
       </Escena>
       {/* 7 · la carrera: primero llega la azul, después la roja (como rayo y trueno) */}
@@ -260,7 +270,7 @@ function Dolor() {
               <polyline points="370,540 345,610 385,605 355,690" fill="none" stroke="#fff7c2" strokeWidth={14} strokeLinejoin="round" strokeLinecap="round" opacity={0.5 + 0.5 * Math.abs(Math.sin(T * 9))} />
               </DZ>
             </g>}
-            <Onomato T={T} at={K.Primer + 5.2} dur={1.2} x={800} y={545} texto="¡BRRUM!" tam={112} color={KC.yellow} />
+            <Onomato T={T} at={K.Primer + 5.2} dur={1.2} x={680} y={545} texto="¡BRRUM!" tam={100} color={KC.yellow} />
           </g></Lienzo>; })()}
       </Escena>
       {/* 8 · sobarte ayuda un poco: compuerta en la médula (teoría de 1965) */}

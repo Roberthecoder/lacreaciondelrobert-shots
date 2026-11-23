@@ -43,7 +43,8 @@ function ConcretoPorDentro({ T, r }) {
 function Pared({ x, y, w = 480, h = 720 }) {
   const R = krng(5), pts = Array.from({ length: 60 }, () => [R() * w, R() * h, 2 + R() * 4]);
   return <g transform={`translate(${x} ${y})`}>
-    <rect width={w} height={h} rx={8} fill="#8f8c85" stroke={KC.ink} strokeWidth={8} />
+    <defs><linearGradient id="arPared" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#a29f98" /><stop offset="0.6" stopColor="#8f8c85" /><stop offset="1" stopColor="#6f6c66" /></linearGradient></defs>
+    <rect width={w} height={h} rx={8} fill="url(#arPared)" stroke={KC.ink} strokeWidth={8} />
     {pts.map(([a, b, s], i) => <circle key={i} cx={a} cy={b} r={s} fill="#6c6861" opacity=".7" />)}
     {[0.33, 0.66].map((q) => <line key={q} x1={0} y1={h * q} x2={w} y2={h * q} stroke="#77736b" strokeWidth={4} />)}
     <rect x={-20} y={-36} width={w + 40} height={40} rx={6} fill="#8a857c" stroke={KC.ink} strokeWidth={6} />
@@ -136,8 +137,9 @@ function CorteMuro({ x, y, lado = 300, o = 1 }) {
 // Dunas del desierto.
 function Dunas({ T }) {
   return <g>
-    <path d={`M 0 980 Q 270 ${820 + Math.sin(T) * 4} 540 960 Q 800 1080 1080 900 L 1080 1920 L 0 1920 Z`} fill="#5c4020" stroke={KC.ink} strokeWidth={8} />
-    <path d="M 0 1120 Q 360 1000 700 1120 Q 900 1190 1080 1100 L 1080 1920 L 0 1920 Z" fill="#4a3218" stroke={KC.ink} strokeWidth={8} />
+    <path d={`M 0 980 Q 270 ${820 + Math.sin(T) * 4} 540 960 Q 800 1080 1080 900 L 1080 1920 L 0 1920 Z`} fill="#8a6a3a" stroke={KC.ink} strokeWidth={8} />
+    <path d="M 0 1120 Q 360 1000 700 1120 Q 900 1190 1080 1100 L 1080 1920 L 0 1920 Z" fill="#6b4f28" stroke={KC.ink} strokeWidth={8} />
+    {Array.from({ length: 14 }, (_, i) => <path key={'o' + i} d={`M ${(i * 173) % 1000} ${1180 + (i % 7) * 95} q 40 -12 80 0 t 80 0`} stroke="#8a6a3a" strokeWidth={4} fill="none" opacity={0.5} />)}
     {Array.from({ length: 6 }, (_, i) => { const u = ((T * 0.5 + i / 6) % 1); return <path key={i} d={`M ${-100 + u * 1300} ${700 + i * 40} q 60 -14 120 0`} stroke="#fff" strokeWidth={5} fill="none" opacity={0.6} />; })}
   </g>;
 }
@@ -230,9 +232,9 @@ function ArenaShot() {
       {/* 1 · gancho: la pared y su mezcla */}
       <Escena T={T} a={K.G} b={K.Tu}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Pared x={90} y={380} w={900} h={800} /><BarraMezcla T={T} at={K.G + 2.0} y={1300} /></>)}
+        {svg(<><Pared x={90} y={440} w={900} h={800} /><BarraMezcla T={T} at={K.G + 2.0} y={1360} /></>)}
       </Escena>
-      <Lupa T={T} at={K.G + 0.15} until={K.Tu - 0.2} x={540} y={760} r={300} fx={540} fy={860} tinte={KC.yellow} etiqueta="POR DENTRO · concreto"
+      <Lupa T={T} at={K.G + 0.15} until={K.Tu - 0.2} x={540} y={820} r={300} fx={540} fy={920} tinte={KC.yellow} etiqueta="POR DENTRO · concreto"
         interior={(t, r) => <ConcretoPorDentro T={t} r={r} />} />
       {/* 2 · banqueta, ventana y chip salen de la arena */}
       <Escena T={T} a={K.Tu} b={K.N}>
@@ -253,15 +255,15 @@ function ArenaShot() {
       {/* 4 · el muro alrededor de la Tierra */}
       <Escena T={T} a={K.Mu} b={K.P}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><TierraMuro T={T} x={400} y={770} r={300} p={kprog(T, K.Mu + 0.2, K.Mu + 2.4, kEase.suave)} />
-          <CorteMuro x={680} y={1350} lado={260} o={kprog(T, K.Mu + 2.6, K.Mu + 3.0)} /></>)}
+        {svg(<><TierraMuro T={T} x={400} y={810} r={310} p={kprog(T, K.Mu + 0.2, K.Mu + 2.4, kEase.suave)} />
+          <CorteMuro x={690} y={1430} lado={260} o={kprog(T, K.Mu + 2.6, K.Mu + 3.0)} /></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 5 · ¿y el desierto? */}
       <Escena T={T} a={K.P} b={K.D} zoom={0.1}>
         <FondoLunares color={KC.orange} />
         {svg(<><Dunas T={T} />
-          <Grano x={780} y={1010} r={150} seed={7} amp={0.38} color="#f2c45c" rot={(T - K.P) * 30} trazo={7} />
+          <Grano x={720} y={1180} r={200} seed={7} amp={0.38} color="#f2c45c" rot={(T - K.P) * 30} trazo={7} />
           <text x={330} y={1180} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 330 990)`}>?</text></>)}
       </Escena>
       {/* 6 · al microscopio: grano del desierto (redondo y pulido) vs. grano de roca triturada (con aristas) */}
@@ -311,14 +313,14 @@ function ArenaShot() {
       {/* 11 · cierre: la misma pared, ahora con el río que se queda sin arena */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Pared x={60} y={420} w={540} h={760} />
-          <g transform="translate(630 1000)"><rect width={420} height={300} rx={22} fill="#1a3347" stroke={KC.ink} strokeWidth={6} />
+        {svg(<><Pared x={60} y={500} w={540} h={800} />
+          <g transform="translate(630 1040)"><rect width={420} height={300} rx={22} fill="#1a3347" stroke={KC.ink} strokeWidth={6} />
             <path d="M 0 120 L 420 120 L 420 230 L 0 230 Z" fill="#2f8fd8" />
             <path d={`M 0 230 L 420 230 L 420 ${300 - 60 * kprog(T, K.C + 0.5, K.C + 4, kEase.suave)} L 0 ${300 - 60 * kprog(T, K.C + 0.5, K.C + 4, kEase.suave)} Z`} fill="#e3c26a" stroke={KC.ink} strokeWidth={4} />
             <text x={210} y={60} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>río</text></g>
-          <Flecha x1={630} y1={1150} x2={500} y2={1000} p={kprog(T, K.C + 0.6, K.C + 1.4)} /></>)}
+          <Flecha x1={630} y1={1190} x2={500} y2={1040} p={kprog(T, K.C + 0.6, K.C + 1.4)} /></>)}
       </Escena>
-      <Lupa T={T} at={K.C + 1.6} until={K.Ou - 0.1} x={330} y={760} r={240} fx={330} fy={860} tinte={KC.yellow} etiqueta="POR DENTRO"
+      <Lupa T={T} at={K.C + 1.6} until={K.Ou - 0.1} x={330} y={860} r={240} fx={330} fy={960} tinte={KC.yellow} etiqueta="POR DENTRO"
         interior={(t, r) => <ConcretoPorDentro T={t} r={r} />} />
 
       {/* datos y etiquetas */}

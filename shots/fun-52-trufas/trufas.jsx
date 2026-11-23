@@ -258,7 +258,7 @@ function TrufasShot() {
             {[[130, 1060], [330, 1100], [480, 1010], [650, 1060]].map(([tx, ty], i) => kprog(T, K.R + 1.6 + i * 0.15, K.R + 2.0 + i * 0.15) > 0 ? <Trufa key={i} x={tx} y={ty} s={0.22 * kprog(T, K.R + 1.6 + i * 0.15, K.R + 2.0 + i * 0.15, kEase.rebote)} seed={i + 3} /> : null)}
           </Zg></g>
           {zoomR > 0 && <g opacity={zoomR}>
-            <rect x={0} y={0} width={KW} height={KH} fill={cineMix(KC.noche, CINE.fondo, 0.55)} />
+            <rect x={0} y={0} width={KW} height={KH} fill={CINE.fondo} />
             <PuntaMicorriza T={T} x={520} y={880} s={1.5} rot={-8} g={kprog(T, K.R + 3.6, K.R + 5.2)} />
             {kprog(T, K.R + 4.4, K.R + 5.0) > 0 && <g opacity={kprog(T, K.R + 4.4, K.R + 5.0)}>
               <path d="M 820 1110 Q 760 1060 700 1000" stroke={KC.mint} strokeWidth={12} fill="none" markerEnd="" strokeLinecap="round" />
@@ -292,8 +292,8 @@ function TrufasShot() {
         <FondoLunares color={KC.orange} />
         {fsvg(<Zg k={1.15} cx={520} cy={900} tx={540} ty={1050}>
           <Suelo y={880} />
-          <Trufa x={520} y={1100} s={1.0} seed={5} />
-          <Olor T={T} x={520} y={1040} alto={560} n={4} o={kprog(T, K.O + 0.2, K.O + 0.8)} />
+          <Trufa x={520} y={1120} s={1.45} seed={5} />
+          <Olor T={T} x={520} y={1010} alto={540} n={4} o={kprog(T, K.O + 0.2, K.O + 0.8)} />
           {kprog(T, K.O + 2.4, K.O + 2.9) > 0 && <MoleculaDMS x={300} y={620} s={1.1 * kprog(T, K.O + 2.4, K.O + 2.9, kEase.rebote)} rot={Math.sin(T * 1.5) * 8} />}
         </Zg>)}
       </Escena>
@@ -433,7 +433,7 @@ function TrufasShot() {
       <BarraEscala T={T} at={K.R + 3.4} until={K.Pb} texto="1 mm" largo={300} />
       <BarraEscala T={T} at={K.Pb} until={K.Pb + 2.3} texto="50 µm" largo={110} />
       <BarraEscala T={T} at={K.Pb + 2.4} until={K.O} texto="5 cm" largo={117} />
-      <BarraEscala T={T} at={K.O} until={K.P} texto="5 cm" largo={161} />
+      <BarraEscala T={T} at={K.O} until={K.P} texto="5 cm" largo={233} />
       <BarraEscala T={T} at={K.A} until={K.H} texto="1 m" largo={325} />
       <BarraEscala T={T} at={K.Pr} until={K.E} texto="1 m" largo={220} />
       <BarraEscala T={T} at={K.E + 2.2} until={K.En} texto="50 µm" largo={110} />

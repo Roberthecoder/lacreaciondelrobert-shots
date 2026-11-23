@@ -315,28 +315,37 @@ function IslaCalorShot() {
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1500} color={KC.ink} />
       </Escena>
       {/* 5 · más causas: pocos árboles, edificios que tapan el viento, coches y climas */}
+      {/* belleza: antes eran tres tarjetitas sobre fondo vacío (lámina); ahora las tres causas se dibujan sobre la misma calle de la escena anterior */}
       <Escena T={T} a={K.E} b={K.P}>
         <FondoLunares color={KC.cyan} />
-        {svg(<>
-          <g transform="translate(150 430) scale(1.15)"><Tarjeta T={T} x={0} y={0} at={K.E + 0.2} texto="pocos árboles">
-            <rect x={20} y={300} width={270} height={40} fill={IC.asfalto} /><circle cx={230} cy={90} r={40} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
+        {svg((() => { const a1 = kprog(T, K.E + 0.2, K.E + 0.7, kEase.rebote), a2 = kprog(T, K.E + 1.3, K.E + 2.0, kEase.sale), a3 = kprog(T, K.E + 2.6, K.E + 3.2, kEase.sale);
+          const viento = (T * 0.9) % 1;
+          return <>
+          <Calle T={T} y={CY} h={CH} dia={0.15} carga={0.6} suelta={0.7} />
+          {/* pocos árboles: el cajete vacío con su tocón, y el calor que sube */}
+          {a1 > 0 && <g transform={`translate(860 1250) scale(${1.7 * a1}) translate(-137 -300)`}>
+            <rect x={60} y={296} width={154} height={12} rx={6} fill="#5a3a22" stroke={KC.ink} strokeWidth={4} />
             <path d="M 120 300 L 125 250 L 150 250 L 155 300 Z" fill="#8a5a33" stroke={KC.ink} strokeWidth={5} /><ellipse cx={138} cy={250} rx={18} ry={6} fill="#c8955f" stroke={KC.ink} strokeWidth={4} />
-            <OndasCalor T={T} x={80} y={290} n={3} s={0.8} />
-          </Tarjeta></g>
-          <g transform="translate(573 430) scale(1.15)"><Tarjeta T={T} x={0} y={0} at={K.E + 1.3} texto="sin viento">
-            <rect x={40} y={90} width={90} height={250} fill="#7d8597" stroke={KC.ink} strokeWidth={5} /><rect x={180} y={60} width={90} height={280} fill="#5f6779" stroke={KC.ink} strokeWidth={5} />
-            {Array.from({ length: 5 }, (_, i) => <g key={i}><rect x={58} y={110 + i * 44} width={20} height={20} fill={KC.yellow} /><rect x={198} y={84 + i * 48} width={20} height={20} fill={KC.yellow} /></g>)}
-            <path d={`M -10 ${150 + Math.sin(T * 4) * 4} L 30 150`} stroke={KC.blue} strokeWidth={10} strokeLinecap="round" />
-            <path d="M 30 150 l -18 -14 m 18 14 l -18 14" stroke={KC.blue} strokeWidth={10} strokeLinecap="round" />
-            <path d={`M 34 175 q -24 20 -6 40`} stroke={KC.blue} strokeWidth={8} fill="none" strokeLinecap="round" strokeDasharray="10 10" />
-          </Tarjeta></g>
-          <g transform="translate(362 966) scale(1.15)"><Tarjeta T={T} x={0} y={0} at={K.E + 2.6} texto="coches y climas">
-            <Coche x={140} y={330} s={0.9} />
-            <OndasCalor T={T} x={30} y={300} n={2} s={0.8} />
-            <Clima T={T} x={180} y={140} s={0.9} />
-            <OndasCalor T={T} x={260} y={110} n={2} s={0.8} />
-          </Tarjeta></g></>)}
+            <OndasCalor T={T} x={80} y={290} n={3} s={0.8} /><OndasCalor T={T} x={196} y={290} n={2} s={0.8} />
+          </g>}
+          {/* sin viento: el aire llega de la derecha, choca con la casa y se enrosca */}
+          {a2 > 0 && <g opacity={a2}>
+            {[0, 1, 2].map((i) => { const y = 860 + i * 90, x0 = klerp(1025, 780, kclamp(viento + i * 0.15 - Math.floor(viento + i * 0.15), 0, 1));
+              return <g key={i}><path d={`M 1025 ${y} L ${Math.max(770, x0)} ${y}`} stroke={KC.blue} strokeWidth={12} strokeLinecap="round" opacity=".85" />
+                <path d={`M ${Math.max(770, x0) + 22} ${y - 18} L ${Math.max(770, x0)} ${y} L ${Math.max(770, x0) + 22} ${y + 18}`} stroke={KC.blue} strokeWidth={12} fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                <path d={`M 768 ${y + 20} q -26 26 -4 52`} stroke={KC.blue} strokeWidth={8} fill="none" strokeLinecap="round" strokeDasharray="10 10" opacity=".8" /></g>; })}
+          </g>}
+          {/* coches y climas: un coche en la calle y un clima en la pared, los dos echando calor */}
+          {a3 > 0 && <g opacity={a3}>
+            <g transform={`translate(${klerp(-160, 300, a3)} 0)`}><Coche x={0} y={1300} s={1.15} /><OndasCalor T={T} x={-150} y={1270} n={2} s={0.9} /></g>
+            <Clima T={T} x={615} y={1040} s={0.85} /><OndasCalor T={T} x={690} y={1000} n={2} s={0.8} />
+          </g>}
+          </>; })())}
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1500} color={KC.ink} />
       </Escena>
+      <Chip T={T} at={K.E + 0.2} until={K.E + 1.1} texto="pocos árboles" x={540} y={470} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.E + 1.3} until={K.E + 2.4} texto="sin viento" x={540} y={470} tam={40} borde={KC.blue} />
+      <Chip T={T} at={K.E + 2.6} until={K.P - 0.2} texto="coches y climas" x={540} y={470} tam={40} borde={KC.orange} />
       {/* 6 · re-gancho: ¿cuánto? de uno a casi tres grados de noche (EPA) */}
       <Escena T={T} a={K.P} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
@@ -357,6 +366,9 @@ function IslaCalorShot() {
       {/* 8 · 3 de cada 4: de noche · febrero: hasta 7.8 °C más */}
       <Escena T={T} a={K.F} b={K.A}>
         <FondoLunares color={KC.cyan} />
+        {/* belleza: el valle (Centro y Texcoco) sigue detrás, a media luz: las lunas y el calendario ya no flotan en el vacío */}
+        {svg(<g opacity={0.32}><Zg {...ZV}><ValleMexico T={T} pines={1} /></Zg></g>)}
+        <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse at 50% 50%, rgba(10,14,26,.15), rgba(10,14,26,.6))' }}></div>
         {svg(<Zg {...ZF}>
           {[0, 1, 2, 3].map((i) => <Turno key={i} x={150 + i * 170} y={740} r={64} noche={i < 3} e={kprog(T, K.F + 0.2 + i * 0.3, K.F + 0.6 + i * 0.3, kEase.rebote)} prendido={i < 3 ? 1 : 0.4} />)}
           <g opacity={kprog(T, K.F + 3.0, K.F + 3.5)}><Calendario x={200} y={970} s={0.95} /></g></Zg>)}

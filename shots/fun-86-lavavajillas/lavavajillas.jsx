@@ -488,7 +488,7 @@ function LavavajillasShot() {
       {/* 10 · también en lavadoras: 79 % de 70 lavadoras de casa en Eslovenia, 2015 */}
       <Escena T={T} a={K.La} b={K.Or} zoom={0.04} origen="70% 55%">
         <FondoLunares color={KC.cyan} />
-        {fsvg(<g transform="translate(740 1060) scale(1.2) translate(-785 -925)">
+        {fsvg(<g transform="translate(700 1070) scale(1.2) translate(-785 -925)">
           <Lavadora T={T} x={560} y={690} gira={1} cajon={kprog(T, K.La + 2.4, K.La + 2.9, kEase.sale)} manchas={kprog(T, K.La + 0.8, K.La + 1.8)} />
         </g>)}
       </Escena>
@@ -497,12 +497,12 @@ function LavavajillasShot() {
         <FondoLunares color={KC.leaf} />
         {fsvg(<g transform="translate(540 1080) scale(1.15) translate(-540 -880)">
           {T < K.Or + 2.6 && <g opacity={1 - kprog(T, K.Or + 2.2, K.Or + 2.6)}><Interrogacion T={T} x={360} y={1120} color={KC.yellow} tam={560} /></g>}
-          {T > K.Or + 2.2 && <g opacity={kprog(T, K.Or + 2.2, K.Or + 2.7)}>
+          {T > K.Or - 0.2 && <g opacity={kprog(T, K.Or - 0.2, K.Or + 0.4) * (0.5 + 0.5 * kprog(T, K.Or + 2.2, K.Or + 2.7))}>
             {[[-40, 520, 1.3, 10, '#1f8a3a'], [900, 640, 1.2, 170, '#2aa64a'], [-60, 1130, 1.4, -15, '#2aa64a'], [880, 1160, 1.3, 195, '#1f8a3a'], [640, 520, 0.9, 160, '#167a30']].map(([x, y, s, r, c], i) => <Hoja key={i} T={T} x={x} y={y} s={s} rot={r} color={c} seed={i} />)}
-            <Papaya x={250} y={780} s={kprog(T, K.Or + 2.5, K.Or + 2.9, kEase.rebote)} />
-            <Mango x={460} y={900} s={kprog(T, K.Or + 2.7, K.Or + 3.1, kEase.rebote)} />
-            <Pina x={680} y={880} s={0.9 * kprog(T, K.Or + 2.9, K.Or + 3.3, kEase.rebote)} />
-            <Ave T={T} x={890} y={760} s={0.85 * kprog(T, K.Or + 3.2, K.Or + 3.6, kEase.rebote)} />
+            <Papaya x={250} y={780} s={kprog(T, K.Or + 0.3, K.Or + 0.7, kEase.rebote)} />
+            <Mango x={460} y={900} s={kprog(T, K.Or + 0.6, K.Or + 1.0, kEase.rebote)} />
+            <Pina x={680} y={880} s={0.9 * kprog(T, K.Or + 0.9, K.Or + 1.3, kEase.rebote)} />
+            <Ave T={T} x={890} y={760} s={0.85 * kprog(T, K.Or + 2.4, K.Or + 2.8, kEase.rebote)} />
           </g>}
         </g>)}
       </Escena>
@@ -548,8 +548,8 @@ function LavavajillasShot() {
       <Chip T={T} at={K.Ri + 3.4} until={K.La - 0.3} texto="fibrosis quística: puede colonizar los pulmones" x={540} y={1370} tam={26} borde={KC.red} />
       <NumeroGigante T={T} at={K.La + 0.7} until={K.Or - 0.3} valor={79} dur={1.0} sufijo=" %" etiqueta="de 70 lavadoras de casa" x={330} y={600} tam={170} color={KC.yellow} />
       <Chip T={T} at={K.La + 1.4} until={K.Or - 0.3} texto="Eslovenia, 2015" x={300} y={760} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.La + 2.6} until={K.Or - 0.3} x={488} y={832} lado="izq" texto="cajón del detergente" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.La + 3.0} until={K.Or - 0.3} x={584} y={1150} lado="izq" texto="hule de la puerta" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.La + 2.6} until={K.Or - 0.3} x={440} y={844} lado="izq" texto="cajón del detergente" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.La + 3.0} until={K.Or - 0.3} x={440} y={1162} lado="izq" texto="hule de la puerta" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Or + 0.4} until={K.Or + 2.3} texto="origen: desconocido" x={360} y={490} tam={40} borde={KC.gold} />
       <Chip T={T} at={K.Or + 2.4} until={K.C - 0.3} texto="HIPÓTESIS" x={260} y={400} tam={48} borde={KC.yellow} fondo={KC.red} />
       <Chip T={T} at={K.Or + 3.4} until={K.C - 0.3} texto="la han hallado en frutas tropicales de Tailandia" x={540} y={1330} tam={26} borde={KC.ink} />

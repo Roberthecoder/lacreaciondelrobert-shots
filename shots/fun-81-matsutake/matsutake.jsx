@@ -297,10 +297,10 @@ function MatsutakeShot() {
       <Escena T={T} a={K.G} b={K.B} zoom={0.04} origen="40% 60%">
         <FondoLunares color={KC.mint} />
         {/* pase a mano cine: el bosque y el botón 1.6 veces más grandes, el hongo cerca del centro */}
-        {fsvg(zoomG(1.6, 400, 1190, 510, 1350, <>
+        {fsvg(zoomG(1.9, 400, 1100, 540, 1000, <>
           <MundoGancho T={T} abre={0} crece={sube} tapa={tapa} />
-          <g opacity={kprog(T, K.G + 0.8, K.G + 1.2)}><Champinon x={150} y={900} s={0.55} abre={1} /></g>
-          {T > K.G + 1.6 && <path d="M 80 640 L 230 860 M 230 640 L 80 860" stroke={KC.red} strokeWidth={18} strokeLinecap="round" opacity={kprog(T, K.G + 1.6, K.G + 1.9)} />}
+          <g opacity={kprog(T, K.G + 0.8, K.G + 1.2)}><Champinon x={215} y={1000} s={0.4} abre={1} /></g>
+          {T > K.G + 1.6 && <path d="M 164 811 L 273 971 M 273 811 L 164 971" stroke={KC.red} strokeWidth={13} strokeLinecap="round" opacity={kprog(T, K.G + 1.6, K.G + 1.9)} />}
           {avU > 0 && (() => { const ax = klerp(400, 1150, avU), ay = klerp(900, 380, avU) - Math.sin(Math.PI * avU) * 120; return <Avion x={ax} y={ay} ang={-30} s={1.2} />; })()}
         </>))}
       </Escena>
@@ -353,11 +353,13 @@ function MatsutakeShot() {
         <FondoLunares color={KC.pink} />
         {/* pase a mano cine: charola, suelo, hongo y signo 1.35 veces más grandes y centrados */}
         {fsvg(zoomG(1.35, 300, 1190, 440, 1320, <>
-          <rect x={60} y={1050} width={380} height={90} rx={14} fill="#2f6fd6" stroke={KC.ink} strokeWidth={7} />
-          {[110, 190, 270, 350].map((cx, i) => <Champinon key={i} x={cx} y={1070} s={0.36} abre={0.6} />)}
+          <defs><linearGradient id="charolaVol" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#3b5f9e" /><stop offset="100%" stopColor="#1f3561" /></linearGradient></defs>
+          <rect x={420} y={1060} width={320} height={86} rx={14} fill="url(#charolaVol)" stroke={KC.ink} strokeWidth={6} />
+          <rect x={432} y={1068} width={296} height={12} rx={6} fill="#fff" opacity=".14" />
+          {[462, 534, 606, 678].map((cx, i) => <Champinon key={i} x={cx} y={1080} s={0.32} abre={0.6} />)}
           <SueloBosque y={1180} />
-          <Matsutake x={300} y={1196} s={1.1} abre={0.8} seed={8} />
-          <Interrogacion T={T} x={330} y={820} tam={380} />
+          <Matsutake x={250} y={1196} s={1.1} abre={0.8} seed={8} />
+          <Interrogacion T={T} x={470} y={860} tam={300} />
         </>))}
       </Escena>
       {/* 6 · bajo tierra: ectomicorriza en la raíz del pino (fondo oscuro) */}
@@ -409,7 +411,7 @@ function MatsutakeShot() {
         <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#160f0a" /><RaizMicorriza T={t} x={r} y={r - 30} s={0.42} manto={1} red={1} flujo={1} /></svg>} etiqueta={TXT.lupa} tinte={KC.gold2} />
 
       {/* textos */}
-      <EtqP T={T} at={K.G + 0.5} until={K.B - 0.3} x={540} y={880} texto={TXT.ganchoEtq} tam={34} color={KC.texto} />
+      <EtqP T={T} at={K.G + 0.5} until={K.B - 0.3} x={420} y={620} texto={TXT.ganchoEtq} tam={34} color={KC.texto} />
       <Chip T={T} at={K.G + 1.0} until={K.B - 0.3} texto={'✗ ' + TXT.champi} x={200} y={400} tam={34} borde={KC.red} />
       <Chip T={T} at={K.G + 3.4} until={K.B - 0.1} texto={TXT.aJapon + ' ✈'} x={760} y={480} tam={38} borde={KC.cyan} />
       {TXT.nombres.map((n, i) => <Chip key={i} T={T} at={K.B + 0.6 + i * 0.9} until={K.Es - 0.2} texto={n} x={330} y={430 + i * 100} tam={38} borde={i === 2 ? KC.orange : KC.gold} />)}
@@ -447,7 +449,7 @@ function MatsutakeShot() {
       <Chip T={T} at={K.C + 1.2} until={K.Ou} texto={TXT.cierre} x={560} y={330} tam={36} borde={KC.gold} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.B} texto="5 cm" largo={240} />
+      <BarraEscala T={T} at={K.G} until={K.B} texto="5 cm" largo={285} />
       <BarraEscala T={T} at={K.B} until={K.J} texto="5 cm" largo={221} />
       <BarraEscala T={T} at={K.J} until={K.Ex} texto="5 cm" largo={169} />
       <BarraEscala T={T} at={K.Ex} until={K.P} texto="mapa esquemático" largo={0} />

@@ -100,8 +100,8 @@ function Motivo({ T, at, x, y, titulo, pct, icono, tachar = null, chico = false 
   return <div style={{ position:'absolute', left:x, top:y, width:290 * sc, height:300 * sc, transform:`translate(-50%,-50%) scale(${e})`, zIndex:40,
     background:KC.paper, border:`7px solid ${KC.ink}`, borderRadius:28, boxShadow:`10px 10px 0 ${KC.ink}`, textAlign:'center', overflow:'hidden', filter:`grayscale(${r})` }}>
     <svg width={290 * sc} height={150 * sc} viewBox="-100 -80 200 140">{icono}</svg>
-    <div style={{ font:`400 ${86 * sc}px/1 ${KF.titulo}`, color: chico ? '#7a6a5a' : KC.ink }}>{pct}</div>
-    <div style={{ font:`900 ${30 * sc}px ${KF.texto}`, color:KC.ink, marginTop:6 }}>{titulo}</div>
+    <div style={{ font:`400 ${70 * sc}px/1 ${KF.titulo}`, color: chico ? '#7a6a5a' : KC.ink, whiteSpace:'nowrap' }}>{pct}</div>
+    <div style={{ font:`900 ${28 * sc}px ${KF.texto}`, color:KC.ink, marginTop:8, whiteSpace:'nowrap' }}>{titulo}</div>
     {r > 0 && <div style={{ position:'absolute', left:-10, top:'52%', height:14, width:`${r * 110}%`, background:KC.red, transform:'rotate(-20deg)', transformOrigin:'0 50%', borderRadius:7 }}></div>}
   </div>;
 }
@@ -244,14 +244,14 @@ function Nazca() {
       <Escena T={T} a={K.Es} b={K.M}>
         <FondoLunares color={KC.cyan} />
       </Escena>
-      {T > K.Es - 0.45 && T < K.M + 0.45 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.Es - 0.45, K.Es + 0.05) * (1 - kprog(T, K.M - 0.05, K.M + 0.45)) * (1 - 0.7 * kprog(T, K.Es + 3.0, K.Es + 3.3) * (1 - kprog(T, K.Es + 7.0, K.Es + 7.3))) }}>
+      {T > K.Es - 0.45 && T < K.M + 0.45 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.Es - 0.45, K.Es + 0.05) * (1 - kprog(T, K.M - 0.05, K.M + 0.45)) }}>
       <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transformOrigin:'0 0', transform:'translate(540px, 930px) scale(1.45) translate(-363px, -722px)' }}>
       <Columnas T={T} base={980} filas={[
         { at: K.Es + 0.2, x: 80, valor: 430, color: '#6b6258', etiqueta: 'hasta 2020' },
         { at: K.Es + 0.9, x: 280, valor: 733, color: KC.yellow, etiqueta: '2024 · +303' },
         { at: K.Es + 7.4, x: 480, valor: 893, color: ROSA, etiqueta: '2025 · +160' }]} /></div></div>}
-      {T > K.Es && T < K.M + 0.4 && <div style={{ position:'absolute', left:0, width:KW, textAlign:'center', top:350, zIndex:40, font:`900 40px ${KF.texto}`, color:KC.ink, opacity:kprog(T, K.Es + 0.2, K.Es + 0.6) * (1 - kprog(T, K.M - 0.1, K.M + 0.3)) }}>figuras conocidas en Nazca</div>}
-      <TarjetaEstudio T={T} at={K.Es + 3.0} until={K.Es + 7.1} anio="2024" quien="Univ. de Yamagata + IBM" revista="Sakai et al. · PNAS · con París 1 y DLR" x={540} y={900} />
+      {T > K.Es && T < K.M + 0.4 && <div style={{ position:'absolute', left:0, width:KW, textAlign:'center', top:350, zIndex:40, font:`900 40px ${KF.texto}`, color:KC.ink, opacity:kprog(T, K.Es + 0.2, K.Es + 0.6) * (1 - kprog(T, K.M - 0.1, K.M + 0.3)) * (1 - kprog(T, K.Es + 2.8, K.Es + 3.1) * (1 - kprog(T, K.Es + 7.0, K.Es + 7.3))) }}>figuras conocidas en Nazca</div>}
+      <TarjetaEstudio T={T} at={K.Es + 3.0} until={K.Es + 7.1} anio="2024" quien="Univ. de Yamagata + IBM" revista="Sakai et al. · PNAS · con París 1 y DLR" x={540} y={355} />
       <Chip T={T} at={K.Es + 7.6} until={K.M - 0.15} texto="anuncio de la Univ. de Yamagata · jul 2025" x={540} y={1470} tam={30} borde={ROSA} />
 
       {/* 8 · el matiz: quién encontró qué */}
@@ -274,10 +274,10 @@ function Nazca() {
       {T > K.Mo - 0.45 && T < K.Ci + 0.45 && <div style={{ position:'absolute', inset:0, opacity:1 - kprog(T, K.Ci - 0.05, K.Ci + 0.45) }}>
         <Chip T={T} at={K.Mo + 0.1} until={K.Ci - 0.15} texto="figuras en relieve (683)" x={540} y={370} tam={34} borde={KC.ink} />
         <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transformOrigin:'0 0', transform:'translate(540px, 910px) scale(1.45) translate(-355px, -748px)' }}>
-        <Motivo T={T} at={K.Mo + 0.4} tachar={K.Mo + 1.6} x={200} y={590} titulo="animal salvaje" pct="6.9 %" icono={<IcAve />} chico />
-        <Motivo T={T} at={K.Mo + 2.4} x={200} y={905} titulo="humanoides" pct="33.8 %" icono={<IcHumanoide />} />
-        <Motivo T={T} at={K.Mo + 2.9} x={510} y={905} titulo="llamas" pct="14.9 %" icono={<LlamaRelieve x={10} y={20} s={0.45} />} />
-        <Motivo T={T} at={K.Mo + 3.5} x={510} y={590} titulo="cabezas cortadas" pct="32.9 %" icono={<IcCabeza />} />
+        <Motivo T={T} at={K.Mo + 0.4} tachar={K.Mo + 1.6} x={190} y={585} titulo="animal salvaje" pct="6.9 %" icono={<IcAve />} chico />
+        <Motivo T={T} at={K.Mo + 2.4} x={190} y={915} titulo="humanoides" pct="33.8 %" icono={<IcHumanoide />} />
+        <Motivo T={T} at={K.Mo + 2.9} x={530} y={915} titulo="llamas" pct="14.9 %" icono={<LlamaRelieve x={10} y={20} s={0.45} />} />
+        <Motivo T={T} at={K.Mo + 3.5} x={530} y={585} titulo="cabezas cortadas" pct="32.9 %" icono={<IcCabeza />} />
         </div>
       </div>}
 

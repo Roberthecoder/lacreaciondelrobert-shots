@@ -13,8 +13,18 @@ function Playa({ T, cielo = KC.cyan, hMar = 840 }) {
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
       <rect x={0} y={hMar} width={KW} height={110} fill={MAR} />
       {Array.from({ length: 7 }, (_, i) => <path key={i} d={`M ${i * 170 - 40 + Math.sin(T * 1.5 + i) * 12} ${hMar + 30 + (i % 2) * 40} q 30 -14 60 0 t 60 0`} stroke="#8cc4ea" strokeWidth={6} fill="none" strokeLinecap="round" />)}
-      <path d={`M 0 ${hMar + 110} Q 270 ${hMar + 90 + Math.sin(T * 1.2) * 8} 540 ${hMar + 108} T ${KW} ${hMar + 104} L ${KW} ${KH} L 0 ${KH} Z`} fill={ARENA} stroke={KC.ink} strokeWidth={6} />
-      {granos.map((g, i) => <circle key={i} cx={g.x} cy={g.y} r={g.s} fill="#665233" />)}
+      <defs>
+        <linearGradient id="coArena" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#4a3b22" /><stop offset="0.35" stopColor={ARENA} /><stop offset="1" stopColor="#2a2114" /></linearGradient>
+        <linearGradient id="coMar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#1a5a92" /><stop offset="1" stopColor={MAR} /></linearGradient>
+      </defs>
+      <rect x={0} y={hMar} width={KW} height={110} fill="url(#coMar)" />
+      <path d={`M 0 ${hMar + 110} Q 270 ${hMar + 90 + Math.sin(T * 1.2) * 8} 540 ${hMar + 108} T ${KW} ${hMar + 104} L ${KW} ${KH} L 0 ${KH} Z`} fill="url(#coArena)" stroke={KC.ink} strokeWidth={6} />
+      <path d={`M 0 ${hMar + 112} Q 270 ${hMar + 96 + Math.sin(T * 1.2) * 8} 540 ${hMar + 112} T ${KW} ${hMar + 108} L ${KW} ${hMar + 150} Q 540 ${hMar + 165} 0 ${hMar + 150} Z`} fill="#2e2615" opacity={0.6} />
+      {granos.map((g, i) => <circle key={i} cx={g.x} cy={g.y} r={g.s} fill={i % 4 ? '#6b5634' : '#8a7148'} opacity={0.8} />)}
+      {Array.from({ length: 7 }, (_, i) => { const x = r() * KW, y = hMar + 220 + r() * (KH - hMar - 300), a = r() * 360;
+        return <g key={'c' + i} transform={`translate(${x} ${y}) rotate(${a}) scale(${0.7 + r() * 0.6})`} opacity={0.55}>
+          <path d="M -16 8 Q -18 -14 0 -18 Q 18 -14 16 8 Z" fill="#8f7a5c" stroke="#b39b78" strokeWidth={2} />
+          {[-8, 0, 8].map((dx) => <line key={dx} x1={dx * 0.6} y1={6} x2={dx} y2={-14} stroke="#6e5a3e" strokeWidth={1.5} />)}</g>; })}
     </svg>
   </>;
 }
@@ -50,6 +60,8 @@ function Colilla({ x, y, s = 1, rot = 0, abre = 0, deshilacha = 0, mancha = 1, p
     {/* fibras que se salen del extremo */}
     {deshilacha > 0 && Array.from({ length: 14 }, (_, i) => { const yy = -42 + i * 6.5, L = (40 + (i * 23) % 70) * deshilacha;
       return <path key={i} d={`M 252 ${yy} q ${L * 0.5} ${(i % 2 ? 1 : -1) * (6 + i % 4 * 3)} ${L} ${(i % 3 - 1) * 10 * deshilacha}`} stroke={FIBRA} strokeWidth={4} fill="none" strokeLinecap="round" style={{ filter:'drop-shadow(0 0 1px #000)' }} />; })}
+    <rect x={-250} y={-46} width={540} height={14} rx={7} fill="#fff" opacity={0.22} />
+    <rect x={-250} y={30} width={540} height={20} rx={8} fill="#000" opacity={0.1} />
     {plastico > 0 && <rect x={-48} y={-63} width={330} height={126} rx={18} fill="none" stroke={KC.pink} strokeWidth={8} strokeDasharray="22 14" strokeDashoffset={-T * 40} opacity={plastico} />}
   </g>;
 }
@@ -59,7 +71,8 @@ function Algodon({ x, y, s = 1, o = 1 }) {
   const b = [[-40, 10, 38], [0, -14, 44], [42, 6, 36], [-10, 26, 36], [24, 28, 32]];
   return <g transform={`translate(${x} ${y}) scale(${s})`} opacity={o}>
     {b.map(([a, c, r], i) => <circle key={i} cx={a} cy={c} r={r + 4} fill={KC.ink} />)}
-    {b.map(([a, c, r], i) => <circle key={'w' + i} cx={a} cy={c} r={r} fill="#ffffff" />)}
+    <defs><radialGradient id="coAlg" cx="0.4" cy="0.3" r="0.8"><stop offset="0" stopColor="#ffffff" /><stop offset="0.7" stopColor="#eef1f6" /><stop offset="1" stopColor="#bfc8d6" /></radialGradient></defs>
+    {b.map(([a, c, r], i) => <circle key={'w' + i} cx={a} cy={c} r={r} fill="url(#coAlg)" />)}
     <circle cx={-8} cy={-24} r={12} fill="#eef3f8" />
   </g>;
 }
@@ -126,12 +139,17 @@ function ColillasShot() {
   const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{c}</svg>;
   // la colilla del inicio (y del cierre): sale de la arena y se acomoda
   const sube = kprog(T, K.G, K.G + 0.7, kEase.rebote);
-  const colillaInicio = (abre, extra = {}) => <Colilla x={535} y={1080 + (1 - sube) * 50} s={1.6} rot={-8 + (1 - sube) * 14} abre={abre} T={T} {...extra} />;
+  // modo cine: más grande e inclinada (antes 1.6 y −8°; ahora 1.8 y −12°) para que llene el cuadro
+  const colillaInicio = (abre, extra = {}) => <Colilla x={505} y={1130 + (1 - sube) * 50} s={1.8} rot={-12 + (1 - sube) * 14} abre={abre} T={T} {...extra} />;
   // podio
-  const pod = (x, h, n, nombre, c, at) => { const k = kprog(T, at, at + 0.6, kEase.rebote);
-    return <g><rect x={x - 130} y={1150 - h * k} width={260} height={h * k} fill={c} stroke={KC.ink} strokeWidth={7} />
-      <text x={x} y={1150 - h * k + 90} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill="#0b1020" opacity={k}>{n}</text>
-      <text x={x} y={1150 - h * k + 140} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill="#0b1020" opacity={k}>{nombre}</text></g>; };
+  // modo cine: podio más grande (1.4×) y apoyado más abajo
+  const BASE = 1340;
+  const pod = (x, h0, n, nombre, c, at) => { const k = kprog(T, at, at + 0.6, kEase.rebote), h = h0 * 1.4;
+    return <g><rect x={x - 140} y={BASE - h * k} width={280} height={h * k} fill={c} stroke={KC.ink} strokeWidth={7} />
+      <rect x={x - 140} y={BASE - h * k} width={280} height={Math.min(h * k, 26)} fill="#fff" opacity={0.25} />
+      <rect x={x + 100} y={BASE - h * k} width={40} height={h * k} fill="#000" opacity={0.15} />
+      <text x={x} y={BASE - h * k + 100} textAnchor="middle" style={{ font:`400 100px ${KF.titulo}` }} fill="#0b1020" opacity={k}>{n}</text>
+      <text x={x} y={BASE - h * k + 152} textAnchor="middle" style={{ font:`900 32px ${KF.texto}` }} fill="#0b1020" opacity={k}>{nombre}</text></g>; };
   // peces del estudio: la mitad se apaga durante las 96 h
   const t96 = kprog(T, K.E + 4.6, K.E + 8.4);
   const peces = [[-110, -300], [60, -330], [-40, -230], [110, -200], [-120, -140], [40, -110]];
@@ -148,14 +166,14 @@ function ColillasShot() {
       <Escena T={T} a={K.F} b={K.Q}>
         <Escena T={T} a={K.F - 0.5} b={K.F + 1.7}>
           <Playa T={T} />
-          {svg(<Colilla x={430} y={1080} s={1.6} abre={1} T={T} />)}
+          {svg(<Colilla x={505} y={1130} s={1.8} rot={-12} abre={1} T={T} />)}
         </Escena>
         <Escena T={T} a={K.F + 1.7} b={K.Q + 1}>
           <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 50%, #1b2238 0%, ${KC.dark} 75%)` }}></div>
           {svg(<HazFibras T={T} y0={690} n={13} destaca={kprog(T, K.F + 3.0, K.F + 3.3) > 0.5 ? 6 : -1} />)}
         </Escena>
       </Escena>
-      <Lupa T={T} at={K.F + 0.1} until={K.F + 1.6} x={600} y={620} r={200} fx={430 + 250 * 1.6} fy={1080} tinte={KC.cyan} etiqueta="AL MICROSCOPIO"
+      <Lupa T={T} at={K.F + 0.1} until={K.F + 1.6} x={600} y={620} r={200} fx={945} fy={1036} tinte={KC.cyan} etiqueta="AL MICROSCOPIO"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#1b2238" />
           {Array.from({ length: 9 }, (_, i) => <path key={i} d={`M -20 ${40 + i * 40} q 60 ${i % 2 ? 12 : -12} 120 0 t 120 0 t 120 0 t 120 0`} stroke={FIBRA} strokeWidth={26} fill="none" />)}</svg>} />
       {/* 3 · químicos: las fibras se tiñen y sueltan sustancias */}
@@ -169,7 +187,7 @@ function ColillasShot() {
         {svg(<><Sol T={T} x={250} y={500} r={105} />
           <Goteo T={T} x={420} y0={680} y1={990} cada={0.25} color="#7fd0ff" desde={K.Ti + 1.2} hasta={K.Ti + 3.4} r={10} />
           <Goteo T={T} x={620} y0={700} y1={990} cada={0.31} color="#7fd0ff" desde={K.Ti + 1.4} hasta={K.Ti + 3.4} r={10} />
-          <Colilla x={470} y={1080} s={1.45} rot={-6} abre={kprog(T, K.Ti + 2.4, K.Ti + 3.4)} deshilacha={kprog(T, K.Ti + 2.6, K.Ti + 4.6)} T={T} />
+          <Colilla x={480} y={1110} s={1.6} rot={-6} abre={kprog(T, K.Ti + 2.4, K.Ti + 3.4)} deshilacha={kprog(T, K.Ti + 2.6, K.Ti + 4.6)} T={T} />
           {Array.from({ length: 22 }, (_, i) => { const u = kprog(T, K.Ti + 3.4 + i * 0.05, K.Ti + 4.4 + i * 0.05, kEase.sale);
             return <line key={i} x1={700 + (i * 37) % 330} y1={1210 + (i * 29) % 130} x2={700 + (i * 37) % 330 + 22} y2={1210 + (i * 29) % 130 + ((i % 3) - 1) * 9} stroke={FIBRA} strokeWidth={5} strokeLinecap="round" opacity={u} style={{ filter:'drop-shadow(0 0 1.5px #000)' }} />; })}</>)}
       </Escena>
@@ -182,9 +200,13 @@ function ColillasShot() {
       {/* 6 · playa: limpieza internacional 2025 y el podio */}
       <Escena T={T} a={K.Pl} b={K.M}>
         <Playa T={T} cielo={KC.mint} hMar={760} />
-        {svg(<>{pod(540, 340, '1', 'botellas', '#bfe7ff', K.Pl + 3.0)}{pod(230, 260, '2', 'colillas', KC.yellow, K.Pl + 3.4)}{pod(850, 190, '3', 'taparroscas', '#d9dde3', K.Pl + 3.2)}
-          <g opacity={kprog(T, K.Pl + 3.6, K.Pl + 3.9)}><Botella x={540} y={806} s={0.95} /><Colilla x={235} y={858} s={0.46} T={T} /><Tapa x={850} y={958} s={1.2} /></g>
-          {kprog(T, K.Pl + 3.8, K.Pl + 4.2) > 0 && <circle cx={230} cy={830} r={150} fill="none" stroke={KC.pink} strokeWidth={8} strokeDasharray="22 14" strokeDashoffset={-T * 40} opacity={kprog(T, K.Pl + 3.8, K.Pl + 4.2)} />}</>)}
+        {svg(<>
+          {/* modo cine: las colillas recogidas están en la arena desde que empieza la escena (mientras sube el conteo) */}
+          {Array.from({ length: 16 }, (_, i) => { const R = krng(60 + i), cx = 80 + R() * 920, cy = 960 + R() * 520, e = kprog(T, K.Pl + i * 0.12, K.Pl + 0.4 + i * 0.12, kEase.rebote);
+            return <g key={i} opacity={e * (1 - 0.6 * kprog(T, K.Pl + 2.8, K.Pl + 3.4))}><Colilla x={cx} y={cy} s={0.36 * e} rot={R() * 360} T={T} /></g>; })}
+          {pod(540, 340, '1', 'botellas', '#bfe7ff', K.Pl + 3.0)}{pod(240, 260, '2', 'colillas', KC.yellow, K.Pl + 3.4)}{pod(840, 190, '3', 'taparroscas', '#d9dde3', K.Pl + 3.2)}
+          <g opacity={kprog(T, K.Pl + 3.6, K.Pl + 3.9)}><Botella x={540} y={BASE - 476} s={1.15} /><Colilla x={245} y={BASE - 364 - 50} s={0.55} T={T} /><Tapa x={840} y={BASE - 266} s={1.4} /></g>
+          {kprog(T, K.Pl + 3.8, K.Pl + 4.2) > 0 && <circle cx={240} cy={BASE - 400} r={160} fill="none" stroke={KC.pink} strokeWidth={8} strokeDasharray="22 14" strokeDashoffset={-T * 40} opacity={kprog(T, K.Pl + 3.8, K.Pl + 4.2)} />}</>)}
       </Escena>
       {/* 7 · México: más del doble de colillas que de botellas */}
       <Escena T={T} a={K.M} b={K.E}>
@@ -220,7 +242,7 @@ function ColillasShot() {
 
       {/* datos y etiquetas */}
       <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 0.9} until={K.F - 0.3} texto="algodón" x={300} y={480} tam={52} />
-      <Chip T={T} at={K.G + 2.2} until={K.F - 0.2} texto="acetato de celulosa = plástico" x={540} y={1300} tam={38} borde={KC.pink} />
+      <Chip T={T} at={K.G + 2.2} until={K.F - 0.2} texto="acetato de celulosa = plástico" x={540} y={1400} tam={38} borde={KC.pink} />
       <NumeroGigante T={T} at={K.F + 1.9} until={K.Q - 0.2} valor={15000} dur={1.2} prefijo="+" etiqueta="fibras en un filtro" x={360} y={470} tam={130} color={KC.yellow} />
       <Etq T={T} at={K.F + 3.2} until={K.Q - 0.2} x={40} y={1150} texto="1 fibra = 20 µm de grueso" tam={30} color={KC.gold2} />
       <Etq T={T} at={K.F + 2.2} until={K.Q - 0.2} x={40} y={640} texto="acetato de celulosa" tam={28} />

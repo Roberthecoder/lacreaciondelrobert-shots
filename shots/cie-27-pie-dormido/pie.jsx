@@ -360,7 +360,7 @@ function Pie_() {
         <FondoLunares color={KC.mint} />
         <Lienzo>
           <g opacity={0.6}><PieGrande x={400} y={1250} s={1.2} gris={0.15} corte={1} T={T} chispas={0.8} /></g>
-          <TextoSvg x={540} y={640} tam={170} color={KC.yellow} rot={-4} s={klerp(0.4, 1, kprog(T, K.Nombre + 0.6, K.Nombre + 1.0, kEase.rebote))} o={kprog(T, K.Nombre + 0.6, K.Nombre + 0.8)}>PARESTESIA</TextoSvg>
+          <TextoSvg x={540} y={650} tam={126} color={KC.yellow} rot={-4} s={klerp(0.4, 1, kprog(T, K.Nombre + 0.6, K.Nombre + 1.0, kEase.rebote))} o={kprog(T, K.Nombre + 0.6, K.Nombre + 0.8)}>PARESTESIA</TextoSvg>
           <Chispas T={T} x={540} y={620} n={10} radio={420} o={kprog(T, K.Nombre + 0.9, K.Nombre + 1.3)} seed={14} />
         </Lienzo>
         <Chip T={T} at={K.Nombre + 0.1} until={K.Pregunta - 0.05} texto="los médicos le llaman" x={540} y={420} tam={42} borde={KC.ink} />
@@ -392,14 +392,15 @@ function Pie_() {
       <Escena T={T} a={K.Medico} b={K.Codo} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <g opacity={0.45}><PieGrande x={120} y={1300} s={0.9} gris={0.3} corte={0.6} T={T} /></g>
-          <Alerta x={540} y={810} s={1.2 * klerp(0.5, 1, kprog(T, K.Medico + 0.1, K.Medico + 0.4, kEase.rebote))} color={KC.orange} />
-          <FlechaRecta x1={540} y1={1140} x2={540} y2={1210} p={kprog(T, K.Medico + 2.6, K.Medico + 3.0, kEase.sale)} color={KC.mint} />
-          {T > K.Medico + 2.9 && <CruzMedica x={540} y={1340} s={klerp(0.3, 0.9, kprog(T, K.Medico + 2.9, K.Medico + 3.3, kEase.rebote))} />}
+          {/* belleza: el pie entumido es el sujeto (grande, a la derecha); alerta → flecha → médico en la columna izquierda */}
+          <g opacity={0.92}><PieGrande x={590} y={1330} s={1.15} gris={0.3} corte={0.6} T={T} /></g>
+          <Alerta x={280} y={760} s={1.3 * klerp(0.5, 1, kprog(T, K.Medico + 0.1, K.Medico + 0.4, kEase.rebote))} color={KC.orange} />
+          <FlechaRecta x1={290} y1={930} x2={290} y2={1030} p={kprog(T, K.Medico + 2.6, K.Medico + 3.0, kEase.sale)} color={KC.mint} />
+          {T > K.Medico + 2.9 && <CruzMedica x={290} y={1170} s={klerp(0.3, 0.9, kprog(T, K.Medico + 2.9, K.Medico + 3.3, kEase.rebote))} />}
         </Lienzo>
-        <Chip T={T} at={K.Medico + 0.6} until={K.Codo - 0.1} texto="si pasa seguido sin razón" x={540} y={990} tam={40} borde={KC.ink} />
-        <Chip T={T} at={K.Medico + 1.7} until={K.Codo - 0.1} texto="o no se quita" x={540} y={1090} tam={40} borde={KC.ink} />
-        <Etq T={T} at={K.Medico + 3.2} until={K.Codo - 0.1} x={660} y={1340} texto="médico" lado="der" color={KC.ink} tam={40} />
+        <Chip T={T} at={K.Medico + 0.6} until={K.Codo - 0.1} texto="si pasa seguido sin razón" x={540} y={470} tam={40} borde={KC.ink} />
+        <Chip T={T} at={K.Medico + 1.7} until={K.Codo - 0.1} texto="o no se quita" x={540} y={565} tam={40} borde={KC.ink} />
+        <Etq T={T} at={K.Medico + 3.2} until={K.Codo - 0.1} x={190} y={1330} texto="médico" lado="der" color={KC.ink} tam={40} />
       </Escena>
 
       {/* 10 · el codo: golpe en el «hueso de la risa» → rayito al anular y al meñique */}

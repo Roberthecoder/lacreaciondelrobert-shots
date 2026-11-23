@@ -12,13 +12,22 @@ const AC = { cera:'#c58f4e', cera2:'#8a5a2a', dentro:'#f3dfb0', comida:'#e8b341'
 const pElipse = (x, y, rx, ry, a) => [x + rx * Math.cos(a * Math.PI / 180), y + ry * Math.sin(a * Math.PI / 180)];
 
 // Larva en "C" (gusanito blanco curvado), centro (x, y), tamaño R. muerde 0..1 abre/cierra las mandíbulas. gris = larva muerta.
+// Pase de belleza: luz de volumen (claro arriba-izquierda, sombra abajo-derecha) para poner encima de piezas planas.
+function AbDefs() {
+  return <defs><radialGradient id="ab-luz" cx=".32" cy=".26" r=".85">
+    <stop offset="0" stopColor="#ffffff" stopOpacity=".45" /><stop offset=".42" stopColor="#ffffff" stopOpacity="0" />
+    <stop offset=".78" stopColor="#000000" stopOpacity=".08" /><stop offset="1" stopColor="#000000" stopOpacity=".3" />
+  </radialGradient></defs>;
+}
 function Larva({ x, y, R = 40, muerde = 0, gris = false, rot = 0 }) {
   if (R <= 0.5) return null;
   const n = 9, segs = Array.from({ length: n }, (_, i) => { const a = (200 - i * 30) * Math.PI / 180; return { i, cx: Math.cos(a) * R * 0.62, cy: Math.sin(a) * R * 0.62, r: R * (0.42 - i * 0.018) }; });
   const col = gris ? '#a9a39a' : AC.larva, col2 = gris ? '#8d877e' : AC.larva2;
   const cabeza = segs[n - 1];
   return <g transform={`translate(${x} ${y}) rotate(${rot})`}>
-    {segs.map((s) => <circle key={s.i} cx={s.cx} cy={s.cy} r={s.r} fill={col} stroke={KC.ink} strokeWidth={Math.max(2.5, R * 0.07)} />)}
+    <AbDefs />
+    {segs.map((s) => <g key={s.i}><circle cx={s.cx} cy={s.cy} r={s.r} fill={col} stroke={KC.ink} strokeWidth={Math.max(2.5, R * 0.07)} />
+      <circle cx={s.cx} cy={s.cy} r={s.r * 0.94} fill="url(#ab-luz)" /></g>)}
     {segs.slice(1, n - 1).map((s) => <path key={'l' + s.i} d={`M ${s.cx - s.r * 0.5} ${s.cy - s.r * 0.6} Q ${s.cx} ${s.cy} ${s.cx - s.r * 0.5} ${s.cy + s.r * 0.6}`} stroke={col2} strokeWidth={Math.max(1.5, R * 0.04)} fill="none" />)}
     {/* cabeza (último segmento) con mandíbulas cafés */}
     <g transform={`translate(${cabeza.cx} ${cabeza.cy})`}>
@@ -50,11 +59,15 @@ function Abeja({ T = 0, x, y, s = 1, rot = 0, reina = false, aleteo = 0, espejo 
     {/* patas */}
     {[-6, 8, 22].map((dx, i) => <path key={i} d={`M ${dx} 14 L ${dx - 10 + i * 6} 40 L ${dx - 4 + i * 8} 58`} stroke={KC.ink} strokeWidth={5} fill="none" strokeLinecap="round" strokeLinejoin="round" />)}
     {/* abdomen con bandas */}
+    <AbDefs />
     <ellipse cx={ab.cx} cy={6} rx={ab.rx} ry={ab.ry} fill={reina ? '#6a5236' : AC.cuerpo2} stroke={KC.ink} strokeWidth={5} />
     {[0.25, 0, -0.25].map((u, i) => <path key={i} d={`M ${ab.cx + u * ab.rx * 2 - 6} ${6 - ab.ry * 0.85} Q ${ab.cx + u * ab.rx * 2 + 4} 6 ${ab.cx + u * ab.rx * 2 - 6} ${6 + ab.ry * 0.85}`} stroke={AC.cuerpo} strokeWidth={6} fill="none" />)}
+    <ellipse cx={ab.cx} cy={6} rx={ab.rx - 2} ry={ab.ry - 2} fill="url(#ab-luz)" />
     {/* tórax y cabeza */}
     <circle cx={8} cy={0} r={25} fill={AC.cuerpo} stroke={KC.ink} strokeWidth={5} />
+    <circle cx={8} cy={0} r={23} fill="url(#ab-luz)" />
     <circle cx={46} cy={2} r={19} fill={AC.cuerpo} stroke={KC.ink} strokeWidth={5} />
+    <circle cx={46} cy={2} r={17} fill="url(#ab-luz)" />
     <ellipse cx={50} cy={-2} rx={7} ry={11} fill="#5b4a3a" />
     <path d="M 52 -14 L 64 -36 L 80 -32" stroke={KC.ink} strokeWidth={4} fill="none" strokeLinecap="round" strokeLinejoin="round" />
     <path d="M 60 16 L 70 22" stroke={AC.manda} strokeWidth={5} strokeLinecap="round" />
@@ -103,6 +116,8 @@ function Celda({ id, x, y, w, h, nivel = 1, sello = 0, hongo = 0, comido = 0, T 
       {fil}
       {children}
     </g>
+    <AbDefs />
+    <ellipse cx={x} cy={y} rx={irx} ry={iry} fill="url(#ab-luz)" opacity={0.55} />
     <path d={`M ${ax} ${ay} A ${rx} ${ry} 0 1 1 ${bx} ${by}`} fill="none" stroke={AC.cera} strokeWidth={pared} strokeLinecap="round" />
     {[[rx + pared / 2, ry + pared / 2, KC.ink, 4 * k, 1], [rx - pared / 2, ry - pared / 2, AC.cera2, 2.5 * k, 0.7]].map(([a, b, c, sw, op], i) => {
       const [p1x, p1y] = pElipse(x, y, a, b, -90 + g), [p2x, p2y] = pElipse(x, y, a, b, -90 - g);
@@ -378,12 +393,14 @@ function AbejaHongoShot() {
       {/* 11 · ergosterol → hormonas de la muda → pupa · barras 2018 (llegaron a pupa) */}
       <Escena T={T} a={K.Pu} b={K.L} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 80)">
+          {/* pase de belleza: las tres pistas de las barras están desde el inicio (la escena ya no empieza casi vacía) */}
+          {[0, 1, 2].map((i) => <rect key={'pista' + i} x={90} y={870 + i * 105} width={920} height={46} rx={10} fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.22)" strokeWidth={3} opacity={kprog(T, K.Pu - 0.2, K.Pu + 0.3)} />)}
           <Esterol x={110} y={680} s={0.42} p={kprog(T, K.Pu + 0.1, K.Pu + 0.5)} color={KC.ink} />
           {[[300, 690], [700, 690]].map(([ax, ay], i) => { const p = kprog(T, K.Pu + 0.4 + i * 0.6, K.Pu + 0.8 + i * 0.6); return p > 0 ? <path key={i} d={`M ${ax - 40} ${ay} L ${ax - 40 + 80 * p} ${ay}`} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" markerEnd="" /> : null; })}
           {[[340, 690], [740, 690]].map(([ax, ay], i) => kprog(T, K.Pu + 0.8 + i * 0.6, K.Pu + 0.9 + i * 0.6) > 0 ? <path key={'p' + i} d={`M ${ax - 18} ${ay - 16} L ${ax + 2} ${ay} L ${ax - 18} ${ay + 16}`} stroke={KC.ink} strokeWidth={8} fill="none" strokeLinecap="round" strokeLinejoin="round" /> : null)}
-          <Larva x={890} y={700} R={70 * (1 - kprog(T, K.Pu + 1.6, K.Pu + 2.2))} />
-          <Pupa x={890} y={690} h={260} o={kprog(T, K.Pu + 1.8, K.Pu + 2.4)} />
+          <Larva x={890} y={700} R={95 * (1 - kprog(T, K.Pu + 1.6, K.Pu + 2.2))} />
+          <Pupa x={890} y={690} h={280} o={kprog(T, K.Pu + 1.8, K.Pu + 2.4)} />
           {[['con hongo', 71, KC.blue], ['con ergosterol (2.5 µM)', 65, KC.gold], ['sin hongo ni esterol', 8, KC.red]].map(([t, v, c], i) => {
             const y = 870 + i * 105, g = kprog(T, K.Pu + 1.4 + i * 0.35, K.Pu + 2.2 + i * 0.35, kEase.sale);
             return <g key={i} opacity={kprog(T, K.Pu + 1.3 + i * 0.35, K.Pu + 1.5 + i * 0.35)}>
@@ -391,7 +408,7 @@ function AbejaHongoShot() {
               <rect x={90} y={y} width={Math.max(8, 9.2 * v * g)} height={46} rx={10} fill={c} stroke={KC.ink} strokeWidth={5} />
               <TxtS x={90 + Math.max(8, 9.2 * v * g) + 18} y={y + 40} tam={44} anchor="start" fuente={KF.titulo} peso={400}>{Math.round(v * g)} %</TxtS>
             </g>; })}
-        </>)}
+        </g>)}
       </Escena>
 
       {/* 12 · el giro: no es moho, es una levadura que crece en hilitos (pseudohifas) */}
@@ -448,15 +465,15 @@ function AbejaHongoShot() {
       <Chip T={T} at={K.R + 0.2} until={K.Er - 0.3} texto="supervivencia de larvas · 2015" x={360} y={470} tam={30} borde={KC.ink} />
       <Etq T={T} at={K.R + 0.6} until={K.Er - 0.3} x={90} y={545} texto="esquema: 25 pozos = 100 %" tam={26} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Er + 0.2} until={K.Er + 2.3} anio="2018" quien="Universidad de São Paulo · Ribeirão Preto" revista="Paludo, Pupo y colaboradores · Scientific Reports" x={540} y={400} />
-      <Chip T={T} at={K.Er + 2.4} until={K.Pu - 0.3} texto="AL MICROSCOPIO · esquemático" x={360} y={470} tam={28} borde={KC.gold} mono />
+      <Chip T={T} at={K.Er + 2.8} until={K.Pu - 0.3} texto="AL MICROSCOPIO · esquemático" x={360} y={470} tam={28} borde={KC.gold} mono />
       <Etq T={T} at={K.Er + 3.3} until={K.Pu - 0.3} x={1040} y={900} lado="izq" texto="gotitas de grasa" tam={30} color={AC.grasa} />
       <Etq T={T} at={K.Er + 3.8} until={K.Pu - 0.3} x={60} y={860} texto="ergosterol" tam={36} color={KC.gold2} />
-      <Chip T={T} at={K.Pu + 0.2} until={K.L - 0.3} texto="llegaron a pupa · 2018" x={540} y={470} tam={36} borde={KC.ink} />
-      {kvisible(T, K.Pu + 1.0, K.L - 0.3) && <div style={{ position:'absolute', left:500, top:690, zIndex:42, transform:'translate(-50%,-50%)', opacity:kentrada(T, K.Pu + 1.0, K.L - 0.3).o,
+      <Chip T={T} at={K.Pu + 0.2} until={K.L - 0.3} texto="llegaron a pupa · 2018" x={540} y={540} tam={36} borde={KC.ink} />
+      {kvisible(T, K.Pu + 1.0, K.L - 0.3) && <div style={{ position:'absolute', left:500, top:770, zIndex:42, transform:'translate(-50%,-50%)', opacity:kentrada(T, K.Pu + 1.0, K.L - 0.3).o,
         background:KC.paper, border:`4px solid ${KC.ink}`, borderRadius:14, padding:'6px 16px', font:`700 28px/1.15 ${KF.mono}`, color:KC.ink, textAlign:'center' }}>hormonas<br />de la muda</div>}
-      <Etq T={T} at={K.Pu + 2.4} until={K.L - 0.3} x={940} y={840} lado="izq" texto="pupa" tam={32} color={KC.ink} />
-      <Caja T={T} at={K.L + 0.2} until={K.M - 0.3} x={540} y={385} centro tachar={K.L + 1.0} tam={34}>moho (<i>Monascus</i>, 2015)</Caja>
-      <Caja T={T} at={K.L + 1.5} until={K.M - 0.3} x={540} y={470} centro tam={32}>levadura · <i>Zygosaccharomyces</i> sp. (2018)</Caja>
+      <Etq T={T} at={K.Pu + 2.4} until={K.L - 0.3} x={940} y={920} lado="izq" texto="pupa" tam={32} color={KC.ink} />
+      <Caja T={T} at={K.L + 0.2} until={K.M - 0.3} x={540} y={365} centro tachar={K.L + 1.0} tam={34}>moho (<i>Monascus</i>, 2015)</Caja>
+      <Caja T={T} at={K.L + 1.5} until={K.M - 0.3} x={540} y={485} centro tam={32}>levadura · <i>Zygosaccharomyces</i> sp. (2018)</Caja>
       <Etq T={T} at={K.L + 2.4} until={K.M - 0.3} x={1000} y={680} lado="izq" texto="hilitos (pseudohifas)" tam={30} color={KC.texto} />
       <Caja T={T} at={K.M + 0.2} until={K.C - 0.3} x={50} y={410}><i>Scaptotrigona mexicana</i></Caja>
       <Chip T={T} at={K.M + 0.6} until={K.C - 0.3} texto="su prima · mismo género" x={300} y={560} tam={32} borde={KC.ink} />
