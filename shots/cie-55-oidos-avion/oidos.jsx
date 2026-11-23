@@ -140,7 +140,7 @@ const PH = { x: 450, y: 980, s: 2.1 }, MANO_S = 1.6;
 const VP = { x: 560, y: 340, w: 380, h: 500 };
 const OREJA_P = [PH.x - 75 * PH.s, PH.y + 10 * PH.s];
 // centro del corte grande del oído (escenas por dentro)
-const OC = { x: 585, y: 700, s: 1.12 };
+const OC = { x: 585, y: 830, s: 1.12 };  // Belleza: bajado de 700 a 830 (el corte del oído quedaba en la mitad de arriba)
 
 function OidosAvion() {
   const { T, CUES } = useComposition();
@@ -189,15 +189,15 @@ function OidosAvion() {
         <Lienzo>
           <Nube x={((900 - (T - K.Cabina) * 120) % 1400 + 1400) % 1400 - 200} y={340} s={1.1} />
           <Nube x={((300 - (T - K.Cabina) * 80) % 1400 + 1400) % 1400 - 200} y={1440} s={1.0} />
-          <Avion x={540 + Math.sin(T * 1.3) * 10} y={690 + Math.sin(T * 2) * 8} s={1.6} />
+          <Avion x={540 + Math.sin(T * 1.3) * 10} y={800 + Math.sin(T * 2) * 8} s={1.6} />
           <g opacity={kprog(T, K.Cabina + 1.4, K.Cabina + 1.9)}>
-            <rect x={90} y={950} width={900} height={330} rx={36} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
-            <BarraH x={140} y={1040} ancho={800} v={kprog(T, K.Cabina + 1.6, K.Cabina + 2.4, kEase.sale)} color={KC.mint} etiqueta="nivel del mar" />
-            <BarraH x={140} y={1180} ancho={800} v={0.72 * kprog(T, K.Cabina + 2.6, K.Cabina + 3.4, kEase.sale)} color={KC.yellow} etiqueta="presión de la cabina" />
+            <rect x={90} y={1060} width={900} height={330} rx={36} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
+            <BarraH x={140} y={1150} ancho={800} v={kprog(T, K.Cabina + 1.6, K.Cabina + 2.4, kEase.sale)} color={KC.mint} etiqueta="nivel del mar" />
+            <BarraH x={140} y={1290} ancho={800} v={0.72 * kprog(T, K.Cabina + 2.6, K.Cabina + 3.4, kEase.sale)} color={KC.yellow} etiqueta="presión de la cabina" />
           </g>
         </Lienzo>
-        <Chip T={T} at={K.Cabina + 0.4} until={K.Bajada - 0.1} texto="cabina presurizada" x={540} y={400} tam={42} borde={KC.ink} />
-        <Chip T={T} at={K.Cabina + 3.4} until={K.Bajada - 0.1} texto="menos presión" x={840} y={1215} tam={34} borde={KC.yellow} />
+        <Chip T={T} at={K.Cabina + 0.4} until={K.Bajada - 0.1} texto="cabina presurizada" x={540} y={520} tam={42} borde={KC.ink} />
+        <Chip T={T} at={K.Cabina + 3.4} until={K.Bajada - 0.1} texto="menos presión" x={840} y={1325} tam={34} borde={KC.yellow} />
       </Escena>
 
       {/* 4 · al bajar, la presión sube y empuja el tímpano hacia adentro */}
@@ -234,7 +234,7 @@ function OidosAvion() {
           <Onomato T={T} at={K.Trago + 3.3} dur={2.2} x={OC.x + 190 * OC.s} y={OC.y - 140 * OC.s} texto="¡POP!" tam={190} />
         </Lienzo>
         <Chip T={T} at={K.Trago + 0.2} until={K.Trago + 2.8} texto="tragas o bostezas" x={540} y={330} tam={42} borde={OTEJ} />
-        <Chip T={T} at={K.Trago + 3.5} until={K.Consejos - 0.1} texto="la presión se iguala" x={400} y={1245} tam={40} borde={KC.cyan} />
+        <Chip T={T} at={K.Trago + 3.5} until={K.Consejos - 0.1} texto="la presión se iguala" x={400} y={1550} tam={40} borde={KC.cyan} />
       </Escena>
 
       {/* 7 · consejos: chicle, tragar seguido, bostezar */}
@@ -279,7 +279,7 @@ function OidosAvion() {
         </Lienzo>
         <Chip T={T} at={K.Gripa + 0.2} until={K.Montana - 0.1} texto="gripa o alergia" x={540} y={330} tam={44} borde={KC.red} />
         <Etq T={T} at={K.Gripa + 1.4} until={K.Montana - 0.1} x={OC.x + 60 * OC.s} y={OC.y + 330 * OC.s} texto="se inflama" color={KC.red} lado="izq" tam={42} />
-        <Chip T={T} at={K.Gripa + 2.6} until={K.Montana - 0.1} texto="cuesta más destaparlo" x={400} y={1245} tam={38} borde={KC.red} />
+        <Chip T={T} at={K.Gripa + 2.6} until={K.Montana - 0.1} texto="cuesta más destaparlo" x={400} y={1550} tam={38} borde={KC.red} />
       </Escena>
 
       {/* 10 · lo mismo al bajar una montaña en carro */}
