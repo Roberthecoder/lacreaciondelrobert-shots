@@ -1,0 +1,1 @@
+- amb-45-agua-embotellada: Hervir: olla 1.3× y bajada, filtro y etiquetas reacomodados (menos vacío arriba-izquierda); chips de 19–25 px subidos a ≥26 px y el de Gasto ya no toca la orilla; las demás escenas ya cumplían (revisado cuadro por cuadro).

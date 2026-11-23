@@ -204,7 +204,7 @@ function AguaShot() {
           </g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.Ma + 0.2} until={K.Ga - 0.2} texto="la creen bebible · ENCIG 2025" y={470} x={715} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Ma + 0.2} until={K.Ga - 0.2} texto="la creen bebible · ENCIG 2025" y={470} x={715} tam={37} borde={KC.ink} />
       {/* 4 · tres de cada cuatro hogares compran agua (2017) */}
       <Escena T={T} a={K.Ga} b={K.P}>
         <FondoLunares color={KC.mint} />
@@ -212,7 +212,7 @@ function AguaShot() {
         <EscalaFija texto="esquema" largo={0} y={1540} color={KC.ink} />
       </Escena>
       <NumeroGigante T={T} at={K.Ga + 0.3} until={K.Ga + 3.3} valor={3} dur={0.6} sufijo=" de 4" etiqueta="hogares (2017):" x={540} y={390} tam={140} color={KC.yellow} />
-      <Chip T={T} at={K.Ga + 1.2} until={K.Ga + 3.3} texto="INEGI · MOHOMA 2017: 76.3 %" y={580} x={540} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Ga + 1.2} until={K.Ga + 3.3} texto="INEGI · MOHOMA 2017: 76.3 %" y={580} x={540} tam={37} borde={KC.ink} />
       <Chip T={T} at={K.Ga + 3.6} until={K.P - 0.2} texto="69.4 %: «es más saludable»" y={500} x={540} tam={42} borde={KC.leaf} />
       {/* 5 · re-gancho (las casas de la escena anterior siguen detrás, bajo un velo) */}
       <Escena T={T} a={K.P} b={K.H} zoom={0.1}>
@@ -233,7 +233,7 @@ function AguaShot() {
             <text x={155} y={1144} style={{ font:`400 68px ${KF.titulo}` }} fill={KC.ink}>1991 · cólera</text></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.H + 1.1} until={K.Gs - 0.2} texto="relación que proponen estudios (2018, 2024)" y={400} x={540} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.H + 1.1} until={K.Gs - 0.2} texto="relación que proponen estudios (2018, 2024)" y={400} x={540} tam={37} borde={KC.ink} />
       <Etq T={T} at={K.H + 2.5} until={K.Gs - 0.2} x={610} y={1210} texto="Vibrio cholerae" it lado="der" tam={30} color={KC.ink} />
       {/* 7 · cuánto cuesta */}
       <Escena T={T} a={K.Gs} b={K.Q}>
@@ -241,7 +241,7 @@ function AguaShot() {
         {svg(<>{monedas}<Garrafon x={330} y={1380} s={1.7} lleno={0.85} /></>)}
       </Escena>
       <NumeroGigante T={T} at={K.Gs + 1.0} until={K.Q - 0.2} valor={52} dur={1.6} prefijo="$" etiqueta="por semana" x={800} y={960} tam={190} color={KC.yellow} />
-      <Chip T={T} at={K.Gs + 0.5} until={K.Q - 0.2} texto="hogares que la compran · 2017" y={740} x={790} tam={26} borde={KC.ink} />
+      <Chip T={T} at={K.Gs + 0.5} until={K.Q - 0.2} texto="hogares que la compran · 2017" y={740} x={745} tam={37} borde={KC.ink} />
       {/* 8 · qué sí sirve: garrafón retornable = casi 32 botellas */}
       <Escena T={T} a={K.Q} b={K.Hv}>
         <FondoLunares color={KC.cyan} />
@@ -251,16 +251,16 @@ function AguaShot() {
       </Escena>
       <Etq T={T} at={K.Q + 0.8} until={K.Hv - 0.2} x={350} y={572} texto="se rellena" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Q + 0.5} until={K.Hv - 0.2} texto="19 L" y={1160} x={250} tam={48} borde={KC.blue} />
-      <Chip T={T} at={K.Q + 3.6} until={K.Hv - 0.2} texto="≈ 32 botellas de 600 ml" y={655} x={723} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Q + 3.6} until={K.Hv - 0.2} texto="≈ 32 botellas de 600 ml" y={655} x={723} tam={37} borde={KC.ink} />
       {/* 9 · hervir y filtro (el filtro espera atenuado desde el principio y se enciende cuando la voz lo nombra) */}
       <Escena T={T} a={K.Hv} b={K.C}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><Olla x={310} y={880} s={1.2} T={T} hierve={kprog(T, K.Hv + 0.3, K.Hv + 1.5)} microbios={1 - kprog(T, K.Hv + 1.6, K.Hv + 3.6)} />
-          <g opacity={0.22 + 0.78 * kprog(T, K.Hv + 4.0, K.Hv + 4.5)}><Filtro x={820} y={1480} s={0.95} sello={kprog(T, K.Hv + 5.0, K.Hv + 5.6, kEase.rebote)} /></g></>)}
+        {svg(<><Olla x={330} y={950} s={1.3} T={T} hierve={kprog(T, K.Hv + 0.3, K.Hv + 1.5)} microbios={1 - kprog(T, K.Hv + 1.6, K.Hv + 3.6)} />
+          <g opacity={0.22 + 0.78 * kprog(T, K.Hv + 4.0, K.Hv + 4.5)}><Filtro x={815} y={1430} s={0.95} sello={kprog(T, K.Hv + 5.0, K.Hv + 5.6, kEase.rebote)} /></g></>)}
       </Escena>
-      <Chip T={T} at={K.Hv + 0.4} until={K.Hv + 3.9} texto="OMS 2015: hervor a borbotones" y={470} x={340} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.Hv + 0.8} until={K.Hv + 3.6} x={50} y={1065} texto="bacterias · virus · protozoarios" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Hv + 5.2} until={K.C - 0.2} texto="certificado Cofepris (NOM-244)" y={1250} x={300} tam={28} borde={KC.leaf} />
+      <Chip T={T} at={K.Hv + 0.4} until={K.Hv + 3.9} texto="OMS 2015: hervor a borbotones" y={500} x={340} tam={37} borde={KC.ink} />
+      <Etq T={T} at={K.Hv + 0.8} until={K.Hv + 3.6} x={50} y={1150} texto="bacterias · virus · protozoarios" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Hv + 5.2} until={K.C - 0.2} texto="certificado Cofepris (NOM-244)" y={1250} x={300} tam={37} borde={KC.leaf} />
       {/* 10 · cierre: las mismas 5 casas, ahora con garrafón, olla o filtro */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
