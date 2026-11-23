@@ -95,7 +95,11 @@ function Pilobolus() {
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<Interrogacion T={T} x={770} y={1380} tam={840} />)}   {/* encuadre: el signo crece y baja al centro, a la derecha del esporangióforo atenuado (sin taparlo) */}
+        {/* belleza (2.ª pasada): el hongo cargado, pleno y grande, con el sol; el «?» chico a su lado (antes escena casi negra) */}
+        {fsvg(<><Sol x={135} y={420} r={62} T={T} />
+          <rect x={-10} y={1400} width={KW + 20} height={800} fill="#2e231d" stroke={KC.ink} strokeWidth={8} />
+          <Pilo T={T} x={560} y={1410} s={1.6} rot={giro} infla={1} sale={0} chorro={0} />
+          <text x={830} y={760} textAnchor="middle" paintOrder="stroke" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} transform={`rotate(${Math.sin(T * 3) * 8} 830 710)`}>?</text></>)}
       </Escena>
       {/* 7–9 · el estudio: video de alta velocidad, rapidez y aceleración */}
       <Escena T={T} a={K.E} b={K.Di}>
