@@ -3,10 +3,20 @@
 // Datos: Sender, Fuchs y Milo 2016, PLoS Biology 14: e1002533 (y su resumen en Cell 164: 337). Ver guion.md y verificacion.md.
 const ROJO = '#e23b3b', BAC = KC.mint;
 
+// belleza: degradados de volumen (glóbulo bicóncavo: borde grueso iluminado y centro hundido; loza y metal con luz arriba-izquierda)
+function BcDefs() {
+  return <defs>
+    <radialGradient id="bc-glob" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stopColor="#b82a2c" /><stop offset="0.38" stopColor="#c9393b" /><stop offset="0.72" stopColor="#f06a66" /><stop offset="0.9" stopColor="#d8403f" /><stop offset="1" stopColor="#9c1f22" /></radialGradient>
+    <linearGradient id="bc-loza" x1="0" y1="0" x2="0.7" y2="1"><stop offset="0" stopColor="#ffffff" /><stop offset="1" stopColor="#c3cad6" /></linearGradient>
+    <linearGradient id="bc-metal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#a9afb9" /><stop offset="1" stopColor="#5d636e" /></linearGradient>
+    <linearGradient id="bc-agua" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#d8f6ff" /><stop offset="1" stopColor="#8fd3ee" /></linearGradient>
+    <linearGradient id="bc-papel" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stopColor="#2c3550" /><stop offset="1" stopColor="#1b2134" /></linearGradient>
+  </defs>;
+}
 function Globulo({ x, y, r = 60, rot = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(1 ${0.92})`}>
-    <circle r={r} fill={ROJO} stroke={KC.ink} strokeWidth={Math.max(3, r / 12)} />
-    <circle r={r * 0.45} fill="#ff7b7b" />
+    <circle r={r} fill="url(#bc-glob)" stroke="#ff9a96" strokeWidth={Math.max(2, r / 30)} />
+    <ellipse cx={-r * 0.42} cy={-r * 0.5} rx={r * 0.22} ry={r * 0.1} transform={`rotate(-35 ${-r * 0.42} ${-r * 0.5})`} fill="#fff" opacity=".35" />
   </g>;
 }
 // Intestino esquemático: colon (marco) + intestino delgado (enredo). bacDelgado/bacColon = 0..1 cuántas bacterias se ven.
@@ -32,8 +42,9 @@ const bDelgadoOp = (v) => kclamp(v, 0, 1);
 function Bascula({ x, y, T, aguja = 0 }) {
   const a = -60 + 120 * aguja + Math.sin(T * 9) * 2 * (1 - aguja);
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={-240} y={-40} width={480} height={150} rx={30} fill="#fff" stroke={KC.ink} strokeWidth={9} />
-    <rect x={-300} y={100} width={600} height={60} rx={20} fill="#8a8f99" stroke={KC.ink} strokeWidth={9} />
+    <ellipse cx={0} cy={172} rx={320} ry={24} fill="rgba(0,0,0,.4)" />
+    <rect x={-240} y={-40} width={480} height={150} rx={30} fill="url(#bc-loza)" stroke={KC.ink} strokeWidth={9} />
+    <rect x={-300} y={100} width={600} height={60} rx={20} fill="url(#bc-metal)" stroke={KC.ink} strokeWidth={9} />
     <circle cx={0} cy={-40} r={150} fill={KC.paper} stroke={KC.ink} strokeWidth={9} />
     {[-60, -30, 0, 30, 60].map((d, i) => <line key={i} x1={Math.sin(d * Math.PI / 180) * 120} y1={-40 - Math.cos(d * Math.PI / 180) * 120} x2={Math.sin(d * Math.PI / 180) * 140} y2={-40 - Math.cos(d * Math.PI / 180) * 140} stroke={KC.ink} strokeWidth={6} />)}
     <line x1={0} y1={-40} x2={Math.sin(a * Math.PI / 180) * 115} y2={-40 - Math.cos(a * Math.PI / 180) * 115} stroke={KC.red} strokeWidth={10} strokeLinecap="round" />
@@ -42,9 +53,11 @@ function Bascula({ x, y, T, aguja = 0 }) {
 }
 function Excusado({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={40} y={-330} width={170} height={230} rx={20} fill="#fff" stroke={KC.ink} strokeWidth={9} />
-    <path d="M -180 -100 L 210 -100 Q 210 40 60 70 L 80 200 L -80 200 L -60 70 Q -180 40 -180 -100 Z" fill="#fff" stroke={KC.ink} strokeWidth={9} />
-    <ellipse cx={15} cy={-100} rx={180} ry={30} fill="#bfefff" stroke={KC.ink} strokeWidth={7} />
+    <ellipse cx={0} cy={206} rx={190} ry={22} fill="rgba(0,0,0,.4)" />
+    <rect x={40} y={-330} width={170} height={230} rx={20} fill="url(#bc-loza)" stroke={KC.ink} strokeWidth={9} />
+    <path d="M -180 -100 L 210 -100 Q 210 40 60 70 L 80 200 L -80 200 L -60 70 Q -180 40 -180 -100 Z" fill="url(#bc-loza)" stroke={KC.ink} strokeWidth={9} />
+    <path d="M -150 -70 Q -140 20 -60 50" stroke="#fff" strokeWidth={12} fill="none" strokeLinecap="round" opacity=".7" />
+    <ellipse cx={15} cy={-100} rx={180} ry={30} fill="url(#bc-agua)" stroke={KC.ink} strokeWidth={7} />
   </g>;
 }
 
@@ -52,7 +65,7 @@ function Bacterias() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, O: CUES.Origen, L: CUES.Litro, Co: CUES.Colon, Q: CUES.Pregunta, H: CUES.Humanas, Cu: CUES.Cuenta, E: CUES.Estudio, P: CUES.Peso, B: CUES.Bano, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
-  const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{c}</svg>;
+  const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><BcDefs />{c}</svg>;
   const g = krng(3);
   const diez = Array.from({ length: 10 }, (_, i) => ({ x: 630 + (i % 3) * 150 + (g() - 0.5) * 40, y: 760 + Math.floor(i / 3) * 150 + (g() - 0.5) * 40, r: g() * 180 }));
   // gancho: 10 bacterias se van y queda ~1 (con 0.3 más)
@@ -73,8 +86,12 @@ function Bacterias() {
       {/* 2 · de dónde salió el 10:1 */}
       <Escena T={T} a={K.O} b={K.L}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
+        {/* belleza: el sujeto del gancho (tu célula y sus bacterias) sigue a cuadro, a media luz, detrás de la hoja de la cuenta */}
+        {svg(<g opacity={0.5}><Globulo x={215} y={1365} r={175} rot={T * 10} />
+          {[[880, 560, 30], [935, 760, 110], [890, 1330, 70], [190, 600, 150]].map(([bx, by, br], i) => <Bacteria key={i} x={bx} y={by + Math.sin(T * 2 + i) * 8} rot={br + T * 20} s={0.9} T={T} seed={i} color={BAC} />)}</g>)}
         {svg(<g transform="translate(540 960) rotate(-4) scale(1.16)">
-          <rect x={-330} y={-330} width={660} height={640} rx={10} fill="#232a40" stroke={KC.ink} strokeWidth={6} />
+          <rect x={-318} y={-312} width={660} height={640} rx={10} fill="rgba(0,0,0,.45)" />
+          <rect x={-330} y={-330} width={660} height={640} rx={10} fill="url(#bc-papel)" stroke={KC.ink} strokeWidth={6} />
           <text x={-280} y={-250} style={{ font:`400 70px ${KF.titulo}` }} fill="#f3f6ff">AÑOS 70</text>
           {[0, 1, 2, 3, 4, 5].map((k) => <rect key={k} x={-280} y={-180 + k * 70} width={k === 2 ? 560 * kprog(T, K.O + 0.6, K.O + 1.6) : 520} height={18} rx={9} fill={k === 2 ? KC.red : '#56607c'} />)}
           <text x={-280} y={260} style={{ font:`700 34px ${KF.mono}` }} fill="#f3f6ff" opacity={kprog(T, K.O + 1.6, K.O + 2.2)}>~10¹⁴ bacterias (estimado)</text>
@@ -104,7 +121,7 @@ function Bacterias() {
       <Escena T={T} a={K.Cu} b={K.E}>
         <FondoLunares color={KC.cyan} />
         {/* modo cine: a cada barra, su sujeto (tu célula y la bacteria del gancho); encuadre: barras más altas y todo un poco más abajo */}
-        {svg(<g opacity={kprog(T, K.Cu + 0.2, K.Cu + 0.7)}><Globulo x={340} y={405} r={66} rot={T * 10} /><Bacteria x={740} y={405} rot={T * 20} s={0.6} T={T} color={BAC} /></g>)}
+        {svg(<g opacity={kprog(T, K.Cu + 0.2, K.Cu + 0.7)}><Globulo x={340} y={400} r={84} rot={T * 10} /><Bacteria x={740} y={400} rot={T * 20} s={0.8} T={T} color={BAC} /></g>)}
       </Escena>
       {/* 8 · el estudio */}
       <Escena T={T} a={K.E} b={K.P}>
