@@ -1,0 +1,1 @@
+- fun-136-nistatina: en regalías, la palabra «NYSTATIN» tenía «STATIN» oscuro sobre oscuro (casi invisible): ahora es clara con contorno oscuro y se lee completa. Lo demás (frasco y caja, boca, levaduras, membrana, Hazen y Brown, mapa, Streptomyces, cierre) ya estaba grande y centrado. Auditores: sin láminas · encuadre bien.

@@ -341,7 +341,7 @@ function NistatinaShot() {
       {/* NY · STATE (letras grandes en Regalías) */}
       {kvisible(T, K.R + 0.2, K.R + 2.9) && (() => { const e = kentrada(T, K.R + 0.2, K.R + 2.9, 'pop'), u = kprog(T, K.R + 1.2, K.R + 1.8, kEase.sale);
         return <div style={{ position:'absolute', left:0, right:0, top:330, zIndex:41, textAlign:'center', opacity:e.o, transform:`scale(${e.s})` }}>
-          <div style={{ font:`400 150px/1 ${KF.titulo}`, color:KC.paper, WebkitTextStroke:`5px ${KC.ink}`, textShadow:`6px 6px 0 ${KC.ink}` }}><span style={{ color:KC.yellow }}>NY</span>STATIN</div>
+          <div style={{ font:`400 150px/1 ${KF.titulo}`, color:"#f4f1ea", WebkitTextStroke:`4px #0b1020`, textShadow:`5px 5px 0 #0b1020` }}><span style={{ color:KC.yellow }}>NY</span>STATIN</div>
           <div style={{ font:`900 52px ${KF.texto}`, color:KC.ink, marginTop:10, opacity:u }}><span style={{ background:KC.yellow, color:'#0b1020', padding:'0 8px', borderRadius:8 }}>N</span>ew <span style={{ background:KC.yellow, color:'#0b1020', padding:'0 8px', borderRadius:8 }}>Y</span>ork <span style={{ background:KC.yellow, color:'#0b1020', padding:'0 8px', borderRadius:8 }}>Stat</span>e</div>
         </div>; })()}
 
