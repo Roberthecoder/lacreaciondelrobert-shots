@@ -39,19 +39,27 @@ function Termometro({ T, at, until, temp, x = 920, y = 520, alto = 620 }) {
 /* ---------- ultracongelador con sus gradillas ---------- */
 function Congelador({ T, x = 0, y = 0, s = 1, abierto = 0, etiqueta, temp = '−80 °C' }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-230} y={-300} width={460} height={620} rx={26} fill={ACERO} stroke={KC.ink} strokeWidth={12} />
+    <defs>
+      <linearGradient id="cep-acero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#6a7683" /><stop offset=".5" stopColor="#47515c" /><stop offset="1" stopColor="#2c333b" /></linearGradient>
+      <linearGradient id="cep-puerta" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#7d8996" /><stop offset=".55" stopColor="#56616c" /><stop offset="1" stopColor="#363e47" /></linearGradient>
+      <linearGradient id="cep-base" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#58626d" /><stop offset="1" stopColor="#353c44" /></linearGradient>
+    </defs>
+    <ellipse cx={0} cy={330} rx={250} ry={30} fill="#000" opacity=".4" />
+    <rect x={-230} y={-300} width={460} height={620} rx={26} fill="url(#cep-acero)" stroke={KC.ink} strokeWidth={12} />
     <rect x={-200} y={-270} width={400} height={470} rx={16} fill="#0f1620" stroke={KC.ink} strokeWidth={8} />
     {abierto > 0.1 && Array.from({ length: 3 }, (_, r) => Array.from({ length: 4 }, (_, c) => (
       <rect key={r + '_' + c} x={-176 + c * 92} y={-244 + r * 150} width={76} height={128} rx={10}
         fill={mixHex('#2a3445', KC.cyan, 0.2 + 0.2 * ((r + c) % 2))} stroke="#5a6678" strokeWidth={5} opacity={abierto} />
     )))}
-    <rect x={-230} y={210} width={460} height={110} rx={18} fill="#9aa4ae" stroke={KC.ink} strokeWidth={10} />
+    <rect x={-230} y={210} width={460} height={110} rx={18} fill="url(#cep-base)" stroke={KC.ink} strokeWidth={10} />
     <rect x={-120} y={238} width={240} height={56} rx={10} fill="#0f1620" stroke={KC.ink} strokeWidth={6} />
     <text y={282} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.cyan}>{temp}</text>
     {/* puerta que se abre */}
     <g transform={`translate(${abierto * -430} 0) rotate(${abierto * -14} -230 0)`} opacity={1}>
-      <rect x={-230} y={-300} width={460} height={510} rx={22} fill="#dfe5ea" stroke={KC.ink} strokeWidth={12} />
-      <rect x={120} y={-80} width={44} height={180} rx={20} fill="#8b96a0" stroke={KC.ink} strokeWidth={8} />
+      <rect x={-230} y={-300} width={460} height={510} rx={22} fill="url(#cep-puerta)" stroke={KC.ink} strokeWidth={12} />
+      <path d="M -200 -270 L 60 -270 L -200 40 Z" fill="#ffffff" opacity=".07" />
+      {[-150, -60, 30, 120].map((yy) => <line key={yy} x1={-196} y1={yy} x2={90} y2={yy} stroke="#2a3038" strokeWidth={3} opacity=".5" />)}
+      <rect x={120} y={-80} width={44} height={180} rx={20} fill="#a9b3bd" stroke={KC.ink} strokeWidth={8} />
     </g>
     {etiqueta && <text y={370} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>{etiqueta}</text>}
   </g>;
@@ -60,10 +68,15 @@ function Congelador({ T, x = 0, y = 0, s = 1, abierto = 0, etiqueta, temp = '−
 /* ---------- tanque de nitrógeno líquido ---------- */
 function TanqueN2({ T, x = 0, y = 0, s = 1, abierto = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <ellipse cx={0} cy={330} rx={210} ry={34} fill="rgba(0,0,0,.25)" />
-    <rect x={-200} y={-250} width={400} height={580} rx={60} fill={ACERO} stroke={KC.ink} strokeWidth={12} />
-    <rect x={-168} y={-210} width={60} height={480} rx={30} fill="#eef3f7" opacity={0.6} />
-    <rect x={-215} y={-296} width={430} height={66} rx={26} fill="#8b96a0" stroke={KC.ink} strokeWidth={11}
+    <defs>
+      <linearGradient id="cep-acero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#6a7683" /><stop offset=".5" stopColor="#47515c" /><stop offset="1" stopColor="#2c333b" /></linearGradient>
+      <linearGradient id="cep-puerta" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#7d8996" /><stop offset=".55" stopColor="#56616c" /><stop offset="1" stopColor="#363e47" /></linearGradient>
+      <linearGradient id="cep-base" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#58626d" /><stop offset="1" stopColor="#353c44" /></linearGradient>
+    </defs>
+    <ellipse cx={0} cy={330} rx={230} ry={34} fill="rgba(0,0,0,.45)" />
+    <rect x={-200} y={-250} width={400} height={580} rx={60} fill="url(#cep-acero)" stroke={KC.ink} strokeWidth={12} />
+    <rect x={-168} y={-210} width={60} height={480} rx={30} fill="#c9d4de" opacity={0.22} />
+    <rect x={-215} y={-296} width={430} height={66} rx={26} fill="url(#cep-base)" stroke={KC.ink} strokeWidth={11}
       transform={`translate(${-abierto * 30} ${-abierto * 70})`} />
     <rect x={-120} y={120} width={240} height={70} rx={12} fill="#0f1620" stroke={KC.ink} strokeWidth={7} />
     <text y={174} textAnchor="middle" style={{ font:`700 44px ${KF.mono}` }} fill="#7fd4ff">−196 °C</text>
@@ -86,8 +99,11 @@ function Congelacion({ T, x = 540, y = 900, glicerol = 0, rompe = 0 }) {
       </g>;
     })}
     {/* la célula */}
-    <ellipse cx={0} cy={0} rx={160} ry={110} fill="#7ee787" stroke={KC.ink} strokeWidth={9}
+    <defs><radialGradient id="cep-cel" cx=".38" cy=".32" r=".75"><stop offset="0" stopColor="#8fdc98" /><stop offset=".6" stopColor="#4c9a5c" /><stop offset="1" stopColor="#2a5e37" /></radialGradient></defs>
+    <ellipse cx={0} cy={0} rx={160} ry={110} fill="url(#cep-cel)" stroke="#c8ffd0" strokeWidth={8}
       opacity={1 - rompe * 0.3} transform={`scale(${1 + rompe * 0.08})`} />
+    <path d="M -90 10 q 30 -40 60 -6 t 60 0 t 50 -10" fill="none" stroke="#bff5c6" strokeWidth={5} opacity=".45" />
+    <ellipse cx={-60} cy={-50} rx={46} ry={16} fill="#ffffff" opacity=".18" transform="rotate(-18 -60 -50)" />
     {rompe > 0.2 && [[-60, -40], [40, 30], [90, -20]].map(([px, py], i) => <path key={i}
       d={`M ${px} ${py} l ${20 + rompe * 30} ${-30 - rompe * 20} l ${-10} ${40}`} fill="none" stroke="#1d5e2a" strokeWidth={7} />)}
     {glicerol > 0 && Array.from({ length: 9 }, (_, i) => { const a = i / 9 * Math.PI * 2;
@@ -174,8 +190,8 @@ function CeparioNarrado() {
       {/* 3 · CEPARIO — la gradilla */}
       <EscenaFundido T={T} a={K.Cp} b={K.Cu} zoom={0.04} fondo={KC.dark}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 46%, #14202e 0%, #0E0F12 76%)' }}></div>
-        <Gradilla T={T} cols={8} filas={9} encendidos={(t) => kprog(t, K.Cp + 0.2, K.Cu - 0.2)} x={80} y={440} ancho={920} alto={1030} />   {/* modo cine: la gradilla llena el cuadro (antes 860 × 720) */}
-        <Chip T={T} at={K.Cp + 0.4} until={K.Cu - 0.3} texto="una biblioteca viva" y={350} borde={KC.cyan} tam={46} />
+        <Gradilla T={T} cols={8} filas={9} encendidos={(t) => kprog(t, K.Cp - 0.4, K.Cu - 0.4)} x={80} y={500} ancho={920} alto={1000} vacio="rgba(170,205,235,.45)" />   {/* belleza: la gradilla completa se ve desde el inicio (huecos más visibles), arranca antes y baja 60 px */}   {/* modo cine: la gradilla llena el cuadro (antes 860 × 720) */}
+        <Chip T={T} at={K.Cp + 0.4} until={K.Cu - 0.3} texto="una biblioteca viva" y={400} borde={KC.cyan} tam={46} />
       </EscenaFundido>
 
       {/* 4 · CUIDO — el congelador abierto */}
@@ -249,8 +265,8 @@ function CeparioNarrado() {
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0d1624, #0b0f19)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {/* modo cine (pase a mano): los dos congeladores llenan el ancho (antes escala 0.6) */}
-          <g transform="translate(262 940) scale(1.0)"><Congelador T={T} x={0} y={0} s={1} abierto={0} etiqueta="copia 1" /></g>
-          <g opacity={kprog(T, K.D + 0.5, K.D + 1.1)} transform="translate(818 940) scale(1.0)">
+          <g transform="translate(275 940) scale(0.94)"><Congelador T={T} x={0} y={0} s={1} abierto={0} etiqueta="copia 1" /></g>
+          <g opacity={kprog(T, K.D + 0.5, K.D + 1.1)} transform="translate(805 940) scale(0.94)">
             <Congelador T={T} x={0} y={0} s={1} abierto={0} etiqueta="copia 2" /></g>
           <path d="M 500 900 L 580 900" stroke={KC.gold} strokeWidth={10} strokeDasharray="22 16" strokeDashoffset={-T * 40} />
         </svg>
@@ -260,7 +276,7 @@ function CeparioNarrado() {
       {/* 11 · MUNDO */}
       <EscenaFundido T={T} a={K.M} b={K.C} zoom={0.03} fondo={KC.dark}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 54%, #14202e 0%, #0E0F12 78%)' }}></div>
-        <Gradilla T={T} cols={10} filas={11} encendidos={(t) => kprog(t, K.M + 0.3, K.C - 0.4)} x={80} y={720} ancho={920} alto={760} color={KC.gold2} />   {/* modo cine: gradilla a todo lo ancho (antes 780 × 520) */}
+        <Gradilla T={T} cols={10} filas={11} encendidos={(t) => kprog(t, K.M + 0.05, K.C - 0.4)} x={80} y={720} ancho={920} alto={760} color={KC.gold2} />   {/* modo cine: gradilla a todo lo ancho (antes 780 × 520) */}
       </EscenaFundido>
       {T >= K.M - 0.1 && T < K.C - 0.1 && <>
         <NumeroGigante T={T} at={K.M + 0.3} until={K.C - 0.3} valor={861} dur={2.6} etiqueta="COLECCIONES DE MICROBIOS" y={400} tam={170} color={KC.yellow} />
