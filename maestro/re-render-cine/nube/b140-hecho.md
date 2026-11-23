@@ -1,0 +1,1 @@
+- amb-58-mancha-pacifico: Origen: objetos de pesca (1.3→1.4), barras Japón/China, chip y etiquetas bajan ~170 px para centrar el conjunto (antes todo arriba y el tercio de abajo vacío); el resto ya cumplía.

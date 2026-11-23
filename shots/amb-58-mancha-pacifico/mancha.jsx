@@ -248,15 +248,16 @@ function ManchaShot() {
       {/* 8 · 2019: más de seis mil objetos duros; Japón y China */}
       <Escena T={T} a={K.O} b={K.B}>
         <FondoLunares color={KC.orange} />
-        {svg(<><Zm c={[540, 800]} a={[540, 820]} k={1.3}><g opacity={kprog(T, K.O + 0.2, K.O + 0.7)} transform="translate(0 -50)">
+        {/* belleza: objetos, barras y etiquetas bajan 170 px y los objetos crecen 1.3 → 1.4 (antes el tercio de abajo quedaba vacío) */}
+        {svg(<><Zm c={[540, 800]} a={[540, 990]} k={1.4}><g opacity={kprog(T, K.O + 0.2, K.O + 0.7)} transform="translate(0 -50)">
             <CajaPescado x={260} y={760} rot={-8} /><CajaPescado x={480} y={820} rot={6} s={0.9} c="#e9eef5" />
             <TrampaAnguila x={720} y={760} rot={-12} /><Separador x={240} y={880} rot={20} /><Separador x={880} y={880} rot={-30} />
             <ellipse cx={650} cy={900} rx={60} ry={50} fill="#fff" stroke={KC.ink} strokeWidth={6} /><path d="M 590 900 Q 650 880 710 900" stroke={KC.red} strokeWidth={10} fill="none" />
           </g></Zm>
           {[['Japón', 0.34, '34 %'], ['China', 0.32, '32 %']].map(([n, v, t], i) => { const w = 560 * v / 0.34 * kprog(T, K.O + 2.4 + i * 0.4, K.O + 3.2 + i * 0.4, kEase.sale);
-            return <g key={n}><text x={90} y={1040 + i * 90} style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>{n}</text>
-              <rect x={270} y={1008 + i * 90} width={w} height={44} rx={12} fill={i ? KC.red : KC.white} stroke={KC.ink} strokeWidth={5} />
-              {w > 40 && <text x={290 + w} y={1043 + i * 90} style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink}>{t}</text>}</g>; })}</>)}
+            return <g key={n}><text x={90} y={1250 + i * 90} style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>{n}</text>
+              <rect x={270} y={1218 + i * 90} width={w} height={44} rx={12} fill={i ? KC.red : KC.white} stroke={KC.ink} strokeWidth={5} />
+              {w > 40 && <text x={290 + w} y={1253 + i * 90} style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink}>{t}</text>}</g>; })}</>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 9 · la boya de 1966 */}
@@ -293,10 +294,10 @@ function ManchaShot() {
       <NumeroGigante T={T} at={K.R + 0.3} until={K.O - 0.2} valor={79} dur={1.2} sufijo=" mil" etiqueta="toneladas de plástico:" x={600} y={560} tam={150} color={KC.yellow} />
       <Chip T={T} at={K.R + 1.0} until={K.O - 0.2} texto="Lebreton et al. 2018 · Sci. Rep." x={600} y={745} tam={26} borde={KC.ink} mono />
       <Etq T={T} at={K.R + 3.0} until={K.O - 0.2} x={32} y={1010} texto="≥ 46 % redes de pesca" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.O + 0.3} until={K.B - 0.2} texto="2019 · más de 6 mil objetos" x={380} y={400} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.O + 1.0} until={K.B - 0.2} x={60} y={572} texto="caja de pescado" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.O + 1.4} until={K.B - 0.2} x={800} y={612} texto="trampa" lado="izq" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.O + 2.4} until={K.B - 0.2} x={90} y={975} texto="objetos con origen identificado:" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.O + 0.3} until={K.B - 0.2} texto="2019 · más de 6 mil objetos" x={380} y={500} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.O + 1.0} until={K.B - 0.2} x={60} y={732} texto="caja de pescado" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.O + 1.4} until={K.B - 0.2} x={800} y={772} texto="trampa" lado="izq" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.O + 2.4} until={K.B - 0.2} x={90} y={1185} texto="objetos con origen identificado:" tam={24} color={KC.ink} />
       <Chip T={T} at={K.B + 0.4} until={K.C - 0.2} texto="el más viejo con fecha legible" x={540} y={400} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.C + 0.4} until={K.Ou - 0.1} texto="no es isla: es sopa" x={540} y={420} tam={40} borde={KC.yellow} />
 
