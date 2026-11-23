@@ -294,7 +294,7 @@ function PaxillusShot() {
       {/* 10–11 · el caso de 1944 (escena dibujada, siluetas esquemáticas) */}
       <Escena T={T} a={K.E} b={K.Ra} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<><g transform="translate(540 1030) scale(1.22) translate(-540 -900)">
+        {fsvg(<><g transform="translate(540 1010) scale(1.4) translate(-530 -900)">
           <Silueta x={300} y={1040} s={0.8} tipo={0} apagado={kprog(T, K.M + 1.6, K.M + 2.6)} />
           <Silueta x={760} y={1040} s={0.76} tipo={1} color="#4a3a5e" />
           <rect x={120} y={1030} width={840} height={40} rx={10} fill="#7a4a22" stroke={KC.ink} strokeWidth={7} />
@@ -302,7 +302,7 @@ function PaxillusShot() {
           <Plato T={T} x={740} y={1010} s={0.42} vapor={0} />
           {T > K.M + 0.2 && <Sello T={T} at={K.M + 0.2} x={760} y={930} texto="✓" color="#118a3a" r={70} rot={0} />}
           </g>
-          {T > K.M + 1.4 && <Calendario x={247} y={610} s={1.2 * kprog(T, K.M + 1.4, K.M + 1.8, kEase.rebote)} dia={Math.max(1, Math.round(klerp(1, 17, kprog(T, K.M + 1.6, K.M + 3.2, kEase.suave))))} />}
+          {T > K.M + 1.4 && <Calendario x={247} y={490} s={1.2 * kprog(T, K.M + 1.4, K.M + 1.8, kEase.rebote)} dia={Math.max(1, Math.round(klerp(1, 17, kprog(T, K.M + 1.6, K.M + 3.2, kEase.suave))))} />}
         </>)}
       </Escena>
       {/* 12 · raro, pero muy difícil de predecir */}
@@ -323,10 +323,10 @@ function PaxillusShot() {
         {fsvg(<>
           <Plato T={T} x={540} y={1070} s={1.9} />
           <g transform="translate(287 520) scale(1.35)"><Veces T={T} x={0} y={0} at={K.C - 2} alerta tachon={kprog(T, K.C + 0.8, K.C + 1.4, kEase.sale)} /></g>
-          <g transform="translate(540 1070) rotate(-10) scale(1.5)" opacity={kprog(T, K.C + 1.0, K.C + 1.2)}>
+          <g transform="translate(540 1070) rotate(-10) scale(1.4)" opacity={kprog(T, K.C + 1.0, K.C + 1.2)}>
             <g transform={`scale(${klerp(2, 1, kprog(T, K.C + 1.0, K.C + 1.35, kEase.rebote))})`}>
               <rect x={-250} y={-60} width={500} height={120} rx={16} fill="rgba(255,255,255,.75)" stroke={KC.red} strokeWidth={12} />
-              <text y={24} textAnchor="middle" style={{ font:`400 74px ${KF.titulo}` }} fill={KC.red}>NO TE PROTEGE</text>
+              <text y={24} textAnchor="middle" style={{ font:`400 66px ${KF.titulo}` }} fill={KC.red}>NO TE PROTEGE</text>
             </g>
           </g>
         </>)}
@@ -354,10 +354,10 @@ function PaxillusShot() {
       <Chip T={T} at={K.R + 0.9} until={K.E - 0.3} texto="riesgo de falla renal" x={540} y={440} tam={38} borde={KC.red} />
       <Chip T={T} at={K.R + 1.7} until={K.E - 0.3} texto="cocerlo no lo evita" x={830} y={1135} tam={36} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.3} until={K.M - 0.2} anio="1944" quien="Julius Schäffer · micólogo alemán" revista="otoño de 1944" x={540} y={430} />
-      <Etq T={T} at={K.E + 1.6} until={K.M - 0.2} x={210} y={1278} texto="él" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.E + 1.9} until={K.M - 0.2} x={770} y={1278} texto="ella" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.M + 0.4} until={K.Ra - 0.3} texto="ella: sin síntomas" x={808} y={1340} tam={34} borde="#118a3a" />
-      <Chip T={T} at={K.M + 2.4} until={K.Ra - 0.3} texto="él: murió 17 días después" x={270} y={1340} tam={28} borde={KC.red} />
+      <Etq T={T} at={K.E + 1.6} until={K.M - 0.2} x={120} y={1300} texto="él" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.E + 1.9} until={K.M - 0.2} x={760} y={1300} texto="ella" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.M + 0.4} until={K.Ra - 0.3} texto="ella: sin síntomas" x={808} y={1380} tam={34} borde="#118a3a" />
+      <Chip T={T} at={K.M + 2.4} until={K.Ra - 0.3} texto="él: murió 17 días después" x={270} y={1380} tam={28} borde={KC.red} />
       <Etq T={T} at={K.E + 0.5} until={K.Ra - 0.3} x={60} y={1480} texto="dibujo esquemático" tam={24} color={KC.ink} />
       <Etq T={T} at={K.M + 2.6} until={K.Ra - 0.3} x={60} y={1525} texto="su muerte se atribuyó a los paxilos" tam={24} color={KC.ink} />
       <Chip T={T} at={K.Ra + 0.2} until={K.C - 0.3} texto="es raro" x={260} y={470} tam={40} borde={KC.ink} />
