@@ -99,8 +99,16 @@ function Refri({ T, abre = 1, mohoM = 0.6, mohoF = 0.6, mohoS = 0, termo = 4, fe
   const dw = (x1 - x0) * (1 - abre * 0.92);
   const g = krng(7);
   return <g>
-    <rect x={x0} y={y0} width={x1 - x0} height={y1 - y0 + 40} rx={36} fill={MR.cuerpo} stroke={KC.ink} strokeWidth={9} />
-    <rect x={ix0} y={iy0} width={ix1 - ix0} height={iy1 - iy0} rx={18} fill={MR.dentro} stroke={KC.ink} strokeWidth={6} />
+    {/* modo cine: cuerpo e interior con degradado (el interior ya no es un rectángulo claro y plano a media pantalla) */}
+    <defs>
+      <linearGradient id="mrCuerpo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#f3f7fa" /><stop offset="0.6" stopColor="#d4dee6" /><stop offset="1" stopColor="#9eacb8" /></linearGradient>
+      <linearGradient id="mrDentro" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#b8d0e2" /><stop offset="0.5" stopColor="#8aa4ba" /><stop offset="1" stopColor="#5d7489" /></linearGradient>
+    </defs>
+    <ellipse cx={(x0 + x1) / 2} cy={y1 + 52} rx={(x1 - x0) * 0.55} ry={26} fill="#000" opacity={0.35} />
+    <rect x={x0} y={y0} width={x1 - x0} height={y1 - y0 + 40} rx={36} fill="url(#mrCuerpo)" stroke={KC.ink} strokeWidth={9} />
+    <rect x={ix0} y={iy0} width={ix1 - ix0} height={iy1 - iy0} rx={18} fill="url(#mrDentro)" stroke={KC.ink} strokeWidth={6} />
+    <rect x={ix0 + 10} y={iy0 + 10} width={24} height={iy1 - iy0 - 20} rx={10} fill="#000" opacity={0.12} />
+    <rect x={ix1 - 34} y={iy0 + 10} width={24} height={iy1 - iy0 - 20} rx={10} fill="#000" opacity={0.12} />
     <rect x={ix0} y={iy0} width={ix1 - ix0} height={iy1 - iy0} rx={18} fill="url(#luzRefri)" opacity={luz} />
     <defs><radialGradient id="luzRefri" cx="50%" cy="8%" r="70%"><stop offset="0%" stopColor="#fffbe0" stopOpacity="0.95" /><stop offset="100%" stopColor="#fffbe0" stopOpacity="0" /></radialGradient></defs>
     <rect x={(ix0 + ix1) / 2 - 70} y={iy0 + 6} width={140} height={22} rx={10} fill="#fff6c2" stroke={KC.ink} strokeWidth={4} opacity={0.4 + 0.6 * luz} />
@@ -109,10 +117,10 @@ function Refri({ T, abre = 1, mohoM = 0.6, mohoF = 0.6, mohoS = 0, termo = 4, fe
     {/* repisas de vidrio */}
     {[rep1, rep2].map((yy) => <g key={yy}><rect x={ix0 - 4} y={yy} width={ix1 - ix0 + 8} height={16} rx={6} fill={MR.vidrio} stroke={KC.ink} strokeWidth={5} /></g>)}
     {/* cajón de verduras */}
-    <rect x={ix0 + 16} y={rep2 + 40} width={ix1 - ix0 - 32} height={iy1 - rep2 - 54} rx={16} fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={5} />
+    <rect x={ix0 + 16} y={rep2 + 40} width={ix1 - ix0 - 32} height={iy1 - rep2 - 54} rx={16} fill="rgba(200,225,245,.28)" stroke={KC.ink} strokeWidth={5} />
     <g transform={`translate(${ix0 + 150} ${rep2 + 150})`}>{[0, 1, 2, 3, 4].map((k) => <ellipse key={k} cx={(k - 2) * 34} cy={-10 - (k % 2) * 16} rx={46} ry={38} fill={k % 2 ? MR.lechuga : '#5cbf55'} stroke={KC.ink} strokeWidth={4} />)}</g>
     {[0, 1, 2].map((k) => <path key={k} transform={`translate(${ix1 - 240 + k * 58} ${rep2 + 110}) rotate(${-20 + k * 14})`} d="M -14 -50 L 14 -50 L 3 70 L -3 70 Z" fill={MR.zanahoria} stroke={KC.ink} strokeWidth={4} />)}
-    <rect x={ix0 + 16} y={rep2 + 40} width={ix1 - ix0 - 32} height={34} rx={14} fill="rgba(255,255,255,.7)" stroke={KC.ink} strokeWidth={4} />
+    <rect x={ix0 + 16} y={rep2 + 40} width={ix1 - ix0 - 32} height={34} rx={14} fill="rgba(220,235,248,.6)" stroke={KC.ink} strokeWidth={4} />
     {/* cosas en las repisas */}
     <Sobras x={300} y={rep1} fecha={fecha} moho={mohoS} />
     <TermoRefri x={790} y={iy0 + 70} valor={termo} h={150} />
@@ -397,7 +405,9 @@ function MohoRefriShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          <path d="M 0 1110 Q 260 1094 540 1110 L 540 1300 L 0 1300 Z" fill="#6a2029" stroke={KC.ink} strokeWidth={6} />
+          <defs><linearGradient id="mrFresa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#9a2c3a" /><stop offset="1" stopColor="#3e1016" /></linearGradient></defs>
+          <path d="M 0 1110 Q 260 1094 540 1110 Q 600 1200 560 1300 L 0 1300 Z" fill="url(#mrFresa)" stroke={KC.ink} strokeWidth={6} />
+          {Array.from({ length: 9 }, (_, i) => <ellipse key={'q' + i} cx={40 + i * 58} cy={1160 + (i % 3) * 38} rx={7} ry={11} fill="#e8c860" opacity={0.7} />)}
           <Botrytis T={T} x={260} y={1110} s={1.3} H={420} crece={kprog(T, K.Bo + 1.3, K.Bo + 3.4)} seed={3} />
           {(() => { const o = kprog(T, K.Bo + 2.6, K.Bo + 3.0, kEase.sale); const cr = kprog(T, K.Bo + 3.0, K.Cl, kEase.suave); return o > 0 ? <g opacity={o} transform={`translate(${klerp(80, 0, o)} 0)`}>
             <Petri x={790} y={940} r={170} medio="#f5e7b8">
@@ -520,7 +530,7 @@ function MohoRefriShot() {
       <Chip T={T} at={K.Cl + 0.9} until={K.P - 0.3} texto="ya en 1923" x={360} y={575} tam={34} borde={KC.gold} />
       <Etq T={T} at={K.Cl + 1.6} until={K.P - 0.3} x={60} y={650} texto="Cladosporium herbarum" it tam={34} color={MR.oliva2} />
       <Etq T={T} at={K.Cl + 2.0} until={K.P - 0.3} x={470} y={1140} texto="la espora germina" tam={24} color={KC.gold2} />
-      <div style={{ position:'absolute', left:0, right:0, top:560, zIndex:41, textAlign:'center', opacity:kprog(T, K.P, K.P + 0.3) * (1 - kprog(T, K.L - 0.2, K.L + 0.2)), font:`400 96px/1 ${KF.titulo}`, color:KC.white, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}` }}>¿PARA QUÉ SIRVE EL FRÍO?</div>
+      <div style={{ position:'absolute', left:0, right:0, top:560, zIndex:41, textAlign:'center', opacity:kprog(T, K.P, K.P + 0.3) * (1 - kprog(T, K.L - 0.2, K.L + 0.2)), font:`400 64px/1 ${KF.titulo}`, color:KC.white, WebkitTextStroke:`3px ${KC.ink}`, textShadow:`4px 4px 0 ${KC.ink}` }}>¿PARA QUÉ SIRVE EL FRÍO?</div>
       <Chip T={T} at={K.L + 0.5} until={K.L + 3.0} texto="reacciones más lentas" x={400} y={900} tam={32} borde={KC.gold} />
       <Chip T={T} at={K.L + 1.9} until={K.L + 3.3} texto="membrana rígida" x={540} y={1395} tam={30} borde={KC.cyan} />
       <Chip T={T} at={K.L + 3.4} until={K.Co - 0.3} texto="grasas insaturadas → membrana flexible" x={540} y={950} tam={28} borde={KC.mint} />
