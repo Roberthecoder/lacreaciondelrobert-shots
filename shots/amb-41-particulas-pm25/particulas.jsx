@@ -247,14 +247,14 @@ function ParticulasShot() {
 
       {/* 2 · tamaño: más de 30 en fila a lo ancho de un granito de arena fina */}
       <Escena T={T} a={K.Ta} b={K.O} fondo="#0E0F12">
-        {svg(<><GranoArena x={540} y={900} w={900} />{fila}
-          <line x1={90} y1={1200} x2={990} y2={1200} stroke={KC.texto} strokeWidth={5} /><line x1={90} y1={1180} x2={90} y2={1220} stroke={KC.texto} strokeWidth={5} /><line x1={990} y1={1180} x2={990} y2={1220} stroke={KC.texto} strokeWidth={5} /></>)}
+        {svg(<g transform="translate(0 140)"><GranoArena x={540} y={900} w={900} />{fila}
+          <line x1={90} y1={1200} x2={990} y2={1200} stroke={KC.texto} strokeWidth={5} /><line x1={90} y1={1180} x2={90} y2={1220} stroke={KC.texto} strokeWidth={5} /><line x1={990} y1={1180} x2={990} y2={1220} stroke={KC.texto} strokeWidth={5} /></g>)}
         <EscalaFija texto="10 µm" largo={100} y={1480} />
         <div style={{ position:'absolute', right:60, top:1455, font:`700 26px ${KF.mono}`, color:'rgba(246,243,236,.75)' }}>esquema</div>
       </Escena>
-      <NumeroGigante T={T} at={K.Ta + 0.5} until={K.O - 0.2} valor={nFila} dur={0.01} etiqueta="en fila:" x={300} y={470} tam={150} color={KC.yellow} />
-      <Etq T={T} at={K.Ta + 3.6} until={K.O - 0.2} x={100} y={1150} texto="arena fina · 90 µm" lado="der" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.Ta + 1.2} until={K.O - 0.2} x={100} y={600} texto="PM2.5 · hasta 2.5 µm" lado="der" tam={28} color={KC.gold2} />
+      <NumeroGigante T={T} at={K.Ta + 0.5} until={K.O - 0.2} valor={nFila} dur={0.01} etiqueta="en fila:" x={300} y={560} tam={150} color={KC.yellow} />
+      <Etq T={T} at={K.Ta + 3.6} until={K.O - 0.2} x={100} y={1405} texto="arena fina · 90 µm" lado="der" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Ta + 1.2} until={K.O - 0.2} x={100} y={720} texto="PM2.5 · hasta 2.5 µm" lado="der" tam={28} color={KC.gold2} />
 
       {/* 3 · de dónde salen */}
       <Escena T={T} a={K.O} b={K.Pu}>
