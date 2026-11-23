@@ -292,7 +292,9 @@ function SalYodada() {
       <Escena T={T} a={K.Da} b={K.Ci}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={24} color="rgba(195,155,211,.3)" />
-        <SvgCapa>
+        {/* belleza (2.ª pasada): la tiroxina (lo que se pesa) grande y atenuada detrás; la balanza ×1.12 */}
+        <SvgCapa><g opacity={0.3}><Tiroxina x={520} y={960} s={1.5} on={4} rot={Math.sin(T * 0.8) * 3} /></g></SvgCapa>
+        <SvgCapa><g transform="translate(540 960) scale(1.12) translate(-540 -930)">
           <path d="M 540 780 L 480 1180 L 600 1180 Z" fill="#9aa3b5" stroke={KC.ink} strokeWidth={8} />
           <g transform={`rotate(${balanza} 540 780)`}>
             <rect x={160} y={768} width={760} height={24} rx={12} fill="#c8cdd6" stroke={KC.ink} strokeWidth={7} />
@@ -307,7 +309,7 @@ function SalYodada() {
               <text x={820} y={1020} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto}>todo lo demás</text>
             </g>
           </g>
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 10 · cierre: el mismo salero, ya explicado */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
