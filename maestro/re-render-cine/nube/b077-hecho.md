@@ -1,0 +1,1 @@
+- cie-32-dolor-tarde: «MÁS DE 1 M» ya no se sale del cuadro (arriba de la regla) y «¡BRRUM!» tampoco; pierna y pie con piel en degradado y brillo, mezclilla con degradado y costura, dedos con volumen; mesa con madera en degradado y sombra bajo la tabla; en la pregunta las dos señales giran más grandes y más abajo (encuadre centrado).
