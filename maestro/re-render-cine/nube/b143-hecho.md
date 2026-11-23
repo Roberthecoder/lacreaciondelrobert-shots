@@ -1,1 +1,2 @@
 - amb-03-bioplasticos: Qué es: bacterias 1.4× (antes chiquitas junto al maíz y el azúcar); Uno (calor): el montón de composta industrial 1.25× más grande y centrado bajo la lupa. El resto ya cumplía. Auditores: sin láminas · encuadre bien.
+- cie-03-adn-viral: Otros: la lista de grupos de mamíferos flotaba sobre fondo vacío (casi lámina); ahora corre detrás el ADN de cada genoma (tres hebras atenuadas) y cada retrovirus de la píldora es más grande. El resto ya cumplía. Auditores: sin láminas · encuadre bien.
