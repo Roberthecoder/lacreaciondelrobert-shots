@@ -285,6 +285,7 @@ function CallCenter() {
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.M} zoom={0.1}>
         <FondoLunares color={KC.orange} />
+        {svg(<g opacity={0.8} transform="translate(540 1330) scale(1.7)"><Cubiculo x={0} y={0} T={T} quien="nuevo" pend={0} calma={1} robot={1} /></g>)}
         {svg(<text x={540} y={1140} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 960)`}>?</text>)}
       </Escena>
 

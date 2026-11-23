@@ -1,4 +1,5 @@
 - qui-44-barro-plomo: Comparación: los dos paneles de 100 niños, los porcentajes y sus rótulos bajan juntos al centro (antes arriba con el tercio de abajo vacío); los dos % más chicos para que no sean dos números gigantes a la vez; nota NOM-199 de 22 a 26 px; Pregunta: mapa de México más grande y al centro, «?» abajo a la izquierda. Auditores: sin láminas · encuadre bien.
 - fun-121-oxido-nitroso: Hongo (6a): la hifa de Fusarium ya no es una sola franja: crece ×1.9 (barra 5 µm recalculada) y dos hifas más del mismo micelio, atenuadas, cruzan atrás; etiquetas subidas para no pisarlas. Lo demás ya cumplía. Auditores: sin láminas · encuadre bien.
 - ia-44-call-center: Clientes: las tres tarjetas ya no flotan solas sobre el fondo; detrás queda atenuado el cubículo del novato con su IA (el sujeto del video, ×1.55 y centrado). Lo demás ya cumplía. Auditores: sin láminas · encuadre bien.
+- ia-44-call-center (2.ª pasada): Pregunta marcaba lámina (solo el «?» sobre la escena anterior a media luz): ahora el cubículo del novato queda en cuadro detrás del signo, en la misma posición que el de la escena anterior. Auditores: sin láminas · encuadre bien.
 GRUPO TERMINADO
