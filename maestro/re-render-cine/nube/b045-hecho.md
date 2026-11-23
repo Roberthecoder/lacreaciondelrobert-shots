@@ -1,0 +1,1 @@
+- bio-20-glutamato: vaso de sopa (gancho y cierre) con volumen: degradado de luz a sombra, brillo vertical y sombra al piso, ya no una plancha blanca; placas de 1957 bajadas al centro del cuadro. El resto ya estaba al nivel (bacteria por dentro grande, matraz, placa campeona, costales). Auditores: sin láminas · encuadre bien.
