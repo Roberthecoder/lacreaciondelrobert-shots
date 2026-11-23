@@ -1,0 +1,1 @@
+- bio-53-mamut: Gancho y Cierre (la lista «Cómo revivir un mamut» baja para no taparse con el logo y se ensancha para que «editar con CRISPR» quepa dentro); Paso 2 (el genoma armado baja al centro y queda 1.1×; el auditor lo marcaba ARRIBA); Paso 3 (elefante asiático y mamut lanudo 0.8→0.93× y las tiras de ADN bajan para no encimarse). Sin barras de escala en esas escenas.
