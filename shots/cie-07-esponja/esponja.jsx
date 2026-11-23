@@ -8,8 +8,16 @@ function Esponja({ x, y, s = 1, squeeze = 0, ventanas = 0, T = 0, olor = 0 }) {
   const g = krng(11), poros = Array.from({ length: 34 }, () => ({ x: -190 + g() * 380, y: -60 + g() * 170, r: 8 + g() * 16 }));
   const sy = 1 - 0.25 * squeeze, sx = 1 + 0.08 * squeeze;
   return <g transform={`translate(${x} ${y}) scale(${s * sx} ${s * sy})`}>
-    <rect x={-220} y={-80} width={440} height={210} rx={30} fill={AMA} stroke={KC.ink} strokeWidth={9} />
-    <rect x={-220} y={-150} width={440} height={80} rx={22} fill={VERDE} stroke={KC.ink} strokeWidth={9} />
+    <defs>
+      <linearGradient id="esp-am" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stopColor="#ffe68a" /><stop offset="0.45" stopColor={AMA} /><stop offset="1" stopColor="#c98f12" /></linearGradient>
+      <linearGradient id="esp-ve" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stopColor="#5cc286" /><stop offset="0.5" stopColor={VERDE} /><stop offset="1" stopColor="#1d6a3d" /></linearGradient>
+    </defs>
+    <ellipse cx={8} cy={150} rx={230} ry={26} fill="rgba(0,0,0,.35)" />
+    <rect x={-220} y={-80} width={440} height={210} rx={30} fill="url(#esp-am)" stroke={KC.ink} strokeWidth={9} />
+    <rect x={-220} y={-150} width={440} height={80} rx={22} fill="url(#esp-ve)" stroke={KC.ink} strokeWidth={9} />
+    {Array.from({ length: 22 }, (_, i) => <path key={'f' + i} d={`M ${-205 + i * 19} -140 l 14 58`} stroke="#164f2d" strokeWidth={3} opacity=".45" />)}
+    <path d="M -196 -138 L 190 -138" stroke="#9fe0b8" strokeWidth={6} strokeLinecap="round" opacity=".55" />
+    <path d="M -198 -62 Q -200 40 -186 110" stroke="#fff4c0" strokeWidth={8} strokeLinecap="round" fill="none" opacity=".45" />
     {poros.map((p, i) => ventanas > i / poros.length
       ? <g key={i}><rect x={p.x - 13} y={p.y - 13} width={26} height={26} rx={4} fill="#fff3a8" stroke={KC.ink} strokeWidth={4} /><circle cx={p.x + Math.sin(T * 3 + i) * 4} cy={p.y} r={6} fill={KC.mint} stroke={KC.ink} strokeWidth={2} /></g>
       : <ellipse key={i} cx={p.x} cy={p.y} rx={p.r} ry={p.r * 0.7} fill={AMA2} />)}
@@ -21,17 +29,23 @@ function Microesponja({ T, lleno = 1 }) {
   const g = krng(5), bac = [];
   const huecos = [[300, 760, 150], [720, 700, 170], [520, 1020, 140], [850, 1060, 120], [200, 1080, 110]];
   huecos.forEach(([cx, cy, r], h) => { for (let k = 0; k < 26; k++) { const a = g() * Math.PI * 2, d = r * (0.75 + 0.2 * g());
-    bac.push(<ellipse key={h * 40 + k} cx={cx + Math.cos(a) * d} cy={cy + Math.sin(a) * d} rx={10} ry={6} transform={`rotate(${a * 57} ${cx + Math.cos(a) * d} ${cy + Math.sin(a) * d})`} fill={KC.red} opacity={kclamp(lleno * 1.2 - k / 30, 0, 1)} />); } });
+    bac.push(<ellipse key={h * 40 + k} cx={cx + Math.cos(a) * d} cy={cy + Math.sin(a) * d} rx={10} ry={6} transform={`rotate(${a * 57} ${cx + Math.cos(a) * d} ${cy + Math.sin(a) * d})`} fill="#b8323a" stroke="#ff9a9a" strokeWidth={2} opacity={kclamp(lleno * 1.2 - k / 30, 0, 1)} />); } });
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+    <defs><radialGradient id="poro-in" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stopColor="#0d0b05" /><stop offset="0.8" stopColor="#1f1a0b" /><stop offset="1" stopColor="#3b3215" /></radialGradient></defs>
     <rect width={KW} height={KH} fill="#1a1a17" />
-    <rect x={0} y={520} width={KW} height={760} fill="#3a341e" />
-    {huecos.map(([cx, cy, r], i) => <circle key={i} cx={cx} cy={cy} r={r} fill="#1a1608" stroke="#a8902e" strokeWidth={8} />)}
+    <rect x={0} y={400} width={KW} height={1100} fill="#332d1a" />
+    {Array.from({ length: 14 }, (_, i) => <path key={'v' + i} d={`M -20 ${430 + i * 78} C 260 ${400 + i * 78 + Math.sin(i) * 30} 760 ${460 + i * 78} 1100 ${420 + i * 78 + Math.cos(i) * 26}`} stroke="#4a4126" strokeWidth={10} fill="none" opacity=".6" />)}
+    <g transform="translate(0 80) translate(540 900) scale(1.3) translate(-540 -900)">
+    {huecos.map(([cx, cy, r], i) => <g key={i}><circle cx={cx} cy={cy} r={r + 10} fill="none" stroke="#d6bb52" strokeWidth={3} opacity=".35" /><circle cx={cx} cy={cy} r={r} fill="url(#poro-in)" stroke="#b39a35" strokeWidth={8} /></g>)}
     {bac}
+    </g>
   </svg>;
 }
 function Micro({ x, y, s = 1, T, on = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-200} y={-130} width={400} height={260} rx={24} fill="#d9dde3" stroke={KC.ink} strokeWidth={9} />
+    <defs><linearGradient id="micro-cu" x1="0" y1="0" x2="0.5" y2="1"><stop offset="0" stopColor="#dfe3ea" /><stop offset="1" stopColor="#8a93a1" /></linearGradient></defs>
+    <ellipse cx={0} cy={150} rx={210} ry={20} fill="rgba(0,0,0,.35)" />
+    <rect x={-200} y={-130} width={400} height={260} rx={24} fill="url(#micro-cu)" stroke={KC.ink} strokeWidth={9} />
     <rect x={-170} y={-100} width={250} height={200} rx={14} fill={on ? `rgba(255,200,80,${0.5 + 0.3 * Math.sin(T * 12)})` : '#4a4f57'} stroke={KC.ink} strokeWidth={7} />
     {[0, 1, 2].map((k) => <circle key={k} cx={140} cy={-60 + k * 50} r={14} fill="#fff" stroke={KC.ink} strokeWidth={5} />)}
   </g>;
@@ -39,10 +53,10 @@ function Micro({ x, y, s = 1, T, on = 0 }) {
 function Calendario({ x, y, T, at }) {
   const n = Math.floor(kprog(T, at, at + 1.5) * 7);
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={-260} y={-200} width={520} height={400} rx={24} fill="#fff" stroke={KC.ink} strokeWidth={9} />
+    <rect x={-260} y={-200} width={520} height={400} rx={24} fill="#22303e" stroke={KC.ink} strokeWidth={9} />
     <rect x={-260} y={-200} width={520} height={90} rx={24} fill={KC.red} stroke={KC.ink} strokeWidth={9} />
     <text x={0} y={-138} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill="#fff">CADA SEMANA</text>
-    {Array.from({ length: 7 }, (_, i) => <g key={i}><rect x={-230 + i * 66} y={-70} width={56} height={56} rx={10} fill={i < n ? KC.mint : '#eee'} stroke={KC.ink} strokeWidth={4} />{i === 6 && n >= 7 && <path d={`M ${-224 + i * 66} -40 l 18 18 l 30 -36`} stroke={KC.ink} strokeWidth={8} fill="none" />}</g>)}
+    {Array.from({ length: 7 }, (_, i) => <g key={i}><rect x={-230 + i * 66} y={-70} width={56} height={56} rx={10} fill={i < n ? KC.mint : '#3a4858'} stroke={KC.ink} strokeWidth={4} />{i === 6 && n >= 7 && <path d={`M ${-224 + i * 66} -40 l 18 18 l 30 -36`} stroke="#0b1020" strokeWidth={8} fill="none" />}</g>)}
   </g>;
 }
 
@@ -66,20 +80,20 @@ function EsponjaShot() {
       {/* 2 · un cubito de 1 cm */}
       <Escena T={T} a={K.Cu} b={K.E}>
         <FondoLunares color={KC.yellow} />
-        {svg(<g transform={`translate(540 960) scale(${klerp(0.9, 1.9, kprog(T, K.Cu, K.Cu + 1.2, kEase.sale))})`}>
+        {svg(<g transform={`translate(540 900) scale(${klerp(1.2, 2.4, kprog(T, K.Cu, K.Cu + 1.2, kEase.sale))})`}>
           <path d="M -120 -60 L 0 -120 L 120 -60 L 0 0 Z" fill={AMA} stroke={KC.ink} strokeWidth={7} />
           <path d="M -120 -60 L 0 0 L 0 140 L -120 80 Z" fill={AMA2} stroke={KC.ink} strokeWidth={7} />
           <path d="M 120 -60 L 0 0 L 0 140 L 120 80 Z" fill="#c99412" stroke={KC.ink} strokeWidth={7} />
           {Array.from({ length: 30 }, (_, i) => <circle key={i} cx={-100 + (i * 37) % 200} cy={-40 + ((i * 53) % 160)} r={4} fill={KC.red} opacity={kprog(T, K.Cu + 1 + i * 0.05, K.Cu + 1.3 + i * 0.05)} />)}
         </g>)}
-        <Escala T={T} z={1} pxPorMm={23} objetivo={240} y={1700} x={60} />
+        <Escala T={T} z={1} pxPorMm={29} objetivo={240} y={1700} x={60} />
       </Escena>
       {/* 3 · el estudio: 14 esponjas */}
       <Escena T={T} a={K.E} b={K.A}>
         <FondoLunares color={KC.orange} />
         {/* modo cine: las 14 esponjas entran al empezar la escena (no 2.2 s después) y llenan el cuadro */}
         {svg(<>{Array.from({ length: 14 }, (_, i) => { const f = Math.floor(i / 5), c = i % 5, e = kprog(T, K.E + 0.25 + i * 0.1, K.E + 0.55 + i * 0.1);
-          return e > 0 ? <g key={i} opacity={e}><Esponja x={200 + c * 170 + (f === 2 ? 85 : 0)} y={900 + f * 165} s={0.36} T={T} /></g> : null; })}</>)}
+          return e > 0 ? <g key={i} opacity={e}><Esponja x={140 + c * 200 + (f === 2 ? 100 : 0)} y={880 + f * 210} s={0.43} T={T} /></g> : null; })}</>)}
       </Escena>
       {/* 4 · ADN: 362 grupos */}
       <Escena T={T} a={K.A} b={K.H}>
@@ -90,9 +104,9 @@ function EsponjaShot() {
       {/* 5 · por dentro: huecos y capas de bacterias */}
       <Escena T={T} a={K.H} b={K.Q} fondo="#2a2412">
         <Microesponja T={T} lleno={kprog(T, K.H + 0.2, K.H + 2.2)} />
-        <Escala T={T} z={1} pxPorMm={30000} y={1430} x={60} />
-        <Etq T={T} at={K.H + 1.2} until={K.Q - 0.3} x={560} y={500} texto="fibra de la esponja" lado="der" />
-        <Etq T={T} at={K.H + 1.8} until={K.Q - 0.3} x={120} y={1180} texto="bacterias en capas" lado="der" color={KC.red} />
+        <Escala T={T} z={1} pxPorMm={39000} y={1430} x={60} />
+        <Etq T={T} at={K.H + 1.2} until={K.Q - 0.3} x={560} y={445} texto="fibra de la esponja" lado="der" />
+        <Etq T={T} at={K.H + 1.8} until={K.Q - 0.3} x={250} y={1420} texto="bacterias en capas" lado="der" color="#ff8a8a" />
       </Escena>
       {/* 6 · pregunta: agua caliente o micro */}
       <Escena T={T} a={K.Q} b={K.I}>
@@ -103,7 +117,7 @@ function EsponjaShot() {
       <Escena T={T} a={K.I} b={K.M}>
         <FondoLunares color={KC.mint} />
         {/* modo cine: no es lámina; la esponja con sus bacterias sigue en pantalla bajo las barras */}
-        {svg(<g opacity={0.85 * kprog(T, K.I + 0.1, K.I + 0.5)}><Esponja x={540} y={1300} s={0.8} ventanas={1} T={T} /></g>)}
+        {svg(<g opacity={0.9 * kprog(T, K.I + 0.1, K.I + 0.5)}><Esponja x={540} y={1340} s={1.15} ventanas={1} T={T} /></g>)}
       </Escena>
       {/* 8–9 · Moraxella y el olor */}
       <Escena T={T} a={K.M} b={K.R}>
@@ -112,7 +126,7 @@ function EsponjaShot() {
           {T < K.O ? <g transform="translate(540 960) scale(1.6)">
             {Array.from({ length: 8 }, (_, i) => { const a = i / 8 * Math.PI * 2 + T * 0.3, r = 160 + (i % 2) * 60;
               return <g key={i} transform={`translate(${Math.cos(a) * r} ${Math.sin(a) * r})`}><circle cx={-22} cy={0} r={26} fill={KC.pink} stroke={KC.ink} strokeWidth={6} /><circle cx={22} cy={0} r={26} fill={KC.pink} stroke={KC.ink} strokeWidth={6} /></g>; })}
-            <path d="M -120 -80 L -60 -120 L 60 -120 L 120 -80 L 90 -40 L 60 -60 L 60 120 L -60 120 L -60 -60 L -90 -40 Z" fill="#cfe7ff" stroke={KC.ink} strokeWidth={8} />
+            <defs><linearGradient id="camisa" x1="0" y1="0" x2="0.5" y2="1"><stop offset="0" stopColor="#d8ecff" /><stop offset="1" stopColor="#7f9fc4" /></linearGradient></defs><path d="M -120 -80 L -60 -120 L 60 -120 L 120 -80 L 90 -40 L 60 -60 L 60 120 L -60 120 L -60 -60 L -90 -40 Z" fill="url(#camisa)" stroke={KC.ink} strokeWidth={8} /><path d="M -22 -120 Q 0 -96 22 -120" stroke="#5d7da3" strokeWidth={5} fill="none" />
             {[-40, 0, 40].map((dx, k) => <path key={k} d={`M ${dx} -140 q 20 -30 0 -60 q -20 -30 0 -60`} stroke={KC.leaf} strokeWidth={9} fill="none" opacity={0.5 + 0.5 * Math.sin(T * 4 + k)} />)}
           </g> : <Esponja x={540} y={1100} s={1.7} T={T} olor={kprog(T, K.O + 0.3, K.O + 1.2)} />}
         </>)}
@@ -121,13 +135,21 @@ function EsponjaShot() {
       {/* 10 · el micro baja la carga, pero regresan */}
       <Escena T={T} a={K.R} b={K.Cs}>
         <FondoLunares color={KC.cyan} />
-        {svg(<Micro x={540} y={940} s={1.7} T={T} on={T > K.R + 0.4 && T < K.R + 1.8 ? 1 : 0} />)}
+        {svg(<><Micro x={540} y={1000} s={1.8} T={T} on={T > K.R + 0.4 && T < K.R + 1.8 ? 1 : 0} />
+          <Esponja x={459} y={1012} s={0.62} ventanas={kclamp(carga, 0, 1)} T={T} />
+          {T > K.R + 0.4 && T < K.R + 1.8 && <rect x={540 - 170 * 1.8} y={1000 - 100 * 1.8} width={250 * 1.8} height={200 * 1.8} rx={22} fill={`rgba(255,190,70,${0.22 + 0.12 * Math.sin(T * 12)})`} />}</>)}
         <Medidor T={T} at={K.R + 0.2} until={K.Cs - 0.2} valor={carga} etiqueta="bacterias en la esponja" texto={() => (T < K.R + 2.4 ? 'bajan' : '¿vuelven a crecer?')} x={90} y={1460} ancho={900} color={KC.red} />
       </Escena>
       {/* 11 · consejo: cámbiala cada semana */}
       <Escena T={T} a={K.Cs} b={K.C}>
         <FondoLunares color={KC.mint} />
-        {svg(<g transform="translate(540 960) scale(1.5)"><Calendario x={0} y={0} T={T} at={K.Cs + 0.3} /></g>)}
+        {svg(<>
+          <g transform="translate(540 760) scale(1.3)"><Calendario x={0} y={0} T={T} at={K.Cs + 0.3} /></g>
+          {(() => { const c = kprog(T, K.Cs + 1.9, K.Cs + 2.7, kEase.suave); return <>
+            <g opacity={1 - c}><Esponja x={540 - 700 * c} y={1330} s={1.15} ventanas={1} T={T} /></g>
+            {c > 0 && <Esponja x={540 + 700 * (1 - c)} y={1330} s={1.15} ventanas={0} T={T} />}
+          </>; })()}
+        </>)}
       </Escena>
       {/* 12 · cierre: la misma esponja, un edificio lleno */}
       <Escena T={T} a={K.C} b={FIN}>
@@ -142,8 +164,8 @@ function EsponjaShot() {
       <NumeroGigante T={T} at={K.A + 0.6} until={K.H - 0.2} valor={362} dur={1.2} etiqueta="grupos de bacterias" x={540} y={470} tam={130} color={KC.yellow} />
       <Chip T={T} at={K.Q + 0.3} until={K.I - 0.2} texto="¿agua caliente o micro?" x={540} y={1500} tam={38} borde={KC.ink} />
       <Comparativa T={T} at={K.I + 0.3} until={K.M - 0.2} max={10} y={720} alto={300}
-        izq={{ valor: 8, etiqueta: 'limpiadas seguido', color: KC.blue, texto: '≈' }} der={{ valor: 8.3, etiqueta: 'sin limpiar', color: KC.orange, texto: '≈' }} />
-      <Chip T={T} at={K.I + 1.6} until={K.M - 0.2} texto="de 4 comparadas: no tenían menos" x={540} y={1500} tam={40} borde={KC.red} />
+        izq={{ valor: 8, etiqueta: 'limpiadas seguido', color: '#4f7fc9', texto: '≈' }} der={{ valor: 8.3, etiqueta: 'sin limpiar', color: '#d98a3d', texto: '≈' }} />
+      <Chip T={T} at={K.I + 1.6} until={K.M - 0.2} texto="de 4 comparadas: no tenían menos" x={540} y={620} tam={40} borde={KC.red} />
       <Chip T={T} at={K.O + 0.4} until={K.R - 0.2} texto="sospecha: culpable del olor" x={380} y={440} tam={36} borde={KC.leaf} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou - 0.1} texto="dale fecha de caducidad" x={540} y={500} tam={40} borde={KC.gold} />
 
