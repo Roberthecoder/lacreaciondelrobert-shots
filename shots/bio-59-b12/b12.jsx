@@ -283,7 +283,7 @@ function B12() {
   const anillo = (t0, cx, cy, s = 1) => orbita.map(([a, rr, rot], i) => { const k = kprog(T, t0 + i * 0.15, t0 + 0.5 + i * 0.15, kEase.rebote); if (k <= 0) return null;
     const ang = a + (T - t0) * 0.6; return <g key={i} transform={`translate(${cx + Math.cos(ang) * rr * s} ${cy + Math.sin(ang) * rr * 0.55 * s}) scale(${k})`}>
       <Bacteria T={T} x={0} y={0} largo={80} ancho={34} rot={rot + T * 30} color={i % 2 ? KC.mint : KC.lilac} seed={i + 2} flagelo={i % 3 === 0} nucleoide={false} /></g>; });
-  const cient = Math.floor(klerp(0, 99, kprog(T, K.S + 0.6, K.S + 3.6, kEase.suave)));
+  const cient = Math.floor(klerp(0, 99, kprog(T, K.S + 0.1, K.S + 3.0, kEase.suave)));   // belleza (2.ª pasada): la cuadrícula no arranca apagada
   const coloresPais = [KC.yellow, KC.pink, KC.cyan, KC.mint, KC.orange, KC.lilac, KC.coral, KC.gold2, '#7fd8ff', '#ffb3c7', '#9ccf5a', '#ffffff', '#ff8fa3', '#c9d3ff', '#f4b942', '#2fe0a8', '#e8336d', '#b6e33a', '#8b4dff'];
 
   return (
@@ -362,8 +362,9 @@ function B12() {
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={30} seed={8} color="rgba(159,232,255,.25)" tam={[3, 8]} vel={10} />
         <SvgB>
-          <g opacity={0.22}><Corrina T={T} x={540} y={930} s={1.35} p={1} co={0} /></g>
-          <Corrina T={T} x={540} y={930} s={1.35} p={kprog(T, K.M + 0.2, K.M + 2.2)} co={kprog(T, K.M + 2.2, K.M + 2.7, kEase.rebote)} />
+          {/* belleza (2.ª pasada): la corrina ×1.6 (antes 1.35), su silueta bien visible y el trazo arranca antes */}
+          <g opacity={0.5}><Corrina T={T} x={540} y={950} s={1.6} p={1} co={0} /></g>
+          <Corrina T={T} x={540} y={950} s={1.6} p={kprog(T, K.M - 0.3, K.M + 1.8)} co={kprog(T, K.M + 2.2, K.M + 2.7, kEase.rebote)} />
         </SvgB>
         <Etq T={T} at={K.M + 1.0} until={K.H - 0.3} x={60} y={1425} texto="anillo de corrina" tam={42} color="#9fe8ff" />
         <Etq T={T} at={K.M + 2.4} until={K.H - 0.3} x={1020} y={1480} texto="un átomo de cobalto" lado="izq" tam={42} color={COBALTO} />
@@ -372,6 +373,8 @@ function B12() {
       <Escena T={T} a={K.H} b={K.S} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         <SvgB>
+          {/* belleza (2.ª pasada): la molécula que Hodgkin descifró, atenuada detrás del aparato de rayos X */}
+          {T < H2 + 0.3 && <g opacity={0.3 * (1 - kprog(T, H2 - 0.1, H2 + 0.3))}><Corrina T={T} x={540} y={1000} s={1.6} p={1} co={1} /></g>}
           {T < H2 + 0.3 && <g opacity={1 - kprog(T, H2 - 0.1, H2 + 0.3)}><Difraccion T={T} t0={K.H} /></g>}
           {T > H2 - 0.1 && <g opacity={kprog(T, H2 - 0.1, H2 + 0.3)} transform={`translate(540 980) scale(${klerp(0.6, 1.2, kprog(T, H2, H2 + 0.6, kEase.rebote))}) translate(-540 -980)`}><Medalla T={T} x={540} y={1000} s={1} /></g>}
         </SvgB>
@@ -389,7 +392,7 @@ function B12() {
           </g>}
           {T > S2 - 0.1 && <g opacity={kprog(T, S2 - 0.1, S2 + 0.3)}><Zm c={[540, 960]} a={[540, 940]} k={1.4}><TiraPasos T={T} t0={S2} y={960} /></Zm></g>}
         </SvgB>
-        {T < S2 && <Contador T={T} at={K.S + 0.6} hasta={99} dur={3} x={540} y={1320} tam={70} color={KC.texto} sufijo=" científicos" />}
+        {T < S2 && <Contador T={T} at={K.S + 0.1} hasta={99} dur={2.9} x={540} y={1320} tam={70} color={KC.texto} sufijo=" científicos" />}
         <Chip T={T} at={K.S + 1.2} until={S2 - 0.2} texto="Harvard + ETH Zúrich" x={340} y={560} tam={36} borde={KC.blue} />
         <Chip T={T} at={K.S + 2.6} until={S2 - 0.2} texto="19 países · 11 años" x={540} y={1430} tam={44} borde={KC.blue} />
         <MitoTachado T={T} at={S2 + 0.4} tacharEn={S2 + 1.8} until={K.Ta - 0.2} texto="B12 hecha con pura química" x={540} y={1230} tam={40} />
