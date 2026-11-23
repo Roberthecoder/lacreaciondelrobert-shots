@@ -283,7 +283,7 @@ function Quimosina10() {
           {Array.from({ length: 168 }, (_, i) => { if (i === 104 && T > corte) return null; const [x1, y1] = cuenta(i), [x2, y2] = cuenta(i + 1);
             return <line key={'l' + i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#e8f0ff" strokeWidth={4} opacity={i >= 105 ? 1 - vuela * 0.5 : 1} />; })}
           {Array.from({ length: 169 }, (_, i) => { const [cx, cy] = cuenta(i), esp = i === 104 || i === 105, on = kprog(T, K.Ti + i * 0.004, K.Ti + 0.2 + i * 0.004);
-            return on > 0 && <circle key={i} cx={cx} cy={cy} r={esp ? 15 : 8} fill={i === 104 ? KC.gold2 : i === 105 ? KC.cyan : i < 105 ? KAPPA : '#ffd6e2'} stroke={KC.ink} strokeWidth={esp ? 4 : 1.5} opacity={(i > 105 ? 1 - vuela * 0.5 : 1) * on} />; })}
+            return on > 0 && <circle key={i} cx={cx} cy={cy} r={esp ? 17 : 10} fill={i === 104 ? KC.gold2 : i === 105 ? KC.cyan : i < 105 ? KAPPA : '#ffd6e2'} stroke={KC.ink} strokeWidth={esp ? 4 : 1.5} opacity={(i > 105 ? 1 - vuela * 0.5 : 1) * on} />; })}
           {(() => { const [ax, ay] = cuenta(104), [bx, by] = cuenta(105), mx = (ax + bx) / 2, my = (ay + by) / 2;
             const llega = kprog(T, K.Ti + 0.6, K.Ti + 1.6, kEase.suave);
             return <Quimosina x={klerp(mx - 40, mx - 40, llega)} y={klerp(my - 420, my - 70, llega)} s={0.9} rot={90} abre={T < corte ? 0.4 + 0.6 * Math.abs(Math.sin(T * 4)) : 0} brillo={T > corte && T < corte + 0.5 ? 1 : 0} />; })()}
@@ -354,7 +354,7 @@ function Quimosina10() {
         <FondoMarca T={T} color={KC.mint} />
         <Capa>
           {[0, 1, 2].map((i) => { const p = kprog(T, K.Ho + 0.2 + i * 0.6, K.Ho + 0.7 + i * 0.6, kEase.rebote);
-            return p > 0 && <g key={i} transform={`translate(${190 + i * 350} 880) scale(${0.95 * p})`}>
+            return p > 0 && <g key={i} transform={`translate(${200 + i * 340} 965) scale(${1.0 * p})`}>
               <Tanque T={T} x={0} y={0} caldo={['#c8f0c8', '#f0d98a', '#e6e0d0'][i]}>
                 {i === 0 && <Bacteria T={T} x={0} y={0} largo={150} ancho={60} rot={-20} color="#7fd88a" seed={2} />}
                 {i === 1 && <><Levadura T={T} x={-10} y={10} r={52} brote={0.8} seed={3} />
@@ -363,9 +363,9 @@ function Quimosina10() {
                   {[0, 1, 2].map((k) => { const f = ((T - K.Ho) * 0.6 + k / 3) % 1; return <Quimosina key={k} x={-60 + k * 50} y={60 + f * 70} s={0.2} rot={k * 70} />; })}</>}
               </Tanque></g>; })}
         </Capa>
-        <Etq T={T} at={K.Ho + 0.5} until={K.Ci - 0.3} x={40} y={1150} texto="E. coli" it color={KC.ink} tam={28} />
-        <Etq T={T} at={K.Ho + 1.1} until={K.Ci - 0.3} x={390} y={1150} texto="K. lactis" it color={KC.ink} tam={28} />
-        <Etq T={T} at={K.Ho + 1.7} until={K.Ci - 0.3} x={740} y={1150} texto="A. niger" it color={KC.ink} tam={28} />
+        <Etq T={T} at={K.Ho + 0.5} until={K.Ci - 0.3} x={55} y={1262} texto="E. coli" it color={KC.ink} tam={28} />
+        <Etq T={T} at={K.Ho + 1.1} until={K.Ci - 0.3} x={395} y={1262} texto="K. lactis" it color={KC.ink} tam={28} />
+        <Etq T={T} at={K.Ho + 1.7} until={K.Ci - 0.3} x={735} y={1262} texto="A. niger" it color={KC.ink} tam={28} />
         <Chip T={T} at={K.Ho + 2.2} until={K.Ci - 0.3} texto="hoy: uso muy común" y={1500} tam={44} borde={KC.gold} />
       </Escena>
       {/* 13 · cierre: la misma olla, ya hecha queso fresco */}
