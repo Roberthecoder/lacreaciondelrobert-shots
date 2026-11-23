@@ -255,7 +255,7 @@ function PlantasShot() {
         <Ambiente T={T} n={16} />
         {fsvg(<>
           {/* pase a mano cine: los dos recuadros de pared 1.1 veces más grandes y a la misma altura (la barra de 100 nm crece igual) */}
-          <g transform="translate(40 640) scale(1.1)"><ParedCelulosa x={0} y={0} w={440} h={520} p={kprog(T, K.Pa + 0.4, K.Pa + 1.8)} /></g>
+          <g transform="translate(40 640) scale(1.1)"><ParedCelulosa x={0} y={0} w={440} h={520} p={kprog(T, K.Pa - 0.2, K.Pa + 1.4)} /></g>
           <g transform="translate(556 640) scale(1.1)"><ParedQuitina x={0} y={0} w={440} h={520} p={kprog(T, K.Pa + 2.4, K.Pa + 4.0)} T={T} /></g>
         </>)}
       </Escena>
@@ -373,32 +373,32 @@ function PlantasShot() {
       {/* textos */}
       <Chip T={T} at={K.G + 1.3} until={K.Co - 0.3} texto="verdura ✗" x={290} y={590} tam={44} borde={KC.red} />
       <Chip T={T} at={K.G + 2.4} until={K.Co - 0.3} texto="pariente tuyo ✓" x={745} y={590} tam={44} borde={KC.mint} />
-      <Etq T={T} at={K.G + 0.9} until={K.Co - 0.3} x={420} y={1300} texto="champiñón · Agaricus bisporus" it tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Co + 0.2} until={K.Co + 1.9} texto="en la cocina: verdura" x={540} y={240} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.G + 0.9} until={K.Co - 0.3} x={420} y={1300} texto="champiñón · Agaricus bisporus" it tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Co + 0.2} until={K.Co + 1.9} texto="en la cocina: verdura" x={540} y={240} tam={37} borde={KC.ink} />
       <Chip T={T} at={K.Co + 2.0} until={K.Cl - 0.3} texto="en biología: otro reino" x={540} y={985} tam={40} borde={KC.gold} />
-      <Chip T={T} at={K.Cl + 0.1} until={K.Es - 0.3} texto="AL MICROSCOPIO" x={300} y={440} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Cl + 1.0} until={K.Es - 0.3} x={45} y={1085} texto="lechuga: cloroplastos" tam={28} color={PL.lechuga} />
-      <Etq T={T} at={K.Cl + 1.6} until={K.Es - 0.3} x={430} y={1445} texto="hongo: clorofila 0" tam={28} color={KC.gold2} />
-      <Etq T={T} at={K.Es + 0.8} until={K.Pa - 0.3} x={60} y={455} texto="tú: digieres adentro" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Es + 1.8} until={K.Pa - 0.3} x={420} y={1465} texto="hongo: enzimas afuera" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Cl + 0.1} until={K.Es - 0.3} texto="AL MICROSCOPIO" x={300} y={440} tam={37} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Cl + 1.0} until={K.Es - 0.3} x={45} y={1085} texto="lechuga: cloroplastos" tam={30} color={PL.lechuga} />
+      <Etq T={T} at={K.Cl + 1.6} until={K.Es - 0.3} x={430} y={1445} texto="hongo: clorofila 0" tam={30} color={KC.gold2} />
+      <Etq T={T} at={K.Es + 0.8} until={K.Pa - 0.3} x={60} y={455} texto="tú: digieres adentro" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Es + 1.8} until={K.Pa - 0.3} x={420} y={1465} texto="hongo: enzimas afuera" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Es + 3.2} until={K.Pa - 0.3} texto="estómago al revés" x={790} y={500} tam={40} borde={KC.mint} />
-      <Chip T={T} at={K.Pa + 0.1} until={K.Qu - 0.3} texto="POR DENTRO · LA PARED" x={330} y={440} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Pa + 0.6} until={K.Qu - 0.3} x={40} y={580} texto="lechuga: celulosa" tam={28} color={PL.lechuga} />
-      <Etq T={T} at={K.Pa + 2.6} until={K.Qu - 0.3} x={556} y={580} texto="hongo: quitina + glucanos" tam={26} color={KC.gold2} />
+      <Chip T={T} at={K.Pa + 0.1} until={K.Qu - 0.3} texto="POR DENTRO · LA PARED" x={330} y={440} tam={37} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Pa + 0.6} until={K.Qu - 0.3} x={40} y={580} texto="lechuga: celulosa" tam={30} color={PL.lechuga} />
+      <Etq T={T} at={K.Pa + 2.6} until={K.Qu - 0.3} x={530} y={580} texto="hongo: quitina + glucanos" tam={30} color={KC.gold2} />
       <Etq T={T} at={K.Qu + 1.6} until={K.Gl - 0.3} x={250} y={1482} texto="la misma molécula: quitina" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Qu + 0.9} until={K.Gl - 0.3} x={40} y={445} texto="caparazón de cangrejo" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Gl + 0.8} until={K.P - 0.3} x={66} y={440} texto="hongo: glucógeno" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Gl + 1.8} until={K.P - 0.3} x={40} y={1290} texto="tu hígado: glucógeno" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Gl + 3.5} until={K.P - 0.3} x={620} y={1095} texto="planta: almidón" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Qu + 0.9} until={K.Gl - 0.3} x={40} y={445} texto="caparazón de cangrejo" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Gl + 0.8} until={K.P - 0.3} x={66} y={440} texto="hongo: glucógeno" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Gl + 1.8} until={K.P - 0.3} x={40} y={1290} texto="tu hígado: glucógeno" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Gl + 3.5} until={K.P - 0.3} x={620} y={1095} texto="planta: almidón" tam={30} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.A - 0.3} anio="1993" quien="Baldauf y Palmer" revista="PNAS, 1993 · secuencias de proteínas" x={540} y={400} />
       <Chip T={T} at={K.A + 2.5} until={K.F - 0.3} texto="grupos hermanos" x={755} y={490} tam={40} borde={KC.gold} />
-      <Etq T={T} at={K.A + 1.7} until={K.F - 0.3} x={20} y={560} texto="plantas: por su lado" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.F + 0.2} until={K.W - 0.3} texto="AL MICROSCOPIO · PROTEÍNA EF-1α" x={420} y={330} tam={28} borde={KC.cyan} mono />
+      <Etq T={T} at={K.A + 1.7} until={K.F - 0.3} x={20} y={560} texto="plantas: por su lado" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.F + 0.2} until={K.W - 0.3} texto="AL MICROSCOPIO · PROTEÍNA EF-1α" x={420} y={330} tam={37} borde={KC.cyan} mono />
       <NumeroGigante T={T} at={K.F + 1.8} until={K.W - 0.3} valor={12} dur={0.8} etiqueta="aminoácidos extra" x={435} y={590} tam={150} color={KC.gold2} />
-      <Etq T={T} at={K.F + 2.4} until={K.W - 0.3} x={272} y={905} texto="planta: no la tiene" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.F + 2.4} until={K.W - 0.3} x={272} y={905} texto="planta: no la tiene" tam={30} color={KC.texto} />
       <TarjetaEstudio T={T} at={K.W + 1.6} until={K.C - 0.3} anio="1969" quien="Robert H. Whittaker" revista="Science, 1969 · cinco reinos" x={540} y={395} />
-      <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="Fungi · primo lejano" x={540} y={1400} tam={36} borde={KC.gold} />
-      {['sin clorofila', 'digiere por fuera', 'pared con quitina', 'glucógeno'].map((t, i) => <Chip key={t} T={T} at={K.C + 1.2 + i * 0.25} until={K.Ou} texto={t} x={250} y={400 + i * 72} tam={28} borde={KC.mint} />)}
+      <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="Fungi · primo lejano" x={540} y={1400} tam={37} borde={KC.gold} />
+      {['sin clorofila', 'digiere por fuera', 'pared con quitina', 'glucógeno'].map((t, i) => <Chip key={t} T={T} at={K.C + 1.2 + i * 0.25} until={K.Ou} texto={t} x={250} y={400 + i * 72} tam={37} borde={KC.mint} />)}
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.Co} texto="5 cm" largo={405} />
