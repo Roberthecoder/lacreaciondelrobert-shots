@@ -3,7 +3,18 @@
 // Datos: SACMEX / IPDP CDMX (2022), Gobierno de Jalisco (2025), Liemberger y Wyatt (2018), EPA WaterSense. Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático (calle, tubería, suelo, lago, ciudad y globo).
 
-const AGUA = '#2f8fd8', AGUA2 = '#7cc8ff', GRIS = '#b8c4cf', TIERRA = '#7a5230', TIERRA2 = '#5f3f22';
+const AGUA = '#2f8fd8', AGUA2 = '#7cc8ff', GRIS = '#b8c4cf', TIERRA = '#4e3520', TIERRA2 = '#3b2716'; // modo cine: tierra más oscura (antes #7a5230 / #5f3f22)
+// Tierra con degradado y piedritas, del borde de arriba al fondo del cuadro.
+function Tierra({ x = 0, y, w = KW, h, color = TIERRA, seed = 3 }) {
+  const r = krng(seed), id = 'fuTierra' + seed;
+  return <g>
+    <defs><linearGradient id={id} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={mixHex(color, '#ffffff', 0.08)} /><stop offset="0.4" stopColor={color} /><stop offset="1" stopColor={mixHex(color, '#000000', 0.55)} /></linearGradient></defs>
+    <rect x={x} y={y} width={w} height={h} fill={`url(#${id})`} />
+    {Array.from({ length: Math.round(w / 30) }, (_, i) => { const cx = x + r() * w, cy = y + 20 + r() * (h - 40), rr = 3 + r() * 9;
+      return <ellipse key={i} cx={cx} cy={cy} rx={rr * 1.4} ry={rr} fill={i % 3 ? mixHex(color, '#000000', 0.3) : mixHex(color, '#ffffff', 0.15)} opacity={0.8} />; })}
+    {Array.from({ length: 5 }, (_, i) => <path key={'v' + i} d={`M ${x} ${y + 80 + i * (h / 5)} Q ${x + w / 2} ${y + 60 + i * (h / 5) + (i % 2 ? 20 : -20)} ${x + w} ${y + 80 + i * (h / 5)}`} stroke={mixHex(color, '#000000', 0.35)} strokeWidth={3} fill="none" opacity={0.5} />)}
+  </g>;
+}
 
 // Cubeta con asa. lleno 0..1. fuga 0..1 = chorrito que sale por un lado. color del agua.
 function Cubeta({ T = 0, x, y, s = 1, lleno = 1, color = AGUA, fuga = 0 }) {
@@ -150,13 +161,12 @@ function FugasShot() {
         {svg(<>
           <rect x={0} y={700} width={KW} height={60} fill="#3c434f" stroke={KC.ink} strokeWidth={6} />
           {[0, 1, 2, 3, 4, 5].map((i) => <rect key={i} x={40 + i * 190} y={724} width={90} height={10} fill={KC.yellow} />)}
-          <rect x={0} y={760} width={KW} height={520} fill={TIERRA} />
-          {Array.from({ length: 30 }, (_, i) => { const r = krng(i + 3); return <circle key={i} cx={r() * KW} cy={790 + r() * 460} r={4 + r() * 8} fill={TIERRA2} />; })}
+          <Tierra y={760} h={1200} seed={3} />
           <Tubo x0={-20} x1={1100} y={1000} g={70} uniones={4} />
           <Chorro T={T} x={520} y={965} fuerza={kprog(T, K.F + 0.3, K.F + 1.0)} alto={200} />
           {kprog(T, K.F + 0.8, K.F + 2) > 0 && <ellipse cx={520} cy={702} rx={160 * kprog(T, K.F + 0.8, K.F + 2.5)} ry={14} fill={AGUA2} stroke={KC.ink} strokeWidth={4} />}
           <Casa x={890} y={700} s={0.95} />
-          <text x={140} y={1110} style={{ font:`700 34px ${KF.mono}` }} fill={KC.paper}>tubería de la red →</text>
+          <text x={140} y={1110} style={{ font:`700 34px ${KF.mono}` }} fill="#e8edf2">tubería de la red →</text>
           <text x={540} y={670} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>la calle</text>
         </>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
@@ -174,12 +184,14 @@ function FugasShot() {
       </Escena>
       {/* 4 · el suelo se mueve de forma dispareja: el tubo se agrieta */}
       <Escena T={T} a={K.S} b={K.P}>
-        <div style={{ position:'absolute', inset:0, background:cineMix(KC.orange, CINE.fondo, 0.8) }} />
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.orange, CINE.fondo, 0.92) }} />
         {svg(<>
           <rect x={0} y={640} width={KW} height={60} fill="#3c434f" stroke={KC.ink} strokeWidth={6} />
-          <rect x={0} y={700} width={540} height={560} fill={TIERRA} stroke={KC.ink} strokeWidth={6} />
+          <Tierra x={0} y={700} w={540} h={1300} seed={5} />
+          <rect x={0} y={700} width={540} height={1300} fill="none" stroke={KC.ink} strokeWidth={6} />
           <g transform={`translate(0 ${hunde * 110})`}>
-            <rect x={540} y={700} width={540} height={560} fill={TIERRA2} stroke={KC.ink} strokeWidth={6} />
+            <Tierra x={540} y={700} w={540} h={1300} color={TIERRA2} seed={6} />
+            <rect x={540} y={700} width={540} height={1300} fill="none" stroke={KC.ink} strokeWidth={6} />
             <rect x={540} y={640} width={540} height={60} fill="#6f7782" stroke={KC.ink} strokeWidth={6} />
           </g>
           <Tubo x0={-20} x1={540} y={930} g={70} uniones={2} />
