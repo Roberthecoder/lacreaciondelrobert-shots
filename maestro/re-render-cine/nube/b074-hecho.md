@@ -1,2 +1,4 @@
 - amb-31-contaminacion-luminica: Solución: farol, foco y apagador (con sus palomitas y rótulos) más hacia adentro y rótulos un poco más chicos: con la cámara, «apagada» y el apagador se salían por la derecha. Lo demás ya cumplía (cielo, ciudad, globo, conteo, tortugas, aves y cierre). Sin láminas · encuadre bien.
 - cie-31-ciclo-nasal: Prueba: los dos medidores (lado 1 / lado 2) 55 px más adentro y la etiqueta «pasa más aire» con ellos (con la cámara se cortaban en las orillas). Lo demás ya cumplía: cara a pantalla completa, corte de la nariz grande y al centro, reloj, cama y cierre. Sin láminas · encuadre bien.
+- qui-31-plata-negra: Dato: el arete 40 px más adentro (se cortaba en la orilla izquierda) y la lista de fuentes de gases 18 px a la derecha para no encimarse con él. Lo demás ya cumplía. Sin láminas · encuadre bien.
+GRUPO TERMINADO

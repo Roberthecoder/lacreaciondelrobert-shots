@@ -238,8 +238,9 @@ function Plata() {
       <Escena T={T} a={K.D} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         <SvgCapa>
-          <Arete T={T} x={200} y={860} s={1.0} sucio={0.92} mece={1} />
-          <g transform="translate(712 895) scale(1.22) translate(-800 -880) rotate(2 800 900)">
+          {/* belleza: el arete 40 px más adentro (se cortaba en la orilla izquierda) y la lista 18 px a la derecha para no tocarlo */}
+          <Arete T={T} x={240} y={880} s={1.0} sucio={0.92} mece={1} />
+          <g transform="translate(730 895) scale(1.22) translate(-800 -880) rotate(2 800 900)">
             <rect x={560} y={500} width={480} height={760} rx={18} fill="#131b2e" stroke={KC.ink} strokeWidth={8} />
             <text x={800} y={575} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>Fuentes de gases</text>
             <text x={800} y={612} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>que ennegrecen la plata</text>
