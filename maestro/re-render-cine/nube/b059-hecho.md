@@ -1,0 +1,1 @@
+- cie-25-sol-8-minutos: «Pasado» rehecho en diagonal (el Sol que ves arriba-izquierda con sus píldoras a la derecha; el de ahorita abajo-derecha con las suyas a la izquierda): antes los dos soles y «EL DE AHORITA» se salían por el borde derecho; el Sol que parpadea en la Pregunta queda encima del Sol de ahorita. Encuadre bien, sin láminas.

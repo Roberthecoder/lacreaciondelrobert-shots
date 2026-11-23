@@ -208,18 +208,18 @@ function Sol8() {
         <FondoLunares color={KC.pink} />
         <Lienzo>
           <defs><filter id="soBlur"><feGaussianBlur stdDeviation="14" /></filter></defs>
-          <g transform="translate(540 960) scale(1.2) translate(-540 -790)">
+          <g transform="translate(0 0)">
           <g opacity={kprog(T, K.Pasado + 0.2, K.Pasado + 0.5)}>
-            <Sol x={300} y={790} r={140} T={T} id="pv" />
-            <Pildora T={T} at={K.Pasado + 0.3} x={300} y={500} texto="EL QUE VES" tam={46} fondo={KC.yellow} />
-            <Pildora T={T} at={K.Pasado + 0.9} x={300} y={1040} texto="hace 8 min" tam={40} fondo={KC.paper} />
+            <Sol x={370} y={720} r={150} T={T} id="pv" />
+            <Pildora T={T} at={K.Pasado + 0.3} x={800} y={650} texto="EL QUE VES" tam={46} fondo={KC.yellow} />
+            <Pildora T={T} at={K.Pasado + 0.9} x={800} y={760} texto="hace 8 min" tam={40} fondo={KC.paper} />
           </g>
           {T > K.Pasado + 2.4 && <g opacity={kprog(T, K.Pasado + 2.4, K.Pasado + 2.9)}>
-            <g filter="url(#soBlur)" opacity={0.5 + 0.15 * Math.sin(T * 4)} transform={`translate(${Math.sin(T * 3) * 8} 0)`}><Sol x={750} y={790} r={140} T={T} id="pa" /></g>
-            <circle cx={750} cy={790} r={150} fill="none" stroke={KC.ink} strokeWidth={8} strokeDasharray="22 16" />
-            <TextoSvg x={750} y={830} tam={150} color={KC.white}>?</TextoSvg>
-            <Pildora T={T} at={K.Pasado + 2.5} x={750} y={500} texto="EL DE AHORITA" tam={46} fondo={KC.white} />
-            <Pildora T={T} at={K.Pasado + 3.1} x={750} y={1040} texto="no lo puedes ver" tam={40} fondo={KC.paper} />
+            <g filter="url(#soBlur)" opacity={0.5 + 0.15 * Math.sin(T * 4)} transform={`translate(${Math.sin(T * 3) * 8} 0)`}><Sol x={730} y={1230} r={150} T={T} id="pa" /></g>
+            <circle cx={730} cy={1230} r={160} fill="none" stroke={KC.ink} strokeWidth={8} strokeDasharray="22 16" />
+            <TextoSvg x={730} y={1272} tam={150} color={KC.white}>?</TextoSvg>
+            <Pildora T={T} at={K.Pasado + 2.5} x={265} y={1170} texto="EL DE AHORITA" tam={46} fondo={KC.white} />
+            <Pildora T={T} at={K.Pasado + 3.1} x={265} y={1280} texto="no lo puedes ver" tam={40} fondo={KC.paper} />
           </g>}
           </g>
         </Lienzo>
@@ -227,7 +227,7 @@ function Sol8() {
       {/* 5 · pregunta: ¿y si el Sol se apagara? */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Apaga} color={KC.lilac} />
       {T > K.Pregunta - 0.45 && T < K.Apaga + 0.45 && <Lienzo z={3} o={kprog(T, K.Pregunta - 0.45, K.Pregunta + 0.05) * (1 - kprog(T, K.Apaga - 0.05, K.Apaga + 0.45))}>
-        <Sol x={760} y={1010} r={170} T={T} apagado={Math.sin(T * 9) > 0.6 ? 0.8 : 0} id="pr" />
+        <Sol x={730} y={1230} r={160} T={T} apagado={Math.sin(T * 9) > 0.6 ? 0.8 : 0} id="pr" />
       </Lienzo>}
       {/* 6 · apaga (esquema): el Sol se apaga y su última luz sigue viajando 8:20 */}
       <Escena T={T} a={K.Apaga} b={K.Luna} fondo={KC.noche} zoom={0.03}>
