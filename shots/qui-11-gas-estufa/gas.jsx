@@ -262,7 +262,7 @@ function Gas() {
         </SvgCapa>
         <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.3} anio="1937" quien="New London, Texas" revista="una escuela · gas sin olor" y={470} />
         <Etq T={T} at={K.Es + 3.8} until={K.Es + 6.6} x={900} y={1340} texto="fuga bajo el edificio" lado="izq" tam={30} />
-        <Chip T={T} at={K.Es + 5.7} until={K.Es + 6.7} texto="chispa (al parecer, una lijadora)" y={1420} tam={34} borde={KC.orange} />
+        <Chip T={T} at={K.Es + 5.7} until={K.Es + 6.7} texto="chispa (al parecer, una lijadora)" y={1420} tam={38} borde={KC.orange} />
         <NumeroGigante T={T} at={K.Es + 7.3} until={K.L - 0.3} valor={300} dur={1.2} prefijo="≈ " etiqueta="personas murieron" y={1420} tam={120} color={KC.white} />
         <EscalaFija texto="10 m" largo={180} y={1680} />
       </Escena>
@@ -333,7 +333,7 @@ function Gas() {
             <Marca x={50} y={20} ok={false} s={0.5} o={kprog(T, K.A2 + 3.1, K.A2 + 3.4)} />
           </TarjetaPaso>
         </SvgCapa>
-        <Chip T={T} at={K.A2 + 0.2} until={K.Ci - 0.2} texto="Guía oficial · Coyoacán, CDMX" y={420} tam={34} borde={KC.ink} />
+        <Chip T={T} at={K.A2 + 0.2} until={K.Ci - 0.2} texto="Guía oficial · Coyoacán, CDMX" y={420} tam={38} borde={KC.ink} />
         <Chip T={T} at={K.A2 + 3.5} until={K.Ci - 0.2} texto="y repórtalo al 911" y={1500} tam={46} borde={KC.red} />
       </Escena>
       {/* 10 · cierre: la estufa del inicio, ahora con la alarma nombrada */}
@@ -356,7 +356,7 @@ function Gas() {
       {/* textos del gancho y del "qué es" */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.3} until={K.G + 2.0} texto="olor = gas" x={330} y={320} tam={50} />
       <Chip T={T} at={K.G + 2.15} until={K.Q - 0.3} texto="🔔 alarma agregada" x={330} y={320} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.Q + 0.4} until={K.A - 0.3} texto="NOM-016-CRE-2016: «esencialmente inodoro»" y={1500} tam={30} borde={KC.ink} mono />
+      <Chip T={T} at={K.Q + 0.4} until={K.A - 0.3} texto="NOM-016-CRE-2016: «esencialmente inodoro»" y={1500} tam={36} borde={KC.ink} mono />
       <Chip T={T} at={K.A + 0.4} until={K.N - 0.3} texto="≈ 1 por cada 50 000 (esquema)" y={1500} tam={38} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
