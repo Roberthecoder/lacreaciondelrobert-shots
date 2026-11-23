@@ -1,3 +1,4 @@
 - qui-54-encendedor: Gancho, Válvula y Cierre: la muñeca ahora se desvanece en oscuro (máscara) en vez de llenar el tercio de abajo de piel; mano y encendedor subidos (Gancho ×1.3 con barra de escala recalculada a 9.655 px/mm; Válvula ×1.3 con pulgar, burbujas y gas recalculados; Cierre con la lupa apuntando al mismo líquido); «gas que sale» ya no se corta. Pregunta: el sol grande al centro como sujeto. Encuadre bien, sin láminas.
 - ia-54-nobel-fisica: Boltzmann: red, bolas, gatos y rótulos bajados 120 px al centro (chips reacomodados, rótulos a 27 px); Valle bajado 50 px (y con él la Pregunta que lo deja detrás); Cierre: rejilla bajada 90 px y medalla un poco más chica para no pasar de y≈1560. Encuadre bien, sin láminas.
 - bio-55-factor-viii: revisado escena por escena: composición y escala ya cumplían; notas «dibujo esquemático» y «virus: esquema, no a escala» subidas de 20–22 a 26 px para que se lean. Encuadre bien, sin láminas.
+GRUPO TERMINADO
