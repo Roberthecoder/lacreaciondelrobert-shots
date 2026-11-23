@@ -39,9 +39,16 @@ function Hormiga14({ T, x, y, s = 1, paso = 0, camina = 1, hilos = 0, flip = fal
 function Gente({ x, y, s = 1, camisa = KC.blue, piel = '#f2c29b', brillo = 0, T = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {brillo > 0 && <ellipse cx={0} cy={-170} rx={150} ry={210} fill="url(#calorBrillo)" opacity={brillo * (0.8 + 0.2 * Math.sin(T * 4))} />}
+    <ellipse cx={0} cy={4} rx={120} ry={16} fill="#000" opacity=".3" />
     <path d="M -95 0 L -95 -120 Q -95 -190 0 -192 Q 95 -190 95 -120 L 95 0 Z" fill={camisa} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    {/* belleza: volumen de la camisa (luz arriba-izquierda), pliegues y sombra del cuello */}
+    <path d="M -91 -4 L -91 -120 Q -91 -186 0 -188 Q 91 -186 91 -120 L 91 -4 Z" fill="url(#gente14)" />
+    <path d="M -50 -40 Q -46 -110 -30 -150 M 52 -30 Q 50 -100 36 -146" stroke="#000" strokeOpacity=".18" strokeWidth={7} fill="none" strokeLinecap="round" />
+    <path d="M -40 -190 Q 0 -168 40 -190" stroke="#000" strokeOpacity=".28" strokeWidth={10} fill="none" strokeLinecap="round" />
     <rect x={-22} y={-215} width={44} height={30} fill={piel} stroke={KC.ink} strokeWidth={6} />
     <circle cx={0} cy={-268} r={66} fill={piel} stroke={KC.ink} strokeWidth={8} />
+    <circle cx={0} cy={-268} r={62} fill="url(#gente14c)" />
+    <circle cx={-36} cy={-240} r={10} fill="#ff8c8c" opacity=".35" /><circle cx={36} cy={-240} r={10} fill="#ff8c8c" opacity=".35" />
     <path d="M -66 -280 Q -60 -350 0 -342 Q 60 -350 66 -282 Q 30 -312 -66 -280 Z" fill="#3b2a20" stroke={KC.ink} strokeWidth={6} />
     <circle cx={-22} cy={-262} r={7} fill={KC.ink} /><circle cx={22} cy={-262} r={7} fill={KC.ink} />
     <path d="M -20 -232 Q 0 -218 20 -232" fill="none" stroke={KC.ink} strokeWidth={6} strokeLinecap="round" />
@@ -50,6 +57,10 @@ function Gente({ x, y, s = 1, camisa = KC.blue, piel = '#f2c29b', brillo = 0, T 
 // Gradientes compartidos (van una vez por svg que los use).
 const DEFS14 = <defs>
   <radialGradient id="calorBrillo"><stop offset="0%" stopColor="#ffb347" stopOpacity=".85" /><stop offset="100%" stopColor="#ff8a1f" stopOpacity="0" /></radialGradient>
+  <linearGradient id="gente14" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fff" stopOpacity=".22" /><stop offset=".45" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".3" /></linearGradient>
+  <radialGradient id="gente14c" cx=".38" cy=".32" r=".75"><stop offset="0" stopColor="#fff" stopOpacity=".25" /><stop offset=".6" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#8a4a2a" stopOpacity=".3" /></radialGradient>
+  <radialGradient id="globo14" cx=".36" cy=".32" r=".8"><stop offset="0" stopColor="#fff" stopOpacity=".18" /><stop offset=".55" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#001030" stopOpacity=".45" /></radialGradient>
+  <radialGradient id="aire14"><stop offset=".55" stopColor="#ff8a1f" stopOpacity="0" /><stop offset=".8" stopColor="#ff8a1f" stopOpacity=".55" /><stop offset="1" stopColor="#ff8a1f" stopOpacity="0" /></radialGradient>
   <radialGradient id="escudoG"><stop offset="70%" stopColor="#ff8a1f" stopOpacity="0" /><stop offset="100%" stopColor="#ff8a1f" stopOpacity=".45" /></radialGradient>
 </defs>;
 // Termómetro vertical. (x, y) = centro del bulbo. f = 0..1 llenado. marcas = [[f, texto]].
@@ -109,32 +120,41 @@ function Caja14({ x, y, r = 34, viva = 1, color = '#fff2c4', seed = 1, flash = 0
     <circle r={r + 6} fill="rgba(255,255,255,.12)" stroke={flash > 0 ? KC.red : '#8892a6'} strokeWidth={flash > 0 ? 6 : 4} />
     <circle r={r} fill={mixHex('#2a3142', '#3b4458', viva)} />
     {viva > 0.02 && <g opacity={viva}><Colonia cx={0} cy={0} r={r * 0.72} color={color} seed={seed} /></g>}
+    {/* belleza: reflejo del vidrio */}
+    <path d={`M ${-r * 0.7} ${-r * 0.35} A ${r * 0.8} ${r * 0.8} 0 0 1 ${-r * 0.2} ${-r * 0.78}`} stroke="#fff" strokeOpacity=".45" strokeWidth={4} fill="none" strokeLinecap="round" />
   </g>;
 }
 // Sello con texto largo (HIPÓTESIS) que cae con golpe.
 function Sello14({ T, at, x, y, texto, color = KC.red, r = 130, rot = -12 }) {
   if (T < at) return null;
-  const k = kprog(T, at, at + 0.35, kEase.rebote), tam = Math.min(r * 0.62, (r * 1.7) / (texto.length * 0.52));
+  const k = kprog(T, at, at + 0.35, kEase.rebote), tam = Math.min(r * 0.62, (r * 1.45) / (texto.length * 0.6)); // belleza: el texto cabe dentro del aro (antes se salía)
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${klerp(2.2, 1, k)})`} opacity={kprog(T, at, at + 0.15)}>
-    <circle r={r} fill="rgba(255,255,255,.55)" stroke={color} strokeWidth={14} />
+    <circle r={r} fill="rgba(16,20,40,.82)" stroke={color} strokeWidth={14} />
     <circle r={r - 20} fill="none" stroke={color} strokeWidth={5} />
-    <text y={tam * 0.35} textAnchor="middle" style={{ font:`400 ${tam}px ${KF.titulo}` }} fill={color}>{texto}</text>
+    <text y={tam * 0.35} textAnchor="middle" style={{ font:`400 ${tam}px ${KF.titulo}` }} fill="#e9ddff">{texto}</text>
   </g>;
 }
 // Levadura (Candida auris): células ovaladas, algunas con yema.
 function Levadura({ x, y, s = 1, rot = 0, yema = 0, T = 0, seed = 1 }) {
   return <g transform={`translate(${x} ${y + Math.sin(T * 1.5 + seed) * 4}) rotate(${rot}) scale(${s})`}>
-    <ellipse rx={46} ry={34} fill="#f3e6c4" stroke={KC.ink} strokeWidth={6} />
-    <ellipse cx={-6} cy={-4} rx={16} ry={12} fill="#d9c48f" />
-    {yema > 0 && <ellipse cx={46 + 14 * yema} cy={-10} rx={22 * yema} ry={17 * yema} fill="#f3e6c4" stroke={KC.ink} strokeWidth={5} />}
+    {/* belleza: en lo micro, contorno claro con resplandor y relleno apagado (antes crema plano) */}
+    <ellipse rx={54} ry={42} fill="#f3e6c4" opacity=".12" />
+    <ellipse rx={46} ry={34} fill="#6e6248" stroke="#f6e7bd" strokeWidth={5} />
+    <ellipse cx={-14} cy={-12} rx={22} ry={10} fill="#fff" opacity=".16" />
+    <ellipse cx={-4} cy={2} rx={15} ry={11} fill="#b7a26c" stroke="#e8d59c" strokeWidth={2} opacity=".9" />
+    {[[22, -10], [18, 14], [-24, 14]].map(([vx, vy], k) => <circle key={k} cx={vx} cy={vy} r={4} fill="#d9c48f" opacity=".7" />)}
+    {yema > 0 && <ellipse cx={46 + 14 * yema} cy={-10} rx={22 * yema} ry={17 * yema} fill="#6e6248" stroke="#f6e7bd" strokeWidth={4} />}
   </g>;
 }
 // Globo terráqueo esquemático.
 function Globo({ x, y, r = 220, calor = 0, T = 0 }) {
   return <g transform={`translate(${x} ${y})`}>
-    <circle r={r} fill={mixHex('#3fa9f5', '#e5743a', calor * 0.5)} stroke={KC.ink} strokeWidth={9} />
+    {calor > 0 && <circle r={r * 1.28} fill="url(#aire14)" opacity={calor} />}
+    <circle r={r} fill={mixHex('#2f8fdc', '#3a7bc0', calor)} stroke={KC.ink} strokeWidth={9} />
     <path d={`M ${-r * 0.6} ${-r * 0.5} Q ${-r * 0.2} ${-r * 0.8} ${r * 0.1} ${-r * 0.45} Q ${-r * 0.05} ${-r * 0.1} ${-r * 0.35} ${r * 0.05} Q ${-r * 0.7} ${-r * 0.1} ${-r * 0.6} ${-r * 0.5} Z`} fill={mixHex('#5fd16a', '#c9a33c', calor)} stroke={KC.ink} strokeWidth={6} />
     <path d={`M ${r * 0.25} ${-r * 0.1} Q ${r * 0.7} ${-r * 0.2} ${r * 0.65} ${r * 0.3} Q ${r * 0.4} ${r * 0.7} ${r * 0.2} ${r * 0.4} Q ${r * 0.05} ${r * 0.1} ${r * 0.25} ${-r * 0.1} Z`} fill={mixHex('#5fd16a', '#c9a33c', calor)} stroke={KC.ink} strokeWidth={6} />
+    <circle r={r - 4} fill="url(#globo14)" />
+    {calor > 0 && <circle r={r - 4} fill="#ff8a1f" opacity={0.18 * calor} />}
     <ellipse cx={-r * 0.4} cy={-r * 0.45} rx={r * 0.18} ry={r * 0.08} fill="#fff" opacity=".35" transform={`rotate(-30 ${-r * 0.4} ${-r * 0.45})`} />
   </g>;
 }
@@ -211,14 +231,14 @@ function CalorShot() {
         {(() => { const nx = klerp(-200, 520, kprog(T, K.Hm + 0.3, K.Hm + 2.6)); const sombra = kclamp(1 - Math.abs(nx - 260) / 220, 0, 1);
           return fsvg(<>
             {/* segunda vuelta: rama y hormiga ×1.5 (la barra pasa de «1 cm» = 290 px a «5 mm» = 218 px, la misma proporción) */}
-            <Sol x={260} y={560} r={88} T={T} />
+            {(() => { const m = kprog(T, K.Tu - 0.8, K.Tu, kEase.suave); return <Sol x={klerp(260, 150, m)} y={klerp(560, 700, m)} r={klerp(88, 62, m)} T={T} />; })()}
             <Nube x={nx} y={570} s={1.4} />
             <g transform="translate(470 1150) scale(1.5) translate(-430 -1050)">
               <path d="M -220 1210 Q 400 1080 1100 1020" fill="none" stroke="#2f7a2c" strokeWidth={30} strokeLinecap="round" />
               <path d="M 640 1058 Q 720 940 860 960 Q 780 1070 640 1058 Z" fill={KC.leaf} stroke={KC.ink} strokeWidth={6} />
               <Hormiga14 T={T} x={430} y={1050} s={1.0} paso={T * 1.4} camina={0.8} />
             </g>
-            <Termo x={900} y={830} alto={440} s={1.2} f={0.35 + 0.3 * (1 - sombra) * kprog(T, K.Hm, K.Hm + 0.6)} color={KC.red} />
+            {(() => { const m = kprog(T, K.Tu - 0.8, K.Tu, kEase.suave); return <Termo x={klerp(900, 880, m)} y={klerp(830, 1320, m)} alto={klerp(440, 460, m)} s={klerp(1.2, 1.3, m)} f={(0.35 + 0.3 * (1 - sombra) * kprog(T, K.Hm, K.Hm + 0.6)) * (1 - m * 0.6)} color={mixHex(KC.red, KC.orange, m)} />; })()}
           </>); })()}
       </Escena>
       {/* 2 · tú: 37 °C de día y de noche */}
@@ -237,13 +257,14 @@ function CalorShot() {
         <FondoLunares color={KC.mint} />
         {(() => { const w = kprog(T, K.Ho + 1.9, K.Ho + 3.0, kEase.suave), crece = kprog(T, K.Ho, K.Ho + 1.2);
           const somb = ['#c98b2b', '#e8336d', '#f3e6c4', '#8a5a2b', '#b18cff', '#ff8a1f'];
-          return fsvg(<>
+          return fsvg(<>{/* belleza: setas y suelo 100 px más arriba, al centro del cuadro */}<g transform="translate(0 -100)">
             {/* segunda vuelta: las setas crecen ×1.3 (la barra de 5 cm igual), en dos filas para que quepan */}
             <rect x={-60} y={1130} width={KW + 120} height={900} fill="#2b1f1a" stroke="#6b5348" strokeWidth={6} />
-            <rect x={-60} y={500} width={KW + 120} height={630} fill={cineMix(KC.orange, CINE.fondo, 0.55)} opacity={w * 0.35} />
+            <defs><linearGradient id="aireHo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#ff8a1f" stopOpacity="0" /><stop offset="1" stopColor="#ff8a1f" stopOpacity=".28" /></linearGradient></defs>
+            <rect x={-60} y={500} width={KW + 120} height={630} fill="url(#aireHo)" opacity={w} />
             {[0, 2, 4, 1, 3, 5].map((i) => { const c = somb[i]; const vive = i === 3; const ww = vive ? 0 : w;
-              return <Seta key={i} x={140 + i * 160} y={i % 2 ? 1300 : 1150} s={1.5 - ww * 0.45} crece={crece * (1 - ww * 0.4)} rot={(i % 2 ? 1 : -1) * 38 * ww + mece(T, i, 0.4) * 2} sombrero={mixHex(c, '#8d8d8d', ww)} pie={mixHex('#f3e6c4', '#9a9a9a', ww)} escamas={i % 2 === 0} anillo={i !== 2} />; })}
-          </>); })()}
+              return <Seta key={i} x={140 + i * 160} y={i % 2 ? 1300 : 1150} s={1.5 - ww * 0.45} crece={crece * (1 - ww * 0.4)} rot={(i % 2 ? 1 : -1) * 20 * ww + mece(T, i, 0.4) * 2} sombrero={mixHex(c, '#8d8d8d', ww)} pie={mixHex('#f3e6c4', '#9a9a9a', ww)} escamas={i % 2 === 0} anillo={i !== 2} />; })}
+          </g></>); })()}
       </Escena>
       {/* 4 · re-gancho */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
@@ -251,11 +272,11 @@ function CalorShot() {
         {/* encuadre: las setas de la escena anterior (ya caídas por el calor) siguen a cuadro, a media luz, y la pregunta encima */}
         <div style={{ position:'absolute', inset:0, background:'rgba(10,15,28,.85)' }}></div>
         {(() => { const somb = ['#c98b2b', '#e8336d', '#f3e6c4', '#8a5a2b', '#b18cff', '#ff8a1f'];
-          return fsvg(<><rect x={-60} y={1130} width={KW + 120} height={900} fill="#1a1310" stroke="#3d302a" strokeWidth={6} /><g opacity={0.6}>
+          return fsvg(<><g transform="translate(0 -100)"><rect x={-60} y={1130} width={KW + 120} height={900} fill="#1a1310" stroke="#3d302a" strokeWidth={6} /><g opacity={0.6}>
             {[0, 2, 4, 1, 3, 5].map((i) => { const c = somb[i]; const ww = i === 3 ? 0 : 1;
-              return <Seta key={i} x={140 + i * 160} y={i % 2 ? 1300 : 1150} s={1.5 - ww * 0.45} crece={1 - ww * 0.4} rot={(i % 2 ? 1 : -1) * 38 * ww + mece(T, i, 0.4) * 2} sombrero={mixHex(c, '#8d8d8d', ww)} pie={mixHex('#f3e6c4', '#9a9a9a', ww)} escamas={i % 2 === 0} anillo={i !== 2} />; })}
-          </g></>); })()}
-        {fsvg(<><Interrogacion T={T} x={280} y={1080} /><Termo x={300} y={1150} alto={300} f={fT(37)} s={0.6} color={KC.orange} /></>)}
+              return <Seta key={i} x={140 + i * 160} y={i % 2 ? 1300 : 1150} s={1.5 - ww * 0.45} crece={1 - ww * 0.4} rot={(i % 2 ? 1 : -1) * 20 * ww + mece(T, i, 0.4) * 2} sombrero={mixHex(c, '#8d8d8d', ww)} pie={mixHex('#f3e6c4', '#9a9a9a', ww)} escamas={i % 2 === 0} anillo={i !== 2} />; })}
+          </g></g></>); })()}
+        {fsvg(<><g transform="translate(0 -100)"><Interrogacion T={T} x={330} y={960} /><Termo x={300} y={1180} alto={300} f={fT(37)} s={0.6} color={KC.orange} /></g></>)}
       </Escena>
       {/* 5–8 · la colección: 50 cajas como esquema de 4 802 cepas */}
       <Escena T={T} a={K.E} b={K.Hi} zoom={0.03}>
@@ -308,11 +329,11 @@ function CalorShot() {
       {/* 11 · ¿el calentamiento global la hizo adaptarse? (hipótesis) */}
       <Escena T={T} a={K.Cl} b={K.D} zoom={0.05}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
+        {fsvg(<>{DEFS14}
           {/* segunda vuelta: el globo ×1.5 (la barra de 5 000 km crece igual) */}
           <Globo x={420} y={1010} r={330} calor={kprog(T, K.Cl + 2.4, K.Cl + 4.4)} T={T} />
           <Termo x={920} y={1290} alto={420} s={1.25} f={klerp(0.35, 0.8, kprog(T, K.Cl + 2.4, K.Cl + 4.4))} color={KC.red} />
-          {[0, 1, 2].map((i) => { const u = (T * 0.8 + i / 3) % 1; return <path key={i} d="M 0 30 L 0 -30 M -18 -12 L 0 -30 L 18 -12" transform={`translate(${150 + i * 270} ${1480 - u * 90}) scale(1.4)`} stroke={KC.red} strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" opacity={(1 - u) * kprog(T, K.Cl + 2.4, K.Cl + 2.8)} />; })}
+          {[0, 1, 2].map((i) => { const u = (T * 0.8 + i / 3) % 1; return <path key={i} d="M 0 30 L 0 -30 M -18 -12 L 0 -30 L 18 -12" transform={`translate(${300 + i * 170} ${1440 - u * 90}) scale(1.4)`} stroke={KC.red} strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" opacity={(1 - u) * kprog(T, K.Cl + 2.4, K.Cl + 2.8)} />; })}
           <Sello14 T={T} at={K.Cl + 3.2} x={760} y={640} texto="HIPÓTESIS" color={KC.violet} r={150} rot={10} />
         </>)}
       </Escena>
@@ -361,8 +382,8 @@ function CalorShot() {
       <Etq T={T} at={K.A + 1.1} until={K.Cl - 0.3} x={60} y={525} texto="Candida auris" it tam={36} color={KC.gold2} />
       <TarjetaEstudio T={T} at={K.Cl + 0.2} until={K.Cl + 2.3} anio="2019" quien="Casadevall y col." revista="mBio" x={360} y={440} />
       <Chip T={T} at={K.Cl + 2.6} until={K.D - 0.3} texto="¿se adaptó al calor?" x={380} y={450} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.D + 1.0} until={K.C - 0.3} x={1040} y={640} lado="izq" texto="calor" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.D + 2.0} until={K.C - 0.3} x={1040} y={725} lado="izq" texto="defensas" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.D + 1.0} until={K.C - 0.3} x={850} y={900} texto="calor" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.D + 2.0} until={K.C - 0.3} x={770} y={1250} texto="defensas" tam={34} color={KC.ink} />
       <Chip T={T} at={K.D + 3.0} until={K.C - 0.3} texto="infecciones graves: raras" x={400} y={420} tam={38} borde={KC.leaf} />
       <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="el zombi: cosa de hormigas" x={330} y={600} tam={36} borde={KC.gold} />
 

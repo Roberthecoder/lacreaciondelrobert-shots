@@ -152,8 +152,8 @@ function EsporasConteoShot() {
       <Escena T={T} a={K.G} b={K.So} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Prado T={T} y={1250} />
-          <CampoSeta T={T} x={540} y={1260} s={1.1} esporas={kprog(T, K.G + 0.1, K.G + 0.6)} suelo={0} />
+          <Prado T={T} y={1290} />
+          <CampoSeta T={T} x={540} y={1300} s={1.3} esporas={kprog(T, K.G + 0.1, K.G + 0.6)} suelo={0} />
         </>)}
       </Escena>
       {/* comparación del gancho: fuera del zoom de la escena para que no baje de y≈1500 */}
@@ -175,7 +175,7 @@ function EsporasConteoShot() {
           {noche > 0.05 && <g opacity={noche}><circle cx={880} cy={420} r={70} fill="#fff6c8" stroke={KC.ink} strokeWidth={6} /><circle cx={910} cy={400} r={62} fill="#26304a" /></g>}
           {T > K.V + 1.9 && T < K.H + 0.8 && <g opacity={kprog(T, K.V + 1.9, K.V + 2.3) * (1 - kprog(T, K.H + 0.4, K.H + 0.8))}><circle cx={880} cy={420} r={70} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />
             {Array.from({ length: 8 }, (_, i) => <line key={i} x1={880 + Math.cos(i * 0.785) * 88} y1={420 + Math.sin(i * 0.785) * 88} x2={880 + Math.cos(i * 0.785) * 120} y2={420 + Math.sin(i * 0.785) * 120} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />)}</g>}
-          <g opacity={1 - arriba} transform={`translate(0 160) translate(540 ${MESA}) scale(1.45) translate(-540 ${-MESA})`}>
+          <g opacity={1 - arriba} transform={`translate(0 220) translate(540 ${MESA}) scale(1.7) translate(-540 ${-MESA})`}>
             <rect x={-20} y={MESA} width={KW + 40} height={KH - MESA} fill={cineMix(EC.mesa, '#0a0f1c', 0.55)} stroke={KC.ink} strokeWidth={8} />
             <path d={`M 150 ${MESA + 4} L 930 ${MESA + 4} L 960 ${MESA + 26} L 120 ${MESA + 26} Z`} fill="#fff" stroke={KC.ink} strokeWidth={5} />
             {levanta > 0 && <ellipse cx={540} cy={MESA + 14} rx={190 * levanta + 10} ry={9} fill={EC.cafe} opacity={0.85 * levanta} />}
@@ -191,8 +191,8 @@ function EsporasConteoShot() {
           {arriba > 0 && <g opacity={arriba}>
             <rect x={-20} y={-20} width={KW + 40} height={KH + 40} fill={cineMix(EC.mesa, '#0a0f1c', 0.55)} />
             {Array.from({ length: 9 }, (_, i) => <line key={i} x1={-20} y1={180 + i * 200} x2={KW + 20} y2={160 + i * 200} stroke={cineMix(EC.mesa2, '#0a0f1c', 0.5)} strokeWidth={5} opacity=".6" />)}
-            <rect x={150} y={440} width={780} height={760} rx={10} fill="#fff" stroke={KC.ink} strokeWidth={8} transform={`rotate(-3 540 820)`} />
-            <Huella cx={540} cy={800} r={290} p={kprog(T, K.H + 1.2, K.H + 2.6)} />
+            <rect x={150} y={590} width={780} height={760} rx={10} fill="#fff" stroke={KC.ink} strokeWidth={8} transform={`rotate(-3 540 970)`} />
+            <Huella cx={540} cy={950} r={290} p={kprog(T, K.H + 1.2, K.H + 2.6)} />
           </g>}
         </>)}
       </Escena>
@@ -200,20 +200,20 @@ function EsporasConteoShot() {
       <Escena T={T} a={K.Po} b={K.Co} zoom={0.08}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<>{Array.from({ length: 34 }, (_, i) => { const g = krng(i + 11); const x = 70 + g() * 940, y = 360 + g() * 960, d0 = g() * 0.4, on = kprog(T, K.Po + 0.02 + d0, K.Po + 0.3 + d0, kEase.rebote);
+        {fsvg(<>{Array.from({ length: 34 }, (_, i) => { const g = krng(i + 11); const x = 70 + g() * 940, y = 480 + g() * 920, d0 = g() * 0.4, on = kprog(T, K.Po + 0.02 + d0, K.Po + 0.3 + d0, kEase.rebote);
           return on > 0 ? <EsporaMicro key={i} x={x + mece(T, i, 0.4) * 10} y={y + mece(T, i + 5, 0.4) * 10} s={1.2 * on} rot={g() * 180} /> : null; })}</>)}
       </Escena>
       {/* 5 · el color de la huella */}
       <Escena T={T} a={K.Co} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          {[['#f5f1e6', 'blanca', 230], [EC.cafe, 'café', 540], ['#c98a7e', 'rosada', 850]].map(([c, t, x], i) => { const on = kprog(T, K.Co + 0.05 + i * 0.15, K.Co + 0.45 + i * 0.15, kEase.rebote); return on > 0 ? <g key={i} transform={`translate(${x} 820) scale(${on})`}>
+          {[['#f5f1e6', 'blanca', 230], [EC.cafe, 'café', 540], ['#c98a7e', 'rosada', 850]].map(([c, t, x], i) => { const on = kprog(T, K.Co + 0.05 + i * 0.15, K.Co + 0.45 + i * 0.15, kEase.rebote); return on > 0 ? <g key={i} transform={`translate(${x} 900) scale(${1.1 * on})`}>
             <rect x={-135} y={-150} width={270} height={300} rx={14} fill={i === 0 ? '#2b2b33' : '#fff'} stroke={KC.ink} strokeWidth={7} />
             <Huella cx={0} cy={-10} r={110} p={1} color={c} n={70} seed={i + 2} />
             <text x={0} y={128} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={i === 0 ? '#fff' : KC.ink}>{t}</text></g> : null; })}
         </>)}
-        {T > K.Co + 2.0 && <div style={{ position:'absolute', left:540, top:1050, zIndex:43, transform:`translate(-50%,-50%) rotate(-6deg) scale(${klerp(2, 1, kprog(T, K.Co + 2.0, K.Co + 2.35, kEase.rebote))})`, opacity:kprog(T, K.Co + 2.0, K.Co + 2.15),
-          border:`10px solid ${KC.red}`, borderRadius:22, padding:'8px 30px', font:`400 66px ${KF.titulo}`, color:KC.red, background:'rgba(255,255,255,.88)', whiteSpace:'nowrap' }}>NO dice si se come</div>}
+        {T > K.Co + 2.0 && <div style={{ position:'absolute', left:540, top:1170, zIndex:43, transform:`translate(-50%,-50%) rotate(-6deg) scale(${klerp(2, 1, kprog(T, K.Co + 2.0, K.Co + 2.35, kEase.rebote))})`, opacity:kprog(T, K.Co + 2.0, K.Co + 2.15),
+          border:'6px solid #e8707a', borderRadius:22, padding:'8px 30px', font:`400 62px ${KF.titulo}`, color:'#f3a0a6', background:'rgba(12,16,30,.88)', whiteSpace:'nowrap' }}>NO dice si se come</div>}
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.B} zoom={0.1}>
@@ -224,8 +224,8 @@ function EsporasConteoShot() {
       <Escena T={T} a={K.B} b={K.R} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Microscopio x={270} y={1310} s={1.8} />
-          <g transform="translate(770 1080) rotate(4) scale(1.45)"><rect x={-190} y={-140} width={380} height={280} rx={12} fill="#fffbea" stroke={KC.ink} strokeWidth={7} />
+          <Microscopio x={270} y={1420} s={1.8} />
+          <g transform="translate(770 1190) rotate(4) scale(1.45)"><rect x={-190} y={-140} width={380} height={280} rx={12} fill="#fffbea" stroke={KC.ink} strokeWidth={7} />
             {Array.from({ length: 12 }, (_, i) => kprog(T, K.B + 0.8 + i * 0.12, K.B + 0.9 + i * 0.12) > 0 ? <line key={i} x1={-150 + (i % 6) * 22 + Math.floor(i / 6) * 160} y1={-100} x2={-150 + (i % 6) * 22 + Math.floor(i / 6) * 160 + (i % 6 === 5 ? -110 : 0)} y2={-30} stroke="#2a3a8a" strokeWidth={6} strokeLinecap="round" /> : null)}
             {kprog(T, K.B + 2.5, K.B + 2.8) > 0 && <text x={-165} y={60} style={{ font:`700 30px ${KF.mono}` }} fill="#2a3a8a" opacity={kprog(T, K.B + 2.5, K.B + 2.8)}>≈ 16,000,000,000</text>}</g>
         </>)}
@@ -278,23 +278,23 @@ function EsporasConteoShot() {
       <Escena T={T} a={K.A} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Prado T={T} y={1190} />
-          <CampoSeta T={T} x={540} y={1200} s={0.95} esporas={0.6} suelo={0} />
+          <Prado T={T} y={1290} />
+          <CampoSeta T={T} x={540} y={1300} s={1.1} esporas={0.6} suelo={0} />
         </>)}
         {[['16,000,000,000', 'champiñón de campo', 'Buller, 1922'], ['30,000,000,000 / día', 'hongo de repisa', 'J. H. White (en Buller), 1922'], ['7,000,000,000,000', 'bejín gigante', 'Buller, 1909']].map(([n, t, a], i) => { const e = kprog(T, K.A + 0.1 + i * 0.25, K.A + 0.5 + i * 0.25, kEase.rebote);
-          return <div key={i} style={{ position:'absolute', left:90, top:300 + i * 118, width:900, zIndex:40, opacity:kprog(T, K.A + 0.1 + i * 0.25, K.A + 0.3 + i * 0.25), transform:`scale(${klerp(0.6, 1, e)})`, transformOrigin:'0 50%',
+          return <div key={i} style={{ position:'absolute', left:90, top:290 + i * 118, width:900, boxSizing:'border-box', zIndex:40, opacity:kprog(T, K.A + 0.1 + i * 0.25, K.A + 0.3 + i * 0.25), transform:`scale(${klerp(0.6, 1, e)})`, transformOrigin:'0 50%',
             background:KC.paper, border:`5px solid ${KC.ink}`, borderRadius:18, padding:'8px 24px', boxShadow:`6px 6px 0 ${KC.ink}` }}>
             <div style={{ font:`400 46px/1 ${KF.titulo}`, color:KC.ink }}>{n}</div>
             <div style={{ font:`700 21px ${KF.mono}`, color:'#aab3c8', marginTop:4 }}>{t} · {a}</div></div>; })}
-        {T > K.A + 1.3 && <div style={{ position:'absolute', left:540, top:1310, zIndex:44, transform:`translate(-50%,-50%) rotate(-5deg) scale(${klerp(2, 1, kprog(T, K.A + 1.3, K.A + 1.65, kEase.rebote))})`, opacity:kprog(T, K.A + 1.3, K.A + 1.45),
-          border:`9px solid ${KC.red}`, borderRadius:22, padding:'6px 26px', font:`400 54px ${KF.titulo}`, color:KC.red, background:'rgba(255,255,255,.9)', whiteSpace:'nowrap' }}>≈ aproximados (1909–1922)</div>}
+        {T > K.A + 1.3 && <div style={{ position:'absolute', left:540, top:1405, zIndex:44, transform:`translate(-50%,-50%) rotate(-5deg) scale(${klerp(2, 1, kprog(T, K.A + 1.3, K.A + 1.65, kEase.rebote))})`, opacity:kprog(T, K.A + 1.3, K.A + 1.45),
+          border:'6px solid #e8707a', borderRadius:22, padding:'6px 26px', font:`400 52px ${KF.titulo}`, color:'#f3a0a6', background:'rgba(12,16,30,.88)', whiteSpace:'nowrap' }}>≈ aproximados (1909–1922)</div>}
       </Escena>
       {/* 13 · cierre: el mismo champiñón del inicio; la lluvia de esporas se vuelve boletos */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Prado T={T} y={1250} />
-          <CampoSeta T={T} x={540} y={1260} s={1.1} esporas={1 - kprog(T, K.C + 0.4, K.C + 1.2)} suelo={0} />
+          <Prado T={T} y={1290} />
+          <CampoSeta T={T} x={540} y={1300} s={1.3} esporas={1 - kprog(T, K.C + 0.4, K.C + 1.2)} suelo={0} />
           {Array.from({ length: 22 }, (_, i) => { const g = krng(i + 300); const t0 = K.C + 0.6 + g() * 2.2, u = kprog(T, t0, t0 + 1.4, kEase.sale); const premio = i === 13;
             if (T < t0) return null; const x = 170 + g() * 740, y = klerp(940, 1320 + g() * 160, u);
             return <Boleto key={i} x={x} y={y} rot={(g() - 0.5) * 70 + Math.sin(T * 2 + i) * 6} s={premio ? 1.3 : 0.95} premio={premio} />; })}
@@ -302,18 +302,18 @@ function EsporasConteoShot() {
       </Escena>
 
       {/* textos */}
-      <Etq T={T} at={K.G + 1.0} until={K.So - 0.3} x={600} y={1020} texto="Agaricus campestris" it tam={30} color={KC.ink} />
-      <Etq T={T} at={K.G + 1.4} until={K.So - 0.3} x={600} y={1065} texto="champiñón de campo" tam={28} color={KC.ink} />
-      <NumeroGigante T={T} at={K.G + 0.2} until={K.So - 0.3} valor={16000000000} dur={1.8} etiqueta="esporas" x={540} y={1420} tam={112} color={KC.yellow} />
+      <Etq T={T} at={K.G + 1.0} until={K.So - 0.3} x={625} y={1060} texto="Agaricus campestris" it tam={30} color={KC.ink} />
+      <Etq T={T} at={K.G + 1.4} until={K.So - 0.3} x={625} y={1105} texto="champiñón de campo" tam={28} color={KC.ink} />
+      <NumeroGigante T={T} at={K.G + 0.2} until={K.So - 0.3} valor={16000000000} dur={1.8} etiqueta="esporas" x={540} y={1450} tam={112} color={KC.yellow} />
       <Chip T={T} at={K.So + 0.3} until={K.V - 0.2} texto="1 · uno abierto · laminillas abajo" x={380} y={470} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.So + 0.6} until={K.So + 2.2} x={60} y={1290} texto="Agaricus bisporus" it tam={30} color={KC.ink} />
+      <Etq T={T} at={K.So + 0.6} until={K.So + 2.2} x={60} y={1330} texto="Agaricus bisporus" it tam={30} color={KC.ink} />
       <Chip T={T} at={K.V + 0.3} until={K.H - 0.1} texto="2 · tápalo · espera una noche" x={400} y={470} tam={34} borde={KC.ink} />
       <Cronometro T={T} at={K.V + 0.6} until={K.H} factor={16000} etiqueta="UNA NOCHE" x={400} y={600} />
-      <Etq T={T} at={K.H + 2.0} until={K.Po - 0.3} x={60} y={380} texto="huella de esporas" tam={36} color={KC.ink} />
-      <Chip T={T} at={K.H + 2.8} until={K.Po - 0.3} texto="a veces no sale con champiñones del súper" x={540} y={1100} tam={26} borde={KC.ink} />
+      <Etq T={T} at={K.H + 2.0} until={K.Po - 0.3} x={60} y={500} texto="huella de esporas" tam={36} color={KC.ink} />
+      <Chip T={T} at={K.H + 2.8} until={K.Po - 0.3} texto="a veces no sale con champiñones del súper" x={540} y={1450} tam={26} borde={KC.ink} />
       <Etq T={T} at={K.Po + 0.2} until={K.Co - 0.3} x={60} y={380} texto="AL MICROSCOPIO · huella de esporas" tam={28} color={KC.gold2} />
-      <Chip T={T} at={K.Po + 1.0} until={K.Co - 0.3} texto="≈ 7 µm cada una" x={540} y={1090} tam={40} borde={KC.gold} />
-      <Chip T={T} at={K.Co + 1.2} until={K.P - 0.2} texto="color de esporas = una pista" x={380} y={470} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Po + 1.0} until={K.Co - 0.3} texto="≈ 7 µm cada una" x={540} y={1515} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.Co + 1.2} until={K.P - 0.2} texto="color de esporas = una pista" x={540} y={600} tam={32} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.B + 0.2} until={K.R - 0.3} anio="1922" quien="A. H. R. Buller · U. de Manitoba, Canadá" revista="Researches on Fungi, vol. II" y={420} />
       <Etq T={T} at={K.R + 0.6} until={K.Bj - 0.3} x={600} y={885} texto="Ganoderma applanatum" it lado="der" tam={28} color={KC.ink} />
       <Etq T={T} at={K.R + 1.0} until={K.Bj - 0.3} x={600} y={927} texto="hongo del artista" tam={24} color={KC.ink} />
@@ -325,15 +325,15 @@ function EsporasConteoShot() {
       <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="casi ningún premio" x={540} y={330} tam={40} borde={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.So} texto="5 cm" largo={270} />
-      <BarraEscala T={T} at={K.So} until={K.H + 1.0} texto="5 cm" largo={276} />
+      <BarraEscala T={T} at={K.G} until={K.So} texto="5 cm" largo={319} />
+      <BarraEscala T={T} at={K.So} until={K.H + 1.0} texto="5 cm" largo={324} />
       <BarraEscala T={T} at={K.H + 1.0} until={K.Po} texto="5 cm" largo={190} />
       <BarraEscala T={T} at={K.Po} until={K.Co} texto="10 µm" largo={187} />
-      <BarraEscala T={T} at={K.Co} until={K.P} texto="5 cm" largo={190} />
+      <BarraEscala T={T} at={K.Co} until={K.P} texto="5 cm" largo={209} />
       <BarraEscala T={T} at={K.R} until={K.Bj} texto="10 cm" largo={429} />
       <BarraEscala T={T} at={K.Bj} until={K.Ra} texto="40 cm" largo={680} />
-      <BarraEscala T={T} at={K.A} until={K.C} texto="5 cm" largo={233} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={270} />
+      <BarraEscala T={T} at={K.A} until={K.C} texto="5 cm" largo={270} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={319} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.So - 0.1} texto="Un champiñón de campo: *16 mil millones* de esporas." />

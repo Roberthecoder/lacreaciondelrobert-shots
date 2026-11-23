@@ -144,7 +144,7 @@ function Reloj24({ x, y, r = 170, horas = 0 }) {
     {Array.from({ length: 24 }, (_, i) => { const b = (i / 24) * Math.PI * 2; return <line key={i} x1={Math.sin(b) * (r - 2)} y1={-Math.cos(b) * (r - 2)} x2={Math.sin(b) * (r - (i % 6 ? 14 : 28))} y2={-Math.cos(b) * (r - (i % 6 ? 14 : 28))} stroke={KC.ink} strokeWidth={i % 6 ? 3 : 6} />; })}
     <line x1={0} y1={0} x2={ex * 0.9} y2={ey * 0.9} stroke={KC.red} strokeWidth={8} strokeLinecap="round" />
     <circle r={12} fill={KC.ink} />
-    <text x={0} y={r + 76} textAnchor="middle" style={{ font:`400 74px ${KF.titulo}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={4} paintOrder="stroke">{Math.round(horas)} h de noche</text>
+    <text x={0} y={r + 76} textAnchor="middle" style={{ font:`400 66px ${KF.titulo}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={4} paintOrder="stroke">{Math.round(horas)} h de noche</text>
   </g>;
 }
 function Foco({ x, y, on = 0 }) {
@@ -286,7 +286,7 @@ function Nochebuena() {
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse 90% 60% at 50% 46%, #141c4a 0%, #0a0f24 65%, #070a12 100%)' }}></div>
         {svg(<>
           <Estrellas T={T} n={10} seed={9} />
-          <Reloj24 x={270} y={500} r={170} horas={14 * kprog(T, K.No + 0.2, K.No + 1.5, kEase.suave)} />
+          <Reloj24 x={330} y={500} r={170} horas={14 * kprog(T, K.No + 0.2, K.No + 1.5, kEase.suave)} />
           <Planta T={T} x={600} y={1340} s={0.9} ramas={1} rojo={semanas} />
         </>)}
       </Escena>
@@ -296,7 +296,7 @@ function Nochebuena() {
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(ellipse 90% 60% at 50% 30%, ${mixHex('#141c4a', '#2c2f52', focoOn)} 0%, #0a0f24 68%, #070a12 100%)` }}></div>
         {svg(<>
           <Foco x={540} y={520} on={focoOn} />
-          <Planta T={T} x={420} y={1380} s={0.85} ramas={1} rojo={klerp(0.55, 0.12, kprog(T, K.Fo + 0.8, K.Fo + 2.0))} />
+          <Planta T={T} x={420} y={1330} s={0.85} ramas={1} rojo={klerp(0.55, 0.12, kprog(T, K.Fo + 0.8, K.Fo + 2.0))} />
           <g opacity={kprog(T, K.Fo + 2.2, K.Fo + 2.6)}><Calendario x={900} y={1330} s={0.95 * kEase.rebote(kprog(T, K.Fo + 2.2, K.Fo + 2.7))} /></g>
         </>)}
       </Escena>
@@ -328,7 +328,7 @@ function Nochebuena() {
       {/* 7 · por dentro: un fitoplasma en el floema (oscuro: escala micro) */}
       <Escena T={T} a={K.Fi} b={K.Ho} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {svg(<Floema T={T} fitos={kprog(T, K.Fi + 0.45, K.Fi + 4.0)} />)}   {/* modo cine: los fitoplasmas empiezan a entrar a los 0.45 s (antes 1.4 s) */}
+        {svg(<Floema T={T} fitos={kprog(T, K.Fi - 0.1, K.Fi + 3.6)} />)}   {/* belleza: el primero ya está a los 0.1 s (antes el tubo se veía vacío 0.7 s) */}   {/* modo cine: los fitoplasmas empiezan a entrar a los 0.45 s (antes 1.4 s) */}
       </Escena>
       {/* 8 · desequilibra las hormonas: brotan ramas por todos lados */}
       <Escena T={T} a={K.Ho} b={K.E}>

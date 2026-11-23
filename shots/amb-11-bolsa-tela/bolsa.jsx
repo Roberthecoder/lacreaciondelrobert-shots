@@ -8,8 +8,11 @@ const BT = { tela:'#efe2c4', tela2:'#d8c69c', plastico:'rgba(255,255,255,.88)', 
 // Bolsa de plástico normal del súper (tipo camiseta, LDPE ~40 µm). Origen: centro de la base.
 function BolsaPlastico({ x, y, s = 1, rot = 0, o = 1, arruga = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`} opacity={o}>
+    <defs><linearGradient id="btPlas" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#ffffff" stopOpacity={0.95} /><stop offset="1" stopColor="#c9d3df" stopOpacity={0.85} /></linearGradient></defs>
+    <ellipse cx={0} cy={6} rx={110} ry={14} fill="#000" opacity={0.28} />
     <path d="M -118 0 Q -126 -120 -116 -232 L -112 -338 L -66 -338 L -58 -258 Q 0 -232 58 -258 L 66 -338 L 112 -338 L 116 -232 Q 126 -120 118 0 Q 0 14 -118 0 Z"
-      fill={BT.plastico} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+      fill="url(#btPlas)" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <path d="M -92 -300 Q -100 -160 -88 -30" stroke="rgba(255,255,255,.9)" strokeWidth={9} fill="none" strokeLinecap="round" opacity={0.7} />
     {[[-70, -40, -40, -170], [10, -30, 30, -150], [70, -60, 50, -200]].map(([a, b, c, d], i) =>
       <path key={i} d={`M ${a} ${b} q ${(c - a) / 2 + 12 * Math.sin(arruga + i)} ${(d - b) / 2} ${c - a} ${d - b}`} stroke="rgba(0,0,0,.18)" strokeWidth={5} fill="none" strokeLinecap="round" />)}
     <path d="M -116 -232 Q 0 -214 116 -232" stroke="rgba(0,0,0,.2)" strokeWidth={4} fill="none" />
@@ -21,8 +24,11 @@ function BolsaTela({ x, y, s = 1, rot = 0, o = 1 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`} opacity={o}>
     {[-62, 62].map((dx) => <g key={dx}><path d={asa(dx)} stroke={KC.ink} strokeWidth={26} fill="none" strokeLinecap="round" />
       <path d={asa(dx)} stroke={BT.tela2} strokeWidth={14} fill="none" strokeLinecap="round" /></g>)}
-    <path d="M -135 -300 L 135 -300 L 128 0 L -128 0 Z" fill={BT.tela} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <defs><linearGradient id="btTela" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#f8efd9" /><stop offset="0.6" stopColor={BT.tela} /><stop offset="1" stopColor="#cdb98d" /></linearGradient></defs>
+    <ellipse cx={0} cy={6} rx={128} ry={14} fill="#000" opacity={0.3} />
+    <path d="M -135 -300 L 135 -300 L 128 0 L -128 0 Z" fill="url(#btTela)" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     <path d="M -118 -282 L 118 -282 L 112 -16 L -112 -16 Z" fill="none" stroke={BT.cafe} strokeWidth={3} strokeDasharray="10 8" opacity={0.7} />
+    {[-90, -50, -10, 30, 70, 110].map((dy) => <line key={dy} x1={-124} y1={-150 + dy} x2={124} y2={-150 + dy} stroke={BT.cafe} strokeWidth={1.5} opacity={0.12} />)}
     {/* estampado: cápsula de algodón */}
     <g transform="translate(0 -150)">
       {[[-22, -10], [22, -10], [-12, 20], [14, 20], [0, -2]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={24} fill="#fff" stroke={BT.cafe} strokeWidth={4} />)}
@@ -46,6 +52,15 @@ function Balanza({ x, y, incl = 0, s = 1, tela = true, plastico = true, sb = 0.5
     <circle r={20} fill={KC.gold} stroke={KC.ink} strokeWidth={6} />
     {plato(-ex, -ey, tela && <BolsaTela x={0} y={160} s={sb} />)}
     {plato(ex, ey, plastico && <BolsaPlastico x={0} y={160} s={sb} />)}
+  </g>;
+}
+// Mesa de madera oscura: escenario a escala real bajo la balanza y las bolsas (desde y hasta abajo).
+function Mesa({ y }) {
+  return <g>
+    <defs><linearGradient id="btMesa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#5a4130" /><stop offset="0.25" stopColor="#3b2a1f" /><stop offset="1" stopColor="#140e0a" /></linearGradient></defs>
+    <rect x={0} y={y} width={KW} height={KH - y} fill="url(#btMesa)" />
+    {[40, 95, 170, 270, 400].map((d, i) => <path key={i} d={`M 0 ${y + d} Q 270 ${y + d - 8 + i * 3} 540 ${y + d + 4} T 1080 ${y + d - 2}`} stroke="#7a5a42" strokeWidth={2} fill="none" opacity={0.28 - i * 0.04} />)}
+    <rect x={0} y={y} width={KW} height={6} fill="#8a6a4e" opacity={0.7} />
   </g>;
 }
 // Tarjeta de estudio angosta (texto que cabe a la izquierda de Robert).
@@ -137,7 +152,7 @@ function BolsaShot() {
   const wob = 4 * Math.sin(T * 1.6);
   // vida de la bolsa: fábrica → súper → casa → basura
   const vida = kprog(T, K.E + 0.6, K.F - 0.6, kEase.suave);
-  const pasos = [140, 400, 660, 930];
+  const pasos = [130, 395, 670, 945];
   const xv = klerp(pasos[0], pasos[3], vida);
   // cuadrícula de 131 usos (Reino Unido)
   const n131 = Math.round(131 * kprog(T, K.R + 1.2, K.R + 4.6, kEase.suave));
@@ -152,53 +167,54 @@ function BolsaShot() {
       {/* 1 · gancho: la balanza, tela contra plástico */}
       <Escena T={T} a={K.G} b={K.E}>
         <FondoLunares color={KC.cyan} />
-        {svg(<Balanza x={540} y={830} s={1.07} sb={0.64} incl={wob} />)}
+        {svg(<><Mesa y={1370} /><Balanza x={540} y={880} s={1.1} sb={0.66} incl={wob} /></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1500} color={KC.ink} />
       </Escena>
       {/* 2 · el estudio: de la fábrica a la basura */}
       <Escena T={T} a={K.E} b={K.F}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<>
+          <Mesa y={1330} />
           <line x1={pasos[0]} y1={1060} x2={pasos[3]} y2={1060} stroke={KC.ink} strokeWidth={6} strokeDasharray="16 12" />
           <line x1={pasos[0]} y1={1060} x2={xv} y2={1060} stroke={KC.gold} strokeWidth={10} strokeLinecap="round" />
-          <g transform={`translate(${pasos[0]} 1250) scale(1.3) translate(${-pasos[0]} -1250)`}><Fabrica x={pasos[0]} y={1250} T={T} /></g>
-          <g transform={`translate(${pasos[1]} 1250) scale(1.3) translate(${-pasos[1]} -1250)`}><Super x={pasos[1]} y={1250} /></g>
-          <g transform={`translate(${pasos[2]} 1250) scale(1.3) translate(${-pasos[2]} -1250)`}><Casa x={pasos[2]} y={1250} /></g>
-          <Bote x={pasos[3]} y={1250} s={1.05} />
-          <BolsaTela x={xv} y={1030} s={0.68} rot={Math.sin(T * 4) * 5} />
-          {['fábrica', 'súper', 'casa', 'basura'].map((t, i) => <text key={t} x={pasos[i]} y={1310} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink} opacity={vida >= i / 3 - 0.01 ? 1 : 0.3}>{t}</text>)}
+          <g transform={`translate(${pasos[0]} 1330) scale(1.5) translate(${-pasos[0]} -1330)`}><Fabrica x={pasos[0]} y={1330} T={T} /></g>
+          <g transform={`translate(${pasos[1]} 1330) scale(1.5) translate(${-pasos[1]} -1330)`}><Super x={pasos[1]} y={1330} /></g>
+          <g transform={`translate(${pasos[2]} 1330) scale(1.5) translate(${-pasos[2]} -1330)`}><Casa x={pasos[2]} y={1330} /></g>
+          <Bote x={pasos[3]} y={1330} s={1.35} />
+          <BolsaTela x={xv} y={1040} s={0.86} rot={Math.sin(T * 4) * 5} />
+          {['fábrica', 'súper', 'casa', 'basura'].map((t, i) => <text key={t} x={pasos[i]} y={1392} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink} opacity={vida >= i / 3 - 0.01 ? 1 : 0.3}>{t}</text>)}
         </>)}
       </Escena>
       <TarjetaChica T={T} at={K.E + 0.2} until={K.F - 0.2} anio="2018" linea1="Agencia de Protección Ambiental de Dinamarca" linea2="cálculo: Universidad Técnica de Dinamarca (DTU)" x={50} y={220} w={620} />
       {/* 3 · fabricarla es lo que más pesa */}
       <Escena T={T} a={K.F} b={K.P}>
         <FondoLunares color={KC.mint} />
-        {svg(<>
-          <Algodonero x={280} y={1260} s={1.7} T={T} />
+        {svg(<g transform="translate(540 980) scale(1.1) translate(-540 -910)">
+          <Algodonero x={310} y={1260} s={1.7} T={T} />
           {Array.from({ length: 6 }, (_, i) => { const u = ((T - K.F) * 0.9 + i / 6) % 1; return <path key={i} d="M 0 -18 Q 14 0 0 10 Q -14 0 0 -18 Z" transform={`translate(${90 + i * 75} ${520 + u * 600})`} fill="#3aa0ff" stroke={KC.ink} strokeWidth={3} opacity={T > K.F + 0.4 ? 1 - u * 0.6 : 0} />; })}
           {[['fabricar', 1], ['usar', 0.08], ['tirar', 0.12]].map(([t, v], i) => { const h = 580 * v * kprog(T, K.F + 0.5 + i * 0.25, K.F + 1.6 + i * 0.25, kEase.sale);
             return <g key={t}><rect x={570 + i * 150} y={1250 - h} width={120} height={h} rx={10} fill={i === 0 ? KC.red : KC.yellow} stroke={KC.ink} strokeWidth={6} />
               <text x={630 + i * 150} y={1300} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>{t}</text></g>; })}
           <text x={780} y={620} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>impacto de la bolsa</text>
-        </>)}
+        </g>)}
         <EscalaFija texto="esquema" largo={0} y={1500} color={KC.ink} />
       </Escena>
       {/* 4 · pregunta */}
       <Escena T={T} a={K.P} b={K.Cl} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         {svg(<><text x={540} y={900} textAnchor="middle" style={{ font:`400 460px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 740)`}>?</text>
-          <BolsaTela x={310} y={1360} s={0.85} rot={-6} /><BolsaPlastico x={780} y={1360} s={0.9} rot={6} arruga={T} /></>)}
+          <BolsaTela x={300} y={1400} s={1.0} rot={-6} /><BolsaPlastico x={790} y={1400} s={1.05} rot={6} arruga={T} /></>)}
       </Escena>
       {/* 5 · solo clima: 52 */}
       <Escena T={T} a={K.Cl} b={K.O}>
         <FondoLunares color={KC.yellow} />
-        {svg(<BolsaTela x={260} y={940} s={0.95} rot={Math.sin(T * 2) * 3} />)}
-        <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.Cl + 0.2, K.Cl + 0.6) }}>{svg(<Tablero T={T} y={1010} encendidos={[kprog(T, K.Cl + 1.6, K.Cl + 2.0)]} />)}</div>
+        {svg(<BolsaTela x={260} y={990} s={1.0} rot={Math.sin(T * 2) * 3} />)}
+        <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.Cl + 0.2, K.Cl + 0.6) }}>{svg(<Tablero T={T} y={1040} encendidos={[kprog(T, K.Cl + 1.6, K.Cl + 2.0)]} />)}</div>
       </Escena>
       {/* 6 · el ozono dispara el número */}
       <Escena T={T} a={K.O} b={K.R}>
         <FondoLunares color={KC.orange} />
-        {svg((() => { const g = kprog(T, K.O + 0.6, K.O + 2.2, kEase.sale), H = 430, base = 1110;
+        {svg(<g transform="translate(540 950) scale(1.15) translate(-540 -800)">{(() => { const g = kprog(T, K.O + 0.6, K.O + 2.2, kEase.sale), H = 430, base = 1110;
           const hO = H * g, h0 = H * 50 / 7100 * g, h1 = H * 1400 / 7100 * g;
           return <>
             <line x1={90} y1={base} x2={660} y2={base} stroke={KC.ink} strokeWidth={6} />
@@ -209,26 +225,26 @@ function BolsaShot() {
             <rect x={334} y={base - h1} width={318} height={h1 - h0} fill="none" stroke={KC.ink} strokeWidth={4} strokeDasharray="10 8" />
             <text x={493} y={base + 46} textAnchor="middle" style={{ font:`900 28px ${KF.texto}` }} fill={KC.ink}>los otros 14</text>
             <Ozono x={215} y={base - hO - 175} s={1} rot={Math.sin(T * 2) * 8} rompe={0} o={g} />
-            <BolsaTela x={880} y={base} s={0.95} rot={Math.sin(T * 2) * 3} />
-          </>; })())}
+            <BolsaTela x={850} y={base} s={0.95} rot={Math.sin(T * 2) * 3} />
+          </>; })()}</g>)}
         <EscalaFija texto="usos para igualar · esquema a escala" largo={0} y={1500} color={KC.ink} />
       </Escena>
       {/* 7 · Reino Unido: 131 usos solo para el clima */}
       <Escena T={T} a={K.R} b={K.M}>
         <FondoLunares color={KC.cyan} />
-        {svg(<g transform="translate(110 600)">{Array.from({ length: 140 }, (_, i) => { const c = i % 14, f = Math.floor(i / 14), on = i < n131, ex = i >= 131;
-          return ex ? null : <rect key={i} x={c * 62} y={f * 36} width={52} height={28} rx={6} fill={on ? BT.tela : 'rgba(255,255,255,.15)'} stroke={KC.ink} strokeWidth={on ? 4 : 2} />; })}</g>)}
-        {svg(<><BolsaTela x={300} y={1370} s={0.8} rot={-4 + Math.sin(T * 2) * 3} /><BolsaPlastico x={790} y={1370} s={0.9} rot={5} arruga={T} /></>)}
+        {svg(<g transform="translate(110 560)">{Array.from({ length: 140 }, (_, i) => { const c = i % 14, f = Math.floor(i / 14), on = i < n131, ex = i >= 131;
+          return ex ? null : <rect key={i} x={c * 62} y={f * 46} width={52} height={38} rx={7} fill={on ? BT.tela : 'rgba(255,255,255,.15)'} stroke={KC.ink} strokeWidth={on ? 4 : 2} />; })}</g>)}
+        {svg(<><BolsaTela x={300} y={1400} s={0.82} rot={-4 + Math.sin(T * 2) * 3} /><BolsaPlastico x={790} y={1400} s={0.92} rot={5} arruga={T} /></>)}
       </Escena>
       <TarjetaChica T={T} at={K.R + 0.2} until={K.M - 0.2} anio="2011" linea1="Agencia Ambiental de Inglaterra" linea2="(datos de 2006)" x={50} y={230} w={560} />
       {/* 8 · la basura tirada: bajada a la Fosa de las Marianas */}
       <Escena T={T} a={K.M} b={K.Co} fondo={`linear-gradient(${mixHex(BT.mar1, BT.mar2, baja)}, ${BT.mar2})`}>
         {svg(<>
-          {Array.from({ length: 18 }, (_, i) => { const u = ((T * 0.25 + i / 18) % 1); return <circle key={i} cx={180 + ((i * 97) % 820)} cy={1200 - u * 900} r={4 + (i % 4) * 2} fill="none" stroke="#bfe7ff" strokeWidth={2} opacity={0.6 * (1 - u)} />; })}
-          {(() => { const dy = (1 - baja) * 600; return <path d={`M 0 ${1110 + dy} Q 200 ${1060 + dy} 400 ${1100 + dy} Q 560 ${1130 + dy} 720 ${1080 + dy} Q 900 ${1050 + dy} 1080 ${1110 + dy} L 1080 1920 L 0 1920 Z`} fill="#2a2f3a" stroke="#556070" strokeWidth={6} />; })()}
-          <BolsaPlastico x={560 + Math.sin(T * 1.3) * 30} y={klerp(860, 1112, baja)} s={1.0} rot={Math.sin(T * 1.1) * 14} arruga={T * 2} o={kprog(T, K.M, K.M + 0.4)} />
-          {T > K.M + 3.8 && <Profundidad T={T} x={90} y={360} alto={760} valor={prof} />}
-          {T > K.M + 3.8 && <text x={330} y={1270 - 860} style={{ font:`400 64px ${KF.titulo}` }} fill="#fff">{kformato(prof)} m</text>}
+          {Array.from({ length: 18 }, (_, i) => { const u = ((T * 0.25 + i / 18) % 1); return <circle key={i} cx={180 + ((i * 97) % 820)} cy={1300 - u * 900} r={4 + (i % 4) * 2} fill="none" stroke="#bfe7ff" strokeWidth={2} opacity={0.6 * (1 - u)} />; })}
+          {(() => { const dy = (1 - baja) * 600; return <path d={`M 0 ${1330 + dy} Q 200 ${1280 + dy} 400 ${1320 + dy} Q 560 ${1350 + dy} 720 ${1300 + dy} Q 900 ${1270 + dy} 1080 ${1330 + dy} L 1080 1920 L 0 1920 Z`} fill="#2a2f3a" stroke="#556070" strokeWidth={6} />; })()}
+          <BolsaPlastico x={580 + Math.sin(T * 1.3) * 30} y={klerp(1000, 1334, baja)} s={1.3} rot={Math.sin(T * 1.1) * 14} arruga={T * 2} o={kprog(T, K.M, K.M + 0.4)} />
+          {T > K.M + 3.8 && <Profundidad T={T} x={90} y={470} alto={860} valor={prof} />}
+          {T > K.M + 3.8 && <text x={300} y={560} style={{ font:`400 64px ${KF.titulo}` }} fill="#fff">{kformato(prof)} m</text>}
         </>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1500} color="#bfe7ff" />
       </Escena>
@@ -236,36 +252,37 @@ function BolsaShot() {
       <Escena T={T} a={K.Co} b={K.C}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <BolsaTela x={290} y={1210} s={1.3} rot={Math.sin(T * 2) * 3} />
-          {Array.from({ length: reusos }, (_, i) => { const a = -Math.PI * 0.95 + i * 0.27; return <text key={i} x={290 + Math.cos(a) * 330} y={830 + Math.sin(a) * 330} textAnchor="middle" style={{ font:`900 50px ${KF.texto}` }} fill={KC.leaf} stroke={KC.ink} strokeWidth={3}>✓</text>; })}
-          <Bote x={800} y={1210} s={1.6} tapa={kprog(T, K.Co + 3.0, K.Co + 3.4) * (1 - kprog(T, K.Co + 4.7, K.Co + 5.0))} />
-          <BolsaPlastico x={klerp(800, 800, alBote)} y={klerp(820, 1020, alBote)} s={klerp(0.75, 0.6, alBote)} o={1 - kprog(T, K.Co + 4.5, K.Co + 4.7)} arruga={T} />
-          {alBote >= 1 && <path d="M 664 935 Q 800 895 936 935" stroke={KC.ink} strokeWidth={6} fill="none" />}
-          <text x={800} y={1270} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>al final: bolsa de basura</text>
+          <Mesa y={1330} />
+          <BolsaTela x={290} y={1330} s={1.3} rot={Math.sin(T * 2) * 3} />
+          {Array.from({ length: reusos }, (_, i) => { const a = -Math.PI * 0.95 + i * 0.27; return <text key={i} x={290 + Math.cos(a) * 330} y={950 + Math.sin(a) * 330} textAnchor="middle" style={{ font:`900 50px ${KF.texto}` }} fill={KC.leaf} stroke={KC.ink} strokeWidth={3}>✓</text>; })}
+          <Bote x={800} y={1330} s={1.6} tapa={kprog(T, K.Co + 3.0, K.Co + 3.4) * (1 - kprog(T, K.Co + 4.7, K.Co + 5.0))} />
+          <BolsaPlastico x={klerp(800, 800, alBote)} y={klerp(940, 1140, alBote)} s={klerp(0.75, 0.6, alBote)} o={1 - kprog(T, K.Co + 4.5, K.Co + 4.7)} arruga={T} />
+          {alBote >= 1 && <path d="M 664 1055 Q 800 1015 936 1055" stroke={KC.ink} strokeWidth={6} fill="none" />}
+          <text x={800} y={1392} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>al final: bolsa de basura</text>
         </>)}
       </Escena>
       {/* 10 · cierre: regreso a la balanza */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
-        {svg(<Balanza x={540} y={830} s={1.07} sb={0.64} incl={wob} />)}
+        {svg(<><Mesa y={1370} /><Balanza x={540} y={880} s={1.1} sb={0.66} incl={wob} /></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1500} color={KC.ink} />
       </Escena>
 
       {/* números y chips */}
-      <NumeroGigante T={T} at={K.G + 0.1} until={K.E - 0.2} valor={7100} dur={2.6} etiqueta="compras con tu bolsa:" x={320} y={500} tam={170} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.G + 0.1} until={K.E - 0.2} valor={7100} dur={2.6} etiqueta="compras con tu bolsa:" x={320} y={540} tam={170} color={KC.yellow} />
       <Chip T={T} at={K.G + 3.6} until={K.E - 0.2} texto="algodón vs. plástico · en TODOS los indicadores" y={1450} x={540} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.E + 1.2} until={K.F - 0.2} texto="de la fábrica a la basura" y={1450} x={540} tam={36} borde={KC.gold} />
-      <Etq T={T} at={K.F + 0.6} until={K.P - 0.2} x={360} y={590} texto="algodón" lado="der" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.F + 2.0} until={K.P - 0.2} texto="agua y contaminación al cultivar" y={1450} x={540} tam={32} borde={KC.leaf} />
-      <NumeroGigante T={T} at={K.Cl + 1.4} until={K.O - 0.2} valor={52} desde={7100} dur={1.4} etiqueta="solo clima:" x={720} y={660} tam={190} color={KC.mint} />
+      <Chip T={T} at={K.E + 1.2} until={K.F - 0.2} texto="de la fábrica a la basura" y={1530} x={540} tam={36} borde={KC.gold} />
+      <Etq T={T} at={K.F + 0.6} until={K.P - 0.2} x={342} y={629} texto="algodón" lado="der" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.F + 2.0} until={K.P - 0.2} texto="agua y contaminación al cultivar" y={1530} x={540} tam={32} borde={KC.leaf} />
+      <NumeroGigante T={T} at={K.Cl + 1.4} until={K.O - 0.2} valor={52} desde={7100} dur={1.4} etiqueta="solo clima:" x={720} y={720} tam={190} color={KC.mint} />
       <Chip T={T} at={K.Cl + 2.4} until={K.O - 0.2} texto="algodón convencional · solo clima: 52 usos" y={1450} x={540} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.O + 2.4} until={K.R - 0.2} texto="sin el ozono: de 50 a 1,400 usos" y={1450} x={540} tam={32} borde={KC.red} />
       <NumeroGigante T={T} at={K.R + 1.2} until={K.M - 0.2} valor={131} dur={3.4} etiqueta="solo clima:" x={830} y={420} tam={170} color={KC.yellow} />
       <Chip T={T} at={K.R + 2.0} until={K.M - 0.2} texto="vs. bolsa de plástico usada una vez" y={1450} x={540} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.M + 0.3} until={K.M + 3.0} texto="basura tirada: no se midió" y={380} x={640} tam={36} borde={KC.red} />
       <Chip T={T} at={K.M + 6.4} until={K.Co - 0.2} texto="Fosa de las Marianas · 10,898 m" y={1450} x={540} tam={34} borde={KC.cyan} />
-      <Chip T={T} at={K.Co + 1.0} until={K.C - 0.2} texto="reúsa la bolsa que ya tienes" y={1450} x={540} tam={36} borde={KC.leaf} />
-      <NumeroGigante T={T} at={K.C + 0.3} until={K.Ou - 0.1} valor={7100} dur={1.6} etiqueta="compras:" x={790} y={500} tam={150} color={KC.yellow} />
+      <Chip T={T} at={K.Co + 1.0} until={K.C - 0.2} texto="reúsa la bolsa que ya tienes" y={1530} x={540} tam={36} borde={KC.leaf} />
+      <NumeroGigante T={T} at={K.C + 0.3} until={K.Ou - 0.1} valor={7100} dur={1.6} etiqueta="compras:" x={760} y={540} tam={150} color={KC.yellow} />
       <Chip T={T} at={K.C + 2.0} until={K.Ou - 0.1} texto="que nunca se quede en casa" y={1450} x={540} tam={36} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

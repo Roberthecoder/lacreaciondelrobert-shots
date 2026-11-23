@@ -4,6 +4,17 @@
 const GEL = '#e8336d', GEL2 = '#ff7aa2', PINA = '#ffd84a', PINA_OSC = '#c98a12', HOJA = '#2e9e4f', AGUA = '#7fc8ff', TIJ = '#ffe11a';
 
 /* ---------- piezas de este shot ---------- */
+// Degradados de volumen (luz arriba-izquierda). Se repiten en cada pieza que los usa: mismo id, mismo contenido.
+function DefsGel() {
+  return <defs>
+    <linearGradient id="gGel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor={GEL2} /><stop offset="0.5" stopColor={GEL} /><stop offset="1" stopColor="#8e1440" /></linearGradient>
+    <radialGradient id="gPlato" cx="0.42" cy="0.3" r="0.75"><stop offset="0" stopColor="#ffffff" /><stop offset="0.7" stopColor="#dfe6ec" /><stop offset="1" stopColor="#9fabb7" /></radialGradient>
+    <radialGradient id="gSombra" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stopColor="#000" stopOpacity="0.55" /><stop offset="1" stopColor="#000" stopOpacity="0" /></radialGradient>
+    <radialGradient id="gPina" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stopColor="#ffd866" /><stop offset="0.6" stopColor="#f2b632" /><stop offset="1" stopColor="#b9780e" /></radialGradient>
+    <radialGradient id="gRodaja" cx="0.45" cy="0.42" r="0.6"><stop offset="0" stopColor="#fff4b8" /><stop offset="0.55" stopColor={PINA} /><stop offset="1" stopColor="#e2a91e" /></radialGradient>
+    <radialGradient id="gKiwi" cx="0.45" cy="0.4" r="0.6"><stop offset="0" stopColor="#c6e86a" /><stop offset="0.6" stopColor="#8cc63f" /><stop offset="1" stopColor="#4f8a1e" /></radialGradient>
+  </defs>;
+}
 // Trozo de piña fresca (cuña con "ojos") o de lata (pedazo de rodaja, liso).
 function TrozoPina({ x, y, s = 1, rot = 0, lata = false }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
@@ -19,11 +30,14 @@ function Gelatina({ T, x, y, s = 1, firme = 1, pina = 'fresca', boing = 0 }) {
   const R = krng(firme > 0.5 ? 11 : 12);
   const trozos = Array.from({ length: 7 }, (_, i) => [(R() - 0.5) * (firme > 0.5 ? 2 * Wt : 2 * W - 80), firme > 0.5 ? -H * (0.2 + R() * 0.6) : -6 - R() * 10, R() * 360]);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <ellipse cx={0} cy={8} rx={320} ry={64} fill="#fff" stroke={KC.ink} strokeWidth={8} />
-    <ellipse cx={0} cy={4} rx={250} ry={40} fill="#eef3f6" />
+    <DefsGel />
+    <ellipse cx={10} cy={46} rx={350} ry={70} fill="url(#gSombra)" />
+    <ellipse cx={0} cy={8} rx={320} ry={64} fill="url(#gPlato)" stroke={KC.ink} strokeWidth={8} />
+    <ellipse cx={0} cy={4} rx={250} ry={40} fill="#e9eef2" />
+    <ellipse cx={-120} cy={-8} rx={90} ry={12} fill="#fff" opacity={0.7} />
     <g transform={`skewX(${tb * 40}) scale(${1 - tb} ${1 + tb})`}>
       <path d={`M ${-W} 0 Q ${-W - 10} ${-H * 0.35} ${-Wt} ${-H} Q 0 ${-H - 30 * firme} ${Wt} ${-H} Q ${W + 10} ${-H * 0.35} ${W} 0 Q 0 ${26} ${-W} 0 Z`}
-        fill={GEL} fillOpacity={0.85} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+        fill="url(#gGel)" fillOpacity={0.9} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
       {firme > 0.5 && [-0.5, 0, 0.5].map((k) => <path key={k} d={`M ${k * W * 0.9} -8 Q ${k * Wt * 1.05} ${-H * 0.5} ${k * Wt * 0.9} ${-H + 8}`} stroke="rgba(120,0,40,.35)" strokeWidth={6} fill="none" />)}
       <path d={`M ${-Wt * 0.6} ${-H + 18} Q ${-Wt * 0.2} ${-H - 4} ${Wt * 0.2} ${-H + 14}`} stroke="rgba(255,255,255,.6)" strokeWidth={10} fill="none" strokeLinecap="round" />
       {pina && trozos.map(([tx, ty, r], i) => <TrozoPina key={i} x={tx} y={ty} rot={r} s={firme > 0.5 ? 0.9 : 0.8} lata={pina === 'lata'} />)}
@@ -45,16 +59,19 @@ function PinaEntera({ x, y, s = 1, rot = 0 }) {
   for (let r = 0; r < 6; r++) for (let c = 0; c < 4; c++) ojos.push([-75 + c * 50 + (r % 2) * 25, -120 + r * 48]);
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     {[-50, -25, 0, 25, 50].map((a, i) => <path key={i} d={`M 0 -150 Q ${a * 2.2} ${-260 - (i % 2) * 40} ${a * 3.2} ${-330 + Math.abs(a) * 1.5} Q ${a * 0.6} -230 0 -150 Z`} fill={i % 2 ? HOJA : '#47c46a'} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />)}
-    <ellipse cx={0} cy={0} rx={120} ry={165} fill="#f2b632" stroke={KC.ink} strokeWidth={8} />
+    <DefsGel />
+    <ellipse cx={0} cy={0} rx={120} ry={165} fill="url(#gPina)" stroke={KC.ink} strokeWidth={8} />
     <clipPath id="clipPina"><ellipse cx={0} cy={0} rx={116} ry={161} /></clipPath>
-    <g clipPath="url(#clipPina)">{ojos.map(([ox, oy], i) => <path key={i} d={`M ${ox} ${oy - 22} L ${ox + 24} ${oy} L ${ox} ${oy + 22} L ${ox - 24} ${oy} Z`} fill="#e39b1f" stroke="#8a5a10" strokeWidth={4} />)}</g>
+    <g clipPath="url(#clipPina)">{ojos.map(([ox, oy], i) => <path key={i} d={`M ${ox} ${oy - 22} L ${ox + 24} ${oy} L ${ox} ${oy + 22} L ${ox - 24} ${oy} Z`} fill="#e39b1f" fillOpacity={0.75} stroke="#8a5a10" strokeWidth={4} />)}
+      <ellipse cx={-48} cy={-70} rx={34} ry={60} fill="#fff" opacity={0.18} /></g>
   </g>;
 }
 // Rodaja de piña (corte) vista de frente.
 function RodajaPina({ x, y, s = 1, rot = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     <circle r={190} fill="#c9a227" stroke={KC.ink} strokeWidth={8} />
-    <circle r={168} fill={PINA} />
+    <DefsGel />
+    <circle r={168} fill="url(#gRodaja)" />
     {Array.from({ length: 24 }, (_, i) => { const a = (i / 24) * Math.PI * 2; return <line key={i} x1={Math.cos(a) * 50} y1={Math.sin(a) * 50} x2={Math.cos(a) * 160} y2={Math.sin(a) * 160} stroke="#f0bf2a" strokeWidth={5} />; })}
     <circle r={44} fill="#fff3b0" stroke="#e0b73a" strokeWidth={5} />
   </g>;
@@ -153,9 +170,17 @@ function Olla({ T, x, y, s = 1, children }) {
 function KiwiMitad({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <ellipse rx={78} ry={62} fill="#7a5a30" stroke={KC.ink} strokeWidth={6} />
-    <ellipse rx={68} ry={53} fill="#8cc63f" />
+    <DefsGel />
+    <ellipse rx={68} ry={53} fill="url(#gKiwi)" />
     <ellipse rx={24} ry={18} fill="#f4f7d8" />
     {Array.from({ length: 14 }, (_, i) => { const a = (i / 14) * Math.PI * 2; return <ellipse key={i} cx={Math.cos(a) * 34} cy={Math.sin(a) * 27} rx={4} ry={7} transform={`rotate(${a * 57.3 + 90} ${Math.cos(a) * 34} ${Math.sin(a) * 27})`} fill={KC.ink} />; })}
+  </g>;
+}
+// Kiwi partido con su gelatina encima (k = tamaño relativo al dibujo original).
+function UnidadKiwi({ T, x, y, k = 1, firme = 1 }) {
+  return <g>
+    <KiwiMitad x={x} y={y + 85 * k} s={0.9 * k} />
+    <g transform={`translate(${x} ${y}) scale(${0.28 * k})`}><Gelatina T={T} x={0} y={0} firme={firme} pina={null} /></g>
   </g>;
 }
 // Tubo de ensayo con jugo y tijeras dentro, en baño de agua.
@@ -315,20 +340,18 @@ function Gelatina10() {
       <Escena T={T} a={K.Ki} b={K.Ci}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          {<g opacity={kprog(T, K.Ki - 0.3, K.Ki + 0.2)} transform="translate(560 1010) scale(1.1) translate(-560 -900)">
-            {[200, 380, 560, 740, 920].map((x, i) => { const d = kprog(T, K.Ki + 2.6 + i * 0.15, K.Ki + 3.6 + i * 0.15); return <g key={i}>
-              <KiwiMitad x={x} y={820} s={0.9} />
-              <g transform={`translate(${x} 735) scale(0.28)`}><Gelatina T={T} x={0} y={0} firme={1 - d} pina={null} /></g></g>; })}
-            {[380, 740].map((x, i) => { const e = kprog(T, K.Ki + 4.0 + i * 0.3, K.Ki + 4.4 + i * 0.3, kEase.rebote); return <g key={i} opacity={e}>
-              <KiwiMitad x={x} y={1030} s={0.9} />
-              <g transform={`translate(${x} 945) scale(0.28)`}><Gelatina T={T} x={0} y={0} firme={1} pina={null} /></g>
-              <Marca x={x + 100} y={930} ok s={0.45} o={e} />
-              <text x={x} y={1130} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink}>{i ? 'Kosui' : 'Hort16A'}</text></g>; })}
+          {<g opacity={kprog(T, K.Ki - 0.3, K.Ki + 0.2)}>
+            {[[210, 720], [540, 720], [870, 720], [375, 975], [705, 975]].map(([x, y], i) => { const d = kprog(T, K.Ki + 2.6 + i * 0.15, K.Ki + 3.6 + i * 0.15);
+              return <UnidadKiwi key={i} T={T} x={x} y={y + Math.sin(T * 1.2 + i) * 6} k={1.45} firme={1 - d} />; })}
+            {[170, 910].map((x, i) => { const e = kprog(T, K.Ki + 4.0 + i * 0.3, K.Ki + 4.4 + i * 0.3, kEase.rebote); return <g key={i} opacity={e}>
+              <UnidadKiwi T={T} x={x} y={1235} k={1.45} firme={1} />
+              <Marca x={x + (i ? -120 : 120)} y={1110} ok s={0.6} o={e} />
+              <text x={x} y={1500} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>{i ? 'Kosui' : 'Hort16A'}</text></g>; })}
           </g>}
         </SvgCapa>
         <TarjetaEstudio T={T} at={K.Ki + 0.2} until={K.Ki + 2.2} anio="2002" quien="Nishiyama · Japón" revista="13 variedades de kiwi · gelatina" x={540} y={330} />
-        <Chip T={T} at={K.Ki + 2.8} until={K.Ci - 0.3} texto="la mayoría de 13: gelatina deshecha" x={540} y={1420} tam={36} borde={GEL} />
-        <Etq T={T} at={K.Ki + 3.2} until={K.Ci - 0.3} x={1040} y={640} texto="actinidina" lado="izq" tam={32} color={KC.ink} />
+        <Chip T={T} at={K.Ki + 2.8} until={K.Ci - 0.3} texto="la mayoría de 13: gelatina deshecha" x={540} y={330} tam={36} borde={GEL} />
+        <Etq T={T} at={K.Ki + 3.2} until={K.Ci - 0.3} x={1040} y={560} texto="actinidina" lado="izq" tam={32} color={KC.ink} />
       </Escena>
       {/* 9 · cierre: la gelatina del inicio, ya explicada */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>

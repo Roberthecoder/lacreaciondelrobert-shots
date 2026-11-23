@@ -5,6 +5,19 @@
 const VD = { blanco:'#f6f0e4', sombra:'#dccdb3', lam:'#b9897a', lam2:'#8a5a4c', carne:'#fbf6ec', madera:'#7a5230', madera2:'#5a3a1f',
   uv:'#b05cff', uv2:'#e2b8ff', sol:'#ffd23a', foco:'#fff36b', salmon:'#ff8a5c', sangre:'#d7263d', metal:'#c9d1d9' };
 
+// Volumen (pase de belleza): degradados del mismo tono, luz arriba a la izquierda.
+function VdDefs() {
+  const rg = (id, a, b, c) => <radialGradient id={id} cx="0.35" cy="0.28" r="0.85"><stop offset="0" stopColor={a} /><stop offset="0.55" stopColor={b} /><stop offset="1" stopColor={c} /></radialGradient>;
+  return <defs>
+    {rg('vd-somb', '#ffffff', VD.blanco, '#cdbd9f')}
+    {rg('vd-carne', '#fffdf7', VD.carne, '#d9cbb0')}
+    {rg('vd-piel', '#f6c9a6', '#e7a87e', '#b97a52')}
+    {rg('vd-salmon', '#ffb08a', VD.salmon, '#d9603a')}
+    {rg('vd-lam', '#d3a597', VD.lam, '#7e5246')}
+    <linearGradient id="vd-madera" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#9a6c45" /><stop offset="1" stopColor={VD.madera2} /></linearGradient>
+    <linearGradient id="vd-brillo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fff" stopOpacity="0.35" /><stop offset="0.5" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.22" /></linearGradient>
+  </defs>;
+}
 // Champiñón (Agaricus bisporus) de perfil: sombrero blanco redondo, pie corto y grueso, anillo, laminillas rosado-cafés.
 // focos 0..1 = puntos de vitamina D que se encienden en el sombrero.
 function Champi({ T = 0, x, y, s = 1, crece = 1, focos = 0, rot = 0 }) {
@@ -12,11 +25,13 @@ function Champi({ T = 0, x, y, s = 1, crece = 1, focos = 0, rot = 0 }) {
   const c = kEase.sale(kclamp(crece, 0, 1)), r = 150 * (0.4 + 0.6 * c), h = 130 * c;
   const PTS = [[-0.55, -0.55], [0.1, -0.85], [0.6, -0.5], [-0.15, -0.35], [0.35, -0.95], [-0.75, -0.25], [0.78, -0.2], [-0.35, -0.85]];
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
+    <VdDefs />
     <ellipse cx={0} cy={4} rx={r * 0.9} ry={16} fill="rgba(0,0,0,.18)" />
-    <path d={`M -38 0 C -36 ${-h * 0.5} -32 ${-h * 0.8} -30 ${-h} L 30 ${-h} C 32 ${-h * 0.8} 36 ${-h * 0.5} 38 0 Z`} fill={VD.carne} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <path d={`M -38 0 C -36 ${-h * 0.5} -32 ${-h * 0.8} -30 ${-h} L 30 ${-h} C 32 ${-h * 0.8} 36 ${-h * 0.5} 38 0 Z`} fill="url(#vd-carne)" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     <path d={`M -36 ${-h * 0.7} Q 0 ${-h * 0.58} 36 ${-h * 0.7} L 40 ${-h * 0.6} Q 0 ${-h * 0.48} -40 ${-h * 0.6} Z`} fill="#fffaf0" stroke={KC.ink} strokeWidth={4} />
-    <path d={`M ${-r * 0.92} ${-h - 6} Q 0 ${-h + r * 0.22} ${r * 0.92} ${-h - 6}`} fill={VD.lam} stroke={KC.ink} strokeWidth={5} />
-    <path d={`M ${-r} ${-h - 4} C ${-r} ${-h - r * 1.05} ${r} ${-h - r * 1.05} ${r} ${-h - 4} Q 0 ${-h + r * 0.06} ${-r} ${-h - 4} Z`} fill={VD.blanco} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <path d={`M ${-r * 0.92} ${-h - 6} Q 0 ${-h + r * 0.22} ${r * 0.92} ${-h - 6}`} fill="url(#vd-lam)" stroke={KC.ink} strokeWidth={5} />
+    {[-0.7, -0.45, -0.2, 0.05, 0.3, 0.55].map((u, i) => <line key={i} x1={u * r} y1={-h - 4} x2={u * r * 0.6} y2={-h + r * 0.06} stroke={VD.lam2} strokeWidth={2.5} opacity={0.6} />)}
+    <path d={`M ${-r} ${-h - 4} C ${-r} ${-h - r * 1.05} ${r} ${-h - r * 1.05} ${r} ${-h - 4} Q 0 ${-h + r * 0.06} ${-r} ${-h - 4} Z`} fill="url(#vd-somb)" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     <path d={`M ${-r * 0.6} ${-h - r * 0.62} Q ${-r * 0.15} ${-h - r * 0.8} ${r * 0.25} ${-h - r * 0.7}`} stroke="#fff" strokeWidth={12} fill="none" strokeLinecap="round" opacity=".8" />
     {focos > 0 && PTS.map(([u, v], i) => { const k = kprog(focos, i / PTS.length, (i + 1) / PTS.length, kEase.rebote); return k > 0 ? <g key={i} transform={`translate(${u * r} ${-h - 4 + v * r * 0.78}) scale(${k})`}>
       <circle r={22 + 4 * Math.sin(T * 5 + i)} fill={VD.foco} opacity=".45" />
@@ -27,8 +42,9 @@ function Champi({ T = 0, x, y, s = 1, crece = 1, focos = 0, rot = 0 }) {
 // Rebanada vertical de champiñón (vista de frente, acostada al sol). brillo 0..1 = vitamina D que aparece.
 function Rebanada({ T = 0, x, y, s = 1, rot = 0, brillo = 0, seed = 1 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
+    <VdDefs />
     {brillo > 0 && <ellipse cx={0} cy={-40} rx={110} ry={90} fill={VD.foco} opacity={0.35 * brillo + 0.06 * Math.sin(T * 5 + seed)} />}
-    <path d="M -95 -40 C -95 -130 95 -130 95 -40 Q 95 -22 70 -22 L 26 -22 L 30 60 Q 0 70 -30 60 L -26 -22 L -70 -22 Q -95 -22 -95 -40 Z" fill={VD.carne} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <path d="M -95 -40 C -95 -130 95 -130 95 -40 Q 95 -22 70 -22 L 26 -22 L 30 60 Q 0 70 -30 60 L -26 -22 L -70 -22 Q -95 -22 -95 -40 Z" fill="url(#vd-carne)" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     <path d="M -86 -34 Q -60 -40 -28 -34 L -28 -24 L -70 -24 Q -84 -24 -86 -34 Z M 86 -34 Q 60 -40 28 -34 L 28 -24 L 70 -24 Q 84 -24 86 -34 Z" fill={VD.lam2} />
     <path d="M -70 -80 Q -10 -112 50 -86" stroke="#efe4cf" strokeWidth={8} fill="none" strokeLinecap="round" />
     {brillo > 0.2 && [[-40, -70], [20, -78], [55, -52], [0, 20]].map(([u, v], i) => { const k = kprog(brillo, 0.2 + i * 0.18, 0.4 + i * 0.18, kEase.rebote); return k > 0 ? <g key={i} transform={`translate(${u} ${v}) scale(${k})`}>
@@ -57,8 +73,9 @@ function RayoUV({ T, x1, y1, x2, y2, p = 1, color = VD.uv, ancho = 9, fase = 0 }
 // Tabla de picar.
 function Tabla({ x, y, w = 760, h = 150 }) {
   return <g transform={`translate(${x} ${y})`}>
+    <VdDefs />
     <rect x={-w / 2 - 70} y={-h / 2 + 30} width={110} height={70} rx={30} fill={VD.madera2} stroke={KC.ink} strokeWidth={7} />
-    <rect x={-w / 2} y={-h / 2} width={w} height={h} rx={34} fill={VD.madera} stroke={KC.ink} strokeWidth={8} />
+    <rect x={-w / 2} y={-h / 2} width={w} height={h} rx={34} fill="url(#vd-madera)" stroke={KC.ink} strokeWidth={8} />
     {[0.25, 0.5, 0.75].map((u, i) => <path key={i} d={`M ${-w / 2 + 40} ${-h / 2 + h * u} Q 0 ${-h / 2 + h * u + 10} ${w / 2 - 40} ${-h / 2 + h * u}`} stroke={VD.madera2} strokeWidth={4} fill="none" />)}
   </g>;
 }
@@ -115,7 +132,9 @@ function Charola({ T, x, y, brillo = 0, n = 6 }) {
 // Filete de salmón.
 function Salmon({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -170 -40 Q -60 -95 150 -60 Q 190 -20 160 40 Q -20 90 -170 50 Q -200 5 -170 -40 Z" fill={VD.salmon} stroke={KC.ink} strokeWidth={7} />
+    <VdDefs />
+    <ellipse cx={0} cy={70} rx={180} ry={16} fill="#000" opacity={0.3} />
+    <path d="M -170 -40 Q -60 -95 150 -60 Q 190 -20 160 40 Q -20 90 -170 50 Q -200 5 -170 -40 Z" fill="url(#vd-salmon)" stroke={KC.ink} strokeWidth={7} />
     {[-110, -50, 10, 70, 125].map((dx, i) => <path key={i} d={`M ${dx} -60 Q ${dx + 25} 0 ${dx} 55`} stroke="#ffd6c2" strokeWidth={7} fill="none" strokeLinecap="round" />)}
   </g>;
 }
@@ -132,7 +151,9 @@ function Tubo({ x, y, nivel = 0, color = VD.sangre }) {
 // Refri con calendario de 7 días que se van tachando (dias 0..7).
 function Refri({ x, y, dias = 0 }) {
   return <g transform={`translate(${x} ${y})`}>
+    <VdDefs />
     <rect x={-210} y={-380} width={420} height={760} rx={36} fill="#27394d" stroke={KC.ink} strokeWidth={9} />
+    <rect x={-210} y={-380} width={420} height={760} rx={36} fill="url(#vd-brillo)" />
     <line x1={-210} y1={-120} x2={210} y2={-120} stroke={KC.ink} strokeWidth={7} />
     <rect x={150} y={-330} width={22} height={160} rx={10} fill={VD.metal} stroke={KC.ink} strokeWidth={5} />
     <rect x={150} y={-60} width={22} height={200} rx={10} fill={VD.metal} stroke={KC.ink} strokeWidth={5} />
@@ -147,7 +168,8 @@ function Refri({ x, y, dias = 0 }) {
 // Brazo (piel) al sol, de lado.
 function Brazo({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -230 40 Q -120 -20 60 -10 Q 140 -40 200 -30 Q 250 -20 240 20 Q 230 50 180 50 Q 110 70 60 60 Q -100 90 -230 110 Z" fill="#e7a87e" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <VdDefs />
+    <path d="M -230 40 Q -120 -20 60 -10 Q 140 -40 200 -30 Q 250 -20 240 20 Q 230 50 180 50 Q 110 70 60 60 Q -100 90 -230 110 Z" fill="url(#vd-piel)" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     <path d="M -160 30 Q -60 0 40 10" stroke="#f6c9a6" strokeWidth={10} fill="none" strokeLinecap="round" />
   </g>;
 }
@@ -170,6 +192,9 @@ function VitaminaDShot() {
           <Sol T={T} x={190} y={400} r={95} o={kprog(T, K.G, K.G + 0.25)} />
           <RayoUV T={T} x1={262} y1={485} x2={400} y2={690} p={rayo0} color="#ff9d00" fase={0} />
           <RayoUV T={T} x1={300} y1={430} x2={560} y2={620} p={rayo0} color="#ff9d00" fase={2} />
+          {/* belleza: la tabla descansa en una mesa de madera oscura que llena el tercio de abajo */}
+          <rect x={-60} y={1300} width={KW + 120} height={700} fill="#24170d" stroke="#5a4028" strokeWidth={5} />
+          {[1420, 1560, 1720, 1870].map((ty, i) => <path key={i} d={`M -60 ${ty} Q 320 ${ty - 14 + i * 7} 600 ${ty} T 1140 ${ty + 5}`} stroke="#160d06" strokeWidth={6} fill="none" />)}
           <Tabla x={540} y={1250} w={1120} h={200} />
           <Champi T={T} x={540} y={1235} s={2.6} focos={kprog(T, K.G + 0.4, K.G + 2.6)} rot={mece(T, 2, 0.4) * 1.5} />
         </>)}
@@ -232,7 +257,8 @@ function VitaminaDShot() {
       {/* 6 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<><Champi T={T} x={360} y={1330} s={1.6} /><Interrogacion T={T} x={770} y={900} tam={460} /></>)}
+        {/* belleza: el champiñón va a la derecha y más grande (×1.19, barra igual) para no encimarse con la rebanada que queda detrás */}
+        {fsvg(<><Champi T={T} x={680} y={1400} s={1.9} /><Interrogacion T={T} x={300} y={1180} tam={460} /></>)}
       </Escena>
       {/* 7–8 · el experimento de 2015: rebanadas al sol de mediodía, 15 minutos */}
       <Escena T={T} a={K.Es} b={K.Sa} zoom={0.04}>
@@ -275,6 +301,12 @@ function VitaminaDShot() {
           <text x={570} y={1160} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>se estanca</text>
           <text x={860} y={1160} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>2 h más</text>
           <text x={110} y={680} style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} transform="rotate(-90 110 680)" textAnchor="end">vitamina D2</text>
+          {/* belleza: el sujeto sigue a cuadro: rebanadas al sol bajo la gráfica, su brillo sigue la curva (sube, se estanca, baja) */}
+          {(() => { const u = kprog(T, K.H + 0.2, K.H + 2.8); const v = u < 0.25 ? u / 0.25 : u < 0.8 ? 1 : 1 - (u - 0.8) / 0.2 * 0.55;
+            return <g opacity={kprog(T, K.H, K.H + 0.5)}>
+              <Sol T={T} x={900} y={440} r={58} />
+              {[0, 1, 2].map((i) => <Rebanada key={i} T={T} x={300 + i * 240} y={1410 + (i % 2) * 20} s={1.05} rot={(i - 1) * 8} brillo={v} seed={i} />)}
+            </g>; })()}
         </>)}
       </Escena>
       {/* 11 · tu cuerpo la aprovecha: estudio pequeño de 2013 */}
@@ -310,6 +342,8 @@ function VitaminaDShot() {
           <Sol T={T} x={190} y={400} r={95} />
           <RayoUV T={T} x1={262} y1={485} x2={300} y2={960} p={kprog(T, K.C + 0.2, K.C + 0.8)} color="#ff9d00" />
           <RayoUV T={T} x1={300} y1={430} x2={640} y2={960} p={kprog(T, K.C + 0.3, K.C + 0.9)} color="#ff9d00" fase={2} />
+          <rect x={-60} y={1300} width={KW + 120} height={700} fill="#24170d" stroke="#5a4028" strokeWidth={5} />
+          {[1420, 1560, 1720, 1870].map((ty, i) => <path key={i} d={`M -60 ${ty} Q 320 ${ty - 14 + i * 7} 600 ${ty} T 1140 ${ty + 5}`} stroke="#160d06" strokeWidth={6} fill="none" />)}
           <Tabla x={540} y={1250} w={1120} h={200} />
           {[0, 1, 2].map((i) => <Rebanada key={i} T={T} x={215 + i * 325} y={1180 + (i % 2) * 16} s={1.45} rot={(i - 1) * 7} brillo={kprog(T, K.C + 0.6 + i * 0.25, K.C + 1.6 + i * 0.25)} seed={i} />)}
         </>)}
@@ -341,7 +375,7 @@ function VitaminaDShot() {
       <Chip T={T} at={K.R + 2.8} until={K.Sa - 0.3} texto="17.6 µg de vitamina D2 por 100 g de champiñón fresco" x={540} y={345} tam={27} borde={KC.yellow} />
       <Etq T={T} at={K.Sa + 0.6} until={K.H - 0.3} x={70} y={990} texto="salmón: comparable" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Sa + 2.8} until={K.H - 0.3} texto="adulto de 19 a 70 años: 15 µg al día" x={540} y={430} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Sa + 3.2} until={K.H - 0.3} x={60} y={520} texto="mayores de 70: 20 µg" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.Sa + 3.2} until={K.H - 0.3} x={60} y={520} texto="mayores de 70: 20 µg" tam={28} color={KC.ink} />
       <Chip T={T} at={K.H + 1.4} until={K.Cu - 0.2} texto="más sol ≠ más vitamina" x={420} y={470} tam={38} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.Cu + 0.2} until={K.Cu + 2.8} anio="2013" quien="25 adultos, 3 meses" revista="cápsulas de polvo de champiñón · Keegan et al., 2013" x={540} y={330} />
       <Chip T={T} at={K.Cu + 5.2} until={K.Tr - 0.3} texto="vitamina D en sangre: igual" x={540} y={1440} tam={34} borde={KC.ink} />
@@ -358,7 +392,7 @@ function VitaminaDShot() {
       <BarraEscala T={T} at={K.E + 2.5} until={K.L} texto="0.5 nm" largo={219} />
       <BarraEscala T={T} at={K.L} until={K.Pi} texto="0.5 nm" largo={281} />
       <BarraEscala T={T} at={K.Pi} until={K.P} texto="5 cm" largo={350} color={KC.ink} />
-      <BarraEscala T={T} at={K.P} until={K.Es} texto="2 cm" largo={178} color={KC.ink} />
+      <BarraEscala T={T} at={K.P} until={K.Es} texto="2 cm" largo={211} color={KC.ink} />
       <BarraEscala T={T} at={K.Es} until={K.Sa} texto="5 cm" largo={290} color={KC.ink} />
       <BarraEscala T={T} at={K.Sa} until={K.H} texto="5 cm" largo={143} color={KC.ink} />
       <BarraEscala T={T} at={K.Cu + 2.8} until={K.Tr} texto="5 cm" largo={260} color={KC.ink} />

@@ -83,7 +83,8 @@ function MonarcaShot() {
       {/* 2 · el viaje en el mapa */}
       <Escena T={T} a={K.V} b={K.R}>
         <FondoLunares color={KC.cyan} />
-        {svg(<MapaMexico x={40} y={700} ancho={1000} conCA={false}>
+        {/* belleza: el mapa baja 120 px al centro del cuadro */}
+        {svg(<MapaMexico x={40} y={820} ancho={1000} conCA={false}>
           <path d={`M ${mx + 260} -400 Q ${mx + 120} ${my - 300} ${mx} ${my}`} stroke={KC.orange} strokeWidth={10} fill="none" strokeDasharray="22 14" opacity={viaje > 0 ? 1 : 0} />
           {Array.from({ length: 6 }, (_, k) => { const u = kclamp(viaje * 1.3 - k * 0.06, 0, 1), t = u; const px = (1 - t) * (1 - t) * (mx + 260) + 2 * (1 - t) * t * (mx + 120) + t * t * mx, py = (1 - t) * (1 - t) * -400 + 2 * (1 - t) * t * (my - 300) + t * t * my;
             return <Monarca key={k} x={px + k * 14} y={py - k * 10} s={0.45} ang={160} T={T} fase={k} />; })}
@@ -94,21 +95,21 @@ function MonarcaShot() {
       {/* 3 · racimos en el oyamel */}
       <Escena T={T} a={K.R} b={K.Ci}>
         <FondoLunares color={KC.mint} />
-        {svg(<Oyamel x={540} y={700} s={1.3} T={T} lleno={kprog(T, K.R + 0.2, K.R + 2.5)} />)}
+        {svg(<Oyamel x={540} y={760} s={1.3} T={T} lleno={kprog(T, K.R + 0.2, K.R + 2.5)} />)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 4–5 · la cifra y el récord de 1996-1997 */}
       <Escena T={T} a={K.Ci} b={K.P}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {/* modo cine: no es lámina; el oyamel con sus monarcas sigue bajo la cifra y, atenuado, bajo las barras */}
-        {svg(<g opacity={klerp(0.85, 0.4, kprog(T, K.A - 0.3, K.A + 0.4))}><Oyamel x={540} y={1110} s={0.8} T={T} lleno={1} /></g>)}
+        {svg(<g opacity={klerp(0.85, 0.4, kprog(T, K.A - 0.3, K.A + 0.4))}><Oyamel x={540} y={1010} s={1.12} T={T} lleno={1} /></g>)}{/* belleza: el oyamel crece (0.8 → 1.12) */}
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.Al} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         {/* encuadre: el signo y la monarca crecen y bajan al centro del cuadro */}
         {svg(<><text x={330} y={1200} textAnchor="middle" style={{ font:`400 720px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={16} transform={`rotate(${Math.sin(T * 3) * 6} 330 950)`}>?</text>
-          <Monarca x={560} y={1330} s={3.4} T={T} ang={-10} /></>)}
+          <Monarca x={570} y={1160} s={4.6} T={T} ang={-10} /></>)}{/* belleza: la monarca crece (3.4 → 4.6) al centro */}
       </Escena>
       {/* 7 · algodoncillo y herbicida */}
       <Escena T={T} a={K.Al} b={K.Cl}>
@@ -121,14 +122,14 @@ function MonarcaShot() {
       {/* 8 · clima, tala, incendio y sequía */}
       <Escena T={T} a={K.Cl} b={K.E}>
         <FondoLunares color={KC.orange} />
-        {svg(<g transform="translate(0 150)">
+        {svg(<g transform="translate(0 320)">{/* belleza: la fila de árboles baja al centro (antes 150) */}
           {[180, 380, 580, 780, 940].map((tx, i) => { const cort = i === 1 || i === 3, quem = i === 4;
             return <g key={i} transform={`translate(${tx} 1000) scale(1.4)`}>
               {cort ? <><rect x={-22} y={-60} width={44} height={60} fill="#6b4a2e" stroke={KC.ink} strokeWidth={5} /><ellipse cx={0} cy={-60} rx={22} ry={8} fill="#d8b98a" stroke={KC.ink} strokeWidth={4} /></>
                 : <><rect x={-16} y={-120} width={32} height={120} fill="#6b4a2e" stroke={KC.ink} strokeWidth={5} /><path d="M -110 -100 L 0 -360 L 110 -100 Z" fill={quem ? '#3b2b22' : '#2f6b3f'} stroke={KC.ink} strokeWidth={5} />
                   {quem && [0, 1, 2].map((k) => <path key={k} d={`M ${-40 + k * 40} -100 q 20 -50 0 -90 q -20 -40 10 -80`} stroke={KC.red} strokeWidth={10} fill="none" opacity={0.6 + 0.4 * Math.sin(T * 8 + k)} />)}</>}
             </g>; })}
-          <g transform="translate(1010 370)"><rect x={-24} y={-150} width={48} height={260} rx={24} fill="#fff" stroke={KC.ink} strokeWidth={6} /><circle cy={130} r={44} fill={KC.red} stroke={KC.ink} strokeWidth={6} /><rect x={-10} y={-120 + 160 * (1 - kprog(T, K.Cl + 0.2, K.Cl + 1.6))} width={20} height={250 - 160 * (1 - kprog(T, K.Cl + 0.2, K.Cl + 1.6))} fill={KC.red} /></g>
+          <g transform="translate(985 230)"><rect x={-24} y={-150} width={48} height={260} rx={24} fill="#fff" stroke={KC.ink} strokeWidth={6} /><circle cy={130} r={44} fill={KC.red} stroke={KC.ink} strokeWidth={6} /><rect x={-10} y={-120 + 160 * (1 - kprog(T, K.Cl + 0.2, K.Cl + 1.6))} width={20} height={250 - 160 * (1 - kprog(T, K.Cl + 0.2, K.Cl + 1.6))} fill={KC.red} /></g>
         </g>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
@@ -141,7 +142,7 @@ function MonarcaShot() {
       <Escena T={T} a={K.M} b={K.C}>
         <FondoLunares color={KC.mint} />
         {/* modo cine: no es lámina; el oyamel del monitoreo sigue en pantalla, atenuado, bajo el medidor */}
-        {svg(<g opacity={0.5}><Oyamel x={540} y={1150} s={0.72} T={T} lleno={1} /></g>)}
+        {svg(<g opacity={0.7}><Oyamel x={540} y={1090} s={1.0} T={T} lleno={1} /></g>)}{/* belleza: el oyamel crece (0.72 → 1.0) */}
       </Escena>
       {/* 11 · cierre: 25 canchas de 1996-1997, solo 4 llenas hoy */}
       <Escena T={T} a={K.C} b={FIN}>
@@ -155,11 +156,11 @@ function MonarcaShot() {
       <Chip T={T} at={K.G + 0.4} until={K.V - 0.2} texto="≈ 4 canchas de fútbol" y={430} x={360} tam={40} borde={KC.orange} />
       <Etq T={T} at={K.G + 2.4} until={K.V - 0.2} x={420} y={1440} texto="cancha FIFA: 105 × 68 m" tam={26} color={KC.ink} />
       <Chip T={T} at={K.V + 0.4} until={K.R - 0.2} texto="del sur de Canadá y EE. UU." y={420} x={620} tam={32} borde={KC.orange} />
-      <Etq T={T} at={K.V + 3.6} until={K.R - 0.2} x={mx + 40 + 40} y={my * 1 + 700 - 2} texto="Michoacán y Edomex" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.R + 0.4} until={K.Ci - 0.2} x={380} y={1470} texto="Danaus plexippus en un oyamel" it tam={28} color={KC.ink} />
+      <Etq T={T} at={K.V + 3.6} until={K.R - 0.2} x={mx + 40 - 24} y={my * 1 + 820 + 110} texto="Michoacán y Edomex" lado="izq" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.R + 0.4} until={K.Ci - 0.2} x={40} y={520} texto="Danaus plexippus en un oyamel" it tam={26} color={KC.ink} />
       <NumeroGigante T={T} at={K.R + 1.2} until={K.Ci - 0.2} valor={20} dur={1.0} prefijo="≈ " sufijo=" millones" etiqueta="por hectárea" y={430} x={640} tam={80} color={KC.orange} />
       <NumeroGigante T={T} at={K.Ci + 0.2} until={K.A - 0.2} valor={2.93} dec={2} dur={1.0} sufijo=" ha" etiqueta="invierno 2025-2026" y={640} tam={200} color={KC.orange} />
-      <Chip T={T} at={K.Ci + 2.2} until={K.A - 0.2} texto="+64 % (antes: 1.79 ha)" y={900} tam={44} borde={KC.leaf} />
+      <Chip T={T} at={K.Ci + 2.2} until={K.A - 0.2} texto="+64 % (antes: 1.79 ha)" y={780} tam={44} borde={KC.leaf} />
       <Comparativa T={T} at={K.A + 0.1} until={K.P - 0.1} max={18.19} y={620} alto={640}
         izq={{ valor: 18.19, texto: '18.19 ha', etiqueta: '1996-1997', color: KC.orange }} der={{ valor: 2.93, texto: '2.93 ha', etiqueta: '2025-2026', color: KC.yellow }} />
       <Etq T={T} at={K.Al + 0.6} until={K.Cl - 0.2} x={520} y={1450} texto="algodoncillo (Asclepias)" tam={28} color={KC.ink} />
@@ -168,7 +169,7 @@ function MonarcaShot() {
       <Chip T={T} at={K.Cl + 3.6} until={K.E - 0.2} texto="tala · incendio · sequía" y={1440} tam={40} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.M - 0.3} anio="2004" quien="CONANP + WWF" revista="monitoreo cada invierno, colonia por colonia" x={640} y={400} />
       <Medidor T={T} at={K.M + 0.3} until={K.C - 0.2} valor={(t) => klerp(0, 2.93 / 6, kprog(t, K.M + 0.4, K.M + 1.6, kEase.sale))} etiqueta="hoy: 2.93 ha" texto={() => 'meta ≈ 6 ha'} y={760} color={KC.orange} />
-      <Chip T={T} at={K.M + 2.0} until={K.C - 0.2} texto="el doble de hoy" y={960} tam={44} borde={KC.orange} />
+      <Chip T={T} at={K.M + 2.0} until={K.C - 0.2} texto="el doble de hoy" y={870} tam={44} borde={KC.orange} />
       <Chip T={T} at={K.C + 0.3} until={K.Ou - 0.1} texto="1996-97: ≈ 25 canchas · hoy: ≈ 4" y={440} x={440} tam={28} borde={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

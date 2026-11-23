@@ -325,10 +325,10 @@ function ArrierasShot() {
       {/* 12 · la futura reina se lleva un pedacito del hongo en la bolsa infrabucal */}
       <Escena T={T} a={K.R} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 130)">
           <rect x={-60} y={1160} width={KW + 120} height={900} fill={AR.tierra} stroke={KC.ink} strokeWidth={8} />
           <Hormiga T={T} x={470} y={1050} s={2.7} alas={0.4} gaster={1.45} cabeza={1.1} paso={0.15} fase={2} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 13 · cierre: la misma hilera; debajo, el jardín que esas hojas alimentan */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
@@ -344,7 +344,7 @@ function ArrierasShot() {
           <RedHifas T={T2} x={r * 0.25} y={r * 1.1} g={klerp(0.35, 0.95, v)} seed={8} n={220} escala={0.3} color={KC.mint} ancho={3} />
           {Array.from({ length: 10 }, (_, i) => { const u = ((T2 * 0.6 + i / 10) % 1); const g = krng(i + 3); return <circle key={i} cx={r * (0.5 + u * 0.9)} cy={r * (0.4 + g() * 1.2)} r={6 + u * 10} fill="#9fe6ff" opacity={(1 - u) * 0.8 * kprog(T2, K.Ba + 1.8, K.Ba + 2.2)} />; })}
         </svg>; }} />
-      <Lupa T={T} at={K.R + 0.8} until={K.C - 0.2} x={380} y={560} r={230} fx={738} fy={1031} tinte={KC.yellow} etiqueta="POR DENTRO · bolsa infrabucal" interior={(T2, r) => {
+      <Lupa T={T} at={K.R + 0.8} until={K.C - 0.2} x={380} y={680} r={230} fx={738} fy={1161} tinte={KC.yellow} etiqueta="POR DENTRO · bolsa infrabucal" interior={(T2, r) => {
         const k = kprog(T2, K.R + 1.3, K.R + 2.3, kEase.rebote);
         return <svg width={r * 2} height={r * 2}>
           <path d={`M ${r * 0.1} ${r * 0.7} Q ${r * 0.6} ${r * 0.15} ${r * 1.5} ${r * 0.55} Q ${r * 1.9} ${r * 0.9} ${r * 1.7} ${r * 1.35} Q ${r} ${r * 1.95} ${r * 0.2} ${r * 1.5} Z`} fill="#c25f2c" stroke="#f3e6c4" strokeWidth={5} opacity=".9" />
@@ -380,7 +380,7 @@ function ArrierasShot() {
       <Rotulo T={T} at={K.Ch + 1.0} until={K.R - 0.2} x={40} y={320} partes={[['chicatana', false]]} tam={34} color={KC.ink} linea={false} />
       <Rotulo T={T} at={K.Ch + 1.4} until={K.R - 0.2} x={40} y={370} partes={[['Atta mexicana', true], [' (con alas)', false]]} tam={30} color={KC.ink} linea={false} />
       <Chip T={T} at={K.Ch + 2.6} until={K.R - 0.2} texto="en salsa" x={800} y={810} tam={34} borde={KC.red} />
-      <Rotulo T={T} at={K.R + 0.3} until={K.C - 0.2} x={60} y={1320} partes={[['futura reina', false]]} tam={32} linea={false} />
+      <Rotulo T={T} at={K.R + 0.3} until={K.C - 0.2} x={60} y={1395} partes={[['futura reina', false]]} tam={32} linea={false} />
       <Chip T={T} at={K.C + 1.8} until={K.Ou} texto="la hoja = abono" x={330} y={400} tam={40} borde={KC.leaf} />
 
       {/* barras de escala */}

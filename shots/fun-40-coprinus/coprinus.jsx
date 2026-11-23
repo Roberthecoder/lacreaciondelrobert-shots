@@ -21,10 +21,17 @@ function Barbuda({ T = 0, x, y, s = 1, crece = 1, tinta = 0, rot = 0, charco = 0
   const r = krng(seed * 7 + 3), esc = [];
   for (let fy = yt + 34; fy < ys - banda - 22; fy += 30) for (let k = 0; k < 4; k++) { const fx = -w / 2 + 16 + ((k + (Math.round((fy - yt) / 30) % 2) * 0.5) * (w - 30)) / 4 + (r() - 0.5) * 6; if (fx < w / 2 - 10) esc.push([fx, fy]); }
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
-    {charco > 0 && <ellipse cx={8} cy={4} rx={30 + 110 * charco} ry={8 + 22 * charco} fill={CP.tinta} stroke={KC.ink} strokeWidth={4} />}
-    <path d={`M -16 0 Q -20 -10 -13 -24 L -10 ${yt + 40} L 10 ${yt + 40} L 13 -24 Q 20 -10 16 0 Z`} fill={CP.blanco} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
+    {/* pase de belleza: volumen (luz arriba-izquierda) en sombrero y pie; charco de tinta con brillo, sin borde claro */}
+    <defs>
+      <linearGradient id="cp-cap" x1="0" y1="0" x2="1" y2="0.35"><stop offset="0" stopColor="#ffffff" /><stop offset="0.5" stopColor={CP.blanco} /><stop offset="1" stopColor={mixHex(CP.blanco, '#7a6e5c', 0.42)} /></linearGradient>
+      <linearGradient id="cp-pie" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#ffffff" /><stop offset="0.45" stopColor={CP.blanco} /><stop offset="1" stopColor={mixHex(CP.blanco, '#7a6e5c', 0.45)} /></linearGradient>
+      <radialGradient id="cp-charco" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stopColor="#3a3640" /><stop offset="1" stopColor={CP.tinta} /></radialGradient>
+    </defs>
+    {charco > 0 && <ellipse cx={8} cy={4} rx={30 + 110 * charco} ry={8 + 22 * charco} fill="url(#cp-charco)" stroke="rgba(150,160,180,.35)" strokeWidth={3} />}
+    {charco > 0 && <ellipse cx={-10 - 30 * charco} cy={-2} rx={10 + 30 * charco} ry={3 + 5 * charco} fill="#ffffff" opacity={0.18} />}
+    <path d={`M -16 0 Q -20 -10 -13 -24 L -10 ${yt + 40} L 10 ${yt + 40} L 13 -24 Q 20 -10 16 0 Z`} fill="url(#cp-pie)" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
     {H > 80 && <ellipse cx={0} cy={-H * 0.3} rx={19} ry={6} fill={CP.blanco} stroke={KC.ink} strokeWidth={4} />}
-    <path d={cap} fill={CP.blanco} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
+    <path d={cap} fill="url(#cp-cap)" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
     {ng > 0 && <rect x={-w / 2 + 3} y={ys - banda - 14} width={w - 6} height={14} fill={CP.rosa} opacity={ng} />}
     {ng > 0 && <path d={bandaP} fill={CP.tinta} stroke={KC.ink} strokeWidth={5} opacity={ng} strokeLinejoin="round" />}
     <ellipse cx={0} cy={yt + 18} rx={w * 0.32} ry={14} fill={CP.cafe} />
@@ -202,11 +209,12 @@ function CoprinusShot() {
       {/* 8 · re-gancho: ¿qué más come, además de restos de plantas? */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
+        <div style={{ position:'absolute', inset:0, background:'rgba(8,12,22,.45)' }}></div>
         {fsvg(<>
           <rect x={-20} y={CP_SUELO} width={KW + 40} height={800} fill="#2e2016" stroke={KC.ink} strokeWidth={8} />
           {[[120, 1486, -20, '#c0702a'], [380, 1492, 25, '#a9612a'], [880, 1484, -40, '#d08a3a'], [80, 1505, 10, '#8f5a2b']].map(([x, y, r, c], i) => <path key={i} d="M -60 0 Q 0 -34 60 0 Q 0 22 -60 0 Z" transform={`translate(${x} ${y}) rotate(${r})`} fill={c} stroke={KC.ink} strokeWidth={4} />)}
           <line x1={760} y1={1500} x2={1000} y2={1470} stroke="#6b4a2b" strokeWidth={12} strokeLinecap="round" />
-          <Barbuda T={T} x={680} y={CP_SUELO + 10} s={2.0} seed={8} />
+          <Barbuda T={T} x={850} y={CP_SUELO + 10} s={2.0} seed={8} />
           <Interrogacion T={T} x={260} y={1250} />
         </>)}
       </Escena>

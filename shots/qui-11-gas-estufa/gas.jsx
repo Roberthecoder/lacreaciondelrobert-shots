@@ -28,14 +28,21 @@ function MercaptanoBrilla({ T, x, y, s = 1, rot = 0, o = 1 }) {
 // Estufa de cocina (vista de frente). perilla en grados.
 function Estufa({ x, y, s = 1, perilla = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-230} y={-20} width={460} height={60} rx={10} fill="#e9edf2" stroke={KC.ink} strokeWidth={9} />
+    <defs>
+      <linearGradient id="gEstCuerpo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#ffffff" /><stop offset="0.55" stopColor="#ece7dc" /><stop offset="1" stopColor="#b9b2a4" /></linearGradient>
+      <linearGradient id="gEstCubierta" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#ffffff" /><stop offset="1" stopColor="#c3cad4" /></linearGradient>
+      <linearGradient id="gEstVidrio" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#5d6a7c" /><stop offset="1" stopColor="#262c36" /></linearGradient>
+    </defs>
+    <ellipse cx={0} cy={350} rx={250} ry={22} fill="rgba(0,0,0,.35)" />
+    <rect x={-230} y={-20} width={460} height={60} rx={10} fill="url(#gEstCubierta)" stroke={KC.ink} strokeWidth={9} />
     {[-110, 110].map((dx) => <g key={dx}><ellipse cx={dx} cy={-26} rx={70} ry={16} fill="#3a3a3a" stroke={KC.ink} strokeWidth={6} />
       <ellipse cx={dx} cy={-32} rx={36} ry={9} fill="#6d6d6d" stroke={KC.ink} strokeWidth={4} /></g>)}
-    <rect x={-220} y={40} width={440} height={300} rx={14} fill="#f6f3ec" stroke={KC.ink} strokeWidth={9} />
+    <rect x={-220} y={40} width={440} height={300} rx={14} fill="url(#gEstCuerpo)" stroke={KC.ink} strokeWidth={9} />
     {[-150, -50, 50, 150].map((dx, i) => <g key={i} transform={`translate(${dx} 72) rotate(${i === 0 ? perilla : 0})`}>
       <circle r={20} fill="#3a3a3a" stroke={KC.ink} strokeWidth={5} /><rect x={-4} y={-18} width={8} height={18} fill="#fff" /></g>)}
     <rect x={-180} y={110} width={360} height={200} rx={12} fill="#2b2f36" stroke={KC.ink} strokeWidth={7} />
-    <rect x={-150} y={135} width={300} height={140} rx={8} fill="#4a5462" />
+    <rect x={-150} y={135} width={300} height={140} rx={8} fill="url(#gEstVidrio)" />
+    <path d="M -130 145 L -70 145 L -130 230 Z" fill="rgba(255,255,255,.12)" />
     <rect x={-120} y={118} width={240} height={10} rx={5} fill="#c9ccd2" />
   </g>;
 }
@@ -44,7 +51,10 @@ function Cilindro({ x, y, s = 1, ventana, etiqueta = 'Gas LP' }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-40} y={-430} width={80} height={60} rx={10} fill="#8d97a6" stroke={KC.ink} strokeWidth={7} />
     <path d="M -70 -380 Q -70 -420 -40 -420 L 40 -420 Q 70 -420 70 -380 Z" fill="#8d97a6" stroke={KC.ink} strokeWidth={7} />
-    <rect x={-120} y={-380} width={240} height={380} rx={90} fill={CIL} stroke={KC.ink} strokeWidth={9} />
+    <defs><linearGradient id="gCilindro" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#8f9cab" /><stop offset="0.3" stopColor="#eef3f8" /><stop offset="0.55" stopColor={CIL} /><stop offset="1" stopColor="#7d8898" /></linearGradient></defs>
+    <ellipse cx={0} cy={4} rx={135} ry={16} fill="rgba(0,0,0,.35)" />
+    <rect x={-120} y={-380} width={240} height={380} rx={90} fill="url(#gCilindro)" stroke={KC.ink} strokeWidth={9} />
+    <rect x={-78} y={-340} width={16} height={290} rx={8} fill="rgba(255,255,255,.35)" />
     <rect x={-120} y={-30} width={240} height={30} fill="#8d97a6" stroke={KC.ink} strokeWidth={7} />
     {!ventana && <g><rect x={-88} y={-240} width={176} height={80} rx={12} fill={KC.orange} stroke={KC.ink} strokeWidth={6} />
       <text x={0} y={-186} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>{etiqueta}</text></g>}
@@ -168,17 +178,17 @@ function Gas() {
       <Escena T={T} a={K.Q} b={K.A} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <Cilindro x={540} y={1290} s={1.75} ventana={<g>
+          <Cilindro x={400} y={1380} s={2.0} ventana={<g>
             <clipPath id="vent"><circle cx={0} cy={-200} r={105} /></clipPath>
             <circle cx={0} cy={-200} r={110} fill={KC.noche} stroke={KC.ink} strokeWidth={8} />
             <g clipPath="url(#vent)">{flot.slice(0, 7).map(([u, v, r, t], i) => <MolG key={i} tipo={t} x={-110 + ((u * 220 + T * 30 * (i % 2 ? 1 : -1)) % 260 + 260) % 260} y={-290 + v * 180} s={0.42} rot={r + T * 25} />)}</g>
           </g>} />
-          <Olor T={T} x={540} y={520} f={0.6 * kprog(T, K.Q + 2.0, K.Q + 2.6)} n={2} color="rgba(63,191,74,.35)" alto={120} dash="4 18" />
+          <Olor T={T} x={400} y={510} f={0.6 * kprog(T, K.Q + 2.0, K.Q + 2.6)} n={2} color="rgba(63,191,74,.35)" alto={120} dash="4 18" />
           <NarizIcono x={880} y={520} s={0.85} etq="casi nada" o={kprog(T, K.Q + 2.6, K.Q + 3.1)} />
         </SvgCapa>
-        <Etq T={T} at={K.Q + 0.6} until={K.A - 0.3} x={30} y={1180} texto="propano C₃H₈" />
-        <Etq T={T} at={K.Q + 1.2} until={K.A - 0.3} x={1050} y={760} texto="butano C₄H₁₀" lado="izq" />
-        <EscalaFija texto="20 cm" largo={229} />
+        <Etq T={T} at={K.Q + 0.6} until={K.A - 0.3} x={660} y={900} texto="propano C₃H₈" tam={30} />
+        <Etq T={T} at={K.Q + 1.2} until={K.A - 0.3} x={660} y={1060} texto="butano C₄H₁₀" tam={30} />
+        <EscalaFija texto="20 cm" largo={262} />
       </Escena>
       {/* 2 · el aviso: una gota de mercaptano entre muchas moléculas */}
       <Escena T={T} a={K.A} b={K.N} zoom={0.06}>
@@ -190,11 +200,11 @@ function Gas() {
             <rect x={-26} y={-150} width={52} height={150} rx={12} fill="rgba(255,255,255,.25)" stroke="#e6edf7" strokeWidth={6} />
             <ellipse cx={0} cy={-170} rx={44} ry={30} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
           </g>
-          {T > K.A + 1.0 && <MercaptanoBrilla T={T} x={540} y={klerp(500, 880, kprog(T, K.A + 1.0, K.A + 2.0, kEase.suave))} s={1.0} rot={Math.sin(T * 2) * 12} />}
+          {T > K.A + 1.0 && <MercaptanoBrilla T={T} x={520} y={klerp(500, 880, kprog(T, K.A + 1.0, K.A + 2.0, kEase.suave))} s={1.3} rot={Math.sin(T * 2) * 12} />}
         </SvgCapa>
-        <Etq T={T} at={K.A + 2.0} until={K.N - 0.3} x={700} y={1000} texto="etil mercaptano · C₂H₆S" tam={30} color={KC.yellow} />
-        <Etq T={T} at={K.A + 2.6} until={K.N - 0.3} x={640} y={1080} texto="S = azufre" tam={30} color={KC.yellow} />
-        <EscalaFija texto="0.5 nm" largo={150} />
+        <Etq T={T} at={K.A + 2.0} until={K.N - 0.3} x={300} y={1060} texto="etil mercaptano · C₂H₆S" tam={30} color={KC.yellow} />
+        <Etq T={T} at={K.A + 2.6} until={K.N - 0.3} x={690} y={880} texto="S = azufre" tam={30} color={KC.yellow} />
+        <EscalaFija texto="0.5 nm" largo={195} />
       </Escena>
       {/* 3 · tu nariz: neuronas olfativas */}
       <Escena T={T} a={K.N} b={K.P} zoom={0.05}>
@@ -252,7 +262,7 @@ function Gas() {
         </SvgCapa>
         <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.3} anio="1937" quien="New London, Texas" revista="una escuela · gas sin olor" y={470} />
         <Etq T={T} at={K.Es + 3.8} until={K.Es + 6.6} x={900} y={1340} texto="fuga bajo el edificio" lado="izq" tam={30} />
-        <Chip T={T} at={K.Es + 5.7} until={K.Es + 6.7} texto="chispa (al parecer, una lijadora)" y={1420} tam={34} borde={KC.orange} />
+        <Chip T={T} at={K.Es + 5.7} until={K.Es + 6.7} texto="chispa (al parecer, una lijadora)" y={1420} tam={38} borde={KC.orange} />
         <NumeroGigante T={T} at={K.Es + 7.3} until={K.L - 0.3} valor={300} dur={1.2} prefijo="≈ " etiqueta="personas murieron" y={1420} tam={120} color={KC.white} />
         <EscalaFija texto="10 m" largo={180} y={1680} />
       </Escena>
@@ -260,7 +270,7 @@ function Gas() {
       <Escena T={T} a={K.L} b={K.J} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <g transform={`translate(540 800) rotate(-3) scale(${1.3 * klerp(0.6, 1, kprog(T, K.L, K.L + 0.4, kEase.rebote))})`}>
+          <g transform={`translate(540 890) rotate(-3) scale(${1.32 * klerp(0.6, 1, kprog(T, K.L, K.L + 0.4, kEase.rebote))})`}>
             <rect x={-260} y={-280} width={520} height={560} rx={14} fill={KC.paper} stroke={KC.ink} strokeWidth={9} />
             <text x={0} y={-190} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>LEY · TEXAS</text>
             <text x={0} y={-120} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="#5a524a">House Bill 1017</text>
@@ -270,8 +280,10 @@ function Gas() {
               <text y={18} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={KC.red}>1937</text>
             </g>
           </g>
-          <path d="M 120 1300 L 400 1300" stroke={GASGRIS} strokeWidth={26} strokeLinecap="round" />
-          <Olor T={T} x={420} y={1290} f={kprog(T, K.L + 1.8, K.L + 2.6)} n={2} alto={140} sep={40} />
+          <path d="M 60 1385 L 400 1385" stroke="#6f7888" strokeWidth={34} strokeLinecap="round" />
+          <path d="M 60 1378 L 400 1378" stroke={GASGRIS} strokeWidth={18} strokeLinecap="round" />
+          <path d="M 70 1372 L 390 1372" stroke="rgba(255,255,255,.4)" strokeWidth={5} strokeLinecap="round" />
+          <Olor T={T} x={425} y={1380} f={kprog(T, K.L + 1.8, K.L + 2.6)} n={2} alto={100} sep={40} />
         </SvgCapa>
         <Chip T={T} at={K.L + 0.5} until={K.J - 0.3} texto="ponerle olor al gas" y={1500} tam={44} borde={OLOR} />
       </Escena>
@@ -283,11 +295,11 @@ function Gas() {
             <rect x={60} y={600} width={960} height={570} rx={30} fill="rgba(14,15,18,.82)" stroke={KC.ink} strokeWidth={6} />
             <line x1={560} y1={yLog(1e4) + 10} x2={560} y2={yLog(1e-6)} stroke={KC.texto} strokeWidth={8} />
             {[3, 0, -3].map((p) => <g key={p}><line x1={540} x2={580} y1={yLog(Math.pow(10, p))} y2={yLog(Math.pow(10, p))} stroke={KC.texto} strokeWidth={5} />
-              <text x={600} y={yLog(Math.pow(10, p)) + 10} style={{ font:`700 26px ${KF.mono}` }} fill="rgba(246,243,236,.7)">{p === 3 ? '1,000 ppm' : p === 0 ? '1 ppm' : '0.001 ppm'}</text></g>)}
-            <MolG tipo="propano" x={200} y={yLog(1500) + 20} s={0.55} rot={T * 10} />
+              <text x={600} y={yLog(Math.pow(10, p)) + 10} style={{ font:`700 30px ${KF.mono}` }} fill="rgba(246,243,236,.85)">{p === 3 ? '1,000 ppm' : p === 0 ? '1 ppm' : '0.001 ppm'}</text></g>)}
+            <MolG tipo="propano" x={190} y={yLog(1500) + 40} s={0.72} rot={T * 10} />
             <line x1={300} x2={560} y1={yLog(1500)} y2={yLog(1500)} stroke={GASGRIS} strokeWidth={8} strokeDasharray="12 8" />
             <circle cx={560} cy={yLog(1500)} r={20} fill={GASGRIS} stroke={KC.ink} strokeWidth={5} />
-            <MercaptanoBrilla T={T} x={200} y={yLog(8.7e-6) - 20} s={0.55} />
+            <MercaptanoBrilla T={T} x={180} y={yLog(8.7e-6) - 40} s={0.72} />
             <line x1={300} x2={560} y1={yLog(8.7e-6)} y2={yLog(8.7e-6)} stroke={KC.yellow} strokeWidth={8} strokeDasharray="12 8" />
             <circle cx={560} cy={yLog(8.7e-6)} r={20} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
             <path d={`M 860 ${yLog(1500) + 30} L 860 ${klerp(yLog(1500) + 30, yLog(8.7e-6) - 30, kprog(T, K.J + 4.4, K.J + 5.6, kEase.suave))}`} stroke={KC.yellow} strokeWidth={12} strokeLinecap="round" />
@@ -321,7 +333,7 @@ function Gas() {
             <Marca x={50} y={20} ok={false} s={0.5} o={kprog(T, K.A2 + 3.1, K.A2 + 3.4)} />
           </TarjetaPaso>
         </SvgCapa>
-        <Chip T={T} at={K.A2 + 0.2} until={K.Ci - 0.2} texto="Guía oficial · Coyoacán, CDMX" y={420} tam={34} borde={KC.ink} />
+        <Chip T={T} at={K.A2 + 0.2} until={K.Ci - 0.2} texto="Guía oficial · Coyoacán, CDMX" y={420} tam={38} borde={KC.ink} />
         <Chip T={T} at={K.A2 + 3.5} until={K.Ci - 0.2} texto="y repórtalo al 911" y={1500} tam={46} borde={KC.red} />
       </Escena>
       {/* 10 · cierre: la estufa del inicio, ahora con la alarma nombrada */}
@@ -337,14 +349,14 @@ function Gas() {
           <MercaptanoBrilla T={T} x={300} y={560} s={0.6} rot={Math.sin(T) * 15} o={kprog(T, K.Ci + 0.4, K.Ci + 1.0)} />
           </g>
         </SvgCapa>
-        <Chip T={T} at={K.Ci + 0.8} until={K.Ou} texto="etil mercaptano = la alarma" y={1400} tam={40} borde={KC.yellow} />
-        <Chip T={T} at={K.Ci + 2.0} until={K.Ou} texto="tu nariz = el detector" y={1490} tam={40} borde={OLOR} />
+        <Chip T={T} at={K.Ci + 0.8} until={K.Ci + 2.9} texto="etil mercaptano = la alarma" y={1450} tam={40} borde={KC.yellow} />
+        <Chip T={T} at={K.Ci + 3.0} until={K.Ou} texto="tu nariz = el detector" y={1450} tam={40} borde={OLOR} />
       </Escena>
 
       {/* textos del gancho y del "qué es" */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.G + 2.9} texto="olor = gas" x={330} y={320} tam={50} />
-      <Chip T={T} at={K.G + 2.0} until={K.Q - 0.3} texto="🔔 alarma agregada" x={330} y={320} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.Q + 0.4} until={K.A - 0.3} texto="NOM-016-CRE-2016: «esencialmente inodoro»" y={1500} tam={30} borde={KC.ink} mono />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.3} until={K.G + 2.0} texto="olor = gas" x={330} y={320} tam={50} />
+      <Chip T={T} at={K.G + 2.15} until={K.Q - 0.3} texto="🔔 alarma agregada" x={330} y={320} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.Q + 0.4} until={K.A - 0.3} texto="NOM-016-CRE-2016: «esencialmente inodoro»" y={1500} tam={36} borde={KC.ink} mono />
       <Chip T={T} at={K.A + 0.4} until={K.N - 0.3} texto="≈ 1 por cada 50 000 (esquema)" y={1500} tam={38} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

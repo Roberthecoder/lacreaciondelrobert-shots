@@ -22,7 +22,9 @@ function Murcielago({ T, x, y, s = 1, seed = 1 }) {
 // Bota de perfil (suela en y = 0).
 function Bota({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -60 -230 L 20 -230 L 24 -80 Q 110 -70 120 -20 L 120 0 L -70 0 L -70 -40 Z" fill="#7a4a22" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <defs><linearGradient id="hp-cuero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#a0683a" /><stop offset="0.55" stopColor="#7a4a22" /><stop offset="1" stopColor="#4e2d12" /></linearGradient></defs>
+    <path d="M -60 -230 L 20 -230 L 24 -80 Q 110 -70 120 -20 L 120 0 L -70 0 L -70 -40 Z" fill="url(#hp-cuero)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <path d="M -44 -220 L -48 -60" stroke="#fff" strokeWidth={8} opacity={0.16} strokeLinecap="round" />
     <rect x={-74} y={-14} width={198} height={18} rx={6} fill="#2b1a10" stroke={KC.ink} strokeWidth={6} />
     <path d="M -50 -200 L 10 -200 M -50 -165 L 10 -165 M -50 -130 L 10 -130" stroke="#c98b2b" strokeWidth={6} />
   </g>;
@@ -44,18 +46,20 @@ function Polvo({ T, t0, x, y, esporas = 0, n = 16, seed = 7, hacia }) {
 // Cueva de frente: arco de roca, interior oscuro, murciélagos en el techo y piso con montones de guano.
 function Cueva({ T, pisa = -9, esporas = 0, hacia, seed = 3 }) {
   const baja = kprog(T, pisa - 0.35, pisa, kEase.entra || ((p) => p * p)), sube = kprog(T, pisa + 0.35, pisa + 0.9, kEase.suave);
-  const by = klerp(760, 1110, baja) - sube * 120;
+  const by = klerp(900, 1110, baja) - sube * 120;
   return <>
     <path d="M -20 1180 L -20 380 Q 120 300 300 330 Q 540 250 780 330 Q 960 300 1100 380 L 1100 1180 Z" fill={HP.roca} stroke={KC.ink} strokeWidth={10} />
     <path d="M 70 1180 L 90 620 Q 140 430 320 440 Q 540 380 760 440 Q 950 440 990 640 L 1010 1180 Z" fill={HP.cueva} stroke={KC.ink} strokeWidth={8} />
     {[[110, 520], [990, 560], [200, 420], [880, 420]].map(([cx, cy], i) => <path key={i} d={`M ${cx - 30} ${cy} L ${cx} ${cy + 60} L ${cx + 30} ${cy} Z`} fill={HP.roca2} stroke={KC.ink} strokeWidth={5} />)}
-    {[[230, 456], [300, 448], [372, 444], [450, 436], [520, 432], [592, 436]].map(([mx, my], i) => <Murcielago key={i} T={T} x={mx} y={my} s={0.8 + (i % 2) * 0.15} seed={i + seed} />)}
-    <path d="M -20 1110 Q 300 1080 540 1100 Q 800 1120 1100 1090 L 1100 1200 L -20 1200 Z" fill={HP.piso} stroke={KC.ink} strokeWidth={8} />
+    {/* belleza: murciélagos más grandes (×1.4), en dos grupos que dejan libre el paso de la bota */}
+    {[[190, 470], [270, 452], [350, 444], [630, 436], [710, 440], [790, 448], [870, 462]].map(([mx, my], i) => <Murcielago key={i} T={T} x={mx} y={my} s={1.15 + (i % 2) * 0.2} seed={i + seed} />)}
+    <path d="M -20 1110 Q 300 1080 540 1100 Q 800 1120 1100 1090 L 1100 1500 L -20 1500 Z" fill={HP.piso} stroke={KC.ink} strokeWidth={8} />
+    {Array.from({ length: 16 }, (_, k) => <circle key={'p' + k} cx={(k * 137 + 40) % 1080} cy={1160 + (k * 53) % 260} r={4 + (k % 3) * 2} fill="#3d2616" />)}
     {[[200, 1105, 120], [470, 1110, 150], [760, 1108, 130]].map(([gx, gy, w], i) => <g key={i}>
       <path d={`M ${gx - w} ${gy} Q ${gx} ${gy - 70} ${gx + w} ${gy} Z`} fill={HP.guano} stroke={KC.ink} strokeWidth={6} />
       {Array.from({ length: 6 }, (_, k) => <circle key={k} cx={gx - w * 0.6 + k * w * 0.24} cy={gy - 12 - (k % 2) * 16} r={5} fill="#4a3424" />)}
     </g>)}
-    <Bota x={470} y={by} s={1.05} />
+    <Bota x={470} y={by} s={1.4} />
     {T > pisa - 0.05 && <Polvo T={T} t0={pisa} x={480} y={1100} esporas={esporas} seed={seed + 11} hacia={hacia} />}
   </>;
 }
@@ -109,7 +113,8 @@ function Macrofago({ T, cx, cy, r = 160, seed = 2, children }) {
     const rr = r * (1 + fases.reduce((acc, f, k) => acc + Math.sin(a * (k + 2) + f + T * (0.6 + k * 0.15)) * 0.05 / (1 + k * 0.4), 0));
     return `${i ? 'L' : 'M'} ${(cx + Math.cos(a) * rr).toFixed(1)} ${(cy + Math.sin(a) * rr).toFixed(1)}`; }).join(' ') + ' Z';
   return <g>
-    <path d={d} fill={HP.macro} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" opacity=".95" />
+    <defs><radialGradient id="hp-macro" cx="0.38" cy="0.32" r="0.8"><stop offset="0" stopColor="#e2cdfa" /><stop offset="0.6" stopColor={HP.macro} /><stop offset="1" stopColor="#8a68b8" /></radialGradient></defs>
+    <path d={d} fill="url(#hp-macro)" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" opacity=".95" />
     <path d={`M ${cx - r * 0.55} ${cy + r * 0.25} Q ${cx - r * 0.6} ${cy - r * 0.35} ${cx - r * 0.15} ${cy - r * 0.3} Q ${cx - r * 0.3} ${cy} ${cx - r * 0.1} ${cy + r * 0.3} Q ${cx - r * 0.35} ${cy + r * 0.55} ${cx - r * 0.55} ${cy + r * 0.25} Z`} fill={HP.macro2} stroke={KC.ink} strokeWidth={5} />
     {children}
   </g>;
@@ -117,8 +122,11 @@ function Macrofago({ T, cx, cy, r = 160, seed = 2, children }) {
 // Persona simple (ícono). mal 0..1 = cara verdosa.
 function PersonaH({ x, y, s = 1, color = '#8fb6ff', mal = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <defs><radialGradient id="hp-esf" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stopColor="#fff" stopOpacity="0.42" /><stop offset="0.6" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.28" /></radialGradient></defs>
     <circle cx={0} cy={-62} r={26} fill={mixHex('#f2c29b', '#b9cf8e', mal)} stroke={KC.ink} strokeWidth={5} />
+    <circle cx={0} cy={-62} r={26} fill="url(#hp-esf)" />
     <path d="M -38 20 Q -40 -26 0 -28 Q 40 -26 38 20 Z" fill={color} stroke={KC.ink} strokeWidth={5} />
+    <path d="M -38 20 Q -40 -26 0 -28 Q 40 -26 38 20 Z" fill="url(#hp-esf)" />
   </g>;
 }
 // Cenote en corte: suelo con selva arriba, bóveda de piedra caliza con una boca, agua turquesa y murciélagos en el techo.
@@ -167,8 +175,8 @@ function HistoplasmaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<g transform="translate(540 1010) scale(1.25) translate(-540 -860)">
-          <HifaHisto T={T} x1={-40} y1={1000} x2={700} y2={700} p={kprog(T, K.H, K.H + 1.6)} at={K.H} micro={[[0.12, 1], [0.24, -1], [0.38, 1], [0.5, -1], [0.66, 1], [0.8, -1]]} macro={[[0.58, -1]]} />
-          <HifaHisto T={T} x1={1120} y1={830} x2={560} y2={1010} p={kprog(T, K.H + 0.4, K.H + 2.0)} at={K.H + 0.4} micro={[[0.15, -1], [0.3, 1], [0.48, -1], [0.62, 1]]} macro={[[0.85, 1]]} onda={14} />
+          <HifaHisto T={T} x1={-40} y1={1000} x2={700} y2={700} p={0.7 + 0.3 * kprog(T, K.H, K.H + 1.2)} at={K.H - 0.6} micro={[[0.12, 1], [0.24, -1], [0.38, 1], [0.5, -1], [0.66, 1], [0.8, -1]]} macro={[[0.58, -1]]} />
+          <HifaHisto T={T} x1={1120} y1={830} x2={560} y2={1010} p={0.6 + 0.4 * kprog(T, K.H, K.H + 1.4)} at={K.H - 0.4} micro={[[0.15, -1], [0.3, 1], [0.48, -1], [0.62, 1]]} macro={[[0.85, 1]]} onda={14} />
         </g>)}
       </Escena>
       {/* 3 · otra pisada: las esporas suben al aire */}
@@ -240,10 +248,12 @@ function HistoplasmaShot() {
       {/* 8 · a casi todos no les pasa nada o algo leve */}
       <Escena T={T} a={K.S} b={K.E}>
         <FondoLunares color={KC.yellow} />
+        {/* belleza: las personas están frente a la misma cueva (atenuada) y crecen ×1.25 */}
+        {fsvg(<g opacity={0.25} transform="translate(540 950) scale(1.45) translate(-540 -725)"><Cueva T={T} seed={3} /></g>)}
         {fsvg(<>
-          {Array.from({ length: 20 }, (_, i) => { const on = kprog(T, K.S + 0.2 + i * 0.05, K.S + 0.5 + i * 0.05, kEase.rebote); const x = 140 + (i % 5) * 200, y = 800 + Math.floor(i / 5) * 150;
+          {Array.from({ length: 20 }, (_, i) => { const on = kprog(T, K.S + 0.2 + i * 0.05, K.S + 0.5 + i * 0.05, kEase.rebote); const x = 140 + (i % 5) * 200, y = 790 + Math.floor(i / 5) * 185;
             const leve = i === 6 || i === 13 || i === 17; const mk = kprog(T, K.S + 1.4 + i * 0.04, K.S + 1.7 + i * 0.04, kEase.rebote);
-            return on > 0 ? <g key={i}><PersonaH x={x} y={y} s={on * 1.0} mal={leve ? 0.6 : 0} color={leve ? '#ffb38a' : '#8fb6ff'} />
+            return on > 0 ? <g key={i}><PersonaH x={x} y={y} s={on * 1.25} mal={leve ? 0.6 : 0} color={leve ? '#ffb38a' : '#8fb6ff'} />
               {mk > 0 && !leve && <path d={`M ${x + 30} ${y - 70} l 12 14 l 24 -30`} stroke="#1f9e3a" strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" transform={`translate(0 0) scale(1)`} opacity={mk} />}
               {mk > 0 && leve && <g transform={`translate(${x + 52} ${y - 80}) scale(${mk})`}>
                 {i === 6 && <><rect x={-6} y={-30} width={12} height={40} rx={6} fill="#fff" stroke={KC.ink} strokeWidth={3} /><rect x={-3} y={-12} width={6} height={22} fill={KC.red} /><circle cy={14} r={11} fill={KC.red} stroke={KC.ink} strokeWidth={3} /></>}
@@ -261,6 +271,8 @@ function HistoplasmaShot() {
       {/* 10 · 2–3 semanas después: 3 confirmados y 1 sospechoso */}
       <Escena T={T} a={K.En} b={K.Ce}>
         <FondoLunares color={KC.orange} />
+        {/* belleza: el mismo cenote sigue detrás, atenuado */}
+        {fsvg(<g opacity={0.22} transform="translate(540 1100) scale(1.3) translate(-540 -900)"><Cenote T={T} y={-130} seed={5} /></g>)}
         {fsvg(<g transform="translate(540 960) scale(1.2) translate(-540 -800)">
           {Array.from({ length: 21 }, (_, i) => { const on = kprog(T, K.En + 0.3 + i * 0.07, K.En + 0.5 + i * 0.07); const x = 253 + (i % 7) * 82, y = 560 + Math.floor(i / 7) * 82; const marca = i >= 14;
             return on > 0 ? <g key={i} opacity={on}><rect x={x} y={y} width={70} height={70} rx={10} fill={marca ? KC.red : '#fff'} stroke={KC.ink} strokeWidth={5} />
@@ -283,9 +295,10 @@ function HistoplasmaShot() {
       <Escena T={T} a={K.N} b={K.C} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
-        {fsvg(<Macrofago T={T} cx={540} cy={900} r={230} seed={4}>
+        {/* belleza: el macrófago crece ×1.45 (barra de 10 µm 150→218 px) y baja al centro */}
+        {fsvg(<g transform="translate(540 990) scale(1.45) translate(-540 -900)"><Macrofago T={T} cx={540} cy={900} r={230} seed={4}>
           {LEV.slice(0, 11).map(([dx, dy], i) => <LevaduraH key={i} x={540 + dx * 1.45} y={900 + dy * 1.45} rot={i * 37} halo={kprog(T, K.N + 0.4, K.N + 1.0)} />)}
-        </Macrofago>)}
+        </Macrofago></g>)}
       </Escena>
       {/* 13 · cierre: la misma cueva y la misma bota; el polvo lleva esporas rumbo a una nariz */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="45% 60%">
@@ -301,7 +314,7 @@ function HistoplasmaShot() {
 
       {/* textos */}
       <Chip T={T} at={K.G + 1.6} until={K.H - 0.3} texto="no es solo tierra: puede ser guano" x={540} y={400} tam={34} borde={KC.gold} />
-      <Etq T={T} at={K.G + 2.4} until={K.H - 0.3} x={640} y={640} texto="murciélagos" tam={30} />
+      <Etq T={T} at={K.G + 2.4} until={K.H - 0.3} x={380} y={760} texto="murciélagos" tam={30} />
       <Chip T={T} at={K.H + 0.3} until={K.A - 0.3} texto="AL MICROSCOPIO · moho" x={360} y={420} tam={30} borde={KC.cyan} mono />
       <Etq T={T} at={K.H + 0.9} until={K.A - 0.3} x={60} y={520} texto="Histoplasma capsulatum" it tam={38} />
       <Etq T={T} at={K.H + 1.5} until={K.A - 0.3} x={60} y={580} texto="vive en el guano" tam={28} color={KC.gold2} />
@@ -326,7 +339,7 @@ function HistoplasmaShot() {
       <Etq T={T} at={K.Ce + 0.6} until={K.Ce + 1.9} x={40} y={330} texto="otro cenote de la zona" tam={30} color={KC.ink} />
       <Chip T={T} at={K.N + 0.2} until={K.C - 0.2} texto="capsulatum = “con cápsula”" x={400} y={440} tam={34} borde={KC.gold} />
       <MitoTachado T={T} at={K.N + 0.8} tacharEn={K.N + 1.7} until={K.C - 0.2} texto="cápsula" x={300} y={560} tam={46} />
-      <Etq T={T} at={K.N + 1.9} until={K.C - 0.2} x={1040} y={1100} lado="izq" texto="solo un halo claro" tam={30} color="#e8f4ff" />
+      <Etq T={T} at={K.N + 1.9} until={K.C - 0.2} x={1040} y={1420} lado="izq" texto="solo un halo claro" tam={30} color="#e8f4ff" />
       <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="no es solo tierra: puede ser guano" x={540} y={400} tam={34} borde={KC.gold} />
 
       {/* barras de escala */}
@@ -338,7 +351,7 @@ function HistoplasmaShot() {
       <BarraEscala T={T} at={K.M} until={K.S} texto="10 µm" largo={240} />
       <BarraEscala T={T} at={K.E} until={K.En} texto="10 m" largo={234} />
       <BarraEscala T={T} at={K.Ce} until={K.N} texto="10 m" largo={234} />
-      <BarraEscala T={T} at={K.N} until={K.C} texto="10 µm" largo={150} />
+      <BarraEscala T={T} at={K.N} until={K.C} texto="10 µm" largo={218} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 m" largo={232} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

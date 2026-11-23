@@ -5,7 +5,16 @@ const PIEL = '#f1b48f', GRASA = '#f2c14e', CABEZA = '#ff3b6b', COLA = '#8f9bb8';
 
 function Mano({ x, y, s = 1, rot = 0, espejo = false, mugre = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${espejo ? -s : s}, ${s})`}>
-    <path d="M -90 160 L -100 -20 Q -105 -60 -80 -60 Q -60 -60 -60 -20 L -60 -110 Q -60 -140 -35 -140 Q -10 -140 -10 -110 L -10 -130 Q -10 -160 15 -160 Q 40 -160 40 -130 L 40 -110 Q 40 -140 65 -140 Q 90 -140 90 -110 L 90 0 Q 90 40 120 40 L 150 20 Q 175 10 180 35 Q 120 120 80 160 Z" fill={PIEL} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <defs>
+      <linearGradient id="jbPiel" x1="0" y1="0" x2="0.9" y2="1"><stop offset="0" stopColor="#fbd2b3" /><stop offset="0.5" stopColor={PIEL} /><stop offset="1" stopColor="#c98262" /></linearGradient>
+    </defs>
+    <ellipse cx={30} cy={175} rx={150} ry={22} fill="#000" opacity={0.22} />
+    <path d="M -90 160 L -100 -20 Q -105 -60 -80 -60 Q -60 -60 -60 -20 L -60 -110 Q -60 -140 -35 -140 Q -10 -140 -10 -110 L -10 -130 Q -10 -160 15 -160 Q 40 -160 40 -130 L 40 -110 Q 40 -140 65 -140 Q 90 -140 90 -110 L 90 0 Q 90 40 120 40 L 150 20 Q 175 10 180 35 Q 120 120 80 160 Z" fill="url(#jbPiel)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    {/* uñas y pliegues de los nudillos (mismo tono, sutiles) */}
+    {[[-80, -50, 24], [-35, -128, 28], [15, -148, 28], [65, -128, 28]].map(([nx, ny, w], i) => <rect key={'u' + i} x={nx - w / 2} y={ny - 4} width={w} height={26} rx={11} fill="#ffe1cf" opacity={0.75} stroke="#d99b7c" strokeWidth={2} />)}
+    {[[-80, -8], [-35, -62], [15, -72], [65, -62], [-35, -20], [15, -24], [65, -20]].map(([cx, cy], i) => <path key={'p' + i} d={`M ${cx - 13} ${cy} Q ${cx} ${cy + 6} ${cx + 13} ${cy}`} stroke="#b9765a" strokeWidth={3} fill="none" opacity={0.55} strokeLinecap="round" />)}
+    <path d="M -70 120 Q -20 60 60 70" stroke="#b9765a" strokeWidth={3} fill="none" opacity={0.4} strokeLinecap="round" />
+    <ellipse cx={-55} cy={-90} rx={8} ry={26} fill="#fff" opacity={0.28} />
     {mugre > 0 && [[-30, 20], [30, -40], [10, 80], [-60, 100]].map(([dx, dy], i) => <ellipse key={i} cx={dx} cy={dy} rx={30} ry={18} fill={GRASA} opacity={mugre * 0.85} stroke="#b8902a" strokeWidth={3} />)}
   </g>;
 }
@@ -19,8 +28,11 @@ function Espuma({ T, x, y, w = 400, h = 200, f = 1, seed = 4 }) {
 function MolJabon({ x, y, s = 1, ang = 0, n = 8, o = 1, T = 0 }) {
   const pts = Array.from({ length: n + 1 }, (_, i) => `${30 + i * 26},${(i % 2 ? 12 : -12) + Math.sin(T * 6 + i) * 2}`).join(' ');
   return <g transform={`translate(${x} ${y}) rotate(${ang}) scale(${s})`} opacity={o}>
+    <defs><radialGradient id="jbCab" cx="0.35" cy="0.3" r="0.75"><stop offset="0" stopColor="#ff9db4" /><stop offset="0.55" stopColor={CABEZA} /><stop offset="1" stopColor="#b8264a" /></radialGradient></defs>
     <polyline points={pts} fill="none" stroke={COLA} strokeWidth={12} strokeLinejoin="round" strokeLinecap="round" />
-    <circle cx={0} cy={0} r={30} fill={CABEZA} stroke={KC.ink} strokeWidth={6} />
+    <polyline points={pts} fill="none" stroke="#d6def0" strokeWidth={3.5} strokeLinejoin="round" strokeLinecap="round" opacity={0.7} transform="translate(0 -3)" />
+    <circle cx={0} cy={0} r={30} fill="url(#jbCab)" stroke={KC.ink} strokeWidth={6} />
+    <ellipse cx={-10} cy={-13} rx={8} ry={5} fill="#fff" opacity={0.45} />
     <text x={0} y={10} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#fff">−</text>
   </g>;
 }
@@ -42,16 +54,30 @@ function Virus({ T, x, y, s = 1, rompe = 0 }) {
         <line x1={Math.cos(a0) * 132} y1={Math.sin(a0) * 132} x2={Math.cos(a0) * 175} y2={Math.sin(a0) * 175} stroke={KC.red} strokeWidth={12} />
         <circle cx={Math.cos(a0) * 180} cy={Math.sin(a0) * 180} r={14} fill={KC.red} stroke={KC.ink} strokeWidth={4} />
       </g>; })}
-    <circle r={80} fill="#7a4fd0" stroke={KC.ink} strokeWidth={6} opacity={1 - rompe * 0.3} />
+    <defs><radialGradient id="jbVir" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stopColor="#b08cf5" /><stop offset="0.6" stopColor="#7a4fd0" /><stop offset="1" stopColor="#43277f" /></radialGradient></defs>
+    <circle r={80} fill="url(#jbVir)" stroke={KC.ink} strokeWidth={6} opacity={1 - rompe * 0.3} />
     <path d="M -40 -20 Q 0 -60 40 -20 Q 0 20 -40 60" stroke="#fff" strokeWidth={8} fill="none" opacity={0.7} />
   </g>;
 }
-function Hospital({ x, y, s = 1 }) {
+function Hospital({ x, y, s = 1, T = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-300} y={-200} width={600} height={360} fill="#3d3122" stroke={KC.ink} strokeWidth={9} />
-    <path d="M -330 -200 L 0 -330 L 330 -200 Z" fill="#54432c" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
-    {[-200, -70, 70, 200].map((dx, i) => <rect key={i} x={dx - 40} y={-140} width={80} height={110} fill="#e0b860" opacity={0.85} stroke={KC.ink} strokeWidth={6} />)}
+    <defs>
+      <linearGradient id="jbMuro" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#5a4630" /><stop offset="1" stopColor="#2a2016" /></linearGradient>
+      <linearGradient id="jbTecho" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#6e5537" /><stop offset="1" stopColor="#3a2c1c" /></linearGradient>
+      <radialGradient id="jbVen" cx="0.5" cy="0.6" r="0.7"><stop offset="0" stopColor="#ffe3a0" /><stop offset="1" stopColor="#c8932f" /></radialGradient>
+      <radialGradient id="jbHalo"><stop offset="0" stopColor="#ffcf70" stopOpacity="0.45" /><stop offset="1" stopColor="#ffcf70" stopOpacity="0" /></radialGradient>
+    </defs>
+    <ellipse cx={0} cy={175} rx={380} ry={34} fill="#000" opacity={0.35} />
+    <rect x={-300} y={-200} width={600} height={360} fill="url(#jbMuro)" stroke={KC.ink} strokeWidth={9} />
+    {Array.from({ length: 8 }, (_, r) => <line key={'l' + r} x1={-296} x2={296} y1={-160 + r * 42} y2={-160 + r * 42} stroke="#1c150d" strokeWidth={2} opacity={0.35} />)}
+    <path d="M -330 -200 L 0 -330 L 330 -200 Z" fill="url(#jbTecho)" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    {[-200, -70, 70, 200].map((dx, i) => <g key={i}>
+      <circle cx={dx} cy={-85} r={95} fill="url(#jbHalo)" opacity={0.75 + 0.25 * Math.sin(T * 1.7 + i * 1.3)} />
+      <rect x={dx - 40} y={-140} width={80} height={110} fill="url(#jbVen)" stroke={KC.ink} strokeWidth={6} />
+      <line x1={dx} y1={-140} x2={dx} y2={-30} stroke="#5a4630" strokeWidth={5} /><line x1={dx - 40} y1={-85} x2={dx + 40} y2={-85} stroke="#5a4630" strokeWidth={5} />
+    </g>)}
     <rect x={-60} y={20} width={120} height={140} fill="#1c150d" stroke={KC.ink} strokeWidth={6} />
+    <rect x={-80} y={160} width={160} height={14} fill="#4a3a28" stroke={KC.ink} strokeWidth={4} />
     <rect x={-25} y={-300} width={50} height={20} fill={KC.red} /><rect x={-10} y={-315} width={20} height={50} fill={KC.red} />
   </g>;
 }
@@ -90,6 +116,12 @@ function Jabon() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
           <rect x={0} y={0} width={KW} height={KH} fill="rgba(80,170,255,.08)" />
+          {/* modo cine: el agua alrededor (moléculas de agua en línea tenue, a la deriva) */}
+          {Array.from({ length: 16 }, (_, i) => { const R = krng(30 + i), x0 = R() * 1080, y0 = 380 + R() * 1150, a = R() * 360 + T * (i % 2 ? 12 : -12), dx = Math.sin(T * 0.6 + i) * 18, dy = Math.cos(T * 0.5 + i) * 14;
+            return <g key={i} transform={`translate(${x0 + dx} ${y0 + dy}) rotate(${a})`} opacity={0.35}>
+              <line x1={0} y1={0} x2={-26} y2={20} stroke="#8fd0ff" strokeWidth={4} /><line x1={0} y1={0} x2={26} y2={20} stroke="#8fd0ff" strokeWidth={4} />
+              <circle r={17} fill="#16314a" stroke="#8fd0ff" strokeWidth={4} /><circle cx={-26} cy={20} r={10} fill="#16314a" stroke="#cfe9ff" strokeWidth={3} /><circle cx={26} cy={20} r={10} fill="#16314a" stroke="#cfe9ff" strokeWidth={3} />
+            </g>; })}
           {/* modo cine: la molécula ocupa casi todo el ancho */}
           <MolJabon x={190} y={900} s={3.1} n={8} T={T} />
           {T > K.Sa && Array.from({ length: 8 }, (_, i) => T > K.Sa + 0.3 + i * 0.18 ? <circle key={i} cx={190 + (30 + (i + 1) * 26) * 3.1} cy={900 + (i % 2 ? -12 : 12) * 3.1} r={20} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} /> : null)}
@@ -149,17 +181,28 @@ function Jabon() {
       </Escena>
       {/* 9 · siglo XIX */}
       <Escena T={T} a={K.Hi} b={K.Ci}>
-        <div style={{ position:'absolute', inset:0, background:'#1d1710' }}></div>
-        <SvgCapa><Hospital x={540} y={960} s={1.55} /><rect x={0} y={0} width={KW} height={KH} fill="rgba(110,80,40,.2)" /></SvgCapa>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg, #0c1020 0%, #15131a 55%, #1a140d 100%)' }}></div>
+        <SvgCapa>
+          {/* modo cine: el hospital ocupa el centro del cuadro, sobre su suelo, con las ventanas encendidas */}
+          <path d="M 0 1345 Q 540 1325 1080 1345 L 1080 1920 L 0 1920 Z" fill="#20180f" />
+          <path d="M 0 1345 Q 540 1325 1080 1345" stroke="#5a4630" strokeWidth={4} fill="none" opacity={0.7} />
+          <path d="M 460 1345 L 620 1345 L 720 1640 L 360 1640 Z" fill="#2c2216" opacity={0.8} />
+          <g transform={`translate(540 1341) scale(${1.48 + 0.05 * kprog(T, K.Hi, K.Ci)}) translate(-540 -1341)`}><Hospital x={540} y={1167} s={1} T={T} /></g>
+        </SvgCapa>
       </Escena>
       {/* 10 · cierre: las mismas manos, limpias */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
+          {/* modo cine: el lavabo debajo de las manos y el agua que baja al desagüe (lo que dice la voz) */}
+          <defs><linearGradient id="jbLav" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#3f4a5c" /><stop offset="1" stopColor="#1a2130" /></linearGradient></defs>
+          <path d="M 150 1330 Q 540 1290 930 1330 Q 900 1560 540 1580 Q 180 1560 150 1330 Z" fill="url(#jbLav)" stroke={KC.ink} strokeWidth={7} />
+          <ellipse cx={540} cy={1330} rx={390} ry={40} fill="#26303f" stroke={KC.ink} strokeWidth={6} />
+          {Array.from({ length: 5 }, (_, i) => { const xx = 470 + i * 35; return <path key={i} d={`M ${xx} 1060 Q ${xx + Math.sin(T * 5 + i) * 10} 1240 540 1420`} stroke="#8fd0ff" strokeWidth={9 - Math.abs(i - 2) * 2} fill="none" opacity={0.45} strokeLinecap="round" />; })}
           <Mano x={300} y={860} s={2.0} rot={20} />
           <Mano x={780} y={860} s={2.0} rot={-20} espejo />
           {[0, 1, 2].map((i) => <Micela key={i} T={T + i} x={klerp(300 + i * 220, 540, kprog(T, K.Ci + 1.0, K.Ci + 3.5))} y={klerp(760, 1400, kprog(T, K.Ci + 1.0 + i * 0.2, K.Ci + 3.5))} s={0.42} grasa={1} />)}
-          <ellipse cx={540} cy={1420} rx={110} ry={30} fill="#3b3f48" stroke={KC.ink} strokeWidth={6} />
+          <ellipse cx={540} cy={1420} rx={80} ry={20} fill="#0b1020" stroke="#7d8aa0" strokeWidth={5} />
         </SvgCapa>
       </Escena>
 
@@ -175,7 +218,7 @@ function Jabon() {
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={mitad - 0.2} anio="2021" quien="Revisión Cochrane · 29 ensayos" revista="lavado de manos y diarrea" y={470} />
       <NumeroGigante T={T} at={mitad + 1.4} until={K.Ta - 0.3} valor={30} dur={1.4} prefijo="≈ −" sufijo=" %" etiqueta="episodios de diarrea" y={1290} tam={130} color={KC.ink} />
       <Chip T={T} at={mitad + 0.2} until={K.Ta - 0.3} texto="guarderías y comunidades" x={540} y={1460} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.Hi + 0.5} until={K.Ci - 0.3} texto="siglo XIX" x={540} y={1420} tam={56} borde={KC.ink} fondo="rgba(60,40,20,.85)" />
+      <Chip T={T} at={K.Hi + 0.5} until={K.Ci - 0.3} texto="siglo XIX" x={540} y={1560} tam={56} borde={KC.ink} fondo="rgba(60,40,20,.85)" />
       <Chip T={T} at={K.Ci + 3.4} until={K.Ou} texto="la encierra · el agua se la lleva" y={1530} tam={38} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

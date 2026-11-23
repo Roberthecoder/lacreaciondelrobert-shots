@@ -138,7 +138,8 @@ function Sarten({ T, x, y, dorado = 1 }) {
 function Nina({ T, x, y, s = 1, tambalea = 0, sonrie = 0 }) {
   const a = Math.sin(T * 4.2) * 9 * tambalea;
   return <g transform={`translate(${x} ${y}) scale(${s}) rotate(${a})`}>
-    <path d="M -70 0 L -40 -170 L 40 -170 L 70 0 Z" fill={KC.lilac} stroke={KC.ink} strokeWidth={6} />
+    <defs><linearGradient id="vestGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#d9c2ff" /><stop offset="1" stopColor="#8f6fd1" /></linearGradient></defs>
+    <path d="M -70 0 L -40 -170 L 40 -170 L 70 0 Z" fill="url(#vestGrad)" stroke={KC.ink} strokeWidth={6} />
     <line x1={-25} y1={0} x2={-25} y2={70} stroke={KC.ink} strokeWidth={12} strokeLinecap="round" /><line x1={25} y1={0} x2={25} y2={70} stroke={KC.ink} strokeWidth={12} strokeLinecap="round" />
     <circle cx={0} cy={-220} r={56} fill="#f2c29b" stroke={KC.ink} strokeWidth={6} />
     <path d="M -58 -230 Q -50 -292 0 -284 Q 52 -292 58 -230 Q 30 -262 -58 -230 Z" fill="#5a3a22" stroke={KC.ink} strokeWidth={5} />
@@ -160,7 +161,8 @@ function Polieno({ x, y, p = 1, n = 12 }) {
 function Zanahoria({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s}) rotate(18)`}>
     <path d="M -20 -110 Q 0 -150 12 -112 M 0 -112 Q 20 -170 38 -120 M -6 -112 Q -40 -160 -40 -108" stroke={KC.leaf} strokeWidth={14} fill="none" strokeLinecap="round" />
-    <path d="M -46 -100 Q 0 -126 46 -100 L 6 170 Q 0 180 -6 170 Z" fill={KC.orange} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <defs><linearGradient id="zanGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#ffb25a" /><stop offset="0.55" stopColor={KC.orange} /><stop offset="1" stopColor="#b8500e" /></linearGradient></defs>
+    <path d="M -46 -100 Q 0 -126 46 -100 L 6 170 Q 0 180 -6 170 Z" fill="url(#zanGrad)" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     {[-40, 0, 40, 80].map((yy, i) => <line key={i} x1={-30 + i * 6} y1={yy} x2={-6 + i * 6} y2={yy + 4} stroke="#c45a10" strokeWidth={5} strokeLinecap="round" />)}
   </g>;
 }

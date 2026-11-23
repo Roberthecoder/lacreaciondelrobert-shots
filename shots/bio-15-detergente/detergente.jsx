@@ -255,13 +255,17 @@ function Detergente() {
         <FondoMarca patron="oscuro" />
         <SvgCapa>
           <BacilosEnzimas T={T} at={K.Fr} x={540} y={960} />
-          <CopoNieve x={180} y={1560} r={46} rot={T * 20} />
-          <CopoNieve x={900} y={1580} r={36} rot={-T * 25} />
+          <CopoNieve x={180} y={1390} r={46} rot={T * 20} />
+          <CopoNieve x={900} y={1410} r={36} rot={-T * 25} />
         </SvgCapa>
       </Escena>
       {/* 8 · tanque de fermentación */}
       <Escena T={T} a={K.Ta} b={K.Bi} zoom={0.04}>
-        <MundoBiorreactor T={T} turbio={0.7} burbujas={1} fondo={KC.cyan} etiquetaTanque="tanque de fermentación" />
+        {/* belleza: el fondo turquesa con puntos del mundo del kit se oculta (fondo oscuro del modo cine) y la etiqueta blanca
+            ilegible del tanque pasa a una etiqueta chica arriba */}
+        <FondoLunares color={KC.cyan} />
+        <style>{'.bd-tanque > div > div:first-child{display:none}'}</style>
+        <div className="bd-tanque"><MundoBiorreactor T={T} turbio={0.7} burbujas={1} fondo={KC.cyan} /></div>
       </Escena>
       <Lupa T={T} at={K.Ta + 0.8} until={K.Bi - 0.3} x={300} y={700} r={190} fx={540} fy={1010} tinte={KC.mint} etiqueta="AL MICROSCOPIO · EL CALDO"
         interior={(t) => <svg width={380} height={380} viewBox="160 620 760 760" style={{ position:'absolute', left:0, top:0 }}><rect x={0} y={0} width={KW} height={KH} fill="#1a1816" /><BacilosEnzimas T={t} at={K.Ta + 0.6} x={540} y={1000} /></svg>} />
@@ -307,9 +311,9 @@ function Detergente() {
       {/* textos */}
       <Chip T={T} at={K.G + 1.2} until={K.Ma - 0.3} texto="enzimas de microbios" y={260} tam={44} borde={KC.mint} />
       <Etiqueta T={T} at={K.G + 1.4} until={K.Ma - 0.3} x={555} y={1390} lado="izq" texto="granito de enzima" color={KC.ink} tam={32} />
-      <Etiqueta T={T} at={K.Ma + 0.3} until={K.Mi - 0.2} x={285} y={1062} texto="huevo" lado="izq" color={KC.ink} tam={34} />
+      <Etiqueta T={T} at={K.Ma + 0.3} until={K.Mi - 0.2} x={205} y={1062} texto="huevo" lado="izq" color={KC.ink} tam={34} />
       <Etiqueta T={T} at={K.Ma + 1.0} until={K.Mi - 0.2} x={800} y={1101} texto="chocolate" color={KC.ink} tam={34} />
-      <Etiqueta T={T} at={K.Ma + 1.7} until={K.Mi - 0.2} x={280} y={1240} texto="grasa" lado="izq" color={KC.ink} tam={34} />
+      <Etiqueta T={T} at={K.Ma + 1.7} until={K.Mi - 0.2} x={205} y={1240} texto="grasa" lado="izq" color={KC.ink} tam={34} />
       <MitoTachado T={T} at={K.Ja + 0.3} tacharEn={K.Ja + 2.0} until={K.Mi - 0.2} texto="solo jabón" x={380} y={470} tam={44} />
       <Chip T={T} at={K.Mi + 0.8} until={K.Pt - 0.3} texto="proteína · almidón · grasa" y={1500} tam={40} borde={KC.cyan} />
       <Chip T={T} at={K.Pt + 0.2} until={K.Pr - 0.3} texto="esquemático · no a escala" x={330} y={420} tam={28} borde="#9aa3b5" mono />
@@ -321,6 +325,7 @@ function Detergente() {
       <Etiqueta T={T} at={K.Fr + 0.4} until={K.Ta - 0.3} x={150} y={830} texto="Bacillus" it tam={40} color="#7fd88a" />
       <Chip T={T} at={K.Fr + 1.6} until={K.Ta - 0.3} texto="mejoradas para el agua fría" y={1500} tam={40} borde="#bfe8ff" />
       <Chip T={T} at={K.Fr + 0.3} until={K.Ta - 0.3} texto="esquemático · no a escala" x={330} y={420} tam={28} borde="#9aa3b5" mono />
+      <Chip T={T} at={K.Ta + 0.2} until={K.Bi - 0.3} texto="tanque de fermentación" y={285} tam={30} borde="#9aa3b5" mono />
       <Chip T={T} at={K.Ta + 1.6} until={K.Bi - 0.3} texto="las bacterias sueltan la enzima al caldo" y={1500} tam={32} borde={KC.mint} />
       <TarjetaEstudio T={T} at={K.Bi + 0.2} until={K.Es - 0.3} anio="1963" quien="Bio-tex · Alcalase" revista="proteasa de bacteria en un polvo para remojar" x={560} y={620} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.8} anio="1969" quien="Inglaterra · The Lancet" revista="obreros de fábrica · polvo de enzima" x={620} y={430} />

@@ -13,8 +13,12 @@ function Testigo({ T, at, x, y, letra, quien, pct, color, gana = false, revela =
     background:KC.paper, border:`9px solid ${borde}`, borderRadius:30, boxShadow:`12px 12px 0 ${KC.ink}`, overflow:'hidden' }}>
     <div style={{ background:color, borderBottom:`6px solid ${KC.ink}`, padding:'12px 0', textAlign:'center', font:`900 48px ${KF.texto}`, color:'#0b1020' }}>Testigo {letra}</div>
     <svg width={462} height={380} viewBox="96 14 210 176" style={{ display:'block' }}>
-      <circle cx={201} cy={70} r={44} fill="#c9c2b4" stroke={KC.ink} strokeWidth={6} />
-      <path d="M 120 190 Q 120 120 201 120 Q 282 120 282 190 Z" fill="#c9c2b4" stroke={KC.ink} strokeWidth={6} />
+      <defs><linearGradient id={'tgSil' + letra} x1="0" y1="0" x2="0.8" y2="1"><stop offset="0" stopColor="#ebe5d8" /><stop offset="0.55" stopColor="#c9c2b4" /><stop offset="1" stopColor="#8f887a" /></linearGradient>
+        <radialGradient id={'tgLuz' + letra} cx="0.5" cy="0.45" r="0.6"><stop offset="0" stopColor={color} stopOpacity="0.28" /><stop offset="1" stopColor={color} stopOpacity="0" /></radialGradient></defs>
+      <rect x={96} y={14} width={210} height={176} fill={`url(#tgLuz${letra})`} />
+      <circle cx={201} cy={70} r={44} fill={`url(#tgSil${letra})`} stroke={KC.ink} strokeWidth={6} />
+      <path d="M 120 190 Q 120 120 201 120 Q 282 120 282 190 Z" fill={`url(#tgSil${letra})`} stroke={KC.ink} strokeWidth={6} />
+      <ellipse cx={186} cy={52} rx={12} ry={8} fill="#fff" opacity={0.35} />
       {!revela && <text x={201} y={92} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill="#0b1020">?</text>}
       {revela === 'humano' && <text x={201} y={90} textAnchor="middle" style={{ font:`900 54px ${KF.texto}` }} fill={KC.leaf}>✔</text>}
     </svg>
@@ -40,11 +44,18 @@ function BarrasH({ T, at, until, filas, top = 760 }) {
 // Gorra y audífonos para el robotito (el "personaje").
 function Disfraz({ x, y, s = 1, e = 1 }) {
   return <g transform={`translate(${x} ${y - (1 - e) * 300}) scale(${s})`} opacity={e}>
-    <path d="M -140 -110 Q -140 -200 0 -200 Q 140 -200 140 -110 Z" fill={KC.pink} stroke={KC.ink} strokeWidth={9} />
-    <path d="M 100 -112 L 230 -100 Q 240 -88 220 -84 L 100 -90 Z" fill={KC.pink} stroke={KC.ink} strokeWidth={8} />
+    <defs>
+      <linearGradient id="tuGorra" x1="0" y1="0" x2="0.7" y2="1"><stop offset="0" stopColor="#ff9fc0" /><stop offset="0.5" stopColor={KC.pink} /><stop offset="1" stopColor="#a8325e" /></linearGradient>
+      <linearGradient id="tuAud" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#d9c8ff" /><stop offset="1" stopColor="#7d62c4" /></linearGradient>
+    </defs>
+    <path d="M -140 -110 Q -140 -200 0 -200 Q 140 -200 140 -110 Z" fill="url(#tuGorra)" stroke={KC.ink} strokeWidth={9} />
+    <path d="M 0 -200 L 0 -112 M -70 -186 Q -50 -150 -52 -112 M 70 -186 Q 50 -150 52 -112" stroke="#a8325e" strokeWidth={4} fill="none" opacity={0.6} />
+    <circle cx={0} cy={-200} r={10} fill="#a8325e" />
+    <path d="M -100 -170 Q -60 -192 -20 -192" stroke="#fff" strokeWidth={8} fill="none" opacity={0.35} strokeLinecap="round" />
+    <path d="M 100 -112 L 230 -100 Q 240 -88 220 -84 L 100 -90 Z" fill="url(#tuGorra)" stroke={KC.ink} strokeWidth={8} />
     <path d="M -150 -60 Q -150 -230 0 -230 Q 150 -230 150 -60" fill="none" stroke={KC.ink} strokeWidth={14} />
-    <rect x={-175} y={-80} width={50} height={90} rx={20} fill={KC.lilac} stroke={KC.ink} strokeWidth={7} />
-    <rect x={125} y={-80} width={50} height={90} rx={20} fill={KC.lilac} stroke={KC.ink} strokeWidth={7} />
+    <rect x={-175} y={-80} width={50} height={90} rx={20} fill="url(#tuAud)" stroke={KC.ink} strokeWidth={7} />
+    <rect x={125} y={-80} width={50} height={90} rx={20} fill="url(#tuAud)" stroke={KC.ink} strokeWidth={7} />
   </g>;
 }
 // Monitor viejo con texto verde (ELIZA).
@@ -53,8 +64,16 @@ function MonitorViejo({ T, x, y, at }) {
   const n = Math.floor(kprog(T, at + 0.5, at + 3.0) * 40);
   let rest = n;
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={-300} y={-230} width={600} height={430} rx={40} fill="#d9cfb4" stroke={KC.ink} strokeWidth={10} />
-    <rect x={-250} y={-185} width={500} height={330} rx={30} fill="#0b1a0e" stroke={KC.ink} strokeWidth={6} />
+    <defs>
+      <linearGradient id="tuCaja" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stopColor="#f0e8d0" /><stop offset="0.5" stopColor="#d9cfb4" /><stop offset="1" stopColor="#a89c7c" /></linearGradient>
+      <radialGradient id="tuPant" cx="0.5" cy="0.45" r="0.7"><stop offset="0" stopColor="#123a1c" /><stop offset="1" stopColor="#040b06" /></radialGradient>
+    </defs>
+    <ellipse cx={0} cy={300} rx={330} ry={30} fill="#000" opacity={0.35} />
+    <rect x={-300} y={-230} width={600} height={430} rx={40} fill="url(#tuCaja)" stroke={KC.ink} strokeWidth={10} />
+    <rect x={-250} y={-185} width={500} height={330} rx={30} fill="url(#tuPant)" stroke={KC.ink} strokeWidth={6} />
+    {Array.from({ length: 20 }, (_, i) => <line key={i} x1={-240} x2={240} y1={-175 + i * 16} y2={-175 + i * 16} stroke="#4cff7a" strokeWidth={2} opacity={0.06} />)}
+    <rect x={-250} y={-185 + ((T * 160) % 330)} width={500} height={26} fill="#4cff7a" opacity={0.05} />
+    <circle cx={240} cy={170} r={9} fill="#4cff7a" opacity={0.5 + 0.5 * Math.sin(T * 4)} />
     {lin.map((l, i) => { const k = Math.max(0, Math.min(l.length, rest)); rest -= l.length;
       return <text key={i} x={-215} y={-110 + i * 80} style={{ font:`700 46px ${KF.mono}` }} fill="#4cff7a">{l.slice(0, k)}{k < l.length && k > 0 && Math.sin(T * 12) > 0 ? '▌' : ''}</text>; })}
     <rect x={-80} y={200} width={160} height={50} fill="#bfb497" stroke={KC.ink} strokeWidth={8} />
@@ -73,7 +92,8 @@ function Burbuja({ T, at, until, x, y, texto, marca, colorMarca }) {
 function Alerta({ T, at, x, y, texto }) {
   if (T < at) return null; const e = kprog(T, at, at + 0.4, kEase.rebote), late = 1 + 0.04 * Math.sin(T * 6);
   return <g transform={`translate(${x} ${y}) scale(${e * late})`}>
-    <path d="M 0 -130 L 140 110 L -140 110 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={12} strokeLinejoin="round" />
+    <defs><linearGradient id="tuAle" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stopColor="#fff2a8" /><stop offset="0.5" stopColor={KC.yellow} /><stop offset="1" stopColor="#c99a10" /></linearGradient></defs>
+    <path d="M 0 -130 L 140 110 L -140 110 Z" fill="url(#tuAle)" stroke={KC.ink} strokeWidth={12} strokeLinejoin="round" />
     <text x={0} y={80} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill="#0b1020">!</text>
     <text x={0} y={180} textAnchor="middle" style={{ font:`900 42px ${KF.texto}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={2}>{texto}</text>
   </g>;
@@ -96,18 +116,19 @@ function Turing() {
       {/* 2 · el juego: dos chats a la vez, 5 minutos */}
       <Escena T={T} a={K.J} b={K.Tu}>
         <FondoLunares color={KC.mint} />
-        <CelularChat T={T} x={278} y={1010} s={0.88} tam={62} mensajes={msg(K.J + 0.3, 'de por aquí jaja')} />
-        <CelularChat T={T} x={802} y={1010} s={0.88} tam={62} mensajes={msg(K.J + 0.6, 'ntp, de lejos xd')} />
-        {svg(<><text x={278} y={540} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink}>Testigo A</text><text x={802} y={540} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink}>Testigo B</text></>)}
+        {/* modo cine: mismos celulares y misma posición que la escena siguiente (Turing), para que la disolvencia no duplique */}
+        <CelularChat T={T} x={280} y={1110} s={0.84} tam={62} mensajes={msg(K.J + 0.3, 'de por aquí jaja')} />
+        <CelularChat T={T} x={800} y={1110} s={0.84} tam={62} mensajes={msg(K.J + 0.6, 'ntp, de lejos xd')} />
+        {svg(<><text x={280} y={650} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.orange}>Testigo A</text><text x={800} y={650} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.cyan}>Testigo B</text></>)}
       </Escena>
       <Cronometro T={T} at={K.J + 0.2} until={K.Tu - 0.2} inicio={300} factor={-20} x={540} y={370} etiqueta="TIEMPO PARA ADIVINAR" />
       {/* 3 · Turing, 1950 */}
       <Escena T={T} a={K.Tu} b={K.P}>
         <FondoLunares color={KC.lilac} />
         {/* modo cine: el juego de imitación (los dos chats) sigue en pantalla; la tarjeta va chica y arriba */}
-        <div style={{ position:'absolute', inset:0, opacity:0.62 }}>
-          <CelularChat T={T} x={290} y={1140} s={0.78} tam={62} mensajes={msg(K.J + 0.3, 'de por aquí jaja')} />
-          <CelularChat T={T} x={790} y={1140} s={0.78} tam={62} mensajes={msg(K.J + 0.6, 'ntp, de lejos xd')} />
+        <div style={{ position:'absolute', inset:0, opacity:klerp(1, 0.6, kprog(T, K.Tu + 0.2, K.Tu + 1.2)) }}>
+          <CelularChat T={T} x={280} y={1110} s={0.84} tam={62} mensajes={msg(K.J + 0.3, 'de por aquí jaja')} />
+          <CelularChat T={T} x={800} y={1110} s={0.84} tam={62} mensajes={msg(K.J + 0.6, 'ntp, de lejos xd')} />
         </div>
       </Escena>
       {/* 4 · pregunta */}
@@ -118,19 +139,20 @@ function Turing() {
       {/* 5 · el personaje */}
       <Escena T={T} a={K.Pe} b={K.S}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Robotito x={500} y={1090} s={2.3} T={T} cara="feliz" /><Disfraz x={500} y={1090 + Math.sin(T * 3) * 6} s={2.3} e={kprog(T, K.Pe + 0.4, K.Pe + 1.0, kEase.sale)} /></>)}
+        {svg(<><ellipse cx={500} cy={1090 + 175 * 2.3} rx={300} ry={36} fill="#000" opacity={0.35} /><Robotito x={500} y={1090} s={2.3} T={T} cara="feliz" /><Disfraz x={500} y={1090 + Math.sin(T * 3) * 6} s={2.3} e={kprog(T, K.Pe + 0.4, K.Pe + 1.0, kEase.sale)} /></>)}
       </Escena>
       {/* 6 · sin personaje */}
       <Escena T={T} a={K.S} b={K.E}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {/* modo cine: la IA sigue en pantalla; al decir «sin ese personaje» se le cae el disfraz */}
-        {svg(<><Robotito x={540} y={700} s={1.7} T={T} cara={T > K.S + 1.6 ? 'duda' : 'feliz'} /><Disfraz x={540 + kprog(T, K.S + 1.2, K.S + 2.0) * 60} y={700 + Math.sin(T * 3) * 6 + kprog(T, K.S + 1.2, K.S + 2.0, kEase.entra) * 220} s={1.7} e={1 - 0.999 * kprog(T, K.S + 1.4, K.S + 2.0)} /></>)}
+        {(() => { const m = kprog(T, K.S, K.S + 0.9, kEase.suave), rx = klerp(500, 540, m), ry = klerp(1090, 680, m), rs = klerp(2.3, 1.75, m);
+          return svg(<><ellipse cx={rx} cy={ry + 175 * rs} rx={130 * rs} ry={16 * rs} fill="#000" opacity={0.35} /><Robotito x={rx} y={ry} s={rs} T={T} cara={T > K.S + 1.6 ? 'duda' : 'feliz'} /><Disfraz x={rx + kprog(T, K.S + 1.2, K.S + 2.0) * 60} y={ry + Math.sin(T * 3) * 6 + kprog(T, K.S + 1.2, K.S + 2.0, kEase.entra) * 220} s={rs} e={1 - 0.999 * kprog(T, K.S + 1.4, K.S + 2.0)} /></>); })()}
       </Escena>
       {/* 7 · el estudio */}
       <Escena T={T} a={K.E} b={K.El}>
         <FondoLunares color={KC.mint} />
         {/* modo cine: las partidas se ven (un celular por partida que se va encendiendo mientras corre el conteo); tarjeta chica y arriba */}
-        {svg(Array.from({ length: 60 }, (_, i) => { const cx = 135 + (i % 10) * 90, cy = 960 + Math.floor(i / 10) * 118, on = kprog(T, K.E + 1.6 + i * 0.02, K.E + 1.9 + i * 0.02);
+        {svg(Array.from({ length: 60 }, (_, i) => { const cx = 135 + (i % 10) * 90, cy = 905 + Math.floor(i / 10) * 118, on = kprog(T, K.E + 1.6 + i * 0.02, K.E + 1.9 + i * 0.02);
           return <g key={i} transform={`translate(${cx} ${cy})`} opacity={kprog(T, K.E - 0.2, K.E + 0.3) * (0.3 + 0.7 * on)}>
             <rect x={-30} y={-48} width={60} height={96} rx={12} fill="#10131a" stroke={KC.ink} strokeWidth={4} />
             <rect x={-20} y={-34} width={26} height={12} rx={5} fill={i % 2 ? KC.cyan : KC.orange} opacity={on} />
@@ -153,7 +175,7 @@ function Turing() {
       <Escena T={T} a={K.R} b={K.C}>
         <FondoCircuito T={T} color={KC.red} />
         {/* modo cine: la IA con su personaje está en pantalla desde que empieza la escena; las alertas salen a sus lados */}
-        {svg(<><Robotito x={540} y={900} s={1.6} T={T} cara="seguro" /><Disfraz x={540} y={900 + Math.sin(T * 3) * 6} s={1.6} e={1} />
+        {svg(<><ellipse cx={540} cy={900 + 175 * 1.6} rx={210} ry={26} fill="#000" opacity={0.35} /><Robotito x={540} y={900} s={1.6} T={T} cara="seguro" /><Disfraz x={540} y={900 + Math.sin(T * 3) * 6} s={1.6} e={1} />
           <Alerta T={T} at={K.R + 3.4} x={290} y={1340} texto="engaños" /><Alerta T={T} at={K.R + 4.2} x={790} y={1340} texto="desinformación" /></>)}
       </Escena>
       {/* 11 · cierre: los mismos testigos */}
@@ -165,13 +187,13 @@ function Turing() {
       {/* datos y textos */}
       <Chip T={T} at={K.G + 0.4} until={K.J - 0.2} texto="¿quién es el humano?" x={540} y={440} tam={50} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.Tu + 0.2} until={K.P - 0.2} anio="1950" quien="Alan Turing" revista="«el juego de imitación»" y={440} />
-      <Chip T={T} at={K.Tu + 2.2} until={K.P - 0.2} texto="si no los distingues: la máquina pasa" y={660} tam={42} borde={KC.ink} />
+      <Chip T={T} at={K.Tu + 2.2} until={K.P - 0.2} texto="si no los distingues: la máquina pasa" y={620} tam={42} borde={KC.ink} />
       {[['joven', 250, 330], ['reservado', 760, 330], ['sabe de internet', 300, 450], ['habla con jerga', 780, 450]].map(([t, cx, y], i) =>
         <Chip key={t} T={T} at={K.Pe + 2.2 + i * 0.4} until={K.S - 0.2} texto={t} x={cx} y={y} tam={44} borde={KC.pink} />)}
       <BarrasH T={T} at={K.S + 0.3} until={K.E - 0.2} filas={[{ valor: 73, etiqueta: 'GPT-4.5 con personaje', color: KC.orange }, { valor: 36, etiqueta: 'GPT-4.5 sin personaje', color: AZUL, at: K.S + 1.6 }]} top={1040} />
       <Chip T={T} at={K.S + 0.6} until={K.E - 0.2} texto="la misma IA" x={540} y={250} tam={44} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.El - 0.3} anio="2026" quien="UC San Diego" revista="Jones y Bergen · PNAS" y={400} />
-      <NumeroGigante T={T} at={K.E + 1.6} until={K.El - 0.3} valor={1023} dur={1.2} etiqueta="partidas analizadas" y={730} tam={150} color={AZUL} />
+      <NumeroGigante T={T} at={K.E + 1.6} until={K.El - 0.3} valor={1023} dur={1.2} etiqueta="partidas analizadas" y={700} tam={150} color={AZUL} />
       <BarrasH T={T} at={K.El + 2.0} until={K.Pi - 0.2} top={1290} filas={[{ valor: 23, etiqueta: 'ELIZA (años sesenta)', color: '#4cff7a' }]} />
       <Burbuja T={T} at={K.Pi + 0.6} until={K.R - 0.2} x={540} y={640} texto="¿pato? qwerty 🦆" marca="✔ de lo que más sirvió" colorMarca={KC.mint} />
       <Burbuja T={T} at={K.Pi + 2.6} until={K.R - 0.2} x={540} y={1030} texto="¿cómo está el clima?" marca="de lo que menos sirvió" colorMarca={KC.paper} />

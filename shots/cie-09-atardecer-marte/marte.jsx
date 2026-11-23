@@ -34,16 +34,20 @@ function Paisaje({ tipo = 'marte', sol = 0, halo = 0, x = 0, w = KW, rSol = 70 }
 // Rayos de colores que salen del Sol y se desvían (dispersión). modo 'dia' o 'tarde'.
 function Rayos({ T, modo = 'dia' }) {
   const largo = modo === 'tarde';
-  const sol = largo ? [100, 1000] : [160, 420], ojo = [860, 1150];
+  const sol = largo ? [175, 1000] : [175, 420], ojo = [860, 1150];   // belleza: el Sol ya no se corta en la orilla izquierda
   const molec = Array.from({ length: 40 }, (_, i) => [140 + ((i * 97) % 820), 560 + ((i * 53) % 560)]);
   const ray = (color, k) => { const u = ((T * 0.45 + k * 0.17) % 1);
     if (color === KC.blue) { const m = molec[(k * 7) % molec.length]; const p1 = [klerp(sol[0], m[0], kclamp(u * 2, 0, 1)), klerp(sol[1], m[1], kclamp(u * 2, 0, 1))];
       const dir = (k * 1.7) % (Math.PI * 2), p2 = [m[0] + Math.cos(dir) * 300 * kclamp(u * 2 - 1, 0, 1), m[1] + Math.sin(dir) * 300 * kclamp(u * 2 - 1, 0, 1)];
       return <polyline key={k} points={`${sol[0]},${sol[1]} ${p1[0]},${p1[1]} ${u > 0.5 ? p2[0] + ',' + p2[1] : ''}`} stroke={color} strokeWidth={9} fill="none" strokeLinecap="round" opacity={largo ? 0.7 : 1} />; }
     return <line key={k} x1={sol[0]} y1={sol[1]} x2={klerp(sol[0], ojo[0], u)} y2={klerp(sol[1], ojo[1], u)} stroke={color} strokeWidth={9} strokeLinecap="round" opacity={largo ? 1 : 0.6} />; };
+  // belleza: Sol con resplandor y volumen (claro al centro), moléculas de aire con un halo suave
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-    {molec.map(([x, y], i) => <circle key={i} cx={x} cy={y} r={7} fill="rgba(255,255,255,.55)" />)}
-    <circle cx={sol[0]} cy={sol[1]} r={70} fill={KC.yellow} stroke={KC.ink} strokeWidth={7} />
+    <defs><radialGradient id="mr-sol" cx="0.4" cy="0.38" r="0.65"><stop offset="0" stopColor="#fff6c4" /><stop offset="0.55" stopColor={KC.yellow} /><stop offset="1" stopColor="#e0a020" /></radialGradient>
+      <radialGradient id="mr-brillo"><stop offset="0" stopColor="#ffe27a" stopOpacity="0.55" /><stop offset="1" stopColor="#ffe27a" stopOpacity="0" /></radialGradient></defs>
+    {molec.map(([x, y], i) => <g key={i}><circle cx={x} cy={y} r={15} fill="rgba(200,215,255,.10)" /><circle cx={x} cy={y} r={7} fill="rgba(255,255,255,.6)" /></g>)}
+    <circle cx={sol[0]} cy={sol[1]} r={150 + Math.sin(T * 2) * 6} fill="url(#mr-brillo)" />
+    <circle cx={sol[0]} cy={sol[1]} r={70} fill="url(#mr-sol)" stroke={KC.ink} strokeWidth={7} />
     {[0, 1, 2, 3].map((k) => ray(KC.blue, k))}
     {[0, 1].map((k) => ray(KC.red, k + 5))}{[0, 1].map((k) => ray(KC.yellow, k + 8))}
     <g transform={`translate(${ojo[0]} ${ojo[1]})`}><ellipse rx={70} ry={42} fill="#fff" stroke={KC.ink} strokeWidth={7} /><circle r={26} fill="#5a3a22" /><circle r={12} fill="#0b1020" /></g>
@@ -63,11 +67,14 @@ function PolvoMarte({ T, frente = 0 }) {
   </svg>;
 }
 function Rover({ x, y, s = 1 }) {
+  // belleza: sombra en el suelo y degradado en la carrocería (luz desde arriba a la izquierda)
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-200} y={-90} width={400} height={110} rx={16} fill="#e9e4da" stroke={KC.ink} strokeWidth={8} />
+    <defs><linearGradient id="mr-rover" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stopColor="#f6f2ea" /><stop offset="1" stopColor="#b9b2a4" /></linearGradient></defs>
+    <ellipse cx={0} cy={124} rx={250} ry={22} fill="#000" opacity={0.35} />
+    <rect x={-200} y={-90} width={400} height={110} rx={16} fill="url(#mr-rover)" stroke={KC.ink} strokeWidth={8} />
     {[-160, -20, 120].map((dx, i) => <g key={i}><line x1={dx + 20} y1={20} x2={dx + 20} y2={60} stroke={KC.ink} strokeWidth={8} /><circle cx={dx + 20} cy={80} r={42} fill="#555" stroke={KC.ink} strokeWidth={8} /></g>)}
     <rect x={110} y={-300} width={20} height={210} fill="#ccc" stroke={KC.ink} strokeWidth={6} />
-    <rect x={70} y={-360} width={110} height={70} rx={12} fill="#e9e4da" stroke={KC.ink} strokeWidth={7} />
+    <rect x={70} y={-360} width={110} height={70} rx={12} fill="url(#mr-rover)" stroke={KC.ink} strokeWidth={7} />
     <circle cx={100} cy={-325} r={18} fill="#0b1020" /><circle cx={150} cy={-325} r={18} fill="#0b1020" />
     <rect x={-170} y={-150} width={120} height={60} rx={8} fill="#c9c4b8" stroke={KC.ink} strokeWidth={6} />
   </g>;
@@ -101,7 +108,8 @@ function Marte() {
       <Escena T={T} a={K.Q} b={K.P} zoom={0.1}>
         <FondoLunares color={KC.orange} />
         {/* modo cine: Marte al centro y más grande (antes r 210 a la izquierda) */}
-        {svg(<g transform="translate(540 960) scale(1.5) translate(-300 -860)"><circle cx={300} cy={860} r={210} fill={OXIDO} stroke={KC.ink} strokeWidth={12} /><circle cx={240} cy={800} r={40} fill={OXIDO2} /><circle cx={360} cy={930} r={28} fill={OXIDO2} /></g>)}
+        {svg(<g transform="translate(540 960) scale(1.5) translate(-300 -860)"><defs><radialGradient id="mr-planeta" cx="0.36" cy="0.32" r="0.75"><stop offset="0" stopColor="#d9784a" /><stop offset="0.6" stopColor={OXIDO} /><stop offset="1" stopColor="#5e260f" /></radialGradient></defs>
+          <circle cx={300} cy={860} r={210} fill="url(#mr-planeta)" stroke={KC.ink} strokeWidth={12} /><circle cx={240} cy={800} r={40} fill={OXIDO2} /><circle cx={360} cy={930} r={28} fill={OXIDO2} /></g>)}
       </Escena>
       {/* 6–7 · el polvo de Marte */}
       <Escena T={T} a={K.P} b={K.H}>
@@ -115,7 +123,7 @@ function Marte() {
       {/* 9 · Curiosity, sol 956 */}
       <Escena T={T} a={K.E} b={K.Ca}>
         <Paisaje tipo="marte" sol={0.8} halo={1} rSol={78} />
-        {svg(<Rover x={275} y={1540} s={1.25} />)}   {/* modo cine: el rover más grande y más arriba (antes s 0.8 en y 1620) */}
+        {svg(<Rover x={330} y={1540} s={1.25} />)}   {/* belleza: 55 px hacia adentro (se cortaba a la izquierda) */}   {/* modo cine: el rover más grande y más arriba (antes s 0.8 en y 1620) */}
       </Escena>
       {/* 10 · la cámara y el ojo */}
       <Escena T={T} a={K.Ca} b={K.S}>
@@ -131,10 +139,13 @@ function Marte() {
       <Escena T={T} a={K.S} b={K.C} fondo="#070b1e">
         {svg(<>
           {/* modo cine (pase a mano): los dos discos más grandes, misma proporción 2/3 (antes r 180 y 120) */}
-          <circle cx={290} cy={940} r={240} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
-          <circle cx={810} cy={940} r={240 * 2 / 3 * kprog(T, K.S + 0.6, K.S + 1.4, kEase.rebote) || 0.01} fill="#f4f7ff" stroke={KC.ink} strokeWidth={8} />
-          <text x={290} y={1270} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.texto}>desde la Tierra</text>
-          <text x={810} y={1270} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.texto}>desde Marte</text>
+          <defs><radialGradient id="mr-solT" cx="0.38" cy="0.35" r="0.7"><stop offset="0" stopColor="#fff3b8" /><stop offset="0.6" stopColor={KC.yellow} /><stop offset="1" stopColor="#d99a1c" /></radialGradient>
+            <radialGradient id="mr-solM" cx="0.38" cy="0.35" r="0.7"><stop offset="0" stopColor="#ffffff" /><stop offset="1" stopColor="#c9d6ee" /></radialGradient></defs>
+          {/* belleza: discos con volumen y 20 px hacia adentro (el de la Tierra tocaba la orilla); misma proporción 2/3 */}
+          <circle cx={310} cy={940} r={225} fill="url(#mr-solT)" stroke={KC.ink} strokeWidth={8} />
+          <circle cx={800} cy={940} r={225 * 2 / 3 * kprog(T, K.S + 0.6, K.S + 1.4, kEase.rebote) || 0.01} fill="url(#mr-solM)" stroke={KC.ink} strokeWidth={8} />
+          <text x={310} y={1270} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.texto}>desde la Tierra</text>
+          <text x={800} y={1270} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.texto}>desde Marte</text>
         </>)}
       </Escena>
       {/* 12 · cierre: tu atardecer rojo y el de Marte, azul junto al Sol (regresa la imagen del inicio) */}

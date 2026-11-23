@@ -18,12 +18,20 @@ function Escama({ x, y, r, rot = 0, o = 1, color = CP.escama }) {
 function Busto({ T, x = 400, y = 0, s = 1, caspa = 1, cae = 0, seed = 1 }) {
   const nE = Math.round(ESC_HOMBRO.length * caspa), nP = Math.round(ESC_PELO.length * caspa);
   return <g transform={`translate(${x} ${y}) scale(${s}) translate(-400 0)`}>
-    <path d="M -20 1960 L 30 1260 Q 40 1080 140 1035 Q 250 990 330 975 L 470 975 Q 550 990 660 1035 Q 760 1080 770 1260 L 820 1960 Z" fill={CP.playera} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    {/* belleza: degradados de volumen (luz arriba a la izquierda) en playera, cuello y pelo */}
+    <defs>
+      <linearGradient id="cspPlay" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#3a4b70" /><stop offset=".45" stopColor={CP.playera} /><stop offset="1" stopColor="#141b2c" /></linearGradient>
+      <radialGradient id="cspPelo" cx=".38" cy=".3" r=".75"><stop offset="0" stopColor="#5a4130" /><stop offset=".5" stopColor={CP.pelo} /><stop offset="1" stopColor="#140c07" /></radialGradient>
+      <linearGradient id="cspCuello" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#9c5d43" /><stop offset=".45" stopColor={CP.piel2} /><stop offset="1" stopColor={CP.piel2} /></linearGradient>
+    </defs>
+    <path d="M -20 1960 L 30 1260 Q 40 1080 140 1035 Q 250 990 330 975 L 470 975 Q 550 990 660 1035 Q 760 1080 770 1260 L 820 1960 Z" fill="url(#cspPlay)" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    <path d="M 150 1060 Q 230 1020 320 1000" stroke="#5a6d96" strokeWidth={6} fill="none" strokeLinecap="round" opacity=".45" />
+    <path d="M 210 1250 Q 250 1420 230 1700 M 600 1240 Q 560 1450 590 1720" stroke="#0e1422" strokeWidth={8} fill="none" strokeLinecap="round" opacity=".45" />
     <path d="M 330 975 Q 400 1010 470 975" stroke="#3a4a6c" strokeWidth={10} fill="none" />
-    <rect x={335} y={850} width={130} height={140} rx={30} fill={CP.piel2} stroke={KC.ink} strokeWidth={8} />
+    <rect x={335} y={850} width={130} height={140} rx={30} fill="url(#cspCuello)" stroke={KC.ink} strokeWidth={8} />
     <ellipse cx={203} cy={720} rx={36} ry={58} fill={CP.piel} stroke={KC.ink} strokeWidth={8} />
     <ellipse cx={597} cy={720} rx={36} ry={58} fill={CP.piel} stroke={KC.ink} strokeWidth={8} />
-    <path d="M 205 680 Q 190 430 400 415 Q 610 430 595 680 Q 590 800 520 870 Q 400 905 280 870 Q 210 800 205 680 Z" fill={CP.pelo} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    <path d="M 205 680 Q 190 430 400 415 Q 610 430 595 680 Q 590 800 520 870 Q 400 905 280 870 Q 210 800 205 680 Z" fill="url(#cspPelo)" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
     {[[260, 520, 300, 780], [320, 470, 340, 850], [400, 440, 400, 880], [470, 465, 455, 850], [540, 520, 505, 790], [295, 600, 330, 700], [500, 610, 470, 720]].map(([x1, y1, x2, y2], i) =>
       <path key={i} d={`M ${x1} ${y1} Q ${(x1 + x2) / 2 + 14} ${(y1 + y2) / 2} ${x2} ${y2}`} stroke={CP.pelo2} strokeWidth={7} fill="none" strokeLinecap="round" />)}
     <path d="M 398 420 Q 404 470 402 540" stroke={CP.piel2} strokeWidth={6} fill="none" strokeLinecap="round" />
@@ -160,10 +168,12 @@ function CaspaShot() {
           <rect x={-60} y={640} width={KW + 120} height={700} fill="#33241f" stroke="#8a6a5c" strokeWidth={5} />
           <rect x={-60} y={640} width={KW + 120} height={60} fill="#55463f" stroke="#8a6a5c" strokeWidth={4} />
           <rect x={-60} y={700} width={KW + 120} height={130} fill="#3f2e28" />
+          {/* belleza: textura de fibras en la dermis (líneas finas del mismo tono) */}
+          {Array.from({ length: 9 }, (_, i) => <path key={'fib' + i} d={`M -40 ${880 + i * 50} Q 270 ${860 + i * 50 + (i % 2 ? 22 : -18)} 540 ${880 + i * 50} T 1120 ${880 + i * 50}`} stroke="#4a3830" strokeWidth={4} fill="none" opacity=".7" />)}
           <path d="M 470 640 L 470 1250 Q 540 1300 610 1250 L 610 640 Z" fill="#d98f6b" stroke={KC.ink} strokeWidth={7} />
           <rect x={506} y={330} width={68} height={940} rx={30} fill={CP.pelo2} stroke={KC.ink} strokeWidth={7} transform={`rotate(4 540 640)`} />
           <ellipse cx={540} cy={1250} rx={95} ry={70} fill="#a45d3e" stroke={KC.ink} strokeWidth={7} />
-          {[[700, 940, 70], [760, 1030, 60], [690, 1060, 55], [770, 900, 45]].map(([cx, cy, r], i) => <circle key={i} cx={cx} cy={cy} r={r} fill={CP.sebo} stroke={KC.ink} strokeWidth={6} />)}
+          {[[700, 940, 70], [760, 1030, 60], [690, 1060, 55], [770, 900, 45]].map(([cx, cy, r], i) => <g key={i}><circle cx={cx} cy={cy} r={r} fill={CP.sebo} stroke={KC.ink} strokeWidth={6} /><circle cx={cx + r * 0.25} cy={cy + r * 0.25} r={r * 0.62} fill="#c98f22" opacity=".45" /><ellipse cx={cx - r * 0.35} cy={cy - r * 0.38} rx={r * 0.26} ry={r * 0.16} fill="#fff" opacity=".55" transform={`rotate(-35 ${cx - r * 0.35} ${cy - r * 0.38})`} /></g>)}
           <path d="M 640 950 Q 615 940 612 900" stroke={CP.sebo} strokeWidth={22} fill="none" />
           {Array.from({ length: 6 }, (_, i) => { const u = kclamp(sebo * 1.6 - i * 0.12, 0, 1); if (u <= 0) return null; const yy = klerp(900, 640, u); const xx = u < 0.95 ? 590 : klerp(590, 640 + i * 60, (u - 0.95) / 0.05);
             return <circle key={i} cx={xx} cy={yy} r={14} fill={CP.sebo2} stroke={KC.ink} strokeWidth={4} />; })}
@@ -204,6 +214,8 @@ function CaspaShot() {
       {/* 7 · tres cosas: grasa + levadura + piel sensible */}
       <Escena T={T} a={K.Tr} b={K.Es} zoom={0.05}>
         <FondoLunares color={KC.mint} />
+        {/* belleza: la cabeza con caspa queda detrás, atenuada: las tres cosas pasan en ella (antes: tres círculos sobre fondo vacío) */}
+        {fsvg(<g opacity={0.24}><Busto T={T} x={540} y={-20} s={1.05} caspa={1} cae={0.5} /></g>)}
         <Bajar dy={150}>{fsvg(<>
           {[0, 1, 2].map((i) => { const t0 = i === 0 ? K.Tr + 0.2 : K.Tr + 0.6 + i * 0.75; /* modo cine: el primer círculo entra al empezar la escena */ const p = kprog(T, t0, t0 + 0.5, kEase.rebote); if (p <= 0) return null; const x = 200 + i * 340, y = 800;
             return <g key={i} transform={`translate(${x} ${y}) scale(${p * 1.08})`}>

@@ -218,7 +218,7 @@ function MohoCortarShot() {
   const knifeOut = kprog(T, K.G + 1.4, K.G + 1.9, kEase.suave);
   const TIRA = ['pan', 'mermelada', 'yogur', 'jitomate', 'quesocrema'];
   const CORTA = ['quesoduro', 'zanahoria', 'pimiento'];
-  const tiraAt = (i) => K.Ti + 1.9 + i * 0.5;
+  const tiraAt = (i) => K.Ti + 0.45 + i * 0.4;   // belleza: los alimentos entran desde el inicio (antes, 1.9 s de bote solo)
   const cortaAt = (i) => K.C + 0.35 + i * 0.4;   // modo cine: sin 2.4 s de pantalla vacía al entrar
   const cajaQ = kprog(T, K.C + 4.7, K.C + 5.4, kEase.sale), corteQ = kprog(T, K.C + 6.0, K.C + 7.1, kEase.suave);
   const cuchQ = kprog(T, K.C + 5.5, K.C + 6.1, kEase.sale) * (1 - kprog(T, K.C + 7.2, K.C + 7.7));
@@ -245,9 +245,9 @@ function MohoCortarShot() {
         <Ambiente T={T} n={22} />
         {fsvg(<>
           <HifaGruesa d="M -40 1080 C 200 1000 360 1120 560 980 S 900 860 1140 900" p={kprog(T, K.X - 0.3, K.X + 1.2, kEase.sale)} />
-          <HifaGruesa d="M 380 1060 C 420 900 360 780 460 640" p={kprog(T, K.X + 0.4, K.X + 1.6, kEase.sale)} largo={600} />
-          <HifaGruesa d="M 760 920 C 820 1040 900 1120 1100 1180" p={kprog(T, K.X + 0.7, K.X + 1.9, kEase.sale)} largo={600} />
-          {Array.from({ length: 12 }, (_, i) => { const t0 = K.X + 1.4 + i * 0.16, k = kprog(T, t0, t0 + 0.5, kEase.rebote); if (k <= 0) return null;
+          <HifaGruesa d="M 380 1060 C 420 900 360 780 460 640" p={kprog(T, K.X - 0.1, K.X + 1.1, kEase.sale)} largo={600} />
+          <HifaGruesa d="M 760 920 C 820 1040 900 1120 1100 1180" p={kprog(T, K.X + 0.1, K.X + 1.3, kEase.sale)} largo={600} />
+          {Array.from({ length: 12 }, (_, i) => { const t0 = K.X + 1.0 + i * 0.15, k = kprog(T, t0, t0 + 0.5, kEase.rebote); if (k <= 0) return null;
             const bx = [300, 560, 820, 450, 700, 980, 220, 620, 400, 880, 520, 760][i], by = [1020, 960, 900, 760, 1040, 880, 1060, 860, 680, 1000, 1100, 960][i];
             const dr = (T - t0) * 22; return <Toxina key={i} x={bx + Math.sin(T + i) * dr * 0.6} y={by - 90 - dr} s={k * 1.1} rot={T * 40 + i * 30} />; })}
         </>)}
@@ -270,10 +270,10 @@ function MohoCortarShot() {
       <Escena T={T} a={K.Ti} b={K.C}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <g opacity={1 - kprog(T, K.D - 0.2, K.D + 0.3)}>
+          <g opacity={1 - kprog(T, K.D - 0.2, K.D + 0.3)} transform="translate(540 1010) scale(1.1) translate(-540 -1000)">
             <Bote x={540} y={1345} s={1} tapa={0.6 * kprog(T, K.Ti + 0.6, K.Ti + 1.0)} />
             {TIRA.map((t, i) => { const k = kprog(T, tiraAt(i), tiraAt(i) + 0.4, kEase.rebote); if (k <= 0) return null;
-              const xx = [200, 540, 880, 330, 750][i], yy = i < 3 ? 650 : 960;
+              const xx = [235, 540, 845, 330, 750][i], yy = i < 3 ? 660 : 960;
               return <g key={t}><Alimento tipo={t} x={xx} y={yy} s={1.5 * k} seed={i} />
                 <text x={xx} y={yy + 165} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink} opacity={k}>{NOMBRES[t]}</text></g>; })}
           </g>
@@ -393,7 +393,7 @@ function MohoCortarShot() {
       <BarraEscala T={T} at={K.G} until={K.R} texto="5 cm" largo={265} />
       <BarraEscala T={T} at={K.R} until={K.X} texto="1 cm" largo={165} />
       <BarraEscala T={T} at={K.H} until={K.P} texto="1 cm" largo={165} />
-      <BarraEscala T={T} at={K.Ti} until={K.D} texto="10 cm" largo={300} />
+      <BarraEscala T={T} at={K.Ti} until={K.D} texto="10 cm" largo={330} />
       <BarraEscala T={T} at={K.D} until={K.C} texto="5 cm" largo={266} />
       <BarraEscala T={T} at={K.C} until={K.C + 4.1} texto="10 cm" largo={256} />
       <BarraEscala T={T} at={K.C + 4.1} until={K.E} texto="2.5 cm" largo={208} />

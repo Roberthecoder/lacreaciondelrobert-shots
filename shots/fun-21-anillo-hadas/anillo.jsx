@@ -275,7 +275,7 @@ function AnilloShot() {
       <Escena T={T} a={K.J} b={K.F} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <g transform="translate(560 1120) scale(1.45) translate(-560 -1120)">
+          <g transform="translate(540 1290) scale(1.5) translate(-545 -1120)">
           <rect x={-400} y={1120} width={KW + 800} height={900} fill={AN.tierra} stroke={KC.ink} strokeWidth={8} />
           <Lepista x={330} y={1124} s={1.3} crece={kprog(T, K.J + 0.1, K.J + 1.2)} />
           <Matraz x={590} y={1050} s={0.9} nivel={0.45 + 0.05 * Math.sin(T * 3)} />
@@ -333,7 +333,7 @@ function AnilloShot() {
       <Chip T={T} at={K.Ed + 0.6} until={K.J - 0.3} texto={`${Math.round(60 * uEd)} m de ancho`} x={500} y={490} tam={36} borde={KC.gold} mono />
       <Chip T={T} at={K.Ed + 2.4} until={K.J - 0.3} texto="estimación" x={540} y={1470} tam={30} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.J + 0.2} until={K.J + 2.5} anio="2010" quien="Universidad de Shizuoka, Japón" revista="ChemBioChem, 2010" y={380} />
-      <Etq T={T} at={K.J + 3.0} until={K.F - 0.3} x={40} y={590} texto="Lepista sordida" it tam={38} color={KC.ink} />
+      <Etq T={T} at={K.J + 3.0} until={K.F - 0.3} x={40} y={700} texto="Lepista sordida" it tam={38} color={KC.ink} />
       <Chip T={T} at={K.J + 3.4} until={K.F - 0.3} texto="AHX (2-azahipoxantina)" x={540} y={1440} tam={34} borde={KC.violet} />
       <Chip T={T} at={K.F + 0.3} until={K.C - 0.3} texto="folclor europeo" x={330} y={400} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="años, o siglos" x={540} y={1460} tam={40} borde={KC.gold} />
@@ -348,7 +348,7 @@ function AnilloShot() {
       <BarraEscala T={T} at={K.P} until={K.E} texto="20 cm" largo={168} />
       <BarraEscala T={T} at={K.E} until={K.Ed} texto="10 m · cinta no a escala" largo={140} />
       <BarraEscala T={T} at={K.Ed} until={K.J} texto="10 m" largo={133} />
-      <BarraEscala T={T} at={K.J} until={K.F} texto="4 cm" largo={220} />
+      <BarraEscala T={T} at={K.J} until={K.F} texto="4 cm" largo={228} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 m" largo={120} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

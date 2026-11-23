@@ -2,18 +2,38 @@
 // Shot Químico #05 · Esa masa no es solo maíz molido: la nixtamalización — NARRADO (N3 capítulos + viaje N1).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const MAIZ = '#f5c542', MASA = '#f1dc9a', PERICARPIO = '#e88a1a', CAL = '#f4f4f0';
+// Volumen (pase de belleza): degradados del mismo tono, luz arriba a la izquierda.
+function NxDefs() {
+  const rg = (id, a, b, c) => <radialGradient id={id} cx="0.35" cy="0.28" r="0.85"><stop offset="0" stopColor={a} /><stop offset="0.55" stopColor={b} /><stop offset="1" stopColor={c} /></radialGradient>;
+  return <defs>
+    {rg('nx-masa', '#fbf0c8', MASA, '#c9ad62')}
+    {rg('nx-tort', '#fcf2cf', '#f3e2a6', '#cdb46a')}
+    {rg('nx-maiz', '#ffe48a', MAIZ, '#c98f1c')}
+    {rg('nx-germen', '#fffbe6', '#fff3c4', '#e0cf8e')}
+    {rg('nx-olla', '#d9774a', '#b4542b', '#76311a')}
+    {rg('nx-piedra', '#9a948f', '#6f6a66', '#45413e')}
+    {rg('nx-mano', '#aaa39d', '#837d78', '#57524e')}
+    {rg('nx-comal', '#5a606c', '#3b3f48', '#202329')}
+    {rg('nx-madera', '#b07a52', '#8a5a3a', '#5a3820')}
+    <linearGradient id="nx-brillo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fff" stopOpacity="0.4" /><stop offset="0.5" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.25" /></linearGradient>
+  </defs>;
+}
 
 function Masa({ x, y, s = 1, aplana = 0, T = 0 }) {
   const rx = klerp(120, 230, aplana), ry = klerp(110, 34, aplana);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <ellipse rx={rx} ry={ry} fill={MASA} stroke={KC.ink} strokeWidth={8} />
-    {[[-40, -20], [30, 10], [-10, 30], [50, -30]].map(([dx, dy], i) => <circle key={i} cx={dx * rx / 120} cy={dy * ry / 110} r={6} fill="#d9be6c" />)}
+    <NxDefs />
+    <ellipse rx={rx} ry={ry} fill="url(#nx-masa)" stroke={KC.ink} strokeWidth={8} />
+    {[[-40, -20], [30, 10], [-10, 30], [50, -30], [-70, 40], [80, 30], [10, -60], [-20, 70]].map(([dx, dy], i) => <circle key={i} cx={dx * rx / 120} cy={dy * ry / 110} r={i < 4 ? 6 : 3.5} fill="#d9be6c" opacity={i < 4 ? 1 : 0.7} />)}
+    <ellipse cx={-rx * 0.38} cy={-ry * 0.45} rx={rx * 0.28} ry={ry * 0.16} fill="#fff" opacity={0.35} />
   </g>;
 }
 function Tortilla({ x, y, s = 1, infla = 0, rot = 0, T = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
-    <ellipse rx={220} ry={60 + infla * 40} fill="#f3e2a6" stroke={KC.ink} strokeWidth={8} />
-    {infla > 0 && <ellipse cx={0} cy={-20 - infla * 30} rx={150} ry={20 + infla * 45} fill="#f7ebc0" stroke={KC.ink} strokeWidth={6} />}
+    <NxDefs />
+    <ellipse rx={220} ry={60 + infla * 40} fill="url(#nx-tort)" stroke={KC.ink} strokeWidth={8} />
+    {infla > 0 && <ellipse cx={0} cy={-20 - infla * 30} rx={150} ry={20 + infla * 45} fill="url(#nx-masa)" stroke={KC.ink} strokeWidth={6} />}
+    {infla > 0 && <ellipse cx={-50} cy={-30 - infla * 50} rx={60} ry={8 + infla * 10} fill="#fff" opacity={0.3} />}
     {[[-90, 10], [40, -10], [110, 20], [-30, 25], [70, 30]].map(([dx, dy], i) => <ellipse key={i} cx={dx} cy={dy} rx={16} ry={7} fill="#b88a3a" opacity={0.7} />)}
   </g>;
 }
@@ -29,13 +49,18 @@ function TortillaRota({ x, y, s = 1, f = 0 }) {
 }
 function Grano({ x, y, s = 1, rot = 0, o = 1 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`} opacity={o}>
-    <path d="M 0 -40 Q 34 -36 32 0 Q 28 34 0 40 Q -28 34 -32 0 Q -34 -36 0 -40 Z" fill={MAIZ} stroke={KC.ink} strokeWidth={4} />
+    <NxDefs />
+    <path d="M 0 -40 Q 34 -36 32 0 Q 28 34 0 40 Q -28 34 -32 0 Q -34 -36 0 -40 Z" fill="url(#nx-maiz)" stroke={KC.ink} strokeWidth={4} />
+    <ellipse cx={-11} cy={-20} rx={8} ry={11} fill="#fff" opacity={0.35} />
     <path d="M -8 22 Q 0 34 8 22 Q 6 8 0 6 Q -6 8 -8 22 Z" fill="#fff3c4" />
   </g>;
 }
 function Olla({ x, y, s = 1, T = 0, hierve = 0, cal = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -260 -160 Q -290 120 -150 170 L 150 170 Q 290 120 260 -160 Z" fill="#b4542b" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+    <NxDefs />
+    <path d="M -260 -160 Q -290 120 -150 170 L 150 170 Q 290 120 260 -160 Z" fill="url(#nx-olla)" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+    <path d="M -200 -90 Q -215 40 -140 120" stroke="#fff" strokeWidth={16} fill="none" strokeLinecap="round" opacity={0.18} />
+    {[-40, 30, 100].map((dy, i) => <path key={i} d={`M -250 ${dy} Q 0 ${dy + 22} 250 ${dy}`} stroke="#6a2a12" strokeWidth={4} fill="none" opacity={0.35} />)}
     <ellipse cx={0} cy={-160} rx={265} ry={50} fill="#7a3418" stroke={KC.ink} strokeWidth={10} />
     <ellipse cx={0} cy={-155} rx={240} ry={38} fill={mixHex('#9fd8ff', '#e9e4cf', cal)} />
     {Array.from({ length: 14 }, (_, i) => <Grano key={i} x={-190 + (i % 7) * 63 + Math.sin(T * 3 + i) * 4 * hierve} y={-160 + Math.floor(i / 7) * 18 + Math.cos(T * 4 + i) * 4 * hierve} s={0.6} rot={i * 40} />)}
@@ -53,8 +78,10 @@ function GranoCorte({ T, x, y, s = 1, pela = 0, calcio = 0 }) {
       <path d={contorno} fill="none" stroke={PERICARPIO} strokeWidth={34} />
       <path d={contorno} fill="none" stroke={KC.ink} strokeWidth={4} transform="scale(1.06)" />
     </g>
-    <path d={contorno} fill={MAIZ} stroke={KC.ink} strokeWidth={8} transform="scale(0.93)" />
-    <path d="M -90 120 Q 0 260 90 120 Q 80 20 0 10 Q -80 20 -90 120 Z" fill="#fff3c4" stroke={KC.ink} strokeWidth={6} />
+    <NxDefs />
+    <path d={contorno} fill="url(#nx-maiz)" stroke={KC.ink} strokeWidth={8} transform="scale(0.93)" />
+    <path d="M -150 -200 Q -195 -60 -170 60" stroke="#fff" strokeWidth={22} fill="none" strokeLinecap="round" opacity={0.2} />
+    <path d="M -90 120 Q 0 260 90 120 Q 80 20 0 10 Q -80 20 -90 120 Z" fill="url(#nx-germen)" stroke={KC.ink} strokeWidth={6} />
     {Array.from({ length: 10 }, (_, i) => <circle key={i} cx={-120 + (i % 5) * 60} cy={-160 + Math.floor(i / 5) * 70} r={18} fill="#ffe28a" opacity={0.7} />)}
     {calcio > 0 && ca.map(([dx, dy], i) => i / ca.length < calcio ? <Atomo key={i} x={dx * 0.8} y={dy * 0.8} r={20} color={QA.Ca} letra="Ca" tam={14} /> : null)}
   </g>;
@@ -77,25 +104,32 @@ function Candado({ x, y, s = 1, abre = 0 }) {
 }
 function Barco({ x, y, s = 1, T = 0 }) {
   return <g transform={`translate(${x} ${y + Math.sin(T * 2) * 8}) rotate(${Math.sin(T * 1.6) * 3}) scale(${s})`}>
-    <path d="M -200 0 L 200 0 L 150 90 L -150 90 Z" fill="#8a5a3a" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <NxDefs />
+    <path d="M -200 0 L 200 0 L 150 90 L -150 90 Z" fill="url(#nx-madera)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    {[28, 58].map((dy, i) => <path key={i} d={`M ${-190 + dy * 0.55} ${dy} L ${190 - dy * 0.55} ${dy}`} stroke="#4a2c18" strokeWidth={4} opacity={0.6} />)}
     <line x1={0} y1={0} x2={0} y2={-260} stroke={KC.ink} strokeWidth={12} />
     <path d="M 10 -250 Q 140 -170 10 -60 Z" fill="#f4efe4" stroke={KC.ink} strokeWidth={7} />
-    {[-120, -60, 60, 120].map((dx, i) => <g key={i} transform={`translate(${dx} -30) rotate(${i * 20 - 30})`}><ellipse rx={22} ry={52} fill={MAIZ} stroke={KC.ink} strokeWidth={5} /><path d="M -20 30 Q -40 60 -10 70 M 20 30 Q 40 60 10 70" stroke={KC.leaf} strokeWidth={8} fill="none" /></g>)}
+    {[-120, -60, 60, 120].map((dx, i) => <g key={i} transform={`translate(${dx} -30) rotate(${i * 20 - 30})`}><ellipse rx={22} ry={52} fill="url(#nx-maiz)" stroke={KC.ink} strokeWidth={5} /><path d="M -20 30 Q -40 60 -10 70 M 20 30 Q 40 60 10 70" stroke={KC.leaf} strokeWidth={8} fill="none" /></g>)}
   </g>;
 }
 function Metate({ x, y, s = 1, T = 0, muele = 0 }) {
   const mx = Math.sin(T * 5) * 60 * muele;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -260 -40 L 240 -90 L 250 -40 L -250 10 Z" fill="#6f6a66" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
-    {[-200, 0, 180].map((dx, i) => <path key={i} d={`M ${dx - 30} ${-10 - i * 15} L ${dx - 20} ${70 - i * 10} L ${dx + 20} ${70 - i * 10} L ${dx + 30} ${-15 - i * 15} Z`} fill="#5a5552" stroke={KC.ink} strokeWidth={7} />)}
-    <rect x={-160 + mx} y={-130} width={260} height={56} rx={28} fill="#837d78" stroke={KC.ink} strokeWidth={8} transform={`rotate(-6 ${-30 + mx} -100)`} />
-    <ellipse cx={130} cy={-80} rx={60} ry={16} fill={MASA} stroke={KC.ink} strokeWidth={5} />
+    <NxDefs />
+    <ellipse cx={0} cy={80} rx={300} ry={20} fill="#000" opacity={0.3} />
+    <path d="M -260 -40 L 240 -90 L 250 -40 L -250 10 Z" fill="url(#nx-piedra)" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    {Array.from({ length: 14 }, (_, i) => <circle key={i} cx={-220 + i * 33} cy={-28 - i * 3.6 + (i % 3) * 6} r={2.5} fill="#2e2b29" opacity={0.6} />)}
+    {[-200, 0, 180].map((dx, i) => <path key={i} d={`M ${dx - 30} ${-10 - i * 15} L ${dx - 20} ${70 - i * 10} L ${dx + 20} ${70 - i * 10} L ${dx + 30} ${-15 - i * 15} Z`} fill="url(#nx-piedra)" stroke={KC.ink} strokeWidth={7} />)}
+    <rect x={-160 + mx} y={-130} width={260} height={56} rx={28} fill="url(#nx-mano)" stroke={KC.ink} strokeWidth={8} transform={`rotate(-6 ${-30 + mx} -100)`} />
+    <ellipse cx={130} cy={-80} rx={60} ry={16} fill="url(#nx-masa)" stroke={KC.ink} strokeWidth={5} />
   </g>;
 }
 function Comal({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <ellipse rx={280} ry={60} fill="#3b3f48" stroke={KC.ink} strokeWidth={9} />
+    <NxDefs />
+    <ellipse rx={280} ry={60} fill="url(#nx-comal)" stroke={KC.ink} strokeWidth={9} />
     <ellipse rx={250} ry={46} fill="#2a2d33" />
+    <path d="M -200 -22 Q -60 -44 120 -36" stroke="#fff" strokeWidth={6} fill="none" opacity={0.12} strokeLinecap="round" />
   </g>;
 }
 
@@ -187,6 +221,7 @@ function Nixtamal() {
           <g opacity={kprog(T, K.Eu + 3.0, K.Eu + 3.5)}>
             {[['piel', '#ff6b5a', 220], ['diarrea', '#c9a14a', 540], ['demencia', '#9aa3b5', 860]].map(([t, c, x], i) => <g key={i} transform={`translate(${x} 800) scale(${1.2 * kprog(T, K.Eu + 3.6 + i * 0.6, K.Eu + 4.0 + i * 0.6, kEase.rebote)})`}>
               <circle r={120} fill={c} stroke={KC.ink} strokeWidth={9} />
+              <circle r={120} fill="url(#nx-brillo)" />
               {i === 0 && <g>{[[-40, -30], [30, 10], [-10, 40], [45, -40]].map(([dx, dy], k) => <circle key={k} cx={dx} cy={dy} r={18} fill="#c0392b" />)}</g>}
               {i === 1 && <path d="M -60 -40 Q 60 -60 40 0 Q 20 50 -40 20 Q -80 0 -30 -10 Q 30 -10 10 20" stroke={KC.ink} strokeWidth={14} fill="none" strokeLinecap="round" />}
               {i === 2 && <g><path d="M -70 20 Q -80 -60 0 -70 Q 80 -60 70 20 Q 60 70 0 60 Q -60 70 -70 20 Z" fill="#f2b8c6" stroke={KC.ink} strokeWidth={7} /><path d="M -50 -10 Q 0 -40 50 -10" stroke="#fff" strokeWidth={10} strokeDasharray="8 10" fill="none" /></g>}
@@ -224,7 +259,7 @@ function Nixtamal() {
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
           <Comal x={540} y={1070} s={1.6} />
-          {T < K.Ci + 1.4 ? <Masa x={540} y={985} s={1.75} aplana={kprog(T, K.Ci + 0.3, K.Ci + 1.4)} />
+          {T < K.Ci + 1.4 ? <g opacity={kprog(T, K.Ci - 0.1, K.Ci + 0.5)}><Masa x={540} y={985} s={1.75} aplana={kprog(T, K.Ci + 0.3, K.Ci + 1.4)} /></g>
             : <Tortilla x={540} y={1020} s={1.6} infla={kprog(T, K.Ci + 2.0, K.Ci + 3.2, kEase.rebote)} />}
           <Marca x={870} y={640} ok s={1.2} o={kprog(T, K.Ci + 3.4, K.Ci + 3.8)} />
         </SvgCapa>

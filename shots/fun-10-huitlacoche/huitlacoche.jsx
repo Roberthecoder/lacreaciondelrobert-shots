@@ -34,7 +34,7 @@ function Elote({ T, x, y, s = 1, abre = 1, agalla = 1, oscuro = 0, pelos = 1, he
   const ang = (k) => klerp(k, k * 12, kEase.sale(abre));
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-26} y={300} width={52} height={130} rx={12} fill={HC.hoja2} stroke={KC.ink} strokeWidth={6} />
-    {[-6, 6, -3.5, 3.5].map((k, i) => <path key={i} d={HOJA} transform={`translate(0 330) rotate(${ang(k)}) scale(${i < 2 ? 1 : 0.92})`} fill={i < 2 ? HC.hoja2 : HC.hoja} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />)}
+    {[-6, 6, -3.5, 3.5].map((k, i) => <path key={i} d={HOJA} transform={`translate(0 330) rotate(${ang(k)}) scale(${i < 2 ? 1 : 0.92})`} fill={i < 2 ? 'url(#hu-hoja2)' : 'url(#hu-hoja)'} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />)}
     {/* pelos (estigmas) */}
     {pelos > 0 && Array.from({ length: 16 }, (_, i) => { const u = i / 15 - 0.5, L = 220 * pelos, sw = mece(T, i + 2, 0.6) * 18;
       return <path key={i} d={`M ${u * 50} -350 Q ${u * 140 + sw} ${-350 - L * 0.55} ${u * 260 + sw * 2} ${-350 - L}`} stroke={i % 3 ? HC.pelo : HC.pelo2} strokeWidth={6} fill="none" strokeLinecap="round" />; })}
@@ -42,7 +42,7 @@ function Elote({ T, x, y, s = 1, abre = 1, agalla = 1, oscuro = 0, pelos = 1, he
     {granos}
     {agalla > 0 && AGALLAS.map(([ax, ay, ar], i) => <Agalla key={i} x={ax} y={ay} r={ar * kEase.rebote(kclamp(agalla * 1.25 - i * 0.04, 0, 1))} oscuro={oscuro} seed={i + 3} />)}
     {/* hojas de enfrente: tapan el elote cerrado y se abren */}
-    {[-1, 1].map((sg) => <path key={sg} d={HOJA} transform={`translate(${sg * 10} 330) rotate(${sg * klerp(2, 62, kEase.sale(abre))}) scale(${klerp(1, 0.85, abre)})`} fill={HC.hoja} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />)}
+    {[-1, 1].map((sg) => <path key={sg} d={HOJA} transform={`translate(${sg * 10} 330) rotate(${sg * klerp(2, 62, kEase.sale(abre))}) scale(${klerp(1, 0.85, abre)})`} fill="url(#hu-hoja)" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />)}
     {herida > 0 && <path d="M 60 -60 L 84 -20 L 64 10 L 92 50 L 70 90" stroke="#7a3b1c" strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray={`${herida * 220} 400`} />}
   </g>;
 }
@@ -81,10 +81,10 @@ function Jeringa({ x, y, empuje = 0 }) {
 // Báscula de cocina con plato.
 function Bascula({ x, y }) {
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={-200} y={0} width={400} height={170} rx={30} fill="#ff6b5a" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-200} y={0} width={400} height={170} rx={30} fill="url(#hu-bascula)" stroke={KC.ink} strokeWidth={8} />
     <rect x={-120} y={40} width={240} height={80} rx={14} fill="#1b2a22" stroke={KC.ink} strokeWidth={5} />
     <text x={0} y={102} textAnchor="middle" style={{ font:`700 54px ${KF.mono}` }} fill="#7dffb0">131 g</text>
-    <ellipse cx={0} cy={-6} rx={250} ry={40} fill="#e9edf2" stroke={KC.ink} strokeWidth={8} />
+    <ellipse cx={0} cy={-6} rx={250} ry={40} fill="url(#hu-plato)" stroke={KC.ink} strokeWidth={8} />
   </g>;
 }
 // Plántula de maíz con agallitas en las hojas.
@@ -125,6 +125,14 @@ function HuitlacocheShot() {
   const NOMBRES = [['cuitlacoche', 'náhuatl', -98.2, 19.3, 250, 900], ['ta’ chak', 'maya', -89.0, 20.7, 820, 880], ['bia’huí’', 'zapoteco', -96.7, 17.0, 300, 1085]];
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
+      {/* belleza: degradados del mismo tono (claro arriba-izquierda, oscuro abajo-derecha) para hojas y báscula */}
+      <svg width={0} height={0} style={{ position:'absolute' }}><defs>
+        <linearGradient id="hu-hoja" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#86d672" /><stop offset=".5" stopColor={HC.hoja} /><stop offset="1" stopColor="#357f2c" /></linearGradient>
+        <linearGradient id="hu-hoja2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#5fb24f" /><stop offset="1" stopColor="#2a6d24" /></linearGradient>
+        <linearGradient id="hu-bascula" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#ff8f7e" /><stop offset="1" stopColor="#b8443a" /></linearGradient>
+        <radialGradient id="hu-globo" cx=".36" cy=".32" r=".75"><stop offset="0" stopColor="#8fd0ff" /><stop offset=".55" stopColor="#3f94e6" /><stop offset="1" stopColor="#1c4f8c" /></radialGradient>
+        <linearGradient id="hu-plato" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#f6f8fb" /><stop offset="1" stopColor="#aab3c0" /></linearGradient>
+      </defs></svg>
       {/* 1–2 · gancho: el elote se abre y salen bolas grises; va a tu quesadilla */}
       <Escena T={T} a={K.G} b={K.En} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
@@ -255,12 +263,12 @@ function HuitlacocheShot() {
         <FondoLunares color={KC.pink} />
         {fsvg(<>
           {T < K.Ef + 2.9 && <g opacity={1 - kprog(T, K.Ef + 2.4, K.Ef + 2.9)} transform={eEf.t}>
-            <circle cx={480} cy={880} r={300} fill="#4aa8ff" stroke={KC.ink} strokeWidth={9} />
-            <path d="M 260 720 Q 330 640 420 700 Q 470 780 400 840 Q 330 900 280 840 Z M 520 640 Q 640 600 700 690 Q 720 800 620 820 Q 540 760 520 640 Z M 470 930 Q 560 900 640 980 Q 650 1080 560 1120 Q 480 1060 470 930 Z" fill={HC.hoja} stroke={KC.ink} strokeWidth={6} />
+            <circle cx={480} cy={880} r={300} fill="url(#hu-globo)" stroke={KC.ink} strokeWidth={9} />
+            <path d="M 260 720 Q 330 640 420 700 Q 470 780 400 840 Q 330 900 280 840 Z M 520 640 Q 640 600 700 690 Q 720 800 620 820 Q 540 760 520 640 Z M 470 930 Q 560 900 640 980 Q 650 1080 560 1120 Q 480 1060 470 930 Z" fill="url(#hu-hoja)" stroke={KC.ink} strokeWidth={6} />
             {[[340, 760], [620, 720], [560, 1010], [300, 960]].map(([a, b], i) => <g key={i} transform={`translate(${a} ${b}) scale(${kprog(T, K.Ef + 0.3 + i * 0.15, K.Ef + 0.6 + i * 0.15, kEase.rebote)})`}>
               <circle r={30} fill={KC.red} stroke={KC.ink} strokeWidth={5} /><text y={14} textAnchor="middle" style={{ font:`400 42px ${KF.titulo}` }} fill="#fff">!</text></g>)}
           </g>}
-          {T > K.Ef + 2.4 && <g opacity={kprog(T, K.Ef + 2.4, K.Ef + 2.9)}>
+          {T > K.Ef + 2.4 && <g opacity={kprog(T, K.Ef + 2.4, K.Ef + 2.9) * (1 - kprog(T, K.Mo - 0.1, K.Mo + 0.4))}>
             <MapaMexico x={60} y={640} ancho={960} />
             {NOMBRES.map(([n, l, lon, lat, tx, ty], i) => { const [px, py] = MXK(lon, lat); const on = kprog(T, K.Ef + 2.9 + i * 0.45, K.Ef + 3.3 + i * 0.45, kEase.rebote); return on > 0 ? <g key={i}>
               <line x1={px} y1={py} x2={tx} y2={ty} stroke={KC.ink} strokeWidth={5} opacity={on > 0.5 ? 1 : 0} />
@@ -304,7 +312,7 @@ function HuitlacocheShot() {
       <Chip T={T} at={K.En + 0.8} until={K.En + 2.5} texto="pelos sin polinizar" x={400} y={235} tam={42} borde={HC.pelo} />
       <Etq T={T} at={K.En + 1.2} until={K.En + 2.5} x={420} y={500} texto="pelos (estigmas)" tam={30} lado="izq" />
       <Chip T={T} at={K.En + 2.7} until={K.H - 0.3} texto="o heridas: granizo, viento" x={400} y={235} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.En + 3.4} until={K.H - 0.3} x={640} y={1040} texto="herida" tam={32} lado="izq" />
+      <Etq T={T} at={K.En + 3.4} until={K.H - 0.3} x={650} y={1250} texto="herida" tam={32} lado="der" />
       <Etq T={T} at={K.H + 0.4} until={K.A - 0.3} x={820} y={420} texto="pelo (estigma)" tam={30} color={HC.pelo} lado="izq" />
       <Etq T={T} at={K.H + 1.2} until={K.A - 0.3} x={500} y={760} texto="hifas" tam={36} color="#fff4d6" lado="izq" />
       <Etq T={T} at={K.H + 2.2} until={K.A - 0.3} x={660} y={1100} texto="grano (ovario)" tam={30} color={HC.grano} />
@@ -317,8 +325,8 @@ function HuitlacocheShot() {
       <Etq T={T} at={K.Es + 2.4} until={K.E - 0.3} x={eEs.x(730)} y={eEs.y(1140)} texto="teliosporas" tam={34} color={KC.texto} lado="izq" />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.1} anio="2003" quien="Universidad de Illinois" revista="Pataky y Chandler · Mycologia, 2003" x={770} y={480} />
       <Chip T={T} at={K.E + 3.4} until={K.Co - 0.3} texto="inoculan a propósito los pelos" x={540} y={1455} tam={36} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Co + 0.3} until={K.Sa - 0.3} valor={131} dur={0.9} sufijo=" g" etiqueta="hasta" x={540} y={440} tam={200} color={KC.gold2} />
-      <Chip T={T} at={K.Co + 1.0} until={K.Sa - 0.3} texto="de huitlacoche por mazorca" x={540} y={640} tam={36} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Co + 1.0} until={K.Sa - 0.3} valor={131} dur={0.9} sufijo=" g" etiqueta="hasta" x={540} y={440} tam={200} color={KC.gold2} />
+      <Chip T={T} at={K.Co + 1.5} until={K.Sa - 0.3} texto="de huitlacoche por mazorca" x={540} y={640} tam={36} borde={KC.ink} />
       <Dias T={T} at={K.Sa + 0.2} until={K.Ef - 0.3} hasta={14} x={440} y={430} />
       <Chip T={T} at={K.Sa + 3.0} until={K.Ef - 0.3} texto="sin esporas: le falta color y sabor" x={540} y={620} tam={34} borde={KC.red} />
       <Chip T={T} at={K.Ef + 0.2} until={K.Ef + 2.5} texto="en casi todo el mundo: enfermedad" x={460} y={470} tam={34} borde={KC.red} />

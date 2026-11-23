@@ -45,10 +45,12 @@ function Tormenta({ T, rayos = [], persona = true }) {
     {rayos.map(([t, x, sd], i) => { const r = rayoEn(T, t); return <Rayo key={i} x0={x + 40} y0={420} x1={x} y1={1450} seed={sd} p={r.p} o={r.o} grosor={9} />; })}
     {[[180, 330, 1.5], [560, 260, 1.8], [930, 360, 1.4], [360, 470, 1.2], [780, 500, 1.3]].map(([x, y, s], i) =>
       <Nube key={i} x={x + Math.sin(T * 0.3 + i) * 14} y={y} s={s} color={fl > 0.25 ? '#6b75a0' : TR_NUBE} borde="#121628" />)}
-    <path d="M 0 1470 Q 260 1390 540 1460 T 1080 1440 L 1080 1920 L 0 1920 Z" fill="#17263a" stroke={KC.ink} strokeWidth={8} />
-    <path d="M 0 1560 Q 300 1510 620 1560 T 1080 1550 L 1080 1920 L 0 1920 Z" fill="#1d3346" />
-    <Casa x={830} y={1545} s={0.55} luz={1} />
-    {persona && <PersonaSimple x={420} yPies={1650} alto={300} color={KC.pink} cara="o" />}
+    <defs><linearGradient id="trSuelo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#24384f" /><stop offset="1" stopColor="#0d1622" /></linearGradient></defs>
+    <path d="M 0 1470 Q 260 1390 540 1460 T 1080 1440 L 1080 1920 L 0 1920 Z" fill="url(#trSuelo)" stroke={KC.ink} strokeWidth={8} />
+    <path d="M 0 1560 Q 300 1510 620 1560 T 1080 1550 L 1080 1920 L 0 1920 Z" fill="#1d3346" opacity={0.7} />
+    {Array.from({ length: 16 }, (_, i) => <path key={'p' + i} d={`M ${(i * 71) % 1080} ${1600 + (i * 53) % 260} l 8 -26 l 6 24`} fill="none" stroke="#3c5a74" strokeWidth={4} strokeLinecap="round" />)}
+    <Casa x={850} y={1560} s={0.78} luz={1} />
+    {persona && <PersonaSimple x={430} yPies={1690} alto={430} color={KC.pink} cara="o" />}
     <Lluvia T={T} />
   </g>;
 }
@@ -174,7 +176,9 @@ function Trueno() {
       {/* 3 · la luz llega casi al instante */}
       <Escena T={T} a={K.Luz} b={K.Sonido} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
-        <Lienzo>
+        <Lienzo><g transform="translate(540 1000) scale(1.25) translate(-575 -880)">
+          <rect x={-200} y={1190} width={1500} height={700} fill="url(#trSueloL)" />
+          <defs><linearGradient id="trSueloL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#24384f" /><stop offset="1" stopColor="#0d1622" /></linearGradient></defs>
           <Rayo x0={250} y0={640} x1={230} y1={1180} seed={11} p={kprog(T, K.Luz + 0.1, K.Luz + 0.2)} grosor={10} />
           <Nube x={260} y={620} s={1.25} color={TR_NUBE} />
           <Casa x={810} y={1130} s={0.95} luz={T > K.Luz + 0.35 ? 1 : 0} />
@@ -184,7 +188,7 @@ function Trueno() {
             <FlechaRecta x1={330} y1={760} x2={700} y2={960} p={kprog(T, K.Luz + 0.25, K.Luz + 0.32)} color="#fff" grosor={16} />
           </g>}
           {Array.from({ length: 8 }, (_, i) => <line key={i} x1={810} y1={980} x2={810 + Math.cos(i * 0.785) * 200} y2={980 + Math.sin(i * 0.785) * 200} stroke="#fff" strokeWidth={8} strokeLinecap="round" opacity={destello(T, K.Luz + 0.32) * 0.9} />)}
-        </Lienzo>
+        </g></Lienzo>
         <Medidor T={T} at={K.Luz + 0.05} until={K.Sonido - 0.15} valor={(t) => kprog(t, K.Luz + 0.25, K.Luz + 0.32)} etiqueta="luz del rayo" texto={(v) => (v < 1 ? '…' : 'casi instantáneo')} x={90} y={420} ancho={900} color={KC.white} />
       </Escena>
       {/* 4 · el sonido: lento, ≈ 340 m cada segundo */}
@@ -208,7 +212,8 @@ function Trueno() {
       <Escena T={T} a={K.Tres} b={K.Pregunta} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <TextoSvg x={560} y={640} tam={150} color={KC.yellow}>1 KM ≈ 3 S</TextoSvg>
+          <TextoSvg x={560} y={700} tam={150} color={KC.yellow}>1 KM ≈ 3 S</TextoSvg>
+          <g transform="translate(0 90)">
           <Nube x={210} y={830} s={0.9} color={TR_NUBE} />
           <Rayo x0={205} y0={865} x1={190} y1={1200} seed={12} grosor={8} amp={50} rama={false} o={0.9} />
           <Regla x={300} y={1200} ancho={690} marcas={[[0, '0'], [1, '1 km']]} />
@@ -218,6 +223,7 @@ function Trueno() {
               <text x={0} y={-24} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink}>{k} s</text>
               <line x1={0} y1={-6} x2={0} y2={60} stroke={KC.ink} strokeWidth={8} /></g>; })}
           <FrenteSonido x={330 + 650 * kprog(T, K.Tres + 0.3, K.Tres + 2.85)} y={1400} T={T} color={KC.violet} alto={85} />
+          </g>
         </Lienzo>
       </Escena>
       {/* 6 · ¿contaste 9? → ≈ 3 km */}
@@ -225,16 +231,18 @@ function Trueno() {
         <FondoLunares color={KC.pink} />
         <Lienzo>
           {/* pase a mano cine: tú contando y la tormenta a lo lejos; la distancia se marca en el suelo */}
-          <Nube x={800} y={740} s={0.85} color={TR_NUBE} />
-          <Rayo x0={812} y0={770} x1={792} y1={1240} seed={14} p={rayoEn(T, P0).p} o={rayoEn(T, P0).o} grosor={8} amp={60} rama={false} />
-          <line x1={60} y1={1240} x2={1020} y2={1240} stroke={KC.ink} strokeWidth={8} />
-          <PersonaSimple x={260} yPies={1240} alto={300} color={KC.pink} cara="o" />
-          <TextoSvg x={300} y={470} tam={74} color={KC.texto}>¿CONTASTE…</TextoSvg>
-          {T > P0 && <NumSalta T={T} n={cuentaP} cambio={P0 + (cuentaP - 1) * 0.22} x={300} y={860} tam={330} color={KC.yellow} />}
+          <defs><linearGradient id="trSueloP" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#24384f" /><stop offset="1" stopColor="#0d1622" /></linearGradient></defs>
+          <rect x={0} y={1340} width={KW} height={600} fill="url(#trSueloP)" />
+          <Nube x={800} y={720} s={1.2} color={TR_NUBE} />
+          <Rayo x0={812} y0={760} x1={792} y1={1340} seed={14} p={rayoEn(T, P0).p} o={rayoEn(T, P0).o} grosor={10} amp={70} rama={false} />
+          <line x1={0} y1={1340} x2={1080} y2={1340} stroke={KC.ink} strokeWidth={8} />
+          <PersonaSimple x={260} yPies={1340} alto={440} color={KC.pink} cara="o" />
+          <TextoSvg x={300} y={420} tam={74} color={KC.texto}>¿CONTASTE…</TextoSvg>
+          {T > P0 && <NumSalta T={T} n={cuentaP} cambio={P0 + (cuentaP - 1) * 0.22} x={300} y={800} tam={330} color={KC.yellow} />}
           {T > K.Pregunta + 2.3 && <g opacity={kprog(T, K.Pregunta + 2.3, K.Pregunta + 2.5)}>
-            <line x1={260} y1={1300} x2={260 + 532 * kprog(T, K.Pregunta + 2.3, K.Pregunta + 2.6)} y2={1300} stroke={KC.cyan} strokeWidth={8} strokeDasharray="20 14" />
-            <line x1={260} y1={1275} x2={260} y2={1325} stroke={KC.cyan} strokeWidth={8} /><line x1={792} y1={1275} x2={792} y2={1325} stroke={KC.cyan} strokeWidth={8} />
-            <TextoSvg x={526} y={1440} tam={120} color={KC.cyan} s={klerp(0.4, 1, kprog(T, K.Pregunta + 2.5, K.Pregunta + 2.9, kEase.rebote))}>≈ 3 KM</TextoSvg>
+            <line x1={260} y1={1400} x2={260 + 532 * kprog(T, K.Pregunta + 2.3, K.Pregunta + 2.6)} y2={1400} stroke={KC.cyan} strokeWidth={8} strokeDasharray="20 14" />
+            <line x1={260} y1={1375} x2={260} y2={1425} stroke={KC.cyan} strokeWidth={8} /><line x1={792} y1={1375} x2={792} y2={1425} stroke={KC.cyan} strokeWidth={8} />
+            <TextoSvg x={526} y={1530} tam={110} color={KC.cyan} s={klerp(0.4, 1, kprog(T, K.Pregunta + 2.5, K.Pregunta + 2.9, kEase.rebote))}>≈ 3 KM</TextoSvg>
           </g>}
         </Lienzo>
       </Escena>
@@ -243,6 +251,7 @@ function Trueno() {
         <FondoLunares color={KC.lilac} />
         <Lienzo>
           {/* pase a mano cine: cada panel trae su tormenta (grande = cerca, chica y tenue = lejos); paneles más altos y al centro */}
+          <g transform="translate(0 110)">
           <rect x={50} y={520} width={980} height={440} rx={36} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
           <text x={100} y={600} style={{ font:`900 50px ${KF.texto}` }} fill={KC.yellow}>¡CRAC! seco → cerca</text>
           <Nube x={185} y={700} s={0.62} color={TR_NUBE} />
@@ -253,13 +262,14 @@ function Trueno() {
           <g opacity={0.6}><Nube x={185} y={1250} s={0.34} color={TR_NUBE} />
             <Rayo x0={190} y0={1262} x1={184} y1={1360} seed={22} p={rayoEn(T, K.Retumbo + 2.2).p} o={Math.max(0.35, rayoEn(T, K.Retumbo + 2.2).o)} grosor={4} amp={20} rama={false} /></g>
           <OndaForma x={330} y={1280} ancho={650} tipo="largo" p={kprog(T, K.Retumbo + 2.3, K.Retumbo + 4.6)} T={T} color={KC.cyan} />
+          </g>
         </Lienzo>
       </Escena>
       {/* 8 · cuidado: puede caer a ≈ 16 km o más de la tormenta */}
       <Escena T={T} a={K.Cuidado} b={K.Regla} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
-        <Lienzo>
-          <circle cx={540} cy={820} r={360 * kprog(T, K.Cuidado + 0.5, K.Cuidado + 1.4, kEase.sale)} fill="rgba(255,225,26,.35)" stroke={KC.ink} strokeWidth={8} strokeDasharray="26 18" />
+        <Lienzo><g transform="translate(540 980) scale(1.15) translate(-540 -820)">
+          <circle cx={540} cy={820} r={360 * kprog(T, K.Cuidado + 0.1, K.Cuidado + 1.0, kEase.sale)} fill="rgba(255,225,26,.35)" stroke={KC.ink} strokeWidth={8} strokeDasharray="26 18" />
           {T > K.Cuidado + 3.6 && <circle cx={540} cy={820} r={360 + 40 * kprog(T, K.Cuidado + 3.6, K.Cuidado + 4.4)} fill="none" stroke={KC.red} strokeWidth={8} strokeDasharray="10 16" opacity={0.6 + 0.4 * Math.sin(T * 6)} />}
           <Nube x={540} y={830} s={1.3} color={TR_NUBE} />
           {[[0.6, -0.5, 1.9], [-0.95, 0.15, 2.6], [0.3, 0.95, 3.2]].map(([cx, cy, t], i) => { const r = rayoEn(T, K.Cuidado + t), px = 540 + cx * 330, py = 820 + cy * 330;
@@ -269,13 +279,15 @@ function Trueno() {
             <line x1={540} y1={830} x2={900} y2={830} stroke={KC.ink} strokeWidth={8} strokeDasharray="14 10" />
             <TextoSvg x={720} y={790} tam={56} fuente="texto" color={KC.texto}>≈ 16 km</TextoSvg>
           </g>}
-        </Lienzo>
+        </g></Lienzo>
         <Chip T={T} at={K.Cuidado + 3.6} until={K.Regla - 0.1} texto="≈ 16 km o más" x={540} y={420} tam={48} borde={KC.red} />
       </Escena>
       {/* 9 · la regla: si truena, métete */}
       <Escena T={T} a={K.Regla} b={K.Espera} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
-        <Lienzo>
+        <Lienzo><g transform="translate(540 1000) scale(1.2) translate(-540 -880)">
+          <defs><linearGradient id="trSueloR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#24384f" /><stop offset="1" stopColor="#0d1622" /></linearGradient></defs>
+          <rect x={-100} y={1160} width={1300} height={700} fill="url(#trSueloR)" />
           <Nube x={560} y={650} s={1.1} color={TR_NUBE} />
           <Rayo x0={590} y0={690} x1={550} y1={1010} seed={31} p={rayoEn(T, K.Regla + 0.2).p} o={rayoEn(T, K.Regla + 0.2).o} grosor={9} amp={70} rama={false} />
           <OndasArco x={590} y={820} ang={20} T={T} color={KC.ink} largo={300} o={1 - kprog(T, K.Regla + 3, K.Regla + 3.5)} />
@@ -284,7 +296,7 @@ function Trueno() {
           {(() => { const run = kprog(T, K.Regla + 2.6, K.Regla + 4.9, kEase.suave), x = klerp(500, 860, run), o = 1 - kprog(T, K.Regla + 4.8, K.Regla + 5.0);
             return o > 0 && <g opacity={o} transform={`translate(0 ${-Math.abs(Math.sin(T * 14)) * 22 * (run > 0 && run < 1 ? 1 : 0)})`}><PersonaSimple x={x} yPies={1160} alto={320} color={KC.pink} cara="o" brazos={run > 0 && run < 1 ? 0.25 : 0} /></g>; })()}
           {T > K.Regla + 0.8 && T < K.Regla + 2.8 && <Alerta x={430} y={800} s={klerp(0.4, 1, kprog(T, K.Regla + 0.8, K.Regla + 1.1, kEase.rebote))} />}
-        </Lienzo>
+        </g></Lienzo>
         <Chip T={T} at={K.Regla + 0.8} until={K.Regla + 2.7} texto="lo oyes = estás a su alcance" x={600} y={430} tam={36} borde={KC.red} />
         <Chip T={T} at={K.Regla + 3.0} until={K.Espera - 0.1} texto="si truena, métete" x={640} y={430} tam={50} borde={KC.yellow} />
       </Escena>
@@ -293,20 +305,23 @@ function Trueno() {
         <FondoLunares color={KC.yellow} />
         <Lienzo>
           {/* pase a mano cine: la casa (donde esperas) atenuada detrás del reloj */}
-          <g opacity={0.4}><Casa x={540} y={1560} s={1.4} luz={1} /></g>
-          <Reloj30 x={540} y={770} r={250} v={1 - kprog(T, K.Espera + 0.9, K.Espera + 3.8, kEase.suave)} T={T} />
-          <TextoSvg x={540} y={1130} tam={120} color={KC.cyan}>30 MIN</TextoSvg>
+          <defs><linearGradient id="trSueloE" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#24384f" /><stop offset="1" stopColor="#0d1622" /></linearGradient></defs>
+          <rect x={0} y={1560} width={KW} height={400} fill="url(#trSueloE)" />
+          <line x1={0} y1={1560} x2={KW} y2={1560} stroke={KC.ink} strokeWidth={8} />
+          <Casa x={540} y={1525} s={1.05} luz={1} />
+          <Reloj30 x={540} y={660} r={250} v={1 - kprog(T, K.Espera + 0.9, K.Espera + 3.8, kEase.suave)} T={T} />
+          <TextoSvg x={540} y={1060} tam={110} color={KC.cyan}>30 MIN</TextoSvg>
         </Lienzo>
-        <Chip T={T} at={K.Espera + 0.2} until={K.Cierre - 0.1} texto="después del último trueno" x={640} y={430} tam={40} borde={KC.ink} />
+        <Chip T={T} at={K.Espera + 0.2} until={K.Cierre - 0.1} texto="después del último trueno" x={540} y={300} tam={40} borde={KC.ink} />
       </Escena>
       {/* 11 · cierre: la misma noche, vista desde adentro */}
       <Escena T={T} a={K.Cierre} b={FIN} fondo={KC.noche}>
         <Lienzo>
           {/* pase a mano cine: ventana y cabeza bajadas al centro del cuadro; globo con texto oscuro sobre blanco */}
-          <g transform="translate(0 170)"><Tormenta T={T} rayos={[[RC, 330, 3]]} persona={false} /></g>
-          <ParedVentana y0={470} y1={1090} />
-          <CabezaPerfil x={250} y={1200} s={1.0} gesto="sonrie" boca={T > RC + 0.4 && T < RC + 2.4 ? 0.5 + 0.5 * Math.sin(T * 15) : 0} />
-          {T > RC + 0.4 && <g transform="translate(20 210)">
+          <g transform="translate(0 290)"><Tormenta T={T} rayos={[[RC, 330, 3]]} persona={false} /></g>
+          <ParedVentana y0={590} y1={1210} />
+          <CabezaPerfil x={250} y={1320} s={1.0} gesto="sonrie" boca={T > RC + 0.4 && T < RC + 2.4 ? 0.5 + 0.5 * Math.sin(T * 15) : 0} />
+          {T > RC + 0.4 && <g transform="translate(20 330)">
             <rect x={470} y={930} width={300} height={140} rx={40} fill="#fff" stroke={KC.ink} strokeWidth={8} />
             <path d="M 480 1010 L 430 1030 L 490 1040 Z" fill="#fff" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
             <text x={620} y={1025} textAnchor="middle" style={{ font:`400 84px ${KF.titulo}` }} fill="#0b1020">{Array.from({ length: cuentaC }, (_, i) => i + 1).join(', ')}…</text>

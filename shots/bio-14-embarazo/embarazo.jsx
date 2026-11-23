@@ -6,8 +6,23 @@
 const ORO = '#e0a419', ORO2 = '#ffd76a', ROSA_T = '#d6336c', PIEL = '#e9a983', PIEL2 = '#c98563';
 const ALFA = '#4dd4ff', BETA = '#ff5fa2', CABRA = '#b18cff', RATON = '#9fb3c8', MEMB = '#fffdf6';
 
+// Pase de belleza: degradados de volumen (claro arriba-izquierda, sombra abajo-derecha) que comparten todas las capas.
+function EmDefs() {
+  return <defs>
+    <radialGradient id="em-luz" cx=".32" cy=".26" r=".85">
+      <stop offset="0" stopColor="#ffffff" stopOpacity=".45" /><stop offset=".42" stopColor="#ffffff" stopOpacity="0" />
+      <stop offset=".78" stopColor="#000000" stopOpacity=".08" /><stop offset="1" stopColor="#000000" stopOpacity=".3" />
+    </radialGradient>
+    <linearGradient id="em-plastico" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stopColor="#ffffff" /><stop offset=".45" stopColor="#f7f4ee" /><stop offset="1" stopColor="#cfc8bb" />
+    </linearGradient>
+    <radialGradient id="em-oro" cx=".36" cy=".3" r=".8">
+      <stop offset="0" stopColor="#ffe08a" /><stop offset=".55" stopColor="#e0a419" /><stop offset="1" stopColor="#9a6a08" />
+    </radialGradient>
+  </defs>;
+}
 function Capa({ children, z }) {
-  return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{children}</svg>;
+  return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}><EmDefs />{children}</svg>;
 }
 
 /* ---------- la prueba casera (cassette) ----------
@@ -16,7 +31,8 @@ function Prueba({ T = 0, x, y, s = 1, rot = 0, t = 0, c = 0, brilla = 0, letras 
   const lin = (yy, v, col) => v > 0 && <rect x={-58} y={yy - 10} width={116} height={20} rx={6} fill={col} opacity={v} />;
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     <rect x={-128} y={-418} width={256} height={836} rx={118} fill="rgba(0,0,0,.18)" transform="translate(14 16)" />
-    <rect x={-128} y={-418} width={256} height={836} rx={118} fill="#f7f4ee" stroke={KC.ink} strokeWidth={10} />
+    <rect x={-128} y={-418} width={256} height={836} rx={118} fill="url(#em-plastico)" stroke={KC.ink} strokeWidth={10} />
+    <rect x={-96} y={-400} width={22} height={790} rx={11} fill="#ffffff" opacity={0.55} />
     <rect x={-100} y={-380} width={200} height={40} rx={20} fill="#e9e4da" />
     {/* ventana de resultado */}
     <rect x={-72} y={-310} width={144} height={290} rx={18} fill="#d9d2c4" stroke={KC.ink} strokeWidth={7} />
@@ -37,11 +53,13 @@ function Prueba({ T = 0, x, y, s = 1, rot = 0, t = 0, c = 0, brilla = 0, letras 
 function ManoAtras({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d="M 60 120 Q 260 140 300 330 Q 330 520 160 640 L -40 760 L -240 760 Q -200 560 -170 420 Q -140 260 60 120 Z" fill={PIEL} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+    <path d="M 60 120 Q 260 140 300 330 Q 330 520 160 640 L -40 760 L -240 760 Q -200 560 -170 420 Q -140 260 60 120 Z" fill="url(#em-luz)" />
   </g>;
 }
 function ManoDelante({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    {[60, 150, 240].map((dy, i) => <rect key={i} x={96} y={dy} width={110 - i * 6} height={74} rx={37} fill={PIEL} stroke={KC.ink} strokeWidth={9} />)}
+    {[60, 150, 240].map((dy, i) => <g key={i}><rect x={96} y={dy} width={110 - i * 6} height={74} rx={37} fill={PIEL} stroke={KC.ink} strokeWidth={9} />
+      <rect x={100} y={dy + 4} width={102 - i * 6} height={66} rx={33} fill="url(#em-luz)" /></g>)}
     <path d="M -230 330 Q -150 250 -96 240 Q -60 236 -70 276 Q -90 320 -170 400 Z" fill={PIEL} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
     <path d="M -96 250 Q -78 252 -80 270" stroke={PIEL2} strokeWidth={6} fill="none" />
   </g>;
@@ -124,6 +142,7 @@ function Utero({ T, x, y, s = 1, hunde = 1, sale = 0 }) {
     <g transform={`translate(0 ${klerp(-150, 40, hunde)})`}>
       <circle r={120} fill="#fff1d6" stroke={KC.ink} strokeWidth={9} />
       <circle r={96} fill="#fde7b8" stroke="#e0b46a" strokeWidth={5} />
+      <circle r={116} fill="url(#em-luz)" />
       <path d="M -60 -50 Q 0 -100 60 -50 Q 40 -10 0 -6 Q -40 -10 -60 -50 Z" fill="#ffc46b" stroke={KC.ink} strokeWidth={5} />
       {Array.from({ length: 14 }, (_, i) => { const a = (i / 14) * Math.PI * 2; return <circle key={i} cx={Math.cos(a) * 108} cy={Math.sin(a) * 108} r={11} fill="#ffd9a0" stroke="#d29a4a" strokeWidth={3} />; })}
     </g>
@@ -160,12 +179,14 @@ function Servilleta({ T, x, y, frente = 0 }) {
 /* ---------- hibridoma (1975) ---------- */
 function Celula({ x, y, r, color, nucleo, o = 1 }) {
   return <g opacity={o}><circle cx={x} cy={y} r={r} fill={color} stroke={KC.ink} strokeWidth={8} />
-    <circle cx={x - r * 0.1} cy={y + r * 0.05} r={r * 0.45} fill={nucleo} stroke={KC.ink} strokeWidth={5} /></g>;
+    <circle cx={x - r * 0.1} cy={y + r * 0.05} r={r * 0.45} fill={nucleo} stroke={KC.ink} strokeWidth={5} />
+    <circle cx={x} cy={y} r={r - 4} fill="url(#em-luz)" /></g>;
 }
 function Raton({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d="M 120 20 Q 220 30 230 -40" stroke={KC.ink} strokeWidth={8} fill="none" strokeLinecap="round" />
     <ellipse cx={0} cy={0} rx={130} ry={74} fill="#d8dee6" stroke={KC.ink} strokeWidth={8} />
+    <ellipse cx={0} cy={0} rx={126} ry={70} fill="url(#em-luz)" />
     <circle cx={-110} cy={-50} r={38} fill="#d8dee6" stroke={KC.ink} strokeWidth={7} /><circle cx={-110} cy={-50} r={20} fill="#ff9fb8" />
     <circle cx={-150} cy={-6} r={8} fill={KC.ink} /><circle cx={-176} cy={16} r={9} fill="#ff6b8a" />
   </g>;
@@ -174,7 +195,7 @@ function Medalla({ T, x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s}) rotate(${Math.sin(T * 1.6) * 5})`}>
     <path d="M -90 -330 L -20 -120 L 20 -120 L 90 -330 Z" fill={KC.blue} stroke={KC.ink} strokeWidth={8} />
     <path d="M -40 -330 L 0 -160 L 40 -330 Z" fill={KC.red} />
-    <circle r={190} fill={ORO} stroke={KC.ink} strokeWidth={10} />
+    <circle r={190} fill="url(#em-oro)" stroke={KC.ink} strokeWidth={10} />
     <circle r={150} fill="none" stroke="#b07c0c" strokeWidth={8} />
     <path d="M -120 -60 A 140 140 0 0 1 -40 -136" stroke="#fff6c8" strokeWidth={14} fill="none" strokeLinecap="round" opacity={0.7} />
     <text x={0} y={-10} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink}>NOBEL</text>
@@ -223,7 +244,7 @@ function Embarazo() {
       {/* 2 · de la sangre a la orina, y la gota al pozo */}
       <Escena T={T} a={K.Or} b={K.Su}>
         <FondoLunares color={KC.yellow} />
-        <Capa>
+        <Capa><g transform="translate(0 120)">
           <path d="M -40 520 Q 300 460 520 560" stroke={KC.ink} strokeWidth={84} fill="none" /><path d="M -40 520 Q 300 460 520 560" stroke="#d7263d" strokeWidth={68} fill="none" />
           {[0, 1, 2, 3].map((i) => { const u = ((T - K.Or) * 0.5 + i / 4) % 1; return <HCG key={i} x={klerp(0, 500, u)} y={520 - Math.sin(u * Math.PI) * 50 + (u > 0.8 ? 0 : 0)} s={1.1} rot={T * 60 + i * 40} />; })}
           <FlechaCurva x1={540} y1={590} x2={710} y2={650} p={kprog(T, K.Or + 0.3, K.Or + 1.0)} curva={60} color={KC.ink} T={T} />
@@ -231,7 +252,7 @@ function Embarazo() {
           <g transform={`translate(0 ${klerp(0, 250, kprog(T, K.Or + 1.2, K.Or + 2.1))})`} opacity={1 - kprog(T, K.Or + 2.05, K.Or + 2.25)}>
             <path d="M 750 600 Q 690 730 750 790 Q 810 730 750 600 Z" fill="#ffe27a" stroke={KC.ink} strokeWidth={7} />
             <HCG x={752} y={735} s={0.7} rot={T * 40} /></g>
-        </Capa>
+        </g></Capa>
       </Escena>
       {/* 3 · la orina sube sola por la tira, como en una servilleta */}
       <Escena T={T} a={K.Su} b={K.Ox + 0.6} zoom={0.03}>
@@ -290,12 +311,14 @@ function Embarazo() {
         <FondoMarca patron="oscuro" />
         <Capa>
           <Fibras T={T} seed={7} /><Corriente T={T} seed={4} />
+          <g transform="translate(0 160)">
           <LineaFija y={1080} xs={[200, 880]} color={KC.mint} s={1.1} etiqueta="línea T" />
           <LineaFija y={500} xs={[240, 540, 840]} color={CABRA} s={1.3} etiqueta="línea C" />
           {[240, 540, 840].map((xx, i) => { const t0 = K.Co + 0.2 + i * 0.6, stop = 500 + 62 * 1.3 + 52 * 1.3 + 52 * 1.3 + 4;
             const yy = Math.max(stop, 1800 - (T - t0) * 520), ok = yy <= stop + 0.5;
             return <g key={i}><Anti x={xx} y={yy} s={1.3} oro />
               {ok && <circle cx={xx} cy={stop - 60} r={70} fill="none" stroke={ORO2} strokeWidth={6} opacity={Math.max(0, 1 - (T - t0 - (1800 - stop) / 520) * 2)} />}</g>; })}
+          </g>
         </Capa>
       </Escena>
       {/* 9 · 1975, Cambridge: hibridomas */}
@@ -320,7 +343,7 @@ function Embarazo() {
       {/* 10 · Nobel 1984 */}
       <Escena T={T} a={K.No} b={K.Ca} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        <Capa><Medalla T={T} x={540} y={850} s={1.3 * kprog(T, K.No, K.No + 0.5, kEase.rebote)} /></Capa>
+        <Capa><Medalla T={T} x={540} y={930} s={1.55 * kprog(T, K.No, K.No + 0.5, kEase.rebote)} /></Capa>
       </Escena>
       {/* 11 · dato chistoso: anticuerpos de cabra que atrapan los de ratón */}
       <Escena T={T} a={K.Ca} b={K.Ci}>
@@ -358,15 +381,15 @@ function Embarazo() {
       <Etq T={T} at={K.Sa + 0.8} until={K.Ra - 0.1} x={10} y={1173} texto="oro" tam={32} color={ORO2} />
       <Chip T={T} at={K.Ra + 0.3} until={K.Pr - 0.1} texto="miles de sándwiches = rayita" y={1500} tam={40} borde={ROSA_T} />
       <Chip T={T} at={K.Pr + 0.2} until={K.Co - 0.1} texto="¿y si la prueba falló?" y={1500} tam={42} borde={KC.pink} />
-      <Chip T={T} at={K.Co + 0.4} until={K.Es - 0.1} texto="control: sale haya hormona o no" y={1500} tam={38} borde={CABRA} />
+      <Chip T={T} at={K.Co + 0.4} until={K.Es - 0.1} texto="control: sale haya hormona o no" y={1555} tam={38} borde={CABRA} />
       <Chip T={T} at={K.Es + 0.2} until={K.Es + 2.3} texto="monoclonales: todos idénticos" y={1500} tam={40} borde={KC.pink} />
       <TarjetaEstudio T={T} at={K.Es + 2.4} until={K.No - 0.2} anio="1975" quien="Köhler y Milstein · Cambridge" revista="Nature · células fusionadas: hibridoma" y={480} />
       <Etq T={T} at={K.Es + 0.6} until={K.Es + 4.0} x={90} y={722} texto="célula de bazo" tam={32} color={KC.ink} />
       <Etq T={T} at={K.Es + 0.8} until={K.Es + 4.0} x={1000} y={1135} texto="célula de mieloma" lado="izq" tam={32} color={KC.ink} />
       <Etq T={T} at={K.Es + 4.3} until={K.No - 0.2} x={770} y={1135} texto="hibridoma" tam={36} color={KC.ink} />
       <Etq T={T} at={K.Es + 0.4} until={K.No - 0.2} x={370} y={1390} texto="ratón" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.No + 0.4} until={K.Ca - 0.1} texto="Nobel de Fisiología o Medicina" y={1270} tam={40} borde={ORO} />
-      <Chip T={T} at={K.No + 0.6} until={K.Ca - 0.1} texto="Jerne · Köhler · Milstein" y={1370} tam={34} borde={KC.ink} mono />
+      <Chip T={T} at={K.No + 0.4} until={K.Ca - 0.1} texto="Nobel de Fisiología o Medicina" y={1300} tam={40} borde={ORO} />
+      <Chip T={T} at={K.No + 0.6} until={K.Ca - 0.1} texto="Jerne · Köhler · Milstein" y={1395} tam={34} borde={KC.ink} mono />
       <Etq T={T} at={K.Ca + 0.4} until={K.Ci - 0.1} x={430} y={600} texto="de cabra" lado="izq" tam={40} color={KC.ink} />
       <Etq T={T} at={K.Ca + 1.6} until={K.Ci - 0.1} x={740} y={1140} texto="de ratón" tam={40} color={KC.ink} />
       <Chip T={T} at={K.Ca + 2.2} until={K.Ci - 0.1} texto="línea C: cabra atrapa ratón" y={1500} tam={40} borde={CABRA} />

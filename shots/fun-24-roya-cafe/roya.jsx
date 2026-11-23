@@ -196,10 +196,11 @@ function RoyaShot() {
       <Escena T={T} a={K.H} b={K.Es} zoom={0.1} origen="75% 55%">
         <FondoLunares color={KC.yellow} />
         {/* modo cine (pase a mano): las dos caras de la hoja 1.5 veces más grandes y al centro */}
-        {fsvg(<><g transform="translate(540 960) scale(1.5) translate(-470 -870)">
-          <HojaCafe x={150} y={1080} L={430} rot={-75} cara="haz" manchas={MANCHAS} roya={kprog(T, K.H + 0.4, K.H + 1.6)} T={T} seed={4} />
-          <HojaCafe x={680} y={1080} L={430} rot={-75} cara="enves" manchas={MANCHAS} roya={kprog(T, K.H + 0.8, K.H + 2.0)} T={T} seed={5} />
-          {T > K.H + 2.6 && <g opacity={kprog(T, K.H + 2.6, K.H + 3.0)}><circle cx={750} cy={790} r={110} fill="rgba(255,255,255,.12)" stroke={KC.white} strokeWidth={12} /><line x1={830} y1={870} x2={920} y2={960} stroke={KC.white} strokeWidth={22} strokeLinecap="round" /></g>}
+        {/* belleza: escala 1.35 y las dos hojas más hacia adentro (antes se cortaban en las orillas del cuadro) */}
+        {fsvg(<><g transform="translate(540 960) scale(1.35) translate(-470 -870)">
+          <HojaCafe x={190} y={1080} L={430} rot={-75} cara="haz" manchas={MANCHAS} roya={kprog(T, K.H + 0.4, K.H + 1.6)} T={T} seed={4} />
+          <HojaCafe x={610} y={1080} L={430} rot={-75} cara="enves" manchas={MANCHAS} roya={kprog(T, K.H + 0.8, K.H + 2.0)} T={T} seed={5} />
+          {T > K.H + 2.6 && <g opacity={kprog(T, K.H + 2.6, K.H + 3.0)}><circle cx={680} cy={790} r={110} fill="rgba(255,255,255,.12)" stroke={KC.white} strokeWidth={12} /><line x1={760} y1={870} x2={850} y2={960} stroke={KC.white} strokeWidth={22} strokeLinecap="round" /></g>}
         </g></>)}
       </Escena>
       {/* 2 · al microscopio: las urediniosporas en forma de riñón */}
@@ -243,15 +244,16 @@ function RoyaShot() {
       </Escena>
       {/* 5 · semanas después: un ramillete de esporas nuevas sale por el estoma; el viento y la lluvia las llevan */}
       <Escena T={T} a={K.R} b={K.C} zoom={0.05}>
-        {fsvg(<>
+        {/* belleza: el envés y el ramillete 1.3 veces más grandes, al centro (barra de 30 µm recalculada: 170 → 221) */}
+        {fsvg(<><g transform="translate(540 1100) scale(1.3) translate(-540 -995)">
           <Enves T={T} estomas={[[540, 1000, 0], [180, 640, 20], [900, 700, -15], [820, 1350, 10]]} Lest={85} seed={6} />
           {Array.from({ length: 9 }, (_, i) => { const ang = -165 + i * 18.75, rad = ang * Math.PI / 180, dummy = 0, k = kprog(T, K.R + 0.5 + i * 0.14, K.R + 1.1 + i * 0.14, kEase.rebote); if (k <= 0) return null;   // modo cine: el ramillete empieza a brotar a los 0.5 s (antes 1.0 s)
             const dist = 170 + (i % 2) * 90, bx = 540 + Math.cos(rad) * dist * brota, by = 990 + Math.sin(rad) * dist * brota;
-            const vx = vuela * (500 + i * 60), vy = vuela * (-200 + (i % 3) * 120) + Math.sin(T * 3 + i) * 10 * vuela;
+            const vx = vuela * (500 + i * 60), vy = vuela * (-60 + (i % 3) * 140) + Math.sin(T * 3 + i) * 10 * vuela;
             return <g key={i}><line x1={540} y1={995} x2={bx} y2={by} stroke="#ffd27a" strokeWidth={8} opacity={1 - vuela} />
               <Uredo x={bx + vx} y={by + vy} L={170} rot={ang + 90 + vuela * 200} s={k} /></g>; })}
           {vuela > 0 && Array.from({ length: 6 }, (_, i) => { const u = (T * 1.4 + i / 6) % 1; return <path key={i} d="M 0 -22 Q 14 0 0 14 Q -14 0 0 -22 Z" transform={`translate(${120 + i * 160} ${400 + u * 900})`} fill="#bfe9ff" stroke={KC.ink} strokeWidth={3} opacity={vuela * 0.9} />; })}
-        </>)}
+        </g></>)}
       </Escena>
       {/* 6 · de vuelta a escala real: el cafeto se queda pelón */}
       <Escena T={T} a={K.C} b={K.P} zoom={0.04}>
@@ -267,7 +269,7 @@ function RoyaShot() {
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
           {/* modo cine (pase a mano): tarjetas en verde oscuro (antes verde claro), más abajo, y la pregunta al centro */}
-          <g transform="translate(0 220)"><g opacity={kprog(T, K.P, K.P + 0.4)}>
+          <g transform="translate(0 400)"><g opacity={kprog(T, K.P, K.P + 0.4)}>
             <rect x={50} y={380} width={400} height={210} rx={26} fill="#24512a" stroke={KC.ink} strokeWidth={7} />
             {Array.from({ length: 8 }, (_, i) => <g key={i}><ellipse cx={105 + (i % 4) * 96} cy={430 + Math.floor(i / 4) * 70} rx={38} ry={30} fill={RC.hoja} stroke={KC.ink} strokeWidth={4} /><circle cx={113 + (i % 4) * 96} cy={438 + Math.floor(i / 4) * 70} r={8} fill={RC.cereza} /></g>)}
             <text x={250} y={572} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>cafetal</text>
@@ -306,10 +308,10 @@ function RoyaShot() {
         <FondoLunares color={KC.orange} />
         {fsvg(<>
           {/* modo cine (pase a mano): mapa en arena oscura (antes crema claro) y más al centro; la tarjeta del estudio va chica y arriba */}
-          <MapaMexico x={40} y={720} ancho={1000} color="#9c8b5c" centro={mixHex('#6f8a66', '#ff7a1a', kprog(T, K.E + 2.4, K.E + 3.4))}>
+          <MapaMexico x={40} y={860} ancho={1000} color="#9c8b5c" centro={mixHex('#6f8a66', '#ff7a1a', kprog(T, K.E + 2.4, K.E + 3.4))}>
             {[[-92.6, 16.4], [-96.9, 19.5], [-96.6, 16.9], [-97.9, 20.1], [-99.5, 17.4]].map(([lo, la], i) => { const [px, py] = mxProy(lo, la); const k = kprog(T, K.E + 2.6 + i * 0.12, K.E + 2.9 + i * 0.12, kEase.rebote); return k > 0 ? <circle key={i} cx={px} cy={py} r={13 * k} fill={RC.roya} stroke={KC.ink} strokeWidth={3} /> : null; })}
           </MapaMexico>
-          {T > K.E + 3.0 && <g opacity={kprog(T, K.E + 3.0, K.E + 3.4)} transform="translate(40 400)">
+          {T > K.E + 3.0 && <g opacity={kprog(T, K.E + 3.0, K.E + 3.4) * (1 - kprog(T, K.Cl - 0.3, K.Cl + 0.3))} transform="translate(40 400)">
             <rect x={0} y={0} width={470} height={300} rx={22} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
             <text x={235} y={44} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>Centroamérica · producción</text>
             {(() => { const u = kprog(T, K.E + 3.4, K.E + 4.4, kEase.sale); return <>
@@ -319,7 +321,7 @@ function RoyaShot() {
               <text x={44} y={252} style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>2012–13</text>
               <text x={455} y={215} textAnchor="end" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink} opacity={u}>−16 %</text>
             </>; })()}
-            <path d="M 420 300 L 715 790" stroke={KC.ink} strokeWidth={6} strokeDasharray="12 10" />
+            <path d="M 420 300 L 715 930" stroke={KC.ink} strokeWidth={6} strokeDasharray="12 10" />
           </g>}
         </>)}
       </Escena>
@@ -377,7 +379,7 @@ function RoyaShot() {
       <Chip T={T} at={K.G + 2.7} until={K.H - 0.2} texto="es un hongo" x={270} y={770} tam={46} borde={RC.roya} />
       <Chip T={T} at={K.H + 0.3} until={K.Es - 0.3} texto="roya del café" x={540} y={440} tam={46} borde={RC.roya} />
       <Etq T={T} at={K.H + 0.6} until={K.Es - 0.3} x={300} y={530} texto="Hemileia vastatrix" it tam={40} color={KC.ink} />
-      <Etq T={T} at={K.H + 1.2} until={K.Es - 0.3} x={60} y={1390} texto="haz (arriba)" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.H + 1.2} until={K.Es - 0.3} x={110} y={1390} texto="haz (arriba)" tam={34} color={KC.ink} />
       <Etq T={T} at={K.H + 1.6} until={K.Es - 0.3} x={600} y={1390} texto="envés (abajo)" tam={34} color={KC.ink} />
       <Etq T={T} at={K.Es + 0.8} until={K.Et - 0.3} x={60} y={625} texto="urediniospora" tam={38} color={RC.roya2} />
       <Etq T={T} at={K.Es + 1.4} until={K.Et - 0.3} x={640} y={712} texto="lado curvo: verruguitas" lado="izq" tam={30} />
@@ -394,17 +396,17 @@ function RoyaShot() {
       <Etq T={T} at={K.S + 0.8} until={K.E - 0.3} x={570} y={1250} texto="Ceilán (hoy Sri Lanka)" lado="der" tam={28} color={KC.ink} />
       <Etq T={T} at={K.S + 5.0} until={K.E - 0.3} x={600} y={900} texto="té" tam={46} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.3} anio="2012–13" quien="Centroamérica y México" revista="Avelino et al., Food Security, 2015" y={470} />
-      <Chip T={T} at={K.Cl + 0.3} until={K.Ti - 0.3} texto="Guatemala · 2012" x={620} y={340} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Cl + 3.0} until={K.Ti - 0.3} texto="hipótesis: probablemente lo aceleró" x={540} y={250} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Cl + 0.3} until={K.Cl + 2.9} texto="Guatemala · 2012" x={620} y={340} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Cl + 3.0} until={K.Ti - 0.3} texto="hipótesis: probablemente lo aceleró" x={540} y={340} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.Ti + 4.0} until={K.Ci - 0.3} texto="la roya evoluciona" x={250} y={1120} tam={38} borde={KC.red} />
       <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="tu café vs. la roya" x={290} y={620} tam={42} borde={RC.roya} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.H} texto="10 cm" largo={360} />
-      <BarraEscala T={T} at={K.H} until={K.Es} texto="5 cm" largo={150} />
+      <BarraEscala T={T} at={K.H} until={K.Es} texto="5 cm" largo={135} />
       <BarraEscala T={T} at={K.Es} until={K.Ha} texto="30 µm" largo={360} />
       <BarraEscala T={T} at={K.Ha} until={K.R} texto="30 µm" largo={360} />
-      <BarraEscala T={T} at={K.R} until={K.C} texto="30 µm" largo={170} />
+      <BarraEscala T={T} at={K.R} until={K.C} texto="30 µm" largo={221} />
       <BarraEscala T={T} at={K.C} until={K.P} texto="1 m" largo={330} />
       <BarraEscala T={T} at={K.S} until={K.E} texto="100 km" largo={144} />
       <BarraEscala T={T} at={K.E} until={K.Cl} texto="500 km" largo={111} />

@@ -73,13 +73,28 @@ function Protocolo({ T, a }) {
     </g>
   </g>;
 }
+// Belleza: luz fija sobre la Tierra que gira (lado de noche abajo a la derecha, brillo de atmósfera arriba a la izquierda).
+function LuzTierra({ x = 540, y = 880, r = 400 }) {
+  return <g>
+    <defs>
+      <radialGradient id="ozSombra" cx="32%" cy="28%" r="85%"><stop offset="0" stopColor="#000" stopOpacity="0" /><stop offset=".55" stopColor="#000" stopOpacity=".05" /><stop offset="1" stopColor="#020616" stopOpacity=".62" /></radialGradient>
+      <radialGradient id="ozBrillo" cx="30%" cy="26%" r="40%"><stop offset="0" stopColor="#fff" stopOpacity=".22" /><stop offset="1" stopColor="#fff" stopOpacity="0" /></radialGradient>
+    </defs>
+    <circle cx={x} cy={y} r={r - 4} fill="url(#ozSombra)" />
+    <circle cx={x} cy={y} r={r - 4} fill="url(#ozBrillo)" />
+    <path d={`M ${x - r * 0.82} ${y - r * 0.34} A ${r * 0.9} ${r * 0.9} 0 0 1 ${x - r * 0.3} ${y - r * 0.86}`} stroke="#bfefff" strokeWidth={7} strokeLinecap="round" fill="none" opacity=".35" />
+  </g>;
+}
 // Medalla esquemática del Nobel (sin reproducir el diseño real).
 function Medalla({ T, at, x, y }) {
   if (T < at) return null; const e = kprog(T, at, at + 0.5, kEase.rebote);
   return <g transform={`translate(${x} ${y}) scale(${e}) rotate(${Math.sin(T * 2) * 4})`}>
     <path d="M -60 -230 L -20 -90 L 20 -90 L 60 -230 Z" fill={KC.blue} stroke={KC.ink} strokeWidth={6} />
-    <circle r={110} fill={KC.gold} stroke={KC.ink} strokeWidth={9} /><circle r={80} fill="none" stroke={KC.ink} strokeWidth={4} strokeDasharray="8 8" />
-    <text y={18} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill="#0b1020">NOBEL</text>
+    <defs><radialGradient id="ozOro" cx="35%" cy="30%" r="75%"><stop offset="0" stopColor="#ffe9a6" /><stop offset=".45" stopColor={KC.gold} /><stop offset="1" stopColor="#8a5a14" /></radialGradient></defs>
+    <ellipse cx={8} cy={128} rx={90} ry={14} fill="#000" opacity=".3" />
+    <circle r={110} fill="url(#ozOro)" stroke={KC.ink} strokeWidth={9} /><circle r={80} fill="none" stroke="#6b4510" strokeWidth={4} strokeDasharray="8 8" />
+    <ellipse cx={-42} cy={-58} rx={26} ry={12} fill="#fff" opacity=".45" transform="rotate(-35 -42 -58)" />
+    <text y={14} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill="#0b1020">NOBEL</text>
   </g>;
 }
 
@@ -101,7 +116,7 @@ function OzonoShot() {
       {/* 1 · gancho: el agujero (vista desde el polo sur) se encoge */}
       <Escena T={T} a={K.G} b={K.Ca}>
         <FondoEspacio T={T} />
-        {svg(<><g transform={`rotate(${T * 4} 540 880)`}><TierraPolo T={T} x={540} y={880} r={400} hueco={huecoG} etiqueta={false} /></g>
+        {svg(<><g transform={`rotate(${T * 4} 540 880)`}><TierraPolo T={T} x={540} y={880} r={400} hueco={huecoG} etiqueta={false} /></g><LuzTierra />
           {/* modo cine: antes del segundo 3 ya asoman, atenuadas, las moléculas de ozono de las que va la historia */}
           <g opacity={0.5 * kprog(T, K.G + 1.8, K.G + 2.6)}>{[[120, 400, 20], [960, 380, 140], [965, 1240, 260], [115, 1215, 80]].map(([x, y, r], i) => <Ozono key={i} x={x + Math.sin(T + i) * 8} y={y + Math.cos(T * 0.8 + i) * 8} s={0.7} rot={r + T * 10} />)}</g></>)}
         <EscalaFija texto="2,000 km (aprox.)" largo={125} x={150} y={1330} />
@@ -151,12 +166,12 @@ function OzonoShot() {
         {/* modo cine: el sujeto sigue en pantalla (las moléculas de ozono y el átomo de cloro de la escena anterior, quietos y atenuados) */}
         {svg(<><g opacity={0.5 * kprog(T, K.E, K.E + 0.5) * (1 - 0.5 * kprog(T, K.E + 2.8, K.E + 3.3))}>{MOLS.map((m, i) => <Ozono key={i} x={m.x} y={m.y + 180} s={1.15} rot={m.rot + Math.sin(T + i) * 8} rompe={i % 3 === 0 ? 1 : 0} o={i % 3 === 0 ? 0.55 : 1} />)}
           <Atomo x={930} y={810} r={56} color={KC.leaf} letra="Cl" /></g>
-          <g transform="translate(540 1100) scale(1.5)"><Medalla T={T} at={K.E + 3.0} x={0} y={0} /></g></>)}
+          <g transform="translate(540 1080) scale(2.0)"><Medalla T={T} at={K.E + 3.0} x={0} y={0} /></g></>)}
       </Escena>
       {/* 9 · Protocolo de Montreal */}
       <Escena T={T} a={K.Mo} b={K.N}>
         <FondoLunares color={KC.cyan} />
-        {svg(<g transform="translate(540 900) scale(1.2) translate(-540 -860)"><Protocolo T={T} a={K.Mo} /></g>)}
+        {svg(<g opacity={1 - kprog(T, K.N - 0.35, K.N + 0.25)} transform="translate(540 900) scale(1.2) translate(-540 -860)"><Protocolo T={T} a={K.Mo} /></g>)}
       </Escena>
       {/* 10 · casi el 99 % ya no se usa (CFC tachados = dejan de usarse, no que el gas ya se fue) */}
       <Escena T={T} a={K.N} b={K.F}>
@@ -168,7 +183,7 @@ function OzonoShot() {
       {/* 11–12 · se cierra el agujero y regreso a la imagen del inicio */}
       <Escena T={T} a={K.F} b={FIN}>
         <FondoEspacio T={T} />
-        {svg(<><g transform={`rotate(${T * 4} 540 880)`}><TierraPolo T={T} x={540} y={880} r={400} hueco={T < K.C ? huecoF : 0.05} etiqueta={false} /></g>{T < K.C - 1.5 && huecoF > 0.25 && <text x={540} y={880 - 175 * huecoF * (400 / 380) - 26} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill="#fff" stroke={KC.ink} strokeWidth={6} paintOrder="stroke">agujero de ozono</text>}</>)}
+        {svg(<><g transform={`rotate(${T * 4} 540 880)`}><TierraPolo T={T} x={540} y={880} r={400} hueco={T < K.C ? huecoF : 0.05} etiqueta={false} /></g><LuzTierra />{T < K.C - 1.5 && huecoF > 0.25 && <text x={540} y={880 - 175 * huecoF * (400 / 380) - 26} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill="#fff" stroke={KC.ink} strokeWidth={6} paintOrder="stroke">agujero de ozono</text>}</>)}
         <EscalaFija texto="2,000 km (aprox.)" largo={125} x={110} y={1345} />
       </Escena>
 

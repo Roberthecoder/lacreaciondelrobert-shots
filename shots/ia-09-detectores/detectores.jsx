@@ -7,7 +7,12 @@ const AZUL = '#2f6dff';
 function Ensayo({ x, y, s = 1, sello = 0, tacha = 0, seed = 2 }) {
   const r = krng(seed);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-210} y={-280} width={420} height={560} rx={14} fill="#fffdf6" stroke={KC.ink} strokeWidth={8} />
+    <defs>
+      <linearGradient id="detPapel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fffdf6" /><stop offset="0.6" stopColor="#f4eedf" /><stop offset="1" stopColor="#dcd3bd" /></linearGradient>
+    </defs>
+    <rect x={-196} y={-262} width={420} height={560} rx={14} fill="rgba(0,0,0,.45)" />
+    <rect x={-210} y={-280} width={420} height={560} rx={14} fill="url(#detPapel)" stroke="#f3ecd9" strokeWidth={4} />
+    <path d="M 120 -280 L 210 -280 L 210 -190 Z" fill="#fff" opacity=".35" />
     <line x1={-160} y1={-280} x2={-160} y2={280} stroke={KC.pink} strokeWidth={4} opacity=".6" />
     <text x={-130} y={-200} style={{ font:`italic 700 46px ${KF.mono}` }} fill="#2b3a8a">My essay</text>
     {Array.from({ length: 9 }, (_, i) => { const yy = -130 + i * 44, l = 230 + r() * 80; let d = `M -130 ${yy}`; for (let k = 0; k < 10; k++) d += ` q ${l / 20} ${-6 - r() * 6} ${l / 10} 0`;
@@ -22,7 +27,9 @@ function Ensayo({ x, y, s = 1, sello = 0, tacha = 0, seed = 2 }) {
 // Escáner/detector esquemático.
 function Escaner({ x, y, s = 1, T = 0, pantalla = '', color = KC.cyan }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-150} y={-120} width={300} height={240} rx={26} fill="#2b3445" stroke={KC.ink} strokeWidth={8} />
+    <defs><linearGradient id="detCaja" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#46536b" /><stop offset="1" stopColor="#1c2433" /></linearGradient></defs>
+    <rect x={-142} y={-108} width={300} height={240} rx={26} fill="rgba(0,0,0,.4)" />
+    <rect x={-150} y={-120} width={300} height={240} rx={26} fill="url(#detCaja)" stroke="#9fb0cc" strokeWidth={4} />
     <rect x={-120} y={-92} width={240} height={150} rx={14} fill="#0d1424" />
     <rect x={-120} y={-92 + ((T * 120) % 150)} width={240} height={6} fill={color} opacity=".7" />
     <text y={6} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={color}>{pantalla}</text>
@@ -38,8 +45,8 @@ function BarrasH({ T, at, until, filas, top = 760 }) {
       return <div key={i} style={{ marginBottom:26, opacity: T >= a0 ? 1 : 0 }}>
         <div style={{ font:`900 38px ${KF.texto}`, color:f.tinta || KC.ink, marginBottom:6 }}>{f.etiqueta}</div>
         <div style={{ display:'flex', alignItems:'center', gap:18 }}>
-          <div style={{ width:Math.max(14, 700 * f.valor / 100 * g), height:76, background:f.color, border:`6px solid ${KC.ink}`, borderRadius:16 }}></div>
-          <div style={{ font:`400 70px ${KF.titulo}`, color:f.color, WebkitTextStroke:`3px ${KC.ink}` }}>{f.texto || `${kformato(f.valor * g, 1)} %`}</div>
+          <div style={{ width:Math.max(14, 700 * f.valor / 100 * g), height:76, background:`linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,0) 45%, rgba(0,0,0,.25)), ${f.color}`, border:'2px solid rgba(255,255,255,.55)', borderRadius:16, boxShadow:`0 0 24px ${f.color}55` }}></div>
+          <div style={{ font:`800 64px ${KF.texto}`, color:f.color }}>{f.texto || `${kformato(f.valor * g, 1)} %`}</div>
         </div>
       </div>; })}
   </div>;
@@ -95,27 +102,27 @@ function Detectores() {
       {/* 1 · gancho: tu ensayo con sello de IA */}
       <Escena T={T} a={K.G} b={K.N}>
         <FondoLunares color={KC.yellow} />
-        {svg(<Ensayo x={540} y={820} s={1.75} sello={kprog(T, K.G + 0.35, K.G + 0.75, kEase.sale)} />)}
+        {svg(<Ensayo x={540} y={880} s={1.62} sello={kprog(T, K.G + 0.35, K.G + 0.75, kEase.sale)} />)}
       </Escena>
-      <NumeroGigante T={T} at={K.G + 3.6} until={K.N - 0.2} valor={61.3} dec={1} dur={1.0} sufijo=" %" etiqueta="" x={540} y={1430} tam={120} color={KC.red} />
+      <NumeroGigante T={T} at={K.G + 3.6} until={K.N - 0.2} valor={61.3} dec={1} dur={1.0} sufijo=" %" etiqueta="" x={540} y={1495} tam={120} color={KC.red} />
       <Chip T={T} at={K.G + 4.2} until={K.N - 0.2} texto="inglés no nativo → «IA»" x={540} y={260} tam={36} borde={KC.red} />
       {/* 2 · los nativos */}
       <Escena T={T} a={K.N} b={K.E}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <Ensayo x={290} y={760} s={1.05} sello={1} seed={2} />
-          <Ensayo x={790} y={760} s={1.05} seed={5} />
+          <Ensayo x={290} y={880} s={1.1} sello={1} seed={2} />
+          <Ensayo x={790} y={880} s={1.1} seed={5} />
         </>)}
       </Escena>
-      <BarrasH T={T} at={K.N + 0.3} until={K.E - 0.2} top={1150} filas={[{ valor: 61.3, etiqueta: 'no nativos (examen TOEFL)', color: KC.red }, { valor: 0, texto: 'casi nunca', etiqueta: 'nativos (8.º grado, EE. UU.)', color: AZUL, at: K.N + 1.6 }]} />
+      <BarrasH T={T} at={K.N + 0.3} until={K.E - 0.2} top={1250} filas={[{ valor: 61.3, etiqueta: 'no nativos (examen TOEFL)', color: KC.red }, { valor: 0, texto: 'casi nunca', etiqueta: 'nativos (8.º grado, EE. UU.)', color: AZUL, at: K.N + 1.6 }]} />
       {/* 3 · el estudio */}
       <Escena T={T} a={K.E} b={K.M}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <Ensayo x={590} y={790} s={1.0} seed={7} />
-          <Ensayo x={560} y={810} s={1.0} seed={4} />
-          <Ensayo x={530} y={830} s={1.0} seed={2} />
-          {Array.from({ length: 7 }, (_, i) => <g key={i} opacity={kprog(T, K.E + 0.4 + i * 0.15, K.E + 0.7 + i * 0.15)}><Escaner x={120 + i * 140} y={1250} s={0.45} T={T + i} /></g>)}
+          <Ensayo x={600} y={870} s={1.2} seed={7} />
+          <Ensayo x={565} y={895} s={1.2} seed={4} />
+          <Ensayo x={530} y={920} s={1.2} seed={2} />
+          {Array.from({ length: 7 }, (_, i) => <g key={i} opacity={kprog(T, K.E + 0.4 + i * 0.15, K.E + 0.7 + i * 0.15)}><Escaner x={120 + i * 140} y={1385} s={0.45} T={T + i} /></g>)}
         </>)}
       </Escena>
       {/* 4 · las 91 hojas se marcan */}
@@ -132,21 +139,21 @@ function Detectores() {
       {/* 6 · qué tan predecible */}
       <Escena T={T} a={K.Pr} b={K.Pu}>
         <FondoCircuito T={T} />
-        {svg(<Escaner x={540} y={470} s={1.5} T={T} pantalla={T > K.Pr + 2.6 && T < K.Pr + 3.4 ? '«IA»' : '¿IA?'} color={T > K.Pr + 2.6 && T < K.Pr + 3.4 ? KC.red : KC.cyan} />)}
+        {svg(<Escaner x={540} y={600} s={1.6} T={T} pantalla={T > K.Pr + 2.6 && T < K.Pr + 3.4 ? '«IA»' : '¿IA?'} color={T > K.Pr + 2.6 && T < K.Pr + 3.4 ? KC.red : KC.cyan} />)}
       </Escena>
-      <Chip T={T} at={K.Pr + 1.2} until={K.Pu - 0.2} texto="The food is very good." x={540} y={770} tam={44} mono borde={KC.red} />
-      <Medidor T={T} at={K.Pr + 1.5} until={K.Pu - 0.2} y={850} etiqueta="frase sencilla" color={KC.red} valor={(t) => 0.88 * kprog(t, K.Pr + 1.6, K.Pr + 2.6, kEase.sale)} texto={(v) => v > 0.6 ? 'muy predecible → «IA»' : ''} />
-      <Chip T={T} at={K.Pr + 3.2} until={K.Pu - 0.2} texto="The soup tasted like rain." x={540} y={1070} tam={44} mono borde={KC.mint} />
-      <Medidor T={T} at={K.Pr + 3.5} until={K.Pu - 0.2} y={1150} etiqueta="frase rebuscada" color={KC.mint} valor={(t) => 0.3 * kprog(t, K.Pr + 3.6, K.Pr + 4.6, kEase.sale)} texto={(v) => v > 0.2 ? 'poco predecible → «humano»' : ''} />
-      <Chip T={T} at={K.Pr + 3.8} until={K.Pu - 0.2} texto="ejemplo ilustrativo" x={540} y={1320} tam={28} borde={KC.texto} />
+      <Chip T={T} at={K.Pr + 1.2} until={K.Pu - 0.2} texto="The food is very good." x={540} y={910} tam={44} mono borde={KC.red} />
+      <Medidor T={T} at={K.Pr + 1.5} until={K.Pu - 0.2} y={990} etiqueta="frase sencilla" color={KC.red} valor={(t) => 0.88 * kprog(t, K.Pr + 1.6, K.Pr + 2.6, kEase.sale)} texto={(v) => v > 0.6 ? 'muy predecible → «IA»' : ''} />
+      <Chip T={T} at={K.Pr + 3.2} until={K.Pu - 0.2} texto="The soup tasted like rain." x={540} y={1210} tam={44} mono borde={KC.mint} />
+      <Medidor T={T} at={K.Pr + 3.5} until={K.Pu - 0.2} y={1290} etiqueta="frase rebuscada" color={KC.mint} valor={(t) => 0.3 * kprog(t, K.Pr + 3.6, K.Pr + 4.6, kEase.sale)} texto={(v) => v > 0.2 ? 'poco predecible → «humano»' : ''} />
+      <Chip T={T} at={K.Pr + 3.8} until={K.Pu - 0.2} texto="ejemplo ilustrativo" x={540} y={1470} tam={38} borde={KC.texto} />
       {/* 7 · la prueba: palabras más rebuscadas */}
       <Escena T={T} a={K.Pu} b={K.Tr}>
         <FondoLunares color={KC.cyan} />
-        {svg(<Ensayo x={540} y={700} s={0.95} sello={1} seed={2} />)}
+        {svg(<Ensayo x={540} y={810} s={1.05} sello={1} seed={2} />)}
       </Escena>
       <Chip T={T} at={K.Pu + 0.3} until={K.Tr - 0.2} texto="falsos «IA» · promedio de 7 detectores" x={540} y={250} tam={32} borde={KC.ink} />
-      <BarrasH T={T} at={K.Pu + 0.4} until={K.Tr - 0.2} top={1010} filas={[{ valor: 61.3, etiqueta: 'ensayos originales', color: KC.red }, { valor: 11.6, etiqueta: 'con palabras más rebuscadas', color: KC.mint, at: K.Pu + 2.6 }]} />
-      <Chip T={T} at={K.Pu + 3.2} until={K.Tr - 0.2} texto="(las palabras las cambió ChatGPT)" x={540} y={1390} tam={32} borde={KC.ink} />
+      <BarrasH T={T} at={K.Pu + 0.4} until={K.Tr - 0.2} top={1160} filas={[{ valor: 61.3, etiqueta: 'ensayos originales', color: KC.red }, { valor: 11.6, etiqueta: 'con palabras más rebuscadas', color: KC.mint, at: K.Pu + 2.6 }]} />
+      <Chip T={T} at={K.Pu + 3.2} until={K.Tr - 0.2} texto="(las palabras las cambió ChatGPT)" x={540} y={1525} tam={32} borde={KC.ink} />
       {/* 8 · al revés: ChatGPT "literario" se escapa */}
       <Escena T={T} a={K.Tr} b={K.R}>
         <FondoLunares color={KC.lilac} />
@@ -167,13 +174,13 @@ function Detectores() {
       {/* 10 · cierre: el mismo ensayo */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
-        {svg(<Ensayo x={540} y={820} s={1.75} sello={1} tacha={kprog(T, K.C + 2.2, K.C + 2.7, kEase.sale)} />)}
+        {svg(<Ensayo x={540} y={890} s={1.75} sello={1} tacha={kprog(T, K.C + 2.2, K.C + 2.7, kEase.sale)} />)}
       </Escena>
-      <Chip T={T} at={K.C + 2.8} until={K.Ou} texto="escrito por ti ✔" x={540} y={1420} tam={46} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 2.8} until={K.Ou} texto="escrito por ti ✔" x={540} y={1470} tam={46} borde={KC.leaf} />
 
       {/* otros textos */}
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.M - 0.3} anio="2023" quien="Universidad de Stanford" revista="Liang, Yuksekgonul, Mao, Wu y Zou · Patterns" y={300} />
-      <Chip T={T} at={K.E + 2.6} until={K.M - 0.3} texto="7 detectores · 91 ensayos TOEFL" y={1420} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.E + 2.6} until={K.M - 0.3} texto="7 detectores · 91 ensayos TOEFL" y={1510} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.M + 0.3} until={K.M + 3.4} texto={`al menos 1 detector: ${rojas} de 91`} y={300} tam={38} borde={KC.red} />
       <Chip T={T} at={K.M + 3.5} until={K.P - 0.2} texto={`los 7 a la vez: ${negras} de 91`} y={300} tam={38} borde={KC.ink} />
 

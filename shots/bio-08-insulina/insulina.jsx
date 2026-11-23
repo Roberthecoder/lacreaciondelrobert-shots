@@ -220,7 +220,11 @@ function InsulinaNarrado() {
         <FondoMarca color={KC.coral} T={T} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g transform={`translate(540 930) scale(1.4) translate(-540 -910) rotate(${mece(T, 2, 0.2) * 1.5} 540 960)`}>
-            <rect x={210} y={760} width={660} height={300} rx={150} fill="#f1b48f" stroke={KC.ink} strokeWidth={10} />
+            <defs><linearGradient id="pielVol" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#f7caa8" /><stop offset="55%" stopColor="#eaa984" /><stop offset="100%" stopColor="#c98160" /></linearGradient></defs>
+            <rect x={210} y={680} width={660} height={460} rx={130} fill="url(#pielVol)" stroke={KC.ink} strokeWidth={8} />
+            {Array.from({ length: 7 }, (_, i) => <path key={'pl' + i} d={`M ${270 + i * 12} ${730 + i * 58} Q 540 ${712 + i * 58} ${810 - i * 12} ${730 + i * 58}`} stroke="#c98a6a" strokeWidth={3} fill="none" opacity=".45" />)}
+            {Array.from({ length: 26 }, (_, i) => { const q = krng(i + 31); return <circle key={'po' + i} cx={260 + q() * 560} cy={720 + q() * 380} r={3} fill="#b9765a" opacity=".5" />; })}
+            <ellipse cx={360} cy={740} rx={90} ry={22} fill="#fff" opacity=".18" />
             {[[420, 880], [530, 940], [640, 870], [560, 830]].map(([cx, cy], i) => {
               const o = kprog(T, K.R + 0.8 + i * 0.22, K.R + 1.3 + i * 0.22, kEase.rebote);
               return <g key={i} opacity={o}><circle cx={cx} cy={cy} r={klerp(0, 34, o)} fill="#e8475a" opacity={0.75} />
@@ -228,7 +232,7 @@ function InsulinaNarrado() {
           </g>
         </svg>
       </EscenaFundido>
-      <MitoTachado T={T} at={K.R + 0.3} tacharEn={K.R + 2.2} until={K.Ge - 0.3} texto="¿insulina humana?" y={540} tam={56} />
+      <MitoTachado T={T} at={K.R + 0.3} tacharEn={K.R + 2.2} until={K.Ge - 0.3} texto="¿insulina humana?" y={450} tam={56} />
 
       {/* 3 · GEN — se ESCRIBE (síntesis química, cadenas A y B) y entra al plásmido */}
       <EscenaFundido T={T} a={K.Ge} b={K.L} zoom={0.04} fondo={KC.dark}>
@@ -272,9 +276,9 @@ function InsulinaNarrado() {
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 46% 48%, #1d2433 0%, #0E0F12 74%)' }}></div>
         <Ambiente T={T} n={26} seed={13} color="rgba(190,220,255,.32)" tam={[3, 9]} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Bacteria T={T} x={540} y={900} s={klerp(1.3, 2.2, kprog(T, K.Q, K.P, kEase.suave))} plasmido={1} />
+          <Bacteria T={T} x={540} y={900} s={klerp(1.75, 2.3, kprog(T, K.Q, K.P, kEase.suave))} plasmido={1} />
         </svg>
-        <Escala T={T} z={klerp(1.3, 2.2, kprog(T, K.Q, K.P, kEase.suave))} pxPorMm={170000} />
+        <Escala T={T} z={klerp(1.75, 2.3, kprog(T, K.Q, K.P, kEase.suave))} pxPorMm={170000} />
       </EscenaFundido>
 
       {/* 6 · PLÁSMIDO — Lupa de rayos X sobre la ventana del tanque */}

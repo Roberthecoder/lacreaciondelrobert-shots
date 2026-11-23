@@ -223,7 +223,7 @@ function Barco({ x, y, s = 1, T = 0 }) {
 // Invernadero (arcos y vidrios)
 function Invernadero() {
   return <g>
-    <path d="M 40 1250 L 40 760 Q 540 520 1040 760 L 1040 1250 Z" fill="rgba(255,255,255,.28)" stroke="#fff" strokeWidth={10} strokeLinejoin="round" />
+    <path d="M 40 1250 L 40 760 Q 540 520 1040 760 L 1040 1250 Z" fill="rgba(200,230,255,.12)" stroke="#fff" strokeWidth={10} strokeLinejoin="round" />
     {[220, 400, 540, 680, 860].map((xx, i) => <line key={i} x1={xx} y1={1250} x2={xx} y2={760 - Math.sin(((xx - 40) / 1000) * Math.PI) * 210 + 30} stroke="#fff" strokeWidth={5} opacity=".7" />)}
     <path d="M 40 900 Q 540 680 1040 900" stroke="#fff" strokeWidth={5} fill="none" opacity=".7" />
     <rect x={20} y={1230} width={1040} height={60} rx={10} fill="#8a5a33" stroke={KC.ink} strokeWidth={6} />
@@ -269,12 +269,12 @@ function Rosas() {
       <Escena T={T} a={K.G} b={K.Te} zoom={0.06}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <g transform="translate(0 150) translate(480 1250) scale(1.38) translate(-480 -1250)">
+          <g transform="translate(0 350) translate(480 1250) scale(1.38) translate(-480 -1250)">
           <Florero x={400} y={880} s={1.2} />
           <RosaTallo T={T} x={400} y={940} alto={330} s={1.25} abre={kprog(T, K.G + 0.05, K.G + 0.75, kEase.sale)} />
           </g>
-          <HojaCalendario x={klerp(1300, 860, kprog(T, K.G + 0.25, K.G + 0.9, kEase.rebote))} y={1500} rot={klerp(30, 6, kprog(T, K.G + 0.25, K.G + 1.0))} s={0.95} />
-          {T > K.G + 0.8 && Array.from({ length: 10 }, (_, i) => { const u = kprog(T, K.G + 0.8, K.G + 1.6), a = (i / 10) * Math.PI * 2; return <circle key={i} cx={400 + Math.cos(a) * (80 + 220 * u)} cy={490 + Math.sin(a) * (80 + 220 * u)} r={12 * (1 - u)} fill="#fff" />; })}
+          <HojaCalendario x={klerp(1300, 850, kprog(T, K.G + 0.25, K.G + 0.9, kEase.rebote))} y={1190} rot={klerp(30, 6, kprog(T, K.G + 0.25, K.G + 1.0))} s={0.95} />
+          {T > K.G + 0.8 && Array.from({ length: 10 }, (_, i) => { const u = kprog(T, K.G + 0.8, K.G + 1.6), a = (i / 10) * Math.PI * 2; return <circle key={i} cx={370 + Math.cos(a) * (80 + 220 * u)} cy={550 + Math.sin(a) * (80 + 220 * u)} r={12 * (1 - u)} fill="#fff" />; })}
         </>)}
       </Escena>
       {/* 1 · la tradición: rosas en el Tepeyac en diciembre (sin imágenes religiosas) */}
@@ -282,7 +282,7 @@ function Rosas() {
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#283b53, #3d4757 55%, #4a4749)' }}></div>
         {svg(<>
           <Copos T={T} o={1 - kprog(T, K.Te + 3.5, K.Te + 5.5) * 0.5} />
-          <g transform="translate(540 1150) scale(1.18) translate(-540 -1150)"><Tepeyac T={T} flor={kprog(T, K.Te + 1.4, K.Te + 3.6)} hielo={1} /></g>
+          <g transform="translate(540 1080) scale(1.42) translate(-540 -1080)"><Tepeyac T={T} flor={kprog(T, K.Te + 1.4, K.Te + 3.6)} hielo={1} /></g>
         </>)}
       </Escena>
       {/* 2 · la rosa silvestre florece solo en primavera */}
@@ -301,19 +301,19 @@ function Rosas() {
           <Gen T={T} y={980} ksn={kprog(T, K.Fr + 0.4, K.Fr + 1.0)} o={kprog(T, K.Fr - 0.3, K.Fr + 0.3)} />
           <path d={`M ${KS0} 1060 L ${KS0} 1080 L ${KS1} 1080 L ${KS1} 1060`} stroke={KSNC} strokeWidth={6} fill="none" opacity={kprog(T, K.Fr + 0.5, K.Fr + 0.9)} />
           <text x={KMID} y={1135} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill={KSNC} opacity={kprog(T, K.Fr + 0.5, K.Fr + 0.9)}>GEN KSN</text>
-          <Alto x={KMID} y={klerp(600, 740, kprog(T, K.Fr + 1.1, K.Fr + 1.6, kEase.rebote))} s={0.9} o={kprog(T, K.Fr + 1.1, K.Fr + 1.4)} />
+          <Alto x={KMID} y={klerp(600, 740, kprog(T, K.Fr + 0.05, K.Fr + 0.65, kEase.rebote))} s={0.9} o={kprog(T, K.Fr + 0.05, K.Fr + 0.3)} />
         </g>)}
       </Escena>
       {/* 4 · con el freno puesto: el brote echa hojas, pero no flor */}
       <Escena T={T} a={K.Ho} b={K.Pr}>
         <FondoLunares color={KC.yellow} />
         {svg((() => { const c = kprog(T, K.Ho + 0.1, K.Ho + 3.2), alto = klerp(220, 600, c);
-          return <g transform="translate(540 1180) scale(1.35) translate(-540 -1180)">
+          return <g transform="translate(0 220) translate(540 1240) scale(1.5) translate(-540 -1240)">
             <Tallo x={540} y={1240} alto={alto} curva={30} espinas={Math.round(2 + c * 3)} />
             {[[0.28, -55], [0.48, 52], [0.66, -50], [0.84, 48]].map(([u, r], i) => <Hoja key={i} x={540 + (r < 0 ? -6 : 6)} y={1240 - 600 * u} rot={r} s={0.85} e={kclamp((alto / 600 - u) * 6, 0, 1)} />)}
             {/* yema de la punta: sigue haciendo hojas */}
             <g transform={`translate(540 ${1240 - alto - 10})`}><path d="M 0 -40 C -22 -20 -22 10 0 16 C 22 10 22 -20 0 -40 Z" fill={HOJA} stroke={KC.ink} strokeWidth={4} /></g>
-            <Alto x={250} y={960} s={0.7} rot={Math.sin(T * 3) * 4} />
+            <Alto x={300} y={960} s={0.7} rot={Math.sin(T * 3) * 4} />
           </g>; })())}
       </Escena>
       {/* 5 · en primavera el freno se afloja: su única floración */}
@@ -338,7 +338,7 @@ function Rosas() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={26} color="rgba(255,120,230,.2)" />
         {svg((() => { const v = kprog(T, K.Sa + 0.3, K.Sa + 2.0, kEase.suave), h = kprog(T, K.Sa + 1.5, K.Sa + 2.2, kEase.suave);
-          const ix = klerp(150, KMID + LARGO_INS / 2 * h, v), iy = klerp(520, 950, v) - Math.sin(v * Math.PI) * 220, rot = (1 - v) * 360;
+          const ix = klerp(120, KMID + LARGO_INS / 2 * h, v), iy = klerp(760, 950, v) - Math.sin(v * Math.PI) * 160, rot = (1 - v) * 360;
           return <g transform="translate(540 980) scale(1.55) translate(-540 -980)">
             <Gen T={T} y={950} hueco={h} inserto={{ x: v >= 1 ? KMID + LARGO_INS / 2 : ix, y: v >= 1 ? 950 : iy, rot }} />
             <text x={KMID + 100 * h} y={1110} textAnchor="middle" style={{ font:`400 52px ${KF.titulo}` }} fill={KSNC}>GEN KSN</text>
@@ -376,16 +376,16 @@ function Rosas() {
         <FondoLunares color={KC.cyan} />
         {svg(<g transform="translate(-40 0) translate(540 1050) scale(1.08) translate(-540 -1050)">
           <g opacity={kprog(T, K.E + 0.5, K.E + 0.9)}>
-            <text x={270} y={740} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>1 vez al año</text>
-            <text x={810} y={740} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>cada temporada buena</text>
+            <text x={270} y={700} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>1 vez al año</text>
+            <text x={810} y={700} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>cada temporada buena</text>
           </g>
-          {Array.from({ length: 6 }, (_, i) => { const e = kprog(T, K.E + 0.7 + i * 0.32, K.E + 1.1 + i * 0.32), yy = 795 + i * 62;
+          {Array.from({ length: 6 }, (_, i) => { const e = kprog(T, K.E + 0.7 + i * 0.32, K.E + 1.1 + i * 0.32), yy = 790 + i * 104;
             return <g key={i}>
-              <GenMini x={110} y={yy} w={260} e={e} />{e > 0 && <g opacity={e}><RosaFlor x={420} y={yy} s={0.17} abre={1} /></g>}
-              <GenMini x={650} y={yy} w={260} ins e={e} />{e > 0 && <g opacity={e}>{[0, 1, 2].map((k) => <RosaFlor key={k} x={950 + k * 36} y={yy} s={0.17} abre={1} />)}</g>}
+              <GenMini x={110} y={yy} w={260} e={e} />{e > 0 && <g opacity={e}><RosaFlor x={420} y={yy} s={0.26} abre={1} /></g>}
+              <GenMini x={650} y={yy} w={260} ins e={e} />{e > 0 && <g opacity={e}>{[0, 1, 2].map((k) => <RosaFlor key={k} x={940 + k * 40} y={yy} s={0.24} abre={1} />)}</g>}
               <text x={540} y={yy + 12} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink} opacity={e}>vs</text>
             </g>; })}
-          {T > K.E + 3.4 && <g>{Array.from({ length: 6 }, (_, i) => <circle key={i} cx={650 + 260 * 0.51} cy={795 + i * 62} r={30 + 6 * Math.sin(T * 6 + i)} fill="none" stroke={KC.red} strokeWidth={5} opacity={kprog(T, K.E + 3.4, K.E + 3.8)} />)}</g>}
+          {T > K.E + 3.4 && <g>{Array.from({ length: 6 }, (_, i) => <circle key={i} cx={650 + 260 * 0.51} cy={790 + i * 104} r={34 + 6 * Math.sin(T * 6 + i)} fill="none" stroke={KC.red} strokeWidth={5} opacity={kprog(T, K.E + 3.4, K.E + 3.8)} />)}</g>}
         </g>)}
       </Escena>
       {/* 10 · rosas de China; a fines del siglo XVIII se cruzan en Europa */}
@@ -394,9 +394,9 @@ function Rosas() {
         {svg((() => { const viaje = kprog(T, K.Ch + 0.3, K.Ch + 2.4, kEase.suave), cruce = kprog(T, K.Ch + 2.5, K.Ch + 3.0), mapa = 1 - kprog(T, K.Ch + 2.4, K.Ch + 2.9);
           return <>
             <g opacity={mapa}>
-              <rect x={0} y={960} width={1080} height={300} fill="#5fb7ff" opacity=".7" />
-              <path d="M -20 700 C 80 640 260 660 330 720 C 360 820 300 920 240 960 L -20 960 Z" fill="#ffe9a8" stroke={KC.ink} strokeWidth={6} />
-              <path d="M 1100 680 C 960 640 780 680 760 760 C 740 860 820 930 900 960 L 1100 960 Z" fill="#ffe9a8" stroke={KC.ink} strokeWidth={6} />
+              <rect x={0} y={960} width={1080} height={300} fill="#1d4f7a" opacity=".85" />
+              <path d="M -20 700 C 80 640 260 660 330 720 C 360 820 300 920 240 960 L -20 960 Z" fill="#7d6a43" stroke={KC.ink} strokeWidth={6} />
+              <path d="M 1100 680 C 960 640 780 680 760 760 C 740 860 820 930 900 960 L 1100 960 Z" fill="#7d6a43" stroke={KC.ink} strokeWidth={6} />
               <text x={140} y={830} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>EUROPA</text>
               <text x={930} y={830} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>CHINA</text>
               <path d={`M 860 1040 Q 540 1200 220 1040`} stroke="#fff" strokeWidth={6} strokeDasharray="16 14" fill="none" opacity=".8" />
@@ -405,7 +405,7 @@ function Rosas() {
                 <RosaFlor x={-50} y={-40} s={0.35} abre={1} color={CHINA} color2="#e88aa8" />
               </g>
             </g>
-            {cruce > 0 && <g opacity={cruce}>
+            {cruce > 0 && <g opacity={cruce} transform="translate(540 900) scale(1.3) translate(-540 -1000)">
               <RosaTallo T={T} x={300} y={1090} alto={260} s={0.9} color={CHINA} />
               <text x={300} y={1150} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>de China</text>
               <text x={540} y={920} textAnchor="middle" style={{ font:`400 200px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8}>×</text>
@@ -413,8 +413,8 @@ function Rosas() {
               <text x={780} y={1150} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>de Europa</text>
             </g>}
             {(() => { const h = kprog(T, K.Ch + 3.8, K.Ch + 4.6); return h > 0 ? <g>
-              <path d="M 540 960 L 540 1040" stroke={KC.ink} strokeWidth={8} opacity={h} />
-              <g transform={`translate(540 ${1350}) scale(${1.0 * h})`}>{[-90, 0, 90].map((dx, k) => <RosaFlor key={k} x={dx} y={k === 1 ? -40 : 0} s={0.8} abre={kprog(T, K.Ch + 4.2 + k * 0.3, K.Ch + 4.9 + k * 0.3)} color={'#ff5c8a'} />)}</g>
+              <path d="M 540 1110 L 540 1190" stroke={KC.ink} strokeWidth={8} opacity={h} />
+              <g transform={`translate(540 ${1330}) scale(${1.1 * h})`}>{[-90, 0, 90].map((dx, k) => <RosaFlor key={k} x={dx} y={k === 1 ? -40 : 0} s={0.8} abre={kprog(T, K.Ch + 4.2 + k * 0.3, K.Ch + 4.9 + k * 0.3)} color={'#ff5c8a'} />)}</g>
             </g> : null; })()}
           </>; })())}
       </Escena>
@@ -455,7 +455,7 @@ function Rosas() {
         <FondoLunares color={KC.pink} />
         {svg((() => { const [ex, ey] = mxProy(-99.7, 19.3), p = kprog(T, K.Da + 0.6, K.Da + 1.2);
           return <>
-            <MapaMexico x={40} y={690} ancho={1000} conCA={false}>
+            <MapaMexico x={40} y={690} ancho={1000} conCA={false} color="#7d6a43">
               <circle cx={ex} cy={ey} r={22 + 40 * p + 8 * Math.sin(T * 5)} fill={KC.red} opacity={0.35 * p} />
               <circle cx={ex} cy={ey} r={20 * p} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
             </MapaMexico>
@@ -470,44 +470,44 @@ function Rosas() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <g transform="translate(0 150) translate(480 1250) scale(1.38) translate(-480 -1250)">
+          <g transform="translate(0 350) translate(480 1250) scale(1.38) translate(-480 -1250)">
           <Florero x={400} y={880} s={1.2} />
           {ramo(kprog(T, K.Ci + 0.2, K.Ci + 1.2, kEase.sale))}
           <RosaTallo T={T} x={400} y={940} alto={330} s={1.25} abre={1} />
           </g>
-          {(() => { const m = kprog(T, K.Ci + 1.5, K.Ci + 2.1, kEase.suave); return <HojaCalendario x={klerp(860, 950, m)} y={klerp(1500, 1560, m)} rot={6} s={klerp(0.95, 0.62, m)} />; })()}
+          {(() => { const m = kprog(T, K.Ci + 1.5, K.Ci + 2.1, kEase.suave); return <HojaCalendario x={klerp(850, 870, m)} y={klerp(1190, 1260, m)} rot={6} s={klerp(0.95, 0.7, m)} />; })()}
         </>)}
-        <Lupa T={T} at={K.Ci + 1.0} until={K.Ou - 0.2} x={820} y={900} r={160} fx={400} fy={760} tinte={KC.yellow} etiqueta="POR DENTRO · KSN"
+        <Lupa T={T} at={K.Ci + 1.0} until={K.Ou - 0.2} x={850} y={640} r={160} fx={390} fy={930} tinte={KC.yellow} etiqueta="POR DENTRO · KSN"
           interior={(Tl, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill={KC.noche} /><g transform={`translate(${r} ${r}) scale(.62) translate(-640 -950)`}><Gen T={Tl} y={950} hueco={1} inserto={{ x: KMID + LARGO_INS / 2, y: 950 }} /></g></svg>} />
       </Escena>
 
       <Capitulo T={T} x={190} y={210} hasta={K.Ou} caps={[{ at: K.Te, titulo: 'La tradición' }, { at: K.Fr, titulo: 'El freno' }, { at: K.Sa, titulo: 'El freno roto' }, { at: K.In, titulo: 'Diciembre' }]} />
 
       {/* textos */}
-      <Chip T={T} at={K.G + 0.2} until={K.Te - 0.2} texto="Especial Virgen de Guadalupe" x={335} y={1470} tam={33} borde={KC.yellow} />
+      <Chip T={T} at={K.G + 0.2} until={K.Te - 0.2} texto="Especial Virgen de Guadalupe" x={540} y={300} tam={33} borde={KC.yellow} />
       <Etq T={T} at={K.Te + 0.3} until={K.Si - 0.3} x={70} y={540} texto="según la tradición" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.Te + 1.0} until={K.Si - 0.3} x={480} y={720} texto="cerro del Tepeyac" tam={34} color={KC.ink} lado="izq" />
-      <Chip T={T} at={K.Te + 2.0} until={K.Si - 0.3} texto="diciembre: rosas de Castilla" x={540} y={1500} tam={40} borde={KC.cyan} />
+      <Etq T={T} at={K.Te + 1.0} until={K.Si - 0.3} x={470} y={640} texto="cerro del Tepeyac" tam={34} color={KC.ink} lado="izq" />
+      <Chip T={T} at={K.Te + 2.0} until={K.Si - 0.3} texto="diciembre: rosas de Castilla" x={540} y={1380} tam={40} borde={KC.cyan} />
       <Etq T={T} at={K.Si + 0.3} until={K.Fr - 0.3} x={420} y={540} texto="rosa silvestre" tam={38} color={KC.ink} />
       <Etq T={T} at={K.Fr + 1.4} until={K.Ho - 0.3} x={680} y={730} texto="= freno" tam={40} color={KC.texto} />
       {((T > K.Fr - 0.3 && T < K.Ho - 0.1) || (T > K.Sa - 0.3 && T < K.Ap + 2.4)) && <Escala T={T} z={1.55} pxPorMm={4e7} x={60} y={1430} />}
-      <Etq T={T} at={K.Ho + 0.4} until={K.Pr - 0.3} x={330} y={700} texto="hoja, hoja, hoja…" tam={34} color={KC.ink} lado="izq" />
-      <MitoTachado T={T} at={K.Ho + 1.2} tacharEn={K.Ho + 2.0} until={K.Pr - 0.3} texto="¿flor?" x={760} y={800} tam={50} />
+      <Etq T={T} at={K.Ho + 0.4} until={K.Pr - 0.3} x={330} y={820} texto="hoja, hoja, hoja…" tam={34} color={KC.ink} lado="izq" />
+      <MitoTachado T={T} at={K.Ho + 1.2} tacharEn={K.Ho + 2.0} until={K.Pr - 0.3} texto="¿flor?" x={780} y={680} tam={50} />
       <Chip T={T} at={K.Pr + 2.4} until={K.P - 0.2} texto="una vez al año" x={540} y={1500} tam={46} borde={SILV} />
-      <Etq T={T} at={K.Sa + 2.2} until={K.Ap - 0.3} x={90} y={560} texto="retrotransposón (ADN saltarín)" tam={34} color={INSERTO} />
-      <Chip T={T} at={K.Sa + 2.4} until={K.Ap - 0.3} texto="se metió dentro del gen" x={540} y={1560} tam={42} borde={INSERTO} />
+      <Etq T={T} at={K.Sa + 2.2} until={K.Ap - 0.3} x={90} y={760} texto="retrotransposón (ADN saltarín)" tam={34} color={INSERTO} />
+      <Chip T={T} at={K.Sa + 2.4} until={K.Ap - 0.3} texto="se metió dentro del gen" x={540} y={1400} tam={42} borde={INSERTO} />
       <Etq T={T} at={K.Ap + 0.4} until={K.Ap + 2.1} x={90} y={1220} texto="la copia del gen se atora" tam={32} color={KC.orange} />
       <Chip T={T} at={K.Ap + 3.4} until={K.E - 0.3} texto="flor en cada temporada buena" x={540} y={330} tam={42} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.0} anio="2012" quien="Iwata et al. · Francia y Japón" revista="The Plant Journal" x={540} y={510} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.0} anio="2012" quien="Iwata et al. · Francia y Japón" revista="The Plant Journal" x={540} y={470} />
       <Chip T={T} at={K.E + 3.6} until={K.Ch - 0.3} texto="las de cada temporada traen el pedazo" x={540} y={1500} tam={40} borde={INSERTO} />
-      <Chip T={T} at={K.Ch + 2.6} until={K.In - 0.3} texto="fines del siglo XVIII: cruces en Europa" x={540} y={560} tam={40} borde={KC.yellow} />
-      <Etq T={T} at={K.Ch + 4.6} until={K.In - 0.3} x={400} y={1510} texto="rosas modernas" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Ch + 2.6} until={K.In - 0.3} texto="fines del siglo XVIII: cruces en Europa" x={540} y={400} tam={40} borde={KC.yellow} />
+      <Etq T={T} at={K.Ch + 4.6} until={K.In - 0.3} x={360} y={1480} texto="rosas modernas" tam={34} color={KC.ink} />
       <MitoTachado T={T} at={K.In + 0.3} tacharEn={K.In + 1.2} until={K.In + 3.0} texto="horas de luz" x={430} y={480} tam={46} />
       <Etq T={T} at={K.In + 3.0} until={K.Da - 0.3} x={60} y={560} texto="brota de la yema" tam={34} color={KC.ink} />
       <Chip T={T} at={K.In + 3.6} until={K.Da - 0.3} texto="6 a 10 semanas" x={540} y={1470} tam={42} borde={KC.gold} />
       <Etq T={T} at={K.Da + 1.0} until={K.Ci - 0.3} x={520} y={1060} texto="Estado de México" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Da + 3.4} until={K.Ci - 0.3} texto="78.7 % · SADER, preliminar 2025" x={540} y={1470} tam={36} borde={KC.yellow} />
-      <Chip T={T} at={K.Ci + 2.2} until={K.Ou} texto="KSN apagado: flor en cada temporada buena" x={445} y={1450} tam={30} borde={KC.yellow} />
+      <Chip T={T} at={K.Ci + 2.2} until={K.Ou} texto="KSN apagado: flor en cada temporada buena" x={540} y={1540} tam={30} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Te - 0.1} texto="No sabe que es diciembre: *trae un freno roto.*" />

@@ -58,6 +58,10 @@ function RatonSilueta({ T, x = 0, y = 0, s = 1, quieto = 0 }) {
     <path d={`M 120 -16 q 70 ${10 + b * 2} 92 -42`} fill="none" stroke={col} strokeWidth={11} strokeLinecap="round" />
     <ellipse cx={30} cy={-40} rx={104} ry={60} fill={col} />
     <circle cx={-72} cy={-62} r={46} fill={col} />
+    {/* belleza: luz suave arriba y sombra abajo para que la silueta tenga volumen */}
+    <defs><radialGradient id="polioRatonVol" cx="35%" cy="25%" r="80%"><stop offset="0" stopColor="#fff" stopOpacity=".16" /><stop offset=".55" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".22" /></radialGradient></defs>
+    <ellipse cx={30} cy={-40} rx={104} ry={60} fill="url(#polioRatonVol)" />
+    <circle cx={-72} cy={-62} r={46} fill="url(#polioRatonVol)" />
     <circle cx={-74} cy={-106} r={22} fill={col} />
     <line x1={-20} y1={16} x2={-20} y2={48} stroke={col} strokeWidth={11} strokeLinecap="round" />
     <line x1={76} y1={16} x2={76} y2={48} stroke={col} strokeWidth={11} strokeLinecap="round" />
@@ -134,11 +138,12 @@ function PolioNarrado() {
       <EscenaFundido T={T} a={K.S} b={K.P} zoom={0.05} fondo="#0a0d14">
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0e1322, #090e19)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Documento T={T} x={420} y={930} w={620} h={740} titulo="secuencia" pie="ya publicada" rot={-5} />
+          {/* belleza: el documento crece (620 → 680 px) y se acerca al centro; las letras salen de él hacia la derecha */}
+          <Documento T={T} x={450} y={990} w={680} h={820} titulo="secuencia" pie="ya publicada" rot={-5} />
           {Array.from({ length: 16 }, (_, i) => { const at = K.S + 0.6 + i * 0.09, p = kprog(T, at, at + 1.6, kEase.sale);
             if (T < at) return null; const g = krng(i * 5 + 1);
             const L = LETRAS[Math.floor(g() * 4)];
-            return <text key={i} x={klerp(380, 780 + g() * 180, p)} y={klerp(880, 560 + g() * 420, p)} opacity={p < 1 ? 1 : 0.9}
+            return <text key={i} x={klerp(420, 850 + g() * 150, p)} y={klerp(940, 600 + g() * 480, p)} opacity={p < 1 ? 1 : 0.9}
               textAnchor="middle" style={{ font:`700 ${34 + g() * 16}px ${KF.mono}` }} fill={LCOL[L]}>{L}</text>; })}
         </svg>
       </EscenaFundido>
@@ -151,7 +156,7 @@ function PolioNarrado() {
           {Array.from({ length: 10 }, (_, i) => { const at = K.P + 0.05 + i * 0.13, p = kprog(T, at, at + 0.8, kEase.rebote);
             // modo cine: los sobres llenan más el cuadro
             if (T < at) return null; const g = krng(i * 13 + 2);
-            const x = 150 + (i % 5) * 200, y = 900 + Math.floor(i / 5) * 290;
+            const x = 172 + (i % 5) * 184, y = 900 + Math.floor(i / 5) * 290;   // belleza: la fila completa cabe en el cuadro
             return <g key={i} transform={`translate(${x} ${klerp(y - 260, y, p)}) rotate(${(g() - 0.5) * 18}) scale(${klerp(0.4, 1, p)})`} opacity={p}>
               <g transform="scale(1.25)">
               <rect x={-80} y={-56} width={160} height={112} rx={10} fill={KC.paper} stroke={KC.ink} strokeWidth={7} />
@@ -162,7 +167,8 @@ function PolioNarrado() {
         </svg>
       </EscenaFundido>
       {T >= K.P && T < K.A - 0.1 && <>
-        <Contador T={T} at={K.P + 0.4} desde={0} hasta={100} dur={2.4} sufijo="+" x={540} y={470} tam={130} color={KC.yellow} />
+        {/* belleza: un solo número grande a la vez; el «100+» cede su lugar cuando llega el costo */}
+        <div style={{ position:'absolute', inset:0, zIndex:41, opacity:1 - kprog(T, K.P + 2.6, K.P + 2.95) }}><Contador T={T} at={K.P + 0.4} desde={0} hasta={100} dur={2.4} sufijo="+" x={540} y={470} tam={130} color={KC.yellow} /></div>
         <Chip T={T} at={K.P + 0.6} until={K.A - 0.3} texto="pedacitos de ADN por correo" y={610} tam={40} />
         <NumeroGigante T={T} at={K.P + 2.9} until={K.A - 0.3} valor={100000} prefijo="$" y={1480} tam={130} color={KC.mint} />
       </>}
@@ -172,12 +178,12 @@ function PolioNarrado() {
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 50%, #241a2a 0%, #080a10 74%)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {Array.from({ length: 26 }, (_, i) => { const p = kprog(T, K.A + 0.2 + i * 0.03, K.A + 2.4, kEase.suave);
-            const th = i / 26 * Math.PI * 2 - Math.PI / 2, rr = 300;
-            const x0 = 60 + i * 38, y0 = 920, x1 = 540 + rr * Math.cos(th), y1 = 920 + rr * Math.sin(th);
+            const th = i / 26 * Math.PI * 2 - Math.PI / 2, rr = 345;   // belleza: el anillo y la cápside crecen y bajan al centro
+            const x0 = 60 + i * 38, y0 = 960, x1 = 540 + rr * Math.cos(th), y1 = 960 + rr * Math.sin(th);
             return <rect key={i} x={klerp(x0, x1, p) - 14} y={klerp(y0, y1, p) - 26} width={28} height={52} rx={8}
               fill={LCOL[LETRAS[i % 4]]} stroke={KC.ink} strokeWidth={4} transform={`rotate(${p * (th * 180 / Math.PI + 90)} ${klerp(x0, x1, p)} ${klerp(y0, y1, p)})`} />; })}
           <g opacity={kprog(T, K.A + 2.2, K.A + 3.2)}>
-            <Capside T={T} x={540} y={920} r={290} rot={(T - K.A) * 18} />
+            <Capside T={T} x={540} y={960} r={335} rot={(T - K.A) * 18} />
           </g>
         </svg>
       </EscenaFundido>
@@ -187,7 +193,7 @@ function PolioNarrado() {
       <EscenaFundido T={T} a={K.R} b={K.Q} zoom={0.04} fondo="#0a0d14">
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#12101b, #090e19)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <RatonSilueta T={T} x={470} y={1080} s={3.5} quieto={kprog(T, K.R + 1.2, K.R + 2.4, kEase.suave)} />
+          <RatonSilueta T={T} x={430} y={1250} s={3.3} quieto={kprog(T, K.R + 1.2, K.R + 2.4, kEase.suave)} />{/* belleza: cabe la cola y queda al centro */}
         </svg>
       </EscenaFundido>
       <Chip T={T} at={K.R + 1.8} until={K.Q - 0.3} texto="los ratones se paralizaron" y={520} borde={KC.red} tam={44} />
@@ -198,8 +204,9 @@ function PolioNarrado() {
         <Ambiente T={T} n={26} seed={11} color="rgba(200,220,255,.32)" tam={[3, 9]} />
         {/* modo cine: no es lámina; el ratón quieto y el virus armado siguen detrás de la pregunta */}
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, opacity:0.55 }}>
-          <RatonSilueta T={T} x={470} y={1080} s={3.5} quieto={1} />
-          <Capside T={T} x={830} y={640} r={190} rot={(T - K.A) * 18} />
+          {/* belleza: mismo encuadre que la escena del ratón; el virus baja junto a él */}
+          <RatonSilueta T={T} x={430} y={1260} s={3.3} quieto={1} />
+          <Capside T={T} x={800} y={880} r={190} rot={(T - K.A) * 18} />
         </svg>
         {/* encuadre: el signo crece y baja al centro del cuadro (antes top 760, 340 px) */}
         <div style={{ position:'absolute', left:0, right:0, top:820, zIndex:5, textAlign:'center',
@@ -211,10 +218,10 @@ function PolioNarrado() {
       <EscenaFundido T={T} a={K.Po} b={K.Sc} zoom={0.04} fondo="#0a0d14">
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0c1220, #090e19)' }}></div>
         {/* modo cine: el sujeto (el genoma en letras) sigue detrás, atenuado */}
-        <div style={{ position:'absolute', inset:0, opacity:0.2 }}><PantallaLetras T={T} llenado={1} x={70} y={400} ancho={940} alto={1000} /></div>
+        <div style={{ position:'absolute', inset:0, opacity:0.3 }}><PantallaLetras T={T} llenado={1} x={70} y={460} ancho={940} alto={1000} /></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:22 }}>
           {[0, 1].map((k) => { const y = 740 + k * 400, on = k === 0 ? 1 : kprog(T, K.Po + 1.8, K.Po + 2.6);
-            return <g key={k} opacity={k === 0 ? kprog(T, K.Po + 0.02, K.Po + 0.5) : on}>
+            return <g key={k} opacity={k === 0 ? kprog(T, K.Po - 0.3, K.Po + 0.2) : on}>
               <g transform={`translate(${k ? 760 : 250} ${y})`}>
                 {k === 0 ? <g><path d="M -34 -60 q 34 30 0 60 q -34 30 0 60" fill="none" stroke={KC.cyan} strokeWidth={14} strokeLinecap="round" />
                   <path d="M 34 -60 q -34 30 0 60 q 34 30 0 60" fill="none" stroke={KC.pink} strokeWidth={14} strokeLinecap="round" /></g>
@@ -248,12 +255,12 @@ function PolioNarrado() {
         <Ambiente T={T} n={16} seed={23} color="rgba(255,255,255,.4)" tam={[5, 14]} vel={12} />
         {/* modo cine: no es lámina; la portada criticada sigue en pantalla, atenuada */}
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, opacity:0.5 }}>
-          <g transform="translate(540 960) scale(1.3) translate(-490 -860)"><PortadaScience T={T} t0={K.Sc} /></g>
+          <g transform="translate(540 1060) scale(1.38) translate(-490 -860)"><PortadaScience T={T} t0={K.Sc} /></g>{/* belleza: mismo encuadre que la portada de Science */}
         </svg>
       </EscenaFundido>
       <Chip T={T} at={K.Cr + 0.4} until={K.Re - 0.3} texto="«irresponsable»" x={540} y={330} borde={KC.red} tam={48} />
-      <Chip T={T} at={K.Cr + 1.9} until={K.Re - 0.3} texto="de eso se trataba:" x={540} y={1400} borde={KC.gold} tam={44} />
-      <Chip T={T} at={K.Cr + 2.3} until={K.Re - 0.3} texto="advertir del riesgo" x={540} y={1490} borde={KC.gold} tam={44} />
+      <Chip T={T} at={K.Cr + 1.9} until={K.Re - 0.3} texto="de eso se trataba:" x={540} y={425} borde={KC.gold} tam={44} />
+      <Chip T={T} at={K.Cr + 2.3} until={K.Re - 0.3} texto="advertir del riesgo" x={540} y={500} borde={KC.gold} tam={44} />
 
       {/* 10 · REGLAS (encuadre: los dos documentos bajan 150 px al centro) */}}
       <EscenaFundido T={T} a={K.Re} b={K.H} zoom={0.04} fondo="#0a0d14">

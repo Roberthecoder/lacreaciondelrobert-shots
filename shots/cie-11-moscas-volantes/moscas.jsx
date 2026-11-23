@@ -2,7 +2,7 @@
 // Shot Científico #11 · Las manchitas que flotan en tu vista están dentro de tu ojo — NARRADO (N1 "Por dentro": cielo → ojo en corte → cielo).
 // Datos: Webb et al. 2013 (Int J Ophthalmol), Ivanova et al. 2016 (Eye), NEI / AAO / MedlinePlus. Ver guion.md y verificacion.md.
 // El ojo en corte es esquemático y las moscas están exageradas para que se vean.
-const CIELO1 = '#164a78', CIELO2 = '#3f7fae', MSOMBRA = 'rgba(8,14,30,.72)', VITREO = 'rgba(120,200,255,.32)';
+const CIELO1 = '#123d66', CIELO2 = '#2f6a98', MSOMBRA = 'rgba(8,14,30,.72)', VITREO = 'rgba(120,200,255,.32)';
 
 // Una "mosca volante" en el cielo: hebrita o grumito transparente. tipo 0 hebra, 1 anillos, 2 grumo con cola.
 function Mosca({ x, y, s = 1, rot = 0, tipo = 0, o = 1, color = MSOMBRA }) {
@@ -30,7 +30,7 @@ function CieloFondo({ T }) {
   return <div style={{ position:'absolute', inset:0, background:`linear-gradient(180deg, ${CIELO1} 0%, ${CIELO2} 100%)` }}>
     <Lienzo z={1}>
       <SolDibujo x={890} y={1560} r={80} T={T} />
-      <Nube x={220 + T * 8} y={1500} s={0.9} /><Nube x={760 - T * 6} y={1700} s={0.7} /><Nube x={160 + T * 5} y={420} s={0.55} color="rgba(255,255,255,.9)" />
+      <Nube x={220 + T * 8} y={1500} s={0.9} /><Nube x={760 - T * 6} y={1700} s={0.7} /><Nube x={900 - T * 4} y={330} s={0.55} color="rgba(255,255,255,.9)" />
     </Lienzo>
   </div>;
 }
@@ -141,7 +141,7 @@ function Moscas() {
   const { T, CUES } = useComposition();
   const K = CUES, FIN = K.Outro + 4;
   const zA = kprog(T, K.Gancho + 2.9, K.Gel + 0.2, kEase.suave);          // la cámara se aleja: aparece el ojo que mira el cielo
-  const OG = { cx: 470, cy: 980, R: 320 };                                  // ojo en corte (escena Gel)
+  const OG = { cx: 470, cy: 960, R: 380 };                                  // ojo en corte (escena Gel)
   // ojo que gira (Escapan): mira a la derecha-arriba y regresa; los grumos llegan tarde y se mecen
   const giro = (t) => -28 * kprog(t, K.Escapan + 0.6, K.Escapan + 1.1, kEase.suave) + 40 * kprog(t, K.Escapan + 2.6, K.Escapan + 3.1, kEase.suave);
   const giroG = (t) => giro(t - 0.45) + 9 * Math.exp(-Math.max(0, t - K.Escapan - 1.5) * 1.6) * Math.sin((t - K.Escapan) * 7) * (t > K.Escapan + 0.9 ? 1 : 0);
@@ -151,12 +151,12 @@ function Moscas() {
       <Escena T={T} a={K.Gancho} b={K.Gel} zoom={0}>
         <CieloFondo T={T} />
         <Lienzo>
-          <MoscasCielo T={T} />
+          <g transform="translate(540 990) scale(1.35) translate(-540 -880)"><MoscasCielo T={T} /></g>
           {zA > 0 && <AlmendraOjo s={klerp(3.2, 1, zA)} cy={940} piel="#6e4636" />}
-          <TextoSvg x={290} y={450} tam={96} color={KC.yellow} rot={-4} o={1 - kprog(T, K.Gancho + 3.0, K.Gancho + 3.3)} s={klerp(0.5, 1, kprog(T, K.Gancho + 0.05, K.Gancho + 0.45, kEase.rebote))}>NO ESTÁN</TextoSvg>
-          <TextoSvg x={290} y={555} tam={96} color={KC.yellow} rot={-4} o={1 - kprog(T, K.Gancho + 3.0, K.Gancho + 3.3)} s={klerp(0.5, 1, kprog(T, K.Gancho + 0.6, K.Gancho + 1.0, kEase.rebote))}>EN EL AIRE</TextoSvg>
-          <TextoSvg x={290} y={450} tam={96} color={KC.pink} rot={-4} o={kprog(T, K.Gancho + 3.3, K.Gancho + 3.5)} s={klerp(0.5, 1, kprog(T, K.Gancho + 3.3, K.Gancho + 3.7, kEase.rebote))}>¡ESTÁN EN</TextoSvg>
-          <TextoSvg x={290} y={555} tam={96} color={KC.pink} rot={-4} o={kprog(T, K.Gancho + 3.6, K.Gancho + 3.8)} s={klerp(0.5, 1, kprog(T, K.Gancho + 3.6, K.Gancho + 4.0, kEase.rebote))}>TU OJO!</TextoSvg>
+          <TextoSvg x={540} y={450} tam={96} color={KC.yellow} rot={-4} o={1 - kprog(T, K.Gancho + 3.0, K.Gancho + 3.3)} s={klerp(0.5, 1, kprog(T, K.Gancho + 0.05, K.Gancho + 0.45, kEase.rebote))}>NO ESTÁN</TextoSvg>
+          <TextoSvg x={540} y={555} tam={96} color={KC.yellow} rot={-4} o={1 - kprog(T, K.Gancho + 3.0, K.Gancho + 3.3)} s={klerp(0.5, 1, kprog(T, K.Gancho + 0.6, K.Gancho + 1.0, kEase.rebote))}>EN EL AIRE</TextoSvg>
+          <TextoSvg x={540} y={450} tam={96} color={KC.pink} rot={-4} o={kprog(T, K.Gancho + 3.3, K.Gancho + 3.5)} s={klerp(0.5, 1, kprog(T, K.Gancho + 3.3, K.Gancho + 3.7, kEase.rebote))}>¡ESTÁN EN</TextoSvg>
+          <TextoSvg x={540} y={555} tam={96} color={KC.pink} rot={-4} o={kprog(T, K.Gancho + 3.6, K.Gancho + 3.8)} s={klerp(0.5, 1, kprog(T, K.Gancho + 3.6, K.Gancho + 4.0, kEase.rebote))}>TU OJO!</TextoSvg>
         </Lienzo>
       </Escena>
       {/* 1 · el gel: el ojo en corte se llena de humor vítreo */}
@@ -166,9 +166,9 @@ function Moscas() {
           <g transform={`translate(${OG.cx} ${OG.cy}) scale(${klerp(0.4, 1, kprog(T, K.Gel - 0.3, K.Gel + 0.5, kEase.rebote))}) translate(${-OG.cx} ${-OG.cy})`}>
             <OjoCorte {...OG} T={T} vit={kprog(T, K.Gel + 0.6, K.Gel + 2.2, kEase.suave)} id="gel" rayos={0} />
           </g>
-          <Rotulo x={OG.cx + 1.2 * OG.R} y={OG.cy - 60} tx={960} ty={1150} texto="córnea" p={kprog(T, K.Gel + 0.8, K.Gel + 1.1)} />
-          <Rotulo x={OG.cx + 0.62 * OG.R} y={OG.cy + 90} tx={800} ty={1360} texto="cristalino" p={kprog(T, K.Gel + 1.1, K.Gel + 1.4)} />
-          <Rotulo x={OG.cx - OG.R + 18} y={OG.cy + 160} tx={150} ty={1360} texto="retina" p={kprog(T, K.Gel + 1.4, K.Gel + 1.7)} />
+          <Rotulo x={OG.cx + 1.2 * OG.R} y={OG.cy - 60} tx={960} ty={1250} texto="córnea" p={kprog(T, K.Gel + 0.8, K.Gel + 1.1)} />
+          <Rotulo x={OG.cx + 0.62 * OG.R} y={OG.cy + 90} tx={800} ty={1440} texto="cristalino" p={kprog(T, K.Gel + 1.1, K.Gel + 1.4)} />
+          <Rotulo x={OG.cx - OG.R + 18} y={OG.cy + 160} tx={150} ty={1440} texto="retina" p={kprog(T, K.Gel + 1.4, K.Gel + 1.7)} />
         </Lienzo>
         <Lupa T={T} at={K.Gel + 2.4} until={K.Fibras - 0.2} x={800} y={460} r={130} fx={OG.cx - 40} fy={OG.cy + 60} tinte={KC.cyan} etiqueta="POR DENTRO · GEL"
           interior={(t, r) => <AguaCerca t={t} r={r} />} />
@@ -219,7 +219,7 @@ function Moscas() {
       <Escena T={T} a={K.Escapan} b={K.Pregunta} fondo={KC.pink}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
-          <OjoCorte cx={430} cy={900} R={300} T={T} rot={giro(T)} rotG={giroG(T)} fibras={1} junta={1} mirada={kprog(T, K.Escapan + 0.3, K.Escapan + 0.8)} id="esc" />
+          <OjoCorte cx={400} cy={960} R={350} T={T} rot={giro(T)} rotG={giroG(T)} fibras={1} junta={1} mirada={kprog(T, K.Escapan + 0.3, K.Escapan + 0.8)} id="esc" />
         </Lienzo>
         <Chip T={T} at={K.Escapan + 0.5} until={K.Escapan + 2.6} texto="mueves el ojo…" x={540} y={430} tam={44} borde={KC.yellow} />
         <Chip T={T} at={K.Escapan + 2.6} until={K.Pregunta - 0.1} texto="…y los grumos llegan tarde" x={540} y={430} tam={42} borde={KC.yellow} />
@@ -229,7 +229,7 @@ function Moscas() {
       {/* 7 · fondo claro y parejo vs. cuarto con muchas cosas */}
       <Escena T={T} a={K.Fondo} b={K.Estudio} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
-        <Lienzo>
+        <Lienzo><g transform="translate(0 90)">
           <g transform={`translate(0 ${(1 - kprog(T, K.Fondo + 0.1, K.Fondo + 0.6, kEase.sale)) * -700})`}>
             <rect x={90} y={400} width={900} height={380} rx={26} fill="#9aa4b0" stroke={KC.ink} strokeWidth={9} />
             <clipPath id="pared"><rect x={90} y={400} width={900} height={380} rx={26} /></clipPath><g clipPath="url(#pared)"><g transform="translate(0 -230)"><MoscasCielo T={T - K.Fondo + 0.3} /></g></g>
@@ -240,7 +240,7 @@ function Moscas() {
             <clipPath id="cuarto"><rect x={90} y={830} width={900} height={420} rx={26} /></clipPath><g clipPath="url(#cuarto)" opacity={0.22}><g transform="translate(0 200)"><MoscasCielo T={T - K.Fondo + 0.3} /></g></g>
             <TextoSvg x={540} y={1222} tam={42} color={KC.white} fuente="texto">muchas cosas: SE NOTAN MENOS</TextoSvg>
           </g>
-        </Lienzo>
+        </g></Lienzo>
       </Escena>
       {/* 8 · el estudio de 2013: 603 personas, 76 % las ve */}
       <Escena T={T} a={K.Estudio} b={K.Aviso} fondo={KC.mint}>
@@ -267,8 +267,8 @@ function Moscas() {
               <IconoSenal tipo={i} x={160} y={y} T={T} />
               <TextoSvg x={250} y={y + 18} tam={54} color={KC.white} ancla="start" fuente="texto">{tx}</TextoSvg></g>; })}
           {T > K.Aviso + 5.3 && <g transform={`translate(540 1410) scale(${klerp(0.4, 1, kprog(T, K.Aviso + 5.3, K.Aviso + 5.7, kEase.rebote))})`}>
-            <rect x={-440} y={-58} width={880} height={116} rx={30} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
-            <text x={0} y={18} textAnchor="middle" style={{ font:`400 58px ${KF.titulo}` }} fill="#0b1020">→ OFTALMÓLOGO ESE MISMO DÍA</text></g>}
+            <rect x={-470} y={-56} width={940} height={112} rx={30} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
+            <text x={0} y={16} textAnchor="middle" textLength={860} lengthAdjust="spacingAndGlyphs" style={{ font:`400 46px ${KF.titulo}` }} fill="#0b1020">→ OFTALMÓLOGO ESE MISMO DÍA</text></g>}
         </Lienzo>
       </Escena>
       {/* 10 · cierre: el mismo cielo, ahora con tu ojo tenue detrás */}
@@ -276,11 +276,11 @@ function Moscas() {
         <CieloFondo T={T} />
         <Lienzo>
           <g opacity={0.55 * kprog(T, K.Cierre + 0.4, K.Cierre + 1.6)}>
-            <AlmendraOjo s={1.15} cy={900} solido={false} />
-            <circle cx={540} cy={900} r={240} fill="none" stroke="rgba(255,255,255,.75)" strokeWidth={10} />
-            <circle cx={540} cy={900} r={110} fill="rgba(20,30,60,.18)" stroke="rgba(255,255,255,.75)" strokeWidth={8} />
+            <AlmendraOjo s={1.15} cy={980} solido={false} />
+            <circle cx={540} cy={980} r={240} fill="none" stroke="rgba(255,255,255,.75)" strokeWidth={10} />
+            <circle cx={540} cy={980} r={110} fill="rgba(20,30,60,.18)" stroke="rgba(255,255,255,.75)" strokeWidth={8} />
           </g>
-          <MoscasCielo T={T} color="rgba(14,20,40,.75)" />
+          <g transform="translate(540 990) scale(1.35) translate(-540 -880)"><MoscasCielo T={T} color="rgba(14,20,40,.75)" /></g>
         </Lienzo>
         <Chip T={T} at={K.Cierre + 1.2} until={K.Outro - 0.1} texto="son su sombra" x={340} y={440} tam={46} borde={KC.gold} />
       </Escena>

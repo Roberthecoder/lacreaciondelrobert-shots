@@ -13,8 +13,13 @@ function Dedo({ T = 0, x, y, s = 1, sano = 0, mala = 1, quiebra = 0, grueso = 0,
   const una = `M ${-nw / 2} ${yb} L ${-nw / 2} ${yt + 70} Q ${-nw / 2} ${yt} 0 ${yt} Q ${nw / 2} ${yt} ${nw / 2} ${yt + 70} L ${nw / 2} ${yb} Q 0 ${yb - 40} ${-nw / 2} ${yb} Z`;
   const rot = mueve * Math.sin(T * 5) * 2;
   return <g transform={`translate(${x} ${y}) rotate(${rot} 0 900) scale(${s})`}>
-    <defs><clipPath id={'cl-' + id}><path d={una} /></clipPath></defs>
-    <path d={`M ${-w / 2} 1100 L ${-w / 2} 210 Q ${-w / 2} -10 0 -10 Q ${w / 2} -10 ${w / 2} 210 L ${w / 2} 1100 Z`} fill={PIEL_U} stroke={KC.ink} strokeWidth={9} />
+    <defs><clipPath id={'cl-' + id}><path d={una} /></clipPath>
+      <linearGradient id={'pv-' + id} x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#c27a58" /><stop offset=".32" stopColor="#f7c3a2" /><stop offset=".6" stopColor={PIEL_U} /><stop offset="1" stopColor="#b8704f" /></linearGradient>
+      <linearGradient id={'pt-' + id} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#fff" stopOpacity=".18" /><stop offset=".35" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".22" /></linearGradient>
+      <radialGradient id={'ub-' + id} cx=".35" cy=".25" r=".8"><stop offset="0" stopColor="#fff" stopOpacity=".32" /><stop offset=".55" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#3a2410" stopOpacity=".28" /></radialGradient></defs>
+    <path d={`M ${-w / 2} 1100 L ${-w / 2} 210 Q ${-w / 2} -10 0 -10 Q ${w / 2} -10 ${w / 2} 210 L ${w / 2} 1100 Z`} fill={`url(#pv-${id})`} stroke={KC.ink} strokeWidth={9} />
+    <path d={`M ${-w / 2} 1100 L ${-w / 2} 210 Q ${-w / 2} -10 0 -10 Q ${w / 2} -10 ${w / 2} 210 L ${w / 2} 1100 Z`} fill={`url(#pt-${id})`} />
+    {[0, 1, 2].map((k) => <path key={'pl' + k} d={`M ${-w / 2 + 60 + k * 14} ${850 + k * 34} Q 0 ${885 + k * 34} ${w / 2 - 60 - k * 14} ${850 + k * 34}`} stroke={PIEL_U2} strokeWidth={3} fill="none" opacity=".45" />)}
     <path d={`M ${-w / 2 + 30} 760 Q 0 800 ${w / 2 - 30} 760`} stroke={PIEL_U2} strokeWidth={6} fill="none" />
     <g clipPath={`url(#cl-${id})`}>
       <rect x={-nw} y={yt - 20} width={nw * 2} height={lim - yt + 20} fill={colV} />
@@ -24,6 +29,7 @@ function Dedo({ T = 0, x, y, s = 1, sano = 0, mala = 1, quiebra = 0, grueso = 0,
       <path d={`M ${-nw / 2 + 30} ${yb - 30} Q 0 ${yb - 110} ${nw / 2 - 30} ${yb - 30}`} fill="#fff1ee" opacity=".9" />
       {sano > 0.02 && sano < 0.98 && <path d={`M ${-nw} ${lim} L ${nw} ${lim}`} stroke={KC.ink} strokeWidth={4} strokeDasharray="12 8" opacity=".55" />}
       <path d={`M ${-nw / 2 + 40} ${yt + 40} Q ${-nw / 2 + 30} ${yt + 160} ${-nw / 2 + 50} ${yt + 260}`} stroke="#fff" strokeWidth={12} fill="none" opacity=".5" strokeLinecap="round" />
+      <rect x={-nw / 2} y={yt} width={nw} height={yb - yt} fill={`url(#ub-${id})`} />
     </g>
     <path d={una} fill="none" stroke={KC.ink} strokeWidth={7} />
     {quiebra > 0 && <path d={`M ${-nw / 2 + 10} ${yt + 40} L ${-80} ${yt + 70} L ${-50} ${yt + 30} L ${-10} ${yt + 80} L ${30} ${yt + 25} L ${70} ${yt + 75} L ${110} ${yt + 35} L ${nw / 2 - 10} ${yt + 60}`} stroke={KC.ink} strokeWidth={6} fill="none" opacity={quiebra} strokeLinejoin="round" />}
@@ -35,7 +41,9 @@ function Dedo({ T = 0, x, y, s = 1, sano = 0, mala = 1, quiebra = 0, grueso = 0,
 // Cajita de pastillas (blíster).
 function Blister({ x, y, s = 1, rot = 0, usadas = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
-    <rect x={-120} y={-80} width={240} height={160} rx={18} fill="#e9eef4" stroke={KC.ink} strokeWidth={7} />
+    <defs><linearGradient id="blis-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#f4f7fb" /><stop offset=".5" stopColor="#d6dde6" /><stop offset="1" stopColor="#aeb8c4" /></linearGradient></defs>
+    <rect x={-112} y={-66} width={240} height={160} rx={18} fill="#000" opacity=".25" />
+    <rect x={-120} y={-80} width={240} height={160} rx={18} fill="url(#blis-g)" stroke={KC.ink} strokeWidth={7} />
     {Array.from({ length: 8 }, (_, i) => { const cx = -84 + (i % 4) * 56, cy = -36 + Math.floor(i / 4) * 72; return <g key={i}>
       <ellipse cx={cx} cy={cy} rx={20} ry={26} fill={i < usadas ? '#c9d0d8' : '#fff'} stroke={KC.ink} strokeWidth={4} />
       {i >= usadas && <ellipse cx={cx} cy={cy} rx={11} ry={16} fill={KC.coral} stroke={KC.ink} strokeWidth={3} />}</g>; })}
@@ -92,8 +100,9 @@ function CorteDedo({ T, hifas = 0, sano = 0, raiz = 0, mala = 1, tf = CORTE_TF }
   const xh = X1 - hifas * 470;
   const gruesa = 22 + 16 * mala;
   return fsvg(<g transform={tf}>
-    <path d="M -20 760 L 300 760 Q 360 760 380 800 L 840 800 Q 990 800 1010 930 Q 1000 1120 820 1130 L -20 1130 Z" fill={PIEL_U} stroke={KC.ink} strokeWidth={9} />
-    <path d="M 120 905 Q 400 880 760 885 Q 870 895 865 965 Q 850 1035 740 1030 Q 420 1035 120 1035 Z" fill="#f3ead2" stroke={KC.ink} strokeWidth={6} />
+    <defs><linearGradient id="cv-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#f7c6a6" /><stop offset=".45" stopColor={PIEL_U} /><stop offset="1" stopColor="#bd7552" /></linearGradient></defs>
+    <path d="M -20 760 L 300 760 Q 360 760 380 800 L 840 800 Q 990 800 1010 930 Q 1000 1120 820 1130 L -20 1130 Z" fill="url(#cv-g)" stroke={KC.ink} strokeWidth={9} />
+    <path d="M 120 905 Q 400 880 760 885 Q 870 895 865 965 Q 850 1035 740 1030 Q 420 1035 120 1035 Z" fill="#e9dcc0" stroke={KC.ink} strokeWidth={6} />
     <path d={`M ${X0 + 20} ${Y + 18} L ${X1 - 40} ${Y + 18}`} stroke="#e98e86" strokeWidth={12} strokeLinecap="round" />
     <ellipse cx={X0 + 10} cy={Y + 30} rx={50} ry={22} fill={mixHex('#e98e86', KC.yellow, raiz)} stroke={KC.ink} strokeWidth={5} style={raiz > 0 ? { filter:`drop-shadow(0 0 ${18 * raiz}px ${KC.yellow})` } : null} />
     {/* lámina: parte sana (de la raíz a xb) y parte vieja dañada (de xb al borde libre) */}
@@ -135,8 +144,12 @@ function ReglaUna({ x, y, mm, p, titulo, valor, color }) {
 // Chancla vista desde arriba.
 function Chancla({ x, y, rot = 0, s = 1 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
-    <path d="M -70 -170 Q 0 -210 70 -170 Q 95 -40 75 120 Q 0 190 -75 120 Q -95 -40 -70 -170 Z" fill={KC.blue} stroke={KC.ink} strokeWidth={8} />
-    <path d="M 0 -150 L -64 -40 M 0 -150 L 64 -40" stroke={KC.yellow} strokeWidth={16} strokeLinecap="round" />
+    <defs><radialGradient id="chan-g" cx=".35" cy=".3" r=".85"><stop offset="0" stopColor="#5f86d6" /><stop offset=".6" stopColor="#2f56a8" /><stop offset="1" stopColor="#1c3570" /></radialGradient></defs>
+    <path d="M -62 -158 Q 8 -198 78 -158 Q 103 -28 83 132 Q 8 202 -67 132 Q -87 -28 -62 -158 Z" fill="#000" opacity=".3" />
+    <path d="M -70 -170 Q 0 -210 70 -170 Q 95 -40 75 120 Q 0 190 -75 120 Q -95 -40 -70 -170 Z" fill="url(#chan-g)" stroke={KC.ink} strokeWidth={8} />
+    <path d="M -48 -150 Q -66 -40 -52 90" stroke="#fff" strokeWidth={8} fill="none" opacity=".22" strokeLinecap="round" />
+    {[0, 1, 2, 3, 4].map((k) => <circle key={k} cx={(k % 2 ? 20 : -20)} cy={-10 + k * 26} r={4} fill="#14295a" opacity=".7" />)}
+    <path d="M 0 -150 L -64 -40 M 0 -150 L 64 -40" stroke="#e2c25a" strokeWidth={16} strokeLinecap="round" />
     <circle cx={0} cy={-150} r={10} fill={KC.ink} />
   </g>;
 }
@@ -160,7 +173,7 @@ function UnasShot() {
   const ladrillos = [];
   for (let r = 0; r < 11; r++) for (let c = 0; c < 5; c++) { const x = c * 260 - (r % 2) * 130 - 40, y = 600 + r * 50;
     const cerca = (Math.abs(y + 22 - 730) < 60 || Math.abs(y + 22 - 910) < 60);
-    ladrillos.push(<rect key={r + '-' + c} x={x} y={y} width={250} height={46} rx={12} fill="#f0d79a" stroke="#a88b55" strokeWidth={3} opacity={1 - (cerca ? digiere * 0.8 : 0)} />); }
+    ladrillos.push(<rect key={r + '-' + c} x={x} y={y} width={250} height={46} rx={12} fill="#5a4a2a" fillOpacity=".55" stroke="#f3dc9e" strokeWidth={3} opacity={1 - (cerca ? digiere * 0.8 : 0)} style={{ filter:'drop-shadow(0 0 5px rgba(243,220,158,.55))' }} />); }
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1–2 · gancho: el dedo con la uña dañada, la pastilla y el tiempo; luego la lupa */}
@@ -214,8 +227,8 @@ function UnasShot() {
       {/* 8 · el estudio: 22 jóvenes marcan sus uñas */}
       <Escena T={T} a={K.E} b={K.Re}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>{Array.from({ length: 22 }, (_, i) => { const on = kprog(T, K.E + 1.4 + i * 0.07, K.E + 1.7 + i * 0.07, kEase.rebote);
-          return on > 0 ? <PersonaU key={i} x={102 + (i % 8) * 125} y={880 + Math.floor(i / 8) * 200} s={on * 1.3} color={i % 3 ? '#8fb6ff' : KC.pink} marca={kprog(T, K.E + 3.0 + i * 0.05, K.E + 3.3 + i * 0.05)} /> : null; })}</>)}
+        {fsvg(<>{Array.from({ length: 22 }, (_, i) => { const on = kprog(T, K.E + 0.05 + i * 0.05, K.E + 0.35 + i * 0.05, kEase.rebote);
+          return on > 0 ? <PersonaU key={i} x={102 + (i % 8) * 125} y={880 + Math.floor(i / 8) * 200} s={on * 1.3} color={i % 3 ? '#8fb6ff' : KC.pink} marca={kprog(T, K.E + 2.2 + i * 0.1, K.E + 2.5 + i * 0.1)} /> : null; })}</>)}
       </Escena>
       {/* 9 · resultado: manos 3.47 mm/mes · pies 1.62 mm/mes */}
       <Escena T={T} a={K.Re} b={K.Ti}>

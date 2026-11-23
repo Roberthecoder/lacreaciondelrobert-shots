@@ -258,14 +258,14 @@ function Chile() {
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
           {(() => { const base = 1200, H = 660, yAgua = base - H * VAL[1] * crece; return <g>
-            {VAL.map((v, i) => { const x = 100 + i * 120, h = H * v * crece, gana = i >= 5;
+            {VAL.map((v, i) => { const x = 90 + i * 126, h = H * v * crece, gana = i >= 5;
               return <g key={i}>
-                <rect x={x - 46} y={base - h} width={92} height={h} fill={COL[i]} stroke={gana && brilla > 0 ? KC.mint : KC.ink} strokeWidth={gana ? 7 + brilla * 5 : 7} />
-                <text x={x} y={base + 40} textAnchor="middle" style={{ font:`700 23px ${KF.mono}` }} fill={KC.ink}>{NOM[i].split('\n').map((l, j) => <tspan key={j} x={x} dy={j ? 24 : 0}>{l}</tspan>)}</text>
+                <rect x={x - 41} y={base - h} width={82} height={h} fill={COL[i]} stroke={gana && brilla > 0 ? KC.mint : KC.ink} strokeWidth={gana ? 7 + brilla * 5 : 7} />
+                <text x={x} y={base + 40} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>{NOM[i].split('\n').map((l, j) => <tspan key={j} x={x} dy={j ? 28 : 0}>{l}</tspan>)}</text>
               </g>; })}
             <line x1={40} x2={1040} y1={yAgua} y2={yAgua} stroke={KC.blue} strokeWidth={5} strokeDasharray="16 12" opacity={kprog(T, K.Re + 1.6, K.Re + 2.0)} />
             <text x={60} y={base - H - 30} style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>ardor total (2 min)</text>
-            <text x={60} y={base - H - 72} textAnchor="start" style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>*sin alcohol · barras esquemáticas</text>
+            <text x={60} y={base - H - 72} textAnchor="start" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>*sin alcohol · barras esquemáticas</text>
           </g>; })()}
         </SvgCapa>
         <Chip T={T} at={K.Re + 2.4} until={K.Pt - 0.3} texto="solo la leche y el agua de sabor le ganaron al agua" y={1400} tam={30} borde={KC.mint} />

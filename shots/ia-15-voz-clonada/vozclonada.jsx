@@ -29,11 +29,18 @@ function Telefono({ x, y, s = 1, T = 0, vibra = 0, modo = 'llamada', contacto = 
       <path d={`M ${-200 - k * 26} -60 q -22 60 0 120`} stroke={KC.ink} strokeWidth={9} fill="none" strokeLinecap="round" />
       <path d={`M ${200 + k * 26} -60 q 22 60 0 120`} stroke={KC.ink} strokeWidth={9} fill="none" strokeLinecap="round" />
     </g>)}
-    <rect x={-165} y={-320} width={330} height={640} rx={54} fill="#1b1f2a" stroke={KC.ink} strokeWidth={10} />
+    <defs>
+      <linearGradient id="vc-cuerpo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#3a4254" /><stop offset="0.5" stopColor="#1b1f2a" /><stop offset="1" stopColor="#0c0e14" /></linearGradient>
+      <linearGradient id="vc-reflejo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fff" stopOpacity="0.16" /><stop offset="1" stopColor="#fff" stopOpacity="0" /></linearGradient>
+      <radialGradient id="vc-esfera" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stopColor="#fff" stopOpacity="0.45" /><stop offset="0.6" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.25" /></radialGradient>
+    </defs>
+    <rect x={-150} y={330} width={300} height={26} rx={13} fill="#000" opacity={0.3} />
+    <rect x={-165} y={-320} width={330} height={640} rx={54} fill="url(#vc-cuerpo)" stroke={KC.ink} strokeWidth={10} />
     <rect x={-145} y={-296} width={290} height={592} rx={40} fill={modo === 'video' ? '#2a1f4a' : '#10131a'} />
     <rect x={-50} y={-286} width={100} height={22} rx={11} fill={KC.ink} />
     {modo === 'llamada' && <>
       <circle cx={0} cy={-120} r={78} fill={KC.lilac} stroke={KC.ink} strokeWidth={7} />
+      <circle cx={0} cy={-120} r={78} fill="url(#vc-esfera)" />
       <circle cx={0} cy={-140} r={30} fill="#f1b48f" stroke={KC.ink} strokeWidth={6} />
       <path d="M -50 -62 Q 0 -110 50 -62" fill="#f1b48f" stroke={KC.ink} strokeWidth={6} />
       <text x={0} y={10} textAnchor="middle" style={{ font:`900 54px ${KF.texto}` }} fill={KC.texto}>{contacto}</text>
@@ -42,6 +49,7 @@ function Telefono({ x, y, s = 1, T = 0, vibra = 0, modo = 'llamada', contacto = 
       <circle cx={72} cy={200} r={44 * (1 + 0.08 * Math.sin(T * 8))} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} />
       <path d="M 52 196 q 20 20 40 0" stroke={KC.white} strokeWidth={8} fill="none" strokeLinecap="round" />
       <path d="M -92 206 q 20 -20 40 0" stroke={KC.white} strokeWidth={8} fill="none" strokeLinecap="round" />
+      <circle cx={-72} cy={200} r={44} fill="url(#vc-esfera)" /><circle cx={72} cy={200} r={44} fill="url(#vc-esfera)" />
     </>}
     {modo === 'video' && <>
       <rect x={-145} y={-296} width={290} height={592} rx={40} fill="url(#gradVideo)" />
@@ -54,6 +62,7 @@ function Telefono({ x, y, s = 1, T = 0, vibra = 0, modo = 'llamada', contacto = 
       <rect x={-120} y={256} width={240} height={8} rx={4} fill="rgba(255,255,255,.3)" />
       <rect x={-120} y={256} width={240 * ((T * 0.12) % 1)} height={8} rx={4} fill={KC.white} />
     </>}
+    <path d="M -145 -256 Q -145 -296 -105 -296 L 60 -296 L -145 40 Z" fill="url(#vc-reflejo)" />
     {burbuja && <g transform="translate(150 -330)">
       <rect x={-20} y={-70} width={burbuja.length * 30 + 60} height={96} rx={40} fill={KC.white} stroke={KC.ink} strokeWidth={7} />
       <path d="M 10 22 L -14 60 L 40 24" fill={KC.white} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
@@ -90,6 +99,7 @@ function Tijeras({ x, y, s = 1, T = 0, rot = 0 }) {
 function Choque({ x, y, s = 1, T = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d="M -120 20 L -100 -30 Q -80 -60 -40 -60 L 40 -60 Q 70 -60 90 -30 L 120 0 L 120 40 L -120 40 Z" fill={KC.cyan} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" transform="rotate(-8)" />
+    <path d="M -100 -30 Q -80 -60 -40 -60 L 40 -60 Q 70 -60 90 -30 Z" fill="#fff" opacity={0.22} transform="rotate(-8)" />
     <circle cx={-70} cy={46} r={26} fill={KC.ink} /><circle cx={70} cy={36} r={26} fill={KC.ink} />
     <g transform={`translate(130 -40) rotate(${T * 90}) scale(${1 + 0.1 * Math.sin(T * 10)})`}>
       <path d="M 0 -56 L 14 -16 L 56 -16 L 22 8 L 36 50 L 0 24 L -36 50 L -22 8 L -56 -16 L -14 -16 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
@@ -135,6 +145,7 @@ function Candado({ x, y, s = 1, c = 1 }) {
     <path d={`M -50 ${-10 - 40 * (1 - c)} L -50 -60 Q -50 -120 0 -120 Q 50 -120 50 -60 L 50 ${-10 - 40 * (1 - c)}`} fill="none" stroke={KC.ink} strokeWidth={22} strokeLinecap="round" />
     <path d={`M -50 ${-10 - 40 * (1 - c)} L -50 -60 Q -50 -120 0 -120 Q 50 -120 50 -60 L 50 ${-10 - 40 * (1 - c)}`} fill="none" stroke="#cfd6e3" strokeWidth={10} strokeLinecap="round" />
     <rect x={-80} y={-20} width={160} height={130} rx={22} fill={KC.gold} stroke={KC.ink} strokeWidth={8} />
+    <rect x={-80} y={-20} width={160} height={130} rx={22} fill="url(#vc-esfera)" />
     <circle cx={0} cy={36} r={16} fill={KC.ink} /><rect x={-6} y={40} width={12} height={36} rx={5} fill={KC.ink} />
   </g>;
 }
@@ -153,16 +164,18 @@ function VozClonada() {
       <Escena T={T} a={K.G} b={K.P1}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <Telefono x={540} y={830} s={1.22} T={T} vibra={1} />
-          <Onda x={90} y={1330} ancho={900} alto={160} T={T} n={34} pixel={pix} />
+          {/* belleza: el celular crece ×1.19 y baja; la onda y el chip bajan con él */}
+          <Telefono x={540} y={855} s={1.45} T={T} vibra={1} />
+          <Onda x={90} y={1400} ancho={900} alto={150} T={T} n={34} pixel={pix} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.G + 2.2} until={K.P1 - 0.2} texto="COPIA HECHA POR IA" x={540} y={1460} tam={46} fondo={KC.ink} color={KC.cyan} borde={KC.cyan} />
+      <Chip T={T} at={K.G + 2.2} until={K.P1 - 0.2} texto="COPIA HECHA POR IA" x={540} y={1530} tam={46} fondo={KC.ink} color={KC.cyan} borde={KC.cyan} />
 
       {/* 2 · paso 1: un audio corto de un video */}
       <Escena T={T} a={K.P1} b={K.P2}>
         <FondoLunares color={KC.yellow} />
-        {svg(<g transform="translate(540 980) scale(1.15) translate(-540 -880)">
+        {/* belleza: el conjunto baja al centro y crece (1.15 → 1.22); los chips bajan debajo del celular */}
+        {svg(<g transform="translate(555 1000) scale(1.22) translate(-540 -820)">
           <Telefono x={260} y={820} s={0.78} T={T} modo="video" />
           <Onda x={460} y={830} ancho={480} alto={190} T={T} n={22} seed={9} sel={T > K.P1 + 2.6 ? [8, 13] : null} />
           <g opacity={kprog(T, K.P1 + 1.8, K.P1 + 2.2)}><Tijeras x={klerp(1180, 900, kprog(T, K.P1 + 1.8, K.P1 + 2.8, kEase.sale))} y={830} s={1.1} T={T} rot={180} /></g>
@@ -172,8 +185,8 @@ function VozClonada() {
           </g>}
         </g>)}
       </Escena>
-      <Chip T={T} at={K.P1 + 1.0} until={K.P2 - 0.2} texto="video en redes" x={218} y={1262} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.P1 + 3.4} until={K.P2 - 0.2} texto="audio corto ✂" x={782} y={1262} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.P1 + 1.0} until={K.P2 - 0.2} texto="video en redes" x={218} y={1400} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.P1 + 3.4} until={K.P2 - 0.2} texto="audio corto ✂" x={782} y={1400} tam={34} borde={KC.ink} />
 
       {/* 3 · paso 2: el programa aprende a imitarla (por dentro de la máquina) */}
       <Escena T={T} a={K.P2} b={K.P3}>
@@ -207,14 +220,15 @@ function VozClonada() {
       <Escena T={T} a={K.S} b={K.Q}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <Telefono x={540} y={1000} s={0.8} T={T} modo="video" />
-          {T > K.S + 5.0 && <g opacity={kprog(T, K.S + 5.0, K.S + 5.4)}><Onda x={240} y={1360} ancho={600} alto={150} T={T} n={9} seed={11} color={KC.yellow} sel={[0, 9]} /></g>}
+          {/* belleza: el celular crece (0.8 → 1.1) para llenar el cuadro; la onda de 3 s baja debajo de él */}
+          <Telefono x={540} y={1050} s={1.1} T={T} modo="video" />
+          {T > K.S + 5.0 && <g opacity={kprog(T, K.S + 5.0, K.S + 5.4)}><Onda x={240} y={1480} ancho={600} alto={150} T={T} n={9} seed={11} color={KC.yellow} sel={[0, 9]} /></g>}
         </>)}
       </Escena>
       <Chip T={T} at={K.S + 0.2} until={K.S + 1.4} texto="¿cuánto audio necesitan?" y={470} tam={50} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.S + 1.5} until={K.S + 4.8} anio="2023" quien="Microsoft · modelo VALL-E" revista="Wang et al. · arXiv:2301.02111" y={470} />
       <NumeroGigante T={T} at={K.S + 5.0} until={K.Q - 0.2} valor={3} dur={1.0} sufijo=" s" etiqueta="de grabación" x={540} y={450} tam={280} color={KC.yellow} />
-      <Chip T={T} at={K.S + 6.0} until={K.Q - 0.2} texto="voces que nunca había oído" y={690} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.S + 6.0} until={K.Q - 0.2} texto="voces que nunca había oído" y={615} tam={36} borde={KC.ink} />
 
       {/* 6 · re-gancho: ¿lo notarías? */}
       <Escena T={T} a={K.Q} b={K.O} zoom={0.1}>
@@ -253,7 +267,7 @@ function VozClonada() {
       {/* 9 · cómo defenderte */}
       <Escena T={T} a={K.D} b={K.Ci}>
         <FondoLunares color={KC.teal} />
-        {svg(<Telefono x={340} y={1150} s={0.78} T={T} vibra={1 - kprog(T, D2 + 0.8, D2 + 1.3)} burbuja={T > K.D + 2.4 ? '¿palabra clave?' : null} />)}
+        {svg(<Telefono x={330} y={1240} s={0.95} T={T} vibra={1 - kprog(T, D2 + 0.8, D2 + 1.3)} burbuja={T > K.D + 2.4 ? '¿palabra clave?' : null} />)}
       </Escena>
       <MitoTachado T={T} at={K.D + 0.3} tacharEn={K.D + 1.5} until={K.Ci - 0.2} texto="confiar solo en la voz" y={380} tam={52} />
       <PasoDefensa T={T} at={K.D + 2.4} until={K.Ci - 0.2} n="1" icono="🔑" texto="palabra clave en familia" y={540} />
@@ -263,7 +277,7 @@ function VozClonada() {
       <Escena T={T} a={K.Ci} b={FIN}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <Telefono x={340} y={klerp(1150, 990, kprog(T, K.Ci, K.Ci + 0.8, kEase.suave))} s={klerp(0.78, 1.1, kprog(T, K.Ci, K.Ci + 0.8, kEase.suave))} T={T} vibra={1 - kprog(T, K.Ci + 2.6, K.Ci + 3.0)} burbuja={T > K.Ci + 0.8 ? '¿palabra clave?' : null} />
+          <Telefono x={klerp(330, 340, kprog(T, K.Ci, K.Ci + 0.8, kEase.suave))} y={klerp(1240, 990, kprog(T, K.Ci, K.Ci + 0.8, kEase.suave))} s={klerp(0.95, 1.1, kprog(T, K.Ci, K.Ci + 0.8, kEase.suave))} T={T} vibra={1 - kprog(T, K.Ci + 2.6, K.Ci + 3.0)} burbuja={T > K.Ci + 0.8 ? '¿palabra clave?' : null} />
           <Onda x={90} y={1420} ancho={900} alto={160} T={T} n={34} pixel={1} cae={kprog(T, K.Ci + 2.0, K.Ci + 3.2, kEase.suave)} />
           <g opacity={kprog(T, K.Ci + 2.8, K.Ci + 3.2)}><Candado x={830} y={1110} s={1.5} c={kprog(T, K.Ci + 3.0, K.Ci + 3.4, kEase.sale)} /></g>
         </>)}

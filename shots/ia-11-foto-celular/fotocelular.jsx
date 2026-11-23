@@ -70,8 +70,10 @@ function Celular({ x, y, s = 1, rot = 0, children }) {
 // Mano esquemática que sostiene el celular desde abajo.
 function Mano({ x, y, s = 1, rot = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
-    <path d="M -150 120 Q -170 -10 -120 -60 L -60 -40 Q -40 40 -20 60 L 120 60 Q 170 70 160 140 L 150 320 L -120 320 Z" fill="#e0a77c" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
-    {[0, 1, 2].map((i) => <path key={i} d={`M 150 ${-10 + i * 50} q 60 0 60 22 q 0 22 -60 22`} fill="#e0a77c" stroke={KC.ink} strokeWidth={7} />)}
+    <defs><linearGradient id="gManoFC" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#f3c39b" /><stop offset="0.6" stopColor="#dba277" /><stop offset="1" stopColor="#b77d56" /></linearGradient></defs>
+    <path d="M -150 120 Q -170 -10 -120 -60 L -60 -40 Q -40 40 -20 60 L 120 60 Q 170 70 160 140 L 150 320 L -120 320 Z" fill="url(#gManoFC)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <path d="M -128 40 Q -138 -20 -112 -44" stroke="rgba(255,255,255,.35)" strokeWidth={10} fill="none" strokeLinecap="round" />
+    {[0, 1, 2].map((i) => <path key={i} d={`M 150 ${-10 + i * 50} q 60 0 60 22 q 0 22 -60 22`} fill="url(#gManoFC)" stroke={KC.ink} strokeWidth={7} />)}
   </g>;
 }
 // Abanico de N fotos que salen del celular (abre 0..1).
@@ -100,6 +102,8 @@ function Sensor({ T, a, x = 60, y = 700 }) {
     const e = kprog(T, a - 0.4 + (c + f) * 0.02, a - 0.1 + (c + f) * 0.02);
     celdas.push(<g key={`${f}-${c}`} opacity={e}>
       <rect x={x + c * SEN_C + 6} y={y + f * SEN_C + 6} width={SEN_C - 12} height={SEN_C - 12} rx={10} fill={col} opacity={0.38 + 0.3 * Math.min(k, 2)} stroke={KC.ink} strokeWidth={4} />
+      <circle cx={x + c * SEN_C + SEN_C / 2} cy={y + f * SEN_C + SEN_C / 2} r={SEN_C / 2 - 14} fill="none" stroke="rgba(255,255,255,.22)" strokeWidth={3} />
+      <ellipse cx={x + c * SEN_C + SEN_C / 2 - 18} cy={y + f * SEN_C + SEN_C / 2 - 20} rx={14} ry={8} fill="rgba(255,255,255,.28)" transform={`rotate(-30 ${x + c * SEN_C + SEN_C / 2 - 18} ${y + f * SEN_C + SEN_C / 2 - 20})`} />
       {k > 0 && <circle cx={x + c * SEN_C + SEN_C / 2} cy={y + f * SEN_C + SEN_C / 2} r={10 + 6 * k} fill="#fff6c4" opacity={0.85} />}
     </g>);
   }
@@ -198,11 +202,11 @@ function FotoCelular() {
         </g></>)}
       </Escena>
       <NumeroGigante T={T} at={K.G + 1.4} until={K.S - 0.2} valor={13} dur={1.0} prefijo="×" x={850} y={1060} tam={190} color={KC.yellow} />
-      <Chip T={T} at={K.G + 4.7} until={K.S - 0.2} texto="modo noche · Pixel · 2019" x={680} y={330} tam={36} borde={KC.yellow} />
+      <Chip T={T} at={K.G + 4.7} until={K.S - 0.2} texto="modo noche · Pixel · 2019" x={680} y={262} tam={38} borde={KC.yellow} />
 
       {/* 2 · el sensor: pixeles diminutos, poquita luz */}
       <Escena T={T} a={K.S} b={K.Pu} zoom={0.08}>
-        <div style={{ position: 'absolute', inset: 0, background: KC.noche }} />
+        <FondoLunares color={KC.cyan} />
         <Ambiente T={T} n={30} color="rgba(255,225,26,.25)" tam={[3, 8]} />
         {svg(<Sensor T={T} a={K.S} />)}
       </Escena>
@@ -223,19 +227,19 @@ function FotoCelular() {
 
       {/* 4 · la ráfaga: muchas fotos cortas */}
       <Escena T={T} a={K.R} b={K.A}>
-        <div style={{ position: 'absolute', inset: 0, background: KC.noche }} />
+        <FondoLunares color={KC.yellow} />
         {svg(<>{Array.from({ length: 13 }, (_, i) => { const c = i % 5, f = Math.floor(i / 5), e = kprog(T, K.R + 0.3 + i * 0.2, K.R + 0.5 + i * 0.2, kEase.rebote);
-          return <g key={i} opacity={kclamp(e * 2, 0, 1)} transform={`translate(${170 + c * 185} ${700 + f * 210}) scale(${klerp(0.55, 1.2, e)})`}>
+          return <g key={i} opacity={kclamp(e * 2, 0, 1)} transform={`translate(${170 + c * 185} ${740 + f * 240}) scale(${klerp(0.6, 1.32, e)})`}>
             <rect x={-62} y={-82} width={124} height={164} rx={8} fill="#fff" stroke={KC.ink} strokeWidth={5} />
             <FotoNoche x={0} y={0} w={110} T={T} ruido={0.9} oscuro={0.6} seed={i + 20} marco={false} />
             <text x={-52} y={-56} style={{ font: `700 22px ${KF.mono}` }} fill="#fff">{i + 1}</text>
           </g>; })}</>)}
       </Escena>
-      <Chip T={T} at={K.R + 0.4} until={K.A - 0.2} texto="ráfaga · hasta ⅓ de segundo cada una" x={600} y={440} tam={32} borde={KC.yellow} />
+      <Chip T={T} at={K.R + 0.4} until={K.A - 0.2} texto="ráfaga · hasta ⅓ de segundo cada una" x={540} y={470} tam={38} borde={KC.yellow} />
 
       {/* 5 · alinear por pedacitos y juntar */}
       <Escena T={T} a={K.A} b={K.P}>
-        <div style={{ position: 'absolute', inset: 0, background: KC.noche }} />
+        <FondoLunares color={KC.cyan} />
         {svg(<Mosaicos x={540} y={880} w={620} T={T} alinea={alinea} ruido={0.9 * (1 - junta) + 0.04} oscuro={0.6 * (1 - junta)} />)}
       </Escena>
       <Chip T={T} at={K.A + 0.3} until={K.A + 2.3} texto="1 · alinear por pedacitos" x={540} y={410} tam={36} borde={KC.cyan} />
@@ -252,16 +256,16 @@ function FotoCelular() {
       {/* 7 · en 2019: alinear y juntar = matemática clásica */}
       <Escena T={T} a={K.Cl} b={K.Co}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<FotoNoche x={540} y={700} w={300} T={T} ruido={0.04} seed={9} />)}
-        <RedNeuronal T={T} x={250} y={980} ancho={580} alto={260} capas={[3, 5, 5, 3]} o={kprog(T, K.Cl + 1.6, K.Cl + 2.0)} />
-        {svg(<g opacity={kprog(T, K.Cl + 2.0, K.Cl + 2.4)}>
+        {svg(<g transform="translate(540 930) scale(1.3) translate(-540 -900)"><FotoNoche x={540} y={700} w={300} T={T} ruido={0.04} seed={9} /></g>)}
+        <RedNeuronal T={T} x={163} y={1034} ancho={754} alto={338} capas={[3, 5, 5, 3]} o={kprog(T, K.Cl + 1.6, K.Cl + 2.0)} />
+        {svg(<g transform="translate(540 930) scale(1.3) translate(-540 -900)" opacity={kprog(T, K.Cl + 2.0, K.Cl + 2.4)}>
           <line x1={230} y1={970} x2={850} y2={1260} stroke={KC.red} strokeWidth={22} strokeLinecap="round" />
           <line x1={850} y1={970} x2={230} y2={1260} stroke={KC.red} strokeWidth={22} strokeLinecap="round" />
         </g>)}
       </Escena>
-      <Chip T={T} at={K.Cl + 0.9} until={K.Co - 0.2} texto="2019 · alinear y juntar" x={540} y={330} tam={42} borde={KC.ink} />
-      <Chip T={T} at={K.Cl + 1.2} until={K.Co - 0.2} texto="matemática clásica: Fourier, filtro de Wiener" x={540} y={420} tam={30} mono borde={KC.cyan} />
-      <Chip T={T} at={K.Cl + 2.2} until={K.Co - 0.2} texto="no es red neuronal" x={540} y={1300} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.Cl + 0.9} until={K.Co - 0.2} texto="2019 · alinear y juntar" x={540} y={262} tam={42} borde={KC.ink} />
+      <Chip T={T} at={K.Cl + 1.2} until={K.Co - 0.2} texto="matemática clásica: Fourier, filtro de Wiener" x={540} y={340} tam={36} mono borde={KC.cyan} />
+      <Chip T={T} at={K.Cl + 2.2} until={K.Co - 0.2} texto="no es red neuronal" x={540} y={1470} tam={40} borde={KC.red} />
 
       {/* 8 · lo aprendido: el color (balance de blancos) */}
       <Escena T={T} a={K.Co} b={K.E}>
@@ -275,22 +279,22 @@ function FotoCelular() {
           <g opacity={kprog(T, K.Co + 3.0, K.Co + 3.3)}><Gotero x={250 + 180 * kprog(T, K.Co + 3.3, K.Co + 5.0, kEase.suave)} y={1040} s={0.6} rot={-20} /></g>
         </g>)}
       </Escena>
-      <Chip T={T} at={K.Co + 0.3} until={K.E - 0.2} texto="lo aprendido: el color" x={360} y={460} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.Co + 0.3} until={K.E - 0.2} texto="lo aprendido: el color" x={540} y={560} tam={40} borde={KC.ink} />
       <Miniaturas T={T} at={K.Co + 3.0} y={1100} filas={2} />
-      <Chip T={T} at={K.Co + 3.4} until={K.E - 0.2} texto="5 000 fotos ajustadas por fotógrafos" x={540} y={1275} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Co + 3.4} until={K.E - 0.2} texto="5 000 fotos ajustadas por fotógrafos" x={540} y={1285} tam={38} borde={KC.ink} />
 
       {/* 9 · el estudio: hasta 0.3 lux */}
       <Escena T={T} a={K.E} b={K.Te}>
         <FondoLunares color={KC.cyan} />
         {svg(<g opacity={kprog(T, K.E, K.E + 0.4)}>
-          <FotoNoche x={300} y={900} w={340} T={T} gris={1} oscuro={0.45} seed={8} />
-          <FotoNoche x={780} y={900} w={340} T={T} seed={8} />
+          <FotoNoche x={295} y={930} w={385} T={T} gris={1} oscuro={0.45} seed={8} />
+          <FotoNoche x={785} y={930} w={385} T={T} seed={8} />
         </g>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 2.3} anio="2019" quien="Google Research · Liba et al." revista="ACM Transactions on Graphics" y={420} />
-      <NumeroGigante T={T} at={K.E + 2.4} until={K.Te - 0.2} valor={0.3} dec={1} dur={0.8} sufijo=" lux" x={540} y={520} tam={130} color={KC.yellow} />
-      <Chip T={T} at={K.E + 2.9} until={K.Te - 0.2} texto="tus ojos" x={300} y={1200} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.E + 3.2} until={K.Te - 0.2} texto="el celular" x={780} y={1200} tam={34} borde={KC.yellow} />
+      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 2.1} anio="2019" quien="Google Research · Liba et al." revista="ACM Transactions on Graphics" y={420} />
+      <NumeroGigante T={T} at={K.E + 2.5} until={K.Te - 0.2} valor={0.3} dec={1} dur={0.8} sufijo=" lux" x={540} y={520} tam={130} color={KC.yellow} />
+      <Chip T={T} at={K.E + 2.9} until={K.Te - 0.2} texto="tus ojos" x={295} y={1240} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.E + 3.2} until={K.Te - 0.2} texto="el celular" x={785} y={1240} tam={38} borde={KC.yellow} />
 
       {/* 10 · el temblor de tu mano (Super Res Zoom, artículo 2019) */}
       <Escena T={T} a={K.Te} b={K.H}>
@@ -303,24 +307,24 @@ function FotoCelular() {
           <g opacity={kprog(T, K.Te + 0.8, K.Te + 1.2)}><RejillaZoom x={560} y={660} T={T} a={K.Te} lado={460} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.Te + 0.3} until={K.H - 0.2} texto="Super Res Zoom · artículo 2019" x={400} y={450} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Te + 2.6} until={K.H - 0.2} texto="tu mano: 8 a 12 temblores por segundo" x={540} y={1260} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.Te + 0.3} until={K.H - 0.2} texto="Super Res Zoom · artículo 2019" x={540} y={470} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.Te + 2.6} until={K.H - 0.2} texto="tu mano: 8 a 12 temblores por segundo" x={722} y={1390} tam={38} borde={KC.red} />
 
       {/* 11 · hoy: desde 2023 una red neuronal también quita el ruido */}
       <Escena T={T} a={K.H} b={K.C}>
         <FondoCircuito T={T} />
-        <RedNeuronal T={T} x={380} y={710} ancho={320} alto={300} capas={[3, 4, 4, 3]} onda={kprog(T, K.H + 0.6, K.H + 2.0)} />
+        <RedNeuronal T={T} x={385} y={770} ancho={310} alto={340} capas={[3, 4, 4, 3]} onda={kprog(T, K.H + 0.6, K.H + 2.0)} />
         {svg(<>
-          <FotoNoche x={190} y={860} w={260} T={T} ruido={0.85} seed={11} />
-          <g opacity={kprog(T, K.H + 1.0, K.H + 1.4)}><FotoNoche x={890} y={860} w={260} T={T} ruido={0.85 * (1 - limpiaIA)} seed={11} /></g>
+          <FotoNoche x={200} y={940} w={300} T={T} ruido={0.85} seed={11} />
+          <g opacity={kprog(T, K.H + 1.0, K.H + 1.4)}><FotoNoche x={880} y={940} w={300} T={T} ruido={0.85 * (1 - limpiaIA)} seed={11} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.H + 0.3} until={K.C - 0.2} texto="desde 2023 · red neuronal contra el ruido" x={540} y={1150} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.H + 0.3} until={K.C - 0.2} texto="desde 2023 · red neuronal contra el ruido" x={540} y={1250} tam={38} borde={KC.cyan} />
 
       {/* 12 · cierre: la misma foto, ahora sabes que son muchas */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><g transform="translate(470 900) scale(1.3) translate(-330 -870)">
+        {svg(<><g transform="translate(470 830) scale(1.3) translate(-330 -870)">
           <Abanico x={330} y={760} T={T} abre={abreC * kprog(T, K.C, K.C + 0.8, kEase.sale)} />
           <Mano x={300} y={1150} s={0.9} />
           <Celular x={330} y={870} s={0.8} rot={-4}>
@@ -329,8 +333,8 @@ function FotoCelular() {
           </Celular>
         </g></>)}
       </Escena>
-      <Chip T={T} at={K.C + 2.8} until={K.Ou} texto="muchas fotos → 1" x={540} y={360} tam={44} borde={KC.yellow} />
-      <Chip T={T} at={K.C + 3.3} until={K.Ou} texto="matemática + IA" x={540} y={450} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={K.C + 2.8} until={K.Ou} texto="muchas fotos → 1" x={540} y={290} tam={44} borde={KC.yellow} />
+      <Chip T={T} at={K.C + 3.3} until={K.Ou} texto="matemática + IA" x={540} y={372} tam={40} borde={KC.cyan} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.G + 4.5} texto="Esa foto de noche… *son hasta 13.*" />

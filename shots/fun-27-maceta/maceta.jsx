@@ -297,7 +297,7 @@ function MacetaShot() {
             <Perrito T={T} x={klerp(1200, 940, u)} y={1440} s={1.3} />
           </> : null; })()}
           {(() => { const baja = kprog(T, K.Tx + 3.4, K.Tx + 4.0, kEase.sale); return baja > 0 ? <Mano x={384 + quita * 650} y={klerp(-200, 1000, baja) - quita * 1170} s={1.4} rot={-10 + quita * 30} /> : null; })()}
-          {T >= K.Tx + 0.6 && (() => { const k = kprog(T, K.Tx + 0.6, K.Tx + 0.95, kEase.rebote); return <g transform={`translate(300 290) rotate(-8) scale(${klerp(2.2, 1, k)})`} opacity={kprog(T, K.Tx + 0.6, K.Tx + 0.75)}>
+          {T >= K.Tx + 0.6 && (() => { const k = kprog(T, K.Tx + 0.6, K.Tx + 0.95, kEase.rebote); return <g transform={`translate(430 380) rotate(-8) scale(${klerp(2.2, 1, k)})`} opacity={kprog(T, K.Tx + 0.6, K.Tx + 0.75)}>
             <rect x={-200} y={-62} width={400} height={124} rx={22} fill="rgba(255,255,255,.85)" stroke={KC.red} strokeWidth={12} />
             <text y={26} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={KC.red}>NO SE COME</text>
           </g>; })()}
@@ -307,9 +307,11 @@ function MacetaShot() {
       <Escena T={T} a={K.E} b={K.Pg} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
+          <g transform="translate(540 990) scale(1.12) translate(-525 -1000)">
           <Leuco x={290} y={1330} s={1.6} abre={1} rot={mece(T, 4, 0.3) * 1.2} />
           <Matraz T={T} x={730} y={1330} s={1.5} lleno={kprog(T, K.E + 1.2, K.E + 3.0, kEase.suave)} />
           {Array.from({ length: 3 }, (_, i) => { const u = kprog(T, K.E + 1.0 + i * 0.4, K.E + 1.8 + i * 0.4, kEase.suave); return u > 0 && u < 1 ? <g key={i} transform={`translate(${730 + (i - 1) * 40} ${klerp(560, 1220, u)}) rotate(${u * 200})`}><ellipse rx={42} ry={20} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} /></g> : null; })}
+          </g>
         </>)}
       </Escena>
       {/* 10 · los pigmentos: birnbauminas (por dentro, fondo oscuro) */}
@@ -317,8 +319,8 @@ function MacetaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} color="rgba(255,225,26,.25)" />
         {fsvg(<>
-          <Birnbaumina T={T} x={110} y={650} s={1.6 * kprog(T, K.Pg - 0.1, K.Pg + 0.4, kEase.rebote)} brilla={0.6 + 0.4 * Math.sin(T * 4)} />
-          <Birnbaumina T={T} x={110} y={1100} oh7 s={1.6 * kprog(T, K.Pg + 0.3, K.Pg + 0.8, kEase.rebote)} brilla={0.6 + 0.4 * Math.sin(T * 4 + 1.5)} />
+          <Birnbaumina T={T} x={140} y={810} s={1.6 * kprog(T, K.Pg - 0.1, K.Pg + 0.4, kEase.rebote)} brilla={0.6 + 0.4 * Math.sin(T * 4)} />
+          <Birnbaumina T={T} x={140} y={1260} oh7 s={1.6 * kprog(T, K.Pg + 0.3, K.Pg + 0.8, kEase.rebote)} brilla={0.6 + 0.4 * Math.sin(T * 4 + 1.5)} />
         </>)}
       </Escena>
       {/* 11 · el truco: una noche sobre papel negro */}
@@ -393,10 +395,10 @@ function MacetaShot() {
       <Chip T={T} at={K.Tx + 1.4} until={K.Tx + 3.0} texto="comerlo: puede caer muy mal" x={540} y={1480} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Tx + 3.2} until={K.E - 0.3} texto="niños o mascotas: quítalo" x={540} y={1490} tam={32} borde={KC.yellow} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Pg - 0.3} anio="2005" quien="Múnich, Alemania" revista="Bartsch y col. · Angewandte Chemie" x={460} y={390} />
-      <Etq T={T} at={K.E + 2.0} until={K.Pg - 0.3} x={460} y={1450} texto="¿de dónde sale el amarillo?" lado="der" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Pg + 0.4} until={K.Tr - 0.3} x={120} y={470} texto="birnbaumina A" tam={34} color={KC.yellow} />
-      <Etq T={T} at={K.Pg + 0.9} until={K.Tr - 0.3} x={120} y={920} texto="birnbaumina B" tam={34} color={KC.yellow} />
-      <Etq T={T} at={K.Pg + 1.4} until={K.Tr - 0.3} x={120} y={1300} texto="pigmentos (esquema)" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.E + 2.0} until={K.Pg - 0.3} x={430} y={1520} texto="¿de dónde sale el amarillo?" lado="der" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Pg + 0.4} until={K.Tr - 0.3} x={150} y={575} texto="birnbaumina A" tam={34} color={KC.yellow} />
+      <Etq T={T} at={K.Pg + 0.9} until={K.Tr - 0.3} x={150} y={1025} texto="birnbaumina B" tam={34} color={KC.yellow} />
+      <Etq T={T} at={K.Pg + 1.4} until={K.Tr - 0.3} x={150} y={1530} texto="pigmentos (esquema)" tam={26} color={KC.texto} />
       <Chip T={T} at={K.Tr + 0.9} until={K.Tr + 3.0} texto="1 noche" x={400} y={560} tam={40} borde={KC.yellow} />
       <Etq T={T} at={K.Tr + 3.5} until={K.Q - 0.3} x={60} y={770} texto="dibujo blanco de esporas" tam={30} color={KC.texto} />
       <Chip T={T} at={K.Q + 3.2} until={K.C - 0.3} texto="fungicidas: casi no sirven" x={420} y={225} tam={32} borde={KC.red} />
@@ -411,7 +413,7 @@ function MacetaShot() {
       <BarraEscala T={T} at={K.A} until={K.P} texto="2 cm" largo={300} />
       <BarraEscala T={T} at={K.P} until={K.Tx} texto="5 cm" largo={160} />
       <BarraEscala T={T} at={K.Tx} until={K.E} texto="5 cm" largo={178} />
-      <BarraEscala T={T} at={K.E} until={K.Pg} texto="5 cm" largo={210} />
+      <BarraEscala T={T} at={K.E} until={K.Pg} texto="5 cm" largo={235} />
       <BarraEscala T={T} at={K.Tr} until={K.Q} texto="5 cm" largo={252} />
       <BarraEscala T={T} at={K.Q} until={K.C} texto="5 cm" largo={191} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={193} />

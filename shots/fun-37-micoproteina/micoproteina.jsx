@@ -5,6 +5,34 @@
 
 const MI = { pan:'#e39a32', pan2:'#a8641c', miga:'#f1e2c0', hifa:'#fff1c9', hifaO:'#e7c46a', leche:'#9ccfff', musc:'#e8706a' };
 
+// Luz de volumen (pase de belleza): claro arriba-izquierda, sombra abajo-derecha; se pone encima de una pieza plana.
+function MiDefs() {
+  return <defs>
+    <radialGradient id="mi-luz" cx=".32" cy=".26" r=".85">
+      <stop offset="0" stopColor="#ffffff" stopOpacity=".5" /><stop offset=".42" stopColor="#ffffff" stopOpacity="0" />
+      <stop offset=".78" stopColor="#000000" stopOpacity=".08" /><stop offset="1" stopColor="#000000" stopOpacity=".32" />
+    </radialGradient>
+    <radialGradient id="mi-pan" cx=".36" cy=".3" r=".8">
+      <stop offset="0" stopColor="#f6bf62" /><stop offset=".55" stopColor="#e39a32" /><stop offset="1" stopColor="#a9621a" />
+    </radialGradient>
+    <radialGradient id="mi-plato" cx=".4" cy=".3" r=".75">
+      <stop offset="0" stopColor="#ffffff" /><stop offset=".7" stopColor="#eef0f3" /><stop offset="1" stopColor="#c9ced6" />
+    </radialGradient>
+    <linearGradient id="mi-metal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stopColor="#aeb7c1" /><stop offset=".22" stopColor="#f1f4f8" /><stop offset=".55" stopColor="#cfd6de" /><stop offset="1" stopColor="#7f8893" />
+    </linearGradient>
+    <linearGradient id="mi-caldo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stopColor="#fbf1c8" /><stop offset=".6" stopColor="#efdc98" /><stop offset="1" stopColor="#d3bd6c" />
+    </linearGradient>
+    <linearGradient id="mi-oro" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stopColor="#f7cf7a" /><stop offset=".5" stopColor="#e9b04c" /><stop offset="1" stopColor="#b98226" />
+    </linearGradient>
+    <linearGradient id="mi-azul" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stopColor="#cfe7ff" /><stop offset=".5" stopColor="#9ccfff" /><stop offset="1" stopColor="#6a9fd6" />
+    </linearGradient>
+  </defs>;
+}
+
 // Contorno de milanesa (irregular, empanizada). Centro en (0,0), ~ 520 × 300 px.
 const MILA_D = 'M -250 -20 Q -262 -110 -170 -138 Q -90 -170 0 -150 Q 90 -168 175 -132 Q 262 -100 252 -10 Q 268 80 190 122 Q 100 160 0 142 Q -110 165 -190 118 Q -268 70 -250 -20 Z';
 function Milanesa({ T, x, y, s = 1, corte = 0, dentro = 0 }) {
@@ -12,8 +40,9 @@ function Milanesa({ T, x, y, s = 1, corte = 0, dentro = 0 }) {
   const sep = 46 * corte;
   const fibras = (w) => Array.from({ length: 9 }, (_, i) => <path key={i} d={`M ${-w} ${-110 + i * 27} Q 0 ${-118 + i * 27 + (i % 2 ? 6 : -6)} ${w} ${-110 + i * 27}`} stroke="#d6bf8f" strokeWidth={4} fill="none" />);
   const mitad = (lado) => <g clipPath={`url(#mila-${lado})`}>
-    <path d={MILA_D} fill={MI.pan} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
-    {migas.map(([mx, my, r], i) => <circle key={i} cx={mx} cy={my} r={r} fill={i % 3 ? MI.pan2 : '#f0c46a'} />)}
+    <path d={MILA_D} fill="url(#mi-pan)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    {migas.map(([mx, my, r], i) => <g key={i}><circle cx={mx} cy={my} r={r} fill={i % 3 ? MI.pan2 : '#f0c46a'} /><circle cx={mx - r * 0.3} cy={my - r * 0.3} r={r * 0.4} fill="#fff3cf" opacity={i % 3 ? 0.35 : 0.6} /></g>)}
+    <path d={MILA_D} fill="url(#mi-luz)" opacity={0.7} />
     {dentro > 0 && <g opacity={dentro}>
       <path d={MILA_D} fill="rgba(255,244,214,.82)" />
       {Array.from({ length: 16 }, (_, i) => { const yy = -125 + i * 16.5; return <g key={i}>
@@ -23,6 +52,8 @@ function Milanesa({ T, x, y, s = 1, corte = 0, dentro = 0 }) {
     </g>}
   </g>;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <MiDefs />
+    <ellipse cx={10} cy={150} rx={250} ry={34} fill="rgba(0,0,0,.25)" />
     <defs>
       <clipPath id="mila-i"><rect x={-300} y={-200} width={340} height={400} /></clipPath>
       <clipPath id="mila-d"><rect x={40} y={-200} width={300} height={400} /></clipPath>
@@ -38,8 +69,11 @@ function Milanesa({ T, x, y, s = 1, corte = 0, dentro = 0 }) {
 function Plato({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <ellipse cx={0} cy={18} rx={420} ry={170} fill="rgba(0,0,0,.18)" />
-    <ellipse cx={0} cy={0} rx={420} ry={165} fill="#ffffff" stroke={KC.ink} strokeWidth={9} />
+    <MiDefs />
+    <ellipse cx={0} cy={0} rx={420} ry={165} fill="url(#mi-plato)" stroke={KC.ink} strokeWidth={9} />
     <ellipse cx={0} cy={0} rx={320} ry={118} fill="#f3f1ec" stroke="#cfcac0" strokeWidth={5} />
+    <ellipse cx={0} cy={6} rx={320} ry={118} fill="url(#mi-luz)" opacity={0.5} />
+    <path d="M -330 -60 Q -200 -150 40 -152" stroke="#ffffff" strokeWidth={10} fill="none" strokeLinecap="round" opacity={0.8} />
   </g>;
 }
 function Tenedor({ x, y, rot = 0, s = 1 }) {
@@ -84,8 +118,10 @@ function Tanque({ T, x, y, s = 1, hifas = 1 }) {
   const frag = Array.from({ length: 10 }, (_, i) => { const u = ((T * 0.18 + i / 10) % 1); const ang = u * Math.PI * 2;
     const px = Math.cos(ang) * 180, py = Math.sin(ang) * 300; return <g key={i} transform={`translate(${px} ${py}) rotate(${ang * 57 + i * 40})`} opacity={hifas}><path d="M -26 0 Q 0 -12 26 0" stroke={KC.ink} strokeWidth={11} fill="none" strokeLinecap="round" /><path d="M -26 0 Q 0 -12 26 0" stroke={MI.hifa} strokeWidth={6} fill="none" strokeLinecap="round" /></g>; });
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -230 -360 Q -230 -470 0 -480 Q 230 -470 230 -360 L 230 420 Q 230 500 0 505 Q -230 500 -230 420 Z" fill="#cfd6de" stroke={KC.ink} strokeWidth={10} />
-    <path d="M -205 -340 Q -205 -440 0 -452 Q 205 -440 205 -340 L 205 410 Q 205 476 0 480 Q -205 476 -205 410 Z" fill="#f2e3a6" opacity=".95" />
+    <MiDefs />
+    <path d="M -230 -360 Q -230 -470 0 -480 Q 230 -470 230 -360 L 230 420 Q 230 500 0 505 Q -230 500 -230 420 Z" fill="url(#mi-metal)" stroke={KC.ink} strokeWidth={10} />
+    <path d="M -205 -340 Q -205 -440 0 -452 Q 205 -440 205 -340 L 205 410 Q 205 476 0 480 Q -205 476 -205 410 Z" fill="url(#mi-caldo)" opacity=".95" />
+    <path d="M -175 -330 L -175 400" stroke="#ffffff" strokeWidth={14} strokeLinecap="round" opacity={0.35} />
     <rect x={-70} y={-300} width={140} height={680} rx={10} fill="rgba(255,255,255,.25)" stroke="#8a929c" strokeWidth={8} />
     {frag}{bur}
     <rect x={-250} y={-150} width={500} height={14} fill="#9aa3ad" stroke={KC.ink} strokeWidth={4} />
@@ -119,7 +155,9 @@ function Pesista({ x, y, s = 1, color = '#8fb6ff', on = 1 }) {
     <rect x={-58} y={-46} width={14} height={32} rx={4} fill="#55606c" stroke={KC.ink} strokeWidth={4} />
     <rect x={44} y={-46} width={14} height={32} rx={4} fill="#55606c" stroke={KC.ink} strokeWidth={4} />
     <circle cx={0} cy={-62} r={24} fill="#f2c29b" stroke={KC.ink} strokeWidth={5} />
+    <circle cx={0} cy={-62} r={22} fill="url(#mi-luz)" />
     <path d="M -34 30 Q -36 -22 0 -24 Q 36 -22 34 30 Z" fill={color} stroke={KC.ink} strokeWidth={5} />
+    <path d="M -34 30 Q -36 -22 0 -24 Q 36 -22 34 30 Z" fill="url(#mi-luz)" />
   </g>;
 }
 // Vaso con bebida.
@@ -133,10 +171,13 @@ function Vaso({ x, y, color, s = 1 }) {
 function Camaron({ T, x, y, s = 1, brillo = 0 }) {
   const segs = [0, 1, 2, 3, 4, 5];
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <MiDefs />
     {[0, 1].map((k) => <path key={k} d={`M 150 -40 Q 260 ${-140 - k * 30 + Math.sin(T * 3 + k) * 10} 320 ${-60 - k * 50}`} stroke={KC.ink} strokeWidth={5} fill="none" />)}
     {segs.map((i) => { const a = -0.2 + i * 0.36, r = 150, cx = Math.cos(a) * r * 0.9 - 20, cy = Math.sin(a) * r * 0.75;
-      return <ellipse key={i} cx={cx} cy={cy} rx={66 - i * 6} ry={52 - i * 5} transform={`rotate(${a * 57 + 90} ${cx} ${cy})`} fill={mixHex('#ff9a7a', '#ffd166', brillo)} stroke={KC.ink} strokeWidth={6} />; })}
+      return <g key={i}><ellipse cx={cx} cy={cy} rx={66 - i * 6} ry={52 - i * 5} transform={`rotate(${a * 57 + 90} ${cx} ${cy})`} fill={mixHex('#ff9a7a', '#ffd166', brillo)} stroke={KC.ink} strokeWidth={6} />
+        <ellipse cx={cx} cy={cy} rx={66 - i * 6} ry={52 - i * 5} transform={`rotate(${a * 57 + 90} ${cx} ${cy})`} fill="url(#mi-luz)" /></g>; })}
     <ellipse cx={130} cy={-20} rx={80} ry={56} fill={mixHex('#ff8a66', '#ffd166', brillo)} stroke={KC.ink} strokeWidth={6} />
+    <ellipse cx={130} cy={-20} rx={80} ry={56} fill="url(#mi-luz)" />
     <circle cx={170} cy={-38} r={10} fill={KC.ink} />
     <path d="M -40 150 L -120 200 L -100 120 Z" fill="#ff8a66" stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />
     {[0, 1, 2, 3].map((k) => <line key={k} x1={60 - k * 30} y1={40 + k * 10} x2={40 - k * 30} y2={80 + k * 10} stroke={KC.ink} strokeWidth={5} />)}
@@ -177,6 +218,8 @@ function MicoproteinaShot() {
   // gancho: el tenedor baja y corta (0.3 → 0.9 s)
   const baja = kprog(T, K.G + 0.2, K.G + 0.75, kEase.sale), sube = kprog(T, K.G + 1.0, K.G + 1.6, kEase.suave);
   const corte = kprog(T, K.G + 0.6, K.G + 1.2, kEase.sale);
+  // hongo: el plato llega del tamaño con que lo deja el gancho y se acomoda abajo de la lupa
+  const uPl = kprog(T, K.H + 0.05, K.H + 0.95, kEase.suave);
   // fibras: las hifas se alinean en haces
   const alinea = kprog(T, K.F + 0.2, K.F + 2.0, kEase.suave);
   const gF = krng(81), HF = Array.from({ length: 14 }, (_, i) => ({ y0: klerp(620, 1060, gF()), a0: klerp(-0.9, 0.9, gF()), x0: klerp(140, 900, gF()), L: klerp(420, 640, gF()) }));
@@ -187,7 +230,7 @@ function MicoproteinaShot() {
       {/* 1 · gancho: el tenedor corta la "milanesa" y por dentro se ve fibrosa */}
       <Escena T={T} a={K.G} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<g transform={mpTr(M_PLATO)}>
+        {fsvg(<g transform={mpTr(M_PLATO)} opacity={1 - kprog(T, K.H - 0.05, K.H + 0.3)}>
           <Plato x={500} y={1010} />
           <Milanesa T={T} x={480} y={990} s={1} corte={corte} />
           <Tenedor x={545 + 46 * corte * 0.5} y={klerp(380, 900, baja) - sube * 520} rot={8} s={1} />
@@ -197,7 +240,8 @@ function MicoproteinaShot() {
       {/* 2 · es micoproteína: por dentro, hilos de hongo */}
       <Escena T={T} a={K.H} b={K.S} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<><Plato x={520} y={1185} s={1.05} /><Milanesa T={T} x={500} y={1165} s={1.05} corte={1} /></>)}
+        {(() => { const u = uPl, cx = klerp(540, 520, u), cy = klerp(1036, 1185, u), k = klerp(1.48, 1.05, u);
+          return fsvg(<g transform={`translate(${cx} ${cy}) scale(${k})`}><Plato x={0} y={0} /><Milanesa T={T} x={-20} y={-20} corte={1} /></g>); })()}
         <Lupa T={T} at={K.H + 0.4} until={K.S - 0.2} x={540} y={700} r={240} fx={560} fy={1160} tinte={KC.yellow} etiqueta="AL MICROSCOPIO · hifas"
           interior={(Tl, r) => fsvg(<g>
             <rect x={0} y={0} width={2 * r} height={2 * r} fill={KC.noche} />
@@ -275,7 +319,7 @@ function MicoproteinaShot() {
               <line x1={300} y1={640} x2={360} y2={640} stroke={KC.yellow} strokeWidth={6} /><line x1={300} y1={684} x2={360} y2={684} stroke={KC.yellow} strokeWidth={6} />
             </g>}
           </g>}
-          {T >= K.F - 0.1 && <g opacity={kprog(T, K.F - 0.1, K.F + 0.3)}>
+          {T >= K.F - 0.1 && <g opacity={kprog(T, K.F - 0.1, K.F + 0.3) * (1 - kprog(T, K.E - 0.05, K.E + 0.3))}>
             {HF.map((h, i) => { const a = klerp(h.a0, 0, alinea), yy = klerp(h.y0, 680 + (i % 7) * 22 + Math.floor(i / 7) * 175, alinea), xx = klerp(h.x0, 330 + (i % 3) * 30, alinea);
               const L = klerp(h.L, 640, alinea) / 2; return <Hifa key={i} x1={xx - Math.cos(a) * L} y1={yy - Math.sin(a) * L} x2={xx + Math.cos(a) * L} y2={yy + Math.sin(a) * L} curva={0.03 * (1 - alinea)} w={17} septo={52} />; })}
             {Array.from({ length: 16 }, (_, i) => { const on = kprog(T, K.F + 2.6 + i * 0.06, K.F + 2.9 + i * 0.06, kEase.rebote); return on > 0 ? <circle key={i} cx={110 + (i % 8) * 85} cy={712 + Math.floor(i / 8) * 175 + (i % 2) * 44} r={13 * on} fill="rgba(255,255,255,.85)" stroke="rgba(0,0,0,.4)" strokeWidth={2} /> : null; })}
@@ -297,8 +341,8 @@ function MicoproteinaShot() {
           {T > K.M - 0.2 && <g opacity={kprog(T, K.M - 0.2, K.M + 0.3)}>
             <line x1={120} y1={1200} x2={960} y2={1200} stroke={KC.ink} strokeWidth={8} />
             {(() => { const u = kprog(T, K.M + 0.6, K.M + 2.4, kEase.sale); const hM = 560 * u, hL = (560 / 2.2) * u;
-              return <><rect x={250} y={1200 - hM} width={220} height={hM} fill={KC.gold2} stroke={KC.ink} strokeWidth={7} />
-                <rect x={610} y={1200 - hL} width={220} height={hL} fill={MI.leche} stroke={KC.ink} strokeWidth={7} />
+              return <><MiDefs /><rect x={250} y={1200 - hM} width={220} height={hM} fill="url(#mi-oro)" stroke={KC.ink} strokeWidth={7} />
+                <rect x={610} y={1200 - hL} width={220} height={hL} fill="url(#mi-azul)" stroke={KC.ink} strokeWidth={7} />
                 <Milanesa T={T} x={360} y={1060} s={0.36} />
                 <Vaso x={720} y={1060} s={1.05} color="#f4f8ff" /></>; })()}
           </g>}
@@ -312,6 +356,7 @@ function MicoproteinaShot() {
             return <g>
               <circle cx={cx} cy={cy} r={r} fill={KC.mint} stroke={KC.ink} strokeWidth={8} />
               {u > 0 && <path d={`M ${cx} ${cy} L ${cx} ${cy - r} A ${r} ${r} 0 0 1 ${cx + Math.cos(a1) * r} ${cy + Math.sin(a1) * r} Z`} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />}
+              <MiDefs /><circle cx={cx} cy={cy} r={r - 4} fill="url(#mi-luz)" />
             </g>; })()}
           <Camaron T={T} x={640} y={1100} s={kprog(T, K.Q + 2.0, K.Q + 2.5, kEase.rebote) * 1.4} brillo={kprog(T, K.Q + 2.8, K.Q + 3.3)} />
         </>)}
@@ -350,7 +395,7 @@ function MicoproteinaShot() {
       <Etq T={T} at={K.F + 2.8} until={K.E - 0.3} x={1040} y={1052} lado="izq" texto="clara de huevo" tam={30} color="#ffffff" />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="2020" quien="Universidad de Exeter, Reino Unido · 20 hombres jóvenes" revista="Am J Clin Nutr, 2020" y={420} />
       <Letrero T={T} at={K.E + 3.4} until={K.M - 0.3} x={540} y={1400} ancho={960} texto="20 pesistas · cada uno: micoproteína o leche" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.E + 4.6} until={K.Q - 0.3} texto="una sola toma · igual leucina, más proteína en la de hongo" x={540} y={1460} tam={25} borde={KC.ink} />
+      <Chip T={T} at={K.E + 4.6} until={K.Q - 0.3} texto="una sola toma · igual leucina, más proteína en la de hongo" x={540} y={1460} tam={26} borde={KC.ink} />
       <Letrero T={T} at={K.M + 0.2} until={K.Q - 0.3} x={60} y={530} ancho={700} align="left" texto="Aumento en la fabricación de proteína del músculo" tam={36} color={KC.ink} />
       <Letrero T={T} at={K.M + 1.0} until={K.Q - 0.3} x={360} y={1240} ancho={260} texto="micoproteína" tam={28} color={KC.ink} />
       <Letrero T={T} at={K.M + 1.0} until={K.Q - 0.3} x={720} y={1240} ancho={200} texto="leche" tam={28} color={KC.ink} />
@@ -364,7 +409,7 @@ function MicoproteinaShot() {
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={200 * M_PLATO.k} color={KC.ink} />
-      <BarraEscala T={T} at={K.H} until={K.S} texto="5 cm" largo={210} color={KC.ink} />
+      <BarraEscala T={T} at={K.H} until={K.S} texto="5 cm" largo={200 * klerp(1.48, 1.05, uPl)} color={KC.ink} />
       <BarraEscala T={T} at={K.S} until={K.Ta} texto="10 cm" largo={160} />
       <NotaEscala T={T} at={K.Ta} until={K.P} />
       <BarraEscala T={T} at={K.Hi} until={K.F} texto="5 µm" largo={50 * M_HIFAS.k} />

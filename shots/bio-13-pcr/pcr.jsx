@@ -180,7 +180,7 @@ function NocheCarretera({ T, u = 0 }) {
   const R = krng(4);
   const estrellas = Array.from({ length: 40 }, () => [R() * KW, 220 + R() * 640, 2 + R() * 4]);
   const cx = klerp(-120, 1180, u), cy = 1110 - Math.sin(u * Math.PI * 2) * 30;
-  const dy = 220;                                         // todo el paisaje baja para quedar al centro del cuadro
+  const dy = 110;                                         // todo el paisaje baja para quedar al centro del cuadro
   return <g>
     <rect width={KW} height={KH} fill="#0c1220" />
     {estrellas.map(([sx, sy, sr], i) => <circle key={i} cx={sx} cy={sy} r={sr * (0.7 + 0.3 * Math.sin(T * 3 + i))} fill="#fff" opacity=".85" />)}
@@ -190,7 +190,7 @@ function NocheCarretera({ T, u = 0 }) {
     <path d="M 0 1000 L 240 880 L 470 960 L 700 860 L 1080 980 L 1080 1920 L 0 1920 Z" fill="#150a30" />
     <path d={`M -40 1140 Q 300 1040 540 1110 T 1120 1100`} stroke="#3a3f52" strokeWidth={80} fill="none" />
     <path d={`M -40 1140 Q 300 1040 540 1110 T 1120 1100`} stroke={KC.gold2} strokeWidth={6} strokeDasharray="30 30" fill="none" opacity=".8" />
-    <g transform={`translate(${cx} ${cy - 40}) scale(1.4)`}>
+    <g transform={`translate(${cx} ${cy - 60}) scale(2.3)`}>
       <path d="M 40 10 L 340 -60 L 340 80 Z" fill={KC.yellow} opacity=".28" />
       <rect x={-80} y={-26} width={130} height={46} rx={14} fill="#c9ced8" stroke={KC.ink} strokeWidth={6} />
       <path d="M -56 -26 L -36 -52 L 14 -52 L 30 -26 Z" fill="#9aa4b5" stroke={KC.ink} strokeWidth={6} />
@@ -259,7 +259,7 @@ function Pcr() {
             <Termociclador x={360} y={760} s={0.9} tapa={cierra} temp={cGancho > 0.5 ? (Math.floor(T * 2.4) % 3 === 0 ? 95 : Math.floor(T * 2.4) % 3 === 1 ? 55 : 72) : 25} ciclo={Math.round(cGancho)} />
           </g>
         </SvgCapa>
-        <Copias T={T} at={K.G + 1.1} until={K.Tu - 0.2} ciclos={cGancho} y={1340} tam={130} etiqueta="copias de 1 molécula de ADN" />
+        <Copias T={T} at={K.G + 1.1} until={K.Tu - 0.2} ciclos={cGancho} y={1360} tam={102} etiqueta="copias de 1 molécula de ADN" />
       </Escena>
 
       {/* 1 · la prueba PCR de COVID: ARN del virus → ADN → copias que brillan */}
@@ -282,7 +282,7 @@ function Pcr() {
       <Escena T={T} a={K.S} b={K.D} zoom={0.02}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 60% 55%, ${colorTemp(tempCap)}99 0%, ${KC.noche} 70%)` }}></div>
         <Termometro x={120} y={540} alto={560} valor={tempCap} max={100} marcas={[0, 50, 100]} color={colorTemp(tempCap) === '#1d4fd8' ? KC.cyan : colorTemp(tempCap)} />
-        <div style={{ position:'absolute', left:120, top:1270, transform:'translate(-50%,-50%)', zIndex:40, font:`400 92px ${KF.titulo}`, color:KC.texto, WebkitTextStroke:`3px ${KC.ink}`, textShadow:'5px 5px 0 #000', whiteSpace:'nowrap' }}>{Math.round(tempCap)} °C</div>
+        <div style={{ position:'absolute', left:185, top:1270, transform:'translate(-50%,-50%)', zIndex:40, font:`400 92px ${KF.titulo}`, color:KC.texto, WebkitTextStroke:`3px ${KC.ink}`, textShadow:'5px 5px 0 #000', whiteSpace:'nowrap' }}>{Math.round(tempCap)} °C</div>
         <SvgCapa z={31}>
           <g transform="translate(655 1000) scale(1.15) translate(-655 -940)"><Escalera T={T} x={330} y={940} paso={50} sep={sep} prim={prim} cop={cop} /></g>
         </SvgCapa>
@@ -296,7 +296,7 @@ function Pcr() {
             return i < n ? <MiniHelice key={i} T={T + i * 0.2} x={102 + c * 125} y={1020 + (r - (filas - 1) / 2) * 125} s={1.4} o={kprog(T, K.D + 0.1 + Math.log2(i + 1) * 0.6, K.D + 0.4 + Math.log2(i + 1) * 0.6)} /> : null; })}
           {cDup > 5 && <rect x={20} y={800} width={1040} height={440} rx={30} fill={NUEVA} opacity={0.35 * kprog(cDup, 5, 30)} />}
         </SvgCapa>
-        <Copias T={T} at={K.D + 0.2} until={K.Q - 0.2} ciclos={cDup} x={540} y={600} tam={130} />
+        <Copias T={T} at={K.D + 0.2} until={K.Q - 0.2} ciclos={cDup} x={540} y={600} tam={102} />
       </Escena>
 
       {/* 6 · pregunta: ¿qué enzima aguanta 95 °C? una común se "derrite" */}
@@ -347,7 +347,7 @@ function Pcr() {
       <Escena T={T} a={K.M} b={K.Ci} zoom={0.03}>
         <SvgCapa>
           <NocheCarretera T={T} u={kprog(T, K.M, K.M + 4.8)} />
-          {T > K.M + 2.3 && <g opacity={kprog(T, K.M + 2.3, K.M + 2.8)}><MedallaNobel x={540} y={930} s={klerp(0.6, 1.35, kprog(T, K.M + 2.3, K.M + 2.9, kEase.rebote))} T={T} /></g>}
+          {T > K.M + 2.3 && <g opacity={kprog(T, K.M + 2.3, K.M + 2.8)}><MedallaNobel x={540} y={800} s={klerp(0.6, 1.35, kprog(T, K.M + 2.3, K.M + 2.9, kEase.rebote))} T={T} /></g>}
         </SvgCapa>
       </Escena>
 
@@ -355,12 +355,12 @@ function Pcr() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <g transform="translate(540 970) scale(1.75) translate(-360 -760)">
+          <g transform="translate(540 1060) scale(1.75) translate(-360 -760)">
             <TuboPCR T={T} x={360} y={klerp(640, 520, sube)} s={0.7} brillo={sube} />
             <Termociclador x={360} y={760} s={0.9} tapa={1 - abre} temp={72} ciclo={30} />
           </g>
         </SvgCapa>
-        <Copias T={T} at={K.Ci + 1.4} until={K.Ou - 0.2} ciclos={30} y={1410} tam={130} etiqueta="1 molécula → hasta (en teoría)" />
+        <Copias T={T} at={K.Ci + 1.4} until={K.Ou - 0.2} ciclos={30} y={1500} tam={102} etiqueta="1 molécula → hasta (en teoría)" />
       </Escena>
 
       {/* textos y medidores */}
