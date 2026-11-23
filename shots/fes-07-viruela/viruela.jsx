@@ -266,7 +266,7 @@ function Viruela() {
       {/* 3 · la vacuna en la piel: granito y defensas que aprenden su forma */}
       <Escena T={T} a={K.Gr} b={K.Me} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {svg(<g transform="translate(540 930) scale(1.35) translate(-610 -900)"><CortePiel T={T} virus={kprog(T, K.Gr + 0.1, K.Gr + 0.9)} vesicula={kprog(T, K.Gr + 0.8, K.Gr + 1.8, kEase.suave)} linfos={kprog(T, K.Gr + 1.5, K.Gr + 2.6, kEase.suave)} foto={kprog(T, K.Gr + 2.6, K.Gr + 3.3)} /></g>)}
+        {svg(<g transform="translate(540 1010) scale(1.35) translate(-610 -900)"><CortePiel T={T} virus={kprog(T, K.Gr + 0.1, K.Gr + 0.9)} vesicula={kprog(T, K.Gr + 0.8, K.Gr + 1.8, kEase.suave)} linfos={kprog(T, K.Gr + 1.5, K.Gr + 2.6, kEase.suave)} foto={kprog(T, K.Gr + 2.6, K.Gr + 3.3)} /></g>)}
       </Escena>
       {/* 4 · memoria: si llega la viruela, la reconocen y la atacan rápido */}
       <Escena T={T} a={K.Me} b={K.Co} zoom={0.04}>
@@ -388,7 +388,7 @@ function Viruela() {
       {/* 11 · el último caso natural: Merca, Somalia, octubre de 1977 */}
       <Escena T={T} a={K.Ul} b={K.Li}>
         <FondoLunares color="#f3d9a4" punto="rgba(255,255,255,.4)" />
-        {svg(<MapaAfrica T={T} x={110} y={420} s={1.3} somalia={kprog(T, K.Ul + 0.6, K.Ul + 1.1)} merca={kprog(T, K.Ul + 1.0, K.Ul + 1.4)} />)}
+        {svg(<MapaAfrica T={T} x={110} y={500} s={1.3} somalia={kprog(T, K.Ul + 0.6, K.Ul + 1.1)} merca={kprog(T, K.Ul + 1.0, K.Ul + 1.4)} />)}
       </Escena>
       {/* 12 · 1980: el mundo, libre de viruela */}
       <Escena T={T} a={K.Li} b={K.Ci}>
@@ -420,9 +420,9 @@ function Viruela() {
       <Etq T={T} at={K.Va + 1.2} until={K.Gr - 0.3} x={795} y={1232} texto="leve" tam={28} color={KC.texto} />
       <Chip T={T} at={K.Va + 2.6} until={K.Gr - 0.3} texto="parientes · orthopoxvirus" x={540} y={520} tam={38} borde={KC.gold2} />
       {T > K.Va - 0.3 && T < K.Gr + 0.2 && <Escala T={T} z={1} pxPorMm={1.04e6 * 1.7} x={60} y={1600} objetivo={240} />}
-      <Etq T={T} at={K.Gr + 0.3} until={K.Me - 0.3} x={1020} y={440} lado="izq" texto="piel por dentro" tam={32} />
-      <Etq T={T} at={K.Gr + 1.6} until={K.Me - 0.3} x={60} y={1420} texto="linfocitos T y B (defensas)" tam={30} color="#cfc2ff" />
-      <Chip T={T} at={K.Gr + 2.7} until={K.Me - 0.3} texto="aprenden su forma" x={540} y={1500} tam={42} borde={KC.gold2} />
+      <Etq T={T} at={K.Gr + 0.3} until={K.Me - 0.3} x={1020} y={520} lado="izq" texto="piel por dentro" tam={32} />
+      <Etq T={T} at={K.Gr + 1.6} until={K.Me - 0.3} x={60} y={1475} texto="linfocitos T y B (defensas)" tam={30} color="#cfc2ff" />
+      <Chip T={T} at={K.Gr + 2.7} until={K.Me - 0.3} texto="aprenden su forma" x={540} y={1535} tam={42} borde={KC.gold2} />
       {T > K.Gr - 0.3 && T < K.Me && <Escala T={T} z={1} pxPorMm={9000 * 1.35} x={60} y={1640} objetivo={200} />}
       {T >= K.Me && T < K.Co + 0.2 && <Escala T={T} z={1} pxPorMm={9000 * 1.15} x={60} y={1640} objetivo={200} />}
       <Etq T={T} at={K.Me + 0.4} until={K.Co - 0.3} x={60} y={470} texto="ganglio · células de memoria" tam={30} color="#cfc2ff" />
@@ -446,7 +446,7 @@ function Viruela() {
       <Etq T={T} at={K.An + 0.3} until={K.Ul - 0.3} x={605} y={837} texto="caso" tam={30} color={KC.ink} />
       <Chip T={T} at={K.An + 1.4} until={K.Ul - 0.3} texto="vigilancia y contención" x={540} y={1480} tam={42} borde={VACCINIA} />
       <Etq T={T} at={K.An + 1.8} until={K.Ul - 0.3} x={60} y={1385} texto="vacunan a sus contactos" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ul + 1.3} until={K.Li - 0.3} x={868} y={845} texto="Merca" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ul + 1.3} until={K.Li - 0.3} x={868} y={925} texto="Merca" tam={34} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Ul + 1.6} until={K.Ul + 4.0} anio="1977" quien="Ali Maow Maalin · cocinero" revista="Merca, Somalia · último caso natural" x={540} y={1450} />
       <Chip T={T} at={K.Ul + 4.2} until={K.Li - 0.3} texto="sobrevivió · después luchó contra la polio" x={540} y={1440} tam={34} borde={KC.coral} />
       <TarjetaEstudio T={T} at={K.Li + 0.4} until={K.Li + 2.9} anio="1980" quien="8 de mayo · Asamblea Mundial de la Salud" revista="el mundo, libre de viruela" x={540} y={1450} />

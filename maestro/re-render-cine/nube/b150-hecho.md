@@ -1,2 +1,4 @@
 - bio-02-vacas: rumen y cierre: vaca, horizonte del pasto, lupa del estómago y etiquetas bajados 150 px para centrar (antes la lupa cargaba todo arriba); proteína: intestino bajado 140 px con su etiqueta y chip. Sin láminas · encuadre bien (antes 3 escenas ARRIBA).
 - amb-02-resistencia: gancho: la cápsula arranca más adentro del cuadro (antes, en el cuadro 0, se encimaba con el logo de arriba a la izquierda). Resto de escenas ya cumplía (colonia grande y centrada, bacterias atenuadas detrás de los números). Sin láminas · encuadre bien.
+- fes-07-viruela: granito: el corte de piel (virus, ampolla, linfocitos) bajado 80 px con sus etiquetas y chip; último caso: mapa de África bajado 80 px con la etiqueta «Merca» (antes ambas ARRIBA con el tercio de abajo vacío). Sin láminas · encuadre bien.
+GRUPO TERMINADO
