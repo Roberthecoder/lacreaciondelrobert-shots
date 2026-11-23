@@ -1,1 +1,2 @@
 - amb-58-mancha-pacifico: Origen: objetos de pesca (1.3→1.4), barras Japón/China, chip y etiquetas bajan ~170 px para centrar el conjunto (antes todo arriba y el tercio de abajo vacío); el resto ya cumplía.
+- cie-58-venas-azules: Compara (marcada ARRIBA): el trozo de piel baja y crece (460→620 px de alto) con líneas tenues de textura, la franja de la vena, su etiqueta, el chip y la muestra gris «sola: no es azul» bajan con él; el resto ya cumplía.

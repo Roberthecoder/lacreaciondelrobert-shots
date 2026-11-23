@@ -209,17 +209,19 @@ function VenasAzules() {
       <Escena T={T} a={K.Compara} b={K.Estudio} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <rect x={60} y={480} width={960} height={460} rx={30} fill={CPIEL} stroke={KC.ink} strokeWidth={10} />
-          <rect x={60} y={664} width={960} height={92} fill="#938fa3" opacity={pr(K.Compara + 0.3, 0.6)} />
-          <rect x={60} y={480} width={960} height={460} rx={30} fill="none" stroke={KC.ink} strokeWidth={10} />
+          {/* belleza: el trozo de piel baja y crece (460 → 620 de alto) y la muestra gris baja con él: antes todo quedaba arriba */}
+          <rect x={60} y={560} width={960} height={620} rx={30} fill={CPIEL} stroke={KC.ink} strokeWidth={10} />
+          {[640, 720, 1010, 1100].map((yy, i) => <path key={i} d={`M 90 ${yy} Q 540 ${yy + (i % 2 ? 10 : -10)} 990 ${yy}`} stroke="#d99a7c" strokeWidth={4} fill="none" opacity={0.5} />)}
+          <rect x={60} y={824} width={960} height={92} fill="#938fa3" opacity={pr(K.Compara + 0.3, 0.6)} />
+          <rect x={60} y={560} width={960} height={620} rx={30} fill="none" stroke={KC.ink} strokeWidth={10} />
           {(() => { const s = pr(K.Compara + 2.6, 0.9, kEase.suave); return <g opacity={s}>
-            <rect x={230} y={990} width={620} height={290} rx={24} fill="#8a8a8a" stroke={KC.ink} strokeWidth={9} />
-            <text x={540} y={1064} textAnchor="middle" style={{ font:`700 46px ${KF.texto}` }} fill="#0b1020">sola: no es azul</text>
-            <rect x={310} y={1110} width={460} height={92} fill="#938fa3" stroke="#0b1020" strokeWidth={5} transform={`translate(0 ${(1 - s) * -380})`} />
+            <rect x={230} y={1230} width={620} height={290} rx={24} fill="#8a8a8a" stroke={KC.ink} strokeWidth={9} />
+            <text x={540} y={1304} textAnchor="middle" style={{ font:`700 46px ${KF.texto}` }} fill="#0b1020">sola: no es azul</text>
+            <rect x={310} y={1350} width={460} height={92} fill="#938fa3" stroke="#0b1020" strokeWidth={5} transform={`translate(0 ${(1 - s) * -380})`} />
           </g>; })()}
         </Lienzo>
-        <Chip T={T} at={K.Compara + 0.6} until={K.Estudio - 0.1} texto="junto a la piel: se ve azulado" x={540} y={390} tam={40} borde={VENA_VISTA} />
-        <Etq T={T} at={K.Compara + 1.2} until={K.Estudio - 0.1} x={1010} y={710} texto="la vena" lado="izq" color={KC.ink} tam={32} />
+        <Chip T={T} at={K.Compara + 0.6} until={K.Estudio - 0.1} texto="junto a la piel: se ve azulado" x={540} y={470} tam={40} borde={VENA_VISTA} />
+        <Etq T={T} at={K.Compara + 1.2} until={K.Estudio - 0.1} x={1010} y={870} texto="la vena" lado="izq" color={KC.ink} tam={32} />
       </Escena>
       {/* 8 · el estudio de 1996 */}
       <Escena T={T} a={K.Estudio} b={K.Hondo} fondo={KC.orange}>
