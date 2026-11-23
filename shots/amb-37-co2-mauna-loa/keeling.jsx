@@ -206,8 +206,9 @@ function KeelingShot() {
       {/* 6 · pregunta: ¿por qué no deja de subir? */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><Grafica T={T} box={{ x: 200, y: 340, w: 780, h: 230 }} ticksY={[300, 400]} ticksX={[]} hasta={hP} tamTick={22} grosor={5} />
-          <text x={830} y={1120} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 830 950)`}>?</text></>)}
+        <div style={{ position:'absolute', inset:0, background:'#0a0e18', opacity:0.75 * kprog(T, K.P, K.P + 0.35) }}></div>
+        {svg(<><Grafica T={T} box={{ x: 150, y: 620, w: 840, h: 640 }} ticksY={[300, 400]} ticksX={[]} hasta={hP} tamTick={28} grosor={7} />
+          <text x={880} y={600} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 880 540)`}>?</text></>)}
       </Escena>
       {/* 7 · el estudio: Keeling, Scripps, 1960 */}
       <Escena T={T} a={K.E} b={K.H}>
