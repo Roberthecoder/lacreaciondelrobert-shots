@@ -10,15 +10,17 @@ const coTinte = (c, blanco) => mixHex(c, CO_BLANCO, kclamp(blanco, 0, 1));
 // Coral cerebro (domo con surcos que serpentean). (x, y) = centro de la base.
 function CoralCerebro({ x, y, r = 220, color = CO_COLOR.cerebro, blanco = 0, muerto = 0 }) {
   const c = mixHex(coTinte(color, blanco), '#9a9484', muerto * 0.8), surco = mixHex(mixHex(color, '#5a3410', 0.45), '#cfcabd', blanco);
-  const id = 'cc' + Math.round(x + y + r);
+  const id = 'cc' + Math.round(x + y + r) + '_' + Math.round(blanco * 20) + '_' + Math.round(muerto * 20);
   const surcos = Array.from({ length: 6 }, (_, i) => {
     const yy = -r * 0.12 - i * r * 0.13, ww = Math.sqrt(Math.max(0, 1 - Math.pow((i * 0.13 + 0.12) / 0.78, 2))) * r * 0.92;
     let d = `M ${-ww} ${yy}`; const n = 10; for (let k = 1; k <= n; k++) { const px = -ww + (2 * ww * k) / n; d += ` Q ${px - ww / n} ${yy + (k % 2 ? -1 : 1) * r * 0.07} ${px} ${yy}`; }
     return <path key={i} d={d} stroke={surco} strokeWidth={r * 0.035} fill="none" strokeLinecap="round" />;
   });
   return <g transform={`translate(${x} ${y})`}>
-    <defs><clipPath id={id}><path d={`M ${-r} 0 A ${r} ${r * 0.78} 0 0 1 ${r} 0 Z`} /></clipPath></defs>
-    <path d={`M ${-r} 0 A ${r} ${r * 0.78} 0 0 1 ${r} 0 Z`} fill={c} stroke={KC.ink} strokeWidth={8} />
+    <defs><clipPath id={id}><path d={`M ${-r} 0 A ${r} ${r * 0.78} 0 0 1 ${r} 0 Z`} /></clipPath>
+      <radialGradient id={id + 'g'} cx="0.36" cy="0.3" r="0.85"><stop offset="0" stopColor={mixHex(c, '#ffffff', 0.28)} /><stop offset="0.55" stopColor={c} /><stop offset="1" stopColor={mixHex(c, '#000000', 0.38)} /></radialGradient></defs>
+    <ellipse cx={r * 0.06} cy={6} rx={r * 1.08} ry={r * 0.12} fill="#000" opacity=".28" />
+    <path d={`M ${-r} 0 A ${r} ${r * 0.78} 0 0 1 ${r} 0 Z`} fill={`url(#${id}g)`} stroke={KC.ink} strokeWidth={8} />
     <g clipPath={`url(#${id})`}>{surcos}</g>
     <path d={`M ${-r * 0.55} ${-r * 0.55} Q ${-r * 0.2} ${-r * 0.72} ${r * 0.15} ${-r * 0.7}`} stroke="#fff" strokeOpacity=".35" strokeWidth={r * 0.06} fill="none" strokeLinecap="round" />
   </g>;
@@ -35,15 +37,21 @@ function CoralRamas({ x, y, h = 340, color = CO_COLOR.ramas, blanco = 0, seed = 
   return <g transform={`translate(${x} ${y})`}>
     {segs.map(([a, b, c2, d, w], i) => <line key={'o' + i} x1={a} y1={b} x2={c2} y2={d} stroke={KC.ink} strokeWidth={w + 12} strokeLinecap="round" />)}
     {segs.map(([a, b, c2, d, w], i) => <line key={'c' + i} x1={a} y1={b} x2={c2} y2={d} stroke={c} strokeWidth={w} strokeLinecap="round" />)}
+    {segs.map(([a, b, c2, d, w], i) => <line key={'b' + i} x1={a - w * 0.2} y1={b} x2={c2 - w * 0.2} y2={d} stroke={mixHex(c, '#ffffff', 0.35)} strokeWidth={w * 0.28} strokeLinecap="round" opacity=".55" />)}
+    {segs.map(([a, b, c2, d, w], i) => <line key={'s' + i} x1={a + w * 0.22} y1={b} x2={c2 + w * 0.22} y2={d} stroke={mixHex(c, '#000000', 0.35)} strokeWidth={w * 0.22} strokeLinecap="round" opacity=".45" />)}
     {segs.filter((s) => s[4] < 30).map(([a, b, c2, d, w], i) => <circle key={'p' + i} cx={c2} cy={d} r={w * 0.28} fill={mixHex(c, '#ffffff', 0.5)} />)}
   </g>;
 }
 // Coral de mesa (tallo y plato).
 function CoralMesa({ x, y, w = 300, color = CO_COLOR.mesa, blanco = 0 }) {
-  const c = coTinte(color, blanco);
+  const c = coTinte(color, blanco), id = 'cm' + Math.round(x) + '_' + Math.round(blanco * 20);
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={-26} y={-150} width={52} height={150} rx={18} fill={c} stroke={KC.ink} strokeWidth={7} />
-    <ellipse cx={0} cy={-160} rx={w / 2} ry={42} fill={c} stroke={KC.ink} strokeWidth={8} />
+    <defs><linearGradient id={id + 't'} x1="0" x2="1" y1="0" y2="0"><stop offset="0" stopColor={mixHex(c, '#ffffff', 0.2)} /><stop offset="1" stopColor={mixHex(c, '#000000', 0.35)} /></linearGradient>
+      <radialGradient id={id + 'p'} cx="0.38" cy="0.25" r="0.8"><stop offset="0" stopColor={mixHex(c, '#ffffff', 0.3)} /><stop offset="0.6" stopColor={c} /><stop offset="1" stopColor={mixHex(c, '#000000', 0.35)} /></radialGradient></defs>
+    <ellipse cx={8} cy={4} rx={70} ry={12} fill="#000" opacity=".28" />
+    <rect x={-26} y={-150} width={52} height={150} rx={18} fill={`url(#${id}t)`} stroke={KC.ink} strokeWidth={7} />
+    <ellipse cx={0} cy={-148} rx={w / 2 - 20} ry={22} fill="#000" opacity=".22" />
+    <ellipse cx={0} cy={-160} rx={w / 2} ry={42} fill={`url(#${id}p)`} stroke={KC.ink} strokeWidth={8} />
     <ellipse cx={0} cy={-172} rx={w / 2 - 30} ry={20} fill="#fff" opacity=".22" />
   </g>;
 }
@@ -58,18 +66,24 @@ function Pez({ x, y, s = 1, color = KC.yellow, dir = 1, T = 0 }) {
   </g>;
 }
 // Arrecife completo (fondo + corales + peces). blanco 0..1 = blanqueado.
-function Arrecife({ T, blanco = 0 }) {
+function Arrecife({ T, blanco = 0, polipos = 0 }) {
+  const sid = 'arS' + Math.round(blanco * 20), arena = mixHex('#5c4b2c', '#46443c', blanco);
   const pez = (i, y0, vel, color, s) => { const u = ((T * vel + i * 0.37) % 1.4) - 0.2; return <Pez key={i} T={T + i} x={u * KW} y={y0 + Math.sin(T * 2 + i) * 14} s={s} color={color} />; };
   return <>
     <div style={{ position:'absolute', inset:0, background:`linear-gradient(${mixHex('#143f58', '#3a4e58', blanco * 0.6)}, ${mixHex('#082a44', '#253640', blanco * 0.6)})` }}></div>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
       {Array.from({ length: 7 }, (_, i) => <polygon key={i} points={`${80 + i * 160},0 ${150 + i * 160},0 ${40 + i * 170 + Math.sin(T * 0.6 + i) * 30},1200 ${-40 + i * 170},1200`} fill="#fff" opacity={0.07} />)}
       {pez(0, 610, 0.09, KC.yellow, 0.7)}{pez(1, 960, 0.07, KC.orange, 0.55)}
-      <g transform="translate(540 1170) scale(1.3) translate(-520 -1060)">
-      <path d="M -200 1050 Q 270 1000 540 1040 T 1280 1030 L 1280 1700 L -200 1700 Z" fill={mixHex('#5c4b2c', '#46443c', blanco)} stroke={KC.ink} strokeWidth={8} />
+      <defs><linearGradient id={sid} x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor={mixHex(arena, '#ffffff', 0.12)} /><stop offset="0.45" stopColor={arena} /><stop offset="1" stopColor={mixHex(arena, '#000000', 0.55)} /></linearGradient></defs>
+      <g transform="translate(540 1330) scale(1.55) translate(-520 -1060)">
+      <path d="M -200 1050 Q 270 1000 540 1040 T 1280 1030 L 1280 1700 L -200 1700 Z" fill={`url(#${sid})`} stroke={KC.ink} strokeWidth={8} />
+      {Array.from({ length: 6 }, (_, i) => { const yy = 1110 + i * 52; return <path key={'r' + i} d={`M -60 ${yy} Q 120 ${yy - 14} 300 ${yy} T 660 ${yy} T 1020 ${yy} T 1260 ${yy}`} stroke={mixHex(arena, '#ffffff', 0.18)} strokeWidth={3} fill="none" opacity={0.5 - i * 0.06} />; })}
+      {Array.from({ length: 14 }, (_, i) => { const rr = krng(40 + i), px = -40 + rr() * 1160, py = 1095 + rr() * 260, w = 10 + rr() * 18;
+        return <g key={'g' + i}><ellipse cx={px + 3} cy={py + 4} rx={w} ry={w * 0.45} fill="#000" opacity=".25" /><ellipse cx={px} cy={py} rx={w} ry={w * 0.55} fill={mixHex(arena, '#ffffff', 0.25 + rr() * 0.2)} /></g>; })}
       <CoralMesa x={175} y={1070} w={250} blanco={blanco} />
       <CoralRamas x={830} y={1070} h={360} blanco={blanco} />
       <CoralCerebro x={470} y={1085} r={260} blanco={blanco} />
+      {polipos > 0 && [[380, 960], [470, 915], [560, 950], [420, 1030], [520, 1025], [330, 1040], [610, 1035]].map(([px, py], i) => <g key={'pp' + i} opacity={kclamp(polipos * 3 - i * 0.3, 0, 1)}><PolipoArriba x={px} y={py} r={30} T={T} seed={i} blanco={blanco} abre={kclamp(polipos * 2 - i * 0.12, 0, 1)} /></g>)}
       {Array.from({ length: 6 }, (_, i) => { const u = ((T * 0.35 + i / 6) % 1); return <circle key={i} cx={590 + i * 30 + Math.sin(T * 3 + i) * 8} cy={820 - u * 340} r={6 + (i % 3) * 3} fill="none" stroke="#fff" strokeWidth={3} opacity={1 - u} />; })}
       </g>
     </svg>
@@ -79,6 +93,7 @@ function Arrecife({ T, blanco = 0 }) {
 function PolipoArriba({ x, y, r = 70, abre = 1, color = CO_COLOR.polipo, blanco = 0, T = 0, seed = 1 }) {
   const c = coTinte(color, blanco), L = r * (0.25 + 0.75 * abre);
   return <g transform={`translate(${x} ${y}) rotate(${seed * 17})`}>
+    <circle cx={6} cy={8} r={r * 0.4 + L * 0.9} fill="#000" opacity=".16" />
     {Array.from({ length: 12 }, (_, i) => { const a = i * 30 + Math.sin(T * 2 + i + seed) * 4;
       return <g key={i} transform={`rotate(${a})`}><ellipse cx={0} cy={-r * 0.38 - L * 0.5} rx={r * 0.13} ry={L * 0.5} fill={c} stroke={KC.ink} strokeWidth={4} />
         <circle cx={0} cy={-r * 0.38 - L * 0.92} r={r * 0.07} fill={mixHex(c, '#ffffff', 0.55)} /></g>; })}
@@ -91,11 +106,14 @@ function PolipoLado({ x, y, s = 1, color = CO_COLOR.polipo, piel = 1, T = 0, bla
   const c = coTinte(color, blanco);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {/* copa de caliza con septos */}
-    <path d="M -170 0 L -140 -190 L 140 -190 L 170 0 Z" fill="#d7d3c8" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <defs><linearGradient id="plCopa" x1="0" x2="1" y1="0" y2="0.3"><stop offset="0" stopColor="#ece8de" /><stop offset="0.5" stopColor="#d7d3c8" /><stop offset="1" stopColor="#8f8a7e" /></linearGradient>
+      <linearGradient id={'plCu' + Math.round(blanco * 20)} x1="0" x2="1" y1="0" y2="0"><stop offset="0" stopColor={mixHex(c, '#ffffff', 0.25)} /><stop offset="0.55" stopColor={c} /><stop offset="1" stopColor={mixHex(c, '#000000', 0.35)} /></linearGradient></defs>
+    <ellipse cx={10} cy={6} rx={200} ry={20} fill="#000" opacity=".3" />
+    <path d="M -170 0 L -140 -190 L 140 -190 L 170 0 Z" fill="url(#plCopa)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     {Array.from({ length: 7 }, (_, i) => <line key={i} x1={-120 + i * 40} y1={-185} x2={-140 + i * 46.6} y2={-6} stroke="#9c978b" strokeWidth={6} />)}
     {/* cuerpo blando */}
     <g opacity={piel}>
-      <path d="M -120 -150 L -110 -330 Q 0 -360 110 -330 L 120 -150 Z" fill={c} fillOpacity=".92" stroke={KC.ink} strokeWidth={7} />
+      <path d="M -120 -150 L -110 -330 Q 0 -360 110 -330 L 120 -150 Z" fill={`url(#plCu${Math.round(blanco * 20)})`} fillOpacity=".92" stroke={KC.ink} strokeWidth={7} />
       {[-150, -110, -70, -35, 0, 35, 70, 110, 150].map((a, i) => { const sw = Math.sin(T * 2.2 + i) * 8;
         return <path key={i} d={`M ${a * 0.65} -335 Q ${a * 1.2 + sw} -440 ${a * 1.45 + sw * 1.5} -520`} stroke={KC.ink} strokeWidth={30} fill="none" strokeLinecap="round" />; })}
       {[-150, -110, -70, -35, 0, 35, 70, 110, 150].map((a, i) => { const sw = Math.sin(T * 2.2 + i) * 8;
@@ -116,9 +134,11 @@ function CopaArriba({ r }) {
 function Zoox({ x, y, r = 55, o = 1, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`} opacity={o}>
     <circle r={r * 1.18} fill="none" stroke="#e9d8a6" strokeWidth={3} strokeDasharray="8 6" opacity=".7" />
-    <circle r={r} fill={CO_COLOR.zoox} stroke={KC.ink} strokeWidth={5} />
+    <defs><radialGradient id="zxG" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stopColor="#e2b85a" /><stop offset="0.6" stopColor={CO_COLOR.zoox} /><stop offset="1" stopColor="#6e4a10" /></radialGradient></defs>
+    <circle r={r} fill="url(#zxG)" stroke={KC.ink} strokeWidth={5} />
     <path d={`M ${-r * 0.7} ${-r * 0.2} Q ${-r * 0.2} ${-r * 0.6} ${r * 0.3} ${-r * 0.4} M ${-r * 0.6} ${r * 0.3} Q 0 0 ${r * 0.6} ${r * 0.2} M ${-r * 0.2} ${r * 0.7} Q ${r * 0.2} ${r * 0.3} ${r * 0.5} ${r * 0.6}`} stroke="#6e4a10" strokeWidth={6} fill="none" strokeLinecap="round" />
     <circle cx={r * 0.25} cy={-r * 0.1} r={r * 0.22} fill="#e9c66a" stroke="#6e4a10" strokeWidth={3} />
+    <ellipse cx={-r * 0.38} cy={-r * 0.52} rx={r * 0.18} ry={r * 0.09} fill="#fff" opacity=".35" transform={`rotate(-30 ${-r * 0.38} ${-r * 0.52})`} />
   </g>;
 }
 const ZX = [[-250, -90], [-60, -160], [140, -110], [260, 60], [60, 120], [-150, 130], [-300, 70]];
@@ -127,8 +147,11 @@ function Celula({ T, x = 540, y = 860, w = 840, h = 620, palidez = 0, expulsa = 
   const fondo = mixHex('#3d6b5a', '#2a3036', palidez);
   return <g transform={`translate(${x} ${y})`}>
     <ellipse rx={w / 2 + 14} ry={h / 2 + 14} fill="none" stroke="#7fe3c4" strokeOpacity=".35" strokeWidth={14} />
-    <ellipse rx={w / 2} ry={h / 2} fill={fondo} stroke="#9ff0d4" strokeWidth={8} />
-    <ellipse cx={-95} cy={-5} rx={62} ry={52} fill="#6b4fa8" stroke={KC.ink} strokeWidth={5} />
+    <defs><radialGradient id={'ceG' + Math.round(palidez * 20)} cx="0.4" cy="0.35" r="0.75"><stop offset="0" stopColor={mixHex(fondo, '#ffffff', 0.12)} /><stop offset="0.7" stopColor={fondo} /><stop offset="1" stopColor={mixHex(fondo, '#000000', 0.4)} /></radialGradient>
+      <radialGradient id="ceN" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stopColor="#8a6fc8" /><stop offset="1" stopColor="#4a3478" /></radialGradient></defs>
+    <ellipse rx={w / 2} ry={h / 2} fill={`url(#ceG${Math.round(palidez * 20)})`} stroke="#9ff0d4" strokeWidth={8} />
+    {Array.from({ length: 22 }, (_, i) => { const rr = krng(70 + i), a = rr() * 6.283, d = Math.sqrt(rr()) * 0.85; return <circle key={'v' + i} cx={Math.cos(a) * d * w / 2} cy={Math.sin(a) * d * h / 2} r={4 + rr() * 6} fill="#9ff0d4" opacity={0.08 + 0.06 * Math.sin(T * 1.2 + i)} />; })}
+    <ellipse cx={-95} cy={-5} rx={62} ry={52} fill="url(#ceN)" stroke={KC.ink} strokeWidth={5} />
     <circle cx={-85} cy={-12} r={15} fill="#9d85d6" />
     {ZX.map(([zx, zy], i) => {
       const k = kclamp(expulsa * 1.6 - i * 0.09, 0, 1), dir = Math.atan2(zy, zx);
@@ -145,9 +168,12 @@ function Celula({ T, x = 540, y = 860, w = 840, h = 620, palidez = 0, expulsa = 
 function Termometro({ x, y, alto = 520, valor = 0.3 }) {
   const c = mixHex('#ffb02e', KC.red, valor);
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={-34} y={-alto} width={68} height={alto} rx={34} fill="#f4f1e8" stroke={KC.ink} strokeWidth={7} />
+    <defs><linearGradient id="tmV" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stopColor="#dfe6ea" /><stop offset="0.35" stopColor="#f4f6f7" /><stop offset="1" stopColor="#9aa6ad" /></linearGradient></defs>
+    <rect x={-34} y={-alto} width={68} height={alto} rx={34} fill="url(#tmV)" stroke={KC.ink} strokeWidth={7} />
     <circle cx={0} cy={30} r={64} fill={c} stroke={KC.ink} strokeWidth={7} />
     <rect x={-18} y={-alto * valor - 10 + 20} width={36} height={alto * valor + 20} rx={18} fill={c} />
+    <rect x={-26} y={-alto + 20} width={9} height={alto - 60} rx={4} fill="#fff" opacity=".45" />
+    <circle cx={-20} cy={14} r={14} fill="#fff" opacity=".35" />
     {[0.2, 0.4, 0.6, 0.8].map((q) => <line key={q} x1={34} y1={-alto * q} x2={60} y2={-alto * q} stroke={KC.ink} strokeWidth={5} />)}
   </g>;
 }
@@ -156,15 +182,19 @@ const GL_PTS = (() => { const r = krng(17); return Array.from({ length: 50 }, ()
 function Globo({ T, x, y, r = 280, blancos = 0 }) {
   const id = 'gl' + Math.round(x);
   return <g transform={`translate(${x} ${y})`}>
-    <defs><clipPath id={id}><circle r={r} /></clipPath></defs>
+    <defs><clipPath id={id}><circle r={r} /></clipPath>
+      <radialGradient id={id + 'o'} cx="0.38" cy="0.32" r="0.8"><stop offset="0" stopColor="#3f8fd6" /><stop offset="0.65" stopColor="#1d62a8" /><stop offset="1" stopColor="#0c2f57" /></radialGradient>
+      <radialGradient id={id + 's'} cx="0.35" cy="0.3" r="0.85"><stop offset="0.55" stopColor="#000" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".55" /></radialGradient></defs>
     <circle r={r + 20} fill="none" stroke="#bff3ff" strokeOpacity=".5" strokeWidth={16} />
-    <circle r={r} fill="#1f74c9" stroke={KC.ink} strokeWidth={8} />
+    <circle r={r} fill={`url(#${id}o)`} stroke={KC.ink} strokeWidth={8} />
     <g clipPath={`url(#${id})`}>
       <rect x={-r} y={-r * 0.36} width={r * 2} height={r * 0.72} fill="#ffffff" opacity=".08" />
       {GL_PTS.map((p, i) => { const w = i < blancos * GL_PTS.length; return <circle key={i} cx={p.a * r * 0.95} cy={p.b * r} r={11} fill={w ? '#ffffff' : KC.coral} stroke={KC.ink} strokeWidth={3} />; })}
       <path d={`M ${-r * 0.75} ${-r * 0.75} q 120 -40 200 30 q 30 90 -40 150 q -60 30 -70 120 q -40 40 -80 -40 q -60 -120 -10 -260 Z`} fill="#66b85a" stroke={KC.ink} strokeWidth={5} />
       <path d={`M ${r * 0.05} ${-r * 0.8} q 140 -20 220 60 q 20 80 -60 110 q 40 60 10 160 q -60 80 -110 -10 q -40 -90 -20 -170 q -60 -60 -40 -150 Z`} fill="#c9a256" stroke={KC.ink} strokeWidth={5} />
       <path d={`M ${r * 0.45} ${r * 0.35} q 90 -20 130 40 q -10 70 -100 60 q -50 -40 -30 -100 Z`} fill="#c9a256" stroke={KC.ink} strokeWidth={5} />
+      <circle r={r} fill={`url(#${id}s)`} />
+      <ellipse cx={-r * 0.42} cy={-r * 0.55} rx={r * 0.22} ry={r * 0.1} fill="#fff" opacity=".22" transform={`rotate(-35 ${-r * 0.42} ${-r * 0.55})`} />
     </g>
   </g>;
 }
@@ -173,7 +203,8 @@ function Barras({ T, at, x = 140, base = 1075, alto = 440 }) {
   const datos = [['1998', 21], ['2010', 37], ['2014–17', 68], ['2023–25', 84]];
   return <g>{datos.map(([a, v], i) => { const k = kprog(T, at + i * 0.35, at + i * 0.35 + 0.5, kEase.sale), h = (alto * v / 100) * k, bx = x + i * 225;
     return <g key={i} opacity={kprog(T, at + i * 0.35, at + i * 0.35 + 0.15)}>
-      <rect x={bx} y={base - h} width={170} height={h} rx={12} fill={i === 3 ? '#ffffff' : '#f4c9b8'} stroke={KC.ink} strokeWidth={6} />
+      <defs><linearGradient id={'brG' + i} x1="0" x2="1" y1="0" y2="0"><stop offset="0" stopColor={i === 3 ? '#ffffff' : '#f6d6c9'} /><stop offset="1" stopColor={i === 3 ? '#b9c3c9' : '#b98a7a'} /></linearGradient></defs>
+      <rect x={bx} y={base - h} width={170} height={h} rx={12} fill={`url(#brG${i})`} stroke={KC.ink} strokeWidth={6} />
       <text x={bx + 85} y={base - h - 18} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill={KC.ink}>{v} %</text>
       <text x={bx + 85} y={base + 44} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{a}</text>
     </g>; })}</g>;
@@ -195,12 +226,17 @@ function CoralesShot() {
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: el arrecife; ¿roca? ¿planta? no: animal */}
       <Escena T={T} a={K.G} b={K.Po}>
-        <Arrecife T={T} blanco={0} />
+        <Arrecife T={T} blanco={0} polipos={kprog(T, K.G + 1.9, K.G + 3.2)} />
       </Escena>
       {/* 2 · pólipos vistos desde arriba, abriendo sus 12 tentáculos */}
       <Escena T={T} a={K.Po} b={K.E} zoom={0.08}>
         <FondoLunares color={KC.mint} />
-        {svg(<g transform="translate(0 170)"><rect x={60} y={450} width={960} height={650} rx={60} fill="#4d3b25" stroke={KC.ink} strokeWidth={8} />
+        {svg(<g transform="translate(0 170)">
+          <defs><radialGradient id="poTej" cx="0.4" cy="0.3" r="0.85"><stop offset="0" stopColor="#6e5436" /><stop offset="0.6" stopColor="#4d3b25" /><stop offset="1" stopColor="#2a1f12" /></radialGradient></defs>
+          <rect x={72} y={466} width={960} height={650} rx={60} fill="#000" opacity=".3" />
+          <rect x={60} y={450} width={960} height={650} rx={60} fill="url(#poTej)" stroke={KC.ink} strokeWidth={8} />
+          {Array.from({ length: 40 }, (_, i) => { const rr = krng(90 + i); return <circle key={'t' + i} cx={100 + rr() * 880} cy={490 + rr() * 570} r={3 + rr() * 4} fill="#a88358" opacity=".3" />; })}
+          <path d="M 120 478 Q 540 462 960 478" stroke="#fff" strokeOpacity=".12" strokeWidth={10} fill="none" strokeLinecap="round" />
           {[0, 1, 2].map((fi) => [0, 1, 2, 3].map((ci) => { const i = fi * 4 + ci, x = 180 + ci * 240 + (fi % 2) * 50, y = 565 + fi * 210;
             return <PolipoArriba key={i} x={x} y={y} r={78} T={T} seed={i} abre={kprog(T, K.Po + 0.2 + i * 0.12, K.Po + 0.8 + i * 0.12, kEase.rebote)} />; }))}</g>)}
         <EscalaFija texto="esquema" largo={0} y={1440} color={KC.ink} />
@@ -208,10 +244,13 @@ function CoralesShot() {
       {/* 3 · un pólipo de lado sobre su esqueleto de caliza */}
       <Escena T={T} a={K.E} b={K.A}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><rect x={0} y={1240} width={KW} height={680} fill="#2c2e33" /><line x1={0} y1={1240} x2={KW} y2={1240} stroke={KC.ink} strokeWidth={8} />
-          <PolipoLado x={360} y={1255} s={1.3} T={T} piel={1 - 0.55 * kprog(T, K.E + 1.2, K.E + 2.0)} /></>)}
+        {svg(<><defs><linearGradient id="esSu" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#4a4740" /><stop offset="1" stopColor="#141518" /></linearGradient></defs>
+          <rect x={0} y={1385} width={KW} height={540} fill="url(#esSu)" /><line x1={0} y1={1385} x2={KW} y2={1385} stroke={KC.ink} strokeWidth={8} />
+          {Array.from({ length: 16 }, (_, i) => { const rr = krng(120 + i), px = rr() * KW, py = 1420 + rr() * 300, w = 14 + rr() * 26;
+            return <ellipse key={i} cx={px} cy={py} rx={w} ry={w * 0.5} fill="#8a857a" opacity={0.18 + rr() * 0.15} />; })}
+          <PolipoLado x={380} y={1400} s={1.7} T={T} piel={1 - 0.55 * kprog(T, K.E + 1.2, K.E + 2.0)} /></>)}
       </Escena>
-      <Lupa T={T} at={K.E + 1.4} until={K.A - 0.2} x={810} y={900} r={175} fx={360} fy={1130} tinte={KC.cyan} etiqueta="CALIZA" interior={(t, r) => <CopaArriba r={r} />} />
+      <Lupa T={T} at={K.E + 1.4} until={K.A - 0.2} x={835} y={960} r={180} fx={380} fy={1238} tinte={KC.cyan} etiqueta="CALIZA" interior={(t, r) => <CopaArriba r={r} />} />
       {/* 4–5 · adentro: una célula con zooxantelas; le pasan azúcar */}
       <Escena T={T} a={K.A} b={K.P}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 45%, #13303a 0%, #0E0F12 75%)' }}></div>
@@ -222,8 +261,11 @@ function CoralesShot() {
       {/* 6 · pregunta: ¿por qué hay corales blancos? */}
       <Escena T={T} a={K.P} b={K.Ca} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><CoralCerebro x={295} y={1200} r={235} blanco={0} /><CoralCerebro x={785} y={1200} r={235} blanco={1} />
-          <text x={540} y={900} textAnchor="middle" style={{ font:`400 340px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 540 780)`}>?</text></>)}
+        {svg(<><defs><linearGradient id="prSu" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#5a5140" /><stop offset="1" stopColor="#15161a" /></linearGradient></defs>
+          <path d="M 0 1345 Q 270 1320 540 1340 T 1080 1335 L 1080 1920 L 0 1920 Z" fill="url(#prSu)" stroke={KC.ink} strokeWidth={8} />
+          {Array.from({ length: 5 }, (_, i) => { const yy = 1410 + i * 70; return <path key={'r' + i} d={`M -40 ${yy} Q 140 ${yy - 16} 320 ${yy} T 680 ${yy} T 1040 ${yy} T 1200 ${yy}`} stroke="#8e8775" strokeWidth={4} fill="none" opacity={0.4 - i * 0.06} />; })}
+          <CoralCerebro x={285} y={1355} r={255} blanco={0} /><CoralCerebro x={795} y={1355} r={255} blanco={kprog(T, K.P - 0.2, K.P + 0.8, kEase.suave)} />
+          <text x={540} y={1080} textAnchor="middle" style={{ font:`400 340px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 540 900)`}>?</text></>)}
       </Escena>
       {/* 7 · calor: el coral expulsa a sus algas */}
       <Escena T={T} a={K.Ca} b={K.H}>
@@ -234,7 +276,9 @@ function CoralesShot() {
       {/* 8 · blanqueado no es muerto (pero sin comida) */}
       <Escena T={T} a={K.H} b={K.M}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><path d="M 0 1230 Q 270 1180 540 1220 T 1080 1210 L 1080 1920 L 0 1920 Z" fill="#5e5848" stroke={KC.ink} strokeWidth={8} />
+        {svg(<><defs><linearGradient id="haSu" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#6a6352" /><stop offset="0.5" stopColor="#4a4538" /><stop offset="1" stopColor="#16171a" /></linearGradient></defs>
+          <path d="M 0 1230 Q 270 1180 540 1220 T 1080 1210 L 1080 1920 L 0 1920 Z" fill="url(#haSu)" stroke={KC.ink} strokeWidth={8} />
+          {Array.from({ length: 5 }, (_, i) => { const yy = 1290 + i * 70; return <path key={'r' + i} d={`M -40 ${yy} Q 140 ${yy - 16} 320 ${yy} T 680 ${yy} T 1040 ${yy} T 1200 ${yy}`} stroke="#8e8775" strokeWidth={4} fill="none" opacity={0.4 - i * 0.06} />; })}
           <g transform="translate(540 1260) scale(1.3) translate(-450 -1080)">
           <CoralCerebro x={400} y={1080} r={300} blanco={1} muerto={kprog(T, K.H + 3.4, K.H + 5.0)} />
           {[[300, 890], [420, 860], [540, 920], [360, 990], [480, 1000], [230, 990]].map(([px, py], i) => <PolipoArriba key={i} x={px} y={py} r={34} T={T} seed={i} blanco={1} abre={1 - kprog(T, K.H + 3.4, K.H + 5.0)} />)}</g></>)}
@@ -243,12 +287,12 @@ function CoralesShot() {
       {/* 9 · el mundo: 84 % (2023 – mediados de 2025) y los eventos anteriores */}
       <Escena T={T} a={K.M} b={K.Mx}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<><g opacity={1 - kprog(T, K.M + 5.0, K.M + 5.5)}><Globo T={T} x={540} y={980} r={340} blancos={0.84 * kprog(T, K.M + 0.8, K.M + 3.6)} /></g>
+        {svg(<><g opacity={1 - 0.78 * kprog(T, K.M + 5.0, K.M + 5.5)}><Globo T={T} x={540} y={980} r={340} blancos={0.84 * kprog(T, K.M + 0.8, K.M + 3.6)} /></g>
           <Barras T={T} at={K.M + 5.4} x={117} base={1230} alto={560} /></>)}
       </Escena>
       {/* 10 · Arrecife Mesoamericano */}
       <Escena T={T} a={K.Mx} b={K.C}>
-        <div style={{ position:'absolute', inset:0, background:'#0f3a55' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 55% 55%, #12445f 0%, #0f3a55 50%, #0b2c42 100%)' }}></div>
         {svg(<><MapaMexico x={MX0} y={MY0} ancho={1000 * MS} color="#6d6040" centro="#3f5c40" />
           <path d={marD} stroke={KC.ink} strokeWidth={30} fill="none" strokeLinecap="round" strokeLinejoin="round" />
           <path d={marD} stroke={mixHex(KC.coral, '#ffffff', marBl)} strokeWidth={18} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="2400" strokeDashoffset={2400 * (1 - kprog(T, K.Mx + 0.3, K.Mx + 1.6, kEase.suave))} />
@@ -259,7 +303,7 @@ function CoralesShot() {
       </Escena>
       {/* 11 · cierre: el mismo arrecife del inicio, ahora blanco */}
       <Escena T={T} a={K.C} b={FIN}>
-        <Arrecife T={T} blanco={kprog(T, K.C - 0.3, K.C + 1.2, kEase.suave)} />
+        <Arrecife T={T} blanco={kprog(T, K.C - 0.3, K.C + 1.2, kEase.suave)} polipos={1} />
       </Escena>
 
       {/* datos y etiquetas */}
@@ -268,8 +312,8 @@ function CoralesShot() {
       <Chip T={T} at={K.G + 2.2} until={K.Po - 0.2} texto="ES UN ANIMAL" x={300} y={700} tam={56} borde={KC.yellow} />
       <Chip T={T} at={K.Po + 0.3} until={K.E - 0.2} texto="pólipos: cientos a miles por coral" y={480} x={540} tam={32} borde={KC.ink} />
       <Etq T={T} at={K.Po + 1.6} until={K.E - 0.2} x={1050} y={565} texto="12 tentáculos" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.E + 0.6} until={K.A - 0.2} x={30} y={530} texto="pólipo (blando)" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.E + 2.2} until={K.A - 0.2} texto="esqueleto de carbonato de calcio" y={1440} x={540} tam={30} borde={KC.ink} />
+      <Etq T={T} at={K.E + 0.6} until={K.A - 0.2} x={30} y={450} texto="pólipo (blando)" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.E + 2.2} until={K.A - 0.2} texto="esqueleto de carbonato de calcio" y={1475} x={540} tam={30} borde={KC.ink} />
       <Etq T={T} at={K.A + 1.0} until={K.Co - 0.2} x={60} y={540} texto="célula del coral" tam={30} />
       <Etq T={T} at={K.A + 1.8} until={K.Co + 1.3} x={1040} y={540} texto="zooxantela (alga)" lado="izq" tam={30} color={KC.gold2} />
       <Etq T={T} at={K.A + 2.6} until={K.Co - 0.2} x={1040} y={588} texto="Symbiodiniaceae" it lado="izq" tam={26} color={KC.gold2} />
@@ -278,7 +322,7 @@ function CoralesShot() {
       <Chip T={T} at={K.Ca + 0.5} until={K.H - 0.2} texto="agua demasiado caliente" y={520} x={600} tam={36} borde={KC.red} />
       <Chip T={T} at={K.H + 0.3} until={K.M - 0.2} texto="blanqueado ≠ muerto" y={520} x={540} tam={44} borde={KC.ink} />
       <Chip T={T} at={K.H + 3.4} until={K.M - 0.2} texto="si el calor sigue: se muere" y={630} x={540} tam={32} borde={KC.red} />
-      <NumeroGigante T={T} at={K.M + 0.8} until={K.Mx - 0.2} valor={84} dur={1.4} sufijo=" %" etiqueta="de los arrecifes del mundo" x={340} y={420} tam={150} color={KC.coral} />
+      <NumeroGigante T={T} at={K.M + 0.8} until={K.M + 5.2} valor={84} dur={1.4} sufijo=" %" etiqueta="de los arrecifes del mundo" x={340} y={420} tam={150} color={KC.coral} />
       <Chip T={T} at={K.M + 2.0} until={K.Mx - 0.2} texto="NOAA · calor de blanqueamiento · 2023 – mediados de 2025" y={1440} x={540} tam={24} borde={KC.coral} />
       <Chip T={T} at={K.Mx + 0.3} until={K.C - 0.2} texto="Arrecife Mesoamericano" y={430} x={660} tam={36} borde={KC.coral} />
       <Chip T={T} at={K.Mx + 2.4} until={K.C - 0.2} texto="2023: el peor blanqueamiento registrado" y={1440} x={540} tam={28} borde={KC.red} />
