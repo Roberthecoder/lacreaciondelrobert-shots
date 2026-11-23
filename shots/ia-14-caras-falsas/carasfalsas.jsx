@@ -53,8 +53,10 @@ function Cara({ x, y, s = 1, T = 0, piel = PIELES[0], pelo = PELOS[0], ropa = KC
 // Retrato en marco tipo foto de perfil, con letra (A/B).
 function Retrato({ x, y, s = 1, letra, fondo = '#dfe7f2', boceto = 0, sello = 0, children }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-196} y={-246} width={392} height={492} rx={26} fill={KC.ink} transform="translate(12 12)" />
-    <rect x={-196} y={-246} width={392} height={492} rx={26} fill={mixHex(fondo, '#fbf8f0', boceto)} stroke={KC.ink} strokeWidth={9} />
+    <defs><linearGradient id={`rg-${letra || 'x'}-${fondo.slice(1)}-${Math.round(boceto * 10)}`} x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stopColor={mixHex(mixHex(fondo, '#ffffff', 0.35), '#fbf8f0', boceto)} /><stop offset="1" stopColor={mixHex(mixHex(fondo, '#7d8aa0', 0.35), '#fbf8f0', boceto)} /></linearGradient></defs>
+    <rect x={-196} y={-246} width={392} height={492} rx={26} fill="#000" opacity={0.35} transform="translate(14 22)" style={{ filter:'blur(10px)' }} />
+    <rect x={-196} y={-246} width={392} height={492} rx={26} fill={`url(#rg-${letra || 'x'}-${fondo.slice(1)}-${Math.round(boceto * 10)})`} stroke={KC.ink} strokeWidth={9} />
     <clipPath id={`cl-${letra}`}><rect x={-190} y={-240} width={380} height={480} rx={22} /></clipPath>
     <g clipPath={`url(#cl-${letra})`}>{children}</g>
     {letra && <g transform="translate(-160 -210)"><circle r={40} fill={KC.yellow} stroke={KC.ink} strokeWidth={7} /><text y={18} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={KC.ink}>{letra}</text></g>}
@@ -95,7 +97,8 @@ function Moneda({ x, y, T, r = 130 }) {
   return <g transform={`translate(${x} ${y + Math.abs(Math.sin(T * 4.5)) * -40})`}>
     <ellipse cx={0} cy={r + 60} rx={r * 0.8} ry={16} fill="rgba(0,0,0,.18)" />
     <g transform={`scale(${Math.max(0.08, Math.abs(sx))} 1)`}>
-      <circle r={r} fill={lado ? KC.gold2 : KC.gold} stroke={KC.ink} strokeWidth={9} />
+      <defs><radialGradient id="mon-g" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stopColor="#ffe9a8" /><stop offset="0.55" stopColor={lado ? KC.gold2 : KC.gold} /><stop offset="1" stopColor="#8a6416" /></radialGradient></defs>
+      <circle r={r} fill="url(#mon-g)" stroke={KC.ink} strokeWidth={9} />
       <circle r={r * 0.78} fill="none" stroke={KC.ink} strokeWidth={4} strokeDasharray="10 8" />
       <text y={lado ? 26 : 30} textAnchor="middle" style={{ font:`400 ${lado ? 52 : 80}px ${KF.titulo}` }} fill={KC.ink}>{lado ? 'ÁGUILA' : 'SOL'}</text>
     </g>
@@ -201,28 +204,28 @@ function CarasFalsas() {
         <FondoLunares color={KC.lilac} />
         {/* pase a mano cine: el retrato del experimento está desde el inicio (atenuado detrás de la tarjeta), más grande y al centro */}
         {svg(<g opacity={klerp(0.35, 1, kprog(T, K.E + 3.4, K.E + 3.8))}>
-          <Retrato x={680} y={920} s={1.0} letra="">
+          <Retrato x={700} y={960} s={1.25} letra="">
             <g transform={`translate(${T < K.E + 3.6 ? 0 : (1 - kEase.sale(Math.min(1, uPas * 3))) * 300} 0)`}><Cara x={0} y={-20} s={1.1} T={T} fase={iPas} {...caraAzar(iPas)} /></g>
           </Retrato>
           {[['REAL', KC.mint, -115], ['IA', KC.red, 115]].map(([t, c, dx], k) => { const on = T > K.E + 3.6 && (iPas + k) % 2 === 0 && uPas > 0.5;
-            return <g key={t} transform={`translate(${680 + dx} 1250)`}><rect x={-90} y={-40} width={180} height={80} rx={22} fill={on ? c : '#fff'} stroke={KC.ink} strokeWidth={7} />
+            return <g key={t} transform={`translate(${700 + dx * 1.2} 1395)`}><rect x={-90} y={-40} width={180} height={80} rx={22} fill={on ? c : '#fff'} stroke={KC.ink} strokeWidth={7} />
               <text y={18} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>{t}</text></g>; })}
         </g>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.2} anio="2022" quien="Lancaster (Inglaterra) y Berkeley (California)" revista="Nightingale y Farid · PNAS" y={340} />
-      <Chip T={T} at={K.E + 3.6} until={K.V - 0.2} texto="315 personas" x={250} y={820} tam={44} borde={KC.ink} />
-      <Chip T={T} at={K.E + 4.2} until={K.V - 0.2} texto="128 caras c/u" x={250} y={930} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.E + 5.6} until={K.V - 0.2} texto="IA: StyleGAN2" x={250} y={1040} tam={36} mono borde={KC.cyan} />
+      <Chip T={T} at={K.E + 3.6} until={K.V - 0.2} texto="315 personas" x={225} y={830} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.E + 4.2} until={K.V - 0.2} texto="128 caras c/u" x={225} y={940} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.E + 5.6} until={K.V - 0.2} texto="IA: StyleGAN2" x={225} y={1050} tam={36} mono borde={KC.cyan} />
 
       {/* 3 · 48 % contra un volado */}
       <Escena T={T} a={K.V} b={K.En}>
         <FondoLunares color={KC.yellow} />
         {/* pase a mano cine: las dos caras (A o B) atenuadas a los lados y la moneda entre ellas desde el inicio */}
-        {svg(<><g opacity={0.4}><DosCaras T={T} xa={170} xb={910} y={1100} s={0.55} /></g>
-          <g opacity={klerp(0.5, 1, kprog(T, K.V + 1.8, K.V + 2.2))}><Moneda x={540} y={1080} T={T} r={180} /></g></>)}
+        {svg(<><g opacity={0.45}><DosCaras T={T} xa={175} xb={905} y={1150} s={0.7} /></g>
+          <g opacity={klerp(0.5, 1, kprog(T, K.V + 1.8, K.V + 2.2))}><Moneda x={540} y={1130} T={T} r={215} /></g></>)}
       </Escena>
-      <NumeroGigante T={T} at={K.V + 0.2} until={K.En - 0.2} valor={48} dur={1.0} sufijo=" %" etiqueta="aciertos" x={540} y={620} tam={230} color={KC.red} />
-      <Chip T={T} at={K.V + 2.2} until={K.En - 0.2} texto="volado: 50 %" x={540} y={1420} tam={40} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.V + 0.2} until={K.En - 0.2} valor={48} dur={1.0} sufijo=" %" etiqueta="aciertos" x={540} y={640} tam={230} color={KC.red} />
+      <Chip T={T} at={K.V + 2.2} until={K.En - 0.2} texto="volado: 50 %" x={540} y={1480} tam={40} borde={KC.ink} />
 
       {/* 4 · con entrenamiento: apenas mejor */}
       <Escena T={T} a={K.En} b={K.P}>
@@ -244,32 +247,32 @@ function CarasFalsas() {
       <Escena T={T} a={K.Co} b={K.Pm}>
         <FondoLunares color={KC.cyan} />
         {/* pase a mano cine: una cara bajo cada barra (todo es dibujo); estrellas y barras bajadas */}
-        {svg(<><Estrellas T={T} at={K.Co + 0.3} x={90} y={540} llenas={5} />
-          {[[340, 5], [740, 12]].map(([cx, i]) => <Retrato key={cx} x={cx} y={1340} s={0.55} letra=""><Cara x={0} y={-20} s={1.1} T={T} fase={i} {...caraAzar(i)} /></Retrato>)}</>)}
+        {svg(<><Estrellas T={T} at={K.Co + 0.05} x={306} y={560} llenas={5} />
+          {[[330, 5], [750, 12]].map(([cx, i]) => <Retrato key={cx} x={cx} y={1330} s={0.72} letra=""><Cara x={0} y={-20} s={1.1} T={T} fase={i} {...caraAzar(i)} /></Retrato>)}</>)}
       </Escena>
-      <Comparativa T={T} at={K.Co + 1.6} until={K.Pm - 0.2} max={7} y={680} alto={400}
-        izq={{ valor: 4.48, texto: '4.48', etiqueta: 'caras reales', color: KC.paper }} der={{ valor: 4.82, texto: '4.82', etiqueta: 'caras de IA', color: KC.yellow }} />
-      <Chip T={T} at={K.Co + 0.6} until={K.Co + 3.3} texto="confianza: 1 a 7" x={820} y={540} tam={34} borde={KC.ink} />
+      <Comparativa T={T} at={K.Co + 1.2} until={K.Pm - 0.2} max={7} y={680} alto={400}
+        izq={{ valor: 4.48, texto: '4.48', etiqueta: 'caras reales', color: KC.cyan }} der={{ valor: 4.82, texto: '4.82', etiqueta: 'caras de IA', color: KC.yellow }} />
+      <Chip T={T} at={K.Co + 0.6} until={K.Co + 3.3} texto="confianza: 1 a 7" x={540} y={455} tam={34} borde={KC.ink} />
 
       {/* 7 · la cara promedio (hipótesis) — por dentro de la máquina */}
       <Escena T={T} a={K.Pm} b={K.S}>
         <FondoCircuito T={T} />
         {svg(<>
-          {Array.from({ length: 8 }, (_, i) => { const a = (i / 8) * Math.PI * 2 + T * 0.3, R = klerp(330, 0, junta);
-            return <g key={i} opacity={1 - junta * 0.9}><Cara x={540 + Math.cos(a) * R} y={880 + Math.sin(a) * R * 0.9} s={klerp(0.42, 0.9, junta)} T={T} fase={i} {...caraAzar(i + 30)} /></g>; })}
-          <g opacity={kprog(T, K.Pm + 2.2, K.Pm + 3.0)}><circle cx={540} cy={880} r={250} fill="none" stroke={KC.yellow} strokeWidth={8} strokeDasharray="20 14" />
-            <Cara x={540} y={860} s={1.0} T={T} piel="#d4a07c" pelo="#4a3324" ropa={KC.teal} peinado="corto" sonrisa={0.65} /></g>
+          {Array.from({ length: 8 }, (_, i) => { const a = (i / 8) * Math.PI * 2 + T * 0.3, R = klerp(370, 0, junta);
+            return <g key={i} opacity={1 - junta * 0.9}><Cara x={540 + Math.cos(a) * R} y={960 + Math.sin(a) * R * 1.05} s={klerp(0.55, 1.1, junta)} T={T} fase={i} {...caraAzar(i + 30)} /></g>; })}
+          <g opacity={kprog(T, K.Pm + 2.2, K.Pm + 3.0)}><circle cx={540} cy={960} r={330} fill="none" stroke={KC.yellow} strokeWidth={8} strokeDasharray="20 14" />
+            <Cara x={540} y={930} s={1.3} T={T} piel="#d4a07c" pelo="#4a3324" ropa={KC.teal} peinado="corto" sonrisa={0.65} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.Pm + 2.6} until={K.S - 0.2} texto="cara «promedio»" x={540} y={520} tam={40} borde={KC.yellow} />
-      <Chip T={T} at={K.Pm + 1.0} until={K.S - 0.2} texto="hipótesis de los autores" x={540} y={1120} tam={34} borde={KC.cyan} />
+      <Chip T={T} at={K.Pm + 2.6} until={K.S - 0.2} texto="cara «promedio»" x={540} y={560} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.Pm + 1.0} until={K.S - 0.2} texto="hipótesis de los autores" x={540} y={1370} tam={34} borde={KC.cyan} />
 
       {/* 8 · 2023: caras blancas de IA, más «humanas» · los que más fallan, más seguros */}
       <Escena T={T} a={K.S} b={K.Cs}>
         <FondoLunares color={KC.lilac} />
         {/* pase a mano cine: las caras del reto atenuadas abajo mientras están la tarjeta y las barras; luego las dos personas 1.4× y al centro */}
-        {T < S2 + 0.2 && svg(<g opacity={0.4 * (1 - kprog(T, S2 - 0.3, S2 + 0.2))}><DosCaras T={T} xa={300} xb={780} y={1270} s={0.6} /></g>)}
-        {T > S2 - 0.3 && svg(<g opacity={kprog(T, S2 - 0.3, S2 + 0.2)} transform="translate(540 1000) scale(1.4) translate(-820 -1000)">
+        {T < S2 + 0.2 && svg(<g opacity={0.45 * (1 - kprog(T, S2 - 0.3, S2 + 0.2))}><DosCaras T={T} xa={300} xb={780} y={1300} s={0.75} /></g>)}
+        {T > S2 - 0.3 && svg(<g opacity={kprog(T, S2 - 0.3, S2 + 0.2)} transform="translate(540 1070) scale(1.6) translate(-820 -1000)">
           <Persona x={700} y={1130} T={T} falla={0.85} seguro={0.9} crece={kprog(T, S2, S2 + 0.9, kEase.sale)} cara={3} />
           <Persona x={940} y={1130} T={T} falla={0.3} seguro={0.45} crece={kprog(T, S2 + 0.4, S2 + 1.3, kEase.sale)} cara={8} />
         </g>)}
