@@ -227,15 +227,15 @@ function FlavrSavr() {
       {/* 4–5 · por dentro: pectina y la enzima que la corta */}
       <Escena T={T} a={K.Pe} b={K.Ar} zoom={0.03}>
         <FondoLunares color={KC.pink} />
-        <SvgCapa><Jitomate x={540} y={1250} r={150} m={1} rot={Math.sin(T) * 3} /></SvgCapa>
-        <Lupa T={T} at={K.Pe + 0.2} until={K.Ar - 0.3} x={540} y={780} r={390} fx={560} fy={1262} tinte={KC.gold2} etiqueta="AL MICROSCOPIO · JITOMATE"
+        <SvgCapa><Jitomate x={540} y={1310} r={150} m={1} rot={Math.sin(T) * 3} /></SvgCapa>
+        <Lupa T={T} at={K.Pe + 0.2} until={K.Ar - 0.3} x={540} y={860} r={390} fx={560} fy={1322} tinte={KC.gold2} etiqueta="AL MICROSCOPIO · JITOMATE"
           interior={(Tl, r) => <Celulas T={Tl} r={r} k={390 / 290} corte={corte} tijeras={kprog(Tl, K.En + 0.3, K.En + 0.6)} />} />
       </Escena>
       {/* 6–7 · el gen al revés */}
       <Escena T={T} a={K.Ar} b={K.Ma}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(180,200,255,.25)" />
-        <SvgCapa><Zm k={1.28} cx={550} cy={830} tx={600} ty={900}>
+        <SvgCapa><Zm k={1.32} cx={550} cy={830} tx={600} ty={1000}>
           <ADNHebra T={T} x={250} y={700} largo={600} alto={80} vueltas={3} />
           <g opacity={kprog(T, K.Ar + 0.2, K.Ar + 0.6)} transform={`rotate(${gira * 180} 550 ${klerp(860, 860, 1)})`}>
             <ADNHebra T={T} x={250} y={860} largo={600} alto={80} vueltas={3} colores={[KC.gold2, KC.orange, KC.gold2, KC.coral]} />
@@ -254,7 +254,7 @@ function FlavrSavr() {
       {/* 8 · madurar en la mata */}
       <Escena T={T} a={K.Ma} b={K.F}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa><Mata T={T} x={540} y={1420} s={1.35} m={madura(K.Ma + 0.4)} /></SvgCapa>
+        <SvgCapa><Mata T={T} x={540} y={1480} s={1.35} m={madura(K.Ma + 0.4)} /></SvgCapa>
       </Escena>
       {/* 9 · FDA, mayo de 1994, y el anaquel */}
       <Escena T={T} a={K.F} b={K.Pr}>
@@ -327,9 +327,9 @@ function FlavrSavr() {
       <Chip T={T} at={K.Pe + 0.8} until={K.En - 0.1} texto="pectina = el pegamento" y={1500} tam={44} borde={KC.gold2} />
       <Chip T={T} at={K.En + 0.4} until={K.Ar - 0.3} texto="poligalacturonasa (PG)" y={1500} tam={44} borde={PG} />
       <Chip T={T} at={K.Ar + 0.5} until={K.Ap - 0.1} texto="gen antisentido (al revés)" y={1500} tam={44} borde={KC.gold2} />
-      <Etq T={T} at={K.Ar + 0.3} until={K.Ap - 0.2} x={216} y={618} texto="gen de la PG" tam={32} />
-      <Etq T={T} at={K.Ap + 0.4} until={K.Ma - 0.3} x={946} y={1233} texto="mensaje + copia al revés" lado="izq" tam={30} />
-      <Chip T={T} at={K.Ma + 0.4} until={K.F - 0.2} texto="la idea: madurar en la mata" y={1500} tam={44} borde={KC.leaf} />
+      <Etq T={T} at={K.Ar + 0.3} until={K.Ap - 0.2} x={200} y={730} texto="gen de la PG" tam={32} />
+      <Etq T={T} at={K.Ap + 0.4} until={K.Ma - 0.3} x={946} y={1350} texto="mensaje + copia al revés" lado="izq" tam={30} />
+      <Chip T={T} at={K.Ma + 0.4} until={K.F - 0.2} texto="la idea: madurar en la mata" y={1555} tam={44} borde={KC.leaf} />
       <Chip T={T} at={K.F + 2.6} until={K.Pr - 0.2} texto="a los 3 días: a la venta" y={1500} tam={44} borde={ROJO} />
       <Chip T={T} at={K.Es + 5.6} until={K.Fr - 0.2} texto="apenas un poco más firme" y={1500} tam={44} borde={PG} />
       <Chip T={T} at={f1 + 0.3} until={f2 - 0.1} texto="se maltrataba en el viaje" y={1500} tam={44} borde={ROJO} />
