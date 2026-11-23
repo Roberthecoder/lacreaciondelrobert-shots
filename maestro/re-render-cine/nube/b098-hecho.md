@@ -1,2 +1,4 @@
 - qui-40-mayonesa: Gancho y Cierre: frasco 1.8→1.65 y 30 px más adentro, lupa r 258→245 (con la cámara del gancho el frasco y «MAYONESA» se cortaban a la izquierda y la lupa a la derecha). Lo demás ya cumplía (vaso por capas, gotas, escudo, tazones del estudio, ley). Sin láminas · encuadre bien.
 - ia-40-envenenar-250: Estudio: los cuatro robots 1.2× (misma proporción entre ellos), repartidos y con rótulos de 42 px para que «600 M» y «2 mil M» ya no se encimen. Lo demás ya cumplía (biblioteca a pantalla completa, documento, chats, panda, pilas, lupa, cierre). Sin láminas · encuadre bien.
+- fun-111-cortinarius: Gancho: el calendario de los días (1→14) más abajo y hacia adentro, un poco más chico (con la cámara del gancho tapaba el logo de arriba a la izquierda); ya no choca con el chip ni con «ya estoy a salvo». Lo demás ya cumplía. Sin láminas · encuadre bien.
+GRUPO TERMINADO

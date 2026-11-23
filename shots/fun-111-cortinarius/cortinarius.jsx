@@ -195,7 +195,7 @@ function CortinariusShot() {
         {fsvg(<>
           <Sarten T={T} x={500} y={1090} s={1.6} calor={1} />
           <g opacity={kprog(T, K.G + 1.4, K.G + 1.8) * (1 - kprog(T, K.G + 4.4, K.G + 4.8))}><Reloj x={540} y={470} r={150} horas={horas} /></g>
-          {T > K.G + 4.4 && <g opacity={kprog(T, K.G + 4.4, K.G + 4.8)}><Calendario x={260} y={480} s={1.45} dia={diasG} /></g>}
+          {T > K.G + 4.4 && <g opacity={kprog(T, K.G + 4.4, K.G + 4.8)}><Calendario x={300} y={545} s={1.3} dia={diasG} /></g>}   {/* belleza: más abajo y adentro (con la cámara del gancho tapaba el logo de arriba a la izquierda) */}
         </>)}
       </Escena>
       {/* 2 · el hongo: joven con cortina y adulto */}
