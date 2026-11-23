@@ -92,7 +92,7 @@ function Mamografias() {
       {/* 4 · la IA califica del 1 al 10 y reparte */}
       <Escena T={T} a={K.Tr} b={K.P}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>
+        {svg(<g transform="translate(0 130)">
           <rect x={-60} y={772} width={KW + 120} height={30} fill="#323033" />
           {Array.from({ length: 14 }, (_, i) => <rect key={i} x={((i * 80 + T * 160) % 1120) - 40} y={777} width={34} height={20} fill="#8a8f99" />)}
           <Robotito x={540} y={450} s={0.9} T={T} cara="seguro" />
@@ -107,12 +107,13 @@ function Mamografias() {
             const x = klerp(klerp(-120, 540, u1), alto ? 800 : 280, u2), y = klerp(670, 1030, u2), sc2 = klerp(0.5, 0.38, u2), op = 1 - kprog(T, t0 + 1.25, t0 + 1.5);
             return <g key={i} opacity={op}><Mamo x={x} y={y} s={sc2} seed={i + 4} />
               {T > t0 + 0.45 && <g transform={`translate(${x + 66} ${y - 104}) scale(1.3)`}><circle r={34} fill={alto ? KC.red : KC.mint} stroke={KC.ink} strokeWidth={5} /><text y={13} textAnchor="middle" style={{ font:`400 38px ${KF.titulo}` }} fill={KC.ink}>{sc}</text></g>}</g>; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.N} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>)}
+        {svg(<><g opacity={kprog(T, K.P, K.P + 0.5)}><Mamo x={540} y={1030} s={1.75} seed={7} /></g>
+          <text x={900} y={720} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 900 640)`}>?</text></>)}
       </Escena>
       {/* 6 · el número */}
       <Escena T={T} a={K.N} b={K.E}>
@@ -122,7 +123,9 @@ function Mamografias() {
       {/* 7 · el estudio */}
       <Escena T={T} a={K.E} b={K.Ch}>
         <FondoLunares color={KC.mint} />
-        {svg(<g opacity={0.34}>{Array.from({ length: 30 }, (_, i) => <Mamo key={i} x={130 + (i % 5) * 205} y={330 + Math.floor(i / 5) * 252} s={0.6} seed={i + 2} />)}</g>)}
+        {svg(<g>{Array.from({ length: 30 }, (_, i) => { const orden = (i * 7) % 30, luz = kprog(T, K.E + 1.4 + orden * 0.04, K.E + 1.9 + orden * 0.04);
+          return <g key={i} opacity={0.3 + 0.32 * luz}><Mamo x={130 + (i % 5) * 205} y={330 + Math.floor(i / 5) * 252} s={0.6} seed={i + 2} /></g>; })}
+          <ellipse cx={540} cy={1000} rx={470} ry={190} fill="#0a0f1c" opacity={0.72 * kprog(T, K.E + 1.3, K.E + 1.8)} /></g>)}
       </Escena>
       {/* 8 · cánceres chicos y falsas alarmas (rayos X) */}
       <Escena T={T} a={K.Ch} b={K.I}>
@@ -137,22 +140,25 @@ function Mamografias() {
       <Escena T={T} a={K.I} b={K.O}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <Mamo x={200} y={420} s={1.0} seed={5} /><Mamo x={880} y={420} s={1.0} seed={9} />
+          <g transform="translate(0 200)">
+          <Mamo x={200} y={440} s={1.1} seed={5} /><Mamo x={880} y={440} s={1.1} seed={9} />
           <line x1={200} y1={700} x2={880} y2={700} stroke={KC.ink} strokeWidth={10} strokeLinecap="round" />
           {[200, 880].map((xx, i) => <g key={i}><circle cx={xx} cy={700} r={34} fill={KC.paper} stroke={KC.ink} strokeWidth={8} /><text x={xx} y={780} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>revisión</text></g>)}
           <text x={540} y={665} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={KC.ink}>hasta 2 años</text>
           <circle cx={klerp(200, 880, kprog(T, K.I + 0.2, K.I + 2.2, kEase.suave))} cy={700} r={18} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
+          </g>
         </>)}
       </Escena>
       {/* 10 · ojo: dónde y con qué */}
       <Escena T={T} a={K.O} b={K.C}>
         <FondoLunares color={KC.orange} />
-        {svg(<>
-          <path d="M 140 620 Q 300 520 520 560 Q 760 520 930 640 Q 960 820 860 960 Q 700 1080 520 1040 Q 300 1080 180 960 Q 90 800 140 620 Z" fill="#2c3040" stroke={KC.ink} strokeWidth={8} />
+        {svg(<g transform="translate(540 960) scale(1.2) translate(-540 -820)">
+          <defs><radialGradient id="mapaGrad" cx="0.4" cy="0.35" r="0.8"><stop offset="0" stopColor="#3b4258" /><stop offset="1" stopColor="#1e2230" /></radialGradient></defs>
+          <path d="M 140 620 Q 300 520 520 560 Q 760 520 930 640 Q 960 820 860 960 Q 700 1080 520 1040 Q 300 1080 180 960 Q 90 800 140 620 Z" fill="url(#mapaGrad)" stroke={KC.ink} strokeWidth={8} />
           {[['Malmö', 300, 900], ['Lund', 520, 760], ['Landskrona', 400, 640], ['Trelleborg', 720, 940]].map(([n, px, py], i) => { const e = kprog(T, K.O + 0.3 + i * 0.3, K.O + 0.6 + i * 0.3, kEase.rebote);
             return <g key={n} transform={`translate(${px} ${py}) scale(${e})`}><path d="M 0 0 C -30 -40 -30 -80 0 -80 C 30 -80 30 -40 0 0 Z" fill={KC.red} stroke={KC.ink} strokeWidth={5} /><circle cy={-55} r={11} fill="#fff" /><text y={46} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>{n}</text></g>; })}
           <text x={540} y={1120} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>(mapa esquemático · sur de Suecia)</text>
-        </>)}
+        </g>)}
       </Escena>
       {/* 11 · cierre: la misma imagen del inicio */}
       <Escena T={T} a={K.C} b={FIN}>
@@ -166,16 +172,16 @@ function Mamografias() {
       <Etq T={T} at={K.M + 0.6} until={K.D - 0.2} x={210} y={1370} texto="rayos X de la mama" color={KC.ink} tam={30} />
       <Etq T={T} at={K.M + 1.4} until={K.D - 0.2} x={210} y={1430} texto="busca cáncer a tiempo" color={KC.ink} tam={30} />
       <Chip T={T} at={K.D + 0.4} until={K.Tr - 0.2} texto="Suecia: 2 lecturas por mamografía" y={330} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.Tr + 0.2} until={K.P - 0.2} texto="la IA califica del 1 al 10" x={540} y={235} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.Tr + 0.2} until={K.P - 0.2} texto="la IA califica del 1 al 10" x={540} y={330} tam={40} borde={KC.ink} />
       <BarrasDec T={T} at={K.N + 0.4} until={K.E - 0.2} top={1010} max={8} unidad="" filas={[{ valor: 6.4, etiqueta: 'con IA', color: VERDE, tinta: KC.ink }, { valor: 5.0, etiqueta: 'sin IA', color: AZUL, tinta: KC.ink, at: K.N + 2.6 }]} />
       <Chip T={T} at={K.N + 0.6} until={K.E - 0.2} texto="cánceres por cada 1,000 mujeres" x={540} y={280} tam={36} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ch - 0.3} anio="MASAI" quien="Suecia · Universidad de Lund" revista="Kristina Lång y equipo · 2021–2022" y={520} />
-      <NumeroGigante T={T} at={K.E + 1.5} until={K.Ch - 0.3} valor={105934} dur={1.2} etiqueta="mujeres" y={940} tam={150} color={KC.yellow} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ch - 0.3} anio="MASAI" quien="Suecia · Universidad de Lund" revista="Kristina Lång y equipo · 2021–2022" y={420} />
+      <NumeroGigante T={T} at={K.E + 1.5} until={K.Ch - 0.3} valor={105934} dur={1.2} etiqueta="mujeres" y={1000} tam={170} color={KC.yellow} />
       <Chip T={T} at={K.Ch + 1.4} until={K.I - 0.3} texto="pequeños · sin llegar a ganglios" x={540} y={1340} tam={38} borde={KC.yellow} />
       <Chip T={T} at={K.Ch + 3.4} until={K.I - 0.3} texto="falsas alarmas: casi iguales" x={540} y={1440} tam={38} borde={KC.leaf} />
-      <BarrasDec T={T} at={K.I + 2.4} until={K.O - 0.2} top={860} max={2.2} dec={2} filas={[{ valor: 1.55, etiqueta: 'con IA', color: VERDE, tinta: KC.ink }, { valor: 1.76, etiqueta: 'sin IA', color: AZUL, tinta: KC.ink, at: K.I + 3.2 }]} />
-      <Chip T={T} at={K.I + 4.4} until={K.O - 0.2} texto="por cada 1,000 · no aumentaron ✔" x={540} y={1340} tam={36} borde={KC.leaf} />
-      <Chip T={T} at={K.O + 1.8} until={K.C - 0.2} texto="1 programa de IA (Transpara)" x={540} y={420} tam={40} borde={KC.ink} />
+      <BarrasDec T={T} at={K.I + 2.4} until={K.O - 0.2} top={1060} max={2.2} dec={2} filas={[{ valor: 1.55, etiqueta: 'con IA', color: VERDE, tinta: KC.ink }, { valor: 1.76, etiqueta: 'sin IA', color: AZUL, tinta: KC.ink, at: K.I + 3.2 }]} />
+      <Chip T={T} at={K.I + 4.4} until={K.O - 0.2} texto="por cada 1,000 · no aumentaron ✔" x={540} y={1500} tam={36} borde={KC.leaf} />
+      <Chip T={T} at={K.O + 1.8} until={K.C - 0.2} texto="1 programa de IA (Transpara)" x={540} y={440} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.C + 1.8} until={K.Ou} texto="la IA no trabajó sola ✔" x={540} y={430} tam={40} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
