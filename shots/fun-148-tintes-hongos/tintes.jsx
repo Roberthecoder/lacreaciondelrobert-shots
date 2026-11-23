@@ -210,7 +210,7 @@ function TintesShot() {
   const K = { G: CUES.Gancho, H: CUES.Hongo, Pi: CUES.Pigmento, Ex: CUES.Extrae, Mo: CUES.Mordiente, Pu: CUES.Puente, P: CUES.Pregunta, Co: CUES.Colores, R: CUES.Rice, E: CUES.Estudio, V: CUES.Veneno, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   // gancho: la madeja cae y rebota (se mueve desde el cuadro 0)
-  const caeY = (() => { const u = kprog(T, K.G, K.G + 0.55); const b = kprog(T, K.G + 0.55, K.G + 0.9); return klerp(400, 700, u * u) - Math.sin(Math.PI * b) * 60; })();
+  const caeY = (() => { const u = kprog(T, K.G, K.G + 0.55); const b = kprog(T, K.G + 0.55, K.G + 0.9); return klerp(560, 880, u * u) - Math.sin(Math.PI * b) * 60 - 180 * kprog(T, K.G + 1.8, K.G + 2.6, kEase.suave); })();
   const aplasta = T > K.G + 0.5 && T < K.G + 0.75 ? 1 - 0.12 * Math.sin(Math.PI * kprog(T, K.G + 0.5, K.G + 0.75)) : 1;
   // extracción
   const corte = (k) => kprog(T, K.Ex + 0.25 + k * 0.32, K.Ex + 0.4 + k * 0.32);
@@ -320,10 +320,13 @@ function TintesShot() {
       <Escena T={T} a={K.Co} b={K.R} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
+          {/* las dos madejas empiezan al centro y suben cuando entran las otras setas */}
+          <g transform={`translate(0 ${klerp(300, 0, kprog(T, K.Co + 2.2, K.Co + 2.9, kEase.suave))})`}>
           <g transform={`translate(0 ${(1 - kprog(T, K.Co, K.Co + 0.4, kEase.sale)) * 60})`}><Madeja T={T} x={265} y={600} s={0.96} /></g>
           <TxtS x={265} y={770} t="alumbre" tam={36} o={kprog(T, K.Co + 0.3, K.Co + 0.6)} />
           {kprog(T, K.Co + 0.5, K.Co + 0.9) > 0 && <g transform={`translate(0 ${(1 - kprog(T, K.Co + 0.5, K.Co + 0.9, kEase.sale)) * 60})`}><Madeja T={T} x={790} y={600} s={0.96} color={TX.hierro} claro={TX.hierro2} oscuro="#3e161a" /></g>}
           <TxtS x={790} y={770} t="hierro" tam={36} o={kprog(T, K.Co + 0.8, K.Co + 1.1)} />
+          </g>
           {/* Phaeolus schweinitzii → amarillo limón */}
           <Phaeolus x={270} y={1100} s={1.35} p={kprog(T, K.Co + 2.3, K.Co + 2.8)} />
           <Madeja T={T} x={250} y={1300} s={0.78} color={TX.limon} claro={TX.limon2} oscuro="#b8a520" op={kprog(T, K.Co + 2.5, K.Co + 2.9)} />
@@ -363,8 +366,8 @@ function TintesShot() {
       <Escena T={T} a={K.V} b={K.C} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 30% 50%, #3a1414 0%, #140808 75%)' }}></div>
         {fsvg(<>
-          <SetaSangre T={T} x={330} y={1090} s={1.9} crece={kprog(T, K.V + 0.4, K.V + 1.2)} sombrero={TX.orellanus} lamina="#c0742e" pie="#d9a060" />
-          <SetaSangre T={T} x={740} y={1100} s={2.0} rot={6} crece={kprog(T, K.V + 0.9, K.V + 1.7)} sombrero={TX.rubellus} lamina="#a35a2a" pie="#c98a50" ancho={120} alto={190} />
+          <SetaSangre T={T} x={330} y={1090} s={1.9} crece={kprog(T, K.V - 0.3, K.V + 0.6)} sombrero={TX.orellanus} lamina="#c0742e" pie="#d9a060" />
+          <SetaSangre T={T} x={740} y={1100} s={2.0} rot={6} crece={kprog(T, K.V + 0.1, K.V + 1.0)} sombrero={TX.rubellus} lamina="#a35a2a" pie="#c98a50" ancho={120} alto={190} />
           <Sello T={T} at={K.V + 2.1} x={535} y={840} texto="NO" color={KC.red} r={150} rot={-10} />
           <Rinon x={330} y={1340} s={1.0} apaga={kprog(T, K.V + 3.4, K.V + 4.6)} />
         </>)}
