@@ -224,6 +224,8 @@ function UmamiShot() {
         {fsvg(<g transform="translate(60 940) scale(1.15) translate(-60 -880)">
           {(() => { const cortes = Math.floor(kprog(T, K.Ti + 1.0, K.Ti + 3.6) * 5.99); const tx = 90 + Math.min(cortes + 1, 5) * 150 - 100;
             return <>
+              <g opacity={0.4}><HebraARN T={T + 0.7} x={40} y={1050} w={900} cortes={0} n={6} /></g>
+              <g opacity={0.25}><HebraARN T={T + 1.4} x={120} y={1200} w={900} cortes={0} n={6} /></g>
               <HebraARN T={T} x={90} y={880} w={900} cortes={cortes} n={6} />
               {T > K.Ti + 0.5 && <Tijeras x={tx} y={830} s={1} abre={0.5 + 0.5 * Math.sin(T * 14)} />}
               {Array.from({ length: cortes }, (_, i) => { const t0 = K.Ti + 1.0 + (i + 1) * 0.43; const k = kprog(T, t0, t0 + 0.9, kEase.sale);
