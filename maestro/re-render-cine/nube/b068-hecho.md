@@ -1,0 +1,1 @@
+- fun-79-cuero-micelio: revisado escena por escena: composición y escala ya cumplían; rótulos «(quitina + glucanos)», «(una proteína)» y «(muchas veces)» subidos de 24 a 27 px para que se lean. Encuadre bien, sin láminas.
