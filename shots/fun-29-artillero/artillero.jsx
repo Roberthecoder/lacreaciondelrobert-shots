@@ -187,8 +187,8 @@ function ArtilleroShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <Corte T={T} x={540} y={880} s={1.3} carga={kprog(T, K.Pr + 0.3, K.D + 1.0)} volteo={kprog(T, LANZA - 0.07, LANZA, kEase.sale)} lanzo={LANZA} tiembla={T > K.D + 0.6 && T < LANZA ? 1 : 0} />
-          {T < LANZA + 0.1 && Array.from({ length: 14 }, (_, i) => { const t0 = K.Pr + 0.2 + i * 0.16, u = kprog(T, t0, t0 + 0.9); const a = -0.5 + (i % 7) * 0.17; return u > 0 && u < 1 ? <circle key={i} cx={540 + (i % 2 ? 1 : -1) * klerp(500, 200, u)} cy={klerp(1300, 1010 - (i % 7) * 6, u)} r={14} fill={AR.agua} stroke={KC.ink} strokeWidth={3} /> : null; })}
+          <Corte T={T} x={540} y={990} s={1.45} carga={kprog(T, K.Pr + 0.3, K.D + 1.0)} volteo={kprog(T, LANZA - 0.07, LANZA, kEase.sale)} lanzo={LANZA} tiembla={T > K.D + 0.6 && T < LANZA ? 1 : 0} />
+          {T < LANZA + 0.1 && Array.from({ length: 14 }, (_, i) => { const t0 = K.Pr + 0.2 + i * 0.16, u = kprog(T, t0, t0 + 0.9); const a = -0.5 + (i % 7) * 0.17; return u > 0 && u < 1 ? <circle key={i} cx={540 + (i % 2 ? 1 : -1) * klerp(500, 200, u)} cy={klerp(1410, 1120 - (i % 7) * 6, u)} r={14} fill={AR.agua} stroke={KC.ink} strokeWidth={3} /> : null; })}
           {T > K.D + 1.6 && T < LANZA + 0.4 && <g opacity={kprog(T, K.D + 1.6, K.D + 1.9) * (1 - kprog(T, LANZA, LANZA + 0.4))}>
             <circle cx={800} cy={540} r={150} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
             <line x1={690} y1={620} x2={910} y2={620} stroke={KC.ink} strokeWidth={6} />
@@ -219,9 +219,12 @@ function ArtilleroShot() {
       {/* 9 · hasta ~6 m de lejos y más de 2 m de alto */}
       <Escena T={T} a={K.Di} b={K.Pe} zoom={0.03} origen="50% 70%">
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
-          <Astillas x={60} y={1180} w={240} h={700} n={20} seed={11} fondo="#432a18" />
-          <rect x={300} y={1180} width={780} height={700} fill="#3a4047" stroke={KC.ink} strokeWidth={6} />
+        {fsvg(<g transform="translate(560 1160) scale(1.22) translate(-585 -1180)">
+          <defs><linearGradient id="artBanqueta" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#4a525c" /><stop offset=".35" stopColor="#262b33" /><stop offset="1" stopColor="#10141b" stopOpacity="0" /></linearGradient></defs>
+          <Astillas x={60} y={1180} w={240} h={560} n={20} seed={11} fondo="#432a18" />
+          <rect x={300} y={1180} width={900} height={560} fill="url(#artBanqueta)" />
+          <line x1={300} y1={1182} x2={1200} y2={1182} stroke="#8a929c" strokeWidth={6} />
+          {[0, 1, 2, 3].map((i) => <line key={i} x1={380 + i * 230} y1={1250} x2={500 + i * 230} y2={1250} stroke="#8a929c" strokeWidth={5} opacity=".35" />)}
           <Coche T={T} x={780} y={1180} w={300} manchas={[[0.5, -0.2, K.Di + 2.2]]} />
           <Persona x={560} y={1180} alto={233} />
           <Tiro x0={180} y0={1175} x1={930} y1={1120} alto={300} p={kprog(T, K.Di + 0.4, K.Di + 2.2, kEase.suave)} />
@@ -234,16 +237,18 @@ function ArtilleroShot() {
             <path d="M 120 906 l -14 22 l 28 0 Z" fill={KC.ink} />
             <line x1={100} y1={906} x2={700} y2={906} stroke={KC.ink} strokeWidth={3} strokeDasharray="10 10" />
           </g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 10 · se pega en la pintura; rasparla daña y mancha */}
       <Escena T={T} a={K.Pe} b={K.E} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <rect x={60} y={700} width={960} height={470} rx={40} fill="#fbfbf8" stroke={KC.ink} strokeWidth={9} />
-          <path d="M 100 760 Q 540 720 980 760" stroke="#ffffff" strokeWidth={18} fill="none" opacity={0.8} />
+          <defs><linearGradient id="artPintura" x1="0" x2=".4" y1="0" y2="1"><stop offset="0" stopColor="#ffffff" /><stop offset=".6" stopColor="#eef0f2" /><stop offset="1" stopColor="#cfd5dc" /></linearGradient></defs>
+          <ellipse cx={540} cy={1330} rx={470} ry={34} fill="rgba(0,0,0,.35)" />
+          <rect x={60} y={620} width={960} height={680} rx={40} fill="url(#artPintura)" stroke={KC.ink} strokeWidth={9} />
+          <path d="M 100 690 Q 540 650 980 690" stroke="#ffffff" strokeWidth={18} fill="none" opacity={0.8} />
           {(() => { const llega = kprog(T, K.Pe + 0.05, K.Pe + 0.35), raspa = kprog(T, K.Pe + 1.8, K.Pe + 2.4, kEase.suave);
-            return <g transform="translate(440 935) scale(1.6) translate(-440 -930)">
+            return <g transform="translate(470 960) scale(2.0) translate(-440 -930)">
               {llega < 1 && <circle cx={klerp(-60, 440, llega)} cy={klerp(1300, 930, llega)} r={60} fill={AR.bolita} />}
               {llega >= 1 && raspa < 0.6 && <g><ellipse cx={440} cy={930} rx={120} ry={105} fill="rgba(214,160,60,.35)" stroke="rgba(150,100,30,.6)" strokeWidth={4} /><ellipse cx={440} cy={930} rx={82} ry={66} fill={AR.bolita} /><ellipse cx={418} cy={910} rx={20} ry={12} fill="#6d5e50" /></g>}
               {raspa > 0.5 && <g opacity={kprog(T, K.Pe + 2.1, K.Pe + 2.5)}><ellipse cx={440} cy={930} rx={96} ry={78} fill="rgba(120,80,40,.55)" />
@@ -257,7 +262,7 @@ function ArtilleroShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           {T > K.E - 0.4 && Array.from({ length: 27 }, (_, i) => {
-            const c = i % 9, f = Math.floor(i / 9), x = 70 + c * 106, y = 790 + f * 140, r = krng(i + 40);
+            const c = i % 9, f = Math.floor(i / 9), x = 70 + c * 106, y = 860 + f * 150, r = krng(i + 40);
             const vel = 0.55 + r() * 0.45, prog = kprog(T, ESTUDIO_T0 + 0.2, ESTUDIO_T0 + 0.2 + 4.2 / vel);
             const ent = kprog(T, K.E - 0.3 + i * 0.03, K.E + 0.0 + i * 0.03, kEase.rebote);
             return <g key={i} transform={`translate(${x + 46} ${y + 60}) scale(${ent}) translate(${-x - 46} ${-y - 60})`}>
@@ -271,12 +276,14 @@ function ArtilleroShot() {
       <Escena T={T} a={K.V} b={K.C} zoom={0.06}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <rect x={60} y={700} width={960} height={470} rx={40} fill="#fbfbf8" stroke={KC.ink} strokeWidth={9} />
-          <g transform="translate(540 940) scale(1.6) translate(-540 -960)">
+          <ellipse cx={540} cy={1330} rx={470} ry={34} fill="rgba(0,0,0,.35)" />
+          <rect x={60} y={620} width={960} height={680} rx={40} fill="url(#artPintura2)" stroke={KC.ink} strokeWidth={9} />
+          <defs><linearGradient id="artPintura2" x1="0" x2=".4" y1="0" y2="1"><stop offset="0" stopColor="#ffffff" /><stop offset=".6" stopColor="#eef0f2" /><stop offset="1" stopColor="#cfd5dc" /></linearGradient></defs>
+          <g transform="translate(540 960) scale(2.0) translate(-540 -960)">
           <ellipse cx={540} cy={960} rx={120} ry={105} fill="rgba(214,160,60,.35)" stroke="rgba(150,100,30,.6)" strokeWidth={4} />
           <ellipse cx={540} cy={960} rx={82} ry={66} fill={AR.bolita} />
           </g>
-          {[0, 1].map((k) => { const u = ((T - K.V) * 0.9 + k * 0.5) % 1; return <circle key={k} cx={540} cy={940} r={140 + u * 140} fill="none" stroke={KC.leaf} strokeWidth={8} opacity={(1 - u) * kprog(T, K.V + 0.4, K.V + 0.8)} />; })}
+          {[0, 1].map((k) => { const u = ((T - K.V) * 0.9 + k * 0.5) % 1; return <circle key={k} cx={540} cy={960} r={175 + u * 160} fill="none" stroke={KC.leaf} strokeWidth={8} opacity={(1 - u) * kprog(T, K.V + 0.4, K.V + 0.8)} />; })}
         </>)}
       </Escena>
       {/* 13 · cierre: el mismo coche del inicio, ahora lleno de manchitas, y de dónde salen */}
@@ -303,23 +310,23 @@ function ArtilleroShot() {
       <Chip T={T} at={K.Es + 2.6} until={K.Pr - 0.3} texto="peridiolo: bolita con esporas" x={420} y={1290} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.Es + 3.4} until={K.Pr - 0.3} x={660} y={790} texto="pegajosa" tam={36} color={KC.ink} />
       <Chip T={T} at={K.Pr + 0.1} until={LANZA + 1.2} texto="POR DENTRO · CORTE" x={330} y={430} tam={30} mono borde={KC.cyan} />
-      <Etq T={T} at={K.Pr + 0.6} until={K.D + 1.4} x={60} y={1240 - 60} texto="agua" tam={30} color={AR.agua} />
-      <Etq T={T} at={K.Pr + 1.0} until={LANZA - 0.2} x={1040} y={790} lado="izq" texto="capa interna" tam={30} color={AR.crema} />
+      <Etq T={T} at={K.Pr + 0.6} until={K.D + 1.4} x={60} y={1300} texto="agua" tam={30} color={AR.agua} />
+      <Etq T={T} at={K.Pr + 1.0} until={LANZA - 0.2} x={1075} y={1250} lado="izq" texto="capa interna" tam={28} color={AR.crema} />
       <Medidor T={T} at={K.Pr + 0.4} until={LANZA} valor={(t) => kprog(t, K.Pr + 0.4, K.D + 3.6)} etiqueta="presión" texto={(v) => (v > 0.97 ? '¡al tope!' : 'sube…')} x={60} y={540} ancho={420} color={KC.red} />
       <Chip T={T} at={K.D + 2.0} until={LANZA - 0.2} texto="juguete de goma" x={800} y={730} tam={26} borde={KC.pink} />
       <Chip T={T} at={LANZA + 0.05} until={K.P - 0.3} texto="¡PUM!" x={540} y={560} tam={80} borde={KC.red} />
-      <Etq T={T} at={LANZA + 0.8} until={K.P - 0.3} x={60} y={760} texto="capa interna volteada" tam={30} color={AR.crema} />
+      <Etq T={T} at={LANZA + 0.8} until={K.P - 0.3} x={60} y={700} texto="capa interna volteada" tam={30} color={AR.crema} />
       <Chip T={T} at={K.L + 1.0} until={K.Di - 0.3} texto="apunta a la luz y a lo claro" x={610} y={560} tam={36} borde={KC.yellow} />
       <Etq T={T} at={K.L + 2.0} until={K.Di - 0.3} x={20} y={680} texto="casa color crema" tam={26} color={KC.ink} />
       <Etq T={T} at={K.L + 2.4} until={K.Di - 0.3} x={560} y={830} texto="coche blanco" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Di + 1.2} until={K.Pe - 0.3} texto="hasta ~6 m" x={400} y={1075} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Di + 2.4} until={K.Pe - 0.3} texto="más de 2 m de alto" x={330} y={840} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Di + 1.2} until={K.Pe - 0.3} texto="hasta ~6 m" x={300} y={1060} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Di + 2.4} until={K.Pe - 0.3} texto="más de 2 m de alto" x={340} y={770} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.Pe + 0.5} until={K.E - 0.3} texto="seca, queda pegadísima" x={400} y={500} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.Pe + 2.6} until={K.E - 0.3} x={640} y={1010} texto="mancha" tam={30} color="#0b1020" />
-      <Chip T={T} at={K.Pe + 2.9} until={K.E - 0.3} texto="quítala mojada, antes de que se seque" x={540} y={1250} tam={30} borde={KC.leaf} />
+      <Etq T={T} at={K.Pe + 2.6} until={K.E - 0.3} x={700} y={1040} texto="mancha" tam={30} color="#0b1020" />
+      <Chip T={T} at={K.Pe + 2.9} until={K.E - 0.3} texto="quítala mojada, antes de que se seque" x={540} y={1400} tam={30} borde={KC.leaf} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={ESTUDIO_T0 - 0.4} anio="2004" quien="Penn State · EUA" revista="27 mantillos · publicado en 2004" y={480} />
       {T > ESTUDIO_T0 && T < K.V && <div style={{ position:'absolute', left:70, top:600, zIndex:42, font:`900 54px ${KF.texto}`, color:KC.ink, opacity:kprog(T, ESTUDIO_T0, ESTUDIO_T0 + 0.3) * (1 - kprog(T, K.V - 0.3, K.V)) }}>año {Math.min(4, 1 + Math.floor(kprog(T, ESTUDIO_T0 + 0.2, ESTUDIO_T0 + 4.6) * 4))} de ~4</div>}
-      <Chip T={T} at={ESTUDIO_T0 + 3.4} until={K.V - 0.3} texto="madera o corteza: todos lo dejaron disparar" x={540} y={740} tam={28} borde={KC.ink} />
+      <Chip T={T} at={ESTUDIO_T0 + 3.4} until={K.V - 0.3} texto="madera o corteza: todos lo dejaron disparar" x={540} y={770} tam={28} borde={KC.ink} />
       <NumeroGigante T={T} at={K.V + 0.4} until={K.C - 0.3} valor={10} dur={0.8} sufijo=" años" etiqueta="puede seguir viva más de" x={360} y={560} tam={150} color={KC.leaf} />
       <MitoTachado T={T} at={K.C + 0.3} tacharEn={K.C + 0.9} until={K.Ou} texto="lodo" x={260} y={600} tam={54} />
       <Chip T={T} at={K.C + 1.3} until={K.Ou} texto="balas de un hongo" x={330} y={720} tam={42} borde={KC.yellow} />
@@ -329,13 +336,13 @@ function ArtilleroShot() {
       <BarraEscala T={T} at={K.Ma} until={K.H} texto="10 cm" largo={150} />
       <BarraEscala T={T} at={K.H} until={K.Es} texto="2 mm" largo={176} />
       <BarraEscala T={T} at={K.Es} until={K.Pr} texto="1 mm" largo={240} />
-      <BarraEscala T={T} at={K.Pr} until={K.P} texto="0.5 mm" largo={180} />
+      <BarraEscala T={T} at={K.Pr} until={K.P} texto="0.5 mm" largo={201} />
       <BarraEscala T={T} at={K.P} until={K.L} texto="1 m" largo={243} />
       <BarraEscala T={T} at={K.L} until={K.Di} texto="1 m" largo={150} />
-      <BarraEscala T={T} at={K.Di} until={K.Pe} texto="1 m" largo={137} />
-      <BarraEscala T={T} at={K.Pe} until={K.E} texto="1 mm" largo={144} />
+      <BarraEscala T={T} at={K.Di} until={K.Pe} texto="1 m" largo={167} />
+      <BarraEscala T={T} at={K.Pe} until={K.E} texto="1 mm" largo={180} />
       <BarraEscala T={T} at={K.E} until={K.V} texto="27 parcelas" largo={140} color={KC.ink} />
-      <BarraEscala T={T} at={K.V} until={K.C} texto="1 mm" largo={144} />
+      <BarraEscala T={T} at={K.V} until={K.C} texto="1 mm" largo={180} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="50 cm" largo={170} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
