@@ -12,16 +12,23 @@ function Capa({ children, z }) {
    origen = hombro; punto de la inyección en (60, 90) local (músculo deltoides). */
 function Brazo({ x, y, s = 1, curita = 0, brillo = 0, T = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <defs>
+      <linearGradient id="arnPiel" x1="0" y1="0" x2="1" y2="0.3"><stop offset="0" stopColor="#d99573" /><stop offset="0.45" stopColor="#f6c4a2" /><stop offset="1" stopColor="#c98262" /></linearGradient>
+      <linearGradient id="arnPlayera" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#c23a68" /><stop offset="1" stopColor="#6e1a3a" /></linearGradient>
+      <linearGradient id="arnManga" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0" stopColor="#e0577f" /><stop offset="1" stopColor="#9c2850" /></linearGradient>
+    </defs>
     {/* torso con la playera, del lado izquierdo, para que se lea como hombro */}
-    <path d="M -1000 -140 Q -600 -330 -250 -260 L -180 1200 L -1000 1200 Z" fill="#e0246a" stroke={KC.ink} strokeWidth={10} />
+    <path d="M -1000 -140 Q -600 -330 -250 -260 L -180 1200 L -1000 1200 Z" fill="url(#arnPlayera)" stroke={KC.ink} strokeWidth={8} />
     <path d="M -560 -300 Q -470 -200 -380 -290" stroke={KC.ink} strokeWidth={8} fill="none" />
     <path d="M -240 260 Q -230 700 -200 1200" stroke="#a8174d" strokeWidth={14} fill="none" />
-    <path d="M -230 -40 Q -250 -190 -40 -225 Q 170 -250 235 -90 Q 275 30 245 210 L 215 1200 L -175 1200 L -205 210 Q -235 90 -230 -40 Z" fill={PIEL} stroke={KC.ink} strokeWidth={10} />
+    <path d="M -230 -40 Q -250 -190 -40 -225 Q 170 -250 235 -90 Q 275 30 245 210 L 215 1200 L -175 1200 L -205 210 Q -235 90 -230 -40 Z" fill="url(#arnPiel)" stroke={KC.ink} strokeWidth={8} />
+    <path d="M -120 300 Q -110 700 -90 1180" stroke="#fff1e6" strokeWidth={22} fill="none" strokeLinecap="round" opacity={0.25} />
     <path d="M -150 -40 Q -60 -150 120 -110 Q 200 -40 190 110 Q 120 230 -30 230 Q -150 200 -150 -40 Z" fill={PIEL2} opacity={0.35} />
     <path d="M 175 380 Q 150 560 160 760" stroke={PIEL2} strokeWidth={8} fill="none" strokeLinecap="round" opacity={0.6} />
     {/* manga */}
-    <path d="M -262 -30 Q -250 -270 0 -285 Q 250 -275 272 -70 Q 140 -120 0 -118 Q -140 -110 -262 -30 Z" fill={KC.pink} stroke={KC.ink} strokeWidth={10} />
-    <path d="M -262 -30 Q -140 -110 0 -118 Q 140 -120 272 -70 L 268 -40 Q 140 -88 0 -86 Q -140 -80 -258 0 Z" fill="#ffd1e1" stroke={KC.ink} strokeWidth={6} />
+    <path d="M -262 -30 Q -250 -270 0 -285 Q 250 -275 272 -70 Q 140 -120 0 -118 Q -140 -110 -262 -30 Z" fill="url(#arnManga)" stroke={KC.ink} strokeWidth={8} />
+    <path d="M -200 -120 Q -120 -240 40 -250" stroke="#ffd1e1" strokeWidth={10} fill="none" strokeLinecap="round" opacity={0.3} />
+    <path d="M -262 -30 Q -140 -110 0 -118 Q 140 -120 272 -70 L 268 -40 Q 140 -88 0 -86 Q -140 -80 -258 0 Z" fill="#e9a9bf" stroke={KC.ink} strokeWidth={5} />
     {brillo > 0 && <circle cx={60} cy={90} r={200 + Math.sin(T * 3) * 12} fill="none" stroke={KC.gold2} strokeWidth={10} opacity={brillo * 0.5} strokeDasharray="4 22" strokeLinecap="round" />}
     {curita > 0 && <g transform={`translate(60 90) rotate(-20) scale(${curita})`}>
       <rect x={-80} y={-28} width={160} height={56} rx={26} fill="#f2c99a" stroke={KC.ink} strokeWidth={6} />
@@ -83,8 +90,9 @@ function Nanoparticula({ T, x, y, r = 80, abre = 0, rot = 0, seed = 1 }) {
 /* ---------- ribosoma: subunidad grande + chica ---------- */
 function Ribosoma({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <ellipse cx={0} cy={-34} rx={64} ry={46} fill="#b78cff" stroke={KC.ink} strokeWidth={7} />
-    <ellipse cx={0} cy={22} rx={50} ry={30} fill="#8e6bd6" stroke={KC.ink} strokeWidth={7} />
+    <ellipse cx={0} cy={-34} rx={64} ry={46} fill="#6a55a8" stroke="#e2d4ff" strokeWidth={6} style={{ filter:'drop-shadow(0 0 8px #b78cff)' }} />
+    <ellipse cx={-14} cy={-50} rx={26} ry={14} fill="#c9b6ff" opacity={0.35} />
+    <ellipse cx={0} cy={22} rx={50} ry={30} fill="#4f3f86" stroke="#d6c2ff" strokeWidth={6} style={{ filter:'drop-shadow(0 0 8px #8e6bd6)' }} />
   </g>;
 }
 /* ---------- proteína espícula: trímero (tallo + cabeza de tres lóbulos) ---------- */
@@ -132,7 +140,7 @@ function Letras({ T, x, y, letras, cambia = [], p = 0, tam = 74 }) {
       return <g key={i} transform={`translate(${i * tam + tam / 2} ${Math.sin(T * 2 + i) * 4})`}>
         <g transform={`scale(${sx || 0.02} 1)`}>
           <rect x={-tam * 0.42} y={-tam * 0.45} width={tam * 0.84} height={tam * 0.9} rx={12} fill={BASES[L]} stroke={KC.ink} strokeWidth={6} />
-          <text x={0} y={tam * 0.22} textAnchor="middle" style={{ font:`700 ${tam * 0.6}px ${KF.mono}` }} fill={KC.ink}>{L}</text>
+          <text x={0} y={tam * 0.22} textAnchor="middle" style={{ font:`700 ${tam * 0.6}px ${KF.mono}` }} fill="#0b1020">{L}</text>
         </g>
         {giro >= 1 && <circle cx={0} cy={0} r={tam * 0.6 + Math.sin(T * 6 + i) * 4} fill="none" stroke={KC.gold2} strokeWidth={4} opacity={0.7} />}
       </g>;
@@ -198,7 +206,7 @@ function Arnm() {
   // inflamación
   const alarma = kprog(T, Al + 1.8, Al + 2.4) * (1 - kprog(T, Ag + 0.3, Ag + 2.0, kEase.suave));
   // escala real (aprox., el dibujo es esquemático): [desde, hasta, px por mm]
-  const ESC = [[G, Bu + 0.4, 4], [Bu + 0.4, En, 1.2e6 * 340 / 280], [En, Ri, 1.8e6], [Ri, Ap, 4.5e6], [Ap, Pr, 5e4], [Pr, Nu, 2.7e4 * 1.3], [Nu, Al, 5e4],
+  const ESC = [[G, Bu + 0.4, 4], [Bu + 0.4, En, 1.2e6 * 340 / 280], [En, Ri, 1.8e6 * 1.3], [Ri, Ap, 4.5e6 * 1.35], [Ap, Pr, 5e4], [Pr, Nu, 2.7e4 * 1.3], [Nu, Al, 5e4 * 1.2],
     [Al, Es, 2e4], [Es, Ag, 1.2e8], [Ag, Tr, 2e4], [Tr, No, 1.2e8 * 1.5], [No, Ci, 7 * 1.3], [Ci, Ou, 4]];
   const esc = ESC.find(([a, b]) => T >= a && T < b);
   const UCAMBIA = [1, 5, 6, 9];
@@ -223,19 +231,20 @@ function Arnm() {
       <Escena T={T} a={En} b={Ri} zoom={0.04}>
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={30} color="rgba(255,159,191,.25)" />
-        <Capa>
+        <Capa><g transform="translate(540 820) scale(1.3) translate(-540 -720)">
           <Membrana y={720} x0={xL} d={suelta > 0 ? klerp(220, 0, kprog(T, En + 2.0, En + 2.3)) : hunde * 220} />
           {suelta > 0 && <circle cx={xL} cy={lY} r={klerp(110, 128, abre)} fill="none" stroke={MEMB} strokeWidth={22} opacity={1 - abre} strokeDasharray={abre > 0 ? `${klerp(80, 6, abre)} ${klerp(0, 40, abre)}` : undefined} />}
           <Nanoparticula T={T} x={xL} y={lY} r={88} abre={abre} seed={2} />
           {abre > 0 && <HebraARN T={T} x={xL - 40} y={lY + 120} largo={560} n={22} p={abre} />}
-          <text x={60} y={640} style={{ font:`700 30px ${KF.mono}` }} fill="rgba(246,243,236,.7)">afuera</text>
-          <text x={60} y={830} style={{ font:`700 30px ${KF.mono}` }} fill="rgba(246,243,236,.7)">adentro de la célula</text>
+          </g>
+          <text x={60} y={712} style={{ font:`700 30px ${KF.mono}` }} fill="rgba(246,243,236,.7)">afuera</text>
+          <text x={60} y={970} style={{ font:`700 30px ${KF.mono}` }} fill="rgba(246,243,236,.7)">adentro de la célula</text>
         </Capa>
       </Escena>
       {/* 3 · los ribosomas leen y arman la espícula */}
       <Escena T={T} a={Ri} b={Ap} zoom={0.05}>
         <FondoMarca patron="oscuro" />
-        <Capa>
+        <Capa><g transform="translate(540 900) scale(1.35) translate(-540 -820)">
           <HebraARN T={T} x={40} y={820} largo={1000} n={36} />
           {[0, 1, 2].map((i) => { const p = kclamp((T - Ri - i * 0.9) / 3.0, 0, 1), rx = klerp(120, 900, p);
             const cuentas = Math.floor(p * 12);
@@ -244,10 +253,10 @@ function Arnm() {
               {T > Ri + i * 0.9 - 0.3 && <Ribosoma x={rx} y={820} s={1} />}
             </g>; })}
           {[0, 1].map((i) => { const c = kprog(T, Ri + 2.3 + i * 0.8, Ri + 3.0 + i * 0.8, kEase.rebote);
-            return c > 0 ? <Espicula key={i} x={720 + i * 170} y={1150} s={1.1 * c} rot={Math.sin(T * 2 + i) * 6} /> : null; })}
-        </Capa>
-        <Etq T={T} at={Ri + 0.5} until={Ap - 0.2} x={150} y={940} texto="ribosoma" color="#d6c2ff" />
-        <Etq T={T} at={Ri + 0.8} until={Ap - 0.2} x={40} y={700} texto="ARNm" color={ARN} />
+            return c > 0 ? <Espicula key={i} x={700 + i * 150} y={1140} s={1.0 * c} rot={Math.sin(T * 2 + i) * 6} /> : null; })}
+        </g></Capa>
+        <Etq T={T} at={Ri + 0.5} until={Ap - 0.2} x={60} y={1080} texto="ribosoma" color="#d6c2ff" />
+        <Etq T={T} at={Ri + 0.8} until={Ap - 0.2} x={40} y={740} texto="ARNm" color={ARN} />
       </Escena>
       {/* 4 · tu sistema inmune aprende */}
       <Escena T={T} a={Ap} b={Pr} zoom={0.05}>
@@ -282,7 +291,7 @@ function Arnm() {
       {/* 6 · no entra al núcleo, y la célula lo desarma */}
       <Escena T={T} a={Nu} b={Al} zoom={0.04}>
         <FondoMarca patron="oscuro" />
-        <Capa>
+        <Capa><g transform="translate(540 960) scale(1.2) translate(-560 -900)">
           <circle cx={560} cy={860} r={210} fill="#1f2f5c" stroke="#7fb3ff" strokeWidth={14} />
           {Array.from({ length: 10 }, (_, i) => { const a = (i / 10) * Math.PI * 2; return <circle key={i} cx={560 + Math.cos(a) * 210} cy={860 + Math.sin(a) * 210} r={10} fill="#0d1424" stroke="#7fb3ff" strokeWidth={4} />; })}
           <ADNNucleo T={T} x={560} y={860} r={200} />
@@ -294,8 +303,8 @@ function Arnm() {
               {[0, 1, 2].map((i) => { const e = kprog(T, Nu + 1.5 + i * 0.2, Nu + 2.1 + i * 0.2, kEase.sale);
                 return e > 0 ? <Tijera key={i} x={klerp(i === 1 ? 1150 : -80, 380 + i * 180, e)} y={y + (i - 1) * 20} s={1} boca={Math.abs(Math.sin(T * 10 + i))} rot={i === 1 ? 180 : 0} /> : null; })}
             </g>; })()}
-        </Capa>
-        <Etq T={T} at={Nu + 1.6} until={Al - 0.2} x={860} y={1210} texto="enzimas" lado="izq" color={KC.mint} />
+        </g></Capa>
+        <Etq T={T} at={Nu + 1.6} until={Al - 0.2} x={1000} y={1330} texto="enzimas" lado="izq" color={KC.mint} />
       </Escena>
       {/* 7 · el ARN de laboratorio prendía la alarma */}
       <Escena T={T} a={Al} b={Es} zoom={0.04}>
@@ -319,9 +328,14 @@ function Arnm() {
       <Escena T={T} a={Es} b={Ag} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <Capa>
-          <Letras T={T} x={96} y={1000} letras={'AUGGCUUACUGA'.split('')} cambia={UCAMBIA} p={kprog(T, Es + 4.4, Es + 7.6)} />
+          <g opacity={0.6}>
+            <ellipse cx={560} cy={1080} rx={420} ry={110} fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={9} />
+            <CelulaInmune T={T} x={560} y={960} r={150} brazos={1} color={mixHex('#b18cff', '#ff5a4f', alarma)} seed={4} />
+            <Sirena T={T} x={880} y={780} on={alarma} />
+          </g>
+          <Letras T={T} x={96} y={640} letras={'AUGGCUUACUGA'.split('')} cambia={UCAMBIA} p={kprog(T, Es + 4.4, Es + 7.6)} />
         </Capa>
-        <Etq T={T} at={Es + 5.0} until={Ag - 0.2} x={560} y={1140} texto="Ψ = pseudouridina" lado="izq" color={KC.ink} tam={36} />
+        <Etq T={T} at={Es + 5.0} until={Ag - 0.2} x={640} y={770} texto="Ψ = pseudouridina" lado="izq" color={KC.ink} tam={36} />
       </Escena>
       {/* 9 · la alarma casi se apagó */}
       <Escena T={T} a={Ag} b={Tr} zoom={0.04}>
@@ -370,7 +384,7 @@ function Arnm() {
       <Chip T={T} at={Ri + 1.6} until={Ap - 0.3} texto="proteína espícula" y={1480} tam={42} borde={ESP} />
       <Chip T={T} at={Ap + 1.6} until={Pr - 0.3} texto="aprende a reconocerla" y={1480} tam={42} borde={ANTI} />
       <Chip T={T} at={Nu + 1.0} until={Al - 0.3} texto="no cambia tu ADN" y={1480} tam={42} borde="#7fb3ff" />
-      <TarjetaEstudio T={T} at={Es + 0.2} until={Es + 4.0} anio="2005" quien="Karikó y Weissman · U. de Pensilvania" revista="Immunity 23: 165–175" y={640} />
+      <TarjetaEstudio T={T} at={Es + 0.2} until={Es + 4.0} anio="2005" quien="Karikó y Weissman · U. de Pensilvania" revista="Immunity 23: 165–175" y={370} />
       <Chip T={T} at={Es + 4.4} until={Ag - 0.3} texto="probaron varias letras modificadas" y={1480} tam={36} borde={PSI} />
       <Chip T={T} at={Tr + 0.6} until={No - 0.3} texto="copiar lo que ya hace tu célula" y={1480} tam={36} borde={PSI} />
       <Chip T={T} at={No + 0.5} until={Ci - 0.2} texto="Katalin Karikó · Drew Weissman" y={1340} tam={40} borde={KC.gold} />
