@@ -11,8 +11,14 @@ function Brazo({ x, y, s = 1, erizo = 0, T = 0, seed = 3, halo = 0 }) {
     return [-400 + c * 34 + g() * 18, -60 + f * 70 + g() * 40, g()]; });
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {halo > 0 && <rect x={-470} y={-160} width={940} height={320} rx={160} fill="none" stroke={KC.white} strokeWidth={10} strokeDasharray="6 22" strokeLinecap="round" opacity={halo} />}
+    <defs><linearGradient id="brazoVol" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#fff" stopOpacity=".05" /><stop offset=".18" stopColor="#fff" stopOpacity=".32" /><stop offset=".45" stopColor="#fff" stopOpacity="0" /><stop offset=".8" stopColor="#7a3a28" stopOpacity=".22" /><stop offset="1" stopColor="#5a2418" stopOpacity=".4" /></linearGradient></defs>
+    <ellipse cx={-60} cy={150} rx={520} ry={26} fill="#000" opacity=".28" />
     <rect x={-560} y={-120} width={1000} height={240} rx={110} fill={CPIEL} stroke={KC.ink} strokeWidth={10} />
-    <rect x={-540} y={40} width={960} height={60} rx={30} fill={CPIEL2} opacity=".35" />
+    {/* belleza: volumen de cilindro (luz arriba, sombra abajo), venitas y poros: se lee como un antebrazo, no como una franja */}
+    <rect x={-555} y={-115} width={990} height={230} rx={106} fill="url(#brazoVol)" />
+    <path d="M -420 30 C -300 10 -200 48 -80 28 S 160 40 300 20" stroke="#7aa0c8" strokeOpacity=".28" strokeWidth={7} fill="none" strokeLinecap="round" />
+    <path d="M -260 64 C -180 52 -100 70 0 58" stroke="#7aa0c8" strokeOpacity=".2" strokeWidth={5} fill="none" strokeLinecap="round" />
+    {Array.from({ length: 60 }, (_, i) => <circle key={'p' + i} cx={-520 + ((i * 97) % 940)} cy={-90 + ((i * 53) % 180)} r={2.2} fill="#b8705a" opacity=".35" />)}
     {/* mano */}
     <path d="M 400 -110 C 470 -130 560 -110 600 -60 L 660 -70 C 690 -72 700 -40 670 -30 L 610 -10 C 640 10 640 60 600 80 C 540 120 450 120 400 100 Z" fill={CPIEL} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
     {pts.map(([px, py, r], i) => { const e = kclamp(erizo * 1.6 - r * 0.6, 0, 1), ang = klerp(72, 8, e) * (i % 2 ? 1 : 0.9);
@@ -230,8 +236,8 @@ function Gallina() {
       <Escena T={T} a={K.Gancho} b={K.Musculo + 1.9} fondo={KC.pink}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
-          {/* pase cine: brazo en primer plano, de borde a borde (x1.8, centrado en el cuadro) */}
-          <g transform="translate(540 960) scale(1.8) translate(-490 -930)">
+          {/* pase cine: brazo en primer plano, de borde a borde (belleza: x2.2, centrado en el cuadro) */}
+          <g transform="translate(540 960) scale(2.2) translate(-490 -930)">
             <Brazo x={500} y={930} s={1} erizo={erizoG + 0.06 * Math.sin(T * 9) * erizoG} T={T} />
           </g>
           <Onomato T={T} at={0.3} dur={1.6} x={800} y={470} texto="¡BRRR!" color={KC.yellow} tam={130} />
@@ -272,11 +278,12 @@ function Gallina() {
         <FondoLunares color={KC.cyan} />
         <Lienzo>
           <Nieve T={T} seed={8} y0={200} y1={1200} n={18} />
-          <Gato x={460} y={900} s={1.25} T={T} eriza={0.45 * kprog(T, K.Animales + 1.6, K.Animales + 2.6, kEase.sale)} aire={kprog(T, K.Animales + 3.0, K.Animales + 3.8)} />
-          {T > K.Animales + 3.4 && [[-150, -60], [0, -150], [160, -80]].map(([px, py], i) => <path key={i} d={`M ${460 + px} ${880 + py} q 14 -20 0 -40 q -14 -20 0 -40`} fill="none" stroke={KC.orange} strokeWidth={8} strokeLinecap="round"
+          {/* belleza (encuadre): el gato y su vapor bajan 150 px, al centro del cuadro */}
+          <Gato x={460} y={1050} s={1.25} T={T} eriza={0.45 * kprog(T, K.Animales + 1.6, K.Animales + 2.6, kEase.sale)} aire={kprog(T, K.Animales + 3.0, K.Animales + 3.8)} />
+          {T > K.Animales + 3.4 && [[-150, -60], [0, -150], [160, -80]].map(([px, py], i) => <path key={i} d={`M ${460 + px} ${1030 + py} q 14 -20 0 -40 q -14 -20 0 -40`} fill="none" stroke={KC.orange} strokeWidth={8} strokeLinecap="round"
             opacity={0.5 + 0.5 * Math.sin(T * 5 + i)} transform={`translate(0 ${-((T * 30 + i * 15) % 30)})`} />)}
         </Lienzo>
-        <Etq T={T} at={K.Animales + 0.8} until={K.Grande - 0.2} x={760} y={560} texto="gato" lado="izq" color={KC.ink} />
+        <Etq T={T} at={K.Animales + 0.8} until={K.Grande - 0.2} x={760} y={710} texto="gato" lado="izq" color={KC.ink} />
         <Chip T={T} at={K.Animales + 3.2} until={K.Grande - 0.1} texto="capa de aire caliente" x={540} y={430} tam={42} borde={KC.orange} />
       </Escena>
 
@@ -285,7 +292,7 @@ function Gallina() {
         <FondoLunares color={KC.orange} />
         <Lienzo>
           <g transform="translate(540 980) scale(1.2) translate(-540 -960)">
-          <Perro x={170} y={1000} s={0.62} T={T} />
+          <Perro x={250} y={1000} s={0.62} T={T} />{/* belleza: el perro entra completo (antes cortado a la izquierda) */}
           {(() => { const e = kprog(T, K.Grande + 0.5, K.Grande + 1.4, kEase.rebote);
             return <><g opacity={kprog(T, K.Grande + 1.2, K.Grande + 1.6) * 0.8}><ellipse cx={700} cy={900} rx={210} ry={150} fill="none" stroke={KC.white} strokeWidth={7} strokeDasharray="16 12" /></g>
               <Gato x={700} y={960} s={0.72 + 0.23 * e} T={T} eriza={e} mira={-1} /></>; })()}
@@ -300,9 +307,9 @@ function Gallina() {
       <Escena T={T} a={K.Pregunta} b={K.Inutil} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <PersonaSimple x={650} yPies={1400} alto={940} color="#2fe0a8" cara="o" />
-          <text x={270} y={1160} textAnchor="middle" fill={KC.yellow} stroke="#0b1020" strokeWidth={14}
-            transform={`rotate(${Math.sin(T * 3) * 6} 270 960)`} style={{ font:`400 ${Math.round(470 * klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote)))}px ${KF.titulo}` }}>?</text>
+          <PersonaSimple x={650} yPies={1520} alto={940} color="#2fe0a8" cara="o" />
+          <text x={270} y={1280} textAnchor="middle" fill={KC.yellow} stroke="#0b1020" strokeWidth={14}
+            transform={`rotate(${Math.sin(T * 3) * 6} 270 1080)`} style={{ font:`400 ${Math.round(470 * klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote)))}px ${KF.titulo}` }}>?</text>
         </Lienzo>
       </Escena>
 
@@ -310,11 +317,12 @@ function Gallina() {
       <Escena T={T} a={K.Inutil} b={K.Harvard} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <Ancestro x={540} yPies={1400} alto={940} pelo={1 - kprog(T, K.Inutil + 1.8, K.Inutil + 3.4, kEase.suave)} T={T} />
+          {/* belleza (encuadre): tú y el ancestro bajan 120 px, al centro del cuadro */}
+          <Ancestro x={540} yPies={1520} alto={940} pelo={1 - kprog(T, K.Inutil + 1.8, K.Inutil + 3.4, kEase.suave)} T={T} />
         </Lienzo>
         <MitoTachado T={T} at={K.Inutil + 0.2} tacharEn={K.Inutil + 1.3} until={K.Inutil + 2.4} texto="¿para abrigarte?" x={540} y={400} tam={44} />
         <Chip T={T} at={K.Inutil + 2.5} until={K.Harvard - 0.1} texto="herencia" x={540} y={400} tam={52} borde={KC.ink} />
-        <Etq T={T} at={K.Inutil + 0.6} until={K.Inutil + 2.6} x={720} y={640} texto="ancestro peludo" lado="der" color={KC.ink} tam={28} />
+        <Etq T={T} at={K.Inutil + 0.6} until={K.Inutil + 2.6} x={720} y={760} texto="ancestro peludo" lado="der" color={KC.ink} tam={28} />
       </Escena>
 
       {/* 8 · Harvard 2020, en ratones */}
@@ -346,7 +354,7 @@ function Gallina() {
       <Escena T={T} a={K.Cierre} b={FIN} fondo={KC.pink}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
-          <g transform="translate(540 960) scale(1.8) translate(-490 -930)">
+          <g transform="translate(540 960) scale(2.2) translate(-490 -930)">
             <Brazo x={500} y={930} s={1} erizo={kprog(T, K.Cierre + 0.2, K.Cierre + 1.2, kEase.sale)} T={T} halo={kprog(T, K.Cierre + 2.6, K.Cierre + 3.4)} />
             <Bufanda x={500} y={930} p={kprog(T, K.Cierre + 3.8, K.Cierre + 5.0)} T={T} />
           </g>
