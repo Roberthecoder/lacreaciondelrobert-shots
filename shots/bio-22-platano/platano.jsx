@@ -340,7 +340,7 @@ function Platano22() {
       <Escena T={T} a={K.Ho} b={K.Ra} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 45%, #1b2333 0%, ${KC.noche} 72%)` }}></div>
         <Ambiente T={T} n={30} color="rgba(233,217,255,.25)" />
-        <SvgCapa><HongoMicro T={T} a={K.Ho - 0.3} /></SvgCapa>
+        <SvgCapa><HongoMicro T={T} a={K.Ho - 1.0} /></SvgCapa>
       </Escena>
       {/* 6 · entra por la raíz, invade el xilema, la planta se marchita */}
       <Escena T={T} a={K.Ra} b={K.GM} zoom={0.03}>
