@@ -120,7 +120,9 @@ function CerebroEsponja({ T, x, y, s = 1, huecos = 0 }) {
 function Vela({ T, x, y, seed = 1, enciende = 1 }) {
   const f = mece(T, seed, 1.4);
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={-34} y={0} width={68} height={190} rx={10} fill="#f6f0e2" stroke={KC.ink} strokeWidth={7} />
+    <defs><linearGradient id="velaVol" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stopColor="#fffaf0" /><stop offset="60%" stopColor="#efe4cc" /><stop offset="100%" stopColor="#c9b993" /></linearGradient></defs>
+    <rect x={-34} y={0} width={68} height={190} rx={10} fill="url(#velaVol)" stroke={KC.ink} strokeWidth={6} />
+    <path d="M -34 10 Q -20 4 -12 12 L -12 46 Q -16 54 -20 46 L -20 18 Q -28 14 -34 18 Z" fill="#fffaf0" opacity=".8" />
     <line x1={0} y1={0} x2={0} y2={-22} stroke={KC.ink} strokeWidth={5} />
     {enciende > 0 && <g opacity={enciende} transform={`translate(0 -26) scale(${0.9 + 0.08 * f}, ${1 + 0.12 * f})`}>
       <ellipse cx={0} cy={-20} rx={30} ry={46} fill={KC.gold2} opacity={0.35} />
@@ -226,10 +228,10 @@ function Hormona() {
       <Escena T={T} a={K.Al} b={K.B} zoom={0.03}>
         <FondoLunares color="#d9cfc0" punto="rgba(255,255,255,.25)" />
         {/* pase a mano cine: velas, frasco y sello 1.15 veces más grandes y bajados */}
-        <SvgCapa><Zg k={1.15} x0={520} y0={1000} X0={500} Y0={1080}>
+        <SvgCapa><Zg k={1.3} x0={545} y0={1000} X0={540} Y0={1050}>
           {[0, 1, 2].map((i) => <Vela key={i} T={T} x={200 + i * 170} y={980} seed={i + 4} enciende={kprog(T, K.Al + 1.6 + i * 0.4, K.Al + 2.0 + i * 0.4)} />)}
           <Frasquito T={T} x={820} y={880} s={1.15} viejo etiqueta={['hipófisis', 'humana']} />
-          {T > K.Al + 3.4 && (() => { const p = kprog(T, K.Al + 3.4, K.Al + 3.8, kEase.rebote); return <g transform={`translate(820 1010) rotate(-14) scale(${klerp(2, 1, p)})`} opacity={kprog(T, K.Al + 3.4, K.Al + 3.6)}>
+          {T > K.Al + 3.4 && (() => { const p = kprog(T, K.Al + 3.4, K.Al + 3.8, kEase.rebote); return <g transform={`translate(760 1030) rotate(-14) scale(${klerp(1.8, 0.86, p)})`} opacity={kprog(T, K.Al + 3.4, K.Al + 3.6)}>
             <rect x={-170} y={-50} width={340} height={100} rx={14} fill="rgba(255,255,255,.75)" stroke={PRION} strokeWidth={9} />
             <text x={0} y={-2} textAnchor="middle" style={{ font:`400 52px ${KF.titulo}` }} fill={PRION}>SUSPENDIDA</text>
             <text x={0} y={34} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={PRION}>abril de 1985</text></g>; })()}
