@@ -6,9 +6,21 @@ const PI_C = { papa:'#c99a5b', papa2:'#a87a40', podrido:'#5a3424', hoja:'#4caf50
   jito:'#e8342a', jito2:'#b8231c', vidrio:'rgba(215,240,255,.28)', vidrioB:'#cfeaff', zoo:'#f3e6c4', alga:'#8a6a2a', alga2:'#b58d3c', diato:'#e0b84a' };
 
 /* ---------- cocina ---------- */
+// Degradados de volumen (pase de belleza): luz arriba a la izquierda.
+function DefsCocina() {
+  return <defs>
+    <radialGradient id="ppPapa" cx="36%" cy="30%" r="80%"><stop offset="0" stopColor="#e6c085" /><stop offset="0.55" stopColor="#c99a5b" /><stop offset="1" stopColor="#8f6434" /></radialGradient>
+    <radialGradient id="ppPodrido" cx="40%" cy="35%" r="75%"><stop offset="0" stopColor="#7a4a33" /><stop offset="1" stopColor="#3e2218" /></radialGradient>
+    <radialGradient id="ppJito" cx="35%" cy="30%" r="80%"><stop offset="0" stopColor="#ff6a55" /><stop offset="0.55" stopColor="#e3352b" /><stop offset="1" stopColor="#9c1c16" /></radialGradient>
+    <linearGradient id="ppMadera" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#e3ad73" /><stop offset="0.5" stopColor="#c98d55" /><stop offset="1" stopColor="#99653a" /></linearGradient>
+  </defs>;
+}
 function Tabla({ x, y }) {
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={-420} y={-40} width={840} height={150} rx={40} fill="#d9a066" stroke={KC.ink} strokeWidth={8} />
+    <DefsCocina />
+    <rect x={-404} y={-16} width={840} height={150} rx={40} fill="rgba(0,0,0,.45)" />
+    <rect x={-420} y={-40} width={840} height={150} rx={40} fill="url(#ppMadera)" stroke="#f0cfa6" strokeOpacity={0.7} strokeWidth={5} />
+    {[-360, -200, -20, 160, 300].map((dx, i) => <path key={'v' + i} d={`M ${dx} 20 q 60 ${i % 2 ? 10 : -10} 120 0`} stroke="#a86f3e" strokeOpacity={0.5} strokeWidth={3} fill="none" />)}
     {[-300, -120, 60, 240].map((dx, i) => <path key={i} d={`M ${dx} -10 Q ${dx + 60} 30 ${dx + 130} 0`} stroke="#b97d45" strokeWidth={5} fill="none" />)}
     <circle cx={360} cy={35} r={18} fill="#b97d45" stroke={KC.ink} strokeWidth={5} />
   </g>;
@@ -16,16 +28,18 @@ function Tabla({ x, y }) {
 // Papa (tubérculo) con ojos; mancha 0..1 = pudrición café rojiza del tizón.
 function Papa({ x, y, s = 1, rot = 0, mancha = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
-    <path d="M -150 -10 Q -160 -95 -60 -105 Q 40 -125 120 -85 Q 175 -50 160 20 Q 150 95 40 100 Q -60 112 -125 70 Q -148 45 -150 -10 Z" fill={PI_C.papa} stroke={KC.ink} strokeWidth={8} />
-    <path d="M -95 -70 Q -40 -92 30 -88" stroke="#e2bb80" strokeWidth={12} fill="none" strokeLinecap="round" />
+    <path d="M -150 -10 Q -160 -95 -60 -105 Q 40 -125 120 -85 Q 175 -50 160 20 Q 150 95 40 100 Q -60 112 -125 70 Q -148 45 -150 -10 Z" fill="url(#ppPapa)" stroke="#f1d6a8" strokeOpacity={0.75} strokeWidth={5} />
+    <path d="M -95 -70 Q -40 -92 30 -88" stroke="#f3d7a6" strokeOpacity={0.7} strokeWidth={12} fill="none" strokeLinecap="round" />
+    {[[-110, -40], [-50, 30], [30, -60], [90, 50], [-10, 80], [130, -10]].map(([a, b], i) => <circle key={'d' + i} cx={a} cy={b} r={3} fill="#8f6434" opacity={0.55} />)}
     {[[-90, 10], [-20, -40], [60, 20], [110, -40], [10, 60]].map(([a, b], i) => <path key={i} d={`M ${a - 9} ${b} Q ${a} ${b - 7} ${a + 9} ${b}`} stroke={PI_C.papa2} strokeWidth={5} fill="none" />)}
-    {mancha > 0 && <path d="M 20 -60 Q 90 -80 125 -30 Q 150 20 105 60 Q 60 85 30 40 Q -5 0 20 -60 Z" fill={PI_C.podrido} stroke={KC.ink} strokeWidth={4} opacity={0.85} transform={`translate(80 -10) scale(${mancha}) translate(-80 10)`} />}
+    {mancha > 0 && <path d="M 20 -60 Q 90 -80 125 -30 Q 150 20 105 60 Q 60 85 30 40 Q -5 0 20 -60 Z" fill="url(#ppPodrido)" stroke="#9a6a4c" strokeWidth={3} opacity={0.9} transform={`translate(80 -10) scale(${mancha}) translate(-80 10)`} />}
   </g>;
 }
 // Jitomate con cáliz verde; mancha 0..1 = mancha café grasosa.
 function Jitomate({ x, y, s = 1, rot = 0, mancha = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
-    <ellipse rx={120} ry={105} fill={PI_C.jito} stroke={KC.ink} strokeWidth={8} />
+    <ellipse cx={10} cy={12} rx={120} ry={105} fill="rgba(0,0,0,.35)" />
+    <ellipse rx={120} ry={105} fill="url(#ppJito)" stroke="#ffb3a6" strokeOpacity={0.6} strokeWidth={4} />
     <ellipse cx={-50} cy={-45} rx={30} ry={18} fill="#ff8a7a" transform="rotate(-30 -50 -45)" />
     {mancha > 0 && <path d="M -20 10 Q 40 -20 80 20 Q 95 70 40 85 Q -20 90 -35 55 Q -45 25 -20 10 Z" fill="#7a3b1c" stroke={KC.ink} strokeWidth={4} opacity={0.9} transform={`translate(30 50) scale(${mancha}) translate(-30 -50)`} />}
     {[0, 72, 144, 216, 288].map((a) => <path key={a} d="M 0 -100 Q 14 -128 0 -150 Q -10 -128 0 -100 Z" transform={`rotate(${a} 0 -100)`} fill={KC.leaf} stroke={KC.ink} strokeWidth={4} />)}
@@ -218,7 +232,7 @@ function SelloLargo({ T, at, x, y, texto, color = KC.red, rot = -10 }) {
 // Pase a mano cine: agranda una escena k veces llevando el punto (cx, cy) a (tx, ty); zp hace lo mismo con una etiqueta.
 const Zg = ({ k, cx, cy, tx = 540, ty = 900, children }) => <g transform={`translate(${tx} ${ty}) scale(${k}) translate(${-cx} ${-cy})`}>{children}</g>;
 const zp = (x, y, k, cx, cy, tx = 540, ty = 900) => [tx + (x - cx) * k, ty + (y - cy) * k];
-const ZC = [1.45, 500, 750], ZH = [1.5, 470, 850], ZL = [1.25, 515, 835], ZP = [1.18, 515, 915, 540, 930], ZI = [1.85, 474, 768], ZA = [1.5, 460, 848];
+const ZC = [1.45, 500, 750], ZH = [1.5, 470, 850], ZL = [1.25, 515, 835], ZP = [1.06, 540, 915, 540, 1050], ZI = [1.85, 474, 768], ZA = [1.5, 460, 848];
 function PapaShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, H: CUES.Hoja, L: CUES.Limones, N: CUES.Nadadores, E: CUES.Entrada, Pa: CUES.Pared, P: CUES.Pregunta, Pr: CUES.Parientes, I: CUES.Irlanda, He: CUES.Herbario, H1: CUES.Herb1, M: CUES.Mexico, C: CUES.Cierre, Ou: CUES.Outro };
@@ -357,8 +371,8 @@ function PapaShot() {
       <Chip T={T} at={K.G + 2.9} until={K.H - 0.3} texto="es un moho de agua" x={340} y={800} tam={40} borde={KC.cyan} />
       <Etq T={T} at={K.G + 1.0} until={K.H - 0.3} x={60} y={1410} texto="papa" tam={30} color={KC.ink} />
       <Etq T={T} at={K.G + 4.4} until={K.H - 0.3} x={1040} y={1410} lado="izq" texto="jitomate" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.H + 0.5} until={K.L - 0.3} x={60} y={250} texto="tizón tardío" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.H + 0.9} until={K.L - 0.3} x={60} y={305} texto="Phytophthora infestans" it tam={38} color={KC.ink} />
+      <Etq T={T} at={K.H + 0.5} until={K.L - 0.3} x={60} y={330} texto="tizón tardío" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.H + 0.9} until={K.L - 0.3} x={60} y={385} texto="Phytophthora infestans" it tam={38} color={KC.ink} />
       <Etq T={T} at={K.H + 2.4} until={K.L - 0.3} x={60} y={1475} texto="envés (abajo): pelusa blanca" tam={30} color={KC.ink} />
       <Chip T={T} at={K.L + 0.2} until={K.N - 0.3} texto="AL MICROSCOPIO · envés de la hoja" x={500} y={320} tam={32} />
       <Etq T={T} at={K.L + 1.6} until={K.N - 0.3} x={340} y={444} texto="esporangio" tam={32} color={KC.gold2} />
