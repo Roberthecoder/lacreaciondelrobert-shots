@@ -219,12 +219,12 @@ function Monarcas() {
       <Escena T={T} a={K.S} b={K.P}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <g transform={`translate(230 500) rotate(${T * 20})`}>{Array.from({ length: 12 }, (_, i) => <path key={i} d="M 0 -150 L 18 -110 L -18 -110 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={3} transform={`rotate(${i * 30})`} />)}</g>
-          <circle cx={230} cy={500} r={100} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} />
-          <line x1={320} y1={590} x2={470} y2={880} stroke={KC.yellow} strokeWidth={8} strokeDasharray="20 14" strokeDashoffset={-T * 40} />
-          <Monarca x={560} y={1110} s={3.4} ala={0.75 + 0.25 * Math.cos(T * 3)} rot={0} />
+          <g transform={`translate(230 700) rotate(${T * 20})`}>{Array.from({ length: 12 }, (_, i) => <path key={i} d="M 0 -150 L 18 -110 L -18 -110 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={3} transform={`rotate(${i * 30})`} />)}</g>
+          <circle cx={230} cy={700} r={100} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} />
+          <line x1={315} y1={780} x2={470} y2={970} stroke={KC.yellow} strokeWidth={8} strokeDasharray="20 14" strokeDashoffset={-T * 40} />
+          <Monarca x={560} y={1200} s={3.4} ala={0.75 + 0.25 * Math.cos(T * 3)} rot={0} />
         </>)}
-        <Lupa T={T} at={K.S + 1.6} until={K.P - 0.1} x={810} y={500} r={185} fx={560 + 26 * 3.4 * 0.75} fy={1110 - 78 * 3.4} tinte={KC.yellow} etiqueta="reloj en las antenas"
+        <Lupa T={T} at={K.S + 1.6} until={K.P - 0.1} x={775} y={700} r={185} fx={560 + 26 * 3.4 * 0.75} fy={1200 - 78 * 3.4} tinte={KC.yellow} etiqueta="reloj en las antenas"
           interior={(t, r) => <svg width={r * 2} height={r * 2}><circle cx={r} cy={r} r={r * 0.7} fill="#fff8e0" stroke={KC.yellow} strokeWidth={8} />
             {Array.from({ length: 12 }, (_, i) => <line key={i} x1={r + Math.cos(i * 0.5236) * r * 0.58} y1={r + Math.sin(i * 0.5236) * r * 0.58} x2={r + Math.cos(i * 0.5236) * r * 0.66} y2={r + Math.sin(i * 0.5236) * r * 0.66} stroke={KC.ink} strokeWidth={5} />)}
             <line x1={r} y1={r} x2={r + Math.cos(t * 2) * r * 0.5} y2={r + Math.sin(t * 2) * r * 0.5} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
@@ -249,7 +249,7 @@ function Monarcas() {
       {/* 8 · 2.93 hectáreas: cuadritos de una hectárea */}
       <Escena T={T} a={K.E} b={K.An} zoom={0.03}>
         <Bosque T={T} fondo="#7fd8ff" atenua={0.68} />
-        {svg(<>
+        {svg(<g opacity={1 - kprog(T, K.An - 0.05, K.An + 0.3)}>
           {/* cada cuadro es una hectárea de bosque; se llena de mariposas (la tercera, al 93 %) */}
           {[0, 1, 2].map((i) => { const at = K.E + 1.5 + i * 0.5, e = Math.min(1, kprog(T, at, at + 0.5, kEase.sale)), lleno = i < 2 ? 1 : 0.93, L = 310;
             return <g key={i} transform={`translate(${45 + i * 340} 940)`} opacity={kprog(T, K.E - 0.3, K.E + 0.3)}>
@@ -260,12 +260,12 @@ function Monarcas() {
                 return on > 0 ? <Monarca key={r * 3 + c} x={55 + c * 100 + (r % 2) * 8} y={my} s={0.38 * on} rot={(c - 1) * 14 + r * 9} ala={Math.abs(Math.cos(T * 7 + r * 2 + c + i))} /> : null; }))}
               <text x={L / 2} y={L + 78} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink} opacity={e}>{i < 2 ? '1 ha' : '0.93'}</text>
             </g>; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 9 · 1996–97 contra 2025–26 */}
       <Escena T={T} a={K.An} b={K.Am}>
         <Bosque T={T} fondo="#7fd8ff" atenua={0.74} />
-        {svg(<>
+        {svg(<g opacity={1 - kprog(T, K.Am - 0.05, K.Am + 0.3)}>
           {[[310, 18.19, '1996–97', NARANJA, g], [770, 2.93, '2025–26', KC.coral, g2]].map(([x, v, et, c, gg], i) => { const h = H * (v / 18.19) * gg;
             return <g key={i}>
               <rect x={x - 150} y={base - h} width={300} height={h} rx={16} fill={c} stroke={KC.ink} strokeWidth={5} />
@@ -273,12 +273,12 @@ function Monarcas() {
               <text x={x} y={base + 74} textAnchor="middle" style={{ font:`900 50px ${KF.texto}` }} fill={KC.ink}>{et}</text>
             </g>; })}
           {Array.from({ length: 10 }, (_, i) => <Monarca key={i} x={310 + (i % 2 ? 68 : -68)} y={base - 80 - i * 78} s={0.52 * kclamp((g * H - (60 + i * 78)) / 60, 0, 1)} ala={Math.abs(Math.cos(T * 8 + i))} />)}
-        </>)}
+        </g>)}
       </Escena>
       {/* 10 · amenazas: tala, algodoncillo que desaparece, clima extremo */}
       <Escena T={T} a={K.Am} b={K.D}>
         <FondoLunares color={KC.coral} />
-        {svg(<>
+        {svg(<g opacity={1 - kprog(T, K.D - 0.05, K.D + 0.3)}>
           {(() => { const on = (i) => 0.3 + 0.7 * kprog(T, K.Am + 0.2 + i * 1.4, K.Am + 0.6 + i * 1.4), tala = kprog(T, K.Am + 0.9, K.Am + 1.3);
             return <>
               {/* tala: el oyamel grande queda en tocón */}
@@ -296,7 +296,7 @@ function Monarcas() {
               </g>
             </>; })()}
           {[['tala ilegal', 280, 1420], ['algodoncillo', 770, 1420], ['clima extremo', 590, 850]].map(([t, x, y], i) => <text key={'t' + i} x={x} y={y} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Am + 0.5 + i * 1.4, K.Am + 0.9 + i * 1.4)}>{t}</text>)}
-        </>)}
+        </g>)}
       </Escena>
       {/* 11 · la oruga, el algodoncillo y el pájaro que la escupe */}
       <Escena T={T} a={K.D} b={K.C}>
@@ -329,7 +329,7 @@ function Monarcas() {
       <Chip T={T} at={K.Vi + 3.9} until={K.A - 0.3} texto="Michoacán y Edomex: bosques de oyamel" x={540} y={1460} tam={34} borde={NARANJA} />
       <Chip T={T} at={K.A + 0.6} until={K.Bi - 0.3} texto="creencia: traen a los difuntos" y={530} tam={40} borde={NARANJA} />
       <Chip T={T} at={K.Bi + 0.2} until={K.S - 0.3} texto="ninguna conoce el camino" y={440} tam={44} borde={KC.ink} />
-      <Chip T={T} at={K.S + 0.4} until={K.S + 1.5} texto="brújula de sol" x={720} y={400} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.S + 0.4} until={K.S + 1.5} texto="brújula de sol" x={720} y={540} tam={40} borde={KC.yellow} />
       <Chip T={T} at={K.Bo + 1.4} until={K.E - 0.3} texto="se mide el bosque que cubren" y={500} tam={42} borde={KC.yellow} />
       <NumeroGigante T={T} at={K.E + 0.3} until={K.An - 0.3} valor={2.93} dec={2} dur={1.2} sufijo=" ha" etiqueta="invierno 2025–2026 · WWF y CONANP" y={540} tam={190} />
       <Chip T={T} at={K.E + 2.6} until={K.An - 0.3} texto="+64 % que el año anterior" y={770} tam={40} borde={KC.ink} />

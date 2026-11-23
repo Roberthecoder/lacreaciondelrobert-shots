@@ -1,0 +1,1 @@
+- fes-01-monarcas: Sol (ARRIBA) sol, lupa y monarca bajados 50–90 px y la lupa más adentro para que «reloj en las antenas» no se salga del cuadro; sin números fantasma: las hectáreas del estudio, las barras 1996–97/2025–26 y las amenazas se apagan al entrar la escena siguiente (antes «2.12 ha» y el oyamel se veían encima de otra gráfica). Auditores: sin láminas, encuadre bien.
