@@ -173,6 +173,8 @@ function MeliponasShot() {
       <Escena T={T} a={K.G} b={K.X}>
         <FondoLunares color={KC.yellow} />
         {svg(<g transform="translate(540 860) scale(1.7) translate(-430 -905)"><Dedo x={420} y={960} s={1.25} /><Melipona T={T} x={abX} y={abY} s={1.6} rot={ate < 1 ? -10 : 0} muerde={muerde} vuela={ate < 1 ? 1 : 0} id="g" /></g>)}
+        {/* belleza: la base del dedo se hunde en la penumbra (como un foco sobre la abeja): el punto de atención es la abeja */}
+        <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, pointerEvents:'none', background:'linear-gradient(to bottom, rgba(8,12,22,0) 58%, rgba(8,12,22,.7) 80%, rgba(8,12,22,.92) 100%)' }}></div>
         <EscalaFija texto="1 cm" largo={333} y={1480} color={KC.ink} />
       </Escena>
       <Lupa T={T} at={K.G + 1.2} until={K.G + 3.0} x={280} y={420} r={215} fx={322} fy={880} tinte={KC.red} etiqueta="POR DENTRO · AGUIJÓN"
@@ -259,9 +261,10 @@ function MeliponasShot() {
       {/* 9 · Landa, hacia 1566: «No pican estas abejas» */}
       <Escena T={T} a={K.L} b={K.C}>
         <FondoLunares color={KC.orange} />
-        {svg(<Melipona T={T} x={520 + Math.sin(T * 1.3) * 26} y={700 + Math.sin(T * 2.6) * 16} s={3.4} rot={-6} id="l" />)}
+        {/* belleza: abeja un poco más grande y abeja + cita bajadas al centro del cuadro */}
+        {svg(<Melipona T={T} x={520 + Math.sin(T * 1.3) * 26} y={840 + Math.sin(T * 2.6) * 16} s={3.6} rot={-6} id="l" />)}
         {(() => { const u = kprog(T, K.L + 0.2, K.L + 1.0, kEase.sale);
-          return <div style={{ position:'absolute', left:110, top:1000, width:860, height:360 * u, overflow:'hidden', background:'#2b1e10', border:'4px solid #c9a877', borderRadius:18, boxShadow:'0 24px 60px rgba(0,0,0,.6)' }}>
+          return <div style={{ position:'absolute', left:110, top:1110, width:860, height:360 * u, overflow:'hidden', background:'#2b1e10', border:'4px solid #c9a877', borderRadius:18, boxShadow:'0 24px 60px rgba(0,0,0,.6)' }}>
             <div style={{ padding:'36px 40px 0', font:`italic 700 66px/1.1 Georgia, 'Times New Roman', serif`, color:'#f3e2b8', textAlign:'center' }}>«No pican estas abejas»</div>
             <div style={{ padding:'26px 40px 0', font:`700 30px ${KF.mono}`, color:'#c9a877', textAlign:'center' }}>— fray Diego de Landa, hacia 1566</div>
             <div style={{ padding:'10px 40px 0', font:`italic 400 26px Georgia, serif`, color:'#c9a877', textAlign:'center' }}>"vejiguitas como nueces de cera… llenas de la miel"</div>

@@ -1,0 +1,1 @@
+- amb-49-abejas-meliponas: Gancho: la base del dedo se hunde en una penumbra suave hacia abajo (el dedo pesaba más que la abeja y el centro del dibujo quedaba abajo); Landa: abeja 3.4→3.6 y bajada 140 px, la cita de fray Diego de Landa 110 px más abajo (todo quedaba arriba). Sin láminas · encuadre bien.
