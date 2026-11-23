@@ -58,7 +58,8 @@ function Atardecer({ T, rojo = 0, solY = 0.3, hilo = 0, seed = 2 }) {
   const motas = Array.from({ length: 70 }, () => ({ x: r() * KW, y: 250 + r() * 780, s: 2 + r() * 4, v: 10 + r() * 30 }));
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
     <defs><linearGradient id="shCielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor={cielo0} /><stop offset="60%" stopColor={cielo1} /><stop offset="100%" stopColor={cielo2} /></linearGradient></defs>
-    <rect width={KW} height={1060} fill="url(#shCielo)" />
+    <rect width={KW} height={1220} fill="url(#shCielo)" />
+    <g transform="translate(0 140)">
     <circle cx={560} cy={sy} r={185} fill={mixHex('#fff6c2', '#ffe08a', rojo)} stroke={KC.ink} strokeWidth={7} />
     {motas.map((m, i) => <circle key={i} cx={(m.x - T * m.v + KW * 4) % KW} cy={m.y} r={m.s} fill="#b9772c" opacity={0.15 + 0.45 * rojo} />)}
     <rect x={0} y={960} width={KW} height={200} fill={mixHex('#1c6f9a', '#4d2f5e', rojo * 0.7)} />
@@ -71,6 +72,7 @@ function Atardecer({ T, rojo = 0, solY = 0.3, hilo = 0, seed = 2 }) {
       {[-60, -20, 25, 70, 120].map((a, i) => <path key={i} d="M 0 0 Q 70 -50 160 10" transform={`translate(80 -380) rotate(${a + 180 * (i < 2 ? 1 : 0) + Math.sin(T * 1.5 + i) * 4})`} fill="#3fbf4a" stroke={KC.ink} strokeWidth={6} />)}
     </g>
     {hilo > 0 && <path d={`M 1080 420 Q 800 330 560 ${sy - 195}`} stroke="#d9a441" strokeWidth={22} strokeLinecap="round" fill="none" strokeDasharray={`${hilo * 900} 2000`} opacity={0.8} />}
+    </g>
   </svg>;
 }
 // ---------- desierto visto de lado: el viento levanta el polvo ----------
@@ -166,16 +168,16 @@ function SaharaShot() {
       {/* 5 · el satélite CALIPSO mide la nube con láser */}
       <Escena T={T} a={K.S} b={K.D}>
         <FondoEspacio T={T} />
-        {svg(<>
+        {svg(<g transform="translate(0 150)">
           <circle cx={540} cy={2700} r={1720} fill="#143c74" stroke={KC.ink} strokeWidth={8} />
           <path d="M -200 1070 Q 540 900 1280 1070" stroke="#d9a441" strokeWidth={70} fill="none" opacity={0.75} strokeLinecap="round" />
           {/* pase a mano cine: el satélite (1.7 veces más grande) está en cuadro desde el inicio y barre la capa de polvo sin salirse */}
-          {(() => { const sx = klerp(300, 780, kprog(T, K.S - 0.45, K.D + 0.45)); return <>
+          {(() => { const sx = klerp(390, 690, kprog(T, K.S - 0.45, K.D + 0.45)); return <>
             {Array.from({ length: 6 }, (_, i) => { const u = ((T * 2.2 + i / 6) % 1); return <rect key={i} x={sx - 7} y={800 + u * 170} width={14} height={44} rx={7} fill="#3dff6e" opacity={0.9} />; })}
             <line x1={sx} y1={790} x2={sx} y2={1000} stroke="#3dff6e" strokeWidth={4} opacity={0.5} />
-            <g transform={`translate(${sx} 690) scale(1.7)`}><Satelite T={T} x={0} y={0} /></g></>; })()}
-        </>)}
-        <Etq T={T} at={K.S + 0.8} until={K.D - 0.2} x={760} y={1010} texto="capa de polvo" lado="izq" tam={30} />
+            <g transform={`translate(${sx} 680) scale(2.1)`}><Satelite T={T} x={0} y={0} /></g></>; })()}
+        </g>)}
+        <Etq T={T} at={K.S + 0.8} until={K.D - 0.2} x={760} y={1160} texto="capa de polvo" lado="izq" tam={30} />
         <EscalaFija texto="esquema (no a escala)" largo={0} x={660} y={1440} color={KC.texto} />
       </Escena>
       {/* 6 · casi medio millón de toneladas cada día */}
@@ -206,7 +208,7 @@ function SaharaShot() {
       {/* 8 · el polvo trae fósforo: casi lo mismo que la selva pierde con la lluvia */}
       <Escena T={T} a={K.F} b={K.H}>
         <FondoLunares color={KC.mint} />
-        {svg(<>
+        {svg(<g transform="translate(0 180)">
           <rect x={0} y={1000} width={KW} height={920} fill="#422c1f" />
           <path d="M 0 1000 L 1080 1000" stroke={KC.ink} strokeWidth={7} />
           {[185, 385, 585].map((x, i) => <g key={i} transform={`translate(${x} 1000) scale(1.3)`}>
@@ -228,8 +230,8 @@ function SaharaShot() {
             <rect x={-190} y={-74} width={380} height={92} rx={22} fill="#101728" stroke={KC.ink} strokeWidth={5} />
             <text x={0} y={-12} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink}>entra ≈ sale</text>
           </g>
-        </>)}
-        <Etq T={T} at={K.F + 2.2} until={K.H - 0.2} x={1060} y={900} texto="la lluvia se lo lleva" lado="izq" tam={26} color={KC.ink} />
+        </g>)}
+        <Etq T={T} at={K.F + 2.2} until={K.H - 0.2} x={1060} y={1080} texto="la lluvia se lo lleva" lado="izq" tam={26} color={KC.ink} />
         <EscalaFija texto="esquema (no a escala)" largo={0} x={660} y={250} color={KC.texto} />
       </Escena>
       {/* 9 · el aire seco puede frenar a los ciclones */}
@@ -256,7 +258,7 @@ function SaharaShot() {
       {/* datos y etiquetas */}
       <MitoTachado T={T} at={K.G + 0.9} tacharEn={K.G + 2.4} until={K.G + 4.0} texto="¿humo de un incendio?" x={540} y={250} tam={46} />
       <Chip T={T} at={K.G + 3.2} until={K.O - 0.2} texto="polvo del Sahara" y={355} x={540} tam={52} borde={KC.yellow} />
-      <Etq T={T} at={K.G + 1.2} until={K.O - 0.2} x={700} y={1240 - 140} texto="Yucatán" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.G + 1.2} until={K.O - 0.2} x={700} y={1240} texto="Yucatán" tam={34} color={KC.ink} />
       <Etq T={T} at={K.O + 0.6} until={K.V - 0.2} x={150} y={1240} texto="desierto del Sahara · África" tam={30} color={KC.ink} />
       <Chip T={T} at={K.O + 1.8} until={K.V - 0.2} texto="↑ muy alto" y={420} x={300} tam={40} borde={KC.ink} />
       <Etq T={T} at={K.V + 1.0} until={K.P - 0.2} x={shP(-60, -5)[0]} y={SH_Y0 + shP(-60, -5)[1]} texto="Sudamérica" tam={26} color={KC.ink} />
@@ -272,7 +274,7 @@ function SaharaShot() {
       <Chip T={T} at={K.F + 0.6} until={K.H - 0.2} texto="≈ 22 mil t de fósforo al año" y={335} x={420} tam={38} borde={KC.orange} />
       <Chip T={T} at={K.H + 1.8} until={K.C - 0.2} texto="aire seco: puede frenarlos un tiempo" y={470} x={640} tam={30} borde={KC.ink} />
       <Etq T={T} at={K.H + 0.8} until={K.C - 0.2} x={shP(-52, 18)[0] + 120} y={SH_Y0 + shP(-52, 18)[1] - 250} texto="ciclón" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.C + 2.8} until={K.Ou - 0.1} texto="un desierto que abona una selva" y={1060} x={540} tam={34} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 2.8} until={K.Ou - 0.1} texto="un desierto que abona una selva" y={1200} x={540} tam={34} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.O - 0.1} texto="No es humo: *es polvo del Sahara.*" />
