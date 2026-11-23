@@ -1,0 +1,1 @@
+- qui-33-barras-luz: Dato: la barra de luz más grande y al centro, y el número «2,918» entra al centro del cuadro y sube cuando llega la gráfica (antes quedaba arriba con un hueco vacío en medio). El resto ya cumplía. Auditores: sin láminas · encuadre bien.
