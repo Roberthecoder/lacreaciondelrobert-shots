@@ -14,6 +14,8 @@ function GDefs() {
     <filter id="gfpBlur2" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="22" /></filter>
     <radialGradient id="gfpMar" cx="50%" cy="35%" r="75%"><stop offset="0%" stopColor="#123a66" /><stop offset="100%" stopColor="#050b1a" /></radialGradient>
     <linearGradient id="gfpCampana" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="rgba(220,240,255,.42)" /><stop offset="100%" stopColor="rgba(170,215,255,.16)" /></linearGradient>
+    <linearGradient id="gfpTabla" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stopColor="#9a7646" /><stop offset="0.55" stopColor="#7a5a33" /><stop offset="1" stopColor="#4f381d" /></linearGradient>
+    <linearGradient id="gfpMuelle" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#c99459" /><stop offset="1" stopColor="#8a5a2e" /></linearGradient>
   </defs></svg>;
 }
 
@@ -257,7 +259,7 @@ function Gfp() {
           {[[170, 1090, 0.44], [400, 1330, 0.38], [690, 1110, 0.46], [910, 1330, 0.4], [520, 930, 0.3], [130, 1650, 0.36], [900, 1660, 0.38]].map(([mx, my, ms], i) => (i !== 4 || red < 0.55) &&
             <Medusa key={i} T={T} x={mx} y={my + Math.sin(T * 1.2 + i) * 10} s={ms} verde={0} azul={0} seed={i + 4} n={14} />)}
           {/* muelle */}
-          <rect x={0} y={700} width={360} height={70} fill="#b07a45" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={700} width={360} height={70} fill="url(#gfpMuelle)" stroke="#e8c49a" strokeOpacity={0.7} strokeWidth={5} />
           {[40, 140, 240, 330].map((px) => <rect key={px} x={px} y={770} width={26} height={160} fill="#8a5a2e" stroke={KC.ink} strokeWidth={6} />)}
           {/* red de mano que saca una medusa */}
           <g transform={`translate(${klerp(300, 520, red)} ${klerp(560, 960, Math.sin(red * Math.PI))}) rotate(${klerp(-20, 30, red)}) scale(1.45)`}>
@@ -266,8 +268,11 @@ function Gfp() {
             {red > 0.55 && <Medusa T={T} x={30} y={30} s={0.18} verde={0} azul={0} seed={9} n={10} />}
           </g>
           {/* tabla de corte: la orilla (órganos de luz) se separa como anillo */}
+          {corte > 0 && <rect x={0} y={0} width={KW} height={KH} fill="#050b1a" opacity={0.6 * kprog(T, K.Me + 2.6, K.Me + 3.0)} />}
           {corte > 0 && <g opacity={kprog(T, K.Me + 2.6, K.Me + 3.0)} transform="translate(540 1070) scale(1.5) translate(-440 -990)">
-            <rect x={140} y={820} width={600} height={340} rx={30} fill="#6b5231" stroke={KC.ink} strokeWidth={6} />
+            <rect x={156} y={840} width={600} height={340} rx={30} fill="rgba(0,0,0,.45)" />
+            <rect x={140} y={820} width={600} height={340} rx={30} fill="url(#gfpTabla)" stroke="#d9b27e" strokeOpacity={0.7} strokeWidth={4} />
+            {[870, 930, 1060, 1120].map((ly, i) => <path key={i} d={`M 170 ${ly} q 140 ${i % 2 ? 8 : -8} 280 0 t 260 0`} stroke="#5a3f1f" strokeOpacity={0.45} strokeWidth={3} fill="none" />)}
             <ellipse cx={440} cy={990} rx={210} ry={120} fill="rgba(210,235,255,.85)" stroke={KC.ink} strokeWidth={6} />
             <ellipse cx={440} cy={990} rx={150} ry={80} fill="rgba(235,248,255,.95)" stroke="rgba(0,0,0,.25)" strokeWidth={4} strokeDasharray="10 8" />
             <ellipse cx={440} cy={990 - 60 * kprog(T, K.Me + 4.4, K.Me + 5.2, kEase.sale)} rx={210} ry={120} fill="none" stroke={mixHex('#9fb4c8', '#7dff95', kprog(T, K.Me + 4.4, K.Me + 5.0))} strokeWidth={22} opacity={kprog(T, K.Me + 4.2, K.Me + 4.4)} />

@@ -1,0 +1,1 @@
+- bio-46-gfp: tabla de corte de la escena de Friday Harbor con madera en degradado, vetas y sombra, y el mar de atrás se atenúa al aparecer (ya no se ven dos composiciones encimadas); muelle con degradado. El resto del shot ya estaba al nivel (medusa, frascos, gusano, Nobel).
