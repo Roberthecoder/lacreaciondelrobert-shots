@@ -185,11 +185,12 @@ function LataShot() {
         {svg(<>
           {T < K.Ti + 0.3 && <g opacity={klerp(0.45, 1, kprog(T, K.Es + 3.2, K.Es + 3.6)) * (1 - kprog(T, K.Ti, K.Ti + 0.3))}>
             <line x1={50} y1={1040} x2={1030} y2={1040} stroke={KC.ink} strokeWidth={6} strokeDasharray="18 14" />
-            <g transform="translate(178 1005) scale(1.6)"><Bote x={0} y={0} /></g>
-            <g transform="translate(422 1012) scale(1.6)"><Camion x={0} y={0} /></g>
-            <g transform="translate(706 1005) scale(1.6)"><Planta x={0} y={0} /></g>
-            <Lata x={955} y={1038} s={0.72} color="#d7dce2" o={kprog(T, K.Es + 7.0, K.Es + 7.4)} />
-            {T > K.Es + 3.2 && <circle cx={178 + viaje * 777} cy={760} r={28} fill="#d7dce2" stroke={KC.ink} strokeWidth={5} />}
+            {/* belleza: bote, camión, planta y lata nueva crecen (1.6 → 1.75) para llenar el cuadro */}
+            <g transform="translate(160 1005) scale(1.75)"><Bote x={0} y={0} /></g>
+            <g transform="translate(418 1012) scale(1.75)"><Camion x={0} y={0} /></g>
+            <g transform="translate(712 1005) scale(1.75)"><Planta x={0} y={0} /></g>
+            <Lata x={955} y={1038} s={0.8} color="#d7dce2" o={kprog(T, K.Es + 7.0, K.Es + 7.4)} />
+            {T > K.Es + 3.2 && <circle cx={160 + viaje * 795} cy={720} r={32} fill="#d7dce2" stroke={KC.ink} strokeWidth={5} />}
           </g>}
           {T > K.Ti && <g opacity={kprog(T, K.Ti, K.Ti + 0.3)} transform="translate(540 880) scale(1.38) translate(-400 -753)">
             {[0, 1].map((f) => <rect key={f} x={90} y={720 + f * 230} width={620} height={22} rx={6} fill="#a8723f" stroke={KC.ink} strokeWidth={5} />)}
