@@ -257,10 +257,10 @@ function Cangrejo21() {
       {/* 3 · endotoxinas: Lupa sobre la vacuna */}
       <Escena T={T} a={K.En} b={K.Pe} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa><Vacuna x={540} y={1180} s={0.9} jeringa={false} /></SvgCapa>
+        <SvgCapa><Vacuna x={540} y={1270} s={0.9} jeringa={false} /></SvgCapa>   {/* belleza: frasco y lupa 80–90 px más abajo, al centro */}
         {T > K.En + 0.8 && <Escala T={T} z={1} pxPorMm={210000} y={1440} color={KC.ink} />}
       </Escena>
-      <Lupa T={T} at={K.En + 0.3} until={K.Pe - 0.25} x={540} y={720} r={330} fx={540} fy={1200} tinte={KC.mint} etiqueta="AL MICROSCOPIO · BACTERIA"
+      <Lupa T={T} at={K.En + 0.3} until={K.Pe - 0.25} x={540} y={800} r={330} fx={540} fy={1290} tinte={KC.mint} etiqueta="AL MICROSCOPIO · BACTERIA"
         interior={(Tl, r) => <svg width={r * 2} height={r * 2}>
           <rect width={r * 2} height={r * 2} fill={KC.noche} />
           <Bacteria T={Tl} x={r} y={r} largo={420} ancho={170} rot={-12} color="#7fd88a" seed={3} />
@@ -280,11 +280,12 @@ function Cangrejo21() {
       {/* 5 · amebocitos y coágulo */}
       <Escena T={T} a={K.Co} b={K.Es} zoom={0.05}>
         <FondoMarca patron="oscuro" />
-        <SvgCapa>
+        {/* belleza: amebocitos, endotoxinas y gel 1.25 veces más grandes y bajados al centro (antes en la mitad de arriba) */}
+        <SvgCapa><g transform="translate(540 1000) scale(1.25) translate(-540 -870)">
           {amebos.map(([x, y, sd], i) => <Amebocito key={i} T={T} x={x} y={y} r={88} seed={sd} suelta={kprog(T, K.Co + 1.2 + i * 0.25, K.Co + 2.2 + i * 0.25)} />)}
           {amebos.map(([x, y], i) => { const u = kprog(T, K.Co + 0.1 + i * 0.2, K.Co + 1.2 + i * 0.25, kEase.suave); return u < 1 ? <Endotoxina key={'e' + i} x={klerp(x + (i % 2 ? 260 : -260), x + 70, u)} y={klerp(y - 200, y - 40, u)} s={0.7} rot={T * 50 + i * 40} /> : null; })}
           <RedGel T={T} p={kprog(T, K.Co + 2.0, K.Co + 3.8)} />
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 6a · Woods Hole: laboratorio junto al mar */}
       <Escena T={T} a={K.Es} b={ES2} zoom={0.04}>
@@ -386,7 +387,7 @@ function Cangrejo21() {
       <Chip T={T} at={K.En + 1.6} until={K.Pe - 0.3} texto="endotoxina = restos de la pared" x={540} y={1470} tam={36} borde={ENDO} />
       <Chip T={T} at={K.Pe + 1.4} until={K.Co - 0.3} texto="fiebre · choque" x={540} y={1470} tam={44} borde={KC.red} />
       <Chip T={T} at={K.Co + 0.2} until={K.Es - 0.3} texto="AL MICROSCOPIO · AMEBOCITOS" x={540} y={430} tam={32} mono borde={KC.cyan} />
-      <Etq T={T} at={K.Co + 0.6} until={K.Co + 2.0} x={640} y={560} texto="amebocito" tam={34} color={KC.texto} />
+      <Etq T={T} at={K.Co + 0.6} until={K.Co + 2.0} x={690} y={610} texto="amebocito" tam={34} color={KC.texto} />
       <Chip T={T} at={K.Co + 2.6} until={K.Es - 0.3} texto="¡coágulo!" x={540} y={1470} tam={50} borde={GEL} />
       <TarjetaEstudio T={T} at={K.Es + 0.3} until={ES2 - 0.3} anio="WOODS HOLE" quien="Bang (años 50) y Levin (años 60)" revista="Massachusetts, EE. UU. · junto al mar" x={560} y={330} />
       <Chip T={T} at={ES2 + 1.7} until={K.Pr - 0.3} texto="antes: prueba con conejos" x={300} y={1470} tam={34} borde={KC.paper} />
