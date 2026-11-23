@@ -1,0 +1,1 @@
+- qui-21-oxido: Pregunta: la barra de hierro ahora va entre los dos bloques (ya no tapa «HIERRO») y el «?» sobre el bloque oxidado; Pilar: pilar centrado y «+1600 años» centrado (antes se cortaba en el borde derecho); Costo: cifra «2.5 billones USD» más chica para que quepa con margen. Resto ya cumplía. Auditores: sin láminas, encuadre bien.

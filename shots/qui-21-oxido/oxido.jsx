@@ -227,14 +227,14 @@ function Oxido() {
       <Escena T={T} a={K.Pr} b={K.Pi} zoom={0.1}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <path d="M 210 1400 L 210 560" stroke={KC.ink} strokeWidth={66} strokeLinecap="round" /><path d="M 210 1400 L 210 560" stroke={OXI} strokeWidth={46} strokeLinecap="round" />
-          <text x={590} y={1360} textAnchor="middle" style={{ font:`400 820px ${KF.titulo}` }} fill={KC.orange} stroke={KC.ink} strokeWidth={16} transform={`rotate(${Math.sin(T * 3) * 6} 590 1050)`}>?</text>
+          <path d="M 540 1380 L 540 600" stroke={KC.ink} strokeWidth={66} strokeLinecap="round" /><path d="M 540 1380 L 540 600" stroke={OXI} strokeWidth={46} strokeLinecap="round" />
+          <text x={300} y={880} textAnchor="middle" style={{ font:`400 820px ${KF.titulo}` }} fill={KC.orange} stroke={KC.ink} strokeWidth={16} transform={`rotate(${Math.sin(T * 3) * 6} 300 600)`}>?</text>
         </SvgCapa>
       </Escena>
       {/* 7 · el pilar de Delhi */}
       <Escena T={T} a={K.Pi} b={K.Es} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa><Pilar x={420} y={1330} s={1.35 * kprog(T, K.Pi - 0.2, K.Pi + 0.5, kEase.sale)} /></SvgCapa>
+        <SvgCapa><Pilar x={540} y={1330} s={1.35 * kprog(T, K.Pi - 0.2, K.Pi + 0.5, kEase.sale)} /></SvgCapa>
       </Escena>
       {/* 8 · el estudio: fósforo y capa compacta */}
       <Escena T={T} a={K.Es} b={K.Co}>
@@ -288,10 +288,10 @@ function Oxido() {
       <Chip T={T} at={K.Po + 2.4} until={K.Al - 0.3} texto="se descarapela → hierro nuevo al aire" y={1500} tam={34} borde={OXI2} />
       <Chip T={T} at={K.Al + 2.6} until={K.Pr - 0.2} texto="pasivación: la capa protege" y={1500} tam={40} borde={ALOX} />
       <Chip T={T} at={K.Pi + 0.3} until={K.Es - 0.3} texto="📍 Delhi, India" x={760} y={440} tam={44} borde={KC.leaf} />
-      <TextoMas T={T} at={K.Pi + 1.2} until={K.Es - 0.3} texto="+1600 años" x={720} y={1500} tam={120} />
+      <TextoMas T={T} at={K.Pi + 1.2} until={K.Es - 0.3} texto="+1600 años" x={540} y={1470} tam={110} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.4} anio="2002" quien="R. Balasubramaniam · IIT Kanpur" revista="Current Science · pilar de hierro de Delhi" y={560} />
       <Chip T={T} at={K.Es + 2.6} until={K.Co - 0.3} texto="fósforo → capa compacta" y={1500} tam={44} borde={PCOL} />
-      <TextoMas T={T} at={K.Co + 0.4} until={K.Ci - 0.3} texto="2.5 billones USD" y={420} tam={110} />
+      <TextoMas T={T} at={K.Co + 0.4} until={K.Ci - 0.3} texto="2.5 billones USD" y={420} tam={94} />
       <Chip T={T} at={K.Co + 1.0} until={K.Ci - 0.3} texto="al año · estimación NACE IMPACT, 2016" y={540} tam={32} borde={KC.gold} />
       <Chip T={T} at={K.Ci + 1.6} until={K.Ou} texto="Fe → óxido de hierro, otra vez" y={1500} tam={40} borde={OXI2} />
 
