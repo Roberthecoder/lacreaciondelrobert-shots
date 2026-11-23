@@ -195,7 +195,8 @@ function Sepsis() {
       <Escena T={T} a={K.G} b={K.S}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Cama x={450} y={830} s={1.1} T={T} alarma={T > K.G + 0.4 ? 1 : 0} />
+          {/* belleza: la cama crece (1.1 → 1.2) y baja y llena el ancho del cuadro */}
+          <Cama x={455} y={900} s={1.2} T={T} alarma={T > K.G + 0.4 ? 1 : 0} />
           {T > K.G + 3.6 && tres(K.G + 3.6, false)}
         </>)}
       </Escena>
@@ -267,15 +268,16 @@ function Sepsis() {
         <FondoLunares color={KC.mint} />
         {svg(<>
           {/* el reloj y el médico están desde el inicio (atenuados) y se encienden en su frase */}
-          <g opacity={klerp(0.3, 1, kprog(T, K.Co + 2.2, K.Co + 2.6))}><Reloj x={170} y={1010} s={1.25} T={T} /></g>
-          <g opacity={klerp(0.3, 1, kprog(T, K.Co + 3.0, K.Co + 3.4))}><Medico x={500} y={1010} s={1.7} ok={kprog(T, K.Co + 3.8, K.Co + 4.2, kEase.sale)} T={T} /></g>
-          <g opacity={kprog(T, K.Co + 4.6, K.Co + 5.0)} transform={`translate(875 ${1100 + 30 * kprog(T, K.Co + 4.6, K.Co + 5.6, kEase.sale)}) scale(1.2)`}>
+          {/* belleza: médico, reloj y flecha más grandes y al centro */}
+          <g opacity={klerp(0.3, 1, kprog(T, K.Co + 2.2, K.Co + 2.6))}><Reloj x={200} y={1060} s={1.4} T={T} /></g>
+          <g opacity={klerp(0.3, 1, kprog(T, K.Co + 3.0, K.Co + 3.4))}><Medico x={530} y={1060} s={2.3} ok={kprog(T, K.Co + 3.8, K.Co + 4.2, kEase.sale)} T={T} /></g>
+          <g opacity={kprog(T, K.Co + 4.6, K.Co + 5.0)} transform={`translate(905 ${1190 + 30 * kprog(T, K.Co + 4.6, K.Co + 5.6, kEase.sale)}) scale(1.2)`}>
             <path d="M -36 -110 L 36 -110 L 36 10 L 80 10 L 0 100 L -80 10 L -36 10 Z" fill={KC.leaf} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
           </g>
         </>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.Co + 0.3} until={K.L - 0.3} anio="2022" quien="Johns Hopkins · TREWS" revista="Adams et al. · Nature Medicine" x={540} y={430} />
-      <Chip T={T} at={K.Co + 4.8} until={K.L - 0.2} texto="menos muertes (asociación)" x={540} y={1420} tam={30} borde={KC.leaf} />
+      <Chip T={T} at={K.Co + 4.8} until={K.L - 0.2} texto="menos muertes (asociación)" x={540} y={1520} tam={36} borde={KC.leaf} />
       <Sello T={T} until={K.L - 0.2} x={540} y={700} texto="estudio de sus creadores" color={KC.red} tam={46} p={kprog(T, K.Co + 6.6, K.Co + 7.0, kEase.sale)} rot={-4} />
       {/* 9 · la lección */}
       <Escena T={T} a={K.L} b={K.Ci}>
@@ -291,7 +293,7 @@ function Sepsis() {
       <Escena T={T} a={K.Ci} b={FIN}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Cama x={450} y={830} s={1.1} T={T} alarma={1} />
+          <Cama x={455} y={900} s={1.2} T={T} alarma={1} />
           {tres(K.Ci - 1, true)}
         </>)}
       </Escena>
