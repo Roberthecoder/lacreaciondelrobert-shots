@@ -301,11 +301,11 @@ function KojiShot() {
       <Escena T={T} a={K.Mo} b={K.Co}>
         <div style={{ position:'absolute', inset:0, background:'#1a120c' }}></div>
         <Ambiente T={T} n={26} color="rgba(255,220,160,.25)" />
-        {fsvg(ZK(1.12, 540, 860, 550, 930, <>
-          <CadenaCorta T={T} pts={CADM} t0={K.Mo + 0.3} paso={0.25} colores={[KC.pink, KC.cyan, KC.orange]} r={20} seed={12} dispersa={70} />
-          {[[640, 1020, 1], [820, 820, 2], [720, 1110, 3], [900, 1060, 4], [560, 840, 5], [940, 780, 6]].map(([x, y, sd], i) => { /* modo cine: entran al empezar la escena */ const on = kprog(T, K.Mo + 0.15 + i * 0.08, K.Mo + 0.45 + i * 0.08, kEase.rebote); return on > 0 ? <Tetrada key={i} T={T} x={x} y={y} s={on} seed={sd} /> : null; })}
-          {[[300, 760, 1], [520, 640, 2]].map(([x, y, sd], i) => { const on = kprog(T, K.Mo + 0.3 + i * 0.2, K.Mo + 0.7 + i * 0.2, kEase.rebote); return on > 0 ? <Levadura key={i} T={T} x={x} y={y} s={on} seed={sd} brote={kprog(T, K.Mo + 2.2, K.Mo + 3.4)} /> : null; })}
-          <Calendario T={T} at={K.Mo + 2.4} x={215} y={1000} />
+        {fsvg(ZK(1.2, 560, 860, 550, 940, <>
+          <CadenaCorta T={T} pts={CADM} t0={K.Mo + 0.3} paso={0.25} colores={[KC.pink, KC.cyan, KC.orange]} r={26} seed={12} dispersa={70} />
+          {[[640, 1020, 1], [820, 820, 2], [720, 1110, 3], [900, 1060, 4], [560, 840, 5], [940, 780, 6]].map(([x, y, sd], i) => { /* modo cine: entran al empezar la escena */ const on = kprog(T, K.Mo + 0.15 + i * 0.08, K.Mo + 0.45 + i * 0.08, kEase.rebote); return on > 0 ? <Tetrada key={i} T={T} x={x} y={y} s={on * 1.3} seed={sd} /> : null; })}
+          {[[300, 760, 1], [520, 640, 2]].map(([x, y, sd], i) => { const on = kprog(T, K.Mo + 0.3 + i * 0.2, K.Mo + 0.7 + i * 0.2, kEase.rebote); return on > 0 ? <Levadura key={i} T={T} x={x} y={y} s={on * 1.3} seed={sd} brote={kprog(T, K.Mo + 2.2, K.Mo + 3.4)} /> : null; })}
+          <Calendario T={T} at={K.Mo + 2.4} x={262} y={1000} />
           {Array.from({ length: 10 }, (_, i) => { const u = ((T * 0.5 + i / 10) % 1); return T > K.Mo + 2.0 ? <circle key={i} cx={260 + (i % 5) * 70 + Math.sin(T * 3 + i) * 8} cy={600 - u * 160} r={6 + (i % 3) * 3} fill="none" stroke="#fff" strokeWidth={3} opacity={(1 - u) * 0.7} /> : null; })}
         </>))}
       </Escena>
@@ -332,8 +332,8 @@ function KojiShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
         {fsvg(<>
-          {ZK(1.5, 290, 1010, 290, 1130, <Conidioforo x={290} y={1010} alto={150} rv={40} p={kprog(T, K.Pm - 0.1, K.Pm + 1.0)} color="#b9d23a" n={13} cad={6} T={T} />)}
-          {ZK(1.5, 790, 1010, 790, 1130, <Conidioforo x={790} y={1010} alto={150} rv={40} p={kprog(T, K.Pm, K.Pm + 1.2)} color={KJ.koji} n={13} cad={6} T={T} />)}
+          {ZK(1.5, 290, 1010, 290, 1130, <Conidioforo x={290} y={1010} alto={150} rv={40} p={0.4 + 0.6 * kprog(T, K.Pm - 0.1, K.Pm + 1.0)} color="#b9d23a" n={13} cad={6} T={T} />)}
+          {ZK(1.5, 790, 1010, 790, 1130, <Conidioforo x={790} y={1010} alto={150} rv={40} p={0.4 + 0.6 * kprog(T, K.Pm, K.Pm + 1.2)} color={KJ.koji} n={13} cad={6} T={T} />)}
           <TiraGenes x={108} y={1195} p={kprog(T, K.Pm + 1.2, K.Pm + 2.0)} />
           <TiraGenes x={608} y={1195} p={kprog(T, K.Pm + 1.6, K.Pm + 2.4)} huecos={T > K.Pm + 3.3 ? [1, 4] : []} rotos={[2, 5]} apagado={kprog(T, K.Pm + 3.6, K.Pm + 4.2)} />
           {[[120, 500, 0], [250, 455, 1], [380, 500, 2], [190, 590, 3]].map(([x, y, i]) => { const on = kprog(T, K.Pm + 2.2 + i * 0.15, K.Pm + 2.6 + i * 0.15, kEase.rebote); return on > 0 ? <Aflatoxina key={i} x={x} y={y + Math.sin(T * 2 + i) * 8} s={on * 1.25} rot={T * 20 + i * 30} /> : null; })}
@@ -377,9 +377,9 @@ function KojiShot() {
       <Chip T={T} at={K.Sa + 0.4} until={K.P - 0.2} texto="salmuera: 22–23 % de sal" x={540} y={330} tam={36} borde={KC.cyan} />
       <Chip T={T} at={K.Sa + 1.8} until={K.P - 0.2} texto="el koji muere" x={540} y={420} tam={40} borde={KC.red} />
       <Etq T={T} at={K.Mo + 0.5} until={K.Co - 0.3} x={330} y={1250} texto="enzimas (siguen)" tam={30} color={KC.cyan} />
-      <Etq T={T} at={K.Mo + 1.0} until={K.Co - 0.3} x={1040} y={1300} texto="Tetragenococcus halophilus" lado="izq" it tam={30} color={KC.mint} />
+      <Etq T={T} at={K.Mo + 1.0} until={K.Co - 0.3} x={1040} y={1385} texto="Tetragenococcus halophilus" lado="izq" it tam={30} color={KC.mint} />
       <Etq T={T} at={K.Mo + 1.8} until={K.Co - 0.3} x={60} y={500} texto="Zygosaccharomyces rouxii" it tam={30} color="#ffd98a" />
-      <Chip T={T} at={K.Mo + 2.4} until={K.Co - 0.3} texto="6–8 meses (método tradicional)" x={540} y={1420} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Mo + 2.4} until={K.Co - 0.3} texto="6–8 meses (método tradicional)" x={540} y={1470} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.Co + 0.6} until={K.E - 0.3} texto="azúcar + aminoácido = color" x={540} y={400} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.Co + 1.8} until={K.E - 0.3} texto="reacción de Maillard" x={540} y={1480} tam={36} borde={KC.gold2} />
       <TarjetaEstudio T={T} at={K.E + 0.15} until={K.Pm - 0.2} anio="2006" quien="Higashi-Hiroshima, Japón · 210 cepas" revista="Tominaga et al., Appl. Environ. Microbiol." y={440} />
@@ -400,7 +400,7 @@ function KojiShot() {
       <BarraEscala T={T} at={K.Cr + 2.0} until={K.Pr} texto="lupa: 50 µm" largo={234} />
       <BarraEscala T={T} at={K.Pr} until={K.Sa} texto="3 nm (moléculas)" largo={226} />
       <BarraEscala T={T} at={K.Sa} until={K.Mo} texto="20 cm" largo={182} />
-      <BarraEscala T={T} at={K.Mo} until={K.Co} texto="5 µm" largo={202} />
+      <BarraEscala T={T} at={K.Mo} until={K.Co} texto="5 µm" largo={281} />{/* belleza: microbios ×1.3 y encuadre ×1.07 → 202 × 1.39 */}
       <BarraEscala T={T} at={K.Co} until={K.E} texto="5 cm" largo={221} />
       <BarraEscala T={T} at={K.E} until={K.Pm} texto="5 cm" largo={189} />
       <BarraEscala T={T} at={K.Pm} until={K.N} texto="50 µm" largo={300} />
