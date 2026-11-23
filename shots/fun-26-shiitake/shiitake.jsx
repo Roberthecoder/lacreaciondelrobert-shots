@@ -111,8 +111,12 @@ function Helice({ T, x, y, largo = 520, s = 1, rot = 0, sep = 0, fase = 0, n = 1
 // Hifa del shiitake (micro): tubo con pared gruesa, tabique y citoplasma.
 function Hifa({ T, y = 820, alto = 260 }) {
   return <g>
-    <rect x={-60} y={y - alto / 2} width={1200} height={alto} rx={alto / 2} fill="#e9d9a6" stroke={KC.ink} strokeWidth={8} />
-    <rect x={-60} y={y - alto / 2 + 34} width={1200} height={alto - 68} rx={(alto - 68) / 2} fill="#3a2f56" stroke={KC.ink} strokeWidth={5} />
+    <defs>
+      <linearGradient id="shHifaPared" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#f6ead0" /><stop offset="0.55" stopColor="#e3cf96" /><stop offset="1" stopColor="#b89e62" /></linearGradient>
+      <radialGradient id="shHifaCito" cx="0.4" cy="0.35" r="0.8"><stop offset="0" stopColor="#4a3d6e" /><stop offset="1" stopColor="#231c38" /></radialGradient>
+    </defs>
+    <rect x={-60} y={y - alto / 2} width={1200} height={alto} rx={alto / 2} fill="url(#shHifaPared)" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-60} y={y - alto / 2 + 34} width={1200} height={alto - 68} rx={(alto - 68) / 2} fill="url(#shHifaCito)" stroke="rgba(200,185,255,.55)" strokeWidth={5} />
     <rect x={640} y={y - alto / 2 + 30} width={26} height={alto - 60} rx={10} fill="#e9d9a6" stroke={KC.ink} strokeWidth={4} />
     {Array.from({ length: 10 }, (_, i) => <circle key={i} cx={((i * 113 + T * 30) % 1160) - 40} cy={y + Math.sin(i * 1.7 + T) * 40} r={10 + (i % 3) * 4} fill="rgba(180,160,255,.45)" />)}
     {Array.from({ length: 22 }, (_, i) => <line key={i} x1={i * 52} y1={y - alto / 2 + 6} x2={i * 52 + 16} y2={y - alto / 2 + 28} stroke="rgba(120,90,40,.5)" strokeWidth={4} />)}
@@ -124,7 +128,8 @@ function CortePiel({ T, abre = 0 }) {
   return <g>
     <rect x={0} y={420} width={KW} height={200} fill="#807470" stroke={KC.ink} strokeWidth={6} />
     {Array.from({ length: 4 }, (_, f) => Array.from({ length: 12 }, (_, i) => <rect key={f + '_' + i} x={(f % 2) * 45 + i * 90 - 30} y={430 + f * 46} width={84} height={42} rx={14} fill={mixHex('#f9e3d2', '#eab69a', f / 3)} stroke="rgba(0,0,0,.35)" strokeWidth={3} />))}
-    <rect x={0} y={620} width={KW} height={600} fill="#7a5854" stroke={KC.ink} strokeWidth={6} />
+    <defs><linearGradient id="shDermis" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0" stopColor="#8c6560" /><stop offset="1" stopColor="#5c403d" /></linearGradient></defs>
+    <rect x={0} y={620} width={KW} height={600} fill="url(#shDermis)" stroke={KC.ink} strokeWidth={6} />
     {Array.from({ length: 9 }, (_, i) => <path key={i} d={`M 0 ${660 + i * 60} C 300 ${640 + i * 60} 700 ${690 + i * 60} 1080 ${660 + i * 60}`} stroke="rgba(150,60,50,.25)" strokeWidth={5} fill="none" />)}
     {abre > 0 && <ellipse cx={540} cy={vy} rx={520} ry={120 * abre} fill="rgba(255,40,60,.25)" />}
     <rect x={-20} y={vy - r} width={1120} height={r * 2} rx={r} fill={mixHex('#f2b6ab', '#ff6a6a', abre)} stroke="#9c2b2b" strokeWidth={6} />
@@ -233,7 +238,7 @@ function ShiitakeShot() {
         <Ambiente T={T} n={22} />
         {fsvg(<Zg k={1.2} cx={540} cy={800}>
           <Hifa T={T} y={1010} />
-          {[[240, 700, -86], [540, 680, -94], [840, 700, -88]].map(([hx, hy, r], i) => { const on = kprog(T, K.L + 1.2 + i * 0.35, K.L + 2.0 + i * 0.35, kEase.sale);
+          {[[240, 700, -86], [540, 680, -94], [840, 700, -88]].map(([hx, hy, r], i) => { const on = kprog(T, K.L + 0.05 + i * 0.3, K.L + 0.85 + i * 0.3, kEase.sale);
             return on > 0 ? <g key={i} opacity={on}><Helice T={T} x={hx} y={hy + (1 - on) * 120} largo={380} s={0.85} rot={r} fase={i} n={11} /></g> : null; })}
         </Zg>)}
       </Escena>
@@ -249,11 +254,11 @@ function ShiitakeShot() {
       {/* 6 · hipótesis: inflamación que abre los vasitos · o alergia retardada (linfocito T) */}
       <Escena T={T} a={K.H} b={K.Ca} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {fsvg(<>
+        {fsvg(<Zg k={1.12} cx={540} cy={820} ty={960}>
           <CortePiel T={T} abre={kprog(T, K.H + 1.2, K.H + 2.6, kEase.suave)} />
           {Array.from({ length: 12 }, (_, i) => { const u = kprog(T, K.H + 0.3 + i * 0.1, K.H + 1.5 + i * 0.1); return u > 0 && u < 1 ? <circle key={i} cx={120 + i * 75 + Math.sin(i) * 20} cy={klerp(470, 990, u)} r={11} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} /> : null; })}
           {T > K.H + 3.3 && <g opacity={kprog(T, K.H + 3.3, K.H + 3.8)}><LinfocitoT T={T} x={760} y={810} s={kprog(T, K.H + 3.3, K.H + 3.9, kEase.rebote)} /></g>}
-        </>)}
+        </Zg>)}
       </Escena>
       {/* 7 · pasa con crudo o poco cocido; el calor fuerte separa la triple hélice */}
       <Escena T={T} a={K.Ca} b={K.E} zoom={0.04}>
@@ -273,7 +278,7 @@ function ShiitakeShot() {
       {/* 8 · el estudio: Francia, 2014–2019, 59 casos de 125 expuestos (cuadrícula esquemática) */}
       <Escena T={T} a={K.E} b={K.D} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>{Array.from({ length: 125 }, (_, i) => { const on = kprog(T, K.E + 0.3 + i * 0.012, K.E + 0.6 + i * 0.012, kEase.rebote); if (on <= 0) return null;
+        {fsvg(<>{Array.from({ length: 125 }, (_, i) => { const on = kprog(T, K.E + 0.05 + i * 0.012, K.E + 0.35 + i * 0.012, kEase.rebote); if (on <= 0) return null;
           const caso = i < 59 && T > K.E + 2.6 + i * 0.012; return <Persona key={i} x={78 + (i % 15) * 66} y={700 + Math.floor(i / 15) * 94} s={0.5 * on} color={caso ? KC.orange : '#8fb6ff'} rayas={caso ? 1 : 0} />; })}</>)}
       </Escena>
       {/* 9 · todos se recuperaron; entre más comieron, más días les duró (medianas 4, 7, 15) */}
@@ -282,8 +287,8 @@ function ShiitakeShot() {
         {fsvg(<>{DIAS.map((d, i) => { const on = kprog(T, dosisT(i), dosisT(i) + 0.5, kEase.sale), y = 680 + i * 260;
           return <g key={i} opacity={klerp(0.35, 1, kprog(T, dosisT(i) - 0.2, dosisT(i)))}>
             <Platito x={200} y={y + 30} n={[1, 3, 6][i]} s={1.3} />
-            <rect x={360} y={y - 40} width={30 * d * on} height={80} rx={18} fill={SH.raya} stroke={KC.ink} strokeWidth={6} />
-            <text x={380 + 30 * d * on} y={y + 20} style={{ font:`400 54px ${KF.titulo}` }} fill={KC.ink}>{on > 0.9 ? `${d} días` : ''}</text>
+            <rect x={360} y={y - 40} width={26 * d * on} height={80} rx={18} fill={SH.raya} stroke={KC.ink} strokeWidth={6} />
+            <text x={380 + 26 * d * on} y={y + 20} style={{ font:`400 54px ${KF.titulo}` }} fill={KC.ink}>{on > 0.9 ? `${d} días` : ''}</text>
           </g>; })}
                     <text x={360} y={540} style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>días con rayas (mediana)</text>
         </>)}
@@ -333,21 +338,21 @@ function ShiitakeShot() {
       <Chip T={T} at={K.R + 1.2} until={K.L - 0.3} texto="mucha comezón" x={300} y={300} tam={36} borde={KC.red} />
       <Etq T={T} at={K.L + 0.5} until={K.P - 0.3} x={60} y={1200} texto="hifa del shiitake" tam={30} />
       <Etq T={T} at={K.L + 0.9} until={K.P - 0.3} x={60} y={966} texto="pared celular" tam={30} color={KC.white} />
-      <Etq T={T} at={K.L + 2.0} until={K.P - 0.3} x={60} y={450} texto="lentinano (β-glucano)" tam={34} color={KC.yellow} />
+      <Etq T={T} at={K.L + 1.2} until={K.P - 0.3} x={60} y={450} texto="lentinano (β-glucano)" tam={34} color={KC.yellow} />
       <Chip T={T} at={K.L + 2.6} until={K.P - 0.3} texto="se cree que es el culpable" x={540} y={340} tam={34} borde={KC.yellow} />
       <Chip T={T} at={K.L + 2.0} until={K.P - 0.3} texto="moléculas agrandadas" x={720} y={1450} tam={26} borde={KC.ink} mono />
       <Chip T={T} at={K.H + 0.4} until={K.H + 3.2} texto="hipótesis 1: inflamación" x={360} y={360} tam={34} borde={KC.yellow} />
-      <Etq T={T} at={K.H + 1.4} until={K.Ca - 0.3} x={60} y={1170} texto="vasito de la piel" tam={30} color={KC.white} />
-      <Etq T={T} at={K.H + 0.3} until={K.Ca - 0.3} x={60} y={680} texto="piel (corte)" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.H + 1.4} until={K.Ca - 0.3} x={60} y={1352} texto="vasito de la piel" tam={30} color={KC.white} />
+      <Etq T={T} at={K.H + 0.3} until={K.Ca - 0.3} x={60} y={803} texto="piel (corte)" tam={30} color={KC.ink} />
       <Chip T={T} at={K.H + 3.4} until={K.Ca - 0.3} texto="hipótesis 2: alergia retardada" x={370} y={360} tam={32} borde={KC.lilac} />
-      <Etq T={T} at={K.H + 3.8} until={K.Ca - 0.3} x={640} y={800} texto="linfocito T" lado="izq" tam={30} color={KC.white} />
+      <Etq T={T} at={K.H + 3.8} until={K.Ca - 0.3} x={652} y={938} texto="linfocito T" lado="izq" tam={30} color={KC.white} />
       <Chip T={T} at={K.Ca + 0.6} until={mitadCa - 0.2} texto="crudo" x={221} y={680} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Ca + 1.0} until={mitadCa - 0.2} texto="poco cocido" x={704} y={680} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Ca + 1.4} until={mitadCa - 0.2} texto="✓ aquí pasa" x={420} y={460} tam={40} borde={KC.ink} />
       <Chip T={T} at={mitadCa + 1.6} until={K.E - 0.3} texto="~140 °C: la hélice se separa" x={390} y={460} tam={36} borde={KC.yellow} />
       <Etq T={T} at={mitadCa + 0.4} until={K.E - 0.3} x={60} y={660} texto="lentinano (molécula agrandada)" tam={28} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.D - 0.3} anio="2014–2019" quien="Francia · centros de toxicología" revista="Boels et al., Clin Toxicol, 2022" y={330} />
-      <Chip T={T} at={K.E + 2.6} until={K.D - 0.3} texto="59 casos de dermatitis · de 125 expuestos" x={540} y={540} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.E + 2.6} until={K.D - 0.3} texto="59 casos de dermatitis · de 125 expuestos" x={540} y={585} tam={32} borde={KC.red} />
       <Chip T={T} at={K.E + 2.0} until={K.D - 0.3} texto="esquemático" x={540} y={1480} tam={24} borde={KC.ink} mono />
       <Chip T={T} at={K.D + 2.4} until={K.Ce - 0.3} texto="✓ todos se recuperaron" x={540} y={380} tam={38} borde={KC.leaf} />
       <Chip T={T} at={K.Ce + 0.4} until={K.S - 0.3} texto="Boels et al., 2014" x={380} y={560} tam={30} borde={KC.ink} mono />
@@ -362,7 +367,7 @@ function ShiitakeShot() {
       <BarraEscala T={T} at={K.R} until={K.L} texto="50 cm" largo={170 * 1.15 / 0.8} />
       <BarraEscala T={T} at={K.L} until={K.P} texto="10 µm" largo={160 * 1.2} />
       <BarraEscala T={T} at={K.P} until={K.H} texto="5 cm" largo={180} />
-      <BarraEscala T={T} at={K.H} until={K.Ca} texto="100 µm" largo={170} />
+      <BarraEscala T={T} at={K.H} until={K.Ca} texto="100 µm" largo={170 * 1.12} />
       <BarraEscala T={T} at={K.Ca} until={K.E} texto="10 cm" largo={170 * 1.15} />
       <BarraEscala T={T} at={K.S} until={K.C} texto="10 cm" largo={170 * 1.2} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={150 * 1.25} />
