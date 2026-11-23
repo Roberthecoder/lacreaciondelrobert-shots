@@ -358,7 +358,8 @@ function Rhizobium() {
       {/* 6 · pregunta: una molécula muy dura */}
       <Escena T={T} a={K.Pr} b={K.Ni} zoom={0.06}>
         <FondoLunares color={KC.pink} />
-        <CapaR><g transform="translate(540 930) scale(1.25) translate(-330 -860)">
+        {/* belleza: martillo y N≡N bajan al centro del cuadro (antes arriba; el auditor marcaba ARRIBA) */}
+        <CapaR><g transform="translate(540 1060) scale(1.25) translate(-330 -860)">
           <N2 x={300} y={880} s={2.6} rot={Math.sin(T * 2) * 4} />
           {(() => { const u = ((T - K.Pr) * 1.6) % 1, gol = Math.abs(Math.sin(u * Math.PI)); return <Martillo x={330} y={640} rot={klerp(-70, 10, gol)} s={0.9} />; })()}
           <text x={300} y={1140} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={6} opacity={Math.abs(Math.sin((T - K.Pr) * 1.6 * Math.PI))}>¡TOC!</text>
@@ -367,12 +368,13 @@ function Rhizobium() {
       {/* 7 · nitrogenasa: rompe el triple enlace */}
       <Escena T={T} a={K.Ni} b={K.Tr} zoom={0.04}>
         <FondoMarca patron="oscuro" />
-        <CapaR>
+        {/* belleza: la nitrogenasa y sus moléculas ×1.3, centradas (antes la enzima quedaba chica) */}
+        <CapaR><g transform="translate(540 960) scale(1.3) translate(-500 -950)">
           <Nitrogenasa T={T} x={500} y={940} s={1.05} acopla={kprog(T, K.Ni, K.Ni + 0.8, kEase.sale)} brilla={kprog(T, rompe[0] - 0.3, rompe[0])} />
           {sale < 1 && <N2 x={klerp(-120, 500, llega)} y={klerp(620, 982, llega)} s={0.9} rot={klerp(-40, 0, llega)} enlaces={enl} sep={enl === 0 ? 30 * sale : (3 - enl) * 4} o={1 - sale} />}
           {sale > 0 && <g><NH3 x={klerp(470, 820, sale)} y={klerp(982, 1180, sale)} s={0.9} rot={T * 30} /><NH3 x={klerp(530, 880, sale)} y={klerp(982, 760, sale)} s={0.9} rot={-T * 30} /></g>}
           {rompe.map((t, i) => { const u = kprog(T, t, t + 0.4); return u > 0 && u < 1 && <text key={i} x={500 + (i - 1) * 120} y={820 - u * 60} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} opacity={1 - u}>¡CLAC!</text>; })}
-        </CapaR>
+        </g></CapaR>
         <Ambiente T={T} n={20} color="rgba(177,140,255,.35)" />
       </Escena>
       {/* 8 · el trueque */}
