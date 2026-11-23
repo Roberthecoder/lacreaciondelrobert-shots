@@ -318,8 +318,15 @@ function Alarma({ T, x, y, s = 1, on = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {b > 0.05 && Array.from({ length: 8 }, (_, i) => <line key={i} x1={Math.cos(i * Math.PI / 4) * 160} y1={-90 + Math.sin(i * Math.PI / 4) * 160} x2={Math.cos(i * Math.PI / 4) * 220} y2={-90 + Math.sin(i * Math.PI / 4) * 220} stroke={KC.red} strokeWidth={14} strokeLinecap="round" opacity={b} />)}
     <path d="M -110 0 L -110 -100 Q -110 -210 0 -210 Q 110 -210 110 -100 L 110 0 Z" fill={mixHex('#8d8d8d', KC.red, on)} stroke={KC.ink} strokeWidth={9} />
+    {/* belleza: la cúpula y la base ganan volumen (sombra abajo a la derecha) */}
+    <defs>
+      <radialGradient id="dxAlarma" cx=".32" cy=".25" r=".95"><stop offset="0" stopColor="#fff" stopOpacity=".18" /><stop offset=".5" stopColor="#000" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".5" /></radialGradient>
+      <linearGradient id="dxBase" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#55556a" /><stop offset="1" stopColor="#22222c" /></linearGradient>
+    </defs>
+    <path d="M -110 0 L -110 -100 Q -110 -210 0 -210 Q 110 -210 110 -100 L 110 0 Z" fill="url(#dxAlarma)" />
     <path d="M -70 -110 Q -70 -170 -20 -175" stroke="#fff" strokeWidth={14} fill="none" opacity={0.25 + 0.4 * on} strokeLinecap="round" />
-    <rect x={-150} y={0} width={300} height={70} rx={16} fill="#3a3a44" stroke={KC.ink} strokeWidth={9} />
+    <rect x={-150} y={0} width={300} height={70} rx={16} fill="url(#dxBase)" stroke={KC.ink} strokeWidth={9} />
+    <rect x={-134} y={10} width={268} height={10} rx={5} fill="#fff" opacity=".18" />
   </g>;
 }
 
