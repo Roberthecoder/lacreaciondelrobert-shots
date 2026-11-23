@@ -155,11 +155,13 @@ function EspumaShot() {
       <Escena T={T} a={K.Na} b={K.Z} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={-60} y={900} width={KW + 120} height={1200} fill={ES.agua} stroke={KC.ink} strokeWidth={6} />
+          <defs><linearGradient id="es-prof" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#14506f" /><stop offset="0.45" stopColor="#0e3a54" stopOpacity="0.75" /><stop offset="1" stopColor="#0e3a54" stopOpacity="0.05" /></linearGradient></defs>
+          <rect x={-60} y={850} width={KW + 120} height={1200} fill="url(#es-prof)" />
+          <path d="M -60 850 L 1140 850" stroke={KC.ink} strokeWidth={6} />
           {[0, 1, 2, 3].map((i) => { const u = kprog(T, K.Na + i * 0.5, K.Na + 1.4 + i * 0.5, kEase.sale); const podr = kprog(T, K.Na + 1.5 + i * 0.4, K.Na + 3.2 + i * 0.4);
-            return <g key={i} transform={`translate(${160 + i * 253} ${klerp(520, 960, u)}) rotate(${Math.sin(T * 2 + i) * 20 * (1 - u) + i * 30})`}><HojaAliso x={0} y={0} s={1.0} color={mixHex(i % 2 ? ES.hoja : ES.hojaV, '#6a4a2a', podr)} /></g>; })}
+            return <g key={i} transform={`translate(${160 + i * 253} ${klerp(480, 910, u)}) rotate(${Math.sin(T * 2 + i) * 20 * (1 - u) + i * 30})`}><HojaAliso x={0} y={0} s={1.0} color={mixHex(i % 2 ? ES.hoja : ES.hojaV, '#6a4a2a', podr)} /></g>; })}
           {Array.from({ length: 22 }, (_, i) => { const t0 = K.Na + 1.6 + i * 0.09, u = kprog(T, t0, t0 + 1.0); if (u <= 0) return null;
-            return <circle key={i} cx={130 + (i * 83) % 820} cy={klerp(1080, 905, u)} r={15 + (i % 4) * 8} fill={ES.espuma} stroke="#c9b98a" strokeWidth={2} opacity={0.9} />; })}
+            return <circle key={i} cx={130 + (i * 83) % 820} cy={klerp(1030, 855, u)} r={15 + (i % 4) * 8} fill={ES.espuma} stroke="#c9b98a" strokeWidth={2} opacity={0.9} />; })}
         </>)}
       </Escena>
       {/* 3–4 · al microscopio: esporas de 4 brazos en las burbujas; medida de Articulospora */}
@@ -270,7 +272,9 @@ function EspumaShot() {
       <Escena T={T} a={K.I} b={K.R} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <path d="M -60 1310 Q 300 1250 540 1320 T 1140 1300 L 1140 2100 L -60 2100 Z" fill={ES.agua} stroke={KC.ink} strokeWidth={6} />
+          <defs><linearGradient id="es-prof2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#14506f" /><stop offset="0.45" stopColor="#0e3a54" stopOpacity="0.75" /><stop offset="1" stopColor="#0e3a54" stopOpacity="0.05" /></linearGradient></defs>
+          <path d="M -60 1310 Q 300 1250 540 1320 T 1140 1300 L 1140 2100 L -60 2100 Z" fill="url(#es-prof2)" />
+          <path d="M -60 1310 Q 300 1250 540 1320 T 1140 1300" fill="none" stroke={KC.ink} strokeWidth={6} />
           <g opacity={kprog(T, K.I + 0.1, K.I + 0.6)}><Casita x={330} y={1285} s={1.8} /></g>
           <g opacity={kprog(T, K.I + 0.8, K.I + 1.3)}><MapaGB x={700} y={560} s={1.5} p={kprog(T, K.I + 1.3, K.I + 1.8)} /></g>
         </>)}
@@ -287,7 +291,7 @@ function EspumaShot() {
               <Estrella x={-30} y={10} s={0.8} L={60} /><Estrella x={40} y={-30} s={0.6} rot={50} L={60} /><Sigmoide x={20} y={50} s={0.6} L={120} rot={-10} />
               <line x1={85} y1={85} x2={170} y2={170} stroke={KC.ink} strokeWidth={26} strokeLinecap="round" />
             </g></g>}
-          {ESTR_GRID.map(([gx, gy], i) => { const on = kprog(T, K.R + 2.6 + i * 0.08, K.R + 2.9 + i * 0.08, kEase.rebote); if (on <= 1e-3) return null;
+          {ESTR_GRID.map(([gx, gy], i) => { const on = kprog(T, K.R + 2.2 + i * 0.04, K.R + 2.5 + i * 0.04, kEase.rebote); if (on <= 1e-3) return null;
             return <g key={i}><circle cx={gx} cy={gy} r={72} fill="rgba(14,20,36,.85)" stroke={KC.ink} strokeWidth={5} />
               {i % 4 === 3 ? <Sigmoide x={gx} y={gy} s={on * 0.84} rot={i * 20} L={150} color="#fff8d6" borde={KC.gold2} /> : <Estrella x={gx} y={gy + 8} s={on * 1.2 * (0.75 + (i % 3) * 0.08)} rot={i * 37} L={60} color="#fff8d6" borde={KC.gold2} />}</g>; })}
         </>)}
@@ -297,9 +301,9 @@ function EspumaShot() {
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#111a29, #1a2433)' }}></div>
         {fsvg(<>
           {Array.from({ length: 40 }, (_, i) => { const x0 = (i * 97) % KW, y0 = ((T * 900 + i * 173) % 1500) + 300; return <line key={i} x1={x0} y1={y0} x2={x0 - 8} y2={y0 + 40} stroke="#e6f6ff" strokeWidth={4} opacity=".45" />; })}
-          <rect x={0} y={1140} width={KW} height={80} fill={ES.agua} stroke={KC.ink} strokeWidth={6} />
-          <ArbolLluvia T={T} x={300} y={1150} s={0.95} />
-          {(() => { const g = kprog(T, K.L + 1.2, K.L + 2.0, kEase.rebote); return <g transform={`translate(800 ${900}) scale(${g * 1.4})`}>
+          <rect x={0} y={1270} width={KW} height={80} fill={ES.agua} stroke={KC.ink} strokeWidth={6} />
+          <ArbolLluvia T={T} x={300} y={1280} s={0.95} />
+          {(() => { const g = kprog(T, K.L + 1.2, K.L + 2.0, kEase.rebote); return <g transform={`translate(800 ${1030}) scale(${g * 1.4})`}>
             <path d="M 0 -200 Q 150 0 140 70 Q 120 170 0 170 Q -120 170 -140 70 Q -150 0 0 -200 Z" fill="rgba(170,225,255,.85)" stroke={KC.ink} strokeWidth={8} />
             <Estrella x={0} y={70} s={1.3} L={60} borde={'#3a7aa0'} />
           </g>; })()}
@@ -344,8 +348,8 @@ function EspumaShot() {
       <Etq T={T} at={K.I + 1.6} until={K.R - 0.3} x={730} y={1190} texto="Inglaterra" tam={32} color={KC.ink} />
       <Etq T={T} at={K.R + 0.3} until={K.R + 2.4} x={60} y={600} texto="espuma tras unas ramitas" tam={36} color={KC.ink} />
       <Chip T={T} at={K.R + 2.8} until={K.L - 0.3} texto="más de 300 especies descritas · estudio de 2022" x={KW / 2} y={1340} tam={30} borde={KC.gold} />
-      <Etq T={T} at={K.L + 0.4} until={K.C - 0.3} x={60} y={1310} texto="agua que escurre" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.L + 0.8} until={K.C - 0.3} x={60} y={1362} texto="por troncos y hojas" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.L + 0.4} until={K.C - 0.3} x={60} y={1412} texto="agua que escurre" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.L + 0.8} until={K.C - 0.3} x={60} y={1458} texto="por troncos y hojas" tam={32} color={KC.ink} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="no es jabón: es un cielo de estrellas de hongo" x={KW / 2} y={1420} tam={30} borde={KC.gold2} />
 
       {/* barras de escala */}
