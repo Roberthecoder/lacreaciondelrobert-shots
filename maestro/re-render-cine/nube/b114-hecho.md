@@ -1,0 +1,1 @@
+- fun-127-olor-hongo: Espejo: las manos entraban 1 s tarde y la escena arrancaba casi vacía; ahora entran al empezar la escena. Las demás escenas ya estaban al nivel (sujeto grande y centrado, un punto de atención). Auditores: sin láminas · encuadre bien.

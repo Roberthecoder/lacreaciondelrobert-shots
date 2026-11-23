@@ -266,7 +266,7 @@ function OlorShot() {
         <Ambiente T={T} n={18} />
         {fsvg(<>
           <line x1={540} y1={560} x2={540} y2={1440} stroke="#fff" strokeWidth={5} strokeDasharray="18 14" opacity={kprog(T, K.E + 0.2, K.E + 0.6)} />
-          <g opacity={kprog(T, K.E + 1.0, K.E + 1.5) * (1 - kprog(T, K.F - 0.2, K.F + 0.3))}><Mano x={320} y={1230} s={1.7} espejo /><Mano x={760} y={1230} s={1.7} /></g>
+          <g opacity={kprog(T, K.E + 0.3, K.E + 0.8) * (1 - kprog(T, K.F - 0.2, K.F + 0.3))}><Mano x={320} y={1230} s={1.7} espejo /><Mano x={760} y={1230} s={1.7} /></g>
           <g opacity={kprog(T, K.E + 0.1, K.E + 0.6)}>
             <Octenol x={510} y={790} s={1.1} p={1} color={KC.texto} forma="R" espejo />
             <Octenol x={570} y={790} s={1.1} p={1} color={KC.texto} forma="S" />
