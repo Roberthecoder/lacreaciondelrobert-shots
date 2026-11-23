@@ -401,7 +401,7 @@ function SueloShot() {
           <FranjaSuelo T={T} y0={900} y1={1300} seed={14} />
           {SU_ESPECIES.map((tipo, i) => { const baja = i < 6, t0 = K.Ep + 2.6 + i * 0.22, u = baja ? kprog(T, t0, t0 + 0.6, kEase.suave) : 0;
             const ap = kprog(T, K.Ep + 0.1 + i * 0.05, K.Ep + 0.5 + i * 0.05);
-            return <g key={tipo} opacity={ap}><Especie tipo={tipo} x={baja ? 190 + i * 140 : 300 + (i - 6) * 160} y={baja ? klerp(640, 1010 + (i % 2) * 110, u) : 780} s={1.1} /></g>; })}
+            return <g key={tipo} opacity={ap}><Especie tipo={tipo} x={baja ? 210 + i * 124 : 300 + (i - 6) * 160} y={baja ? klerp(640, 1010 + (i % 2) * 110, u) : 780} s={1.35} /></g>; })}
         </g>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.Ep + 0.2} until={K.Ep + 2.4} anio="2023" quien="Zúrich (Suiza)" revista="Anthony et al. · PNAS" y={430} />

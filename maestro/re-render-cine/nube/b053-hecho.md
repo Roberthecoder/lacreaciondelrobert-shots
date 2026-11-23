@@ -1,1 +1,2 @@
 - fun-63-camembert: Estudio: árbol del ADN agrandado (×1.15) y bajado al centro; ramas y colonias recorridas hacia adentro para que «P. fuscoglaucum» y «var. camemberti» no se corten en los bordes; rótulos chicos a 24 px; chip del clon más abajo. Encuadre bien, sin láminas.
+- amb-23-suelo-cm: Especies: seres vivos más grandes (×1.35 → ×1.23 relativo) y repartidos para que el hongo y el brote ya no se corten en los bordes con el avance de cámara. El resto ya cumplía. Encuadre bien, sin láminas.
