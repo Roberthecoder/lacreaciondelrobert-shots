@@ -156,10 +156,10 @@ function Frasco({ x, y, s = 1, tipo = 'rana' }) {
 function NumeroBloque({ T, at, until, valor, dur = 1.6, arriba, abajo, x, y, tam = 150, color = KC.yellow }) {
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'pop'), v = Math.round(klerp(0, valor, kprog(T, at, at + dur, kEase.sale)));
-  const t = { font:`900 36px ${KF.texto}`, color:KC.ink, textShadow:'0 2px 0 rgba(255,255,255,.6)' };
+  const t = { font:`900 36px ${KF.texto}`, color:KC.ink, textShadow:'0 2px 8px rgba(0,0,0,.6)' };
   return <div style={{ position:'absolute', left:x, top:y, zIndex:41, transform:`translate(-50%,-50%) scale(${e.s})`, opacity:e.o, textAlign:'center', whiteSpace:'nowrap' }}>
     {arriba && <div style={t}>{arriba}</div>}
-    <div style={{ font:`400 ${tam}px/0.95 ${KF.titulo}`, color, WebkitTextStroke:`${tam / 30}px ${KC.ink}`, textShadow:`${tam / 24}px ${tam / 24}px 0 ${KC.ink}` }}>{kformato(v)}</div>
+    <div style={{ font:`900 ${tam}px/0.95 ${KF.texto}`, color, textShadow:'0 6px 24px rgba(0,0,0,.6)' }}>{kformato(v)}</div>
     {abajo && <div style={t}>{abajo}</div>}
   </div>;
 }
@@ -238,7 +238,7 @@ function QuitridioShot() {
       {/* 6 · re-gancho */}
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<g transform="translate(330 980) scale(1.25) translate(-290 -700)"><Interrogacion T={T} x={290} y={1010} tam={480} /><Rana T={T} x={290} y={470} s={0.45} enferma={0.55} ojos={0.75} latido={0} escamas={1} id="q" /></g>)}
+        {fsvg(<g><Rana T={T} x={540} y={980} s={1.05} enferma={0.55} ojos={0.75} latido={0} escamas={1} id="q" /><Interrogacion T={T} x={830} y={640} tam={200} /></g>)}
       </Escena>
       {/* 7 · el estudio de 2009 (Australia): rana arborícola verde y su sangre */}
       <Escena T={T} a={K.Es} b={K.C} zoom={0.05}>
@@ -262,8 +262,10 @@ function QuitridioShot() {
           {ecgPath && <path d={ecgPath} stroke={KC.mint} strokeWidth={7} fill="none" strokeLinejoin="round" style={{ filter:`drop-shadow(0 0 8px ${KC.mint})` }} />}
           {sweep > 0 && sweep < 1 && <circle cx={xs} cy={ecgY(xs)} r={10} fill="#fff" />}
           </g>
-          <g transform={`translate(540 900) scale(${5.4 * (1 + 0.3 * corazonPulso)})`}>
-            <path d="M 0 22 C -40 -4 -30 -36 0 -18 C 30 -36 40 -4 0 22 Z" fill={parado ? '#6d7078' : KC.red} stroke={KC.ink} strokeWidth={4} />
+          <g transform={`translate(540 880) scale(${7.6 * (1 + 0.25 * corazonPulso)})`}>
+            <defs><radialGradient id="corVol" cx="35%" cy="30%" r="75%"><stop offset="0%" stopColor={parado ? '#9a9da6' : '#ff7a6e'} /><stop offset="60%" stopColor={parado ? '#6d7078' : KC.red} /><stop offset="100%" stopColor={parado ? '#43464d' : '#8e1e1a'} /></radialGradient></defs>
+            <path d="M 0 22 C -40 -4 -30 -36 0 -18 C 30 -36 40 -4 0 22 Z" fill="url(#corVol)" stroke={KC.ink} strokeWidth={3} />
+            <ellipse cx={-14} cy={-14} rx={7} ry={4} fill="#fff" opacity=".35" transform="rotate(-30 -14 -14)" />
           </g>
         </>)}
       </Escena>
@@ -320,8 +322,8 @@ function QuitridioShot() {
       <Medidor T={T} at={K.C + 0.3} until={K.Sp - 0.3} valor={(t) => 1 - 0.2 * kprog(t, K.C + 0.8, K.C + 1.8, kEase.suave)} etiqueta="sodio (Na⁺)" texto={(v) => (v > 0.995 ? '100 %' : '≈ −' + Math.round((1 - v) * 100) + ' %')} x={240} y={270} ancho={600} color={KC.yellow} />
       <Medidor T={T} at={K.C + 0.6} until={K.Sp - 0.3} valor={(t) => 1 - 0.5 * kprog(t, K.C + 1.4, K.C + 2.6, kEase.suave)} etiqueta="potasio (K⁺)" texto={(v) => (v > 0.995 ? '100 %' : '≈ −' + Math.round((1 - v) * 100) + ' %')} x={240} y={390} ancho={600} color={KC.lilac} />
       <Chip T={T} at={K.C + 3.6} until={K.Sp - 0.3} texto="el corazón se detuvo" x={540} y={1110} tam={46} borde={KC.red} />
-      <NumeroBloque T={T} at={K.Sp + 0.3} until={K.Sp + 3.1} valor={501} dur={1.8} arriba="al menos" abajo="especies en declive" x={540} y={430} tam={150} color={KC.paper} />
-      <NumeroBloque T={T} at={K.Sp + 3.3} until={K.M - 0.3} valor={90} dur={1.0} arriba="y" abajo="presuntas extinciones" x={540} y={430} tam={150} color="#4a4a4a" />
+      <NumeroBloque T={T} at={K.Sp + 0.3} until={K.Sp + 3.1} valor={501} dur={1.8} arriba="al menos" abajo="especies en declive" x={540} y={430} tam={150} color="#ffffff" />
+      <NumeroBloque T={T} at={K.Sp + 3.3} until={K.M - 0.3} valor={90} dur={1.0} arriba="y" abajo="presuntas extinciones" x={540} y={430} tam={150} color="#d6d9e0" />
       <Chip T={T} at={K.Sp + 0.8} until={K.Sp + 4.2} texto="Scheele et al., Science 2019" x={540} y={625} tam={26} borde={KC.ink} />
       <Chip T={T} at={K.Sp + 4.4} until={K.M - 0.3} texto="cifras debatidas (Lambert et al. 2020)" x={540} y={625} tam={26} borde={KC.red} />
       <Etq T={T} at={K.M + 0.7} until={K.Sa - 0.3} x={600} y={660} texto="frascos de museo" tam={30} color={KC.ink} />
@@ -338,7 +340,7 @@ function QuitridioShot() {
       <BarraEscala T={T} at={K.G} until={K.Z} texto="2 cm" largo={153} />
       <BarraEscala T={T} at={K.Z} until={K.Q} texto="5 µm" largo={175} />
       <BarraEscala T={T} at={K.Q} until={K.Pr} texto="25 µm" largo={135} />
-      <BarraEscala T={T} at={K.Pr} until={K.Es} texto="5 cm" largo={175} />
+      <BarraEscala T={T} at={K.Pr} until={K.Es} texto="2 cm" largo={132} />
       <BarraEscala T={T} at={K.Es} until={K.C} texto="2 cm" largo={103} />
       <BarraEscala T={T} at={K.M} until={K.Sa} texto="500 km" largo={113} />
       <BarraEscala T={T} at={K.Sa} until={K.Ci} texto="5 cm" largo={250} />
