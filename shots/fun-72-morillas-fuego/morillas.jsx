@@ -63,9 +63,13 @@ function TroncoQuemado({ x, y, h = 520, s = 1, seed = 1, T = 0, brasas = 0 }) {
   const g = krng(seed * 13);
   const ramas = Array.from({ length: 4 }, (_, i) => ({ y: -h * (0.4 + i * 0.13), lado: i % 2 ? 1 : -1, l: 40 + g() * 50 }));
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d={`M -26 0 L -18 ${-h} L 18 ${-h} L 26 0 Z`} fill={MO.carbon} stroke={KC.ink} strokeWidth={5} />
-    {ramas.map((r, i) => <line key={i} x1={0} y1={r.y} x2={r.lado * r.l} y2={r.y - 30} stroke={MO.carbon} strokeWidth={12} strokeLinecap="round" />)}
-    {[0.2, 0.45, 0.7].map((k, i) => <path key={i} d={`M -16 ${-h * k} l 12 -8 l 10 6`} stroke="#3a3430" strokeWidth={3} fill="none" />)}
+    <defs><linearGradient id="mqTronco" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#a8917d" /><stop offset="0.35" stopColor="#6a5546" /><stop offset="0.7" stopColor="#2c231c" /><stop offset="1" stopColor="#120e0b" /></linearGradient></defs>
+    {ramas.map((r, i) => <g key={i}><line x1={0} y1={r.y} x2={r.lado * r.l} y2={r.y - 30} stroke="#4a3c33" strokeWidth={12} strokeLinecap="round" />
+      <line x1={0} y1={r.y - 4} x2={r.lado * r.l} y2={r.y - 34} stroke="#c9b29c" strokeWidth={3} strokeLinecap="round" opacity={0.6} /></g>)}
+    <path d={`M -26 0 L -18 ${-h} L 18 ${-h} L 26 0 Z`} fill="url(#mqTronco)" stroke="#0a0807" strokeWidth={4} />
+    <path d={`M -24 -4 L -17 ${-h + 4}`} stroke="#e2cdb8" strokeWidth={4} opacity={0.8} />
+    {Array.from({ length: Math.floor(h / 46) }, (_, i) => <path key={'g' + i} d={`M ${-18 + (i % 3) * 6} ${-30 - i * 46} l 10 -4 l 12 3`} stroke="#0a0807" strokeWidth={3} fill="none" opacity={0.8} />)}
+    {[0.2, 0.45, 0.7].map((k, i) => <path key={i} d={`M -16 ${-h * k} l 12 -8 l 10 6`} stroke="#ff8a3a" strokeWidth={2} fill="none" opacity={0.35} />)}
     {brasas > 0 && [0.1, 0.3, 0.55].map((k, i) => <circle key={i} cx={(i - 1) * 8} cy={-h * k} r={5} fill={MO.brasa} opacity={brasas * (0.5 + 0.5 * Math.sin(T * 7 + i * 2))} />)}
   </g>;
 }
@@ -241,7 +245,7 @@ function MorillasShot() {
         {fsvg(<>
           {Array.from({ length: 12 }, (_, i) => { const calor = kprog(T, K.Mi + 2.2 + (i % 4) * 0.2, K.Mi + 3.2 + (i % 4) * 0.2);
             return <Microbio key={i} T={T} seed={i} x={120 + (i % 6) * 160} y={600 + Math.floor(i / 6) * 330 + (i % 2) * 60} vida={1 - calor} />; })}
-          <RedHifas T={T} x={540} y={830} g={kprog(T, K.Mi + 0.6, K.Mi + 6)} seed={7} n={260} escala={0.42} color={MO.alveolo2} ancho={4} />
+          <RedHifas T={T} x={540} y={830} g={klerp(0.35, 1, kprog(T, K.Mi, K.Mi + 5.5))} seed={7} n={260} escala={0.42} color={MO.alveolo2} ancho={4} />
           {Array.from({ length: 14 }, (_, i) => { const q = kprog(T, K.Mi + 3.6 + i * 0.08, K.Mi + 4.0 + i * 0.08, kEase.rebote);
             return q > 0 ? <circle key={'c' + i} cx={150 + (i * 61) % 800} cy={620 + (i * 97) % 440} r={10 * q} fill={KC.gold2} stroke={KC.ink} strokeWidth={2} /> : null; })}
           <path d="M 0 470 L 1080 470" stroke={MO.brasa} strokeWidth={10} opacity={0.6 + 0.4 * Math.sin(T * 6)} />
