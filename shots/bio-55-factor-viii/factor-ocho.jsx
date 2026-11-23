@@ -323,7 +323,7 @@ function FactorOcho() {
             <Virus key={i} x={vx + Math.sin(T * 1.5 + i) * 12} y={vy + Math.cos(T * 1.2 + i) * 10} r={lab ? 34 : 24} color={c} rot={T * 15 + i * 40} lab={lab} o={kprog(T, K.V + 0.5 + i * 0.25, K.V + 0.9 + i * 0.25)} />)}
         </g></FSvg>
         <Chip T={T} at={K.V + 0.3} until={K.Ci - 0.1} texto="años 80 · concentrados de plasma" y={1500} tam={34} borde={KC.texto} />
-        <Chip T={T} at={K.V + 1.2} until={K.Ci - 0.1} texto="virus: esquema, no a escala" x={330} y={1860} tam={22} mono borde="rgba(255,255,255,.4)" />
+        <Chip T={T} at={K.V + 1.2} until={K.Ci - 0.1} texto="virus: esquema, no a escala" x={340} y={1850} tam={26} mono borde="rgba(255,255,255,.4)" />
       </Escena>
 
       {/* 8 · 1987: 7 de cada 10 personas con hemofilia A analizadas en EE. UU. tenían VIH */}
@@ -417,7 +417,7 @@ function FactorOcho() {
       {/* textos fijos */}
       <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 2.0} until={K.G + 2.6} texto="¿la curita?" x={540} y={620} tam={48} />
       <Chip T={T} at={K.Fa + 1.2} until={K.Cr - 0.15} texto="hemofilia A = falta o hay poco factor VIII" y={1500} tam={30} borde={F8.viii} />
-      <Chip T={T} at={K.Ca + 0.2} until={K.O} texto="dibujo esquemático" x={870} y={1860} tam={20} mono borde="rgba(255,255,255,.4)" />
+      <Chip T={T} at={K.Ca + 0.2} until={K.O} texto="dibujo esquemático" x={850} y={1850} tam={26} mono borde="rgba(255,255,255,.4)" />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ca - 0.1} texto="La cierra *una red de tu sangre.*" />
