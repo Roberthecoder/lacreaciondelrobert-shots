@@ -238,7 +238,8 @@ function ProtoShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          {T < Qe + 0.4 && <g opacity={1 - kprog(T, Qe - 0.2, Qe + 0.3)}>
+          {/* belleza: hifa y cadena de quitina 170 px más abajo, y el espectro más alto y al centro (todo quedaba en la mitad de arriba) */}
+          {T < Qe + 0.4 && <g opacity={1 - kprog(T, Qe - 0.2, Qe + 0.3)} transform="translate(0 170)">
             <rect x={40} y={600} width={1000} height={220} rx={110} fill="#1d3a33" stroke={KC.mint} strokeWidth={34} />
             {Array.from({ length: 14 }, (_, i) => <circle key={i} cx={120 + (i * 67) % 840} cy={660 + ((i * 37) % 100) + Math.sin(T * 2 + i) * 6} r={8 + (i % 3) * 4} fill="rgba(246,243,236,.35)" />)}
             <text x={540} y={725} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.texto} opacity=".8">hifa (esquema)</text>
@@ -247,7 +248,7 @@ function ProtoShot() {
             <Quitina x={130} y={1010} n={8} prog={kprog(T, Qm + 0.5, Qm + 2.0)} s={1.1} />
           </g>}
           {T > Qe - 0.3 && <g opacity={kprog(T, Qe - 0.3, Qe + 0.2)}>
-            <Espectro x={130} y={720} picos={[[0.32, 0.75, 0.025], [0.66, 0.6, 0.03], [0.15, 0.2, 0.05], [0.85, 0.25, 0.05]]} bandas={BANDAS_Q} prog={kprog(T, Qe + 0.1, Qe + 1.6)} color={KC.mint} titulo="hongo fósil (misma piedra)" />
+            <Espectro x={130} y={830} h={320} picos={[[0.32, 0.75, 0.025], [0.66, 0.6, 0.03], [0.15, 0.2, 0.05], [0.85, 0.25, 0.05]]} bandas={BANDAS_Q} prog={kprog(T, Qe + 0.1, Qe + 1.6)} color={KC.mint} titulo="hongo fósil (misma piedra)" />
           </g>}
         </>)}
       </Escena>
@@ -326,9 +327,9 @@ function ProtoShot() {
       <NumeroGigante T={T} at={K.E + 3.2} until={K.Q - 0.3} valor={407} dur={1.0} sufijo=" millones de años" etiqueta="fósiles de" x={370} y={500} tam={70} color={KC.yellow} />
       <Etq T={T} at={K.Q + 0.5} until={Qm - 0.3} x={700} y={760} texto="champiñón" tam={28} color={KC.ink} />
       <Etq T={T} at={K.Q + 0.9} until={Qm - 0.3} x={700} y={815} texto="Agaricus bisporus" it tam={26} color={KC.ink} />
-      <Chip T={T} at={Qm + 0.2} until={Qe - 0.3} texto="AL MICROSCOPIO · pared celular" x={430} y={540} tam={32} borde={KC.mint} mono />
-      <Etq T={T} at={Qm + 1.0} until={Qe - 0.3} x={130} y={1150} texto="cadena de quitina (esquema)" tam={30} color={KC.mint} />
-      <Etq T={T} at={Qe + 1.6} until={K.S - 0.3} x={120} y={1070} texto="bandas de la quitina" tam={28} color={KC.gold2} />
+      <Chip T={T} at={Qm + 0.2} until={Qe - 0.3} texto="AL MICROSCOPIO · pared celular" x={430} y={710} tam={32} borde={KC.mint} mono />
+      <Etq T={T} at={Qm + 1.0} until={Qe - 0.3} x={130} y={1320} texto="cadena de quitina (esquema)" tam={30} color={KC.mint} />
+      <Etq T={T} at={Qe + 1.6} until={K.S - 0.3} x={120} y={1270} texto="bandas de la quitina" tam={28} color={KC.gold2} />
       <Chip T={T} at={K.S + 1.4} until={K.S + 2.3} texto="otros picos, sin la quitina" x={420} y={430} tam={32} borde={KC.red} />
       <Chip T={T} at={K.S + 2.9} until={K.L - 0.3} texto="forma: no coincide" x={360} y={480} tam={36} borde={KC.red} />
       <Chip T={T} at={K.L + 1.4} until={K.De - 0.3} texto="propuesta · Loron et al. 2026" x={400} y={380} tam={32} borde={KC.ink} />
