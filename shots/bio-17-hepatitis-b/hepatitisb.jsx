@@ -15,6 +15,13 @@ function SvgCapa({ children }) {
 function Bebe({ T, x = 450, y = 640, s = 1, curita = 0 }) {
   const resp = 1 + Math.sin(T * 2.2) * 0.012, pat = mece(T, 3, 0.8) * 6;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    {/* belleza: degradados de volumen (luz arriba a la izquierda); la cobija pasa de menta chillona a un verde agua apagado */}
+    <defs>
+      <linearGradient id="hbCobija" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#6fd3b4" /><stop offset=".5" stopColor="#36a587" /><stop offset="1" stopColor="#1d6b58" /></linearGradient>
+      <linearGradient id="hbPanal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#f4f1ea" /><stop offset="1" stopColor="#b9b4aa" /></linearGradient>
+      <radialGradient id="hbCara" cx=".38" cy=".3" r=".8"><stop offset="0" stopColor="#ffd3b4" /><stop offset=".55" stopColor={PIEL} /><stop offset="1" stopColor="#c4805e" /></radialGradient>
+    </defs>
+    <ellipse cx={10} cy={668} rx={190} ry={24} fill="#000" opacity=".35" />
     {/* piernas */}
     {[-1, 1].map((k) => <g key={k} transform={`rotate(${k * 10 + (k > 0 ? pat * 0.3 : -pat * 0.3)} ${k * 70} 430)`}>
       <path d={`M ${k * 70 - 50} 420 Q ${k * 90} 560 ${k * 80 - 20} 620 L ${k * 80 + 40} 620 Q ${k * 120 + 10} 540 ${k * 70 + 60} 420 Z`} fill={PIEL} stroke={KC.ink} strokeWidth={9} />
@@ -22,15 +29,16 @@ function Bebe({ T, x = 450, y = 640, s = 1, curita = 0 }) {
     </g>)}
     {curita > 0 && <g opacity={curita} transform="translate(98 500) rotate(-20)"><rect x={-40} y={-16} width={80} height={32} rx={14} fill="#f7d9b0" stroke={KC.ink} strokeWidth={5} /><rect x={-14} y={-10} width={28} height={20} rx={4} fill="#e9bf8a" /></g>}
     {/* pañal */}
-    <path d="M -150 330 Q 0 300 150 330 L 130 450 Q 0 500 -130 450 Z" fill="#ffffff" stroke={KC.ink} strokeWidth={9} />
+    <path d="M -150 330 Q 0 300 150 330 L 130 450 Q 0 500 -130 450 Z" fill="url(#hbPanal)" stroke={KC.ink} strokeWidth={9} />
     {/* cobija */}
     <g transform={`scale(${resp})`}>
-      <path d="M -210 40 Q -240 220 -150 350 Q 0 400 150 350 Q 240 220 210 40 Q 0 -10 -210 40 Z" fill={KC.mint} stroke={KC.ink} strokeWidth={10} />
-      <path d="M -200 60 Q 0 150 200 60" fill="none" stroke="#18a77b" strokeWidth={9} />
-      {[[-120, 220], [0, 260], [110, 200], [-50, 160], [70, 300]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={13} fill="#ffffff" opacity=".7" />)}
+      <path d="M -210 40 Q -240 220 -150 350 Q 0 400 150 350 Q 240 220 210 40 Q 0 -10 -210 40 Z" fill="url(#hbCobija)" stroke={KC.ink} strokeWidth={10} />
+      <path d="M -200 60 Q 0 150 200 60" fill="none" stroke="#165a4a" strokeWidth={9} />
+      <path d="M -150 200 Q -40 250 60 330 M 40 120 Q 120 200 150 300" stroke="#165a4a" strokeWidth={6} fill="none" strokeLinecap="round" opacity=".45" />
+      {[[-120, 220], [0, 260], [110, 200], [-50, 160], [70, 300]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={13} fill="#e8fff6" opacity=".55" />)}
     </g>
     {/* cabeza */}
-    <circle cx={0} cy={-80} r={150} fill={PIEL} stroke={KC.ink} strokeWidth={10} />
+    <circle cx={0} cy={-80} r={150} fill="url(#hbCara)" stroke={KC.ink} strokeWidth={10} />
     <path d="M -20 -226 q 30 -40 50 -6" fill="none" stroke={KC.ink} strokeWidth={9} strokeLinecap="round" />
     <path d="M -70 -90 q 22 16 44 0 M 26 -90 q 22 16 44 0" fill="none" stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
     <ellipse cx={-90} cy={-40} rx={26} ry={16} fill="#f08a8a" opacity=".55" /><ellipse cx={90} cy={-40} rx={26} ry={16} fill="#f08a8a" opacity=".55" />
@@ -73,10 +81,15 @@ function Reloj24({ x, y, r = 130, p = 1 }) {
 /* ---------- silueta de cuerpo con hígado ---------- */
 function CuerpoHigado({ T, x, y, s = 1, brilla = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <circle cx={0} cy={-330} r={96} fill="#ffffff" stroke={KC.ink} strokeWidth={10} />
-    <path d="M -150 -220 Q 0 -250 150 -220 Q 200 -40 170 220 L 120 520 L 30 520 L 0 260 L -30 520 L -120 520 L -170 220 Q -200 -40 -150 -220 Z" fill="#ffffff" stroke={KC.ink} strokeWidth={10} />
+    {/* belleza: silueta gris azulada con volumen (antes: blanco plano que deslumbraba); el hígado rojo es el punto de atención */}
+    <defs>
+      <linearGradient id="hbSil" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#b9c6de" /><stop offset=".5" stopColor="#8796b3" /><stop offset="1" stopColor="#4c5876" /></linearGradient>
+    </defs>
+    <ellipse cx={0} cy={530} rx={220} ry={26} fill="#000" opacity=".3" />
     <path d="M -150 -200 L -250 120 M 150 -200 L 250 120" stroke={KC.ink} strokeWidth={60} strokeLinecap="round" />
-    <path d="M -150 -200 L -250 120 M 150 -200 L 250 120" stroke="#ffffff" strokeWidth={42} strokeLinecap="round" />
+    <path d="M -150 -200 L -250 120 M 150 -200 L 250 120" stroke="#7f8eab" strokeWidth={42} strokeLinecap="round" />
+    <circle cx={0} cy={-330} r={96} fill="url(#hbSil)" stroke={KC.ink} strokeWidth={10} />
+    <path d="M -150 -220 Q 0 -250 150 -220 Q 200 -40 170 220 L 120 520 L 30 520 L 0 260 L -30 520 L -120 520 L -170 220 Q -200 -40 -150 -220 Z" fill="url(#hbSil)" stroke={KC.ink} strokeWidth={10} />
     {brilla > 0 && <ellipse cx={-40} cy={-30} rx={170} ry={100} fill={KC.red} opacity={0.25 * brilla * (0.7 + 0.3 * Math.sin(T * 5))} />}
     {/* hígado: lóbulo derecho grande (a la izquierda de la pantalla) */}
     <path d="M -130 -80 Q -40 -120 90 -70 Q 70 0 -10 20 Q -100 40 -130 -10 Z" fill="#8b2232" stroke={KC.ink} strokeWidth={8} />
