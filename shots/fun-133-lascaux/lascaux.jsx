@@ -272,8 +272,8 @@ function LascauxShot() {
         <Ambiente T={T} n={16} />
         {fsvg(<>
           {T < K.Me + 0.2 && <g opacity={1 - kprog(T, K.Me - 0.2, K.Me + 0.2)}>
-            <RedHifas T={T} x={540} y={580} g={0.55 + 0.45 * kprog(T, K.Es + 2.4, K.Es + 4.6)} seed={12} n={260} escala={0.5} color="#8a7458" ancho={7} />
-            <Esporas T={T} color="#4a3b2b" p={kprog(T, K.Es + 3.4, K.Es + 4.6)} pts={[[330, 840, 10], [780, 900, -20], [500, 1120, 40], [660, 720, 0]]} />
+            <RedHifas T={T} x={540} y={700} g={0.55 + 0.45 * kprog(T, K.Es + 2.4, K.Es + 4.6)} seed={12} n={260} escala={0.5} color="#8a7458" ancho={7} />
+            <Esporas T={T} color="#4a3b2b" p={kprog(T, K.Es + 3.4, K.Es + 4.6)} pts={[[330, 960, 10], [780, 1020, -20], [500, 1240, 40], [660, 840, 0]]} />
           </g>}
           {T > K.Me - 0.2 && <g opacity={kprog(T, K.Me - 0.2, K.Me + 0.3)}><CorteHifa x={90} y={760} w={900} h={300} p={kprog(T, K.Me + 0.6, K.Me + 2.4)} /></g>}
         </>)}
@@ -290,7 +290,9 @@ function LascauxShot() {
       <Escena T={T} a={K.Re} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Replica x={470} y={500} w={540} h={430} st={0.9} p={kprog(T, K.Re + 0.2, K.Re + 0.7)} toro={kprog(T, K.Re + 0.6, K.Re + 1.3)} />
+          {/* belleza: Lascaux II entra grande y centrada; cuando llega Lascaux IV se hace a un lado (antes quedaba chica arriba con el cuadro vacío) */}
+          {(() => { const u = kprog(T, K.Re + 2.3, K.Re + 3.0, kEase.suave);
+            return <Replica x={klerp(200, 470, u)} y={klerp(660, 500, u)} w={klerp(680, 540, u)} h={klerp(540, 430, u)} st={klerp(1.15, 0.9, u)} p={kprog(T, K.Re + 0.2, K.Re + 0.7)} toro={kprog(T, K.Re + 0.6, K.Re + 1.3)} />; })()}
           <Replica x={50} y={1040} w={600} h={450} st={1.0} color="#4a3550" p={kprog(T, K.Re + 2.8, K.Re + 3.3)} toro={kprog(T, K.Re + 3.1, K.Re + 3.8)} />
           {[0, 1, 2].map((i) => <g key={i} opacity={kprog(T, K.Re + 3.5 + i * 0.2, K.Re + 3.9 + i * 0.2)}><Visitante T={T} x={730 + i * 110} y={1440} s={0.62} aliento={0} fase={i} color={['#3a2e5c', '#1f5a7a', '#7a2e3a'][i]} /></g>)}
         </>)}
@@ -339,8 +341,8 @@ function LascauxShot() {
       <Etq T={T} at={K.Me + 0.9} until={K.Pa - 0.3} x={110} y={728} texto="pared" tam={34} color="#c9a87a" />
       <Etq T={T} at={K.Me + 1.4} until={K.Pa - 0.3} x={110} y={1112} texto="melanina (gránulos negros)" tam={34} color={KC.gold2} />
       <Chip T={T} at={K.Pa + 0.9} until={K.Re - 0.3} texto="sobre las paredes con arte" x={540} y={420} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.Re + 1.2} until={K.C - 0.3} x={40} y={560} texto="Lascaux II · 1983" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Re + 1.6} until={K.C - 0.3} x={40} y={615} texto="copia de 2 salas" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Re + 1.2} until={K.C - 0.3} x={40} y={470} texto="Lascaux II · 1983" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Re + 1.6} until={K.C - 0.3} x={40} y={520} texto="copia de 2 salas" tam={26} color={KC.ink} />
       <Etq T={T} at={K.Re + 3.0} until={K.C - 0.3} x={670} y={1130} texto="Lascaux IV · 2016" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Re + 3.4} until={K.C - 0.3} x={670} y={1185} texto="copia completa" tam={26} color={KC.ink} />
       <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="la original: cerrada y vigilada" x={540} y={310} tam={36} borde={KC.gold} />
