@@ -1,0 +1,1 @@
+- fun-101-levadura-cicatrices: Gancho: el letrero «NO ES INMORTAL» era más ancho que el cuadro y se cortaba en ambos lados; bajado a 88 px. Revisadas todas las escenas: lo demás ya cumplía (HijaJoven se deja igual para respetar la barra de 5 µm). Encuadre bien, sin láminas.

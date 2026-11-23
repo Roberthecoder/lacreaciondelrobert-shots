@@ -313,7 +313,7 @@ function LevaduraShot() {
       </Escena>
 
       {/* textos */}
-      <Letrero T={T} at={K.G + 0.2} until={K.Ma - 0.3} texto="NO ES INMORTAL" x={540} y={1440} tam={120} color={KC.white} />
+      <Letrero T={T} at={K.G + 0.2} until={K.Ma - 0.3} texto="NO ES INMORTAL" x={540} y={1440} tam={88} color={KC.white} />
       <Etq T={T} at={K.Ma + 0.5} until={K.Ce - 0.3} x={50} y={420} texto="levadura de pan" tam={34} color={KC.ink} />
       <Etq T={T} at={K.Ma + 0.9} until={K.Ce - 0.3} x={50} y={476} texto="Saccharomyces cerevisiae" it tam={34} color={KC.ink} />
       <Chip T={T} at={K.Ce + 0.2} until={K.Y - 0.2} texto="AL MICROSCOPIO" x={330} y={430} tam={36} borde={KC.cyan} mono />
