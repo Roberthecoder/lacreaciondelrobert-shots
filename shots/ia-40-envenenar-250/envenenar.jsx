@@ -160,7 +160,8 @@ function Envenenar() {
   const zG = klerp(1, 0.3, kprog(T, K.G + 1.6, K.G + 5.6, kEase.suave));
   const zC = klerp(0.32, 0.25, kprog(T, K.C - 0.4, K.C + 4.5, kEase.suave));
   const nG = Math.round(250 * kprog(T, K.G + 0.15, K.G + 4.2));
-  const robotes = [{ x: 150, s: 0.45, t: '600 M' }, { x: 338, s: 0.6, t: '2 mil M' }, { x: 566, s: 0.78, t: '7 mil M' }, { x: 845, s: 0.98, t: '13 mil M' }];
+  // belleza: robots 1.2 veces más grandes (misma proporción entre ellos) y repartidos para que sus rótulos no se encimen
+  const robotes = [{ x: 125, s: 0.54, t: '600 M' }, { x: 325, s: 0.72, t: '2 mil M' }, { x: 568, s: 0.94, t: '7 mil M' }, { x: 865, s: 1.18, t: '13 mil M' }];
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: la biblioteca y las 250 hojas rojas */}
@@ -251,8 +252,8 @@ function Envenenar() {
         <FondoLunares color={KC.pink} />
         {svg(<>{robotes.map((r, i) => { const on = kprog(T, K.Es + 3.2 + i * 0.35, K.Es + 3.5 + i * 0.35);
           return <g key={i}>
-          <g opacity={0.4 + 0.6 * on}><Robotito x={r.x} y={1230 - 140 * r.s} s={r.s} T={T + i} cara="feliz" color={KC.cyan} /></g>
-          <text x={r.x} y={1300} textAnchor="middle" style={{ font:`400 50px ${KF.titulo}` }} fill={KC.ink} opacity={on}>{r.t}</text>
+          <g opacity={0.4 + 0.6 * on}><Robotito x={r.x} y={1250 - 140 * r.s} s={r.s} T={T + i} cara="feliz" color={KC.cyan} /></g>
+          <text x={r.x} y={1330} textAnchor="middle" style={{ font:`400 42px ${KF.titulo}` }} fill={KC.ink} opacity={on}>{r.t}</text>
         </g>; })}</>)}
       </Escena>
       <TarjetaEstudio2 T={T} at={K.Es + 0.4} until={K.Ta - 0.3} y={520} k={0.82} />
