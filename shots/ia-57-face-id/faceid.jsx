@@ -260,11 +260,11 @@ function FaceId() {
       {/* 8 · el estudio: la presentación de 2017 */}
       <Escena T={T} a={K.E} b={K.Ge}>
         <FondoLunares color={KC.lilac} />
-        {svg(<Cara x={540} y={1190} s={1.4} T={T} puntos={0.25 + 0.75 * kprog(T, K.E + 0.4, K.E + 2.4)} />)}
+        {svg(<Cara x={540} y={1070} s={1.3} T={T} puntos={0.25 + 0.75 * kprog(T, K.E + 0.4, K.E + 2.4)} />)}
       </Escena>
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ge - 0.3} anio="2017" quien="Cupertino, California" revista="Apple presenta el iPhone X · 12 sep 2017" x={540} y={320} />
-      <NumeroGigante T={T} at={K.E + 1.6} until={K.Ge - 0.3} valor={30000} dur={1.0} etiqueta="más de" y={570} tam={150} color={KC.red} />
-      <Chip T={T} at={K.E + 2.4} until={K.Ge - 0.3} texto="puntos infrarrojos · hoy Apple dice «miles»" x={540} y={745} tam={30} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.E + 1.6} until={K.Ge - 0.3} valor={30000} dur={1.0} etiqueta="más de" y={545} tam={130} color={KC.red} />
+      <Chip T={T} at={K.E + 2.4} until={K.Ge - 0.3} texto="puntos infrarrojos · hoy Apple dice «miles»" x={540} y={665} tam={30} borde={KC.ink} />
 
       {/* 9 · gemelos, hermanos y niños */}
       <Escena T={T} a={K.Ge} b={K.O}>
