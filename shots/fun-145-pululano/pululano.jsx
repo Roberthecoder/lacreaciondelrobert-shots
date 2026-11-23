@@ -296,8 +296,8 @@ function PululanoShot() {
         <Ambiente T={T} n={14} />
         {fsvg(<>
           {/* la célula con su baba sigue en cuadro, atenuada: de ahí sale la molécula */}
-          <g opacity={0.45}><Baba T={T} x={830} y={575} R={110} p={0.55} /><Celula T={T} x={830} y={575} rx={125} ry={88} seed={9} /></g>
-          <g transform="translate(520 860) scale(1.1) translate(-476 -800)"><Escalera T={T} at={K.Mo + 0.3} cada={0.3} /></g>
+          <g opacity={0.6}><Baba T={T} x={905} y={730} R={110} p={0.55} /><Celula T={T} x={905} y={730} rx={125} ry={88} seed={9} /></g>
+          <g transform="translate(540 980) scale(1.15) translate(-476 -800)"><Escalera T={T} at={K.Mo + 0.3} cada={0.3} /></g>
         </>)}
       </Escena>
       {/* 6 · re-gancho: ¿y cómo se vuelve cápsula? */}
@@ -401,11 +401,11 @@ function PululanoShot() {
       <Chip T={T} at={K.B + 0.8} until={K.Mo - 0.3} texto="fuera de la célula" x={320} y={300} tam={38} borde={KC.cyan} />
       <Etq T={T} at={K.B + 2.0} until={K.Mo - 0.3} x={60} y={420} texto="pululano («baba»)" tam={32} />
 
-      <Chip T={T} at={K.Mo + 0.2} until={K.P - 0.3} texto="glucosa" x={200} y={470} tam={34} borde={KC.cyan} />
-      <Chip T={T} at={K.Mo + 1.5} until={K.P - 0.3} texto="maltotriosa = 3 glucosas" x={420} y={560} tam={34} borde={KC.gold} />
-      <Etq T={T} at={K.Mo + 1.0} until={K.P - 0.3} x={100} y={745} texto="unión α-1,4" tam={26} />
-      <Etq T={T} at={K.Mo + 2.4} until={K.P - 0.3} x={440} y={788} texto="unión α-1,6 (escalón)" tam={26} color={KC.gold2} />
-      <Chip T={T} at={K.Mo + 3.4} until={K.P - 0.3} texto="forma de escalera" x={320} y={1240} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.Mo + 0.2} until={K.P - 0.3} texto="glucosa" x={218} y={572} tam={34} borde={KC.cyan} />
+      <Chip T={T} at={K.Mo + 1.5} until={K.P - 0.3} texto="maltotriosa = 3 glucosas" x={435} y={666} tam={34} borde={KC.gold} />
+      <Etq T={T} at={K.Mo + 1.0} until={K.P - 0.3} x={100} y={860} texto="unión α-1,4" tam={26} />
+      <Etq T={T} at={K.Mo + 2.4} until={K.P - 0.3} x={456} y={905} texto="unión α-1,6 (escalón)" tam={26} color={KC.gold2} />
+      <Chip T={T} at={K.Mo + 3.4} until={K.P - 0.3} texto="forma de escalera" x={760} y={1330} tam={34} borde={KC.gold} />
 
       <Chip T={T} at={pe(0.2)} until={pe(1.9)} texto="se disuelve en agua" x={330} y={470} tam={36} borde={KC.cyan} />
       <Chip T={T} at={pe(2.3)} until={pe(3.2)} texto="se seca" x={330} y={470} tam={40} borde={KC.white} />
