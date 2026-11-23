@@ -1,0 +1,1 @@
+- qui-44-barro-plomo: Comparación: los dos paneles de 100 niños, los porcentajes y sus rótulos bajan juntos al centro (antes arriba con el tercio de abajo vacío); los dos % más chicos para que no sean dos números gigantes a la vez; nota NOM-199 de 22 a 26 px; Pregunta: mapa de México más grande y al centro, «?» abajo a la izquierda. Auditores: sin láminas · encuadre bien.

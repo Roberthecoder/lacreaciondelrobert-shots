@@ -315,11 +315,11 @@ function Barro() {
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <MapaMexico x={130} y={320} ancho={820} conCA={false}>
+          <MapaMexico x={60} y={770} ancho={960} conCA={false}>
             {Array.from({ length: 22 }, (_, i) => { const R = krng(30 + i); const lon = -110 + R() * 22, lat = 17 + R() * 9; const [px, py] = mxProy(lon, lat); const t0 = K.Pr + 0.2 + i * 0.08;
               return T > t0 ? <circle key={i} cx={px} cy={py} r={14 * kprog(T, t0, t0 + 0.2, kEase.rebote)} fill={KC.red} stroke={KC.ink} strokeWidth={4} /> : null; })}
           </MapaMexico>
-          <text x={280} y={1320} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 1140)`}>?</text>
+          <text x={250} y={1440} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 250 1260)`}>?</text>
         </SvgCapa>
       </Escena>
       {/* 6 · el estudio del INSP: piquete y lector */}
@@ -338,15 +338,15 @@ function Barro() {
       <Escena T={T} a={K.Co} b={K.Cu}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <rect x={60} y={520} width={460} height={470} rx={26} fill="rgba(255,255,255,.07)" stroke={KC.ink} strokeWidth={7} />
-          <rect x={560} y={520} width={460} height={470} rx={26} fill="rgba(255,255,255,.07)" stroke={KC.ink} strokeWidth={7} />
-          <Cien100 T={T} at={K.Co + 0.6} k={44} x={102} y={560} off="rgba(255,255,255,.2)" />
-          <Cien100 T={T} at={K.Co + 3.4} k={10} x={602} y={560} off="rgba(255,255,255,.2)" />
+          <rect x={60} y={680} width={460} height={470} rx={26} fill="rgba(255,255,255,.07)" stroke={KC.ink} strokeWidth={7} />
+          <rect x={560} y={680} width={460} height={470} rx={26} fill="rgba(255,255,255,.07)" stroke={KC.ink} strokeWidth={7} />
+          <Cien100 T={T} at={K.Co + 0.6} k={44} x={102} y={720} off="rgba(255,255,255,.2)" />
+          <Cien100 T={T} at={K.Co + 3.4} k={10} x={602} y={720} off="rgba(255,255,255,.2)" />
         </SvgCapa>
-        <NumeroGigante T={T} at={K.Co + 1.2} until={K.Cu - 0.3} valor={44} dur={1.2} sufijo=" %" x={290} y={1120} tam={150} color={KC.red} />
-        <NumeroGigante T={T} at={K.Co + 3.6} until={K.Cu - 0.3} valor={9.8} dec={1} dur={0.8} sufijo=" %" x={790} y={1120} tam={150} color={KC.mint} />
-        <Etq T={T} at={K.Co + 1.4} until={K.Cu - 0.3} x={60} y={1245} texto="usaban seguido barro con plomo" tam={26} color={KC.ink} />
-        <Etq T={T} at={K.Co + 3.8} until={K.Cu - 0.3} x={1030} y={1245} lado="izq" texto="no lo usaban" tam={26} color={KC.ink} />
+        <NumeroGigante T={T} at={K.Co + 1.2} until={K.Cu - 0.3} valor={44} dur={1.2} sufijo=" %" x={290} y={1265} tam={112} color={KC.red} />
+        <NumeroGigante T={T} at={K.Co + 3.6} until={K.Cu - 0.3} valor={9.8} dec={1} dur={0.8} sufijo=" %" x={790} y={1265} tam={112} color={KC.mint} />
+        <Etq T={T} at={K.Co + 1.4} until={K.Cu - 0.3} x={60} y={1375} texto="usaban seguido barro con plomo" tam={26} color={KC.ink} />
+        <Etq T={T} at={K.Co + 3.8} until={K.Cu - 0.3} x={1030} y={1375} lado="izq" texto="no lo usaban" tam={26} color={KC.ink} />
         <BarraEscala texto="niños de 1 a 4 años" largo={60} />
       </Escena>
       {/* 8 · el curado con ajo y vinagre */}
@@ -418,7 +418,7 @@ function Barro() {
       <Etq T={T} at={K.Ce + 3.6} until={K.Pr - 0.3} x={230} y={465} lado="der" texto="OMS: no hay nivel seguro conocido" tam={26} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.9} anio="2024" quien="INSP · datos de 2022 y 2023" revista="Salud Publica Mex · 1 747 niños de 1 a 4 años" y={430} />
       <Chip T={T} at={K.Es + 3.4} until={K.Co - 0.3} texto="plomo en sangre · 1 a 4 años" x={670} y={1470} tam={38} borde={KC.gold} />
-      <Etq T={T} at={K.Co + 4.4} until={K.Cu - 0.3} x={250} y={1340} lado="der" texto="de más = 5 µg/dL o más (NOM-199)" tam={22} color={KC.ink} />
+      <Etq T={T} at={K.Co + 4.4} until={K.Cu - 0.3} x={250} y={1450} lado="der" texto="de más = 5 µg/dL o más (NOM-199)" tam={26} color={KC.ink} />
       <MitoTachado T={T} at={K.Cu + 0.4} tacharEn={barraCu + 1.4} until={K.Al - 0.3} texto="curar quita el plomo" x={540} y={350} tam={42} />
       <TarjetaEstudio T={T} at={tarjCu} until={barraCu - 0.1} anio="2025" quien="estudio de laboratorio" revista="Processes · INSP, Ibero, Tec de Monterrey" y={1500} />
       <Chip T={T} at={barraCu + 1.5} until={K.Al - 0.3} texto="sigue soltando plomo" y={1420} tam={42} borde={KC.red} />
