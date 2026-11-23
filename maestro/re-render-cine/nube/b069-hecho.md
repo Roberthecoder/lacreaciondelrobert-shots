@@ -1,0 +1,1 @@
+- cie-29-espejo: Texto: espejo y hoja bajan al centro y crecen ×1.18 (antes cargados arriba con el tercio de abajo vacío), etiqueta «al revés» acompaña a la hoja; volumen en todas las figuras (torso, brazos, piernas, cabeza y manos con brillo y sombra; pliegues tenues en la playera), personas vistas desde arriba, marco del espejo de madera con degradado y sombra en la pared.

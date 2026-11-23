@@ -11,6 +11,14 @@ const ES = { mx1: 90, mx2: 820, my1: 540, my2: 1215 };          // marco del esp
 const REF = { x: 590, pies: 1190, alto: 500 };                  // reflejo (de frente, dentro del espejo)
 const PER = { x: 190, pies: 1960, alto: 1000 };                 // tú (de espaldas, en primer plano)
 
+// Volumen (pase de belleza): brillo arriba-izquierda y sombra abajo-derecha sobre cualquier color.
+function EjDefs() {
+  return <defs>
+    <radialGradient id="ej-esf" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stopColor="#fff" stopOpacity="0.4" /><stop offset="0.6" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.26" /></radialGradient>
+    <linearGradient id="ej-brillo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fff" stopOpacity="0.3" /><stop offset="0.5" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.25" /></linearGradient>
+    <linearGradient id="ej-madera" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#b07a42" /><stop offset="0.5" stopColor={EMARCO} /><stop offset="1" stopColor="#5a3818" /></linearGradient>
+  </defs>;
+}
 // Persona de cuerpo completo. vista 'frente' | 'espalda'. (x, pies) en px, alto en px.
 // brazoD / brazoI: cuánto sube el brazo del lado DERECHO / IZQUIERDO DE LA PANTALLA (0 abajo … 1 arriba).
 // punto: 'D' | 'I' = punto rojo en la mano de ese lado de la pantalla. guino: 'D' | 'I' = ojo cerrado de ese lado (vista frente).
@@ -24,16 +32,22 @@ function Figura({ x = 0, pies = 0, alto = 600, vista = 'frente', brazoD = 0, bra
   const brazo = (lado, r) => { const a = brazoAng(lado, r), bx = lado === 'D' ? 112 : -112;
     return <g transform={`rotate(${a} ${bx} -452)`}>
       <rect x={bx - 30} y={-470} width={60} height={196} rx={28} fill={color} stroke={KC.ink} strokeWidth={8} />
+      <rect x={bx - 30} y={-470} width={60} height={196} rx={28} fill="url(#ej-brillo)" />
       <circle cx={bx} cy={-262} r={34} fill={CPIEL} stroke={KC.ink} strokeWidth={8} />
+      <circle cx={bx} cy={-262} r={34} fill="url(#ej-esf)" />
     </g>; };
   const dot = (lado, r) => { const [hx, hy] = manoPos(lado, r);
     return <g><circle cx={hx} cy={hy} r={30} fill={EROJO} stroke={KC.ink} strokeWidth={7} /><circle cx={hx - 9} cy={hy - 9} r={8} fill="#fff" opacity=".7" /></g>; };
   const resp = 1 + 0.012 * Math.sin(T * 2.2);
   return <g transform={`translate(${x} ${pies}) scale(${k * sx} ${k * resp})`} opacity={o}>
+    <EjDefs />
     <rect x={-74} y={-240} width={64} height={240} rx={26} fill="#3a3f5c" stroke={KC.ink} strokeWidth={8} />
     <rect x={10} y={-240} width={64} height={240} rx={26} fill="#3a3f5c" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-74} y={-240} width={148} height={240} rx={26} fill="url(#ej-brillo)" />
     {brazo('I', brazoI)}{brazo('D', brazoD)}
     <rect x={-96} y={-480} width={192} height={260} rx={46} fill={color} stroke={KC.ink} strokeWidth={8} />
+    <rect x={-96} y={-480} width={192} height={260} rx={46} fill="url(#ej-brillo)" />
+    <path d="M -50 -420 Q -40 -330 -48 -250 M 46 -400 Q 52 -320 44 -250" stroke="#000" strokeWidth={4} opacity={0.12} fill="none" strokeLinecap="round" />
     {vista === 'espalda' && <path d="M -40 -478 Q 0 -455 40 -478" stroke={KC.ink} strokeWidth={6} fill="none" strokeLinecap="round" />}
     {vista === 'frente' && <path d="M -36 -480 L 0 -446 L 36 -480" stroke={KC.ink} strokeWidth={6} fill="none" strokeLinejoin="round" />}
     {punto === 'D' && dot('D', brazoD)}{punto === 'I' && dot('I', brazoI)}
@@ -41,10 +55,10 @@ function Figura({ x = 0, pies = 0, alto = 600, vista = 'frente', brazoD = 0, bra
     <ellipse cx={-64} cy={cy + 6} rx={14} ry={20} fill={CPIEL} stroke={KC.ink} strokeWidth={6} />
     <ellipse cx={64} cy={cy + 6} rx={14} ry={20} fill={CPIEL} stroke={KC.ink} strokeWidth={6} />
     {vista === 'espalda'
-      ? <g><circle cx={0} cy={cy} r={64} fill={CPELO} stroke={KC.ink} strokeWidth={8} />
+      ? <g><circle cx={0} cy={cy} r={64} fill={CPELO} stroke={KC.ink} strokeWidth={8} /><circle cx={0} cy={cy} r={64} fill="url(#ej-esf)" />
           <path d={`M -30 ${cy - 30} Q 0 ${cy - 10} 26 ${cy - 34}`} stroke="#4a3528" strokeWidth={7} fill="none" strokeLinecap="round" />
           <path d={`M -44 ${cy + 40} Q 0 ${cy + 66} 44 ${cy + 40}`} stroke={CPIEL2} strokeWidth={8} fill="none" strokeLinecap="round" /></g>
-      : <g><circle cx={0} cy={cy} r={62} fill={CPIEL} stroke={KC.ink} strokeWidth={8} />
+      : <g><circle cx={0} cy={cy} r={62} fill={CPIEL} stroke={KC.ink} strokeWidth={8} /><circle cx={0} cy={cy} r={62} fill="url(#ej-esf)" />
           <path d={`M -62 ${cy - 10} Q -60 ${cy - 75} 0 ${cy - 72} Q 60 ${cy - 75} 62 ${cy - 10} Q 30 ${cy - 40} -62 ${cy - 10} Z`} fill={CPELO} stroke={KC.ink} strokeWidth={6} />
           {guino === 'I' ? <path d={`M -32 ${cy + 2} Q -22 ${cy + 10} -12 ${cy + 2}`} stroke={KC.ink} strokeWidth={6} fill="none" strokeLinecap="round" /> : <circle cx={-22} cy={cy + 2} r={8} fill={KC.ink} />}
           {guino === 'D' ? <path d={`M 12 ${cy + 2} Q 22 ${cy + 10} 32 ${cy + 2}`} stroke={KC.ink} strokeWidth={6} fill="none" strokeLinecap="round" /> : <circle cx={22} cy={cy + 2} r={8} fill={KC.ink} />}
@@ -60,7 +74,9 @@ function EspejoPared({ T, x1, y1, x2, y2, children, id = 'ep' }) {
   return <g>
     <defs><clipPath id={id}><rect x={x1} y={y1} width={w} height={h} rx={18} /></clipPath>
       <linearGradient id={id + 'g'} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor={EVIDRIO} /><stop offset="1" stopColor={EVIDRIO2} /></linearGradient></defs>
-    <rect x={x1 - 26} y={y1 - 26} width={w + 52} height={h + 52} rx={30} fill={EMARCO} stroke={KC.ink} strokeWidth={10} />
+    <EjDefs />
+    <rect x={x1 - 18} y={y2 + 30} width={w + 36} height={22} rx={11} fill="#000" opacity={0.3} />
+    <rect x={x1 - 26} y={y1 - 26} width={w + 52} height={h + 52} rx={30} fill="url(#ej-madera)" stroke={KC.ink} strokeWidth={10} />
     <rect x={x1} y={y1} width={w} height={h} rx={18} fill={`url(#${id}g)`} stroke={KC.ink} strokeWidth={7} />
     <g clipPath={`url(#${id})`}>
       <rect x={x1} y={y2 - h * 0.2} width={w} height={h * 0.2} fill="#8fc3dc" opacity=".55" />
@@ -98,12 +114,15 @@ function Punteada({ a, b, p = 1, color = '#fff' }) {
 function PersonaArriba({ x, y, dir = -1, s = 1, color = KC.pink, punto = 'D', o = 1, fantasma = false, T = 0 }) {
   const ny = dir * 78;
   return <g transform={`translate(${x} ${y}) scale(${s})`} opacity={o}>
+    <EjDefs />
     <ellipse cx={0} cy={0} rx={170} ry={62} fill={color} stroke={KC.ink} strokeWidth={9} strokeDasharray={fantasma ? '22 14' : undefined} />
+    <ellipse cx={0} cy={0} rx={170} ry={62} fill="url(#ej-brillo)" />
     {[-1, 1].map((l) => { const hx = l * 190, hy = dir * 52;
       return <g key={l}><line x1={l * 150} y1={0} x2={hx} y2={hy} stroke={KC.ink} strokeWidth={42} strokeLinecap="round" /><line x1={l * 150} y1={0} x2={hx} y2={hy} stroke={color} strokeWidth={28} strokeLinecap="round" />
         <circle cx={hx} cy={hy} r={28} fill={(punto === 'D' && l === 1) || (punto === 'I' && l === -1) ? EROJO : CPIEL} stroke={KC.ink} strokeWidth={7} /></g>; })}
     <path d={`M -16 ${dir * 50} L 0 ${ny + dir * 22} L 16 ${dir * 50} Z`} fill={CPIEL} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     <circle cx={0} cy={0} r={64} fill={CPELO} stroke={KC.ink} strokeWidth={8} />
+    <circle cx={0} cy={0} r={64} fill="url(#ej-esf)" />
     <path d={`M -30 ${-dir * 10} Q 0 ${dir * 20} 30 ${-dir * 10}`} stroke="#4a3528" strokeWidth={7} fill="none" strokeLinecap="round" />
   </g>;
 }
@@ -255,14 +274,17 @@ function Espejo() {
       <Escena T={T} a={K.Texto} b={K.Ambulancia} fondo={KC.yellow} origen="50% 55%">
         <FondoLunares color={KC.yellow} />
         <Lienzo>
+          {/* belleza: espejo y hoja bajan al centro y crecen ×1.18 */}
+          <g transform="translate(540 1020) scale(1.18) translate(-540 -880)">
           <EspejoPared T={T} x1={150} y1={540} x2={930} y2={1210} id="ep3">
             {/* en el espejo se ve la cara de la hoja que mira hacia él, con x e y iguales */}
             <Hoja x={640} y={830} w={300} h={210} cara={ch > 0 ? 'atras' : 'texto'} sx={Math.max(0.04, Math.abs(ch)) * (ch > 0 ? 1 : -1)} />
           </EspejoPared>
           <Hoja x={400} y={1060} w={440} h={300} cara={ch > 0 ? 'texto' : 'atras'} sx={Math.max(0.04, Math.abs(ch)) * (ch > 0 ? 1 : -1)} manos />
+          </g>
         </Lienzo>
         <Chip T={T} at={K.Texto + 2.7} until={K.Ambulancia - 0.1} texto="la hoja mira al espejo" x={540} y={445} tam={44} borde={KC.blue} />
-        <Etq T={T} at={K.Texto + 2.9} until={K.Ambulancia - 0.2} x={650} y={690} texto="al revés" lado="der" color={KC.ink} tam={34} />
+        <Etq T={T} at={K.Texto + 2.9} until={K.Ambulancia - 0.2} x={665} y={805} texto="al revés" lado="der" color={KC.ink} tam={34} />
       </Escena>
 
       {/* 7 · ambulancia: al revés en el frente, derecha en el retrovisor */}
