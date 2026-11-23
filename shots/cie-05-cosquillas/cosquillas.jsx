@@ -3,33 +3,57 @@
 // Datos: Blakemore, Frith y Wolpert 1999 (J Cogn Neurosci, robots), Blakemore, Wolpert y Frith 1998 (Nat Neurosci, cerebelo) y 2000 (Neuroreport),
 // Ishiyama y Brecht 2016 (Science) e Ishiyama, Kaufmann y Brecht 2019 (Curr Biol) con ratas. Ver guion.md y verificacion.md.
 const PIEL = '#f1b48f', PIEL2 = '#d98f6b', OTRA = '#9a6a4a';
+// Volumen (pase de belleza): degradados del mismo tono, luz arriba a la izquierda.
+function VolDefs() {
+  const rg = (id, a, b, c) => <radialGradient id={id} cx="0.35" cy="0.28" r="0.85"><stop offset="0" stopColor={a} /><stop offset="0.55" stopColor={b} /><stop offset="1" stopColor={c} /></radialGradient>;
+  return <defs>
+    {rg('cq-piel', '#fbd3b6', PIEL, '#c98466')}
+    {rg('cq-otra', '#b8845f', OTRA, '#6e4a33')}
+    {rg('cq-cer', '#fcc8dc', '#f7a8c4', '#cf789c')}
+    {rg('cq-cbl', '#f6b4cc', '#e98fb2', '#b9648a')}
+    {rg('cq-cbl2', '#ffe39a', '#ffd166', '#d9a53a')}
+    {rg('cq-rata', '#dcd8d2', '#b9b4ae', '#86817b')}
+    {rg('cq-rosa', '#f6c3c8', '#e8a0a8', '#c07880')}
+    {rg('cq-lila', '#cdb8ff', KC.lilac, '#7f68c9')}
+    <linearGradient id="cq-brillo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fff" stopOpacity="0.38" /><stop offset="0.5" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.22" /></linearGradient>
+  </defs>;
+}
+const volDe = (c) => c === PIEL ? 'url(#cq-piel)' : c === OTRA ? 'url(#cq-otra)' : c;
 
 function Pie({ x, y, s = 1, rot = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
-    <path d="M -80 -230 Q -130 -120 -110 20 Q -100 160 -60 250 Q 0 320 60 250 Q 100 160 100 0 Q 110 -140 70 -230 Z" fill={PIEL} stroke={KC.ink} strokeWidth={8} />
-    {[[-70, -275, 32], [-15, -295, 26], [33, -290, 24], [72, -270, 22], [100, -235, 20]].map(([cx, cy, r], i) => <circle key={i} cx={cx} cy={cy} r={r} fill={PIEL} stroke={KC.ink} strokeWidth={7} />)}
+    <VolDefs />
+    <path d="M -80 -230 Q -130 -120 -110 20 Q -100 160 -60 250 Q 0 320 60 250 Q 100 160 100 0 Q 110 -140 70 -230 Z" fill="url(#cq-piel)" stroke={KC.ink} strokeWidth={8} />
+    {[[-70, -275, 32], [-15, -295, 26], [33, -290, 24], [72, -270, 22], [100, -235, 20]].map(([cx, cy, r], i) => <g key={i}><circle cx={cx} cy={cy} r={r} fill="url(#cq-piel)" stroke={KC.ink} strokeWidth={7} /><ellipse cx={cx - r * 0.3} cy={cy - r * 0.35} rx={r * 0.35} ry={r * 0.22} fill="#fff" opacity={0.35} /></g>)}
     <path d="M -40 40 Q 0 70 40 40" stroke={PIEL2} strokeWidth={6} fill="none" strokeLinecap="round" />
+    <path d="M -55 120 Q 0 150 50 118 M -60 -120 Q -10 -95 45 -125" stroke={PIEL2} strokeWidth={4} fill="none" strokeLinecap="round" opacity={0.45} />
+    <ellipse cx={-55} cy={-150} rx={22} ry={70} fill="#fff" opacity={0.16} />
   </g>;
 }
 // Mano que hace cosquillas: dedos que se menean. vel = qué tan rápido se mueven.
 function ManoCosq({ x, y, s = 1, T, color = PIEL, rot = 0, vel = 14 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
-    {[-66, -22, 22, 66].map((dx, i) => <rect key={i} x={dx - 19} y={-10} width={38} height={150} rx={19} fill={color} stroke={KC.ink} strokeWidth={7}
+    <VolDefs />
+    {[-66, -22, 22, 66].map((dx, i) => <rect key={i} x={dx - 19} y={-10} width={38} height={150} rx={19} fill={volDe(color)} stroke={KC.ink} strokeWidth={7}
       transform={`rotate(${Math.sin(T * vel + i * 1.3) * 14} ${dx} -10)`} />)}
-    <rect x={-100} y={-160} width={200} height={170} rx={60} fill={color} stroke={KC.ink} strokeWidth={8} />
-    <rect x={-60} y={-330} width={120} height={190} rx={20} fill={KC.lilac} stroke={KC.ink} strokeWidth={8} />
+    <rect x={-100} y={-160} width={200} height={170} rx={60} fill={volDe(color)} stroke={KC.ink} strokeWidth={8} />
+    <rect x={-60} y={-330} width={120} height={190} rx={20} fill="url(#cq-lila)" stroke={KC.ink} strokeWidth={8} />
+    <path d="M -40 -315 L -40 -160 M 0 -315 L 0 -160" stroke="#fff" strokeWidth={3} opacity={0.18} />
   </g>;
 }
 // Cerebro de lado con el cerebelo (abajo a la derecha). glow 0..1 resalta el cerebelo.
 function Cerebro({ x, y, s = 1, glow = 0, T = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -300 40 Q -330 -160 -150 -230 Q 0 -300 150 -240 Q 320 -170 300 0 Q 290 90 200 110 L -200 120 Q -290 110 -300 40 Z" fill="#f7a8c4" stroke={KC.ink} strokeWidth={9} />
+    <VolDefs />
+    <path d="M -300 40 Q -330 -160 -150 -230 Q 0 -300 150 -240 Q 320 -170 300 0 Q 290 90 200 110 L -200 120 Q -290 110 -300 40 Z" fill="url(#cq-cer)" stroke={KC.ink} strokeWidth={9} />
+    {[[-250, -60, -170, -10], [-120, -130, -20, -160], [180, -120, 250, -40], [-140, 70, -40, 90], [190, 40, 260, 70], [-20, -240, 60, -230]].map(([a, b, c, d], i) =>
+      <path key={'t' + i} d={`M ${a} ${b} Q ${(a + c) / 2 + 20} ${(b + d) / 2 + 30} ${c} ${d}`} stroke="#c45a86" strokeWidth={5} fill="none" strokeLinecap="round" opacity={0.5} />)}
     {[[-200, -120, -80, -60], [-60, -200, 40, -110], [90, -170, 200, -60], [-230, 20, -90, 60], [10, -40, 140, 40]].map(([a, b, c, d], i) =>
       <path key={i} d={`M ${a} ${b} Q ${(a + c) / 2 + 30} ${(b + d) / 2 - 40} ${c} ${d}`} stroke="#c45a86" strokeWidth={8} fill="none" strokeLinecap="round" />)}
-    <path d="M 60 120 L 90 260 L 140 260 L 130 120 Z" fill="#f7a8c4" stroke={KC.ink} strokeWidth={8} />
+    <path d="M 60 120 L 90 260 L 140 260 L 130 120 Z" fill="url(#cq-cer)" stroke={KC.ink} strokeWidth={8} />
     <g transform="translate(220 150)">
       {glow > 0 && <ellipse rx={150} ry={100} fill={KC.yellow} opacity={0.45 * glow * (0.7 + 0.3 * Math.sin(T * 6))} />}
-      <ellipse rx={115} ry={72} fill={glow > 0.5 ? '#ffd166' : '#e98fb2'} stroke={KC.ink} strokeWidth={8} />
+      <ellipse rx={115} ry={72} fill={glow > 0.5 ? 'url(#cq-cbl2)' : 'url(#cq-cbl)'} stroke={KC.ink} strokeWidth={8} />
       {[-40, -10, 20, 50].map((dy, i) => <path key={i} d={`M -95 ${dy * 0.9} Q 0 ${dy * 0.9 + 18} 95 ${dy * 0.9}`} stroke="#b0517a" strokeWidth={5} fill="none" />)}
     </g>
   </g>;
@@ -37,11 +61,16 @@ function Cerebro({ x, y, s = 1, glow = 0, T = 0 }) {
 // Brazo robótico simple. ang = ángulo del segmento; punta = 'mango' o 'pincel'.
 function Robot({ x, y, s = 1, ang = 0, punta = 'mango', color = KC.cyan }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <VolDefs />
+    <ellipse cx={0} cy={34} rx={120} ry={14} fill="#000" opacity={0.3} />
     <rect x={-90} y={-30} width={180} height={60} rx={14} fill="#8a8f99" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-90} y={-30} width={180} height={60} rx={14} fill="url(#cq-brillo)" />
     <rect x={-22} y={-200} width={44} height={180} rx={18} fill={color} stroke={KC.ink} strokeWidth={8} />
+    <rect x={-22} y={-200} width={44} height={180} rx={18} fill="url(#cq-brillo)" />
     <circle cx={0} cy={-200} r={30} fill="#fff" stroke={KC.ink} strokeWidth={8} />
     <g transform={`translate(0 -200) rotate(${ang})`}>
       <rect x={0} y={-20} width={200} height={40} rx={18} fill={color} stroke={KC.ink} strokeWidth={8} />
+      <rect x={0} y={-20} width={200} height={40} rx={18} fill="url(#cq-brillo)" />
       {punta === 'mango' ? <rect x={190} y={-40} width={40} height={80} rx={14} fill={KC.red} stroke={KC.ink} strokeWidth={7} />
         : <g><rect x={190} y={-14} width={50} height={28} rx={8} fill="#c98b4a" stroke={KC.ink} strokeWidth={6} />{[-10, 0, 10].map((d, i) => <path key={i} d={`M 240 ${d} l 50 ${d * 1.6}`} stroke={KC.ink} strokeWidth={6} strokeLinecap="round" />)}</g>}
     </g>
@@ -50,20 +79,26 @@ function Robot({ x, y, s = 1, ang = 0, punta = 'mango', color = KC.cyan }) {
 // Palma de la mano (vista de frente), para el robot que la roza.
 function Palma({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    {[-75, -25, 25, 75].map((dx, i) => <rect key={i} x={dx - 22} y={-240 + Math.abs(dx) * 0.4} width={44} height={170} rx={22} fill={PIEL} stroke={KC.ink} strokeWidth={7} />)}
-    <rect x={-110} y={-110} width={220} height={220} rx={80} fill={PIEL} stroke={KC.ink} strokeWidth={8} />
-    <rect x={-150} y={-30} width={44} height={130} rx={22} transform="rotate(-35 -128 30)" fill={PIEL} stroke={KC.ink} strokeWidth={7} />
+    <VolDefs />
+    {[-75, -25, 25, 75].map((dx, i) => <rect key={i} x={dx - 22} y={-240 + Math.abs(dx) * 0.4} width={44} height={170} rx={22} fill="url(#cq-piel)" stroke={KC.ink} strokeWidth={7} />)}
+    <rect x={-110} y={-110} width={220} height={220} rx={80} fill="url(#cq-piel)" stroke={KC.ink} strokeWidth={8} />
+    <path d="M -60 -20 Q -10 30 60 10 M -40 50 Q 10 70 70 40" stroke={PIEL2} strokeWidth={4} fill="none" strokeLinecap="round" opacity={0.5} />
+    <rect x={-150} y={-30} width={44} height={130} rx={22} transform="rotate(-35 -128 30)" fill="url(#cq-piel)" stroke={KC.ink} strokeWidth={7} />
   </g>;
 }
 // Rata con ondas de ultrasonido (chillidos). ondas 0..1.
 function Rata({ x, y, s = 1, ondas = 0, T = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <VolDefs />
+    <ellipse cx={-30} cy={95} rx={190} ry={18} fill="#000" opacity={0.28} />
     <path d="M 150 40 Q 300 60 340 -20" stroke="#e8a0a8" strokeWidth={12} fill="none" strokeLinecap="round" />
-    <ellipse cx={0} cy={0} rx={170} ry={100} fill="#b9b4ae" stroke={KC.ink} strokeWidth={8} />
-    <ellipse cx={-170} cy={-30} rx={90} ry={66} fill="#b9b4ae" stroke={KC.ink} strokeWidth={8} />
-    <circle cx={-150} cy={-110} r={40} fill="#e8a0a8" stroke={KC.ink} strokeWidth={7} />
+    <ellipse cx={0} cy={0} rx={170} ry={100} fill="url(#cq-rata)" stroke={KC.ink} strokeWidth={8} />
+    {[-90, -40, 10, 60, 110].map((dx, i) => <path key={i} d={`M ${dx} ${-70 + Math.abs(dx) * 0.15} q 14 22 4 44`} stroke="#8f8a84" strokeWidth={3} fill="none" opacity={0.5} strokeLinecap="round" />)}
+    <ellipse cx={-170} cy={-30} rx={90} ry={66} fill="url(#cq-rata)" stroke={KC.ink} strokeWidth={8} />
+    <circle cx={-150} cy={-110} r={40} fill="url(#cq-rosa)" stroke={KC.ink} strokeWidth={7} />
     <circle cx={-200} cy={-44} r={10} fill={KC.ink} />
-    <circle cx={-258} cy={-22} r={14} fill="#e8a0a8" stroke={KC.ink} strokeWidth={5} />
+    <circle cx={-202} cy={-48} r={3.5} fill="#fff" />
+    <circle cx={-258} cy={-22} r={14} fill="url(#cq-rosa)" stroke={KC.ink} strokeWidth={5} />
     {ondas > 0 && [0, 1, 2].map((k) => { const u = (T * 1.6 + k / 3) % 1; return <path key={k} d={`M ${-300 - u * 160} ${-120 - u * 60} q ${-50} ${100} 0 ${200}`} stroke={KC.yellow} strokeWidth={10} fill="none" opacity={ondas * (1 - u)} strokeLinecap="round" />; })}
   </g>;
 }
