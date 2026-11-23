@@ -1,2 +1,4 @@
 - qui-30-protector-solar: Gancho y Cierre (brazo, sol y rayos bajan 130 px al centro del cuadro); Filtros/Absorbe/Calor (la capa de crema por dentro baja al centro y crece 1.1×, rótulos dentro del cuadro); Esfera (tarjeta 2016 y «minerales = espejitos» suben arriba; barras reflejado/absorbido suben bajo la esfera, ya nada abajo de y≈1560); FPS (el «97 %» sube a y 1380); Playa (tarjeta 1992 arriba y el sol un poco más abajo para no encimarse).
 - fun-83-orquidea-hongo: Vainilla (las etiquetas «Vanilla planifolia / también es una orquídea» ya no se enciman con el logo: bajan a la derecha de la vara; mapa de México más grande, 450→515 px, marcado «mapa esquemático»). El resto ya cumplía (sin láminas, encuadre bien).
+- ia-30-teclado: Matiz (el paquete cifrado 2.7×→3.0× y bajado al centro; las fichas de la frase llegan más abajo y los chips se reacomodan, ya no queda todo en la mitad de arriba). El resto ya cumplía (sin láminas, encuadre bien).
+GRUPO TERMINADO
