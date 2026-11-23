@@ -1,0 +1,1 @@
+- amb-01-vinazas: sin cambios: revisadas las 12 escenas (jarra, botellas, alambique, pH, río, reactor, bagazo, setas, granja, cierre): sujeto grande y centrado, sin encimados ni cortes. Encuadre bien, sin láminas.
