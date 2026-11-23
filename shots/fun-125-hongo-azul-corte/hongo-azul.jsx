@@ -59,7 +59,8 @@ function BoletoCorte({ x, y, s = 1, rot = 0, somb = HA.cafe, carne = HA.amarillo
   const R = 30 + 520 * kEase.suave(kclamp(azul, 0, 1));
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${espejo ? -s : s} ${s})`}>
     <defs><clipPath id={`az${id}`}><circle cx={0} cy={-215} r={R} /></clipPath>
-      <clipPath id={`mi${id}`}><rect x={mitad === 'der' ? 0 : -400} y={-500} width={mitad ? 400 : 800} height={560} /></clipPath></defs>
+      <clipPath id={`mi${id}`}><rect x={mitad === 'der' ? 0 : -400} y={-500} width={mitad ? 400 : 800} height={560} /></clipPath>
+      <radialGradient id={`vol${id}`} cx="32%" cy="22%" r="85%"><stop offset="0%" stopColor="#fff" stopOpacity=".22" /><stop offset="45%" stopColor="#fff" stopOpacity="0" /><stop offset="100%" stopColor="#000" stopOpacity=".3" /></radialGradient></defs>
     <g clipPath={`url(#mi${id})`}>
     <path d={bPie(bulbo)} fill={pie} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     <path d={bSomb} fill={somb} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
@@ -69,6 +70,7 @@ function BoletoCorte({ x, y, s = 1, rot = 0, somb = HA.cafe, carne = HA.amarillo
     {azul > 0 && <g clipPath={`url(#az${id})`} opacity={0.15 + 0.85 * kclamp(azul * 1.6, 0, 1)}>
       <path d={bPie(bulbo)} fill={colorAzul} /><path d={bCarneSomb} fill={colorAzul} /><path d={bTubos} fill={mixHex(colorAzul, '#000000', 0.25)} />
     </g>}
+    <path d={bCarneSomb} fill={`url(#vol${id})`} /><path d={bPie(bulbo)} fill={`url(#vol${id})`} /><path d={bSomb} fill={`url(#vol${id})`} opacity=".7" />
     {hueco && [[-130, 26, 34], [-80, 30, 36], [-36, 28, 30]].map(([yy, rx, ry], i) => <ellipse key={i} cx={0} cy={yy} rx={rx} ry={ry} fill="#3a2a18" stroke={KC.ink} strokeWidth={4} opacity=".85" />)}
     <path d={bSomb} fill="none" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     <path d={bPie(bulbo)} fill="none" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
@@ -344,8 +346,8 @@ function HongoAzulShot() {
       <Chip T={T} at={K.D + 2.6} until={K.C - 0.3} texto="otra molécula: girocianina" x={815} y={670} tam={32} borde="#2a5be0" />
       <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="no es podrido: es química" x={540} y={400} tam={42} borde="#2f6bff" />
       <Etq T={T} at={K.C + 1.6} until={K.Ou} x={60} y={490} texto="pigmento + oxígeno del aire" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.C + 2.2} until={K.Ou} x={60} y={1485} texto="No es guía de consumo: no comas hongos" tam={22} color={KC.ink} />
-      <Etq T={T} at={K.C + 2.2} until={K.Ou} x={60} y={1520} texto="silvestres sin que un experto los identifique." tam={22} color={KC.ink} />
+      <Etq T={T} at={K.C + 2.2} until={K.Ou} x={60} y={1420} texto="No es guía de consumo: no comas hongos" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.C + 2.2} until={K.Ou} x={60} y={1470} texto="silvestres sin que un experto los identifique." tam={28} color={KC.ink} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.Bo} texto="5 cm" largo={210} y={1560} color={KC.ink} />

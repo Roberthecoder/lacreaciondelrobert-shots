@@ -1,2 +1,4 @@
 - ia-45-pronostico-clima: Gancho: supercomputadora, chip, relojes, chip de núcleos y las dos barras de carrera bajados 110 px juntos (antes todo cargado arriba con el último tercio vacío). Las demás escenas ya cumplían (globo, red, mapas, cuadrícula, ciclones, monitores, celular).
 - fun-124-sequia-suelo: Estudio: las macetas pasan de naranja plano chillón a barro con degradado, brillo lateral y borde más fino. El resto ya cumplía al mirarlo (terrón con su escenario de suelo, poros, hifas, redes, panel húmeda/seca, hipótesis, lluvia y cierre).
+- fun-125-hongo-azul-corte: todos los cortes de boleto (gancho, corte, pregunta, estudio, respuesta, dato extra y cierre) ganan volumen: degradado radial de luz arriba-izquierda y sombra abajo-derecha sobre carne, pie y sombrero (el azul plano ya tiene relieve); Cierre: el aviso «No es guía de consumo…» de 22 a 28 px y subido para no encimarse con la barra de escala.
+GRUPO TERMINADO
