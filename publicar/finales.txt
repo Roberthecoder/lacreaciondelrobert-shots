@@ -9,3 +9,8 @@ ia-04-huella
 fun-11-moho-cortar
 bio-05-petunia
 fun-12-caspa
+qui-04-col-morada
+amb-05-ozono
+cie-05-cosquillas
+qui-05-nixtamal
+fun-13-vitamina-d
