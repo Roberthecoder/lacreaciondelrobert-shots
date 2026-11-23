@@ -191,15 +191,15 @@ function Calentador() {
       <Escena T={T} a={K.Em} b={K.Ox} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <g transform="translate(470 1150) scale(1.8) translate(-420 -900)">
+          <g transform="translate(520 1110) scale(2.0) translate(-420 -880)">
           <Bolsita T={T} x={420} y={880 - abreEm * 120} s={0.85} calor={kprog(T, K.Em + 3.0, K.Em + 4.0)} />
-          <g opacity={1 - abreEm * 0.85}><Sobre x={420} y={900 + abreEm * 300} s={1.05} abre={abreEm} candado={1 - abreEm} /></g>
+          <g opacity={1 - abreEm}><Sobre x={420} y={900 + abreEm * 300} s={1.05} abre={abreEm} candado={1 - abreEm} /></g>
           {abreEm > 0 && o2s.slice(0, 7).map(([ox, oy, ph], i) => { const p = kprog(T, K.Em + 2.0 + i * 0.18, K.Em + 3.4 + i * 0.18, kEase.suave);
             return p > 0 && p < 1 ? <Mol key={i} tipo="o2" x={klerp(ox < 540 ? 60 : 1020, 420 + (i - 3) * 30, p)} y={klerp(560 + oy, 820, p)} s={0.7} rot={T * 60 + ph * 50} o={1 - kprog(p, 0.85, 1)} /> : null; })}
           </g>
           <Termo x={970} y={1340} s={1.1} v={0.15 + 0.45 * kprog(T, K.Em + 2.6, K.Em + 4.2)} on={kprog(T, K.Em + 2.4, K.Em + 3.0)} />
         </SvgCapa>
-        <Escala T={T} z={1.53} pxPorMm={PXMM} x={60} y={1430} color={KC.ink} />
+        <Escala T={T} z={1.70} pxPorMm={PXMM} x={60} y={1430} color={KC.ink} />
       </Escena>
       {/* 3 · óxido: un grano de hierro por dentro (micro, fondo noche) */}
       <Escena T={T} a={K.Ox} b={K.Po} zoom={0.06}>
@@ -321,7 +321,7 @@ function Calentador() {
       <Chip T={T} at={K.G + 2.7} until={K.Re - 0.3} texto="hierro + oxígeno" x={300} y={470} tam={44} borde={OXI} />
       <Chip T={T} at={K.Re + 0.4} until={K.Em - 0.3} texto="por dentro · hoja de seguridad 2021" x={380} y={330} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.Em + 0.2} until={K.Em + 1.8} texto="sobre cerrado: sin aire" y={330} tam={40} borde="#9aa3b5" />
-      <Chip T={T} at={K.Em + 2.2} until={K.Ox - 0.2} texto="entra O₂ por la tela" y={330} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Em + 2.2} until={K.Ox - 0.2} texto="entra O₂ por la tela" y={1440} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Ox + 0.5} until={K.Po - 0.2} texto="hierro + oxígeno → óxido + calor" y={1470} tam={38} borde={KC.orange} />
       <Chip T={T} at={K.Pr + 0.2} until={K.Pa - 0.1} texto="¿cuántas horas?" x={300} y={470} tam={44} borde={KC.yellow} />
       <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="hierro + oxígeno → óxido + calor" y={1470} tam={38} borde={KC.orange} />
