@@ -218,7 +218,7 @@ function EspeciesShot() {
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ri - 0.2} anio="2023" quien="Real Jardín Botánico de Kew" revista="State of the World's Plants and Fungi" x={450} y={370} />
       <Chip T={T} at={K.Ri + 0.3} until={K.Mil - 0.2} texto="+2,500 especies nombradas al año" x={540} y={355} tam={34} borde={KC.orange} />
       <Chip T={T} at={K.Ri + 1.2} until={K.Mil - 0.2} texto="1 año = 1 franjita naranja (1/10 de cuadrito)" x={540} y={445} tam={24} borde={KC.orange} mono />
-      <div style={{ position:'absolute', left:440, top:400, transform:'translate(-50%,-50%)', zIndex:41, opacity:kprog(T, K.Mil + 0.4, K.Mil + 0.8) * (1 - kprog(T, K.Po - 0.3, K.Po)), font:`400 104px ${KF.titulo}`, color:KC.gold2, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}`, whiteSpace:'nowrap', display: T > K.Mil && T < K.Po + 0.2 ? 'block' : 'none' }}>750–1,000 AÑOS</div>
+      <div style={{ position:'absolute', left:430, top:400, transform:'translate(-50%,-50%)', zIndex:41, opacity:kprog(T, K.Mil + 0.4, K.Mil + 0.8) * (1 - kprog(T, K.Po - 0.3, K.Po)), font:`400 82px ${KF.titulo}`, color:KC.gold2, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}`, whiteSpace:'nowrap', display: T > K.Mil && T < K.Po + 0.2 ? 'block' : 'none' }}>750–1,000 AÑOS</div>
       <TarjetaEstudio T={T} at={K.Po + 2.6} until={K.C - 0.3} anio="2014" quien="Dentinger y Suz · comprado en 2013" revista="PeerJ, 2014" x={450} y={345} />
       <Etq T={T} at={K.Po + 1.0} until={K.Po + 2.5} x={60} y={400} texto="hongos secos de China · Londres" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Po + 4.6} until={K.C - 0.3} texto="3 especies sin nombre" x={760} y={1470} tam={36} borde="#3ddc84" />
