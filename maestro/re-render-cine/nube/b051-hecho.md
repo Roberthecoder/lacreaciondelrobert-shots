@@ -1,0 +1,1 @@
+- cie-22-agujetas: Gancho: la persona arranca un escalón más abajo y se ve completa desde el cuadro 0 (antes salía cortada a la izquierda); el resto de las escenas ya cumplía (revisadas las 11). Auditores: sin láminas · encuadre bien.
