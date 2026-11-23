@@ -23,10 +23,19 @@ function EscalaFija({ T, at, until, texto, largo, x = 60, y = 1440 }) {
   </div>;
 }
 // Cara de frente con la boca abierta. espuma 0..1, brillo 0..1 (flúor que se queda), manchas 0..1 (café), lineas 0..1 (fluorosis).
+// Pase de belleza: luz de volumen (claro arriba-izquierda, sombra abajo-derecha) para poner encima de piezas planas.
+function FlDefs() {
+  return <defs><radialGradient id="fl-luz" cx=".32" cy=".26" r=".85">
+    <stop offset="0" stopColor="#ffffff" stopOpacity=".42" /><stop offset=".42" stopColor="#ffffff" stopOpacity="0" />
+    <stop offset=".78" stopColor="#000000" stopOpacity=".08" /><stop offset="1" stopColor="#000000" stopOpacity=".3" />
+  </radialGradient></defs>;
+}
 function Cara({ T, x, y, s = 1, espuma = 0, brillo = 0, manchas = 0 }) {
   const dientes = [-150, -90, -30, 30, 90, 150];
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <FlDefs />
     <ellipse cx={0} cy={-40} rx={420} ry={330} fill={PIEL} stroke={KC.ink} strokeWidth={10} />
+    <ellipse cx={0} cy={-40} rx={414} ry={324} fill="url(#fl-luz)" />
     <path d="M -50 -300 Q 0 -250 50 -300" stroke={KC.ink} strokeWidth={8} fill="none" strokeLinecap="round" />
     <ellipse cx={-200} cy={-120} rx={60} ry={34} fill="#ec8f86" opacity={0.6} />
     <ellipse cx={200} cy={-120} rx={60} ry={34} fill="#ec8f86" opacity={0.6} />
@@ -66,6 +75,8 @@ function Muela({ x, y, s = 1, lineas = 0, color = '#ffffff' }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d="M -150 -100 Q -170 -170 -100 -180 Q -50 -190 -30 -155 Q 0 -190 30 -155 Q 50 -190 100 -180 Q 170 -170 150 -100 L 140 60 Q 130 120 90 120 L 70 280 Q 60 310 35 290 L 10 140 L -10 140 L -35 290 Q -60 310 -70 280 L -90 120 Q -130 120 -140 60 Z"
       fill={color} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    <FlDefs />
+    <path d="M -150 -100 Q -170 -170 -100 -180 Q -50 -190 -30 -155 Q 0 -190 30 -155 Q 50 -190 100 -180 Q 170 -170 150 -100 L 140 60 Q 130 120 90 120 L 70 280 Q 60 310 35 290 L 10 140 L -10 140 L -35 290 Q -60 310 -70 280 L -90 120 Q -130 120 -140 60 Z" fill="url(#fl-luz)" />
     <path d="M -144 40 Q 0 70 144 40" stroke="#c9c2b2" strokeWidth={5} fill="none" />
     <path d="M -110 -130 Q -90 -150 -60 -140" stroke="#fff" strokeWidth={10} strokeLinecap="round" opacity={0.8} fill="none" />
     {lineas > 0 && [-60, -20, 20, 60].map((dy, i) => <path key={i} d={`M -120 ${dy - 40} q 30 -10 60 0 t 60 0 t 60 0 t 60 0`} stroke="#ffffff" strokeWidth={7} fill="none" opacity={lineas * 0.95} strokeDasharray="18 8" />)}
@@ -193,7 +204,7 @@ function Fluor() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
           <Ambiente T={T} n={24} />
-          <g transform="translate(540 870) scale(1.3) translate(-540 -850)">
+          <g transform="translate(540 975) scale(1.35) translate(-540 -850)">
           <path d={hexPath(540, 850, 270)} fill="rgba(239,233,218,.12)" stroke={entraF > 0.9 ? ORO : ESMALTE} strokeWidth={10} />
           {Array.from({ length: 6 }, (_, k) => { const a = Math.PI / 6 + k * Math.PI / 3; return <Atomo key={k} x={540 + 270 * Math.cos(a)} y={850 + 270 * Math.sin(a)} r={40} color={QA.Ca} letra="Ca" tam={30} />; })}
           {[0, 2, 4].map((k) => { const a = k * Math.PI / 3, x = 540 + 150 * Math.cos(a), y = 850 + 150 * Math.sin(a);
@@ -259,13 +270,13 @@ function Fluor() {
               return <Personita key={i} x={170 + (i % 6) * 150} y={640 + Math.floor(i / 6) * 100} s={1.4 * e} color={[KC.yellow, KC.cyan, KC.mint, KC.pink][i % 4]} />; })}
           </g>
           {T > mitadR && (() => { const g = kprog(T, mitadR, mitadR + 1.0, kEase.sale), h1 = 560 * g, h2 = 560 * 0.38 * g;
-            return <g>
+            return <g opacity={1 - kprog(T, K.N - 0.05, K.N + 0.3)}>
               <rect x={200} y={1180 - h1} width={240} height={h1} rx={12} fill={KC.coral} stroke={KC.ink} strokeWidth={7} />
               <rect x={640} y={1180 - h2} width={240} height={h2} rx={12} fill={KC.mint} stroke={KC.ink} strokeWidth={7} />
               <line x1={160} x2={920} y1={1180} y2={1180} stroke={KC.ink} strokeWidth={8} />
               <text x={320} y={1225} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>antes del flúor</text>
               <text x={760} y={1225} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>nacidos después</text>
-              <text x={760} y={1180 - h2 - 30} textAnchor="middle" style={{ font:`400 92px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} paintOrder="stroke" opacity={kprog(T, mitadR + 0.8, mitadR + 1.2)}>−60 % o más</text>
+              <text x={720} y={1180 - h2 - 30} textAnchor="middle" style={{ font:`400 74px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} paintOrder="stroke" opacity={kprog(T, mitadR + 0.8, mitadR + 1.2)}>−60 % o más</text>
               <text x={320} y={1180 - h1 - 24} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink}>caries</text>
             </g>; })()}
         </SvgCapa>
@@ -305,8 +316,8 @@ function Fluor() {
       <Chip T={T} at={K.A + 0.4} until={K.F - 0.2} texto="bacterias + azúcar → ácido" y={1500} tam={42} borde={KC.red} />
       <EscalaFija T={T} at={K.A + 0.2} until={K.C - 0.2} texto="100 nm" largo={203} y={1330} />
       <Chip T={T} at={K.F + 0.3} until={K.C - 0.2} texto="flúor en la saliva → se reconstruye" y={1500} tam={36} borde={ORO} />
-      <Chip T={T} at={K.C + 2.4} until={K.P - 0.2} texto="OH → F: se disuelve menos" y={1500} tam={42} borde={ORO} />
-      <div style={{ position:'absolute', left:60, top:1385, zIndex:40, font:`700 24px ${KF.mono}`, color:KC.texto, opacity: T > K.C + 0.2 && T < K.P - 0.2 ? 0.85 : 0 }}>esquema de la red · no a escala</div>
+      <Chip T={T} at={K.C + 2.4} until={K.P - 0.2} texto="OH → F: se disuelve menos" y={1528} tam={42} borde={ORO} />
+      <div style={{ position:'absolute', left:60, top:1425, zIndex:40, font:`700 26px ${KF.mono}`, color:KC.texto, opacity: T > K.C + 0.2 && T < K.P - 0.2 ? 0.85 : 0 }}>esquema de la red · no a escala</div>
       <TarjetaEstudio T={T} at={K.M + 0.2} until={mitadM - 0.3} anio="1901" quien="Frederick McKay · Colorado Springs" revista="manchas color chocolate · NIDCR (NIH)" y={330} />
       <Chip T={T} at={K.M + 2.8} until={mitadM - 0.3} texto="manchados… y con menos caries" x={540} y={1400} tam={38} borde={CAFE} />
       <Chip T={T} at={mitadM + 0.1} until={K.Es - 0.3} texto="30 años después" x={540} y={450} tam={50} borde={ORO} />
