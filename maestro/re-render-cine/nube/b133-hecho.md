@@ -1,0 +1,1 @@
+- amb-54-basura-diaria: Camion: el camión, la calle y la cuadrícula de 100 bolsitas bajados 150 px (el camión estaba en el tercio de arriba y la cuadrícula se cortaba con el chip); «77 de 100» y el chip se recorren con ellos. Lo demás ya cumplía.

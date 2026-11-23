@@ -170,7 +170,7 @@ function BasuraShot() {
       {/* 5 · el camión recoge 77 de cada 100 */}
       <Escena T={T} a={K.Ca} b={K.P}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<g transform="translate(540 690) scale(1.4) translate(-540 -700)"><rect x={-400} y={700} width={KW + 800} height={14} fill="#525864" />{bolsitas}{quedan}<Camion T={T} x={camX} y={702} s={0.95} /></g>)}
+        {svg(<g transform="translate(540 840) scale(1.4) translate(-540 -700)"><rect x={-400} y={700} width={KW + 800} height={14} fill="#525864" />{bolsitas}{quedan}<Camion T={T} x={camX} y={702} s={0.95} /></g>)}
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.Di} zoom={0.1}>
@@ -227,8 +227,8 @@ function BasuraShot() {
       <Etq T={T} at={K.M + 1.4} until={K.Ca - 0.2} x={655} y={872} texto="aprovechables 36 %" tam={30} color={KC.ink} />
       <Etq T={T} at={K.M + 3.0} until={K.Ca - 0.2} x={615} y={677} texto="otros 24 %" tam={30} color={KC.ink} />
       <Chip T={T} at={K.M + 0.4} until={K.Ca - 0.2} texto="plástico · cartón · papel · vidrio · latas" y={1440} x={540} tam={30} borde={KC.blue} />
-      <NumeroGigante T={T} at={K.Ca + 1.0} until={K.P - 0.2} valor={77} dur={2.0} sufijo=" de 100" etiqueta="kilos que se recogen:" x={540} y={280} tam={110} color={KC.leaf} />
-      <Chip T={T} at={K.Ca + 2.8} until={K.P - 0.2} texto="23 kg de cada 100 se quedan sin recoger" y={1440} x={540} tam={30} borde={KC.red} />
+      <NumeroGigante T={T} at={K.Ca + 1.0} until={K.P - 0.2} valor={77} dur={2.0} sufijo=" de 100" etiqueta="kilos que se recogen:" x={540} y={400} tam={110} color={KC.leaf} />
+      <Chip T={T} at={K.Ca + 2.8} until={K.P - 0.2} texto="23 kg de cada 100 se quedan sin recoger" y={1530} x={540} tam={30} borde={KC.red} />
       <NumeroGigante T={T} at={K.Di + 0.3} until={K.Di + 4.3} valor={2250} dur={2.7} etiqueta="sitios de basura:" x={600} y={450} tam={130} color={KC.paper} />
       <NumeroGigante T={T} at={K.Di + 4.5} until={K.De - 0.2} valor={52} dur={0.6} etiqueta="rellenos sanitarios:" x={600} y={450} tam={150} color={KC.leaf} />
       <Chip T={T} at={K.Di + 0.6} until={K.De - 0.2} texto="SEMARNAT · INECC · DBGIR 2026 (datos de 2022)" y={1440} x={540} tam={28} borde={KC.ink} />
