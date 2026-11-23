@@ -1,1 +1,2 @@
 - amb-35-gatos-aves: lagartijas: la rama ahora es un arbusto con ramitas y hojas que se mecen (llenan el tercio de abajo) y la rama tiene brillo; el resto ya cumplía (encuadre bien, sin láminas).
+- fun-96-mosca-ventana: ventana (gancho, subida, halo, cierre): cielo, nubes y pasto más apagados para que no brillen a media pantalla (mismo tono de día y de atardecer); bandas al microscopio: los conidióforos ya están saliendo desde el inicio de la escena (antes entraban tarde).
