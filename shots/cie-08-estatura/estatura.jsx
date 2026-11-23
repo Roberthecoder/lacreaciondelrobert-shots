@@ -3,20 +3,40 @@
 // Datos: Tyrrell, Reilly y Troup 1985 (Spine), Roberts et al. 1998 (Clin Anat, Liverpool), Paajanen et al. 1994 (J Orthop Res),
 // NASA (Spinal Ultrasound, ISS) y Green y Scott 2017 (Front Physiol, revisión). Ver guion.md y verificacion.md.
 const PIEL = '#f1b48f', HUESO = '#f4ecd8', DISCO = '#7fc8ff';
+// Degradados (luz arriba a la izquierda) para dar volumen a las piezas planas.
+const EST_DEFS = <defs>
+  <radialGradient id="estPiel" cx="0.35" cy="0.3" r="0.75"><stop offset="0" stopColor="#f9cfae" /><stop offset="1" stopColor="#cf8a63" /></radialGradient>
+  <linearGradient id="estPant" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#4a5072" /><stop offset="1" stopColor="#2a2e45" /></linearGradient>
+  <linearGradient id="estRegla" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#fff1c4" /><stop offset="1" stopColor="#d9bd72" /></linearGradient>
+  <linearGradient id="estHueso" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stopColor="#fffaf0" /><stop offset="0.6" stopColor="#efe4c8" /><stop offset="1" stopColor="#cbbb94" /></linearGradient>
+  <radialGradient id="estDisco" cx="0.4" cy="0.3" r="0.8"><stop offset="0" stopColor="#c4e6ff" /><stop offset="1" stopColor="#4f9fd6" /></radialGradient>
+  <linearGradient id="estTraje" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stopColor="#ffffff" /><stop offset="1" stopColor="#c3cbd8" /></linearGradient>
+  <radialGradient id="estVisor" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stopColor="#4a64a8" /><stop offset="1" stopColor="#141c38" /></radialGradient>
+  <radialGradient id="estSol" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stopColor="#fff3a6" /><stop offset="1" stopColor="#f2b928" /></radialGradient>
+</defs>;
+function estTono(c, k) { return typeof mixHex === 'function' ? mixHex(c, k > 0 ? '#ffffff' : '#000000', Math.abs(k)) : c; }
 
 // Persona de frente; alto en px (la cabeza mide fijo, se estira el cuerpo).
 function Persona({ x, yPies, alto = 700, color = KC.blue, acostado = false }) {
   const h = alto - 120;
+  const gid = 'estRopa' + String(color).replace(/[^0-9a-z]/gi, '');
   return <g transform={`translate(${x} ${yPies}) ${acostado ? 'rotate(-90)' : ''}`}>
-    <circle cx={0} cy={-alto + 60} r={60} fill={PIEL} stroke={KC.ink} strokeWidth={8} />
-    <rect x={-80} y={-h} width={160} height={h * 0.5} rx={40} fill={color} stroke={KC.ink} strokeWidth={8} />
-    <rect x={-70} y={-h * 0.5} width={60} height={h * 0.5} rx={24} fill="#3a3f5c" stroke={KC.ink} strokeWidth={8} />
-    <rect x={10} y={-h * 0.5} width={60} height={h * 0.5} rx={24} fill="#3a3f5c" stroke={KC.ink} strokeWidth={8} />
+    {EST_DEFS}
+    <defs><linearGradient id={gid} x1="0" y1="0" x2="0.7" y2="1"><stop offset="0" stopColor={estTono(color, 0.18)} /><stop offset="1" stopColor={estTono(color, -0.45)} /></linearGradient></defs>
+    {!acostado && <ellipse cx={0} cy={6} rx={110} ry={16} fill="#000" opacity={0.35} />}
+    <rect x={-70} y={-h * 0.5} width={60} height={h * 0.5} rx={24} fill="url(#estPant)" stroke={KC.ink} strokeWidth={6} />
+    <rect x={10} y={-h * 0.5} width={60} height={h * 0.5} rx={24} fill="url(#estPant)" stroke={KC.ink} strokeWidth={6} />
+    <rect x={-80} y={-h} width={160} height={h * 0.5} rx={40} fill={`url(#${gid})`} stroke={KC.ink} strokeWidth={6} />
+    <path d={`M -52 ${-h + 30} Q -60 ${-h * 0.75} -50 ${-h * 0.56}`} fill="none" stroke="#fff" strokeWidth={8} strokeLinecap="round" opacity={0.22} />
+    <rect x={-22} y={-alto + 108} width={44} height={22} fill="url(#estPiel)" />
+    <circle cx={0} cy={-alto + 60} r={60} fill="url(#estPiel)" stroke={KC.ink} strokeWidth={6} />
+    <path d={`M -58 ${-alto + 52} Q -50 ${-alto - 10} 0 ${-alto - 2} Q 50 ${-alto - 10} 58 ${-alto + 52} Q 40 ${-alto + 18} 0 ${-alto + 22} Q -40 ${-alto + 18} -58 ${-alto + 52} Z`} fill="#3b2a22" />
   </g>;
 }
 function Regla({ x, yBase, alto = 900, marca }) {
   return <g transform={`translate(${x} ${yBase})`}>
-    <rect x={0} y={-alto} width={70} height={alto} fill="#ffe9a8" stroke={KC.ink} strokeWidth={6} />
+    {EST_DEFS}<rect x={10} y={-alto + 10} width={70} height={alto} fill="#000" opacity={0.3} />
+    <rect x={0} y={-alto} width={70} height={alto} fill="url(#estRegla)" stroke={KC.ink} strokeWidth={5} />
     {Array.from({ length: Math.floor(alto / 30) + 1 }, (_, i) => <line key={i} x1={0} y1={-i * 30} x2={i % 5 ? 22 : 44} y2={-i * 30} stroke="#0b1020" strokeWidth={4} />)}
     {marca != null && <line x1={-40} y1={-marca} x2={110} y2={-marca} stroke={KC.red} strokeWidth={8} strokeLinecap="round" />}
   </g>;
@@ -26,29 +46,35 @@ function Columna({ x, y, s = 1, aplaste = 0, n = 7, brillo = 0, T = 0 }) {
   const hv = 70, hd = klerp(34, 14, aplaste), els = [];
   let yy = 0;
   for (let i = 0; i < n; i++) {
-    els.push(<rect key={'v' + i} x={-90} y={yy} width={180} height={hv} rx={16} fill={HUESO} stroke={KC.ink} strokeWidth={7} />);
+    els.push(<rect key={'v' + i} x={-90} y={yy} width={180} height={hv} rx={16} fill="url(#estHueso)" stroke={KC.ink} strokeWidth={6} />);
+    els.push(<path key={'vb' + i} d={`M -66 ${yy + 14} Q 0 ${yy + 6} 66 ${yy + 14}`} fill="none" stroke="#fff" strokeWidth={6} strokeLinecap="round" opacity={0.5} />);
+    els.push(<path key={'vs' + i} d={`M -70 ${yy + hv - 10} Q 0 ${yy + hv - 2} 70 ${yy + hv - 10}`} fill="none" stroke="#a8976e" strokeWidth={5} strokeLinecap="round" opacity={0.45} />);
     yy += hv;
-    if (i < n - 1) { els.push(<ellipse key={'d' + i} cx={0} cy={yy + hd / 2} rx={klerp(86, 96, aplaste)} ry={hd / 2} fill={DISCO} stroke={KC.ink} strokeWidth={6} opacity={1} />);
+    if (i < n - 1) { els.push(<ellipse key={'d' + i} cx={0} cy={yy + hd / 2} rx={klerp(86, 96, aplaste)} ry={hd / 2} fill="url(#estDisco)" stroke={KC.ink} strokeWidth={5} opacity={1} />);
       if (brillo > 0) els.push(<ellipse key={'b' + i} cx={0} cy={yy + hd / 2} rx={110} ry={hd} fill={KC.yellow} opacity={0.35 * brillo * (0.6 + 0.4 * Math.sin(T * 5 + i))} />); yy += hd; }
   }
-  return <g transform={`translate(${x} ${y - yy * s / 2}) scale(${s})`}>{els}</g>;
+  return <g transform={`translate(${x} ${y - yy * s / 2}) scale(${s})`}>{EST_DEFS}{els}</g>;
 }
 function Sol({ x, y, r = 70 }) {
-  return <g transform={`translate(${x} ${y})`}>{Array.from({ length: 8 }, (_, i) => <line key={i} x1={0} y1={-r - 15} x2={0} y2={-r - 45} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" transform={`rotate(${i * 45})`} />)}<circle r={r} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} /></g>;
+  return <g transform={`translate(${x} ${y})`}>{Array.from({ length: 8 }, (_, i) => <line key={i} x1={0} y1={-r - 15} x2={0} y2={-r - 45} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" transform={`rotate(${i * 45})`} />)}{EST_DEFS}<circle r={r} fill="url(#estSol)" stroke={KC.ink} strokeWidth={6} /></g>;
 }
 function Luna({ x, y, r = 70 }) {
   return <g transform={`translate(${x} ${y})`}><circle r={r} fill="#fff6c8" stroke={KC.ink} strokeWidth={8} /><circle cx={r * 0.45} cy={-r * 0.2} r={r * 0.85} fill={KC.noche} /></g>;
 }
 function Astronauta({ x, y, s = 1, rot = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
-    <rect x={-90} y={-60} width={180} height={230} rx={60} fill="#fff" stroke={KC.ink} strokeWidth={9} />
-    <rect x={-150} y={-30} width={70} height={150} rx={30} fill="#fff" stroke={KC.ink} strokeWidth={8} transform="rotate(25 -115 45)" />
-    <rect x={80} y={-30} width={70} height={150} rx={30} fill="#fff" stroke={KC.ink} strokeWidth={8} transform="rotate(-25 115 45)" />
-    <rect x={-80} y={150} width={70} height={170} rx={30} fill="#fff" stroke={KC.ink} strokeWidth={8} />
-    <rect x={10} y={150} width={70} height={170} rx={30} fill="#fff" stroke={KC.ink} strokeWidth={8} />
-    <circle cx={0} cy={-130} r={90} fill="#fff" stroke={KC.ink} strokeWidth={9} />
-    <ellipse cx={0} cy={-125} rx={62} ry={50} fill="#2b3a67" stroke={KC.ink} strokeWidth={6} />
+    {EST_DEFS}
+    <rect x={-90} y={-60} width={180} height={230} rx={60} fill="url(#estTraje)" stroke={KC.ink} strokeWidth={7} />
+    <rect x={-150} y={-30} width={70} height={150} rx={30} fill="url(#estTraje)" stroke={KC.ink} strokeWidth={6} transform="rotate(25 -115 45)" />
+    <rect x={80} y={-30} width={70} height={150} rx={30} fill="url(#estTraje)" stroke={KC.ink} strokeWidth={6} transform="rotate(-25 115 45)" />
+    <rect x={-80} y={150} width={70} height={170} rx={30} fill="url(#estTraje)" stroke={KC.ink} strokeWidth={6} />
+    <rect x={10} y={150} width={70} height={170} rx={30} fill="url(#estTraje)" stroke={KC.ink} strokeWidth={6} />
+    <circle cx={0} cy={-130} r={90} fill="url(#estTraje)" stroke={KC.ink} strokeWidth={7} />
+    <ellipse cx={0} cy={-125} rx={62} ry={50} fill="url(#estVisor)" stroke={KC.ink} strokeWidth={5} />
     <ellipse cx={-20} cy={-140} rx={16} ry={10} fill="#fff" opacity=".6" />
+    <rect x={-50} y={10} width={100} height={60} rx={10} fill="#d7dde7" stroke="#9aa4b4" strokeWidth={4} />
+    {[-28, 0, 28].map((bx, i) => <circle key={i} cx={bx} cy={40} r={9} fill={['#e06a5a', '#5b8fbf', '#e8c45a'][i]} />)}
+    <path d="M -80 170 L 80 170" stroke="#9aa4b4" strokeWidth={6} />
   </g>;
 }
 function Estrellas({ T }) {
@@ -133,10 +159,12 @@ function Estatura() {
         <Estrellas T={T} />
         {svg(<>
           {T < K.R + 1.5 ? <Astronauta x={360} y={830 + Math.sin(T * 1.2) * 20} s={1.7} rot={Math.sin(T * 0.7) * 6} />
-            : <g><circle cx={540} cy={2300} r={1200} fill="#173f73" stroke={KC.ink} strokeWidth={10} /><path d="M 200 1200 q 120 -60 260 -10 q 80 30 200 -20" stroke="#3d7a36" strokeWidth={60} fill="none" strokeLinecap="round" /><Astronauta x={540} y={720} s={1.4} /></g>}
+            : <g><defs><radialGradient id="estTierra" cx="0.5" cy="0" r="0.6"><stop offset="0" stopColor="#1d4a7e" /><stop offset="1" stopColor="#0a1a33" /></radialGradient></defs>
+              <circle cx={540} cy={2450} r={1200} fill="url(#estTierra)" stroke="#6fb4ff" strokeWidth={8} style={{ filter:'drop-shadow(0 0 18px #3d8bff)' }} /><path d="M 200 1350 q 120 -60 260 -10 q 80 30 200 -20" stroke="#2c5a2a" strokeWidth={60} fill="none" strokeLinecap="round" />
+              <ellipse cx={540} cy={1262} rx={130} ry={16} fill="#000" opacity={0.35} /><Astronauta x={540} y={870} s={1.4} /></g>}
           {T < K.R + 1.5 && <Columna x={860} y={950} s={1.0} aplaste={-0.6 * estira} />}
         </>)}
-        {T > K.R + 2.6 && svg(<path d="M 475 800 l 40 -40 l 26 40 l 40 -40 l 26 40" stroke={KC.red} strokeWidth={14} fill="none" strokeLinecap="round" strokeLinejoin="round" />)}
+        {T > K.R + 2.6 && svg(<path d="M 475 950 l 40 -40 l 26 40 l 40 -40 l 26 40" stroke={KC.red} strokeWidth={14} fill="none" strokeLinecap="round" strokeLinejoin="round" />)}
       </Escena>
       {/* 12 · cierre: la misma escena del inicio, ahora en la mañana */}
       <Escena T={T} a={K.C} b={FIN} fondo="linear-gradient(#163c57, #1f5270)">
