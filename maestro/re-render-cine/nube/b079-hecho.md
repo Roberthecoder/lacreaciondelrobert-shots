@@ -1,0 +1,1 @@
+- amb-33-mezclilla: pantalón del gancho, garrafones y cierre bajado 70 px para centrarlo (antes dejaba vacío el cuarto de abajo y quedaba pegado al número). Las demás escenas ya cumplían (barras, contraste, lavar, secar). Encuadre bien, sin láminas.

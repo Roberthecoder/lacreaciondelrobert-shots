@@ -222,7 +222,7 @@ function MezclillaShot() {
   const mA = kprog(T, K.Al - 0.2, K.Al + 0.8, kEase.suave), mP = kprog(T, K.P - 0.2, K.P + 0.6, kEase.suave);
   // pase a mano cine: el pantalón llena el cuadro (centrado, con un empuje lento de cámara) y los números van arriba de él
   const empuje = 1 + 0.08 * kprog(T, K.G - 0.4, K.Al, kEase.suave);
-  const pzX = klerp(klerp(540, 225, mA), 380, mP), pzY = klerp(klerp(410, 560, mA), 430, mP), pzS = klerp(klerp(empuje, 0.72, mA), 1.0, mP);
+  const pzX = klerp(klerp(540, 225, mA), 380, mP), pzY = klerp(klerp(480, 560, mA), 430, mP), pzS = klerp(klerp(empuje, 0.72, mA), 1.0, mP);
   // nota fija "esquema": fuera de la Escena para que la cámara no la saque del cuadro
   const nota = (a, b, texto) => (T > a - 0.3 && T < b) ? <EscalaFija texto={texto} largo={0} y={1700} color={KC.ink} o={kprog(T, a - 0.3, a + 0.2) * (1 - kprog(T, b - 0.3, b))} /> : null;
   const pzO = 1 - kprog(T, K.Ca - 0.4, K.Ca + 0.1);
@@ -330,7 +330,7 @@ function MezclillaShot() {
       {/* 9 · cierre: el mismo pantalón lleno, ya con años de uso */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        {svg(<Pantalon T={T} id="pzZ" x={540} y={420} s={1.0} garr={kprog(T, K.C - 0.3, K.C + 1.6)} gastado={kprog(T, K.C + 1.4, K.C + 2.4)} />)}
+        {svg(<Pantalon T={T} id="pzZ" x={540} y={490} s={1.0} garr={kprog(T, K.C - 0.3, K.C + 1.6)} gastado={kprog(T, K.C + 1.4, K.C + 2.4)} />)}
       </Escena>
       {nota(K.C, K.Ou, 'esquema (no a escala)')}
 
