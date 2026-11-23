@@ -1,2 +1,4 @@
 - amb-42-hielo-artico: en el estudio, el Ártico ya no desaparece: queda atenuado detrás de la cuadrícula de años (ya no es lámina) y las casillas vacías pasan de blanco a azul hielo translúcido (sin plancha blanca). El resto (mapa del Ártico, México, espejo, círculo, vaso) ya estaba centrado y grande. Auditores: sin láminas · encuadre bien.
 - fun-115-arroz-presion: estudio de 1991: plástico y apresorios ×1.08 y bajados al centro, la tira de plástico menos lechosa y el chip debajo sin encimarse. Lo demás (hoja, espora, apresorio por dentro, clavija, trigo y cierre) ya estaba al nivel. Auditores: sin láminas · encuadre bien.
+- cie-42-huellas-gemelos: escena de la policía (huellas, lupa, palomita y gel de ADN) bajada al centro con sus chips (quitada la marca ARRIBA); en «dos» las 10 huellas empiezan a aparecer desde el inicio de la escena (antes arrancaba casi vacía). Auditores: sin láminas · encuadre bien.
+GRUPO TERMINADO

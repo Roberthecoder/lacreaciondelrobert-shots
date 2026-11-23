@@ -216,7 +216,7 @@ function HuellasGemelos() {
       <Escena T={T} a={K.Dos} b={K.Pregunta} fondo={KC.noche}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          {TIPOS10.map((tp, i) => { const fila = Math.floor(i / 5), c = i % 5, at = K.Dos + 0.3 + i * 0.22;
+          {TIPOS10.map((tp, i) => { const fila = Math.floor(i / 5), c = i % 5, at = K.Dos + 0.02 + i * 0.2;
             return <Huella key={i} id={'d' + i} x={140 + c * 200} y={720 + fila * 480} s={0.84 * sube(at)} tipo={tp} seed={20 + i * 3} o={kprog(T, at, at + 0.1)} grosor={6} />; })}
           {T > K.Dos + 3.2 && <TextoSvg x={240} y={755} tam={110} color={KC.yellow} s={sube(K.Dos + 3.2)}>≠</TextoSvg>}
         </Lienzo>
@@ -253,17 +253,17 @@ function HuellasGemelos() {
       <Escena T={T} a={K.Policia} b={K.Koala} fondo={KC.noche}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <Huella id="p1" x={300} y={720} s={1.35} tipo="remolino" seed={3} marcas={1} nMarcas={3} />
-          <Huella id="p2" x={780} y={720} s={1.35} tipo="remolino" seed={11} marcas={1} nMarcas={3} colorMarca={KC.blue} />
-          {(() => { const t = T - K.Policia, u = kprog(t, 0.2, 2.6, kEase.suave); return <LupaDetective x={klerp(200, 800, u)} y={700 + Math.sin(u * Math.PI * 2) * 50} s={1.15} rot={-35} />; })()}
-          {T > K.Policia + 2.4 && <TextoSvg x={540} y={775} tam={150} color={KC.leaf} s={sube(K.Policia + 2.4)}>✓</TextoSvg>}
+          <Huella id="p1" x={300} y={800} s={1.35} tipo="remolino" seed={3} marcas={1} nMarcas={3} />
+          <Huella id="p2" x={780} y={800} s={1.35} tipo="remolino" seed={11} marcas={1} nMarcas={3} colorMarca={KC.blue} />
+          {(() => { const t = T - K.Policia, u = kprog(t, 0.2, 2.6, kEase.suave); return <LupaDetective x={klerp(200, 800, u)} y={780 + Math.sin(u * Math.PI * 2) * 50} s={1.15} rot={-35} />; })()}
+          {T > K.Policia + 2.4 && <TextoSvg x={540} y={855} tam={150} color={KC.leaf} s={sube(K.Policia + 2.4)}>✓</TextoSvg>}
           <g opacity={kprog(T, K.Policia + 2.8, K.Policia + 3.2)} transform={`translate(0 ${(1 - sube(K.Policia + 2.8)) * 200})`}>
-            <GelADN x={380} y={1110} p={kprog(T, K.Policia + 3.0, K.Policia + 4.0)} />
-            <TextoSvg x={380} y={1320} tam={110} color={KC.yellow}>=</TextoSvg>
+            <GelADN x={380} y={1170} p={kprog(T, K.Policia + 3.0, K.Policia + 4.0)} />
+            <TextoSvg x={380} y={1380} tam={110} color={KC.yellow}>=</TextoSvg>
           </g>
         </Lienzo>
-        <Chip T={T} at={K.Policia + 0.4} until={K.Koala - 0.1} texto="las huellas sí los distinguen" x={540} y={420} tam={42} borde={KC.leaf} />
-        <Chip T={T} at={K.Policia + 3.4} until={K.Koala - 0.1} texto="prueba común de ADN" x={810} y={1270} tam={34} borde={KC.cyan} />
+        <Chip T={T} at={K.Policia + 0.4} until={K.Koala - 0.1} texto="las huellas sí los distinguen" x={540} y={490} tam={42} borde={KC.leaf} />
+        <Chip T={T} at={K.Policia + 3.4} until={K.Koala - 0.1} texto="prueba común de ADN" x={810} y={1330} tam={34} borde={KC.cyan} />
       </Escena>
       {/* 8 · dato raro: koalas con huellas casi idénticas, también al microscopio (Henneberg 1997) */}
       <Escena T={T} a={K.Koala} b={K.Cierre} fondo={KC.noche}>
