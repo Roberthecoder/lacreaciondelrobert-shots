@@ -212,10 +212,10 @@ function Computo() {
       </div>}
       {/* lupa: el cuadrito de 2020 (la esquina de la cuadrícula) visto de cerca */}
       {T > K.D && T < K.D + 2.4 && <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:35, opacity:oD }}>
-        <g transform="matrix(1 0 0 -1 0 1980)">
+        <line x1={122} y1={1440} x2={276} y2={1040} stroke={KC.yellow} strokeWidth={5} />
+        <circle cx={114} cy={1456} r={16 + 5 * Math.sin(T * 8)} fill="none" stroke={KC.yellow} strokeWidth={5} />
+        <g transform="matrix(1 0 0 -1 0 1690)">
         <defs><clipPath id="lupaD"><circle cx={330} cy={790} r={150} /></clipPath></defs>
-        <line x1={124} y1={534} x2={224} y2={684} stroke={KC.yellow} strokeWidth={5} />
-        <circle cx={114} cy={524} r={16 + 5 * Math.sin(T * 8)} fill="none" stroke={KC.yellow} strokeWidth={5} />
         <circle cx={330} cy={790} r={150} fill="#0b1020" />
         <g clipPath="url(#lupaD)">
           {[0, 1, 2].map((j) => [0, 1, 2].map((i) => <rect key={`${i}-${j}`} x={236 + i * 104} y={696 + j * 104} width={90} height={90} rx={12} fill={i + j === 0 ? KC.yellow : 'rgba(255,255,255,.16)'} />))}
