@@ -232,9 +232,9 @@ function Edulcorantes() {
       {/* 1 · familia: cuántas veces más dulces */}
       <Escena T={T} a={K.F} b={K.Re}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa><Zoom cx={520} cy={910} k={1.15}>
+        <SvgCapa><Zoom cx={590} cy={940} k={1.15}>{/* pase de belleza: barras más separadas y corridas a la izquierda para que «≈600×» quepa */}
           {[['sucralosa', 600, 0, '≈600×', '#ffffff'], ['aspartamo', 200, 0.5, '≈200×', '#ffffff'], ['stevia', 400, 1.0, '200–400×', '#f1fff0']].map(([n, v, d, t, c], i) => {
-            const y = 760 + i * 170, p = kprog(T, K.F + 0.2 + d, K.F + 1.0 + d, kEase.sale), ancho = v * 1.05 * p;
+            const y = 720 + i * 220, p = kprog(T, K.F + 0.2 + d, K.F + 1.0 + d, kEase.sale), ancho = v * 1.05 * p;
             return <g key={n} opacity={kprog(T, K.F + d, K.F + d + 0.2)}>
               <Granito x={90} y={y} s={1.3} color={c} />
               {n === 'stevia' && <Hoja x={90} y={y - 70} s={0.6} rot={-20} />}
@@ -297,6 +297,8 @@ function Edulcorantes() {
       <Escena T={T} a={K.Sc} b={K.Lo}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa><Zoom cx={530} cy={950} k={1.25} y={970}>
+          <defs><linearGradient id="edMesa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#4a3828" /><stop offset="1" stopColor="#140e09" /></linearGradient></defs>
+          <rect x={-200} y={1240} width={KW + 400} height={600} fill="url(#edMesa)" stroke={KC.ink} strokeWidth={6} />
           <rect x={-200} y={1180} width={KW + 400} height={60} fill="#6a5444" stroke={KC.ink} strokeWidth={8} />
           <Matraz x={300} y={1030} s={0.9} polvo={1 - toca * 0.6} />
           <Papel x={760} y={1080} s={0.7} rot={8} />
@@ -308,11 +310,14 @@ function Edulcorantes() {
       <Escena T={T} a={K.Lo} b={K.Es}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa><Zoom cx={550} cy={915} k={1.12}>
-          <Telefono x={260} y={1060} s={0.9} T={T} suena={kprog(T, K.Lo + 1.6, K.Lo + 1.8) * (1 - kprog(T, K.Lo + 2.8, K.Lo + 3.0))} />
+          <defs><linearGradient id="edMesa2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#3b2f4a" /><stop offset="1" stopColor="#120e18" /></linearGradient></defs>
+          <rect x={-200} y={1190} width={KW + 400} height={40} fill="#5a4a6a" stroke={KC.ink} strokeWidth={7} />
+          <rect x={-200} y={1230} width={KW + 400} height={600} fill="url(#edMesa2)" stroke={KC.ink} strokeWidth={5} />
+          <Telefono x={260} y={1091} s={0.9} T={T} suena={kprog(T, K.Lo + 1.6, K.Lo + 1.8) * (1 - kprog(T, K.Lo + 2.8, K.Lo + 3.0))} />
           <g opacity={kprog(T, K.Lo + 2.2, K.Lo + 2.5)}>
             <path d="M 420 780 Q 420 680 560 680 L 900 680 Q 1000 680 1000 780 Q 1000 880 900 880 L 540 880 L 430 960 L 470 870 Q 420 850 420 780 Z" fill="#fff" stroke={KC.ink} strokeWidth={8} />
-            <text x={710} y={800} textAnchor="middle" style={{ font:`400 66px ${KF.titulo}` }} fill={KC.blue} opacity={1 - morf}>"TEST" = analizar</text>
-            <text x={710} y={800} textAnchor="middle" style={{ font:`400 66px ${KF.titulo}` }} fill={KC.red} opacity={morf}>"TASTE" = probar</text>
+            <text x={710} y={800} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={KC.blue} opacity={1 - morf}>"TEST" = analizar</text>
+            <text x={710} y={800} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={KC.red} opacity={morf}>"TASTE" = probar</text>
           </g>
           <Frasquito x={720} y={1170} s={1} etiqueta="Cl" />
           {T > K.Lo + 4.0 && <g opacity={kprog(T, K.Lo + 4.0, K.Lo + 4.3)}><Labios x={720} y={1000} s={0.55} abre={0.4 + Math.sin(T * 8) * 0.1} /></g>}
