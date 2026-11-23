@@ -67,7 +67,7 @@ function Termometro({ x, y, alto = 600, valor, max = 200, etiqueta = true }) {
     {[0, 50, 100, 150, 200].filter((v) => v <= max).map((v) => { const yy = y + alto - alto * v / max; return <g key={v}>
       <line x1={x + 34} y1={yy} x2={x + 56} y2={yy} stroke={KC.ink} strokeWidth={5} />
       <text x={x - 46} y={yy + 10} textAnchor="end" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink} stroke="#fff" strokeWidth={6} paintOrder="stroke">{v}</text></g>; })}
-    {etiqueta && <text x={x} y={y - 34} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={9} paintOrder="stroke">{Math.round(valor)} °C</text>}
+    {etiqueta && <text x={Math.min(x, KW - 170)} y={y - 34} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={9} paintOrder="stroke">{Math.round(valor)} °C</text>}
   </g>;
 }
 // Manómetro: valor en "veces la presión del aire" (0..max).
@@ -195,10 +195,10 @@ function Palomitas() {
         <SvgCapa>
           <g transform="translate(560 1050) scale(1.35) translate(-560 -1000)">
           <Palomera T={T} x={560} y={1010} s={0.95} llena={0.12 + 0.1 * kprog(T, K.G, K.Gr)} />
-          {T < popG ? <Grano x={270 + Math.sin(T * 60) * 4} y={780} s={2.2} rot={-12} />
-            : <g><Palomita x={270} y={770 - 40 * kprog(T, popG, popG + 0.4, kEase.sale)} r={klerp(40, 95, kprog(T, popG, popG + 0.3, kEase.sale))} rot={-10} />
-              <Vapor T={T} x={270} y={720} f={kprog(T, popG, popG + 1.4)} r={90} seed={3} /></g>}
-          <Pop T={T} at={popG} x={290} y={620} tam={110} />
+          {T < popG ? <Grano x={330 + Math.sin(T * 60) * 4} y={780} s={2.2} rot={-12} />
+            : <g><Palomita x={330} y={770 - 40 * kprog(T, popG, popG + 0.4, kEase.sale)} r={klerp(40, 95, kprog(T, popG, popG + 0.3, kEase.sale))} rot={-10} />
+              <Vapor T={T} x={330} y={720} f={kprog(T, popG, popG + 1.4)} r={90} seed={3} /></g>}
+          <Pop T={T} at={popG} x={350} y={620} tam={110} />
           {[0, 1, 2].map((i) => { const t0 = K.G + 1.4 + i * 1.0; return T > t0 && T < t0 + 1.0 ? <Palomita key={i} x={420 + i * 120} y={850 - 260 * Math.sin(Math.PI * kprog(T, t0, t0 + 1.0))} r={34} rot={T * 200} /> : null; })}
           </g>
         </SvgCapa>
@@ -206,25 +206,27 @@ function Palomitas() {
       {/* 1 · el grano por dentro (rayos X) */}
       <Escena T={T} a={K.Gr} b={K.Ca} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 900) scale(1.24) translate(-600 -890)">
           {T < K.Gr + 0.9 ? <Grano x={600} y={890} s={klerp(1.2, 4.2, kprog(T, K.Gr - 0.4, K.Gr + 0.9, kEase.suave))} />
             : <g>
               <GranoCorte T={T} x={600} y={890} s={4.2} id="gc1" />
               <circle cx={600} cy={890} r={330} fill="none" stroke="#fff" strokeWidth={6} strokeDasharray="18 16" opacity={0.6 * kprog(T, K.Gr + 0.9, K.Gr + 1.3)} transform={`rotate(${T * 12} 600 890)`} />
             </g>}
-        </SvgCapa>
-        <Escala T={T} pxPorMm={68} x={60} y={1395} color={KC.ink} />
+        </g></SvgCapa>
+        <Escala T={T} pxPorMm={84.3} x={60} y={1395} color={KC.ink} />
       </Escena>
       {/* 2–3 · calor y presión (por dentro, fondo noche) */}
       <Escena T={T} a={K.Ca} b={K.Es} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
           <Ambiente T={T} />
+          <g transform="translate(540 860) scale(1.25) translate(-560 -890)">
           <circle cx={560} cy={880} r={250 + 30 * Math.sin(T * 6) * kprog(T, K.Ca, K.Pe)} fill="rgba(255,138,31,.10)" />
           <GranoCorte T={T} x={560} y={890} s={klerp(3.4, 3.9, kprog(T, K.Ca, K.Es))} vapor={kprog(T, K.Ca + 0.6, K.Pe + 0.6)} presion={kprog(T, K.Pe, K.Pe + 1.2)} id="gc2" />
-          <Termometro x={985} y={T < K.Pe ? 560 : klerp(560, 760, kprog(T, K.Pe, K.Pe + 0.5, kEase.suave))} alto={T < K.Pe ? 560 : klerp(560, 380, kprog(T, K.Pe, K.Pe + 0.5, kEase.suave))} valor={temp} />
-          <Manometro x={200} y={1010} valor={pres} o={kprog(T, K.Ca + 1.8, K.Ca + 2.3)} />
-          <OllaExpres T={T} x={230} y={640} s={0.62} o={kprog(T, K.Pe + 0.6, K.Pe + 1.1)} />
+          </g>
+          <Termometro x={955} y={T < K.Pe ? 560 : klerp(560, 760, kprog(T, K.Pe, K.Pe + 0.5, kEase.suave))} alto={T < K.Pe ? 560 : klerp(560, 380, kprog(T, K.Pe, K.Pe + 0.5, kEase.suave))} valor={temp} />
+          <Manometro x={180} y={1205} valor={pres} o={kprog(T, K.Ca + 1.8, K.Ca + 2.3)} />
+          <OllaExpres T={T} x={205} y={490} s={0.62} o={kprog(T, K.Pe + 0.6, K.Pe + 1.1)} />
         </SvgCapa>
       </Escena>
       {/* 4 · revienta: la espuma de almidón */}
@@ -263,11 +265,13 @@ function Palomitas() {
       <Escena T={T} a={K.Et} b={K.Te} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
+          <g transform="translate(520 1010) scale(1.08) translate(-535 -940)">
           <Horno T={T} x={270} y={940} s={0.95} f={K.Et + 3.0} />
           <Placa x={790} y={1100} ancho={420} />
           <Grano x={790} y={1060} s={0.6} />
           <CamaraRapida x={830} y={800} s={0.9} rec={Math.sin(T * 8) > 0 ? 1 : 0} />
           <path d="M 940 810 L 820 1030" stroke="#fff" strokeWidth={5} strokeDasharray="14 12" opacity={0.8} />
+          </g>
         </SvgCapa>
       </Escena>
       {/* 7 · el termómetro: 50 granos */}
@@ -351,9 +355,9 @@ function Palomitas() {
         <SvgCapa>
           <g transform="translate(560 1070) scale(1.35) translate(-560 -1020)">
           <Palomera T={T} x={560} y={1030} s={0.95} llena={klerp(0.6, 1, kprog(T, K.Ci, K.Ci + 2.5, kEase.sale))} />
-          {T < K.Ci + 0.6 ? <Grano x={250 + Math.sin(T * 60) * 4} y={800} s={2.0} rot={-12} />
-            : <g><Palomita x={250} y={790} r={klerp(36, 85, kprog(T, K.Ci + 0.6, K.Ci + 0.9, kEase.sale))} rot={-10} /><Vapor T={T} x={250} y={740} f={kprog(T, K.Ci + 0.6, K.Ci + 2.0)} r={80} seed={5} /></g>}
-          <Pop T={T} at={K.Ci + 0.6} x={270} y={640} tam={100} />
+          {T < K.Ci + 0.6 ? <Grano x={320 + Math.sin(T * 60) * 4} y={800} s={2.0} rot={-12} />
+            : <g><Palomita x={320} y={790} r={klerp(36, 85, kprog(T, K.Ci + 0.6, K.Ci + 0.9, kEase.sale))} rot={-10} /><Vapor T={T} x={320} y={740} f={kprog(T, K.Ci + 0.6, K.Ci + 2.0)} r={80} seed={5} /></g>}
+          <Pop T={T} at={K.Ci + 0.6} x={340} y={640} tam={100} />
           </g>
         </SvgCapa>
       </Escena>
@@ -364,8 +368,8 @@ function Palomitas() {
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.9} until={K.Gr - 0.3} texto="¿se quemó?" x={300} y={330} tam={50} />
       <Chip T={T} at={K.G + 2.1} until={K.Gr - 0.3} texto="trae agua adentro" y={1500} tam={46} borde={AGUA} />
-      <Etq T={T} at={K.Gr + 1.1} until={K.Ca - 0.3} x={790} y={760} texto="pericarpio" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Gr + 1.6} until={K.Ca - 0.3} x={600} y={930} texto="almidón" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Gr + 1.1} until={K.Ca - 0.3} x={775} y={739} texto="pericarpio" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Gr + 1.6} until={K.Ca - 0.3} x={540} y={950} texto="almidón" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Gr + 1.1} until={K.Gr + 3.0} texto="pericarpio = la cáscara · ~0.16 mm" y={1500} tam={36} borde={ORO} />
       <Chip T={T} at={K.Gr + 3.1} until={K.Ca - 0.3} texto="≈ 20 mg de agua por grano" y={1500} tam={42} borde={AGUA} />
       <Chip T={T} at={K.Ca + 0.8} until={K.Pe - 0.3} texto="agua → vapor" y={1500} tam={46} borde="#fff" />
@@ -373,7 +377,7 @@ function Palomitas() {
       <Chip T={T} at={rompe + 1.3} until={K.Pr - 0.2} texto="ancho ×2" x={290} y={1500} tam={46} borde={KC.yellow} />
       <Chip T={T} at={rompe + 1.9} until={K.Pr - 0.2} texto="densidad ÷8" x={780} y={1500} tam={46} borde={KC.cyan} />
       <TarjetaEstudio T={T} at={K.Et + 0.3} until={K.Et + 2.7} anio="2015" quien="Virot y Ponomarenko · Francia" revista="J. R. Soc. Interface" x={540} y={430} />
-      <Etq T={T} at={K.Et + 3.0} until={K.Te - 0.3} x={110} y={740} texto="horno" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Et + 3.0} until={K.Te - 0.3} x={70} y={780} texto="horno" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Et + 3.2} until={K.Te - 0.3} texto="cámara: 2900 cuadros por segundo" y={1500} tam={36} borde={KC.ink} fondo="rgba(14,15,18,.85)" />
       <Chip T={T} at={t180 + 0.4} until={K.Br - 0.3} texto="temperatura crítica ≈ 180 °C" x={600} y={650} tam={32} borde={KC.red} />
       <Chip T={T} at={bAplasta - 0.1} until={bSalta - 0.1} texto="la patita se aplasta · 13.8 ms" y={1500} tam={38} borde={CREMA} />
