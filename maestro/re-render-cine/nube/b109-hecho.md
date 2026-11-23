@@ -1,0 +1,1 @@
+- fun-122-necromasa: Huella: escena bajada 90 px y glucosamina/ácido murámico más grandes (1.45→1.75), etiquetas y chips movidos con ellas; Estudio 2019 (marcado ARRIBA): perfil de suelo, barras y etiquetas bajados 150 px y tarjeta más abajo, ya no queda el tercio de abajo vacío. Auditores: sin láminas · encuadre bien
