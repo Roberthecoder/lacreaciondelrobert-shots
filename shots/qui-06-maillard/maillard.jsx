@@ -13,7 +13,10 @@ function Sarten({ x, y, s = 1 }) {
 function Bistec({ x, y, s = 1, dorado = 0, T = 0 }) {
   const c = mixHex(CRUDO, DORADO, dorado);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <defs><radialGradient id="bistecLuz" cx="35%" cy="25%" r="80%"><stop offset="0" stopColor="#fff" stopOpacity="0.28" /><stop offset="0.55" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.35" /></radialGradient></defs>
+    <ellipse cx={0} cy={62} rx={200} ry={18} fill="#000" opacity={0.35} />
     <path d="M -210 -10 Q -220 -70 -120 -80 Q 40 -100 170 -60 Q 230 -30 200 20 Q 150 70 0 70 Q -180 70 -210 -10 Z" fill={c} stroke={KC.ink} strokeWidth={9} />
+    <path d="M -210 -10 Q -220 -70 -120 -80 Q 40 -100 170 -60 Q 230 -30 200 20 Q 150 70 0 70 Q -180 70 -210 -10 Z" fill="url(#bistecLuz)" />
     <path d="M -150 -20 Q -60 -50 60 -30 Q 120 -20 150 0" stroke={mixHex('#fbe2d0', '#d8a46a', dorado)} strokeWidth={14} fill="none" opacity={0.8} />
     {dorado > 0.3 && [-120, -40, 40, 120].map((dx, i) => <line key={i} x1={dx - 30} y1={-50} x2={dx + 30} y2={50} stroke={CAFE} strokeWidth={14} opacity={(dorado - 0.3) * 1.4} strokeLinecap="round" />)}
   </g>;
@@ -27,7 +30,7 @@ function Azucar({ x, y, s = 1, rot = 0, o = 1 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`} opacity={o}>
     <polygon points={hexPts(58)} fill={KC.white} stroke={KC.ink} strokeWidth={8} />
     <Atomo x={0} y={-58} r={20} color={QA.O} letra="O" tam={16} />
-    <text x={0} y={14} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#0b1020">azúcar</text>
+    <text x={0} y={9} textAnchor="middle" transform={`rotate(${-rot})`} style={{ font:`700 24px ${KF.mono}` }} fill="#0b1020">azúcar</text>
   </g>;
 }
 function Aminoacido({ x, y, s = 1, rot = 0, o = 1 }) {
@@ -44,7 +47,7 @@ function Pirazina({ x, y, s = 1, rot = 0, o = 1 }) {
   </g>;
 }
 // Red café de melanoidinas que crece (f 0..1).
-function RedCafe({ T, f = 0, x = 120, y = 760, w = 840, h = 420, seed = 6 }) {
+function RedCafe({ T, f = 0, x = 100, y = 740, w = 880, h = 470, seed = 6 }) {
   if (f <= 0) return null;
   const R = krng(seed);
   const nod = Array.from({ length: 34 }, () => [x + R() * w, y + R() * h]);
@@ -72,13 +75,18 @@ function Acrilamida({ x, y, s = 1, rot = 0 }) {
 function Papas({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {[-50, -20, 10, 40, 60].map((dx, i) => <rect key={i} x={dx - 14} y={-140 + (i % 2) * 20} width={28} height={150} rx={6} fill="#f2c14e" stroke={KC.ink} strokeWidth={5} transform={`rotate(${(i - 2) * 8} ${dx} 0)`} />)}
+    <defs><linearGradient id="vasoPapas" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fff" stopOpacity="0.22" /><stop offset="0.5" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.35" /></linearGradient></defs>
     <path d="M -90 -40 L 90 -40 L 70 80 L -70 80 Z" fill={KC.red} stroke={KC.ink} strokeWidth={8} />
+    <path d="M -90 -40 L 90 -40 L 70 80 L -70 80 Z" fill="url(#vasoPapas)" />
   </g>;
 }
 function PanTostado({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d="M -100 100 L -100 -40 Q -130 -120 -40 -120 Q 0 -150 40 -120 Q 130 -120 100 -40 L 100 100 Z" fill="#c98a3c" stroke={KC.ink} strokeWidth={8} />
     <path d="M -80 85 L -80 -35 Q -100 -100 -35 -100 Q 0 -125 35 -100 Q 100 -100 80 -35 L 80 85 Z" fill="#e9b96a" />
+    <defs><radialGradient id="migaPan" cx="35%" cy="30%" r="80%"><stop offset="0" stopColor="#fff" stopOpacity="0.25" /><stop offset="0.6" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#7a4a1a" stopOpacity="0.35" /></radialGradient></defs>
+    <path d="M -80 85 L -80 -35 Q -100 -100 -35 -100 Q 0 -125 35 -100 Q 100 -100 80 -35 L 80 85 Z" fill="url(#migaPan)" />
+    {[[-40, -40], [20, -10], [-20, 30], [40, 50], [-50, 60], [10, -60]].map(([dx, dy], i) => <circle key={i} cx={dx} cy={dy} r={5} fill="#c98a3c" opacity={0.5} />)}
   </g>;
 }
 function Congelador({ x, y, s = 1, T = 0 }) {
@@ -125,8 +133,12 @@ function Maillard() {
       <Escena T={T} a={K.U} b={K.Pr}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          <rect x={0} y={1200} width={KW} height={720} fill={mixHex('#3a1c1c', '#2a190f', kprog(T, K.Co, K.Co + 3))} />
-          {T < K.Ca + 0.5 && <g>
+          <defs><linearGradient id="supCarne" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#fff" stopOpacity="0.10" /><stop offset="0.25" stopColor="#000" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.45" /></linearGradient></defs>
+          <rect x={0} y={1300} width={KW} height={620} fill={mixHex('#3a1c1c', '#2a190f', kprog(T, K.Co, K.Co + 3))} />
+          <rect x={0} y={1300} width={KW} height={620} fill="url(#supCarne)" />
+          {Array.from({ length: 9 }, (_, i) => <path key={i} d={`M -20 ${1340 + i * 60} q 270 ${(i % 2 ? 14 : -14)} 560 0 t 560 0`} stroke={mixHex('#5a2a26', '#4a2a16', kprog(T, K.Co, K.Co + 3))} strokeWidth={5} fill="none" opacity={0.35} />)}
+          <line x1={0} y1={1300} x2={KW} y2={1300} stroke={mixHex('#e7737a', DORADO, kprog(T, K.Co, K.Co + 3))} strokeWidth={5} opacity={0.55} />
+          {T < K.Ca + 0.5 && <g transform="translate(540 940) scale(1.15) translate(-540 -850)">
             <Azucar x={klerp(200, 410, une)} y={830} s={2.1} rot={T * 30} />
             <Aminoacido x={klerp(860, 670, une)} y={850} s={1.9} rot={-T * 20} />
             {une > 0.98 && <circle cx={540} cy={840} r={110 * (1 - kprog(T, K.U + 2.6, K.U + 3.2))} fill={KC.yellow} opacity={0.8} />}
@@ -134,16 +146,16 @@ function Maillard() {
           {T >= K.Ca + 0.5 && T < K.Ag && frag.map(([u, v, r, esP], i) => {
             const sube = esP ? kprog(T, K.Ar + 0.2, K.Ar + 2.6, kEase.suave) : 0;
             const junta = !esP ? kprog(T, K.Co + 0.2, K.Co + 1.2) : 0;
-            const px = 540 + u * 380 * rompe, py = 880 + v * 260 * rompe - sube * 560;
+            const px = 540 + u * 400 * rompe, py = 910 + v * 260 * rompe - sube * 250;
             if (junta > 0.9) return null;
             return esP ? <Pirazina key={i} x={px} y={py} s={1.45} rot={r + T * 40} />
               : <circle key={i} cx={klerp(px, 540, junta)} cy={klerp(py, 1000, junta)} r={33} fill={i % 2 ? "#c9a14a" : "#e0b070"} stroke={KC.ink} strokeWidth={5} opacity={1 - junta} />;
           })}
-          {T > K.Ar && T < K.Ag && <g opacity={kprog(T, K.Ar + 0.3, K.Ar + 0.8) * (1 - kprog(T, K.Co + 0.5, K.Co + 1))}><path d="M 540 400 q 60 40 40 120 q -20 20 -60 10" stroke={KC.texto} strokeWidth={14} fill="none" strokeLinecap="round" /></g>}
+          {T > K.Ar && T < K.Ag && <g opacity={kprog(T, K.Ar + 0.3, K.Ar + 0.8) * (1 - kprog(T, K.Co + 0.5, K.Co + 1))}><path d="M 540 430 q 60 40 40 120 q -20 20 -60 10" stroke={KC.texto} strokeWidth={14} fill="none" strokeLinecap="round" /></g>}
           <RedCafe T={T} f={kprog(T, K.Co + 0.6, K.Co + 3.4)} />{/* modo cine: la red dorada ya no se apaga antes de la pregunta; sigue detrás */}
-          {T > K.Ag && Array.from({ length: 12 }, (_, i) => { const t0 = K.Ag + 1.8 + (i % 6) * 0.12, u = kprog(T, t0, t0 + 0.7); return u > 0 && u < 1 ? <path key={i} d="M 0 -26 Q 18 0 0 14 Q -18 0 0 -26 Z" transform={`translate(${200 + (i * 71) % 680} ${klerp(500, 1100, u)})`} fill="#7fc8ff" stroke={KC.ink} strokeWidth={4} /> : null; })}
+          {T > K.Ag && Array.from({ length: 12 }, (_, i) => { const t0 = K.Ag + 1.8 + (i % 6) * 0.12, u = kprog(T, t0, t0 + 0.7); return u > 0 && u < 1 ? <path key={i} d="M 0 -26 Q 18 0 0 14 Q -18 0 0 -26 Z" transform={`translate(${200 + (i * 71) % 680} ${klerp(540, 1220, u)})`} fill="#7fc8ff" stroke={KC.ink} strokeWidth={4} /> : null; })}
         </SvgCapa>
-        <Medidor T={T} at={K.U + 0.2} until={K.Pr - 0.2} valor={(t) => (temp(t) - 20) / 180} etiqueta="temperatura" texto={(v) => Math.round(temp(T)) + ' °C'} y={1335} color={KC.orange} />
+        <Medidor T={T} at={K.U + 0.2} until={K.Pr - 0.2} valor={(t) => (temp(t) - 20) / 180} etiqueta="temperatura" texto={(v) => Math.round(temp(T)) + ' °C'} y={1345} color={KC.orange} />
         <Medidor T={T} at={K.Ag + 0.1} until={K.Pr - 0.2} valor={vel} etiqueta="velocidad de la reacción" texto={(v) => v > 0.5 ? 'rápida' : 'lenta'} y={1440} color={KC.yellow} />
       </Escena>
       {/* 6 · pregunta */}
@@ -151,7 +163,7 @@ function Maillard() {
         <FondoLunares color={KC.lilac} />
         {/* encuadre: la red café de la escena anterior sigue a cuadro, a media luz, y la pregunta encima */}
         <div style={{ position:'absolute', inset:0, background:'rgba(10,15,28,.85)' }}></div>
-        <SvgCapa><rect x={0} y={1200} width={KW} height={720} fill="#1c120c" /><g opacity={0.55}><RedCafe T={T} f={1} /></g></SvgCapa>
+        <SvgCapa><rect x={0} y={1300} width={KW} height={620} fill="#1c120c" /><g opacity={0.55}><RedCafe T={T} f={1} /></g></SvgCapa>
         <SvgCapa><text x={540} y={1130} textAnchor="middle" style={{ font:`400 620px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 930)`}>?</text></SvgCapa>
       </Escena>
       {/* 7 · 1912: Maillard */}
@@ -198,11 +210,11 @@ function Maillard() {
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.G + 2.8} texto="¿quemado?" x={540} y={400} tam={50} />
       <Chip T={T} at={K.G + 3.0} until={K.U - 0.3} texto="química: azúcar + proteína" x={540} y={400} tam={40} borde={KC.yellow} />
-      <Etq T={T} at={K.U + 1.0} until={K.Ca - 0.2} x={60} y={640} texto="azúcar" tam={34} />
-      <Etq T={T} at={K.U + 1.0} until={K.Ca - 0.2} x={1030} y={1060} texto="aminoácido" lado="izq" tam={34} />
-      <Chip T={T} at={K.Ca + 0.6} until={K.Ar - 0.2} texto="se reacomoda · se rompe · se junta" x={540} y={1262} tam={36} borde={KC.yellow} />
-      <Chip T={T} at={K.Ar + 0.4} until={K.Co - 0.2} texto="pirazinas → olor a tostado" x={540} y={1262} tam={40} borde="#ffcf6b" />
-      <Chip T={T} at={K.Co + 0.8} until={K.Ag - 0.2} texto="melanoidinas → el dorado" x={540} y={680} tam={40} borde={DORADO} />
+      <Etq T={T} at={K.U + 1.0} until={K.Ca - 0.2} x={60} y={700} texto="azúcar" tam={34} />
+      <Etq T={T} at={K.U + 1.0} until={K.Ca - 0.2} x={1030} y={1150} texto="aminoácido" lado="izq" tam={34} />
+      <Chip T={T} at={K.Ca + 0.6} until={K.Ar - 0.2} texto="se reacomoda · se rompe · se junta" x={540} y={1252} tam={36} borde={KC.yellow} />
+      <Chip T={T} at={K.Ar + 0.4} until={K.Co - 0.2} texto="pirazinas → olor a tostado" x={540} y={1252} tam={40} borde="#ffcf6b" />
+      <Chip T={T} at={K.Co + 0.8} until={K.Ag - 0.2} texto="melanoidinas → el dorado" x={540} y={655} tam={40} borde={DORADO} />
       <TarjetaEstudio T={T} at={K.Ma + 0.2} until={K.Ac - 0.3} anio="1912" quien="Louis Camille Maillard" revista="químico francés · azúcar + aminoácido" x={540} y={275} />
       <TarjetaEstudio T={T} at={K.Ac + 0.2} until={K.Ac + 3.4} anio="2002" quien="Mottram et al. · U. de Reading" revista="Nature · Inglaterra" y={560} />
       <Chip T={T} at={K.Ac + 3.6} until={K.Ri - 0.2} texto="asparagina (papa y cereales) → acrilamida" y={1450} tam={34} borde={KC.ink} />

@@ -1,0 +1,1 @@
+- qui-06-maillard: Union→Agua: franja café = superficie de la carne más baja y con degradado y fibras, moléculas 15 % más grandes y centradas, pirazinas ya no se salen por arriba, texto «azúcar» cabe y queda derecho, medidores y chips reacomodados sin encimarse; Pregunta igual; bistec con luz y sombra; vaso de papas y pan con volumen. Láminas: sin láminas; encuadre bien.
