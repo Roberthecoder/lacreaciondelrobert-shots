@@ -9,8 +9,8 @@ const CRETINA = KC.coral, CNERVIO = '#f4c99c';
 // Cruz y punto de la prueba (dentro de svg). punto 0..1 = opacidad del punto.
 function CruzPunto({ punto = 1 }) {
   return <g>
-    <rect x={PRUEBA.cx - 50} y={PRUEBA.y - 9} width={100} height={18} fill={KC.ink} />
-    <rect x={PRUEBA.cx - 9} y={PRUEBA.y - 50} width={18} height={100} fill={KC.ink} />
+    <rect x={PRUEBA.cx - 80} y={PRUEBA.y - 13} width={160} height={26} rx={4} fill={KC.ink} />
+    <rect x={PRUEBA.cx - 13} y={PRUEBA.y - 80} width={26} height={160} rx={4} fill={KC.ink} />
     <circle cx={PRUEBA.px} cy={PRUEBA.y} r={PRUEBA.r} fill={KC.red} opacity={punto} />
   </g>;
 }
@@ -53,8 +53,10 @@ function OjoCorteH({ cx, cy, R = 290, T, rayos = 0, pulso = 0, fibras = 0, disco
     {pulso > 0 && Array.from({ length: 5 }, (_, i) => { const f = (T * 0.7 + i / 5) % 1, x = klerp(n0[0] - 20, n1[0] + 40, f), y = klerp(n0[1], n1[1], f * f);
       return <circle key={i} cx={x} cy={y} r={13} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} opacity={pulso * Math.sin(Math.PI * f)} />; })}
     <path d={`M ${0.74 * R} ${-0.66 * R} Q ${1.32 * R} 0 ${0.74 * R} ${0.66 * R}`} fill="rgba(210,245,255,.75)" stroke={KC.ink} strokeWidth={9} />
-    <circle r={R} fill="#fffaf3" stroke={KC.ink} strokeWidth={11} />
-    <circle r={R - 34} fill="rgba(175,228,255,.35)" />
+    <defs><radialGradient id="vitreo" cx=".42" cy=".4" r=".7"><stop offset="0" stopColor="#1e3448" /><stop offset=".75" stopColor="#122233" /><stop offset="1" stopColor="#0b1622" /></radialGradient></defs>
+    <circle r={R + 10} fill="none" stroke="#bfe6ff" strokeWidth={18} opacity=".12" />
+    <circle r={R} fill="url(#vitreo)" stroke={KC.ink} strokeWidth={11} />
+    <circle r={R - 34} fill="rgba(175,228,255,.10)" />
     {/* retina en dos tramos: el hueco es el disco del nervio */}
     <path d={`M ${Rr * Math.cos(1.05)} ${-Rr * Math.sin(1.05)} A ${Rr} ${Rr} 0 0 0 ${Rr * Math.cos(ANG_DISCO - gap)} ${-Rr * Math.sin(ANG_DISCO - gap)}`} fill="none" stroke={CRETINA} strokeWidth={20} strokeLinecap="round" />
     <path d={`M ${Rr * Math.cos(ANG_DISCO + gap)} ${-Rr * Math.sin(ANG_DISCO + gap)} A ${Rr} ${Rr} 0 0 0 ${Rr * Math.cos(-1.05)} ${-Rr * Math.sin(-1.05)}`} fill="none" stroke={CRETINA} strokeWidth={20} strokeLinecap="round" />
@@ -108,8 +110,10 @@ function OjoPulpo({ cx, cy, R = 270, T, haces = 1, rayos = 0 }) {
       const x0 = Rr * Math.cos(a), y0 = -Rr * Math.sin(a), x1 = (R + 40 + 150 * e) * Math.cos(a), y1 = -(R + 40 + 150 * e) * Math.sin(a);
       return <g key={i} opacity={e}>{[-5, 0, 5].map((o) => <line key={o} x1={x0 + o} y1={y0 + o} x2={x1 + o * 2} y2={y1 + o * 2} stroke={KC.yellow} strokeWidth={4} strokeLinecap="round" />)}
         <line x1={x0} y1={y0} x2={x1} y2={y1} stroke={KC.ink} strokeWidth={3} opacity=".3" /></g>; })}
-    <circle r={R} fill="#fffaf3" stroke={KC.ink} strokeWidth={11} />
-    <circle r={R - 34} fill="rgba(175,228,255,.35)" />
+    <defs><radialGradient id="vitreo" cx=".42" cy=".4" r=".7"><stop offset="0" stopColor="#1e3448" /><stop offset=".75" stopColor="#122233" /><stop offset="1" stopColor="#0b1622" /></radialGradient></defs>
+    <circle r={R + 10} fill="none" stroke="#bfe6ff" strokeWidth={18} opacity=".12" />
+    <circle r={R} fill="url(#vitreo)" stroke={KC.ink} strokeWidth={11} />
+    <circle r={R - 34} fill="rgba(175,228,255,.10)" />
     <path d={`M ${Rr * Math.cos(1.0)} ${-Rr * Math.sin(1.0)} A ${Rr} ${Rr} 0 1 0 ${Rr * Math.cos(-1.0)} ${-Rr * Math.sin(-1.0)}`} fill="none" stroke={CRETINA} strokeWidth={20} strokeLinecap="round" />
     {[-1, 1].map((sg) => <line key={sg} x1={0.8 * R} y1={sg * 0.15 * R} x2={0.8 * R} y2={sg * 0.6 * R} stroke="#c9a227" strokeWidth={22} strokeLinecap="round" />)}
     <circle cx={0.5 * R} cy={0} r={0.24 * R} fill="rgba(255,236,190,.95)" stroke={KC.ink} strokeWidth={8} />
@@ -131,13 +135,16 @@ function Pulpo({ x, y, s = 1, T = 0 }) {
 // Pergamino con la prueba dibujada (Mariotte).
 function Pergamino({ x, y, p = 1, T }) {
   return <g transform={`translate(${x} ${y}) rotate(3) scale(${klerp(0.5, 1, p)})`} opacity={p}>
-    <rect x={-330} y={-110} width={660} height={220} rx={18} fill="#f1e2bf" stroke={KC.ink} strokeWidth={8} />
-    <rect x={-350} y={-125} width={40} height={250} rx={20} fill="#d9bf8a" stroke={KC.ink} strokeWidth={7} />
-    <rect x={310} y={-125} width={40} height={250} rx={20} fill="#d9bf8a" stroke={KC.ink} strokeWidth={7} />
+    <defs><linearGradient id="perg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#cdb487" /><stop offset=".55" stopColor="#b79a6a" /><stop offset="1" stopColor="#957a4e" /></linearGradient>
+      <linearGradient id="perg-r" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#7a5f38" /><stop offset=".45" stopColor="#b8976a" /><stop offset="1" stopColor="#6a5230" /></linearGradient></defs>
+    <rect x={-330} y={-110} width={660} height={220} rx={18} fill="url(#perg)" stroke={KC.ink} strokeWidth={8} />
+    {[-60, -20, 40, 72].map((yy, i) => <path key={i} d={`M -300 ${yy} Q 0 ${yy + (i % 2 ? 6 : -6)} 300 ${yy}`} stroke="#8a7048" strokeWidth={2} fill="none" opacity=".35" />)}
+    <rect x={-350} y={-125} width={40} height={250} rx={20} fill="url(#perg-r)" stroke={KC.ink} strokeWidth={7} />
+    <rect x={310} y={-125} width={40} height={250} rx={20} fill="url(#perg-r)" stroke={KC.ink} strokeWidth={7} />
     <g stroke="#3a2a1a" strokeWidth={8} strokeLinecap="round"><line x1={-230} y1={0} x2={-170} y2={0} /><line x1={-200} y1={-30} x2={-200} y2={30} /></g>
     <circle cx={190} cy={0} r={30} fill="#9c2a1e" opacity={0.5 + 0.5 * Math.abs(Math.sin(T * 2))} />
     <path d="M -120 -50 Q 0 -80 120 -50" fill="none" stroke="#3a2a1a" strokeWidth={4} strokeDasharray="10 10" />
-    <text x={0} y={80} textAnchor="middle" style={{ font:`italic 700 30px ${KF.mono}` }} fill="#3a2a1a">1668</text>
+    <text x={0} y={80} textAnchor="middle" style={{ font:`italic 700 34px ${KF.mono}` }} fill="#2a1d10">1668</text>
   </g>;
 }
 // Flechas "cerca ↔ lejos" estáticas (no se mueven: no estorban la prueba).
@@ -171,13 +178,13 @@ function Ciego() {
       <Escena T={T} a={K.Gancho} b={K.Prueba} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <defs><Rayas id="rg" /><clipPath id="cuadro-g"><rect x={110} y={730} width={860} height={350} rx={30} /></clipPath></defs>
+          <defs><Rayas id="rg" a={mixHex(KC.yellow, '#1a1d2a', 0.22)} b={mixHex(KC.pink, '#1a1d2a', 0.22)} /><clipPath id="cuadro-g"><rect x={110} y={730} width={860} height={350} rx={30} /></clipPath></defs>
           <g transform="translate(540 990) scale(1.12) translate(-540 -800)">
           <path d={`M 330 520 L 110 730 L 970 730 Z`} fill="rgba(255,255,255,.35)" />
           <g transform={`translate(540 905) scale(${klerp(0.6, 1, kprog(T, K.Gancho, K.Gancho + 0.4, kEase.rebote))}) translate(-540 -905)`}>
             <rect x={110} y={730} width={860} height={350} rx={30} fill="url(#rg)" />
             <g clipPath="url(#cuadro-g)">
-              <circle cx={HG.x} cy={HG.y} r={110 * hoyo} fill={KC.ink} />
+              <circle cx={HG.x} cy={HG.y} r={110 * hoyo} fill="#0b1020" stroke="#000" strokeWidth={4} />   {/* belleza: el hoyo es negro (KC.ink es claro en modo cine) */}
               {T > K.Gancho + 2.6 && T < K.Gancho + 3.8 && Array.from({ length: 8 }, (_, i) => { const a = i * Math.PI / 4, f = kprog(T, K.Gancho + 2.6, K.Gancho + 3.6);
                 return <circle key={i} cx={HG.x + Math.cos(a) * (140 - 110 * f)} cy={HG.y + Math.sin(a) * (140 - 110 * f)} r={10} fill="#fff" stroke={KC.ink} strokeWidth={3} opacity={1 - f} />; })}
             </g>
@@ -190,8 +197,10 @@ function Ciego() {
         </Lienzo>
       </Escena>
       {/* 1–3 · LA PRUEBA: fondo amarillo liso y quieto, cruz y punto fijos. Una sola escena (sin cortes ni zoom). */}
-      <Escena T={T} a={K.Prueba} b={K.Nervio} fondo={KC.yellow} zoom={0}>
+      <Escena T={T} a={K.Prueba} b={K.Nervio} fondo="#14161d" zoom={0}>
         <Lienzo>
+          {/* belleza: el ojo que mira la cruz, grande, abajo y QUIETO (lejos del punto: la prueba sigue funcionando) */}
+          <g opacity={kprog(T, K.Prueba - 0.4, K.Prueba + 0.1)}><OjoFrente x={540} y={1290} s={0.9} parp={0} mira={-0.45} id="p" /></g>
           <CruzPunto />
           <CercaLejos x={470} y={950} o={kprog(T, K.Acercate + 0.2, K.Acercate + 0.6) * (1 - kprog(T, K.Desaparece - 0.3, K.Desaparece))} />
         </Lienzo>
@@ -256,10 +265,10 @@ function Ciego() {
       <Escena T={T} a={K.Rellena} b={K.Mariotte} fondo={KC.pink}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
-          <defs><Rayas id="rr" a={KC.yellow} b={KC.blue} w={38} /><clipPath id="cuadro-r"><rect x={110} y={630} width={860} height={540} rx={30} /></clipPath></defs>
+          <defs><Rayas id="rr" a={mixHex(KC.yellow, '#1a1d2a', 0.22)} b={mixHex(KC.blue, '#1a1d2a', 0.22)} w={38} /><clipPath id="cuadro-r"><rect x={110} y={630} width={860} height={540} rx={30} /></clipPath></defs>
           <rect x={110} y={630} width={860} height={540} rx={30} fill="url(#rr)" />
           <g clipPath="url(#cuadro-r)">
-            <circle cx={RH.x} cy={RH.y} r={130 * kprog(T, K.Rellena + 0.2, K.Rellena + 0.6, kEase.rebote) * (1 - rellena)} fill={KC.ink} />
+            <circle cx={RH.x} cy={RH.y} r={130 * kprog(T, K.Rellena + 0.2, K.Rellena + 0.6, kEase.rebote) * (1 - rellena)} fill="#0b1020" />
             {rellena > 0 && rellena < 1 && Array.from({ length: 8 }, (_, i) => { const a = i * Math.PI / 4, rr = 230 - 110 * rellena;
               return <FlechaRecta key={i} x1={RH.x + Math.cos(a) * rr} y1={RH.y + Math.sin(a) * rr} x2={RH.x + Math.cos(a) * (rr - 70)} y2={RH.y + Math.sin(a) * (rr - 70)} color="#fff" grosor={9} punta={22} />; })}
           </g>
@@ -272,30 +281,34 @@ function Ciego() {
       <Escena T={T} a={K.Mariotte} b={K.Pulpo} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
         <Lienzo><g transform="translate(540 1090) scale(1.3) translate(-540 -1030)"><Pergamino x={540} y={1030} p={kprog(T, K.Mariotte + 0.1, K.Mariotte + 0.6, kEase.rebote)} T={T} /></g></Lienzo>
-        <TarjetaEstudio T={T} at={K.Mariotte + 0.2} until={K.Pulpo - 0.2} anio="SIGLO XVII" quien="Edme Mariotte · Francia" revista="describió el punto ciego" x={540} y={680} />
+        <TarjetaEstudio T={T} at={K.Mariotte + 0.2} until={K.Pulpo - 0.2} anio="SIGLO XVII" quien="Edme Mariotte · Francia" revista="describió el punto ciego" x={540} y={600} />
       </Escena>
       {/* 10 · el pulpo: muchos haces delgados de nervio salen por detrás de la retina */}
       <Escena T={T} a={K.Pulpo} b={K.Cierre} fondo={KC.noche}>
         <Ambiente T={T} n={18} color="rgba(255,255,255,.12)" />
         <Lienzo>
-          <g opacity={kprog(T, K.Pulpo - 0.2, K.Pulpo + 0.3)}><Pulpo x={210} y={560} s={0.75} T={T} /></g>
-          <g transform={`translate(640 900) scale(${klerp(0.3, 1, kprog(T, K.Pulpo + 0.6, K.Pulpo + 1.2, kEase.rebote))}) translate(-640 -900)`} opacity={kprog(T, K.Pulpo + 0.6, K.Pulpo + 0.9)}>
-            <OjoPulpo cx={610} cy={900} R={250} T={T} haces={kprog(T, K.Pulpo + 1.6, K.Pulpo + 3.4)} rayos={kprog(T, K.Pulpo + 1.0, K.Pulpo + 1.5)} />
+          <g opacity={kprog(T, K.Pulpo - 0.2, K.Pulpo + 0.3)}><Pulpo x={200} y={620} s={0.85} T={T} /></g>
+          <g transform={`translate(640 980) scale(${klerp(0.6, 1, kprog(T, K.Pulpo - 0.2, K.Pulpo + 0.5, kEase.rebote))}) translate(-640 -980)`} opacity={kprog(T, K.Pulpo - 0.2, K.Pulpo + 0.2)}>
+            <OjoPulpo cx={610} cy={980} R={250} T={T} haces={kprog(T, K.Pulpo + 1.6, K.Pulpo + 3.4)} rayos={kprog(T, K.Pulpo + 1.0, K.Pulpo + 1.5)} />
           </g>
         </Lienzo>
-        <Etq T={T} at={K.Pulpo + 0.4} until={K.Cierre - 0.2} x={340} y={470} texto="pulpo" lado="der" color={KC.texto} tam={34} />
-        <Etq T={T} at={K.Pulpo + 2.6} until={K.Cierre - 0.2} x={30} y={1085} texto="nervios por detrás" lado="der" color={KC.yellow} tam={34} />
+        <Etq T={T} at={K.Pulpo + 0.4} until={K.Cierre - 0.2} x={340} y={550} texto="pulpo" lado="der" color={KC.texto} tam={34} />
+        <Etq T={T} at={K.Pulpo + 2.6} until={K.Cierre - 0.2} x={30} y={1165} texto="nervios por detrás" lado="der" color={KC.yellow} tam={34} />
         <Chip T={T} at={K.Pulpo + 3.4} until={K.Cierre - 0.1} texto="✓ sin punto ciego" x={700} y={400} tam={46} borde={KC.mint} />
       </Escena>
       {/* 11 · cierre: regresa la prueba; el punto parpadea y aparece tu punto ciego */}
-      <Escena T={T} a={K.Cierre} b={FIN} fondo={KC.yellow} zoom={0.02}>
+      <Escena T={T} a={K.Cierre} b={FIN} fondo="#14161d" zoom={0.02}>
         <Lienzo>
+          {/* belleza: líneas de mirada del ojo a la cruz y al punto (el punto cae en el punto ciego) */}
+          <g opacity={0.6 * kprog(T, K.Cierre - 0.2, K.Cierre + 0.4)} stroke={KC.ink} strokeWidth={7} strokeDasharray="18 14" strokeLinecap="round">
+            <line x1={420} y1={1180} x2={PRUEBA.cx + 60} y2={PRUEBA.y + 50} /><line x1={660} y1={1180} x2={PRUEBA.px - 60} y2={PRUEBA.y + 45} />
+          </g>
           <CruzPunto punto={1 - parpCierre} />
           {T > K.Cierre + 1.2 && <circle cx={PRUEBA.px} cy={PRUEBA.y} r={95} fill="none" stroke={KC.ink} strokeWidth={6} strokeDasharray="14 10" opacity={kprog(T, K.Cierre + 1.2, K.Cierre + 1.6)} />}
-          <OjoFrente x={540} y={1320} s={0.75} parp={parpadeo(T, K.Cierre + 0.4) + parpadeo(T, K.Cierre + 3.2)} id="c" mira={0} />
+          <OjoFrente x={540} y={1215} s={0.9} parp={parpadeo(T, K.Cierre + 0.4) + parpadeo(T, K.Cierre + 3.2)} id="c" mira={-0.45} />   {/* belleza: mismo ojo y lugar que en la prueba */}
         </Lienzo>
         <Etq T={T} at={K.Cierre + 1.6} until={K.Outro - 0.1} x={PRUEBA.px - 110} y={PRUEBA.y - 130} texto="tu punto ciego" lado="izq" color={KC.ink} tam={34} />
-        <Chip T={T} at={K.Cierre + 0.6} until={K.Outro - 0.1} texto="tu cerebro pone de su parte" x={540} y={760} tam={44} borde={KC.gold} />
+        <Chip T={T} at={K.Cierre + 0.2} until={K.Outro - 0.1} texto="tu cerebro pone de su parte" x={540} y={760} tam={52} borde={KC.gold} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Prueba - 0.1} texto="Tienes un *hoyo en tu vista.*" />
