@@ -62,7 +62,7 @@ function Siguiente() {
             // segunda vuelta: los pedacitos van grandes, en dos renglones (juntos → separados por el corte)
             const fila = i < 4 ? [0, 1, 2, 3] : [4, 5, 6], anchoF = (j) => Math.max(70, PREG[j].trim().length * 40 * 0.62 + 40) * G;
             const pos = (gap) => { const tot = fila.reduce((a, j) => a + anchoF(j), 0) + gap * (fila.length - 1); let x = 540 - tot / 2; for (const j of fila) { if (j === i) return x + anchoF(j) / 2; x += anchoF(j) + gap; } return 540; };
-            const yF = i < 4 ? 800 : 990, xG = klerp(pos(0), pos(26), sep);
+            const yF = i < 4 ? 860 : 1060, xG = klerp(pos(0), pos(26), sep); // modo cine: los pedacitos al centro del cuadro (antes 800/990)
             return <g key={i} opacity={1 - aPe}>
               <Ficha x={klerp(xG, x1, aN)} y={klerp(yF, 640, aN)} texto={w.trim()} tam={40} s={klerp(G, 1, aN)} color={[KC.yellow, KC.cyan, KC.mint, KC.pink, KC.orange, KC.lilac, KC.yellow][i]} />
               {T > K.Co + 0.6 + i * 0.15 && T < K.Co + 1.2 + i * 0.15 && i !== 3 && i !== 6 && <line x1={pos(26) + anchoF(i) / 2 + 13} y1={yF - 95} x2={pos(26) + anchoF(i) / 2 + 13} y2={yF + 95} stroke={KC.red} strokeWidth={8} strokeDasharray="12 9" />}
