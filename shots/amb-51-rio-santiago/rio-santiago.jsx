@@ -254,7 +254,7 @@ function RioSantiagoShot() {
         <Etq T={T} at={K.S + 2.4} until={S2 - 0.2} x={420} y={1395} texto="Juanacatlán" lado="der" tam={34} color={KC.ink} />
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
-      <Chip T={T} at={K.S + 0.4} until={S2 - 0.2} texto="CIDH · 2020: proteger su salud" y={400} x={540} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.S + 0.4} until={S2 - 0.2} texto="CIDH · 2020: proteger su salud" y={400} x={540} tam={36} borde={KC.red} />
       {/* 8b · el vínculo con la enfermedad renal no estaba probado (CNDH 2022) */}
       <Escena T={T} a={S2} b={K.Pl}>
         <FondoLunares color={KC.pink} />
@@ -266,7 +266,7 @@ function RioSantiagoShot() {
         </>)}
         <Etq T={T} at={S2 + 0.6} until={K.Pl - 0.2} x={70} y={1420} texto="río" lado="der" tam={32} color={KC.ink} />
       </Escena>
-      <Chip T={T} at={S2 + 1.4} until={K.Pl - 0.2} texto="vínculo no probado (hasta 2022)" y={1490} x={600} tam={32} borde={KC.ink} />
+      <Chip T={T} at={S2 + 1.4} until={K.Pl - 0.2} texto="vínculo no probado (hasta 2022)" y={1490} x={600} tam={36} borde={KC.ink} />
       {/* 9 · planta El Ahogado: hasta 3,250 L/s */}
       <Escena T={T} a={K.Pl} b={K.C}>
         <FondoLunares color={KC.mint} />
@@ -290,13 +290,13 @@ function RioSantiagoShot() {
 
       {/* datos y etiquetas generales */}
       <Chip T={T} at={K.G + 1.6} until={K.O - 0.2} texto="espuma, no nieve" y={1440} x={540} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.O + 0.5} until={K.Co - 0.2} texto="nace en el Lago de Chapala" y={330} x={540} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.O + 0.5} until={K.Co - 0.2} texto="nace en el Lago de Chapala" y={330} x={540} tam={36} borde={KC.cyan} />
       <NumeroGigante T={T} at={K.O + 1.6} until={K.Co - 0.2} valor={562} dur={1.6} sufijo=" km" etiqueta="largo del río:" x={540} y={520} tam={110} color={KC.yellow} />
       <Etq T={T} at={K.Co + 0.6} until={K.Ca - 0.2} x={70} y={520} texto="ciudad" lado="der" tam={34} color={KC.ink} />
       <Etq T={T} at={K.Co + 1.6} until={K.Ca - 0.2} x={1010} y={520} texto="corredor industrial" lado="izq" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Co + 2.4} until={K.Ca - 0.2} texto="aguas residuales → río" y={1440} x={540} tam={34} borde={RS_SUCIA} />
-      <Chip T={T} at={K.Ca + 2.4} until={K.B - 0.2} texto="la caída lo bate como lavadora" y={1440} x={540} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.B + 0.3} until={K.P - 0.2} texto="una burbuja de espuma, por dentro" y={320} x={540} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.Co + 2.4} until={K.Ca - 0.2} texto="aguas residuales → río" y={1440} x={540} tam={36} borde={RS_SUCIA} />
+      <Chip T={T} at={K.Ca + 2.4} until={K.B - 0.2} texto="la caída lo bate como lavadora" y={1440} x={540} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.B + 0.3} until={K.P - 0.2} texto="una burbuja de espuma, por dentro" y={320} x={540} tam={36} borde={KC.cyan} />
       <Chip T={T} at={K.C + 0.6} until={K.Ou - 0.1} texto="espuma, no nieve" y={420} x={540} tam={40} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
