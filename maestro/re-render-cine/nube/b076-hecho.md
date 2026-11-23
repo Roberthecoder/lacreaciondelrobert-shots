@@ -1,0 +1,1 @@
+- bio-32-falciforme: plasma del vaso oscuro con degradado (antes rosa claro a media pantalla) y pared apagada con degradado y células del endotelio (gancho, cambio, crisis, cierre y disco); glóbulos rojos y hoces con volumen; Interruptor: interruptor y glóbulo más grandes (1→1.3 y 2.1→2.7). Auditores: sin láminas · encuadre bien
