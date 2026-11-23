@@ -310,7 +310,7 @@ function LapizShot() {
           </g>
           </g>
         </SvgCapa>
-        {T > K.Es + 1.0 && <div style={{ position:'absolute', left:890, top:590, transform:'translate(-50%,-50%)', zIndex:41, font:`400 130px ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}` }}>×{veces}</div>}
+        {T > K.Es + 1.0 && <div style={{ position:'absolute', left:840, top:600, transform:'translate(-50%,-50%)', zIndex:41, font:`400 130px ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}` }}>×{veces}</div>}
       </Escena>
       {/* 8 · grafeno: una sola capa, Nobel 2010 */}
       <Escena T={T} a={K.Gr} b={K.Cu}>
