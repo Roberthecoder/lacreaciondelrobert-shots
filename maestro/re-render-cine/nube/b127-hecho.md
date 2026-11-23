@@ -1,0 +1,1 @@
+- fun-141-crudos: Gancho: la morilla ya se ve tenue desde el cuadro 0 (la tabla no queda vacía); Cierre: «No es consejo médico» ya no pisa el sartén ni el sello; chips y etiquetas de 17–25 px subidos a ≥26 px; las demás escenas ya cumplían (revisado cuadro por cuadro).
