@@ -201,12 +201,12 @@ function CalorCabeza() {
         <FondoLunares color={KC.yellow} />
         <Lienzo>
           <g transform={`translate(0 ${(1 - kprog(T, K.Ejercito - 0.2, K.Ejercito + 0.4, kEase.rebote)) * 900})`}>
-            <Carpeta x={540} y={930} s={1.3} abre={kprog(T, K.Ejercito + 0.2, K.Ejercito + 0.9, kEase.sale)} />
+            <Carpeta x={540} y={840} s={1.3} abre={kprog(T, K.Ejercito + 0.2, K.Ejercito + 0.9, kEase.sale)} />
           </g>
-          <TextoSvg x={540} y={1220} tam={50} color={KC.paper} o={kprog(T, K.Ejercito + 0.5, K.Ejercito + 0.8)}>VIEJAS PRUEBAS MILITARES</TextoSvg>
-          <Sello T={T} at={K.Ejercito + 1.7} x={780} y={637} texto="EE. UU." tam={95} rot={10} color={KC.blue} />
+          <TextoSvg x={540} y={1130} tam={50} color={KC.paper} o={kprog(T, K.Ejercito + 0.5, K.Ejercito + 0.8)}>VIEJAS PRUEBAS MILITARES</TextoSvg>
+          <Sello T={T} at={K.Ejercito + 1.7} x={780} y={560} texto="EE. UU." tam={95} rot={10} color={KC.blue} />
         </Lienzo>
-        <Chip T={T} at={K.Ejercito + 0.3} until={K.Trajes - 0.1} texto="se cree" x={300} y={440} tam={46} borde={KC.pink} />
+        <Chip T={T} at={K.Ejercito + 0.3} until={K.Trajes - 0.1} texto="se cree" x={300} y={330} tam={46} borde={KC.pink} />
       </Escena>
       {/* 2 · voluntarios con traje y la cabeza destapada */}
       <Escena T={T} a={K.Trajes} b={K.Claro} fondo={KC.lilac}>
