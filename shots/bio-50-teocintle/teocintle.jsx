@@ -163,7 +163,7 @@ function Teocintle() {
       <Escena T={T} a={K.Te} b={K.Mq} zoom={0.08} origen="55% 45%">
         <FondoMarca color={KC.cyan} patron="rayas" />
         <SvgCapa>
-          <MapaMexico x={-230} y={520} ancho={1800} conCA={false}>
+          <MapaMexico x={-230} y={520} ancho={1800} conCA={false} color="#7d6a43">
             <path d={'M ' + CUENCA.map(([a, b]) => mxProy(a, b).join(' ')).join(' L ') + ' Z'} fill={KC.mint} stroke={KC.ink} strokeWidth={3} opacity={kprog(T, K.Te + 0.4, K.Te + 1.2)} />
             <path d={ruta(RIO)} stroke={KC.blue} strokeWidth={5} fill="none" strokeLinecap="round" strokeDasharray="400" strokeDashoffset={400 * (1 - kprog(T, K.Te + 1.0, K.Te + 2.6))} />
             {[[-100.2, 18.7], [-101.6, 18.9], [-99.0, 18.6], [-100.9, 18.0]].map(([a, b], i) => { const [px, py] = mxProy(a, b), e = kprog(T, K.Te + 1.6 + i * 0.3, K.Te + 2.0 + i * 0.3, kEase.rebote);
