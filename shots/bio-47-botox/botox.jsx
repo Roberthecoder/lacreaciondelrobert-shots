@@ -376,13 +376,18 @@ function Botox() {
       <Escena T={T} a={K.Do} b={K.Ne} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <Capa>
-          <g transform="translate(540 1120) scale(1.25)">
-            <line x1={0} y1={-70} x2={0} y2={80} stroke={KC.ink} strokeWidth={14} />
-            <rect x={-90} y={70} width={180} height={26} rx={10} fill="#6f7a84" stroke={KC.ink} strokeWidth={6} />
+          <g transform="translate(540 1150) scale(1.45)">
+            <defs><linearGradient id="botMetal" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#eef2f6" /><stop offset=".5" stopColor="#b9c1ca" /><stop offset="1" stopColor="#6f7a84" /></linearGradient></defs>
+            <ellipse cx={0} cy={104} rx={130} ry={12} fill="rgba(0,0,0,.35)" />
+            <line x1={0} y1={-70} x2={0} y2={80} stroke={KC.ink} strokeWidth={18} />
+            <line x1={0} y1={-70} x2={0} y2={80} stroke="url(#botMetal)" strokeWidth={10} />
+            <rect x={-90} y={70} width={180} height={28} rx={10} fill="url(#botMetal)" stroke={KC.ink} strokeWidth={6} />
             <g transform={`rotate(${Math.sin(T * 1.3) * 1.2})`}>
-              <line x1={-260} y1={-70} x2={260} y2={-70} stroke={KC.ink} strokeWidth={12} strokeLinecap="round" />
+              <line x1={-260} y1={-70} x2={260} y2={-70} stroke={KC.ink} strokeWidth={18} strokeLinecap="round" />
+              <line x1={-258} y1={-71} x2={258} y2={-71} stroke="#c9d0d8" strokeWidth={9} strokeLinecap="round" />
+              <circle cx={0} cy={-70} r={14} fill="url(#botMetal)" stroke={KC.ink} strokeWidth={5} />
               {[-1, 1].map((d) => <g key={d}><line x1={d * 250} y1={-70} x2={d * 250 - 70} y2={10} stroke={KC.ink} strokeWidth={4} /><line x1={d * 250} y1={-70} x2={d * 250 + 70} y2={10} stroke={KC.ink} strokeWidth={4} />
-                <path d={`M ${d * 250 - 90} 10 Q ${d * 250} 60 ${d * 250 + 90} 10 Z`} fill="#c7ccd2" stroke={KC.ink} strokeWidth={6} /></g>)}
+                <path d={`M ${d * 250 - 90} 10 Q ${d * 250} 60 ${d * 250 + 90} 10 Z`} fill="url(#botMetal)" stroke={KC.ink} strokeWidth={6} /></g>)}
               <circle cx={-250} cy={14} r={3 + Math.max(0, Math.sin(T * 5)) * 2} fill={KC.red} />
               <circle cx={-250} cy={14} r={22 + Math.max(0, Math.sin(T * 5)) * 8} fill="none" stroke={KC.red} strokeWidth={4} opacity={0.7} />
             </g>
