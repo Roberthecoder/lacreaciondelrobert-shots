@@ -3,7 +3,8 @@
 // Protocolo de referencia: Sanders, E. R. (2012) JoVE 63: e3064. Guion y fuentes: guion.md. El dibujo es esquemático.
 const AVS = (n) => 'assets/stickers/' + n + '.png';
 const fondoPuntos = (c) => ({ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 50%, ${cineMix(c, CINE.fondo, 0.72)} 0%, ${cineMix(c, CINE.fondo, 0.9)} 78%)` });
-const AGAR = '#f1d79a', RP = 360;                       // radio de la placa grande
+const AGAR = '#cba866', RP = 360;   // belleza: ámbar del agar real, menos claro (antes #f1d79a casi crema a media pantalla)
+                       // radio de la placa grande
 const EST = kEstriado(RP - 20, 4);
 
 // Placa con el estriado. trazo[q] 0..1 = cuánto se ha dibujado la zona q · crecen[q] 0..1 = colonias de la zona q.
@@ -14,7 +15,7 @@ function PlacaEstriada({ T, x = 540, y = 960, s = 1, trazo = [1, 1, 1, 1], crece
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     <PlacaPetri x={0} y={0} r={RP} agar={AGAR} id={id} tapa={tapa} gota={gota}>
       {EST.trazos.map((pts, q) => { const p = trazo[q]; if (p <= 0) return null; const pp = kParcial(q === 3 && extra ? pts.concat(extra) : pts, p);
-        return <path key={q} d={'M' + pp.map((v) => v.join(' ')).join(' L ')} fill="none" stroke={modo === 'clava' ? '#8a6a2a' : 'rgba(150,110,40,.35)'} strokeWidth={modo === 'clava' ? 12 : 5} strokeLinecap="round" strokeLinejoin="round" />; })}
+        return <path key={q} d={'M' + pp.map((v) => v.join(' ')).join(' L ')} fill="none" stroke={modo === 'clava' ? '#6e5020' : 'rgba(95,62,18,.55)'} strokeWidth={modo === 'clava' ? 12 : 5} strokeLinecap="round" strokeLinejoin="round" />; })}
       {modo === 'clava' && EST.trazos.map((pts, q) => trazo[q] > 0.5 && pts.slice(1).map((v, k) => k % 2 ? <path key={q + '_' + k} d={`M ${v[0]} ${v[1]} l ${12} ${18} l ${-8} ${14}`} fill="none" stroke="#6b4a1a" strokeWidth={4} /> : null))}
       {/* colonias */}
       {EST.colonias.map((c, i) => { const g = crecen[c.q]; if (g <= 0 || modo === 'muerta') return null;
@@ -182,7 +183,7 @@ function EstriadoNarrado() {
       </Escena>
       {/* el estudio: Sanders 2012, Serratia */}
       <Escena T={T} a={K.E} b={K.X} fondo={KC.lilac}>
-        <div style={{ position:'absolute', inset:0, background:cineMix(KC.lilac, CINE.fondo, 0.8), backgroundImage:'repeating-linear-gradient(45deg, rgba(255,255,255,.12) 0 24px, transparent 24px 48px)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.lilac, CINE.fondo, 0.8), backgroundImage:'repeating-linear-gradient(45deg, rgba(255,255,255,.035) 0 24px, transparent 24px 48px)' }}></div>
         <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3} anio="2012" quien="Erin R. Sanders" revista="JoVE 63: e3064 · protocolo de estriado" y={330} />
         {<svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <PlacaEstriada T={T} y={1000} s={1.1} crecen={[0, 1, 2, 3].map((q) => kprog(T, K.E + 3.4 + q * 0.4, K.E + 5 + q * 0.4))} color="#e8384f" borde="#9a1a2a" id="ps" />
@@ -197,7 +198,10 @@ function EstriadoNarrado() {
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <path d={`M 0 1500 Q ${200 * kprog(T, K.X + 0.3, K.X + 3)} 1460 ${380 * kprog(T, K.X + 0.3, K.X + 3)} 1500 L 0 1500 Z`} fill="#ff6b7a" opacity=".85" />
           <path d={`M 0 1500 L 0 ${1500 - 760 * kprog(T, K.X + 0.3, K.X + 3)} Q 150 ${1500 - 560 * kprog(T, K.X + 0.3, K.X + 3)} 110 1500 Z`} fill="#ff6b7a" opacity=".85" />
-          <rect x={0} y={1500} width={KW} height={420} fill="#34373d" stroke={KC.ink} strokeWidth={8} />
+          <defs><linearGradient id="piso-reg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#3a4048" /><stop offset="1" stopColor="#14171b" /></linearGradient></defs>
+          <rect x={0} y={1500} width={KW} height={420} fill="url(#piso-reg)" stroke={KC.ink} strokeWidth={8} />
+          {[1560, 1640, 1750, 1890].map((yy, i) => <line key={'h' + i} x1={0} y1={yy} x2={KW} y2={yy} stroke="#0d0f12" strokeWidth={3 + i} opacity=".6" />)}
+          {Array.from({ length: 11 }, (_, i) => <line key={'v' + i} x1={i * 110} y1={1500} x2={540 + (i * 110 - 540) * 1.8} y2={1920} stroke="#0d0f12" strokeWidth={3} opacity=".5" />)}
           <rect x={700} y={300} width={60} height={300} rx={20} fill="#9aa4ae" stroke={KC.ink} strokeWidth={6} />
           <ellipse cx={730} cy={620} rx={110} ry={34} fill="#c3cbd3" stroke={KC.ink} strokeWidth={6} />
           {Array.from({ length: 14 }, (_, i) => { const u = ((T * 0.9 + i / 14) % 1); return <line key={i} x1={650 + (i * 13) % 160} y1={650 + u * 820} x2={650 + (i * 13) % 160} y2={680 + u * 820} stroke="#5ac8ff" strokeWidth={6} opacity=".7" />; })}
