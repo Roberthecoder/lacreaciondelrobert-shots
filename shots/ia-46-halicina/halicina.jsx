@@ -123,7 +123,7 @@ function Calendario({ x, y, dias, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-24} y={-90} width={624} height={570} rx={26} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
     <rect x={-24} y={-90} width={624} height={70} rx={26} fill={KC.red} stroke={KC.ink} strokeWidth={8} />
-    <text x={288} y={-40} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.texto}>30 DÍAS EN EL LABORATORIO</text>
+    <text x={288} y={-40} textAnchor="middle" textLength={560} lengthAdjust="spacingAndGlyphs" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.texto}>30 DÍAS EN EL LABORATORIO</text>
     {out}
   </g>;
 }
@@ -137,7 +137,7 @@ function Frasco({ x, y, s = 1, sello = 0 }) {
     <text x={0} y={40} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#5a524a">ABAUCINA</text>
     {sello > 0 && <g transform={`translate(0 20) rotate(-14) scale(${klerp(2.2, 1, sello)})`} opacity={Math.min(1, sello * 2)}>
       <rect x={-240} y={-64} width={480} height={128} rx={18} fill="rgba(255,240,235,.92)" stroke={KC.red} strokeWidth={10} />
-      <text y={-6} textAnchor="middle" style={{ font:`400 52px ${KF.titulo}` }} fill={KC.red}>AÚN NO APROBADA</text>
+      <text y={-6} textAnchor="middle" textLength={430} lengthAdjust="spacingAndGlyphs" style={{ font:`400 50px ${KF.titulo}` }} fill={KC.red}>AÚN NO APROBADA</text>
       <text y={42} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.red}>para personas</text>
     </g>}
   </g>;
