@@ -1,0 +1,1 @@
+- ia-41-concurso-arte: Regla→Cierre: la escena y las dos tarjetas de la regla se van antes de que entre la pared de cuadros (ya no se enciman); demás escenas ya cumplían (revisadas cuadro por cuadro)

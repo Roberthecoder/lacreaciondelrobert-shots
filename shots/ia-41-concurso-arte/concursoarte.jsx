@@ -353,7 +353,7 @@ function ConcursoArte() {
       <Chip T={T} at={K.F + 1.6} until={K.Rg - 0.2} texto="dibujo nuestro, no la imagen original" x={335} y={1340} tam={24} borde={KC.texto} />
       <Cita T={T} at={K.F + 3.8} until={K.Rg - 0.2} y={470} texto="«La IA no es fotografía»" quien="Boris Eldagsen · 13 abr 2023 · rechazó el premio" />
       {/* 9 · la regla de 2025 */}
-      <Escena T={T} a={K.Rg} b={K.C}>
+      <Escena T={T} a={K.Rg} b={K.C - 0.5}>
         <FondoLunares color={KC.mint} />
         {(() => { const r2 = kprog(T, K.Rg + 3.5, K.Rg + 4.1, kEase.sale); return svg(<>
           {/* IA como herramienta: la obra con los retoques a mano encima (la misma capa azul de «Demanda») */}
@@ -369,8 +369,8 @@ function ConcursoArte() {
         </>); })()}
       </Escena>
       <Chip T={T} at={K.Rg + 0.2} until={K.Rg + 2.4} texto="Oficina de Derechos de Autor · Parte 2 · enero 2025" x={540} y={400} tam={32} borde={KC.ink} />
-      <Regla T={T} at={K.Rg + 1.0} until={K.C - 0.2} x={290} y={1270} ok titulo="IA como herramienta" texto="se protege lo que tú creas, eliges o modificas" />
-      <Regla T={T} at={K.Rg + 3.8} until={K.C - 0.2} x={790} y={1270} ok={false} titulo="solo instrucciones" texto="los prompts solos no bastan (por ahora)" />
+      <Regla T={T} at={K.Rg + 1.0} until={K.C - 0.6} x={290} y={1270} ok titulo="IA como herramienta" texto="se protege lo que tú creas, eliges o modificas" />
+      <Regla T={T} at={K.Rg + 3.8} until={K.C - 0.6} x={790} y={1270} ok={false} titulo="solo instrucciones" texto="los prompts solos no bastan (por ahora)" />
       {/* 10 · cierre: la misma pared */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
