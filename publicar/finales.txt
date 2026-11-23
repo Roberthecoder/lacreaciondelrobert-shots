@@ -3,3 +3,4 @@
 # (estilo cine al nivel de la referencia, logo pequeño, sin subtítulos) en el Release borradores-voces-v4.
 # Ya publicados antes del cambio no necesitan estar aquí.
 amb-04-barrenador
+cie-04-dedos-arrugados
