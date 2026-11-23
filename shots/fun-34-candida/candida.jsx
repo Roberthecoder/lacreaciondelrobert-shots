@@ -175,6 +175,9 @@ function CandidaShot() {
   const QUIEN = [['recién nacidos', IcoBebe], ['dentadura postiza', IcoDentadura], ['antibióticos', IcoCapsula], ['inhalador de corticoides', IcoInhalador]];
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
+      <svg width={0} height={0} style={{ position:'absolute' }}><defs>
+        <linearGradient id="ca-vol" x1="0" y1="0" x2=".6" y2="1"><stop offset="0" stopColor="#fff" stopOpacity=".3" /><stop offset=".45" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#5a1020" stopOpacity=".3" /></linearGradient>
+      </defs></svg>
       {/* 1 · gancho: tú y tu pareja, la misma levadura en la boca */}
       <Escena T={T} a={K.G} b={K.Ca} zoom={0.05}>
         <FondoLunares color={KC.pink} />
@@ -242,6 +245,7 @@ function CandidaShot() {
             return <g key={fila + '-' + col}>
               <rect x={x} y={y} width={250} height={130} rx={30} fill={mixHex(CA.celula, '#7d8089', gris)} stroke={blanco ? (rompe > 0 ? KC.red : KC.ink) : KC.ink} strokeWidth={blanco ? 7 : 5}
                 strokeDasharray={blanco && rompe > 0 ? `${klerp(700, 40, rompe)} ${klerp(0, 30, rompe)}` : undefined} />
+              <rect x={x} y={y} width={250} height={130} rx={30} fill="url(#ca-vol)" />
               <ellipse cx={x + 125} cy={y + 68} rx={34} ry={22} fill={mixHex(CA.nucleo, '#55585f', gris)} stroke={KC.ink} strokeWidth={4} />
             </g>; }))}
           {/* levaduras sobre la superficie: ovaladas, ≈ 5 µm */}
@@ -255,7 +259,7 @@ function CandidaShot() {
             return sal > 0 ? <circle key={i} cx={tipX + Math.cos(a) * (20 + u * 110)} cy={tipY + Math.sin(a) * (14 + u * 60)} r={7 * sal} fill={KC.red} stroke={KC.ink} strokeWidth={2} opacity={1 - u * 0.6} /> : null; })}
           </g>
           {/* ratón sin la toxina: no enferma */}
-          {T > K.Tx + 2.2 && <g transform="translate(0 -110)" opacity={kprog(T, K.Tx + 2.2, K.Tx + 2.6)}>
+          {T > K.Tx + 2.2 && <g transform="translate(0 -140)" opacity={kprog(T, K.Tx + 2.2, K.Tx + 2.6)}>
             <rect x={70} y={430} width={560} height={250} rx={30} fill={KC.paper} stroke={KC.ink} strokeWidth={7} />
             <Raton x={220} y={570} s={kprog(T, K.Tx + 2.2, K.Tx + 2.6, kEase.rebote)} />
             <g transform="translate(400 530)"><Hifa x={0} y={0} ang={0} largo={150} ancho={22} paso={90} /></g>
@@ -273,12 +277,12 @@ function CandidaShot() {
       {/* 12 · a quién le pasa más (CDC) */}
       <Escena T={T} a={K.Q} b={K.Al}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<><g opacity=".38"><BocaGrande T={T} placas={1} /></g>{QUIEN.map(([t, Ico], i) => { const s = kprog(T, K.Q + 0.4 + i * 1.1, K.Q + 0.8 + i * 1.1, kEase.rebote); const x = i % 2 ? 790 : 290, y = i < 2 ? 700 : 1160;
+        {fsvg(<><g opacity=".22"><BocaGrande T={T} placas={1} /></g>{QUIEN.map(([t, Ico], i) => { const s = kprog(T, K.Q + 0.4 + i * 1.1, K.Q + 0.8 + i * 1.1, kEase.rebote); const x = i % 2 ? 790 : 290, y = i < 2 ? 800 : 1250;
           return s > 0 ? <g key={i} transform={`translate(${x} ${y}) scale(${s * 1.15})`}>
             <circle r={130} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
             <g transform="scale(0.95)"><Ico T={T} /></g>
           </g> : null; })}</>)}
-        {QUIEN.map(([t], i) => <div key={i} style={{ position:'absolute', left:(i % 2 ? 790 : 290) - 240, width:480, top:(i < 2 ? 700 : 1160) + 160, textAlign:'center', zIndex:30,
+        {QUIEN.map(([t], i) => <div key={i} style={{ position:'absolute', left:(i % 2 ? 790 : 290) - 240, width:480, top:(i < 2 ? 800 : 1250) + 160, textAlign:'center', zIndex:30,
           font:`900 ${t.length > 20 ? 32 : 38}px ${KF.texto}`, color:KC.ink, textShadow:'0 3px 0 rgba(0,0,0,.8), 0 0 18px rgba(0,0,0,.9)', opacity:kprog(T, K.Q + 0.6 + i * 1.1, K.Q + 0.9 + i * 1.1) }}>{t}</div>)}
       </Escena>
       {/* 13 · se siente como algodón */}
@@ -323,11 +327,11 @@ function CandidaShot() {
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.6} anio="2016" quien="Londres y Jena (Alemania)" revista="Moyes et al., Nature" x={540} y={480} />
       <EtqOsc T={T} at={K.Es + 3.0} until={K.Pl - 0.3} x={700} y={1040} texto="candidalisina" tam={32} color="#ff6b6b" />
       <Chip T={T} at={K.Tx + 0.4} until={K.Tx + 2.1} texto="daña la membrana" x={400} y={560} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.Tx + 2.9} until={K.Pl - 0.3} texto="en ratones, sin toxina: no enfermaba la boca" x={420} y={270} tam={28} borde={KC.leaf} />
+      <Chip T={T} at={K.Tx + 2.9} until={K.Pl - 0.3} texto="en ratones, sin toxina: no enfermaba la boca" x={420} y={598} tam={28} borde={KC.leaf} />
       <Etq T={T} at={K.Pl + 1.0} until={K.Q - 0.3} x={60} y={400} texto="algodoncillo" tam={44} color={KC.ink} />
       <Etq T={T} at={K.Pl + 1.4} until={K.Q - 0.3} x={60} y={460} texto="(candidiasis oral)" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Pl + 3.0} until={K.Q - 0.3} x={60} y={520} texto="placas blancas" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Q + 0.1} until={K.Al - 0.3} texto="más común en… (CDC)" x={540} y={440} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Q + 0.1} until={K.Al - 0.3} texto="más común en… (CDC)" x={540} y={560} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.Al + 0.6} until={K.C - 0.2} texto="puede sentirse como algodón" x={400} y={440} tam={36} borde={KC.white} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="tus bacterias la mantienen a raya" x={540} y={470} tam={29} borde={KC.mint} />
 
