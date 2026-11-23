@@ -233,7 +233,12 @@ function OxidoNitrosoShot() {
       <Escena T={T} a={K.H} b={H2}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
-        {fsvg(<g transform="translate(540 880) scale(1.7) translate(-540 -820)"><HifaMicro T={T} crece={kprog(T, K.H - 0.9, K.H + 1.1, kEase.sale)} /></g>)}
+        {fsvg(<>
+          {/* más hifas del mismo micelio, atrás y atenuadas, para que la escena no sea una sola franja */}
+          <g opacity={0.55} transform="translate(560 560) rotate(-20) scale(1.15) translate(-540 -820)"><HifaMicro T={T + 1.3} crece={kprog(T, K.H - 0.7, K.H + 1.5, kEase.sale)} /></g>
+          <g opacity={0.55} transform="translate(520 1240) rotate(16) scale(1.15) translate(-540 -820)"><HifaMicro T={T + 2.6} crece={kprog(T, K.H - 0.5, K.H + 1.7, kEase.sale)} /></g>
+          <g transform="translate(540 900) scale(1.9) translate(-540 -820)"><HifaMicro T={T} crece={kprog(T, K.H - 0.9, K.H + 1.1, kEase.sale)} /></g>
+        </>)}
       </Escena>
       {/* 6b · la enzima P450nor de cerca: NO + NO → N₂O; no se conoce la que lo desarma */}
       <Escena T={T} a={H2} b={K.E} zoom={0.04}>
@@ -300,8 +305,8 @@ function OxidoNitrosoShot() {
       <Etq T={T} at={K.Ch + 3.2} until={K.P - 0.3} x={60} y={718} texto="nitrato (NO₃⁻) del abono" tam={28} color={KC.texto} />
       <Etq T={T} at={K.B + 0.4} until={K.H - 0.3} x={60} y={480} texto="bacterias desnitrificantes" tam={30} color={KC.mint} />
       <Etq T={T} at={K.B + 1.6} until={K.H - 0.3} x={60} y={540} texto="N₂O → N₂ (inofensivo)" tam={34} color={KC.texto} />
-      <Etq T={T} at={K.H + 0.6} until={H2 - 0.2} x={60} y={600} texto="Fusarium oxysporum" it tam={40} color={KC.texto} />
-      <Etq T={T} at={K.H + 1.1} until={H2 - 0.2} x={60} y={655} texto="hifa (un hongo del suelo)" tam={28} color={NX.hifa} />
+      <Etq T={T} at={K.H + 0.6} until={H2 - 0.2} x={60} y={370} texto="Fusarium oxysporum" it tam={40} color={KC.texto} />
+      <Etq T={T} at={K.H + 1.1} until={H2 - 0.2} x={60} y={425} texto="hifa (un hongo del suelo)" tam={28} color={NX.hifa} />
       <Etq T={T} at={H2 + 0.3} until={K.E - 0.3} x={60} y={420} texto="enzima P450nor" tam={36} color="#c9b3ff" />
       <Etq T={T} at={H2 + 0.8} until={K.E - 0.3} x={60} y={478} texto="NO + NO → N₂O" tam={32} color={KC.texto} />
       <Chip T={T} at={H2 + 2.6} until={K.E - 0.3} texto="la enzima que lo desarma: no se conoce en hongos" x={540} y={1425} tam={30} borde={KC.red} />
@@ -322,7 +327,7 @@ function OxidoNitrosoShot() {
       <BarraEscala T={T} at={K.Ca} until={K.Ch} texto="barra esquemática" largo={0} />
       <BarraEscala T={T} at={K.Ch} until={K.B} texto="1 mm" largo={173} />
       <BarraEscala T={T} at={K.B} until={K.H} texto="1 µm" largo={285} />
-      <BarraEscala T={T} at={K.H} until={H2} texto="5 µm" largo={204} />
+      <BarraEscala T={T} at={K.H} until={H2} texto="5 µm" largo={204 * 1.9 / 1.7} />
       <BarraEscala T={T} at={H2} until={K.E} texto="esquemático (nm)" largo={0} />
       <BarraEscala T={T} at={K.Pa} until={K.M} texto="barras esquemáticas" largo={0} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="50 cm" largo={160} />
