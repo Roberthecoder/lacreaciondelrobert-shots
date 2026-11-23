@@ -117,7 +117,10 @@ function CorteOjo({ x, y, s = 1, T = 0, haz = 0 }) {
 function Baumanometro({ x, y, s = 1, T = 0, aguja = 0 }) {
   const a = -120 + 200 * aguja;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-170} y={40} width={340} height={130} rx={30} fill={KC.blue} stroke={KC.ink} strokeWidth={8} />
+    <defs><linearGradient id="brazVol" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#4a63c9" /><stop offset="100%" stopColor="#24357a" /></linearGradient></defs>
+    <rect x={-170} y={40} width={340} height={130} rx={30} fill="url(#brazVol)" stroke={KC.ink} strokeWidth={6} />
+    {[-110, -55, 0, 55, 110].map((lx) => <line key={lx} x1={lx} y1={60} x2={lx} y2={150} stroke="#8fa2ec" strokeWidth={3} opacity=".35" />)}
+    <rect x={-150} y={52} width={300} height={18} rx={9} fill="#fff" opacity=".12" />
     <path d="M 0 40 Q 30 -20 0 -60" stroke={KC.ink} strokeWidth={8} fill="none" />
     <circle cx={0} cy={-150} r={110} fill="#fffdf7" stroke={KC.ink} strokeWidth={9} />
     {Array.from({ length: 11 }, (_, i) => { const g = (-120 + i * 20) * Math.PI / 180; return <line key={i} x1={Math.sin(g) * 80} y1={-150 - Math.cos(g) * 80} x2={Math.sin(g) * 96} y2={-150 - Math.cos(g) * 96} stroke={KC.ink} strokeWidth={5} />; })}
@@ -273,14 +276,14 @@ function Retinas() {
       <Escena T={T} a={K.Ed} b={K.S}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <Retina id="ed" x={290} y={860} r={210} T={T} />
-          <path d={`M 530 860 L ${klerp(530, 680, kprog(T, K.Ed + 0.4, K.Ed + 0.9))} 860`} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" />
-          {T > K.Ed + 0.9 && <path d="M 660 835 L 695 860 L 660 885" stroke={KC.ink} strokeWidth={14} fill="none" strokeLinecap="round" strokeLinejoin="round" />}
-          <Robotito x={860} y={880} s={1.1} T={T} cara="seguro" />
+          <Retina id="ed" x={540} y={590} r={235} T={T} />
+          <path d={`M 540 850 L 540 ${klerp(850, 960, kprog(T, K.Ed + 0.4, K.Ed + 0.9))}`} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" />
+          {T > K.Ed + 0.9 && <path d="M 515 945 L 540 975 L 565 945" stroke={KC.ink} strokeWidth={14} fill="none" strokeLinecap="round" strokeLinejoin="round" />}
+          <Robotito x={540} y={1130} s={1.25} T={T} cara="seguro" />
         </>)}
       </Escena>
-      <NumeroGigante T={T} at={K.Ed + 1.0} until={K.S - 0.2} valor={3} dur={0.6} prefijo="± " sufijo=" años" x={540} y={1330} tam={130} color={KC.orange} />
-      <Chip T={T} at={K.Ed + 0.6} until={K.S - 0.2} texto="edad (ejemplo): 57 ± 3 años" x={540} y={1170} tam={38} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Ed + 1.0} until={K.S - 0.2} valor={3} dur={0.6} prefijo="± " sufijo=" años" x={540} y={1470} tam={120} color={KC.orange} />
+      <Chip T={T} at={K.Ed + 0.6} until={K.S - 0.2} texto="edad (ejemplo): 57 ± 3 años" x={540} y={1360} tam={38} borde={KC.ink} />
       {/* 5 · el sexo: 97 de cada 100 pares */}
       <Escena T={T} a={K.S} b={K.Pr}>
         <FondoLunares color={KC.pink} />
@@ -297,8 +300,8 @@ function Retinas() {
       <Escena T={T} a={K.Pr} b={K.P}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <Baumanometro x={300} y={900} s={1.4} T={T} aguja={0.5 + 0.3 * Math.sin(T * 2)} />
-          <g opacity={kprog(T, K.Pr + 1.0, K.Pr + 1.4)}><Cigarro x={790} y={920} s={1.3} T={T} /></g>
+          <Baumanometro x={300} y={930} s={1.7} T={T} aguja={0.5 + 0.3 * Math.sin(T * 2)} />
+          <g opacity={kprog(T, K.Pr + 1.0, K.Pr + 1.4)}><Cigarro x={800} y={1000} s={1.45} T={T} /></g>
         </>)}
       </Escena>
       <Chip T={T} at={K.Pr + 0.5} until={K.P - 0.2} texto="presión sistólica: ± 11 mmHg de error" x={540} y={1270} tam={36} borde={KC.blue} />
