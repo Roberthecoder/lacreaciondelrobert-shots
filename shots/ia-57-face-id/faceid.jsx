@@ -237,8 +237,8 @@ function FaceId() {
       {/* 6 · el número */}
       <Escena T={T} a={K.N} b={K.C}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>{extranos.map((c, i) => { const xx = 190 + (i % 3) * 350, yy = i < 3 ? 990 : 1330, a0 = K.N + 1.2 + i * 0.35, v = kprog(T, a0, a0 + 0.3, kEase.sale);
-          return <g key={i} opacity={0.22 + 0.78 * v} transform={`translate(0 ${(1 - v) * 24})`}>
+        {svg(<>{extranos.map((c, i) => { const xx = 190 + (i % 3) * 350, yy = i < 3 ? 990 : 1330, a0 = K.N + 0.3 + i * 0.35, v = kprog(T, a0, a0 + 0.3, kEase.sale);
+          return <g key={i} opacity={0.45 + 0.55 * v} transform={`translate(0 ${(1 - v) * 24})`}>
             <Cara x={xx} y={yy} s={0.56} {...c} camisa={[KC.pink, KC.cyan, KC.lilac, KC.orange, KC.mint, KC.blue][i]} boca="recta" />
             <g opacity={kprog(T, a0 + 0.3, a0 + 0.45)}><circle cx={xx + 82} cy={yy - 120} r={38} fill={KC.red} stroke={KC.ink} strokeWidth={5} /><path d={`M ${xx + 66} ${yy - 136} L ${xx + 98} ${yy - 104} M ${xx + 98} ${yy - 136} L ${xx + 66} ${yy - 104}`} stroke="#fff" strokeWidth={9} strokeLinecap="round" /></g>
           </g>; })}</>)}

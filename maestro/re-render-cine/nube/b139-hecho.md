@@ -1,2 +1,3 @@
 - qui-57-leche-blanca: bolitas/rebote/blanco y descremar (microscopio): todo el campo de gotitas, micelas, rayos y ojo bajado 80 px al centro del cuadro, con sus etiquetas movidas igual; el resto ya cumplía.
 - ia-57-face-id: estudio 2017 (estaba ABAJO): cara subida 120 px y un poco más chica para quedar al centro, número «30,000» y chip de puntos infrarrojos acomodados arriba sin encimarse con la cabeza; el resto ya cumplía.
+- ia-57-face-id (2): número «1 en 1,000,000»: las seis caras ya se ven desde el inicio de la escena y se van marcando antes (antes muy tenues: el auditor la marcaba como lámina); ahora sin láminas.
