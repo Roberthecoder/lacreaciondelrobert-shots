@@ -239,7 +239,7 @@ function LavarShot() {
         <Ambiente T={T} n={20} />
         {fsvg(<>
           <g transform="translate(0 740) scale(1.5) translate(0 -652)">
-          <PielMicro T={T} hifas={kprog(T, K.H, K.H + 1.2)} varillas={kprog(T, K.H + 1.4, K.H + 3.2)} />
+          <PielMicro T={T} hifas={kprog(T, K.H - 0.3, K.H + 0.6)} varillas={kprog(T, K.H + 1.4, K.H + 3.2)} />
           </g>
           <GotaPerla x={480} y={648} r={120} p={kprog(T, K.H + 3.4, K.H + 3.9)} rebote={T > K.H + 3.9 ? Math.max(0, Math.sin((T - K.H - 3.9) * 14)) * Math.exp(-(T - K.H - 3.9) * 3) : 0} />
         </>)}
@@ -317,7 +317,7 @@ function LavarShot() {
       <Etq T={T} at={K.Ex + 1.0} until={K.P - 0.3} x={600} y={1402} texto="Lentinula edodes" it tam={26} color={KC.texto} />
       <Chip T={T} at={K.Ex + 0.2} until={K.Ex + 1.5} texto="laminillas expuestas" x={540} y={400} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.H + 0.1} until={K.L - 0.3} texto="AL MICROSCOPIO · LA PIEL DEL SOMBRERO" x={540} y={345} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.H + 0.9} until={K.L - 0.3} x={60} y={1500} texto="hifas" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.H + 0.9} until={K.L - 0.3} x={640} y={1490} texto="hifas" tam={32} color={KC.texto} />
       <Etq T={T} at={K.H + 2.0} until={K.L - 0.3} x={60} y={425} texto="hidrofobina: capa de varillitas" tam={30} color={KC.gold2} />
       <Chip T={T} at={K.H + 4.2} until={K.L - 0.3} texto="la gota no moja" x={840} y={610} tam={36} borde={KC.cyan} />
       <NumeroGigante T={T} at={K.L + 0.4} until={K.S - 0.3} valor={92} dur={2.2} prefijo="≈ " sufijo=" %" etiqueta="del champiñón es agua" x={540} y={440} tam={130} color={KC.cyan} />
