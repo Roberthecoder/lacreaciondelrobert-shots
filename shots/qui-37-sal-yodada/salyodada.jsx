@@ -204,8 +204,13 @@ function SalYodada() {
       <Escena T={T} a={K.G} b={K.Ti} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <rect x={0} y={1250} width={KW} height={670} fill="#3b2d20" /><rect x={0} y={1250} width={KW} height={14} fill={CINE.borde} />
-          <g transform="translate(530 1250) scale(1.15) translate(-530 -1250)">
+          <rect x={0} y={1380} width={KW} height={540} fill="#3b2d20" />
+          <rect x={0} y={1380} width={KW} height={540} fill="url(#mesaSal)" />
+          <defs><linearGradient id="mesaSal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#fff" stopOpacity="0.10" /><stop offset="0.3" stopColor="#000" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.5" /></linearGradient></defs>
+          {[0, 1, 2, 3, 4, 5].map((i) => <path key={i} d={`M -20 ${1420 + i * 70} q 300 ${i % 2 ? 16 : -16} 560 0 t 560 0`} stroke="#4c3a29" strokeWidth={5} fill="none" opacity={0.7} />)}
+          <rect x={0} y={1380} width={KW} height={14} fill={CINE.borde} />
+          {/* belleza: mesa más abajo con veta; salero, plato y paquete ×1.22 */}
+          <g transform="translate(530 1380) scale(1.22) translate(-530 -1250)">
           <PaqueteSal x={770} y={980} s={0.95} hl={hlG} T={T} />
           <Plato x={300} y={1150} s={0.9} granos={granosG} />
           <Granos T={T} x={300} y0={800} y1={1140} desde={K.G + 0.1} hasta={K.G + 2.5} />
@@ -224,8 +229,8 @@ function SalYodada() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(195,155,211,.35)" />
         <SvgCapa>
-          <Tiroxina x={540} y={860} s={1.2} on={yodoNum} rot={Math.sin(T * 0.8) * 3} />
-          {[0, 1, 2, 3].map((i) => T > K.Tx + 0.6 + i * 0.6 && <text key={i} x={300 + i * 160} y={560} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={yodoNum > i ? YODO2 : 'rgba(255,255,255,.2)'} stroke={KC.ink} strokeWidth={4}>{i + 1}</text>)}
+          <Tiroxina x={520} y={990} s={1.12} on={yodoNum} rot={Math.sin(T * 0.8) * 3} />
+          {[0, 1, 2, 3].map((i) => T > K.Tx + 0.6 + i * 0.6 && <text key={i} x={300 + i * 160} y={700} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={yodoNum > i ? YODO2 : 'rgba(255,255,255,.2)'} stroke={KC.ink} strokeWidth={4}>{i + 1}</text>)}
         </SvgCapa>
       </Escena>
       {/* 3 · bocio: la hipófisis manda más señal y la tiroides crece */}
@@ -236,9 +241,9 @@ function SalYodada() {
       {/* 4 · embarazo */}
       <Escena T={T} a={K.Em} b={K.Pr}>
         <FondoLunares color={KC.pink} />
-        <SvgCapa><Embarazada x={300} y={900} s={1.05} /></SvgCapa>
+        <SvgCapa><Embarazada x={300} y={980} s={1.12} /></SvgCapa>
       </Escena>
-      <Lupa T={T} at={K.Em + 0.5} until={K.Pr - 0.4} x={760} y={700} r={240} fx={400} fy={960} interior={interiorBebe} tinte={KC.yellow} etiqueta="POR DENTRO · EL BEBÉ" />
+      <Lupa T={T} at={K.Em + 0.5} until={K.Pr - 0.4} x={770} y={830} r={250} fx={406} fy={1044} interior={interiorBebe} tinte={KC.yellow} etiqueta="POR DENTRO · EL BEBÉ" />
       {/* 5 · pregunta */}
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
@@ -267,7 +272,7 @@ function SalYodada() {
           {[[300, 27.6, KC.red, 'sin yodo'], [760, 0.2, KC.mint, 'con yodo']].map(([cx, v, c, et], i) => { const h = Math.max(8, v * 22 * barras);
             return <g key={i}>
               <rect x={cx - 150} y={1250 - h} width={300} height={h} rx={14} fill={c} stroke={KC.ink} strokeWidth={8} />
-              <text x={cx} y={1250 - h - 26} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={c} stroke={KC.ink} strokeWidth={5} paintOrder="stroke">{(v * barras).toFixed(1)} %</text>
+              <text x={cx} y={1250 - h - 26} textAnchor="middle" opacity={Math.min(1, barras * 4)} style={{ font:`400 110px ${KF.titulo}` }} fill={c} stroke={KC.ink} strokeWidth={5} paintOrder="stroke">{(v * barras).toFixed(1)} %</text>
               <text x={cx} y={1312} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>{et}</text>
             </g>; })}
           {[0, 1, 2, 3].map((i) => { const e = kprog(T, K.Re + 2.4 + i * 0.15, K.Re + 2.7 + i * 0.15, kEase.rebote); return e > 0 && <g key={i}><Personita x={150 + i * 62} y={400} s={1.3 * e} color={i === 0 ? KC.red : '#fff'} /></g>; })}
@@ -277,11 +282,11 @@ function SalYodada() {
       {/* 8 · México: NOM-040 */}
       <Escena T={T} a={K.Mx} b={K.Da}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(0 100)">
           <g transform="translate(330 940) scale(1.3) translate(-330 -940)"><Bascula x={330} y={940} s={1} carga={kprog(T, K.Mx + 0.3, K.Mx + 1.0, kEase.sale)} T={T} />
           {T > K.Mx + 1.2 && Array.from({ length: 6 }, (_, i) => { const e = kprog(T, K.Mx + 1.2 + i * 0.12, K.Mx + 1.5 + i * 0.12, kEase.rebote); return <AtI key={i} x={230 + (i % 3) * 100} y={600 - Math.floor(i / 3) * 90 + Math.sin(T * 3 + i) * 6} r={30} o={e} />; })}</g>
           {T > K.Mx + 3.4 && <Diente x={800} y={880} s={1.6 * kprog(T, K.Mx + 3.4, K.Mx + 3.9, kEase.rebote)} brillo={kprog(T, K.Mx + 4.0, K.Mx + 4.6)} T={T} />}
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 9 · dato: la tiroxina en una balanza */}
       <Escena T={T} a={K.Da} b={K.Ci}>
@@ -308,8 +313,13 @@ function SalYodada() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <rect x={0} y={1250} width={KW} height={670} fill="#3b2d20" /><rect x={0} y={1250} width={KW} height={14} fill={CINE.borde} />
-          <g transform="translate(530 1250) scale(1.15) translate(-530 -1250)">
+          <rect x={0} y={1380} width={KW} height={540} fill="#3b2d20" />
+          <rect x={0} y={1380} width={KW} height={540} fill="url(#mesaSal)" />
+          <defs><linearGradient id="mesaSal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#fff" stopOpacity="0.10" /><stop offset="0.3" stopColor="#000" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.5" /></linearGradient></defs>
+          {[0, 1, 2, 3, 4, 5].map((i) => <path key={i} d={`M -20 ${1420 + i * 70} q 300 ${i % 2 ? 16 : -16} 560 0 t 560 0`} stroke="#4c3a29" strokeWidth={5} fill="none" opacity={0.7} />)}
+          <rect x={0} y={1380} width={KW} height={14} fill={CINE.borde} />
+          {/* belleza: mesa más abajo con veta; salero, plato y paquete ×1.22 */}
+          <g transform="translate(530 1380) scale(1.22) translate(-530 -1250)">
           <PaqueteSal x={770} y={980} s={0.95} hl={1} T={T} />
           <Plato x={300} y={1150} s={0.9} granos={1} />
           <Salero x={300} y={960} s={0.95} inclina={0} />
@@ -334,11 +344,11 @@ function SalYodada() {
       <Chip T={T} at={K.Re + 0.3} until={K.Mx - 0.3} texto="niñas con tiroides normal al inicio" y={1420} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.Re + 2.8} until={K.Mx - 0.3} x={370} y={385} texto="1 de cada 4" lado="der" tam={36} color={KC.ink} />
       <Chip T={T} at={K.Mx + 1.0} until={K.Mx + 3.6} texto="20–40 mg de yodo por kilo" x={430} y={280} tam={44} borde={YODO} />
-      <Etq T={T} at={K.Mx + 1.6} until={K.Da - 0.3} x={40} y={1210} texto="NOM-040-SSA1-1993" lado="der" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Mx + 1.6} until={K.Da - 0.3} x={40} y={1310} texto="NOM-040-SSA1-1993" lado="der" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Mx + 3.8} until={K.Mx + 5.4} texto="flúor → contra la caries" x={430} y={280} tam={44} borde={KC.cyan} />
-      <Chip T={T} at={K.Mx + 5.0} until={K.Da - 0.3} texto="no se vende donde el agua ya trae más de 0.7 mg/L de flúor" y={1360} tam={28} borde={KC.cyan} />
+      <Chip T={T} at={K.Mx + 5.0} until={K.Da - 0.3} texto="no se vende donde el agua ya trae más de 0.7 mg/L de flúor" y={1440} tam={28} borde={KC.cyan} />
       <NumeroGigante T={T} at={K.Da + 1.6} until={K.Ci - 0.3} valor={65} dur={1.2} prefijo="≈ " sufijo=" %" etiqueta="del peso de la tiroxina es yodo" y={1400} tam={130} color={YODO2} />
-      <Chip T={T} at={K.Ci + 1.8} until={K.Ou} texto="yodo (I) → tiroxina → tu tiroides" y={1400} tam={38} borde={YODO} />
+      <Chip T={T} at={K.Ci + 1.8} until={K.Ou} texto="yodo (I) → tiroxina → tu tiroides" y={1500} tam={38} borde={YODO} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ti - 0.1} texto="«Yodada» *no es adorno.*" />
