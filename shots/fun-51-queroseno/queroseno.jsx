@@ -287,10 +287,10 @@ function QuerosenoShot() {
       <BarraEscala T={T} at={K.Cr} until={K.Ag} texto="1 m" largo={170} y={1560} color={KC.ink} />
       <BarraEscala T={T} at={K.Ag} until={K.Fr} texto="50 cm" largo={300} color={KC.ink} y={1500} />
       <BarraEscala T={T} at={K.Fr} until={K.P} texto="10 µm" largo={60} y={1500} />
-      <BarraEscala T={T} at={K.D} until={K.E} texto="1 cm" largo={207} y={1500} color={KC.ink} />
+      <BarraEscala T={T} at={K.D} until={K.E} texto="1 cm" largo={223} y={1500} color={KC.ink} />
       <BarraEscala T={T} at={K.E} until={K.R} texto="5 cm" largo={154} y={1620} color={KC.ink} />
       <BarraEscala T={T} at={K.R} until={K.Ga} texto="10 cm" largo={156} y={1500} color={KC.ink} />
-      <BarraEscala T={T} at={K.Ga} until={K.C} texto="10 m" largo={140} y={1500} color={KC.ink} />
+      <BarraEscala T={T} at={K.Ga} until={K.C} texto="10 m" largo={189} y={1500} color={KC.ink} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={236} color={KC.ink} y={1600} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
