@@ -104,8 +104,11 @@ function MiniFoto({ id, x, y, animal, fondo, o = 1, T }) {
 function Persona({ x, y, color, confia = 0, nieve = 0, T = 0, k = 0 }) {
   const b = Math.sin(T * 3 + k) * 3;
   return <g transform={`translate(${x} ${y + b})`}>
+    <ellipse cx={0} cy={74} rx={38} ry={8} fill="#000" opacity=".35" />
     <path d="M -34 70 Q -34 18 0 18 Q 34 18 34 70 Z" fill={color} stroke={KC.ink} strokeWidth={5} />
+    <path d="M -34 70 Q -34 18 0 18 Q 34 18 34 70 Z" fill="url(#ln-vol)" />
     <circle cx={0} cy={-6} r={24} fill="#f1c39a" stroke={KC.ink} strokeWidth={5} />
+    <circle cx={0} cy={-6} r={24} fill="url(#ln-volr)" />
     {confia > 0 && <g transform={`translate(30 -30) scale(${confia})`}><circle r={20} fill={KC.leaf} stroke={KC.ink} strokeWidth={4} /><path d="M -9 0 L -2 8 L 10 -8" stroke="#fff" strokeWidth={5} fill="none" strokeLinecap="round" /></g>}
     {nieve > 0 && <g transform={`translate(-30 -34) scale(${nieve})`}><circle r={22} fill="#fff" stroke={KC.ink} strokeWidth={4} />
       {[0, 60, 120].map((a) => <line key={a} x1={-13} y1={0} x2={13} y2={0} transform={`rotate(${a})`} stroke={LN_AZUL} strokeWidth={4} strokeLinecap="round" />)}</g>}
@@ -115,7 +118,9 @@ function Persona({ x, y, color, confia = 0, nieve = 0, T = 0, k = 0 }) {
 /* ---------- hospital, radiografía, lunar, tijeras ---------- */
 function Hospital({ x, y, s = 1, nombre, color = '#fffdf6' }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <ellipse cx={0} cy={74} rx={150} ry={14} fill="#000" opacity=".4" />
     <rect x={-120} y={-150} width={240} height={220} rx={10} fill={color} stroke={KC.ink} strokeWidth={7} />
+    <rect x={-120} y={-150} width={240} height={220} rx={10} fill="url(#ln-vol)" />
     <rect x={-50} y={-210} width={100} height={70} rx={8} fill={color} stroke={KC.ink} strokeWidth={7} />
     <path d="M -12 -198 h 24 v 16 h 16 v 24 h -16 v 16 h -24 v -16 h -16 v -24 h 16 Z" fill={KC.red} />
     {[-80, -25, 30, 85].map((wx) => [-110, -50].map((wy) => <rect key={`${wx}${wy}`} x={wx - 18} y={wy} width={36} height={36} rx={4} fill="#9fd6ff" stroke={KC.ink} strokeWidth={4} />))}
@@ -203,6 +208,10 @@ function LoboNieve() {
   const rojosL = Math.round(54 * kprog(T, K.L + 4.6, K.L + 6.6, kEase.suave));
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
+      <svg width={0} height={0} style={{ position:'absolute' }}><defs>
+        <linearGradient id="ln-vol" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fff" stopOpacity=".32" /><stop offset=".5" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".3" /></linearGradient>
+        <radialGradient id="ln-volr" cx=".35" cy=".3" r=".75"><stop offset="0" stopColor="#fff" stopOpacity=".4" /><stop offset=".55" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".28" /></radialGradient>
+      </defs></svg>
       {/* 1 · gancho: el lobo en la nieve… y lo que de verdad miró la IA */}
       <Escena T={T} a={K.G} b={K.F}>
         <FondoLunares color={KC.cyan} />
@@ -238,14 +247,14 @@ function LoboNieve() {
           const resto = [1, 2, 3, 5, 6, 8, 9].indexOf(rk);   // los 7 que dejan de confiar
           const conf = T < PU2 + 0.6 ? (rk < confAntes ? 1 : 0) : (rk === 0 || rk === 4 || rk === 7 ? 1 : (resto >= 0 && resto < confDesp - 3 ? 1 : 0));
           const nv = rk < vieron ? 1 : 0;
-          return <g key={n} opacity={kprog(T, a0, a0 + 0.3)}><Persona x={110 + c * 108} y={760 + f * 150} k={n} T={T} color={[KC.pink, LN_AZUL, KC.orange, KC.lilac, KC.teal][n % 5]} confia={conf} nieve={nv} /></g>; })}
-          {T > PU2 - 0.2 && <g opacity={kprog(T, PU2 - 0.2, PU2 + 0.3)}><FotoIA id="p" x={330} y={525} w={250} T={T} animal="husky" fondo="nieve" zonas={kprog(T, PU2, PU2 + 0.6)} s={1} rot={-3} /></g>}
+          return <g key={n} opacity={kprog(T, a0, a0 + 0.3)}><g transform={`translate(${96 + c * 111} ${850 + f * 190}) scale(1.3)`}><Persona x={0} y={0} k={n} T={T} color={[KC.pink, LN_AZUL, KC.orange, KC.lilac, KC.teal][n % 5]} confia={conf} nieve={nv} /></g></g>; })}
+          {T > PU2 - 0.2 && <g opacity={kprog(T, PU2 - 0.2, PU2 + 0.3)}><FotoIA id="p" x={330} y={545} w={250} T={T} animal="husky" fondo="nieve" zonas={kprog(T, PU2, PU2 + 0.6)} s={1} rot={-3} /></g>}
         </>)}
       </Escena>
-      <Chip T={T} at={K.Pu + 0.4} until={PU2 - 0.3} texto="27 estudiantes de posgrado" x={360} y={470} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Pu + 2.6} until={PU2 - 0.3} texto={`confían en la IA: ${confAntes} de 27`} x={360} y={570} tam={36} borde={KC.leaf} />
-      <Chip T={T} at={PU2 + 0.6} until={K.P - 0.2} texto={`vieron la nieve: ${vieron} de 27`} x={340} y={360} tam={32} borde={LN_AZUL} />
-      <Chip T={T} at={PU2 + 1.4} until={K.P - 0.2} texto={`confían en la IA: ${confDesp} de 27`} x={340} y={690} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.Pu + 0.4} until={PU2 - 0.3} texto="27 estudiantes de posgrado" x={360} y={560} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Pu + 2.6} until={PU2 - 0.3} texto={`confían en la IA: ${confAntes} de 27`} x={360} y={660} tam={36} borde={KC.leaf} />
+      <Chip T={T} at={PU2 + 0.6} until={K.P - 0.2} texto={`vieron la nieve: ${vieron} de 27`} x={720} y={480} tam={32} borde={LN_AZUL} />
+      <Chip T={T} at={PU2 + 1.4} until={K.P - 0.2} texto={`confían en la IA: ${confDesp} de 27`} x={720} y={590} tam={32} borde={KC.leaf} />
 
       {/* 5 · re-gancho */}
       <Escena T={T} a={K.P} b={K.H} zoom={0.1}>
@@ -256,30 +265,30 @@ function LoboNieve() {
       {/* 6 · tres hospitales, neumonía muy distinta */}
       <Escena T={T} a={K.H} b={K.Fi}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<g opacity={1 - kprog(T, H2 - 0.4, H2 + 0.1)}>
+        {svg(<g opacity={1 - kprog(T, H2 - 0.4, H2 + 0.1)} transform="translate(0 90)">
           {[['NIH', 200], ['Mount Sinai', 540], ['Indiana', 880]].map(([n, x], i) => <g key={n} opacity={kprog(T, K.H + 0.5 + i * 0.3, K.H + 0.9 + i * 0.3)}>
             <Hospital x={x} y={930} s={0.95} nombre={n} />
             <g transform={`translate(${x + 70} ${760}) rotate(8)`}><rect width={80} height={92} rx={6} fill="#10141c" stroke={KC.ink} strokeWidth={4} /><ellipse cx={27} cy={46} rx={12} ry={28} fill="#5a6476" /><ellipse cx={53} cy={46} rx={12} ry={28} fill="#5a6476" /></g>
           </g>)}
         </g>)}
-        {T > H2 - 0.3 && svg(<g opacity={kprog(T, H2 - 0.3, H2 + 0.3)}><Radiografia x={40} y={640} s={1.25} T={T} ficha={0.5} /></g>)}
+        {T > H2 - 0.3 && svg(<g opacity={kprog(T, H2 - 0.3, H2 + 0.3)}><Radiografia x={40} y={720} s={1.25} T={T} ficha={0.5} /></g>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.H + 0.2} until={K.H + 2.6} anio="2018" quien="3 hospitales de EE. UU." revista="Zech et al. · PLOS Medicine" y={560} />
-      <Chip T={T} at={K.H + 3.2} until={H2 - 0.3} texto="IA que busca neumonía" x={540} y={560} tam={38} borde={KC.ink} />
-      <Chip T={T} at={H2 + 0.1} until={K.Fi - 0.2} texto="radiografías con neumonía" x={540} y={262} tam={36} borde={KC.ink} />
-      <BarrasLN T={T} at={H2 + 0.2} until={K.Fi - 0.2} top={316} filas={[{ valor: 34.2, texto: '34 %', etiqueta: 'Mount Sinai: 1 de cada 3', color: KC.red }, { valor: 1.2, texto: '1 %', etiqueta: 'NIH: casi ninguna', color: LN_AZUL, at: H2 + 1.8 }]} />
+      <Chip T={T} at={K.H + 3.2} until={H2 - 0.3} texto="IA que busca neumonía" x={540} y={620} tam={38} borde={KC.ink} />
+      <Chip T={T} at={H2 + 0.1} until={K.Fi - 0.2} texto="radiografías con neumonía" x={540} y={330} tam={36} borde={KC.ink} />
+      <BarrasLN T={T} at={H2 + 0.2} until={K.Fi - 0.2} top={384} filas={[{ valor: 34.2, texto: '34 %', etiqueta: 'Mount Sinai: 1 de cada 3', color: KC.red }, { valor: 1.2, texto: '1 %', etiqueta: 'NIH: casi ninguna', color: LN_AZUL, at: H2 + 1.8 }]} />
 
       {/* 7 · por dentro: la red reconoce el hospital, hasta por la ficha de metal */}
       <Escena T={T} a={K.Fi} b={K.L}>
         <FondoCircuito T={T} />
-        {svg(<Radiografia x={40} y={640} s={1.25} T={T} ficha={0.5 + 0.5 * kprog(T, K.Fi + 1.6, K.Fi + 2.0)} calor={kprog(T, K.Fi + 1.8, K.Fi + 2.6, kEase.sale)} scan={kprog(T, K.Fi + 0.3, K.Fi + 1.5)} />)}
+        {svg(<Radiografia x={40} y={720} s={1.25} T={T} ficha={0.5 + 0.5 * kprog(T, K.Fi + 1.6, K.Fi + 2.0)} calor={kprog(T, K.Fi + 1.8, K.Fi + 2.6, kEase.sale)} scan={kprog(T, K.Fi + 0.3, K.Fi + 1.5)} />)}
       </Escena>
-      <Chip T={T} at={K.Fi + 0.3} until={K.L - 0.2} texto="¿de qué hospital es esta placa?" x={380} y={470} tam={32} borde={KC.cyan} />
-      <Chip T={T} at={K.Fi + 2.0} until={K.L - 0.2} texto="ficha de metal (lado R/L)" x={330} y={560} tam={30} borde={KC.yellow} />
-      <Chip T={T} at={K.Fi + 2.6} until={K.L - 0.2} texto="NIH 99.95 %" x={875} y={760} tam={34} borde={KC.cyan} />
-      <Chip T={T} at={K.Fi + 2.9} until={K.L - 0.2} texto="Mount Sinai 99.98 %" x={875} y={870} tam={30} borde={KC.cyan} />
-      <Chip T={T} at={K.Fi + 3.2} until={K.L - 0.2} texto="Indiana 95.6 %" x={875} y={980} tam={34} borde={KC.cyan} />
-      <Chip T={T} at={K.Fi + 3.5} until={K.L - 0.2} texto="placas reconocidas" x={875} y={1080} tam={28} borde={KC.texto} />
+      <Chip T={T} at={K.Fi + 0.3} until={K.L - 0.2} texto="¿de qué hospital es esta placa?" x={380} y={550} tam={32} borde={KC.cyan} />
+      <Chip T={T} at={K.Fi + 2.0} until={K.L - 0.2} texto="ficha de metal (lado R/L)" x={330} y={640} tam={30} borde={KC.yellow} />
+      <Chip T={T} at={K.Fi + 2.6} until={K.L - 0.2} texto="NIH 99.95 %" x={875} y={840} tam={34} borde={KC.cyan} />
+      <Chip T={T} at={K.Fi + 2.9} until={K.L - 0.2} texto="Mount Sinai 99.98 %" x={875} y={950} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.Fi + 3.2} until={K.L - 0.2} texto="Indiana 95.6 %" x={875} y={1060} tam={34} borde={KC.cyan} />
+      <Chip T={T} at={K.Fi + 3.5} until={K.L - 0.2} texto="placas reconocidas" x={875} y={1160} tam={28} borde={KC.texto} />
 
       {/* 8 · la tinta del cirujano en los lunares */}
       <Escena T={T} a={K.L} b={K.Re}>

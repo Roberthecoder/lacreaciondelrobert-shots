@@ -1,0 +1,1 @@
+- ia-12-lobo-nieve: Prueba: los 27 estudiantes 1.3× más grandes en tres filas centradas (y 850–1230) y chips reacomodados sin encimarse; Hospital: hospitales bajados al centro, barras y radiografía bajadas 70–80 px (centro ~y 900); Ficha: radiografía y chips en la misma nueva altura; personas y hospitales con degradado de volumen y sombra. Auditores: sin láminas · encuadre bien.
