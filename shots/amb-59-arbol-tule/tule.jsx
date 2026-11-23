@@ -25,11 +25,17 @@ function Ahuehuete({ x, y, s = 1, separa = 0, T = 0, numeros = 0, marca = 0, int
     const d = `M ${X - w / 2 - 10} 0 C ${X - w / 2 - 20} -70 ${X - w / 2 + 14} -170 ${X - w / 3} -250 L ${X + w / 3} -250 C ${X + w / 2 - 14} -170 ${X + w / 2 + 20} -70 ${X + w / 2 + 10} 0 Z`;
     return <g key={i}>
       <path d={d} fill={i % 2 ? TU_BARK : '#94633f'} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+      <path d={d} fill="url(#tuLado)" />
       {[-0.22, 0.05, 0.28].map((q, k) => <path key={k} d={`M ${X + q * w} -8 q ${8 - k * 5} -90 ${-5 + k * 4} -215`} stroke={TU_BARK2} strokeWidth={6} fill="none" strokeLinecap="round" />)}
       {marca > 0 && <path d={d} fill="none" stroke={KC.yellow} strokeWidth={6} strokeDasharray="16 12" opacity={marca} transform={`translate(0 0)`} />}
     </g>;
   });
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    {/* pase de belleza: volumen (luz arriba-izquierda en la copa; cada contrafuerte con luz y sombra lateral) */}
+    <defs>
+      <radialGradient id="tuCopa" gradientUnits="userSpaceOnUse" cx={-150} cy={-760} r={620}><stop offset="0" stopColor="#7cc46a" /><stop offset="0.45" stopColor="#2f7d3a" /><stop offset="1" stopColor="#123d1c" /></radialGradient>
+      <linearGradient id="tuLado" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#fff" stopOpacity="0.22" /><stop offset="0.5" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.35" /></linearGradient>
+    </defs>
     {/* ramas principales (debajo de la copa) */}
     <g transform={`rotate(${sw * 0.3} 0 -200)`}>
       {TU_RAMAS.map(([x0, y0, x1, y1], i) => <g key={i}>
@@ -43,6 +49,7 @@ function Ahuehuete({ x, y, s = 1, separa = 0, T = 0, numeros = 0, marca = 0, int
     <g transform={`rotate(${sw} 0 -200)`}>
       {TU_COPA.map((c, i) => <circle key={'b' + i} cx={c.cx} cy={c.cy} r={c.r} fill={TU_HOJA} stroke={KC.ink} strokeWidth={14} />)}
       {TU_COPA.map((c, i) => <circle key={'f' + i} cx={c.cx} cy={c.cy} r={c.r} fill={TU_HOJA} />)}
+      <g opacity={0.6}>{TU_COPA.map((c, i) => <circle key={'v' + i} cx={c.cx} cy={c.cy} r={c.r} fill="url(#tuCopa)" />)}</g>
       {TU_LUZ.map(([cx, cy, r], i) => <circle key={'l' + i} cx={cx} cy={cy} r={r} fill={TU_HOJA2} opacity={0.75} />)}
       {/* ramillas colgantes */}
       {Array.from({ length: 16 }, (_, i) => { const xx = -300 + i * 40, yy = -540 + Math.sqrt(Math.max(0, 1 - (xx / 360) ** 2)) * 190 + 55;
