@@ -213,8 +213,8 @@ function NobelFisica() {
       <Escena T={T} a={K.V} b={K.Q}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<>
-          <Espines x={260} y={560} tam={560} ang={angV} pix={0.9} />
-          <g transform="translate(0 300)" opacity={0.4 + 0.6 * kprog(T, rotaEn - 0.2, rotaEn + 0.3)}><Paisaje bx={bx} /></g>
+          <Espines x={260} y={610} tam={560} ang={angV} pix={0.9} />
+          <g transform="translate(0 350)" opacity={0.4 + 0.6 * kprog(T, rotaEn - 0.2, rotaEn + 0.3)}><Paisaje bx={bx} /></g>
         </>)}
       </Escena>
       <Medidor T={T} at={K.V + 0.3} until={K.Q - 0.2} x={90} y={410} ancho={520} etiqueta="energía" color={energia > 0.4 ? KC.red : KC.mint} valor={energia} texto={(v) => v > 0.4 ? 'alta' : 'baja'} />
@@ -232,20 +232,20 @@ function NobelFisica() {
       {/* 7 · Cap. 3: máquina de Boltzmann (por dentro) */}
       <Escena T={T} a={K.B} b={K.Ta}>
         <FondoCircuito T={T} color={KC.lilac} />
-        {svg(<>
+        {svg(<g transform="translate(0 120)">
           <rect x={70} y={560} width={940} height={640} rx={44} fill="rgba(177,140,255,.10)" stroke={KC.lilac} strokeWidth={8} opacity={1 - mB} />
           <g opacity={mB}>{NODOS.map((a, p) => NODOS.slice(p + 1).map((b, q) => <line key={`${p}-${q}`} x1={a[0]} y1={a[1]} x2={b[0]} y2={b[1]} stroke={KC.cyan} strokeOpacity=".3" strokeWidth={4} />))}</g>
           {bolas.map(([a, b, o], k) => <circle key={k} cx={a} cy={b} r={k < 6 ? 33 : 28} opacity={o} fill={k < 6 ? KC.lilac : KC.yellow} stroke={KC.ink} strokeWidth={5} />)}
           {[0, 1, 2].map((k) => { const t0 = K.B + 5.0 + k * 0.45, p = kprog(T, t0, t0 + 0.7, kEase.sale);
             return <g key={k} opacity={p}><Gato x={klerp(-80, 300 + k * 240, p)} y={1165} s={1.15} color={[KC.orange, KC.paper, KC.gold2][k]} /></g>; })}
-        </>)}
+        </g>)}
       </Escena>
-      <Etq T={T} at={K.B + 4.4} until={K.Ta - 0.2} x={760} y={712} texto="ocultos" tam={26} />
-      <Etq T={T} at={K.B + 4.6} until={K.Ta - 0.2} x={830} y={1008} texto="visibles" tam={26} />
-      <Chip T={T} at={K.B + 0.4} until={K.B + 4.3} texto="física estadística" x={540} y={470} tam={38} borde={KC.lilac} />
-      <Chip T={T} at={K.B + 1.8} until={K.B + 4.8} texto="distribución de Boltzmann · siglo XIX" x={540} y={1295} tam={34} borde={KC.gold} />
-      <Chip T={T} at={K.B + 4.4} until={K.Ta - 0.2} texto="Hinton + Sejnowski · 1985" x={540} y={470} tam={36} borde={KC.gold} />
-      <MitoTachado T={T} at={K.B + 5.2} tacharEn={K.B + 6.2} until={K.Ta - 0.2} texto="instrucciones paso a paso" y={1300} tam={38} />
+      <Etq T={T} at={K.B + 4.4} until={K.Ta - 0.2} x={760} y={832} texto="ocultos" tam={27} />
+      <Etq T={T} at={K.B + 4.6} until={K.Ta - 0.2} x={830} y={1128} texto="visibles" tam={27} />
+      <Chip T={T} at={K.B + 0.4} until={K.B + 4.3} texto="física estadística" x={540} y={540} tam={38} borde={KC.lilac} />
+      <Chip T={T} at={K.B + 1.8} until={K.B + 4.8} texto="distribución de Boltzmann · siglo XIX" x={540} y={1415} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.B + 4.4} until={K.Ta - 0.2} texto="Hinton + Sejnowski · 1985" x={540} y={540} tam={36} borde={KC.gold} />
+      <MitoTachado T={T} at={K.B + 5.2} tacharEn={K.B + 6.2} until={K.Ta - 0.2} texto="instrucciones paso a paso" y={1420} tam={38} />
 
       {/* 8 · tamaño: 1982 contra hoy */}
       <Escena T={T} a={K.Ta} b={K.A}>
@@ -275,9 +275,9 @@ function NobelFisica() {
       {/* 10 · cierre: la misma rejilla, ahora una memoria */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Espines x={140} y={390} tam={800} ang={angC} pix={pixC} /><Medalla x={540} y={1425} s={0.75} T={T} /></>)}
+        {svg(<><Espines x={140} y={480} tam={800} ang={angC} pix={pixC} /><Medalla x={540} y={1478} s={0.68} T={T} /></>)}
       </Escena>
-      <Chip T={T} at={K.C + 2.6} until={K.Ou} texto="imanes → memoria ✔" x={540} y={220} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 2.6} until={K.Ou} texto="imanes → memoria ✔" x={540} y={300} tam={40} borde={KC.leaf} />
 
       <Capitulo T={T} hasta={K.Ta} caps={[{ at: K.I, titulo: 'Imanes' }, { at: K.X, titulo: 'La memoria de Hopfield' }, { at: K.B, titulo: 'La máquina de Boltzmann' }]} />
 
