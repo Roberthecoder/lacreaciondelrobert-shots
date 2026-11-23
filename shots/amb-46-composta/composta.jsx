@@ -12,23 +12,38 @@ function Cascara({ x, y, s = 1, rot = 0, pudre = 0, deshace = 0, T = 0 }) {
   const k = 1 - 0.85 * deshace;
   const tira = (a, l) => <path key={a} d={`M 0 0 C ${-26} ${l * 0.35} ${-24} ${l * 0.8} 0 ${l} C ${24} ${l * 0.8} ${26} ${l * 0.35} 0 0 Z`} transform={`rotate(${a})`}
     fill={col} stroke={KC.ink} strokeWidth={6} />;
+  const brillo = (a, l) => <path key={'b' + a} d={`M 0 0 C ${-26} ${l * 0.35} ${-24} ${l * 0.8} 0 ${l} C ${24} ${l * 0.8} ${26} ${l * 0.35} 0 0 Z`} transform={`rotate(${a}) scale(0.9)`} fill="url(#cpCasc)" />;
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`} opacity={1 - deshace * 0.9}>
     <g transform={`scale(${k})`}>
+      <DefsCp />
       {[[-150, 120], [-30, 130], [40, 115], [150, 125]].map(([a, l]) => tira(a + Math.sin(T * 2 + a) * 2, l))}
+      {[[-150, 120], [-30, 130], [40, 115], [150, 125]].map(([a, l]) => brillo(a + Math.sin(T * 2 + a) * 2, l))}
       {pudre > 0.2 && [[-30, 60], [40, 55], [150, 70]].map(([a, d], i) => <circle key={i} cx={Math.sin(-a * Math.PI / 180) * d} cy={Math.cos(a * Math.PI / 180) * d} r={9} fill="#3b2412" opacity={kclamp(pudre * 1.5 - 0.3, 0, 0.8)} />)}
       <rect x={-12} y={-46} width={24} height={50} rx={8} fill="#8a6a2a" stroke={KC.ink} strokeWidth={6} />
       <rect x={-14} y={-56} width={28} height={14} rx={5} fill="#3b2a12" />
     </g>
   </g>;
 }
+// Sombreado de volumen (pase de belleza): capa de luz arriba-izquierda y sombra abajo-derecha sobre cualquier color.
+function DefsCp() {
+  return <defs>
+    <linearGradient id="cpLado" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#fff" stopOpacity="0.32" /><stop offset="0.45" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.38" /></linearGradient>
+    <radialGradient id="cpLoma" cx="40%" cy="20%" r="85%"><stop offset="0" stopColor="#9a6838" /><stop offset="0.6" stopColor="#7a4a22" /><stop offset="1" stopColor="#4a2c12" /></radialGradient>
+    <linearGradient id="cpCasc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fff" stopOpacity="0.35" /><stop offset="1" stopColor="#000" stopOpacity="0.25" /></linearGradient>
+  </defs>;
+}
 // Bote de basura de cocina con pedal. tapa 0..1 = abierta.
-function Bote({ x, y, s = 1, tapa = 0, color = '#5aa9e6' }) {
+function Bote({ x, y, s = 1, tapa = 0, color = '#4f8fc4' }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -150 -300 L 150 -300 L 125 0 L -125 0 Z" fill={color} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <DefsCp />
+    <ellipse cx={10} cy={14} rx={170} ry={22} fill="rgba(0,0,0,.4)" />
+    <path d="M -150 -300 L 150 -300 L 125 0 L -125 0 Z" fill={color} stroke="#cfe6ff" strokeOpacity={0.75} strokeWidth={5} strokeLinejoin="round" />
+    <path d="M -150 -300 L 150 -300 L 125 0 L -125 0 Z" fill="url(#cpLado)" />
     {[-70, 0, 70].map((d) => <line key={d} x1={d} y1={-260} x2={d * 0.85} y2={-40} stroke="rgba(0,0,0,.18)" strokeWidth={10} strokeLinecap="round" />)}
     <rect x={-60} y={-6} width={120} height={22} rx={8} fill="#2b2f3a" stroke={KC.ink} strokeWidth={5} />
     <g transform={`translate(-160 -300) rotate(${-tapa * 70})`}>
-      <path d="M 0 0 L 320 0 Q 310 -50 160 -56 Q 10 -50 0 0 Z" fill={mixHex(color, '#ffffff', 0.25)} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+      <path d="M 0 0 L 320 0 Q 310 -50 160 -56 Q 10 -50 0 0 Z" fill={mixHex(color, '#ffffff', 0.25)} stroke="#cfe6ff" strokeOpacity={0.75} strokeWidth={5} strokeLinejoin="round" />
+      <path d="M 0 0 L 320 0 Q 310 -50 160 -56 Q 10 -50 0 0 Z" fill="url(#cpLado)" />
     </g>
   </g>;
 }
@@ -99,7 +114,9 @@ function Termo({ x, y, v = 0, alto = 420, etiqueta }) {
 // Pila larga de composta (hilera) con sensores en mástiles.
 function Hilera({ x, y, w = 900, T = 0, sensores = 0, vapor = 0 }) {
   return <g transform={`translate(${x} ${y})`}>
-    <path d={`M 0 0 Q 60 -170 ${w * 0.25} -190 L ${w * 0.75} -190 Q ${w - 60} -170 ${w} 0 Z`} fill={CP.cafe} stroke={KC.ink} strokeWidth={8} />
+    <DefsCp />
+    <path d={`M 0 0 Q 60 -170 ${w * 0.25} -190 L ${w * 0.75} -190 Q ${w - 60} -170 ${w} 0 Z`} fill="url(#cpLoma)" stroke="#d9b48a" strokeOpacity={0.75} strokeWidth={5} />
+    {Array.from({ length: 22 }, (_, i) => { const r = krng(60 + i); return <circle key={'g' + i} cx={40 + r() * (w - 80)} cy={-20 - r() * 140} r={3 + r() * 4} fill="#3a2210" opacity={0.5} />; })}
     {Array.from({ length: 14 }, (_, i) => <circle key={i} cx={60 + i * (w - 120) / 13} cy={-60 - (i % 3) * 40} r={10} fill={i % 2 ? '#a4703b' : '#3fbf4a'} opacity=".8" />)}
     {sensores > 0 && [0.62, 0.9].map((q, i) => <g key={i} opacity={sensores}><line x1={w * q} y1={0} x2={w * q} y2={-330} stroke={KC.ink} strokeWidth={8} />
       <rect x={w * q - 26} y={-370} width={52} height={40} rx={8} fill="#e9eef5" stroke={KC.ink} strokeWidth={5} />
