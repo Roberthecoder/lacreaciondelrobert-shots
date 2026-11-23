@@ -68,7 +68,10 @@ function Monticulo({ T = 0, x, y, W = 740, H = 520, corte = 0, seta = 0, setaS =
   const d = `M ${-W / 2} 0 Q ${-W * 0.46} ${-H * 0.62} ${-W * 0.2} ${-H * 0.94} Q 0 ${-H * 1.04} ${W * 0.2} ${-H * 0.93} Q ${W * 0.47} ${-H * 0.6} ${W / 2} 0 Z`;
   const cima = -H * 0.99, cx = 0, cy = -H * 0.36, cw = W * 0.5, ch = H * 0.36;
   return <g transform={`translate(${x} ${y})`}>
-    <path d={d} fill={TC.tierra} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <defs><radialGradient id="montGrad" cx="32%" cy="18%" r="95%"><stop offset="0" stopColor="#d58a58" /><stop offset="0.5" stopColor={TC.tierra} /><stop offset="1" stopColor={TC.tierra3} /></radialGradient></defs>
+    <ellipse cx={0} cy={6} rx={W * 0.58} ry={30} fill="#000" opacity={0.35} />
+    <path d={d} fill="url(#montGrad)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <path d={`M ${-W * 0.4} ${-H * 0.3} Q ${-W * 0.36} ${-H * 0.7} ${-W * 0.16} ${-H * 0.88}`} stroke="#e9a679" strokeWidth={10} fill="none" strokeLinecap="round" opacity={0.35} />
     {[[-0.28, -0.3, 60, 26], [0.22, -0.22, 70, 22], [-0.05, -0.62, 54, 20], [0.3, -0.55, 40, 16], [-0.32, -0.62, 36, 14]].map(([u, v, rx, ry], i) =>
       <ellipse key={i} cx={u * W} cy={v * H} rx={rx} ry={ry} fill={TC.tierra2} opacity=".55" />)}
     {/* pasto y arbustos encima: montículo viejo */}
@@ -102,6 +105,8 @@ function Panal({ x, y, w = 600, h = 420, seed = 3, tono = 0.3, nod = 0, come = 0
     <defs><clipPath id={id}><rect x={-w} y={-h / 2 - 20} width={w * 2} height={alto + 20} /></clipPath></defs>
     <g clipPath={`url(#${id})`}>
       <path d={borde} fill={col} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
+      <defs><radialGradient id={id + 'L'} cx="30%" cy="22%" r="80%"><stop offset="0" stopColor="#fff2dc" stopOpacity="0.28" /><stop offset="0.6" stopColor="#fff2dc" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.3" /></radialGradient></defs>
+      <path d={borde} fill={`url(#${id}L)`} />
       {tubos.map(([tx, ty, l, r, sw], i) => <path key={i} d={`M ${-l} 0 Q 0 ${-l * 0.7} ${l} 0 Q ${l * 1.4} ${l * 0.5} ${l * 1.8} ${l * 0.1}`} transform={`translate(${tx.toFixed(1)} ${ty.toFixed(1)}) rotate(${r.toFixed(0)})`}
         stroke={TC.huecoPanal} strokeWidth={sw} fill="none" strokeLinecap="round" opacity=".85" />)}
       {hifas > 0 && <RedHifas T={T} x={0} y={0} g={hifas} seed={seed + 40} n={220} escala={Math.min(w, h) / 900} color={FK.hifa} ancho={3} brillo={0.5} />}
@@ -217,9 +222,19 @@ const TxtS = ({ x, y, t, tam = 30, anchor = 'middle', color = KC.texto, o = 1, i
   <text x={x} y={y} textAnchor={anchor} opacity={o} style={{ font:`700 ${tam}px ${KF.mono}`, fontStyle: it ? 'italic' : 'normal' }} fill={color} stroke={KC.ink} strokeWidth={7} paintOrder="stroke">{t}</text>;
 
 // La sabana del gancho y del cierre (misma imagen).
+function Suelo({ y0, T, seed = 50 }) {
+  const g = krng(seed);
+  const pied = Array.from({ length: 22 }, () => [g() * KW, y0 + 120 + g() * 900, 6 + g() * 12]);
+  return <>
+    <defs><linearGradient id={'suelo' + seed} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#5e4a24" /><stop offset="0.35" stopColor={TC.sabana} /><stop offset="1" stopColor="#1e170b" /></linearGradient></defs>
+    <rect x={-200} y={y0} width={KW + 400} height={KH + 600 - y0} fill={`url(#suelo${seed})`} stroke={KC.ink} strokeWidth={8} />
+    {pied.map(([px, py, r], i) => <ellipse key={i} cx={px} cy={py} rx={r * 1.4} ry={r * 0.7} fill="#2a2010" opacity={0.55} />)}
+    {Array.from({ length: 9 }, (_, i) => <Mata key={'m' + i} x={60 + i * 120 + (i % 2) * 40} y={y0 + 190 + (i % 3) * 150} s={0.6 - (i % 3) * 0.08} T={T} seed={seed + i} color={TC.seco} />)}
+  </>;
+}
 function Sabana({ T }) {
   return <>
-    <rect x={0} y={1040} width={KW} height={KH - 1040} fill={TC.sabana} stroke={KC.ink} strokeWidth={8} />
+    <Suelo y0={1040} T={T} seed={51} />
     {Array.from({ length: 16 }, (_, i) => <Mata key={i} x={30 + i * 68} y={1060 + (i % 3) * 26} s={0.8} T={T} seed={i + 20} color={TC.seco} />)}
     <Acacia x={930} y={1050} s={0.9} T={T} />
   </>;
@@ -246,43 +261,45 @@ function TermitasShot() {
       {/* 1 · gancho: el montículo de la sabana; la cámara se acerca y las obreras entran */}
       <Escena T={T} a={K.G} b={K.N} zoom={0.06} origen="40% 55%">
         <FondoLunares color={KC.yellow} />
-        {fsvg(<g transform={`translate(${MX - MX * (1 + 0.1 * acerca)} ${MY - MY * (1 + 0.1 * acerca)}) scale(${1 + 0.1 * acerca})`}>
+        {fsvg(<g transform="translate(540 1000) scale(1.3) translate(-440 -850)"><g transform={`translate(${MX - MX * (1 + 0.1 * acerca)} ${MY - MY * (1 + 0.1 * acerca)}) scale(${1 + 0.1 * acerca})`}>
           <Sabana T={T} />
           <Monticulo T={T} x={MX} y={MY} />
           {filaEntrada(K.G - 2)}
-        </g>)}
+        </g></g>)}
       </Escena>
       {/* 2 · dónde viven: África y Asia; el hongo se llama Termitomyces */}
       <Escena T={T} a={K.N} b={K.F} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<MapaAfroAsia T={T} at={K.N + 0.1} x={70} y={680} s={0.95} />)}
+        {fsvg(<MapaAfroAsia T={T} at={K.N + 0.1} x={40} y={820} s={1.06} />)}
       </Escena>
       {/* 3 · las obreras traen planta muerta: pasto seco, hojas y madera */}
       <Escena T={T} a={K.F} b={K.Pa} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
-          <rect x={0} y={1080} width={KW} height={KH} fill={TC.sabana} stroke={KC.ink} strokeWidth={8} />
+        {fsvg(<g transform="translate(540 1250) scale(1.3) translate(-540 -1080)">
+          <Suelo y0={1080} T={T} seed={61} />
           <path d="M 860 1084 Q 900 720 1120 660 L 1120 1084 Z" fill={TC.tierra} stroke={KC.ink} strokeWidth={8} />
           <Acacia x={260} y={1084} s={1.15} T={T} /><Mata x={990} y={740} s={1} T={T} seed={4} /><Mata x={930} y={840} s={0.9} T={T} seed={5} />
           <ellipse cx={935} cy={1062} rx={40} ry={20} fill={TC.hueco} stroke={KC.ink} strokeWidth={5} />
           {[['pasto seco', <path d="M -6 -4 Q 40 -50 110 -60" stroke={TC.seco} strokeWidth={9} fill="none" strokeLinecap="round" />],
             ['hoja', <path d="M 0 0 Q 30 -50 80 -30 Q 50 14 0 0 Z" fill={TC.hoja} stroke={KC.ink} strokeWidth={4} />],
             ['madera', <rect x={-4} y={-14} width={90} height={22} rx={6} fill={TC.madera} stroke={KC.ink} strokeWidth={4} transform="rotate(-12)" />]].map(([nom, carga], i) => {
-            const xx = klerp(60 + i * 290, 250 + i * 290, kprog(T, K.F - 0.4, K.Pa + 0.4));
+            const xx = klerp(110 + i * 270, 290 + i * 270, kprog(T, K.F - 0.4, K.Pa + 0.4));
             return <g key={i}><Termita T={T} x={xx} y={1026} s={1.4} fase={i * 1.3} carga={carga} />
-              <TxtS x={xx + 20} y={900} t={nom} tam={34} o={kprog(T, K.F + 0.4 + i * 0.6, K.F + 0.8 + i * 0.6)} /></g>; })}
-        </>)}
+              <TxtS x={Math.max(xx + 20, 230)} y={900} t={nom} tam={34} o={kprog(T, K.F + 0.4 + i * 0.6, K.F + 0.8 + i * 0.6)} /></g>; })}
+        </g>)}
       </Escena>
       {/* 4 · por dentro del montículo: las jóvenes comen la planta y con su popó arman el panal */}
       <Escena T={T} a={K.Pa} b={K.H} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:'#2e1a10' }}></div>
         {fsvg(<>
-          {[[160, 470, 300], [880, 520, 260], [300, 1180, 360]].map(([tx, ty, w], i) => <path key={i} d={`M ${tx - w} ${ty} Q ${tx} ${ty - 70} ${tx + w} ${ty + 20}`} stroke={TC.hueco} strokeWidth={60} fill="none" strokeLinecap="round" opacity=".7" />)}
+          {[[160, 470, 300], [880, 520, 260], [300, 1220, 360], [900, 1330, 300], [500, 1480, 420]].map(([tx, ty, w], i) => <path key={i} d={`M ${tx - w} ${ty} Q ${tx} ${ty - 70} ${tx + w} ${ty + 20}`} stroke={TC.hueco} strokeWidth={60} fill="none" strokeLinecap="round" opacity=".7" />)}
+          <g transform="translate(540 960) scale(1.15) translate(-540 -820)">
           <ellipse cx={540} cy={820} rx={430} ry={290} fill={TC.hueco} stroke={KC.ink} strokeWidth={8} />
           <Panal x={540} y={850} w={600} h={klerp(220, 380, crecePanal)} seed={5} tono={0.2} id="pPa" />
           <Bolitas T={T} lista={pellets} />
           <Termita T={T} x={250} y={720} s={1.3} ang={20} fase={0.4} anda={0.3} />
           <Termita T={T} x={820} y={745} s={1.3} ang={-25} fase={1.2} anda={0.3} espejo />
+          </g>
         </>)}
       </Escena>
       {/* 5 · al microscopio: crecen las hifas y la planta se deshace */}
@@ -290,15 +307,17 @@ function TermitasShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
         {fsvg((() => { const d = kprog(T, K.H + 0.3, K.B + 0.2); return <>
-          {Array.from({ length: 7 }, (_, i) => { const y0 = 600 + i * 78; return <path key={i} d={`M 80 ${y0} Q 400 ${y0 - 60 + i * 12} 700 ${y0 + 20} T 1010 ${y0 - 10}`} stroke={mixHex('#9c8a3a', '#5a4a2a', d)} strokeWidth={30 - d * 12}
+          {Array.from({ length: 7 }, (_, i) => { const y0 = 720 + i * 78; return <path key={i} d={`M 80 ${y0} Q 400 ${y0 - 60 + i * 12} 700 ${y0 + 20} T 1010 ${y0 - 10}`} stroke={mixHex('#9c8a3a', '#5a4a2a', d)} strokeWidth={30 - d * 12}
             fill="none" strokeLinecap="round" strokeDasharray={d > 0.05 ? `${Math.max(8, 260 - d * 240)} ${10 + d * 70}` : 'none'} opacity={1 - d * 0.55} />; })}
-          <RedHifas T={T} x={540} y={820} g={kprog(T, K.H, K.B + 0.3)} seed={98} n={360} escala={0.85} color={FK.hifa} ancho={6} brillo={0.8} />
+          <RedHifas T={T} x={540} y={960} g={kprog(T, K.H, K.B + 0.3)} seed={98} n={360} escala={0.85} color={FK.hifa} ancho={6} brillo={0.8} />
         </>; })())}
       </Escena>
       {/* 6 · nódulos: bolitas blancas de esporas que comen las jóvenes para sembrar más panal */}
       <Escena T={T} a={K.B} b={K.V} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:'#2e1a10' }}></div>
         {fsvg(<>
+          {[[160, 470, 300], [880, 520, 260], [300, 1220, 360], [900, 1330, 300], [500, 1480, 420]].map(([tx, ty, w], i) => <path key={i} d={`M ${tx - w} ${ty} Q ${tx} ${ty - 70} ${tx + w} ${ty + 20}`} stroke={TC.hueco} strokeWidth={60} fill="none" strokeLinecap="round" opacity=".7" />)}
+          <g transform="translate(540 960) scale(1.15) translate(-540 -820)">
           <ellipse cx={540} cy={820} rx={430} ry={290} fill={TC.hueco} stroke={KC.ink} strokeWidth={8} />
           <Panal x={540} y={850} w={600} h={380} seed={5} tono={0.35} nod={nodB} id="pB" />
           {(() => { const u = kprog(T, K.B + 2.0, K.B + 3.4, kEase.suave); return <Termita T={T} x={klerp(150, 280, u)} y={klerp(1060, 990, u)} s={1.3} ang={-25} fase={0.2} anda={1 - u} come={u > 0.9 ? 1 : 0} />; })()}
@@ -313,34 +332,38 @@ function TermitasShot() {
               <circle cx={lx} cy={ly} r={R * 0.62} fill={TC.nodulo} stroke={KC.ink} strokeWidth={5} />
               {Array.from({ length: 14 }, (_, i) => { const a = i * 2.4, rr = (i % 4) * 0.13 * R + 0.05 * R; return <ellipse key={i} cx={lx + Math.cos(a) * rr} cy={ly + Math.sin(a) * rr} rx={9 * k} ry={6 * k} transform={`rotate(${i * 37} ${lx + Math.cos(a) * rr} ${ly + Math.sin(a) * rr})`} fill="#e6dcc6" stroke="#8a7a5a" strokeWidth={2} />; })}
             </g>; })()}
+          </g>
         </>)}
       </Escena>
       {/* 7 · las obreras viejas se comen el panal maduro */}
       <Escena T={T} a={K.V} b={K.P} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:'#2e1a10' }}></div>
         {fsvg(<>
+          {[[160, 470, 300], [880, 520, 260], [300, 1220, 360], [900, 1330, 300], [500, 1480, 420]].map(([tx, ty, w], i) => <path key={i} d={`M ${tx - w} ${ty} Q ${tx} ${ty - 70} ${tx + w} ${ty + 20}`} stroke={TC.hueco} strokeWidth={60} fill="none" strokeLinecap="round" opacity=".7" />)}
+          <g transform="translate(540 960) scale(1.15) translate(-540 -820)">
           <ellipse cx={540} cy={820} rx={430} ry={290} fill={TC.hueco} stroke={KC.ink} strokeWidth={8} />
           <Panal x={540} y={850} w={600} h={380} seed={5} tono={klerp(0.35, 1, madura)} nod={0.5} come={comido} id="pV" />
           {[[330, 0], [540, 1], [750, 2]].map(([xx, i]) => <Termita key={i} T={T} x={xx} y={klerp(1160, 850 + 190 - 380 * comido + 56, kprog(T, K.V + 0.2, K.V + 1.0))} s={1.1} ang={-90} fase={i} anda={0.5} come={1} cabeza="#b9803c" />)}
+          </g>
         </>)}
       </Escena>
       {/* 8 · re-gancho: llegan el rey y la reina, solos, sin hongo */}
       <Escena T={T} a={K.P} b={K.Es} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<>
-          <rect x={0} y={1010} width={KW} height={KH} fill="#2f1a10" stroke={KC.ink} strokeWidth={8} />
+        {fsvg(<g transform="translate(0 190)">
+          <Suelo y0={1010} T={T} seed={71} />
           <Alado T={T} x={klerp(120, 250, aterriza)} y={klerp(560, 960, aterriza)} s={2.1} ang={klerp(-20, 0, aterriza)} />
           <Alado T={T} x={klerp(900, 720, aterriza)} y={klerp(520, 965, aterriza)} s={2.1} ang={klerp(25, 0, aterriza)} fase={1} />
           <TxtS x={250} y={1100} t="rey" tam={36} o={kprog(T, K.P + 1.2, K.P + 1.5)} />
           <TxtS x={720} y={1105} t="reina" tam={36} o={kprog(T, K.P + 1.3, K.P + 1.6)} />
           <Interrogacion T={T} x={540} y={760} tam={380} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 9 · ¿de dónde sale el hongo? la mayoría: esporas del ambiente · unas pocas: lo trae el rey o la reina */}
       <Escena T={T} a={K.Es} b={K.E} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<>
-          <rect x={0} y={1010} width={KW} height={KH} fill="#2f1a10" stroke={KC.ink} strokeWidth={8} />
+        {fsvg(<g transform="translate(0 190)">
+          <Suelo y0={1010} T={T} seed={81} />
           <line x1={540} y1={680} x2={540} y2={1010} stroke={KC.ink} strokeWidth={8} strokeDasharray="22 14" />
           <Titanicus x={130} y={1014} s={0.4} id="tEs" />
           {Array.from({ length: 16 }, (_, i) => { const u = ((T - K.Es) * 0.35 + i / 16) % 1; return T > K.Es ? <ellipse key={i} cx={150 + u * 300 + Math.sin(T * 2 + i) * 14} cy={880 - Math.sin(u * Math.PI) * 150 + u * 100 + (i % 4) * 10}
@@ -349,7 +372,7 @@ function TermitasShot() {
           <Termita T={T} x={470} y={980} s={1} fase={1.9} anda={0.6} espejo />
           <Alado T={T} x={860} y={800} s={1.9} alas={1} bola={kprog(T, K.Es + 3.1, K.Es + 3.8, kEase.rebote)} />
           <TxtS x={290} y={1070} t="esporas del ambiente" tam={28} o={kprog(T, K.Es + 0.8, K.Es + 1.2)} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 10 · el estudio: nidos fósiles con panal, Tanzania (publicado en 2016) */}
       <Escena T={T} a={K.E} b={K.O} zoom={0.04}>
@@ -374,19 +397,22 @@ function TermitasShot() {
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
           {lluvia > 0 && Array.from({ length: 40 }, (_, i) => { const g = krng(i + 300); const x0 = g() * KW, u = ((T * 1.4 + g()) % 1); return <line key={i} x1={x0} y1={u * 1300 - 100} x2={x0 - 12} y2={u * 1300 - 40} stroke="#e8f8ff" strokeWidth={5} strokeLinecap="round" opacity={0.8 * lluvia} />; })}
+          <g transform="translate(540 1000) scale(1.3) translate(-440 -850)">
           <Sabana T={T} />
           <Monticulo T={T} x={MX} y={MY} corte={kprog(T, K.Ti + 2.6, K.Ti + 3.4)} seta={setaTi} setaS={0.75} nod={0.7} />
           {(() => { const k = kprog(T, K.Ti + 3.4, K.Ti + 4.0); const W = 560 * 0.75, x0 = MX + 4 - W / 2, x1 = MX + 4 + W / 2, yy = 340; return k > 0 ? <g opacity={k}>
             <line x1={x0} y1={yy} x2={x1} y2={yy} stroke={KC.ink} strokeWidth={6} /><line x1={x0} y1={yy - 18} x2={x0} y2={yy + 18} stroke={KC.ink} strokeWidth={6} /><line x1={x1} y1={yy - 18} x2={x1} y2={yy + 18} stroke={KC.ink} strokeWidth={6} />
             <TxtS x={MX} y={yy - 76} t="Termitomyces titanicus" tam={32} it /><TxtS x={MX} y={yy - 30} t="sombrero: 40–80 cm · hasta 1 m" tam={30} />
           </g> : null; })()}
+          </g>
         </>)}
       </Escena>
       {/* 13 · Zambia: se venden a la orilla de la carretera; una sola alcanza para una familia grande */}
       <Escena T={T} a={K.M} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
-          <rect x={0} y={1060} width={KW} height={KH} fill="#343842" stroke={KC.ink} strokeWidth={8} />
+        {fsvg(<g transform="translate(540 1060) scale(1.2) translate(-540 -860)">
+          <defs><linearGradient id="asfalto" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#4a4f5a" /><stop offset="1" stopColor="#1c1f25" /></linearGradient></defs>
+          <rect x={-200} y={1060} width={KW + 400} height={KH} fill="url(#asfalto)" stroke={KC.ink} strokeWidth={8} />
           {[0, 1, 2, 3, 4].map((i) => <rect key={i} x={40 + i * 230} y={1150} width={120} height={14} rx={7} fill={KC.yellow} />)}
           <rect x={0} y={1000} width={KW} height={64} fill={TC.sabana} stroke={KC.ink} strokeWidth={7} />
           {[[200, 850, 0.95, KC.coral, 0], [330, 830, 1.05, KC.blue, 1], [770, 880, 1.0, KC.teal, 2], [900, 900, 0.8, KC.violet, 3], [650, 880, 0.7, KC.orange, 4]].map(([px, py, s, c, i]) =>
@@ -395,42 +421,42 @@ function TermitasShot() {
           <rect x={160} y={856} width={30} height={160} fill="#7a4a22" stroke={KC.ink} strokeWidth={6} /><rect x={890} y={856} width={30} height={160} fill="#7a4a22" stroke={KC.ink} strokeWidth={6} />
           {[[230, 0], [330, 1]].map(([hx, i]) => <g key={i}>{[0, 1, 2].map((k) => <Seta key={k} x={hx - 30 + k * 30} y={822 - (k === 1 ? 14 : 0)} s={0.42} sombrero="#efe7d6" escamas={false} anillo={false} />)}</g>)}
           <g opacity={kprog(T, K.M + 0.3, K.M + 0.8)}><Titanicus x={540} y={822} s={0.55} id="tM" /></g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 14 · cierre: el mismo montículo del inicio, ya con la seta encima y el panal a la vista */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="40% 55%">
         <FondoLunares color={KC.yellow} />
-        {fsvg(<g transform={`translate(${MX - MX * 1.1} ${MY - MY * 1.1}) scale(1.1)`}>
+        {fsvg(<g transform="translate(540 1000) scale(1.3) translate(-440 -850)"><g transform={`translate(${MX - MX * 1.1} ${MY - MY * 1.1}) scale(1.1)`}>
           <Sabana T={T} />
           <Monticulo T={T} x={MX} y={MY} corte={kprog(T, K.C + 0.3, K.C + 1.0)} seta={1} setaS={0.75} nod={0.7} />
           {filaEntrada(K.C)}
-        </g>)}
+        </g></g>)}
       </Escena>
 
       {/* textos en pantalla */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.9} until={K.G + 3.6} texto="casa de termitas" x={320} y={440} tam={46} />
       <Chip T={T} at={K.G + 2.2} until={K.N - 0.3} texto="granja de hongos" x={320} y={540} tam={44} borde={KC.gold} />
-      <Caja T={T} at={K.N + 0.3} until={K.F - 0.3} x={50} y={400} texto="termitas cultivadoras" tam={32} />
-      <Caja T={T} at={K.N + 0.6} until={K.F - 0.3} x={50} y={472} texto={<i>Macrotermitinae</i>} tam={32} />
-      <Caja T={T} at={K.N + 2.4} until={K.F - 0.3} x={50} y={544} texto={<span>hongo: <i>Termitomyces</i></span>} tam={32} />
-      <Etq T={T} at={K.N + 1.5} until={K.F - 0.3} x={60} y={1140} texto="mapa esquemático" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.F + 0.3} until={K.Pa - 0.3} texto="planta muerta" x={540} y={470} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.Pa + 0.2} until={K.H - 0.3} texto="POR DENTRO · esquemático" x={330} y={470} tam={30} borde={KC.gold} mono />
-      <Etq T={T} at={K.Pa + 1.2} until={K.H - 0.3} x={250} y={560} texto="bolitas de popó" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.Pa + 2.0} until={K.H - 0.3} x={60} y={1135} texto="panal de hongo (fungus comb)" tam={30} color={KC.gold2} />
-      <Chip T={T} at={K.H + 0.2} until={K.B - 0.3} texto="AL MICROSCOPIO · esquemático" x={540} y={470} tam={30} borde={KC.gold} mono />
-      <Etq T={T} at={K.H + 0.6} until={K.B - 0.3} x={60} y={575} texto="fibras de planta" tam={30} color="#d9c27a" />
-      <Etq T={T} at={K.H + 1.2} until={K.B - 0.3} x={60} y={1135} texto={'hifas del hongo'} tam={30} color={FK.hifa} />
-      <Chip T={T} at={K.B + 1.0} until={K.V - 0.3} texto="nódulo · esporas asexuales" x={770} y={330} tam={28} borde={KC.gold2} mono />
-      <Etq T={T} at={K.B + 2.4} until={K.V - 0.3} x={60} y={1135} texto="obrera joven: se los come" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.B + 3.4} until={K.V - 0.3} x={490} y={600} texto="panal nuevo" tam={30} color={KC.gold2} />
-      <Chip T={T} at={K.V + 0.3} until={K.P - 0.3} texto="panal viejo = comida" x={540} y={470} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.V + 1.0} until={K.P - 0.3} x={60} y={1135} texto="obreras viejas" tam={30} color={KC.texto} />
-      <Chip T={T} at={K.Es + 0.3} until={K.E - 0.3} texto="la mayoría" x={270} y={620} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.Es + 2.9} until={K.E - 0.3} texto="unas pocas" x={810} y={620} tam={38} borde={KC.ink} />
-      <Caja T={T} at={K.Es + 3.4} until={K.E - 0.3} x={810} y={880} centro texto={<span><i>Macrotermes bellicosus</i>: el rey</span>} tam={22} />
-      <Caja T={T} at={K.Es + 3.8} until={K.E - 0.3} x={810} y={945} centro texto={<span><i>Microtermes</i>: la reina</span>} tam={22} />
-      <Etq T={T} at={K.Es + 3.9} until={K.E - 0.3} x={820} y={710} lado="izq" texto="hongo adentro" tam={26} color={KC.texto} />
+      <Caja T={T} at={K.N + 0.3} until={K.F - 0.3} x={50} y={500} texto="termitas cultivadoras" tam={32} />
+      <Caja T={T} at={K.N + 0.6} until={K.F - 0.3} x={50} y={572} texto={<i>Macrotermitinae</i>} tam={32} />
+      <Caja T={T} at={K.N + 2.4} until={K.F - 0.3} x={50} y={644} texto={<span>hongo: <i>Termitomyces</i></span>} tam={32} />
+      <Etq T={T} at={K.N + 1.5} until={K.F - 0.3} x={60} y={1360} texto="mapa esquemático" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.F + 0.3} until={K.Pa - 0.3} texto="planta muerta" x={540} y={600} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.Pa + 0.2} until={K.H - 0.3} texto="POR DENTRO · esquemático" x={330} y={540} tam={30} borde={KC.gold} mono />
+      <Etq T={T} at={K.Pa + 1.2} until={K.H - 0.3} x={240} y={690} texto="bolitas de popó" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Pa + 2.0} until={K.H - 0.3} x={60} y={1360} texto="panal de hongo (fungus comb)" tam={30} color={KC.gold2} />
+      <Chip T={T} at={K.H + 0.2} until={K.B - 0.3} texto="AL MICROSCOPIO · esquemático" x={540} y={540} tam={30} borde={KC.gold} mono />
+      <Etq T={T} at={K.H + 0.6} until={K.B - 0.3} x={60} y={690} texto="fibras de planta" tam={30} color="#d9c27a" />
+      <Etq T={T} at={K.H + 1.2} until={K.B - 0.3} x={60} y={1330} texto={'hifas del hongo'} tam={30} color={FK.hifa} />
+      <Chip T={T} at={K.B + 1.0} until={K.V - 0.3} texto="nódulo · esporas asexuales" x={770} y={380} tam={28} borde={KC.gold2} mono />
+      <Etq T={T} at={K.B + 2.4} until={K.V - 0.3} x={60} y={1380} texto="obrera joven: se los come" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.B + 3.4} until={K.V - 0.3} x={500} y={730} texto="panal nuevo" tam={30} color={KC.gold2} />
+      <Chip T={T} at={K.V + 0.3} until={K.P - 0.3} texto="panal viejo = comida" x={540} y={540} tam={40} borde={KC.ink} />
+      <Etq T={T} at={K.V + 1.0} until={K.P - 0.3} x={60} y={1390} texto="obreras viejas" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.Es + 0.3} until={K.E - 0.3} texto="la mayoría" x={270} y={800} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.Es + 2.9} until={K.E - 0.3} texto="unas pocas" x={810} y={800} tam={38} borde={KC.ink} />
+      <Caja T={T} at={K.Es + 3.4} until={K.E - 0.3} x={810} y={1070} centro texto={<span><i>Macrotermes bellicosus</i>: el rey</span>} tam={22} />
+      <Caja T={T} at={K.Es + 3.8} until={K.E - 0.3} x={810} y={1135} centro texto={<span><i>Microtermes</i>: la reina</span>} tam={22} />
+      <Etq T={T} at={K.Es + 3.9} until={K.E - 0.3} x={820} y={890} lado="izq" texto="hongo adentro" tam={26} color={KC.texto} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.3} anio="2016" quien="Tanzania · cuenca del Rukwa" revista="Roberts y col. · PLoS ONE" x={540} y={400} />
       <Chip T={T} at={K.E + 2.6} until={K.O - 0.3} texto="≈ 25 millones de años" x={330} y={470} tam={38} borde={KC.gold} />
       <Etq T={T} at={K.E + 3.2} until={K.O - 0.3} x={60} y={640} texto="nido fósil (roca)" tam={30} color={KC.ink} />
@@ -438,9 +464,9 @@ function TermitasShot() {
       <Chip T={T} at={K.O + 0.2} until={K.Ti - 0.3} texto="nació en África" x={540} y={470} tam={40} borde={KC.ink} />
       <Etq T={T} at={K.O + 1.4} until={K.Ti - 0.3} x={60} y={560} texto="estimación (no edad exacta)" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Ti + 0.2} until={K.Ti + 2.5} texto="temporada de lluvias" x={540} y={300} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.Ti + 3.6} until={K.M - 0.3} x={MX + 120} y={760} lado="der" texto="pseudorriza al panal" tam={26} color={KC.texto} />
-      <Chip T={T} at={K.M + 0.2} until={K.C - 0.3} texto="Zambia · temporada de lluvias" x={370} y={470} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.M + 2.4} until={K.C - 0.3} x={60} y={560} texto="1 seta alcanza para una familia" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Ti + 3.6} until={K.M - 0.3} x={MX + 170} y={860} lado="der" texto="pseudorriza al panal" tam={26} color={KC.texto} />
+      <Chip T={T} at={K.M + 0.2} until={K.C - 0.3} texto="Zambia · temporada de lluvias" x={370} y={560} tam={30} borde={KC.ink} />
+      <Etq T={T} at={K.M + 2.4} until={K.C - 0.3} x={60} y={660} texto="1 seta alcanza para una familia" tam={26} color={KC.ink} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.N} texto="esquemático" largo={160} />
