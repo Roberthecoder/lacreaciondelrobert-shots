@@ -1,0 +1,1 @@
+- cie-39-moken: Doble (niños, rayas y barras 1.08× y bajados al centro, chip más abajo; también se ve así bajo el velo de Pregunta); Pupila (el ojo de frente, el corte con el cristalino, el diafragma y la foto bajan 50–80 px para no pegarse al logo y llenar el tercio de abajo). Sin barras de escala en esas escenas.

@@ -259,7 +259,7 @@ function Moken() {
   const buceo = kprog(T, K.Pueblo + 5.2, K.Pueblo + 7.4, kEase.suave);
   // Pupila
   const OX = 500, OY = 900, OR = 340;   // ojo en corte: grande y al centro (pase a mano cine)
-  const subir = kprog(T, K.Pupila + 1.8, K.Pupila + 2.5, kEase.suave), ojoY = klerp(820, 450, subir), ojoS = klerp(2.0, 1.45, subir);
+  const subir = kprog(T, K.Pupila + 1.8, K.Pupila + 2.5, kEase.suave), ojoY = klerp(900, 505, subir), ojoS = klerp(2.0, 1.45, subir);
   const rp = klerp(78, 34, kprog(T, K.Pupila + 0.3, K.Pupila + 2.0, kEase.suave));
   const lente = kprog(T, K.Pupila + 2.3, K.Pupila + 3.6, kEase.suave);
   const apert = klerp(1, 0.38, kprog(T, K.Pupila + 4.0, K.Pupila + 5.4, kEase.suave));
@@ -384,7 +384,7 @@ function Moken() {
       {/* 6 · el resultado: detalles más de dos veces más finos (los dos niños siguen en cuadro, cada uno sobre su tarjeta) */}
       <Escena T={T} a={K.Doble} b={K.Pregunta} zoom={0.03}>
         <FondoLunares color={KC.mint} />
-        <Lienzo>
+        <Lienzo><g transform="translate(540 1010) scale(1.08) translate(-540 -900)">
           {(() => { const e1 = kprog(T, K.Doble - 0.1, K.Doble + 0.35, kEase.rebote), e2 = kprog(T, K.Doble + 0.15, K.Doble + 0.6, kEase.rebote), en = kprog(T, K.Doble - 0.3, K.Doble + 0.3); return <g>
             <g opacity={en}>
               <NinoNadando x={300} y={540} s={0.72} rot={4} T={T} brazo={0.3} />
@@ -396,8 +396,8 @@ function Moken() {
             <BarraH x={140} y={1110} ancho={800} alto={64} v={RMK * kprog(T, K.Doble + 1.2, K.Doble + 2.0, kEase.sale)} color={KC.yellow} etiqueta="niños moken" />
             <BarraH x={140} y={1260} ancho={800} alto={64} v={REU * kprog(T, K.Doble + 1.2, K.Doble + 2.0, kEase.sale)} color="#fff" etiqueta="niños europeos" />
           </g>; })()}
-        </Lienzo>
-        <Chip T={T} at={K.Doble + 1.6} until={K.Pregunta - 0.1} texto="más de 2 veces más fino" x={540} y={330} tam={50} borde={KC.yellow} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Doble + 1.6} until={K.Pregunta - 0.1} texto="más de 2 veces más fino" x={540} y={400} tam={50} borde={KC.yellow} />
       </Escena>
 
       {/* 7 · pregunta */}
@@ -409,25 +409,25 @@ function Moken() {
         <Lienzo>
           <g opacity={kprog(T, K.Pupila - 0.2, K.Pupila + 0.3)}>
             <OjoFrente x={540} y={ojoY} s={ojoS} rp={rp} />
-            <Rotulo x={540 + rp * ojoS * Math.sin(1.1 * subir)} y={ojoY + rp * ojoS * Math.cos(1.1 * subir)} tx={klerp(540, 965, subir)} ty={klerp(1150, 650, subir)} texto="pupila" p={kprog(T, K.Pupila + 0.6, K.Pupila + 0.9)} />
+            <Rotulo x={540 + rp * ojoS * Math.sin(1.1 * subir)} y={ojoY + rp * ojoS * Math.cos(1.1 * subir)} tx={klerp(540, 965, subir)} ty={klerp(1230, 705, subir)} texto="pupila" p={kprog(T, K.Pupila + 0.6, K.Pupila + 0.9)} />
           </g>
           <g opacity={kprog(T, K.Pupila + 2.0, K.Pupila + 2.5)}>
-            <OjoLado cx={600} cy={850} R={185} T={T} lente={lente} />
-            <Rotulo x={600 + 0.6 * 185} y={850 + 0.3 * 185} tx={930} ty={1010} texto="cristalino" p={kprog(T, K.Pupila + 2.4, K.Pupila + 2.7)} />
-            {lente > 0.05 && [-1, 1].map((sg) => <path key={sg} d={`M ${600 + 111 + sg * 92} ${850 - 99} l ${-sg * 34} 0`} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" opacity={lente} />)}
+            <OjoLado cx={600} cy={900} R={185} T={T} lente={lente} />
+            <Rotulo x={600 + 0.6 * 185} y={900 + 0.3 * 185} tx={930} ty={1060} texto="cristalino" p={kprog(T, K.Pupila + 2.4, K.Pupila + 2.7)} />
+            {lente > 0.05 && [-1, 1].map((sg) => <path key={sg} d={`M ${600 + 111 + sg * 92} ${900 - 99} l ${-sg * 34} 0`} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" opacity={lente} />)}
           </g>
           <g opacity={kprog(T, K.Pupila + 3.8, K.Pupila + 4.2)}>
-            <Diafragma x={270} y={1265} r={120} a={apert} T={T} />
-            <g transform="translate(790 1265)">
+            <Diafragma x={270} y={1310} r={120} a={apert} T={T} />
+            <g transform="translate(790 1310)">
               <defs><clipPath id="foto"><rect x={-180} y={-125} width={360} height={250} rx={12} /></clipPath><Borr id="bfoto" d={klerp(14, 0, nitido)} /></defs>
               <rect x={-196} y={-141} width={392} height={282} rx={20} fill="#fff" stroke={KC.ink} strokeWidth={8} />
               <g clipPath="url(#foto)"><g filter="url(#bfoto)" transform="translate(-180 -125) scale(0.42) translate(-80 -900)">
                 <rect x={0} y={800} width={1080} height={700} fill={AGUA1} /><FondoMar T={T} y={1150} /></g></g>
             </g>
-            <FlechaRecta x1={425} y1={1265} x2={570} y2={1265} p={kprog(T, K.Pupila + 4.4, K.Pupila + 4.9)} color={KC.yellow} grosor={12} />
+            <FlechaRecta x1={425} y1={1310} x2={570} y2={1310} p={kprog(T, K.Pupila + 4.4, K.Pupila + 4.9)} color={KC.yellow} grosor={12} />
           </g>
         </Lienzo>
-        <Chip T={T} at={K.Pupila + 5.6} until={K.Entrenar - 0.1} texto="más nítido" x={790} y={1465} tam={42} borde={KC.leaf} />
+        <Chip T={T} at={K.Pupila + 5.6} until={K.Entrenar - 0.1} texto="más nítido" x={790} y={1505} tam={42} borde={KC.leaf} />
       </Escena>
 
       {/* 9 · 2006: niños europeos entrenados un mes también lo lograron (el niño que entrena está en cuadro) */}
