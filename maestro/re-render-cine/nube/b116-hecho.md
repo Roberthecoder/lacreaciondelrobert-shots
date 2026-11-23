@@ -1,1 +1,2 @@
 - qui-47-agua-mineral: Gancho («ÁCIDO» más chico: ya no se corta en el borde derecho), pH (rótulos «aguas minerales con gas» y «agua de la llave» ya no se enciman con la barra de pH).
+- ia-47-olimpiada-mate: sin cambios: revisadas las 12 escenas, ya cumplía (sujetos centrados, sin números fantasma ni encimados fuera de las disolvencias; auditores «sin láminas» y «encuadre bien»).
