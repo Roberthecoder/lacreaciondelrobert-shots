@@ -1,0 +1,1 @@
+- ia-22-ia-come-ia: Gancho: la hoja «texto de entrada» y su flecha se recorren para no cortarse a la derecha; Liebres (y Pregunta): la hoja Gen 9 crece (0.95→1.05) y baja con las liebres y sus chips al centro (antes cargada arriba); Acumular: las dos pilas bajan 30 px con sus chips reacomodados. Auditores: sin láminas · encuadre bien.
