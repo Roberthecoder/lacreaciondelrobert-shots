@@ -290,7 +290,7 @@ function CoprinaShot() {
       <Escena T={T} a={K.Cp} b={K.E} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<CoprinaMol x={735} y={1070} s={1.27} parte={kprog(T, K.Cp + 0.5, K.Cp + 1.6)} T={T} />)}
+        {fsvg(<CoprinaMol x={735} y={1060} s={1.6} parte={kprog(T, K.Cp + 0.5, K.Cp + 1.6)} T={T} />)}
       </Escena>
       {/* 5 · bloquea la aldehído deshidrogenasa (hígado) */}
       <Escena T={T} a={K.E} b={K.P} zoom={0.05}>
@@ -323,7 +323,7 @@ function CoprinaShot() {
         </>)}
       </Escena>
       {/* 8 · síntomas */}
-      <Escena T={T} a={K.S} b={K.V} zoom={0.04}>
+      <Escena T={T} a={K.S} b={K.V - 0.5} zoom={0.04}>
         <FondoLunares color={KC.coral} />
         {fsvg(<>
           <Cara T={T} x={370} y={800} r={270} rojo={rubor} nausea={naus} />
@@ -332,14 +332,14 @@ function CoprinaShot() {
         </>)}
       </Escena>
       {/* 9 · ventana de hasta 3 días */}
-      <Escena T={T} a={K.V} b={K.Es} zoom={0.04}>
+      <Escena T={T} a={K.V} b={K.Es - 0.5} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
           {[0, 1, 2, 3].map((d) => <g key={d} transform={`translate(${290 + (d % 2) * 500} ${610 + Math.floor(d / 2) * 530}) scale(1.85)`}><DiaCard T={T} x={0} y={0} dia={d} hongo={d === 0} on={d ? kprog(T, K.V + 0.5 + d * 0.45, K.V + 0.8 + d * 0.45) : 0} /></g>)}
         </>)}
       </Escena>
       {/* 10 · Múnich, 2011: otro hongo (Lepiota aspera), la reacción volvía hasta 48 h */}
-      <Escena T={T} a={K.Es} b={K.D} zoom={0.04}>
+      <Escena T={T} a={K.Es} b={K.D - 0.5} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <Pasto T={T} y={1300} />
@@ -355,7 +355,7 @@ function CoprinaShot() {
         </>)}
       </Escena>
       {/* 11 · se estudió como medicina contra el alcoholismo; en ratas dañó los testículos */}
-      <Escena T={T} a={K.D} b={K.C} zoom={0.04}>
+      <Escena T={T} a={K.D} b={K.C - 0.5} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
           <rect x={-20} y={1300} width={KW + 40} height={800} fill="#241d3a" stroke={KC.ink} strokeWidth={8} />
@@ -398,30 +398,31 @@ function CoprinaShot() {
       <Etq T={T} at={K.A + 2.0} until={K.S - 0.3} x={760} y={1140} texto="ALDH" tam={34} color={KC.texto} />
       <Medidor T={T} at={LOCK - 0.2} until={K.S - 0.3} valor={0.12 + 0.85 * acum} etiqueta="acetaldehído" texto={() => 'se acumula'} y={1250} color={CA.acetal} />
       <Cronometro T={T} at={K.S + 0.2} until={K.S + 3.4} factor={90} etiqueta="DESPUÉS DE BEBER" x={800} y={520} />
-      <Etq T={T} at={K.S + 0.9} until={K.V - 0.3} x={60} y={1130} texto="cara roja" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.S + 1.6} until={K.V - 0.3} x={1040} y={1320} lado="izq" texto="corazón acelerado" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.S + 0.9} until={K.V - 0.6} x={60} y={1130} texto="cara roja" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.S + 1.6} until={K.V - 0.6} x={1040} y={1320} lado="izq" texto="corazón acelerado" tam={32} color={KC.ink} />
       <Etq T={T} at={K.S + 2.5} until={K.S + 3.5} x={60} y={1190} texto="náusea y vómito" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.S + 3.9} until={K.V - 0.25} texto="= efecto del disulfiram, fármaco contra el alcoholismo" x={540} y={1470} tam={30} borde={KC.blue} />
-      <Chip T={T} at={K.V + 2.0} until={K.Es - 0.25} texto="hasta ~3 días después del hongo" x={540} y={1470} tam={42} borde={KC.red} />
+      <Chip T={T} at={K.S + 3.9} until={K.V - 0.6} texto="= efecto del disulfiram, fármaco contra el alcoholismo" x={540} y={1470} tam={30} borde={KC.blue} />
+      <Chip T={T} at={K.V + 2.0} until={K.Es - 0.6} texto="hasta ~3 días después del hongo" x={540} y={1470} tam={42} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.0} anio="2011" quien="Centro de toxicología de Múnich" revista="Haberl et al., Clinical Toxicology" x={730} y={480} />
       <Chip T={T} at={K.Es + 1.2} until={K.Es + 3.0} texto="5 pacientes · otro hongo" x={770} y={720} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.Es + 3.2} until={K.D - 0.3} x={60} y={400} texto="Lepiota aspera" it tam={40} color={KC.ink} />
-      <Etq T={T} at={K.Es + 3.5} until={K.D - 0.3} x={60} y={456} texto="su toxina: desconocida en 2011" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Es + 4.0} until={K.D - 0.3} x={545} y={860} texto="la reacción volvía al beber" tam={25} color={KC.ink} />
+      <Etq T={T} at={K.Es + 3.2} until={K.D - 0.6} x={60} y={400} texto="Lepiota aspera" it tam={40} color={KC.ink} />
+      <Etq T={T} at={K.Es + 3.5} until={K.D - 0.6} x={60} y={456} texto="su toxina: desconocida en 2011" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Es + 4.0} until={K.D - 0.6} x={545} y={860} texto="la reacción volvía al beber" tam={28} color={KC.ink} />
       <Chip T={T} at={K.D + 0.4} until={K.D + 2.5} texto="¿medicina contra el alcoholismo?" x={540} y={560} tam={40} borde={KC.ink} />
-      <SelloRect T={T} at={K.D + 3.6} x={290} y={900} texto="DESCARTADA" until={K.C - 0.1} />
-      <Chip T={T} at={K.D + 3.0} until={K.C - 0.25} texto="en ratas: daño en testículos" x={540} y={1440} tam={40} borde={KC.red} />
-      <Etq T={T} at={K.D + 3.1} until={K.C - 0.3} x={600} y={1040} texto="rata de laboratorio" tam={30} color={KC.ink} />
+      <SelloRect T={T} at={K.D + 3.6} x={290} y={900} texto="DESCARTADA" until={K.C - 0.6} />
+      <Chip T={T} at={K.D + 3.0} until={K.C - 0.6} texto="en ratas: daño en testículos" x={540} y={1440} tam={40} borde={KC.red} />
+      <Etq T={T} at={K.D + 3.1} until={K.C - 0.6} x={600} y={1040} texto="rata de laboratorio" tam={30} color={KC.ink} />
       <Chip T={T} at={K.C + 1.0} until={K.C + 3.4} texto="comestible… según lo que hagas después" x={540} y={1430} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="ante la duda: no lo comas" x={540} y={420} tam={44} borde={KC.red} />
       <Chip T={T} at={K.C + 4.6} until={K.Ou} texto="¿te sientes mal? → urgencias" x={540} y={1430} tam={40} borde={KC.red} />
-      <Etq T={T} at={K.C + 0.8} until={K.Ou} x={40} y={300} texto="No es guía para identificar hongos" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.C + 0.8} until={K.Ou} x={40} y={300} texto="No es guía para identificar hongos" tam={26} color={KC.ink} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.N} texto="5 cm" largo={179} color={KC.ink} />
       <BarraEscala T={T} at={K.N} until={K.Co} texto="5 cm" largo={225} />
       <BarraEscala T={T} at={K.Co} until={K.Cp} texto="5 cm" largo={240} />
-      <BarraEscala T={T} at={K.Cp} until={K.P} texto="1 nm · esquemático" largo={123} />
+      <BarraEscala T={T} at={K.Cp} until={K.E} texto="1 nm · esquemático" largo={155} />
+      <BarraEscala T={T} at={K.E} until={K.P} texto="1 nm · esquemático" largo={123} />
       <BarraEscala T={T} at={K.P} until={K.A} texto="10 cm" largo={217} />
       <BarraEscala T={T} at={K.A} until={K.S} texto="esquemático" largo={120} />
       <BarraEscala T={T} at={K.Es} until={K.D} texto="5 cm" largo={265} />

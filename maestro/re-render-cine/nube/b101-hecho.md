@@ -1,1 +1,2 @@
 - ia-41-concurso-arte: Regla→Cierre: la escena y las dos tarjetas de la regla se van antes de que entre la pared de cuadros (ya no se enciman); demás escenas ya cumplían (revisadas cuadro por cuadro)
+- fun-114-hongo-cerveza: Coprina: molécula ×1.26 más grande (barra de 1 nm recalculada solo en esa escena); disolvencias limpias Síntomas→Ventana→Estudio→Dato→Cierre (escenas, etiquetas, chips y sello se van antes de que entre lo siguiente); textos chicos subidos a 26–28 px
