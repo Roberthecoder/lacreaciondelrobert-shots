@@ -162,14 +162,14 @@ function Antiacido() {
       </Escena>
       {/* 1 · las células parietales hacen el HCl (micro, fondo noche) */}
       <Escena T={T} a={K.A} b={K.P} fondo={KC.noche}>
-        <SvgCapa>
-          <rect x={0} y={1060} width={KW} height={260} fill="#221426" />
+        <SvgCapa><g transform="translate(540 1010) scale(1.25) translate(-540 -980)">
+          <rect x={-120} y={1060} width={KW + 240} height={260} fill="#221426" />
           {[230, 540, 850].map((cx, i) => <Parietal key={i} T={T} x={cx} y={1000} />)}
           {[230, 540, 850].map((cx, i) => <Emision key={i} T={T} x={cx} y={880} desde={K.A + 0.5 + i * 0.2} alto={300} />)}
           <text x={760} y={500} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="rgba(246,243,236,.7)">interior del estómago</text>
-        </SvgCapa>
-        <div style={{ position:'absolute', left:80, top:1190, zIndex:40, color:KC.texto, font:`700 26px ${KF.mono}`, textShadow:KSOMBRA }}>
-          <div style={{ marginBottom:8 }}>10 µm</div><div style={{ width:110, height:8, background:KC.texto, borderRadius:4 }}></div></div>
+        </g></SvgCapa>
+        <div style={{ position:'absolute', left:80, top:1330, zIndex:40, color:KC.texto, font:`700 26px ${KF.mono}`, textShadow:KSOMBRA }}>
+          <div style={{ marginBottom:8 }}>10 µm</div><div style={{ width:138, height:8, background:KC.texto, borderRadius:4 }}></div></div>
       </Escena>
       {/* 2 · pH 1.7 en ayunas (1990): la cápsula medidora, grande, cae al ácido */}
       <Escena T={T} a={K.P} b={K.Ag} fondo="#14301f">
@@ -233,7 +233,7 @@ function Antiacido() {
           <defs><GradAcido id="acg2" /></defs>
           <g transform="translate(540 1100) scale(1.5) translate(-640 -1060)">
             <path d={`M -100 ${1060 + Math.sin(T * 3) * 8} Q 270 ${1040} 540 ${1060} T 1180 ${1055} L 1180 1700 L -100 1700 Z`} fill="url(#acg2)" opacity={0.9} />
-            <g transform={`translate(640 1080) scale(${1 - kprog(T, K.Ga + 0.3, K.Pr, kEase.suave) * 0.5})`}>
+            <g transform={`translate(640 1080) scale(${1.7 - kprog(T, K.Ga + 0.3, K.Pr, kEase.suave) * 0.85})`}>
               <rect x={-70} y={-50} width={140} height={100} rx={20} fill="#f6f3ec" stroke={KC.ink} strokeWidth={7} />
               <text y={14} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}`, stroke:'none' }} fill={TINTA}>CaCO₃</text>
             </g>
@@ -248,8 +248,8 @@ function Antiacido() {
         <SvgCapa>
           {/* detrás queda a media luz la escena anterior (ácido, CaCO₃ y CO₂): la pone cine.jsx */}
           <text x={540} y={1075} textAnchor="middle" style={{ font:`400 470px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 900)`}>?</text>
-          <Pastilla x={290} y={1330} s={2.3} rot={Math.sin(T * 2) * 10} />
-          <CapsulaOmep x={790} y={1330} s={1.8} rot={-20 + Math.sin(T * 2.4) * 10} />
+          <Pastilla x={290} y={1270} s={3.4} rot={Math.sin(T * 2) * 10} />
+          <CapsulaOmep x={790} y={1270} s={2.7} rot={-20 + Math.sin(T * 2.4) * 10} />
         </SvgCapa>
       </Escena>
       {/* 7 · antiácido (arriba) vs. omeprazol (abajo): cada mitad 1.3x */}
