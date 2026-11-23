@@ -1,0 +1,1 @@
+- ia-55-tutor-nigeria: Gancho: calendario y «≈2 años» más abajo y más grande el número (encuadre bien); Lugar: mapa, escuelas y chips bajados al centro; Resultado: las barras ya están creciendo desde que empieza la escena (ya no queda solo el número: sin láminas); Equivalencia: calendario y barras bajados; disolvencias limpias Resultado→Equivalencia→Peros y Chicas→Cierre

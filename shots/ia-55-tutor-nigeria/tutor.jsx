@@ -165,24 +165,24 @@ function Tutor() {
       {/* 0 · gancho: 6 semanas de tardes que se tachan */}
       <Escena T={T} a={K.G} b={K.L}>
         <FondoLunares color={KC.yellow} />
-        {svgT(<Calendario x={540} y={klerp(950, 720, calG)} s={klerp(1.75, 1.25, calG)} tachados={30 * kprog(T, K.G + 0.05, K.G + 3.6, kEase.suave)} />)}
+        {svgT(<Calendario x={540} y={klerp(1030, 860, calG)} s={klerp(1.75, 1.05, calG)} tachados={30 * kprog(T, K.G + 0.05, K.G + 3.6, kEase.suave)} />)}
       </Escena>
-      <Chip T={T} at={K.G + 4.7} until={K.L - 0.2} texto="6 semanas =" x={540} y={1130} tam={44} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.G + 5.0} until={K.L - 0.2} valor={2} dur={0.6} prefijo="≈" sufijo=" años*" etiqueta="hasta" x={540} y={1310} tam={170} color={KC.mint} />
-      <Chip T={T} at={K.G + 5.6} until={K.L - 0.2} texto="*equivalencia estimada · investigadores del Banco Mundial" x={540} y={1495} tam={27} borde={KC.ink} />
+      <Chip T={T} at={K.G + 4.7} until={K.L - 0.2} texto="6 semanas =" x={540} y={1200} tam={44} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.G + 5.0} until={K.L - 0.2} valor={2} dur={0.6} prefijo="≈" sufijo=" años*" etiqueta="hasta" x={540} y={1375} tam={220} color={KC.mint} />
+      <Chip T={T} at={K.G + 5.6} until={K.L - 0.2} texto="*equivalencia estimada · investigadores del Banco Mundial" x={540} y={1540} tam={27} borde={KC.ink} />
 
       {/* 1 · lugar */}
       <Escena T={T} a={K.L} b={K.S}>
         <FondoLunares color={KC.mint} />
         {svgT(<>
-          <MapaAfrica T={T} x={540} y={790} k={12} pin={kprog(T, K.L + 0.4, K.L + 0.9, kEase.rebote)} />
-          {Array.from({ length: 9 }, (_, i) => <Escuela key={i} x={124 + i * 104} y={1365} s={1} o={kprog(T, K.L + 3.0 + i * 0.12, K.L + 3.3 + i * 0.12)} />)}
+          <MapaAfrica T={T} x={540} y={880} k={12} pin={kprog(T, K.L + 0.4, K.L + 0.9, kEase.rebote)} />
+          {Array.from({ length: 9 }, (_, i) => <Escuela key={i} x={124 + i * 104} y={1420} s={1} o={kprog(T, K.L + 3.0 + i * 0.12, K.L + 3.3 + i * 0.12)} />)}
         </>)}
       </Escena>
-      <Chip T={T} at={K.L + 0.8} until={K.S - 0.2} texto="Benin City, Nigeria" x={235} y={915} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.L + 1.5} until={K.S - 0.2} texto="junio–julio 2024" x={235} y={1008} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.L + 2.3} until={K.S - 0.2} texto="1.º de prepa · ~15 años" x={235} y={1100} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.L + 3.6} until={K.S - 0.2} texto="9 escuelas públicas" x={540} y={1510} tam={36} borde={KC.leaf} />
+      <Chip T={T} at={K.L + 0.8} until={K.S - 0.2} texto="Benin City, Nigeria" x={235} y={1005} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.L + 1.5} until={K.S - 0.2} texto="junio–julio 2024" x={235} y={1098} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.L + 2.3} until={K.S - 0.2} texto="1.º de prepa · ~15 años" x={235} y={1190} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.L + 3.6} until={K.S - 0.2} texto="9 escuelas públicas" x={540} y={1540} tam={36} borde={KC.leaf} />
 
       {/* 2 · sesiones en el laboratorio */}
       <Escena T={T} a={K.S} b={K.M}>
@@ -245,11 +245,11 @@ function Tutor() {
       </Escena>
 
       {/* 6 · resultado */}
-      <Escena T={T} a={K.R} b={K.E}>
+      <Escena T={T} a={K.R} b={K.E - 0.5}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svgT(<>
           <line x1={90} y1={1400} x2={990} y2={1400} stroke={KC.ink} strokeWidth={6} />
-          {alturas.map((h0, i) => { const h = h0 * 1.9; const g = kprog(T, K.R + 1.6 + i * 0.08, K.R + 2.2 + i * 0.08, kEase.sale), abajo = i < 8 && T > K.R + 3.4;
+          {alturas.map((h0, i) => { const h = h0 * 1.9; const g = kprog(T, K.R - 0.2 + i * 0.12, K.R + 0.8 + i * 0.12, kEase.sale), abajo = i < 8 && T > K.R + 3.4;
             return <rect key={i} x={110 + i * 88} y={1400 - h * g} width={64} height={h * g} rx={6} fill={abajo ? '#9aa0ab' : (i < 8 ? '#c9ccd3' : '#c9ccd3')} stroke={KC.ink} strokeWidth={4} />; })}
           {T > K.R + 2.8 && <g opacity={kprog(T, K.R + 2.8, K.R + 3.2)}>
             <line x1={90} y1={982} x2={90 + 900 * kprog(T, K.R + 2.8, K.R + 3.5, kEase.sale)} y2={982} stroke={KC.gold} strokeWidth={12} strokeLinecap="round" />
@@ -258,21 +258,21 @@ function Tutor() {
           {T > K.R + 3.4 && <text x={380} y={1050} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.R + 3.4, K.R + 3.8)}>8 de 10 quedan abajo</text>}
         </>)}
       </Escena>
-      <NumeroGigante T={T} at={K.R + 0.2} until={K.E - 0.2} valor={0.31} dec={2} prefijo="+" sufijo=" σ" etiqueta="" x={540} y={400} tam={190} color={KC.gold2} />
-      <Chip T={T} at={K.R + 0.7} until={K.E - 0.2} texto="examen completo · inglés: +0.23 σ" x={540} y={560} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.R + 2.0} until={K.E - 0.2} texto="programas probados con sorteo · países de ingreso bajo y medio (esquemático)" x={540} y={1475} tam={22} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.R + 0.2} until={K.E - 0.6} valor={0.31} dec={2} prefijo="+" sufijo=" σ" etiqueta="" x={540} y={400} tam={190} color={KC.gold2} />
+      <Chip T={T} at={K.R + 0.7} until={K.E - 0.6} texto="examen completo · inglés: +0.23 σ" x={540} y={560} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.R + 2.0} until={K.E - 0.6} texto="programas probados con sorteo · países de ingreso bajo y medio (esquemático)" x={540} y={1475} tam={22} borde={KC.ink} />
 
       {/* 7 · la equivalencia */}
-      <Escena T={T} a={K.E} b={K.Pe}>
+      <Escena T={T} a={K.E} b={K.Pe - 0.5}>
         <FondoLunares color={KC.yellow} />
-        {svgT(<Calendario x={klerp(540, 780, calE)} y={klerp(1140, 700, calE)} s={klerp(1.45, 0.92, calE)} tachados={30} />)}
+        {svgT(<Calendario x={klerp(540, 780, calE)} y={klerp(1140, 800, calE)} s={klerp(1.45, 0.92, calE)} tachados={30} />)}
       </Escena>
       <MitoTachado T={T} at={K.E + 0.2} tacharEn={K.E + 1.2} until={K.E + 3.0} texto="«aprendieron 2 años de temario»" y={270} tam={40} />
       <NumeroGigante T={T} at={K.E + 0.4} until={K.E + 1.8} valor={2} dur={0.5} sufijo=" años" etiqueta="¿de temario?" x={540} y={455} tam={170} color={KC.red} />
-      <BarraTiempo T={T} at={K.E + 2.0} until={K.Pe - 0.2} x={70} y={600} ancho={70} color={KC.gold2} etiqueta="piloto con tutor de IA" valor="6 semanas" />
-      <BarraTiempo T={T} at={K.E + 3.2} until={K.Pe - 0.2} x={70} y={1040} ancho={760} color={KC.mint} etiqueta="mejora equivalente a…" valor="" dur={1.6} />
-      <Chip T={T} at={K.E + 4.6} until={K.Pe - 0.2} texto="1.5 a 2 años de escuela normal en Nigeria" x={540} y={1265} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.E + 5.2} until={K.Pe - 0.2} texto="equivalencia estimada (método EYOS)" x={540} y={1355} tam={28} borde={KC.ink} />
+      <BarraTiempo T={T} at={K.E + 2.0} until={K.Pe - 0.6} x={70} y={700} ancho={70} color={KC.gold2} etiqueta="piloto con tutor de IA" valor="6 semanas" />
+      <BarraTiempo T={T} at={K.E + 3.2} until={K.Pe - 0.6} x={70} y={1170} ancho={760} color={KC.mint} etiqueta="mejora equivalente a…" valor="" dur={1.6} />
+      <Chip T={T} at={K.E + 4.6} until={K.Pe - 0.6} texto="1.5 a 2 años de escuela normal en Nigeria" x={540} y={1380} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.E + 5.2} until={K.Pe - 0.6} texto="equivalencia estimada (método EYOS)" x={540} y={1470} tam={28} borde={KC.ink} />
 
       {/* 8 · los peros */}
       <Escena T={T} a={K.Pe} b={K.Ch}>
@@ -293,7 +293,7 @@ function Tutor() {
       <Nota T={T} at={K.Pe + 3.4} texto="¿Dura? Aún no se sabe" until={K.Ch - 0.2} x={540} y={660} rot={-1.5} color={KC.mint} ancho={780} />
 
       {/* 9 · las chicas */}
-      <Escena T={T} a={K.Ch} b={K.C}>
+      <Escena T={T} a={K.Ch} b={K.C - 0.5}>
         <FondoLunares color={KC.lilac} />
         {svgT(<>
           <line x1={150} y1={1400} x2={930} y2={1400} stroke={KC.ink} strokeWidth={6} />
@@ -305,8 +305,8 @@ function Tutor() {
               <text x={o.x + 115} y={1462} textAnchor="middle" style={{ font:`900 48px ${KF.texto}` }} fill={KC.ink}>{o.t}</text></g>; })}
         </>)}
       </Escena>
-      <Chip T={T} at={K.Ch + 0.4} until={K.C - 0.2} texto="antes - - -  ·  después ▮" x={540} y={290} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Ch + 1.8} until={K.C - 0.2} texto="con cautela · esquemático" x={540} y={372} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.Ch + 0.4} until={K.C - 0.6} texto="antes - - -  ·  después ▮" x={540} y={290} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Ch + 1.8} until={K.C - 0.6} texto="con cautela · esquemático" x={540} y={372} tam={28} borde={KC.ink} />
 
       {/* 10 · cierre: el mismo calendario, ahora con la maestra al lado */}
       <Escena T={T} a={K.C} b={FIN}>
