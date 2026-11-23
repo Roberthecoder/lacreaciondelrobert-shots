@@ -189,8 +189,10 @@ function Macetas({ T, at }) {
     {pots.map((x, i) => { const on = kEase.rebote(kprog(T, at + 0.4 + i * 0.12, at + 0.8 + i * 0.12)); return <g key={i} transform={`translate(${x} 1090) scale(${on})`}>
       {Array.from({ length: 9 }, (_, j) => { const dx = -80 + j * 20, h = 90 + ((j * 37) % 50), sw = mece(T, i * 9 + j, 0.4) * 6;
         return <path key={j} d={`M ${dx} -150 Q ${dx + sw} ${-150 - h * 0.6} ${dx + sw * 2 + (j % 2 ? 12 : -12)} ${-150 - h}`} stroke={j % 3 ? '#5fae3a' : '#3f8f2a'} strokeWidth={9} fill="none" strokeLinecap="round" />; })}
-      <path d="M -100 -160 L 100 -160 L 80 0 L -80 0 Z" fill={KC.orange} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
-      <rect x={-112} y={-180} width={224} height={30} rx={8} fill={KC.coral} stroke={KC.ink} strokeWidth={7} />
+      <defs><linearGradient id="barroMac" x1="0" y1="0" x2="1" y2="0.4"><stop offset="0%" stopColor="#d98450" /><stop offset="55%" stopColor="#b45f30" /><stop offset="100%" stopColor="#7c3b1c" /></linearGradient></defs>
+      <path d="M -100 -160 L 100 -160 L 80 0 L -80 0 Z" fill="url(#barroMac)" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
+      <path d="M -78 -140 L -64 -18" stroke="#f2b48a" strokeWidth={8} strokeLinecap="round" opacity=".35" />
+      <rect x={-112} y={-180} width={224} height={30} rx={8} fill="#c2693a" stroke={KC.ink} strokeWidth={6} />
     </g>; })}
   </>);
 }

@@ -1,1 +1,2 @@
 - ia-45-pronostico-clima: Gancho: supercomputadora, chip, relojes, chip de núcleos y las dos barras de carrera bajados 110 px juntos (antes todo cargado arriba con el último tercio vacío). Las demás escenas ya cumplían (globo, red, mapas, cuadrícula, ciclones, monitores, celular).
+- fun-124-sequia-suelo: Estudio: las macetas pasan de naranja plano chillón a barro con degradado, brillo lateral y borde más fino. El resto ya cumplía al mirarlo (terrón con su escenario de suelo, poros, hifas, redes, panel húmeda/seca, hipótesis, lluvia y cierre).
