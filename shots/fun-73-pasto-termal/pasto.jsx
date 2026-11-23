@@ -155,12 +155,12 @@ function PastoShot() {
       <Escena T={T} a={K.S} b={K.J} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <g transform="translate(540 960) scale(1.2) translate(-485 -835)">
+          <g transform="translate(540 960) scale(1.12) translate(-500 -835)">
           {(() => { const m = kprog(T, K.S + 1.6, K.S + 3.0); return <>
             <rect x={60} y={880} width={420} height={150} rx={20} fill={PX.tierra} stroke={KC.ink} strokeWidth={7} />
             <Pasto T={T} x={270} y={882} s={0.8} salud={1 - m * 0.85} seed={6} />
-            <Petri x={760} y={900} r={150}><Colonia cx={0} cy={0} r={klerp(30, 70, kprog(T, K.S, K.S + 1.4)) * (1 - m * 0.15)} color={mixHex('#f3e2c0', '#9a8f80', m)} seed={4} /></Petri>
-            {[[270, 760], [760, 760]].map(([a, b], i) => { const x = kprog(T, K.S + 2.6 + i * 0.2, K.S + 3.0 + i * 0.2, kEase.rebote); return x > 0 &&
+            <Petri x={800} y={900} r={150}><Colonia cx={0} cy={0} r={klerp(30, 70, kprog(T, K.S, K.S + 1.4)) * (1 - m * 0.15)} color={mixHex('#f3e2c0', '#9a8f80', m)} seed={4} /></Petri>
+            {[[270, 760], [800, 760]].map(([a, b], i) => { const x = kprog(T, K.S + 2.6 + i * 0.2, K.S + 3.0 + i * 0.2, kEase.rebote); return x > 0 &&
               <path key={i} d="M -60 -60 L 60 60 M 60 -60 L -60 60" transform={`translate(${a} ${b}) scale(${x})`} stroke={KC.red} strokeWidth={22} strokeLinecap="round" />; })}
           </>; })()}
           <Termo x={520} y={1030} s={0.7} valor={klerp(25, 38, kprog(T, K.S + 0.4, K.S + 1.6))} />
@@ -294,7 +294,7 @@ function PastoShot() {
       <BarraEscala T={T} at={K.G} until={K.L} texto="10 cm" largo={160} y={1450} />
       <BarraEscala T={T} at={K.L} until={K.E} texto="paisaje esquemático" largo={0} y={1450} />
       <BarraEscala T={T} at={K.E} until={K.S} texto="20 µm" largo={150} y={1450} />
-      <BarraEscala T={T} at={K.S} until={K.J} texto="10 cm" largo={150} y={1450} />
+      <BarraEscala T={T} at={K.S} until={K.J} texto="10 cm" largo={150 * 1.12 / 1.2} y={1450} />
       <BarraEscala T={T} at={K.J} until={K.P} texto="10 cm" largo={160} y={1450} />
       <BarraEscala T={T} at={K.P} until={K.Es} texto="10 cm" largo={170} y={1450} />
       <BarraEscala T={T} at={K.Es} until={K.Ji} texto="dibujo esquemático" largo={0} y={1450} />
