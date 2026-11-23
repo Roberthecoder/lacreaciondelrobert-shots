@@ -1,0 +1,1 @@
+- cie-41-cerebro-congelado: Rapido: el título «MENOS DE 2 MIN» se salía por los dos lados (118→92 px), ahora cabe entero; Resultado: la arteria de cerca sube 20 px y los medidores arteria/dolor suben 60–70 px (ya no bajan de y≈1560). El resto ya cumplía. Auditores: sin láminas · encuadre bien.

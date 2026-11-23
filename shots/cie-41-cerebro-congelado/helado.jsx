@@ -337,7 +337,7 @@ function Helado41() {
             <path d="M -30 70 C 20 40 80 0 95 -55 C 100 -80 60 -100 20 -100" fill="none" stroke={HSANGRE} strokeWidth={5 + 8 * ancho} strokeLinecap="round" />
           </g>
           {/* el tubo de cerca */}
-          {(() => { const h = 70 + 90 * ancho, y0 = 1190;
+          {(() => { const h = 70 + 90 * ancho, y0 = 1170;
             return <g opacity={kprog(T, K.Resultado - 0.1, K.Resultado + 0.4)}>
               <rect x={60} y={y0 - h / 2 - 12} width={960} height={h + 24} rx={(h + 24) / 2} fill="#a3364a" stroke={KC.ink} strokeWidth={8} />
               <rect x={60} y={y0 - h / 2} width={960} height={h} rx={h / 2} fill={HSANGRE} />
@@ -349,8 +349,8 @@ function Helado41() {
           <Latidos x={RC.x + 370} y={RC.y - 90} T={T} o={dolorR} r1={100} />
         </Lienzo>
         <Etq T={T} at={K.Resultado + 0.7} until={K.Lengua - 0.2} x={575} y={1040} texto="una arteria del cerebro" lado="der" color={KC.texto} tam={24} />
-        <Medidor T={T} at={K.Resultado + 1.0} until={K.Lengua - 0.1} valor={() => 0.3 + 0.7 * ancho} etiqueta="arteria" texto={() => (ancho > 0.5 ? 'se ensancha' : baja > 0.5 ? 'se cierra' : 'normal')} x={230} y={1405} ancho={620} color={HSANGRE} />
-        <Medidor T={T} at={K.Resultado + 1.0} until={K.Lengua - 0.1} valor={() => dolorR} etiqueta="dolor" texto={() => (dolorR > 0.5 ? '¡duele!' : baja > 0.5 ? 'se quita' : 'nada')} x={230} y={1505} ancho={620} color={KC.yellow} />
+        <Medidor T={T} at={K.Resultado + 1.0} until={K.Lengua - 0.1} valor={() => 0.3 + 0.7 * ancho} etiqueta="arteria" texto={() => (ancho > 0.5 ? 'se ensancha' : baja > 0.5 ? 'se cierra' : 'normal')} x={230} y={1345} ancho={620} color={HSANGRE} />
+        <Medidor T={T} at={K.Resultado + 1.0} until={K.Lengua - 0.1} valor={() => dolorR} etiqueta="dolor" texto={() => (dolorR > 0.5 ? '¡duele!' : baja > 0.5 ? 'se quita' : 'nada')} x={230} y={1435} ancho={620} color={KC.yellow} />
         <Chip T={T} at={K.Resultado + 2.6} until={K.Resultado + 4.5} texto="¡al mismo tiempo!" x={540} y={300} tam={44} borde={KC.yellow} />
       </Escena>
 
@@ -378,7 +378,7 @@ function Helado41() {
           <g transform={`translate(540 960) scale(${klerp(0.6, 1, kprog(T, K.Rapido - 0.2, K.Rapido + 0.3, kEase.rebote))}) translate(-540 -960)`}>
             <Reloj x={540} y={960} r={310} p={0.8 * kprog(T, K.Rapido + 0.2, K.Rapido + 2.6, kEase.suave)} dolor={1 - kprog(T, K.Rapido + 1.6, K.Rapido + 2.6)} />
           </g>
-          <TextoSvg x={540} y={500} tam={118} color={KC.yellow} s={klerp(0.5, 1, kprog(T, K.Rapido + 0.3, K.Rapido + 0.7, kEase.rebote))}>MENOS DE 2 MIN</TextoSvg>
+          <TextoSvg x={540} y={500} tam={92} color={KC.yellow} s={klerp(0.5, 1, kprog(T, K.Rapido + 0.3, K.Rapido + 0.7, kEase.rebote))}>MENOS DE 2 MIN</TextoSvg>
         </Lienzo>
         <Chip T={T} at={K.Rapido + 1.0} until={K.Despacio - 0.1} texto="casi siempre se quita solo" x={540} y={1400} tam={40} borde={KC.mint} />
       </Escena>
