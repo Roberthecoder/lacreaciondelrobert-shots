@@ -121,7 +121,7 @@ function HuevoVinagre() {
       {/* 1 · el cascarón: 95 % mineral */}
       <Escena T={T} a={K.Ca} b={K.Bu}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa><Acerca k={1.18} de={[560, 860]} a={[540, 900]}>
+        <SvgCapa><Acerca k={1.2} de={[560, 860]} a={[560, 910]}>
           <Vaso x={330} y={1190} s={0.9} etiqueta="vinagre" />
           <Huevo x={330} y={klerp(620, 1000, entra)} s={0.8} cas={1} rot={klerp(-20, 0, entra)} />
           {(() => { const f = 0.95 * kprog(T, K.Ca + 0.6, K.Ca + 1.8, kEase.sale), a = f * Math.PI * 2, r = 170, cx = 790, cy = 880;
@@ -138,7 +138,7 @@ function HuevoVinagre() {
       {/* 2 · por dentro: ácido acético + carbonato de calcio → CO₂ */}
       <Escena T={T} a={K.Bu} b={K.Di}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 1000) scale(1.3) translate(-540 -1000)">{/* belleza: moléculas ×1.3 */}
           <rect x={150} y={1010} width={780} height={200} rx={20} fill="rgba(242,227,201,.12)" stroke={CASCARA} strokeWidth={4} strokeDasharray="14 10" />
           {Array.from({ length: 21 }, (_, i) => { const c = i % 7, f = Math.floor(i / 7), x = 240 + c * 100, y = 1050 + f * 65;
             const s = sitios.findIndex(([sx, sf]) => Math.abs(sx - x) < 70 && sf === f && f < 1);
@@ -147,12 +147,12 @@ function HuevoVinagre() {
               : <g key={i} opacity={1 - ido}><Atomo x={x + ido * 80} y={y} r={24} color={QA.Ca} letra="Ca" tam={20} /></g>; })}
           {sitios.slice(0, 5).map(([sx], i) => { const t0 = K.Bu + 0.6 + i * 0.7, baja = kprog(T, t0 - 0.9, t0, kEase.sale), gas = kprog(T, t0 + 0.4, t0 + 3.2, kEase.suave);
             return <g key={i}>
-              {baja < 1 || T < t0 + 0.4 ? <Molecula {...QK.acetico} x={sx} y={klerp(460, 960, baja)} s={0.75} rot={i * 50 + T * 20} o={1 - kprog(T, t0 + 0.2, t0 + 0.5)} /> : null}
+              {baja < 1 || T < t0 + 0.4 ? <Molecula {...QK.acetico} x={sx} y={klerp(570, 960, baja)} s={0.75} rot={i * 50 + T * 20} o={1 - kprog(T, t0 + 0.2, t0 + 0.5)} /> : null}
               {T > t0 + 0.4 && <g transform={`translate(${sx + Math.sin(T * 3 + i) * 14} ${klerp(990, 700, gas)})`} opacity={1 - kprog(T, t0 + 2.9, t0 + 3.3)}>
                 <circle r={62 + gas * 18} fill="rgba(255,255,255,.1)" stroke="#bfe8ff" strokeWidth={5} /><Mol tipo="co2" x={0} y={0} s={0.6} /></g>}
             </g>; })}
-        </SvgCapa>
-        <Etq T={T} at={K.Bu + 0.3} until={K.Di - 0.2} x={150} y={1240} texto="cascarón: CaCO₃" color={CASCARA} tam={30} />
+        </g></SvgCapa>
+        <Etq T={T} at={K.Bu + 0.3} until={K.Di - 0.2} x={40} y={1300} texto="cascarón: CaCO₃" color={CASCARA} tam={30} />
         <Etq T={T} at={K.Bu + 0.5} until={K.Bu + 2.4} x={90} y={325} texto="ácido acético (vinagre)" tam={30} color={KC.yellow} />
       </Escena>
       {/* 3 · días: se va el cascarón, queda la membrana */}
