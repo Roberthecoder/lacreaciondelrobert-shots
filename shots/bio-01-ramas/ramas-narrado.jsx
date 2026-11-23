@@ -34,18 +34,18 @@ function RamasNarrado() {
         <FondoMarca T={T} color={KC.yellow} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {/* los tres están en cuadro desde el inicio (atenuados) y cada uno se enciende con su palabra */}
-          <g opacity={klerp(0.35, 1, kprog(T, C.Def + 0.3, C.Def + 0.6))} transform={`translate(0 ${(1 - kprog(T, C.Def + 0.3, C.Def + 0.8, kEase.rebote)) * 40})`}><Bacteria T={T} x={240} y={810} largo={290} ancho={122} rot={-15} color="#7fd88a" seed={3} /></g>
-          <g opacity={klerp(0.35, 1, kprog(T, C.Def + 1.3, C.Def + 1.6))}><Celula T={T} x={540} y={790} r={126} /></g>
-          <g opacity={klerp(0.35, 1, kprog(T, C.Def + 2.1, C.Def + 2.4))}><Enzima x={855} y={810} s={3.5} boca={0.5 + 0.5 * Math.sin(T * 9)} /></g>
-          {[215, 540, 855].map((x, i) => <FlechaCurva key={i} T={T} x1={x} y1={960} x2={540 + (i - 1) * 80} y2={1200} curva={(i - 1) * -50} p={kprog(T, C.Def + 2.8 + i * 0.15, C.Def + 3.4 + i * 0.15)} color={KC.ink} />)}
-          <g opacity={klerp(0.3, 1, kprog(T, C.Def + 3.3, C.Def + 3.6))} transform={`translate(540 1340) scale(${1.7 * klerp(0.85, 1, kprog(T, C.Def + 3.3, C.Def + 3.8, kEase.rebote))}) rotate(${mece(T, 1, 0.3) * 4})`}>
+          <g opacity={klerp(0.35, 1, kprog(T, C.Def + 0.3, C.Def + 0.6))} transform={`translate(0 ${(1 - kprog(T, C.Def + 0.3, C.Def + 0.8, kEase.rebote)) * 40})`}><Bacteria T={T} x={240} y={880} largo={290} ancho={122} rot={-15} color="#7fd88a" seed={3} /></g>
+          <g opacity={klerp(0.35, 1, kprog(T, C.Def + 1.3, C.Def + 1.6))}><Celula T={T} x={540} y={860} r={126} /></g>
+          <g opacity={klerp(0.35, 1, kprog(T, C.Def + 2.1, C.Def + 2.4))}><Enzima x={855} y={880} s={3.5} boca={0.5 + 0.5 * Math.sin(T * 9)} /></g>
+          {[215, 540, 855].map((x, i) => <FlechaCurva key={i} T={T} x1={x} y1={1030} x2={540 + (i - 1) * 80} y2={1260} curva={(i - 1) * -50} p={kprog(T, C.Def + 2.8 + i * 0.15, C.Def + 3.4 + i * 0.15)} color={KC.ink} />)}
+          <g opacity={klerp(0.5, 1, kprog(T, C.Def + 3.3, C.Def + 3.6))} transform={`translate(540 1400) scale(${1.7 * klerp(0.85, 1, kprog(T, C.Def + 3.3, C.Def + 3.8, kEase.rebote))}) rotate(${mece(T, 1, 0.3) * 4})`}>
             <rect x={-60} y={-70} width={120} height={140} rx={24} fill={KC.paper} stroke={KC.ink} strokeWidth={7} /><rect x={-36} y={-100} width={72} height={36} rx={8} fill={KC.pink} stroke={KC.ink} strokeWidth={6} />
             <path d="M -30 0 L 30 0 M 0 -30 L 0 30" stroke={KC.red} strokeWidth={14} strokeLinecap="round" />
           </g>
         </svg>
-        <Etq T={T} at={C.Def + 0.6} until={C.Rojo - 0.2} x={90} y={610} texto="microbios" color={KC.ink} />
-        <Etq T={T} at={C.Def + 1.5} until={C.Rojo - 0.2} x={430} y={610} texto="células" color={KC.ink} />
-        <Etq T={T} at={C.Def + 2.3} until={C.Rojo - 0.2} x={755} y={610} texto="enzimas" color={KC.ink} />
+        <Etq T={T} at={C.Def + 0.6} until={C.Rojo - 0.2} x={90} y={680} texto="microbios" color={KC.ink} />
+        <Etq T={T} at={C.Def + 1.5} until={C.Rojo - 0.2} x={430} y={680} texto="células" color={KC.ink} />
+        <Etq T={T} at={C.Def + 2.3} until={C.Rojo - 0.2} x={755} y={680} texto="enzimas" color={KC.ink} />
       </Escena>
 
       {/* LAS RAMAS: un mismo lugar que se va llenando (arcoíris arriba, medallón al centro) */}
