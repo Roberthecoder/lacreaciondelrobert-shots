@@ -1,3 +1,4 @@
 - ia-55-tutor-nigeria: Gancho: calendario y «≈2 años» más abajo y más grande el número (encuadre bien); Lugar: mapa, escuelas y chips bajados al centro; Resultado: las barras ya están creciendo desde que empieza la escena (ya no queda solo el número: sin láminas); Equivalencia: calendario y barras bajados; disolvencias limpias Resultado→Equivalencia→Peros y Chicas→Cierre
 - bio-56-vph: Virus y Cápside: útero, etiqueta y lupa bajados al centro (ya no se cargan arriba); Escocia: las tres niñas y sus palomitas subidas (ya no se cargan abajo); encuadre bien en todo el shot
 - amb-56-sal-microplasticos: Gancho: salero, plato y los tres saleros bajados al centro; Colima: mapa, número y chip bajados; Hilitos: hilitos y fragmentos ya en cuadro al empezar y bajados al centro, el «?» chico entra cuando lo dice la voz (antes la capa lo encendía desde el inicio); encuadre bien
+GRUPO TERMINADO
