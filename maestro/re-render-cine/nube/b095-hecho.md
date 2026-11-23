@@ -1,2 +1,4 @@
 - cie-39-moken: Doble (niños, rayas y barras 1.08× y bajados al centro, chip más abajo; también se ve así bajo el velo de Pregunta); Pupila (el ojo de frente, el corte con el cristalino, el diafragma y la foto bajan 50–80 px para no pegarse al logo y llenar el tercio de abajo). Sin barras de escala en esas escenas.
 - qui-39-antiacido: Ácido (células parietales, emisión de HCl y rótulos 1.25× y bajados al centro; barra «10 µm» recalculada 110→138 px y bajada); Gas (el bloque de CaCO₃, sujeto de la escena, 1.7× al inicio y se va deshaciendo; ya no es un letrerito flotando); Pregunta (pastilla y cápsula de omeprazol ~1.5× más grandes).
+- ia-39-aves: Gente (el mapa de Europa con la ruta de la grulla baja 120 px al centro con su rótulo y chip; ya no queda el tercio de abajo vacío); Pregunta (era lámina según el auditor: ahora la red que lee la «foto» del canto queda a cuadro, con velo propio para que no se vea doble). Auditor: sin láminas, encuadre bien.
+GRUPO TERMINADO
