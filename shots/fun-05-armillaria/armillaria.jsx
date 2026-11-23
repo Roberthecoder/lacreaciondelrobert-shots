@@ -58,8 +58,11 @@ function Armillaria() {
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1–4 · el bosque en corte: setas → red → cordón → raíz que muere */}
       <Escena T={T} a={K.G} b={K.P} zoom={0.04} origen="40% 50%">
+        {/* belleza: todo el bosque en corte 120 px más abajo (quedaba cargado arriba); etiquetas bajan igual */}
+        <div style={{ position:'absolute', inset:0, transform:'translateY(120px)' }}>
         <Bosque T={T} at={K.G} rayos={rayos} red={red} cordon={kprog(T, K.Co + 0.3, K.Co + 3.2, kEase.suave)} raizMala={kprog(T, K.R, K.R + 1.2)} muere={kprog(T, K.R + 0.6, K.P - 0.2)} />
         {T > K.Co && fsvg(<path d="M 400 1070 Q 460 1075 530 1030" stroke={KC.yellow} strokeWidth={14} fill="none" strokeLinecap="round" strokeDasharray={`${180 * kprog(T, K.Co, K.Co + 1.2)} 999`} opacity={1 - kprog(T, K.P - 0.6, K.P)} style={{ filter:`drop-shadow(0 0 8px ${KC.yellow})` }} />, 21)}
+        </div>
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
@@ -95,7 +98,7 @@ function Armillaria() {
       {/* 9 · 965 hectáreas en canchas de fútbol */}
       <Escena T={T} a={K.N} b={K.Ed} zoom={0.02}>
         <div style={{ position:'absolute', inset:0, background:'#0b2215' }}></div>
-        <Cuadricula T={T} cols={30} filas={45} x={90} y={590} ancho={900} alto={800} llenado={(t) => kprog(t, K.N + 1.4, K.N + 4.6)} lleno={KC.mint} vacio="rgba(255,255,255,.08)" />
+        <Cuadricula T={T} cols={30} filas={45} x={90} y={590} ancho={900} alto={800} llenado={(t) => kprog(t, K.N + 0.6, K.N + 4.6)} lleno={KC.mint} vacio="rgba(160,255,200,.2)" />
       </Escena>
       {/* 10–11 · la edad y la duda: el mapa del genet */}
       <Escena T={T} a={K.Ed} b={K.B}>
@@ -109,10 +112,10 @@ function Armillaria() {
         <Ambiente T={T} n={30} color="rgba(160,255,140,.35)" />
         {fsvg(<>
           <g transform="translate(540 900) scale(1.9) translate(-540 -890)">
-            <rect x={120} y={760} width={840} height={260} rx={120} fill="#3a281b" stroke="#6b4a33" strokeWidth={5} />
-            {[800, 850, 905, 960, 990].map((yy, i) => <path key={i} d={`M ${170 + i * 30} ${yy} q 200 ${i % 2 ? 14 : -14} 400 0 t ${330 - i * 40} 0`} stroke="#241710" strokeWidth={5} fill="none" strokeLinecap="round" />)}
+            <rect x={120} y={760} width={840} height={260} rx={120} fill="#4a3424" stroke="#8a6447" strokeWidth={5} />
+            {[800, 850, 905, 960, 990].map((yy, i) => <path key={i} d={`M ${170 + i * 30} ${yy} q 200 ${i % 2 ? 14 : -14} 400 0 t ${330 - i * 40} 0`} stroke="#2e1f15" strokeWidth={5} fill="none" strokeLinecap="round" />)}
           </g>
-          <RedHifas T={T} x={540} y={900} g={kprog(T, K.B + 0.2, K.B + 2.6)} seed={11} n={260} escala={0.304} ancho={3} color="#b6ff8f" circ={true} brillo={1.6 + 0.6 * Math.sin(T * 3)} />
+          <RedHifas T={T} x={540} y={900} g={kprog(T, K.B - 0.4, K.B + 2.4)} seed={11} n={260} escala={0.304} ancho={3} color="#b6ff8f" circ={true} brillo={1.6 + 0.6 * Math.sin(T * 3)} />
         </>)}
       </Escena>
       {/* 13 · cierre: el mismo bosque; la cámara se aleja y la red sigue más allá */}
@@ -124,14 +127,14 @@ function Armillaria() {
       </Escena>
 
       {/* textos y etiquetas */}
-      <Chip T={T} at={K.G + 0.9} until={K.G + 2.6} texto="¿cientos de hongos?" y={250} x={420} tam={46} borde={KC.ink} />
-      <Chip T={T} at={K.G + 3.4} until={K.F - 0.2} texto="= 1 solo individuo" y={250} x={420} tam={50} borde={KC.yellow} />
-      <Etq T={T} at={K.F + 0.3} until={K.Co - 0.3} x={540} y={760} texto="seta = fruto" tam={34} />
-      <Etq T={T} at={K.F + 1.4} until={K.Co - 0.3} x={600} y={1130} texto="micelio (el hongo)" tam={32} color={KC.yellow} />
-      <Etq T={T} at={K.F + 1.0} until={K.Co - 0.3} x={60} y={1450} texto="Armillaria ostoyae" it tam={36} color={KC.texto} />
-      <Etq T={T} at={K.Co + 1.2} until={K.R - 0.2} x={720} y={1080} texto="cordón negro" tam={32} />
-      <Etq T={T} at={K.Co + 0.4} until={K.R - 0.2} x={380} y={1020} texto="raíz con raíz" tam={30} color={KC.yellow} />
-      <Etq T={T} at={K.R + 0.6} until={K.P - 0.2} x={700} y={1080} texto="raíz muerta" tam={32} color={KC.coral} />
+      <Chip T={T} at={K.G + 0.9} until={K.G + 2.6} texto="¿cientos de hongos?" y={330} x={420} tam={46} borde={KC.ink} />
+      <Chip T={T} at={K.G + 3.4} until={K.F - 0.2} texto="= 1 solo individuo" y={330} x={420} tam={50} borde={KC.yellow} />
+      <Etq T={T} at={K.F + 0.3} until={K.Co - 0.3} x={540} y={880} texto="seta = fruto" tam={34} />
+      <Etq T={T} at={K.F + 1.4} until={K.Co - 0.3} x={600} y={1250} texto="micelio (el hongo)" tam={32} color={KC.yellow} />
+      <Etq T={T} at={K.F + 1.0} until={K.Co - 0.3} x={300} y={1480} texto="Armillaria ostoyae" it tam={36} color={KC.texto} />
+      <Etq T={T} at={K.Co + 1.2} until={K.R - 0.2} x={720} y={1200} texto="cordón negro" tam={32} />
+      <Etq T={T} at={K.Co + 0.4} until={K.R - 0.2} x={380} y={1140} texto="raíz con raíz" tam={30} color={KC.yellow} />
+      <Etq T={T} at={K.R + 0.6} until={K.P - 0.2} x={700} y={1200} texto="raíz muerta" tam={32} color={KC.coral} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ca - 0.3} anio="2003" quien="Ferguson et al. · Oregón, EE. UU." revista="Can. J. For. Res. · bosque Malheur" y={540} />
       <Chip T={T} at={K.Ca + 0.3} until={K.N - 0.3} texto="muestra contra muestra" y={250} x={360} tam={42} borde={KC.ink} />
       <Chip T={T} at={K.Fu + 0.8} until={K.N - 0.3} texto="se fusionan: mismo" x={870} y={650} tam={32} borde={KC.leaf} />
