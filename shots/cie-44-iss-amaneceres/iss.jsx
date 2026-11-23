@@ -369,9 +369,10 @@ function Iss() {
       <Escena T={T} a={K.Cuenta} b={K.Altura} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <TextoSvg x={190} y={470} tam={110} color={KC.white} s={kEase.rebote(kprog(T, K.Cuenta + 0.1, K.Cuenta + 0.5))}>24 h</TextoSvg>
-          <TextoSvg x={540} y={470} tam={110} color={KC.white} s={kEase.rebote(kprog(T, K.Cuenta + 0.9, K.Cuenta + 1.3))}>÷ 90 min</TextoSvg>
-          <TextoSvg x={890} y={470} tam={110} color={KC.pink} s={kEase.rebote(kprog(T, K.Cuenta + 2.0, K.Cuenta + 2.4))}>≈ 16</TextoSvg>
+          {/* belleza: la cuenta a 84 px y repartida para que «24 h», «÷ 90 min» y «≈ 16» no se encimen */}
+          <TextoSvg x={150} y={470} tam={84} color={KC.white} s={kEase.rebote(kprog(T, K.Cuenta + 0.1, K.Cuenta + 0.5))}>24 h</TextoSvg>
+          <TextoSvg x={520} y={470} tam={84} color={KC.white} s={kEase.rebote(kprog(T, K.Cuenta + 0.9, K.Cuenta + 1.3))}>÷ 90 min</TextoSvg>
+          <TextoSvg x={905} y={470} tam={84} color={KC.pink} s={kEase.rebote(kprog(T, K.Cuenta + 2.0, K.Cuenta + 2.4))}>≈ 16</TextoSvg>
           <g opacity={kprog(T, K.Cuenta + 0.1, K.Cuenta + 0.5)}>
             <rect x={80} y={550} width={920} height={140} rx={22} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
             {Array.from({ length: 16 }, (_, i) => { const on = kclamp(vueltasC - i, 0, 1);
