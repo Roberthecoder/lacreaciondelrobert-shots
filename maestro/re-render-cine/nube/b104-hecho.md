@@ -1,0 +1,1 @@
+- fun-117-cacao-monilia: Número: «MILLONES» de 160 a 112 px (antes se salía del cuadro por la derecha y se leía «MILLONI»); el resto ya cumplía (revisadas las 12 escenas). Auditores: sin láminas · encuadre bien.

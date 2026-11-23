@@ -235,7 +235,8 @@ function CacaoShot() {
           <NubeViento T={T} x={360} y={1060} p={viento} n={120} seed={12} lejos={860} />
         </svg>
         <div style={{ position:'absolute', left:330, right:20, top:500, textAlign:'center', zIndex:41, transform:`scale(${klerp(0.6, 1, kprog(T, K.N + 0.05, K.N + 0.5, kEase.rebote))})`, opacity:kprog(T, K.N, K.N + 0.2) }}>
-          <div style={{ font:`400 160px/0.95 ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`6px ${KC.ink}`, textShadow:`8px 8px 0 ${KC.ink}` }}>MILLONES</div>
+          {/* belleza: 160 → 112 px; a 160 la palabra se salía del cuadro por la derecha («MILLONI») */}
+          <div style={{ font:`400 112px/0.95 ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`6px ${KC.ink}`, textShadow:`8px 8px 0 ${KC.ink}`, whiteSpace:'nowrap' }}>MILLONES</div>
           <div style={{ font:`900 46px ${KF.texto}`, color:KC.texto, textShadow:KSOMBRA, marginTop:10 }}>de esporas por mazorca</div>
         </div>
       </Escena>
