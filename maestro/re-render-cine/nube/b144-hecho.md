@@ -1,3 +1,4 @@
 - qui-03-cloro: pulmones con bronquios ramificados y brillo (volumen); Amoniaco: cubeta en azul apagado en lugar de cian chillón; Guerra: cielo con degradado, trinchera más oscura con costales, y la nube de gas ya asoma desde el inicio de la escena (antes entraba casi un segundo tarde con el cuadro vacío). Auditores: sin láminas · encuadre bien
 - ia-03-siguiente-palabra: Corta: los pedacitos (tokens) bajados al centro del cuadro (y 800/990 → 860/1060) para que no quede la mitad de abajo vacía; el resto ya cumplía (chat del gancho grande, perillas, red, lista, robot y dados llenan el cuadro). Auditores: sin láminas · encuadre bien
 - fes-08-pelicula-nitrato: La molécula (marcada ARRIBA): cadena de celulosa más grande (1.6→1.9) y bajada al centro del cuadro, etiqueta y chip movidos con ella; barra de 0.5 nm recalculada (334→397 px) y bajada de y 262 a 400. Auditores: sin láminas · encuadre bien
+GRUPO TERMINADO
