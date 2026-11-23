@@ -1,3 +1,4 @@
 - amb-35-gatos-aves: lagartijas: la rama ahora es un arbusto con ramitas y hojas que se mecen (llenan el tercio de abajo) y la rama tiene brillo; el resto ya cumplía (encuadre bien, sin láminas).
 - fun-96-mosca-ventana: ventana (gancho, subida, halo, cierre): cielo, nubes y pasto más apagados para que no brillen a media pantalla (mismo tono de día y de atardecer); bandas al microscopio: los conidióforos ya están saliendo desde el inicio de la escena (antes entraban tarde).
 - cie-35-cuerpo-radiactivo: gancho y cierre: silueta bajada 90 px al centro y nota de abajo sin encimarse; potasio: el elemento K, el plátano y el aguacate entran al empezar (antes ~0.5 s vacío); la cuenta: silueta más grande (0.74→0.9); normal: las tres siluetas ya están al empezar, pastel con relleno visible (antes oscuro sobre oscuro, auditor lo marcaba) y «tu propio cuerpo 7–10 %» ya no se corta a la derecha.
+GRUPO TERMINADO
