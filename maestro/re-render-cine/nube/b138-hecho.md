@@ -1,0 +1,1 @@
+- bio-57-huella-adn: Personas (gancho, inmigración, gemelos, cierre): el pelo, los ojos y la sonrisa eran KC.ink, que en modo cine sale CLARO (pelo blanco, ojos casi invisibles): ahora oscuro fijo; ropa menos saturada con degradado de volumen, cara sombreada y sombra en el suelo. Auditores: sin láminas · encuadre bien.
