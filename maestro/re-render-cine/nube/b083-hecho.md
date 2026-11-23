@@ -1,0 +1,1 @@
+- ia-34-herculano: Premio (columnas de texto bajadas y agrandadas al centro, 00,000 y chips recolocados abajo sin encimarse), Matiz (mismas columnas en el mismo lugar que Premio para que la disolvencia no muestre dos hojas; tarjetas IA/papirólogos recolocadas).
