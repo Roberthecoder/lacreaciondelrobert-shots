@@ -17,7 +17,8 @@ const ZONAS = [[-140, -50, 90], [-40, -120, 85], [80, -110, 85], [140, -10, 80],
 function Cerebro({ x, y, s = 1, T = 0, id = 'c', zonas = -1, brillo = 0, color = ROSA_CEREBRO }) {
   const lat = 1 + 0.012 * Math.sin(T * 3);
   return <g transform={`translate(${x} ${y}) scale(${s * lat})`}>
-    <defs><clipPath id={`clip-${id}`}><path d={CEREBRO_D} /></clipPath></defs>
+    <defs><clipPath id={`clip-${id}`}><path d={CEREBRO_D} /></clipPath>
+      <radialGradient id={`vol-${id}`} cx="0.32" cy="0.25" r="0.85"><stop offset="0" stopColor="#fff" stopOpacity=".32" /><stop offset="0.45" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#5a1030" stopOpacity=".38" /></radialGradient></defs>
     {brillo > 0 && <ellipse cx={0} cy={-50} rx={260} ry={200} fill={KC.yellow} opacity={0.35 * brillo} filter="blur(0px)" />}
     {/* cerebelo y tallo */}
     <path d="M 40 70 q 70 -10 100 30 q -20 45 -90 30 Z" fill="#e7789f" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
@@ -25,8 +26,9 @@ function Cerebro({ x, y, s = 1, T = 0, id = 'c', zonas = -1, brillo = 0, color =
     <path d={CEREBRO_D} fill={color} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
     <g clipPath={`url(#clip-${id})`}>
       {zonas >= 0 && ZONAS.map(([zx, zy, r], i) => { const on = kclamp(zonas * ZONAS.length - i, 0, 1);
-        return <circle key={i} cx={zx} cy={zy} r={r} fill={[KC.yellow, KC.cyan, KC.mint, KC.orange, KC.lilac, KC.gold2][i]} opacity={0.85 * on} />; })}
+        return <circle key={i} cx={zx} cy={zy} r={r} fill={[KC.yellow, KC.cyan, KC.mint, KC.orange, KC.lilac, KC.gold2][i]} opacity={0.62 * on} />; })}
       {GIROS.map((d, i) => <path key={i} d={d} fill="none" stroke="#b8466f" strokeWidth={7} strokeLinecap="round" />)}
+      <rect x={-220} y={-210} width={440} height={320} fill={`url(#vol-${id})`} />
     </g>
     <path d={CEREBRO_D} fill="none" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
   </g>;
@@ -34,8 +36,9 @@ function Cerebro({ x, y, s = 1, T = 0, id = 'c', zonas = -1, brillo = 0, color =
 // Cabeza de perfil (mira a la derecha) con el cerebro adentro. brillo 0..1 del cerebro.
 function Cabeza({ x, y, s = 1, T = 0, brillo = 0, id = 'cab' }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <defs><linearGradient id={`piel-${id}`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#f8c9a6" /><stop offset="0.55" stopColor="#efb08a" /><stop offset="1" stopColor="#c98563" /></linearGradient></defs>
     <path d="M -150 330 C -150 230 -240 150 -245 10 C -250 -200 -100 -310 40 -310 C 190 -310 265 -200 262 -60 L 300 45 Q 305 60 285 66 L 262 72 L 270 118 Q 258 128 262 145 Q 270 165 255 185 C 240 235 180 245 130 245 L 120 330 Z"
-      fill="#f1b48f" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+      fill={`url(#piel-${id})`} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
     <path d="M -120 330 C -120 280 -150 250 -170 230" fill="none" stroke="#d98f6b" strokeWidth={8} strokeLinecap="round" />
     <ellipse cx={-40} cy={20} rx={30} ry={42} fill="#d98f6b" stroke={KC.ink} strokeWidth={7} />
     <circle cx={205} cy={-30} r={13} fill={KC.ink} />
@@ -59,13 +62,14 @@ function Foco({ x, y, s = 1, on = 0, T = 0, watts = '20 W' }) {
 }
 // Dona de porcentaje con un cerebrito al centro.
 function Dona({ x, y, r = 165, p = 0, color = KC.pink, T = 0, id }) {
+  const sc = 0.19 * r / 165;
   const a = Math.PI * 2 * p - Math.PI / 2, gr = p > 0.5 ? 1 : 0;
   const d = p <= 0 ? '' : p >= 1 ? '' : `M 0 0 L 0 ${-r} A ${r} ${r} 0 ${gr} 1 ${Math.cos(a) * r} ${Math.sin(a) * r} Z`;
   return <g transform={`translate(${x} ${y})`}>
     <circle r={r} fill="#1e2840" stroke={KC.ink} strokeWidth={9} />
     {d && <path d={d} fill={color} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />}
     <circle r={r * 0.52} fill="#141b2e" stroke={KC.ink} strokeWidth={7} />
-    <Cerebro x={0} y={14} s={0.19} T={T} id={id} />
+    <Cerebro x={0} y={14 * r / 165} s={sc} T={T} id={id} />
   </g>;
 }
 // Red de neuronas que se encienden (fondo oscuro).
@@ -98,7 +102,7 @@ function MosaicoGPU({ T, z }) {
   const tw = 260, th = 150;
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
     <defs>
-      <pattern id="gpuTile" width={tw} height={th} patternUnits="userSpaceOnUse" patternTransform={`translate(540 760) scale(${z}) translate(${-tw / 2} ${-th / 2})`}>
+      <pattern id="gpuTile" width={tw} height={th} patternUnits="userSpaceOnUse" patternTransform={`translate(540 960) scale(${z}) translate(${-tw / 2} ${-th / 2})`}>
         <rect x={10} y={10} width={tw - 20} height={th - 30} rx={14} fill="#2b3445" stroke={KC.ink} strokeWidth={6} />
         <rect x={30} y={th - 22} width={tw - 90} height={10} fill={KC.gold} />
         <circle cx={tw / 2 - 55} cy={th / 2 - 8} r={36} fill="#151a24" stroke={KC.ink} strokeWidth={5} />
@@ -205,12 +209,12 @@ function CerebroWatts() {
       <Escena T={T} a={K.Cu} b={K.N}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <Dona x={280} y={830} p={0.02 * kprog(T, K.Cu + 0.4, K.Cu + 1.2, kEase.sale)} color={KC.pink} T={T} id="d1" />
-          <Dona x={790} y={830} p={0.2 * kprog(T, K.Cu + 2.2, K.Cu + 3.2, kEase.sale)} color={KC.orange} T={T} id="d2" />
+          <Dona x={290} y={880} r={200} p={0.02 * kprog(T, K.Cu + 0.4, K.Cu + 1.2, kEase.sale)} color={KC.pink} T={T} id="d1" />
+          <Dona x={790} y={880} r={200} p={0.2 * kprog(T, K.Cu + 2.2, K.Cu + 3.2, kEase.sale)} color={KC.orange} T={T} id="d2" />
         </>)}
       </Escena>
-      <NumeroGigante T={T} at={K.Cu + 0.4} until={K.N - 0.2} valor={2} dur={0.6} sufijo=" %" etiqueta="del peso" x={280} y={1080} tam={100} color={KC.pink} />
-      <NumeroGigante T={T} at={K.Cu + 2.2} until={K.N - 0.2} valor={20} dur={0.8} sufijo=" %" etiqueta="de tu energía" x={790} y={1080} tam={100} color={KC.orange} />
+      <div style={{ opacity:1 - 0.55 * kprog(T, K.Cu + 2.2, K.Cu + 2.7) }}><NumeroGigante T={T} at={K.Cu + 0.4} until={K.N - 0.2} valor={2} dur={0.6} sufijo=" %" etiqueta="del peso" x={290} y={1200} tam={120} color={KC.pink} /></div>
+      <NumeroGigante T={T} at={K.Cu + 2.2} until={K.N - 0.2} valor={20} dur={0.8} sufijo=" %" etiqueta="de tu energía" x={790} y={1200} tam={120} color={KC.orange} />
       {/* 2 · 86 mil millones de neuronas (por dentro: fondo oscuro) */}
       <Escena T={T} a={K.N} b={K.Mi} zoom={0.1}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
@@ -239,13 +243,13 @@ function CerebroWatts() {
       <Escena T={T} a={K.Ml} b={K.P}>
         <FondoCircuito T={T} />
         <MosaicoGPU T={T} z={zMos} />
-        <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 45%, transparent 30%, rgba(13,20,36,.75) 85%)` }}></div>
+        <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 50%, transparent 34%, rgba(13,20,36,.7) 88%)` }}></div>
       </Escena>
       {T >= K.Ml + 0.6 && T < K.P + 0.4 && <div style={{ opacity:kprog(T, K.Ml + 0.6, K.Ml + 0.9) * (1 - kprog(T, K.P - 0.1, K.P + 0.3)) }}>
-        <Contador T={T} at={K.Ml + 0.6} desde={1} hasta={16000} dur={2.6} x={540} y={460} tam={130} color={KC.yellow} />
+        <Contador T={T} at={K.Ml + 0.6} desde={1} hasta={16000} dur={2.6} x={540} y={880} tam={150} color={KC.yellow} />
       </div>}
-      <Chip T={T} at={K.Ml + 0.9} until={K.P - 0.2} texto="tarjetas H100 a la vez" y={580} tam={42} borde={KC.yellow} />
-      <Chip T={T} at={K.Ml + 1.8} until={K.P - 0.2} texto="Llama 3 405B · Meta · 2024" y={1080} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={K.Ml + 0.9} until={K.P - 0.2} texto="tarjetas H100 a la vez" y={1010} tam={44} borde={KC.yellow} />
+      <Chip T={T} at={K.Ml + 1.8} until={K.P - 0.2} texto="Llama 3 405B · Meta · 2024" y={1460} tam={40} borde={KC.cyan} />
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.O} zoom={0.1}>
         <FondoLunares color={KC.orange} />
@@ -257,11 +261,11 @@ function CerebroWatts() {
       {/* 7 · ojo: no se comparan uno a uno */}
       <Escena T={T} a={K.O} b={K.E}>
         <FondoLunares color={KC.mint} />
-        {svg(<g transform="translate(540 900) scale(1.1) translate(-540 -720)"><Balanza x={540} y={600} T={T} /></g>)}
+        {svg(<g transform="translate(540 980) scale(1.12) translate(-540 -720)"><Balanza x={540} y={600} T={T} /></g>)}
       </Escena>
-      <Aparece T={T} at={K.O + 0.4} until={K.E - 0.2} x={470} y={400}><div style={{ font:`400 200px/1 ${KF.titulo}`, color:KC.red, WebkitTextStroke:`7px ${KC.ink}`, textShadow:`8px 8px 0 ${KC.ink}` }}>≠</div></Aparece>
-      <Chip T={T} at={K.O + 2.4} until={K.E - 0.2} texto="la tarjeta: otro tipo de trabajo" y={1290} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.O + 3.8} until={K.E - 0.2} texto="el cerebro: no es una computadora digital" y={1370} tam={34} borde={KC.ink} />
+      <Aparece T={T} at={K.O + 0.4} until={K.E - 0.2} x={470} y={500}><div style={{ font:`400 200px/1 ${KF.titulo}`, color:KC.red, WebkitTextStroke:`7px ${KC.ink}`, textShadow:`8px 8px 0 ${KC.ink}` }}>≠</div></Aparece>
+      <Chip T={T} at={K.O + 2.4} until={K.E - 0.2} texto="la tarjeta: otro tipo de trabajo" y={1400} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.O + 3.8} until={K.E - 0.2} texto="el cerebro: no es una computadora digital" y={1475} tam={38} borde={KC.ink} />
       {/* 8 · el estudio (por dentro de la corteza: fondo oscuro) */}
       <Escena T={T} a={K.E} b={K.Co}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
@@ -273,20 +277,20 @@ function CerebroWatts() {
       <BarrasW T={T} at={K.E + 4.6} until={K.Co - 0.2} top={1140} max={3.5} filas={[
         { valor: 0.1, texto: '0.1 W', etiqueta: 'calcular', color: KC.mint },
         { valor: 3.5, texto: '3.5 W · ×35', etiqueta: 'mandar señales lejos', color: KC.orange, at: K.E + 6.0 }]} />
-      <Chip T={T} at={K.E + 6.6} until={K.Co - 0.2} texto="estimación teórica · corteza humana" y={430} x={540} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.E + 6.6} until={K.Co - 0.2} texto="estimación teórica · corteza humana" y={430} x={540} tam={37} borde={KC.cyan} />
       {/* 9 · la copia: Hala Point */}
       <Escena T={T} a={K.Co} b={K.C}>
         <FondoLunares color={KC.pink} />
         {svg(<CajaHala x={540} y={860} s={1.45} T={T} calor={kprog(T, K.Co + 4.0, K.Co + 5.5)} />)}
       </Escena>
       <Chip T={T} at={K.Co + 0.3} until={K.Co + 5.6} texto="Hala Point · Intel · 2024" x={540} y={330} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.Co + 0.9} until={K.Co + 5.6} texto="prototipo de investigación" x={540} y={405} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Co + 0.9} until={K.Co + 5.6} texto="prototipo de investigación" x={540} y={405} tam={37} borde={KC.ink} />
       {T >= K.Co + 2.2 && T < K.C + 0.3 && <div style={{ opacity:kprog(T, K.Co + 2.2, K.Co + 2.5) * (1 - kprog(T, K.C - 0.2, K.C + 0.2)) }}>
         <Contador T={T} at={K.Co + 2.2} desde={0} hasta={1150} dur={1.6} sufijo=" millones" x={540} y={1180} tam={78} color={KC.texto} />
       </div>}
-      <Chip T={T} at={K.Co + 2.6} until={K.C - 0.2} texto="de neuronas artificiales" y={1250} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Co + 2.6} until={K.C - 0.2} texto="de neuronas artificiales" y={1250} tam={37} borde={KC.ink} />
       <Medidor T={T} at={K.Co + 4.0} until={K.C - 0.2} y={1300} etiqueta="hasta" color={KC.red} valor={kprog(T, K.Co + 4.0, K.Co + 5.5, kEase.sale)} texto={(v) => `${kformato(Math.round(2600 * v))} W`} />
-      <Chip T={T} at={K.Co + 5.8} until={K.C - 0.2} texto="tu cerebro: ≈ 86,000 millones con ≈ 20 W" x={540} y={370} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.Co + 5.8} until={K.C - 0.2} texto="tu cerebro: ≈ 86,000 millones con ≈ 20 W" x={540} y={370} tam={37} borde={KC.leaf} />
       {/* 10 · cierre: la misma cabeza y el mismo foco */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
@@ -297,7 +301,7 @@ function CerebroWatts() {
           <Foco x={800} y={1040} s={1.0} on={1} T={T} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="tu cerebro: ≈ 20 W" x={790} y={810} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="tu cerebro: ≈ 20 W" x={800} y={1250} tam={42} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Cu - 0.1} texto="Tu cerebro gasta *unos 20 watts.*" />
