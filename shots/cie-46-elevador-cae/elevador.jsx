@@ -166,14 +166,14 @@ function Elevador() {
         <Lienzo>
           <TiraCine x={70} y={-200} w={940} h={2320} off={T * 260} />
           <Pozo x={70} y={-200} w={940} h={2320} off={T * 900} />
-          <Rieles xs={[216, 864]} y0={-200} y1={2120} off={T * 900} ancho={40} />
-          <LineasCaida x={250} y={0} w={580} h={520} T={T} n={9} />
+          <Rieles xs={[166, 914]} y0={-200} y1={2120} off={T * 900} ancho={40} />
+          <LineasCaida x={220} y={0} w={640} h={520} T={T} n={9} />
           <g transform={`translate(${Math.sin(T * 37) * 4} 0)`}>
-            <Cabina x={540} y={890} w={580} h={680} T={T} suelto={1} largo={210} persona={{ dy: -130 * saltoG, cara: 'o', brazos: 0.5 * saltoG }} />
+            <Cabina x={540} y={930} w={680} h={760} T={T} suelto={1} largo={210} persona={{ dy: -130 * saltoG, cara: 'o', brazos: 0.5 * saltoG }} />
           </g>
         </Lienzo>
-        <MitoTachado T={T} at={K.Gancho + 0.9} tacharEn={999} until={K.Mito - 0.2} texto="«saltar te salva»" x={470} y={1290} tam={50} />
-        <Sello T={T} at={K.Gancho + 1.9} until={K.Mito - 0.2} texto="¿MITO?" x={690} y={1410} tam={110} />
+        <MitoTachado T={T} at={K.Gancho + 0.9} tacharEn={999} until={K.Mito - 0.2} texto="«saltar te salva»" x={470} y={1390} tam={50} />
+        <Sello T={T} at={K.Gancho + 1.9} until={K.Mito - 0.2} texto="¿MITO?" x={700} y={1500} tam={110} />
       </Escena>
       {/* 1 · en las películas: la persona flota con la cabina */}
       <Escena T={T} a={K.Mito} b={K.Velocidad}>
@@ -302,10 +302,10 @@ function Elevador() {
         <Lienzo>
           <TiraCine x={70} y={-200} w={940} h={2320} off={0} />
           <Pozo x={70} y={-200} w={940} h={2320} />
-          <Rieles xs={[216, 864]} y0={-200} y1={2120} ancho={40} />
-          <Cabina x={540} y={890} w={580} h={680} T={T} cables={4} garras={1} persona={{ dy: 0, cara: 'sonrie' }} />
+          <Rieles xs={[166, 914]} y0={-200} y1={2120} ancho={40} />
+          <Cabina x={540} y={930} w={680} h={760} T={T} cables={4} garras={1} persona={{ dy: 0, cara: 'sonrie' }} />
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 0.5} until={K.Outro - 0.1} texto="no lo vas a necesitar" x={540} y={1330} tam={46} borde={KC.mint} />
+        <Chip T={T} at={K.Cierre + 0.5} until={K.Outro - 0.1} texto="no lo vas a necesitar" x={540} y={1400} tam={46} borde={KC.mint} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Mito - 0.1} texto="Saltar al final *casi seguro no te salva.*" />

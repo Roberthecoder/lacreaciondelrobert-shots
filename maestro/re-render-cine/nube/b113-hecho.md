@@ -1,0 +1,1 @@
+- cie-46-elevador-cae: gancho y cierre: cabina más grande (580→680 px de ancho) y centrada, rieles más abiertos como en «mito»; «saltar te salva», el sello ¿MITO? y «no lo vas a necesitar» bajados para no encimarse con la cabina; el resto ya cumplía.
