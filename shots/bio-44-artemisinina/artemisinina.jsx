@@ -168,8 +168,11 @@ function Fabrica({ T, x, y, at, p = 1 }) {
 function Fabrica2({ T, x, y, on = 1, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {on > 0 && [0, 1, 2].map((k) => { const ph = (T * 0.5 + k / 3) % 1; return <circle key={k} cx={150 + ph * 40} cy={-330 - ph * 220} r={30 + ph * 50} fill="#fff" opacity={(1 - ph) * 0.8 * on} stroke={KC.ink} strokeWidth={3} />; })}
-    <rect x={120} y={-330} width={60} height={200} fill="#9aa4ae" stroke={KC.ink} strokeWidth={7} />
-    <path d="M -260 160 L -260 -60 L -150 -140 L -150 -60 L -40 -140 L -40 -60 L 70 -140 L 70 -130 L 260 -130 L 260 160 Z" fill="#cfd8e0" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    <rect x={120} y={-330} width={60} height={200} fill="url(#arFab)" stroke={KC.ink} strokeWidth={7} />
+    {/* belleza: muros con volumen (antes: bloque gris claro plano) */}
+    <defs><linearGradient id="arFab" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#a9b6c4" /><stop offset=".5" stopColor="#7a8796" /><stop offset="1" stopColor="#3d4652" /></linearGradient></defs>
+    <ellipse cx={14} cy={172} rx={280} ry={22} fill="#000" opacity=".35" />
+    <path d="M -260 160 L -260 -60 L -150 -140 L -150 -60 L -40 -140 L -40 -60 L 70 -140 L 70 -130 L 260 -130 L 260 160 Z" fill="url(#arFab)" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
     {[-200, -90, 20, 130].map((dx) => <rect key={dx} x={dx} y={-20} width={70} height={60} rx={6} fill={on > 0.5 ? KC.yellow : '#4a5560'} stroke={KC.ink} strokeWidth={5} />)}
     <rect x={-40} y={70} width={80} height={90} fill="#6f7a84" stroke={KC.ink} strokeWidth={6} />
   </g>;
@@ -301,9 +304,11 @@ function Artemisinina44() {
               return <Molecula key={i} x={xx} y={yy} s={0.8} color={KC.mint} anillos={2} cola={1} rot={T * 30 + i * 40} />; })}</g>; })()}
         </g></Capa>
         {/* la química: matraz que cierra el puente O–O */}
+        {/* belleza: el velo oscuro va en un div (en el SVG el filtro de volumen lo aclaraba a gris) */}
+        {T >= K.Qu + 1.0 && <div style={{ position:'absolute', inset:0, background:'rgba(10,12,18,.72)', opacity:kprog(T, K.Qu + 1.0, K.Qu + 1.4) }}></div>}
         {T >= K.Qu + 1.0 && <Capa>
           <g opacity={kprog(T, K.Qu + 1.0, K.Qu + 1.4)}>
-            <rect x={0} y={0} width={KW} height={KH} fill="rgba(14,15,18,.7)" /><g transform="translate(0 150)">
+            <g transform="translate(0 150)">
             <path d="M 470 560 L 470 700 L 330 1040 Q 320 1080 360 1080 L 720 1080 Q 760 1080 750 1040 L 610 700 L 610 560 Z" fill="rgba(200,240,255,.25)" stroke={KC.white} strokeWidth={9} />
             <path d="M 395 900 L 685 900 L 740 1040 Q 745 1070 715 1070 L 365 1070 Q 335 1070 340 1040 Z" fill="rgba(47,224,168,.45)" />
             {Array.from({ length: 6 }, (_, i) => { const ph = (T * 0.9 + i / 6) % 1; return <circle key={i} cx={400 + i * 50} cy={1050 - ph * 150} r={8} fill="none" stroke="#fff" strokeWidth={3} opacity={1 - ph} />; })}
