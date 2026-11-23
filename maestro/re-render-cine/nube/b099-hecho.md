@@ -1,0 +1,1 @@
+- bio-41-jeans: jeans del tendedero (gancho, hilos, cierre) ×1.25 (antes ×1.2) y bajados 70 px, con el hongo de la rodilla y la escala (1.2→1.25 px/mm) en la misma proporción; lupa de la mezclilla bajada; chips que tapaban el dobladillo movidos (uno arriba del tendedero, otro abajo). Las demás escenas ya cumplían. Encuadre bien, sin láminas.
