@@ -1,0 +1,1 @@
+- fun-41-pollo-bosque: revisado escena por escena: ya cumplía composición y escala; volumen con degradado en la zanahoria (Naranja) y en el vestido de la niña (Estudio, Monstruo, Recupero). Zanahoria sin agrandar para respetar la barra de 5 cm. Encuadre bien, sin láminas.
