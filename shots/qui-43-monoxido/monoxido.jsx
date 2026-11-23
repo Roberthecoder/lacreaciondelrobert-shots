@@ -247,11 +247,11 @@ function Monoxido() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
           <g transform="translate(320 640) scale(1.368) translate(-270 -830)">
-          <Pulmones x={270} y={830} s={0.95} />
-          {Array.from({ length: 5 }, (_, i) => { const u = kprog(T, K.Pu + i * 0.25, K.Pu + 1.4 + i * 0.25); return u > 0 && u < 1 ? <MolCO key={i} x={270 + Math.sin(i * 2) * 20} y={klerp(560, 920, u)} s={0.45} rot={T * 60 + i * 50} /> : null; })}
+          <Pulmones x={270} y={900} s={0.95} />
+          {Array.from({ length: 5 }, (_, i) => { const u = kprog(T, K.Pu + i * 0.25, K.Pu + 1.4 + i * 0.25); return u > 0 && u < 1 ? <MolCO key={i} x={270 + Math.sin(i * 2) * 20} y={klerp(630, 990, u)} s={0.45} rot={T * 60 + i * 50} /> : null; })}
           </g>
           {/* lupa: alvéolo y capilar */}
-          <line x1={400} y1={850} x2={528} y2={962} stroke="#fff" strokeWidth={4} strokeDasharray="12 10" opacity={kprog(T, K.Pu + 0.5, K.Pu + 0.9)} />
+          <line x1={400} y1={920} x2={528} y2={990} stroke="#fff" strokeWidth={4} strokeDasharray="12 10" opacity={kprog(T, K.Pu + 0.5, K.Pu + 0.9)} />
           <g opacity={kprog(T, K.Pu + 0.5, K.Pu + 0.9)} transform="translate(745 1170) scale(1.2) translate(-780 -900)">
             <clipPath id="lupaPu"><circle cx={780} cy={900} r={250} /></clipPath>
             <g clipPath="url(#lupaPu)">
@@ -264,7 +264,7 @@ function Monoxido() {
             <circle cx={780} cy={900} r={250} fill="none" stroke="#fff" strokeWidth={10} />
           </g>
         </SvgCapa>
-        <Etq T={T} at={K.Pu + 0.3} until={K.H - 0.2} x={70} y={1140} texto="pulmón" color={KC.texto} />
+        <Etq T={T} at={K.Pu + 0.3} until={K.H - 0.2} x={70} y={1210} texto="pulmón" color={KC.texto} />
         <Etq T={T} at={K.Pu + 1.1} until={K.H - 0.2} x={1050} y={1500} lado="izq" texto="glóbulos rojos" color="#ff8fa3" />
         <Etq T={T} at={K.Pu + 0.9} until={K.H - 0.2} x={1050} y={850} lado="izq" texto="alvéolo" color="#ffc2cc" />
       </Escena>
