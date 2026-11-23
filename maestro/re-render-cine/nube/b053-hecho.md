@@ -1,0 +1,1 @@
+- fun-63-camembert: Estudio: árbol del ADN agrandado (×1.15) y bajado al centro; ramas y colonias recorridas hacia adentro para que «P. fuscoglaucum» y «var. camemberti» no se corten en los bordes; rótulos chicos a 24 px; chip del clon más abajo. Encuadre bien, sin láminas.

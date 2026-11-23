@@ -257,19 +257,19 @@ function CamembertShot() {
       {/* 9 · estudio 2020: leyeron su ADN; el blanco es un clon */}
       <Escena T={T} a={K.Es} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<DZ k={1.1} de={[540, 940]} a={[540, 1040]}>
+        {fsvg(<DZ k={1.15} de={[540, 940]} a={[540, 1080]}>
           <g opacity={kprog(T, K.Es, K.Es + 0.4)}><ADNHebra T={T} x={140} y={730} largo={800} alto={60} vueltas={4} /></g>
           {(() => { const p1 = kprog(T, K.Es + 1.5, K.Es + 2.1, kEase.sale), p2 = kprog(T, K.Es + 2.0, K.Es + 2.6, kEase.sale), p3 = kprog(T, K.Es + 2.5, K.Es + 3.2, kEase.sale);
             const ln = (x1, y1, x2, y2, p) => <line x1={x1} y1={y1} x2={klerp(x1, x2, p)} y2={klerp(y1, y2, p)} stroke={KC.ink} strokeWidth={10} strokeLinecap="round" />;
             const tx = (x, y, t, p, it = true, tam = 26) => p > 0 ? <text x={x} y={y} textAnchor="middle" opacity={p} style={{ font:`700 ${tam}px ${KF.mono}`, fontStyle: it ? 'italic' : 'normal' }} fill={KC.ink}>{t}</text> : null;
             return <>
-              {ln(380, 1150, 380, 1090, p1)}{ln(380, 1090, 220, 920, p1)}{ln(380, 1090, 700, 1060, p2)}{ln(700, 1060, 560, 920, p2)}{ln(700, 1060, 860, 920, p3)}
-              <ColoniaCaja x={220} y={860} r={50} color={CB.fusco} p={kprog(T, K.Es + 1.9, K.Es + 2.3)} seed={2} />
-              <ColoniaCaja x={560} y={860} r={50} color={CB.biforme} p={kprog(T, K.Es + 2.4, K.Es + 2.8)} seed={3} />
-              {[0, 1, 2].map((k) => <ColoniaCaja key={k} x={800 + k * 60} y={860 - k * 6} r={40} color="#fbfbf6" p={kprog(T, K.Es + 2.9 + k * 0.2, K.Es + 3.2 + k * 0.2)} seed={7} />)}
-              {tx(220, 950, 'P. fuscoglaucum', kprog(T, K.Es + 2.0, K.Es + 2.3))}{tx(220, 980, 'silvestre', kprog(T, K.Es + 2.0, K.Es + 2.3), false, 22)}
-              {tx(560, 950, 'P. biforme', kprog(T, K.Es + 2.5, K.Es + 2.8))}
-              {tx(860, 950, 'P. camemberti', kprog(T, K.Es + 3.0, K.Es + 3.3))}{tx(860, 980, 'var. camemberti', kprog(T, K.Es + 3.0, K.Es + 3.3), true, 22)}
+              {ln(400, 1150, 400, 1090, p1)}{ln(400, 1090, 270, 920, p1)}{ln(400, 1090, 680, 1060, p2)}{ln(680, 1060, 540, 920, p2)}{ln(680, 1060, 825, 920, p3)}
+              <ColoniaCaja x={270} y={860} r={50} color={CB.fusco} p={kprog(T, K.Es + 1.9, K.Es + 2.3)} seed={2} />
+              <ColoniaCaja x={540} y={860} r={50} color={CB.biforme} p={kprog(T, K.Es + 2.4, K.Es + 2.8)} seed={3} />
+              {[0, 1, 2].map((k) => <ColoniaCaja key={k} x={770 + k * 55} y={860 - k * 6} r={40} color="#fbfbf6" p={kprog(T, K.Es + 2.9 + k * 0.2, K.Es + 3.2 + k * 0.2)} seed={7} />)}
+              {tx(270, 950, 'P. fuscoglaucum', kprog(T, K.Es + 2.0, K.Es + 2.3))}{tx(270, 982, 'silvestre', kprog(T, K.Es + 2.0, K.Es + 2.3), false, 24)}
+              {tx(540, 950, 'P. biforme', kprog(T, K.Es + 2.5, K.Es + 2.8))}
+              {tx(825, 950, 'P. camemberti', kprog(T, K.Es + 3.0, K.Es + 3.3))}{tx(825, 982, 'var. camemberti', kprog(T, K.Es + 3.0, K.Es + 3.3), true, 24)}
             </>; })()}
         </DZ>)}
       </Escena>
@@ -349,7 +349,7 @@ function CamembertShot() {
       <Etq T={T} at={K.AA + 2.4} until={K.P - 0.3} x={80} y={1279} texto="centro blanco y más firme" tam={30} color={KC.ink} />
       <Chip T={T} at={K.P + 0.4} until={K.Es - 0.3} texto="la cepa se está desgastando" x={540} y={560} tam={40} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.Es + 0.1} until={K.M - 0.3} anio="2020" quien="CNRS · U. Paris-Saclay" revista="Current Biology, 2020" x={540} y={440} />
-      <Chip T={T} at={K.Es + 3.4} until={K.M - 0.3} texto="clon: copias casi idénticas" x={540} y={1360} tam={28} borde={KC.gold} />
+      <Chip T={T} at={K.Es + 3.4} until={K.M - 0.3} texto="clon: copias casi idénticas" x={540} y={1450} tam={28} borde={KC.gold} />
       <Chip T={T} at={K.M + 0.2} until={K.Ep - 0.3} texto="un mutante blanco" x={380} y={560} tam={44} borde={KC.ink} />
       <Nota T={T} at={K.M + 4.2} until={K.Ep - 0.3} x={540} y={1094} ancho={900} tam={28} borde={KC.ink}>hasta los años 50, los camembert todavía tenían mohos grises, verdes y a veces anaranjados <span style={{ opacity:0.7 }}>(CNRS, 2024)</span></Nota>
       <Chip T={T} at={K.Ep + 0.2} until={K.B - 0.3} texto="solo se reproduce sin sexo (clonal)" x={540} y={470} tam={32} borde={KC.cyan} />
