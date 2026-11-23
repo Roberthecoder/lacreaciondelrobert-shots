@@ -169,8 +169,8 @@ function EscarabajoShot() {
   const push = kprog(T, K.G, K.G + 1.4, kEase.sale);
   const palito = 0.4 + 0.6 * kprog(T, K.G + 0.1, K.G + 0.9, kEase.sale);
   // túnel por dentro
-  const cava = kprog(T, K.Tu + 0.1, K.Tu + 1.6, kEase.suave);
-  const jardin = kprog(T, K.Tu + 1.2, K.Tu + 2.4, kEase.sale);
+  const cava = kprog(T, K.Tu - 0.5, K.Tu + 1.4, kEase.suave);   // belleza (2.ª pasada): el túnel ya va cavado al entrar
+  const jardin = kprog(T, K.Tu - 0.1, K.Tu + 1.6, kEase.sale);
   const crias = kprog(T, K.Tu + 2.2, K.Tu + 2.8);
   // xilema
   const tapa = (i) => kprog(T, K.D + 0.5 + i * 0.3, K.D + 1.1 + i * 0.3, kEase.sale);
@@ -224,7 +224,8 @@ function EscarabajoShot() {
         <div style={{ position:'absolute', inset:0, background:'#1a120c' }}></div>
         {/* belleza (2.ª pasada): el túnel ×1.5 y la cámara sigue al escarabajo */}
         {fsvg(<g transform={`translate(${-320 * cava} 995) scale(1.5) translate(0 -995)`}>
-          {Array.from({ length: 14 }, (_, i) => <path key={i} d={`M -20 ${760 + i * 40} Q 540 ${740 + i * 40 + (i % 2 ? 30 : -10)} 1100 ${760 + i * 40}`} stroke="#3a281a" strokeWidth={6} fill="none" />)}
+          <rect x={-20} y={720} width={1460} height={590} fill={cineMix('#8a5f38', '#0a0f1c', 0.4)} />
+          {Array.from({ length: 14 }, (_, i) => <path key={i} d={`M -20 ${760 + i * 40} Q 540 ${740 + i * 40 + (i % 2 ? 30 : -10)} 1100 ${760 + i * 40}`} stroke="#5a3e26" strokeWidth={8} fill="none" />)}
           <rect x={0} y={740} width={80} height={560} fill={EC.corteza} stroke={KC.ink} strokeWidth={6} />
           <rect x={40} y={940} width={klerp(40, 900, cava)} height={110} rx={55} fill={EC.tunel} stroke="#6a4a2a" strokeWidth={6} />
           {cava > 0.6 && <rect x={560} y={klerp(990, 820, kprog(T, K.Tu + 1.0, K.Tu + 1.8))} width={100} height={klerp(0, 200, kprog(T, K.Tu + 1.0, K.Tu + 1.8))} rx={50} fill={EC.tunel} stroke="#6a4a2a" strokeWidth={6} />}
