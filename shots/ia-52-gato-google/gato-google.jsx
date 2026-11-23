@@ -161,6 +161,7 @@ function GatoGoogle() {
   const cuadroVideo = TIPOS[Math.floor(Math.max(0, T - K.V) * 4) % TIPOS.length];
   const onRacks = kprog(T, K.Ma + 2.5, K.Ma + 3.6, kEase.suave);
   const est = K.E + 4.3; // segunda frase de la escena Estudio
+  const oyO = klerp(170, 0, kprog(T, K.O + 3.1, K.O + 3.6, kEase.suave)); // las fotos con nombre suben cuando entran las barras
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: la cara borrosa llena el cuadro y se enfoca */}
@@ -177,21 +178,21 @@ function GatoGoogle() {
         <FondoLunares color={KC.cyan} />
         {svg(<>
           <defs><clipPath id="pant-v"><rect x={-410} y={-254} width={820} height={508} rx={14} /></clipPath></defs>
-          <Reproductor x={540} y={700} w={820} T={T} prog={kprog(T, K.V, K.Ma, null)}>
+          <Reproductor x={540} y={790} w={820} T={T} prog={kprog(T, K.V, K.Ma, null)}>
             <g clipPath="url(#pant-v)"><Miniatura x={0} y={0} w={820} tipo={cuadroVideo} borde={0} /></g>
           </Reproductor>
           {/* la pila de cuadros, justo debajo de la pantalla */}
           {Array.from({ length: 6 }, (_, k) => <g key={k} opacity={kprog(T, K.V + 1.0 + k * 0.5, K.V + 1.3 + k * 0.5)}>
-            <Miniatura x={540 + (k % 2) * 12} y={1200 - k * 12} w={250} tipo={TIPOS[(k * 5) % TIPOS.length]} rot={(k % 3 - 1) * 6} borde={4} /></g>)}
+            <Miniatura x={540 + (k % 2) * 12} y={1250 - k * 12} w={250} tipo={TIPOS[(k * 5) % TIPOS.length]} rot={(k % 3 - 1) * 6} borde={4} /></g>)}
           {Array.from({ length: 16 }, (_, i) => { const t0 = K.V + 0.6 + i * 0.3, u = kprog(T, t0, t0 + 0.8, kEase.suave);
             if (u <= 0 || u >= 1) return null;
-            return <Miniatura key={i} x={540 + Math.sin(Math.PI * u) * (i % 2 ? 150 : -150)} y={klerp(1010, 1185, u)} w={klerp(200, 250, u)} tipo={TIPOS[i % TIPOS.length]} rot={u * 20 - 10} borde={4} />; })}
+            return <Miniatura key={i} x={540 + Math.sin(Math.PI * u) * (i % 2 ? 150 : -150)} y={klerp(1100, 1235, u)} w={klerp(200, 250, u)} tipo={TIPOS[i % TIPOS.length]} rot={u * 20 - 10} borde={4} />; })}
         </>)}
       </Escena>
-      <Chip T={T} at={K.V + 0.2} until={K.Ma - 0.2} texto="estudio publicado en 2012" x={540} y={350} tam={34} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.V + 2.2} until={K.Ma - 0.2} valor={10000000} dur={1.2} etiqueta="" x={540} y={1395} tam={120} color={KC.yellow} />
-      <Chip T={T} at={K.V + 2.6} until={K.Ma - 0.2} texto="imágenes · 1 por video · 200 × 200 píxeles" x={540} y={1490} tam={28} borde={KC.ink} />
-      <MitoTachado T={T} at={K.V + 4.0} tacharEn={K.V + 4.7} until={K.Ma - 0.2} texto="etiqueta: «gato»" x={872} y={1150} tam={36} />
+      <Chip T={T} at={K.V + 0.2} until={K.Ma - 0.2} texto="estudio publicado en 2012" x={540} y={430} tam={34} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.V + 2.2} until={K.Ma - 0.2} valor={10000000} dur={1.2} etiqueta="" x={540} y={1425} tam={120} color={KC.yellow} />
+      <Chip T={T} at={K.V + 2.6} until={K.Ma - 0.2} texto="imágenes · 1 por video · 200 × 200 píxeles" x={540} y={1515} tam={28} borde={KC.ink} />
+      <MitoTachado T={T} at={K.V + 4.0} tacharEn={K.V + 4.7} until={K.Ma - 0.2} texto="etiqueta: «gato»" x={872} y={1200} tam={36} />
 
       {/* 3 · la máquina: conexiones, computadoras, días */}
       <Escena T={T} a={K.Ma} b={K.N}>
@@ -276,24 +277,24 @@ function GatoGoogle() {
       {/* 8 · con fotos etiquetadas: +70 %… pero 16 de cada 100. Las fotos con su etiqueta están en cuadro toda la escena */}
       <Escena T={T} a={K.O} b={K.Ce}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>{['perro', 'coche', 'pelota'].map((t, i) => { const o = kprog(T, K.O + 0.05 + i * 0.15, K.O + 0.35 + i * 0.15);
-          return <g key={t} opacity={o} transform={`rotate(${(i - 1) * 3} ${210 + i * 330} 520)`}>
-            <Miniatura x={210 + i * 330} y={500} w={280} tipo={t} borde={5} />
+        {svg(<g transform={`translate(0 ${oyO})`}>{['perro', 'coche', 'pelota'].map((t, i) => { const o = kprog(T, K.O + 0.05 + i * 0.15, K.O + 0.35 + i * 0.15);
+          return <g key={t} opacity={o} transform={`rotate(${(i - 1) * 3} ${210 + i * 330} 740)`}>
+            <Miniatura x={210 + i * 330} y={720} w={290} tipo={t} borde={5} />
             {/* la etiqueta con nombre (rayita, sin texto) */}
-            <rect x={210 + i * 330 - 95} y={630} width={190} height={54} rx={12} fill="#e9e4d6" stroke={KC.ink} strokeWidth={5} />
-            <circle cx={210 + i * 330 - 68} cy={657} r={8} fill="#0b1020" />
-            <path d={`M ${210 + i * 330 - 44} 657 L ${210 + i * 330 + 70 - i * 14} 657`} stroke="#0b1020" strokeWidth={9} strokeLinecap="round" />
-          </g>; })}</>)}
+            <rect x={210 + i * 330 - 95} y={855} width={190} height={54} rx={12} fill="#e9e4d6" stroke={KC.ink} strokeWidth={5} />
+            <circle cx={210 + i * 330 - 68} cy={882} r={8} fill="#0b1020" />
+            <path d={`M ${210 + i * 330 - 44} 882 L ${210 + i * 330 + 70 - i * 14} 882`} stroke="#0b1020" strokeWidth={9} strokeLinecap="round" />
+          </g>; })}</g>)}
       </Escena>
-      <Chip T={T} at={K.O + 0.3} until={K.O + 6.6} texto="después: fotos con nombre" x={540} y={290} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.O + 1.9} until={K.O + 6.6} texto="ImageNet · 22,000 tipos de objetos" x={540} y={790} tam={34} borde={KC.ink} />
-      <BarrasEsc T={T} at={K.O + 3.6} until={K.O + 6.6} top={870} max={20} filas={[{ valor: 9.3, etiqueta: 'mejor sistema previo', color: '#9aa3b5' }, { valor: 15.8, etiqueta: 'esta red', color: KC.pink, at: K.O + 4.4 }]} />
-      <Chip T={T} at={K.O + 5.0} until={K.O + 6.6} texto="+70 % relativo" x={540} y={1260} tam={48} borde={KC.pink} />
-      <Chip T={T} at={K.O + 5.3} until={K.O + 6.6} texto="con ajuste usando fotos etiquetadas" x={540} y={1350} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.O + 0.3} until={K.O + 6.6} texto="después: fotos con nombre" x={540} y={500 + oyO} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.O + 1.9} until={K.O + 6.6} texto="ImageNet · 22,000 tipos de objetos" x={540} y={985 + oyO} tam={34} borde={KC.ink} />
+      <BarrasEsc T={T} at={K.O + 3.6} until={K.O + 6.6} top={1050} max={20} filas={[{ valor: 9.3, etiqueta: 'mejor sistema previo', color: '#9aa3b5' }, { valor: 15.8, etiqueta: 'esta red', color: KC.pink, at: K.O + 4.4 }]} />
+      <Chip T={T} at={K.O + 5.0} until={K.O + 6.6} texto="+70 % relativo" x={540} y={1400} tam={48} borde={KC.pink} />
+      <Chip T={T} at={K.O + 5.3} until={K.O + 6.6} texto="con ajuste usando fotos etiquetadas" x={540} y={1480} tam={28} borde={KC.ink} />
       {T > K.O + 6.7 && <div style={{ opacity:kprog(T, K.O + 6.8, K.O + 7.2) * (1 - kprog(T, K.Ce - 0.05, K.Ce + 0.4)) }}>
-        <Cuadricula T={T} cols={10} filas={10} x={190} y={850} ancho={700} alto={620} llenado={kprog(T, K.O + 7.0, K.O + 8.2, kEase.suave) * 0.16} vacio="rgba(255,255,255,.16)" lleno={KC.pink} />
+        <Cuadricula T={T} cols={10} filas={10} x={240} y={1040} ancho={600} alto={500} llenado={kprog(T, K.O + 7.0, K.O + 8.2, kEase.suave) * 0.16} vacio="rgba(255,255,255,.24)" lleno={KC.pink} />
       </div>}
-      <Chip T={T} at={K.O + 7.4} until={K.Ce - 0.2} texto="aciertos: 16 de cada 100" x={540} y={790} tam={36} borde={KC.pink} />
+      <Chip T={T} at={K.O + 7.4} until={K.Ce - 0.2} texto="aciertos: 16 de cada 100" x={540} y={985} tam={36} borde={KC.pink} />
 
       {/* 9 · y era chiquita */}
       <Escena T={T} a={K.Ce} b={K.C}>

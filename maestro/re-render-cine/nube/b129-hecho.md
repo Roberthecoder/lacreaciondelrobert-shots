@@ -1,0 +1,1 @@
+- ia-52-gato-google: Videos: la pantalla, la pila de cuadros, el contador y sus chips bajan 30–90 px (antes cargado arriba); Objetos: las tres fotos con nombre más grandes y al centro, suben suave cuando entran las barras; barras, chips y la cuadrícula de aciertos bajan y la cuadrícula se ve más (celdas vacías .16→.24). Auditores: sin láminas · encuadre bien.
