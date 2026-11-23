@@ -1,0 +1,1 @@
+- amb-42-hielo-artico: en el estudio, el Ártico ya no desaparece: queda atenuado detrás de la cuadrícula de años (ya no es lámina) y las casillas vacías pasan de blanco a azul hielo translúcido (sin plancha blanca). El resto (mapa del Ártico, México, espejo, círculo, vaso) ya estaba centrado y grande. Auditores: sin láminas · encuadre bien.

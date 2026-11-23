@@ -202,14 +202,14 @@ function HieloArticoShot() {
       <Escena T={T} a={K.Es} b={K.R}>
         <FondoLunares color={KC.noche} punto="rgba(255,255,255,.08)" />
         {svg(<>
-          <g opacity={1 - kprog(T, K.Es + 2.6, K.Es + 3.0)}>
+          <g opacity={1 - 0.75 * kprog(T, K.Es + 2.6, K.Es + 3.0)}>
             <ArticoMapa T={T} cx={540} cy={1000} Ro={330} valor={HA_2026} />
             <ellipse cx={540} cy={1000} rx={440} ry={150} fill="none" stroke="rgba(255,255,255,.5)" strokeWidth={4} strokeDasharray="12 10" />
             <g transform={`translate(${540 + Math.cos((T - K.Es) * 1.6) * 440} ${1000 + Math.sin((T - K.Es) * 1.6) * 150}) scale(1.4)`}><Satelite x={0} y={0} rot={(T - K.Es) * 20} /></g>
           </g>
           <g opacity={kprog(T, K.Es + 2.8, K.Es + 3.2)} transform="translate(540 1000) scale(1.45) translate(-421 -956)">
             {Array.from({ length: 48 }, (_, i) => { const c = i % 8, f = Math.floor(i / 8), on = i >= 28 && T > K.Es + 3.4 + (i - 28) * 0.06;
-              return <rect key={i} x={90 + c * 84} y={740 + f * 72} width={74} height={60} rx={12} fill={on ? KC.red : 'rgba(244,251,255,.85)'} stroke={KC.ink} strokeWidth={4} />; })}
+              return <rect key={i} x={90 + c * 84} y={740 + f * 72} width={74} height={60} rx={12} fill={on ? KC.red : 'rgba(170,205,235,.38)'} stroke={KC.ink} strokeWidth={4} />; })}
             <text x={127} y={779} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill={KC.ink}>1979</text>
             <text x={715} y={1139} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill="#fff">2026</text>
             <text x={463} y={995} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill="#fff">2007</text>
