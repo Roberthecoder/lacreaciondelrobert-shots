@@ -94,7 +94,8 @@ function Rosca({ T = 0, x, y, s = 1, mezcla = 1, sinHeroe = false, brillo = 0 })
   }
   items.sort((p, q) => p.py - q.py);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <defs><clipPath id="hueco"><ellipse cx={0} cy={0} rx={175} ry={80} /></clipPath></defs>
+    <defs><clipPath id="hueco"><ellipse cx={0} cy={0} rx={175} ry={80} /></clipPath>
+      <radialGradient id="panLuz" cx=".32" cy=".22" r=".85"><stop offset="0" stopColor="#ffe2b0" stopOpacity=".55" /><stop offset=".5" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#3a1a06" stopOpacity=".45" /></radialGradient></defs>
     {/* plato de talavera */}
     <ellipse cx={0} cy={80} rx={540} ry={300} fill="rgba(0,0,0,.18)" />
     <ellipse cx={0} cy={60} rx={530} ry={290} fill={PLATO} stroke={KC.ink} strokeWidth={8} />
@@ -103,6 +104,7 @@ function Rosca({ T = 0, x, y, s = 1, mezcla = 1, sinHeroe = false, brillo = 0 })
     {/* pan: lado y cara de arriba */}
     <path d={`M ${-430} 50 A 430 225 0 1 0 430 50 A 430 225 0 1 0 -430 50 Z`} fill={PAN3} stroke={KC.ink} strokeWidth={8} />
     <path d={`M -430 0 A 430 225 0 1 0 430 0 A 430 225 0 1 0 -430 0 Z M -175 0 A 175 80 0 1 1 175 0 A 175 80 0 1 1 -175 0 Z`} fill={PAN} stroke={KC.ink} strokeWidth={8} fillRule="evenodd" />
+    <path d={`M -430 0 A 430 225 0 1 0 430 0 A 430 225 0 1 0 -430 0 Z M -175 0 A 175 80 0 1 1 175 0 A 175 80 0 1 1 -175 0 Z`} fill="url(#panLuz)" fillRule="evenodd" />
     <g clipPath="url(#hueco)"><ellipse cx={0} cy={0} rx={175} ry={80} fill={PAN3} /><ellipse cx={0} cy={36} rx={175} ry={72} fill={PLATO} /><ellipse cx={0} cy={36} rx={160} ry={60} fill="none" stroke={TALAVERA} strokeWidth={8} opacity=".5" /></g>
     <path d="M -380 -60 Q -200 -190 120 -195" stroke="#f0b26a" strokeWidth={22} fill="none" strokeLinecap="round" opacity=".6" />
     {/* azúcar espolvoreada */}
@@ -160,7 +162,11 @@ function CazoAlmibar({ T, x, y, s = 1, espesor = 0, cubos = 0 }) {
     {[-120, -60, 0, 60, 120].map((fx, i) => <path key={i} d={`M ${fx - 26} 200 Q ${fx} ${120 - 20 * Math.sin(T * 12 + i)} ${fx + 26} 200 Z`} fill={i % 2 ? KC.orange : KC.yellow} opacity={0.95} stroke={KC.ink} strokeWidth={3} />)}
     {[-150, -90, -30, 30, 90, 150].map((lx, i) => <rect key={'l' + i} x={lx - 26} y={196} width={52} height={22} rx={8} fill="#6b4226" stroke={KC.ink} strokeWidth={4} transform={`rotate(${i % 2 ? 8 : -8} ${lx} 207)`} />)}
     <rect x={-250} y={-40} width={40} height={24} rx={10} fill="#6b4226" stroke={KC.ink} strokeWidth={5} /><rect x={210} y={-40} width={40} height={24} rx={10} fill="#6b4226" stroke={KC.ink} strokeWidth={5} />
+    <defs><linearGradient id="cobreLuz" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stopColor="#ffd2a8" stopOpacity=".45" /><stop offset=".35" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#2a0e02" stopOpacity=".5" /></linearGradient></defs>
+    <ellipse cx={0} cy={230} rx={260} ry={26} fill="rgba(0,0,0,.3)" />
     <path d="M -230 -70 L 230 -70 L 200 150 Q 0 200 -200 150 Z" fill={COBRE} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    <path d="M -230 -70 L 230 -70 L 200 150 Q 0 200 -200 150 Z" fill="url(#cobreLuz)" />
+    <path d="M -150 -40 Q -160 60 -120 140" stroke="#ffe0c0" strokeWidth={10} fill="none" strokeLinecap="round" opacity=".35" />
     <path d="M -200 -30 L 190 -30" stroke="#e08b57" strokeWidth={8} opacity=".7" />
     <ellipse cx={0} cy={-70} rx={230} ry={44} fill={color} stroke={KC.ink} strokeWidth={8} />
     {Array.from({ length: Math.round(cubos * 9) }, (_, i) => { const q = krng(i + 30); return cuboAcitron((q() - 0.5) * 340, -70 + (q() - 0.5) * 50, 1.1, 'c' + i, 0.9); })}
@@ -194,7 +200,7 @@ function CelulaOsmosis({ T, x, y, r = 270, u = 0, t0 = 0 }) {
 
 /* ---------- báscula de dos platos ---------- */
 function Bascula({ T, x, y, ang = 0, izq, der }) {
-  const L = 330, rad = (ang * Math.PI) / 180;
+  const L = 290, rad = (ang * Math.PI) / 180;
   const pl = [x - Math.cos(rad) * L, y - Math.sin(rad) * L], pr = [x + Math.cos(rad) * L, y + Math.sin(rad) * L];
   const plato = ([px, py], hijos, k) => <g key={k}>
     <line x1={px} y1={py} x2={px - 110} y2={py + 170} stroke={KC.ink} strokeWidth={4} /><line x1={px} y1={py} x2={px + 110} y2={py + 170} stroke={KC.ink} strokeWidth={4} />
@@ -275,7 +281,7 @@ function Acitron() {
       {/* 2 · dónde vive: desierto chihuahuense y valle de Tehuacán */}
       <Escena T={T} a={K.De} b={K.Pu} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        {svg(<MapaMexico x={40} y={600} ancho={1000} conCA={false} color="#5a4a2a">
+        {svg(<MapaMexico x={40} y={780} ancho={1000} conCA={false} color="#5a4a2a">
           {(() => {
             const norte = [[-101.6, 27.2], [-100.3, 25.6], [-99.3, 23.6], [-100.6, 22.6], [-102.4, 23.6], [-101.1, 21.2], [-99.8, 20.8], [-98.9, 20.4]];
             const sur = [[-97.4, 18.4], [-97.1, 17.9]];
@@ -314,7 +320,7 @@ function Acitron() {
               <rect x={700} y={1180 - alto - 20} width={46} height={alto + 20} fill="#fff6d8" stroke={KC.ink} strokeWidth={5} />
               {Array.from({ length: 11 }, (_, i) => <line key={i} x1={700} y1={1180 - i * alto / 10} x2={i % 5 ? 722 : 746} y2={1180 - i * alto / 10} stroke={KC.ink} strokeWidth={4} />)}
               <line x1={560} y1={1180 - alto} x2={700} y2={1180 - alto} stroke={KC.red} strokeWidth={6} strokeDasharray="14 10" />
-              <text x={770} y={1180 - alto + 14} style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink}>50 cm</text>
+              <text x={758} y={1180 - alto + 14} style={{ font:`400 54px ${KF.titulo}` }} fill={KC.ink}>50 cm</text>
             </g>
             {/* costillas con espinas que salen volando */}
             {pela > 0 && pela < 1 && Array.from({ length: 8 }, (_, i) => { const a = (i / 8) * Math.PI * 2, d = pela * 420;
@@ -347,7 +353,7 @@ function Acitron() {
       <Escena T={T} a={K.P} b={K.Mu} zoom={0.1}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <g opacity=".85"><Biznaga T={T} x={640} y={1260} s={1.0} flores={0} detalle={false} gid="bz7" /></g>
+          <g opacity=".85"><Biznaga T={T} x={620} y={1390} s={1.45} flores={0} detalle={false} gid="bz7" /></g>
           <text x={280} y={1060} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 860)`}>?</text>
         </>)}
       </Escena>
@@ -368,18 +374,18 @@ function Acitron() {
       <Escena T={T} a={K.E} b={K.Le} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <g transform="translate(470 1170) scale(1.25) translate(-540 -1180)">
-          <rect x={-200} y={1180} width={KW + 400} height={110} fill={ARENA} />
+          <g transform="translate(470 1260) scale(1.35) translate(-540 -1180)">
+          <rect x={-200} y={1180} width={KW + 400} height={170} fill={ARENA} />
           <path d={`M -200 1180 Q 270 1165 540 1180 T ${KW + 200} 1180`} stroke={KC.ink} strokeWidth={6} fill="none" />
           <Biznaga T={T} x={470} y={1180} s={klerp(0.06, 0.87, crece)} flores={kprog(T, K.E + 5.0, K.E + 5.8)} detalle={crece > 0.25} gid="bz9" />
           <g opacity={kprog(T, K.E + 0.4, K.E + 0.9)}>
             <rect x={760} y={760} width={46} height={420} fill="#fff6d8" stroke={KC.ink} strokeWidth={5} />
             {Array.from({ length: 11 }, (_, i) => <line key={i} x1={760} y1={1180 - i * 40} x2={i % 5 ? 782 : 806} y2={1180 - i * 40} stroke={KC.ink} strokeWidth={4} />)}
-            <text x={820} y={790} style={{ font:`400 60px ${KF.titulo}` }} fill={KC.ink}>50 cm</text>
+            <text x={783} y={738} textAnchor="middle" style={{ font:`400 50px ${KF.titulo}` }} fill={KC.ink}>50 cm</text>
           </g>
           </g>
         </>)}
-        <div style={{ position:'absolute', left:60, top:600, zIndex:41, opacity:kprog(T, K.E + 0.6, K.E + 1.0), textAlign:'center' }}>
+        <div style={{ position:'absolute', left:50, top:590, zIndex:41, opacity:kprog(T, K.E + 0.6, K.E + 1.0), textAlign:'center' }}>
           <div style={{ font:`700 30px ${KF.mono}`, color:KC.ink }}>EDAD (AÑOS)</div>
           <div style={{ font:`400 120px/1 ${KF.titulo}`, color:KC.texto, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}` }}>{crece >= 1 ? '≈ 25' : Math.round(crece * 25)}</div>
         </div>
@@ -387,7 +393,7 @@ function Acitron() {
       {/* 10 · 2019: sube de categoría en la NOM-059 */}
       <Escena T={T} a={K.Le} b={K.Da} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        {svg(<>
+        {svg(<g transform="translate(540 1120) scale(1.2) translate(-540 -1000)">
           <rect x={120} y={1060} width={420} height={140} fill="#4a4434" stroke={KC.ink} strokeWidth={7} />
           <rect x={540} y={860} width={420} height={340} fill="#7a5a22" stroke={KC.ink} strokeWidth={7} />
           <text x={330} y={1120} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill={KC.ink}>2010</text>
@@ -396,22 +402,22 @@ function Acitron() {
           <text x={750} y={990} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Le + 1.8, K.Le + 2.3)}>más alta</text>
           <path d="M 400 1010 Q 520 760 700 820" stroke={KC.red} strokeWidth={10} fill="none" strokeLinecap="round" strokeDasharray="1000" strokeDashoffset={1000 * (1 - kprog(T, K.Le + 0.9, K.Le + 1.6))} />
           <path d="M 676 790 L 712 822 L 668 842" stroke={KC.red} strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" opacity={kprog(T, K.Le + 1.5, K.Le + 1.7)} />
-          {(() => { const bx = klerp(330, 750, sube), by = klerp(1060, 860, sube) - Math.sin(sube * Math.PI) * 160; return <Biznaga T={T} x={bx} y={by} s={0.62} flores={1} detalle={false} gid="bz10" />; })()}
-        </>)}
-        <div style={{ position:'absolute', left:60, top:430, zIndex:41, width:560, opacity:kprog(T, K.Le + 0.1, K.Le + 0.5), transform:`rotate(-2deg) translateY(${(1 - kprog(T, K.Le + 0.1, K.Le + 0.6, kEase.sale)) * 40}px)`,
-          background:KC.paper, border:`6px solid ${KC.ink}`, borderRadius:18, padding:'18px 26px', boxShadow:`10px 10px 0 ${KC.ink}` }}>
-          <div style={{ font:`400 58px/1 ${KF.titulo}`, color:KC.ink }}>NOM-059-SEMARNAT</div>
-          <div style={{ font:`900 30px ${KF.texto}`, color:'#5a524a', marginTop:8 }}>Lista oficial de especies en riesgo</div>
-          {[0, 1, 2].map((i) => <div key={i} style={{ height:10, borderRadius:5, background:'#d8d0c0', marginTop:12, width:`${90 - i * 18}%` }}></div>)}
+          {(() => { const bx = klerp(330, 750, sube), by = klerp(1060, 860, sube) - Math.sin(sube * Math.PI) * 90; return <Biznaga T={T} x={bx} y={by} s={0.62} flores={1} detalle={false} gid="bz10" />; })()}
+        </g>)}
+        <div style={{ position:'absolute', left:60, top:290, zIndex:41, width:470, opacity:kprog(T, K.Le + 0.1, K.Le + 0.5), transform:`rotate(-2deg) translateY(${(1 - kprog(T, K.Le + 0.1, K.Le + 0.6, kEase.sale)) * 40}px)`,
+          background:KC.paper, border:`5px solid ${KC.ink}`, borderRadius:16, padding:'14px 22px', boxShadow:`8px 8px 0 ${KC.ink}` }}>
+          <div style={{ font:`400 46px/1 ${KF.titulo}`, color:KC.ink }}>NOM-059-SEMARNAT</div>
+          <div style={{ font:`900 26px ${KF.texto}`, color:'#9a9284', marginTop:8 }}>Lista oficial de especies en riesgo</div>
+          {[0, 1].map((i) => <div key={i} style={{ height:8, borderRadius:4, background:'#5a5448', marginTop:10, width:`${90 - i * 18}%` }}></div>)}
         </div>
       </Escena>
       {/* 11 · dato: kilo y medio de azúcar por kilo de biznaga */}
       <Escena T={T} a={K.Da} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {svg(<Bascula T={T} x={540} y={760} ang={angSuave}
-          izq={<>{Array.from({ length: 6 }, (_, i) => cuboAcitron(-60 + (i % 3) * 60, -30 - Math.floor(i / 3) * 46, 1.3, 'k' + i))}<text x={0} y={90} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill={KC.ink}>1 kg biznaga</text></>}
+          izq={<>{Array.from({ length: 6 }, (_, i) => cuboAcitron(-60 + (i % 3) * 60, -30 - Math.floor(i / 3) * 46, 1.3, 'k' + i))}<text x={0} y={90} textAnchor="middle" style={{ font:`400 48px ${KF.titulo}` }} fill={KC.ink}>1 kg biznaga</text></>}
           der={<>{[0.7, 1.3, 1.9].map((d, i) => { const u = kprog(T, K.Da + d - 0.35, K.Da + d, (p) => p * p); return u > 0 ? <g key={i} transform={`translate(0 ${(1 - u) * -500})`}>{BolsaAzucar({ x: -90 + i * 90, y: 0, key: 'b' + i })}</g> : null; })}
-            <text x={0} y={90} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Da + 2.0, K.Da + 2.4)}>1.5 kg azúcar</text></>} />)}
+            <text x={0} y={90} textAnchor="middle" style={{ font:`400 48px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Da + 2.0, K.Da + 2.4)}>1.5 kg azúcar</text></>} />)}
       </Escena>
       {/* 12 · cierre: la misma rosca; por dentro, células de cactus con azúcar; luego ate o papaya */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
@@ -432,9 +438,9 @@ function Acitron() {
       <Etq T={T} at={K.Bi + 0.9} until={K.De - 0.2} x={60} y={1410} texto="biznaga de dulce" tam={40} />
       <Etq T={T} at={K.Bi + 1.2} until={K.De - 0.2} x={60} y={1465} texto="Echinocactus platyacanthus" it tam={36} color={KC.yellow} />
       <Chip T={T} at={K.Bi + 2.6} until={K.De - 0.2} texto="endémica de México" x={540} y={300} tam={40} borde={KC.yellow} />
-      <Etq T={T} at={K.De + 1.2} until={K.Pu - 0.2} x={520} y={775} texto="desierto chihuahuense" tam={30} />
-      <Etq T={T} at={K.De + 2.6} until={K.Pu - 0.2} x={640} y={1015} texto="valle de Tehuacán" tam={30} />
-      <Chip T={T} at={K.De + 3.0} until={K.Pu - 0.2} texto="Puebla y Oaxaca" x={540} y={1360} tam={40} borde={KC.ink} />
+      <Etq T={T} at={K.De + 1.2} until={K.Pu - 0.2} x={520} y={955} texto="desierto chihuahuense" tam={30} />
+      <Etq T={T} at={K.De + 2.6} until={K.Pu - 0.2} x={640} y={1195} texto="valle de Tehuacán" tam={30} />
+      <Chip T={T} at={K.De + 3.0} until={K.Pu - 0.2} texto="Puebla y Oaxaca" x={540} y={1500} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.Pu + 2.2} until={K.Co - 0.2} texto="tejido que guarda agua" x={540} y={1440} tam={42} borde={KC.mint} />
       <Chip T={T} at={K.Co + 0.9} until={K.Co + 2.6} texto="más de medio metro" x={540} y={1450} tam={42} borde={KC.red} />
       <Etq T={T} at={K.Co + 2.0} until={K.Co + 3.4} x={660} y={760} texto="sin costillas" tam={32} />
@@ -447,13 +453,13 @@ function Acitron() {
       </div>}
       {T > K.Os - 0.3 && T < K.P + 0.2 && <Escala T={T} z={1} pxPorMm={3000} x={60} y={1430} />}
       <Chip T={T} at={K.Os + 0.4} until={K.P - 0.2} texto="ósmosis" x={560} y={470} tam={46} borde={KC.cyan} />
-      <Etq T={T} at={K.Os + 1.0} until={K.P - 0.2} x={760} y={600} texto="sale agua" tam={32} color="#7fd0ff" />
+      <Etq T={T} at={K.Os + 1.0} until={K.P - 0.2} x={690} y={560} texto="sale agua" tam={32} color="#7fd0ff" />
       <Etq T={T} at={K.Os + 1.6} until={K.P - 0.2} x={620} y={1170} texto="entra azúcar" tam={32} color={KC.gold2} />
       <Medidor T={T} at={K.Os + 1.0} until={K.P - 0.2} y={1390} ancho={900} etiqueta="azúcar en la pulpa" valor={(t) => 0.725 * kprog(t, K.Os + 1.2, K.Os + 5.4, kEase.suave)} texto={(v) => (v >= 0.7 ? '70–75 %' : Math.round(v * 100) + ' %')} color={KC.gold} />
       <Chip T={T} at={K.Mu + 2.0} until={K.E - 0.2} texto="se usa la planta entera" x={540} y={300} tam={42} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.0} anio="2008" quien="Tesis doctoral · UNAM" revista="Zapotitlán Salinas, Tehuacán (Puebla)" x={470} y={420} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.0} anio="2008" quien="Tesis doctoral · UNAM" revista="Zapotitlán Salinas, Tehuacán (Puebla)" x={470} y={390} />
       <Chip T={T} at={K.E + 5.2} until={K.Le - 0.2} texto="≈ 25 años · estimación" x={540} y={420} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.Le + 2.4} until={K.Da - 0.2} texto="especie en riesgo · 2019" x={540} y={1330} tam={42} borde={KC.red} />
+      <Chip T={T} at={K.Le + 2.4} until={K.Da - 0.2} texto="especie en riesgo · 2019" x={540} y={1460} tam={42} borde={KC.red} />
       <Chip T={T} at={K.Da + 2.4} until={K.Ci - 0.2} texto="1.5 kg de azúcar por kg" x={540} y={1340} tam={42} borde={KC.gold} />
       <Etq T={T} at={K.Da + 0.4} until={K.Ci - 0.2} x={240} y={1430} texto="una receta tradicional" tam={30} />
       <Chip T={T} at={K.Ci + 1.2} until={K.Ci + 3.6} texto="no es fruta: es cactus" x={540} y={1340} tam={44} borde={KC.mint} />
