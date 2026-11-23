@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Biotecnológico #03 · CRISPR — gemelo MUDO (M4 "Ciclo" + M1: la fila CRISPR es la partitura). Loop de 61.5 s.
 // Virus rosa ataca → la bacteria guarda un pedazo → vuelve y lo corta → virus cian → lo guarda → lo corta →
 // la memoria suena como melodía → la vecina todavía no recuerda nada… y llega el virus rosa (primer cuadro).

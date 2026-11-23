@@ -236,19 +236,19 @@ function NecromasaShot() {
       {/* 7 · las dos huellas: glucosamina (sobre todo hongos) y ácido murámico (solo bacterias) */}
       <Escena T={T} a={K.Hu} b={K.E19} zoom={0.04}>
         <FondoMarca patron="oscuro" />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 90)">{/* modo cine: bajado al centro y moléculas más grandes */}
           <g opacity={klerp(1, 0.3, kprog(T, K.Hu + 0.6, K.Hu + 1.2))}><CadenaAnillos x={96} y={580} n={4} p={1} s={1.05} color={NC.pared} /></g>
-          <AminoAzucar x={215} y={950} s={1.45} color={NC.hongo} p={kprog(T, K.Hu + 0.9, K.Hu + 1.5)} />
+          <AminoAzucar x={195} y={930} s={1.75} color={NC.hongo} p={kprog(T, K.Hu + 0.9, K.Hu + 1.5)} />
           {T > K.Hu + 2.4 && <Bacteria T={T} x={835} y={580} largo={290} ancho={118} rot={-10} seed={7} opacidad={0.3 * kprog(T, K.Hu + 2.6, K.Hu + 3.2)} />}
           <Bacteria T={T} x={835} y={580} largo={290} ancho={118} rot={-10} seed={7} reventar={kprog(T, K.Hu + 2.4, K.Hu + 3.2)} />
-          <AminoAzucar x={775} y={950} s={1.45} color={NC.bact} cola p={kprog(T, K.Hu + 2.9, K.Hu + 3.5)} />
-          <line x1={540} y1={450} x2={540} y2={1290} stroke="rgba(255,255,255,.25)" strokeWidth={4} strokeDasharray="12 12" />
-        </>)}
+          <AminoAzucar x={745} y={930} s={1.75} color={NC.bact} cola p={kprog(T, K.Hu + 2.9, K.Hu + 3.5)} />
+          <line x1={540} y1={380} x2={540} y2={1300} stroke="rgba(255,255,255,.25)" strokeWidth={4} strokeDasharray="12 12" />
+        </g>)}
       </Escena>
       {/* 8 · el estudio de 2019 (zonas templadas, capa superior): perfil de suelo grande y barras; la tarjeta, chica y arriba */}
       <Escena T={T} a={K.E19} b={K.E26} zoom={0.04}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 150)">{/* modo cine: bajado al centro del cuadro (estaba ARRIBA) */}
           {/* perfil de suelo con la capa de arriba resaltada */}
           <rect x={60} y={640} width={450} height={190} fill="#2b1d14" stroke={KC.ink} strokeWidth={6} />
           <rect x={60} y={830} width={450} height={190} fill="#4d3524" stroke={KC.ink} strokeWidth={6} />
@@ -264,7 +264,7 @@ function NecromasaShot() {
             <line x1={805} y1={735} x2={805} y2={1150} stroke={KC.ink} strokeWidth={5} strokeDasharray="10 8" />
             <text x={805} y={1190} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>mitad</text>
           </g>; })()}
-        </>)}
+        </g>)}
       </Escena>
       {/* 9 · el estudio de 2026: mapa → cuadrícula que se llena (34 % hongos + 16 % bacterias) */}
       <Escena T={T} a={K.E26} b={K.D} zoom={0.03}>
@@ -319,16 +319,16 @@ function NecromasaShot() {
       <Etq T={T} at={K.A + 1.0} until={K.P - 0.3} x={1040} y={1335} texto="suelto: se va antes" lado="izq" tam={28} color="#e0a43a" />
       <Etq T={T} at={K.A + 0.9} until={K.P - 0.6} x={600} y={540} texto="décadas" tam={46} color={KC.gold2} />
       <Etq T={T} at={K.A + 1.8} until={K.P - 0.6} x={600} y={790} texto="… o siglos" tam={46} color={KC.gold2} />
-      <Etq T={T} at={K.Hu + 0.2} until={K.E19 - 0.3} x={50} y={410} texto="hongo: quitina" tam={32} color={NC.pared} />
-      <Etq T={T} at={K.Hu + 0.2} until={K.E19 - 0.3} x={575} y={410} texto="bacteria: peptidoglicano" tam={27} color={NC.bact} />
-      <Chip T={T} at={K.Hu + 1.3} until={K.E19 - 0.3} texto="glucosamina" x={270} y={1160} tam={40} borde={NC.hongo} />
-      <Etq T={T} at={K.Hu + 1.6} until={K.E19 - 0.3} x={24} y={1250} texto="en el suelo: sobre todo hongos" tam={24} color={NC.hongo} />
-      <Chip T={T} at={K.Hu + 3.3} until={K.E19 - 0.3} texto="ácido murámico" x={810} y={1160} tam={40} borde={NC.bact} />
-      <Etq T={T} at={K.Hu + 3.6} until={K.E19 - 0.3} x={600} y={1250} texto="solo de bacterias" tam={28} color={NC.bact} />
-      <TarjetaEstudio T={T} at={K.E19 + 0.1} until={K.E19 + 5.6} anio="2019" quien="Liang, Amelung, Lehmann y Kästner" revista="Global Change Biology · aminoazúcares 1996–2018" x={450} y={350} />
-      <Etq T={T} at={K.E19 + 1.4} until={K.E26 - 0.3} x={60} y={590} texto="capa superior" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.E19 + 2.2} until={K.E26 - 0.3} x={590} y={725} texto="pastizales: ~62 %" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.E19 + 2.6} until={K.E26 - 0.3} x={590} y={985} texto="bosques: ~1/3" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Hu + 0.2} until={K.E19 - 0.3} x={50} y={500} texto="hongo: quitina" tam={32} color={NC.pared} />
+      <Etq T={T} at={K.Hu + 0.2} until={K.E19 - 0.3} x={575} y={500} texto="bacteria: peptidoglicano" tam={27} color={NC.bact} />
+      <Chip T={T} at={K.Hu + 1.3} until={K.E19 - 0.3} texto="glucosamina" x={270} y={1270} tam={40} borde={NC.hongo} />
+      <Etq T={T} at={K.Hu + 1.6} until={K.E19 - 0.3} x={24} y={1350} texto="en el suelo: sobre todo hongos" tam={24} color={NC.hongo} />
+      <Chip T={T} at={K.Hu + 3.3} until={K.E19 - 0.3} texto="ácido murámico" x={810} y={1270} tam={40} borde={NC.bact} />
+      <Etq T={T} at={K.Hu + 3.6} until={K.E19 - 0.3} x={600} y={1350} texto="solo de bacterias" tam={28} color={NC.bact} />
+      <TarjetaEstudio T={T} at={K.E19 + 0.1} until={K.E19 + 5.6} anio="2019" quien="Liang, Amelung, Lehmann y Kästner" revista="Global Change Biology · aminoazúcares 1996–2018" x={450} y={440} />
+      <Etq T={T} at={K.E19 + 1.4} until={K.E26 - 0.3} x={60} y={740} texto="capa superior" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.E19 + 2.2} until={K.E26 - 0.3} x={590} y={875} texto="pastizales: ~62 %" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.E19 + 2.6} until={K.E26 - 0.3} x={590} y={1135} texto="bosques: ~1/3" tam={30} color={KC.ink} />
       <Chip T={T} at={K.E26 + 0.1} until={K.E26 + 3.4} texto="2026 · Lu et al. · Earth Syst. Sci. Data" x={540} y={420} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.E26 + 1.0} until={K.E26 + 3.4} texto="486 sitios · sobre todo hemisferio norte" x={540} y={1170} tam={32} borde={KC.red} />
       <Chip T={T} at={K.E26 + 3.8} until={K.D - 0.2} texto="tierras de cultivo · 0–20 cm · promedio" x={540} y={560} tam={30} borde={KC.ink} />

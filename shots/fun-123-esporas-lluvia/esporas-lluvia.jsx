@@ -352,7 +352,7 @@ function EsporasLluviaShot() {
           </g>}
           {/* el moho y la gota entran en cuanto se va la espora: la tarjeta de 1992 nunca queda sola */}
           {T > K.E + 2.7 && <>
-            <Fusarium T={T} x={60} y={1330} s={1.7} p={kprog(T, K.E + 2.7, K.E + 5.2)} o={kprog(T, K.E + 2.7, K.E + 3.2)} />
+            <Fusarium T={T} x={40} y={1250} s={1.8} p={kprog(T, K.E + 2.7, K.E + 4.2, kEase.sale)} o={kprog(T, K.E + 2.7, K.E + 3.2)} />{/* modo cine: el moho crece más rápido y más grande (antes 1.7 y en 2.5 s; ahora 1.8 y en 1.5 s) para que no quede la tarjeta sola */}
             <g opacity={kprog(T, K.E + 2.8, K.E + 3.4)}><Gotita x={800} y={770} r={105} hielo={kprog(T, mohoHielo, mohoHielo + 0.6)} T={T} seed={8} /></g>
           </>}
         </>)}

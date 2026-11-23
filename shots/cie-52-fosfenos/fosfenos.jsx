@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #52 · Las luces que ves al tallarte los ojos (fosfenos) — NARRADO (N1 "Por dentro": la retina estimulada sin luz).
 // Datos: Grüsser et al. 1989 (Vision Research), Science Norway 2022, NEI, AAO, NASA 2012 (Apolo). Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático.
@@ -190,7 +191,7 @@ function Fosfenos52() {
   const { T, CUES } = useComposition();
   const K = CUES, FIN = K.Outro + 4;
   // ojo en corte de las escenas por dentro
-  const OJ = { cx: 560, cy: 930, R: 240 };
+  const OJ = { cx: 580, cy: 1000, R: 340 };
   const aprieta = kprog(T, K.Presion + 0.6, K.Presion + 1.3, kEase.sale) * (1 - kprog(T, K.Cerebro - 0.6, K.Cerebro - 0.1));
   // zoom al ojo al final de la escena de la cara
   const zEntra = kprog(T, K.Retina - 0.9, K.Retina + 0.3, kEase.suave);
@@ -200,34 +201,34 @@ function Fosfenos52() {
       <Escena T={T} a={K.Gancho} b={K.Retina} zoom={0.02}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <g transform={`translate(466 869) scale(${1 + zEntra * 2.2}) translate(-466 -869)`}>
-            <CaraFrente x={400} y={860} s={0.92} T={T} manos={1 - kprog(T, K.Nombre + 2.2, K.Nombre + 2.8)} frota={T < K.Nombre + 2.2 ? 1 : 0} gesto={T < K.Nombre ? 'mueca' : 'normal'} />
+          <g transform={`translate(${klerp(662, OJ.cx, zEntra)} ${klerp(1077, OJ.cy, zEntra)}) scale(${1 + zEntra * 2.2}) translate(-662 -1077)`}>
+            <CaraFrente x={540} y={1060} s={1.7} T={T} manos={1 - kprog(T, K.Nombre + 2.2, K.Nombre + 2.8)} frota={T < K.Nombre + 2.2 ? 1 : 0} gesto={T < K.Nombre ? 'mueca' : 'normal'} />
           </g>
-          <BurbujaVision x={340} y={470} rx={250} ry={165} T={T} p={kprog(T, K.Gancho + 0.25, K.Gancho + 1.6)} cola={[380, 650]} o={1 - zEntra} />
-          <TextoSvg x={540} y={720} tam={92} color={KC.yellow} rot={-3} o={kprog(T, K.Gancho + 4.4, K.Gancho + 4.8) * (1 - kprog(T, K.Nombre - 0.3, K.Nombre))}
+          <BurbujaVision x={540} y={385} rx={360} ry={190} T={T} p={kprog(T, K.Gancho + 0.25, K.Gancho + 1.6)} cola={[540, 680]} o={1 - zEntra} />
+          <TextoSvg x={540} y={600} tam={72} color={KC.yellow} rot={-3} o={kprog(T, K.Gancho + 4.4, K.Gancho + 4.8) * (1 - kprog(T, K.Nombre - 0.3, K.Nombre))}
             s={klerp(0.5, 1, kprog(T, K.Gancho + 4.4, K.Gancho + 4.9, kEase.rebote))}>LAS FABRICA TU OJO</TextoSvg>
         </Lienzo>
-        <Chip T={T} at={K.Nombre + 0.2} until={K.Retina - 1} texto="fosfenos" x={800} y={560} tam={64} borde={KC.yellow} />
-        <Chip T={T} at={K.Nombre + 2.2} until={K.Retina - 1} texto="los más comunes:" x={800} y={690} tam={36} borde={KC.pink} />
-        <Chip T={T} at={K.Nombre + 2.5} until={K.Retina - 1} texto="apretando el ojo" x={800} y={775} tam={36} borde={KC.pink} />
+        <Chip T={T} at={K.Nombre + 0.2} until={K.Retina - 1} texto="fosfenos" x={540} y={655} tam={64} borde={KC.yellow} />
+        <Chip T={T} at={K.Nombre + 2.2} until={K.Retina - 1} texto="los más comunes:" x={540} y={1490} tam={36} borde={KC.pink} />
+        <Chip T={T} at={K.Nombre + 2.5} until={K.Retina - 1} texto="apretando el ojo" x={540} y={1572} tam={36} borde={KC.pink} />
       </Escena>
 
       {/* 2–3 · por dentro: la retina con luz, luego sin luz y con presión */}
       <Escena T={T} a={K.Retina} b={K.Cerebro} fondo={KC.noche} zoom={0.03}>
         <Ambiente T={T} n={22} color="rgba(255,255,255,.12)" />
         <Lienzo>
-          <Nervio x0={OJ.cx - OJ.R + 10} y0={OJ.cy} cxq={180} cyq={OJ.cy + 40} x1={-60} y1={OJ.cy - 60} T={T}
+          <Nervio x0={OJ.cx - OJ.R + 10} y0={OJ.cy} cxq={200} cyq={OJ.cy + 55} x1={-60} y1={OJ.cy - 80} T={T} grosor={96}
             pulsos={T < K.Presion ? kprog(T, K.Retina + 1.2, K.Retina + 1.8) * (1 - kprog(T, K.Presion - 0.6, K.Presion)) : kprog(T, K.Presion + 1.2, K.Presion + 1.8)} />
           <OjoSimple cx={OJ.cx} cy={OJ.cy} R={OJ.R} T={T} aplasta={aprieta}
             rayos={kprog(T, K.Retina + 0.2, K.Retina + 0.8) * (1 - kprog(T, K.Presion - 0.5, K.Presion))}
             brillo={T < K.Presion ? kprog(T, K.Retina + 0.8, K.Retina + 1.2) * (1 - kprog(T, K.Presion - 0.5, K.Presion)) : kprog(T, K.Presion + 1.0, K.Presion + 1.4) * (0.75 + 0.25 * Math.sin(T * 8))} />
-          {T > K.Presion - 0.2 && <Dedo x={OJ.cx + OJ.R * 0.95} y={OJ.cy - OJ.R * 0.25} p={aprieta} rot={-12} />}
+          {T > K.Presion - 0.2 && <g transform={`translate(${OJ.cx + OJ.R * 0.95} ${OJ.cy - OJ.R * 0.25}) scale(1.4)`}><Dedo x={0} y={0} p={aprieta} rot={-12} /></g>}
         </Lienzo>
-        <Etq T={T} at={K.Retina + 0.6} until={K.Presion + 4.0} x={OJ.cx - OJ.R - 10} y={OJ.cy + 230} texto="retina" lado="izq" color={RETINA} />
-        <Etq T={T} at={K.Retina + 1.6} until={K.Presion - 0.2} x={170} y={OJ.cy - 120} texto="al cerebro" lado="der" color={SENAL} />
-        <Chip T={T} at={K.Retina + 1.0} until={K.Presion - 0.2} texto="luz → señales eléctricas" x={540} y={430} tam={44} borde={SENAL} />
-        <Chip T={T} at={K.Presion + 0.1} until={K.Cerebro - 0.2} texto="sin luz" x={220} y={430} tam={50} borde={KC.cyan} />
-        <Lupa T={T} at={K.Presion + 1.6} until={K.Cerebro - 0.3} x={760} y={450} r={160} fx={OJ.cx - OJ.R + 22} fy={OJ.cy} tinte={SENAL} etiqueta="AL MICROSCOPIO · RETINA"
+        <Etq T={T} at={K.Retina + 0.6} until={K.Presion + 4.0} x={OJ.cx - OJ.R * 0.72} y={OJ.cy - OJ.R * 0.72} texto="retina" lado="izq" color={RETINA} />
+        <Etq T={T} at={K.Retina + 1.6} until={K.Presion - 0.2} x={56} y={OJ.cy + 275} tam={30} texto="al cerebro" lado="der" color={SENAL} />
+        <Chip T={T} at={K.Retina + 1.0} until={K.Presion - 0.2} texto="luz → señales eléctricas" x={540} y={470} tam={44} borde={SENAL} />
+        <Chip T={T} at={K.Presion + 0.1} until={K.Cerebro - 0.2} texto="sin luz" x={230} y={470} tam={50} borde={KC.cyan} />
+        <Lupa T={T} at={K.Presion + 1.6} until={K.Cerebro - 0.3} x={720} y={400} r={190} fx={OJ.cx - OJ.R + 22} fy={OJ.cy} tinte={SENAL} etiqueta="AL MICROSCOPIO · RETINA"
           interior={(t, r) => <CelulasRetina t={t} r={r} enc={1} />} />
       </Escena>
 
@@ -235,14 +236,14 @@ function Fosfenos52() {
       <Escena T={T} a={K.Cerebro} b={K.Pregunta} fondo={KC.noche}>
         <Ambiente T={T} n={22} color="rgba(255,255,255,.12)" />
         <Lienzo>
-          <Nervio x0={830} y0={1020} cxq={600} cyq={1120} x1={320} y1={1020} T={T} grosor={44} pulsos={kprog(T, K.Cerebro + 0.4, K.Cerebro + 1)} />
-          <CerebroSimple x={400} y={960} s={1.05} brillo={kprog(T, K.Cerebro + 1.4, K.Cerebro + 2.0) * (0.8 + 0.2 * Math.sin(T * 7))} />
-          <OjoSimple cx={880} cy={1020} R={110} T={T} brillo={0.8 + 0.2 * Math.sin(T * 8)} />
-          <BurbujaVision x={560} y={590} rx={340} ry={125} T={T} p={kprog(T, K.Cerebro + 2.2, K.Cerebro + 3.4)} cola={[260, 780]} />
+          <Nervio x0={740} y0={1150} cxq={620} cyq={1300} x1={310} y1={1170} T={T} grosor={60} pulsos={kprog(T, K.Cerebro + 0.4, K.Cerebro + 1)} />
+          <CerebroSimple x={430} y={1080} s={1.5} brillo={kprog(T, K.Cerebro + 1.4, K.Cerebro + 2.0) * (0.8 + 0.2 * Math.sin(T * 7))} />
+          <OjoSimple cx={860} cy={1150} R={140} T={T} brillo={0.8 + 0.2 * Math.sin(T * 8)} />
+          <BurbujaVision x={540} y={565} rx={400} ry={165} T={T} p={kprog(T, K.Cerebro + 2.2, K.Cerebro + 3.4)} cola={[220, 810]} />
         </Lienzo>
-        <Etq T={T} at={K.Cerebro + 0.3} until={K.Pregunta - 0.2} x={880} y={1170} texto="ojo" lado="izq" color={KC.texto} />
-        <Etq T={T} at={K.Cerebro + 0.6} until={K.Cerebro + 2.2} x={630} y={870} texto="cerebro" lado="der" color={KC.texto} />
-        <Chip T={T} at={K.Cerebro + 2.4} until={K.Pregunta - 0.1} texto="señal de la retina = luz" x={540} y={400} tam={40} borde={SENAL} />
+        <Etq T={T} at={K.Cerebro + 0.3} until={K.Pregunta - 0.2} x={860} y={1335} texto="ojo" lado="izq" color={KC.texto} />
+        <Etq T={T} at={K.Cerebro + 0.6} until={K.Cerebro + 2.2} x={770} y={900} texto="cerebro" lado="der" color={KC.texto} />
+        <Chip T={T} at={K.Cerebro + 2.4} until={K.Pregunta - 0.1} texto="señal de la retina = luz" x={540} y={320} tam={40} borde={SENAL} />
       </Escena>
 
       {/* 5 · pregunta */}
@@ -253,18 +254,18 @@ function Fosfenos52() {
         <FondoLunares color={KC.orange} />
         <Lienzo>
           {(() => { const golpe = K.Golpe + 0.55, tb = kprog(T, K.Golpe, golpe), sale = kprog(T, golpe, golpe + 0.8, kEase.sale);
-            const bx = T < golpe ? klerp(1150, 520, tb) : klerp(520, 1250, sale), by = T < golpe ? klerp(420, 700, tb) : klerp(700, 250, sale) - Math.sin(sale * Math.PI) * 120;
+            const bx = T < golpe ? klerp(1300, 760, tb) : klerp(760, 1350, sale), by = T < golpe ? klerp(300, 740, tb) : klerp(740, 150, sale) - Math.sin(sale * Math.PI) * 180;
             const sacude = T > golpe && T < golpe + 0.5 ? Math.sin(T * 60) * 10 * (1 - (T - golpe) / 0.5) : 0;
             return <g>
-              <g transform={`translate(${sacude} 0)`}><CabezaPerfil x={360} y={930} s={1.3} gesto={T > golpe ? 'mueca' : 'normal'} /></g>
+              <g transform={`translate(${sacude} 0)`}><CabezaPerfil x={500} y={1090} s={2.0} gesto={T > golpe ? 'mueca' : 'normal'} /></g>
               {T > golpe && <g opacity={kprog(T, golpe, golpe + 0.3)}>{Array.from({ length: 6 }, (_, i) => { const a = T * 2.6 + i * Math.PI / 3;
-                return <Estrella key={i} x={360 + Math.cos(a) * 250} y={650 + Math.sin(a) * 60} r={i % 2 ? 30 : 42} c={i % 3 === 1 ? KC.cyan : KC.yellow} rot={T * 120 + i * 20} />; })}</g>}
-              <g transform={`translate(${bx} ${by}) rotate(${T * 400})`}><circle r={70} fill={KC.pink} stroke={KC.ink} strokeWidth={9} />
+                return <Estrella key={i} x={500 + Math.cos(a) * 385} y={660 + Math.sin(a) * 92} r={i % 2 ? 46 : 64} c={i % 3 === 1 ? KC.cyan : KC.yellow} rot={T * 120 + i * 20} />; })}</g>}
+              <g transform={`translate(${bx} ${by}) scale(1.5) rotate(${T * 400})`}><circle r={70} fill={KC.pink} stroke={KC.ink} strokeWidth={9} />
                 <path d="M -70 0 Q 0 -40 70 0 M 0 -70 Q 30 0 0 70" fill="none" stroke="#fff" strokeWidth={8} /></g>
-              <Onomato T={T} at={golpe} dur={1.0} x={500} y={560} texto="¡PUM!" tam={140} />
+              <Onomato T={T} at={golpe} dur={1.0} x={500} y={430} texto="¡PUM!" tam={140} />
             </g>; })()}
         </Lienzo>
-        <Chip T={T} at={K.Golpe + 2.2} until={K.Astronautas - 0.1} texto="las estrellitas de las caricaturas" x={540} y={430} tam={40} borde={KC.yellow} />
+        <Chip T={T} at={K.Golpe + 2.2} until={K.Astronautas - 0.1} texto="las estrellitas de las caricaturas" x={540} y={400} tam={40} borde={KC.yellow} />
       </Escena>
 
       {/* 7 · astronautas: destellos con los ojos cerrados */}
@@ -273,26 +274,26 @@ function Fosfenos52() {
           <EstrellasFondo T={T} n={90} />
           <circle cx={540} cy={2350} r={900} fill="#2f7df6" stroke="#9fd2ff" strokeWidth={14} />
           <path d="M 120 1640 Q 300 1520 470 1580 Q 560 1610 640 1540 L 700 1700 L 160 1760 Z" fill="#7bd36b" opacity=".85" />
-          <Astronauta x={560} y={880} s={1.05} T={T} destello={T > K.Astronautas + 2.4 ? Math.max(0, Math.sin(T * 5)) : 0} />
+          <Astronauta x={540} y={960} s={1.35} T={T} destello={T > K.Astronautas + 2.4 ? Math.max(0, Math.sin(T * 5)) : 0} />
           <Particulas T={T} p={kprog(T, K.Astronautas + 2.0, K.Astronautas + 2.6)} />
         </Lienzo>
-        <TarjetaEstudio T={T} at={K.Astronautas + 0.2} until={K.Astronautas + 2.4} anio="1969–1972" quien="astronautas de las misiones Apolo" revista="NASA (artículo de 2012)" x={540} y={760} />
-        <Chip T={T} at={K.Astronautas + 2.6} until={K.Ojo - 0.1} texto="destellos con los ojos cerrados" x={540} y={430} tam={40} borde={KC.cyan} />
-        <Etq T={T} at={K.Astronautas + 3.6} until={K.Ojo - 0.2} x={820} y={1190} texto="partículas del espacio" lado="izq" color={KC.cyan} />
+        <TarjetaEstudio T={T} at={K.Astronautas + 0.2} until={K.Astronautas + 2.4} anio="1969–1972" quien="astronautas de las misiones Apolo" revista="NASA (artículo de 2012)" x={540} y={340} />
+        <Chip T={T} at={K.Astronautas + 2.6} until={K.Ojo - 0.1} texto="destellos con los ojos cerrados" x={540} y={330} tam={40} borde={KC.cyan} />
+        <Etq T={T} at={K.Astronautas + 3.6} until={K.Ojo - 0.2} x={900} y={520} texto="partículas del espacio" lado="izq" color={KC.cyan} />
       </Escena>
 
       {/* 8 · aviso: no te talles fuerte ni seguido */}
       <Escena T={T} a={K.Ojo} b={K.Destellos} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <CaraFrente x={320} y={900} s={0.85} T={T} manos={1} frota={1} gesto="mueca" color={KC.pink} />
-          <g transform={`translate(320 560) scale(${klerp(0.3, 1.2, kprog(T, K.Ojo + 0.3, K.Ojo + 0.7, kEase.rebote))})`}><Alerta x={0} y={0} s={1} color={KC.orange} /></g>
-          {T > K.Ojo + 1.2 && <g opacity={kprog(T, K.Ojo + 1.2, K.Ojo + 1.5)} transform="translate(320 900)">
+          <CaraFrente x={540} y={1070} s={1.6} T={T} manos={1} frota={1} gesto="mueca" color={KC.pink} />
+          <g transform={`translate(540 535) scale(${klerp(0.5, 2.0, kprog(T, K.Ojo + 0.3, K.Ojo + 0.7, kEase.rebote))})`}><Alerta x={0} y={0} s={1} color={KC.orange} /></g>
+          {T > K.Ojo + 1.2 && <g opacity={kprog(T, K.Ojo + 1.2, K.Ojo + 1.5)} transform="translate(540 1085) scale(1.8)">
             <line x1={-200} y1={-150} x2={200} y2={150} stroke={KC.ink} strokeWidth={46} strokeLinecap="round" />
             <line x1={-200} y1={-150} x2={200} y2={150} stroke={KC.red} strokeWidth={30} strokeLinecap="round" />
           </g>}
         </Lienzo>
-        <Chip T={T} at={K.Ojo + 0.9} until={K.Destellos - 0.1} texto="ni fuerte ni seguido" x={540} y={430} tam={48} borde={KC.red} />
+        <Chip T={T} at={K.Ojo + 0.9} until={K.Destellos - 0.1} texto="ni fuerte ni seguido" x={540} y={300} tam={48} borde={KC.red} />
       </Escena>
 
       {/* 9 · señal de alarma: destellos sin tocarte + manchas nuevas → oftalmólogo */}
@@ -301,34 +302,34 @@ function Fosfenos52() {
         <Lienzo>
           {(() => { const mueve = kprog(T, K.Destellos + 3.6, K.Destellos + 4.4, kEase.suave);
             return <g>
-              <g transform={`translate(${klerp(540, 300, mueve)} ${klerp(820, 920, mueve)}) scale(${klerp(1, 0.62, mueve)})`}>
+              <g transform={`translate(${klerp(540, 330, mueve)} ${klerp(990, 1010, mueve)}) scale(${klerp(1.16, 0.76, mueve)})`}>
                 <OjoFrenteA x={0} y={0} s={1.25} T={T} />
                 {[[-260, -150, 0], [250, -120, 1.3], [-200, 170, 2.1]].map(([dx, dy, f], i) => { const on = T > K.Destellos + 0.5 && Math.sin(T * 6 + f * 3) > 0.2;
                   return on ? <g key={i} transform={`translate(${dx} ${dy})`}><path d="M -40 -50 L 10 -10 L -14 4 L 40 50" fill="none" stroke="#fff" strokeWidth={14} strokeLinecap="round" strokeLinejoin="round" style={{ filter:'drop-shadow(0 0 14px #fff)' }} /></g> : null; })}
                 {T > K.Destellos + 1.8 && [[-120, -40, 22], [60, 70, 16], [150, -60, 12], [-40, 110, 14]].map(([dx, dy, r], i) =>
                   <circle key={i} cx={dx + Math.sin(T * 0.9 + i) * 20} cy={dy + Math.cos(T * 0.7 + i) * 14} r={r * kprog(T, K.Destellos + 1.8 + i * 0.15, K.Destellos + 2.2 + i * 0.15)} fill="rgba(20,22,40,.75)" />)}
               </g>
-              {mueve > 0 && <CartaVista x={790} y={920} s={0.95} p={kprog(T, K.Destellos + 4.0, K.Destellos + 4.6)} />}
+              {mueve > 0 && <CartaVista x={835} y={1010} s={1.1} p={kprog(T, K.Destellos + 4.0, K.Destellos + 4.6)} />}
             </g>; })()}
         </Lienzo>
-        <Chip T={T} at={K.Destellos + 0.5} until={K.Cierre - 0.1} texto="destellos sin tocarte" x={540} y={420} tam={42} borde={KC.ink} />
-        <Chip T={T} at={K.Destellos + 1.9} until={K.Cierre - 0.1} texto="+ manchas nuevas" x={540} y={510} tam={42} borde={KC.ink} />
-        <Chip T={T} at={K.Destellos + 4.2} until={K.Cierre - 0.1} texto="→ ve al oftalmólogo" x={540} y={600} tam={44} borde={KC.red} />
+        <Chip T={T} at={K.Destellos + 0.5} until={K.Cierre - 0.1} texto="destellos sin tocarte" x={540} y={400} tam={42} borde={KC.ink} />
+        <Chip T={T} at={K.Destellos + 1.9} until={K.Cierre - 0.1} texto="+ manchas nuevas" x={540} y={487} tam={42} borde={KC.ink} />
+        <Chip T={T} at={K.Destellos + 4.2} until={K.Cierre - 0.1} texto="→ ve al oftalmólogo" x={540} y={576} tam={44} borde={KC.red} />
       </Escena>
 
       {/* 10 · cierre: la misma cara del inicio, ahora tranquila, y su ojo hablándole al cerebro */}
       <Escena T={T} a={K.Cierre} b={FIN} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <CaraFrente x={400} y={860} s={0.92} T={T} manos={0} gesto="sonrie" />
+          <CaraFrente x={540} y={1060} s={1.7} T={T} manos={0} gesto="sonrie" />
           {(() => { const p = kprog(T, K.Cierre + 0.8, K.Cierre + 1.6, kEase.sale);
-            return <g opacity={p}>
+            return <g opacity={p} transform="translate(540 1060) scale(1.848) translate(-400 -860)">
               <path d="M 466 869 Q 560 760 490 720 Q 430 690 380 720" fill="none" stroke={SENAL} strokeWidth={12} strokeDasharray="22 14" strokeDashoffset={-T * 80} strokeLinecap="round" style={{ filter:`drop-shadow(0 0 10px ${SENAL})` }} />
               <circle cx={466} cy={869} r={18} fill={SENAL} stroke={KC.ink} strokeWidth={5} />
             </g>; })()}
-          <BurbujaVision x={770} y={680} rx={250} ry={170} T={T} p={kprog(T, K.Cierre + 0.3, K.Cierre + 1.4)} cola={[560, 760]} />
+          <BurbujaVision x={540} y={385} rx={360} ry={190} T={T} p={kprog(T, K.Cierre + 0.3, K.Cierre + 1.4)} cola={[540, 680]} />
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 1.4} until={K.Outro - 0.1} texto="tu ojo hablando sin luz" x={540} y={420} tam={48} borde={KC.yellow} />
+        <Chip T={T} at={K.Cierre + 1.4} until={K.Outro - 0.1} texto="tu ojo hablando sin luz" x={540} y={640} tam={48} borde={KC.yellow} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Nombre - 0.1} texto="No vienen de afuera: *las fabrica tu ojo.*" />

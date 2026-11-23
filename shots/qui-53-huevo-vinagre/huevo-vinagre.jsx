@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #53 · Este huevo no está pelado (el vinagre, el cascarón y la ósmosis) — NARRADO (N5 experimento + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const VINAGRE = '#f3efcf', JARABE = '#e0a136', AGUA = '#9fd8ff', CASCARA = '#f2e3c9', MEMB = '#fff4d6', YEMA = '#ffb21a';
@@ -70,6 +71,10 @@ const FIBRAS = (() => { const R = krng(31), out = [];
     out.push({ capa, d: `M ${x0} ${y0} C ${x0 + 220} ${y0 + a} ${x1 - 220} ${y0 + b} ${x1} ${y0 + (R() - 0.5) * 120}`, w: capa ? 10 + R() * 6 : 16 + R() * 10, ph: R() * 6 }); }
   return out; })();
 
+// Pase a mano (cine): agranda un grupo k veces llevando el punto `de` al punto `a` (todo lo de adentro crece junto).
+function Acerca({ k = 1, de = [540, 960], a = [540, 960], children }) {
+  return <g transform={`translate(${a[0]} ${a[1]}) scale(${k}) translate(${-de[0]} ${-de[1]})`}>{children}</g>;
+}
 function HuevoVinagre() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, Ca: CUES.Cascaron, Bu: CUES.Burbujas, Di: CUES.Dias, Me: CUES.Membrana, Pr: CUES.Pregunta, Os: CUES.Osmosis, Es: CUES.Estudio, Ja: CUES.Jarabe, Re: CUES.Rebote, Ci: CUES.Cierre, Ou: CUES.Outro };
@@ -104,19 +109,19 @@ function HuevoVinagre() {
       {/* 0 · gancho: el huevo desnudo sale del vinagre */}
       <Escena T={T} a={K.G} b={K.Ca} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa>
+        <SvgCapa><Acerca k={1.5} de={[350, 800]} a={[510, 880]}>
           <Vaso x={400} y={1190} s={1} etiqueta="vinagre" />
           <g transform={`rotate(${bamb * 60} 400 ${yHuevo + 150})`}>
             <Huevo x={400} y={yHuevo} s={0.95} cas={0} inf={1.05} sq={1 + bamb * 2} />
             <Cuchara x={400} y={yHuevo} s={0.95} />
           </g>
           <Goteo T={T} x={430} y0={yHuevo + 200} y1={1000} cada={0.35} color={VINAGRE} desde={K.G + 0.6} hasta={K.G + 4.5} />
-        </SvgCapa>
+        </Acerca></SvgCapa>
       </Escena>
       {/* 1 · el cascarón: 95 % mineral */}
       <Escena T={T} a={K.Ca} b={K.Bu}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa>
+        <SvgCapa><Acerca k={1.2} de={[560, 860]} a={[560, 910]}>
           <Vaso x={330} y={1190} s={0.9} etiqueta="vinagre" />
           <Huevo x={330} y={klerp(620, 1000, entra)} s={0.8} cas={1} rot={klerp(-20, 0, entra)} />
           {(() => { const f = 0.95 * kprog(T, K.Ca + 0.6, K.Ca + 1.8, kEase.sale), a = f * Math.PI * 2, r = 170, cx = 790, cy = 880;
@@ -124,16 +129,16 @@ function HuevoVinagre() {
             return <g>
               <circle cx={cx} cy={cy} r={r} fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={8} />
               {f > 0 && <path d={`M ${cx} ${cy} L ${cx} ${cy - r} A ${r} ${r} 0 ${a > Math.PI ? 1 : 0} 1 ${x1} ${y1} Z`} fill={CASCARA} stroke={KC.ink} strokeWidth={6} />}
-              <text x={cx} y={cy + 20} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.ink}>{Math.round(f * 100)} %</text>
+              <text x={cx} y={cy + 20} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill="#0b1020">{Math.round(f * 100)} %</text>
               <text x={cx} y={cy + 240} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>del cascarón:</text>
               <text x={cx} y={cy + 290} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>mineral</text>
             </g>; })()}
-        </SvgCapa>
+        </Acerca></SvgCapa>
       </Escena>
       {/* 2 · por dentro: ácido acético + carbonato de calcio → CO₂ */}
       <Escena T={T} a={K.Bu} b={K.Di}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 1000) scale(1.3) translate(-540 -1000)">{/* belleza: moléculas ×1.3 */}
           <rect x={150} y={1010} width={780} height={200} rx={20} fill="rgba(242,227,201,.12)" stroke={CASCARA} strokeWidth={4} strokeDasharray="14 10" />
           {Array.from({ length: 21 }, (_, i) => { const c = i % 7, f = Math.floor(i / 7), x = 240 + c * 100, y = 1050 + f * 65;
             const s = sitios.findIndex(([sx, sf]) => Math.abs(sx - x) < 70 && sf === f && f < 1);
@@ -142,27 +147,27 @@ function HuevoVinagre() {
               : <g key={i} opacity={1 - ido}><Atomo x={x + ido * 80} y={y} r={24} color={QA.Ca} letra="Ca" tam={20} /></g>; })}
           {sitios.slice(0, 5).map(([sx], i) => { const t0 = K.Bu + 0.6 + i * 0.7, baja = kprog(T, t0 - 0.9, t0, kEase.sale), gas = kprog(T, t0 + 0.4, t0 + 3.2, kEase.suave);
             return <g key={i}>
-              {baja < 1 || T < t0 + 0.4 ? <Molecula {...QK.acetico} x={sx} y={klerp(460, 960, baja)} s={0.75} rot={i * 50 + T * 20} o={1 - kprog(T, t0 + 0.2, t0 + 0.5)} /> : null}
+              {baja < 1 || T < t0 + 0.4 ? <Molecula {...QK.acetico} x={sx} y={klerp(570, 960, baja)} s={0.75} rot={i * 50 + T * 20} o={1 - kprog(T, t0 + 0.2, t0 + 0.5)} /> : null}
               {T > t0 + 0.4 && <g transform={`translate(${sx + Math.sin(T * 3 + i) * 14} ${klerp(990, 700, gas)})`} opacity={1 - kprog(T, t0 + 2.9, t0 + 3.3)}>
                 <circle r={62 + gas * 18} fill="rgba(255,255,255,.1)" stroke="#bfe8ff" strokeWidth={5} /><Mol tipo="co2" x={0} y={0} s={0.6} /></g>}
             </g>; })}
-        </SvgCapa>
-        <Etq T={T} at={K.Bu + 0.3} until={K.Di - 0.2} x={150} y={1240} texto="cascarón: CaCO₃" color={CASCARA} tam={30} />
-        <Etq T={T} at={K.Bu + 0.5} until={K.Bu + 2.4} x={90} y={440} texto="ácido acético (vinagre)" tam={30} color={KC.yellow} />
+        </g></SvgCapa>
+        <Etq T={T} at={K.Bu + 0.3} until={K.Di - 0.2} x={40} y={1300} texto="cascarón: CaCO₃" color={CASCARA} tam={30} />
+        <Etq T={T} at={K.Bu + 0.5} until={K.Bu + 2.4} x={90} y={325} texto="ácido acético (vinagre)" tam={30} color={KC.yellow} />
       </Escena>
       {/* 3 · días: se va el cascarón, queda la membrana */}
       <Escena T={T} a={K.Di} b={K.Me} zoom={0.06}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa>
+        <SvgCapa><Acerca k={1.6} de={[540, 940]} a={[540, 940]}>
           <Vaso x={540} y={1190} s={1} etiqueta="vinagre" />
           <Huevo T={T} x={540} y={985 - Math.sin(T * 2) * 8} s={0.9} cas={1 - dias} burb={1} inf={1 + 0.04 * dias} />
           <Burbujas T={T} x={380} y={700} w={320} h={420} n={22} vel={120} seed={4} color="rgba(255,255,255,.85)" />
-        </SvgCapa>
+        </Acerca></SvgCapa>
       </Escena>
       {/* 4 · la membrana: red de fibras de proteína */}
       <Escena T={T} a={K.Me} b={K.Pr} zoom={0.08}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        <SvgCapa>
+        <SvgCapa><Acerca k={1.15} de={[570, 880]} a={[540, 900]}>
           <g transform="translate(240 560)">
             <rect x={-40} y={60} width={680} height={540} rx={40} fill="rgba(255,244,214,.06)" />
             {FIBRAS.map((f, i) => <path key={i} d={f.d} fill="none" stroke={f.capa ? '#f7d88a' : '#fff4d6'} strokeWidth={f.w} strokeLinecap="round"
@@ -173,21 +178,21 @@ function HuevoVinagre() {
             <line x1={940} y1={640} x2={980} y2={640} stroke={KC.gold2} strokeWidth={8} />
             <line x1={940} y1={1120} x2={980} y2={1120} stroke={KC.gold2} strokeWidth={8} />
           </g>; })()}
-        </SvgCapa>
-        <Etq T={T} at={K.Me + 2.0} until={K.Pr - 0.2} x={1000} y={600} lado="izq" texto="grosor: 50–70 µm" color={KC.gold2} tam={38} />
-        <Etq T={T} at={K.Me + 0.6} until={K.Pr - 0.2} x={150} y={640} texto="capa externa" tam={28} />
-        <Etq T={T} at={K.Me + 1.0} until={K.Pr - 0.2} x={150} y={1150} texto="capa interna" tam={28} color="#f7d88a" />
+        </Acerca></SvgCapa>
+        <Etq T={T} at={K.Me + 2.0} until={K.Pr - 0.2} x={1012} y={578} lado="izq" texto="grosor: 50–70 µm" color={KC.gold2} tam={38} />
+        <Etq T={T} at={K.Me + 0.6} until={K.Pr - 0.2} x={66} y={624} texto="capa externa" tam={28} />
+        <Etq T={T} at={K.Me + 1.0} until={K.Pr - 0.2} x={66} y={1212} texto="capa interna" tam={28} color="#f7d88a" />
       </Escena>
       {/* 5 · pregunta: ¿por qué sale más grande? */}
       <Escena T={T} a={K.Pr} b={K.Os} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        <SvgCapa>
+        <SvgCapa><Acerca k={1.7} de={[270, 800]} a={[540, 880]}>
           <Huevo x={150} y={880} s={0.62} cas={1} />
           <Huevo x={390} y={850} s={0.62} cas={0} inf={klerp(1, 1.2, kprog(T, K.Pr + 0.3, K.Pr + 1.2, kEase.rebote))} />
           <text x={150} y={1050} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>antes</text>
           <text x={390} y={1050} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>después</text>
           <text x={300} y={640} textAnchor="middle" style={{ font:`400 260px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 300 660)`}>?</text>
-        </SvgCapa>
+        </Acerca></SvgCapa>
       </Escena>
       {/* 6 · ósmosis: el agua cruza la membrana */}
       <Escena T={T} a={K.Os} b={K.Es}>
@@ -214,10 +219,10 @@ function HuevoVinagre() {
       <Escena T={T} a={K.Es} b={K.Ja}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          {(() => { const emp = kprog(T, K.Es + 3.4, K.Es + 7.6, kEase.suave); return <g opacity={kprog(T, K.Es + 3.0, K.Es + 3.5)}>
+          {(() => { const emp = kprog(T, K.Es + 3.4, K.Es + 7.6, kEase.suave); return <Acerca k={1.6} de={[540, 880]} a={[770, 1000]}>
             <rect x={460} y={660} width={160} height={300} rx={10} fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={8} />
             <rect x={470} y={klerp(700, 820, emp)} width={140} height={140 - klerp(0, 120, emp) + 120} fill="rgba(159,216,255,.6)" />
-            <rect x={520} y={klerp(560, 680, emp) - 100} width={40} height={140} fill="#e5e5e5" stroke={KC.ink} strokeWidth={6} />
+            <rect x={520} y={klerp(560, 680, emp) - 100} width={40} height={222} fill="#e5e5e5" stroke={KC.ink} strokeWidth={6} />
             <rect x={470} y={klerp(680, 800, emp)} width={140} height={24} rx={6} fill="#555" stroke={KC.ink} strokeWidth={5} />
             <rect x={440} y={960} width={200} height={40} rx={8} fill="#7d8a99" stroke={KC.ink} strokeWidth={6} />
             <rect x={455} y={968} width={170} height={20} fill={MEMB} stroke={KC.ink} strokeWidth={3} />
@@ -226,68 +231,70 @@ function HuevoVinagre() {
             {Array.from({ length: 10 }, (_, i) => { const t0 = K.Es + 4.0 + i * 0.35, u = kprog(T, t0, t0 + 1.2); return u > 0 && u < 1 ?
               <circle key={'c' + i} cx={540 + ((i % 3) - 1) * 14} cy={klerp(1000, 1200, u)} r={6} fill={KC.cyan} stroke={KC.ink} strokeWidth={2} /> : null; })}
             <Goteo T={T} x={540} y0={1070} y1={1190} cada={0.5} color={AGUA} desde={K.Es + 3.6} hasta={K.Ja - 0.5} r={10} />
-          </g>; })()}
+          </Acerca>; })()}
         </SvgCapa>
-        <Etq T={T} at={K.Es + 4.2} until={K.Ja - 0.2} x={440} y={880} lado="izq" texto="204 nm: se quedan" tam={28} color={KC.ink} />
-        <Etq T={T} at={K.Es + 4.8} until={K.Ja - 0.2} x={590} y={1140} texto="14 nm: pasan" tam={28} color={KC.ink} />
+        <Etq T={T} at={K.Es + 4.2} until={K.Ja - 0.2} x={600} y={1055} lado="izq" texto="204 nm: se quedan" tam={28} color={KC.ink} />
+        <Etq T={T} at={K.Es + 4.8} until={K.Ja - 0.2} x={735} y={1420} lado="izq" texto="14 nm: pasan" tam={28} color={KC.ink} />
       </Escena>
       {/* 8 · jarabe y agua */}
       <Escena T={T} a={K.Ja} b={K.Re}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa>
+        <SvgCapa><Acerca k={1.12} de={[540, 900]} a={[540, 960]}>
           <Vaso x={300} y={1190} s={0.85} liquido={JARABE} etiqueta="jarabe" />
           <rect x={300 - 160} y={1190 - 500 * 0.85 * 0.72 - 16 * arruga} width={320} height={16 * arruga + 2} fill={AGUA} opacity={0.9 * arruga} />
           <Vaso x={780} y={1190} s={0.85} liquido={AGUA} etiqueta="agua" />
           <Huevo x={xJ} y={yJ} s={0.78} cas={0} inf={salto < 1 ? klerp(1.04, 0.86, arruga) : klerp(0.86, 1.06, infla)} arr={salto < 1 ? arruga : 1 - infla} />
-        </SvgCapa>
-        <RelojH T={T} at={K.Ja + 0.2} until={K.Re - 0.3} horas={T < K.Ja + 2.6 ? klerp(0, 24, kprog(T, K.Ja + 0.3, K.Ja + 2.4)) : klerp(0, 24, kprog(T, K.Ja + 3.3, K.Ja + 5.0))} pre="+" titulo={T < K.Ja + 2.6 ? 'EN JARABE' : 'EN AGUA'} />
+        </Acerca></SvgCapa>
+        <RelojH T={T} at={K.Ja + 0.2} until={K.Re - 0.3} horas={T < K.Ja + 2.6 ? klerp(0, 24, kprog(T, K.Ja + 0.3, K.Ja + 2.4)) : klerp(0, 24, kprog(T, K.Ja + 3.3, K.Ja + 5.0))} pre="+" y={300} titulo={T < K.Ja + 2.6 ? 'EN JARABE' : 'EN AGUA'} />
       </Escena>
       {/* 9 · rebote */}
       <Escena T={T} a={K.Re} b={K.Ci}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <rect x={0} y={1150} width={KW} height={240} fill="#c98b4f" stroke={KC.ink} strokeWidth={8} />
+          <Acerca k={2.1} de={[540, 1150]} a={[540, 1250]}>
+          <rect x={0} y={1150} width={KW} height={240} fill="#6a4d36" stroke={KC.ink} strokeWidth={8} />
           <ellipse cx={540} cy={1158} rx={100 * (1 - (SUELO - yR) / 600)} ry={14} fill="rgba(0,0,0,.25)" />
           <Huevo x={540} y={yR} s={0.9} cas={0} sq={sqR} />
+          </Acerca>
           {(() => { const l = kprog(T, K.Re + 2.4, K.Re + 2.9, kEase.sale); return l > 0 ? <g opacity={l}>
-            <path d="M 120 640 L 120 700 L 200 700" stroke="#9aa3b5" strokeWidth={30} fill="none" strokeLinecap="round" />
-            <Goteo T={T} x={200} y0={720} y1={1100} cada={0.25} color={AGUA} desde={K.Re + 2.6} hasta={K.Ci} />
+            <path d="M 90 520 L 90 610 L 210 610" stroke="#9aa3b5" strokeWidth={44} fill="none" strokeLinecap="round" />
+            <Goteo T={T} x={210} y0={640} y1={1225} cada={0.25} color={AGUA} desde={K.Re + 2.6} hasta={K.Ci} />
           </g> : null; })()}
         </SvgCapa>
-        <Onomato T={T} at={K.Re + 0.65} until={K.Re + 1.8} x={300} y={760} texto="¡BOING!" color={KC.pink} tam={90} />
+        <Onomato T={T} at={K.Re + 0.65} until={K.Re + 1.8} x={250} y={640} texto="¡BOING!" color={KC.pink} tam={120} />
       </Escena>
       {/* 10 · cierre: la imagen del inicio, transformada */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa>
+        <SvgCapa><Acerca k={1.5} de={[350, 800]} a={[510, 880]}>
           <Vaso x={400} y={1190} s={1} etiqueta="vinagre" />
           <Burbujas T={T} x={240} y={880} w={320} h={280} n={14} vel={90} seed={6} color="rgba(255,255,255,.9)" />
           <g transform={`rotate(${Math.sin(T * 4) * 2} 400 840)`}>
             <Huevo x={400} y={690} s={0.95} cas={0} inf={1.05} />
             <Cuchara x={400} y={690} s={0.95} />
           </g>
-        </SvgCapa>
-        <Etq T={T} at={K.Ci + 0.8} until={K.Ou} x={500} y={820} texto="membrana semipermeable" tam={26} color={KC.ink} />
+        </Acerca></SvgCapa>
+        <Etq T={T} at={K.Ci + 0.8} until={K.Ou} x={580} y={505} texto="membrana semipermeable" tam={26} color={KC.ink} />
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.G + 3.2} texto="¿pelado?" x={300} y={440} tam={50} />
-      <Chip T={T} at={K.G + 3.0} until={K.Ca - 0.3} texto="huevo crudo · sin cascarón" y={1500} tam={42} borde={KC.orange} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.G + 3.2} texto="¿pelado?" x={690} y={340} tam={60} />
+      <Chip T={T} at={K.G + 3.0} until={K.Ca - 0.3} texto="huevo crudo · sin cascarón" x={650} y={340} tam={40} borde={KC.orange} />
       <Chip T={T} at={K.Ca + 1.8} until={K.Bu - 0.2} texto="casi todo: CaCO₃ (calcita)" y={1500} tam={44} borde={KC.gold} />
       <Chip T={T} at={K.Bu + 2.4} until={K.Di - 0.2} texto="CaCO₃ + 2 CH₃COOH → Ca(CH₃COO)₂ + H₂O + CO₂" y={1500} tam={27} mono borde={KC.yellow} />
       <Chip T={T} at={K.Bu + 0.6} until={K.Bu + 2.3} texto="CO₂ = las burbujas" y={1500} tam={44} borde="#bfe8ff" />
-      <RelojH T={T} at={K.Di} until={K.Me - 0.3} horas={48 * dias} x={400} y={420} />
-      <Chip T={T} at={K.Di + 2.8} until={K.Me - 0.2} texto="queda la membrana" y={1500} tam={46} borde={KC.mint} />
+      <RelojH T={T} at={K.Di} until={K.Me - 0.3} horas={48 * dias} x={540} y={370} />
+      <Chip T={T} at={K.Di + 2.8} until={K.Me - 0.2} texto="queda la membrana" y={1540} tam={46} borde={KC.mint} />
       <Chip T={T} at={K.Me + 0.4} until={K.Pr - 0.2} texto="fibras de proteína · < 0.1 mm" y={1500} tam={40} borde={KC.gold2} />
-      <Chip T={T} at={K.Pr + 0.4} until={K.Os - 0.2} texto="¿por qué creció?" x={300} y={1500} tam={44} borde={KC.pink} />
+      <Chip T={T} at={K.Pr + 0.4} until={K.Os - 0.2} texto="¿por qué creció?" x={540} y={1500} tam={44} borde={KC.pink} />
       <Chip T={T} at={K.Os + 2.8} until={K.Es - 0.2} texto="ÓSMOSIS: el agua va a lo más concentrado" y={1500} tam={32} borde={AGUA} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.3} anio="2026" quien="Hagiri y Suzuki · Japón" revista="BMC Research Notes · membrana del huevo" y={900} />
-      <Chip T={T} at={K.Es + 5.6} until={K.Ja - 0.2} texto="poros estimados: ≈ 100–200 nm" y={1500} tam={40} borde={KC.violet} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.3} anio="2026" quien="Hagiri y Suzuki · Japón" revista="BMC Research Notes · membrana del huevo" x={315} y={480} />
+      <Chip T={T} at={K.Es + 5.6} until={K.Ja - 0.2} texto="poros estimados: ≈ 100–200 nm" x={315} y={620} tam={33} borde={KC.violet} />
       <Chip T={T} at={K.Ja + 0.8} until={K.Ja + 2.6} texto="el agua sale → se arruga" y={1500} tam={42} borde={JARABE} />
       <Chip T={T} at={K.Ja + 3.3} until={K.Re - 0.2} texto="el agua entra → se infla" y={1500} tam={42} borde={AGUA} />
       <Chip T={T} at={K.Re + 1.0} until={K.Re + 2.4} texto="solo desde muy poquito" y={1500} tam={42} borde={KC.pink} />
       <Chip T={T} at={K.Re + 2.6} until={K.Ci - 0.2} texto="huevo crudo: lávate las manos 🧼" y={1500} tam={38} borde={KC.mint} />
-      <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="CaCO₃ → CO₂ 🫧 · queda la membrana" y={1500} tam={36} borde={KC.gold} />
+      <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="CaCO₃ → CO₂ 🫧 · queda la membrana" x={620} y={330} tam={34} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ca - 0.1} texto="No está pelado: *es vinagre.*" />

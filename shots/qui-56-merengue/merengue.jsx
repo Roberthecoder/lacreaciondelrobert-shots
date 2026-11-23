@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #56 · Ese merengue no es solo azúcar (la espuma de proteínas de la clara) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (proteínas, listones, ganchitos, gotas de grasa).
 const MER = '#fffdf6', MER_SOMBRA = '#e9e1cf', CLARA = '#f4f1d6', YEMA = '#ffc21a', NAR = '#ff8a1f', AZU = '#4fb3ff', ORO = '#F4C25A', GRASA = '#ffd23f';
@@ -6,7 +7,14 @@ const TAZON = '#2346ff';
 // ---------- piezas de cocina ----------
 // Tazón visto de lado. x,y = centro del borde. contenido: 'nada' | 'clara' | 'espuma'.
 function Tazon({ T, x, y, s = 1, contenido = 'espuma', pico = 0, color = TAZON, espumaSube = 1, gota = 0 }) {
+  const gid = 'tzG' + String(color).replace('#', '');
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <defs>
+      <linearGradient id={gid} x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stopColor={mixHex(color, '#ffffff', 0.18)} /><stop offset="0.55" stopColor={mixHex(color, '#0b1020', 0.2)} /><stop offset="1" stopColor={mixHex(color, '#0b1020', 0.55)} />
+      </linearGradient>
+    </defs>
+    <ellipse cx={0} cy={292} rx={240} ry={26} fill="rgba(0,0,0,.35)" />
     <ellipse cx={0} cy={0} rx={300} ry={60} fill="#1a1f4a" stroke={KC.ink} strokeWidth={10} />
     {contenido === 'clara' && <ellipse cx={0} cy={8} rx={270} ry={46} fill={CLARA} opacity={0.9} />}
     {contenido === 'clara' && gota > 0 && <circle cx={40} cy={10} r={22 * gota} fill={YEMA} stroke={KC.ink} strokeWidth={5} />}
@@ -15,8 +23,9 @@ function Tazon({ T, x, y, s = 1, contenido = 'espuma', pico = 0, color = TAZON, 
         fill={MER} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
       {pico > 0 && <Pico x={10} y={-30 * espumaSube} h={170 * pico} />}
     </g>}
-    <path d="M -300 0 Q -290 260 0 270 Q 290 260 300 0 Q 0 70 -300 0 Z" fill={color} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+    <path d="M -300 0 Q -290 260 0 270 Q 290 260 300 0 Q 0 70 -300 0 Z" fill={`url(#${gid})`} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
     <path d="M -240 70 Q -220 200 -90 236" stroke="rgba(255,255,255,.35)" strokeWidth={16} fill="none" strokeLinecap="round" />
+    <ellipse cx={-205} cy={95} rx={16} ry={9} fill="rgba(255,255,255,.55)" transform="rotate(-50 -205 95)" />
   </g>;
 }
 // Pico de merengue con la puntita doblada.
@@ -47,9 +56,15 @@ function Huevo({ x, y, s = 1, abre = 0 }) {
 function Horno({ T, x, y, s = 1, dora = 0 }) {
   const brillo = 0.5 + 0.2 * Math.sin(T * 5);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-330} y={-300} width={660} height={560} rx={36} fill="#e8e3da" stroke={KC.ink} strokeWidth={10} />
-    {[-220, -110, 0, 110, 220].map((dx) => <circle key={dx} cx={dx} cy={-250} r={20} fill="#3a3a3a" stroke={KC.ink} strokeWidth={5} />)}
-    <rect x={-270} y={-190} width={540} height={380} rx={24} fill={`rgba(255,150,40,${brillo})`} stroke={KC.ink} strokeWidth={9} />
+    <defs>
+      <linearGradient id="hornoG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#5e5953" /><stop offset="1" stopColor="#2c2926" /></linearGradient>
+      <radialGradient id="hornoLuz" cx="0.5" cy="0.35" r="0.75"><stop offset="0" stopColor="#ffb45a" /><stop offset="1" stopColor="#8a4a14" /></radialGradient>
+    </defs>
+    <ellipse cx={0} cy={290} rx={300} ry={28} fill="rgba(0,0,0,.35)" />
+    <rect x={-330} y={-300} width={660} height={560} rx={36} fill="url(#hornoG)" stroke={KC.ink} strokeWidth={10} />
+    {[-220, -110, 0, 110, 220].map((dx) => <circle key={dx} cx={dx} cy={-250} r={20} fill="#1d1c1b" stroke={KC.ink} strokeWidth={5} />)}
+    <rect x={-270} y={-190} width={540} height={380} rx={24} fill="url(#hornoLuz)" opacity={0.55 + brillo * 0.6} stroke={KC.ink} strokeWidth={9} />
+    <path d="M -240 -170 L -150 -170 L -240 -60 Z" fill="rgba(255,255,255,.12)" />
     <line x1={-250} y1={110} x2={250} y2={110} stroke="#5a524a" strokeWidth={10} />
     {[-170, -60, 50, 160].map((dx, i) => <g key={i} transform={`translate(${dx} 104) scale(0.55)`}>
       <path d="M -80 4 Q -46 -80 -10 -150 Q 4 -176 34 -144 Q 10 -146 6 -110 Q 30 -50 80 4 Z" fill={mixHex('#fffdf6', '#f1d9a8', dora)} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" /></g>)}
@@ -74,7 +89,9 @@ function Olla({ T, x, y, s = 1 }) {
   const R = krng(11);
   const gs = Array.from({ length: 22 }, () => [R() * 380 - 190, R() * 120, R() * 6]);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-250} y={-180} width={500} height={260} rx={30} fill="#9aa3b5" stroke={KC.ink} strokeWidth={10} />
+    <defs><linearGradient id="ollaG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#6f7787" /><stop offset="0.3" stopColor="#d2d8e2" /><stop offset="0.55" stopColor="#9aa3b5" /><stop offset="1" stopColor="#4f5665" /></linearGradient></defs>
+    <ellipse cx={0} cy={92} rx={240} ry={24} fill="rgba(0,0,0,.35)" />
+    <rect x={-250} y={-180} width={500} height={260} rx={30} fill="url(#ollaG)" stroke={KC.ink} strokeWidth={10} />
     <ellipse cx={0} cy={-180} rx={250} ry={50} fill="#e9d9a8" stroke={KC.ink} strokeWidth={10} />
     {gs.map(([gx, gy, p], i) => <circle key={i} cx={gx * (1 - gy / 400)} cy={-200 + gy * 0.25 + Math.sin(T * 6 + p) * 4} r={22} fill="#e2b866" stroke={KC.ink} strokeWidth={4} />)}
     {[0, 1, 2].map((k) => { const ph = (T * 0.8 + k / 3) % 1; return <path key={k} d={`M ${-120 + k * 120} ${-250 - ph * 180} q 30 -30 0 -60 q -30 -30 0 -60`} stroke="rgba(255,255,255,.75)" strokeWidth={12} fill="none" strokeLinecap="round" opacity={1 - ph} />; })}
@@ -89,7 +106,7 @@ function Suspiro({ T, x, y, s = 1, estrellas = 0, etiqueta, color = KC.mint }) {
     <g transform="translate(0 20) scale(1.2)"><path d="M -80 4 Q -46 -80 -10 -150 Q 4 -176 34 -144 Q 10 -146 6 -110 Q 30 -50 80 4 Z" fill={MER} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" /><path d="M -44 0 Q -24 -70 -8 -128 M 10 -4 Q 22 -50 4 -104" stroke={MER_SOMBRA} strokeWidth={9} fill="none" strokeLinecap="round" /></g>
     {[0, 1, 2, 3].map((k) => { const e = kclamp(estrellas * 4 - k, 0, 1); return e > 0 ? <path key={k} transform={`translate(${-105 + k * 70} 120) scale(${e})`} d="M 0 -28 L 8 -9 L 28 -9 L 12 4 L 18 24 L 0 12 L -18 24 L -12 4 L -28 -9 L -8 -9 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={4} strokeLinejoin="round" /> : null; })}
     {etiqueta && <g><rect x={-170} y={-280} width={340} height={64} rx={32} fill={color} stroke={KC.ink} strokeWidth={6} />
-      <text x={0} y={-236} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>{etiqueta}</text></g>}
+      <text x={0} y={-236} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill="#0b1020">{etiqueta}</text></g>}
   </g>;
 }
 
@@ -141,9 +158,9 @@ function BurbujaRed({ T, cx, cy, r, n = 14, desd = 1, red = 1, rompe = 0, apriet
   </g>;
 }
 // Barra de escala esquemática (sin número: no hay fuente del tamaño).
-function EscalaEsq({ x = 60, y = 1600, txt = 'escala esquemática', color = KC.texto }) {
+function EscalaEsq({ x = 60, y = 1600, txt = 'escala esquemática', color = KC.texto, w = 150 }) {
   return <div style={{ position:'absolute', left:x, top:y, zIndex:40, display:'flex', alignItems:'center', gap:14 }}>
-    <div style={{ width:150, height:10, background:color, borderRadius:4, boxShadow:'0 3px 0 rgba(0,0,0,.6)' }}></div>
+    <div style={{ width:w, height:10, background:color, borderRadius:4, boxShadow:'0 3px 0 rgba(0,0,0,.6)' }}></div>
     <div style={{ font:`700 28px ${KF.mono}`, color, textShadow:'0 2px 0 rgba(0,0,0,.8)' }}>{txt}</div>
   </div>;
 }
@@ -193,37 +210,46 @@ function Merengue() {
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: el pico de merengue */}
-      <Escena T={T} a={K.G} b={K.Cl} zoom={0.06} origen="45% 55%">
+      <Escena T={T} a={K.G} b={K.Cl} zoom={0.06} origen="50% 55%">
         <FondoLunares color={KC.pink} />
         <SvgCapa>
+          <g transform="translate(540 1040) scale(1.26) translate(-440 -900)">
           <Tazon T={T} x={440} y={900} s={1.15} contenido="espuma" pico={pico} />
-          <Batidor x={450} y={klerp(880, 460, sube)} s={1} gira={T * 2} rot={klerp(0, 14, sube)} />
+          <Batidor x={klerp(450, 510, sube)} y={klerp(880, 460, sube)} s={1} gira={T * 2} rot={klerp(0, 14, sube)} />
           {T > K.G + 2.4 && Array.from({ length: 9 }, (_, i) => { const e = kprog(T, K.G + 2.4 + i * 0.12, K.G + 2.8 + i * 0.12, kEase.rebote); return <circle key={i} cx={260 + (i % 5) * 80 + (i > 4 ? 40 : 0)} cy={(i > 4 ? 890 : 860) - (i % 2) * 12} r={16 * e} fill="none" stroke={AZU} strokeWidth={5} />; })}
+          </g>
         </SvgCapa>
-        <EscalaEsq txt="1 cm · esquemático" color={KC.ink} />
+        {/* el dibujo creció 1.26: la barra de 1 cm crece igual (150 → 189 px) */}
+        <EscalaEsq txt="1 cm · esquemático" color={KC.ink} w={189} y={1650} />
       </Escena>
       {/* 1 · la clara: huevo que se parte, y adentro */}
       <Escena T={T} a={K.Cl} b={K.Ba + 0.2} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          <g transform="translate(540 1040) scale(1.3) translate(-540 -960)">
           <Tazon T={T} x={540} y={960} s={1} contenido="clara" />
-          <Huevo x={540} y={560} s={1.1} abre={abre} />
-          {cae > 0 && cae < 1 && <ellipse cx={540} cy={klerp(580, 950, cae)} rx={90 - cae * 20} ry={60 + cae * 30} fill={CLARA} stroke="#c9c2a0" strokeWidth={5} opacity={0.9} />}
+          <Huevo x={540} y={640} s={1.1} abre={abre} />
+          {cae > 0 && cae < 1 && <ellipse cx={540} cy={klerp(660, 950, cae)} rx={90 - cae * 20} ry={60 + cae * 30} fill={CLARA} stroke="#c9c2a0" strokeWidth={5} opacity={0.9} />}
+          </g>
         </SvgCapa>
-        <Lupa T={T} at={micro1} until={K.Ba - 0.2} x={540} y={700} r={240} fx={540} fy={960} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · la clara"
+        <Lupa T={T} at={micro1} until={K.Ba - 0.2} x={540} y={600} r={270} fx={540} fy={1050} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · la clara"
           interior={(T2, r) => <svg width={r * 2} height={r * 2}>
             <rect width={r * 2} height={r * 2} fill={KC.noche} />
-            {Array.from({ length: 40 }, (_, i) => { const R = krng(30 + i); const x = R() * r * 2, y = R() * r * 2; return <circle key={i} cx={x + Math.sin(T2 + i) * 6} cy={y} r={5} fill="rgba(120,190,255,.5)" />; })}
+            <g transform={`scale(${r / 240})`}>
+            {Array.from({ length: 40 }, (_, i) => { const R = krng(30 + i); const x = R() * 480, y = R() * 480; return <circle key={i} cx={x + Math.sin(T2 + i) * 6} cy={y} r={5} fill="rgba(120,190,255,.5)" />; })}
             {Array.from({ length: 10 }, (_, i) => { const x = 90 + (i % 4) * 110 + (Math.floor(i / 4) % 2) * 50, y = 110 + Math.floor(i / 4) * 140; const oro = i % 2 === 0 && T2 > micro1 + 1.2;
               return <ProtBola key={i} T={T2} x={x + Math.sin(T2 + i) * 8} y={y + Math.cos(T2 * 0.8 + i) * 8} r={34} seed={i} color={oro ? ORO : '#9fd8ff'} />; })}
+            </g>
           </svg>} />
       </Escena>
       {/* 2a · batir (macro) */}
       <Escena T={T} a={K.Ba} b={batM} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
+          <g transform="translate(540 1040) scale(1.3) translate(-540 -960)">
           <Tazon T={T} x={540} y={960} s={1} contenido="espuma" espumaSube={kprog(T, K.Ba, batM)} />
           <Batidor x={540 + Math.sin(T * 9) * 60} y={860} s={1} gira={T * 14} rot={Math.sin(T * 9) * 10} />
+          </g>
         </SvgCapa>
       </Escena>
       {/* 2b–3–4 · micro: burbuja, proteínas que se pegan, se desdoblan, se enganchan */}
@@ -231,10 +257,12 @@ function Merengue() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
           <AguaMicro T={T} />
+          <g transform="translate(540 900) scale(1.3) translate(-540 -860)">
           <circle cx={540} cy={860} r={300} fill="rgba(190,232,255,.14)" stroke="#bfe8ff" strokeWidth={6} />
-          <text x={540} y={875} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill="#bfe8ff" opacity={0.8}>AIRE</text>
+          <text x={540} y={875} textAnchor="middle" style={{ font:`400 50px ${KF.titulo}` }} fill="#bfe8ff" opacity={0.9}>AIRE</text>
           {bolas.map(([a, d0, q], i) => { const t0 = batM + 0.2 + q * 1.4, llega = kprog(T, t0, t0 + 1.0, kEase.sale), d = klerp(d0, 330, llega);
             return <ProtBola key={i} T={T} x={540 + Math.cos(a) * d} y={860 + Math.sin(a) * d} r={30} seed={i} color={i % 2 ? '#9fd8ff' : ORO} />; })}
+          </g>
         </SvgCapa>
         <EscalaEsq />
       </Escena>
@@ -242,12 +270,14 @@ function Merengue() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
           <AguaMicro T={T} seed={6} />
+          <g transform="translate(540 920) scale(1.25) translate(-540 -880)">
           <circle cx={CX} cy={CY} r={RR} fill="rgba(190,232,255,.18)" stroke="#bfe8ff" strokeWidth={8} />
-          <text x={560} y={430} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill="#bfe8ff" opacity={0.85}>AIRE</text>
-          <text x={540} y={1180} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill="#7fc8ff" opacity={0.6}>AGUA</text>
+          <text x={560} y={430} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill="#bfe8ff" opacity={0.9}>AIRE</text>
+          <text x={540} y={1180} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill="#9fd4ff" opacity={0.9}>AGUA</text>
           {orilla.map(([x, y, ux, uy], i) => { const p = desd(i); return <g key={i}>
             <ProtBola T={T} x={x} y={y} r={36 * (1 - p)} seed={i} color={i % 2 ? '#9fd8ff' : ORO} />
             <Liston T={T} px={x} py={y} ux={ux} uy={uy} L={150} p={p} seed={i} /></g>; })}
+          </g>
         </SvgCapa>
         <EscalaEsq />
       </Escena>
@@ -255,7 +285,7 @@ function Merengue() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
           <AguaMicro T={T} seed={8} />
-          <BurbujaRed T={T} cx={540} cy={880} r={300} n={16} desd={1} red={redP} aprieta={apr} />
+          <BurbujaRed T={T} cx={540} cy={900} r={340} n={16} desd={1} red={redP} aprieta={apr} />
         </SvgCapa>
         <EscalaEsq />
       </Escena>
@@ -277,21 +307,21 @@ function Merengue() {
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <Tazon T={T} x={360} y={1080} s={0.85} contenido="clara" gota={kprog(T, K.Pr + 0.8, K.Pr + 1.0)} />
-          {gotaY < 1 && T > K.Pr + 0.1 && <circle cx={394} cy={klerp(600, 1086, gotaY)} r={22} fill={YEMA} stroke={KC.ink} strokeWidth={5} />}
-          <text x={300} y={860} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 300 700)`} opacity={kprog(T, K.Pr + 0.9, K.Pr + 1.2)}>?</text>
+          <Tazon T={T} x={540} y={1100} s={1.25} contenido="clara" gota={kprog(T, K.Pr + 0.8, K.Pr + 1.0)} />
+          {gotaY < 1 && T > K.Pr + 0.1 && <circle cx={590} cy={klerp(460, 1112, gotaY)} r={27} fill={YEMA} stroke={KC.ink} strokeWidth={5} />}
+          <text x={250} y={860} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 250 700)`} opacity={kprog(T, K.Pr + 0.9, K.Pr + 1.2)}>?</text>
+          <Onomato T={T} at={K.Pr + 0.8} until={K.Es - 0.1} x={830} y={930} texto="¡plop!" tam={110} />
         </SvgCapa>
-        <Onomato T={T} at={K.Pr + 0.8} until={K.Es - 0.1} x={560} y={1000} texto="¡plop!" />
       </Escena>
       {/* 7 · 2009 · Iowa: probetas */}
       <Escena T={T} a={K.Es} b={K.Gr} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          {T > probAt - 0.4 && <g opacity={kprog(T, probAt - 0.4, probAt)}>
+          {<g opacity={klerp(0.45, 1, kprog(T, probAt - 0.4, probAt))} transform="translate(540 910) scale(1.2) translate(-610 -855)">
             <Probeta T={T} x={420} y={1180} h={espA} seed={3} />
             <Probeta T={T} x={800} y={1180} h={espB} seed={5} liq="#f6e7a6" />
-            <text x={420} y={1145} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>limpia</text>
-            <text x={800} y={1145} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>+ yema</text>
+            <text x={420} y={1145} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill="#0b1020">limpia</text>
+            <text x={800} y={1145} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill="#0b1020">+ yema</text>
             {T > probAt + 0.2 && <circle cx={840} cy={1090} r={14} fill={YEMA} stroke={KC.ink} strokeWidth={4} />}
           </g>}
         </SvgCapa>
@@ -302,59 +332,63 @@ function Merengue() {
         <SvgCapa>
           <AguaMicro T={T} seed={14} />
           {Array.from({ length: 8 }, (_, i) => { const t0 = K.Gr + 0.3 + i * 0.12, u = kprog(T, t0, t0 + 0.9, kEase.sale); const a = (i / 8) * Math.PI * 2;
-            return u < 1 && T > t0 ? <circle key={i} cx={540 + Math.cos(a) * klerp(520, 300, u)} cy={880 + Math.sin(a) * klerp(520, 300, u)} r={22} fill={GRASA} stroke={KC.ink} strokeWidth={4} /> : null; })}
-          <BurbujaRed T={T} cx={540} cy={880} r={300} n={16} desd={1} red={1} rompe={rompe} grasa={grasaP} />
+            return u < 1 && T > t0 ? <circle key={i} cx={540 + Math.cos(a) * klerp(600, 340, u)} cy={900 + Math.sin(a) * klerp(600, 340, u)} r={26} fill={GRASA} stroke={KC.ink} strokeWidth={4} /> : null; })}
+          <BurbujaRed T={T} cx={540} cy={900} r={340} n={16} desd={1} red={1} rompe={rompe} grasa={grasaP} />
         </SvgCapa>
-        <Onomato T={T} at={K.Gr + 4.4} until={K.Ga - 0.1} x={540} y={900} texto="¡pop!" color={GRASA} tam={130} />
+        <SvgCapa z={30}><Onomato T={T} at={K.Gr + 4.4} until={K.Ga - 0.1} x={540} y={940} texto="¡pop!" color={GRASA} tam={150} /></SvgCapa>
         <EscalaEsq />
       </Escena>
       {/* 9 · agua de garbanzo */}
       <Escena T={T} a={K.Ga} b={compAt} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
+          <g transform="translate(540 980) scale(1.3) translate(-760 -850)">
           <Olla T={T} x={760} y={680} s={0.8} />
           <Chorro T={T} x0={820} y0={740} x1={780} y1={1000} color="#efe2b4" o={chorro} ancho={20} />
           <Tazon T={T} x={760} y={1030} s={0.7} contenido={espG > 0 ? 'espuma' : 'clara'} espumaSube={espG} />
           {T > K.Ga + 2.4 && T < K.Ga + 3.8 && <Batidor x={760 + Math.sin(T * 9) * 40} y={950} s={0.7} gira={T * 14} rot={Math.sin(T * 9) * 10} />}
+          </g>
         </SvgCapa>
       </Escena>
       <Escena T={T} a={compAt} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Suspiro T={T} x={280} y={980} s={1.25} etiqueta="normal" color={KC.cyan} estrellas={kprog(T, compAt + 0.6, compAt + 1.4)} />
-          <Suspiro T={T} x={800} y={980} s={1.25} etiqueta="½ clara → garbanzo" color={KC.mint} estrellas={kprog(T, compAt + 0.6, compAt + 1.4)} />
+          <Suspiro T={T} x={300} y={1000} s={1.25} etiqueta="normal" color={KC.cyan} estrellas={kprog(T, compAt + 0.6, compAt + 1.4)} />
+          <Suspiro T={T} x={780} y={1000} s={1.25} etiqueta="½ clara → garbanzo" color={KC.mint} estrellas={kprog(T, compAt + 0.6, compAt + 1.4)} />
         </SvgCapa>
       </Escena>
       {/* 10 · cierre: el mismo pico, por dentro */}
-      <Escena T={T} a={K.Ci} b={FIN} zoom={0.04} origen="45% 55%">
+      <Escena T={T} a={K.Ci} b={FIN} zoom={0.04} origen="50% 55%">
         <FondoLunares color={KC.pink} />
-        <SvgCapa><Tazon T={T} x={440} y={900} s={1.15} contenido="espuma" pico={1} /></SvgCapa>
-        <Lupa T={T} at={K.Ci + 0.6} until={K.Ou - 0.1} x={420} y={520} r={220} fx={452} fy={740} tinte={KC.cyan} etiqueta="POR DENTRO · aire + proteínas"
+        <SvgCapa><g transform="translate(540 1090) scale(1.26) translate(-440 -900)"><Tazon T={T} x={440} y={900} s={1.15} contenido="espuma" pico={1} /></g></SvgCapa>
+        <Lupa T={T} at={K.Ci + 0.6} until={K.Ou - 0.1} x={540} y={450} r={205} fx={555} fy={890} tinte={KC.cyan} etiqueta="POR DENTRO · aire + proteínas"
           interior={(T2, r) => <svg width={r * 2} height={r * 2}>
             <rect width={r * 2} height={r * 2} fill={KC.noche} />
+            <g transform={`scale(${r / 220})`}>
             {[[150, 160, 100], [330, 150, 80], [250, 330, 110], [90, 340, 60], [400, 320, 60]].map(([x, y, rr], i) => <BurbujaRed key={i} T={T2} cx={x} cy={y} r={rr} n={8} desd={1} red={1} />)}
+            </g>
           </svg>} />
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 1.9} until={K.G + 3.0} texto="¿solo azúcar?" x={330} y={470} tam={48} />
-      <Chip T={T} at={K.G + 3.0} until={K.Cl - 0.3} texto="aire + proteínas de la clara" x={540} y={1500} tam={40} borde={AZU} />
-      <Medidor T={T} at={K.Cl + 0.6} until={K.Ba - 0.3} valor={(t) => 0.88 * kprog(t, K.Cl + 0.7, K.Cl + 1.9, kEase.sale)} etiqueta="la clara: agua" x={90} y={1430} color={AZU} />
-      <Etq T={T} at={micro1 + 1.3} until={K.Ba - 0.3} x={60} y={410} texto="½ = ovalbúmina" tam={34} color={ORO} />
+      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 1.9} until={K.G + 3.0} texto="¿solo azúcar?" x={290} y={350} tam={48} />
+      <Chip T={T} at={K.G + 3.0} until={K.Cl - 0.3} texto="aire + proteínas de la clara" x={540} y={1545} tam={40} borde={AZU} />
+      <Medidor T={T} at={K.Cl + 0.6} until={K.Ba - 0.3} valor={(t) => 0.88 * kprog(t, K.Cl + 0.7, K.Cl + 1.9, kEase.sale)} etiqueta="la clara: agua" x={90} y={1475} color={AZU} />
+      <Etq T={T} at={micro1 + 1.3} until={K.Ba - 0.3} x={250} y={255} texto="½ = ovalbúmina" tam={34} color={ORO} />
       <Chip T={T} at={batM + 0.3} until={K.De - 0.2} texto="las proteínas se pegan a la burbuja" y={1500} tam={34} borde="#bfe8ff" />
-      <Etq T={T} at={K.De + 1.2} until={K.Re - 0.2} x={1040} y={540} texto="odia el agua → aire" lado="izq" tam={32} color={NAR} />
-      <Etq T={T} at={K.De + 1.6} until={K.Re - 0.2} x={1040} y={1080} texto="ama el agua → agua" lado="izq" tam={32} color={AZU} />
+      <Etq T={T} at={K.De + 1.2} until={K.Re - 0.2} x={1040} y={505} texto="odia el agua → aire" lado="izq" tam={32} color={NAR} />
+      <Etq T={T} at={K.De + 1.6} until={K.Re - 0.2} x={1040} y={1195} texto="ama el agua → agua" lado="izq" tam={32} color={AZU} />
       <Chip T={T} at={K.Re + 0.8} until={K.Az - 0.2} texto="red de proteínas = piel elástica" y={1500} tam={36} borde={ORO} />
       <Medidor T={T} at={K.Az + 0.4} until={hornoAt - 0.2} valor={(t) => klerp(0.35, 0.95, kprog(t, K.Az + 0.6, K.Az + 2.0, kEase.sale))} etiqueta="estabilidad de la espuma" texto={() => '+ azúcar'} x={90} y={1430} color={KC.mint} />
       <Chip T={T} at={hornoAt + 0.5} until={K.Pr - 0.2} texto="horno → merengue firme" y={1500} tam={42} borde={KC.orange} />
-      <TarjetaEstudio T={T} at={K.Es + 0.5} until={probAt - 0.3} anio="2009" quien="Wang y Wang · Iowa State, EUA" revista="J Food Sci · yema en la clara" x={540} y={760} />
+      <TarjetaEstudio T={T} at={K.Es + 0.5} until={probAt - 0.3} anio="2009" quien="Wang y Wang · Iowa State, EUA" revista="J Food Sci · yema en la clara" x={540} y={320} />
       <NumeroGigante T={T} at={probAt + 1.0} until={K.Gr - 0.3} valor={0.022} desde={0.022} dec={3} dur={0.1} sufijo=" %" etiqueta="de yema en la clara" y={1520} tam={120} color={YEMA} />
       <Chip T={T} at={K.Gr + 0.4} until={K.Gr + 3.0} texto="según los autores: la grasa estorba" y={1500} tam={34} borde={GRASA} />
       <Chip T={T} at={K.Gr + 3.2} until={K.Ga - 0.2} texto="sin ganchitos → la burbuja se escapa" y={1500} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.Ga + 0.5} until={K.Ga + 3.6} texto="agua de cocer garbanzos" x={540} y={420} tam={40} borde="#e2b866" />
-      <TarjetaEstudio T={T} at={K.Ga + 3.9} until={compAt - 0.3} anio="2025" quien="Universidad de Jahrom · Irán" revista="Food Chem X · merengue con aquafaba" x={540} y={760} />
+      <Chip T={T} at={K.Ga + 0.5} until={K.Ga + 3.6} texto="agua de cocer garbanzos" x={540} y={1500} tam={40} borde="#e2b866" />
+      <TarjetaEstudio T={T} at={K.Ga + 3.9} until={compAt - 0.3} anio="2025" quien="Universidad de Jahrom · Irán" revista="Food Chem X · merengue con aquafaba" x={540} y={300} />
       <Chip T={T} at={compAt + 1.4} until={K.Ci - 0.2} texto="sin diferencia en la cata" y={1500} tam={42} borde={KC.mint} />
-      <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="aire + red de proteínas desdobladas" y={1500} tam={34} borde={AZU} />
+      <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="aire + red de proteínas desdobladas" y={1545} tam={34} borde={AZU} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Cl - 0.1} texto="No es solo azúcar: *es aire.*" />

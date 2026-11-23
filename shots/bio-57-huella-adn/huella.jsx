@@ -22,18 +22,27 @@ const B_TU = hBandas(41, 11), B_LADO = hBandas(57, 11), B_GEMELO = hBandas(73, 1
 const B_CRIMEN = hBandas(91, 9), B_SOSP = hBandas(103, 9);
 
 // Persona esquemática (cabeza + torso + brazos), origen en los pies.
-function Persona({ x, y, s = 1, ropa = KC.blue, pelo = KC.ink, mece: m = 0, sonrisa = true }) {
-  return <g transform={`translate(${x} ${y}) scale(${s}) rotate(${m})`}>
+// belleza: el pelo era KC.ink, que en modo cine es CLARO (salía blanco): ahora es oscuro fijo; ropa menos saturada y con volumen.
+function Persona({ x, y, s = 1, ropa = KC.blue, pelo = '#1d1612', mece: m = 0, sonrisa = true }) {
+  if (pelo === KC.ink) pelo = '#1d1612';
+  return <g transform={`translate(${x} ${y}) scale(${s}) rotate(${m})`} style={{ filter:'saturate(0.72)' }}>
+    <defs>
+      <linearGradient id="huRopa" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fff" stopOpacity=".16" /><stop offset=".45" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".42" /></linearGradient>
+      <radialGradient id="huCara" cx=".38" cy=".32" r=".75"><stop offset="0" stopColor="#fff" stopOpacity=".2" /><stop offset=".6" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".28" /></radialGradient>
+    </defs>
+    <ellipse cx={8} cy={10} rx={140} ry={18} fill="#000" opacity=".3" />
     <path d="M -120 0 L -110 -250 Q -100 -330 0 -335 Q 100 -330 110 -250 L 120 0 Z" fill={ropa} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+    <path d="M -120 0 L -110 -250 Q -100 -330 0 -335 Q 100 -330 110 -250 L 120 0 Z" fill="url(#huRopa)" />
     <path d="M -110 -250 Q -170 -170 -150 -60" stroke={KC.ink} strokeWidth={34} fill="none" strokeLinecap="round" />
     <path d="M -110 -250 Q -170 -170 -150 -60" stroke={ropa} strokeWidth={20} fill="none" strokeLinecap="round" />
     <path d="M 110 -250 Q 170 -170 150 -60" stroke={KC.ink} strokeWidth={34} fill="none" strokeLinecap="round" />
     <path d="M 110 -250 Q 170 -170 150 -60" stroke={ropa} strokeWidth={20} fill="none" strokeLinecap="round" />
     <rect x={-26} y={-370} width={52} height={50} fill={PIEL} stroke={KC.ink} strokeWidth={8} />
     <circle cx={0} cy={-445} r={88} fill={PIEL} stroke={KC.ink} strokeWidth={10} />
+    <circle cx={0} cy={-445} r={84} fill="url(#huCara)" />
     <path d="M -88 -460 Q -80 -545 0 -540 Q 85 -545 90 -465 Q 40 -500 -88 -460 Z" fill={pelo} stroke={KC.ink} strokeWidth={6} />
-    <circle cx={-30} cy={-440} r={9} fill={KC.ink} /><circle cx={30} cy={-440} r={9} fill={KC.ink} />
-    {sonrisa && <path d="M -30 -400 Q 0 -378 30 -400" stroke={KC.ink} strokeWidth={7} fill="none" strokeLinecap="round" />}
+    <circle cx={-30} cy={-440} r={9} fill="#1d1612" /><circle cx={30} cy={-440} r={9} fill="#1d1612" />
+    {sonrisa && <path d="M -30 -400 Q 0 -378 30 -400" stroke="#1d1612" strokeWidth={7} fill="none" strokeLinecap="round" />}
   </g>;
 }
 // Carril de un gel / película: bandas horizontales. p = 0..1 cuánto se ha revelado; resalta(i) → dorado.

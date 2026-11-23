@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #46 · El plátano que madura a la fruta de al lado (etileno) — NARRADO (N5 experimento + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const VERDE = '#7cc242', AMAR = '#ffd23f', CAFE = '#6b3f1d', PAPEL = '#c99a5b';
@@ -127,14 +128,33 @@ function Chicharo({ x, y, g = 1, lado = 1, dir = 1 }) {
 }
 function Caja({ x, y, mad, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-120} y={-30} width={240} height={90} rx={8} fill="#d9a05b" stroke={KC.ink} strokeWidth={7} />
+    <rect x={-120} y={-30} width={240} height={90} rx={8} fill="#6a4320" stroke={KC.ink} strokeWidth={7} />
     <Platano x={-40} y={-40} s={0.42} mad={mad} rot={-6} /><Platano x={50} y={-44} s={0.42} mad={mad} rot={4} />
-    <rect x={-120} y={-10} width={240} height={70} rx={8} fill="#e2ad6a" stroke={KC.ink} strokeWidth={7} />
+    <rect x={-120} y={-10} width={240} height={70} rx={8} fill="#7a4f27" stroke={KC.ink} strokeWidth={7} />
     <text x={0} y={42} textAnchor="middle" style={{ font:`400 34px ${KF.titulo}` }} fill={KC.ink}>BANANAS</text>
   </g>;
 }
 
 function Capa({ dy = -130, children }) { return <SvgCapa><g transform={`translate(0 ${dy})`}>{children}</g></SvgCapa>; }
+// Capa agrandada: el punto local (lx, ly) queda en (gx, gy) y todo crece k veces (pase a mano del modo cine).
+function CapaZ({ k = 1, lx = 540, ly = 960, gx = 540, gy = 900, children }) { return <SvgCapa><g transform={`translate(${gx - lx * k} ${gy - ly * k}) scale(${k})`}>{children}</g></SvgCapa>; }
+// Mesa de madera oscura para el frutero (escenario de la escena a escala real).
+function Mesa({ y = 1240 }) {
+  return <g>
+    <rect x={-60} y={y} width={1200} height={760} fill="#3d2816" />
+    <rect x={-60} y={y} width={1200} height={10} fill="#8a5d36" />
+    {[90, 210, 350, 520].map((d, i) => <path key={i} d={`M -60 ${y + d} Q ${300 + i * 90} ${y + d + (i % 2 ? 18 : -14)} 1140 ${y + d + 6}`} fill="none" stroke="rgba(0,0,0,.28)" strokeWidth={5} />)}
+  </g>;
+}
+// Rótulo con guía vertical hacia abajo (el texto va arriba de lo que señala).
+function RotuloAlto({ T, at, until, x, y, texto, largo = 50, color = KC.texto, tam = 30 }) {
+  if (!kvisible(T, at, until)) return null;
+  const e = kentrada(T, at, until, 'sube');
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:41, opacity:e.o, transform:'translate(-50%, 0)', display:'flex', flexDirection:'column', alignItems:'center', gap:8 }}>
+    <div style={{ font:`700 ${tam}px ${KF.mono}`, color, textShadow:'0 3px 0 rgba(0,0,0,.8), 0 0 18px rgba(0,0,0,.9)', whiteSpace:'nowrap' }}>{texto}</div>
+    <div style={{ width:4, height:largo * kprog(T, at, at + 0.4, kEase.sale), background:color, borderRadius:2 }}></div>
+  </div>;
+}
 
 function Platanos() {
   const { T, CUES } = useComposition();
@@ -152,38 +172,41 @@ function Platanos() {
   const ventana = kprog(T, K.N + 3.5, K.N + 4.0, kEase.sale);
   const llena = kprog(T, K.Cu + 2.4, K.Cu + 3.6);
   const cuartoMad = kprog(T, K.Cu + 3.2, K.Cu + 5.4, kEase.suave);
-  const entra = kprog(T, K.Cu + 0.2, K.Cu + 1.6, kEase.sale);
+  const entra = kprog(T, K.Cu - 0.5, K.Cu + 0.8, kEase.sale);
   const dia = Math.floor(Math.max(0, T - (K.B + 0.9)) / 0.55);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: el frutero; el plátano suelta gas hacia el aguacate */}
       <Escena T={T} a={K.G} b={K.Q} zoom={0.06} origen="45% 55%">
         <FondoLunares color={KC.yellow} />
-        <Capa dy={-170}>
+        <SvgCapa><Mesa /></SvgCapa>
+        <CapaZ k={1.45} lx={470} ly={1080} gx={540} gy={960}>
           <Frutero x={470} y={1120} s={1.15} />
           <Uvas x={720} y={1010} s={0.95} />
           <Aguacate x={520} y={980} s={0.95} mad={ripeG * 0.45} rot={8} />
           <Platano x={300} y={1040} s={1.1} mad={0.9} rot={-8 + Math.sin(T * 3) * 2} />
           <Gas T={T} x0={300} y0={960} x1={520} y1={900} n={9} desde={K.G} hasta={K.Q} vel={0.5} ancho={90} />
-        </Capa>
+        </CapaZ>
       </Escena>
       {/* 1 · qué es: la molécula C₂H₄ se arma */}
       <Escena T={T} a={K.Q} b={K.H} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Capa dy={-120}>
           {[...Array(14)].map((_, i) => <circle key={i} cx={(i * 173) % 1080} cy={420 + (i * 271) % 1100} r={3 + (i % 3)} fill="rgba(255,255,255,.18)" />)}
-          <MolEt x={540} y={960} s={3} rot={Math.sin(T * 0.8) * 10} f={kprog(T, K.Q + 0.1, K.Q + 1.6)} />
+        </Capa>
+        <CapaZ k={1.6} lx={540} ly={960} gx={540} gy={1000}>
+          <MolEt x={540} y={960} s={3} rot={Math.sin(T * 0.8) * 6} f={kprog(T, K.Q - 0.4, K.Q + 0.8)} />
           <g opacity={kprog(T, K.Q + 3.4, K.Q + 3.8)}>
             <line x1={300} y1={1160} x2={780} y2={1160} stroke={KC.gold2} strokeWidth={8} />
             <line x1={300} y1={1140} x2={300} y2={1180} stroke={KC.gold2} strokeWidth={8} /><line x1={780} y1={1140} x2={780} y2={1180} stroke={KC.gold2} strokeWidth={8} />
             <text x={540} y={1220} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.gold2}>≈ 0.4 nm</text>
           </g>
-        </Capa>
+        </CapaZ>
       </Escena>
       {/* 2 · hormona: llega a la célula de la otra fruta y da la orden */}
       <Escena T={T} a={K.H} b={K.Ca} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        <Capa dy={-120}>
+        <CapaZ k={1.25} lx={540} ly={820} gx={540} gy={840}>
           <rect x={160} y={800} width={760} height={420} rx={70} fill="#1f4a33" stroke={KC.mint} strokeWidth={10} />
           <circle cx={700} cy={1060} r={80} fill="#2c6b48" stroke={KC.mint} strokeWidth={6} />
           <path d="M 500 800 L 500 760 Q 500 730 540 730 Q 580 730 580 760 L 580 800" fill="none" stroke={KC.gold2} strokeWidth={16} strokeLinecap="round" />
@@ -191,26 +214,26 @@ function Platanos() {
           <MolEt x={540} y={klerp(500, 770, kprog(T, K.H + 0.3, K.H + 1.5, kEase.sale))} s={0.55} rot={0} o={kprog(T, K.H + 0.2, K.H + 0.5)} />
           {T > K.H + 1.5 && <circle cx={540} cy={770} r={60 + 40 * kprog(T, K.H + 1.5, K.H + 2.1)} fill="none" stroke={KC.gold2} strokeWidth={6} opacity={1 - kprog(T, K.H + 1.5, K.H + 2.1)} />}
           <g opacity={kprog(T, K.H + 2.0, K.H + 2.3)} transform={`translate(400 1010) scale(${klerp(0.6, 1, kprog(T, K.H + 2.0, K.H + 2.4, kEase.rebote))})`}>
-            <text x={0} y={30} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">¡MADURA!</text>
+            <text x={0} y={30} textAnchor="middle" style={{ font:`400 84px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={7} paintOrder="stroke">¡MADURA!</text>
           </g>
-        </Capa>
+        </CapaZ>
       </Escena>
       {/* 3 · la reacción en cadena: respira, color, se ablanda, más etileno */}
       <Escena T={T} a={K.Ca} b={K.B} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        <Capa dy={-130}>
+        <CapaZ k={1.55} lx={650} ly={1000} gx={700} gy={980}>
           <Aguacate x={650} y={1000} s={1.4} mad={cadena} hundido={kprog(T, K.Ca + 2.0, K.Ca + 2.5)} />
           {T > K.Ca + 0.3 && [0, 1, 2].map((i) => { const u = ((T - K.Ca - 0.3) * 0.5 + i / 3) % 1; return <Mol key={i} tipo="co2" x={570 + i * 60} y={klerp(760, 560, u)} s={0.55} o={Math.min(1, (1 - u) * 3) * kprog(T, K.Ca + 0.3, K.Ca + 0.6)} />; })}
           {T > K.Ca + 1.9 && <g transform={`translate(${klerp(1000, 740, kprog(T, K.Ca + 1.9, K.Ca + 2.3, kEase.sale))} 1060) rotate(-30)`}>
             <rect x={-30} y={-60} width={60} height={130} rx={30} fill="#f1b48f" stroke={KC.ink} strokeWidth={7} /></g>}
           <Gas T={T} x0={700} y0={940} x1={980} y1={800} n={7} desde={K.Ca + 2.9} hasta={K.B} vel={0.6} ancho={120} />
           <Gas T={T} x0={560} y0={1080} x1={300} y1={1260} n={6} desde={K.Ca + 3.0} hasta={K.B} vel={0.6} ancho={120} seed={8} />
-        </Capa>
+        </CapaZ>
       </Escena>
       {/* 4 · el experimento: bolsa de papel con una manzana madura */}
       <Escena T={T} a={K.B} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        <Capa dy={-150}>
+        <CapaZ k={1.25} lx={530} ly={935} gx={540} gy={900}>
           <Aguacate x={230} y={1090} s={0.85} mad={0.05} />
           <BolsaPapel x={700} y={1020} s={1.0}>
             <Aguacate x={-50} y={40} s={0.62} mad={bolsaMad * 0.85} />
@@ -222,7 +245,7 @@ function Platanos() {
             {dia % 2 ? <path d="M -14 -30 A 32 32 0 1 0 18 26 A 26 26 0 1 1 -14 -30 Z" fill="#f4efe4" opacity={kprog(T, K.B + 0.8, K.B + 1.1)} /> : null}
           </g>
           <Marca x={860} y={760} ok={true} s={0.8} o={kprog(T, K.B + 3.4, K.B + 3.8)} />
-        </Capa>
+        </CapaZ>
       </Escena>
       {/* 5 · pregunta: ¿y las uvas? */}
       <Escena T={T} a={K.P} b={K.Ti} zoom={0.08} origen="30% 55%">
@@ -236,112 +259,119 @@ function Platanos() {
       {/* 6–7 · dos tipos de fruta */}
       <Escena T={T} a={K.Ti} b={K.N} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
-        <Capa dy={-100}>
-          <line x1={540} y1={760} x2={540} y2={1200} stroke="rgba(22,18,15,.4)" strokeWidth={8} strokeDasharray="20 16" />
+        <Capa dy={0}>
+          <line x1={540} y1={600} x2={540} y2={1340} stroke="rgba(223,231,255,.28)" strokeWidth={8} strokeDasharray="20 16" />
           {/* izquierda: maduran en la planta */}
-          <path d="M 70 790 Q 280 760 500 795" fill="none" stroke={CAFE} strokeWidth={16} strokeLinecap="round" />
-          {[[160, 930, 'uvas'], [380, 930, 'fresa'], [160, 1120, 'limon'], [380, 1120, 'naranja']].map(([fx, fy, t], i) => {
-            const cae = corta * 30, hy = 790 + (fy - 790) * 0.3;
+          <path d="M 30 640 Q 270 596 512 648" fill="none" stroke={CAFE} strokeWidth={22} strokeLinecap="round" />
+          {[[150, 850, 'uvas'], [392, 850, 'fresa'], [150, 1170, 'limon'], [392, 1170, 'naranja']].map(([fx, fy, t], i) => {
+            const cae = corta * 40;
             return <g key={i}>
-              {corta < 1 && <line x1={fx} y1={790} x2={fx} y2={fy - 80} stroke={KC.leaf} strokeWidth={8} opacity={1 - corta} />}
+              {corta < 1 && <line x1={fx} y1={632} x2={fx} y2={fy - 108} stroke={KC.leaf} strokeWidth={10} opacity={1 - corta} />}
               <g transform={`translate(0 ${cae})`} opacity={1 - corta * 0.15}>
-                {t === 'uvas' ? <Uvas x={fx} y={fy} s={0.62} /> : t === 'fresa' ? <Fresa x={fx} y={fy} s={0.85} /> : t === 'limon' ? <Citrico x={fx} y={fy} s={0.8} limon={true} /> : <Citrico x={fx} y={fy} s={0.85} />}
+                {t === 'uvas' ? <Uvas x={fx} y={fy} s={0.86} /> : t === 'fresa' ? <Fresa x={fx} y={fy} s={1.18} /> : t === 'limon' ? <Citrico x={fx} y={fy} s={1.1} limon={true} /> : <Citrico x={fx} y={fy} s={1.18} />}
               </g>
             </g>; })}
-          {corta > 0 && <g opacity={corta}><circle cx={270} cy={1030} r={50} fill="rgba(14,15,18,.75)" stroke={KC.texto} strokeWidth={5} />
+          {corta > 0 && <g opacity={corta} transform="translate(270 1030) scale(1.3) translate(-270 -1030)"><circle cx={270} cy={1030} r={50} fill="rgba(14,15,18,.75)" stroke={KC.texto} strokeWidth={5} />
             <rect x={250} y={1005} width={14} height={50} fill={KC.texto} /><rect x={276} y={1005} width={14} height={50} fill={KC.texto} /></g>}
           {/* derecha: siguen madurando */}
           <g opacity={kprog(T, T7 - 0.2, T7 + 0.3)}>
-            <Platano x={720} y={930} s={0.7} mad={derMad} rot={-10} />
-            <Aguacate x={930} y={950} s={0.7} mad={derMad * 0.85} />
-            <Manzana x={800} y={1120} s={0.85} color={mixHex('#9bc23a', '#e5262f', derMad)} />
+            <Platano x={790} y={800} s={1.08} mad={derMad} rot={-10} />
+            <Aguacate x={925} y={1075} s={0.98} mad={derMad * 0.85} />
+            <Manzana x={688} y={1170} s={1.05} color={mixHex('#9bc23a', '#e5262f', derMad)} />
           </g>
         </Capa>
       </Escena>
       {/* 8 · Neljubov 1901: chícharos de lado por el gas de alumbrado */}
       <Escena T={T} a={K.N} b={K.Ga} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:'#c9b58e' }}></div>
-        <Capa dy={-120}>
+        <div style={{ position:'absolute', inset:0, background:'#231c14' }}></div>
+        <CapaZ k={1.3} lx={70} ly={420} gx={70} gy={330}>
           <rect x={70} y={420} width={300} height={360} fill={mixHex('#3a3048', '#8fd8ff', ventana)} stroke={KC.ink} strokeWidth={10} />
           <line x1={220} y1={420} x2={220} y2={780} stroke={KC.ink} strokeWidth={8} /><line x1={70} y1={600} x2={370} y2={600} stroke={KC.ink} strokeWidth={8} />
+        </CapaZ>
+        <CapaZ k={1.4} lx={950} ly={1180} gx={985} gy={1350}>
           <rect x={940} y={940} width={20} height={240} fill="#5b5f6b" stroke={KC.ink} strokeWidth={6} />
           <path d="M 900 940 L 1000 940 L 980 860 L 920 860 Z" fill="rgba(255,240,180,.85)" stroke={KC.ink} strokeWidth={7} />
           <path d={`M 950 ${920 - Math.sin(T * 12) * 6} Q 935 895 950 875 Q 965 895 950 ${920 - Math.sin(T * 12) * 6} Z`} fill={KC.orange} />
-          <Gas T={T} x0={900} y0={900} x1={520} y1={960} n={7} desde={K.N - 0.3} hasta={K.N + 3.8} vel={0.5} ancho={90} s={0.28} />
+        </CapaZ>
+        <Capa dy={0}>
+          <Gas T={T} x0={930} y0={965} x1={440} y1={1010} n={7} desde={K.N - 0.3} hasta={K.N + 3.8} vel={0.5} ancho={110} s={0.38} />
+        </Capa>
+        <CapaZ k={1.4} lx={560} ly={1110} gx={470} gy={1210}>
           <rect x={260} y={1100} width={600} height={110} rx={16} fill="#8a5a33" stroke={KC.ink} strokeWidth={9} />
           {[320, 420, 520, 620, 720].map((sx, i) => <Chicharo key={i} x={sx} y={1110} g={crece} lado={1 - recto} dir={1} />)}
           <rect x={260} y={1100} width={600} height={30} fill="#5b3a20" />
-        </Capa>
+        </CapaZ>
       </Escena>
       {/* 9 · Gane 1934: el gas de muchas manzanas */}
       <Escena T={T} a={K.Ga} b={K.Cu} zoom={0.04}>
         <FondoLunares color={KC.coral} />
-        <Capa dy={-120}>
+        <CapaZ k={1.18} lx={567} ly={1010} gx={540} gy={900}>
           {[[260, 1150], [380, 1150], [500, 1150], [320, 1050], [440, 1050], [380, 950], [200, 1170], [560, 1170]].map(([ax, ay], i) => <Manzana key={i} x={ax} y={ay} s={0.62} />)}
           <path d="M 470 900 Q 600 760 760 840" fill="none" stroke={KC.ink} strokeWidth={22} strokeLinecap="round" />
           <path d="M 470 900 Q 600 760 760 840" fill="none" stroke="#e8f6ff" strokeWidth={12} strokeLinecap="round" />
           <Gas T={T} x0={420} y0={930} x1={790} y1={1060} n={6} desde={K.Ga + 0.6} hasta={K.Cu} vel={0.5} ancho={40} s={0.24} />
           <VasoLab x={820} y={1200} s={1} liquido="rgba(200,230,255,.5)" nivel={0.85} ancho={220} alto={300} />
           <g opacity={kprog(T, K.Ga + 3.4, K.Ga + 3.8)}><MolEt x={820} y={1050} s={0.9} rot={Math.sin(T) * 10} /></g>
-          <Marca x={960} y={880} ok={true} s={0.7} o={kprog(T, K.Ga + 3.8, K.Ga + 4.2)} />
-        </Capa>
+          <Marca x={905} y={850} ok={true} s={0.7} o={kprog(T, K.Ga + 3.8, K.Ga + 4.2)} />
+        </CapaZ>
       </Escena>
       {/* 10 · cuartos de maduración con etileno */}
       <Escena T={T} a={K.Cu} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        <Capa dy={-110}>
-          <rect x={260} y={760} width={780} height={470} fill="#dfe3ea" stroke={KC.ink} strokeWidth={10} />
-          <rect x={260} y={760} width={780} height={470} fill={`rgba(255,225,26,${0.18 * llena})`} />
-          <rect x={880} y={830} width={110} height={220} rx={50} fill="#9aa3b5" stroke={KC.ink} strokeWidth={8} />
-          <text x={935} y={960} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink}>C₂H₄</text>
-          <GasCaja T={T} x={290} y={790} w={580} h={300} n={14} f={llena} seed={21} s={0.28} />
-          {[[460, 1130], [720, 1130], [590, 1020]].map(([cx, cy], i) => <Caja key={i} x={klerp(-200 - i * 140, cx, entra)} y={cy} mad={cuartoMad} s={0.95} />)}
-          <rect x={60} y={1060} width={200} height={170} fill="#9aa3b5" stroke={KC.ink} strokeWidth={8} />
+        <Capa dy={0}>
+          <rect x={230} y={470} width={830} height={830} fill="#2a3242" stroke={KC.ink} strokeWidth={10} />
+          <rect x={230} y={470} width={830} height={830} fill={`rgba(255,225,26,${0.2 * llena})`} />
+          <rect x={900} y={540} width={124} height={250} rx={56} fill="#4a5266" stroke={KC.ink} strokeWidth={8} />
+          <text x={962} y={682} textAnchor="middle" style={{ font:`400 44px ${KF.titulo}` }} fill={KC.ink}>C₂H₄</text>
+          <GasCaja T={T} x={260} y={510} w={620} h={470} n={14} f={llena} seed={21} s={0.38} />
+          {[[440, 1200], [770, 1200], [605, 1055]].map(([cx, cy], i) => <Caja key={i} x={klerp(-260 - i * 180, cx, entra)} y={cy} mad={cuartoMad} s={1.35} />)}
+          <rect x={30} y={1090} width={200} height={210} fill="#6f788c" stroke={KC.ink} strokeWidth={8} />
         </Capa>
       </Escena>
       {/* 11 · cierre: el mismo frutero, ya transformado */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.05} origen="45% 55%">
         <FondoLunares color={KC.yellow} />
-        <Capa dy={-170}>
+        <SvgCapa><Mesa /></SvgCapa>
+        <CapaZ k={1.45} lx={470} ly={1080} gx={540} gy={960}>
           <Frutero x={470} y={1120} s={1.15} />
           <Uvas x={720} y={1010} s={0.95} />
           <Aguacate x={520} y={980} s={0.95} mad={0.9} rot={8} />
           <Platano x={300} y={1040} s={1.1} mad={1} rot={-8 + Math.sin(T * 3) * 2} corona={kprog(T, K.Ci + 0.8, K.Ci + 1.3, kEase.rebote)} />
           <Gas T={T} x0={300} y0={960} x1={560} y1={860} n={9} desde={K.Ci - 0.3} hasta={FIN} vel={0.5} ancho={120} />
-        </Capa>
+        </CapaZ>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.G + 2.8} texto="¿quieto?" x={270} y={560} tam={56} />
-      <Chip T={T} at={K.G + 2.9} until={K.Q - 0.3} texto="suelta gas → madura al de al lado" y={1500} tam={36} borde={KC.yellow} />
-      <Etq T={T} at={K.G + 0.6} until={K.G + 2.8} x={130} y={1480} texto="plátano maduro" lado="der" tam={34} />
-      <Chip T={T} at={K.Q + 0.4} until={K.Q + 3.2} texto="etileno · C₂H₄" y={1500} tam={52} borde={KC.gold2} mono />
-      <Chip T={T} at={K.Q + 3.4} until={K.H - 0.3} texto="la hormona vegetal más simple" y={1500} tam={40} borde={KC.mint} />
-      <Etq T={T} at={K.Q + 1.0} until={K.Q + 3.2} x={800} y={700} texto="hidrógeno" lado="der" tam={30} />
-      <Etq T={T} at={K.Q + 0.6} until={K.Q + 3.2} x={760} y={860} texto="carbono" lado="der" tam={30} />
-      <Etq T={T} at={K.H + 0.6} until={K.Ca - 0.3} x={600} y={620} texto="receptor" lado="der" tam={34} color={KC.gold2} />
-      <Chip T={T} at={K.H + 2.5} until={K.Ca - 0.3} texto="una hormona en el aire" y={1500} tam={42} borde={KC.mint} />
-      <Etq T={T} at={K.Ca + 0.4} until={K.B - 0.3} x={30} y={780} texto="1 · respira más" lado="der" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Ca + 1.2} until={K.B - 0.3} x={30} y={880} texto="2 · cambia de color" lado="der" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Ca + 2.0} until={K.B - 0.3} x={1050} y={1110} texto="3 · se ablanda" lado="izq" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Ca + 2.9} until={K.B - 0.3} texto="4 · más etileno → más etileno" y={1500} tam={40} borde={KC.gold2} />
-      <Etq T={T} at={K.B + 0.5} until={K.P - 0.3} x={120} y={1100} texto="solo: duro" lado="der" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.B + 0.3} until={K.P - 0.3} texto="bolsa de papel + manzana madura" y={1500} tam={38} borde={PAPEL} />
-      <Etq T={T} at={K.B + 1.0} until={K.B + 3.3} x={470} y={550} texto="time-lapse" lado="izq" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Ti + 0.3} until={K.N - 0.3} texto="en la planta" x={270} y={1480} tam={38} borde={KC.leaf} />
-      <Chip T={T} at={T7} until={K.N - 0.3} texto="siguen" x={820} y={1480} tam={38} borde={KC.gold2} />
-      <Etq T={T} at={K.Ti + 3.0} until={K.N - 0.3} x={60} y={1600} texto="cortadas: casi no maduran" lado="der" tam={28} />
-      <Etq T={T} at={T7 + 0.8} until={K.N - 0.3} x={1020} y={1600} texto="climatéricas" lado="izq" tam={28} />
-      <TarjetaEstudio T={T} at={K.N + 0.2} until={K.N + 3.0} anio="1901" quien="D. Neljubov · San Petersburgo" revista="plántulas de chícharo y gas de alumbrado" y={1600} />
-      <Etq T={T} at={K.N + 3.1} until={K.Ga - 0.3} x={900} y={1060} texto="Pisum sativum" it lado="izq" tam={30} />
-      <Chip T={T} at={K.N + 3.2} until={K.N + 4.6} texto="C₂H₄ del gas de alumbrado" y={1500} tam={38} borde={KC.orange} />
-      <Chip T={T} at={K.N + 4.7} until={K.Ga - 0.3} texto="aire de afuera: crecen derechos" y={1500} tam={36} borde="#8fd8ff" />
-      <TarjetaEstudio T={T} at={K.Ga + 0.2} until={K.Ga + 3.0} anio="1934" quien="R. Gane · Cambridge, Inglaterra" revista="Nature 134:1008" y={1600} />
-      <Chip T={T} at={K.Ga + 3.4} until={K.Cu - 0.3} texto="la fruta fabrica etileno" y={1500} tam={42} borde={KC.mint} />
-      <Chip T={T} at={K.Cu + 0.3} until={K.Cu + 2.6} texto="exportación: se cortan verdes" y={1500} tam={40} borde={VERDE} />
-      <Chip T={T} at={K.Cu + 2.8} until={K.Ci - 0.3} texto="cuarto de maduración + etileno" y={1500} tam={38} borde={KC.yellow} />
-      <Etq T={T} at={K.Cu + 3.4} until={K.Ci - 0.3} x={60} y={1620} texto="EFSA, 2021 · plátano importado a la UE" lado="der" tam={26} />
-      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="el etileno manda en tu frutero" y={1500} tam={40} borde={KC.gold2} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.G + 2.8} texto="¿quieto?" x={300} y={440} tam={60} />
+      <Chip T={T} at={K.G + 2.9} until={K.Q - 0.3} texto="suelta gas → madura al de al lado" y={1420} tam={38} borde={KC.yellow} />
+      <Etq T={T} at={K.G + 0.6} until={K.G + 2.8} x={40} y={610} texto="plátano maduro" lado="der" tam={34} />
+      <Chip T={T} at={K.Q + 0.4} until={K.Q + 3.2} texto="etileno · C₂H₄" y={1400} tam={52} borde={KC.gold2} mono />
+      <Chip T={T} at={K.Q + 3.4} until={K.H - 0.3} texto="la hormona vegetal más simple" y={560} tam={40} borde={KC.mint} />
+      <RotuloAlto T={T} at={K.Q + 1.0} until={K.Q + 3.2} x={886} y={585} texto="hidrógeno" largo={56} tam={32} />
+      <RotuloAlto T={T} at={K.Q + 0.6} until={K.Q + 3.2} x={650} y={730} texto="carbono" largo={50} tam={32} />
+      <Etq T={T} at={K.H + 0.6} until={K.Ca - 0.3} x={608} y={768} texto="receptor" lado="der" tam={36} color={KC.gold2} />
+      <Chip T={T} at={K.H + 2.5} until={K.Ca - 0.3} texto="una hormona en el aire" y={1470} tam={42} borde={KC.mint} />
+      <Etq T={T} at={K.Ca + 0.4} until={K.B - 0.3} x={30} y={520} texto="1 · respira más" lado="der" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 1.2} until={K.B - 0.3} x={30} y={770} texto="2 · cambia de color" lado="der" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 2.0} until={K.B - 0.3} x={30} y={1010} texto="3 · se ablanda" lado="der" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Ca + 2.9} until={K.B - 0.3} texto="4 · más etileno → más etileno" y={1450} tam={40} borde={KC.gold2} />
+      <Etq T={T} at={K.B + 0.5} until={K.P - 0.3} x={50} y={1310} texto="solo: duro" lado="der" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.B + 0.3} until={K.P - 0.3} texto="bolsa de papel + manzana madura" y={1440} tam={38} borde={PAPEL} />
+      <Etq T={T} at={K.B + 1.0} until={K.B + 3.3} x={462} y={606} texto="time-lapse" lado="izq" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Ti + 0.3} until={K.N - 0.3} texto="en la planta" x={270} y={1400} tam={38} borde={KC.leaf} />
+      <Chip T={T} at={T7} until={K.N - 0.3} texto="siguen" x={810} y={1400} tam={38} borde={KC.gold2} />
+      <Etq T={T} at={K.Ti + 3.0} until={K.N - 0.3} x={40} y={1485} texto="cortadas: casi no maduran" lado="der" tam={28} />
+      <Etq T={T} at={T7 + 0.8} until={K.N - 0.3} x={1040} y={1485} texto="climatéricas" lado="izq" tam={28} />
+      <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, zIndex:43, pointerEvents:'none', transform:'scale(.6)', transformOrigin:'765px 480px' }}><TarjetaEstudio T={T} at={K.N + 0.2} until={K.N + 3.0} anio="1901" quien="D. Neljubov · San Petersburgo" revista="plántulas de chícharo y gas de alumbrado" x={765} y={480} /></div>
+      <Etq T={T} at={K.N + 3.1} until={K.Ga - 0.3} x={870} y={1300} texto="Pisum sativum" it lado="izq" tam={32} />
+      <Chip T={T} at={K.N + 3.2} until={K.N + 4.6} texto="C₂H₄ del gas de alumbrado" y={1480} tam={38} borde={KC.orange} />
+      <Chip T={T} at={K.N + 4.7} until={K.Ga - 0.3} texto="aire de afuera: crecen derechos" y={1480} tam={36} borde="#8fd8ff" />
+      <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, zIndex:43, pointerEvents:'none', transform:'scale(.6)', transformOrigin:'540px 400px' }}><TarjetaEstudio T={T} at={K.Ga + 0.2} until={K.Ga + 3.0} anio="1934" quien="R. Gane · Cambridge, Inglaterra" revista="Nature 134:1008" x={540} y={400} /></div>
+      <Chip T={T} at={K.Ga + 3.4} until={K.Cu - 0.3} texto="la fruta fabrica etileno" y={1400} tam={42} borde={KC.mint} />
+      <Chip T={T} at={K.Cu + 0.3} until={K.Cu + 2.6} texto="exportación: se cortan verdes" y={1420} tam={40} borde={VERDE} />
+      <Chip T={T} at={K.Cu + 2.8} until={K.Ci - 0.3} texto="cuarto de maduración + etileno" y={1420} tam={38} borde={KC.yellow} />
+      <Etq T={T} at={K.Cu + 3.4} until={K.Ci - 0.3} x={60} y={1500} texto="EFSA, 2021 · plátano importado a la UE" lado="der" tam={26} />
+      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="el etileno manda en tu frutero" y={1440} tam={40} borde={KC.gold2} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Q - 0.1} texto="Suelta *un gas que madura.*" />

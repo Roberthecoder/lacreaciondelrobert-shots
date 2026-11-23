@@ -209,7 +209,7 @@ function ReflejoBuceo() {
         <Lienzo>
           {(() => { const kf = kprog(T, K.Gancho + 3.8, K.Gancho + 4.5, kEase.suave);
             return <CaraFrente x={klerp(470, 330, kf)} y={klerp(900, 930, kf)} s={klerp(1.6, 1.2, kf)} T={T} moja={kprog(T, 0, 0.3)} ojosCerrados={1} infla={kprog(T, K.Gancho + 1.0, K.Gancho + 1.6)} />; })()}
-          <Onomato T={T} at={0.05} dur={1.1} x={300} y={400} texto="¡SPLASH!" color={KC.white} tam={120} />
+          <Onomato T={T} at={0.05} dur={1.1} x={420} y={420} texto="¡SPLASH!" color={KC.white} tam={120} />
           <Monitor x={560} y={260} w={470} h={170} T={T} fase={faseTu} etiqueta="" o={kprog(T, 0.3, 0.7)} />
           {T > K.Gancho + 1.6 && <TextoSvg x={795} y={485} tam={44} color={KC.yellow} fuente="texto" o={kprog(T, K.Gancho + 1.6, K.Gancho + 2.0)}>más lento…</TextoSvg>}
           {T > K.Gancho + 4.2 && <g transform={`translate(0 ${(1 - kprog(T, K.Gancho + 4.2, K.Gancho + 4.8, kEase.rebote)) * 500})`}>
@@ -295,7 +295,8 @@ function ReflejoBuceo() {
       <Escena T={T} a={K.Ojo} b={K.Medico} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <g transform="translate(540 960) scale(1.15) translate(-540 -765)">
+          {/* belleza: 1.15→1.02: «NO HAGAS PRUEBAS» y «¡NUNCA A SOLAS!» se salían por las orillas */}
+          <g transform="translate(540 960) scale(1.02) translate(-540 -765)">
           <g transform={`translate(540 455) scale(${klerp(0.4, 1.25, kprog(T, K.Ojo, K.Ojo + 0.4, kEase.rebote)) * (1 + 0.04 * Math.sin(T * 9))})`}><Alerta x={0} y={0} /></g>
           <TextoSvg x={540} y={640} tam={78} color={KC.yellow} s={klerp(0.5, 1, kprog(T, K.Ojo + 0.4, K.Ojo + 0.8, kEase.rebote))} o={kprog(T, K.Ojo + 0.4, K.Ojo + 0.6)}>NO HAGAS PRUEBAS</TextoSvg>
           <TextoSvg x={540} y={730} tam={78} color={KC.yellow} s={klerp(0.5, 1, kprog(T, K.Ojo + 0.7, K.Ojo + 1.1, kEase.rebote))} o={kprog(T, K.Ojo + 0.7, K.Ojo + 0.9)}>BAJO EL AGUA</TextoSvg>
@@ -313,7 +314,8 @@ function ReflejoBuceo() {
       <Escena T={T} a={K.Medico} b={K.Cierre} fondo={KC.lilac}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <g transform="translate(540 980) scale(1.25) translate(-540 -850)">
+          {/* belleza: 1.25→1.1 y centrado: el médico se cortaba a la izquierda y el monitor a la derecha */}
+          <g transform="translate(540 980) scale(1.1) translate(-570 -850)">
           <PersonaSimple x={270} yPies={1170} alto={640} color="#ffffff" brazos={kprog(T, K.Medico + 2.4, K.Medico + 3.0) * 0.25} />
           <Estetoscopio x={270} y={1170 - 640 + 150} s={0.9} />
           <rect x={232} y={1170 - 640 + 230} width={22} height={70} rx={6} fill={KC.red} stroke={KC.ink} strokeWidth={4} /><rect x={208} y={1170 - 640 + 254} width={70} height={22} rx={6} fill={KC.red} stroke={KC.ink} strokeWidth={4} />

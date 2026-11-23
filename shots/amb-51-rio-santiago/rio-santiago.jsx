@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #51 · Esto no es nieve: es espuma del río Santiago (El Salto y Juanacatlán) — NARRADO (N1 "Por dentro").
 // Datos: CNDH Recomendación 134/2022 (IMTA 2011, inspección 2021), CIDH Res. 7/2020, Gobierno de Jalisco (Revivamos el Río Santiago).
 // Ver guion.md y verificacion.md. Todo el dibujo es esquemático; no aparece ninguna empresa.
@@ -5,24 +6,27 @@
 const RS_AGUA = '#2f8fd8', RS_SUCIA = '#7a6a3a', RS_ESPUMA = '#fbfaf4';
 
 // ---------- mapa (Jalisco–Nayarit, esquemático) ----------
-const RS_MS = 9.45, RS_X0 = -2610, RS_Y0 = -2101;
+const RS_MS = 9.45, RS_X0 = -2610, RS_Y0 = -2101, RS_ZM = 1.35;
 function rsP(lon, lat) { const [a, b] = mxProy(lon, lat); return [RS_X0 + a * RS_MS, RS_Y0 + b * RS_MS]; }
 const RS_RIO = [[-102.77,20.36],[-102.93,20.39],[-103.1,20.47],[-103.18,20.52],[-103.22,20.62],[-103.2,20.8],[-103.3,20.95],[-103.55,21.1],[-103.9,21.2],[-104.3,21.3],[-104.65,21.45],[-105.0,21.55],[-105.3,21.62],[-105.62,21.62]].map(([a, b]) => rsP(a, b));
 const RS_RIO_LARGO = RS_RIO.reduce((s, p, i) => i ? s + Math.hypot(p[0] - RS_RIO[i - 1][0], p[1] - RS_RIO[i - 1][1]) : 0, 0);
 function MapaRio({ T, traza = 1, salto = 0 }) {
   const d = 'M ' + RS_RIO.map((p) => p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' L ');
   const [lx, ly] = rsP(-103.05, 20.22), [gx, gy] = rsP(-103.35, 20.67), [sx, sy] = rsP(-103.18, 20.52);
+  // pase a mano cine: mar y tierra oscuros (conservan el tinte) y el río agrandado RS_ZM veces (la barra de escala va en la misma proporción)
   return <g>
-    <rect x={0} y={0} width={KW} height={KH} fill="#7fd0f5" />
-    {Array.from({ length: 8 }, (_, i) => <path key={i} d={`M ${40 + (i % 3) * 60} ${520 + i * 90} q 20 -10 40 0 t 40 0`} stroke="#d4f1ff" strokeWidth={5} fill="none" opacity={0.6 + 0.3 * Math.sin(T * 2 + i)} />)}
-    <MapaMexico x={RS_X0} y={RS_Y0} ancho={1000 * RS_MS} color="#ffe9a8" conCA={false} />
-    <text x={60} y={1420} style={{ font:`700 34px ${KF.mono}` }} fill="#0b4d73">Océano Pacífico</text>
+    <rect x={0} y={0} width={KW} height={KH} fill="#0f2738" />
+    <g transform={`translate(540 960) scale(${RS_ZM}) translate(-500 -830)`}>
+    <MapaMexico x={RS_X0} y={RS_Y0} ancho={1000 * RS_MS} color="#3b3829" conCA={false} />
     <path d={d} stroke={RS_AGUA} strokeWidth={14} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray={RS_RIO_LARGO} strokeDashoffset={RS_RIO_LARGO * (1 - traza)} />
     <path d={d} stroke={KC.ink} strokeWidth={4} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray={RS_RIO_LARGO} strokeDashoffset={RS_RIO_LARGO * (1 - traza)} opacity={0.35} />
     <ellipse cx={lx} cy={ly} rx={85} ry={30} fill={RS_AGUA} stroke={KC.ink} strokeWidth={6} />
     <circle cx={gx} cy={gy} r={12} fill={KC.ink} />
     <text x={gx - 20} y={gy - 18} textAnchor="end" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>Guadalajara</text>
     {salto > 0 && <g opacity={salto}><circle cx={sx} cy={sy} r={22 + 6 * Math.sin(T * 6)} fill="none" stroke={KC.red} strokeWidth={7} /><circle cx={sx} cy={sy} r={8} fill={KC.red} /></g>}
+    </g>
+    {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${30 + (i % 3) * 60} ${1300 + i * 100} q 20 -10 40 0 t 40 0`} stroke="#9fd0ea" strokeWidth={5} fill="none" opacity={0.3 + 0.15 * Math.sin(T * 2 + i)} />)}
+    <text x={36} y={1590} style={{ font:`700 30px ${KF.mono}` }} fill="#9fd0ea">Océano Pacífico</text>
   </g>;
 }
 
@@ -53,6 +57,8 @@ function Cascada({ T, espuma = 1, sucia = 1, lavadora = 0, y = 760 }) {
       return <line key={i} x1={x} y1={y + 10 + u * 200} x2={x + 2} y2={y + 70 + u * 200} stroke="rgba(255,255,255,.5)" strokeWidth={6} strokeLinecap="round" />; })}
     {/* poza */}
     <path d={`M 0 ${y + 320} L 1080 ${y + 320} L 1080 ${y + 1300} L 0 ${y + 1300} Z`} fill={agua} stroke={KC.ink} strokeWidth={6} />
+    <defs><linearGradient id="rsPoza" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="rgba(8,12,22,0)" /><stop offset="1" stopColor="rgba(8,12,22,.82)" /></linearGradient></defs>
+    <rect x={0} y={y + 430} width={1080} height={760} fill="url(#rsPoza)" />
     {/* lavadora: remolinos que giran en la base */}
     {lavadora > 0 && [220, 540, 860].map((cx, i) => <g key={i} transform={`translate(${cx} ${y + 380}) rotate(${T * 260 * (i % 2 ? -1 : 1)})`} opacity={lavadora}>
       <circle r={70} fill="none" stroke="rgba(255,255,255,.75)" strokeWidth={8} strokeDasharray="60 30" />
@@ -162,24 +168,24 @@ function RioSantiagoShot() {
       {/* 1 · nace en Chapala y corre más de 560 km hasta el mar */}
       <Escena T={T} a={K.O} b={K.Co}>
         {svg(<MapaRio T={T} traza={kprog(T, K.O + 0.3, K.O + 3.2, kEase.suave)} />)}
-        <EscalaFija texto="100 km · esquema" largo={216} y={1470} color={KC.ink} />
+        <EscalaFija texto="100 km · esquema" largo={216 * RS_ZM} x={640} y={1440} color={KC.ink} />
       </Escena>
       {/* 2 · aguas residuales de la ciudad y del corredor industrial */}
       <Escena T={T} a={K.Co} b={K.Ca}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>
-          <rect x={0} y={660} width={KW} height={330} fill="#bfe3b4" stroke={KC.ink} strokeWidth={6} />
-          {[[110, 860, '#ff9db5'], [220, 830, '#9de0ff'], [330, 870, '#ffd36b'], [160, 950, '#b8f0c8'], [290, 960, '#ffb38a'], [410, 940, '#d6c2ff']].map(([x, y, c], i) =>
+        {svg(<g transform="translate(540 960) scale(1.5) translate(-351 -895)">
+          <rect x={-200} y={660} width={1100} height={330} fill="#3f4f45" stroke={KC.ink} strokeWidth={5} />
+          {[[82, 860, '#ff9db5'], [172, 830, '#9de0ff'], [262, 870, '#ffd36b'], [117, 950, '#b8f0c8'], [207, 960, '#ffb38a'], [297, 940, '#d6c2ff']].map(([x, y, c], i) =>
             <g key={i} opacity={kprog(T, K.Co + 0.1 + i * 0.08, K.Co + 0.4 + i * 0.08)}><Casa x={x} y={y} c={c} /></g>)}
-          {[[560, 900, 190], [770, 880, 220], [610, 980, 160], [800, 975, 200]].map(([x, y, w], i) =>
+          {[[352, 900, 150], [512, 880, 160], [367, 980, 140], [517, 975, 150]].map(([x, y, w], i) =>
             <g key={i} opacity={kprog(T, K.Co + 1.2 + i * 0.1, K.Co + 1.5 + i * 0.1)}><Nave x={x} y={y} w={w} /></g>)}
-          <rect x={0} y={1000} width={KW} height={130} fill={mixHex(RS_AGUA, RS_SUCIA, sucioCo)} stroke={KC.ink} strokeWidth={6} />
-          {Array.from({ length: 7 }, (_, i) => <path key={i} d={`M ${((i * 170 + T * 120) % 1240) - 120} 1060 q 25 -10 50 0`} stroke="rgba(255,255,255,.5)" strokeWidth={5} fill="none" />)}
-          <Tubo T={T} x={250} y0={960} y1={1000} desde={K.Co + 0.6} />
-          <Tubo T={T} x={450} y0={950} y1={1000} desde={K.Co + 0.8} />
-          <Tubo T={T} x={700} y0={980} y1={1000} desde={K.Co + 1.6} />
-          <Tubo T={T} x={930} y0={980} y1={1000} desde={K.Co + 1.8} />
-        </>)}
+          <rect x={-200} y={1000} width={1100} height={130} fill={mixHex(RS_AGUA, RS_SUCIA, sucioCo)} stroke={KC.ink} strokeWidth={5} />
+          {Array.from({ length: 7 }, (_, i) => <path key={i} d={`M ${((i * 120 + T * 80) % 840) - 100} 1060 q 25 -10 50 0`} stroke="rgba(255,255,255,.5)" strokeWidth={5} fill="none" />)}
+          <Tubo T={T} x={162} y0={960} y1={1000} desde={K.Co + 0.6} />
+          <Tubo T={T} x={300} y0={950} y1={1000} desde={K.Co + 0.8} />
+          <Tubo T={T} x={440} y0={980} y1={1000} desde={K.Co + 1.6} />
+          <Tubo T={T} x={610} y0={980} y1={1000} desde={K.Co + 1.8} />
+        </g>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 3 · la cascada: antes "el Niágara mexicano"; hoy la caída bate el agua como lavadora */}
@@ -192,87 +198,89 @@ function RioSantiagoShot() {
       {/* 4 · micro: el detergente forra la burbuja */}
       <Escena T={T} a={K.B} b={K.P}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 42%, #18324a 0%, ${KC.noche} 70%)` }}></div>
-        {svg(<><Burbuja T={T} aparece={kprog(T, K.B + 0.6, K.B + 2.6)} />
-          {Array.from({ length: 10 }, (_, i) => { const u = ((T * 0.25 + i / 10) % 1); return <circle key={i} cx={90 + (i * 97) % 900} cy={1180 - u * 800} r={14 + (i % 3) * 8} fill="none" stroke="rgba(180,230,255,.45)" strokeWidth={4} />; })}
-          <text x={540} y={830} textAnchor="middle" style={{ font:`900 54px ${KF.texto}` }} fill="#bfe7ff">aire</text>
-          <text x={70} y={1110} style={{ font:`900 46px ${KF.texto}` }} fill="#7fd0f5">agua</text></>)}
-        <Etq T={T} at={K.B + 1.4} until={K.P - 0.2} x={760} y={573} texto="detergente" lado="der" tam={26} color={KC.yellow} />
+        {svg(<><Burbuja T={T} cy={930} R={400} n={40} aparece={kprog(T, K.B + 0.6, K.B + 2.6)} />
+          {Array.from({ length: 10 }, (_, i) => { const u = ((T * 0.25 + i / 10) % 1); return <circle key={i} cx={90 + (i * 97) % 900} cy={1500 - u * 1150} r={14 + (i % 3) * 8} fill="none" stroke="rgba(180,230,255,.45)" strokeWidth={4} />; })}
+          <text x={540} y={950} textAnchor="middle" style={{ font:`900 64px ${KF.texto}` }} fill="#bfe7ff">aire</text>
+          <text x={60} y={1420} style={{ font:`900 46px ${KF.texto}` }} fill="#7fd0f5">agua</text></>)}
+        <Etq T={T} at={K.B + 1.4} until={K.P - 0.2} x={727} y={532} texto="detergente" lado="der" tam={26} color={KC.yellow} />
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.texto} />
       </Escena>
       {/* 5 · re-gancho */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<Gota x={300} y={820} s={0.85} relleno={mixHex(RS_AGUA, RS_SUCIA, 0.7)} borde={KC.ink}>
-          <text x={0} y={190} textAnchor="middle" style={{ font:`400 420px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 0 0)`}>?</text></Gota>)}
+        {svg(<Gota x={540} y={980} s={1.5} relleno={mixHex(RS_AGUA, RS_SUCIA, 0.7)} borde={KC.ink}>
+          <text x={0} y={170} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 0 0)`}>?</text></Gota>)}
       </Escena>
       {/* 6 · IMTA 2011: 1,090 sustancias y metales */}
       <Escena T={T} a={K.E} b={K.M}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 50%, #18324a 0%, ${KC.noche} 70%)` }}></div>
-        {svg(<Gota x={540} y={880} s={1.15}><Puntos T={T} n={170} lleno={kprog(T, K.E + 0.8, K.E + 4.3, kEase.suave)} /></Gota>)}
-        <Contador T={T} at={K.E + 0.8} desde={0} hasta={1090} dur={3.5} x={540} y={960} tam={150} color={KC.yellow} />
-        <Chip T={T} at={K.E + 2.0} until={K.M - 0.2} texto="sustancias y metales" y={1110} x={540} tam={36} borde={KC.yellow} />
+        {svg(<Gota x={540} y={980} s={1.5}><Puntos T={T} n={170} lleno={kprog(T, K.E + 0.8, K.E + 4.3, kEase.suave)} /></Gota>)}
+        <Contador T={T} at={K.E + 0.8} desde={0} hasta={1090} dur={3.5} x={540} y={1090} tam={170} color={KC.yellow} />
+        <Chip T={T} at={K.E + 2.0} until={K.M - 0.2} texto="sustancias y metales" y={1250} x={540} tam={38} borde={KC.yellow} />
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.0} anio="2011" quien="IMTA · río Santiago" revista="Instituto Mexicano de Tecnología del Agua (federal)" y={500} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.0} anio="2011" quien="IMTA · río Santiago" revista="Instituto Mexicano de Tecnología del Agua (federal)" y={330} />
       {/* 7 · arsénico y plomo sobre la norma de entonces; microbios en todo el río */}
       <Escena T={T} a={K.M} b={K.S}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 50%, #18324a 0%, ${KC.noche} 70%)` }}></div>
         {svg(<>
+          <g transform="translate(540 800) scale(1.35) translate(-725 -800)">
           {[[600, 'As', KC.lilac, K.M + 0.2], [840, 'Pb', '#9aa3ad', K.M + 0.7]].map(([x, l, c, t0], i) => { const h = 380 * barra(t0);
             return <g key={i}><rect x={x - 60} y={980 - h} width={120} height={h} rx={10} fill={c} stroke={KC.ink} strokeWidth={6} />
               <Atomo x={x} y={980 - h - 60} r={50} color={c} letra={l} o={kprog(T, t0, t0 + 0.3)} /></g>; })}
           <line x1={470} y1={700} x2={980} y2={700} stroke={KC.red} strokeWidth={7} strokeDasharray="22 14" />
           <text x={980} y={465} textAnchor="end" style={{ font:`700 26px ${KF.mono}` }} fill={KC.red}>raya roja: norma de entonces (1996)</text>
           <line x1={470} y1={980} x2={980} y2={980} stroke={KC.texto} strokeWidth={5} />
-          <rect x={0} y={1040} width={KW} height={140} fill={RS_SUCIA} opacity={kprog(T, K.M + 2.6, K.M + 3.0)} />
-          {Array.from({ length: 7 }, (_, i) => <Bacteria key={i} T={T} seed={i} x={((i * 170 + (T - K.M) * 90) % 1300) - 110} y={1090 + (i % 2) * 40} rot={(i % 3 - 1) * 10} s={0.55}
+          </g>
+          <rect x={0} y={1130} width={KW} height={200} fill={RS_SUCIA} opacity={kprog(T, K.M + 2.6, K.M + 3.0)} />
+          {Array.from({ length: 7 }, (_, i) => <Bacteria key={i} T={T} seed={i} x={((i * 170 + (T - K.M) * 90) % 1300) - 110} y={1200 + (i % 2) * 60} rot={(i % 3 - 1) * 10} s={0.8}
             color={[KC.mint, KC.pink, KC.yellow][i % 3]} vida={kprog(T, K.M + 2.7 + i * 0.12, K.M + 3.0 + i * 0.12)} />)}
         </>)}
-        <Etq T={T} at={K.M + 3.0} until={K.S - 0.2} x={1020} y={1010} texto="microbios en todo el río" lado="izq" tam={30} color={KC.mint} />
+        <Etq T={T} at={K.M + 3.0} until={K.S - 0.2} x={1020} y={1385} texto="microbios en todo el río" lado="izq" tam={30} color={KC.mint} />
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.texto} />
       </Escena>
       {/* 8a · CIDH 2020: hasta 5 km del río en El Salto y Juanacatlán */}
       <Escena T={T} a={K.S} b={S2}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<>
+        {svg(<g transform="translate(540 980) scale(1.4) translate(-540 -1010)">
           <path d="M -40 860 C 200 760 360 960 560 860 C 760 760 900 900 1120 820 L 1120 1120 C 900 1200 760 1060 560 1160 C 360 1260 200 1060 -40 1160 Z" fill={KC.red} opacity={0.18 * kprog(T, K.S + 0.8, K.S + 1.6)} />
           <path d="M -40 1010 C 200 910 360 1110 560 1010 C 760 910 900 1050 1120 970" stroke={RS_SUCIA} strokeWidth={36} fill="none" />
           <path d="M -40 1010 C 200 910 360 1110 560 1010 C 760 910 900 1050 1120 970" stroke={KC.ink} strokeWidth={4} fill="none" opacity={0.4} />
-          {[[120, 900], [300, 930], [470, 900], [700, 880], [880, 900], [150, 1110], [380, 1150], [640, 1090], [860, 1080]].map(([x, y], i) =>
+          {[[230, 890], [370, 930], [500, 900], [640, 870], [780, 890], [240, 1110], [400, 1150], [640, 1090], [840, 1080]].map(([x, y], i) =>
             <g key={i} opacity={kprog(T, K.S + 1.2 + i * 0.08, K.S + 1.5 + i * 0.08)} transform={`translate(${x} ${y}) scale(0.6)`}><Casa x={0} y={0} c={['#ff9db5', '#9de0ff', '#ffd36b'][i % 3]} /></g>)}
-          <line x1={1000} y1={820} x2={1000} y2={970} stroke={KC.ink} strokeWidth={5} /><path d="M 990 830 L 1000 815 L 1010 830" stroke={KC.ink} strokeWidth={5} fill="none" />
-        </>)}
-        <Etq T={T} at={K.S + 1.8} until={S2 - 0.2} x={990} y={760} texto="hasta 5 km" lado="izq" tam={30} color={KC.ink} />
-        <Etq T={T} at={K.S + 2.2} until={S2 - 0.2} x={100} y={720} texto="El Salto" lado="der" tam={34} color={KC.ink} />
-        <Etq T={T} at={K.S + 2.4} until={S2 - 0.2} x={480} y={1210} texto="Juanacatlán" lado="der" tam={34} color={KC.ink} />
+          <line x1={880} y1={812} x2={880} y2={985} stroke={KC.ink} strokeWidth={5} /><path d="M 870 827 L 880 812 L 890 827" stroke={KC.ink} strokeWidth={5} fill="none" />
+        </g>)}
+        <Etq T={T} at={K.S + 1.8} until={S2 - 0.2} x={1030} y={640} texto="hasta 5 km" lado="izq" tam={30} color={KC.ink} />
+        <Etq T={T} at={K.S + 2.2} until={S2 - 0.2} x={90} y={570} texto="El Salto" lado="der" tam={34} color={KC.ink} />
+        <Etq T={T} at={K.S + 2.4} until={S2 - 0.2} x={420} y={1395} texto="Juanacatlán" lado="der" tam={34} color={KC.ink} />
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
-      <Chip T={T} at={K.S + 0.4} until={S2 - 0.2} texto="CIDH · 2020: proteger su salud" y={500} x={380} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.S + 0.4} until={S2 - 0.2} texto="CIDH · 2020: proteger su salud" y={400} x={540} tam={36} borde={KC.red} />
       {/* 8b · el vínculo con la enfermedad renal no estaba probado (CNDH 2022) */}
       <Escena T={T} a={S2} b={K.Pl}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <path d="M 120 1060 C 200 1010 260 1110 340 1060" stroke={RS_SUCIA} strokeWidth={30} fill="none" strokeLinecap="round" />
-          <path d="M 380 1040 Q 470 960 540 930" stroke={KC.ink} strokeWidth={6} fill="none" strokeDasharray="16 12" strokeDashoffset={-T * 30} />
-          <g transform={`translate(0 ${Math.sin(T * 2) * 6})`}><Rinon x={720} y={820} s={1.15} /></g>
-          <text x={720} y={600} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, S2 + 0.8, S2 + 1.2)}>¿?</text>
+          <path d="M 60 1330 C 170 1260 250 1400 370 1330" stroke={RS_SUCIA} strokeWidth={46} fill="none" strokeLinecap="round" />
+          <path d="M 410 1300 Q 440 1190 520 1130" stroke={KC.ink} strokeWidth={7} fill="none" strokeDasharray="18 14" strokeDashoffset={-T * 30} />
+          <g transform={`translate(0 ${Math.sin(T * 2) * 6})`}><Rinon x={600} y={900} s={1.9} /></g>
+          <text x={620} y={510} textAnchor="middle" style={{ font:`400 180px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, S2 + 0.8, S2 + 1.2)}>¿?</text>
         </>)}
-        <Etq T={T} at={S2 + 0.6} until={K.Pl - 0.2} x={120} y={1120} texto="río" lado="der" tam={32} color={KC.ink} />
+        <Etq T={T} at={S2 + 0.6} until={K.Pl - 0.2} x={70} y={1420} texto="río" lado="der" tam={32} color={KC.ink} />
       </Escena>
-      <Chip T={T} at={S2 + 1.4} until={K.Pl - 0.2} texto="vínculo no probado (hasta 2022)" y={1440} x={540} tam={32} borde={KC.ink} />
+      <Chip T={T} at={S2 + 1.4} until={K.Pl - 0.2} texto="vínculo no probado (hasta 2022)" y={1490} x={600} tam={36} borde={KC.ink} />
       {/* 9 · planta El Ahogado: hasta 3,250 L/s */}
       <Escena T={T} a={K.Pl} b={K.C}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <rect x={0} y={1040} width={KW} height={130} fill={RS_SUCIA} stroke={KC.ink} strokeWidth={6} />
-          <rect x={640} y={1040} width={440} height={130} fill={mixHex(RS_SUCIA, RS_AGUA, 0.55 * kprog(T, K.Pl + 1.5, K.Pl + 3.5))} />
-          <path d="M 0 1040 L 1080 1040 M 0 1170 L 1080 1170" stroke={KC.ink} strokeWidth={6} />
-          {Array.from({ length: 7 }, (_, i) => <path key={i} d={`M ${((i * 170 + T * 120) % 1240) - 120} 1100 q 25 -10 50 0`} stroke="rgba(255,255,255,.5)" strokeWidth={5} fill="none" />)}
-          <Planta T={T} x={90} y={720} />
-          <rect x={600} y={880} width={26} height={160} fill="#9aa3ad" stroke={KC.ink} strokeWidth={4} />
-          <Goteo T={T} x={613} y0={1030} y1={1080} cada={0.25} color={RS_AGUA} desde={K.Pl + 1.0} r={10} />
+          <rect x={0} y={1150} width={KW} height={190} fill={RS_SUCIA} stroke={KC.ink} strokeWidth={6} />
+          <rect x={890} y={1150} width={190} height={190} fill={mixHex(RS_SUCIA, RS_AGUA, 0.55 * kprog(T, K.Pl + 1.5, K.Pl + 3.5))} />
+          <path d="M 0 1150 L 1080 1150 M 0 1340 L 1080 1340" stroke={KC.ink} strokeWidth={6} />
+          {Array.from({ length: 7 }, (_, i) => <path key={i} d={`M ${((i * 170 + T * 120) % 1240) - 120} 1240 q 25 -10 50 0`} stroke="rgba(255,255,255,.5)" strokeWidth={5} fill="none" />)}
+          <rect x={845} y={940} width={39} height={210} fill="#9aa3ad" stroke={KC.ink} strokeWidth={5} />
+          <g transform="translate(80 700) scale(1.5)"><Planta T={T} x={0} y={0} /></g>
+          <Goteo T={T} x={864} y0={1140} y1={1215} cada={0.25} color={RS_AGUA} desde={K.Pl + 1.0} r={14} />
         </>)}
-        <Etq T={T} at={K.Pl + 0.8} until={K.C - 0.2} x={100} y={660} texto="planta El Ahogado (esquema)" lado="der" tam={30} color={KC.ink} />
-        <NumeroGigante T={T} at={K.Pl + 1.2} until={K.C - 0.2} desde={2250} valor={3250} dur={1.8} sufijo=" L/s" etiqueta="ya ampliada, hasta:" x={400} y={470} tam={120} color={KC.yellow} />
+        <Etq T={T} at={K.Pl + 0.8} until={K.C - 0.2} x={70} y={590} texto="planta El Ahogado (esquema)" lado="der" tam={30} color={KC.ink} />
+        <NumeroGigante T={T} at={K.Pl + 1.2} until={K.C - 0.2} desde={2250} valor={3250} dur={1.8} sufijo=" L/s" etiqueta="ya ampliada, hasta:" x={540} y={410} tam={120} color={KC.yellow} />
       </Escena>
       {/* 10 · cierre: la misma cascada, la misma "nieve" */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
@@ -282,14 +290,14 @@ function RioSantiagoShot() {
 
       {/* datos y etiquetas generales */}
       <Chip T={T} at={K.G + 1.6} until={K.O - 0.2} texto="espuma, no nieve" y={1440} x={540} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.O + 0.5} until={K.Co - 0.2} texto="nace en el Lago de Chapala" y={430} x={360} tam={30} borde={KC.cyan} />
-      <NumeroGigante T={T} at={K.O + 1.6} until={K.Co - 0.2} valor={562} dur={1.6} sufijo=" km" etiqueta="largo del río:" x={300} y={560} tam={110} color={KC.yellow} />
-      <Etq T={T} at={K.Co + 0.6} until={K.Ca - 0.2} x={80} y={600} texto="ciudad" lado="der" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Co + 1.6} until={K.Ca - 0.2} x={1000} y={600} texto="corredor industrial" lado="izq" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Co + 2.4} until={K.Ca - 0.2} texto="aguas residuales → río" y={1440} x={540} tam={34} borde={RS_SUCIA} />
-      <Chip T={T} at={K.Ca + 2.4} until={K.B - 0.2} texto="la caída lo bate como lavadora" y={1440} x={540} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.B + 0.3} until={K.P - 0.2} texto="una burbuja de espuma, por dentro" y={420} x={460} tam={30} borde={KC.cyan} />
-      <Chip T={T} at={K.C + 0.6} until={K.Ou - 0.1} texto="espuma, no nieve" y={470} x={680} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.O + 0.5} until={K.Co - 0.2} texto="nace en el Lago de Chapala" y={330} x={540} tam={36} borde={KC.cyan} />
+      <NumeroGigante T={T} at={K.O + 1.6} until={K.Co - 0.2} valor={562} dur={1.6} sufijo=" km" etiqueta="largo del río:" x={540} y={520} tam={110} color={KC.yellow} />
+      <Etq T={T} at={K.Co + 0.6} until={K.Ca - 0.2} x={70} y={520} texto="ciudad" lado="der" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Co + 1.6} until={K.Ca - 0.2} x={1010} y={520} texto="corredor industrial" lado="izq" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Co + 2.4} until={K.Ca - 0.2} texto="aguas residuales → río" y={1440} x={540} tam={36} borde={RS_SUCIA} />
+      <Chip T={T} at={K.Ca + 2.4} until={K.B - 0.2} texto="la caída lo bate como lavadora" y={1440} x={540} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.B + 0.3} until={K.P - 0.2} texto="una burbuja de espuma, por dentro" y={320} x={540} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={K.C + 0.6} until={K.Ou - 0.1} texto="espuma, no nieve" y={420} x={540} tam={40} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.O - 0.1} texto="Esto no es nieve: *es espuma.*" />

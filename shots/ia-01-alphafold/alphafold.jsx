@@ -13,7 +13,7 @@ function plegada(i, ang = 0, r = 1) {
   return [(x * Math.cos(ang) + z * Math.sin(ang)) * r, y * r, -x * Math.sin(ang) + z * Math.cos(ang)];
 }
 // Forma estirada: collar ondulado de lado a lado.
-function estirada(i, T) { const u = i / (N_CUENTAS - 1); return [klerp(-470, 470, u), Math.sin(u * 9 + T * 2) * 40, 0]; }
+function estirada(i, T) { const u = i / (N_CUENTAS - 1); return [klerp(-470, 470, u), Math.sin(u * 9 + T * 2) * 95, 0]; }
 // Curva suave (Catmull-Rom) que pasa por los puntos.
 function curva(pts) {
   let d = `M ${pts[0][0]} ${pts[0][1]}`;
@@ -38,6 +38,7 @@ function Proteina({ T, x, y, s = 1, f = 1, estambre = 0, cuentas = 1, confianza 
     {estambre > 0 && <path d={curva(pts)} fill="none" stroke="#b02a4f" strokeWidth={6} strokeDasharray="4 14" opacity={estambre} />}
     {cuentas > 0 && orden.map(([px, py, pz, i]) => <g key={i} opacity={cuentas}>
       <circle cx={px} cy={py} r={(16 + pz * 0.03) * (letras ? 1.35 : 1)} fill={colorDe(i)} stroke={KC.ink} strokeWidth={5} />
+      {!letras && <circle cx={px - 5} cy={py - 6} r={5 + pz * 0.01} fill="#fff" opacity={0.55} />}
       {letras > 0 && <text x={px} y={py + 9} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink} opacity={letras}>{LETRAS[i]}</text>}
     </g>)}
   </g>;
@@ -62,16 +63,23 @@ function Cristal({ T, a }) {
   const haz = kprog(T, a + 1.0, a + 1.6), pts = krng(11);
   const puntos = Array.from({ length: 46 }, () => [pts() * 2 - 1, pts() * 2 - 1, pts()]);
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-    <rect x={40} y={830} width={150} height={120} rx={16} fill="#3c4458" stroke={KC.ink} strokeWidth={8} />
-    <text x={115} y={900} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.yellow}>RX</text>
-    {haz > 0 && <line x1={190} y1={890} x2={klerp(190, 820, haz)} y2={890} stroke={KC.yellow} strokeWidth={14} opacity={0.55 + 0.45 * Math.sin(T * 30)} />}
-    <g transform={`translate(430 890) scale(1.55) rotate(${T * 10})`}>
-      <path d="M 0 -110 L 90 -55 L 90 55 L 0 110 L -90 55 L -90 -55 Z" fill="#b8f1ff" stroke={KC.ink} strokeWidth={8} opacity=".9" />
+    <defs>
+      <linearGradient id="afRX" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#56607a" /><stop offset="1" stopColor="#2a3040" /></linearGradient>
+      <radialGradient id="afCr" cx="35%" cy="30%" r="80%"><stop offset="0" stopColor="#e4fbff" /><stop offset="0.6" stopColor="#b8f1ff" /><stop offset="1" stopColor="#6fbfdc" /></radialGradient>
+    </defs>
+    <ellipse cx={440} cy={1200} rx={200} ry={26} fill="#000" opacity={0.3} />
+    <rect x={30} y={880} width={170} height={150} rx={18} fill="url(#afRX)" stroke={KC.ink} strokeWidth={8} />
+    <text x={115} y={968} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.yellow}>RX</text>
+    {haz > 0 && <line x1={200} y1={955} x2={klerp(200, 820, haz)} y2={955} stroke={KC.yellow} strokeWidth={16} opacity={0.55 + 0.45 * Math.sin(T * 30)} />}
+    <g transform={`translate(440 955) scale(1.95) rotate(${T * 10})`}>
+      <path d="M 0 -110 L 90 -55 L 90 55 L 0 110 L -90 55 L -90 -55 Z" fill="url(#afCr)" stroke={KC.ink} strokeWidth={7} opacity=".92" />
+      <path d="M -70 -50 L -10 -86" stroke="#fff" strokeWidth={6} strokeLinecap="round" opacity={0.6} />
       <path d="M 0 -110 L 0 0 L 90 55 M 0 0 L -90 55" stroke="#5fc6e6" strokeWidth={5} fill="none" />
       {Array.from({ length: 9 }, (_, i) => <g key={i} transform={`translate(${((i % 3) - 1) * 46} ${(Math.floor(i / 3) - 1) * 46}) scale(.16)`}><Proteina T={T} x={0} y={0} f={1} cuentas={0} /></g>)}
     </g>
-    <rect x={820} y={640} width={200} height={500} rx={12} fill="#10131a" stroke={KC.ink} strokeWidth={8} />
-    {puntos.map(([u, v, d], i) => { const on = kprog(T, a + 1.6 + d * 2.2, a + 1.8 + d * 2.2); return on > 0 ? <circle key={i} cx={920 + u * 80} cy={890 + v * 220} r={4 + d * 7} fill="#fff" opacity={on * (0.4 + d * 0.6)} /> : null; })}
+    <rect x={820} y={640} width={220} height={630} rx={14} fill="#10131a" stroke={KC.ink} strokeWidth={8} />
+    <rect x={832} y={652} width={196} height={606} rx={8} fill="none" stroke="#3a4560" strokeWidth={3} />
+    {puntos.map(([u, v, d], i) => { const on = kprog(T, a + 1.6 + d * 2.2, a + 1.8 + d * 2.2); return on > 0 ? <circle key={i} cx={930 + u * 85} cy={955 + v * 280} r={4 + d * 7} fill="#fff" opacity={on * (0.4 + d * 0.6)} /> : null; })}
   </svg>;
 }
 // Disco duro esquemático (para los 23 TiB).
@@ -140,19 +148,19 @@ function AlphaFold() {
       {/* 8 · el estudio */}
       <Escena T={T} a={K.E} b={K.B}>
         <FondoLunares color={KC.orange} />
-        {svg(<Proteina T={T} x={540} y={1110} s={1.4} f={1} gira={0.4} />)}
+        {svg(<Proteina T={T} x={540} y={1060} s={1.75} f={1} gira={0.4} />)}
       </Escena>
       {/* 9 · 214 millones: el catálogo se llena */}
       <Escena T={T} a={K.B} b={K.O} zoom={0.03}>
         <FondoCircuito T={T} color={KC.mint} />
-        {svg(<g opacity={1 - kprog(T, K.B + 0.2, K.B + 1.4)}><Proteina T={T} x={540} y={1110} s={klerp(1.4, 0.3, kprog(T, K.B, K.B + 1.4, kEase.suave))} f={1} gira={0.4} /></g>)}
+        {svg(<g opacity={1 - kprog(T, K.B + 0.2, K.B + 1.4)}><Proteina T={T} x={540} y={1060} s={klerp(1.75, 0.3, kprog(T, K.B, K.B + 1.4, kEase.suave))} f={1} gira={0.4} /></g>)}
         {svg(Array.from({ length: 48 }, (_, i) => { const at = K.B + 0.05 + i * 0.05; if (T < at) return null; const c = i % 8, r = Math.floor(i / 8);
           return <g key={i} transform={`translate(${115 + c * 122} ${900 + r * 100}) scale(${0.2 * kprog(T, at, at + 0.3, kEase.rebote)})`}><Proteina T={T + i} x={0} y={0} f={1} gira={0.5} /></g>; }))}
       </Escena>
       {/* 10 · ojo: confianza de cada predicción */}
       <Escena T={T} a={K.O} b={K.Pe}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {svg(<Proteina T={T} x={540} y={980} s={1.6} f={1} confianza={kprog(T, K.O + 0.8, K.O + 2.0)} gira={0.5} />)}
+        {svg(<Proteina T={T} x={540} y={990} s={1.8} f={1} confianza={kprog(T, K.O + 0.8, K.O + 2.0)} gira={0.5} />)}
       </Escena>
       {/* 11 · 23 TiB contra un celular */}
       <Escena T={T} a={K.Pe} b={K.C}>
@@ -177,7 +185,7 @@ function AlphaFold() {
       <Etq T={T} at={K.Co + 1.6} until={K.D - 0.2} x={80} y={740} texto="aminoácidos (cuentas)" tam={32} color={KC.ink} />
       <Chip T={T} at={K.D + 1.0} until={K.L - 0.3} texto="de la forma depende el trabajo" y={470} tam={46} borde={KC.ink} />
       <Chip T={T} at={K.L + 1.7} until={K.R - 0.3} texto="otra forma: no entra" y={1440} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.R + 0.3} until={K.P - 0.3} texto="cristal + rayos X" y={560} tam={44} borde={KC.yellow} />
+      <Chip T={T} at={K.R + 0.3} until={K.P - 0.3} texto="cristal + rayos X" y={470} tam={44} borde={KC.yellow} />
       <Etq T={T} at={K.R + 2.0} until={K.P - 0.3} x={1000} y={600} texto="patrón de puntos" lado="izq" tam={28} />
       <Chip T={T} at={K.Re + 0.2} until={K.E - 0.3} texto="AlphaFold · Google DeepMind" y={470} tam={38} borde={KC.cyan} />
       <Etq T={T} at={K.Re + 0.6} until={K.Re + 3} x={40} y={700} texto="cadena de letras" tam={28} />

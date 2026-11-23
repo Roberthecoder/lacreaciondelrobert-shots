@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #49 · Cápsulas hechas a partir de caca (trasplante de microbiota fecal contra C. difficile) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const CAFE = '#8a5a2b', CAFE_OSC = '#5e3b1a', CDIF = '#b18cff', TOX = '#9b2fd6', BILIS = '#7bd35a';
@@ -149,12 +150,13 @@ function Fecal() {
     Pa: CUES.Parado, Bi: CUES.Bilis, Rb: CUES.Rebyota, Vo: CUES.Vowst, Do: CUES.Dosis, Ci: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   const es2 = K.Es + (K.Pa - K.Es) * 0.5;            // segunda línea del estudio (81 % vs 31 %)
+  const kEs2 = kprog(T, es2 - 0.5, es2, kEase.suave);   // el paciente sube y se achica cuando entran las barras
   const sacude = 1 - kprog(T, K.G + 1.2, K.G + 1.8);
   // micro: cuándo se apaga cada bacteria (onda que baja con la pastilla)
   const pildoraY = klerp(-120, 1300, kprog(T, K.An + 0.3, K.An + 3.0, kEase.suave));
   const vidaDe = (b) => {
     if (T >= K.Bi - 0.5) return 1;                                               // bosque repoblado
-    const pasa = kprog(T, K.An + 0.4 + (b.y - 380) / 900 * 2.4, K.An + 0.9 + (b.y - 380) / 900 * 2.4);
+    const pasa = kprog(T, K.An + 0.4 + (b.y - 260) / 900 * 2.4, K.An + 0.9 + (b.y - 260) / 900 * 2.4);
     const muere = b.centro || b.muere < 0.62 ? pasa : 0;
     return 1 - muere * (b.centro ? 1 : 0.85);
   };
@@ -166,20 +168,21 @@ function Fecal() {
   const ciclo = (T > K.Re + 1.2 ? Math.sin((T - K.Re - 1.2) / 0.9 * Math.PI) : 0);
   const cdiffs = [[540, 790, 20], [540 - 210 * divide, 700 - 40 * divide, 70], [540 + 200 * divide, 880 + 30 * divide, -30]];
   const microVisible = T > K.An - 0.5 && T < K.Pr + 0.5;
-  const Micro = ({ bilis = 0 }) => <CapaF>
+  const Micro = ({ bilis = 0 }) => <CapaF><g transform="translate(0 220)">   {/* belleza: bosque bajado 100 px más para centrarlo */}
     {BOSQUE.map((b, i) => <g key={i} opacity={huecoO(b)}><BichoBosque T={T} b={b} vida={vidaDe(b)} /></g>)}
     {bilis === 0 && T > K.Di && T < K.Pr + 0.5 && cdiffs.map(([x, y, r], i) => (i === 0 || divide > 0) &&
       <CDiff key={i} T={T} x={x} y={y} rot={r + Math.sin(T + i) * 6} s={1.35 * crece * (i === 0 ? 1 : divide) * (1 - 0.25 * Math.max(0, ciclo))} espora={esporaK} o={1 - kprog(T, K.Re + 0.9, K.Re + 1.2) * 0.6 + 0.6 * Math.max(0, ciclo)} seed={i + 2} />)}
     {bilis === 0 && T > K.Di + 0.8 && T < K.Re + 0.6 && Array.from({ length: 8 }, (_, i) => { const u = ((T - K.Di - 0.8) * 0.35 + i / 8) % 1, a = i * 0.8;
       return <Toxina key={i} x={540 + Math.cos(a) * (120 + 380 * u)} y={790 + Math.sin(a) * (100 + 300 * u)} s={0.7 + u * 0.4} o={1 - u} />; })}
     {T > K.Re + 0.9 && cdiffs.map(([x, y, r], i) => <Espora key={'e' + i} T={T} x={x + 90 * Math.cos(r * Math.PI / 180)} y={y + 90 * Math.sin(r * Math.PI / 180)} rot={r} s={1.3} dormida={bilis} o={1} />)}
-    {T > K.An && T < K.Di + 0.3 && <Pastilla x={540} y={pildoraY} s={1.1} rot={T * 60} />}
+    {T > K.An && T < K.Di + 0.3 && <Pastilla x={540} y={pildoraY - 120} s={1.1} rot={T * 60} />}
     {bilis > 0 && Array.from({ length: 10 }, (_, i) => { const u = ((T - K.Bi) * 0.28 + i / 10) % 1, x = 120 + (i * 97) % 860, y = 380 + u * 820;
       return <path key={'b' + i} d="M 0 -26 Q 18 0 0 18 Q -18 0 0 -26 Z" transform={`translate(${x} ${y})`} fill={mixHex(BILIS, KC.gold2, kprog(u, 0.35, 0.6))} stroke={KC.ink} strokeWidth={4} opacity={bilis} />; })}
-  </CapaF>;
+  </g></CapaF>;
 
   // pasos de Vowst
   const pasosVo = [['donante', 0], ['alcohol', 1], ['filtro', 2], ['esporas', 3], ['cápsulas', 4]];
+  const POS_VO = [[205, 800], [540, 800], [875, 800], [708, 1130], [372, 1130]];   // serpentina: 3 arriba, 2 abajo
   const pasoOn = (i) => kprog(T, K.Vo + 0.3 + i * 0.7, K.Vo + 0.6 + i * 0.7, kEase.rebote);
 
   return (
@@ -187,17 +190,17 @@ function Fecal() {
       {/* 0 · gancho: el frasco de cápsulas */}
       <Escena T={T} a={K.G} b={K.Bo} zoom={0.06}>
         <FondoLunares color={KC.yellow} />
-        <CapaF><FrascoCapsulas T={T} x={340} y={860} s={1.15} sacude={sacude} />
-          {T > K.G + 2.4 && <g opacity={kprog(T, K.G + 2.4, K.G + 2.8)}><Capsula x={620} y={1080} rot={-10} s={1.5} /><Capsula x={760} y={1110} rot={18} s={1.2} /></g>}
+        <CapaF><FrascoCapsulas T={T} x={540} y={740} s={2} sacude={sacude} />
+          {T > K.G + 2.4 && <g opacity={kprog(T, K.G + 2.4, K.G + 2.8)}><Capsula x={600} y={1258} rot={-10} s={1.7} /><Capsula x={820} y={1252} rot={18} s={1.4} /></g>}
         </CapaF>
       </Escena>
       {/* 1 · el cuerpo y la Lupa al intestino */}
       <Escena T={T} a={K.Bo} b={K.An} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        <CapaF><CuerpoIntestino T={T} x={300} y={900} s={0.95} brillo={kprog(T, K.Bo + 0.2, K.Bo + 0.8)} /></CapaF>
+        <CapaF><CuerpoIntestino T={T} x={330} y={960} s={1.4} brillo={kprog(T, K.Bo + 0.2, K.Bo + 0.8)} /></CapaF>
       </Escena>
-      <Lupa T={T} at={K.Bo + 0.5} until={K.An - 0.2} x={700} y={760} r={270} fx={300} fy={940} tinte={KC.mint} etiqueta="AL MICROSCOPIO · COLON"
-        interior={(T2, r) => <svg width={r * 2} height={r * 2} viewBox="200 500 680 680">{BOSQUE.map((b, i) => <BichoBosque key={i} T={T2} b={b} vida={1} />)}</svg>} />
+      <Lupa T={T} at={K.Bo + 0.5} until={K.An - 0.2} x={730} y={650} r={290} fx={498} fy={1100} tinte={KC.mint} etiqueta="AL MICROSCOPIO · COLON"
+        interior={(T2, r) => <svg width={r * 2} height={r * 2} viewBox={`${540 - r} ${790 - r} ${r * 2} ${r * 2}`}>{BOSQUE.map((b, i) => <BichoBosque key={i} T={T2} b={b} vida={1} />)}</svg>} />
       {/* 2–4 · dentro: antibiótico, C. difficile, esporas */}
       <Escena T={T} a={K.An} b={K.Pr} zoom={0.03}>
         <FondoMarca patron="oscuro" />
@@ -208,41 +211,41 @@ function Fecal() {
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         <CapaF>
-          <Pastilla x={250} y={1000} s={1.5} rot={Math.sin(T * 3) * 8} />
-          <g transform="translate(820 1100)"><path d="M -110 0 L 110 0 L 80 120 L -80 120 Z" fill={KC.orange} stroke={KC.ink} strokeWidth={9} /><Arbolito T={T} x={0} y={0} s={1.1} crece={kprog(T, K.Pr + 0.6, K.Pr + 2.2)} /></g>
-          <text x={520} y={880} textAnchor="middle" style={{ font:`400 240px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={9} transform={`rotate(${Math.sin(T * 3) * 8} 520 800)`}>?</text>
+          <Pastilla x={270} y={1010} s={2.1} rot={Math.sin(T * 3) * 8} />
+          <g transform="translate(765 1170) scale(1.5)"><path d="M -110 0 L 110 0 L 80 120 L -80 120 Z" fill={KC.orange} stroke={KC.ink} strokeWidth={9} /><Arbolito T={T} x={0} y={0} s={1.1} crece={kprog(T, K.Pr + 0.6, K.Pr + 2.2)} /></g>
+          <text x={520} y={720} textAnchor="middle" style={{ font:`400 240px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={9} transform={`rotate(${Math.sin(T * 3) * 8} 520 640)`}>?</text>
         </CapaF>
       </Escena>
       {/* 6–7 · el ensayo de Ámsterdam, 2013 */}
       <Escena T={T} a={K.Es} b={K.Pa} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <CapaF>
-          <g opacity={1 - kprog(T, es2 - 0.4, es2)}>
+          <g opacity={1 - 0.4 * kEs2} transform={`translate(540 ${klerp(960, 500, kEs2)}) scale(${klerp(1, 0.58, kEs2)}) translate(-540 -900)`}>
             <PacienteSonda T={T} x={560} y={900} s={1.05} sonda={kprog(T, K.Es + 1.4, K.Es + 2.6, kEase.suave)} flujo={kprog(T, K.Es + 2.6, K.Es + 3.0)} />
-            <FrascoDonante x={180} y={720} s={0.9} />
+            <FrascoDonante x={185} y={640} s={1.25} />
           </g>
-          {T > es2 - 0.3 && [['trasplante', 81, '13 de 16', KC.mint, 330], ['solo vancomicina', 31, '4 de 13', KC.coral, 750]].map(([et, v, n, col, cx], i) => {
-            const g = kprog(T, es2 + 0.1 + i * 0.25, es2 + 1.2 + i * 0.25, kEase.sale), h = 420 * v / 100 * g, base = 1180;
+          {T > es2 - 0.3 && [['trasplante', 81, '13 de 16', KC.mint, 320], ['solo vancomicina', 31, '4 de 13', KC.coral, 760]].map(([et, v, n, col, cx], i) => {
+            const g = kprog(T, es2 + 0.1 + i * 0.25, es2 + 1.2 + i * 0.25, kEase.sale), h = 480 * v / 100 * g, base = 1300;
             return <g key={i} opacity={kprog(T, es2 - 0.3, es2)}>
-              <rect x={cx - 120} y={base - h} width={240} height={h} rx={14} fill={col} stroke={KC.ink} strokeWidth={8} />
+              <rect x={cx - 150} y={base - h} width={300} height={h} rx={14} fill={col} stroke={KC.ink} strokeWidth={8} />
               <text x={cx} y={base - h - 20} textAnchor="middle" style={{ font:`400 96px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={5}>{Math.round(v * g)} %</text>
               <text x={cx} y={base - h - 120} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink} opacity={g}>{n}</text>
               <text x={cx} y={base + 54} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>{et}</text>
             </g>; })}
-          {T > es2 - 0.3 && <line x1={150} y1={1180} x2={930} y2={1180} stroke={KC.ink} strokeWidth={8} />}
+          {T > es2 - 0.3 && <line x1={110} y1={1300} x2={970} y2={1300} stroke={KC.ink} strokeWidth={8} />}
         </CapaF>
       </Escena>
       {/* 8 · lo pararon antes de tiempo */}
       <Escena T={T} a={K.Pa} b={K.Bi} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <CapaF>
-          <g transform={`translate(300 940) rotate(-4)`}>
+          <g transform={`translate(540 1000) rotate(-4) scale(1.45)`}>
             <rect x={-220} y={-260} width={440} height={520} rx={20} fill={KC.paper} stroke={KC.ink} strokeWidth={9} />
             {[0, 1, 2, 3, 4, 5, 6].map((i) => <rect key={i} x={-170} y={-190 + i * 62} width={i % 3 === 2 ? 220 : 340} height={22} rx={11} fill="#cfc6b4" />)}
             <text x={0} y={-215} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>ensayo · 2013</text>
           </g>
         </CapaF>
-        <Sello T={T} at={K.Pa + 0.9} until={K.Bi - 0.2} x={300} y={940} texto="ALTO" />
+        <Sello T={T} at={K.Pa + 0.9} until={K.Bi - 0.2} x={540} y={1010} texto="ALTO" tam={150} />
         <Medidor T={T} at={K.Pa + 0.1} until={K.Bi - 0.2} valor={(t) => klerp(0, 43 / 120, kprog(t, K.Pa + 0.2, K.Pa + 0.9, kEase.sale))} etiqueta="pacientes" texto={(v) => `${Math.round(v * 120)} de 120 planeados`} x={70} y={430} ancho={940} color={KC.orange} />
       </Escena>
       {/* 9 · la bilis (hipótesis): el bosque repoblado frena las esporas */}
@@ -255,15 +258,16 @@ function Fecal() {
       <Escena T={T} a={K.Rb} b={K.Vo} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         <Ambiente T={T} n={24} color="rgba(255,255,255,.45)" />
+        <CapaF><FrascoDonante x={540} y={1050 + Math.sin(T * 1.5) * 8} s={3} /></CapaF>
       </Escena>
-      <Sello T={T} at={K.Rb + 2.2} until={K.Vo - 0.3} x={540} y={1060} texto="APROBADO" color={KC.blue} rot={-8} tam={84} />
+      <Sello T={T} at={K.Rb + 2.2} until={K.Vo - 0.3} x={540} y={1250} texto="APROBADO" color={KC.blue} rot={-8} tam={104} />
       {/* 11 · Vowst, 2023: de la muestra a la cápsula */}
       <Escena T={T} a={K.Vo} b={K.Do} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         <CapaF>
-          {pasosVo.map(([t, i]) => { const cx = 120 + i * 210, cy = 1020, k = pasoOn(i);
+          {pasosVo.map(([t, i]) => { const [cx, cy] = POS_VO[i], k = pasoOn(i), sig = POS_VO[i + 1];
             return <g key={i} opacity={0.25 + 0.75 * k}>
-              <g transform={`translate(${cx} ${cy}) scale(${0.85 + 0.15 * k})`}>
+              <g transform={`translate(${cx} ${cy}) scale(${(0.85 + 0.15 * k) * 1.5})`}>
                 <circle r={92} fill={KC.white} stroke={KC.ink} strokeWidth={8} />
                 {i === 0 && <FrascoDonante x={0} y={10} s={0.5} etiqueta="" />}
                 {i === 1 && <g><path d="M -26 -60 L 26 -60 L 26 -20 L 60 50 Q 64 64 50 64 L -50 64 Q -64 64 -60 50 L -26 -20 Z" fill="#dff3ff" stroke={KC.ink} strokeWidth={6} />
@@ -274,8 +278,11 @@ function Fecal() {
                 {i === 3 && [[-30, -20], [24, -26], [0, 18], [-32, 30], [34, 22]].map(([a, b], j) => <Espora key={j} T={T} x={a} y={b} s={0.65} rot={j * 40} />)}
                 {i === 4 && <Capsula x={0} y={0} s={1.2} rot={-20} />}
               </g>
-              <text x={cx} y={cy + 140} textAnchor="middle" style={{ font:`900 32px ${KF.texto}` }} fill={KC.ink}>{t}</text>
-              {i < 4 && <path d={`M ${cx + 96} ${cy} l 18 0`} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" opacity={pasoOn(i + 1)} />}
+              <text x={cx} y={cy + 196} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>{t}</text>
+              {i < 4 && (() => { const d = Math.hypot(sig[0] - cx, sig[1] - cy), ux = (sig[0] - cx) / d, uy = (sig[1] - cy) / d;
+                const ax = sig[0] - ux * 150, ay = sig[1] - uy * 150;   // punta de la flecha, pegada al paso siguiente
+                return <g opacity={pasoOn(i + 1)}><path d={`M ${cx + ux * 152} ${cy + uy * 152} L ${ax - ux * 10} ${ay - uy * 10}`} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
+                  <path d={`M ${ax} ${ay} L ${ax - ux * 22 - uy * 15} ${ay - uy * 22 + ux * 15} L ${ax - ux * 22 + uy * 15} ${ay - uy * 22 - ux * 15} Z`} fill={KC.ink} /></g>; })()}
             </g>; })}
         </CapaF>
       </Escena>
@@ -283,8 +290,8 @@ function Fecal() {
       <Escena T={T} a={K.Do} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <CapaF>
-          {[0, 1, 2].map((d) => <g key={d} transform={`translate(${70 + d * 175} ${680})`}>
-            <rect x={0} y={0} width={160} height={440} rx={20} fill={KC.white} stroke={KC.ink} strokeWidth={8} />
+          {[0, 1, 2].map((d) => <g key={d} transform={`translate(${94 + d * 306} ${570}) scale(1.75)`}>
+            <rect x={0} y={0} width={160} height={440} rx={20} fill="#16203a" stroke={KC.ink} strokeWidth={8} />
             <rect x={0} y={0} width={160} height={70} rx={20} fill={KC.red} stroke={KC.ink} strokeWidth={8} />
             <text x={80} y={50} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.white}>día {d + 1}</text>
             {[0, 1, 2, 3].map((c) => { const k = kprog(T, K.Do + 0.15 + (d * 4 + c) * 0.13, K.Do + 0.4 + (d * 4 + c) * 0.13, kEase.rebote);
@@ -296,34 +303,34 @@ function Fecal() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <CapaF>
-          <FrascoCapsulas T={T} x={290} y={860} s={0.95} abierto={kprog(T, K.Ci + 0.2, K.Ci + 0.9, kEase.sale)} />
-          <Capsula x={640} y={1170} rot={-8} s={1.4} />
-          <Arbolito T={T} x={640} y={1150} s={1.25} crece={kprog(T, K.Ci + 0.8, K.Ci + 3.0)} />
+          <FrascoCapsulas T={T} x={350} y={900} s={1.5} abierto={kprog(T, K.Ci + 0.2, K.Ci + 0.9, kEase.sale)} />
+          <Capsula x={810} y={1290} rot={-8} s={1.9} />
+          <Arbolito T={T} x={810} y={1264} s={1.6} crece={kprog(T, K.Ci + 0.8, K.Ci + 3.0)} />
         </CapaF>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.3} until={K.Bo - 0.3} texto="¿vitaminas?" x={300} y={470} tam={52} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.3} until={K.Bo - 0.3} texto="¿vitaminas?" x={540} y={350} tam={64} />
       <Chip T={T} at={K.G + 1.9} until={K.Bo - 0.3} texto="hechas a partir de caca humana" y={1490} tam={42} borde={CAFE} />
       <NumeroGigante T={T} at={K.Bo + 0.9} until={K.An - 0.2} valor={38} dur={1.0} sufijo=" billones" etiqueta="bacterias en el colon (estimación 2016)" y={1560} tam={120} color={KC.mint} />
       {((T > K.Bo + 0.5 && T < K.Pr) || (T > K.Bi && T < K.Rb)) && <Escala T={T} z={1} pxPorMm={40000} x={60} y={1720} />}
       <Chip T={T} at={K.An + 0.5} until={K.Di - 0.3} texto="antibiótico: el bosque se desordena" y={1490} tam={38} borde={KC.red} />
-      <Etq T={T} at={K.Di + 1.0} until={K.Re - 0.2} x={120} y={1110} texto="Clostridioides difficile" it tam={36} color={CDIF} />
+      <Etq T={T} at={K.Di + 1.0} until={K.Re - 0.2} x={450} y={870} texto="Clostridioides difficile" it tam={32} color={CDIF} />
       <Chip T={T} at={K.Di + 1.4} until={K.Re - 0.3} texto="toxinas → diarrea" y={1490} tam={42} borde={TOX} />
-      <Etq T={T} at={K.Re + 0.8} until={K.Pr - 0.2} x={330} y={980} texto="espora" lado="izq" tam={36} color="#fff7dc" />
+      <Etq T={T} at={K.Re + 0.8} until={K.Pr - 0.2} x={335} y={965} texto="espora" lado="izq" tam={36} color="#fff7dc" />
       <Chip T={T} at={K.Re + 0.9} until={K.Pr - 0.2} texto={`recaída ${recaida}`} y={1490} tam={46} borde={CDIF} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 1.6} anio="2013" quien="Ámsterdam · van Nood et al." revista="New England Journal of Medicine" y={560} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 1.6} anio="2013" quien="Ámsterdam · van Nood et al." revista="New England Journal of Medicine" y={380} />
       <Chip T={T} at={K.Es + 1.9} until={es2 - 0.4} texto="sonda: nariz → intestino delgado" y={1490} tam={38} borde={CAFE} />
       <Chip T={T} at={es2 + 0.4} until={K.Pa - 0.2} texto="curados sin recaída a las 10 semanas" y={1490} tam={36} borde={KC.mint} />
       <Chip T={T} at={K.Pa + 1.4} until={K.Bi - 0.3} texto="se detuvo: el trasplante iba muy por delante" y={1490} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Bi + 0.4} until={K.Rb - 0.3} texto="hipótesis: se cree que…" y={1490} tam={40} borde={BILIS} />
-      <Etq T={T} at={K.Bi + 1.2} until={K.Rb - 0.3} x={60} y={1110} texto="ácidos biliares (hipótesis)" tam={36} color={BILIS} />
-      <TarjetaEstudio T={T} at={K.Rb + 0.2} until={K.Vo - 0.3} anio="2022" quien="FDA · Rebyota" revista="1.er producto de microbiota fecal aprobado" y={700} />
+      <Etq T={T} at={K.Bi + 1.2} until={K.Rb - 0.3} x={60} y={1390} texto="ácidos biliares (hipótesis)" tam={36} color={BILIS} />
+      <TarjetaEstudio T={T} at={K.Rb + 0.2} until={K.Vo - 0.3} anio="2022" quien="FDA · Rebyota" revista="1.er producto de microbiota fecal aprobado" y={400} />
       <Chip T={T} at={K.Rb + 1.2} until={K.Vo - 0.3} texto="una sola dosis, por vía rectal" y={1490} tam={40} borde={KC.blue} />
-      <Chip T={T} at={K.Vo + 0.1} until={K.Do - 0.2} texto="2023 · FDA · Vowst" x={640} y={640} tam={48} borde={KC.blue} />
+      <Chip T={T} at={K.Vo + 0.1} until={K.Do - 0.2} texto="2023 · FDA · Vowst" x={540} y={540} tam={48} borde={KC.blue} />
       <Chip T={T} at={K.Vo + 1.5} until={K.Do - 0.2} texto="el alcohol mata lo que no es espora" y={1490} tam={36} borde={KC.red} />
       <Chip T={T} at={K.Do + 0.4} until={K.Ci - 0.2} texto="4 × 3 = 12 cápsulas" y={1490} tam={44} borde={CAFE} />
-      <MitoTachado T={T} at={K.Do + 0.8} tacharEn={K.Do + 1.5} until={K.Ci - 0.2} texto="sonda" x={300} y={500} tam={48} />
+      <MitoTachado T={T} at={K.Do + 0.8} tacharEn={K.Do + 1.5} until={K.Ci - 0.2} texto="sonda" x={540} y={450} tam={56} />
       <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="bacterias que vuelven a poblar" y={1490} tam={40} borde={KC.mint} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

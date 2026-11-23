@@ -1,4 +1,4 @@
-# Publicación · Shot Festivo #03 · Día de Muertos · Fungi Mati: Los hongos que regresan los árboles a la tierra
+# Publicación · Shot Festivo 03 · Día de Muertos · Fungi Mati: Los hongos que regresan los árboles a la tierra
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Se publica el 1 nov 2026.
 
@@ -13,7 +13,7 @@ Como dice el Día de Muertos, todo regresa a la tierra. Y con la madera, quien m
 El dibujo es esquemático.
 Fuentes: Floudas et al., Science 2012 · Nelsen et al., PNAS 2016 · Wilcox, USDA 1968 · Frei, 2013 · Cragg et al., 2015.
 ¿Qué pones tú en tu ofrenda? 👇
-Shot Festivo #03 · Día de Muertos · Fungi Mati · La Creación del Robert
+Shot Festivo 03 · Día de Muertos · Fungi Mati · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #DiaDeMuertos #Hongos #Ciencia
 ```
@@ -24,7 +24,7 @@ Este tronco está muerto, pero no está solo: un hongo se lo está comiendo. �
 Los hongos de podredumbre blanca son de los pocos seres vivos que digieren la lignina, la que endurece la pared de las células de la madera: sus hifas perforan las paredes y sus enzimas (peroxidasas y lacasas) oxidan la lignina y la desarman. Así el árbol se vuelve suelo, agua y CO₂. Un estudio de 2012 (Science, 31 genomas) sugiere que esas enzimas nacieron hace unos 290 millones de años, y propuso que antes muchos troncos se volvieron carbón; en 2016 esa hipótesis se puso en duda.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué pones tú en tu ofrenda? 👇
-Shot Festivo #03 · Día de Muertos · Fungi Mati · La Creación del Robert
+Shot Festivo 03 · Día de Muertos · Fungi Mati · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #DiaDeMuertos #Hongos #Ciencia
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este tronco no está solo: se lo come un hongo 🍄 | Shot Festivo #03
+Este tronco no está solo: se lo come un hongo 🍄 | Shot Festivo 03
 ```
 Descripción:
 ```text
@@ -49,7 +49,7 @@ Fuentes:
 - Frei, M. (2013). Lignin: characterization of a multifaceted crop component. The Scientific World Journal.
 - Cragg, S. M. et al. (2015). Lignocellulose degradation mechanisms across the Tree of Life. Current Opinion in Chemical Biology.
 ¿Qué pones tú en tu ofrenda? 👇
-Shot Festivo #03 · Día de Muertos · Fungi Mati · La Creación del Robert
+Shot Festivo 03 · Día de Muertos · Fungi Mati · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Hongos #DiaDeMuertos
 ```
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Este tronco está muerto, pero no está solo: un hongo se lo está comiendo. 🍄🕯️ Los hongos de podredumbre blanca rompen la lignina de la madera y la regresan a la tierra como suelo, agua y CO₂. Un estudio de 2012 sugiere que aprendieron a hacerlo hace unos 290 millones de años (fecha que otros estudios discuten).
 ¿Qué pones tú en tu ofrenda? 👇
-Shot Festivo #03 · Día de Muertos · Fungi Mati · La Creación del Robert
+Shot Festivo 03 · Día de Muertos · Fungi Mati · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #DiaDeMuertos
 ```
@@ -69,14 +69,14 @@ Este tronco está muerto, pero no está solo: un hongo se lo está comiendo.
 La lignina es el polímero que endurece la pared de las células de la madera, y casi ningún ser vivo puede digerirla. Los hongos de podredumbre blanca son de los pocos organismos capaces de descomponerla en cantidad: sus hifas perforan las paredes celulares y sus enzimas (peroxidasas y lacasas) oxidan la lignina y la desarman, devolviendo el carbono del árbol al suelo y a la atmósfera como CO₂ y agua.
 Un estudio de 2012 en Science, dirigido desde la Universidad Clark con 31 genomas de hongos, estimó con reloj molecular que estas enzimas surgieron hacia el final del Carbonífero, hace unos 290 millones de años, y propuso que eso pudo frenar la formación de carbón. En 2016, un trabajo en PNAS cuestionó esa hipótesis.
 ¿Qué otros procesos de la naturaleza crees que la biotecnología debería aprender de los hongos?
-Shot Festivo #03 · Día de Muertos · Fungi Mati · La Creación del Robert
+Shot Festivo 03 · Día de Muertos · Fungi Mati · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #FungiMati #Hongos #Biotecnologia #Ciencia
 ```
 
 ### X
 ```text
-Este tronco está muerto, pero no está solo: un hongo se lo está comiendo. 🍄 Los hongos de podredumbre blanca rompen la lignina; un estudio de 2012 sugiere que aprendieron hace ~290 millones de años (fecha que otros estudios discuten). Shot Festivo #03 #DiaDeMuertos #FungiMati
+Este tronco está muerto, pero no está solo: un hongo se lo está comiendo. 🍄 Los hongos de podredumbre blanca rompen la lignina; un estudio de 2012 sugiere que aprendieron hace ~290 millones de años (fecha que otros estudios discuten). Shot Festivo 03 #DiaDeMuertos #FungiMati
 ```
 
 ### Threads
@@ -84,7 +84,7 @@ Este tronco está muerto, pero no está solo: un hongo se lo está comiendo. �
 Este tronco está muerto, pero no está solo: un hongo se lo está comiendo. 🍄🕯️
 Sus hifas perforan la madera y sus enzimas (peroxidasas y lacasas) oxidan la lignina, la que endurece la madera y casi nadie puede digerir. Así el árbol vuelve a ser suelo, agua y CO₂. Como dice el Día de Muertos: todo regresa a la tierra.
 ¿Qué pones tú en tu ofrenda? 👇
-Shot Festivo #03 · Día de Muertos · Fungi Mati · La Creación del Robert
+Shot Festivo 03 · Día de Muertos · Fungi Mati · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Hongos
 ```

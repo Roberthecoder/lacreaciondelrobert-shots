@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #47 · El veneno más potente también es medicina (toxina botulínica) — NARRADO (N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. Todo el dibujo es esquemático y no está a escala.
 const PIEL = '#f1b48f', PIEL2 = '#d98f6b', TOX = '#ff3b2f', SNAP = '#F4C25A', VES = '#7fdcff', MUS = '#e36b6b';
@@ -323,6 +324,12 @@ function Filtro({ T, x, y, s = 1, gotea = 0 }) {
   </g>;
 }
 
+// Silueta del biorreactor del kit (cuerpo, tapa, motor, patas y tubos), en sus coordenadas, para recortar su fondo de puntos.
+const RECORTE_TANQUE = 'M 312 512 H 768 Q 838 512 838 582 V 1438 Q 838 1508 768 1508 H 312 Q 242 1508 242 1438 V 582 Q 242 512 312 512 Z '
+  + 'M 302 436 H 778 V 524 H 302 Z M 462 344 H 618 V 444 H 462 Z '
+  + 'M 326 1470 L 356 1480 L 304 1622 L 276 1612 Z M 724 1480 L 754 1470 L 804 1612 L 776 1622 Z '
+  + 'M 256 806 Q 126 806 126 946 L 154 946 Q 154 834 256 834 Z M 824 1054 Q 964 1054 964 894 L 936 894 Q 936 1026 824 1026 Z';
+
 function Botox() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, Ba: CUES.Bacteria, Do: CUES.Dosis, Ne: CUES.Nervio, Co: CUES.Corte, Si: CUES.Silencio, Pr: CUES.Pregunta, Es: CUES.Estudio,
@@ -343,18 +350,19 @@ function Botox() {
       <Escena T={T} a={K.G} b={K.Ba} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <Capa>
-          <Frasco T={T} x={330} y={960} s={1.35} etq={flip0} rot={Math.sin(T * 1.6) * 4} />
-          <Cara T={T} x={790} y={985} r={145} desvio={1} />
+          <Frasco T={T} x={300} y={760} s={2} etq={flip0} rot={Math.sin(T * 1.6) * 3} />
+          <Cara T={T} x={760} y={1110} r={210} desvio={1} />
         </Capa>
       </Escena>
       {/* 1 · la bacteria (lata abultada + microscopio) */}
       <Escena T={T} a={K.Ba} b={K.Do} zoom={0.03}>
         <FondoLunares color={KC.mint} />
-        <Capa><Lata T={T} x={250} y={1020} s={1} abulta={1} /></Capa>
+        <Capa><Lata T={T} x={290} y={1210} s={1.6} abulta={1} /></Capa>
       </Escena>
-      <Lupa T={T} at={K.Ba + 0.25} until={K.Do - 0.3} x={640} y={720} r={270} fx={250} fy={1000} tinte={KC.mint} etiqueta="AL MICROSCOPIO · BACTERIA"
-        interior={(T, r) => <svg width={2 * r} height={2 * r} style={{ position:'absolute', left:0, top:0 }}>
-          <rect width={2 * r} height={2 * r} fill="#081a14" />
+      <Lupa T={T} at={K.Ba + 0.25} until={K.Do - 0.3} x={650} y={640} r={320} fx={300} fy={1130} tinte={KC.mint} etiqueta="AL MICROSCOPIO · BACTERIA"
+        interior={(T, R) => { const r = 270; return <svg width={2 * R} height={2 * R} style={{ position:'absolute', left:0, top:0 }}>
+          <rect width={2 * R} height={2 * R} fill="#081a14" />
+          <g transform={`scale(${R / r})`}>
           <Clostridium T={T} x={r - 10 + Math.sin(T) * 10} y={r} L={330} W={78} rot={-12} seed={2} />
           <Clostridium T={T} x={r - 120} y={r - 160} L={250} W={64} rot={28} seed={5} espora={0} />
           <Clostridium T={T} x={r + 140} y={r + 170} L={260} W={66} rot={160} seed={7} />
@@ -362,49 +370,55 @@ function Botox() {
           <line x1={r - 10 + 165 - 82} y1={r - 20} x2={r + 90} y2={r - 90} stroke="#f6fff9" strokeWidth={3} />
           <text x={r + 96} y={r - 96} style={{ font:`700 26px ${KF.mono}` }} fill="#f6fff9">espora</text>
           <text x={r} y={2 * r - 34} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill="#9fe8c8">esquema · no a escala</text>
-        </svg>} />
+          </g>
+        </svg>; }} />
       {/* 2 · la dosis */}
       <Escena T={T} a={K.Do} b={K.Ne} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <Capa>
-          <g transform="translate(600 1060)">
-            <line x1={0} y1={-70} x2={0} y2={80} stroke={KC.ink} strokeWidth={14} />
-            <rect x={-90} y={70} width={180} height={26} rx={10} fill="#6f7a84" stroke={KC.ink} strokeWidth={6} />
+          <g transform="translate(540 1150) scale(1.45)">
+            <defs><linearGradient id="botMetal" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#eef2f6" /><stop offset=".5" stopColor="#b9c1ca" /><stop offset="1" stopColor="#6f7a84" /></linearGradient></defs>
+            <ellipse cx={0} cy={104} rx={130} ry={12} fill="rgba(0,0,0,.35)" />
+            <line x1={0} y1={-70} x2={0} y2={80} stroke={KC.ink} strokeWidth={18} />
+            <line x1={0} y1={-70} x2={0} y2={80} stroke="url(#botMetal)" strokeWidth={10} />
+            <rect x={-90} y={70} width={180} height={28} rx={10} fill="url(#botMetal)" stroke={KC.ink} strokeWidth={6} />
             <g transform={`rotate(${Math.sin(T * 1.3) * 1.2})`}>
-              <line x1={-260} y1={-70} x2={260} y2={-70} stroke={KC.ink} strokeWidth={12} strokeLinecap="round" />
+              <line x1={-260} y1={-70} x2={260} y2={-70} stroke={KC.ink} strokeWidth={18} strokeLinecap="round" />
+              <line x1={-258} y1={-71} x2={258} y2={-71} stroke="#c9d0d8" strokeWidth={9} strokeLinecap="round" />
+              <circle cx={0} cy={-70} r={14} fill="url(#botMetal)" stroke={KC.ink} strokeWidth={5} />
               {[-1, 1].map((d) => <g key={d}><line x1={d * 250} y1={-70} x2={d * 250 - 70} y2={10} stroke={KC.ink} strokeWidth={4} /><line x1={d * 250} y1={-70} x2={d * 250 + 70} y2={10} stroke={KC.ink} strokeWidth={4} />
-                <path d={`M ${d * 250 - 90} 10 Q ${d * 250} 60 ${d * 250 + 90} 10 Z`} fill="#c7ccd2" stroke={KC.ink} strokeWidth={6} /></g>)}
+                <path d={`M ${d * 250 - 90} 10 Q ${d * 250} 60 ${d * 250 + 90} 10 Z`} fill="url(#botMetal)" stroke={KC.ink} strokeWidth={6} /></g>)}
               <circle cx={-250} cy={14} r={3 + Math.max(0, Math.sin(T * 5)) * 2} fill={KC.red} />
               <circle cx={-250} cy={14} r={22 + Math.max(0, Math.sin(T * 5)) * 8} fill="none" stroke={KC.red} strokeWidth={4} opacity={0.7} />
             </g>
           </g>
         </Capa>
       </Escena>
-      <NumeroGigante T={T} at={K.Do + 0.3} until={K.Ne - 0.3} valor={1} desde={1} prefijo="< " sufijo=" µg" x={600} y={800} tam={250} color={KC.red} />
+      <NumeroGigante T={T} at={K.Do + 0.3} until={K.Ne - 0.3} valor={1} desde={1} prefijo="< " sufijo=" µg" x={540} y={790} tam={320} color={KC.red} />
       {/* 3–5 · el nervio por dentro */}
       <Escena T={T} a={K.Ne} b={K.Pr} zoom={0.02}>
         <FondoLunares color={KC.mint} />
-        <Capa><Brazo T={T} flex={kclamp(flexBrazo, 0, 1)} /></Capa>
+        <Capa><Brazo T={T} flex={kclamp(flexBrazo, 0, 1)} ey={1270} /></Capa>
       </Escena>
-      <Lupa T={T} at={K.Ne + 0.2} until={K.Pr - 0.35} x={680} y={700} r={290} fx={700} fy={960} tinte={KC.cyan} etiqueta="POR DENTRO · NERVIO Y MÚSCULO"
-        interior={(T, r) => <NervioPorDentro T={T} r={r} K={K} />} />
+      <Lupa T={T} at={K.Ne + 0.2} until={K.Pr - 0.35} x={640} y={630} r={335} fx={720} fy={1180} tinte={KC.cyan} etiqueta="POR DENTRO · NERVIO Y MÚSCULO"
+        interior={(T, r) => <div style={{ position:'absolute', left:0, top:0, transform:`scale(${r / 290})`, transformOrigin:'0 0' }}><NervioPorDentro T={T} r={290} K={K} /></div>} />
       {/* 6 · pregunta */}
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         <Capa>
-          <text x={280} y={900} textAnchor="middle" style={{ font:`400 460px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 760)`}>?</text>
-          <Frasco T={T} x={280} y={1080} s={0.7} etq={1} rot={Math.sin(T * 2) * 6} />
+          <text x={280} y={860} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 700)`}>?</text>
+          <Frasco T={T} x={650} y={1010} s={1.5} etq={1} rot={Math.sin(T * 2) * 5} />
         </Capa>
       </Escena>
       {/* 7 · estudio: monos y ojos desviados */}
       <Escena T={T} a={K.Es} b={K.Ap}>
         <FondoLunares color={KC.cyan} />
         <Capa>
-          {T < K.Es + 2.75 && <g opacity={1 - kprog(T, K.Es + 2.45, K.Es + 2.75)}><Mono T={T} x={540} y={960} s={1.1} />
-            <Jeringa x={720} y={940} ang={200} s={0.7} o={kprog(T, K.Es + 1.4, K.Es + 1.7)} empuja={kprog(T, K.Es + 1.8, K.Es + 2.3)} /></g>}
+          {T < K.Es + 2.75 && <g opacity={1 - kprog(T, K.Es + 2.45, K.Es + 2.75)}><Mono T={T} x={440} y={1060} s={1.8} />
+            <Jeringa x={735} y={1028} ang={200} s={0.75} o={kprog(T, K.Es + 1.4, K.Es + 1.7)} empuja={kprog(T, K.Es + 1.8, K.Es + 2.3)} /></g>}
           {T >= K.Es + 2.6 && <g opacity={kprog(T, K.Es + 2.6, K.Es + 2.95)}>
-            <Cara T={T} x={540} y={950} r={250} desvio={1 - alinea} />
-            <Jeringa x={540 + 100 + 30 * (1 - kprog(T, K.Es + 2.9, K.Es + 3.3))} y={930} ang={190} s={0.8} o={kprog(T, K.Es + 2.9, K.Es + 3.1) * (1 - kprog(T, K.Es + 3.9, K.Es + 4.2))} empuja={kprog(T, K.Es + 3.3, K.Es + 3.8)} />
+            <Cara T={T} x={540} y={1020} r={310} desvio={1 - alinea} />
+            <Jeringa x={540 + 124 + 36 * (1 - kprog(T, K.Es + 2.9, K.Es + 3.3))} y={995} ang={190} s={0.9} o={kprog(T, K.Es + 2.9, K.Es + 3.1) * (1 - kprog(T, K.Es + 3.9, K.Es + 4.2))} empuja={kprog(T, K.Es + 3.3, K.Es + 3.8)} />
           </g>}
         </Capa>
       </Escena>
@@ -412,53 +426,57 @@ function Botox() {
       <Escena T={T} a={K.Ap} b={K.Us} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <Capa>
-          <Sello T={T} at={K.Ap + 0.4} x={320} y={610} texto1="FDA" texto2="29 dic 1989" />
-          <Cara T={T} x={290} y={900} r={160} desvio={0} />
-          <Cara T={T} x={790} y={900} r={160} parpado={pdAp} />
-          <text x={290} y={1110} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Ap + 1.2, K.Ap + 1.6)}>estrabismo</text>
-          <text x={790} y={1110} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Ap + 2.0, K.Ap + 2.4)}>blefaroespasmo</text>
+          <g transform="translate(540 590) scale(1.3) translate(-540 -590)"><Sello T={T} at={K.Ap + 0.4} x={540} y={590} texto1="FDA" texto2="29 dic 1989" /></g>
+          <Cara T={T} x={285} y={1060} r={200} desvio={0} />
+          <Cara T={T} x={795} y={1060} r={200} parpado={pdAp} />
+          <text x={285} y={1365} textAnchor="middle" style={{ font:`700 44px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Ap + 1.2, K.Ap + 1.6)}>estrabismo</text>
+          <text x={795} y={1365} textAnchor="middle" style={{ font:`700 44px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Ap + 2.0, K.Ap + 2.4)}>blefaroespasmo</text>
         </Capa>
       </Escena>
       {/* 9 · otros usos */}
       <Escena T={T} a={K.Us} b={K.Fa} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         <Capa>
-          <CabezaDolor T={T} x={290} y={840} o={kprog(T, K.Us + 0.2, K.Us + 0.6)} />
-          <TorsoSudor T={T} x={760} y={860} o={kprog(T, K.Us + 1.3, K.Us + 1.7)} />
-          <text x={290} y={1110} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Us + 0.4, K.Us + 0.8)}>migraña crónica</text>
-          <text x={760} y={1120} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Us + 1.5, K.Us + 1.9)}>sudor excesivo</text>
+          <CabezaDolor T={T} x={300} y={1110} s={1.3} o={kprog(T, K.Us - 0.2, K.Us + 0.3)} />
+          <TorsoSudor T={T} x={750} y={1080} s={1.3} o={0.3 + 0.7 * kprog(T, K.Us + 1.3, K.Us + 1.7)} />
+          <text x={300} y={1430} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Us + 0.4, K.Us + 0.8)}>migraña crónica</text>
+          <text x={750} y={1430} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Us + 1.5, K.Us + 1.9)}>sudor excesivo</text>
         </Capa>
       </Escena>
       {/* 10 · fabricación: tanque, filtro, frasquito */}
       <Escena T={T} a={K.Fa} b={K.Cl} zoom={0.03}>
-        <div style={{ position:'absolute', inset:0, transform:'translate(-110px, 0) scale(0.62)', transformOrigin:'540px 700px' }}>
-          <MundoBiorreactor T={T} turbio={0.75} burbujas={1} rpm={70} fondo={KC.cyan} />
+        <FondoLunares color={KC.cyan} />
+        {/* el tanque del kit trae un fondo de puntos: se recorta a la silueta del tanque para que quede sobre el fondo oscuro */}
+        <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transform:'translate(-104px, 77px) scale(0.86)', transformOrigin:'0 0' }}>
+          <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, clipPath:`path('${RECORTE_TANQUE}')` }}>
+            <MundoBiorreactor T={T} turbio={0.75} burbujas={1} rpm={70} fondo={KC.cyan} />
+          </div>
         </div>
         <Capa>
-          <path d="M 720 820 Q 860 820 880 760" fill="none" stroke="#9aa4ae" strokeWidth={18} strokeLinecap="round" />
-          <Filtro T={T} x={890} y={760} s={0.8} />
-          <Goteo T={T} x={890} y0={860} y1={1010} cada={0.35} color="#f6e7b8" desde={K.Fa + 0.8} hasta={K.Cl} r={9} />
-          <Frasco T={T} x={890} y={1120} s={0.55} etq={1} cruz polvo={kprog(T, K.Fa + 1.0, K.Fa + 3.2)} />
+          <path d="M 713 846 Q 735 700 852 752" fill="none" stroke="#9aa4ae" strokeWidth={16} strokeLinecap="round" />
+          <Filtro T={T} x={880} y={830} s={1.15} />
+          <Goteo T={T} x={880} y0={962} y1={1070} cada={0.35} color="#f6e7b8" desde={K.Fa + 0.8} hasta={K.Cl} r={11} />
+          <Frasco T={T} x={880} y={1270} s={0.9} etq={1} cruz polvo={kprog(T, K.Fa + 1.0, K.Fa + 3.2)} />
         </Capa>
       </Escena>
       {/* 11 · la clave es la dosis */}
       <Escena T={T} a={K.Cl} b={K.Ke} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <Capa>
-          <Cara T={T} x={400} y={900} r={250} parpado={0.08} parpadoDer={pdCl} />
-          <Jeringa x={500 + 160 - 40 * kprog(T, K.Cl + 0.3, K.Cl + 0.7)} y={800} ang={200} s={0.75} o={kprog(T, K.Cl + 0.2, K.Cl + 0.4) * (1 - kprog(T, inyCl + 0.4, inyCl + 0.7))} empuja={kprog(T, K.Cl + 0.7, inyCl)} />
-          {T > inyCl && <circle cx={520} cy={815} r={klerp(20, 90, kprog(T, inyCl, inyCl + 0.6, kEase.sale))} fill="rgba(255,225,26,.18)" stroke={KC.gold} strokeWidth={6} strokeDasharray="12 8" opacity={1 - kprog(T, K.Cl + 2.4, K.Ke - 0.4)} />}
-          {T > K.Cl + 2.0 && <Calendario T={T} x={850} y={1010} at={K.Cl + 2.1} n={3} />}
+          <Cara T={T} x={400} y={1040} r={300} parpado={0.08} parpadoDer={pdCl} />
+          <Jeringa x={520 + 192 - 48 * kprog(T, K.Cl + 0.3, K.Cl + 0.7)} y={920} ang={200} s={0.9} o={kprog(T, K.Cl + 0.2, K.Cl + 0.4) * (1 - kprog(T, inyCl + 0.4, inyCl + 0.7))} empuja={kprog(T, K.Cl + 0.7, inyCl)} />
+          {T > inyCl && <circle cx={544} cy={938} r={klerp(24, 108, kprog(T, inyCl, inyCl + 0.6, kEase.sale))} fill="rgba(255,225,26,.18)" stroke={KC.gold} strokeWidth={6} strokeDasharray="12 8" opacity={1 - kprog(T, K.Cl + 2.4, K.Ke - 0.4)} />}
+          <g transform="translate(890 1265) scale(1.15)" opacity={0.35 + 0.65 * kprog(T, K.Cl + 1.9, K.Cl + 2.2)}><Calendario T={T} x={0} y={0} at={K.Cl + 2.1} n={3} /></g>
         </Capa>
       </Escena>
       {/* 12 · Kerner, hace dos siglos */}
       <Escena T={T} a={K.Ke} b={K.Ci} zoom={0.03}>
-        <div style={{ position:'absolute', inset:0, background:'#f1e3c2' }}></div>
+        <FondoLunares color="#c9a15a" />
         <Capa>
-          <Kerner T={T} x={680} y={880} s={1} />
-          <Libro x={260} y={860} s={0.85} />
-          <Salchicha x={290} y={1130} s={0.9} rot={-6} />
-          {T > K.Ke + 2.2 && <g transform={`translate(860 ${600 - kprog(T, K.Ke + 2.2, K.Ke + 2.8, kEase.rebote) * 30})`} opacity={kprog(T, K.Ke + 2.2, K.Ke + 2.6)}>
+          <Kerner T={T} x={700} y={980} s={1.3} />
+          <Libro x={230} y={850} s={1.15} />
+          <Salchicha x={240} y={1240} s={0.95} rot={-6} />
+          {T > K.Ke + 2.2 && <g transform={`translate(905 ${650 - kprog(T, K.Ke + 2.2, K.Ke + 2.8, kEase.rebote) * 30}) scale(1.25)`} opacity={kprog(T, K.Ke + 2.2, K.Ke + 2.6)}>
             <circle r={70} fill="#fff" stroke={KC.ink} strokeWidth={6} /><CruzMedica x={0} y={0} s={1.1} />
             <circle cx={-80} cy={70} r={14} fill="#fff" stroke={KC.ink} strokeWidth={5} /><circle cx={-110} cy={110} r={9} fill="#fff" stroke={KC.ink} strokeWidth={4} />
           </g>}
@@ -469,27 +487,27 @@ function Botox() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <Capa>
-          <Frasco T={T} x={330} y={960} s={1.35} etq={1} cruz rot={Math.sin(T * 1.6) * 4} />
-          <Cara T={T} x={790} y={985} r={145} desvio={0} />
+          <Frasco T={T} x={300} y={760} s={2} etq={1} cruz rot={Math.sin(T * 1.6) * 3} />
+          <Cara T={T} x={760} y={1110} r={210} desvio={0} />
         </Capa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.6} until={K.G + 3.0} texto="¿solo para arrugas?" x={330} y={470} tam={44} />
+      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.6} until={K.G + 3.0} texto="¿solo para arrugas?" x={775} y={600} tam={42} />
       <Chip T={T} at={K.G + 2.4} until={K.Ba - 0.3} texto="uno de los venenos más potentes" y={1500} tam={40} borde={KC.red} />
-      <Etiqueta T={T} at={K.Ba + 0.8} until={K.Do - 0.3} x={140} y={1500} texto="Clostridium botulinum" it tam={44} color={KC.ink} />
-      <Chip T={T} at={K.Do + 0.6} until={K.Ne - 0.3} texto="dosis letal estimada · inyectada · adulto de 70 kg" y={1490} tam={30} borde={KC.red} />
-      <Chip T={T} at={K.Do + 1.0} until={K.Ne - 0.3} texto="(2001, estudios en primates)" y={1580} tam={30} borde={KC.gold} />
-      <Chip T={T} at={K.Ne + 0.8} until={K.Co - 0.2} texto="acetilcolina = la orden" x={400} y={1480} tam={36} borde={KC.cyan} />
-      <Chip T={T} at={K.Co + 0.8} until={K.Si - 0.2} texto="corta la SNAP-25 (tipo A)" x={400} y={1480} tam={36} borde={SNAP} />
-      <Chip T={T} at={K.Si + 0.5} until={K.Pr - 0.2} texto="sin orden = músculo flojo" x={400} y={1480} tam={36} borde={KC.red} />
+      <Etiqueta T={T} at={K.Ba + 0.8} until={K.Do - 0.3} x={490} y={1215} texto="Clostridium botulinum" it tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Do + 0.6} until={K.Ne - 0.3} texto="dosis letal estimada · inyectada · adulto de 70 kg" y={1420} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.Do + 1.0} until={K.Ne - 0.3} texto="(2001, estudios en primates)" y={1505} tam={30} borde={KC.gold} />
+      <Chip T={T} at={K.Ne + 0.8} until={K.Co - 0.2} texto="acetilcolina = la orden" x={540} y={1520} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={K.Co + 0.8} until={K.Si - 0.2} texto="corta la SNAP-25 (tipo A)" x={540} y={1520} tam={36} borde={SNAP} />
+      <Chip T={T} at={K.Si + 0.5} until={K.Pr - 0.2} texto="sin orden = músculo flojo" x={540} y={1520} tam={36} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.Es + 0.85} until={K.Es + 2.4} anio="AÑOS 70" quien="Alan B. Scott" revista="oftalmólogo · San Francisco" x={540} y={560} />
-      <Chip T={T} at={K.Es + 3.0} until={K.Ap - 0.3} texto="ojo desviado: estrabismo" y={1500} tam={38} borde={KC.cyan} />
+      <Chip T={T} at={K.Es + 3.0} until={K.Ap - 0.3} texto="ojo desviado: estrabismo" y={1520} tam={38} borde={KC.cyan} />
       <Chip T={T} at={K.Ap + 2.6} until={K.Us - 0.3} texto="párpado que se cierra solo" y={1500} tam={38} borde={KC.lilac} />
-      <Chip T={T} at={K.Fa + 0.4} until={K.Cl - 0.3} texto="cultivo → se purifica → polvo" y={1500} tam={38} borde={KC.gold} />
-      <Chip T={T} at={K.Cl + 1.4} until={K.Ke - 0.3} texto="dosis diminuta · solo donde se trata" y={1500} tam={34} borde={KC.gold} />
-      <Chip T={T} at={K.Ke + 0.4} until={K.Ci - 0.3} texto="«veneno de las salchichas»" x={620} y={420} tam={36} borde={KC.orange} />
-      <Chip T={T} at={K.Ke + 1.0} until={K.Ci - 0.3} texto="Justinus Kerner · 1817–1822" y={1500} tam={38} borde={KC.gold} />
+      <Chip T={T} at={K.Fa + 0.4} until={K.Cl - 0.3} texto="cultivo → se purifica → polvo" y={262} tam={38} borde={KC.gold} />
+      <Chip T={T} at={K.Cl + 1.4} until={K.Ke - 0.3} texto="dosis diminuta · solo donde se trata" y={1530} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.Ke + 0.4} until={K.Ci - 0.3} texto="«veneno de las salchichas»" x={500} y={440} tam={36} borde={KC.orange} />
+      <Chip T={T} at={K.Ke + 1.0} until={K.Ci - 0.3} texto="Justinus Kerner · 1817–1822" y={1540} tam={38} borde={KC.gold} />
       <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="veneno → medicina" y={1500} tam={44} borde={KC.mint} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

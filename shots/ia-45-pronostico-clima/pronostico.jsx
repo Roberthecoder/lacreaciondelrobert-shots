@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #45 · La IA que hace el pronóstico de 10 días en menos de un minuto — NARRADO (N2 "El número" + N3 "Capítulos y medidores").
 // Datos: Lam et al., "Learning skillful medium-range global weather forecasting", Science 382:1416–1421 (2023) · ECMWF (25 feb 2025, AIFS) · CENAPRED (2026).
 // Ver guion.md y verificacion.md. Todo el dibujo es esquemático.
@@ -35,7 +36,7 @@ function TiraClima({ T, x = 60, y = 880, w = 960, rev = 10, fondo = KC.paper }) 
         {CLIMA[i] === 'sol' && <Sol x={cx} y={82} s={0.62} T={T} />}
         {CLIMA[i] === 'nube' && <Nube x={cx} y={84} s={0.66} />}
         {CLIMA[i] === 'lluvia' && <Lluvia x={cx} y={78} s={0.62} T={T} />}
-        <text x={cx} y={150} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#5a524a">{CLIMA[i] === 'sol' ? '28°' : CLIMA[i] === 'nube' ? '24°' : '19°'}</text>
+        <text x={cx} y={150} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#b9c4d6">{CLIMA[i] === 'sol' ? '28°' : CLIMA[i] === 'nube' ? '24°' : '19°'}</text>
       </g>; })}
   </g>;
 }
@@ -67,7 +68,7 @@ function ChipIA({ x, y, s = 1, T = 0, brillo = 1 }) {
     </g>)}
     <rect x={-100} y={-100} width={200} height={200} rx={22} fill="#1d2b4a" stroke={KC.ink} strokeWidth={8} />
     <rect x={-66} y={-66} width={132} height={132} rx={12} fill={KC.mint} stroke={KC.ink} strokeWidth={6} />
-    <text y={18} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill={KC.ink}>IA</text>
+    <text y={18} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill="#0b1020">IA</text>
   </g>;
 }
 // Barra de carrera: etiqueta, barra que se llena y lo que tardó.
@@ -76,9 +77,9 @@ function Carrera({ T, at, until, y, etiqueta, p, color, fin, top = 0 }) {
   const e = kentrada(T, at, until, 'sube'), v = kclamp(p, 0, 1);
   return <div style={{ position:'absolute', left:70, top:y, width:940, zIndex:40, opacity:e.o, transform:`translateY(${e.y * 0.4}px)` }}>
     <div style={{ display:'flex', justifyContent:'space-between', alignItems:'baseline', font:`900 34px ${KF.texto}`, color:KC.ink, marginBottom:8 }}>
-      <span>{etiqueta}</span><span style={{ font:`400 46px ${KF.titulo}`, color, WebkitTextStroke:`2px ${KC.ink}` }}>{fin}</span>
+      <span>{etiqueta}</span><span style={{ font:`400 46px ${KF.titulo}`, color }}>{fin}</span>
     </div>
-    <div style={{ height:52, borderRadius:26, background:'rgba(255,255,255,.75)', border:`6px solid ${KC.ink}`, overflow:'hidden' }}>
+    <div style={{ height:52, borderRadius:26, background:'rgba(255,255,255,.14)', border:`6px solid ${KC.ink}`, overflow:'hidden' }}>
       <div style={{ width:`${v * 100}%`, height:'100%', background:color, borderRight: v > 0 && v < 1 ? `6px solid ${KC.ink}` : 'none' }}></div>
     </div>
   </div>;
@@ -132,7 +133,7 @@ function HojaMapa({ x, y, s = 1, anio, seed = 1, rot = 0, o = 1 }) {
     <rect x={-140} y={-100} width={280} height={200} rx={14} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
     {manchas.map(([mx, my, mr, c], i) => <g key={i}><circle cx={mx} cy={my} r={mr} fill={c} opacity=".55" /><circle cx={mx} cy={my} r={mr * 0.6} fill="none" stroke={KC.ink} strokeWidth={2.5} opacity=".6" /></g>)}
     <path d="M -120 40 Q -60 10 0 30 T 120 20" stroke={KC.ink} strokeWidth={3} fill="none" opacity=".5" />
-    {anio && <g><rect x={-60} y={58} width={120} height={36} rx={10} fill={KC.ink} /><text y={86} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.yellow}>{anio}</text></g>}
+    {anio && <g><rect x={-60} y={58} width={120} height={36} rx={10} fill="#0b1020" /><text y={86} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.yellow}>{anio}</text></g>}
   </g>;
 }
 // Parche de terreno con una cuadrícula encima: paso grande = menos detalle.
@@ -186,7 +187,7 @@ function CajaFisica({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-150} y={-90} width={300} height={180} rx={20} fill={KC.paper} stroke={KC.ink} strokeWidth={7} />
     <text y={-28} textAnchor="middle" style={{ font:`italic 700 38px ${KF.mono}` }} fill={KC.ink}>∂u/∂t = …</text>
-    <text y={22} textAnchor="middle" style={{ font:`italic 700 34px ${KF.mono}` }} fill="#5a524a">F = m·a</text>
+    <text y={22} textAnchor="middle" style={{ font:`italic 700 34px ${KF.mono}` }} fill="#9aa6b8">F = m·a</text>
     <text y={68} textAnchor="middle" style={{ font:`900 26px ${KF.texto}` }} fill={KC.ink}>modelo de física</text>
   </g>;
 }
@@ -201,7 +202,7 @@ function Monitor({ x, y, s = 1, T = 0, rotulo, color, ia = false }) {
     <rect x={-30} y={140} width={60} height={50} fill="#2b3445" stroke={KC.ink} strokeWidth={6} />
     <rect x={-120} y={186} width={240} height={22} rx={10} fill="#2b3445" stroke={KC.ink} strokeWidth={6} />
     <g transform="translate(0 -196)"><rect x={-150} y={-34} width={300} height={68} rx={34} fill={color} stroke={KC.ink} strokeWidth={6} />
-      <text y={14} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>{rotulo}</text></g>
+      <text y={14} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill="#0b1020">{rotulo}</text></g>
   </g>;
 }
 // Flecha que se dibuja de (x1,y1) a (x2,y2).
@@ -217,7 +218,7 @@ function Flecha({ x1, y1, x2, y2, p = 1, color = KC.yellow }) {
 function Celular({ T, x, y, s = 1, children }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-300} y={-420} width={600} height={840} rx={70} fill="#10131a" stroke={KC.ink} strokeWidth={12} />
-    <rect x={-270} y={-380} width={540} height={760} rx={44} fill="#bfe8ff" />
+    <rect x={-270} y={-380} width={540} height={760} rx={44} fill="#16324f" />
     <rect x={-80} y={-404} width={160} height={26} rx={13} fill={KC.ink} />
     {children}
   </g>;
@@ -245,6 +246,8 @@ function Pronostico() {
   const trayReal = [[140, 1060], [260, 960], [380, 880], [500, 820], [640, 770], [780, 740], [930, 720]];
   const trayIA = [[140, 1060], [262, 968], [388, 892], [512, 836], [652, 790], [790, 764], [940, 748]];
   const trayHRES = [[140, 1060], [268, 985], [400, 925], [530, 885], [670, 860], [810, 850], [950, 846]];
+  // pase a mano: la misma gráfica esquemática, estirada para llenar el cuadro
+  [trayReal, trayIA, trayHRES].forEach((tr) => tr.forEach((q) => { q[0] = 540 + (q[0] - 540) * 0.6; q[1] = 900 + (q[1] - 890) * 2.2; }));
   const pTray = kprog(T, K.Ci + 0.3, K.Ci + 2.4, kEase.suave);
   const ciPt = (() => { const n = trayReal.length - 1, k = pTray * n, i = Math.min(n - 1, Math.floor(k)), f = k - i; return [klerp(trayReal[i][0], trayReal[i + 1][0], f), klerp(trayReal[i][1], trayReal[i + 1][1], f)]; })();
   const mx = K.Ci + 2.5;                                                    // "A México le pegan…"
@@ -254,55 +257,58 @@ function Pronostico() {
       <Escena T={T} a={K.G} b={K.E}>
         <FondoLunares color={KC.cyan} />
         <SVGF>
-          <g opacity={1 - 0.55 * kprog(T, iaAt, iaAt + 0.5)}><Rack x={70} y={350} s={0.98} T={T} n={4} /></g>
-          <g opacity={kprog(T, iaAt - 0.1, iaAt + 0.3)} transform={`translate(0 ${(1 - kprog(T, iaAt - 0.1, iaAt + 0.4, kEase.sale)) * 120})`}><ChipIA x={800} y={520} s={0.95} T={T} brillo={pIA} /></g>
+          {/* pase a mano: la supercomputadora llena el cuadro; el chip espera chico en la esquina y pasa al centro cuando la voz dice "Esta IA" */}
+          <g opacity={1 - 0.62 * kprog(T, iaAt, iaAt + 0.5)}><Rack x={82} y={430} s={2.1} T={T} n={4} /></g>
+          {(() => { const u = kprog(T, iaAt - 0.1, iaAt + 0.5, kEase.sale);
+            return <g opacity={klerp(0.6 * kprog(T, K.G + 1.6, K.G + 2.2), 1, kprog(T, iaAt - 0.1, iaAt + 0.3))}><ChipIA x={klerp(880, 540, u)} y={klerp(1140, 850, u)} s={klerp(0.7, 1.8, u)} T={T} brillo={pIA} /></g>; })()}
         </SVGF>
       </Escena>
-      <Chip T={T} at={K.G + 0.6} until={K.E - 0.2} texto="usando 11,664 núcleos" x={300} y={790} tam={34} borde={KC.ink} />
-      <Reloj T={T} at={K.G + 0.2} until={K.E - 0.2} x={300} y={300} seg={segSuper} color={KC.cyan} />
-      <Reloj T={T} at={iaAt} until={K.E - 0.2} x={800} y={300} seg={segIA} color={KC.mint} />
-      <Carrera T={T} at={K.G + 0.15} until={K.E - 0.2} y={880} etiqueta="supercomputadora · 10 días" p={pSuper} color={KC.orange} fin={pSuper > 0.97 ? '≈ 1 h' : '…'} />
-      <Carrera T={T} at={iaAt + 0.2} until={K.E - 0.2} y={1040} etiqueta="IA en 1 chip · 10 días" p={pIA} color={KC.mint} fin={pIA >= 1 ? '< 1 min ✔' : '…'} />
+      <Chip T={T} at={K.G + 0.6} until={K.E - 0.2} texto="usando 11,664 núcleos" x={540} y={1278} tam={36} borde={KC.ink} />
+      <Reloj T={T} at={K.G + 0.2} until={K.E - 0.2} x={300} y={350} seg={segSuper} color={KC.cyan} />
+      <Reloj T={T} at={iaAt} until={K.E - 0.2} x={800} y={350} seg={segIA} color={KC.mint} />
+      <Carrera T={T} at={K.G + 0.15} until={K.E - 0.2} y={1345} etiqueta="supercomputadora · 10 días" p={pSuper} color={KC.orange} fin={pSuper > 0.97 ? '≈ 1 h' : '…'} />
+      <Carrera T={T} at={iaAt + 0.2} until={K.E - 0.2} y={1490} etiqueta="IA en 1 chip · 10 días" p={pIA} color={KC.mint} fin={pIA >= 1 ? '< 1 min ✔' : '…'} />
 
       {/* 2 · el estudio */}
       <Escena T={T} a={K.E} b={K.A}>
         <FondoLunares color={KC.lilac} />
-        <SVGF><Globo x={540} y={1010} r={250} T={T} malla={kprog(T, K.E + 0.8, K.E + 1.6)} /></SVGF>
+        <SVGF><Globo x={540} y={980} r={400} T={T} malla={kprog(T, K.E + 0.8, K.E + 1.6)} /></SVGF>
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.A - 0.3} anio="2023" quien="GraphCast · Google DeepMind" revista="Lam et al. · Science" y={560} />
+      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.A - 0.3} anio="2023" quien="GraphCast · Google DeepMind" revista="Lam et al. · Science" y={360} />
 
       {/* 3 · aprende de mapas del tiempo pasado */}
       <Escena T={T} a={K.A} b={K.Cu}>
         <FondoLunares color={KC.mint} />
-        <SVGF><rect x={290} y={880} width={500} height={260} rx={30} fill="#0d1424" stroke={KC.ink} strokeWidth={8} /></SVGF>
-        <RedNeuronal T={T} x={330} y={895} ancho={420} alto={230} capas={[3, 5, 5, 3]} onda={((T - K.A) * 0.6) % 1} />
+        <SVGF><rect x={110} y={830} width={860} height={470} rx={36} fill="#0d1424" stroke={KC.ink} strokeWidth={8} /></SVGF>
+        <RedNeuronal T={T} x={190} y={850} ancho={700} alto={430} capas={[3, 5, 5, 3]} onda={((T - K.A) * 0.6) % 1} />
         <SVGF>
           {Array.from({ length: 6 }, (_, i) => { const t0 = K.A + 0.3 + i * 0.55, u = kprog(T, t0, t0 + 1.2, kEase.suave);
             const anios = ['1979', '1987', '1995', '2003', '2010', '2017'];
-            return <HojaMapa key={i} x={klerp(250, 540, u)} y={klerp(640 + i * 4, 1010, u)} s={klerp(0.95, 0.25, u)} rot={klerp(-8 + i * 3, 0, u)} anio={anios[i]} seed={i + 2} o={u >= 1 ? 0 : 1} />; })}
+            return <HojaMapa key={i} x={klerp(540, 540, u)} y={klerp(540 + i * 6, 1065, u)} s={klerp(1.75, 0.4, u)} rot={klerp(-8 + i * 3, 0, u)} anio={anios[i]} seed={i + 2} o={u >= 1 ? 0 : 1} />; })}
         </SVGF>
       </Escena>
-      <Chip T={T} at={K.A + 0.4} until={K.Cu - 0.2} texto="39 años · 1979 → 2017" x={380} y={470} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.A + 2.6} until={K.Cu - 0.2} texto="mapas reconstruidos · ERA5 (ECMWF)" x={370} y={560} tam={26} borde={KC.ink} />
+      <Chip T={T} at={K.A + 0.4} until={K.Cu - 0.2} texto="39 años · 1979 → 2017" x={540} y={262} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.A + 2.6} until={K.Cu - 0.2} texto="mapas reconstruidos · ERA5 (ECMWF)" x={540} y={1370} tam={32} borde={KC.ink} />
 
       {/* 4 · cuadritos más grandes */}
       <Escena T={T} a={K.Cu} b={K.P}>
         <FondoLunares color={KC.yellow} />
         <SVGF>
-          <g opacity={kprog(T, K.Cu + 0.2, K.Cu + 0.6)}><Parche x={70} y={650} w={430} h={400} paso={86} color={KC.mint} id="pIA" /></g>
-          <g opacity={kprog(T, K.Cu + 2.0, K.Cu + 2.4)}><Parche x={580} y={650} w={430} h={400} paso={34.4} color={KC.red} id="pSC" /></g>
+          {/* vuelta de encuadre: los dos parches bajan ~100 px · pase a mano: los dos parches grandes, uno sobre otro (misma proporción de cuadrícula 86 : 34.4); el segundo espera atenuado */}
+          <g opacity={kprog(T, K.Cu + 0.05, K.Cu + 0.4)}><Parche x={200} y={330} w={680} h={500} paso={136} color={KC.mint} id="pIA" /></g>
+          <g opacity={kprog(T, K.Cu + 0.05, K.Cu + 0.4) * klerp(0.3, 1, kprog(T, K.Cu + 2.0, K.Cu + 2.4))}><Parche x={200} y={1000} w={680} h={500} paso={54.4} color={KC.red} id="pSC" /></g>
         </SVGF>
       </Escena>
-      <Chip T={T} at={K.Cu + 0.4} until={K.P - 0.2} texto="IA · ≈ 28 km" x={285} y={1095} tam={36} borde={KC.mint} />
-      <Chip T={T} at={K.Cu + 2.2} until={K.P - 0.2} texto="supercomputadora · ≈ 11 km" x={795} y={1095} tam={30} borde={KC.red} />
-      <Chip T={T} at={K.Cu + 2.6} until={K.Cu + 4.3} texto="más detalle ↓" x={795} y={590} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.Cu + 4.4} until={K.P - 0.2} texto={`+6 h × ${pasos} = ${kformato(pasos * 6 / 24, 1)} días`} x={650} y={560} tam={38} mono borde={KC.ink} />
-      <Chip T={T} at={K.Cu + 0.4} until={K.Cu + 2.0} texto="esquemático · en el ecuador" x={285} y={590} tam={26} borde={KC.texto} />
+      <Chip T={T} at={K.Cu + 0.4} until={K.P - 0.2} texto="IA · ≈ 28 km" x={540} y={866} tam={38} borde={KC.mint} />
+      <Chip T={T} at={K.Cu + 2.2} until={K.P - 0.2} texto="supercomputadora · ≈ 11 km" x={540} y={1536} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.Cu + 2.6} until={K.Cu + 4.3} texto="más detalle ↓" x={540} y={944} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Cu + 4.4} until={K.P - 0.2} texto={`+6 h × ${pasos} = ${kformato(pasos * 6 / 24, 1)} días`} x={540} y={944} tam={40} mono borde={KC.ink} />
+      <Chip T={T} at={K.Cu + 0.4} until={K.Cu + 2.0} texto="esquemático · en el ecuador" x={540} y={944} tam={28} borde={KC.texto} />
 
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.Pr} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        <SVGF><text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text></SVGF>
+        <SVGF><text x={540} y={1330} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 1150)`}>?</text></SVGF>
       </Escena>
 
       {/* 6 · la prueba: 90 % de 1,380 */}
@@ -310,73 +316,74 @@ function Pronostico() {
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
       </Escena>
       {T > K.Pr - 0.45 && T < K.Ci + 0.45 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.Pr - 0.2, K.Pr + 0.3) * (1 - kprog(T, K.Ci - 0.05, K.Ci + 0.4)) }}>
-        <Cuadricula T={T} cols={46} filas={30} llenado={verdes} x={90} y={680} ancho={900} alto={420} vacio="rgba(22,18,15,.14)" lleno={KC.leaf} />
+        <Cuadricula T={T} cols={30} filas={46} llenado={verdes} x={90} y={340} ancho={900} alto={1100} vacio="rgba(150,190,255,.4)" lleno={KC.leaf} />
       </div>}
-      <Chip T={T} at={K.Pr + 0.3} until={K.Ci - 0.2} texto="1,380 pruebas · contra HRES (ECMWF)" x={380} y={470} tam={28} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Pr + 3.0} until={K.Ci - 0.2} valor={90} dur={0.6} sufijo=" %" x={540} y={890} tam={220} color={KC.leaf} etiqueta="" />
+      <Chip T={T} at={K.Pr + 0.3} until={K.Ci - 0.2} texto="1,380 pruebas · contra HRES (ECMWF)" x={540} y={262} tam={32} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Pr + 3.0} until={K.Ci - 0.2} valor={90} dur={0.6} sufijo=" %" x={540} y={880} tam={300} color={KC.leaf} etiqueta="" />
 
       {/* 7 · ciclones (esquemático) y México */}
       <Escena T={T} a={K.Ci} b={K.Eu}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2a7fd6, #1b5fb0)' }}></div>
-        <SVGF>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#122c4c, #0e2442)' }}></div>
+        <SVGF><g transform="translate(0 60)">{/* vuelta de encuadre: las trayectorias bajan 60 px y el mapa 160 */}
           <g opacity={1 - kprog(T, mx - 0.1, mx + 0.4)}>
-            <Traza pts={trayReal} p={pTray} color="#fff" ancho={9} guion="18 14" />
-            <Traza pts={trayHRES} p={pTray} color={KC.pink} ancho={10} />
-            <Traza pts={trayIA} p={pTray} color={KC.mint} ancho={10} />
-            <Ciclon x={ciPt[0]} y={ciPt[1]} s={0.75} T={T} />
+            <Traza pts={trayReal} p={pTray} color="#fff" ancho={11} guion="18 14" />
+            <Traza pts={trayHRES} p={pTray} color={KC.pink} ancho={13} />
+            <Traza pts={trayIA} p={pTray} color={KC.mint} ancho={13} />
+            <Ciclon x={ciPt[0]} y={ciPt[1]} s={1.7} T={T} />
           </g>
-          <g opacity={kprog(T, mx, mx + 0.5)}>
+          <g opacity={kprog(T, mx, mx + 0.5)} transform="translate(0 100)">
             <MapaMexico x={60} y={540} ancho={960} />
             <Flecha x1={140} y1={1060} x2={420} y2={880} p={kprog(T, mx + 0.3, mx + 0.9)} color={KC.yellow} />
             <Flecha x1={1010} y1={980} x2={830} y2={790} p={kprog(T, mx + 0.6, mx + 1.2)} color={KC.yellow} />
           </g>
-        </SVGF>
+        </g></SVGF>
       </Escena>
-      <Chip T={T} at={K.Ci + 0.3} until={mx - 0.1} texto="esquemático · ciclones de todo el mundo" x={540} y={470} tam={30} borde={KC.texto} />
-      <Etq T={T} at={K.Ci + 1.0} until={mx - 0.1} x={140} y={1110} texto="real" color="#fff" />
-      <Etq T={T} at={K.Ci + 1.2} until={mx - 0.1} x={140} y={1155} texto="IA" color={KC.mint} />
-      <Etq T={T} at={K.Ci + 1.4} until={mx - 0.1} x={140} y={1200} texto="supercomputadora" color={KC.pink} />
-      <Chip T={T} at={mx + 0.4} until={K.Eu - 0.2} texto="≈ 5 ciclones al año" x={400} y={470} tam={40} borde={KC.yellow} />
-      <Chip T={T} at={mx + 0.9} until={K.Eu - 0.2} texto="3 Pacífico" x={250} y={1140} tam={32} borde={KC.yellow} />
-      <Chip T={T} at={mx + 1.2} until={K.Eu - 0.2} texto="2 Golfo y Caribe" x={830} y={1140} tam={32} borde={KC.yellow} />
+      <Chip T={T} at={K.Ci + 0.3} until={mx - 0.1} texto="esquemático · ciclones de todo el mundo" x={540} y={262} tam={32} borde={KC.texto} />
+      <Etq T={T} at={K.Ci + 1.0} until={mx - 0.1} x={560} y={1210} texto="real" tam={40} color="#fff" />
+      <Etq T={T} at={K.Ci + 1.2} until={mx - 0.1} x={560} y={1275} texto="IA" tam={40} color={KC.mint} />
+      <Etq T={T} at={K.Ci + 1.4} until={mx - 0.1} x={560} y={1340} texto="supercomputadora" tam={40} color={KC.pink} />
+      <Chip T={T} at={mx + 0.4} until={K.Eu - 0.2} texto="≈ 5 ciclones al año" x={400} y={630} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={mx + 0.9} until={K.Eu - 0.2} texto="3 Pacífico" x={250} y={1300} tam={32} borde={KC.yellow} />
+      <Chip T={T} at={mx + 1.2} until={K.Eu - 0.2} texto="2 Golfo y Caribe" x={830} y={1300} tam={32} borde={KC.yellow} />
 
       {/* 8 · el centro europeo ya usa su IA */}
       <Escena T={T} a={K.Eu} b={K.O}>
         <FondoLunares color={KC.lilac} />
         <SVGF>
-          <g opacity={kprog(T, K.Eu + 2.0, K.Eu + 2.4)}><Monitor x={290} y={910} s={0.98} T={T} rotulo="IFS · física" color={KC.orange} /></g>
-          <g opacity={kprog(T, K.Eu + 2.5, K.Eu + 2.9)}><Monitor x={790} y={910} s={0.98} T={T} rotulo="AIFS · IA" color={KC.mint} ia /></g>
+          <g opacity={klerp(0.4, 1, kprog(T, K.Eu + 2.0, K.Eu + 2.4))}><Monitor x={290} y={940} s={1.15} T={T} rotulo="IFS · física" color={KC.orange} /></g>
+          <g opacity={klerp(0.4, 1, kprog(T, K.Eu + 2.5, K.Eu + 2.9))}><Monitor x={790} y={940} s={1.15} T={T} rotulo="AIFS · IA" color={KC.mint} ia /></g>
         </SVGF>
       </Escena>
-      <TarjetaEstudio T={T} at={K.Eu + 0.15} until={K.Eu + 1.8} anio="2025" quien="ECMWF · AIFS en operación" revista="25 de febrero de 2025" y={620} />
-      <Chip T={T} at={K.Eu + 2.4} until={K.O - 0.2} texto="lado a lado · desde el 25 feb 2025" x={640} y={560} tam={30} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Eu + 0.15} until={K.Eu + 1.8} anio="2025" quien="ECMWF · AIFS en operación" revista="25 de febrero de 2025" y={360} />
+      <Chip T={T} at={K.Eu + 2.4} until={K.O - 0.2} texto="lado a lado · desde el 25 feb 2025" x={540} y={1262} tam={34} borde={KC.ink} />
 
       {/* 9 · ojo: arrancan de mediciones */}
       <Escena T={T} a={K.O} b={K.C}>
         <FondoCircuito T={T} />
-        <SVGF>
-          <g opacity={kprog(T, K.O + 0.4, K.O + 0.8) * (1 - kprog(T, K.O + 4.3, K.O + 4.7))}><Satelite x={220} y={480} s={0.8} T={T} /></g>
-          <g opacity={kprog(T, K.O + 0.9, K.O + 1.3)}><Estacion x={540} y={640} s={0.85} T={T} /></g>
-          <g opacity={kprog(T, K.O + 2.2, K.O + 2.6)}><CajaFisica x={840} y={500} s={0.75} /></g>
-          <Flecha x1={250} y1={580} x2={460} y2={790} p={kprog(T, K.O + 1.4, K.O + 2.0)} color={KC.cyan} />
-          <Flecha x1={540} y1={660} x2={540} y2={770} p={kprog(T, K.O + 1.6, K.O + 2.1)} color={KC.cyan} />
-          <Flecha x1={820} y1={580} x2={630} y2={790} p={kprog(T, K.O + 2.6, K.O + 3.1)} color={KC.gold2} />
-          <g opacity={kprog(T, K.O + 2.0, K.O + 2.4)}><HojaMapa x={540} y={880} s={0.9} seed={11} /></g>
-          <Flecha x1={690} y1={880} x2={790} y2={880} p={kprog(T, K.O + 3.6, K.O + 4.0)} color={KC.yellow} />
-          <g opacity={kprog(T, K.O + 3.8, K.O + 4.2)}><ChipIA x={900} y={880} s={0.42} T={T} /></g>
-        </SVGF>
+        <SVGF><g transform="translate(0 170)">{/* vuelta de encuadre: todo baja 170 px */}
+          {/* pase a mano: el mismo esquema, más grande y sin que el satélite se apague */}
+          <g opacity={kprog(T, K.O + 0.05, K.O + 0.4)}><Satelite x={275} y={410} s={1.1} T={T} /></g>
+          <g opacity={kprog(T, K.O + 0.05, K.O + 0.4) * klerp(0.45, 1, kprog(T, K.O + 0.9, K.O + 1.3))}><Estacion x={560} y={730} s={1.4} T={T} /></g>
+          <g opacity={kprog(T, K.O + 2.2, K.O + 2.6)}><CajaFisica x={850} y={440} s={1.05} /></g>
+          <Flecha x1={310} y1={510} x2={400} y2={825} p={kprog(T, K.O + 1.4, K.O + 2.0)} color={KC.cyan} />
+          <Flecha x1={545} y1={760} x2={510} y2={825} p={kprog(T, K.O + 1.6, K.O + 2.1)} color={KC.cyan} />
+          <Flecha x1={850} y1={550} x2={620} y2={825} p={kprog(T, K.O + 2.6, K.O + 3.1)} color={KC.gold2} />
+          <g opacity={kprog(T, K.O + 2.0, K.O + 2.4)}><HojaMapa x={470} y={1010} s={1.6} seed={11} /></g>
+          <Flecha x1={708} y1={1010} x2={790} y2={1010} p={kprog(T, K.O + 3.6, K.O + 4.0)} color={KC.yellow} />
+          <g opacity={kprog(T, K.O + 3.8, K.O + 4.2)}><ChipIA x={915} y={1010} s={0.66} T={T} /></g>
+        </g></SVGF>
       </Escena>
-      <Chip T={T} at={K.O + 0.9} until={K.O + 4.6} texto="mediciones" x={540} y={400} tam={32} borde={KC.cyan} />
-      <MitoTachado T={T} at={K.O + 5.6} tacharEn={K.O + 6.6} until={K.C - 0.2} texto="«ya no hacen falta mediciones»" x={540} y={1060} tam={36} />
+      <Chip T={T} at={K.O + 0.9} until={K.C - 0.2} texto="mediciones" x={400} y={405} tam={36} borde={KC.cyan} />
+      <MitoTachado T={T} at={K.O + 5.6} tacharEn={K.O + 6.6} until={K.C - 0.2} texto="«ya no hacen falta mediciones»" x={540} y={1500} tam={44} />
 
       {/* 10 · cierre: el mismo pronóstico, en tu celular */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
         <SVGF>
-          <Celular T={T} x={540} y={930} s={0.75}>
+          <Celular T={T} x={540} y={880} s={1.45}>
             <text x={0} y={-300} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>Pronóstico · 10 días</text>
             <g transform="translate(-255 -220) scale(0.53)"><TiraClima T={T} x={0} y={0} w={960} rev={10} /></g>
-            <g transform="translate(-255 -40) scale(0.53)"><TiraClima T={T + 1} x={0} y={0} w={960} rev={10} fondo="#fff" /></g>
+            <g transform="translate(-255 -40) scale(0.53)"><TiraClima T={T + 1} x={0} y={0} w={960} rev={10} fondo="#1d2b4a" /></g>
             <g opacity={kprog(T, K.C + 2.4, K.C + 2.8)}>
               <rect x={-240} y={120} width={225} height={200} rx={24} fill="#2b3445" stroke={KC.ink} strokeWidth={6} />
               <text x={-128} y={190} textAnchor="middle" style={{ font:`900 20px ${KF.texto}` }} fill={KC.texto}>supercomputadora</text>

@@ -1,4 +1,4 @@
-# Publicación · Shot Festivo #04 · Día de Muertos · Científico: Tu calavera se está reconstruyendo
+# Publicación · Shot Festivo 04 · Día de Muertos · Científico: Tu calavera se está reconstruyendo
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Se publica el 2 nov 2026.
 
@@ -14,7 +14,7 @@ Dato: al nacer tenías unos 300 huesos; muchos se sueldan al crecer, y de adulto
 El dibujo es esquemático.
 Fuentes: NIAMS (NIH) · Walsh, Surgery 2017 (Univ. de Sheffield) · Cleveland Clinic.
 ¿Qué le pones a tu ofrenda este Día de Muertos? 👇
-Shot Festivo #04 · Día de Muertos · Científico · La Creación del Robert
+Shot Festivo 04 · Día de Muertos · Científico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #DiaDeMuertos #Huesos #CuerpoHumano
 ```
@@ -25,7 +25,7 @@ Esta calavera no es un adorno: eres tú por dentro, y se está reconstruyendo ah
 Tus huesos son tejido vivo: los osteoclastos disuelven hueso viejo y los osteoblastos ponen hueso nuevo. Siempre hay partes de tu esqueleto en obra: cada año se renueva entre el 5 y el 10 % de tu esqueleto adulto. Ahí guardas cerca del 99 % del calcio de tu cuerpo, y el hueso que trabaja se refuerza. Al nacer tenías unos 300 huesos; de adulto te quedan 206.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué le pones a tu ofrenda este Día de Muertos? 👇
-Shot Festivo #04 · Día de Muertos · Científico · La Creación del Robert
+Shot Festivo 04 · Día de Muertos · Científico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #DiaDeMuertos #Huesos #CuerpoHumano
 ```
@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu calavera se está reconstruyendo ahora mismo 💀 | Shot Festivo #04
+Tu calavera se está reconstruyendo ahora mismo 💀 | Shot Festivo 04
 ```
 Descripción:
 ```text
@@ -45,7 +45,7 @@ Fuentes:
 - Walsh JS. Normal bone physiology, remodelling and its hormonal regulation. Surgery 36(1):1–6 (2017), Univ. de Sheffield: https://eprints.whiterose.ac.uk/id/eprint/130926/
 - Cleveland Clinic, Osteoblasts and Osteoclasts: https://my.clevelandclinic.org/health/body/24871-osteoblasts-and-osteoclasts
 ¿Qué le pones a tu ofrenda este Día de Muertos? 👇
-Shot Festivo #04 · Día de Muertos · Científico · La Creación del Robert
+Shot Festivo 04 · Día de Muertos · Científico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #DiaDeMuertos #Huesos
 ```
@@ -54,7 +54,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esta calavera no es un adorno: eres tú por dentro, y se está reconstruyendo ahora mismo. 💀🦴 Unas células disuelven hueso viejo y otras ponen hueso nuevo: cada año se renueva entre el 5 y el 10 % de tu esqueleto adulto.
 ¿Qué le pones a tu ofrenda este Día de Muertos? 👇
-Shot Festivo #04 · Día de Muertos · Científico · La Creación del Robert
+Shot Festivo 04 · Día de Muertos · Científico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #DiaDeMuertos #Ciencia
 ```
@@ -65,7 +65,7 @@ Esta calavera no es un adorno: eres tú por dentro, y se está reconstruyendo ah
 El hueso es tejido vivo. Los osteoclastos disuelven hueso viejo y los osteoblastos depositan hueso nuevo en el mismo sitio: la remodelación ósea. Es un proceso continuo: cada año se renueva entre el 5 y el 10 % del esqueleto adulto (Walsh, Surgery, 2017, Universidad de Sheffield).
 Por qué importa: el esqueleto guarda cerca del 99 % del calcio del cuerpo y responde a la carga; el ejercicio con peso ayuda a mantenerlo fuerte. Entender este equilibrio es la base para prevenir y tratar la osteoporosis.
 ¿Qué otro "dato de Día de Muertos" del cuerpo humano te gustaría ver explicado?
-Shot Festivo #04 · Día de Muertos · Científico · La Creación del Robert
+Shot Festivo 04 · Día de Muertos · Científico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #DiaDeMuertos #SaludOsea #Biologia
 ```

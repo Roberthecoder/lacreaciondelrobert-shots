@@ -214,9 +214,12 @@ function HuellaShot() {
       {/* 5 · pregunta: ¿y si viene del rancho de al lado? */}
       <Escena T={T} a={K.P} b={K.Tr} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><text x={540} y={800} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 540 680)`}>?</text>
-          <Rancho x={270} y={1230} s={2.1} /><Taqueria x={800} y={1230} s={2} />
-          <path d="M 430 1262 Q 525 1330 615 1262" stroke={KC.ink} strokeWidth={7} strokeDasharray="14 10" fill="none" /></>)}
+        {/* belleza: el rancho y la taquería, grandes y al centro, sobre un panel oscuro que separa de las barras veladas
+            (antes caían encima de ellas y sus etiquetas se enciman) */}
+        {svg(<><rect x={40} y={740} width={1000} height={450} rx={40} fill="rgba(9,13,24,.92)" stroke="rgba(223,231,255,.25)" strokeWidth={4} opacity={kprog(T, K.P, K.P + 0.3)} />
+          <text x={540} y={960} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 540 900)`}>?</text>
+          <Rancho x={230} y={1070} s={1.9} /><Taqueria x={850} y={1070} s={1.8} />
+          <line x1={370} y1={1105} x2={700} y2={1105} stroke={KC.ink} strokeWidth={6} strokeDasharray="14 10" /></>)}
       </Escena>
       {/* 6 · transporte: casi nada; pesa la granja y el suelo */}
       <Escena T={T} a={K.Tr} b={K.Es}>
@@ -287,7 +290,7 @@ function HuellaShot() {
       <NumeroGigante T={T} at={K.F + 0.2} until={K.E - 0.15} valor={1.8} dec={1} dur={0.8} sufijo=" kg" etiqueta="1 kg de legumbres secas:" x={330} y={640} tam={150} color={KC.mint} />
       <Chip T={T} at={K.R + 0.6} until={K.P - 0.2} texto="kg de CO₂e por kilo · promedio mundial" x={540} y={1495} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.E + 0.4} until={K.P - 0.2} texto="queso · cerdo · pollo" x={330} y={700} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.P + 0.3} until={K.Tr - 0.2} texto="¿y si viene de al lado?" x={540} y={1440} tam={36} borde={KC.yellow} />
+      <Chip T={T} at={K.P + 0.3} until={K.Tr - 0.2} texto="¿y si viene de al lado?" x={540} y={1540} tam={36} borde={KC.yellow} />
       <Chip T={T} at={K.Tr + 1.9} until={K.Es - 0.2} texto="casi da igual de dónde viene" x={540} y={1440} tam={32} borde={KC.pink} />
       <Etq T={T} at={K.Tr + 4.0} until={K.Es - 0.2} x={245} y={520} texto="metano" tam={34} color={KC.ink} lado="der" />
       <Etq T={T} at={K.Tr + 4.6} until={K.Es - 0.2} x={590} y={850} texto="tierra desmontada" tam={28} color={KC.ink} lado="der" />

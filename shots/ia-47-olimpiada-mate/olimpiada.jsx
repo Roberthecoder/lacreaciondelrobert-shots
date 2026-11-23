@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #47 · La IA que sacó oro en la Olimpiada de Matemáticas (y el problema que no pudo) — NARRADO (N2 "El número" + N5 "El experimento").
 // Datos: imo-official.org (edición y resultados 2025), blog de Google DeepMind (21 jul 2025 y 25 jul 2024), hilo de A. Wei / OpenAI (19 jul 2025).
 // Ver guion.md y verificacion.md. Todo es esquemático.
@@ -28,7 +29,7 @@ function Pupitre({ x, y, s = 1, T = 0, quien = 'tu', escribe = true, brillo = 0,
 function HojaExamen({ x, y, s = 1, n, estado = '', p = 1, o = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`} opacity={o}>
     <rect x={-62} y={-82} width={124} height={164} rx={10} fill={estado === 'vacia' ? '#e9e4da' : '#fffdf6'} stroke={KC.ink} strokeWidth={6} />
-    <text x={0} y={-40} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>P{n}</text>
+    <text x={0} y={-40} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill="#0b1020">P{n}</text>
     {[0, 1, 2].map((i) => <line key={i} x1={-40} y1={-6 + i * 20} x2={40 - i * 12} y2={-6 + i * 20} stroke="#2b3a8a" strokeWidth={4} opacity={estado === 'vacia' ? 0.15 : 0.6} />)}
     {estado === 'ok' && p > 0 && <g transform={`translate(0 52) scale(${klerp(1.8, 1, p)})`} opacity={p}>
       <circle r={30} fill={KC.leaf} stroke={KC.ink} strokeWidth={5} />
@@ -50,10 +51,10 @@ function Reloj({ x, y, s = 1, T = 0, vueltas = 0.15, texto = '' }) {
   const a = T * 360 * vueltas;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <circle r={90} fill="#fffdf6" stroke={KC.ink} strokeWidth={9} />
-    {Array.from({ length: 12 }, (_, i) => <line key={i} x1={0} y1={-72} x2={0} y2={-60} stroke={KC.ink} strokeWidth={5} transform={`rotate(${i * 30})`} />)}
-    <line x1={0} y1={0} x2={0} y2={-44} stroke={KC.ink} strokeWidth={9} strokeLinecap="round" transform={`rotate(${a / 12})`} />
+    {Array.from({ length: 12 }, (_, i) => <line key={i} x1={0} y1={-72} x2={0} y2={-60} stroke="#0b1020" strokeWidth={5} transform={`rotate(${i * 30})`} />)}
+    <line x1={0} y1={0} x2={0} y2={-44} stroke="#0b1020" strokeWidth={9} strokeLinecap="round" transform={`rotate(${a / 12})`} />
     <line x1={0} y1={0} x2={0} y2={-66} stroke={KC.red} strokeWidth={6} strokeLinecap="round" transform={`rotate(${a})`} />
-    <circle r={9} fill={KC.ink} />
+    <circle r={9} fill="#0b1020" />
     {texto && <text y={140} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>{texto}</text>}
   </g>;
 }
@@ -80,14 +81,14 @@ function Juez({ x, y, s = 1, T = 0, k = 0, color = KC.lilac }) {
   return <g transform={`translate(${x} ${y + b}) scale(${s})`}>
     <path d="M -70 120 Q -70 40 0 40 Q 70 40 70 120 Z" fill={color} stroke={KC.ink} strokeWidth={7} />
     <circle cy={-10} r={52} fill="#f2c9a0" stroke={KC.ink} strokeWidth={7} />
-    <circle cx={-18} cy={-14} r={6} fill={KC.ink} /><circle cx={18} cy={-14} r={6} fill={KC.ink} />
-    <path d="M -16 14 Q 0 24 16 14" stroke={KC.ink} strokeWidth={5} fill="none" strokeLinecap="round" />
+    <circle cx={-18} cy={-14} r={6} fill="#0b1020" /><circle cx={18} cy={-14} r={6} fill="#0b1020" />
+    <path d="M -16 14 Q 0 24 16 14" stroke="#0b1020" strokeWidth={5} fill="none" strokeLinecap="round" />
     <path d="M -24 40 L 0 78 L 24 40" stroke={KC.blue} strokeWidth={8} fill="none" />
     <circle cy={88} r={18} fill={ORO} stroke={KC.ink} strokeWidth={5} />
     <g transform={`translate(78 ${-20 - Math.max(0, Math.sin(T * 2 + k)) * 18})`}>
       <line x1={0} y1={40} x2={0} y2={100} stroke={KC.ink} strokeWidth={8} />
       <rect x={-34} y={-6} width={68} height={56} rx={8} fill="#fff" stroke={KC.ink} strokeWidth={6} />
-      <text y={36} textAnchor="middle" style={{ font:`400 38px ${KF.titulo}` }} fill={KC.ink}>7</text>
+      <text y={36} textAnchor="middle" style={{ font:`400 38px ${KF.titulo}` }} fill="#0b1020">7</text>
     </g>
   </g>;
 }
@@ -98,10 +99,10 @@ function Estudiante({ x, y, s = 1, T = 0, k = 0, medalla = PLATA, playera = KC.l
     <path d="M -58 130 Q -58 50 0 50 Q 58 50 58 130 Z" fill={playera} stroke={KC.ink} strokeWidth={6} />
     <circle cy={0} r={46} fill="#c98d5e" stroke={KC.ink} strokeWidth={6} />
     <path d="M -46 -8 Q -40 -52 0 -50 Q 40 -52 46 -8 Q 30 -30 0 -30 Q -30 -30 -46 -8 Z" fill="#2a1d14" />
-    <circle cx={-15} cy={4} r={5} fill={KC.ink} /><circle cx={15} cy={4} r={5} fill={KC.ink} />
-    <path d="M -14 22 Q 0 32 14 22" stroke={KC.ink} strokeWidth={4} fill="none" strokeLinecap="round" />
-    <path d="M -20 50 L 0 84 L 20 50" stroke={KC.red} strokeWidth={7} fill="none" />
-    <circle cy={98} r={20} fill={medalla} stroke={KC.ink} strokeWidth={5} />
+    <circle cx={-15} cy={4} r={5} fill="#0b1020" /><circle cx={15} cy={4} r={5} fill="#0b1020" />
+    <path d="M -14 22 Q 0 32 14 22" stroke="#0b1020" strokeWidth={4} fill="none" strokeLinecap="round" />
+    {medalla && <><path d="M -20 50 L 0 84 L 20 50" stroke={KC.red} strokeWidth={7} fill="none" />
+    <circle cy={98} r={20} fill={medalla} stroke={KC.ink} strokeWidth={5} /></>}
   </g>;
 }
 // Problema 6: cuadrícula con mosaicos rectangulares y un hueco por fila y columna (esquemático).
@@ -110,7 +111,7 @@ function CuadriculaP6({ x, y, s = 1, T = 0, p = 1 }) {
   const tiles = [[0,0,2,1],[3,0,2,2],[6,0,2,1],[0,1,1,3],[1,2,3,1],[5,1,1,2],[7,1,2,2],[1,3,1,2],[2,4,2,1],[5,3,3,1],[8,3,1,3],[0,5,4,1],[5,4,2,2],[0,6,1,3],[1,6,3,1],[4,6,2,2],[7,6,1,3],[2,7,2,2],[8,7,1,2],[1,8,1,1],[4,8,2,1],[6,5,2,1]];
   const cols = [KC.cyan, KC.pink, KC.mint, KC.yellow, KC.lilac, KC.orange];
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-8} y={-8} width={n * c + 16} height={n * c + 16} rx={12} fill="#fffdf6" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-8} y={-8} width={n * c + 16} height={n * c + 16} rx={12} fill="#ece6d8" stroke={KC.ink} strokeWidth={8} />
     {Array.from({ length: n + 1 }, (_, i) => <g key={i}><line x1={i * c} y1={0} x2={i * c} y2={n * c} stroke="#cfc8bb" strokeWidth={2} /><line x1={0} y1={i * c} x2={n * c} y2={i * c} stroke="#cfc8bb" strokeWidth={2} /></g>)}
     {tiles.map(([tx, ty, w, h], i) => { const e = kclamp(p * tiles.length - i, 0, 1);
       return <rect key={i} x={tx * c + 5} y={ty * c + 5} width={w * c - 10} height={h * c - 10} rx={8} fill={cols[i % cols.length]} stroke={KC.ink} strokeWidth={5} opacity={e} transform={`translate(0 ${(1 - e) * -20})`} />; })}
@@ -162,22 +163,36 @@ function Concursantes({ T, x = 90, y = 560, paso = 30, apaga = 0, oro = 0, sube 
 
 // Los 72 oros de 2025: 26 con más de 35 puntos suben arriba de la línea; 46 con 35 exactos (empate con las IA) se quedan.
 function Oros({ T, p = 1, sube = 0 }) {
-  const out = [], paso = 64, x0 = 156;
+  const out = [], paso = 76, x0 = 84;
   for (let i = 0; i < 72; i++) {
     const top = i < 26, j = top ? i : i - 26;
     const c = j % 12, r = Math.floor(j / 12);
-    const yJunto = 600 + Math.floor(i / 12) * paso, yFin = top ? 560 + r * paso : 880 + r * paso;
+    const yJunto = 700 + Math.floor(i / 12) * paso, yFin = top ? 630 + r * paso : 1010 + r * paso;
     const cy = klerp(yJunto, yFin, sube), e = kclamp(p * 72 - i * 0.6, 0, 1);
-    out.push(<circle key={i} cx={x0 + c * paso + paso / 2} cy={cy} r={24 * e} fill={top && sube > 0.5 ? KC.mint : ORO} stroke={KC.ink} strokeWidth={4} />);
+    out.push(<circle key={i} cx={x0 + c * paso + paso / 2} cy={cy} r={29 * e} fill={top && sube > 0.5 ? KC.mint : ORO} stroke={KC.ink} strokeWidth={4} />);
   }
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
     {out}
     <g opacity={sube}>
-      <line x1={120} y1={800} x2={960} y2={800} stroke={KC.texto} strokeWidth={6} strokeDasharray="18 12" />
-      <text x={130} y={785} style={{ font:`900 40px ${KF.texto}` }} fill={KC.mint}>más de 35 puntos: 26</text>
-      <text x={130} y={850} style={{ font:`900 40px ${KF.texto}` }} fill={ORO}>35 exactos, como las IA: 46</text>
+      <line x1={84} y1={900} x2={996} y2={900} stroke={KC.texto} strokeWidth={6} strokeDasharray="18 12" />
+      <text x={94} y={880} style={{ font:`900 46px ${KF.texto}` }} fill={KC.mint}>más de 35 puntos: 26</text>
+      <text x={94} y={952} style={{ font:`900 46px ${KF.texto}` }} fill={ORO}>35 exactos, como las IA: 46</text>
     </g>
   </svg>;
+}
+
+// Salón del examen (gancho y cierre): tú y la IA en pupitres que llenan el cuadro, reloj de pared y piso.
+function Salon({ T, cierre = false, brillo = 0 }) {
+  return <g transform="translate(0 60)">
+    <rect x={-300} y={1345} width={1680} height={800} fill="#0c1322" />
+    <line x1={-300} y1={1345} x2={1380} y2={1345} stroke="rgba(223,231,255,.2)" strokeWidth={5} />
+    <Reloj x={540} y={455} s={1.2} T={T} vueltas={0.15} />
+    <Estudiante x={262} y={842} s={1.9} T={cierre ? T : T * 0.5} medalla={null} playera={KC.pink} />
+    <Robotito x={818} y={918} s={1.3} T={T} cara={cierre ? 'duda' : 'seguro'} />
+    <Pupitre x={262} y={1080} s={1.3} T={T} quien="tu" etiqueta={cierre ? 'P6' : 'P1'} brillo={brillo} />
+    <Pupitre x={818} y={1080} s={1.3} T={T + 0.4} quien="ia" escribe={!cierre} etiqueta={cierre ? 'P6' : 'P1'} />
+    <text x={540} y={1010} textAnchor="middle" style={{ font:`400 140px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={6}>VS</text>
+  </g>;
 }
 
 function Olimpiada() {
@@ -195,33 +210,28 @@ function Olimpiada() {
       <Escena T={T} a={K.G} b={K.Ex}>
         <FondoLunares color={KC.yellow} />
         <div style={{ opacity: 1 - kprog(T, K.G + 4.4, K.G + 5.0) }}>
-          {svg(<>
-            <Pupitre x={280} y={940} s={1} T={T} quien="tu" />
-            <Robotito x={790} y={815} s={0.85} T={T} cara="seguro" />
-            <Pupitre x={790} y={940} s={1} T={T + 0.4} quien="ia" />
-            <text x={540} y={960} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={6}>VS</text>
-          </>)}
+          {svg(<Salon T={T} />)}
         </div>
         <Concursantes T={T} o={kprog(T, K.G + 4.6, K.G + 5.2)} y={600} apaga={kprog(T, K.G + 6.4, K.G + 9.2, kEase.suave)} oro={kprog(T, K.G + 8.6, K.G + 9.4)} />
       </Escena>
-      <Chip T={T} at={K.G + 0.2} until={K.G + 4.4} texto="TÚ" x={280} y={700} tam={52} borde={KC.ink} />
-            <Chip T={T} at={K.G + 1.2} until={K.G + 4.4} texto="IMO 2025" x={270} y={480} tam={48} borde={KC.gold} />
-      <NumeroGigante T={T} at={K.G + 5.2} until={K.Ex - 0.2} valor={558} dur={1.6} etiqueta="" x={420} y={430} tam={170} color={KC.white} />
-      <Chip T={T} at={K.G + 5.6} until={K.Ex - 0.2} texto="de 630 concursantes" x={420} y={545} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.G + 0.2} until={K.G + 4.4} texto="TÚ" x={262} y={715} tam={52} borde={KC.ink} />
+            <Chip T={T} at={K.G + 1.2} until={K.G + 4.4} texto="IMO 2025" x={540} y={310} tam={48} borde={KC.gold} />
+      <NumeroGigante T={T} at={K.G + 5.2} until={K.Ex - 0.2} valor={558} dur={1.6} etiqueta="" x={540} y={420} tam={170} color={KC.white} />
+      <Chip T={T} at={K.G + 5.6} until={K.Ex - 0.2} texto="de 630 concursantes" x={540} y={540} tam={36} borde={KC.ink} />
 
       {/* 2 · el examen */}
       <Escena T={T} a={K.Ex} b={K.Ge}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Australia x={70} y={430} s={0.82} T={T} pin={kprog(T, K.Ex + 0.6, K.Ex + 1.0, kEase.rebote)} />
-          <SeisHojas T={T} x={120} y={1030} paso={168} s={0.85} estados={['', '', '', '', '', '']} tiempos={[0, 1, 2, 3, 4, 5].map((i) => K.Ex + 1.6 + i * 0.18)} />
+          <Australia x={143} y={340} s={1.05} T={T} pin={kprog(T, K.Ex + 0.6, K.Ex + 1.0, kEase.rebote)} />
+          <SeisHojas T={T} x={130} y={1340} paso={164} s={1.0} estados={['', '', '', '', '', '']} tiempos={[0, 1, 2, 3, 4, 5].map((i) => K.Ex + 1.6 + i * 0.18)} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.Ex + 0.9} until={K.Ge - 0.2} texto="Sunshine Coast, Australia · jul 2025" x={440} y={430} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.Ex + 0.9} until={K.Ge - 0.2} texto="Sunshine Coast, Australia · jul 2025" x={560} y={270} tam={34} borde={KC.red} />
       <Escena T={T} a={K.Ex + 3.0} b={K.Ge}>
         {svg(<>
-          <g transform="translate(0 0)"><Reloj x={760} y={760} s={0.8} T={T} vueltas={0.6} texto="4 h 30" /></g>
-          <Reloj x={960} y={760} s={0.8} T={T + 2} vueltas={0.6} texto="× 2" />
+          <g transform="translate(0 0)"><Reloj x={250} y={1040} s={0.9} T={T} vueltas={0.6} texto="4 h 30" /></g>
+          <Reloj x={480} y={1040} s={0.9} T={T + 2} vueltas={0.6} texto="× 2" />
         </>)}
       </Escena>
 
@@ -229,31 +239,31 @@ function Olimpiada() {
       <Escena T={T} a={K.Ge} b={K.Op}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <Robotito x={270} y={600} s={0.9} T={T} cara={T > K.Ge + 4 ? 'feliz' : 'seguro'} color={KC.cyan} />
-          <SeisHojas T={T} x={120} y={1040} paso={168} s={0.85} estados={['ok', 'ok', 'ok', 'ok', 'ok', 'vacia']} tiempos={[...tiemposGe, K.Ge + 4.2]} />
+          <Robotito x={300} y={770} s={1.35} T={T} cara={T > K.Ge + 4 ? 'feliz' : 'seguro'} color={KC.cyan} />
+          <SeisHojas T={T} x={130} y={1290} paso={164} s={1.0} estados={['ok', 'ok', 'ok', 'ok', 'ok', 'vacia']} tiempos={[...tiemposGe, K.Ge + 4.2]} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.Ge + 0.3} until={L3 - 0.1} texto="Gemini Deep Think · Google DeepMind" x={540} y={840} tam={32} borde={KC.cyan} />
-      <Marcador T={T} at={K.Ge + 0.6} until={L3 - 0.1} valor={puntosGe} x={720} y={560} />
-      <Chip T={T} at={K.Ge + 4.0} until={L3 - 0.1} texto="corte de oro 2025: 35" x={720} y={700} tam={32} borde={ORO} />
-      <Sello T={T} at={L3 + 0.1} until={K.Op - 0.2} texto={<>CALIFICADO POR<br />LA OLIMPIADA ✔</>} x={600} y={775} tam={42} />
+      <Chip T={T} at={K.Ge + 0.3} until={K.Op - 0.2} texto="Gemini Deep Think · Google DeepMind" x={540} y={420} tam={34} borde={KC.cyan} />
+      <Marcador T={T} at={K.Ge + 0.6} until={K.Op - 0.2} valor={puntosGe} x={770} y={720} tam={170} />
+      <Chip T={T} at={K.Ge + 4.0} until={K.Op - 0.2} texto="corte de oro 2025: 35" x={770} y={870} tam={32} borde={ORO} />
+      <Sello T={T} at={L3 + 0.1} until={K.Op - 0.2} texto={<>CALIFICADO POR<br />LA OLIMPIADA ✔</>} x={540} y={1075} tam={46} />
 
       {/* 4 · OpenAI: mismo puntaje, calificación no oficial */}
       <Escena T={T} a={K.Op} b={K.P}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <Robotito x={540} y={590} s={0.8} T={T} cara="feliz" color={NARANJA_IA} />
-          {[0, 1, 2].map((k) => <g key={k} opacity={kprog(T, K.Op + 1.6 + k * 0.25, K.Op + 1.9 + k * 0.25)}><Juez x={260 + k * 280} y={950} s={0.95} T={T} k={k} color={[KC.pink, KC.yellow, KC.cyan][k]} /></g>)}
+          <Robotito x={540} y={710} s={1.2} T={T} cara="feliz" color={NARANJA_IA} />
+          {[0, 1, 2].map((k) => <g key={k} opacity={klerp(0.3, 1, kprog(T, K.Op + 1.6 + k * 0.25, K.Op + 1.9 + k * 0.25))}><Juez x={205 + k * 320} y={1120} s={1.3} T={T} k={k} color={[KC.pink, KC.yellow, KC.cyan][k]} /></g>)}
         </>)}
       </Escena>
-      <Chip T={T} at={K.Op + 0.3} until={K.P - 0.2} texto="IA experimental de OpenAI: 35 / 42" x={540} y={400 + 30} tam={34} borde={NARANJA_IA} />
-      <Chip T={T} at={K.Op + 2.0} until={K.P - 0.2} texto="3 exmedallistas" x={540} y={1150} tam={36} borde={KC.ink} />
-      <Sello T={T} at={K.Op + 3.2} until={K.P - 0.2} texto="NO OFICIAL" x={800} y={720} color="#6b6b6b" tam={46} rot={10} />
+      <Chip T={T} at={K.Op + 0.3} until={K.P - 0.2} texto="IA experimental de OpenAI: 35 / 42" x={540} y={400} tam={36} borde={NARANJA_IA} />
+      <Chip T={T} at={K.Op + 2.0} until={K.P - 0.2} texto="3 exmedallistas" x={540} y={1370} tam={38} borde={KC.ink} />
+      <Sello T={T} at={K.Op + 3.2} until={K.P - 0.2} texto="NO OFICIAL" x={790} y={915} color="#6b6b6b" tam={50} rot={10} />
 
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.H} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>)}
+        {svg(<text x={540} y={1100} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 920)`}>?</text>)}
       </Escena>
 
       {/* 6 · los humanos: 72 oros, 26 por encima */}
@@ -261,69 +271,64 @@ function Olimpiada() {
         <FondoLunares color={KC.violet} punto="rgba(255,255,255,.08)" />
         <Oros T={T} p={kprog(T, K.H + 0.2, K.H + 0.9)} sube={kprog(T, K.H + 1.8, K.H + 2.6, kEase.sale)} />
 </Escena>
-      <NumeroGigante T={T} at={K.H + 0.2} until={K.A - 0.2} valor={72} dur={0.6} sufijo=" oros" x={330} y={430} tam={120} color={ORO} />
+      <NumeroGigante T={T} at={K.H + 0.2} until={K.A - 0.2} valor={72} dur={0.6} sufijo=" oros" x={540} y={430} tam={140} color={ORO} />
       
       {/* 7 · un año antes: nivel plata */}
       <Escena T={T} a={K.A} b={K.Mx}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <Reloj x={240} y={880} s={1.0} T={T} vueltas={3} texto="hasta 3 días" />
-          <g opacity={kprog(T, K.A + 3.2, K.A + 3.7)}>
+          <Reloj x={540} y={740} s={1.45} T={T} vueltas={3} texto="hasta 3 días" />
+          <g opacity={klerp(0.3, 1, kprog(T, K.A + 3.2, K.A + 3.7))} transform="translate(540 1200) scale(1.6) translate(-740 -945)">
             <rect x={470} y={830} width={540} height={230} rx={18} fill="#10131a" stroke={KC.ink} strokeWidth={8} />
             {['theorem p :', '  ∀ n, … :=', 'by', '  intro n …'].map((l, i) => <text key={i} x={500} y={885 + i * 48} style={{ font:`700 34px ${KF.mono}` }} fill={i === 2 ? KC.pink : KC.mint} opacity={kprog(T, K.A + 3.5 + i * 0.25, K.A + 3.7 + i * 0.25)}>{l}</text>)}
           </g>
         </>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.A + 0.2} until={K.Mx - 0.2} anio="2024" quien="AlphaProof + AlphaGeometry 2" revista="Google DeepMind · 28 / 42 · nivel plata" y={560} />
-      <Chip T={T} at={K.A + 3.6} until={K.Mx - 0.2} texto="traducidos a mano (Lean)" x={740} y={790} tam={28} borde={KC.mint} />
+      <TarjetaEstudio T={T} at={K.A + 0.2} until={K.Mx - 0.2} anio="2024" quien="AlphaProof + AlphaGeometry 2" revista="Google DeepMind · 28 / 42 · nivel plata" y={370} />
+      <Chip T={T} at={K.A + 3.6} until={K.Mx - 0.2} texto="traducidos a mano (Lean)" x={740} y={1010} tam={30} borde={KC.mint} />
 
       {/* 8 · México */}
       <Escena T={T} a={K.Mx} b={K.S}>
-        <div style={{ position:'absolute', inset:0, background:`linear-gradient(90deg, #0b8a4a 0 33.3%, #f4efe4 33.3% 66.6%, #ce1126 66.6% 100%)` }} />
-        {svg(<>{[PLATA, PLATA, BRONCE, BRONCE, BRONCE, BRONCE].map((m, i) => <g key={i} opacity={kprog(T, K.Mx + 0.3 + i * 0.15, K.Mx + 0.6 + i * 0.15)}>
-          <Estudiante x={300 + (i % 3) * 260} y={770 + Math.floor(i / 3) * 240} s={1.05} T={T} k={i} medalla={m} playera={i % 2 ? KC.leaf : '#ffffff'} /></g>)}</>)}
+        <div style={{ position:'absolute', inset:0, background:`linear-gradient(90deg, #0a4a2c 0 33.3%, #343b4c 33.3% 66.6%, #5c0f1d 66.6% 100%)` }} />
+        {svg(<>{[PLATA, PLATA, BRONCE, BRONCE, BRONCE, BRONCE].map((m, i) => <g key={i} opacity={kprog(T, K.Mx + i * 0.1, K.Mx + 0.3 + i * 0.1)}>
+          <Estudiante x={220 + (i % 3) * 320} y={770 + Math.floor(i / 3) * 390} s={1.5} T={T} k={i} medalla={m} playera={i % 2 ? KC.leaf : '#ffffff'} /></g>)}</>)}
       </Escena>
-      <Chip T={T} at={K.Mx + 0.2} until={K.S - 0.2} texto="México · IMO 2025" x={660} y={460} tam={44} borde={KC.leaf} />
+      <Chip T={T} at={K.Mx + 0.2} until={K.S - 0.2} texto="México · IMO 2025" x={540} y={500} tam={46} borde={KC.leaf} />
       
       {/* 9 · el problema seis */}
       <Escena T={T} a={K.S} b={K.Ma}>
         <FondoLunares color={KC.noche} punto="rgba(255,255,255,.06)" />
         {svg(<>
-          <g opacity={1 - 0.75 * kprog(T, K.S + 2.5, K.S + 2.9)}><CuadriculaP6 x={250} y={470} s={0.9} T={T} p={kprog(T, K.S + 0.3, K.S + 2.4, kEase.suave)} /></g>
-          <Robotito x={240} y={1110} s={0.55} T={T} cara="duda" color={KC.cyan} />
-          <Robotito x={840} y={1110} s={0.55} T={T + 1} cara="duda" color={NARANJA_IA} />
+          <g opacity={1 - 0.75 * kprog(T, K.S + 2.5, K.S + 2.9)}><CuadriculaP6 x={166} y={430} s={1.3} T={T} p={kprog(T, K.S + 0.3, K.S + 2.4, kEase.suave)} /></g>
+          <Robotito x={250} y={1375} s={0.85} T={T} cara="duda" color={KC.cyan} />
+          <Robotito x={830} y={1375} s={0.85} T={T + 1} cara="duda" color={NARANJA_IA} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.S + 0.2} until={K.Ma - 0.2} texto="2025 · problema 6" x={540} y={420} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.S + 1.0} until={K.Ma - 0.2} texto="IA: 0" x={540} y={1110} tam={40} borde={KC.red} />
-      <NumeroGigante T={T} at={K.S + 2.8} until={K.Ma - 0.2} valor={6} dur={0.5} sufijo=" de 630" etiqueta="lo resolvieron completo:" x={540} y={760} tam={120} color={KC.mint} />
+      <Chip T={T} at={K.S + 0.2} until={K.Ma - 0.2} texto="2025 · problema 6" x={540} y={350} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.S + 1.0} until={K.Ma - 0.2} texto="IA: 0" x={540} y={1380} tam={48} borde={KC.red} />
+      <NumeroGigante T={T} at={K.S + 2.8} until={K.Ma - 0.2} valor={6} dur={0.5} sufijo=" de 630" etiqueta="lo resolvieron completo:" x={540} y={790} tam={150} color={KC.mint} />
 
       {/* 10 · el matiz */}
       <Escena T={T} a={K.Ma} b={K.C}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<>
-          <Puerta x={290} y={880} s={0.95} abre={kprog(T, K.Ma + 0.6, K.Ma + 1.4, kEase.sale)} color={KC.leaf} T={T}>
+          <Puerta x={275} y={900} s={1.5} abre={kprog(T, K.Ma + 0.6, K.Ma + 1.4, kEase.sale)} color={KC.leaf} T={T}>
             <path d="M -40 -40 a 30 30 0 1 1 1 0 M -40 -10 L -40 110 M -40 70 L -10 70 M -40 100 L -16 100" stroke={ORO} strokeWidth={14} fill="none" strokeLinecap="round" />
           </Puerta>
-          <Puerta x={790} y={880} s={0.95} abre={kprog(T, K.Ma + 2.2, K.Ma + 3.0, kEase.sale) * 0.6} color={KC.violet} dentro="#14162a" T={T}>
+          <Puerta x={805} y={900} s={1.5} abre={kprog(T, K.Ma + 2.2, K.Ma + 3.0, kEase.sale) * 0.6} color={KC.violet} dentro="#14162a" T={T}>
             {[0, 1, 2].map((k) => <text key={k} x={-60 + k * 60} y={20 + Math.sin(T * 3 + k) * 20} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.lilac}>?</text>)}
           </Puerta>
         </>)}
       </Escena>
-      <Chip T={T} at={K.Ma + 0.4} until={K.C - 0.2} texto="olimpiada: la solución existe" x={290} y={1140} tam={28} borde={KC.leaf} />
-      <Chip T={T} at={K.Ma + 2.0} until={K.C - 0.2} texto="investigación: nadie la sabe" x={790} y={1140} tam={28} borde={KC.violet} />
+      <Chip T={T} at={K.Ma + 0.4} until={K.C - 0.2} texto="olimpiada: la solución existe" x={275} y={1275} tam={26} borde={KC.leaf} />
+      <Chip T={T} at={K.Ma + 2.0} until={K.C - 0.2} texto="investigación: nadie la sabe" x={805} y={1275} tam={26} borde={KC.violet} />
 
       {/* 11 · cierre: los mismos pupitres; tú con el problema seis */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>
-          <Pupitre x={280} y={940} s={1} T={T} quien="tu" etiqueta="P6" brillo={kprog(T, K.C + 2.2, K.C + 3.0)} />
-          <Robotito x={790} y={815} s={0.85} T={T} cara="duda" />
-          <Pupitre x={790} y={940} s={1} T={T + 0.4} quien="ia" escribe={false} etiqueta="P6" />
-          <text x={540} y={960} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={6}>VS</text>
-        </>)}
+        {svg(<Salon T={T} cierre brillo={kprog(T, K.C + 2.2, K.C + 3.0)} />)}
       </Escena>
-      <Chip T={T} at={K.C + 0.4} until={K.Ou} texto="2025: top 26 … o el problema 6" x={360} y={480} tam={34} borde={ORO} />
+      <Chip T={T} at={K.C + 0.4} until={K.Ou} texto="2025: top 26 … o el problema 6" x={540} y={310} tam={38} borde={ORO} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ex - 0.1} texto="Tú contra la IA: *superó a 558 de 630.*" />

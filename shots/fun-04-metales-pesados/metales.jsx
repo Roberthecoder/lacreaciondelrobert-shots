@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Fungi Mati #04 · ¿Los hongos tienen metales pesados? — NARRADA (N1 "Por dentro" + N2) y MUDO (M2 "¿Por qué NO…?").
 // Guion y fuentes: guion.md. El dibujo es esquemático; las partículas de metal NO están a escala (son átomos).
 const AVS = (n) => 'assets/stickers/' + n + '.png';
@@ -53,7 +54,7 @@ function Olla({ T, x, y, s = 1, hierve = 1, agua = '#7fd6ff', children }) {
 function Paisaje({ T, carretera = 1, mina = 0, fondo = KC.cyan, carros = 4, polvo = 0 }) {
   const sup = MUNDO_SUELO.sup;
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-    {mina > 0 && <g opacity={mina}><rect x={70} y={640} width={90} height={400} fill="#6b6f7a" stroke={KC.ink} strokeWidth={7} />
+    {mina > 0 && <g opacity={mina} transform="translate(115 1040) scale(1.5) translate(-115 -1040)"><rect x={70} y={640} width={90} height={400} fill="#6b6f7a" stroke={KC.ink} strokeWidth={7} />
       {Array.from({ length: 6 }, (_, i) => { const u = ((T * 0.3 + i / 6) % 1); return <circle key={i} cx={115 + u * 160} cy={620 - u * 300} r={30 + u * 50} fill="#9b9ea8" opacity={(1 - u) * 0.8} />; })}</g>}
     {carretera > 0 && <g opacity={carretera}>
       <rect x={-20} y={1040} width={KW + 40} height={110} fill="#4a4d55" stroke={KC.ink} strokeWidth={7} />
@@ -73,7 +74,8 @@ function MetalesNarrado() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, Mi: CUES.Micelio, R: CUES.Riesgo, L: CUES.Lugar, Cu: CUES.Cultivo, P: CUES.Pregunta, E: CUES.Estudio, D: CUES.Digestion, Li: CUES.Limpia, Ci: CUES.Cierre, O: CUES.Outro };
   const FIN = K.O + 4, sup = MUNDO_SUELO.sup;
-  const keysG = [{ t: K.G, x: 540, y: 960, z: 1 }, { t: K.Mi - 0.4, x: 540, y: 960, z: 1.04 }, { t: K.Mi + 1.2, x: 560, y: 1080, z: 1.7 }, { t: K.R, x: 560, y: 1100, z: 1.8 }];
+  const keysG = [{ t: K.G, x: 560, y: 1075, z: 1.5 }, { t: K.Mi - 0.4, x: 560, y: 1080, z: 1.56 }, { t: K.Mi + 1.2, x: 560, y: 1085, z: 1.8 }, { t: K.R, x: 560, y: 1100, z: 1.9 }];
+  const keysC = [{ t: K.Ci, x: 560, y: 1075, z: 1.5 }, { t: FIN, x: 560, y: 1075, z: 1.5 }];
   const cG = camaraEn(T, keysG);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -89,39 +91,45 @@ function MetalesNarrado() {
         </Camara>
         <Escala T={T} z={cG.z} pxPorMm={PX} />
       </Escena>
-      {/* 2 · tres cosas */}
-      <Escena T={T} a={K.R} b={K.L} fondo={KC.yellow}>
-        <div style={fondoPuntos(KC.yellow)}></div>
-        {['la especie', 'el lugar', 'cuánto comes'].map((t, i) => { const e = kentrada(T, K.R + 0.4 + i * 0.9, null, 'pop'); if (T < K.R + 0.4 + i * 0.9) return null;
-          return <div key={i} style={{ position:'absolute', left:110, top:440 + i * 230, width:840, height:190, boxSizing:'border-box', opacity:e.o, transform:`scale(${e.s}) rotate(${(i % 2 ? 1.5 : -1.5) + mece(T, i, 0.2)}deg)`,
-            background:KC.paper, border:`7px solid ${KC.ink}`, borderRadius:30, boxShadow:`12px 12px 0 ${KC.ink}`, display:'flex', alignItems:'center', gap:30, padding:'0 40px' }}>
-            <div style={{ font:`400 120px/1 ${KF.titulo}`, color:KC.red, WebkitTextStroke:`4px ${KC.ink}` }}>{i + 1}</div>
-            <div style={{ font:`900 64px ${KF.texto}`, color:KC.ink }}>{t}</div>
-          </div>; })}
+      {/* 2 · tres cosas, dibujadas: la especie (dos hongos distintos), el lugar (el suelo) y cuánto comes (el plato) */}
+      <Escena T={T} a={K.R} b={K.L} zoom={0.03}>
+        <MundoSuelo T={T} red={1} brillo={kprog(T, K.R + 1.3, K.R + 2)} ox={360} cielo={KC.yellow} escala={0.21}>
+          <Boleto x={360} y={sup + 4} s={1.9} rot={mece(T, 2, 0.15) * 1.2} />
+          {T >= K.R + 0.4 && (() => { const e = kentrada(T, K.R + 0.4, null, 'pop'); return <g opacity={e.o} transform={`translate(810 ${sup + 4}) scale(${e.s})`}><Rebozuelo x={0} y={0} s={1.4} rot={mece(T, 5, 0.18) * 2} /></g>; })()}
+          {T >= K.R + 1.3 && Array.from({ length: 12 }, (_, i) => <Metal key={i} x={90 + (i * 197) % 900} y={sup + 110 + (i * 83) % 330 + mece(T, i, 0.4) * 5} k={i} r={17} o={kprog(T, K.R + 1.3 + i * 0.04, K.R + 1.7 + i * 0.04)} />)}
+          {T >= K.R + 2.2 && (() => { const e = kentrada(T, K.R + 2.2, null, 'pop'); return <g opacity={e.o} transform={`translate(800 640) scale(${e.s})`}>
+            <ellipse cx={0} cy={6} rx={185} ry={42} fill="#cfd6e4" stroke={KC.ink} strokeWidth={6} /><ellipse cx={0} cy={2} rx={136} ry={27} fill="#aeb7c9" />
+            {[-95, 0, 95].map((dx, i) => { const u = kprog(T, K.R + 2.3 + i * 0.3, K.R + 2.6 + i * 0.3, kEase.sale); return u > 0 ? <g key={i} opacity={u} transform={`translate(${dx} ${-(1 - u) * 60})`}><Boleto x={0} y={4} s={0.52} rot={(i - 1) * 7} /></g> : null; })}
+          </g>; })()}
+        </MundoSuelo>
       </Escena>
       {/* 3 · junto a minas, fundidoras y carreteras */}
       <Escena T={T} a={K.L} b={K.Cu} zoom={0.03}>
-        <MundoSuelo T={T} red={1} ox={760} cielo={KC.lilac} />
-        <Paisaje T={T} carretera={kprog(T, K.L + 0.3, K.L + 0.8)} mina={kprog(T, K.L, K.L + 0.5)} polvo={kprog(T, K.L + 1, K.L + 2)} carros={3} />
+        <MundoSuelo T={T} red={1} ox={720} cielo={KC.lilac} escala={0.21} />
+        <Paisaje T={T} carretera={1} mina={1} polvo={kprog(T, K.L + 1, K.L + 2)} carros={3} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Boleto x={760} y={sup + 4} s={1.2} tinte={kprog(T, K.L + 1.5, K.L + 4)} />
-          <MetalesSuben T={T} x={760} sup={sup} alto={230} n={30} p={1} r={13} />
+          <Boleto x={720} y={sup + 4} s={2} rot={mece(T, 2, 0.15) * 1.2} tinte={kprog(T, K.L + 1.5, K.L + 4)} />
+          <MetalesSuben T={T} x={720} sup={sup} alto={400} n={30} p={1} ancho={420} r={17} />
         </svg>
         <Medidor T={T} at={K.L + 0.8} until={K.Cu - 0.2} etiqueta="METALES EN EL HONGO" valor={(t) => 0.25 + 0.7 * kprog(t, K.L + 1.5, K.L + 4.2)} texto={(v) => (v > 0.7 ? 'muy alto' : 'subiendo')} y={330} color={KC.red} />
       </Escena>
       {/* 4 · cultivados: sustrato controlado */}
       <Escena T={T} a={K.Cu} b={K.P} fondo={KC.mint}>
-        <div style={fondoPuntos(KC.mint)}></div>
+        <FondoMarca color={KC.mint} T={T} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+          <g>
           {[250, 720].map((x, i) => <g key={i}><BolsaCultivo T={T} x={x} y={1020} w={340} h={520} col={1} seed={i + 4} />
             <RacimoOstra T={T} x={x + 110} y={880} s={1.1} abre={kprog(T, K.Cu + 0.4 + i * 0.4, K.Cu + 2 + i * 0.4)} n={6} color="#d8dde3" oscuro="#9aa4ae" seed={i + 2} /></g>)}
+          </g>
         </svg>
         <Medidor T={T} at={K.Cu + 0.8} until={K.P - 0.2} etiqueta="METALES EN EL HONGO" valor={(t) => 0.6 - 0.45 * kprog(t, K.Cu + 1, K.Cu + 3)} texto={(v) => (v < 0.3 ? 'bajo' : 'bajando')} y={330} color={KC.mint} />
       </Escena>
       {/* 5-6 · ¿y si los hierves? el estudio de Polonia (2017) */}
-      <Escena T={T} a={K.P} b={K.D} fondo={KC.orange}>
-        <div style={fondoPuntos(KC.orange)}></div>
+      <Escena T={T} a={K.P} b={K.D}>
+        <FondoMarca color={KC.orange} T={T} />
+        <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.E - 0.5, K.E + 0.5), background:`radial-gradient(ellipse 90% 60% at 50% 50%, ${mixHex(KC.orange, '#0a0f1c', 0.8)} 0%, #0a0f1c 62%, #070a12 100%)` }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+          <g transform={`translate(${540 - 110 * kprog(T, K.D - 3.4, K.D - 2.2, kEase.suave)} ${1040 - 50 * kprog(T, K.D - 3.4, K.D - 2.2, kEase.suave)}) scale(1.25) translate(-540 -1120)`}>
           {(() => { const tira = kprog(T, K.D - 3.4, K.D - 2.2, kEase.suave);
             return <g transform={`translate(${tira * 140} ${-tira * 60}) rotate(${tira * 38} 540 1120)`}>
               <Olla T={T} x={540} y={1120} s={1.15} hierve={1 - tira} agua={mixHex('#7fd6ff', '#a7a48a', kprog(T, K.E + 3, K.E + 6))}>
@@ -131,55 +139,63 @@ function MetalesNarrado() {
               </Olla>
               {tira > 0.6 && Array.from({ length: 16 }, (_, i) => { const u = ((T * 1.1 + i / 16) % 1); return <circle key={i} cx={790 + u * 60} cy={1100 + u * 500} r={10} fill="#a7a48a" opacity={Math.sin(Math.PI * u)} />; })}
             </g>; })()}
+          </g>
         </svg>
-        <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.6} anio="2017" quien="Falandysz y Drewnowska · Polonia" revista="Environ. Sci. Pollut. Res. 24: 13352" y={620} />
+        <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.6} anio="2017" quien="Falandysz y Drewnowska · Polonia" revista="Environ. Sci. Pollut. Res. 24: 13352" y={420} />
         <Medidor T={T} at={K.E + 2.6} until={K.E + 6.8} etiqueta="MERCURIO · rebozuelo" valor={(t) => 1 - 0.15 * kprog(t, K.E + 3, K.E + 5)} texto={(v) => '−' + Math.round((1 - v) * 100) + ' %'} y={330} color={KC.yellow} />
         <Medidor T={T} at={K.E + 7} until={K.D - 0.2} etiqueta="MERCURIO · Amanita fulva" valor={(t) => 1 - 0.56 * kprog(t, K.E + 7.2, K.E + 9)} texto={(v) => '−' + Math.round((1 - v) * 100) + ' %'} y={330} color={KC.yellow} />
       </Escena>
       {/* 7 · digestión simulada */}
       <Escena T={T} a={K.D} b={K.Li} fondo="radial-gradient(circle at 50% 50%, #3a1c2e 0%, #0E0F12 75%)">
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+          <g transform="translate(0 130)">
           <path d="M 120 520 C 120 360, 420 340, 480 520 C 540 700, 960 640, 960 900 C 960 1160, 560 1140, 420 1060 C 260 980, 120 900, 120 520 Z" fill="#e88aa0" stroke={KC.ink} strokeWidth={10} />
           <path d="M 170 540 C 180 420, 400 410, 440 560 C 500 740, 900 700, 900 900 C 900 1100, 580 1080, 450 1010 C 300 940, 170 860, 170 540 Z" fill="#f6c1cd" />
           {Array.from({ length: 10 }, (_, i) => { const x = 300 + (i * 61) % 460, y = 640 + (i * 83) % 330; return <rect key={'h' + i} x={x - 30} y={y - 12} width={60} height={24} rx={10} fill="#d9b58a" stroke={KC.ink} strokeWidth={4} transform={`rotate(${i * 40} ${x} ${y})`} />; })}
           {Array.from({ length: 30 }, (_, i) => { const sale = i < 12, u = kprog(T, K.D + 1 + i * 0.07, K.D + 3.2 + i * 0.07, kEase.suave), x0 = 300 + (i * 61) % 460, y0 = 640 + (i * 83) % 330;
-            return <Metal key={i} x={sale ? klerp(x0, x0 + 120, u) : x0 + mece(T, i, 0.5) * 6} y={sale ? klerp(y0, 1260 + (i % 3) * 30, u) : y0} k={i} r={13} />; })}
+            return <Metal key={i} x={sale ? klerp(x0, x0 + 120, u) : x0 + mece(T, i, 0.5) * 6} y={sale ? klerp(y0, 1260 + (i % 3) * 30, u) : y0} k={i} r={15} />; })}
+          </g>
         </svg>
-        <TarjetaEstudio T={T} at={K.D + 0.1} until={K.D + 1.2} anio="2020" quien="Chiocchetti et al." revista="Food Chemistry 306" y={420} />
+        <TarjetaEstudio T={T} at={K.D + 0.1} until={K.D + 1.2} anio="2020" quien="Chiocchetti et al." revista="Food Chemistry 306" y={300} />
         <Medidor T={T} at={K.D + 1.2} until={K.Li - 0.2} etiqueta="SE LIBERA EN LA DIGESTIÓN" valor={(t) => 0.4 * kprog(t, K.D + 1.4, K.D + 3.4)} texto={(v) => (v < 0.39 ? Math.round(v * 100) + ' %' : '< 40 %')} y={330} color={KC.pink} />
       </Escena>
       {/* 8 · esa esponja se estudia para limpiar suelos */}
       <Escena T={T} a={K.Li} b={K.Ci} zoom={0.03}>
-        <MundoSuelo T={T} red={kprog(T, K.Li, K.Li + 3)} brillo={0.7} ox={540} cielo={KC.mint}>
+        <MundoSuelo T={T} red={kprog(T, K.Li - 0.4, K.Li + 2.4)} brillo={0.7} ox={560} cielo={KC.mint} escala={0.23}>
           {Array.from({ length: 34 }, (_, i) => { const u = kprog(T, K.Li + 0.5 + i * 0.07, K.Li + 2.5 + i * 0.07, kEase.suave), x0 = 80 + (i * 97) % 920, y0 = sup + 80 + (i * 61) % 480;
-            return <Metal key={i} x={klerp(x0, 560, u)} y={klerp(y0, sup - 60, u)} k={i} r={12} o={1 - kprog(u, 0.8, 1)} />; })}
-          <RacimoOstra T={T} x={560} y={sup - 20} s={1.4} abre={kprog(T, K.Li + 1, K.Li + 3)} n={7} color="#e8e4da" oscuro="#a7a090" />
+            return <Metal key={i} x={klerp(x0, 560, u)} y={klerp(y0, sup - 60, u)} k={i} r={15} o={1 - kprog(u, 0.8, 1)} />; })}
+          <RacimoOstra T={T} x={560} y={sup - 14} s={2.1} abre={0.45 + 0.55 * kprog(T, K.Li + 0.3, K.Li + 2.6)} n={7} color="#e8e4da" oscuro="#a7a090" />
         </MundoSuelo>
       </Escena>
       {/* 9 · cierre: el mismo hongo del inicio, ahora "reflejando" el suelo */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.03}>
+        <Camara T={T} keys={keysC}>
         <MundoSuelo T={T} red={1} brillo={kprog(T, K.Ci + 0.4, K.Ci + 1.4)} ox={560} cielo={KC.cyan}>
           <ellipse cx={560} cy={sup + 160} rx={330 * kprog(T, K.Ci + 0.4, K.Ci + 1.6)} ry={120 * kprog(T, K.Ci + 0.4, K.Ci + 1.6)} fill="none" stroke={KC.gold2} strokeWidth={8} strokeDasharray="18 12" strokeDashoffset={-T * 40} />
           <Boleto x={560} y={sup + 4} s={1.55} rot={mece(T, 2, 0.15) * 1.5} />
           <MetalesSuben T={T} x={560} sup={sup} alto={300} n={10} p={1} r={16} />
         </MundoSuelo>
-        <Escala T={T} z={1} pxPorMm={PX} />
+        </Camara>
+        <Escala T={T} z={1.5} pxPorMm={PX} />
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 1.8} until={K.Mi - 0.2} texto="cadmio · plomo · mercurio" y={1530} x={400} borde={KC.red} tam={40} />
-      <Chip T={T} at={K.Mi + 1.4} until={K.R - 0.2} texto="micelio → fruto" y={430} borde={KC.mint} tam={42} />
-      <Chip T={T} at={K.R + 0.1} until={K.L - 0.2} texto="el riesgo depende de" y={330} borde={KC.red} tam={40} />
-      <Chip T={T} at={K.L + 1.2} until={K.Cu - 0.2} texto="minas · fundidoras · carreteras" y={1530} x={400} borde={KC.red} tam={36} />
-      <Chip T={T} at={K.Cu + 0.3} until={K.P - 0.2} texto="sustrato controlado" y={1530} x={400} borde={KC.mint} tam={42} />
-      <Chip T={T} at={K.E + 3} until={K.E + 6.8} texto="rebozuelos blanqueados" y={1530} x={400} borde={KC.yellow} tam={38} />
-      <Etq T={T} at={K.E + 7.4} until={K.D - 0.2} x={100} y={1530} texto="Amanita fulva, hervida" it tam={30} color={KC.ink} />
-      <Chip T={T} at={K.D - 2.4} until={K.D - 0.2} texto="el agua se tira" x={300} y={760} borde={KC.red} tam={44} />
-      <Etq T={T} at={K.D + 3.4} until={K.Li - 0.2} x={990} y={1135} texto="se libera" color={KC.pink} lado="izq" />
-      <Etq T={T} at={K.D + 3.8} until={K.Li - 0.2} x={990} y={560} texto="no se libera" lado="izq" tam={28} />
-      <Chip T={T} at={K.Li + 1} until={K.Ci - 0.2} texto="micorremediación" y={430} borde={KC.mint} tam={44} />
-      <Etq T={T} at={K.Li + 2} until={K.Ci - 0.2} x={200} y={760} texto="Pleurotus" it lado="der" />
-      <Chip T={T} at={K.Ci + 0.6} until={K.O} texto="un espejo del suelo" y={430} borde={KC.gold} tam={46} />
+      <Chip T={T} at={K.G + 1.8} until={K.Mi - 0.2} texto="cadmio · plomo · mercurio" y={318} x={420} borde={KC.red} tam={40} />
+      <Chip T={T} at={K.Mi + 1.4} until={K.R - 0.2} texto="micelio → fruto" y={318} borde={KC.mint} tam={42} />
+      <Chip T={T} at={K.R + 0.1} until={K.L - 0.2} texto="el riesgo depende de" y={318} borde={KC.red} tam={40} />
+      <Etq T={T} at={K.R + 0.4} until={K.L - 0.2} x={60} y={520} texto="1 · la especie" tam={32} color={KC.yellow} />
+      <Etq T={T} at={K.R + 1.3} until={K.L - 0.2} x={600} y={1400} texto="2 · el lugar" tam={32} color={KC.yellow} />
+      <Etq T={T} at={K.R + 2.2} until={K.L - 0.2} x={600} y={760} texto="3 · cuánto comes" tam={32} color={KC.yellow} />
+      <Chip T={T} at={K.L + 1.2} until={K.Cu - 0.2} texto="minas · fundidoras · carreteras" y={1470} x={400} borde={KC.red} tam={36} />
+      <Chip T={T} at={K.Cu + 0.3} until={K.P - 0.2} texto="sustrato controlado" y={1470} x={540} borde={KC.mint} tam={42} />
+      <Chip T={T} at={K.E + 3} until={K.E + 6.8} texto="rebozuelos blanqueados" y={540} x={540} borde={KC.yellow} tam={38} />
+      <Etq T={T} at={K.E + 7.4} until={K.D - 2.5} x={100} y={540} texto="Amanita fulva, hervida" it tam={30} color={KC.ink} />
+      <Chip T={T} at={K.D - 2.4} until={K.D - 0.2} texto="el agua se tira" x={300} y={560} borde={KC.red} tam={44} />
+      <Etq T={T} at={K.D + 3.4} until={K.Li - 0.2} x={70} y={1420} texto="se libera" color={KC.pink} />
+      <Etq T={T} at={K.D + 3.8} until={K.Li - 0.2} x={1010} y={650} texto="no se libera" lado="izq" tam={30} />
+      <Chip T={T} at={K.Li + 1} until={K.Ci - 0.2} texto="micorremediación" y={330} borde={KC.mint} tam={44} />
+      <Etq T={T} at={K.Li + 2} until={K.Ci - 0.2} x={90} y={740} texto="Pleurotus" it />
+      <Chip T={T} at={K.Ci + 0.6} until={K.O} texto="un espejo del suelo" y={318} x={420} borde={KC.gold} tam={46} />
 
       <Subtitulo T={T} idx={0} at={K.G + 0.2} until={K.Mi - 0.1} texto="No solo chupó agua: *también metales.*" />
       <Subtitulo T={T} idx={1} at={K.Mi + 0.1} until={K.R - 0.1} texto="El micelio los guarda *en el fruto.*" />

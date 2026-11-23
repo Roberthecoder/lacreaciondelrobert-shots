@@ -220,7 +220,7 @@ function CrudosShot() {
           <PlatoEnsalada T={T} x={540} y={690} s={1.33} champ={kprog(T, K.G + 0.1, K.G + 1.2)} />
           <Tenedor x={klerp(870, 743, caeTen)} y={klerp(-50, 545, caeTen)} rot={klerp(-60, 30, caeTen) + (caeTen >= 1 ? Math.sin((T - K.G - 0.55) * 30) * 6 * Math.exp(-(T - K.G - 0.55) * 6) : 0)} s={1.16} />
           <Tabla x={420} y={1440} w={550} h={175} />
-          <g opacity={kprog(T, K.G + 1.6, K.G + 2.2)}>
+          <g opacity={klerp(0.3, 1, kprog(T, K.G + 1.6, K.G + 2.2))}>
             <g transform={`translate(420 ${1430 - 58 * (1 - kprog(T, K.G + 1.6, K.G + 2.3, kEase.rebote))})`}><Morilla x={0} y={0} s={1.23} rot={Math.sin(T * 2) * 3} id="g" /></g>
           </g>
           {(() => { const e = kEase.rebote(kprog(T, K.G + 3.2, K.G + 3.6)); return e > 0 && <g transform={`translate(850 1170) scale(${e})`}>
@@ -338,41 +338,41 @@ function CrudosShot() {
       <Etq T={T} at={K.G + 2.2} until={K.D - 0.3} x={700} y={1440} texto="morilla cruda" tam={34} color={KC.ink} />
       <Etq T={T} at={K.D + 0.4} until={K.A - 0.2} x={590} y={1150} texto="champiñón" tam={40} color={KC.ink} />
       <Etq T={T} at={K.D + 0.8} until={K.A - 0.2} x={590} y={1210} texto="Agaricus bisporus" it tam={36} color={KC.ink} />
-      <Chip T={T} at={K.A + 0.1} until={K.G3 - 0.3} texto="AL MICROSCOPIO · LAMINILLA" x={330} y={470} tam={30} borde={KC.cyan} mono />
+      <Chip T={T} at={K.A + 0.1} until={K.G3 - 0.3} texto="AL MICROSCOPIO · LAMINILLA" x={330} y={470} tam={37} borde={KC.cyan} mono />
       <Etq T={T} at={K.A + 0.9} until={K.G3 - 0.3} x={60} y={1390} texto="bisporus: 2 esporas por basidio" it tam={30} color={KC.gold2} />
       <Etq T={T} at={K.A + 1.8} until={K.G3 - 0.3} x={60} y={590} texto="agaritina (molécula agrandada)" tam={30} color={KC.yellow} />
-      <Chip T={T} at={K.A + 2.6} until={K.G3 - 0.3} texto="todavía se estudia" x={360} y={830} tam={36} borde={KC.yellow} />
+      <Chip T={T} at={K.A + 2.6} until={K.G3 - 0.3} texto="todavía se estudia" x={360} y={830} tam={37} borde={KC.yellow} />
       <TarjetaEstudio T={T} at={K.G3 + 0.15} until={K.G3 + 2.3} anio="IARC" quien="agencia de la OMS contra el cáncer" revista="evaluación de 1987" x={420} y={600} />
-      <Chip T={T} at={K.G3 + 3.2} until={K.S - 0.3} texto="grupo 3 · no clasificable como cancerígeno en humanos" x={540} y={1030} tam={30} borde={KC.gold} />
+      <Chip T={T} at={K.G3 + 3.2} until={K.S - 0.3} texto="grupo 3 · no clasificable como cancerígeno en humanos" x={540} y={1030} tam={37} borde={KC.gold} />
       <Chip T={T} at={K.G3 + 3.8} until={K.S - 0.3} texto="la agaritina, no el hongo" x={330} y={650} tam={38} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.S + 0.2} until={K.S + 2.9} anio="2002" quien="Praga, Chequia" revista="Schulzová et al., Food Addit. Contam." x={540} y={470} />
       <Etq T={T} at={K.S + 1.4} until={K.P - 0.3} x={60} y={1380} texto="champiñones de cultivo comprados en Praga" tam={31} color={KC.ink} />
       <Cronometro T={T} at={K.S + 3.0} until={K.S + 5.6} factor={300 / 3.2} x={300} y={505} />
-      <Chip T={T} at={K.S + 3.0} until={K.S + 5.6} texto="frito en aceite" x={300} y={432} tam={26} borde={KC.yellow} />
+      <Chip T={T} at={K.S + 3.0} until={K.S + 5.6} texto="frito en aceite" x={300} y={432} tam={37} borde={KC.yellow} />
       <Medidor T={T} at={K.S + 3.0} until={K.P - 0.3} x={60} y={590} ancho={600} etiqueta="agaritina que queda" valor={(t) => klerp(1, 0.343, kprog(t, K.S + 3.1, K.S + 5.6, kEase.suave))} texto={(v) => Math.round(v * 100) + ' %'} color={KC.yellow} />
       <Etq T={T} at={K.P + 0.3} until={K.Mo - 0.2} x={60} y={450} texto="morilla" tam={44} color={KC.ink} />
       <Etq T={T} at={K.P + 0.6} until={K.Mo - 0.2} x={60} y={510} texto="Morchella" it tam={40} color={KC.ink} />
-      <Etq T={T} at={K.P + 1.2} until={K.Mo - 0.2} x={60} y={1150} texto="hueca por dentro" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.P + 1.2} until={K.Mo - 0.2} x={60} y={1150} texto="hueca por dentro" tam={30} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Mo + 0.2} until={K.E - 0.3} anio="2023" quien="Bozeman, Montana (EE. UU.)" revista="CDC · MMWR, 2024" x={540} y={490} />
-      <Chip T={T} at={K.Mo + 2.0} until={K.E - 0.3} texto="crudas" x={860} y={1260} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.Mo + 2.6} until={K.E - 0.3} texto="apenas cocidas" x={860} y={1350} tam={36} borde={KC.orange} />
+      <Chip T={T} at={K.Mo + 2.0} until={K.E - 0.3} texto="crudas" x={860} y={1260} tam={37} borde={KC.red} />
+      <Chip T={T} at={K.Mo + 2.6} until={K.E - 0.3} texto="apenas cocidas" x={860} y={1350} tam={37} borde={KC.orange} />
       <NumeroGigante T={T} at={K.E + 0.2} until={K.Cr - 0.3} valor={51} dur={1.6} etiqueta="enfermos del estómago" x={360} y={510} tam={160} color={KC.yellow} />
-      <Chip T={T} at={K.E + 2.6} until={K.Cr - 0.3} texto="3 al hospital" x={540} y={1400} tam={34} borde={KC.cyan} />
-      <Chip T={T} at={K.E + 3.4} until={K.Cr - 0.3} texto="2 murieron · tenían enfermedades previas" x={540} y={1475} tam={28} borde="#8b8f96" />
-      <Chip T={T} at={K.Cr + 0.3} until={K.Cu - 0.3} texto="crudas: lo más ligado a enfermarse" x={540} y={560} tam={36} borde={KC.red} />
-      <Etq T={T} at={K.Cr + 0.6} until={K.Cu - 0.3} x={640} y={1330} texto="cocidas o a medias" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Cu + 0.2} until={K.F - 0.3} texto="morillas de cultivo · importadas" x={330} y={700} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.Cu + 2.0} until={K.F - 0.3} texto="toxina: no identificada" x={540} y={1400} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.E + 2.6} until={K.Cr - 0.3} texto="3 al hospital" x={540} y={1400} tam={37} borde={KC.cyan} />
+      <Chip T={T} at={K.E + 3.4} until={K.Cr - 0.3} texto="2 murieron · tenían enfermedades previas" x={540} y={1475} tam={37} borde="#8b8f96" />
+      <Chip T={T} at={K.Cr + 0.3} until={K.Cu - 0.3} texto="crudas: lo más ligado a enfermarse" x={540} y={560} tam={37} borde={KC.red} />
+      <Etq T={T} at={K.Cr + 0.6} until={K.Cu - 0.3} x={640} y={1330} texto="cocidas o a medias" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Cu + 0.2} until={K.F - 0.3} texto="morillas de cultivo · importadas" x={330} y={700} tam={37} borde={KC.ink} />
+      <Chip T={T} at={K.Cu + 2.0} until={K.F - 0.3} texto="toxina: no identificada" x={540} y={1400} tam={37} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.F + 0.2} until={K.F + 2.6} anio="Francia" quien="2010–2020 · centros antitóxicos" revista="Vodovar et al., Clin. Toxicol., 2024" x={540} y={520} />
       <NumeroGigante T={T} at={K.F + 2.6} until={K.Sh - 0.3} valor={446} dur={1.8} etiqueta="casos reportados" x={330} y={520} tam={170} color={KC.red} />
-      <Chip T={T} at={K.F + 3.2} until={K.Sh - 0.3} texto="solo morillas" x={330} y={700} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.F + 3.2} until={K.Sh - 0.3} texto="solo morillas" x={330} y={700} tam={37} borde={KC.ink} />
       <Etq T={T} at={K.Sh + 0.4} until={K.C - 0.3} x={610} y={800} texto="shiitake" tam={44} color={KC.ink} />
       <Etq T={T} at={K.Sh + 0.8} until={K.C - 0.3} x={610} y={860} texto="Lentinula edodes" it tam={38} color={KC.ink} />
-      <Chip T={T} at={K.Sh + 1.2} until={K.C - 0.3} texto="ya lo vimos: Fungi Mati 26" x={760} y={470} tam={30} borde={KC.gold} />
-      <Etq T={T} at={K.Sh + 2.2} until={K.C - 0.3} x={560} y={1390} texto="crudo o mal cocido" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="silvestres: siempre cocidos" x={540} y={300} tam={36} borde="#118a3a" />
-      <Chip T={T} at={K.C + 1.8} until={K.Ou} texto="y bien identificados" x={540} y={385} tam={36} borde="#118a3a" />
-      <Etq T={T} at={K.C + 2.4} until={K.Ou} x={700} y={1480} texto="No es consejo médico." tam={24} color={KC.ink} />
+      <Chip T={T} at={K.Sh + 1.2} until={K.C - 0.3} texto="ya lo vimos: Fungi Mati 26" x={760} y={470} tam={37} borde={KC.gold} />
+      <Etq T={T} at={K.Sh + 2.2} until={K.C - 0.3} x={560} y={1390} texto="crudo o mal cocido" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="silvestres: siempre cocidos" x={540} y={300} tam={37} borde="#118a3a" />
+      <Chip T={T} at={K.C + 1.8} until={K.Ou} texto="y bien identificados" x={540} y={385} tam={37} borde="#118a3a" />
+      <Etq T={T} at={K.C + 2.4} until={K.Ou} x={60} y={1110} texto="No es consejo médico." tam={30} color={KC.ink} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.D} texto="5 cm" largo={174} />

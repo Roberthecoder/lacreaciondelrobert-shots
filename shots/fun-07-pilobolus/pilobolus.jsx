@@ -62,14 +62,14 @@ function Pilobolus() {
   const sale = kprog(T, K.D + 1.6, K.D + 2.6);
   // gancho: en el pasto, una caca con gotitas; a los 0.6 s una dispara
   const disparoG = kprog(T, K.G + 0.5, K.G + 1.3);
-  const zoomG = klerp(1.5, 2.1, kprog(T, K.H, K.H + 2.5, kEase.suave));   // segunda vuelta: la caca llena el cuadro (la barra de escala sigue este zoom)
+  const zoomG = klerp(1.85, 2.3, kprog(T, K.H, K.H + 2.5, kEase.suave));   // segunda vuelta: la caca llena el cuadro (la barra de escala sigue este zoom)
   const POS = [[-210, -80], [-120, -110], [-30, -125], [60, -120], [150, -105], [230, -80], [-160, -40], [100, -60]];
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1–2 · gancho y el hongo: pasto, caca de vaca y gotitas que disparan */}
       <Escena T={T} a={K.G} b={K.A} zoom={0} >
         <FondoLunares color={KC.cyan} />
-        <div style={{ position:'absolute', inset:0, transform:`scale(${zoomG})`, transformOrigin:'52% 52%' }}>
+        <div style={{ position:'absolute', inset:0, transform:`translateY(240px) scale(${zoomG})`, transformOrigin:'52% 52%' }}>
           {fsvg(<>
             <rect x={-200} y={1060} width={1500} height={900} fill={PASTO} stroke={KC.ink} strokeWidth={8} />
             {Array.from({ length: 40 }, (_, i) => <path key={i} d={`M ${i * 30 - 40} 1065 l 10 -40 l 10 40`} fill={PASTO} stroke={KC.ink} strokeWidth={4} />)}
@@ -101,7 +101,7 @@ function Pilobolus() {
       <Escena T={T} a={K.E} b={K.Di}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {fsvg(<>
-          {Array.from({ length: 6 }, (_, i) => { const on = kprog(T, K.E + 0.15 + i * 0.25, K.E + 0.35 + i * 0.25);   /* modo cine: los cuadros del video entran al empezar la escena, no 1 s después */ return on > 0 ? <g key={i} opacity={on * (T > K.V ? 0.3 : 1)} transform={`translate(${90 + (i % 3) * 315} ${700 + Math.floor(i / 3) * 410}) scale(1.8) translate(${-(60 + i * 162)} -860)`}>
+          {Array.from({ length: 6 }, (_, i) => { const on = kprog(T, K.E + 0.15 + i * 0.25, K.E + 0.35 + i * 0.25);   /* modo cine: los cuadros del video entran al empezar la escena, no 1 s después */ return on > 0 ? <g key={i} opacity={on * (T > K.V ? 0.12 : 1)} transform={`translate(${90 + (i % 3) * 315} ${700 + Math.floor(i / 3) * 410}) scale(1.8) translate(${-(60 + i * 162)} -860)`}>
             <rect x={60 + i * 162} y={860} width={150} height={220} rx={8} fill="#1d2433" stroke={KC.texto} strokeWidth={4} />
             {[0, 1, 2, 3].map((k) => <rect key={k} x={66 + i * 162 + k * 38} y={866} width={22} height={12} fill={KC.texto} opacity=".6" />)}
             <ellipse cx={135 + i * 162} cy={1040 - i * 30} rx={14} ry={10} fill="#fff" />
@@ -164,7 +164,7 @@ function Pilobolus() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <g transform="translate(562 998) scale(1.5) translate(-562 -998)">
+          <g transform="translate(562 1238) scale(1.85) translate(-562 -998)">
           <rect x={-200} y={1060} width={1500} height={900} fill={PASTO} stroke={KC.ink} strokeWidth={8} />
           <rect x={-200} y={1100} width={1500} height={900} fill="url(#f07-hondo4)" />
           <defs><linearGradient id="f07-hondo4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#0b1020" stopOpacity="0" /><stop offset=".6" stopColor="#0b1020" stopOpacity=".7" /></linearGradient></defs>
@@ -202,7 +202,7 @@ function Pilobolus() {
       <BarraEscala T={T} at={K.A} until={K.P} texto="1 mm" largo={273} />
       <BarraEscala T={T} at={K.Di} until={K.Va} texto="1 m" largo={360} />
       <BarraEscala T={T} at={K.Po} until={K.C} texto="0.1 mm" largo={224} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={255} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={314.5} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No es rocío: *es un cañón.*" />

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #58 · Tus venas no son azules — NARRADO (N1 "Por dentro": la luz que entra en la piel).
 // Datos: Kienle et al. 1996 (Applied Optics 35(7)); C. Baird (WTAMU). Ver guion.md y verificacion.md.
 // La sangre SIEMPRE se pinta roja (oscura en la vena). Lo único azulado es cómo se ve la vena desde afuera.
@@ -124,8 +125,8 @@ function VenasAzules() {
       {/* 0 · gancho: tu muñeca con venas "azules"; por dentro, sangre roja oscura */}
       <Escena T={T} a={K.Gancho} b={K.Oscura}>
         <FondoLunares color={KC.pink} />
-        <Lienzo><g transform={`translate(${(1 - pr(K.Gancho, 0.6)) * -300} 0)`}><Antebrazo x={620} y={1000} T={T} /></g></Lienzo>
-        <Lupa T={T} at={K.Gancho + 0.25} until={K.Oscura - 0.2} x={300} y={500} r={175} fx={420} fy={975} tinte={KC.red} etiqueta="POR DENTRO · TU VENA"
+        <Lienzo><g transform={`translate(${(1 - pr(K.Gancho, 0.6)) * -300} 0)`}><Antebrazo x={520} y={1080} s={1.7} T={T} /></g></Lienzo>
+        <Lupa T={T} at={K.Gancho + 0.25} until={K.Oscura - 0.2} x={270} y={470} r={190} fx={316} fy={1024} tinte={KC.red} etiqueta="POR DENTRO · TU VENA"
           interior={(t, r) => <VenaDentro t={t} r={r} />} />
       </Escena>
       {/* 1 · menos oxígeno: rojo más oscuro, pero roja */}
@@ -133,68 +134,74 @@ function VenasAzules() {
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={18} color="rgba(255,90,90,.18)" />
         <Lienzo>
-          <rect x={-20} y={700} width={1120} height={320} fill="#2a0a12" stroke="#c9706a" strokeWidth={14} />
+          <rect x={-20} y={612} width={1120} height={576} fill="#2a0a12" stroke="#c9706a" strokeWidth={18} />
           <defs><linearGradient id="o2" x1="0" x2="1"><stop offset="0" stopColor={SANGRE_O2} /><stop offset="1" stopColor={SANGRE} /></linearGradient></defs>
-          <rect x={-20} y={714} width={1120} height={292} fill="url(#o2)" opacity={pr(K.Oscura + 0.2, 1)} />
-          {Array.from({ length: 16 }, (_, i) => { const f = ((T * 0.12 + i / 16) % 1), x = -60 + f * 1200, y = 760 + ((i * 53) % 220);
+          <rect x={-20} y={630} width={1120} height={540} fill="url(#o2)" opacity={pr(K.Oscura + 0.2, 1)} />
+          {Array.from({ length: 16 }, (_, i) => { const f = ((T * 0.12 + i / 16) % 1), x = -80 + f * 1240, y = 710 + ((i * 53) % 220) * 1.75;
             const c = f < 0.45 ? SANGRE_O2 : f < 0.65 ? '#b81b29' : SANGRE2;
-            return <Globulo key={i} x={x} y={y} r={38} color={c} rot={i * 30 + T * 25} />; })}
+            return <Globulo key={i} x={x} y={y} r={62} color={c} rot={i * 30 + T * 25} />; })}
           {Array.from({ length: 6 }, (_, i) => { const f = ((T * 0.12 + i / 6 + 0.05) % 1); if (f > 0.5) return null;
-            return <g key={'o' + i} opacity={1 - f * 2}><circle cx={-40 + f * 1200} cy={735 + (i % 3) * 110} r={13} fill="#bfe8ff" stroke={KC.ink} strokeWidth={3} />
-              <text x={-40 + f * 1200} y={741 + (i % 3) * 110} textAnchor="middle" style={{ font:`900 16px ${KF.texto}` }} fill={KC.ink}>O₂</text></g>; })}
+            return <g key={'o' + i} opacity={1 - f * 2}><circle cx={-40 + f * 1200} cy={690 + (i % 3) * 200} r={24} fill="#bfe8ff" stroke="#0b1020" strokeWidth={4} />
+              <text x={-40 + f * 1200} y={700 + (i % 3) * 200} textAnchor="middle" style={{ font:`900 26px ${KF.texto}` }} fill="#0b1020">O₂</text></g>; })}
         </Lienzo>
-        <Etq T={T} at={K.Oscura + 0.6} until={K.Truco - 0.2} x={60} y={650} texto="con más oxígeno" lado="der" color={KC.texto} />
-        <Etq T={T} at={K.Oscura + 1.4} until={K.Truco - 0.2} x={1020} y={1075} texto="con menos oxígeno" lado="izq" color={KC.gold2} />
-        <Chip T={T} at={K.Oscura + 3.0} until={K.Truco - 0.1} texto="más oscura… pero ROJA" x={340} y={470} tam={44} borde={KC.red} />
+        <Etq T={T} at={K.Oscura + 0.6} until={K.Truco - 0.2} x={60} y={560} texto="con más oxígeno" lado="der" color={KC.texto} />
+        <Etq T={T} at={K.Oscura + 1.4} until={K.Truco - 0.2} x={1020} y={1245} texto="con menos oxígeno" lado="izq" color={KC.gold2} />
+        <Chip T={T} at={K.Oscura + 3.0} until={K.Truco - 0.1} texto="más oscura… pero ROJA" x={540} y={420} tam={44} borde={KC.red} />
       </Escena>
       {/* 2 · el truco: la luz llega a tu piel */}
       <Escena T={T} a={K.Truco} b={K.Profundo} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <SolDibujo x={170} y={560} r={70} T={T} />
-          {[0, 1, 2, 3, 4].map((i) => <Rayo key={i} d={`M ${230 + i * 12} ${600 + i * 6} L ${330 + i * 95} ${880 - i * 6}`} color={i % 2 ? LUZ_AZUL : LUZ_ROJA} grosor={10} p={pr(K.Truco + 0.15 + i * 0.12, 0.6)} />)}
-          <Antebrazo x={620} y={1000} T={T} />
-          <TextoSvg x={760} y={700} tam={120} color={KC.pink} rot={-6} s={klerp(0.4, 1, pr(K.Truco + 0.9, 0.4, kEase.rebote))} o={pr(K.Truco + 0.9, 0.2)}>¡TRUCO!</TextoSvg>
+          <SolDibujo x={180} y={500} r={100} T={T} />
+          {[0, 1, 2, 3, 4].map((i) => <Rayo key={i} d={`M ${265 + i * 12} ${565 + i * 6} L ${270 + i * 85} ${915 - i * 5}`} color={i % 2 ? LUZ_AZUL : LUZ_ROJA} grosor={12} p={pr(K.Truco + 0.15 + i * 0.12, 0.6)} />)}
+          <Antebrazo x={520} y={1080} s={1.7} T={T} />
+          <TextoSvg x={740} y={480} tam={130} color={KC.pink} rot={-6} s={klerp(0.4, 1, pr(K.Truco + 0.9, 0.4, kEase.rebote))} o={pr(K.Truco + 0.9, 0.2)}>¡TRUCO!</TextoSvg>
         </Lienzo>
-        <Chip T={T} at={K.Truco + 0.4} until={K.Profundo - 0.1} texto="truco de la luz y de tu piel" x={540} y={420} tam={42} borde={KC.ink} />
+        <Chip T={T} at={K.Truco + 0.4} until={K.Profundo - 0.1} texto="truco de la luz y de tu piel" x={540} y={300} tam={42} borde={KC.ink} />
       </Escena>
       {/* 3 · corte de piel: la roja entra hondo, la azul rebota cerca de la superficie */}
       <Escena T={T} a={K.Profundo} b={K.Traga} fondo={KC.noche} zoom={0.03}>
         <Ambiente T={T} n={16} color="rgba(255,255,255,.12)" />
         <Lienzo>
-          <CortePiel T={T} />
+          <g transform="translate(0 80)">
+          <CortePiel T={T} y1={1290} />
           <Rayo d={ROJO_D} color={LUZ_ROJA} p={pr(K.Profundo + 0.3, 2.2, kEase.suave)} />
           <Rayo d={AZUL_D} color={LUZ_AZUL} p={pr(K.Profundo + 2.5, 1.4, kEase.suave)} />
+          </g>
         </Lienzo>
-        <Chip T={T} at={K.Profundo + 0.5} until={K.Traga - 0.1} texto="luz roja: entra más profundo" x={540} y={360} tam={38} borde={LUZ_ROJA} />
-        <Chip T={T} at={K.Profundo + 2.6} until={K.Traga - 0.1} texto="luz azul: rebota cerca" x={540} y={1130} tam={38} borde={LUZ_AZUL} />
-        <Etq T={T} at={K.Profundo + 1.0} until={K.Traga - 0.1} x={1030} y={610} texto="tu piel por dentro" lado="izq" color={KC.texto} tam={28} />
+        <Chip T={T} at={K.Profundo + 0.5} until={K.Traga - 0.1} texto="luz roja: entra más profundo" x={540} y={440} tam={38} borde={LUZ_ROJA} />
+        <Chip T={T} at={K.Profundo + 2.6} until={K.Traga - 0.1} texto="luz azul: rebota cerca" x={540} y={1440} tam={38} borde={LUZ_AZUL} />
+        <Etq T={T} at={K.Profundo + 1.0} until={K.Traga - 0.1} x={1030} y={690} texto="tu piel por dentro" lado="izq" color={KC.texto} tam={28} />
       </Escena>
       {/* 4 · la vena se traga la luz roja */}
       <Escena T={T} a={K.Traga} b={K.Menos} fondo={KC.noche} zoom={0.03}>
         <Ambiente T={T} n={16} color="rgba(255,255,255,.12)" />
         <Lienzo>
-          <CortePiel T={T}><VenaCorte x={700} y={860} T={T} /></CortePiel>
+          <g transform="translate(0 80)">
+          <CortePiel T={T} y1={1290}><VenaCorte x={700} y={860} rx={150} ry={98} T={T} /></CortePiel>
           <Rayo d="M 520 470 L 620 640 L 700 860" color={LUZ_ROJA} p={pr(K.Traga + 0.3, 1.2, kEase.suave)} o={1 - kprog(T, K.Traga + 2.2, K.Traga + 3.0)} />
           <circle cx={700} cy={860} r={60 + 40 * pr(K.Traga + 1.5, 0.6)} fill={LUZ_ROJA} opacity={0.5 * kprog(T, K.Traga + 1.4, K.Traga + 1.7) * (1 - kprog(T, K.Traga + 1.9, K.Traga + 2.8))} />
           <Onomato T={T} at={K.Traga + 1.5} dur={1.6} x={360} y={950} texto="¡GLUP!" color={KC.yellow} tam={120} />
+          </g>
         </Lienzo>
-        <Etq T={T} at={K.Traga + 0.6} until={K.Menos - 0.1} x={830} y={980} texto="vena" lado="der" color={KC.gold2} />
-        <Chip T={T} at={K.Traga + 1.0} until={K.Menos - 0.1} texto="la sangre se traga la luz roja" x={650} y={420} tam={38} borde={LUZ_ROJA} />
+        <Etq T={T} at={K.Traga + 0.6} until={K.Menos - 0.1} x={850} y={1065} texto="vena" lado="der" color={KC.gold2} />
+        <Chip T={T} at={K.Traga + 1.0} until={K.Menos - 0.1} texto="la sangre se traga la luz roja" x={650} y={500} tam={38} borde={LUZ_ROJA} />
       </Escena>
       {/* 5 · de la vena regresa menos rojo que de la piel de al lado */}
       <Escena T={T} a={K.Menos} b={K.Pregunta} fondo={KC.noche} zoom={0.03}>
         <Ambiente T={T} n={16} color="rgba(255,255,255,.12)" />
         <Lienzo>
-          <CortePiel T={T}><VenaCorte x={760} y={860} T={T} /></CortePiel>
+          <g transform="translate(0 80)">
+          <CortePiel T={T} y1={1290}><VenaCorte x={760} y={860} rx={150} ry={98} T={T} /></CortePiel>
           <Rayo d="M 230 640 L 300 760 L 250 860 L 330 800 L 300 640" color={LUZ_ROJA} p={pr(K.Menos + 0.2, 0.9, kEase.suave)} grosor={10} />
           <FlechaRecta x1={300} y1={630} x2={300} y2={420} p={pr(K.Menos + 1.0, 0.6)} color={LUZ_ROJA} grosor={34} punta={60} />
           <Rayo d="M 700 640 L 740 760" color={LUZ_ROJA} p={pr(K.Menos + 0.4, 0.6, kEase.suave)} grosor={10} />
           <FlechaRecta x1={790} y1={630} x2={790} y2={480} p={pr(K.Menos + 1.6, 0.6)} color={LUZ_ROJA} grosor={9} punta={28} />
+          </g>
         </Lienzo>
-        <Etq T={T} at={K.Menos + 1.3} until={K.Pregunta - 0.1} x={350} y={480} texto="piel de al lado" lado="der" color={KC.texto} tam={30} />
-        <Etq T={T} at={K.Menos + 2.0} until={K.Pregunta - 0.1} x={760} y={600} texto="sobre la vena" lado="izq" color={KC.gold2} tam={30} />
-        <Chip T={T} at={K.Menos + 2.0} until={K.Pregunta - 0.1} texto="de la vena regresa MENOS rojo" x={540} y={1130} tam={38} borde={LUZ_ROJA} />
+        <Etq T={T} at={K.Menos + 1.3} until={K.Pregunta - 0.1} x={350} y={560} texto="piel de al lado" lado="der" color={KC.texto} tam={30} />
+        <Etq T={T} at={K.Menos + 2.0} until={K.Pregunta - 0.1} x={760} y={680} texto="sobre la vena" lado="izq" color={KC.gold2} tam={30} />
+        <Chip T={T} at={K.Menos + 2.0} until={K.Pregunta - 0.1} texto="de la vena regresa MENOS rojo" x={540} y={1440} tam={38} borde={LUZ_ROJA} />
       </Escena>
       {/* 6 · pregunta */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Compara} />
@@ -202,23 +209,25 @@ function VenasAzules() {
       <Escena T={T} a={K.Compara} b={K.Estudio} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <rect x={120} y={500} width={840} height={400} rx={30} fill={CPIEL} stroke={KC.ink} strokeWidth={10} />
-          <rect x={120} y={660} width={840} height={80} fill="#938fa3" opacity={pr(K.Compara + 0.3, 0.6)} />
-          <rect x={120} y={500} width={840} height={400} rx={30} fill="none" stroke={KC.ink} strokeWidth={10} />
+          {/* belleza: el trozo de piel baja y crece (460 → 620 de alto) y la muestra gris baja con él: antes todo quedaba arriba */}
+          <rect x={60} y={560} width={960} height={620} rx={30} fill={CPIEL} stroke={KC.ink} strokeWidth={10} />
+          {[640, 720, 1010, 1100].map((yy, i) => <path key={i} d={`M 90 ${yy} Q 540 ${yy + (i % 2 ? 10 : -10)} 990 ${yy}`} stroke="#d99a7c" strokeWidth={4} fill="none" opacity={0.5} />)}
+          <rect x={60} y={824} width={960} height={92} fill="#938fa3" opacity={pr(K.Compara + 0.3, 0.6)} />
+          <rect x={60} y={560} width={960} height={620} rx={30} fill="none" stroke={KC.ink} strokeWidth={10} />
           {(() => { const s = pr(K.Compara + 2.6, 0.9, kEase.suave); return <g opacity={s}>
-            <rect x={300} y={940} width={480} height={230} rx={24} fill="#8a8a8a" stroke={KC.ink} strokeWidth={9} />
-            <text x={540} y={1000} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.texto}>sola: no es azul</text>
-            <rect x={360} y={1030} width={360} height={80} fill="#938fa3" stroke={KC.ink} strokeWidth={5} transform={`translate(0 ${(1 - s) * -300})`} />
+            <rect x={230} y={1230} width={620} height={290} rx={24} fill="#8a8a8a" stroke={KC.ink} strokeWidth={9} />
+            <text x={540} y={1304} textAnchor="middle" style={{ font:`700 46px ${KF.texto}` }} fill="#0b1020">sola: no es azul</text>
+            <rect x={310} y={1350} width={460} height={92} fill="#938fa3" stroke="#0b1020" strokeWidth={5} transform={`translate(0 ${(1 - s) * -380})`} />
           </g>; })()}
         </Lienzo>
-        <Chip T={T} at={K.Compara + 0.6} until={K.Estudio - 0.1} texto="junto a la piel: se ve azulado" x={540} y={420} tam={40} borde={VENA_VISTA} />
-        <Etq T={T} at={K.Compara + 1.2} until={K.Estudio - 0.1} x={990} y={700} texto="la vena" lado="izq" color={KC.ink} tam={30} />
+        <Chip T={T} at={K.Compara + 0.6} until={K.Estudio - 0.1} texto="junto a la piel: se ve azulado" x={540} y={470} tam={40} borde={VENA_VISTA} />
+        <Etq T={T} at={K.Compara + 1.2} until={K.Estudio - 0.1} x={1010} y={870} texto="la vena" lado="izq" color={KC.ink} tam={32} />
       </Escena>
       {/* 8 · el estudio de 1996 */}
       <Escena T={T} a={K.Estudio} b={K.Hondo} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <g opacity={pr(K.Estudio + 2.6, 0.5)}>
+          <g opacity={klerp(0.5, 1, pr(K.Estudio + 2.6, 0.5))} transform="translate(0 130)">
             <rect x={120} y={600} width={840} height={520} rx={28} fill={DERMIS} stroke={KC.ink} strokeWidth={10} />
             <rect x={120} y={600} width={840} height={60} rx={20} fill={CPIEL} stroke={KC.ink} strokeWidth={8} />
             <path d="M 470 420 L 610 420 L 580 600 L 500 600 Z" fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={6} />
@@ -226,49 +235,49 @@ function VenasAzules() {
             <FotonesPiel T={T} x0={120} y0={620} w={840} h={500} p={pr(K.Estudio + 3.0, 0.6)} />
           </g>
         </Lienzo>
-        <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Estudio + 2.6} anio="1996" quien="Alwin Kienle · Alemania y Canadá" revista="Applied Optics" x={540} y={760} />
-        <Chip T={T} at={K.Estudio + 3.2} until={K.Hondo - 0.1} texto="cómo viaja la luz en la piel" x={540} y={1180} tam={38} borde={KC.ink} />
+        <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Estudio + 2.6} anio="1996" quien="Alwin Kienle · Alemania y Canadá" revista="Applied Optics" x={540} y={300} />
+        <Chip T={T} at={K.Estudio + 3.2} until={K.Hondo - 0.1} texto="cómo viaja la luz en la piel" x={540} y={1340} tam={38} borde={KC.ink} />
       </Escena>
       {/* 9 · la profundidad: si la vena está muy honda, casi no se distingue */}
       <Escena T={T} a={K.Hondo} b={K.Muneca} fondo={KC.noche} zoom={0.03}>
         <Ambiente T={T} n={16} color="rgba(255,255,255,.12)" />
         {(() => { const h = pr(K.Hondo + 0.8, 2.6, kEase.suave), vy = klerp(760, 1060, h), vis = klerp(1, 0.12, h);
-          return <Lienzo>
+          return <Lienzo><g transform="translate(0 110)">
             <rect x={140} y={400} width={800} height={150} rx={22} fill={CPIEL} stroke={KC.ink} strokeWidth={8} />
             <rect x={140} y={448} width={800} height={54} fill={VENA_VISTA} opacity={vis} />
             <rect x={140} y={400} width={800} height={150} rx={22} fill="none" stroke={KC.ink} strokeWidth={8} />
             <CortePiel T={T}><VenaCorte x={540} y={vy} rx={110} ry={70} T={T} /></CortePiel>
             <path d={`M 540 ${vy - 80} L 540 560`} stroke={KC.texto} strokeWidth={4} strokeDasharray="10 10" opacity={0.6} />
-          </Lienzo>; })()}
-        <Etq T={T} at={K.Hondo + 0.4} until={K.Muneca - 0.1} x={950} y={380} texto="lo que ves" lado="izq" color={KC.texto} tam={28} />
-        <Chip T={T} at={K.Hondo + 2.6} until={K.Muneca - 0.1} texto="muy honda: casi no se distingue" x={540} y={595} tam={38} borde={KC.gold} />
+          </g></Lienzo>; })()}
+        <Etq T={T} at={K.Hondo + 0.4} until={K.Muneca - 0.1} x={950} y={490} texto="lo que ves" lado="izq" color={KC.texto} tam={28} />
+        <Chip T={T} at={K.Hondo + 2.6} until={K.Muneca - 0.1} texto="muy honda: casi no se distingue" x={540} y={705} tam={38} borde={KC.gold} />
       </Escena>
       {/* 10 · las que mejor ves: muñeca y dorso de la mano */}
       <Escena T={T} a={K.Muneca} b={K.Sangre} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
-        <Lienzo><g transform={`translate(0 ${(1 - pr(K.Muneca, 0.6, kEase.rebote)) * 500})`}><ManoDorso x={560} y={1010} s={1.05} T={T} /></g></Lienzo>
-        <Chip T={T} at={K.Muneca + 0.5} until={K.Sangre - 0.1} texto="cerca de la superficie" x={540} y={400} tam={42} borde={VENA_VISTA} />
-        <Etq T={T} at={K.Muneca + 2.6} until={K.Sangre - 0.1} x={400} y={1100} texto="muñeca" lado="izq" color={KC.ink} tam={32} />
-        <Etq T={T} at={K.Muneca + 3.4} until={K.Sangre - 0.1} x={700} y={860} texto="dorso de la mano" lado="der" color={KC.ink} tam={26} />
+        <Lienzo><g transform={`translate(0 ${(1 - pr(K.Muneca, 0.6, kEase.rebote)) * 500})`}><ManoDorso x={700} y={1110} s={1.65} T={T} /></g></Lienzo>
+        <Chip T={T} at={K.Muneca + 0.5} until={K.Sangre - 0.1} texto="cerca de la superficie" x={540} y={290} tam={42} borde={VENA_VISTA} />
+        <Etq T={T} at={K.Muneca + 2.6} until={K.Sangre - 0.1} x={465} y={1250} texto="muñeca" lado="izq" color={KC.ink} tam={32} />
+        <Etq T={T} at={K.Muneca + 3.4} until={K.Sangre - 0.1} x={425} y={1000} texto="dorso de la mano" lado="izq" color={KC.ink} tam={26} />
       </Escena>
       {/* 11 · cuando te sacan sangre: roja oscura */}
       <Escena T={T} a={K.Sangre} b={K.Cierre} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
-        <Lienzo><g transform={`rotate(${Math.sin(T * 2) * 2} 560 800)`}><TuboSangre x={560} y={480} llen={pr(K.Sangre + 0.3, 1.6, kEase.suave) * 0.8} T={T} /></g></Lienzo>
-        <Chip T={T} at={K.Sangre + 1.2} until={K.Cierre - 0.1} texto="roja oscura" x={250} y={760} tam={42} borde={SANGRE} />
-        <MitoTachado T={T} at={K.Sangre + 2.0} tacharEn={K.Sangre + 2.7} until={K.Cierre - 0.1} texto="sangre azul" x={250} y={900} tam={42} />
+        <Lienzo><g transform={`rotate(${Math.sin(T * 2) * 2} 580 900) translate(580 520) scale(1.4)`}><TuboSangre x={0} y={0} llen={pr(K.Sangre + 0.3, 1.6, kEase.suave) * 0.8} T={T} /></g></Lienzo>
+        <Chip T={T} at={K.Sangre + 1.2} until={K.Cierre - 0.1} texto="roja oscura" x={225} y={800} tam={42} borde={SANGRE} />
+        <MitoTachado T={T} at={K.Sangre + 2.0} tacharEn={K.Sangre + 2.7} until={K.Cierre - 0.1} texto="sangre azul" x={225} y={950} tam={42} />
       </Escena>
       {/* 12 · cierre: la misma muñeca, ahora con la luz explicada */}
       <Escena T={T} a={K.Cierre} b={FIN}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
-          <Antebrazo x={620} y={1000} T={T} />
-          <Rayo d="M 1000 360 L 470 960" color={LUZ_ROJA} grosor={10} p={pr(K.Cierre + 0.3, 0.6)} />
-          <Rayo d="M 1040 420 L 560 950 L 700 760" color={LUZ_AZUL} grosor={10} p={pr(K.Cierre + 0.5, 0.8)} />
+          <Antebrazo x={520} y={1080} s={1.7} T={T} />
+          <Rayo d="M 770 290 L 440 1000" color={LUZ_ROJA} grosor={12} p={pr(K.Cierre + 0.3, 0.6)} />
+          <Rayo d="M 820 290 L 470 1000 L 535 885" color={LUZ_AZUL} grosor={12} p={pr(K.Cierre + 0.5, 0.8)} />
         </Lienzo>
-        <Lupa T={T} at={K.Cierre + 0.4} until={K.Outro + 0.6} x={300} y={500} r={175} fx={420} fy={975} tinte={KC.red} etiqueta="POR DENTRO · TU VENA"
+        <Lupa T={T} at={K.Cierre + 0.4} until={K.Outro + 0.6} x={270} y={470} r={190} fx={316} fy={1024} tinte={KC.red} etiqueta="POR DENTRO · TU VENA"
           interior={(t, r) => <VenaDentro t={t} r={r} texto="sigue roja" />} />
-        <Chip T={T} at={K.Cierre + 1.0} until={K.Outro - 0.1} texto="no son azules" x={760} y={330} tam={44} borde={KC.gold} />
+        <Chip T={T} at={K.Cierre + 1.0} until={K.Outro - 0.1} texto="no son azules" x={540} y={1440} tam={44} borde={KC.gold} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Oscura - 0.1} texto="No es azul: *es roja oscura.*" />

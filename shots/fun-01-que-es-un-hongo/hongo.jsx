@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Fungi Mati #01 · ¿Qué es un hongo? — versión NARRADA (N1 "Por dentro") y gemelo MUDO (M4 "Ciclo").
 // Guion y fuentes: guion.md. El dibujo es esquemático (escala aproximada).
 const AVS = (n) => 'assets/stickers/' + n + '.png';
@@ -54,13 +55,17 @@ function SueloChampi({ T, red = 1, brillo = 0, crece = 1, abre = 1, x = 540, s =
       return yy < sup - 6 ? <EsporaAg key={i} x={xx} y={yy} s={0.9} rot={i * 33} o={Math.min(1, u * 2)} /> : null; });
   }
   return <MundoSuelo T={T} red={red} brillo={brillo} ox={x} cielo={cielo}>
+    {/* pase de belleza: cielo nocturno con degradado (tapa el color plano con puntos) */}
+    <defs><linearGradient id="hg-cielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#070b14" /><stop offset="0.7" stopColor="#0d1c22" /><stop offset="1" stopColor="#163a34" /></linearGradient></defs>
+    <rect x={-2000} y={sup - 2616} width={KW + 4000} height={2600} fill="url(#hg-cielo)" />
+    {Array.from({ length: 26 }, (_, i) => { const q = krng(i + 70); const xx = q() * KW, yy = sup - 120 - q() * 1300; return <circle key={i} cx={xx + Math.sin(T * 0.4 + i) * 12} cy={yy + Math.cos(T * 0.3 + i) * 10} r={1.5 + q() * 3} fill="#cfeee6" opacity={0.18 + 0.18 * q()} />; })}
     <Champinon x={x} y={sup + 4} s={s} crece={crece} abre={abre} rot={mece(T, 2, 0.15) * 1.2} />
     {otro && <Champinon x={otro.x} y={sup + 4} s={otro.s} crece={otro.crece} abre={otro.abre} rot={mece(T, 6, 0.15) * 1.5} />}
     {esp}
   </MundoSuelo>;
 }
 // Pelo humano para comparar (≈ 60–80 µm; de 17 a 181 µm según la persona, Ley 1999), banda café con escamas.
-function Pelo({ y = 1500, alto = 476, o = 1 }) {
+function Pelo({ y = 1420, alto = 476, o = 1 }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, opacity:o }}>
     <rect x={-20} y={y} width={KW + 40} height={alto} fill="#3b2418" stroke={KC.ink} strokeWidth={6} />
     {Array.from({ length: 9 }, (_, i) => <path key={i} d={`M ${i * 130} ${y + 4} l 70 ${alto * 0.25} l -70 ${alto * 0.25}`} fill="none" stroke="rgba(255,255,255,.15)" strokeWidth={8} />)}
@@ -76,21 +81,21 @@ function HongoNarrado() {
   // cámara macro: el champiñón entero → bajo tierra (al micelio)
   const keysG = [{ t: K.G, x: 540, y: 960, z: 1 }, { t: K.R - 0.6, x: 540, y: 960, z: 1.04 }, { t: K.R + 1.4, x: 600, y: sup + 120, z: 5 }];
   const cG = camaraEn(T, keysG);
-  const keysP = [{ t: K.P - 0.4, x: 600, y: sup + 160, z: 3.2 }, { t: K.P + 1.2, x: 540, y: 960, z: 1 }, { t: K.F + 6, x: 540, y: 960, z: 1.05 }];
+  const keysP = [{ t: K.P - 0.4, x: 600, y: sup + 160, z: 3.2 }, { t: K.P + 1.4, x: 540, y: sup - 20, z: 1.9 }, { t: K.F + 0.5, x: 540, y: sup - 40, z: 1.8 }, { t: K.F + 4.4, x: 540, y: 960, z: 1 }, { t: K.F + 6, x: 540, y: 960, z: 1.05 }];
   const crece = kprog(T, K.F + 0.6, K.F + 4.2, kEase.suave), abre = kprog(T, K.F + 3.2, K.F + 5.6, kEase.sale);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: el champiñón brota y luego se ilumina el micelio bajo tierra (rayos X) */}
       <Escena T={T} a={K.G} b={K.R + 1.3} zoom={0}>
         <Camara T={T} keys={keysG}>
-          <SueloChampi T={T} red={1} brillo={kprog(T, K.G + 2.4, K.G + 3.4)} crece={klerp(0.55, 1, kprog(T, K.G + 0.05, K.G + 0.7, kEase.rebote))} abre={klerp(0.6, 1, kprog(T, K.G + 0.05, K.G + 0.9))} esporas={K.G + 0.6} />
+          <SueloChampi T={T} red={1} brillo={kprog(T, K.G + 1.9, K.G + 2.9)} crece={klerp(0.55, 1, kprog(T, K.G + 0.05, K.G + 0.7, kEase.rebote))} abre={klerp(0.6, 1, kprog(T, K.G + 0.05, K.G + 0.9))} esporas={K.G + 0.6} />
         </Camara>
         <Escala T={T} z={cG.z} pxPorMm={PX_MACRO} />
       </Escena>
       {/* 1-2 · hifas de cerca: red, micelio, comen por fuera */}
       <Escena T={T} a={K.R + 1.3} b={K.P} fondo="radial-gradient(circle at 50% 50%, #1b2333 0%, #0E0F12 75%)" zoom={0.04}>
         <Ambiente T={T} n={30} seed={12} color="rgba(234,255,247,.35)" tam={[3, 8]} />
-        <HifasMicro T={T} g={kprog(T, K.R + 1.3, K.R + 6.5, kEase.suave) * 0.85 + kprog(T, K.C, K.C + 3) * 0.15} enzimas={kprog(T, K.C + 3.2, K.C + 4.2)} />
+        <HifasMicro T={T} g={0.5 + kprog(T, K.R + 1.3, K.R + 5.2, kEase.suave) * 0.35 + kprog(T, K.C, K.C + 3) * 0.15} enzimas={kprog(T, K.C + 3.2, K.C + 4.2)} />
         <Pelo o={kprog(T, K.R + 2.4, K.R + 3.2) * (1 - kprog(T, K.R + 6.2, K.R + 7))} />
         <Escala T={T} z={1} pxPorMm={PX_MICRO} />
       </Escena>
@@ -102,40 +107,39 @@ function HongoNarrado() {
         <Escala T={T} z={camaraEn(T, keysP).z} pxPorMm={PX_MACRO} />
       </Escena>
       {/* 5 · como el manzano */}
-      <Escena T={T} a={K.M} b={K.E} fondo={KC.yellow}>
-        <div style={{ position:'absolute', inset:0, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.35) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
+      <Escena T={T} a={K.M} b={K.E} fondo="radial-gradient(ellipse 95% 60% at 50% 38%, #2b2a18 0%, #0a0f1c 72%)">
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <rect x={0} y={1180} width={KW} height={740} fill="#6b4a32" stroke={KC.ink} strokeWidth={8} />
+          <rect x={-20} y={1180} width={KW + 40} height={780} fill="#3a2c27" stroke={KC.ink} strokeWidth={8} />
           <Manzano T={T} x={290} y={1184} s={1.05} />
-          {Array.from({ length: 18 }, (_, i) => <line key={i} x1={760 + Math.cos(i) * 20} y1={1190} x2={760 + Math.cos(i * 1.7) * 230} y2={1220 + (i % 6) * 60} stroke="#f4ecd8" strokeWidth={4} opacity={kprog(T, K.M + 0.4 + i * 0.04, K.M + 0.8 + i * 0.04)} />)}
+          {Array.from({ length: 18 }, (_, i) => <line key={i} x1={760 + Math.cos(i) * 20} y1={1190} x2={760 + Math.cos(i * 1.7) * 230} y2={1220 + (i % 6) * 60} stroke="#f4ecd8" strokeWidth={4} opacity={0.35 + 0.65 * kprog(T, K.M + 0.1 + i * 0.03, K.M + 0.5 + i * 0.03)} />)}
           <Champinon x={790} y={1184} s={1.6} crece={1} abre={1} rot={mece(T, 4, 0.2) * 2} />
-          <text x={540} y={800} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.M + 0.8, K.M + 1.2)}>=</text>
         </svg>
-        <Chip T={T} at={K.M + 0.5} texto="fruto" x={290} y={560} borde={KC.red} tam={40} />
-        <Chip T={T} at={K.M + 0.7} texto="fruto" x={790} y={560} borde={KC.red} tam={40} />
-        <Chip T={T} at={K.M + 1.4} texto="árbol" x={290} y={1500} borde={KC.leaf} tam={40} />
-        <Chip T={T} at={K.M + 1.6} texto="micelio" x={790} y={1500} borde={KC.mint} tam={40} />
+        <Chip T={T} at={K.M + 0.5} texto="fruto" x={290} y={505} borde={KC.red} tam={40} />
+        <Chip T={T} at={K.M + 0.7} texto="fruto" x={790} y={505} borde={KC.red} tam={40} />
+        <Chip T={T} at={K.M + 1.4} texto="árbol" x={290} y={1275} borde={KC.leaf} tam={40} />
+        <Chip T={T} at={K.M + 1.6} texto="micelio" x={790} y={1560} borde={KC.mint} tam={40} />
       </Escena>
       {/* 6 · el estudio: más parientes de los animales */}
-      <Escena T={T} a={K.E} b={K.Q} fondo={KC.lilac}>
-        <div style={{ position:'absolute', inset:0, backgroundImage:'repeating-linear-gradient(45deg, rgba(255,255,255,.12) 0 24px, transparent 24px 48px)' }}></div>
-        <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="1993" quien="Baldauf y Palmer" revista="PNAS · 25 proteínas comparadas" y={760} />
-        {T > K.E + 3.4 && <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+      <Escena T={T} a={K.E} b={K.Q} fondo="radial-gradient(ellipse 95% 60% at 50% 46%, #261f42 0%, #0a0f1c 72%)">
+        <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="1993" quien="Baldauf y Palmer" revista="PNAS · 25 proteínas comparadas" y={350} />
+        {/* los tres grupos están en cuadro desde el inicio (atenuados); el árbol de parentesco crece con la frase */}
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {(() => { const p = kprog(T, K.E + 3.5, K.E + 5, kEase.sale), q = kprog(T, K.E + 4.6, K.E + 6, kEase.sale);
+            if (p <= 0) return null;
             return <g strokeLinecap="round" fill="none">
-              <path d={`M 540 1150 L 540 ${klerp(1150, 1040, p)}`} stroke={KC.ink} strokeWidth={14} />
-              <path d={`M 540 1040 L ${klerp(540, 230, p)} ${klerp(1040, 640, p)}`} stroke={KC.ink} strokeWidth={14} />
-              <path d={`M 540 1040 L ${klerp(540, 700, p)} ${klerp(1040, 860, p)}`} stroke={KC.ink} strokeWidth={14} />
-              <path d={`M 700 860 L ${klerp(700, 560, q)} ${klerp(860, 640, q)} M 700 860 L ${klerp(700, 860, q)} ${klerp(860, 640, q)}`} stroke={KC.ink} strokeWidth={14} />
-              <circle cx={700} cy={860} r={26 * q} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />
+              <path d={`M 500 1550 L 500 ${klerp(1550, 1430, p)}`} stroke={KC.ink} strokeWidth={16} />
+              <path d={`M 500 1430 L ${klerp(500, 215, p)} ${klerp(1430, 1010, p)}`} stroke={KC.ink} strokeWidth={16} />
+              <path d={`M 500 1430 L ${klerp(500, 720, p)} ${klerp(1430, 1230, p)}`} stroke={KC.ink} strokeWidth={16} />
+              <path d={`M 720 1230 L ${klerp(720, 560, q)} ${klerp(1230, 1010, q)} M 720 1230 L ${klerp(720, 885, q)} ${klerp(1230, 1010, q)}`} stroke={KC.ink} strokeWidth={16} opacity={q > 0 ? 1 : 0} />
+              {q > 0 && <circle cx={720} cy={1230} r={32 * q} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />}
             </g>; })()}
-          <g opacity={kprog(T, K.E + 4.4, K.E + 5)}><Manzano T={T} x={230} y={600} s={0.38} /></g>
-          <g opacity={kprog(T, K.E + 5.4, K.E + 6)}><Champinon x={560} y={600} s={0.9} /></g>
-          <g opacity={kprog(T, K.E + 5.6, K.E + 6.2)}><Escarabajo T={T} x={860} y={520} s={0.55} /></g>
-        </svg>}
-        <Chip T={T} at={K.E + 4.4} texto="plantas" x={230} y={700} borde={KC.leaf} tam={36} />
-        <Chip T={T} at={K.E + 5.4} texto="hongos" x={560} y={700} borde={KC.gold} tam={36} />
-        <Chip T={T} at={K.E + 5.6} texto="animales" x={880} y={700} borde={KC.red} tam={36} />
+          <g opacity={klerp(0.5, 1, kprog(T, K.E + 4.4, K.E + 5))}><Manzano T={T} x={220} y={880} s={0.6} /></g>
+          <g opacity={klerp(0.5, 1, kprog(T, K.E + 5.4, K.E + 6))}><Champinon x={560} y={880} s={1.2} /></g>
+          <g opacity={klerp(0.5, 1, kprog(T, K.E + 5.6, K.E + 6.2))}><Escarabajo T={T} x={890} y={765} s={0.85} /></g>
+        </svg>
+        <Chip T={T} at={K.E + 4.4} texto="plantas" x={215} y={945} borde={KC.leaf} tam={36} />
+        <Chip T={T} at={K.E + 5.4} texto="hongos" x={560} y={945} borde={KC.gold} tam={36} />
+        <Chip T={T} at={K.E + 5.6} texto="animales" x={885} y={945} borde={KC.red} tam={36} />
       </Escena>
       {/* 7 · quitina: pared de la hifa = caparazón del escarabajo */}
       <Escena T={T} a={K.Q} b={K.L} fondo="radial-gradient(circle at 50% 40%, #1b2333 0%, #0E0F12 75%)">
@@ -144,25 +148,26 @@ function HongoNarrado() {
           <rect x={-20} y={470} width={KW + 40} height={250} rx={120} fill="#cfeee3" />
           {Array.from({ length: 6 }, (_, i) => <circle key={i} cx={((i * 220 + T * 30) % 1200) - 60} cy={595 + mece(T, i, 0.3) * 20} r={22} fill="#b18cff" />)}
           <CadenaQuitina x={150} y={440} p={kprog(T, K.Q + 0.3, K.Q + 2.2)} s={0.85} />
-          <Escarabajo T={T} x={780} y={1060} s={kentrada(T, K.Q + 1.6, null, 'pop').s * 1.05} />
-          <g opacity={kprog(T, K.Q + 2.2, K.Q + 2.8)}><CadenaQuitina x={640} y={880} n={3} s={0.45} /></g>
+          <g opacity={klerp(0.4, 1, kprog(T, K.Q + 1.4, K.Q + 1.9))}><Escarabajo T={T} x={720} y={1270} s={1.9 + 0.08 * Math.sin(Math.PI * kprog(T, K.Q + 1.4, K.Q + 2))} /></g>
+          <g opacity={kprog(T, K.Q + 2.2, K.Q + 2.8)}><CadenaQuitina x={649} y={1330} n={3} s={0.6} /></g>
         </svg>
         <Etq T={T} at={K.Q + 0.8} until={K.L} x={120} y={360} texto="pared de la hifa" />
-        <Chip T={T} at={K.Q + 2.0} texto="quitina" x={330} y={1060} borde={KC.gold} tam={48} mono />
+        <Chip T={T} at={K.Q + 2.0} texto="quitina" x={225} y={1190} borde={KC.gold} tam={48} mono />
       </Escena>
       {/* 8 · levadura: también es hongo, de una sola célula */}
-      <Escena T={T} a={K.L} b={K.Ci} fondo={KC.pink}>
-        <div style={{ position:'absolute', inset:0, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
+      <Escena T={T} a={K.L} b={K.Ci} fondo="radial-gradient(ellipse 95% 60% at 50% 46%, #3a1a30 0%, #0a0f1c 72%)">
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <ellipse cx={540} cy={1600} rx={380} ry={90} fill="#d9e1e8" stroke={KC.ink} strokeWidth={9} />
-          <path d={`M 170 1600 Q 540 ${1600 - klerp(150, 300, kprog(T, K.L, K.L + 4.5))} 910 1600 Z`} fill="#f2dcae" stroke={KC.ink} strokeWidth={9} />
-          <path d="M 160 1600 Q 200 1780 540 1790 Q 880 1780 920 1600" fill="#d9e1e8" stroke={KC.ink} strokeWidth={9} />
+          <g transform="translate(0 -150)">
+            <ellipse cx={540} cy={1600} rx={380} ry={90} fill="#d9e1e8" stroke={KC.ink} strokeWidth={9} />
+            <path d={`M 170 1600 Q 540 ${1600 - klerp(150, 300, kprog(T, K.L, K.L + 4.5))} 910 1600 Z`} fill="#f2dcae" stroke={KC.ink} strokeWidth={9} />
+            <path d="M 160 1600 Q 200 1780 540 1790 Q 880 1780 920 1600" fill="#d9e1e8" stroke={KC.ink} strokeWidth={9} />
+          </g>
         </svg>
-        <Lupa T={T} at={K.L + 0.5} until={K.Ci - 0.3} x={540} y={680} r={280} fx={540} fy={1480} etiqueta="AL MICROSCOPIO · masa de pan" tinte={KC.yellow}
+        <Lupa T={T} at={K.L + 0.3} until={K.Ci - 0.3} x={540} y={720} r={345} fx={540} fy={1370} etiqueta="AL MICROSCOPIO · masa de pan" tinte={KC.yellow}
           interior={(t, r) => <svg width={r * 2} height={r * 2}>{[[r * 0.6, r * 0.7, 0], [r * 1.35, r * 0.6, 1], [r * 0.9, r * 1.35, 2], [r * 1.55, r * 1.4, 3]].map(([cx, cy, i]) =>
             <Levadura key={i} x={cx} y={cy} r={r * 0.2} brote={kprog(t, K.L + 1 + i * 0.5, K.L + 3 + i * 0.5)} T={t} seed={i} rot={i * 40} />)}</svg>} />
-        <Etq T={T} at={K.L + 1.6} until={K.Ci - 0.3} x={190} y={1080} texto="Saccharomyces cerevisiae" it lado="der" tam={30} />
-        <Chip T={T} at={K.L + 2.4} until={K.Ci - 0.3} texto="1 célula · sin micelio" y={330} borde={KC.yellow} tam={38} />
+        <Etq T={T} at={K.L + 1.6} until={K.Ci - 0.3} x={535} y={1215} texto="Saccharomyces cerevisiae" it lado="izq" tam={26} />
+        <Chip T={T} at={K.L + 2.4} until={K.Ci - 0.3} texto="1 célula · sin micelio" y={285} borde={KC.yellow} tam={38} />
       </Escena>
       {/* 9 · cierre: la misma imagen del inicio, ahora con el hongo completo a la vista */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.03}>
@@ -173,22 +178,21 @@ function HongoNarrado() {
       {/* etiquetas del gancho / cierre */}
       <Etq T={T} at={K.G + 1.0} until={K.R - 0.4} x={560} y={500} texto="fruto" color={KC.texto} lado="izq" />
       <Etq T={T} at={K.G + 1.4} until={K.R - 0.4} x={560} y={556} texto="Agaricus bisporus" it tam={28} lado="izq" />
-      <Chip T={T} at={K.G + 3.0} until={K.R - 0.4} texto="el hongo de verdad" y={1530} x={400} borde={KC.mint} tam={42} />
+      <Chip T={T} at={K.G + 2.6} until={K.R - 0.4} texto="el hongo de verdad" y={1590} x={255} borde={KC.mint} tam={38} />
       <Chip T={T} at={K.Ci + 0.4} until={K.O} texto="lo que ves: el fruto" y={430} borde={KC.red} tam={42} />
-      <Chip T={T} at={K.Ci + 1.4} until={K.O} texto="el hongo: el micelio" y={1530} x={400} borde={KC.mint} tam={42} />
+      <Chip T={T} at={K.Ci + 1.4} until={K.O} texto="el hongo: el micelio" y={1590} x={255} borde={KC.mint} tam={38} />
       {/* micro */}
-      <Etq T={T} at={K.R + 2.0} until={K.R + 6.2} x={330} y={480} texto="hifa" color="#eafff7" />
-      <Etq T={T} at={K.R + 2.8} until={K.R + 6.2} x={120} y={1600} texto="pelo humano (≈ 60–80 µm)" tam={28} />
+      <Etq T={T} at={K.R + 2.6} until={K.R + 6.2} x={268} y={800} texto="hifa" color="#eafff7" lado="izq" />
+      <Etq T={T} at={K.R + 2.8} until={K.R + 6.2} x={120} y={1500} texto="pelo humano (≈ 60–80 µm)" tam={28} />
       <Chip T={T} at={K.R + 6.4} until={K.C - 0.2} texto="micelio = el cuerpo del hongo" y={430} borde={KC.mint} tam={42} />
       <MitoTachado T={T} at={K.C + 0.1} tacharEn={K.C + 0.7} until={K.C + 3.3} texto="raíces" x={250} y={420} tam={40} />
       <MitoTachado T={T} at={K.C + 0.5} tacharEn={K.C + 1.1} until={K.C + 3.3} texto="hojas" x={540} y={420} tam={40} />
       <MitoTachado T={T} at={K.C + 0.9} tacharEn={K.C + 1.6} until={K.C + 3.3} texto="fotosíntesis" x={820} y={520} tam={40} />
-      <Etq T={T} at={K.C + 3.6} until={K.P - 0.2} x={1010} y={620} texto="enzimas" color={KC.yellow} lado="izq" />
-      <Etq T={T} at={K.C + 4.4} until={K.P - 0.2} x={1010} y={900} texto="nutrientes" color={KC.mint} lado="izq" />
-      <Chip T={T} at={K.C + 3.4} until={K.P - 0.2} texto="digiere por fuera" y={420} borde={KC.yellow} tam={42} />
+      <Etq T={T} at={K.C + 3.6} until={K.P - 0.2} x={790} y={625} texto="enzimas" color={KC.yellow} />
+      <Etq T={T} at={K.C + 4.4} until={K.P - 0.2} x={765} y={910} texto="nutrientes" color={KC.mint} />
       {/* fruto */}
-      <Chip T={T} at={K.F + 0.4} until={K.M - 0.2} texto="humedad ✓  temperatura ✓" y={420} borde={KC.cyan} tam={38} />
-      <Etq T={T} at={K.F + 4.4} until={K.M - 0.2} x={770} y={620} texto="cuerpo fructífero" tam={30} />
+      <Chip T={T} at={K.F + 0.4} until={K.F + 4.1} texto="humedad ✓  temperatura ✓" y={420} borde={KC.cyan} tam={38} />
+      <Etq T={T} at={K.F + 4.4} until={K.M - 0.2} x={470} y={545} texto="cuerpo fructífero" tam={30} />
       <Etq T={T} at={K.F + 5.6} until={K.M - 0.2} x={300} y={1020} texto="esporas" lado="izq" tam={30} />
 
       <Subtitulo T={T} idx={0} at={K.G + 0.2} until={K.R - 0.1} texto="No es el hongo: *es su fruto.*" />

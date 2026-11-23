@@ -294,7 +294,7 @@ function ViolinShot() {
       </Escena>
 
       {/* textos */}
-      <NumeroGigante T={T} at={K.G + 2.6} until={K.Ci - 0.3} valor={9} dur={1.6} sufijo=" meses" etiqueta="con hongos" x={820} y={1080} tam={110} color={KC.mint} />
+      <NumeroGigante T={T} at={K.G + 2.6} until={K.Ci - 0.3} valor={9} dur={1.6} sufijo=" meses" etiqueta="con hongos" x={800} y={600} tam={110} color={KC.mint} />
       <Etq T={T} at={K.G + 3.4} until={K.Ci - 0.3} x={650} y={1230} texto="tratada con hongos" tam={26} color={KC.ink} />
       <NumeroGigante T={T} at={K.Ci + 1.3} until={K.Ma - 0.3} valor={113} dur={1.2} etiqueta="personas" x={350} y={825} tam={150} color={KC.gold2} />
       <Chip T={T} at={K.Ci + 2.0} until={K.Ma - 0.3} texto="creyeron que era el Stradivarius" x={570} y={1086} tam={32} borde={KC.gold} />

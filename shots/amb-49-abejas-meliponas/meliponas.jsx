@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #49 · La abeja maya que no pica — NARRADO (N1 "Por dentro" + estudio a la mitad).
 // Datos: Pat Fernández et al. 2018 (Estudios de Cultura Maya 52), Villanueva-Gutiérrez et al. 2013 (J. Kansas Entomol. Soc. 86),
 // guía ECOSUR 2023, Moreno y Cardozo 2003, Landa (hacia 1566). Ver guion.md y verificacion.md. Todo el dibujo es esquemático.
@@ -71,9 +72,9 @@ function Jobon({ T = 0, x, y, w = 760, h = 230, discos = 1, corte = 0, pCria = 1
     {corte < 1 && Array.from({ length: 7 }, (_, i) => <path key={i} d={`M ${L + 40 + i * (w - 80) / 6} ${-ry + 14} q 14 ${ry * 0.6} 0 ${h - 28}`} stroke={MEL.troncoOsc} strokeWidth={5} fill="none" opacity={1 - corte} />)}
     {corte > 0 && <g opacity={corte}>
       <rect x={L + 16} y={-ry + 16} width={w - 32} height={h - 32} rx={18} fill="#2a1a10" stroke="#f4efe4" strokeWidth={3} strokeDasharray="12 8" />
-      <DiscosCria x={0} y={0} p={pCria} s={Math.min(1, h / 230)} />
-      <Racimo x={L + w * 0.17} y={0} p={pOllas} seed={4} s={Math.min(1, h / 230)} />
-      <Racimo x={R - w * 0.17} y={0} p={pOllas} seed={9} s={Math.min(1, h / 230)} />
+      <DiscosCria x={0} y={0} p={pCria} s={Math.min(1.25, h / 230)} />
+      <Racimo x={L + w * 0.17} y={0} p={pOllas} seed={4} s={Math.min(1.25, h / 230)} />
+      <Racimo x={R - w * 0.17} y={0} p={pOllas} seed={9} s={Math.min(1.25, h / 230)} />
     </g>}
     <circle cx={0} cy={-ry + 2} r={Math.max(6, h * 0.05)} fill="#1a100a" stroke={KC.ink} strokeWidth={3} opacity={1 - corte * 0.7} />
     {[L, R].map((ax, i) => <g key={i} opacity={discos} transform={`translate(${ax} 0)`}>
@@ -154,40 +155,42 @@ function MeliponasShot() {
 
   // Gancho: la abeja vuela y aterriza en la punta del dedo (antes del segundo 1).
   const ate = kprog(T, K.G, K.G + 0.8, kEase.sale);
-  const abX = klerp(900, 430, ate), abY = klerp(520, 905, ate) - Math.sin(ate * Math.PI) * 120;
+  const abX = klerp(720, 430, ate), abY = klerp(560, 905, ate) - Math.sin(ate * Math.PI) * 120;
   const muerde = T > K.G + 3.0 && T < K.X ? Math.max(0, Math.sin((T - K.G - 3.0) * 9)) : 0;
   // Cierre: la abeja camina del dedo a la entrada del jobón.
   const cam = kprog(T, K.C + 0.8, K.C + 3.2, kEase.suave);
   const cbX = klerp(330, 640, cam), cbY = klerp(985, 815, cam) - Math.sin(cam * Math.PI) * 80;
   // mapa de la península
-  const mapa = <MapaMexico x={-2230} y={-430} ancho={4000} color="#ffe9a8" centro="#bfe3b4" />;
+  const mapa = <MapaMexico x={-2230} y={-430} ancho={4000} color="#4d4424" centro="#22402f" />;
   // Estudio: 11 jobones, se apagan 7
   const grid = Array.from({ length: 11 }, (_, i) => { const f = Math.floor(i / 4), c = i % 4; const cols = f === 2 ? 3 : 4;
-    return { x: 540 + (c - (cols - 1) / 2) * 230, y: 800 + f * 130, g: i >= 4 ? kclamp(kprog(T, K.E + 4.4, K.E + 6.6) * 7 - (10 - i), 0, 1) : 0 }; });
-  const enGrid = kprog(T, K.E + 3.3, K.E + 4.0, kEase.sale);
+    return { x: 540 + (c - (cols - 1) / 2) * 228, y: 860 + f * 160, g: i >= 4 ? kclamp(kprog(T, K.E + 4.4, K.E + 6.6) * 7 - (10 - i), 0, 1) : 0 }; });
+  const enGrid = kprog(T, K.E, K.E + 0.5, kEase.sale);
 
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: la abeja que no pica, en tu dedo */}
       <Escena T={T} a={K.G} b={K.X}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><Dedo x={420} y={960} s={1.25} /><Melipona T={T} x={abX} y={abY} s={1.6} rot={ate < 1 ? -10 : 0} muerde={muerde} vuela={ate < 1 ? 1 : 0} id="g" /></>)}
-        <EscalaFija texto="1 cm" largo={196} y={1480} color={KC.ink} />
+        {svg(<g transform="translate(540 860) scale(1.7) translate(-430 -905)"><Dedo x={420} y={960} s={1.25} /><Melipona T={T} x={abX} y={abY} s={1.6} rot={ate < 1 ? -10 : 0} muerde={muerde} vuela={ate < 1 ? 1 : 0} id="g" /></g>)}
+        {/* belleza: la base del dedo se hunde en la penumbra (como un foco sobre la abeja): el punto de atención es la abeja */}
+        <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, pointerEvents:'none', background:'linear-gradient(to bottom, rgba(8,12,22,0) 58%, rgba(8,12,22,.7) 80%, rgba(8,12,22,.92) 100%)' }}></div>
+        <EscalaFija texto="1 cm" largo={333} y={1480} color={KC.ink} />
       </Escena>
-      <Lupa T={T} at={K.G + 1.2} until={K.G + 3.0} x={270} y={560} r={150} fx={300} fy={915} tinte={KC.red} etiqueta="POR DENTRO · AGUIJÓN"
-        interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#14100c" />
+      <Lupa T={T} at={K.G + 1.2} until={K.G + 3.0} x={280} y={420} r={215} fx={322} fy={880} tinte={KC.red} etiqueta="POR DENTRO · AGUIJÓN"
+        interior={(t, R) => { const r = 150; return <svg width={R * 2} height={R * 2} viewBox="0 0 300 300"><rect width={r * 2} height={r * 2} fill="#14100c" />
           <g transform={`translate(${r + 60} ${r - 30}) scale(2.4)`}><ellipse cx={-10} cy={0} rx={44} ry={27} fill="#1d1a17" stroke="#f4efe4" strokeWidth={1.5} />
             {[-46, -34, -22, -10, 2].map((a) => <rect key={a} x={a} y={-22} width={4} height={44} fill="#c9cf6a" />)}
             <path d="M -54 2 l -5 1" stroke="#f4efe4" strokeWidth={2.5} strokeLinecap="round" /></g>
           <line x1={r - 125} y1={r - 55} x2={r - 75} y2={r - 5} stroke={KC.red} strokeWidth={10} strokeLinecap="round" opacity={kprog(t, K.G + 1.8, K.G + 2.1)} />
           <line x1={r - 75} y1={r - 55} x2={r - 125} y2={r - 5} stroke={KC.red} strokeWidth={10} strokeLinecap="round" opacity={kprog(t, K.G + 1.9, K.G + 2.2)} />
-          <text x={r} y={r + 92} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#fff">atrofiado</text></svg>} />
+          <text x={r} y={r + 92} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#fff">atrofiado</text></svg>; }} />
 
       {/* 2 · xunán kab: la abeja de los mayas, en la península de Yucatán */}
       <Escena T={T} a={K.X} b={K.J}>
         <FondoLunares color={KC.mint} />
         {svg(<>{mapa}
-          <Melipona T={T} x={450} y={880 + Math.sin(T * 3) * 10} s={1.1} id="x" /></>)}
+          <Melipona T={T} x={470} y={900 + Math.sin(T * 3) * 10} s={2.3} id="x" /></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
 
@@ -211,57 +214,60 @@ function MeliponasShot() {
             <line x1={360} y1={460} x2={720} y2={660} stroke={KC.red} strokeWidth={16} strokeLinecap="round" strokeDasharray="420" strokeDashoffset={420 * (1 - kprog(T, K.O + 0.9, K.O + 1.3))} />
             <line x1={720} y1={460} x2={360} y2={660} stroke={KC.red} strokeWidth={16} strokeLinecap="round" strokeDasharray="420" strokeDashoffset={420 * (1 - kprog(T, K.O + 1.1, K.O + 1.5))} /></g>
           <Jobon T={T} x={540} y={900} w={900} h={280} corte={kprog(T, K.O + 0.2, K.O + 0.9)} pOllas={kprog(T, K.O + 1.4, K.O + 3.4)} pCria={kprog(T, K.O + 3.4, K.O + 4.6)} /></>)}
-        <EscalaFija texto="10 cm" largo={180} y={1480} color={KC.paper} />
+        <EscalaFija texto="10 cm" largo={180} y={1480} color="#f4efe4" />
       </Escena>
 
       {/* 5 · pregunta: la casita de las abejas se va apagando */}
       <Escena T={T} a={K.P} b={K.Ki} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><NajilKaab T={T} x={290} y={900} s={0.85} apaga={kprog(T, K.P + 0.4, K.P + 2.4)} />
-          <text x={250} y={640} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 250 540)`}>?</text></>)}
+        {svg(<><NajilKaab T={T} x={540} y={1010} s={1.5} apaga={kprog(T, K.P + 0.4, K.P + 2.4)} />
+          <text x={540} y={560} textAnchor="middle" style={{ font:`400 260px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 540 470)`}>?</text></>)}
         <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
       </Escena>
 
       {/* 6 · un kilo al año por tronco; la abeja europea rinde más y en parte la desplazó */}
       <Escena T={T} a={K.Ki} b={K.A}>
         <FondoLunares color={KC.cyan} />
-        {svg(<>{(() => { const d = kprog(T, K.Ki + 5.6, K.Ki + 7.0, kEase.suave);
-          return <><Jobon T={T} x={320 - d * 80} y={680} w={380} h={130} />
-            <path d={`M ${320 - d * 80} 770 l 0 90`} stroke={KC.ink} strokeWidth={8} markerEnd="" />
-            <path d={`M ${300 - d * 80} 845 l 20 26 l 20 -26`} stroke={KC.ink} strokeWidth={8} fill="none" strokeLinejoin="round" />
-            <Frasco x={320 - d * 80} y={1170} lleno={kprog(T, K.Ki + 1.4, K.Ki + 3.4, kEase.suave)} s={0.95} />
-            <text x={320 - d * 80} y={1000} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Ki + 3.2, K.Ki + 3.6)}>≈ 1 kg</text>
-            <g transform={`translate(${klerp(700, 0, kprog(T, K.Ki + 5.0, K.Ki + 6.4, kEase.sale))} 0)`} opacity={kprog(T, K.Ki + 5.0, K.Ki + 5.4)}><CajaApis T={T} x={760} y={960} s={0.9} /></g></>; })()}</>)}
+        {svg(<>{(() => { const d = kprog(T, K.Ki + 5.0, K.Ki + 6.2, kEase.suave);
+          return <><g transform={`translate(${klerp(540, 285, d)} 930) scale(${klerp(1.4, 1, d)}) translate(-320 -925)`}>
+            <Jobon T={T} x={320} y={680} w={380} h={130} />
+            <path d="M 320 770 l 0 90" stroke={KC.ink} strokeWidth={8} markerEnd="" />
+            <path d="M 300 845 l 20 26 l 20 -26" stroke={KC.ink} strokeWidth={8} fill="none" strokeLinejoin="round" />
+            <Frasco x={320} y={1170} lleno={kprog(T, K.Ki + 1.4, K.Ki + 3.4, kEase.suave)} s={0.95} />
+            <text x={320} y={1000} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Ki + 3.2, K.Ki + 3.6)}>≈ 1 kg</text></g>
+            <g transform={`translate(${klerp(700, 0, kprog(T, K.Ki + 5.0, K.Ki + 6.4, kEase.sale))} 0)`} opacity={kprog(T, K.Ki + 5.0, K.Ki + 5.4)}><CajaApis T={T} x={770} y={990} s={1.1} /></g></>; })()}</>)}
         <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
       </Escena>
 
       {/* 7 · quienes la cuidan: edad promedio de más de sesenta; los jóvenes se van a la ciudad */}
       <Escena T={T} a={K.A} b={K.E}>
         <FondoLunares color={KC.mint} />
-        {svg(<><Ciudad x={760} y={1150} s={0.9} />
-          <Persona x={260} y={1150} s={1.3} mayor />
-          <Persona x={420} y={1150} s={1.2} mayor color="#3a2f28" />
+        {svg(<><Ciudad x={720} y={1220} s={1.1} />
+          <Persona x={190} y={1220} s={1.8} mayor />
+          <Persona x={400} y={1220} s={1.7} mayor color="#c9a27c" />
           {[0, 1].map((i) => { const u = kprog(T, K.A + 2.6 + i * 0.4, K.A + 5.8 + i * 0.4, kEase.suave);
-            return <Persona key={i} x={klerp(520, 780, u) + i * 60} y={1150} s={1.15} paso={T * 9 + i} color="#2a7f6f" />; })}
-          <text x={340} y={830} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.A + 0.6, K.A + 1.0)}>+60</text></>)}
+            return <Persona key={i} x={klerp(560, 800, u) + i * 80} y={1220} s={1.55} paso={T * 9 + i} color="#3fb39c" />; })}
+          <text x={300} y={800} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.A + 0.6, K.A + 1.0)}>+60</text></>)}
         <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
       </Escena>
 
       {/* 8 · estudio 2011, Zona Maya de Quintana Roo: de ~11 a ~4 colonias por meliponario */}
       <Escena T={T} a={K.E} b={K.L}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<g opacity={enGrid}>{grid.map((q, i) => <Jobon key={i} x={q.x} y={q.y} w={190} h={88} gris={q.g} />)}</g>)}
+        {svg(<g opacity={enGrid}>{grid.map((q, i) => <Jobon key={i} x={q.x} y={q.y} w={184} h={104} gris={q.g} />)}</g>)}
         <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
       </Escena>
 
       {/* 9 · Landa, hacia 1566: «No pican estas abejas» */}
       <Escena T={T} a={K.L} b={K.C}>
         <FondoLunares color={KC.orange} />
+        {/* belleza: abeja un poco más grande y abeja + cita bajadas al centro del cuadro */}
+        {svg(<Melipona T={T} x={520 + Math.sin(T * 1.3) * 26} y={840 + Math.sin(T * 2.6) * 16} s={3.6} rot={-6} id="l" />)}
         {(() => { const u = kprog(T, K.L + 0.2, K.L + 1.0, kEase.sale);
-          return <div style={{ position:'absolute', left:110, top:740, width:860, height:360 * u, overflow:'hidden', background:'#f3e2b8', border:`7px solid ${KC.ink}`, borderRadius:18, boxShadow:`12px 12px 0 ${KC.ink}` }}>
-            <div style={{ padding:'36px 40px 0', font:`italic 700 66px/1.1 Georgia, 'Times New Roman', serif`, color:'#3b2410', textAlign:'center' }}>«No pican estas abejas»</div>
-            <div style={{ padding:'26px 40px 0', font:`700 30px ${KF.mono}`, color:'#6b4a26', textAlign:'center' }}>— fray Diego de Landa, hacia 1566</div>
-            <div style={{ padding:'10px 40px 0', font:`italic 400 26px Georgia, serif`, color:'#6b4a26', textAlign:'center' }}>"vejiguitas como nueces de cera… llenas de la miel"</div>
+          return <div style={{ position:'absolute', left:110, top:1110, width:860, height:360 * u, overflow:'hidden', background:'#2b1e10', border:'4px solid #c9a877', borderRadius:18, boxShadow:'0 24px 60px rgba(0,0,0,.6)' }}>
+            <div style={{ padding:'36px 40px 0', font:`italic 700 66px/1.1 Georgia, 'Times New Roman', serif`, color:'#f3e2b8', textAlign:'center' }}>«No pican estas abejas»</div>
+            <div style={{ padding:'26px 40px 0', font:`700 30px ${KF.mono}`, color:'#c9a877', textAlign:'center' }}>— fray Diego de Landa, hacia 1566</div>
+            <div style={{ padding:'10px 40px 0', font:`italic 400 26px Georgia, serif`, color:'#c9a877', textAlign:'center' }}>"vejiguitas como nueces de cera… llenas de la miel"</div>
             <svg width={860} height={120} style={{ position:'absolute', left:0, top:250 }}>{[0, 1, 2, 3, 4].map((i) => <Ollita key={i} x={330 + i * 48} y={50 + (i % 2) * 14} s={0.9} tipo="miel" o={kprog(T, K.L + 1.2 + i * 0.15, K.L + 1.5 + i * 0.15)} />)}</svg>
           </div>; })()}
       </Escena>
@@ -269,34 +275,34 @@ function MeliponasShot() {
       {/* 10 · cierre: la misma abeja del inicio, ahora entra a su jobón */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><Jobon T={T} x={760} y={930} w={620} h={230} /><Dedo x={340} y={1040} s={1.1} />
-          <Melipona T={T} x={cbX} y={cbY} s={1.3 * (1 - cam * 0.35)} rot={cam > 0 && cam < 1 ? -14 : 0} vuela={cam > 0 && cam < 1 ? 1 : 0} id="c" /></>)}
+        {svg(<g transform="translate(520 940) scale(1.3) translate(-540 -960)"><Jobon T={T} x={760} y={930} w={620} h={230} /><Dedo x={340} y={1040} s={1.1} />
+          <Melipona T={T} x={cbX} y={cbY} s={1.3 * (1 - cam * 0.35)} rot={cam > 0 && cam < 1 ? -14 : 0} vuela={cam > 0 && cam < 1 ? 1 : 0} id="c" /></g>)}
         <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
       </Escena>
 
       {/* datos y etiquetas */}
       <Chip T={T} at={K.G + 3.0} until={K.X - 0.2} texto="a lo mucho: un mordisco" y={1440} x={540} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.G + 0.9} until={K.G + 2.9} x={620} y={1010} texto="10–11 mm" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.X + 0.4} until={K.J - 0.2} x={610} y={740} texto="xunán kab" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.X + 0.9} until={K.J - 0.2} x={610} y={796} texto="Melipona beecheii" it tam={34} color={KC.ink} />
-      <Etq T={T} at={K.X + 1.6} until={K.J - 0.2} x={300} y={1010} texto="Campeche" lado="izq" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.X + 1.9} until={K.J - 0.2} x={620} y={1060} texto="Quintana Roo" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.X + 2.2} until={K.J - 0.2} x={470} y={680} texto="Yucatán" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.G + 0.9} until={K.G + 2.9} x={745} y={900} texto="10–11 mm" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.X + 0.4} until={K.J - 0.2} x={590} y={700} texto="xunán kab" tam={40} color={KC.ink} />
+      <Etq T={T} at={K.X + 0.9} until={K.J - 0.2} x={590} y={756} texto="Melipona beecheii" it tam={34} color={KC.ink} />
+      <Etq T={T} at={K.X + 1.6} until={K.J - 0.2} x={290} y={1120} texto="Campeche" lado="izq" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.X + 1.9} until={K.J - 0.2} x={660} y={1090} texto="Quintana Roo" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.X + 2.2} until={K.J - 0.2} x={430} y={640} texto="Yucatán" tam={28} color={KC.ink} />
       <Chip T={T} at={K.X + 2.8} until={K.J - 0.2} texto="crianza maya prehispánica" y={1440} x={540} tam={36} borde={KC.leaf} />
-      <Chip T={T} at={K.J + 1.9} until={K.O - 0.2} texto="jobón: tronco hueco" y={470} x={420} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.J + 1.9} until={K.O - 0.2} texto="jobón: tronco hueco" y={640} x={540} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.J + 2.2} until={K.O - 0.2} x={130} y={1035} texto="disco de madera" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.J + 2.6} until={K.O - 0.2} x={575} y={740} texto="entrada" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.J + 2.6} until={K.O - 0.2} x={556} y={766} texto="entrada" tam={28} color={KC.ink} />
       <Chip T={T} at={K.O + 0.3} until={K.O + 2.4} texto="¿panal de hexágonos? no" y={410} x={560} tam={34} borde={KC.red} />
-      <Etq T={T} at={K.O + 2.6} until={K.P - 0.2} x={200} y={1100} texto="ollitas de cera: miel y polen" tam={30} color={KC.paper} />
-      <Etq T={T} at={K.O + 4.0} until={K.P - 0.2} x={640} y={700} texto="crías" tam={32} color={KC.paper} />
+      <Etq T={T} at={K.O + 2.6} until={K.P - 0.2} x={200} y={1100} texto="ollitas de cera: miel y polen" tam={30} color="#f4efe4" />
+      <Etq T={T} at={K.O + 4.0} until={K.P - 0.2} x={640} y={715} texto="crías" tam={32} color="#f4efe4" />
       <Chip T={T} at={K.O + 2.8} until={K.P - 0.2} texto="POR DENTRO · el jobón" y={1440} x={540} tam={32} borde={KC.gold} mono />
       <Chip T={T} at={K.Ki + 3.4} until={K.A - 0.2} texto="Los Petenes, Campeche · 2015" y={1440} x={540} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Ki + 3.6} until={K.Ki + 5.4} x={420} y={1080} texto="por tronco, al año" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Ki + 6.4} until={K.A - 0.2} texto="abeja europea: rinde más" y={520} x={360} tam={30} borde={KC.ink} />
+      <Etq T={T} at={K.Ki + 3.6} until={K.Ki + 4.9} x={664} y={1150} texto="por tronco, al año" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Ki + 6.4} until={K.A - 0.2} texto="abeja europea: rinde más" y={620} x={750} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.A + 1.0} until={K.E - 0.2} texto="edad promedio: 63 y 62 años" y={1440} x={540} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.A + 3.6} until={K.E - 0.2} x={780} y={700} texto="Mérida · Cancún · Campeche" lado="izq" tam={26} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.1} until={K.E + 3.4} anio="2011" quien="Zona Maya, Quintana Roo" revista="58 meliponicultores · J. Kansas Entomol. Soc. (2013)" y={780} />
-      <NumeroGigante T={T} at={K.E + 4.0} until={K.L - 0.2} valor={4} desde={11} dur={2.6} etiqueta="colonias por meliponario" x={340} y={520} tam={170} color={KC.yellow} />
+      <Etq T={T} at={K.A + 3.6} until={K.E - 0.2} x={900} y={640} texto="Mérida · Cancún · Campeche" lado="izq" tam={26} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.1} until={K.E + 3.4} anio="2011" quien="Zona Maya, Quintana Roo" revista="58 meliponicultores · J. Kansas Entomol. Soc. (2013)" y={500} />
+      <NumeroGigante T={T} at={K.E + 4.0} until={K.L - 0.2} valor={4} desde={11} dur={2.6} etiqueta="colonias por meliponario" x={540} y={520} tam={170} color={KC.yellow} />
       <Chip T={T} at={K.E + 4.4} until={K.L - 0.2} texto="≈ 11 → ≈ 4 (promedio)" y={1440} x={540} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.C + 3.4} until={K.Ou - 0.1} texto="xunán kab: no pica" y={1440} x={540} tam={38} borde={KC.ink} />
 

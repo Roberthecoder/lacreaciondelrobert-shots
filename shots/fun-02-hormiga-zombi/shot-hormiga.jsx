@@ -186,7 +186,7 @@ function EsporaScene({ T, K }) {
   const s = K.E, SOIL = 1450, SX = 600, B = s + 3.3;
   const fall = prog(T, s + 0.05, s + 0.7, Easing.easeInCubic), sq = wobble(T, s + 0.7, 6, 22);
   const hair = prog(T, s + 0.9, s + 1.6, MOTION.draw), tipY = SOIL - 30 - 150 * hair;
-  const antX = 200 + Math.max(0, T - (s + 0.1)) * (390 / 2.37);
+  const antX = 330 + Math.min(260, Math.max(0, T - (s + 0.1)) * (260 / 2.37));
   const pegada = antX >= SX - 10;
   const fa = 1 - prog(T, B - 0.15, B + 0.2), fb = prog(T, B - 0.15, B + 0.2);
   const drill = prog(T, B + 0.25, B + 1.4, Easing.easeInOutQuad), drillOn = T > B + 0.25 && T < B + 1.5;
@@ -194,10 +194,10 @@ function EsporaScene({ T, K }) {
   return (
     <Bg color={C.blue} kind="grid" T={T}>
       {fa > 0.01 && <div style={{ position:'absolute', inset:0, opacity:fa }}>
-       <div style={{ position:'absolute', inset:0, transformOrigin:`${SX}px ${SOIL}px`, transform:'translateY(-200px) scale(1.5)' }}>
+       <div style={{ position:'absolute', inset:0, transformOrigin:`${SX}px ${SOIL}px`, transform:'translateY(-200px) scale(1.8)' }}>
         <div style={{ position:'absolute', left:-400, right:-400, top:SOIL, bottom:-600, background:'#4a2414', borderTop:OL, backgroundImage:'radial-gradient(circle, rgba(0,0,0,.2) 6px, transparent 7px)', backgroundSize:'46px 46px' }}></div>
         <div style={{ position:'absolute', inset:0, transformOrigin:`${SX}px ${SOIL}px`, transform:`scale(${1 + sq * 0.12},${1 - sq * 0.16})` }}>
-          <Spore x={SX + (1 - fall) * 260} y={lerp(800, SOIL - 22, fall)} w={420} rot={(1 - fall) * -40} glow={1} />
+          <Spore x={SX + (1 - fall) * 180} y={lerp(1000, SOIL - 22, fall)} w={420} rot={(1 - fall) * -40} glow={1} />
         </div>
         {hair > 0.01 && <svg viewBox={`0 0 ${W} ${H}`} width={W} height={H} style={{ position:'absolute', inset:0 }}>
           <line x1={SX + 60} y1={SOIL - 30} x2={SX + 60} y2={tipY} stroke={C.ink} strokeWidth="9" strokeLinecap="round" />
@@ -259,13 +259,13 @@ function SubidaScene({ T, K }) {
   let ax, ay, rot;
   if (T < s + 1.45) { ax = 200; ay = lerp(1000, GROUND - 120, down); rot = 90; }
   else if (T < s + 2.45) { const tr = prog(T, s + 1.4, s + 1.6, MOTION.draw); ax = lerp(200, STEM - 70, walkP); ay = GROUND - 72; rot = lerp(90, 0, tr); }
-  else { const tu = prog(T, s + 2.3, s + 2.6, MOTION.draw); ax = STEM - 78; ay = lerp(GROUND - 120, GROUND - 25 * CM, climb); rot = -90 * tu; }
+  else { const tu = prog(T, s + 2.3, s + 2.6, MOTION.draw); ax = STEM - 86; ay = lerp(GROUND - 120, GROUND - 25 * CM, climb); rot = -90 * tu; }
   const hcm = clamp((GROUND - ay - 40) / CM, 0, 25) * (T > s + 2.6 ? 1 : 0);
   const lab = prog(T, s + 4.6, s + 4.95, MOTION.pop), hum = prog(T, s + 5.4, s + 5.8, MOTION.pop);
   return (
     <Bg color={C.cyan} kind="cyan" T={T}>
      <div style={{ position:'absolute', inset:0, transform:'translateY(-250px)' }}>
-      <div style={{ position:'absolute', left:0, right:0, top:GROUND, bottom:-300, background:'#4a2414', borderTop:OL }}></div>
+      <div style={{ position:'absolute', left:-200, right:-200, top:GROUND, bottom:-300, background:'#4a2414', borderTop:OL }}></div>
       {/* árbol con la colonia arriba */}
       <div style={{ position:'absolute', left:40, top:-40, width:120, height:GROUND + 290, background:'linear-gradient(90deg,#5a2e16,#8a4a26 50%,#5a2e16)', border:OL, borderBottom:'none', boxSizing:'border-box' }}></div>
       <div style={{ position:'absolute', left:66, top:820, width:70, height:90, borderRadius:'35px 35px 30px 30px', background:C.ink }}></div>
@@ -280,10 +280,10 @@ function SubidaScene({ T, K }) {
           <div style={{ position:'absolute', left:54, top:-14, font:`700 22px ${MONO}`, color:C.ink }}>{i * 5}</div></div>)}
       </div>
       {hcm > 0 && <div style={{ position:'absolute', left:830, top:GROUND - hcm * CM - 26, width:0, height:0, borderTop:'26px solid transparent', borderBottom:'26px solid transparent', borderLeft:`60px solid ${C.pink}` }}></div>}
-      <Ant T={T} x={ax} y={ay} w={300} rot={rot} walk={(T - s) * 2.4} walking={T > s + 0.2 && T < s + 4.6 ? 1 : 0} zombie={1} />
+      <Ant T={T} x={ax} y={ay} w={340} rot={rot} walk={(T - s) * 2.4} walking={T > s + 0.2 && T < s + 4.6 ? 1 : 0} zombie={1} />
       {lab > 0.01 && <Abs x={720} y={GROUND - 25 * CM - 170} w={420} h={170} style={{ display:'flex', justifyContent:'center', transform:`scale(${lab})` }}><Big size={150} color={C.yellow} rot={-6}>25 cm</Big></Abs>}
-      {hum > 0.01 && [0, 1, 2, 3, 4, 5].map((k) => { const t = ((T - s) * 0.6 + k / 6) % 1; return <Abs key={k} x={360 + k * 90} y={700 + t * 220} w={34} h={46} style={{ borderRadius:'50% 50% 50% 50% / 60% 60% 40% 40%', background:'rgba(255,255,255,.85)', border:`4px solid ${C.ink}`, opacity:hum * (1 - t) }}></Abs>; })}
-      {hum > 0.01 && <Abs x={500} y={620} w={460} h={80} style={{ display:'flex', justifyContent:'center', transform:`scale(${hum}) rotate(-3deg)` }}>
+      {hum > 0.01 && [0, 1, 2, 3, 4, 5].map((k) => { const t = ((T - s) * 0.6 + k / 6) % 1; return <Abs key={k} x={360 + k * 90} y={790 + t * 200} w={34} h={46} style={{ borderRadius:'50% 50% 50% 50% / 60% 60% 40% 40%', background:'rgba(255,255,255,.85)', border:`4px solid ${C.ink}`, opacity:hum * (1 - t) }}></Abs>; })}
+      {hum > 0.01 && <Abs x={500} y={720} w={460} h={80} style={{ display:'flex', justifyContent:'center', transform:`scale(${hum}) rotate(-3deg)` }}>
         <div style={{ font:`700 40px ${MONO}`, color:C.ink, background:'#fff', border:`6px solid ${C.ink}`, padding:'4px 22px', borderRadius:14 }}>MUCHA HUMEDAD</div></Abs>}
      </div>
     </Bg>
@@ -334,12 +334,12 @@ function PreguntaScene({ T, K }) {
   const s = K.P, q = prog(T, s + 0.02, s + 0.4, MOTION.pop), w = wobble(T, s + 0.4, 4, 16);
   return (
     <Bg color={C.yellow} kind="dots" T={T}>
-      <div style={{ position:'absolute', inset:0, opacity:0.5, transform:HOJA_ESC, transformOrigin:'0 0' }}>
+      <div style={{ position:'absolute', inset:0, opacity:0.85, transform:HOJA_ESC, transformOrigin:'0 0' }}>
         <Leaf T={T} y={880} />
         <Ant T={T} x={540} y={980} w={560} flipY bite={1} zombie={1} />
       </div>
-      <Abs x={330} y={1080} w={520} h={700} style={{ display:'flex', alignItems:'center', justifyContent:'center', transform:`scale(${q}) rotate(${-8 + w * 12 + Math.sin(T * 3) * 3}deg)` }}>
-        <Big size={640} color={C.pink}>?</Big>
+      <Abs x={820} y={560} w={260} h={300} style={{ display:'flex', alignItems:'center', justifyContent:'center', transform:`scale(${q}) rotate(${-8 + w * 12 + Math.sin(T * 3) * 3}deg)` }}>
+        <Big size={240} color={C.pink}>?</Big>
       </Abs>
     </Bg>
   );
@@ -409,8 +409,8 @@ function FosilScene({ T, K }) {
 /* Humanos + Calor: ¿a ti? No: es especialista en hormigas; y la mayoría de los hongos no crece a 37 °C. */
 function Persona({ x, y, s = 1 }) {
   return <div style={{ position:'absolute', left:x - 150 * s, top:y - 200 * s, width:300 * s, height:400 * s }}>
-    <div style={{ position:'absolute', left:75 * s, top:0, width:150 * s, height:150 * s, borderRadius:'50%', background:'#f2c49b', border:OL, boxSizing:'border-box' }}></div>
-    <div style={{ position:'absolute', left:0, top:165 * s, width:300 * s, height:235 * s, borderRadius:`${140 * s}px ${140 * s}px 30px 30px`, background:C.cyan, border:OL, boxSizing:'border-box' }}></div>
+    <div style={{ position:'absolute', left:75 * s, top:0, width:150 * s, height:150 * s, borderRadius:'50%', background:'radial-gradient(circle at 35% 30%,#ffe0c2,#f2c49b 55%,#c98f62)', border:OL, boxSizing:'border-box' }}></div>
+    <div style={{ position:'absolute', left:0, top:165 * s, width:300 * s, height:235 * s, borderRadius:`${140 * s}px ${140 * s}px 30px 30px`, background:`radial-gradient(ellipse at 35% 20%,#7fe9ff,${C.cyan} 55%,#0a7fa0)`, border:OL, boxSizing:'border-box' }}></div>
   </div>;
 }
 function HumanosScene({ T, K }) {
@@ -422,21 +422,21 @@ function HumanosScene({ T, K }) {
   const t37 = prog(T, c + 1.7, c + 2.0, MOTION.pop), chip = prog(T, c + 2.2, c + 2.6, MOTION.pop);
   return (
     <Bg color={C.red} kind="pop" T={T}>
-      {outA < 1 && <div style={{ position:'absolute', inset:0, opacity:1 - outA, transform:`scale(${inA * 1.2})`, transformOrigin:'540px 1000px' }}>
-        <Ant T={T} x={320} y={1050} w={380} walk={T * 2} walking={0.4} />
-        {ok > 0.01 && <Abs x={320} y={1050} w={440} h={340} style={{ borderRadius:'50%', border:`12px solid ${C.mint}`, boxShadow:`0 0 0 6px ${C.ink}`, transform:`scale(${ok})` }}></Abs>}
-        <Persona x={790} y={1030} s={0.9} />
-        {no > 0.01 && <Abs x={790} y={1030} w={360} h={200} style={{ display:'flex', justifyContent:'center', alignItems:'center', transform:`scale(${lerp(2.4, 1, no)}) rotate(-10deg)`, opacity:clamp(no * 3, 0, 1) }}>
+      {outA < 1 && <div style={{ position:'absolute', inset:0, opacity:1 - outA, transform:`scale(${inA * 1.3})`, transformOrigin:'540px 1000px' }}>
+        <Ant T={T} x={370} y={1050} w={380} walk={T * 2} walking={0.4} />
+        {ok > 0.01 && <Abs x={370} y={1050} w={400} h={320} style={{ borderRadius:'50%', border:`12px solid ${C.mint}`, boxShadow:`0 0 0 6px ${C.ink}`, transform:`scale(${ok})` }}></Abs>}
+        <Persona x={760} y={1030} s={0.9} />
+        {no > 0.01 && <Abs x={760} y={1030} w={360} h={200} style={{ display:'flex', justifyContent:'center', alignItems:'center', transform:`scale(${lerp(2.4, 1, no)}) rotate(-10deg)`, opacity:clamp(no * 3, 0, 1) }}>
           <div style={{ font:`400 150px/1 ${NUM}`, color:C.ink, background:C.yellow, border:`12px solid ${C.ink}`, boxShadow:`14px 14px 0 ${C.ink}`, padding:'0 40px' }}>NO</div></Abs>}
-        {ok > 0.01 && <Abs x={320} y={850} w={520} h={80} style={{ display:'flex', justifyContent:'center', transform:`scale(${ok})` }}>
+        {ok > 0.01 && <Abs x={420} y={1290} w={520} h={80} style={{ display:'flex', justifyContent:'center', transform:`scale(${ok})` }}>
           <div style={{ font:`700 38px ${MONO}`, color:C.ink, background:C.mint, border:`6px solid ${C.ink}`, padding:'4px 18px', borderRadius:12 }}>SOLO HORMIGAS</div></Abs>}
       </div>}
       {T >= c && <div style={{ position:'absolute', left:150, top:590, width:200, height:900, transform:`translateY(${(1 - th) * 1200}px) rotate(${-6 + Math.sin(T * 3) * 1.5}deg)` }}>
-        <div style={{ position:'absolute', left:50, top:0, width:100, height:720, borderRadius:50, background:'#fff', border:OL, boxSizing:'border-box', overflow:'hidden' }}>
+        <div style={{ position:'absolute', left:50, top:0, width:100, height:720, borderRadius:50, background:'linear-gradient(90deg,#c9d3df,#ffffff 35%,#e6ecf2 70%,#9aa6b4)', border:OL, boxSizing:'border-box', overflow:'hidden' }}>
           <div style={{ position:'absolute', left:22, right:22, bottom:0, height:`${20 + fill * 66}%`, background:C.red, borderRadius:30 }}></div>
           {[0, 1, 2, 3, 4, 5].map((i) => <div key={i} style={{ position:'absolute', right:0, top:90 + i * 100, width:30, height:6, background:C.ink }}></div>)}
         </div>
-        <div style={{ position:'absolute', left:0, top:640, width:200, height:200, borderRadius:'50%', background:C.red, border:OL, boxSizing:'border-box' }}></div>
+        <div style={{ position:'absolute', left:0, top:640, width:200, height:200, borderRadius:'50%', background:`radial-gradient(circle at 35% 30%,#ff9a8a,${C.red} 55%,#8f1d14)`, border:OL, boxSizing:'border-box' }}></div>
       </div>}
       {t37 > 0.01 && <Abs x={640} y={820} w={420} h={170} style={{ display:'flex', justifyContent:'center', transform:`scale(${t37})` }}><Big size={150} color={C.white} rot={-6}>37 °C</Big></Abs>}
       {chip > 0.01 && <Abs x={650} y={1060} w={620} h={170} style={{ display:'flex', justifyContent:'center', alignItems:'center', transform:`scale(${chip}) rotate(2deg)` }}>

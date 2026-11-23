@@ -100,7 +100,11 @@ function Secretos({ T, x0, y0, x1, y1, n = 6, vel = 0.32, alto = 220, o = 1 }) {
 function Consultorio({ T, traje = 1, reglas = 0, secretos = 1 }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
     <g transform="translate(540 1250) scale(1.15) translate(-500 -1180)">
-      <rect x={-100} y={1180} width={KW + 200} height={740} fill="#1d3531" />
+      <defs><linearGradient id="piso-cons" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#2b4a43" /><stop offset=".5" stopColor="#15241f" /><stop offset="1" stopColor="#07090c" /></linearGradient></defs>
+      <rect x={-100} y={1180} width={KW + 200} height={740} fill="url(#piso-cons)" />
+      {[22, 56, 104, 170, 256, 362].map((dy, i) => <line key={'pl' + i} x1={-100} y1={1180 + dy} x2={KW + 100} y2={1180 + dy} stroke="#000" strokeWidth={3 + i} opacity=".22" />)}
+      {Array.from({ length: 13 }, (_, i) => <line key={'pv' + i} x1={-100 + i * 100} y1={1180} x2={-100 + (i - 6) * 260 + 640} y2={1180 + 740} stroke="#000" strokeWidth={3} opacity=".16" />)}
+      <ellipse cx={420} cy={1230} rx={380} ry={46} fill="#3a2b44" opacity=".55" /><ellipse cx={420} cy={1230} rx={340} ry={36} fill="none" stroke="#7a5f8a" strokeWidth={4} opacity=".4" />
       <line x1={-100} y1={1180} x2={KW + 100} y2={1180} stroke={KC.ink} strokeWidth={8} />
       <Divan x={330} y={1120} s={1} T={T} />
       <Psicologo x={790} y={1000} s={0.95} T={T} traje={traje} reglas={reglas} />
@@ -155,7 +159,10 @@ function Oficina({ T, K }) {
     <g transform="translate(540 1380) scale(1.2) translate(-540 -1180)">
     <rect x={-100} y={-100} width={KW + 200} height={1280} fill="#2c2a25" />
     {Array.from({ length: 14 }, (_, i) => <line key={i} x1={-96 + i * 96} y1={-100} x2={-96 + i * 96} y2={1180} stroke="#4a4232" strokeWidth={10} />)}
-    <rect x={-100} y={1180} width={KW + 200} height={740} fill="#2a1e17" />
+    <defs><linearGradient id="piso-ofi" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#3b2a1e" /><stop offset=".5" stopColor="#1e150f" /><stop offset="1" stopColor="#07090c" /></linearGradient></defs>
+      <rect x={-100} y={1180} width={KW + 200} height={740} fill="url(#piso-ofi)" />
+      {[22, 56, 104, 170, 256, 362].map((dy, i) => <line key={'pl' + i} x1={-100} y1={1180 + dy} x2={KW + 100} y2={1180 + dy} stroke="#000" strokeWidth={3 + i} opacity=".22" />)}
+      {Array.from({ length: 13 }, (_, i) => <line key={'pv' + i} x1={-100 + i * 100} y1={1180} x2={-100 + (i - 6) * 260 + 640} y2={1180 + 740} stroke="#000" strokeWidth={3} opacity=".16" />)}
     <line x1={0} y1={1180} x2={KW} y2={1180} stroke={KC.ink} strokeWidth={8} />
     {/* puerta */}
     <rect x={860} y={700} width={220} height={480} fill="#3a2a20" stroke={KC.ink} strokeWidth={8} />
@@ -394,12 +401,12 @@ function Eliza() {
       {/* 9 · hoy */}
       <Escena T={T} a={K.H} b={K.Ci}>
         <FondoLunares color={KC.cyan} />
-        {svg(<Secretos T={T} x0={640} y0={1000} x1={960} y1={860} n={5} alto={180} />)}
+        {svg(<Secretos T={T} x0={640} y0={1150} x1={960} y1={980} n={5} alto={180} />)}
       </Escena>
       {T > K.H - 0.4 && T < K.Ci + 0.4 && <div style={{ opacity:kprog(T, K.H - 0.4, K.H + 0.05) * (1 - kprog(T, K.Ci - 0.05, K.Ci + 0.4)) }}>
-        <CelularChat T={T} x={400} y={1000} s={0.85} tam={46} mensajes={[{ at: K.H + 0.3, yo: true, texto: 'Tuve un día horrible.' }, { at: K.H + 1.3, texto: 'Lamento que te sientas así. ¿Quieres contarme qué pasó?' }]} escribe={[K.H + 0.7, K.H + 1.3]} />
+        <CelularChat T={T} x={400} y={1100} s={0.9} tam={46} mensajes={[{ at: K.H + 0.3, yo: true, texto: 'Tuve un día horrible.' }, { at: K.H + 1.3, texto: 'Lamento que te sientas así. ¿Quieres contarme qué pasó?' }]} escribe={[K.H + 0.7, K.H + 1.3]} />
       </div>}
-      <Chip T={T} at={K.H + 1.8} until={K.Ci - 0.2} texto="chat ilustrativo" x={830} y={1380} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.H + 1.8} until={K.Ci - 0.2} texto="chat ilustrativo" x={830} y={1480} tam={28} borde={KC.ink} />
 
       {/* 10 · cierre: el mismo consultorio, ya sin disfraz */}
       <Escena T={T} a={K.Ci} b={FIN}>

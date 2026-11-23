@@ -169,8 +169,9 @@ function AdnViralNarrado() {
       <Escena T={T} a={K.O} b={K.C}>
         <FondoLunares color={KC.yellow} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+          {[630, 990, 1340].map((yy, i) => <g key={'adn' + i} opacity={0.32}><TiraADN T={T} x0={-40} x1={1120} y={yy} amp={52} fase={i * 1.3} /></g>)}
           {[['primates', VIR], ['roedores', KC.blue], ['conejos', KC.orange], ['carnívoros', KC.leaf], ['rumiantes', KC.lilac]].map(([t, c], i) => { const at = K.O + 0.4 + i * 0.45; if (T < at) return null; const p = kprog(T, at, at + 0.4, kEase.rebote);
-            return <g key={t} transform={`translate(${i % 2 ? 765 : 315} ${540 + i * 178}) scale(${p * 1.28})`}><rect x={-200} y={-52} width={400} height={104} rx={52} fill={KC.paper} stroke={KC.ink} strokeWidth={6} /><Retrovirus x={-140} y={0} s={0.42} T={T} color={c} seed={i} /><text x={30} y={14} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>{t}</text></g>; })}
+            return <g key={t} transform={`translate(${i % 2 ? 765 : 315} ${540 + i * 178}) scale(${p * 1.28})`}><rect x={-200} y={-52} width={400} height={104} rx={52} fill={KC.paper} stroke={KC.ink} strokeWidth={6} /><Retrovirus x={-150} y={0} s={0.55} T={T} color={c} seed={i} /><text x={30} y={14} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>{t}</text></g>; })}
         </svg>
       </Escena>
       <Escena T={T} a={K.C} b={FIN} zoom={0.03}>

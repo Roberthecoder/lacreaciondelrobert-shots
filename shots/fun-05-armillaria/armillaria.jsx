@@ -1,13 +1,15 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #05 · El hongo gigante (Armillaria ostoyae) — NARRADO (N2 "El número" + viaje N1).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático (la red y el mapa no son el contorno real).
 const SUELO_Y = 900;
 const CAFE_SOMBRERO = '#a8642a';
+const CIELO = '#132a33';   // cielo de noche con el tinte verde azulado del bosque (pase a mano cine)
 
 // El bosque en corte: cielo, suelo, dos coníferas, tres racimos de setas y (opcional) la red del hongo bajo tierra.
 function Bosque({ T, at, red = 0, rayos = 0, cordon = 0, muere = 0, raizMala = 0, extra = 0 }) {
   return fsvg(<>
-    <rect x={0} y={0} width={KW} height={SUELO_Y} fill="#9fe7d2" />
-    {[0, 1, 2, 3, 4, 5].map((i) => <circle key={i} cx={(i * 230 + T * 12) % 1300 - 100} cy={120 + (i % 3) * 70} r={46} fill="#fff" opacity=".55" />)}
+    <rect x={-800} y={-1600} width={KW + 1600} height={SUELO_Y + 1600} fill={CIELO} />
+    {[0, 1, 2, 3, 4, 5].map((i) => <circle key={i} cx={(i * 230 + T * 12) % 1300 - 100} cy={120 + (i % 3) * 70} r={46} fill="#9fc4c8" opacity=".13" />)}
     {extra > 0 && [-520, -300, 1150, 1400, 1650].map((xx, i) => <Conifera key={i} x={xx} y={SUELO_Y + 5} s={0.6} T={T} seed={i + 9} />)}
     <Conifera x={250} y={SUELO_Y + 5} s={0.8} T={T} seed={1} />
     <Conifera x={640} y={SUELO_Y + 5} s={0.52} T={T} seed={2} muere={muere} />
@@ -26,18 +28,18 @@ function Bosque({ T, at, red = 0, rayos = 0, cordon = 0, muere = 0, raizMala = 0
 }
 
 // Mapa de arriba del genet (mancha de bosque con su frontera). frente = 0..1 el borde avanza. dudas = huecos grises.
-function MapaGenet({ T, cx = 470, cy = 720, r = 260, frente = 1, dudas = 0, puntos = 1 }) {
+function MapaGenet({ T, cx = 540, cy = 900, r = 360, frente = 1, dudas = 0, puntos = 1 }) {
   const g = krng(8), n = 40;
   const forma = (k) => Array.from({ length: n }, (_, i) => { const a = (i / n) * Math.PI * 2, rr = r * k * (0.82 + 0.25 * Math.sin(a * 3 + 1) * 0.6 + 0.08 * Math.sin(a * 7)); return `${i ? 'L' : 'M'} ${(cx + Math.cos(a) * rr * 1.15).toFixed(1)} ${(cy + Math.sin(a) * rr * 0.85).toFixed(1)}`; }).join(' ') + ' Z';
   const arboles = Array.from({ length: 70 }, () => [cx + (g() - 0.5) * r * 3.2, cy + (g() - 0.5) * r * 2.4]);
   return fsvg(<>
-    {arboles.map(([x, y], i) => <circle key={i} cx={x} cy={y} r={20} fill="#2f9e44" stroke={KC.ink} strokeWidth={3} opacity=".7" />)}
+    {arboles.map(([x, y], i) => <circle key={i} cx={x} cy={y} r={27} fill="#2f9e44" stroke={KC.ink} strokeWidth={3} opacity=".7" />)}
     <path d={forma(Math.max(0.05, frente))} fill="rgba(255,225,26,.28)" stroke={KC.yellow} strokeWidth={8} strokeDasharray="22 12" strokeDashoffset={-T * 30} />
     {Array.from({ length: 14 }, (_, i) => { const a = i * 2.4, rr = r * 0.25 + (i % 5) * r * 0.13; const on = kprog(puntos, i / 14, i / 14 + 0.1);
-      return on > 0 ? <circle key={i} cx={cx + Math.cos(a) * rr * 1.1} cy={cy + Math.sin(a) * rr * 0.8} r={12 * on} fill={KC.red} stroke={KC.ink} strokeWidth={4} /> : null; })}
+      return on > 0 ? <circle key={i} cx={cx + Math.cos(a) * rr * 1.1} cy={cy + Math.sin(a) * rr * 0.8} r={16 * on} fill={KC.red} stroke={KC.ink} strokeWidth={4} /> : null; })}
     {dudas > 0 && [[-0.45, -0.2], [0.35, 0.3], [0.1, -0.45]].map(([u, v], i) => <g key={i} opacity={dudas}>
-      <circle cx={cx + u * r} cy={cy + v * r} r={60} fill="#8a8f99" stroke={KC.ink} strokeWidth={5} opacity=".85" />
-      <text x={cx + u * r} y={cy + v * r + 26} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill="#fff" stroke={KC.ink} strokeWidth={4}>?</text></g>)}
+      <circle cx={cx + u * r} cy={cy + v * r} r={82} fill="#8a8f99" stroke={KC.ink} strokeWidth={5} opacity=".85" />
+      <text x={cx + u * r} y={cy + v * r + 36} textAnchor="middle" style={{ font:`400 104px ${KF.titulo}` }} fill="#0b1020" stroke={KC.ink} strokeWidth={4}>?</text></g>)}
   </>);
 }
 
@@ -56,8 +58,11 @@ function Armillaria() {
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1–4 · el bosque en corte: setas → red → cordón → raíz que muere */}
       <Escena T={T} a={K.G} b={K.P} zoom={0.04} origen="40% 50%">
+        {/* belleza: todo el bosque en corte 120 px más abajo (quedaba cargado arriba); etiquetas bajan igual */}
+        <div style={{ position:'absolute', inset:0, transform:'translateY(120px)' }}>
         <Bosque T={T} at={K.G} rayos={rayos} red={red} cordon={kprog(T, K.Co + 0.3, K.Co + 3.2, kEase.suave)} raizMala={kprog(T, K.R, K.R + 1.2)} muere={kprog(T, K.R + 0.6, K.P - 0.2)} />
         {T > K.Co && fsvg(<path d="M 400 1070 Q 460 1075 530 1030" stroke={KC.yellow} strokeWidth={14} fill="none" strokeLinecap="round" strokeDasharray={`${180 * kprog(T, K.Co, K.Co + 1.2)} 999`} opacity={1 - kprog(T, K.P - 0.6, K.P)} style={{ filter:`drop-shadow(0 0 8px ${KC.yellow})` }} />, 21)}
+        </div>
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
@@ -67,48 +72,54 @@ function Armillaria() {
       {/* 6 · el estudio: un bosque de Oregón con los árboles muestreados */}
       <Escena T={T} a={K.E} b={K.Ca}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>{Array.from({ length: 9 }, (_, i) => <Conifera key={i} x={110 + i * 108} y={1180 - (i % 2) * 30} s={0.32} T={T} seed={i} muere={i % 3 === 1 ? 0.8 : 0} />)}
-          {Array.from({ length: 9 }, (_, i) => i % 3 === 1 ? <circle key={'p' + i} cx={110 + i * 108} cy={1100 - (i % 2) * 30} r={16 * kprog(T, K.E + 1.4 + i * 0.1, K.E + 1.7 + i * 0.1, kEase.rebote)} fill={KC.red} stroke={KC.ink} strokeWidth={4} /> : null)}</>)}
+        {fsvg(<>{Array.from({ length: 9 }, (_, i) => <Conifera key={i} x={100 + i * 110} y={1400 - (i % 2) * 70} s={0.64} T={T} seed={i} muere={i % 3 === 1 ? 0.8 : 0} />)}
+          {Array.from({ length: 9 }, (_, i) => i % 3 === 1 ? <circle key={'p' + i} cx={100 + i * 110} cy={1240 - (i % 2) * 70} r={28 * kprog(T, K.E + 1.4 + i * 0.1, K.E + 1.7 + i * 0.1, kEase.rebote)} fill={KC.red} stroke={KC.ink} strokeWidth={4} /> : null)}</>)}
       </Escena>
       {/* 7–8 · cajas de cultivo: fusión = mismo individuo · hueco = otro individuo */}
       <Escena T={T} a={K.Ca} b={K.N}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Petri x={290} y={900} r={185}>
-            <Colonia cx={-75 + 25 * crece} cy={0} r={20 + 95 * crece} seed={1} />
-            <Colonia cx={75 - 25 * crece} cy={0} r={20 + 95 * crece} seed={2} />
+          <Petri x={365} y={650} r={265} medio="#d9c98f">
+            <g transform="scale(1.432)">
+              <Colonia cx={-75 + 25 * crece} cy={0} r={20 + 95 * crece} seed={1} />
+              <Colonia cx={75 - 25 * crece} cy={0} r={20 + 95 * crece} seed={2} />
+            </g>
           </Petri>
-          <Petri x={790} y={900} r={185}>
-            <Colonia cx={-80} cy={0} r={20 + 62 * crece} seed={3} color="#fff3dc" />
-            <Colonia cx={80} cy={0} r={20 + 62 * crece} seed={4} color="#f0fff4" />
+          <Petri x={730} y={1190} r={265} medio="#d9c98f">
+            <g transform="scale(1.432)">
+              <Colonia cx={-80} cy={0} r={20 + 62 * crece} seed={3} color="#fff3dc" />
+              <Colonia cx={80} cy={0} r={20 + 62 * crece} seed={4} color="#f0fff4" />
+            </g>
           </Petri>
-          <Sello T={T} at={K.Fu + 0.6} x={290} y={900} texto="✓" color={KC.leaf} r={62} />
-          <Sello T={T} at={K.Fu + 1.4} x={790} y={900} texto="✗" color={KC.red} r={62} rot={10} />
+          <Sello T={T} at={K.Fu + 0.6} x={365} y={650} texto="✓" color={KC.leaf} r={88} />
+          <Sello T={T} at={K.Fu + 1.4} x={730} y={1190} texto="✗" color={KC.red} r={88} rot={10} />
         </>)}
       </Escena>
       {/* 9 · 965 hectáreas en canchas de fútbol */}
       <Escena T={T} a={K.N} b={K.Ed} zoom={0.02}>
-        <div style={{ position:'absolute', inset:0, background:'#1f5130' }}></div>
-        <Cuadricula T={T} cols={30} filas={45} x={90} y={640} ancho={900} alto={420} llenado={(t) => kprog(t, K.N + 1.4, K.N + 4.6)} lleno={KC.mint} vacio="rgba(255,255,255,.08)" />
+        <div style={{ position:'absolute', inset:0, background:'#0b2215' }}></div>
+        <Cuadricula T={T} cols={30} filas={45} x={90} y={590} ancho={900} alto={800} llenado={(t) => kprog(t, K.N + 0.6, K.N + 4.6)} lleno={KC.mint} vacio="rgba(160,255,200,.2)" />
       </Escena>
       {/* 10–11 · la edad y la duda: el mapa del genet */}
       <Escena T={T} a={K.Ed} b={K.B}>
-        <div style={{ position:'absolute', inset:0, background:'#24402c' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'#0c1f14' }}></div>
         <MapaGenet T={T} frente={kprog(T, K.Ed + 0.2, K.Ed + 4.5, kEase.suave)} dudas={kprog(T, K.O + 0.6, K.O + 1.2)} puntos={kprog(T, K.Ed + 0.2, K.Ed + 2.5)} />
-        {fsvg(<g opacity={kprog(T, K.Ed + 1.5, K.Ed + 2)}><line x1={200} y1={1010} x2={750} y2={1010} stroke={KC.texto} strokeWidth={6} /><line x1={200} y1={990} x2={200} y2={1030} stroke={KC.texto} strokeWidth={6} /><line x1={750} y1={990} x2={750} y2={1030} stroke={KC.texto} strokeWidth={6} /><text x={475} y={1068} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto}>≈ 3.8 km</text></g>)}
+        {fsvg(<g opacity={kprog(T, K.Ed + 1.5, K.Ed + 2)}><line x1={159} y1={1262} x2={921} y2={1262} stroke={KC.texto} strokeWidth={6} /><line x1={159} y1={1240} x2={159} y2={1284} stroke={KC.texto} strokeWidth={6} /><line x1={921} y1={1240} x2={921} y2={1284} stroke={KC.texto} strokeWidth={6} /><text x={540} y={1322} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.texto}>≈ 3.8 km</text></g>)}
       </Escena>
       {/* 12 · brilla en la oscuridad: madera podrida con hilos luminosos */}
       <Escena T={T} a={K.B} b={K.C}>
         <div style={{ position:'absolute', inset:0, background:'#05070c' }}></div>
         <Ambiente T={T} n={30} color="rgba(160,255,140,.35)" />
         {fsvg(<>
-          <rect x={120} y={760} width={840} height={260} rx={120} fill="#2a1d14" stroke="#0b0806" strokeWidth={8} />
-          <ellipse cx={960} cy={890} rx={60} ry={130} fill="#3b2a1d" stroke="#0b0806" strokeWidth={8} />
-          <RedHifas T={T} x={540} y={890} g={kprog(T, K.B + 0.2, K.B + 2.6)} seed={11} n={260} escala={0.16} ancho={3} color="#b6ff8f" circ={true} brillo={1.6 + 0.6 * Math.sin(T * 3)} />
+          <g transform="translate(540 900) scale(1.9) translate(-540 -890)">
+            <rect x={120} y={760} width={840} height={260} rx={120} fill="#4a3424" stroke="#8a6447" strokeWidth={5} />
+            {[800, 850, 905, 960, 990].map((yy, i) => <path key={i} d={`M ${170 + i * 30} ${yy} q 200 ${i % 2 ? 14 : -14} 400 0 t ${330 - i * 40} 0`} stroke="#2e1f15" strokeWidth={5} fill="none" strokeLinecap="round" />)}
+          </g>
+          <RedHifas T={T} x={540} y={900} g={kprog(T, K.B - 0.4, K.B + 2.4)} seed={11} n={260} escala={0.304} ancho={3} color="#b6ff8f" circ={true} brillo={1.6 + 0.6 * Math.sin(T * 3)} />
         </>)}
       </Escena>
       {/* 13 · cierre: el mismo bosque; la cámara se aleja y la red sigue más allá */}
-      <Escena T={T} a={K.C} b={FIN} zoom={0} fondo={`linear-gradient(#9fe7d2 0 47%, ${FK.tierra} 47%)`}>
+      <Escena T={T} a={K.C} b={FIN} zoom={0} fondo={`linear-gradient(${CIELO} 0 47%, ${FK.tierra} 47%)`}>
         <div style={{ position:'absolute', inset:0, transform:`scale(${klerp(1, 0.55, lejos)})`, transformOrigin:'40% 47%' }}>
           <Bosque T={T} at={K.C - 2} rayos={1} red={1} extra={lejos} />
           {fsvg(<>{[-1, 1].map((k) => <RedHifas key={k} T={T} x={430 + k * 650} y={SUELO_Y + 10} g={lejos} seed={6 + k} n={300} escala={0.28} ancho={3.2} color={FK.hifa} brillo={0.6} />)}</>, 21)}
@@ -116,36 +127,36 @@ function Armillaria() {
       </Escena>
 
       {/* textos y etiquetas */}
-      <Chip T={T} at={K.G + 0.9} until={K.G + 2.6} texto="¿cientos de hongos?" y={470} x={360} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.G + 3.4} until={K.F - 0.2} texto="= 1 solo individuo" y={470} x={360} tam={44} borde={KC.yellow} />
-      <Etq T={T} at={K.F + 0.3} until={K.Co - 0.3} x={540} y={760} texto="seta = fruto" tam={34} />
-      <Etq T={T} at={K.F + 1.4} until={K.Co - 0.3} x={600} y={1130} texto="micelio (el hongo)" tam={32} color={KC.yellow} />
-      <Etq T={T} at={K.F + 1.0} until={K.Co - 0.3} x={60} y={1540} texto="Armillaria ostoyae" it tam={36} color={KC.texto} />
-      <Etq T={T} at={K.Co + 1.2} until={K.R - 0.2} x={720} y={1080} texto="cordón negro" tam={32} />
-      <Etq T={T} at={K.Co + 0.4} until={K.R - 0.2} x={380} y={1020} texto="raíz con raíz" tam={30} color={KC.yellow} />
-      <Etq T={T} at={K.R + 0.6} until={K.P - 0.2} x={700} y={1080} texto="raíz muerta" tam={32} color={KC.coral} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ca - 0.3} anio="2003" quien="Ferguson et al. · Oregón, EE. UU." revista="Can. J. For. Res. · bosque Malheur" y={830} />
-      <Chip T={T} at={K.Ca + 0.3} until={K.N - 0.3} texto="muestra contra muestra" y={500} x={360} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.Fu + 0.8} until={K.N - 0.3} texto="se fusionan: mismo" x={290} y={1140} tam={30} borde={KC.leaf} />
-      <Chip T={T} at={K.Fu + 1.6} until={K.N - 0.3} texto="hueco: otro individuo" x={790} y={1140} tam={30} borde={KC.red} />
-      <NumeroGigante T={T} at={K.N + 0.3} until={K.Ed - 0.3} valor={965} dur={1.2} sufijo=" ha" etiqueta="un solo individuo" y={430} tam={170} />
-      <Chip T={T} at={K.N + 1.6} until={K.N + 3.2} texto="1 cuadrito = 1 cancha de 105 × 68 m" y={585} tam={32} borde={KC.mint} />
-      {kvisible(T, K.N + 1.4, K.Ed - 0.4, 0) && <Contador T={T} at={K.N + 1.4} desde={0} hasta={1351} dur={3.2} sufijo=" canchas" x={540} y={1110} tam={46} color={KC.yellow} />}
-      <Chip T={T} at={K.N + 3.4} until={K.Ed - 0.3} texto="uno de los seres vivos más grandes" y={588} tam={34} borde={KC.yellow} />
-      <div style={{ position:'absolute', left:0, right:0, top:400, zIndex:42, textAlign:'center', opacity:kprog(T, K.Ed + 2.2, K.Ed + 2.6) * (1 - kprog(T, K.O - 0.3, K.O)) }}>
+      <Chip T={T} at={K.G + 0.9} until={K.G + 2.6} texto="¿cientos de hongos?" y={330} x={420} tam={46} borde={KC.ink} />
+      <Chip T={T} at={K.G + 3.4} until={K.F - 0.2} texto="= 1 solo individuo" y={330} x={420} tam={50} borde={KC.yellow} />
+      <Etq T={T} at={K.F + 0.3} until={K.Co - 0.3} x={540} y={880} texto="seta = fruto" tam={34} />
+      <Etq T={T} at={K.F + 1.4} until={K.Co - 0.3} x={600} y={1250} texto="micelio (el hongo)" tam={32} color={KC.yellow} />
+      <Etq T={T} at={K.F + 1.0} until={K.Co - 0.3} x={300} y={1480} texto="Armillaria ostoyae" it tam={36} color={KC.texto} />
+      <Etq T={T} at={K.Co + 1.2} until={K.R - 0.2} x={720} y={1200} texto="cordón negro" tam={32} />
+      <Etq T={T} at={K.Co + 0.4} until={K.R - 0.2} x={380} y={1140} texto="raíz con raíz" tam={30} color={KC.yellow} />
+      <Etq T={T} at={K.R + 0.6} until={K.P - 0.2} x={700} y={1200} texto="raíz muerta" tam={32} color={KC.coral} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ca - 0.3} anio="2003" quien="Ferguson et al. · Oregón, EE. UU." revista="Can. J. For. Res. · bosque Malheur" y={540} />
+      <Chip T={T} at={K.Ca + 0.3} until={K.N - 0.3} texto="muestra contra muestra" y={250} x={360} tam={42} borde={KC.ink} />
+      <Chip T={T} at={K.Fu + 0.8} until={K.N - 0.3} texto="se fusionan: mismo" x={870} y={650} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.Fu + 1.6} until={K.N - 0.3} texto="hueco: otro individuo" x={215} y={1190} tam={32} borde={KC.red} />
+      <NumeroGigante T={T} at={K.N + 0.3} until={K.Ed - 0.3} valor={965} dur={1.2} sufijo=" ha" etiqueta="un solo individuo" y={370} tam={170} />
+      <Chip T={T} at={K.N + 1.6} until={K.N + 3.2} texto="1 cuadrito = 1 cancha de 105 × 68 m" y={520} tam={34} borde={KC.mint} />
+      {kvisible(T, K.N + 1.4, K.Ed - 0.4, 0) && <Contador T={T} at={K.N + 1.4} desde={0} hasta={1351} dur={3.2} sufijo=" canchas" x={540} y={1495} tam={52} color={KC.yellow} />}
+      <Chip T={T} at={K.N + 3.4} until={K.Ed - 0.3} texto="uno de los seres vivos más grandes" y={520} tam={36} borde={KC.yellow} />
+      <div style={{ position:'absolute', left:0, right:0, top:330, zIndex:42, textAlign:'center', opacity:kprog(T, K.Ed + 2.2, K.Ed + 2.6) * (1 - kprog(T, K.O - 0.3, K.O)) }}>
         <span style={{ font:`400 110px/1 ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}` }}>{kformato(Math.round(klerp(0, 1900, kprog(T, K.Ed + 2.2, K.Ed + 3.0))))} – {kformato(Math.round(klerp(0, 8650, kprog(T, K.Ed + 2.6, K.Ed + 3.8))))}</span>
         <div style={{ font:`900 40px ${KF.texto}`, color:KC.texto, textShadow:KSOMBRA }}>años (estimado)</div>
       </div>
-      <Chip T={T} at={K.O + 0.5} until={K.B - 0.3} texto="¿sigue unido? no se sabe" y={1110} tam={40} borde={KC.coral} />
-      <Chip T={T} at={K.O + 1.6} until={K.B - 0.3} texto="pruebas: 1 individuo" y={470} x={420} tam={40} borde={KC.yellow} />
-      <Etq T={T} at={K.B + 1.2} until={K.C - 0.3} x={150} y={1110} texto="hilos de Armillaria que brillan" tam={32} color="#b6ff8f" />
-      <Chip T={T} at={K.C + 2.6} until={K.Ou} texto="un solo gigante" y={470} x={330} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.O + 0.5} until={K.B - 0.3} texto="¿sigue unido? no se sabe" y={1480} tam={42} borde={KC.coral} />
+      <Chip T={T} at={K.O + 1.6} until={K.B - 0.3} texto="pruebas: 1 individuo" y={440} x={540} tam={44} borde={KC.yellow} />
+      <Etq T={T} at={K.B + 1.2} until={K.C - 0.3} x={150} y={1430} texto="hilos de Armillaria que brillan" tam={32} color="#b6ff8f" />
+      <Chip T={T} at={K.C + 2.6} until={K.Ou} texto="un solo gigante" y={420} x={540} tam={48} borde={KC.yellow} />
 
       {/* barra de escala de cada escena */}
       <BarraEscala T={T} at={K.G} until={K.P} texto="5 m" largo={160} />
-      <BarraEscala T={T} at={K.Ca} until={K.N} texto="5 cm" largo={200} />
-      <BarraEscala T={T} at={K.Ed} until={K.B} texto="1 km" largo={144} />
-      <BarraEscala T={T} at={K.B} until={K.C} texto="10 cm" largo={170} />
+      <BarraEscala T={T} at={K.Ca} until={K.N} texto="5 cm" largo={286} />
+      <BarraEscala T={T} at={K.Ed} until={K.B} texto="1 km" largo={200} />
+      <BarraEscala T={T} at={K.B} until={K.C} texto="10 cm" largo={323} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.F - 0.1} texto="No son cientos: *puede ser uno solo.*" />

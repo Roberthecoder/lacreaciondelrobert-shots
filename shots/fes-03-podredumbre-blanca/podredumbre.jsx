@@ -1,7 +1,10 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Festivo #03 · Día de Muertos · Fungi Mati: los hongos que regresan los árboles a la tierra (podredumbre blanca) — NARRADO, formato N1 "Por dentro".
 // Guion, fuentes y verificación: guion.md y verificacion.md. El dibujo es esquemático (células y hifas no están a escala exacta entre sí).
 const MADERA = { ambar: '#c98a2b', celulosa: '#f3e6c8', lumen: '#2a1d12', blanca: '#efeadb', corteza: '#6b4423', cortezaOsc: '#4a2e17' };
-const PXMM_MACRO = 1;      // macro: 1 px = 1 mm (el tronco mide ~30 cm de grueso)
+const PXMM_MACRO = 1.25;   // macro: el tronco (~30 cm de grueso) se dibuja de 300 px y la escena lo agranda 1.25
+const PXMM_CORTE = 760 / 300; // corte del tronco en «blanca»: 30 cm = 760 px
+const ENC = 'translateY(210px) scale(1.25)', ENC_O = '540px 850px'; // pase de belleza: antes translateY(100px), quedaba arriba // encuadre del bosque: el tronco llena el ancho
 const PXMM_MICRO = 5000;   // micro: una célula de 150 px ≈ 30 µm
 
 const svgF = (c, extra) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, ...extra }}>{c}</svg>;
@@ -60,14 +63,14 @@ function Bosque({ T, color = KC.mint }) {
         <rect x={-18} y={0} width={36} height={420} fill="#1d7a55" />
         <circle cx={0} cy={-30} r={120 + (i % 3) * 20} fill="#24a06c" />
       </g>)}
-      <path d="M 0 920 Q 540 860 1080 920 L 1080 1920 L 0 1920 Z" fill="#7a5a32" stroke={KC.ink} strokeWidth={8} />
+      <path d="M 0 920 Q 540 860 1080 920 L 1080 1920 L 0 1920 Z" fill="#3a2a18" stroke={KC.ink} strokeWidth={8} />
       {Array.from({ length: 26 }, (_, i) => { const g = krng(30 + i); return <ellipse key={i} cx={g() * 1080} cy={950 + g() * 140} rx={16} ry={7} transform={`rotate(${g() * 180} ${g() * 1080} ${950 + g() * 140})`} fill={i % 3 ? '#b8782e' : '#d9a03f'} />; })}
     </>)}
   </>;
 }
 
 // ---------- MUNDO MICRO: la madera en corte (células de fibra) ----------
-const CEL = { x0: 90, y0: 420, n: 6, m: 5, t: 150 };
+const CEL = { x0: 90, y0: 560, n: 6, m: 5, t: 150 };
 const celdaC = (c, r) => [CEL.x0 + c * CEL.t + CEL.t / 2, CEL.y0 + r * CEL.t + CEL.t / 2];
 // hifas: caminos de centro de célula a centro de célula, cruzando por los poros
 const HIFAS = [
@@ -176,13 +179,15 @@ function Podredumbre() {
   const FIN = K.Ou + 4;
   // zoom macro → micro (fin del gancho) y micro → macro (inicio de "blanca")
   const zIn = kprog(T, K.L - 1.0, K.L + 0.4, kEase.suave), zOut = kprog(T, K.B - 0.5, K.B + 0.5, kEase.suave);
-  const zEsc = Math.exp(Math.log(PXMM_MICRO) * zIn * (1 - zOut));
+  // px por mm reales de lo que se ve: tronco del gancho (30 cm = 375 px), células (150 px ≈ 30 µm) y corte de «blanca» (30 cm = 760 px)
+  const pxmm = zOut > 0 ? Math.exp(klerp(Math.log(PXMM_MICRO), Math.log(PXMM_CORTE), zOut)) : Math.exp(klerp(Math.log(PXMM_MACRO), Math.log(PXMM_MICRO), zIn));
   const hongo = kprog(T, K.G + 0.1, K.G + 2.4, kEase.sale);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: el tronco caído con la ofrenda; el hongo asoma en manchas blancas; la cámara entra al corte */}
       <Escena T={T} a={K.G} b={K.L} zoom={0}>
-        <div style={{ position:'absolute', inset:0, transformOrigin:'880px 850px', transform:`scale(${1 + 6 * kprog(T, K.L - 1.2, K.L + 0.4, kEase.entra || kEase.suave)})` }}>
+        <div style={{ position:'absolute', inset:0, transformOrigin:'965px 1060px', transform:`scale(${1 + 6 * kprog(T, K.L - 1.2, K.L + 0.4, kEase.entra || kEase.suave)})` }}>
+          <div style={{ position:'absolute', inset:0, transformOrigin:ENC_O, transform:ENC }}>
           <Bosque T={T} />
           {svgF(<>
             <Tronco T={T} x={120 - 40 * (1 - kprog(T, K.G, K.G + 0.7, kEase.sale))} y={700} hongo={hongo} />
@@ -190,6 +195,7 @@ function Podredumbre() {
             <Cempasuchil x={330} y={1080} s={1.1} T={T} seed={1} /><Cempasuchil x={480} y={1130} s={0.9} T={T} seed={2} /><Cempasuchil x={70} y={1150} s={0.8} T={T} seed={3} />
             {Array.from({ length: 6 }, (_, i) => { const u = ((T - K.G) * 0.35 + i / 6) % 1; return <ellipse key={i} cx={260 + i * 120 + Math.sin(T * 2 + i) * 30} cy={klerp(420, 1020, u)} rx={14} ry={8} fill="#f07a12" stroke={KC.ink} strokeWidth={2} opacity={1 - u * 0.4} />; })}
           </>)}
+          </div>
         </div>
       </Escena>
       {/* 2–4 · por dentro de la madera: lignina (endurece la pared), hifas que cruzan por los poros, enzimas que oxidan la lignina */}
@@ -199,7 +205,7 @@ function Podredumbre() {
           lignina={1 - 0.85 * kprog(T, K.E + 0.4, K.B - 0.2)}
           hifas={kprog(T, K.H + 0.1, K.E + 1.0)}
           blanco={kprog(T, K.E + 1.2, K.B)}
-          enzimas={[{ x: 315, y: 645, at: K.E + 0.1 }, { x: 615, y: 795, at: K.E + 0.5, s: 0.9 }, { x: 765, y: 495, at: K.E + 0.9, s: 0.8 }, { x: 465, y: 945, at: K.E + 1.3, s: 0.9 }]} />
+          enzimas={[{ x: 315, y: 785, at: K.E + 0.1 }, { x: 615, y: 935, at: K.E + 0.5, s: 0.9 }, { x: 765, y: 635, at: K.E + 0.9, s: 0.8 }, { x: 465, y: 1085, at: K.E + 1.3, s: 0.9 }]} />
       </Escena>
       {/* 5 · de vuelta afuera: el corte del tronco blanco y blando (un dedo lo hunde) */}
       <Escena T={T} a={K.B} b={K.S} zoom={0.05}>
@@ -216,62 +222,75 @@ function Podredumbre() {
       </Escena>
       {/* 6 · lo que fue árbol: suelo, agua y CO₂ */}
       <Escena T={T} a={K.S} b={K.P} zoom={0.04}>
+        <div style={{ position:'absolute', inset:0, transformOrigin:ENC_O, transform:'translateY(400px) scale(1.3)' }}>
         <Bosque T={T} color={KC.yellow} />
         {svgF(<>
           <Tronco T={T} x={160} y={640} hongo={1} blanco={1} deshace={kprog(T, K.S + 0.2, K.S + 1.6, kEase.suave)} />
-          <path d={`M 160 940 Q 540 ${klerp(940, 800, kprog(T, K.S + 0.6, K.S + 1.8))} 920 940 Z`} fill="#4a2f1a" stroke={KC.ink} strokeWidth={8} />
+          <path d={`M 160 940 Q 540 ${klerp(940, 620, kprog(T, K.S + 0.6, K.S + 1.8))} 920 940 Z`} fill="#5b3a1f" stroke={KC.ink} strokeWidth={8} />
           <Flecha x1={540} y1={880} x2={250} y2={1020} k={kprog(T, K.S + 1.4, K.S + 1.8)} color={KC.ink} />
           <Flecha x1={520} y1={820} x2={420} y2={600} k={kprog(T, K.S + 1.8, K.S + 2.2)} color={KC.ink} />
           <Flecha x1={600} y1={880} x2={880} y2={1020} k={kprog(T, K.S + 2.2, K.S + 2.6)} color={KC.ink} />
           {T > K.S + 2.0 && Array.from({ length: 6 }, (_, i) => { const u = ((T - K.S - 2) * 0.6 + i / 6) % 1; return <circle key={i} cx={410 + Math.sin(T * 3 + i) * 30} cy={klerp(580, 380, u)} r={16 + i % 3 * 6} fill="rgba(255,255,255,.7)" stroke={KC.ink} strokeWidth={4} opacity={1 - u} />; })}
           {T > K.S + 2.5 && <path d="M 900 1000 q 26 40 0 60 q -26 -20 0 -60 Z" transform={`translate(0 ${Math.sin(T * 4) * 6})`} fill="#4fc3ff" stroke={KC.ink} strokeWidth={5} />}
         </>)}
+        </div>
       </Escena>
       {/* 7 · pregunta */}
       <Escena T={T} a={K.P} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         {svgF(<>
           <text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>
-          <g opacity={kprog(T, K.P + 0.3, K.P + 0.8)}><Enzima T={T} x={230} y={1160} at={K.P + 0.3} s={1.4} />
-            <line x1={160} y1={1100} x2={330} y2={1220} stroke={KC.red} strokeWidth={18} strokeLinecap="round" opacity={kprog(T, K.P + 1.0, K.P + 1.3)} /></g>
+          {/* pase de belleza: la enzima (lo que se pregunta) más grande y dentro del cuadro central, junto al «?» */}
+          <g opacity={kprog(T, K.P + 0.3, K.P + 0.8)}><Enzima T={T} x={480} y={1050} at={K.P + 0.3} s={1.8} />
+            <line x1={390} y1={975} x2={580} y2={1125} stroke={KC.red} strokeWidth={20} strokeLinecap="round" opacity={kprog(T, K.P + 1.0, K.P + 1.3)} /></g>
         </>)}
       </Escena>
       {/* 8 · el estudio: 31 genomas de hongos */}
       <Escena T={T} a={K.Es} b={K.R} zoom={0.03}>
         <FondoLunares color={KC.orange} />
-        {svgF(Array.from({ length: 31 }, (_, i) => { const at = K.Es + 1.2 + i * 0.08; if (T < at) return null; const c = i % 8, r = Math.floor(i / 8);
-          return <g key={i} transform={`translate(${135 + c * 116} ${1000 + r * 64}) scale(${kprog(T, at, at + 0.3, kEase.rebote)})`}><Repisa x={0} y={0} s={0.9} color={i % 5 === 3 ? '#c98a5a' : '#fbfaf3'} /></g>; }))}
+        {svgF(<>
+          {/* el tronco con el hongo sigue en cuadro desde que empieza la escena (atenuado); los 31 hongos, grandes, encima */}
+          <g opacity={0.62} transform="translate(540 1270) scale(1.2) translate(-415 -150)"><Tronco T={T} x={0} y={0} hongo={1} blanco={0.5} /></g>
+          {Array.from({ length: 31 }, (_, i) => { const at = K.Es + 0.5 + i * 0.08; if (T < at) return null; const c = i % 8, r = Math.floor(i / 8);
+            return <g key={i} transform={`translate(${106 + c * 124} ${690 + r * 104}) scale(${kprog(T, at, at + 0.3, kEase.rebote)})`}><Repisa x={0} y={0} s={1.2} color={i % 5 === 3 ? '#c98a5a' : '#fbfaf3'} /></g>; })}
+        </>)}
       </Escena>
       {/* 9 · reloj molecular: hacia atrás hasta ~290 millones de años */}
       <Escena T={T} a={K.R} b={K.C} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {svgF((() => { const u = kprog(T, K.R + 0.6, K.R + 3.4, kEase.suave); return <>
-          <line x1={100} y1={1010} x2={980} y2={1010} stroke={KC.texto} strokeWidth={10} strokeLinecap="round" />
-          {Array.from({ length: 11 }, (_, i) => <line key={i} x1={100 + i * 88} y1={990} x2={100 + i * 88} y2={1030} stroke={KC.texto} strokeWidth={6} />)}
-          <text x={980} y={1090} textAnchor="end" style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto}>hoy</text>
-          <text x={100} y={1090} style={{ font:`700 34px ${KF.mono}` }} fill={KC.gold2}>Carbonífero</text>
-          <circle cx={klerp(980, 160, u)} cy={1010} r={30} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />
-          <g transform={`translate(${klerp(980, 160, u)} 940)`} opacity={kprog(T, K.R + 3.2, K.R + 3.6)}><Enzima T={T} x={0} y={0} at={K.R + 3.2} s={0.9} /></g>
-          <g transform={`translate(540 700) rotate(${-u * 1440})`}><circle r={90} fill="none" stroke={KC.cyan} strokeWidth={10} /><line x1={0} y1={0} x2={0} y2={-70} stroke={KC.cyan} strokeWidth={10} strokeLinecap="round" /></g>
-          <g transform="translate(540 700) rotate(0)"><line x1={0} y1={0} x2={50} y2={0} stroke={KC.cyan} strokeWidth={10} strokeLinecap="round" /><circle r={12} fill={KC.cyan} /></g>
+        {svgF((() => { const u = kprog(T, K.R + 0.6, K.R + 3.4, kEase.suave), mx = klerp(980, 160, u); return <>
+          {/* el tronco de hoy, chico y atenuado, sobre el extremo «hoy»: de ahí sale la enzima que viaja hacia atrás */}
+          <g opacity={0.55} transform="translate(770 1070) scale(0.34)"><Tronco T={T} x={0} y={0} hongo={1} blanco={0.5} /></g>
+          <g transform={`translate(540 860) rotate(${-u * 1440})`}><circle r={190} fill="rgba(87,214,255,.06)" stroke={KC.cyan} strokeWidth={14} /><line x1={0} y1={0} x2={0} y2={-150} stroke={KC.cyan} strokeWidth={14} strokeLinecap="round" />
+            {Array.from({ length: 12 }, (_, i) => <line key={i} x1={0} y1={-190} x2={0} y2={-166} stroke={KC.cyan} strokeWidth={i % 3 ? 5 : 9} strokeLinecap="round" transform={`rotate(${i * 30})`} />)}</g>
+          <g transform="translate(540 860)"><line x1={0} y1={0} x2={104} y2={0} stroke={KC.cyan} strokeWidth={14} strokeLinecap="round" /><circle r={20} fill={KC.cyan} /></g>
+          <line x1={100} y1={1330} x2={980} y2={1330} stroke={KC.texto} strokeWidth={12} strokeLinecap="round" />
+          {Array.from({ length: 11 }, (_, i) => <line key={i} x1={100 + i * 88} y1={1304} x2={100 + i * 88} y2={1356} stroke={KC.texto} strokeWidth={7} />)}
+          <text x={980} y={1420} textAnchor="end" style={{ font:`700 38px ${KF.mono}` }} fill={KC.texto}>hoy</text>
+          <text x={100} y={1420} style={{ font:`700 38px ${KF.mono}` }} fill={KC.gold2}>Carbonífero</text>
+          <circle cx={mx} cy={1330} r={36} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />
+          <Enzima T={T} x={mx} y={1240} at={K.R + 0.1} s={1.25} />
         </>; })())}
       </Escena>
       {/* 10 · la hipótesis del carbón: licopsidas que caen y se entierran sin pudrirse */}
       <Escena T={T} a={K.C} b={K.D} zoom={0.03}>
         <FondoLunares color={KC.teal} punto="rgba(255,255,255,.18)" />
         {svgF((() => { const capas = kprog(T, K.C + 1.6, K.C + 4.2); return <>
-          <Helecho x={120} y={1000} s={1.1} T={T} /><Helecho x={980} y={1000} s={1.0} T={T} />
+          <g transform="translate(540 1200) scale(1.3) translate(-540 -1000)">
+          <rect x={-200} y={1190} width={1480} height={420} fill="#1f160d" />
+          <Helecho x={215} y={1000} s={1.1} T={T} /><Helecho x={865} y={1000} s={1.0} T={T} />
           <Licopsida x={380} y={1000} h={620} cae={kprog(T, K.C + 0.3, K.C + 1.2, kEase.entra || kEase.suave)} T={T} />
           <Licopsida x={720} y={1000} h={560} cae={kprog(T, K.C + 0.8, K.C + 1.7, kEase.entra || kEase.suave) * -1.05} T={T} />
-          <rect x={0} y={1000} width={1080} height={200} fill="#3d2a16" stroke={KC.ink} strokeWidth={8} />
-          {[0, 1, 2, 3].map((i) => { const k = kclamp(capas * 4 - i, 0, 1); return <rect key={i} x={0} y={1200 - (i + 1) * 50 * k} width={1080} height={50 * k} fill={i % 2 ? '#8a6a3a' : '#a8844a'} opacity={0.95} />; })}
-          <rect x={0} y={1160} width={1080} height={40} fill="#14110f" opacity={kprog(T, K.C + 3.6, K.C + 4.6)} />
+          <rect x={-200} y={1000} width={1480} height={200} fill="#3d2a16" stroke={KC.ink} strokeWidth={8} />
+          {[0, 1, 2, 3].map((i) => { const k = kclamp(capas * 4 - i, 0, 1); return <rect key={i} x={-200} y={1200 - (i + 1) * 50 * k} width={1480} height={50 * k} fill={i % 2 ? '#6e5530' : '#84683b'} opacity={0.95} />; })}
+          <rect x={-200} y={1160} width={1480} height={40} fill="#14110f" stroke="#6b6460" strokeWidth={3} opacity={kprog(T, K.C + 3.6, K.C + 4.6)} />
+          </g>
         </>; })())}
       </Escena>
       {/* 11 · dato: un trozo de carbón con la huella de una planta */}
       <Escena T={T} a={K.D} b={K.Ci} zoom={0.06}>
         <FondoLunares color={KC.yellow} />
-        {svgF(<g transform={`translate(330 900) rotate(${Math.sin(T * 1.5) * 4}) scale(${0.75 * kprog(T, K.D, K.D + 0.5, kEase.rebote)})`}>
+        {svgF(<g transform={`translate(540 990) rotate(${Math.sin(T * 1.5) * 4}) scale(${1.35 * kprog(T, K.D, K.D + 0.5, kEase.rebote)})`}>
           <path d="M -260 -60 L -150 -200 L 60 -230 L 250 -120 L 280 80 L 120 220 L -140 200 L -280 80 Z" fill="#1d1a19" stroke={KC.ink} strokeWidth={10} />
           <path d="M -120 -160 L 200 -40 L 210 120 L -40 160 Z" fill="#2b2726" />
           <g opacity={0.85}><path d="M -160 120 Q 0 0 180 -100" stroke="#6b6460" strokeWidth={8} fill="none" />
@@ -280,43 +299,45 @@ function Podredumbre() {
       </Escena>
       {/* 12 · cierre: el mismo lugar del inicio; el tronco ya es tierra, con un brote y cempasúchil */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
+        <div style={{ position:'absolute', inset:0, transformOrigin:ENC_O, transform:ENC }}>
         <Bosque T={T} />
         {svgF((() => { const d = kprog(T, K.Ci + 0.3, K.Ci + 2.0, kEase.suave); return <>
           <Tronco T={T} x={120} y={700} hongo={1} blanco={1} deshace={d} />
-          <path d={`M 100 1010 Q 520 ${klerp(1010, 870, d)} 940 1010 Z`} fill="#4a2f1a" stroke={KC.ink} strokeWidth={8} />
+          <path d={`M 100 1010 Q 520 ${klerp(1010, 870, d)} 940 1010 Z`} fill="#5b3a1f" stroke={KC.ink} strokeWidth={8} />
           <Brote x={520} y={920} k={kprog(T, K.Ci + 1.8, K.Ci + 3.2, kEase.sale)} T={T} />
           <g opacity={kprog(T, K.Ci + 2.6, K.Ci + 3.2)}><Repisa x={720} y={950} s={1.2} /><Repisa x={790} y={970} s={0.9} /></g>
           <Vela x={170} y={1120} s={0.9} T={T} />
           <Cempasuchil x={330} y={1080} s={1.1} T={T} seed={1} /><Cempasuchil x={480} y={1130} s={0.9} T={T} seed={2} /><Cempasuchil x={70} y={1150} s={0.8} T={T} seed={3} />
           <Cempasuchil x={640} y={1060} s={kprog(T, K.Ci + 3.0, K.Ci + 3.6, kEase.rebote)} T={T} seed={4} />
         </>; })())}
+        </div>
       </Escena>
 
       {/* escala: cm → µm al entrar a la madera y de vuelta */}
-      {T < K.S - 0.3 && <Escala T={T} z={zEsc} pxPorMm={PXMM_MACRO} x={60} y={1430} />}
+      {T < K.S - 0.3 && <Escala T={T} z={1} pxPorMm={pxmm} x={60} y={1430} />}
 
       {/* textos */}
-      <Chip T={T} at={K.G + 0.2} until={K.L - 1.2} texto="Especial Día de Muertos" y={470} tam={34} borde={KC.orange} />
-      <Etq T={T} at={K.G + 1.4} until={K.L - 1.1} x={560} y={650} texto="hongo (micelio)" tam={32} />
-      <Chip T={T} at={K.L + 0.6} until={K.H - 0.2} texto="lignina: endurece la pared" y={330} x={640} tam={40} borde={MADERA.ambar} />
-      <Etq T={T} at={K.L + 1.4} until={K.H - 0.2} x={1000} y={1205} texto="celulosa (pared)" lado="izq" tam={28} />
-      <Etq T={T} at={K.H + 0.6} until={K.E - 0.2} x={1000} y={330} texto="hifas" lado="izq" tam={38} color={KC.texto} />
-      <Etq T={T} at={K.H + 1.6} until={K.E - 0.2} x={1000} y={1205} texto="poros en la pared" lado="izq" tam={28} />
-      <Chip T={T} at={K.E + 0.3} until={K.B - 0.2} texto="peroxidasas y lacasas" y={330} x={640} tam={36} borde={KC.pink} />
+      <Chip T={T} at={K.G + 0.2} until={K.L - 1.2} texto="Especial Día de Muertos" y={380} tam={34} borde={KC.orange} />
+      <Etq T={T} at={K.G + 1.4} until={K.L - 1.1} x={565} y={825} texto="hongo (micelio)" tam={32} />
+      <Chip T={T} at={K.L + 0.6} until={K.H - 0.2} texto="lignina: endurece la pared" y={462} x={540} tam={40} borde={MADERA.ambar} />
+      <Etq T={T} at={K.L + 1.4} until={K.H - 0.2} x={1000} y={1380} texto="celulosa (pared)" lado="izq" tam={28} />
+      <Etq T={T} at={K.H + 0.6} until={K.E - 0.2} x={1000} y={470} texto="hifas" lado="izq" tam={38} color={KC.texto} />
+      <Etq T={T} at={K.H + 1.6} until={K.E - 0.2} x={1000} y={1380} texto="poros en la pared" lado="izq" tam={28} />
+      <Chip T={T} at={K.E + 0.3} until={K.B - 0.2} texto="peroxidasas y lacasas" y={462} x={540} tam={36} borde={KC.pink} />
       <Chip T={T} at={K.B + 0.4} until={K.S - 0.2} texto="podredumbre blanca" y={420} tam={48} borde={KC.ink} fondo={KC.paper} color={KC.ink} />
       <Etq T={T} at={K.B + 2.0} until={K.S - 0.2} x={760} y={1120} texto="blanda" tam={34} />
-      <Etq T={T} at={K.S + 1.6} until={K.P - 0.2} x={60} y={1040} texto="suelo" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.S + 1.9} until={K.P - 0.2} x={460} y={400} texto="CO₂" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.S + 2.5} until={K.P - 0.2} x={1040} y={1110} texto="agua" lado="izq" tam={36} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.R - 0.3} anio="2012" quien="Floudas, Hibbett et al. · U. Clark" revista="Science · consorcio internacional · 31 genomas" y={760} />
-      <NumeroGigante T={T} at={K.R + 0.6} until={K.C - 0.3} valor={290} dur={2.8} etiqueta="millones de años (aprox.)" x={640} y={430} tam={170} />
-      <Chip T={T} at={K.R + 3.5} until={K.C - 0.3} texto="reloj molecular" x={780} y={860} tam={38} borde={KC.cyan} />
-      <Chip T={T} at={K.C + 0.3} until={K.D - 0.2} texto="HIPÓTESIS" y={420} tam={46} borde={KC.yellow} />
-      <Etq T={T} at={K.C + 3.8} until={K.D - 0.2} x={60} y={1150} texto="carbón" tam={34} color={KC.texto} />
-      <Chip T={T} at={K.C + 4.6} until={K.D - 0.2} texto="2016: en duda" x={360} y={560} tam={40} borde={KC.red} />
+      <Etq T={T} at={K.S + 1.6} until={K.P - 0.2} x={60} y={1535} texto="suelo" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.S + 1.9} until={K.P - 0.2} x={470} y={720} texto="CO₂" tam={40} color={KC.ink} />
+      <Etq T={T} at={K.S + 2.5} until={K.P - 0.2} x={1050} y={1530} texto="agua" lado="izq" tam={36} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.R - 0.3} anio="2012" quien="Floudas, Hibbett et al. · U. Clark" revista="Science · consorcio internacional · 31 genomas" y={390} />
+      <NumeroGigante T={T} at={K.R + 0.6} until={K.C - 0.3} valor={290} dur={2.8} etiqueta="millones de años (aprox.)" x={540} y={430} tam={170} />
+      <Chip T={T} at={K.R + 3.5} until={K.C - 0.3} texto="reloj molecular" x={540} y={1130} tam={38} borde={KC.cyan} />
+      <Chip T={T} at={K.C + 0.3} until={K.D - 0.2} texto="HIPÓTESIS" y={570} tam={46} borde={KC.yellow} />
+      <Etq T={T} at={K.C + 3.8} until={K.D - 0.2} x={60} y={1462} texto="carbón" tam={34} color={KC.texto} />
+      <Chip T={T} at={K.C + 4.6} until={K.D - 0.2} texto="2016: en duda" x={540} y={672} tam={40} borde={KC.red} />
       <Chip T={T} at={K.D + 0.6} until={K.Ci - 0.2} texto="pantanos empapados: casi no se pudren" y={420} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.D + 1.4} until={K.Ci - 0.2} x={40} y={680} texto="huella de planta (esquemática)" tam={24} color={KC.ink} />
-      <Chip T={T} at={K.Ci + 3.4} until={K.Ou} texto="todo regresa a la tierra" x={370} y={470} tam={38} borde={KC.orange} />
+      <Etq T={T} at={K.D + 1.4} until={K.Ci - 0.2} x={110} y={600} texto="huella de planta (esquemática)" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Ci + 3.4} until={K.Ou} texto="todo regresa a la tierra" x={540} y={380} tam={38} borde={KC.orange} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.L - 0.1} texto="Muerto, pero no solo: *lo come un hongo.*" />

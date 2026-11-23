@@ -72,7 +72,7 @@ function Flamas({ T, t0, apagarDesde = null, apagarDur = 3.5 }) {
     const nat = PV_NAT.includes(i);
     const off = apagarDesde == null || nat ? 0 : kprog(T, apagarDesde + PV_ORDEN[i] * apagarDur, apagarDesde + PV_ORDEN[i] * apagarDur + 0.25);
     const fl = 1 + 0.12 * Math.sin(T * 12 + i * 1.7);
-    if (off >= 1) { out.push(<circle key={i} cx={x} cy={y - 4} r={2.5} fill="#5b5f66" />); continue; }
+    if (off >= 1) { out.push(<path key={i} d={PV_FLAMA} transform={`translate(${x} ${y}) scale(0.6, 0.62)`} fill="#4a4f58" stroke="#6b717c" strokeWidth={1.5} opacity={0.7} />); continue; }
     out.push(<path key={i} d={PV_FLAMA} transform={`translate(${x} ${y}) scale(${0.85 * luz * (1 - off)}, ${0.95 * luz * fl * (1 - off)})`} fill={nat ? KC.cyan : (i % 3 ? KC.orange : '#ff5a1f')} stroke={KC.ink} strokeWidth={2} />);
   }
   const marcas = PV_NAT.map((i, k) => { const c = i % 40, r = Math.floor(i / 40), x = x0 + c * cw + cw / 2, y = y0 + r * ch + ch - 6;

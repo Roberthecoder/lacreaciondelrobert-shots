@@ -11,7 +11,8 @@ function SvgCapa({ children, z }) {
 function Tabla({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <ellipse cx={0} cy={70} rx={430} ry={60} fill="rgba(0,0,0,.18)" />
-    <rect x={-420} y={-150} width={840} height={230} rx={60} fill="#c98a4b" stroke={KC.ink} strokeWidth={10} />
+    <defs><linearGradient id="cnTabla" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0" stopColor="#dca167" /><stop offset="1" stopColor="#a96c35" /></linearGradient></defs>
+    <rect x={-420} y={-150} width={840} height={230} rx={60} fill="url(#cnTabla)" stroke={KC.ink} strokeWidth={8} />
     <rect x={-420} y={30} width={840} height={50} rx={25} fill="#a86b33" stroke={KC.ink} strokeWidth={8} />
     {[-300, -120, 80, 260].map((v, i) => <path key={i} d={`M ${v} -120 q 40 60 0 130`} stroke="#b07a3f" strokeWidth={5} fill="none" />)}
     <circle cx={360} cy={-80} r={22} fill="#8a5426" stroke={KC.ink} strokeWidth={6} />
@@ -48,15 +49,16 @@ function TanqueMini({ T, x, y, s = 1, brillo = 0, celulas = 1 }) {
 function Vaca({ T = 0, x = 0, y = 0, s = 1, feto = 0 }) {
   const c = Math.sin(T * 1.7) * 12;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <g transform={`translate(-300 -90) rotate(${c})`}><path d="M 0 0 C -40 40 -50 120 -40 190" stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" /><ellipse cx={-40} cy={200} rx={16} ry={28} fill={KC.ink} /></g>
+    <g transform={`translate(-300 -90) rotate(${c})`}><path d="M 0 0 C -40 40 -50 120 -40 190" stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" /><ellipse cx={-40} cy={200} rx={16} ry={28} fill="#23252c" /></g>
     {[[-230, 0], [-150, 1], [150, 0], [230, 1]].map(([px], i) => <g key={i} transform={`rotate(${Math.sin(T * 0.8 + i) * 1.2} ${px} 60)`}>
       <rect x={px - 26} y={40} width={52} height={210} rx={20} fill={i % 2 ? '#f4efe4' : '#fff'} stroke={KC.ink} strokeWidth={8} /><rect x={px - 28} y={226} width={56} height={34} rx={10} fill="#3a2b22" stroke={KC.ink} strokeWidth={6} />
     </g>)}
     <path d="M -60 120 Q 0 190 60 120 Z" fill="#ffb3c7" stroke={KC.ink} strokeWidth={7} />
-    <rect x={-320} y={-170} width={600} height={320} rx={150} fill="#fff" stroke={KC.ink} strokeWidth={9} />
-    <path d="M -250 -150 C -200 -110 -150 -140 -130 -90 C -110 -40 -190 -20 -230 -60 C -270 -100 -290 -130 -250 -150 Z" fill={KC.ink} />
-    <path d="M 20 -168 C 70 -120 140 -150 150 -100 C 160 -40 70 -40 40 -80 C 20 -110 0 -150 20 -168 Z" fill={KC.ink} />
-    <path d="M 160 40 C 200 20 250 40 240 90 C 220 120 170 110 160 80 Z" fill={KC.ink} />
+    <defs><radialGradient id="cnVaca" cx="0.35" cy="0.25" r="0.85"><stop offset="0" stopColor="#ffffff" /><stop offset="0.7" stopColor="#e6e9ee" /><stop offset="1" stopColor="#b9c0cb" /></radialGradient></defs>
+    <rect x={-320} y={-170} width={600} height={320} rx={150} fill="url(#cnVaca)" stroke={KC.ink} strokeWidth={8} />
+    <path d="M -250 -150 C -200 -110 -150 -140 -130 -90 C -110 -40 -190 -20 -230 -60 C -270 -100 -290 -130 -250 -150 Z" fill="#23252c" />
+    <path d="M 20 -168 C 70 -120 140 -150 150 -100 C 160 -40 70 -40 40 -80 C 20 -110 0 -150 20 -168 Z" fill="#23252c" />
+    <path d="M 160 40 C 200 20 250 40 240 90 C 220 120 170 110 160 80 Z" fill="#23252c" />
     {feto > 0 && <g opacity={feto}>
       <ellipse cx={-40} cy={20} rx={150} ry={95} fill="rgba(255,179,199,.55)" stroke={KC.pink} strokeWidth={6} strokeDasharray="16 10" />
       <path d="M -120 40 Q -130 -30 -60 -40 Q 0 -50 30 -10 Q 70 -30 80 10 Q 70 50 30 40 Q 0 80 -60 70 Q -110 70 -120 40 Z" fill="none" stroke={KC.ink} strokeWidth={5} strokeDasharray="10 8" />
@@ -64,11 +66,11 @@ function Vaca({ T = 0, x = 0, y = 0, s = 1, feto = 0 }) {
     <g transform={`translate(300 -110) rotate(${mece(T, 5, 0.25) * 2})`}>
       <path d="M -20 -40 L -60 -66 L -40 -20 Z" fill="#fff" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
       <path d="M 10 -76 q 10 -30 30 -36" stroke="#e8d9b0" strokeWidth={12} fill="none" strokeLinecap="round" />
-      <rect x={-30} y={-80} width={170} height={150} rx={60} fill="#fff" stroke={KC.ink} strokeWidth={9} />
-      <path d="M 40 -80 C 70 -60 60 -20 30 -30 C 10 -40 10 -70 40 -80 Z" fill={KC.ink} />
-      <circle cx={70} cy={-20} r={12} fill={KC.ink} /><circle cx={74} cy={-24} r={4} fill="#fff" />
+      <rect x={-30} y={-80} width={170} height={150} rx={60} fill="url(#cnVaca)" stroke={KC.ink} strokeWidth={8} />
+      <path d="M 40 -80 C 70 -60 60 -20 30 -30 C 10 -40 10 -70 40 -80 Z" fill="#23252c" />
+      <circle cx={70} cy={-20} r={12} fill="#14161c" /><circle cx={74} cy={-24} r={4} fill="#fff" />
       <rect x={70} y={10} width={110} height={60} rx={28} fill="#ffb3c7" stroke={KC.ink} strokeWidth={8} />
-      <circle cx={150} cy={34} r={6} fill={KC.ink} /><circle cx={124} cy={34} r={6} fill={KC.ink} />
+      <circle cx={150} cy={34} r={6} fill="#6b3a48" /><circle cx={124} cy={34} r={6} fill="#6b3a48" />
     </g>
   </g>;
 }
@@ -267,7 +269,7 @@ function Carne() {
         </SvgCapa>
       </EscenaFundido>
       {/* 7 · caldos sin suero */}
-      <EscenaFundido T={T} a={K.SS} b={K.Ha} zoom={0.04}>
+      <EscenaFundido T={T} a={K.SS} b={K.Ha - 0.5} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
           <g opacity={1 - 0.6 * kprog(T, K.SS + 1.2, K.SS + 1.8)}><Tubo x={220} y={960} s={1.35} liquido={AMBAR} etiqueta="FBS" /></g>
@@ -280,7 +282,9 @@ function Carne() {
         <SvgCapa>
           <g transform="translate(540 1020) scale(1.35) translate(-640 -1050)">
           <ellipse cx={640} cy={1080} rx={300} ry={50} fill="rgba(0,0,0,.18)" />
-          <ellipse cx={640} cy={1050} rx={360} ry={70} fill="#fff" stroke={KC.ink} strokeWidth={9} />
+          <defs><radialGradient id="cnPlato" cx="0.4" cy="0.3" r="0.8"><stop offset="0" stopColor="#f4f6f9" /><stop offset="1" stopColor="#aeb6c2" /></radialGradient></defs>
+          <ellipse cx={640} cy={1050} rx={360} ry={70} fill="url(#cnPlato)" stroke={KC.ink} strokeWidth={7} />
+          <ellipse cx={640} cy={1046} rx={270} ry={46} fill="none" stroke="#8d96a3" strokeWidth={4} opacity={0.6} />
           {torta > 0 && <g opacity={torta}><ellipse cx={640} cy={1010} rx={250} ry={90} fill={CARNE} stroke={KC.ink} strokeWidth={9} />
             <ellipse cx={600} cy={985} rx={140} ry={30} fill="rgba(255,255,255,.35)" /></g>}
           {tiras.map(([x, y, rot, t0], i) => { const p = kprog(T, t0, t0 + 0.45, kEase.sale); if (p <= 0) return null;
@@ -309,7 +313,7 @@ function Carne() {
         <Tarjeta T={T} at={K.Le + 4.6} nombre="8 estados de EE. UU." anio="2024–26" y={940} chico />
       </div>}
       {/* 11 · el reto: el caldo y los tanques gigantes */}
-      <EscenaFundido T={T} a={K.Re} b={K.Ci} zoom={0.02}>
+      <EscenaFundido T={T} a={K.Re} b={K.Ci - 0.5} zoom={0.02}>
         <div style={{ position:'absolute', inset:0, transform:`scale(${klerp(0.78, 0.95, crece)})`, transformOrigin:'50% 48%' }}>
           <MundoBiorreactor T={T} turbio={0.55} burbujas={1} fondo="#8a6a10" />
         </div>
@@ -348,13 +352,13 @@ function Carne() {
       <Etq T={T} at={K.Fi + 4.0} until={K.Pr - 0.3} x={60} y={1060} texto="grasa" lado="der" tam={36} color={LIPIDO} />
       <Etq T={T} at={K.Su + 1.5} until={K.SS - 0.3} x={350} y={640} texto="suero fetal bovino" lado="der" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Su + 2.4} until={K.SS - 0.3} texto="parte líquida de la sangre de fetos" y={1480} tam={36} borde={AMBAR} />
-      <MitoTachado T={T} at={K.SS + 0.2} tacharEn={K.SS + 1.0} until={K.Ha - 0.3} texto="suero fetal" x={650} y={540} tam={44} />
-      <Chip T={T} at={K.SS + 2.0} until={K.Ha - 0.3} texto="Singapur · 2023 · primer caldo sin suero" y={1480} tam={34} borde={KC.mint} />
+      <MitoTachado T={T} at={K.SS + 0.2} tacharEn={K.SS + 1.0} until={K.Ha - 0.6} texto="suero fetal" x={650} y={540} tam={44} />
+      <Chip T={T} at={K.SS + 2.0} until={K.Ha - 0.6} texto="Singapur · 2023 · primer caldo sin suero" y={1480} tam={34} borde={KC.mint} />
       <TarjetaEstudio T={T} at={K.Ha + 0.2} until={K.Ha + 3.6} anio="2013" quien="Mark Post · Londres" revista="5 ago · Universidad de Maastricht" x={540} y={470} />
       {T < K.Le && <Contador T={T} at={K.Ha + 1.0} desde={0} hasta={20000} dur={3.8} sufijo=" tiritas" x={540} y={1340} tam={64} color={KC.texto} />}
       <NumeroGigante T={T} at={K.Co} until={K.Le - 0.2} valor={250000} dur={1.0} sufijo=" €" y={500} tam={190} color={KC.yellow} />
       <Chip T={T} at={K.Re + 0.3} until={K.Re + 2.0} texto="el caldo: lo más caro" y={1560} tam={46} borde={KC.gold} />
-      <Chip T={T} at={K.Re + 2.2} until={K.Ci - 0.3} texto="falta: tanques gigantes" y={250} tam={46} borde={KC.cyan} />
+      <Chip T={T} at={K.Re + 2.2} until={K.Ci - 0.6} texto="falta: tanques gigantes" y={250} tam={46} borde={KC.cyan} />
       <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="células de animal · crecidas en tanque" y={1540} tam={36} borde={KC.pink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

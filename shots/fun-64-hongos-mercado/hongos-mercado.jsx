@@ -458,7 +458,7 @@ function HongosMercadoShot() {
       </div>
       <NumeroGigante T={T} at={K.C + 2.4} until={K.Ou} valor={425} dur={0.4} desde={424} x={275} y={770} tam={130} color={KC.yellow} />
       <Etq T={T} at={K.C + 2.6} until={K.Ou} x={60} y={872} texto="hongos silvestres en la mesa" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.C + 0.8} until={K.Ou} x={60} y={1500} texto="Nunca comas hongos silvestres sin un experto." tam={24} color={KC.texto} />
+      <Etq T={T} at={K.C + 0.8} until={K.Ou} x={60} y={1420} texto="Nunca comas hongos silvestres sin un experto." tam={24} color={KC.texto} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.Me} texto="5 cm" largo={125} />{/* champiñón 1.1 → 2.3: 60 × 2.09 */}

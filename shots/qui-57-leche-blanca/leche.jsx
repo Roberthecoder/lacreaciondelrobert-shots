@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #57 · Lo blanco de tu leche no es un pigmento (micelas de caseína, grasa y luz rebotando) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const LECHE = '#fbfaf3', DESC = '#e2ebff', GRASA = '#fff1b8', CASEINA = '#f4efe4', AZUL = '#4f8bff', ROJO = '#ff4d3a', VERDE = '#3fdf6a';
@@ -37,7 +38,7 @@ function RayoLuz({ T, pts, t0, t1, color = '#fffbe6', ancho = 10, brillo = true,
 
 // ---------- dibujos de cocina ----------
 // Vaso de vidrio (origen = centro del fondo). nivel 0..1 de leche.
-function Vaso({ x, y, s = 1, nivel = 1, leche = LECHE, halo, children }) {
+function Vaso({ x, y, s = 1, nivel = 1, leche = LECHE, halo, trazo = 10, children }) {
   const h = 380 * nivel, wTop = (yy) => klerp(120, 150, yy / 380);
   const id = `vs${Math.round(x)}_${Math.round(y)}`;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
@@ -49,7 +50,7 @@ function Vaso({ x, y, s = 1, nivel = 1, leche = LECHE, halo, children }) {
       {nivel > 0.02 && <ellipse cx={0} cy={-h} rx={wTop(h)} ry={18} fill={mixHex(leche, '#ffffff', 0.6)} stroke="rgba(0,0,0,.12)" strokeWidth={3} />}
       {children}
     </g>
-    <path d="M -150 -380 L 150 -380 L 120 0 L -120 0 Z" fill="rgba(255,255,255,.12)" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+    <path d="M -150 -380 L 150 -380 L 120 0 L -120 0 Z" fill="rgba(255,255,255,.12)" stroke={KC.ink} strokeWidth={trazo} strokeLinejoin="round" />
     <path d="M -118 -350 L -96 -40" stroke="#fff" strokeWidth={12} opacity={0.6} strokeLinecap="round" />
   </g>;
 }
@@ -150,7 +151,8 @@ function zigzagVaso(cx, cy, w, h, n, seed) {
   pts.push([cx + w / 2 + 300, cy - h * 0.55]);
   return pts;
 }
-const ZZ_MON = zigzagVaso(540, 975, 230, 250, 46, 11);
+const ZZ_MON = zigzagVaso(540, 985, 300, 370, 46, 11);
+ZZ_MON[ZZ_MON.length - 1] = [948, 790];   // el rayo sale sin pasarse del borde de la pantalla
 const ZZ_CIERRE = zigzagVaso(400, 990, 210, 270, 22, 4);
 const ZZ_GANCHO = [[-40, 1000], [330, 990], [430, 1090], [360, 900], [470, 960], [410, 1130], [520, 860], [1100, 640]];
 
@@ -169,8 +171,9 @@ function Leche() {
     {REB_MIC.map(([x, y], i) => <Micela key={'b' + i} x={x} y={y} r={30} iones={iones} />)}
   </g>;
   // rayos de colores hacia el ojo
-  const OJO = [905, 1080];
+  const OJO = [800, 1130];
   const colores = [[ROJO, [610, 780]], [VERDE, [740, 960]], [AZUL, [560, 1120]]];
+  const GRANDE = 'translate(540 1010) scale(1.8) translate(-400 -990)';   // pase a mano: el vaso llena el cuadro
   // azul vs rojo en la descremada
   const zzAzul = [[-40, 700], [250, 690], [380, 880], [230, 990], [470, 1060], [600, 860], [760, 1000], [690, 1180], [900, 1090], [1120, 1150]];
   const rectoRojo = [[-40, 600], [520, 610], [1120, 640]];
@@ -181,123 +184,128 @@ function Leche() {
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: el vaso de leche y la luz que entra */}
-      <Escena T={T} a={K.G} b={K.Bo} zoom={0.12} origen="37% 52%">
+      <Escena T={T} a={K.G} b={K.Bo} zoom={0.12} origen="50% 52%">
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <SolVentana T={T} x={90} y={1440} o={kprog(T, K.G + 2.2, K.G + 2.6)} />
-          <Vaso x={400} y={1180} nivel={nivel} />
-          <Chorro T={T} x0={318} y0={655} x1={400} y1={1170 - nivel * 380} color={LECHE} o={vierte} ancho={22} />
-          <Carton x={210} y={680} s={0.8} inclina={klerp(30, 110, kprog(T, K.G - 0.3, K.G + 0.3, kEase.sale)) - 80 * kprog(T, K.G + 2.4, K.G + 3.0)} />
-          <RayoLuz T={T} pts={ZZ_GANCHO} t0={K.G + 2.7} t1={K.G + 4.6} color="#fff6c4" ancho={9} />
+          <SolVentana T={T} x={120} y={1520} o={kprog(T, K.G + 2.2, K.G + 2.6)} />
+          <g transform={GRANDE}>
+            <Vaso x={400} y={1180} nivel={nivel} trazo={6} />
+            <Chorro T={T} x0={318} y0={655} x1={400} y1={1170 - nivel * 380} color={LECHE} o={vierte} ancho={15} />
+            <Carton x={210} y={680} s={0.8} inclina={klerp(30, 110, kprog(T, K.G - 0.3, K.G + 0.3, kEase.sale)) - 80 * kprog(T, K.G + 2.4, K.G + 3.0)} />
+            <RayoLuz T={T} pts={ZZ_GANCHO} t0={K.G + 2.7} t1={K.G + 4.6} color="#fff6c4" ancho={5.5} />
+          </g>
         </SvgCapa>
-        <Escala T={T} z={1} pxPorMm={3.8} y={1430} x={620} />
+        <Escala T={T} z={1} pxPorMm={3.8 * 1.8} y={1430} x={620} />
       </Escena>
       {/* 1–3 · al microscopio: grasa y micelas, el rayo rebota, todos los colores = blanco */}
       <Escena T={T} a={K.Bo} b={K.Pr} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(180,200,255,.25)" tam={[2, 6]} vel={10} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(0 80)">
           {mundoMicro(true, T > K.Bo + 3.6)}
           {T > K.Bo + 3.6 && T < K.Re && <g opacity={kprog(T, K.Bo + 3.6, K.Bo + 4.1) * (1 - kprog(T, K.Re - 0.4, K.Re))}>
             <circle cx={540} cy={860} r={190} fill="rgba(13,20,36,.92)" stroke={KC.gold2} strokeWidth={8} />
             <Micela x={540} y={860} r={150 * kprog(T, K.Bo + 3.6, K.Bo + 4.2, kEase.rebote)} iones={true} />
           </g>}
           <RayoLuz T={T} pts={REB} t0={K.Re + 0.3} t1={K.Re + 4.6} color="#fffbe6" o={1 - kprog(T, K.Bl + 0.2, K.Bl + 0.8)} />
+          {T > K.Bl && <g opacity={kprog(T, K.Bl, K.Bl + 0.4)}><circle cx={OJO[0]} cy={OJO[1]} r={215} fill="rgba(13,20,36,.92)" stroke={KC.gold2} strokeWidth={8} /></g>}
           {T > K.Bl && colores.map(([c, p0], i) => <RayoLuz key={i} T={T} pts={[[p0[0], p0[1]], [klerp(p0[0], OJO[0], 0.5) + (i - 1) * 40, klerp(p0[1], OJO[1], 0.5) - 60], OJO]} t0={K.Bl + 0.3 + i * 0.25} t1={K.Bl + 1.6 + i * 0.25} color={c} ancho={9} chispas={false} />)}
-          {T > K.Bl && <Ojo x={OJO[0]} y={OJO[1]} s={0.85} T={T} />}
-          {T > K.Bl + 2.0 && <circle cx={OJO[0]} cy={OJO[1]} r={40 + 70 * kprog(T, K.Bl + 2.0, K.Bl + 2.6, kEase.sale)} fill="#fff" opacity={0.55 * (1 - 0.5 * kprog(T, K.Bl + 2.6, K.Bl + 3.4))} />}
-        </SvgCapa>
+          {T > K.Bl && <g opacity={kprog(T, K.Bl, K.Bl + 0.4)}><Ojo x={OJO[0]} y={OJO[1]} s={1.5} T={T} /></g>}
+          {T > K.Bl + 2.0 && <circle cx={OJO[0]} cy={OJO[1]} r={60 + 110 * kprog(T, K.Bl + 2.0, K.Bl + 2.6, kEase.sale)} fill="#fff" opacity={0.55 * (1 - 0.5 * kprog(T, K.Bl + 2.6, K.Bl + 3.4))} />}
+        </g></SvgCapa>
         <Escala T={T} z={1} pxPorMm={300000} y={1430} x={60} />
       </Escena>
       {/* 4 · pregunta: entera vs descremada */}
-      <Escena T={T} a={K.Pr} b={K.Az} zoom={0.06} origen="30% 55%">
+      <Escena T={T} a={K.Pr} b={K.Az} zoom={0.06} origen="50% 55%">
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Vaso x={170} y={1150} s={0.72} nivel={0.85} />
-          <Vaso x={400} y={1150} s={0.72} nivel={0.85} leche={DESC} halo={AZUL} />
-          <text x={170} y={1210} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>entera</text>
-          <text x={400} y={1210} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>descremada</text>
-          <text x={285} y={760} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 285 660)`}>?</text>
+          <Vaso x={285} y={1290} s={1.3} nivel={0.85} trazo={7} />
+          <Vaso x={795} y={1290} s={1.3} nivel={0.85} leche={DESC} halo={AZUL} trazo={7} />
+          <text x={285} y={1385} textAnchor="middle" style={{ font:`700 46px ${KF.mono}` }} fill={KC.ink}>entera</text>
+          <text x={795} y={1385} textAnchor="middle" style={{ font:`700 46px ${KF.mono}` }} fill={KC.ink}>descremada</text>
+          <text x={540} y={690} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke="#0b1020" strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 540 590)`}>?</text>
         </SvgCapa>
       </Escena>
       {/* 5 · descremar: se va la grasa, quedan micelas; el azul rebota más */}
       <Escena T={T} a={K.Az} b={K.Es}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(180,200,255,.25)" tam={[2, 6]} vel={10} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(0 80)">
           {mundoMicro(true, false)}
           <RayoLuz T={T} pts={rectoRojo} t0={K.Az + 2.4} t1={K.Az + 3.3} color={ROJO} ancho={10} chispas={false} />
           <RayoLuz T={T} pts={zzAzul} t0={K.Az + 2.6} t1={K.Az + 5.4} color={AZUL} ancho={10} />
           {sale > 0 && sale < 1 && <g opacity={1 - sale}><path d="M 540 760 L 540 520" stroke={KC.gold2} strokeWidth={16} strokeLinecap="round" /><path d="M 500 560 L 540 500 L 580 560" stroke={KC.gold2} strokeWidth={16} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g>}
-        </SvgCapa>
+        </g></SvgCapa>
         <Escala T={T} z={1} pxPorMm={300000} y={1430} x={60} />
       </Escena>
       {/* 6–8 · 2008, Granada: el tanque */}
       <Escena T={T} a={K.Es} b={mitadRo + 0.2} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <rect x={120} y={955} width={850} height={60} fill="#fff7d6" opacity={0.35 + 0.2 * kprog(T, K.Es + 1.0, K.Es + 1.6)} />
-          <Tanque turb={turb} azul={azulTanque} />
-          <Lampara x={90} y={985} />
-          <rect x={950} y={860} width={50} height={250} rx={8} fill="#f4efe4" stroke={KC.ink} strokeWidth={7} />
-          <ellipse cx={952} cy={985} rx={18} ry={60} fill={mixHex('#fff7d6', '#ff6a2a', rojoPant)} opacity={0.4 + 0.6 * kprog(T, K.Es + 1.0, K.Es + 1.6)} />
-          <g transform={`translate(520 ${klerp(560, 700, kprog(T, K.Es + 2.4, K.Es + 3.0, kEase.sale))})`}>
-            <rect x={-16} y={-150} width={32} height={130} rx={8} fill="#ffffff" stroke={KC.ink} strokeWidth={6} />
-            <ellipse cx={0} cy={-160} rx={34} ry={24} fill={KC.blue} stroke={KC.ink} strokeWidth={5} /></g>
-          <Goteo T={T} x={520} y0={690} y1={830} cada={0.35} color="#ffffff" desde={K.Es + 3.0} hasta={K.Es + 5.6} />
-          <Medidor x={540} y={1560} az={kprog(T, K.Rs + 0.2, K.Rs + 1.2)} ro={rojoPant * 0.6} />
+          <rect x={120} y={900} width={850} height={80} fill="#fff7d6" opacity={0.35 + 0.2 * kprog(T, K.Es + 1.0, K.Es + 1.6)} />
+          <Tanque y0={690} y1={1190} turb={turb} azul={azulTanque} />
+          <Lampara x={90} y={940} />
+          <rect x={950} y={780} width={50} height={320} rx={8} fill="#f4efe4" stroke={KC.ink} strokeWidth={7} />
+          <ellipse cx={952} cy={940} rx={18} ry={74} fill={mixHex('#fff7d6', '#ff6a2a', rojoPant)} opacity={0.4 + 0.6 * kprog(T, K.Es + 1.0, K.Es + 1.6)} />
+          <g transform={`translate(760 ${klerp(470, 590, kprog(T, K.Es + 2.4, K.Es + 3.0, kEase.sale))}) scale(1.6)`}>
+            <rect x={-16} y={-150} width={32} height={130} rx={8} fill="#ffffff" stroke={KC.ink} strokeWidth={5} />
+            <ellipse cx={0} cy={-160} rx={34} ry={24} fill={KC.blue} stroke={KC.ink} strokeWidth={4} /></g>
+          <Goteo T={T} x={760} y0={575} y1={705} cada={0.35} color="#ffffff" desde={K.Es + 3.0} hasta={K.Es + 5.6} r={16} />
+          <Medidor x={540} y={1400} az={kprog(T, K.Rs + 0.2, K.Rs + 1.2)} ro={rojoPant * 0.6} />
         </SvgCapa>
       </Escena>
       {/* 8b · igual que el cielo y el atardecer */}
       <Escena T={T} a={mitadRo} b={K.Ra} zoom={0.05}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg,#2f6bff 0%,#5aa0ff 30%,#ffb36b 52%,#ff7a3a 59.9%,#3a2a3a 60%,#241a28 100%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg,#142757 0%,#1f3557 34%,#4a3a31 60%,#4a2b24 68.6%,#161624 68.7%,#11121f 100%)' }}></div>
         <SvgCapa>
-          <circle cx={700} cy={1152} r={kprog(T, mitadRo + 0.2, mitadRo + 1.2, kEase.sale) * 130} fill="#ff5a2a" stroke={KC.ink} strokeWidth={8} />
-          <rect x={0} y={1152} width={KW} height={770} fill="#241a28" />
-          {[[200, 640], [420, 560], [820, 700]].map(([x, y], i) => <g key={i} transform={`translate(${x + Math.sin(T * 0.3 + i) * 20} ${y})`}><ellipse rx={110} ry={34} fill="#fff" opacity={0.8} /><ellipse cx={50} cy={-20} rx={70} ry={30} fill="#fff" opacity={0.8} /></g>)}
+          <circle cx={540} cy={1320} r={kprog(T, mitadRo + 0.2, mitadRo + 1.2, kEase.sale) * 290} fill="#ff5a2a" stroke="#ffb48a" strokeWidth={6} />
+          <rect x={0} y={1320} width={KW} height={620} fill="#171422" />
+          {[[230, 620], [560, 440], [850, 760]].map(([x, y], i) => <g key={i} transform={`translate(${x + Math.sin(T * 0.3 + i) * 20} ${y}) scale(1.7)`}><ellipse rx={110} ry={34} fill="#fff" opacity={0.8} /><ellipse cx={50} cy={-20} rx={70} ry={30} fill="#fff" opacity={0.8} /></g>)}
         </SvgCapa>
       </Escena>
       {/* 9 · 2007: la simulación */}
       <Escena T={T} a={K.Ra} b={K.Ci}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Monitor>
-            <g transform="translate(0 0)"><Vaso x={540} y={1110} s={0.82} nivel={0.9} /></g>
-            <RayoLuz T={T} pts={ZZ_MON} t0={K.Ra + 3.0} t1={K.Ci - 0.2} color="#fff3a0" ancho={4} brillo={false} />
+          <Monitor x0={80} x1={1000} y0={620} y1={1270}>
+            <g transform="translate(0 0)"><Vaso x={540} y={1220} s={1.3} nivel={0.9} trazo={7} /></g>
+            <RayoLuz T={T} pts={ZZ_MON} t0={K.Ra + 3.0} t1={K.Ci - 0.2} color="#fff3a0" ancho={5} brillo={false} />
           </Monitor>
         </SvgCapa>
       </Escena>
       {/* 10 · cierre: el vaso del inicio, ahora entendido */}
-      <Escena T={T} a={K.Ci} b={FIN} zoom={0.04} origen="37% 52%">
+      <Escena T={T} a={K.Ci} b={FIN} zoom={0.04} origen="50% 52%">
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <SolVentana T={T} x={90} y={1440} />
-          <Vaso x={400} y={1180} nivel={0.82} />
-          <RayoLuz T={T} pts={ZZ_CIERRE} t0={K.Ci + 0.2} t1={K.Ci + 3.2} color="#ffd34d" ancho={7} />
+          <SolVentana T={T} x={120} y={1520} />
+          <g transform={GRANDE}>
+            <Vaso x={400} y={1180} nivel={0.82} trazo={6} />
+            <RayoLuz T={T} pts={ZZ_CIERRE} t0={K.Ci + 0.2} t1={K.Ci + 3.2} color="#ffd34d" ancho={4.5} />
+          </g>
         </SvgCapa>
-        <Escala T={T} z={1} pxPorMm={3.8} y={1430} x={620} />
+        <Escala T={T} z={1} pxPorMm={3.8 * 1.8} y={1430} x={620} />
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.G + 2.6} texto="¿pintura blanca?" x={330} y={400} tam={44} />
-      <Chip T={T} at={K.G + 2.9} until={K.Bo - 0.3} texto="luz rebotando" x={300} y={400} tam={46} borde={KC.gold} />
-      <Etq T={T} at={K.Bo + 0.6} until={K.Bo + 3.5} x={285} y={650} texto="gotita de grasa" tam={34} color={GRASA} />
-      <Etq T={T} at={K.Bo + 1.9} until={K.Bo + 3.5} x={505} y={930} texto="micela de caseína" tam={34} color={CASEINA} />
-      <Etq T={T} at={K.Bo + 4.2} until={K.Re - 0.3} x={745} y={730} texto="Ca  ·  PO₄" tam={36} color={KC.cyan} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.G + 2.6} texto="¿pintura blanca?" x={770} y={430} tam={44} />
+      <Chip T={T} at={K.G + 2.9} until={K.Bo - 0.3} texto="luz rebotando" x={770} y={430} tam={46} borde={KC.gold} />
+      <Etq T={T} at={K.Bo + 0.6} until={K.Bo + 3.5} x={285} y={730} texto="gotita de grasa" tam={34} color={GRASA} />
+      <Etq T={T} at={K.Bo + 1.9} until={K.Bo + 3.5} x={505} y={1010} texto="micela de caseína" tam={34} color={CASEINA} />
+      <Etq T={T} at={K.Bo + 4.2} until={K.Re - 0.3} x={745} y={810} texto="Ca  ·  PO₄" tam={36} color={KC.cyan} />
       <Chip T={T} at={K.Bo + 3.8} until={K.Re - 0.3} texto="proteína + calcio + fosfato" y={1500} tam={38} borde={KC.cyan} />
       <Chip T={T} at={K.Re + 0.4} until={K.Bl - 0.2} texto={`rebotes: ${Math.min(7, Math.floor(kprog(T, K.Re + 0.3, K.Re + 4.6) * 7.99))}`} y={1500} tam={44} borde="#fffbe6" mono />
       <Chip T={T} at={K.Bl + 1.0} until={K.Pr - 0.2} texto="rojo + verde + azul = blanco" y={1500} tam={38} borde="#ffffff" />
       <Chip T={T} at={K.Az + 0.3} until={K.Az + 2.2} texto="descremar = quitar la grasa" x={540} y={1500} tam={40} borde={KC.gold2} />
       <Chip T={T} at={K.Az + 2.6} until={K.Es - 0.2} texto="más chica → desvía más el azul" y={1500} tam={38} borde={AZUL} />
-      <Etq T={T} at={K.Az + 3.2} until={K.Es - 0.3} x={90} y={500} texto="rojo: pasa casi derecho" tam={30} color={ROJO} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.6} anio="2008" quien="Univ. de Granada (España) + EE. UU." revista="Applied Optics · leche descremada en agua" y={560} />
-      <Etq T={T} at={K.Es + 3.0} until={K.Rs - 0.2} x={560} y={760} texto="leche descremada" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Rs + 0.3} until={K.Ro - 0.1} x={860} y={1180} texto="de lado: azul" lado="izq" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.Ro + 0.4} until={mitadRo} x={930} y={800} texto="lo que cruza: rojizo" lado="izq" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Az + 3.2} until={K.Es - 0.3} x={90} y={465} texto="rojo: pasa casi derecho" tam={30} color={ROJO} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.6} anio="2008" quien="Univ. de Granada (España) + EE. UU." revista="Applied Optics · leche descremada en agua" x={340} y={400} />
+      <Etq T={T} at={K.Es + 3.0} until={K.Rs - 0.2} x={705} y={400} texto="leche descremada" lado="izq" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Rs + 0.3} until={K.Ro - 0.1} x={860} y={1238} texto="de lado: azul" lado="izq" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Ro + 0.4} until={mitadRo} x={975} y={650} texto="lo que cruza: rojizo" lado="izq" tam={36} color={KC.ink} />
       <Chip T={T} at={mitadRo + 0.3} until={K.Ra - 0.2} texto="cielo azul · sol rojo" y={1500} tam={44} borde={KC.orange} />
-      <TarjetaEstudio T={T} at={K.Ra + 0.2} until={K.Ra + 2.7} anio="2007" quien="Dinamarca + California" revista="ACM SIGGRAPH · leche simulada" y={560} />
+      <TarjetaEstudio T={T} at={K.Ra + 0.2} until={K.Ra + 2.7} anio="2007" quien="Dinamarca + California" revista="ACM SIGGRAPH · leche simulada" y={420} />
       <Chip T={T} at={K.Ra + 3.6} until={K.Ci - 0.2} texto="un rayo: miles de rebotes" y={1500} tam={42} borde="#fff3a0" />
-      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="luz rebotando = blanco" x={300} y={400} tam={42} borde={KC.gold} />
+      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="luz rebotando = blanco" x={540} y={480} tam={42} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Bo - 0.1} texto="No es pigmento: *es luz.*" />

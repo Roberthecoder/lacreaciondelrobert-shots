@@ -50,8 +50,11 @@ function Cristales({ T, desde, x0, y0, x1, y1, w = 220, n = 26, cada = 0.07, see
 function CristalGrande({ x, y, s = 1, o = 1 }) {
   if (o <= 0) return null;
   return <g transform={`translate(${x} ${y}) scale(${s})`} opacity={o}>
-    <path d="M 0 -150 L 120 -40 L 80 140 L -80 140 L -120 -40 Z" fill="#f4fbff" stroke="#7d8ea3" strokeWidth={8} strokeLinejoin="round" />
-    <path d="M 0 -150 L 20 -20 L 80 140 M 20 -20 L 120 -40 M 20 -20 L -80 140 M 20 -20 L -120 -40" stroke="#b9cadb" strokeWidth={4} fill="none" />
+    <path d="M 0 -150 L 120 -40 L 80 140 L -80 140 L -120 -40 Z" fill="#9fb3c8" stroke="#7d8ea3" strokeWidth={8} strokeLinejoin="round" />
+    <path d="M 0 -150 L 20 -20 L -120 -40 Z" fill="#eef6ff" /><path d="M 0 -150 L 120 -40 L 20 -20 Z" fill="#c9d9ea" />
+    <path d="M -120 -40 L 20 -20 L -80 140 Z" fill="#b3c6da" /><path d="M 120 -40 L 80 140 L 20 -20 Z" fill="#7f95ad" /><path d="M -80 140 L 20 -20 L 80 140 Z" fill="#94a9bf" />
+    <path d="M 0 -150 L 120 -40 L 80 140 L -80 140 L -120 -40 Z" fill="none" stroke="#dbe8f5" strokeWidth={6} strokeLinejoin="round" />
+    <path d="M 0 -150 L 20 -20 L 80 140 M 20 -20 L 120 -40 M 20 -20 L -80 140 M 20 -20 L -120 -40" stroke="#eef6ff" strokeWidth={3} fill="none" opacity=".7" />
   </g>;
 }
 // Cadena de proteína (cuentas de colores). glu = índices que son glutamato (dorado). sep = separación extra 0..1.
@@ -147,8 +150,9 @@ function Sello({ x, y, texto, s = 1, o = 1, color = KC.red, rot = -12, tam = 64 
 }
 function GotaLeche({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M 0 -380 Q 60 -250 220 -60 Q 330 90 230 230 Q 120 360 0 360 Q -120 360 -230 230 Q -330 90 -220 -60 Q -60 -250 0 -380 Z" fill="#fffaf0" stroke={KC.ink} strokeWidth={12} />
-    <path d="M -150 -40 Q -210 60 -170 160" stroke="#fff" strokeWidth={22} fill="none" strokeLinecap="round" />
+    <path d="M 0 -380 Q 60 -250 220 -60 Q 330 90 230 230 Q 120 360 0 360 Q -120 360 -230 230 Q -330 90 -220 -60 Q -60 -250 0 -380 Z" fill="url(#gota-leche)" stroke={KC.ink} strokeWidth={12} />
+    <defs><radialGradient id="gota-leche" cx=".38" cy=".55" r=".7"><stop offset="0" stopColor="#fffaf0" /><stop offset=".6" stopColor="#e3ddd0" /><stop offset="1" stopColor="#a9a497" /></radialGradient></defs>
+    <path d="M -150 -40 Q -210 60 -170 160" stroke="#fff" strokeWidth={22} fill="none" strokeLinecap="round" opacity=".8" />
   </g>;
 }
 // Vaso de la prueba (A/B).
@@ -221,7 +225,7 @@ function Glutamato() {
             <Olla T={T} x={540} y={1060} s={1.4} />
             <CristalGrande x={540} y={klerp(860, 640, kprog(T, uOlla + 0.4, uOlla + 1.6, kEase.sale))} s={0.45 * kprog(T, uOlla + 0.4, uOlla + 0.8)} />
           </g>}
-          {T > uLengua - 0.2 && <g opacity={kprog(T, uLengua - 0.2, uLengua + 0.2)}>
+          {T > uLengua - 0.2 && <g opacity={kprog(T, uLengua - 0.2, uLengua + 0.2) * (1 - kprog(T, K.Gr - 0.4, K.Gr + 0.05))}>
             <Lengua T={T} x={540} y={960} s={1.6} brillo={kprog(T, uLengua + 0.3, uLengua + 0.8)} />
             <text x={540} y={1010} textAnchor="middle" style={{ font:`400 ${190 * kprog(T, uLengua + 0.3, uLengua + 0.7, kEase.rebote)}px ${KF.titulo}` }} fill={GLU} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">UMAMI</text>
           </g>}
@@ -231,7 +235,7 @@ function Glutamato() {
       <Escena T={T} a={K.Gr} b={K.Pr} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <g opacity={1 - kprog(T, grBarras - 0.3, grBarras + 0.1)}>
+          <g opacity={(1 - kprog(T, grBarras - 0.3, grBarras + 0.1)) * kprog(T, K.Gr - 0.1, K.Gr + 0.35)}>
             <Plato x={160} y={720} s={0.8} />
             <Intestino T={T} />
             {Array.from({ length: 12 }, (_, i) => { const u = klerp(-0.15, 0.95, kprog(T, K.Gr + 0.2, grBarras, kEase.suave)) - i * 0.035 * (1 + 2.2 * kprog(T, K.Gr + 1.2, K.Gr + 2.4));
@@ -265,10 +269,10 @@ function Glutamato() {
       <Escena T={T} a={K.Ca} b={K.So} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <g opacity={1 - kprog(T, K.Ca + 3.0, K.Ca + 3.4)}>
+          <g opacity={1 - kprog(T, K.Ca + 2.85, K.Ca + 3.2)}>
             <Sobre x={540} y={1060} s={1.5} abre={kprog(T, K.Ca + 0.2, K.Ca + 0.8, kEase.sale)} sube={kprog(T, K.Ca + 0.8, K.Ca + 1.6, kEase.sale)} />
           </g>
-          {T > K.Ca + 3.0 && <g opacity={kprog(T, K.Ca + 3.0, K.Ca + 3.4)}><Silueta T={T} x={540} y={1030} s={1.3} f={kprog(T, K.Ca + 3.6, K.Ca + 4.2)} /></g>}
+          {T > K.Ca + 3.1 && <g opacity={kprog(T, K.Ca + 3.1, K.Ca + 3.45)}><Silueta T={T} x={540} y={1030} s={1.3} f={kprog(T, K.Ca + 3.6, K.Ca + 4.2)} /></g>}
         </SvgCapa>
       </Escena>
       {/* 6 · sospechosos sin pruebas */}

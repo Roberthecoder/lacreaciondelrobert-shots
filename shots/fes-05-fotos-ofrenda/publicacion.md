@@ -1,4 +1,4 @@
-# Publicación · Shot Festivo #05 · Día de Muertos · IA: La IA que restaura las fotos de tu ofrenda
+# Publicación · Shot Festivo 05 · Día de Muertos · IA: La IA que restaura las fotos de tu ofrenda
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Se publica el 2 nov 2026.
 
@@ -13,7 +13,7 @@ Cuanto más dañada está la foto, menos información queda y más tiene que rel
 El dibujo es esquemático.
 Fuentes: Menon et al., PULSE (CVPR 2020) · The Register (2020) · Wan et al., CVPR 2020 · Zhang et al., 2016.
 ¿Tú ya restauraste alguna foto de tu familia con IA? 👇
-Shot Festivo #05 · Día de Muertos · IA · La Creación del Robert
+Shot Festivo 05 · Día de Muertos · IA · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #DiaDeMuertos #FotosAntiguas #Ofrenda
 ```
@@ -24,7 +24,7 @@ Si una IA restauró la foto de tu bisabuela, una parte no es real: la inventó. 
 Lo que se borró de una foto vieja ya no está: la IA no lo recupera, lo adivina con lo más probable que aprendió de muchísimas fotos. El color también lo elige. En 2020, PULSE (Universidad Duke) recibió una foto pixeleada de Barack Obama y devolvió la cara de un hombre blanco: la IA en la que se apoyaba generaba sobre todo caras blancas. Cuanto más dañada la foto, más inventa. Guarda siempre la original.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú ya restauraste alguna foto de tu familia con IA? 👇
-Shot Festivo #05 · Día de Muertos · IA · La Creación del Robert
+Shot Festivo 05 · Día de Muertos · IA · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #DiaDeMuertos #FotosAntiguas #Ofrenda
 ```
@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA no solo restaura la foto de tu bisabuela: inventa una parte 🕯️ | Shot Festivo #05
+La IA no solo restaura la foto de tu bisabuela: inventa una parte 🕯️ | Shot Festivo 05
 ```
 Descripción:
 ```text
@@ -48,7 +48,7 @@ Fuentes:
 - Wan, Z. et al. Bringing Old Photos Back to Life (CVPR 2020): https://arxiv.org/abs/2004.09484
 - Zhang, Isola y Efros. Colorful Image Colorization (2016): https://arxiv.org/abs/1603.08511
 ¿Tú ya restauraste alguna foto de tu familia con IA? 👇
-Shot Festivo #05 · Día de Muertos · IA · La Creación del Robert
+Shot Festivo 05 · Día de Muertos · IA · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #InteligenciaArtificial #DiaDeMuertos
 ```
@@ -57,7 +57,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Si una IA restauró la foto de tu bisabuela, una parte no es real: la inventó. 🕯️🤖 La IA no recupera lo que se borró: lo adivina. En 2020, una IA convirtió una foto pixeleada de Barack Obama en la cara de un hombre blanco. Si restauras las fotos de tu ofrenda, guarda siempre la original.
 ¿Tú ya restauraste alguna foto de tu familia con IA? 👇
-Shot Festivo #05 · Día de Muertos · IA · La Creación del Robert
+Shot Festivo 05 · Día de Muertos · IA · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #DiaDeMuertos
 ```
@@ -69,7 +69,7 @@ Las herramientas de restauración no recuperan la información perdida por rayon
 El caso más conocido es PULSE (Universidad Duke, CVPR 2020): una foto pixeleada de Barack Obama dio como resultado la cara de un hombre blanco, porque el generador en el que se apoyaba (StyleGAN) producía caras blancas con mucha más frecuencia. Sus autores advierten que PULSE crea caras de personas que no existen y no reconstruye la imagen original.
 Por qué importa: en archivos familiares, museos, periodismo o identificación, una restauración con IA es una interpretación, no un documento. Cuanto más dañado está el original, más se inventa. Conservar el original y etiquetar lo restaurado es una buena práctica.
 ¿Cómo deberían marcarse las imágenes restauradas con IA?
-Shot Festivo #05 · Día de Muertos · IA · La Creación del Robert
+Shot Festivo 05 · Día de Muertos · IA · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #InteligenciaArtificial #SesgoAlgoritmico #Patrimonio #DiaDeMuertos
 ```
@@ -84,7 +84,7 @@ Si una IA restauró la foto de tu bisabuela, una parte no es real: la inventó. 
 Si una IA restauró la foto de tu bisabuela, una parte no es real: la inventó. 🕯️
 Lo que se borró no se recupera: la IA lo adivina con lo más probable. En 2020, PULSE (Universidad Duke) recibió una foto pixeleada de Barack Obama y devolvió la cara de un hombre blanco. Cuanto más dañada la foto, más inventa.
 ¿Tú ya restauraste alguna foto de tu familia con IA?
-Shot Festivo #05 · Día de Muertos · IA · La Creación del Robert
+Shot Festivo 05 · Día de Muertos · IA · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #InteligenciaArtificial
 ```

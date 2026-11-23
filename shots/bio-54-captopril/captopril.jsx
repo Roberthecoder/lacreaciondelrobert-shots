@@ -1,7 +1,9 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #54 · La pastilla de la presión es nieta de un veneno de víbora (captopril) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (no está a escala).
 const CP = { piel:'#eab48f', pielO:'#c98b66', cafe:'#8a6440', cafeO:'#3f2614', borde:'#e2cc9c', veneno:'#ffb21f', eca:'#9b5de5', zn:'#F4C25A',
   sangre:'#d7263d', pared:'#ff8fa3', bradi:'#2fe0a8', angio:'#ff3b2f', azufre:'#ffe11a', gris:'#9aa3b5' };
+const OSC = '#0b1020';   // tinta oscura fija para texto y detalles sobre piezas claras (en cine KC.ink es claro)
 
 function CpSvg({ children, z }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{children}</svg>;
@@ -42,8 +44,8 @@ function Jararaca({ T, x0 = 120, x1 = 900, y = 1000, amp = 110, ancho = 74, somb
       <path d="M -30 -50 Q 20 -58 62 -16 Q 80 0 62 16 Q 20 58 -30 50 Q -16 0 -30 -50 Z" fill={col} stroke={bor} strokeWidth={8} strokeLinejoin="round" />
       {!sombra && <g>
         <path d="M 40 -30 L -20 -44 L -20 -34 L 36 -22 Z" fill={CP.cafeO} /><path d="M 40 30 L -20 44 L -20 34 L 36 22 Z" fill={CP.cafeO} />
-        <circle cx={34} cy={-26} r={9} fill="#f2c94c" stroke={KC.ink} strokeWidth={3} /><ellipse cx={34} cy={-26} rx={2.5} ry={7} fill={KC.ink} />
-        <circle cx={34} cy={26} r={9} fill="#f2c94c" stroke={KC.ink} strokeWidth={3} /><ellipse cx={34} cy={26} rx={2.5} ry={7} fill={KC.ink} />
+        <circle cx={34} cy={-26} r={9} fill="#f2c94c" stroke={KC.ink} strokeWidth={3} /><ellipse cx={34} cy={-26} rx={2.5} ry={7} fill={OSC} />
+        <circle cx={34} cy={26} r={9} fill="#f2c94c" stroke={KC.ink} strokeWidth={3} /><ellipse cx={34} cy={26} rx={2.5} ry={7} fill={OSC} />
         <circle cx={60} cy={-10} r={3} fill={KC.ink} /><circle cx={60} cy={10} r={3} fill={KC.ink} />
       </g>}
     </g>
@@ -63,7 +65,7 @@ function Blister({ T, x, y, s = 1, sale = 0, pril = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-270} y={-150} width={540} height={330} rx={26} fill="#d9dde3" stroke={KC.ink} strokeWidth={8} />
     <rect x={-250} y={-136} width={500} height={84} rx={14} fill="#fff" stroke={KC.ink} strokeWidth={4} />
-    <text x={0} y={-76} textAnchor="middle" style={{ font:`400 66px ${KF.titulo}` }} fill={KC.ink}>CAPTO<tspan fill={pril ? KC.pink : KC.ink}>PRIL</tspan> <tspan style={{ font:`700 30px ${KF.mono}` }}>25 mg</tspan></text>
+    <text x={0} y={-76} textAnchor="middle" style={{ font:`400 66px ${KF.titulo}`, stroke:'none' }} fill={OSC}>CAPTO<tspan fill={pril ? '#c2185b' : OSC}>PRIL</tspan> <tspan style={{ font:`700 30px ${KF.mono}` }}>25 mg</tspan></text>
     {bur}
     {sale > 0 && <g transform={`translate(${px} ${py}) rotate(${rot})`}><circle r={34} fill="#fffdf7" stroke={KC.ink} strokeWidth={5} /><line x1={-22} y1={0} x2={22} y2={0} stroke="#c9c2b4" strokeWidth={4} /></g>}
   </g>;
@@ -94,9 +96,9 @@ function ECA({ x, y, s = 1, boca = 0.5, traba = 0, T = 0 }) {
   const a = 18 + boca * 22, c = Math.cos(a * Math.PI / 180) * 110, d = Math.sin(a * Math.PI / 180) * 110;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d={`M 10 0 L ${c} ${-d} A 110 110 0 1 0 ${c} ${d} Z`} fill={CP.eca} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
-    <circle cx={-40} cy={-56} r={14} fill="#fff" /><circle cx={-36} cy={-56} r={7} fill={KC.ink} />
+    <circle cx={-40} cy={-56} r={14} fill="#fff" /><circle cx={-36} cy={-56} r={7} fill={OSC} />
     <circle cx={22} cy={0} r={18 + Math.sin(T * 5) * 2} fill={CP.zn} stroke={KC.ink} strokeWidth={4} />
-    <text x={22} y={7} textAnchor="middle" style={{ font:`700 18px ${KF.mono}` }} fill={KC.ink}>Zn</text>
+    <text x={22} y={7} textAnchor="middle" style={{ font:`700 18px ${KF.mono}`, stroke:'none' }} fill={OSC}>Zn</text>
     {traba > 0 && <g opacity={traba} transform="translate(-30 60)"><rect x={-22} y={-6} width={44} height={36} rx={6} fill={KC.gold2} stroke={KC.ink} strokeWidth={4} /><path d="M -13 -6 v -12 a 13 13 0 0 1 26 0 v 12" fill="none" stroke={KC.ink} strokeWidth={5} /></g>}
   </g>;
 }
@@ -119,11 +121,11 @@ function Inhibidor({ x, y, s = 1, azufre = false, rot = 0, o = 1 }) {
   const pent = Array.from({ length: 5 }, (_, i) => { const a = -Math.PI / 2 + i * 2 * Math.PI / 5; return `${(Math.cos(a) * 50).toFixed(1)} ${(Math.sin(a) * 50).toFixed(1)}`; }).join(' L ');
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`} opacity={o}>
     <path d={`M ${pent} Z`} transform="translate(90 0)" fill={KC.cyan} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
-    <text x={90} y={10} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>Pro</text>
+    <text x={90} y={10} textAnchor="middle" style={{ font:`700 24px ${KF.mono}`, stroke:'none' }} fill={OSC}>Pro</text>
     <path d="M 40 0 L 0 -26 L -44 0 L -88 -26" stroke={KC.ink} strokeWidth={9} fill="none" strokeLinecap="round" strokeLinejoin="round" />
     <circle cx={0} cy={-26} r={14} fill="#fff" stroke={KC.ink} strokeWidth={5} />
-    {azufre ? <g><circle cx={-110} cy={-14} r={30} fill={CP.azufre} stroke={KC.ink} strokeWidth={6} /><text x={-110} y={-4} textAnchor="middle" style={{ font:`400 34px ${KF.titulo}` }} fill={KC.ink}>S</text></g>
-      : <g><rect x={-172} y={-48} width={96} height={52} rx={14} fill={CP.gris} stroke={KC.ink} strokeWidth={5} /><text x={-124} y={-12} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>COOH</text></g>}
+    {azufre ? <g><circle cx={-110} cy={-14} r={30} fill={CP.azufre} stroke={KC.ink} strokeWidth={6} /><text x={-110} y={-4} textAnchor="middle" style={{ font:`400 34px ${KF.titulo}`, stroke:'none' }} fill={OSC}>S</text></g>
+      : <g><rect x={-172} y={-48} width={96} height={52} rx={14} fill={CP.gris} stroke={KC.ink} strokeWidth={5} /><text x={-124} y={-12} textAnchor="middle" style={{ font:`700 24px ${KF.mono}`, stroke:'none' }} fill={OSC}>COOH</text></g>}
   </g>;
 }
 function Paloma({ x, y, ok = true, s = 1, o = 1 }) {
@@ -156,21 +158,22 @@ function Captopril() {
       <Escena T={T} a={K.G} b={K.J} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         <CpSvg>
-          <Jararaca T={T} x0={60} x1={klerp(560, 980, kprog(T, 0, 3))} y={780} amp={70} ancho={60} sombra />
-          <Mano x={420} y={1020} s={1} />
-          <Blister T={T} x={440} y={980} s={1} sale={salta} />
-          <Pulgar x={420} y={1020} s={1} />
+          {/* pase a mano: mano y blíster ×1.5, de borde a borde; la sombra de la víbora cruza arriba */}
+          <Jararaca T={T} x0={-40} x1={klerp(620, 1040, kprog(T, 0, 3))} y={500} amp={95} ancho={92} sombra />
+          <Mano x={510} y={980} s={1.5} />
+          <Blister T={T} x={540} y={920} s={1.5} sale={salta} />
+          <Pulgar x={510} y={980} s={1.5} />
         </CpSvg>
       </Escena>
       {/* 1 · la jararaca y su presa */}
       <Escena T={T} a={K.J} b={K.F} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <CpSvg>
-          <ellipse cx={540} cy={1120} rx={520} ry={70} fill="rgba(0,0,0,.12)" />
-          <Jararaca T={T} x0={40} x1={770} y={990} amp={150} ancho={92} />
-          <g transform={`translate(930 ${1010 + Math.sin(T * 12) * 3}) rotate(${klerp(0, 80, kprog(T, K.J + 2.2, K.J + 3.0))})`}>
+          <ellipse cx={540} cy={1170} rx={540} ry={84} fill="rgba(0,0,0,.12)" />
+          <Jararaca T={T} x0={10} x1={730} y={990} amp={185} ancho={114} />
+          <g transform={`translate(915 ${1010 + Math.sin(T * 12) * 3}) rotate(${klerp(0, 80, kprog(T, K.J + 2.2, K.J + 3.0))}) scale(1.25)`}>
             <ellipse rx={70} ry={42} fill="#b9b2a8" stroke={KC.ink} strokeWidth={6} /><circle cx={-58} cy={-28} r={20} fill="#d8cfc4" stroke={KC.ink} strokeWidth={5} />
-            <circle cx={-72} cy={-6} r={6} fill={KC.ink} /><path d="M 66 6 q 60 10 70 50" stroke={KC.ink} strokeWidth={5} fill="none" />
+            <circle cx={-72} cy={-6} r={6} fill={OSC} /><path d="M 66 6 q 60 10 70 50" stroke={KC.ink} strokeWidth={5} fill="none" />
           </g>
         </CpSvg>
       </Escena>
@@ -178,62 +181,67 @@ function Captopril() {
       <Escena T={T} a={K.F} b={K.E} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <CpSvg>
-          <Tubo x={260} y={900} s={1} nivel={0.2 + 0.4 * kprog(T, K.F + 0.4, K.F + 1.4)} />
-          <Goteo T={T} x={260} y0={650} y1={880} cada={0.5} color={CP.veneno} desde={K.F + 0.2} hasta={K.F + 1.6} />
+          <Tubo x={230} y={830} s={1.5} nivel={0.2 + 0.4 * kprog(T, K.F + 0.4, K.F + 1.4)} />
+          <Goteo T={T} x={230} y0={460} y1={800} cada={0.5} color={CP.veneno} desde={K.F + 0.2} hasta={K.F + 1.6} />
           {[0, 1, 2, 3].map((i) => { const p = kprog(T, K.F + 1.4 + i * 0.25, K.F + 2.6 + i * 0.25, kEase.sale);
-            return p > 0 && <Cadena key={i} T={T} x={klerp(260, 480 + (i % 2) * 120, p)} y={klerp(820, 700 + i * 60, p)} n={5 + i * 2} r={11} s={0.9} seed={i} />; })}
-          <Vaso T={T} y={1080} abre={0.25 + 0.35 * kprog(T, K.F + 3.4, K.F + 5.0, kEase.suave)} vel={1} x0={420} x1={1120} />
-          {T > K.F + 3.0 && <Cadena T={T} x={760} y={1080} n={9} r={13} color={CP.bradi} s={klerp(0.7, 1.15, kprog(T, K.F + 3.4, K.F + 5.0))} />}
+            return p > 0 && <Cadena key={i} T={T} x={klerp(230, 520 + (i % 2) * 170, p)} y={klerp(720, 540 + i * 80, p)} n={5 + i * 2} r={15} s={1} seed={i} />; })}
+          <Vaso T={T} y={1170} abre={0.25 + 0.35 * kprog(T, K.F + 3.4, K.F + 5.0, kEase.suave)} vel={1} x0={400} x1={1120} />
+          {T > K.F + 3.0 && <Cadena T={T} x={770} y={1170} n={9} r={16} color={CP.bradi} s={klerp(0.7, 1.15, kprog(T, K.F + 3.4, K.F + 5.0))} />}
         </CpSvg>
       </Escena>
       {/* 3 · la ECA: por dentro de tu brazo */}
       <Escena T={T} a={K.E} b={K.M} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         <CpSvg>
+          <g transform="translate(0 200)">
           <path d="M -40 1000 Q 300 940 700 960 Q 980 975 1120 1010 L 1120 1260 Q 700 1220 300 1240 Q 100 1250 -40 1260 Z" fill={CP.piel} stroke={KC.ink} strokeWidth={10} />
           <path d="M -40 1110 Q 300 1080 600 1110 Q 860 1135 1120 1100" stroke="#5b7fd6" strokeWidth={14} fill="none" opacity={0.7} strokeLinecap="round" />
+          </g>
         </CpSvg>
       </Escena>
-      <Lupa T={T} at={K.E + 0.2} until={K.M - 0.2} x={540} y={720} r={290} fx={600} fy={1110} tinte={KC.mint} etiqueta="POR DENTRO · TU VASO SANGUÍNEO"
-        interior={(t) => <svg width={580} height={580}>
+      <Lupa T={T} at={K.E + 0.2} until={K.M - 0.2} x={540} y={720} r={370} fx={600} fy={1310} tinte={KC.mint} etiqueta="POR DENTRO · TU VASO SANGUÍNEO"
+        interior={(t) => <svg width={740} height={740}><g transform={`scale(${740 / 580})`}>
           <rect width={580} height={580} fill="#14070c" />
           <rect x={0} y={40} width={580} height={60} fill={CP.pared} stroke={KC.ink} strokeWidth={5} />
           <rect x={0} y={480} width={580} height={60} fill={CP.pared} stroke={KC.ink} strokeWidth={5} />
           <ECA x={250} y={300} s={1.25} boca={0.6 - 0.4 * kprog(t, K.E + 1.8, K.E + 2.3)} traba={kprog(t, K.E + 2.2, K.E + 2.5)} T={t} />
           <Cadena T={t} x={klerp(560, 330, kprog(t, K.E + 0.9, K.E + 2.0, kEase.sale))} y={300} n={5} r={16} />
-        </svg>} />
+        </g></svg>} />
       {/* 4–5 · angiotensina II aprieta el vaso; frenar la ECA lo afloja */}
       <Escena T={T} a={K.M} b={K.P} zoom={0.03}>
         <FondoMarca patron="oscuro" />
         <CpSvg>
+          {/* pase a mano: vaso y ECA ×1.45 alrededor del centro */}
+          <g transform="translate(540 900) scale(1.45) translate(-540 -900)">
           <Vaso T={T} y={900} abre={abre} vel={klerp(1, 0.5, aprieta) + suelta} />
-          <ECA x={300} y={900} s={1.1} boca={T < K.Fr ? 0.5 + 0.3 * Math.sin(T * 6) : 0.2} traba={kprog(T, K.Fr + 0.2, K.Fr + 0.5)} T={T} />
+          <ECA x={400} y={900} s={1.1} boca={T < K.Fr ? 0.5 + 0.3 * Math.sin(T * 6) : 0.2} traba={kprog(T, K.Fr + 0.2, K.Fr + 0.5)} T={T} />
           {T < K.Fr + 0.2 && <g>
-            <Cadena T={T} x={klerp(560, 470, kprog(T, K.M, K.M + 0.6))} y={900} n={10} r={13} color={CP.angio} resalta={[8, 9]} p={1} ondula={0.4} />
+            <Cadena T={T} x={klerp(660, 570, kprog(T, K.M, K.M + 0.6))} y={900} n={10} r={13} color={CP.angio} resalta={[8, 9]} p={1} ondula={0.4} />
           </g>}
-          {corte > 0 && T < K.Fr + 0.2 && <Cadena T={T} x={klerp(470, 800, corte)} y={klerp(900, 880, corte)} n={8} r={13} color={CP.angio} ondula={0.4} />}
-          {T >= K.Fr && <Cadena T={T} x={klerp(620, 360, kprog(T, K.Fr, K.Fr + 0.3, kEase.sale))} y={900} n={5} r={14} color={CP.veneno} />}
-          {[0, 1].map((i) => { const ux = 900 + i * 0, a = aprieta * (1 - suelta); return <g key={i} opacity={a}>
+          {corte > 0 && T < K.Fr + 0.2 && <Cadena T={T} x={klerp(570, 770, corte)} y={klerp(900, 880, corte)} n={8} r={13} color={CP.angio} ondula={0.4} />}
+          {T >= K.Fr && <Cadena T={T} x={klerp(720, 460, kprog(T, K.Fr, K.Fr + 0.3, kEase.sale))} y={900} n={5} r={14} color={CP.veneno} />}
+          {[0, 1].map((i) => { const ux = 850 + i * 0, a = aprieta * (1 - suelta); return <g key={i} opacity={a}>
             <path d={`M ${ux} ${700 - i * 0} l 0 ${60} m -24 -24 l 24 24 l 24 -24`} transform={i ? `rotate(180 ${ux} 900)` : ''} stroke={KC.yellow} strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g>; })}
+          </g>
         </CpSvg>
-        <Etq T={T} at={K.M + 0.4} until={K.Fr - 0.1} x={440} y={820} texto="angiotensina I (10 eslabones)" color={CP.angio} tam={30} />
-        <Etq T={T} at={K.M + 1.4} until={K.Fr - 0.1} x={1030} y={1140} texto="angiotensina II (8): aprieta" lado="izq" color={CP.angio} tam={30} />
-        <Etq T={T} at={K.M + 0.2} until={K.P} x={180} y={1130} texto="ECA" color={CP.eca} tam={40} />
+        <Etq T={T} at={K.M + 0.4} until={K.Fr - 0.1} x={470} y={775} texto="angiotensina I (10 eslabones)" color={CP.angio} tam={30} />
+        <Etq T={T} at={K.M + 1.4} until={K.Fr - 0.1} x={1030} y={1345} texto="angiotensina II (8): aprieta" lado="izq" color={CP.angio} tam={30} />
+        <Etq T={T} at={K.M + 0.2} until={K.P} x={110} y={1345} texto="ECA" color={CP.eca} tam={40} />
         <Medidor T={T} at={K.M + 1.2} until={K.P - 0.2} valor={(t) => 0.55 + 0.35 * kprog(t, K.M + 1.4, K.M + 2.6) - 0.5 * kprog(t, K.Fr + 0.4, K.Fr + 1.8)} etiqueta="presión" texto={(v) => (v > 0.7 ? 'sube' : v < 0.5 ? 'baja' : '')} y={1450} color={KC.red} />
       </Escena>
       {/* 6 · pregunta: ¿tu abuela se toma veneno? */}
       <Escena T={T} a={K.P} b={K.I} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         <CpSvg>
-          <Mano x={330} y={1020} s={0.9} /><Blister T={T} x={340} y={985} s={0.9} sale={1} /><Pulgar x={330} y={1020} s={0.9} />
-          <text x={250} y={760} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 7} 250 660)`}>?</text>
+          <Mano x={480} y={1100} s={1.3} /><Blister T={T} x={506} y={1048} s={1.3} sale={1} /><Pulgar x={480} y={1100} s={1.3} />
+          <text x={300} y={790} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 7} 300 670)`}>?</text>
         </CpSvg>
       </Escena>
       {/* 7 · inyectado sí; tragado no pasa del intestino */}
       <Escena T={T} a={K.I} b={K.S} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         <CpSvg>
-          <g transform="translate(270 960)">
+          <g transform="translate(282 1040) scale(1.12)">
             <rect x={-200} y={60} width={400} height={150} rx={60} fill={CP.piel} stroke={KC.ink} strokeWidth={8} />
             <g transform={`translate(${klerp(-40, 0, kprog(T, K.I + 0.6, K.I + 1.2))} ${klerp(-140, -40, kprog(T, K.I + 0.6, K.I + 1.2))}) rotate(-35)`}>
               <rect x={-30} y={-220} width={60} height={200} rx={8} fill="rgba(255,255,255,.75)" stroke={KC.ink} strokeWidth={6} />
@@ -243,62 +251,69 @@ function Captopril() {
             </g>
             <Paloma x={0} y={-230} ok s={1} o={kprog(T, K.I + 1.8, K.I + 2.2)} />
           </g>
-          <g transform="translate(790 980)">
+          <g transform="translate(796 1060) scale(1.12)">
             <path d="M -220 120 Q -220 -60 -160 -60 Q -100 -60 -100 60 Q -100 -60 -40 -60 Q 20 -60 20 60 Q 20 -60 80 -60 Q 140 -60 140 60 Q 140 -60 200 -60 Q 230 -60 230 120 Z" fill="#ff9e7a" stroke={KC.ink} strokeWidth={7} />
             {[0, 1, 2].map((i) => { const ph = ((T - K.I - 0.8 - i * 0.5) % 1.6 + 1.6) % 1.6, up = ph < 0.8 ? ph / 0.8 : 2 - ph / 0.8;
               return T > K.I + 0.8 && <Cadena key={i} T={T} x={-140 + i * 140} y={klerp(-330, -110, up)} n={5} r={12} seed={i} />; })}
             <Paloma x={-160} y={-300} ok={false} s={1} o={kprog(T, K.I + 2.6, K.I + 3.0)} />
           </g>
         </CpSvg>
-        <Etq T={T} at={K.I + 0.4} until={K.S - 0.2} x={60} y={620} texto="inyectado" tam={32} color={KC.ink} />
-        <Etq T={T} at={K.I + 0.8} until={K.S - 0.2} x={560} y={1140} texto="tragado: intestino" tam={32} color={KC.ink} />
+        <Etq T={T} at={K.I + 0.4} until={K.S - 0.2} x={60} y={640} texto="inyectado" tam={32} color={KC.ink} />
+        <Etq T={T} at={K.I + 0.8} until={K.S - 0.2} x={560} y={1250} texto="tragado: intestino" tam={32} color={KC.ink} />
       </Escena>
       {/* 8 · 1974, Squibb: dibujaron el hueco de la enzima con su zinc */}
       <Escena T={T} a={K.S} b={K.A} zoom={0.03}>
         <FondoLunares color={KC.orange} />
         <CpSvg>
-          <rect x={100} y={660} width={880} height={540} rx={18} fill="#1f4d3a" stroke="#7a4a22" strokeWidth={22} />
+          <rect x={60} y={600} width={960} height={680} rx={18} fill="#1f4d3a" stroke="#7a4a22" strokeWidth={22} />
+          {/* pase a mano: la enzima (la ECA) está en el pizarrón desde el inicio y se vuelve su dibujo de gis */}
+          <g opacity={0.6 * (1 - kprog(T, K.S + 2.0, K.S + 2.8))}><ECA x={540} y={940} s={2} boca={0.5} T={T} /></g>
+          <g transform="translate(540 1140) scale(1.2) translate(-440 -1110)">
           {(() => { const p = kprog(T, K.S + 2.0, K.S + 3.6), L = 1500;
             return <g stroke="#f6f3ec" strokeWidth={8} fill="none" strokeLinecap="round" strokeLinejoin="round">
               <path d="M 300 760 L 300 1000 Q 300 1110 440 1110 Q 580 1110 580 1000 L 580 760" strokeDasharray={L} strokeDashoffset={L * (1 - p)} />
               <path d="M 160 760 L 300 760 M 580 760 L 720 760" strokeDasharray={L} strokeDashoffset={L * (1 - p)} />
             </g>; })()}
-          <g opacity={kprog(T, K.S + 3.4, K.S + 3.8)}><circle cx={440} cy={1060} r={32} fill={CP.zn} stroke="#f6f3ec" strokeWidth={5} /><text x={440} y={1070} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>Zn</text></g>
-          <text x={820} y={1130} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#f6f3ec" opacity={kprog(T, K.S + 3.0, K.S + 3.4)}>el hueco</text>
-          <text x={820} y={1170} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#f6f3ec" opacity={kprog(T, K.S + 3.0, K.S + 3.4)}>de la ECA</text>
-          <path d={`M ${klerp(900, 600, kprog(T, K.S + 2.0, K.S + 3.6))} ${klerp(820, 1100, kprog(T, K.S + 2.0, K.S + 3.6))} l 30 -14 l 60 -100 l -30 14 Z`} fill="#fff" stroke={KC.ink} strokeWidth={4} opacity={T > K.S + 1.9 && T < K.S + 3.8 ? 1 : 0} />
+          <g opacity={kprog(T, K.S + 3.4, K.S + 3.8)}><circle cx={440} cy={1060} r={32} fill={CP.zn} stroke="#f6f3ec" strokeWidth={5} /><text x={440} y={1070} textAnchor="middle" style={{ font:`700 26px ${KF.mono}`, stroke:'none' }} fill={OSC}>Zn</text></g>
+          <text x={715} y={900} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#f6f3ec" opacity={kprog(T, K.S + 3.0, K.S + 3.4)}>el hueco</text>
+          <text x={715} y={940} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#f6f3ec" opacity={kprog(T, K.S + 3.0, K.S + 3.4)}>de la ECA</text>
+          <path d={`M ${klerp(820, 600, kprog(T, K.S + 2.0, K.S + 3.6))} ${klerp(820, 1100, kprog(T, K.S + 2.0, K.S + 3.6))} l 30 -14 l 60 -100 l -30 14 Z`} fill="#fff" stroke={KC.ink} strokeWidth={4} opacity={T > K.S + 1.9 && T < K.S + 3.8 ? 1 : 0} />
+          </g>
         </CpSvg>
-        <TarjetaEstudio T={T} at={K.S + 0.2} until={K.S + 1.9} anio="1974" quien="Cushman y Ondetti · Squibb" revista="New Brunswick, Nueva Jersey, EUA" y={900} />
+        <TarjetaEstudio T={T} at={K.S + 0.2} until={K.S + 1.9} anio="1974" quien="Cushman y Ondetti · Squibb" revista="New Brunswick, Nueva Jersey, EUA" y={400} />
         <Chip T={T} at={K.S + 2.2} until={K.A - 0.2} texto="modelo: una enzima parecida (carboxipeptidasa A)" y={1500} tam={28} borde={CP.zn} />
       </Escena>
       {/* 9 · copiaron la punta del veneno; con azufre, 2,000 veces más potente que su copia sin azufre */}
       <Escena T={T} a={K.A} b={K.C} zoom={0.03}>
         <FondoMarca patron="oscuro" />
         <CpSvg>
+          {/* pase a mano: el hueco ×1.4 y al centro, alineado con el dibujo de gis de la escena anterior */}
+          <g transform="translate(540 930) scale(1.4) translate(-340 -970)">
           <path d="M 120 720 L 220 720 L 220 1000 Q 220 1120 340 1120 Q 460 1120 460 1000 L 460 720 L 560 720 L 560 1220 L 120 1220 Z" fill={CP.eca} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
           <circle cx={340} cy={1080} r={30 + (T > swap ? Math.max(0, 1 - (T - swap) * 2) * 14 : 0)} fill={CP.zn} stroke={KC.ink} strokeWidth={5} />
-          <text x={340} y={1090} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>Zn</text>
+          <text x={340} y={1090} textAnchor="middle" style={{ font:`700 24px ${KF.mono}`, stroke:'none' }} fill={OSC}>Zn</text>
           {T < K.A + 1.1 && <Cadena T={T} x={360} y={560} n={5} r={18} resalta={kprog(T, K.A + 0.3, K.A + 0.6) > 0 ? [3, 4] : []} />}
           {T >= K.A + 1.1 && T < swap && <Inhibidor x={340} y={klerp(700, 900, kprog(T, K.A + 1.1, K.A + 1.8, kEase.sale))} rot={-90} s={1.1} />}
           {T >= swap && <Inhibidor x={340} y={klerp(860, 940, kprog(T, swap, swap + 0.3, kEase.sale))} rot={-90} s={1.1} azufre />}
           {T >= swap && <circle cx={340} cy={1080} r={70 + (T - swap) * 40} fill="none" stroke={CP.azufre} strokeWidth={6} opacity={Math.max(0, 1 - (T - swap) * 1.5)} />}
+          </g>
         </CpSvg>
-        <Etq T={T} at={K.A + 0.4} until={K.A + 1.1} x={500} y={560} texto="Ala-Pro: punta del veneno" color={KC.gold2} tam={30} />
-        <Etq T={T} at={K.A + 1.4} until={swap} x={40} y={650} texto="copia sin azufre (–COOH)" color={CP.gris} tam={26} />
-        <Etq T={T} at={swap + 0.1} until={K.C - 0.2} x={40} y={650} texto="con azufre (S): al zinc" color={CP.azufre} tam={26} />
-        <NumeroGigante T={T} at={swap + 0.4} until={K.C - 0.2} valor={2000} dur={1.0} prefijo="×" etiqueta="vs. su copia sin azufre" y={1530} tam={170} color={CP.azufre} />
+        <Etq T={T} at={K.A + 0.4} until={K.A + 1.1} x={300} y={272} texto="Ala-Pro: punta del veneno" color={KC.gold2} tam={30} />
+        <Etq T={T} at={K.A + 1.4} until={swap} x={40} y={500} texto="copia sin azufre (–COOH)" color={CP.gris} tam={26} />
+        <Etq T={T} at={swap + 0.1} until={K.C - 0.2} x={40} y={560} texto="con azufre (S): al zinc" color={CP.azufre} tam={26} />
+        <NumeroGigante T={T} at={swap + 0.4} until={K.C - 0.2} valor={2000} dur={1.0} prefijo="×" etiqueta="vs. su copia sin azufre" y={1500} tam={170} color={CP.azufre} />
       </Escena>
       {/* 10 · así nació el captopril (1981) */}
       <Escena T={T} a={K.C} b={K.Se} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <CpSvg>
-          <g transform={`translate(540 960) rotate(${T * 12})`} opacity={0.5}>{Array.from({ length: 16 }, (_, i) => <path key={i} d="M 0 0 L 900 -90 L 900 90 Z" fill="#fff" transform={`rotate(${i * 22.5})`} opacity={i % 2 ? 0 : 0.6} />)}</g>
-          <Jararaca T={T} x0={60} x1={1000} y={690} amp={50} ancho={56} />
+          <g transform={`translate(540 1000) rotate(${T * 12})`} opacity={0.5}>{Array.from({ length: 16 }, (_, i) => <path key={i} d="M 0 0 L 900 -90 L 900 90 Z" fill="#fff" transform={`rotate(${i * 22.5})`} opacity={i % 2 ? 0 : 0.6} />)}</g>
+          <Jararaca T={T} x0={10} x1={960} y={520} amp={60} ancho={78} />
           {(() => { const p = kprog(T, K.C + 0.3, K.C + 1.5, kEase.suave);
             return <g>
-              <Inhibidor x={540} y={klerp(860, 980, p)} s={klerp(1.5, 0.2, p)} azufre o={1 - kprog(T, K.C + 1.2, K.C + 1.5)} />
-              <g transform={`translate(540 ${klerp(900, 980, p)}) scale(${kprog(T, K.C + 1.2, K.C + 1.6, kEase.rebote)})`}><circle r={120} fill="#fffdf7" stroke={KC.ink} strokeWidth={9} /><line x1={-80} y1={0} x2={80} y2={0} stroke="#c9c2b4" strokeWidth={8} />
-                <text x={0} y={-30} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink}>CAPTOPRIL</text></g>
+              <Inhibidor x={560} y={klerp(900, 1000, p)} s={klerp(2.3, 0.3, p)} azufre o={1 - kprog(T, K.C + 1.2, K.C + 1.5)} />
+              <g transform={`translate(540 ${klerp(940, 1000, p)}) scale(${2 * kprog(T, K.C + 1.2, K.C + 1.6, kEase.rebote)})`}><circle r={120} fill="#fffdf7" stroke={KC.ink} strokeWidth={9} /><line x1={-80} y1={0} x2={80} y2={0} stroke="#c9c2b4" strokeWidth={8} />
+                <text x={0} y={-30} textAnchor="middle" textLength={196} lengthAdjust="spacingAndGlyphs" style={{ font:`400 40px ${KF.titulo}`, stroke:'none' }} fill={OSC}>CAPTOPRIL</text></g>
             </g>; })()}
         </CpSvg>
         <Chip T={T} at={K.C + 1.8} until={K.Se - 0.2} texto="1981 · FDA · primer inhibidor de la ECA en pastilla" y={1500} tam={32} borde={KC.blue} />
@@ -306,31 +321,42 @@ function Captopril() {
       {/* 11 · 2,000 al azar contra 60 con el dibujo */}
       <Escena T={T} a={K.Se} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.mint} />
+        {/* pase a mano: «su dibujo» (el hueco de gis con su zinc) sobre la barra de los ~60, desde que empieza la escena */}
+        <CpSvg>
+          {/* belleza: todo 160 px más abajo (quedaba cargado arriba) */}
+          <g transform="translate(0 80)">
+          <g stroke="#f6f3ec" strokeWidth={9} fill="none" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M 620 600 L 620 860 Q 620 975 740 975 Q 860 975 860 860 L 860 600" />
+            <path d="M 520 600 L 620 600 M 860 600 L 960 600" />
+          </g>
+          <circle cx={740} cy={925} r={34} fill={CP.zn} stroke="#f6f3ec" strokeWidth={5} /><text x={740} y={935} textAnchor="middle" style={{ font:`700 26px ${KF.mono}`, stroke:'none' }} fill={OSC}>Zn</text>
+          </g>
+        </CpSvg>
       </Escena>
-      <Comparativa T={T} at={K.Se + 0.3} until={K.Ci - 0.2} max={2000} y={560} alto={420}
+      <Comparativa T={T} at={K.Se + 0.3} until={K.Ci - 0.2} max={2000} y={660} alto={640}
         izq={{ valor:2000, etiqueta:'al azar', color:CP.gris, texto:'~2,000' }} der={{ valor:60, etiqueta:'con su dibujo', color:KC.yellow, texto:'~60' }} />
       <Chip T={T} at={K.Se + 1.6} until={K.Ci - 0.2} texto="compuestos probados (Cushman y Ondetti, 1991)" y={1500} tam={28} borde={KC.ink} />
       {/* 12 · cierre: la misma pastilla, ahora con su familia «pril» y la víbora */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <CpSvg>
-          <Jararaca T={T} x0={40} x1={940} y={760} amp={60} ancho={60} />
-          <Mano x={420} y={1020} s={1} /><Blister T={T} x={440} y={980} s={1} sale={0} pril={1} /><Pulgar x={420} y={1020} s={1} />
+          <Jararaca T={T} x0={-20} x1={900} y={500} amp={70} ancho={84} />
+          <Mano x={510} y={980} s={1.5} /><Blister T={T} x={540} y={920} s={1.5} sale={0} pril={1} /><Pulgar x={510} y={980} s={1.5} />
         </CpSvg>
-        <Chip T={T} at={K.Ci + 0.5} until={K.O} texto="capto·PRIL   enala·PRIL   lisino·PRIL" y={1500} tam={38} borde={KC.pink} />
+        <Chip T={T} at={K.Ci + 0.5} until={K.O} texto="capto·PRIL   enala·PRIL   lisino·PRIL" y={300} tam={38} borde={KC.pink} />
       </Escena>
 
       {/* textos fijos */}
-      <Chip T={T} at={K.G + 1.2} until={K.J - 0.3} texto="captopril ← veneno de víbora" y={1500} tam={40} borde={CP.veneno} />
+      <Chip T={T} at={K.G + 1.2} until={K.J - 0.3} texto="captopril ← veneno de víbora" y={262} tam={40} borde={CP.veneno} />
       <Etq T={T} at={K.J + 0.5} until={K.F - 0.2} x={70} y={760} texto="jararaca" tam={40} color={KC.ink} />
       <Etq T={T} at={K.J + 0.8} until={K.F - 0.2} x={70} y={815} texto="Bothrops jararaca" it tam={34} color={KC.ink} />
       <Medidor T={T} at={K.J + 1.2} until={K.F - 0.3} valor={(t) => 0.85 - 0.6 * kprog(t, K.J + 1.8, K.J + 3.0, kEase.suave)} etiqueta="presión de la presa" texto={(v) => (v < 0.4 ? 'se desploma' : '')} y={1450} color={KC.red} />
       <Chip T={T} at={K.F + 0.3} until={K.F + 3.0} texto="1965 · Sérgio Ferreira · Brasil" y={1500} tam={40} borde={CP.veneno} />
-      <Etq T={T} at={K.F + 1.6} until={K.F + 3.2} x={500} y={640} texto="pedacitos de proteína" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.F + 3.3} until={K.E - 0.2} x={1040} y={620} lado="izq" texto="bradicinina: afloja el vaso" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.E + 0.8} until={K.M - 0.2} texto="ECA = enzima convertidora de angiotensina" y={1500} tam={30} borde={CP.eca} />
+      <Etq T={T} at={K.F + 1.6} until={K.F + 3.2} x={480} y={460} texto="pedacitos de proteína" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.F + 3.3} until={K.E - 0.2} x={1040} y={880} lado="izq" texto="bradicinina: afloja el vaso" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.E + 0.8} until={K.M - 0.2} texto="ECA = enzima convertidora de angiotensina" y={262} tam={30} borde={CP.eca} />
       <MitoTachado T={T} at={K.I + 0.2} tacharEn={K.I + 2.6} until={K.S - 0.3} texto="¿veneno en pastilla?" x={400} y={480} tam={44} />
-      <Chip T={T} at={K.P + 0.3} until={K.I - 0.2} texto="¿veneno?" x={330} y={1500} tam={46} borde={KC.yellow} />
+      <Chip T={T} at={K.P + 0.3} until={K.I - 0.2} texto="¿veneno?" x={770} y={1480} tam={46} borde={KC.yellow} />
       <Chip T={T} at={K.E + 0.2} until={K.Ci} texto="dibujo esquemático" x={870} y={1820} tam={22} mono borde="rgba(255,255,255,.4)" />
 
       {/* subtítulos (idx = línea de narracion.json) */}

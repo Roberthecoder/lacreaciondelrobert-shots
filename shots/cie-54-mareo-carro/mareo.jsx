@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #54 · Por qué te mareas en el carro — NARRADO (N1 "Por dentro": oído interno contra ojos).
 // Datos: conflicto sensorial (CDC Yellow Book 2026; Golding 2006), hipótesis del veneno (Treisman 1977), control del conductor
 // (Rolnick y Lubow 1991), consejos y edades (CDC 2026; NHS). Ver guion.md y verificacion.md.
@@ -129,8 +130,8 @@ function CaminoFrente({ T, c = 0, y0 = 360, y1 = 860 }) {
   const bordeI = `M 120 ${y1} Q ${mid - 160} ${(y0 + y1) / 2} ${cxTop - 26} ${y0}`, bordeD = `M 960 ${y1} Q ${mid + 160} ${(y0 + y1) / 2} ${cxTop + 26} ${y0}`;
   const centro = `M 540 ${y1} Q ${mid} ${(y0 + y1) / 2} ${cxTop} ${y0}`;
   return <g>
-    <rect x={0} y={y0 - 260} width={KW} height={260} fill="#9fe3ff" />
-    <rect x={0} y={y0} width={KW} height={y1 - y0} fill={KC.leaf} />
+    <rect x={0} y={y0 - 260} width={KW} height={260} fill="#54798e" />
+    <rect x={0} y={y0} width={KW} height={y1 - y0} fill={cineMix(KC.leaf, CINE.fondo, 0.55)} />
     <path d={`${bordeI} L ${cxTop + 26} ${y0} Q ${mid + 160} ${(y0 + y1) / 2} 960 ${y1} Z`} fill="#4a4d5c" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     <path d={centro} fill="none" stroke={KC.yellow} strokeWidth={12} strokeDasharray="40 36" strokeDashoffset={-T * 260} />
   </g>;
@@ -201,7 +202,8 @@ function MareoCarro() {
       {/* 0 · gancho: niño leyendo atrás, carro en curvas, cara verde */}
       <Escena T={T} a={K.Gancho} b={K.Oido}>
         <FondoLunares color={KC.pink} />
-        <Lienzo>
+        <Lienzo><g transform="translate(0 170)">
+          <rect x={-100} y={1265} width={KW + 200} height={700} fill={cineMix(KC.leaf, CINE.fondo, 0.8)} />
           <Paisaje T={T} y={1150} />
           <Carro x={540} y={1090} s={1.05} T={T} rot={balanceo} />
           <Espiral x={400} y={690} T={T} s={1.1} o={kprog(T, K.Gancho + 0.2, K.Gancho + 0.6)} />
@@ -216,25 +218,25 @@ function MareoCarro() {
             <FlechaRecta x1={560} y1={760} x2={660} y2={620} p={kprog(T, K.Gancho + 4.9, K.Gancho + 5.3, kEase.sale)} color={LIQ} />
             <FlechaRecta x1={980} y1={780} x2={870} y2={640} p={kprog(T, K.Gancho + 5.2, K.Gancho + 5.6, kEase.sale)} color={KC.yellow} />
           </g>}
-        </Lienzo>
-        <MitoTachado T={T} at={K.Gancho + 2.5} tacharEn={K.Gancho + 3.0} until={K.Oido - 0.2} texto="tu estómago" x={250} y={610} tam={42} />
-        <Chip T={T} at={K.Gancho + 4.6} until={K.Oido - 0.2} texto="tu cerebro: 2 mensajes" x={700} y={300} tam={40} borde={KC.yellow} />
+        </g></Lienzo>
+        <MitoTachado T={T} at={K.Gancho + 2.5} tacharEn={K.Gancho + 3.0} until={K.Oido - 0.2} texto="tu estómago" x={250} y={780} tam={42} />
+        <Chip T={T} at={K.Gancho + 4.6} until={K.Oido - 0.2} texto="tu cerebro: 2 mensajes" x={700} y={450} tam={40} borde={KC.yellow} />
       </Escena>
       {/* 1 · el oído interno: sistema vestibular */}
       <Escena T={T} a={K.Oido} b={K.Ojos}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <g transform={`rotate(${balanceo * 1.2} 470 1100)`}><CabezaPerfil x={470} y={860} s={1.4} piel={PVERDE} gesto="mueca" /></g>
+          <g transform="translate(470 1010) scale(1.3) translate(-470 -860)"><g transform={`rotate(${balanceo * 1.2} 470 1100)`}><CabezaPerfil x={470} y={860} s={1.4} piel={PVERDE} gesto="mueca" /></g></g>
         </Lienzo>
-        <Lupa T={T} at={K.Oido + 0.5} until={K.Ojos - 0.25} x={720} y={470} r={210} fx={365} fy={874} tinte={KC.yellow} etiqueta="POR DENTRO · OÍDO"
-          interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0b1a2c" /><OidoInterno cx={r} cy={r + 20} s={1.15} T={t} /></svg>} />
-        <Etq T={T} at={K.Oido + 2.0} until={K.Ojos - 0.3} x={1050} y={1110} texto="sistema vestibular" lado="izq" color={KC.texto} tam={40} />
-        <Chip T={T} at={K.Oido + 1.2} until={K.Ojos - 0.3} texto="siente el movimiento" x={330} y={330} tam={38} borde={KC.yellow} />
+        <Lupa T={T} at={K.Oido + 0.5} until={K.Ojos - 0.25} x={740} y={520} r={260} fx={334} fy={1028} tinte={KC.yellow} etiqueta="POR DENTRO · OÍDO"
+          interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0b1a2c" /><OidoInterno cx={r} cy={r + 24} s={1.42} T={t} /></svg>} />
+        <Etq T={T} at={K.Oido + 2.0} until={K.Ojos - 0.3} x={1010} y={215} texto="sistema vestibular" lado="izq" color={KC.texto} tam={40} />
+        <Chip T={T} at={K.Oido + 1.2} until={K.Ojos - 0.3} texto="siente el movimiento" x={280} y={330} tam={38} borde={KC.yellow} />
       </Escena>
       {/* 2 · los ojos ven el libro quieto */}
       <Escena T={T} a={K.Ojos} b={K.Choque}>
         <FondoLunares color={KC.yellow} />
-        <Lienzo>
+        <Lienzo><g transform="translate(0 190)">
           <rect x={60} y={360} width={960} height={330} rx={40} fill="#9fe3ff" stroke={KC.ink} strokeWidth={10} />
           <g style={{ clipPath:'inset(0)' }}>{[0, 1, 2, 3].map((i) => { const ax = ((i * 300 - T * 520) % 1200 + 1200) % 1200 - 100; return ax > 40 && ax < 1040 ? <Arbol key={i} x={ax} y={670} s={0.75} /> : null; })}</g>
           {[0, 1, 2].map((i) => <line key={i} x1={120 + ((i * 260 + T * 900) % 800)} y1={430 + i * 70} x2={200 + ((i * 260 + T * 900) % 800)} y2={430 + i * 70} stroke="#fff" strokeWidth={8} strokeLinecap="round" opacity={0.8} />)}
@@ -245,61 +247,62 @@ function MareoCarro() {
             <line x1={0} y1={-70} x2={0} y2={130} stroke={KC.ink} strokeWidth={7} />
             {[-50, -10, 30, 70].map((yy) => <g key={yy}><line x1={-220} y1={yy - 20} x2={-40} y2={yy - 10} stroke="#9a9a9a" strokeWidth={8} /><line x1={40} y1={yy - 10} x2={220} y2={yy - 20} stroke="#9a9a9a" strokeWidth={8} /></g>)}
           </g>
-        </Lienzo>
-        <Chip T={T} at={K.Ojos + 1.0} until={K.Choque - 0.2} texto="quieto frente a ti" x={540} y={1200} tam={38} borde={KC.ink} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Ojos + 1.0} until={K.Choque - 0.2} texto="quieto frente a ti" x={540} y={1470} tam={38} borde={KC.ink} />
       </Escena>
       {/* 3 · el choque: oído «nos movemos» / ojos «estamos quietos» */}
       <Escena T={T} a={K.Choque} b={K.Teoria}>
         <FondoLunares color={KC.lilac} />
-        <Lienzo>
+        <Lienzo><g transform="translate(540 960) scale(1.05) translate(-545 -790)">
           <Cerebro x={600} y={560} s={1.05} T={T} sacude={kprog(T, K.Choque + 2.2, K.Choque + 2.6)} />
           <Chispas T={T} x={600} y={540} r={240} n={9} p={kprog(T, K.Choque + 2.2, K.Choque + 2.6)} />
           <g transform={`rotate(${balanceo * 1.5} 220 1030)`}><OrejaIcono x={220} y={1030} s={1.1} /></g>
           <OjoIcono x={860} y={1060} s={0.85} />
           {T > K.Choque + 0.2 && <Globo x={280} y={820} w={400} tam={44} texto="¡nos movemos!" s={kprog(T, K.Choque + 0.2, K.Choque + 0.6, kEase.rebote)} cola="abajo-izq" color={LIQ} rot={-3} />}
           {T > K.Choque + 1.3 && <Globo x={800} y={880} w={420} tam={44} texto="estamos quietos" s={kprog(T, K.Choque + 1.3, K.Choque + 1.7, kEase.rebote)} cola="abajo-der" color={KC.yellow} rot={3} />}
-        </Lienzo>
+        </g></Lienzo>
       </Escena>
       {/* 4 · la teoría más aceptada: conflicto de sentidos */}
       <Escena T={T} a={K.Teoria} b={K.Pregunta}>
         <FondoLunares color={KC.mint} />
-        <Lienzo>
+        <Lienzo><g transform="translate(540 1140) scale(1.3) translate(-540 -800)">
           <OrejaIcono x={210} y={760} s={1.0} />
           <OjoIcono x={870} y={760} s={0.8} />
           {T > K.Teoria + 0.6 && <g>
-            <FlechaRecta x1={300} y1={740} x2={440} y2={700} p={kprog(T, K.Teoria + 0.6, K.Teoria + 1.0, kEase.sale)} color={LIQ} />
-            <FlechaRecta x1={760} y1={740} x2={640} y2={700} p={kprog(T, K.Teoria + 0.9, K.Teoria + 1.3, kEase.sale)} color={KC.yellow} />
+            <FlechaRecta x1={312} y1={740} x2={392} y2={690} p={kprog(T, K.Teoria + 0.6, K.Teoria + 1.0, kEase.sale)} color={LIQ} />
+            <FlechaRecta x1={772} y1={740} x2={700} y2={690} p={kprog(T, K.Teoria + 0.9, K.Teoria + 1.3, kEase.sale)} color={KC.yellow} />
           </g>}
-          <Cerebro x={540} y={620} s={0.6} T={T} sacude={kprog(T, K.Teoria + 3.6, K.Teoria + 4.0)} />
-          <Chispas T={T} x={540} y={610} r={150} n={7} p={kprog(T, K.Teoria + 3.6, K.Teoria + 4.0)} />
+          <Cerebro x={540} y={620} s={0.8} T={T} sacude={kprog(T, K.Teoria + 3.6, K.Teoria + 4.0)} />
+          <Chispas T={T} x={540} y={610} r={195} n={7} p={kprog(T, K.Teoria + 3.6, K.Teoria + 4.0)} />
           <TextoSvg x={540} y={1010} tam={170} color={KC.yellow} s={kprog(T, K.Teoria + 2.2, K.Teoria + 2.6, kEase.rebote)}>≠</TextoSvg>
-        </Lienzo>
-        <Chip T={T} at={K.Teoria + 0.3} until={K.Pregunta - 0.15} texto="conflicto de sentidos" x={540} y={1150} tam={50} borde={KC.gold} />
-        <Chip T={T} at={K.Teoria + 1.4} until={K.Pregunta - 0.15} texto="(lo más aceptado)" x={540} y={410} tam={38} borde={KC.ink} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Teoria + 0.3} until={K.Pregunta - 0.15} texto="conflicto de sentidos" x={540} y={560} tam={50} borde={KC.gold} />
+        <Chip T={T} at={K.Teoria + 1.4} until={K.Pregunta - 0.15} texto="(lo más aceptado)" x={540} y={450} tam={38} borde={KC.ink} />
       </Escena>
       {/* 5 · pregunta */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Veneno} color={KC.orange} />
       {/* 6 · la hipótesis del veneno */}
       <Escena T={T} a={K.Veneno} b={K.Conductor}>
         <FondoLunares color={KC.orange} />
-        <Lienzo>
+        <Lienzo><g transform="translate(540 960) scale(1.2) translate(-560 -780)">
+          <Cerebro x={420} y={720} s={1.0} T={T} />
           {T > K.Veneno + 1.8 && <g opacity={kprog(T, K.Veneno + 1.8, K.Veneno + 2.2)}>
-            <Cerebro x={420} y={720} s={1.0} T={T} />
             {Array.from({ length: 3 }, (_, i) => { const f = ((T * 0.9 + i / 3) % 1); return <circle key={i} cx={420} cy={700} r={200 + f * 140} fill="none" stroke={KC.red} strokeWidth={10} opacity={kprog(T, K.Veneno + 2.4, K.Veneno + 2.8) * (1 - f)} />; })}
             <g transform={`translate(770 560) scale(${kprog(T, K.Veneno + 2.4, K.Veneno + 2.8, kEase.rebote)}) rotate(${Math.sin(T * 14) * 6})`}><Alerta x={0} y={0} s={1.3} color={T % 0.5 < 0.25 ? KC.yellow : KC.red} /></g>
             <FlechaRecta x1={430} y1={930} x2={640} y2={1020} p={kprog(T, K.Veneno + 4.4, K.Veneno + 4.9, kEase.sale)} color={KC.red} />
             {T > K.Veneno + 4.6 && <Estomago x={770} y={1050} s={0.8} T={T} sacude={1} />}
           </g>}
           <Onomato T={T} at={K.Veneno + 5.1} dur={1.2} x={760} y={880} texto="¡GUÁCALA!" color={KC.mint} tam={90} />
-        </Lienzo>
-        <Chip T={T} at={K.Veneno + 0.1} until={K.Veneno + 1.7} texto="nadie lo sabe con certeza" x={540} y={440} tam={44} borde={KC.ink} />
-        <Chip T={T} at={K.Veneno + 1.9} until={K.Conductor - 0.15} texto="hipótesis" x={260} y={420} tam={46} borde={KC.pink} />
-        <Chip T={T} at={K.Veneno + 2.6} until={K.Conductor - 0.15} texto="¿veneno?" x={770} y={740} tam={44} borde={KC.red} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Veneno + 0.1} until={K.Veneno + 1.7} texto="nadie lo sabe con certeza" x={540} y={520} tam={44} borde={KC.ink} />
+        <Chip T={T} at={K.Veneno + 1.9} until={K.Conductor - 0.15} texto="hipótesis" x={300} y={540} tam={46} borde={KC.pink} />
+        <Chip T={T} at={K.Veneno + 2.6} until={K.Conductor - 0.15} texto="¿veneno?" x={792} y={900} tam={44} borde={KC.red} />
       </Escena>
       {/* 7 · el conductor controla el carro y anticipa la curva */}
       <Escena T={T} a={K.Conductor} b={K.Consejo} fondo={KC.dark}>
         <FondoLunares color={KC.cyan} />
-        <Lienzo>
+        <Lienzo><g transform="translate(540 960) scale(1.15) translate(-540 -760)">
+          <rect x={-100} y={-200} width={KW + 200} height={1100} fill="#161a28" />
           <g><rect x={40} y={330} width={1000} height={560} rx={50} fill="#2a2d3a" stroke={KC.ink} strokeWidth={12} />
             <svg x={70} y={360} width={940} height={500} viewBox="70 360 940 500"><CaminoFrente T={T} c={curva(T + 0.6)} y0={520} y1={880} /></svg>
             <rect x={40} y={330} width={1000} height={560} rx={50} fill="none" stroke={KC.ink} strokeWidth={14} /></g>
@@ -307,59 +310,63 @@ function MareoCarro() {
             <path d="M 0 -70 L 70 0 L 0 70 L -70 0 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
             <path d={curva(T + 1.2) > 0 ? 'M -18 30 L -18 0 Q -18 -20 10 -20 L 10 -32 L 30 -14 L 10 4 L 10 -8 Q -4 -8 -4 0 L -4 30 Z' : 'M 18 30 L 18 0 Q 18 -20 -10 -20 L -10 -32 L -30 -14 L -10 4 L -10 -8 Q 4 -8 4 0 L 4 30 Z'} fill={KC.ink} />
           </g>
-          <rect x={0} y={880} width={KW} height={380} fill="#3a3f5c" />
+          <rect x={-100} y={880} width={KW + 200} height={1000} fill="#22273c" />
           <Volante x={540} y={985} r={190} giro={curva(T + 0.6) * 38} />
           <Onomato T={T} at={K.Conductor + 4.7} dur={0.9} x={560} y={640} texto="¡FRENÓN!" color={KC.red} tam={90} rot={-6} />
-        </Lienzo>
-        <Chip T={T} at={K.Conductor + 0.4} until={K.Consejo - 0.15} texto="controla el carro" x={340} y={430} tam={40} borde={KC.mint} />
-        <Chip T={T} at={K.Conductor + 2.9} until={K.Consejo - 0.15} texto="sabe cuándo viene la curva" x={540} y={820} tam={38} borde={KC.yellow} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Conductor + 0.4} until={K.Consejo - 0.15} texto="controla el carro" x={310} y={585} tam={40} borde={KC.mint} />
+        <Chip T={T} at={K.Conductor + 2.9} until={K.Consejo - 0.15} texto="sabe cuándo viene la curva" x={540} y={380} tam={38} borde={KC.yellow} />
       </Escena>
       {/* 8 · consejos */}
       <Escena T={T} a={K.Consejo} b={K.Barco}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <Consejo x={540} y={500} p={kprog(T, K.Consejo + 0.3, K.Consejo + 0.8, kEase.sale)} ok={kprog(T, K.Consejo + 0.9, K.Consejo + 1.2, kEase.rebote)} texto="mira al horizonte"
+          <g transform="translate(0 330)"><rect x={-100} y={1265} width={KW + 200} height={700} fill={cineMix(KC.leaf, CINE.fondo, 0.8)} /><Paisaje T={T} y={1150} /><Carro x={540} y={1090} s={0.95} T={T} rot={balanceo * 0.4} nino="bien" /></g>
+          <g transform="translate(540 0) scale(0.8) translate(-540 0)">
+          <Consejo x={540} y={450} p={kprog(T, K.Consejo + 0.3, K.Consejo + 0.8, kEase.sale)} ok={kprog(T, K.Consejo + 0.9, K.Consejo + 1.2, kEase.rebote)} texto="mira al horizonte"
             icono={<g><line x1={-60} y1={20} x2={60} y2={20} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" /><path d="M -32 20 A 32 32 0 0 1 32 20" fill={KC.orange} stroke={KC.ink} strokeWidth={6} /></g>} />
-          <Consejo x={540} y={770} p={kprog(T, K.Consejo + 1.8, K.Consejo + 2.3, kEase.sale)} ok={kprog(T, K.Consejo + 2.4, K.Consejo + 2.7, kEase.rebote)} texto="asiento de adelante"
+          <Consejo x={540} y={700} p={kprog(T, K.Consejo + 1.8, K.Consejo + 2.3, kEase.sale)} ok={kprog(T, K.Consejo + 2.4, K.Consejo + 2.7, kEase.rebote)} texto="asiento de adelante"
             icono={<g><rect x={-30} y={-50} width={44} height={80} rx={14} fill={KC.red} stroke={KC.ink} strokeWidth={6} /><rect x={-30} y={20} width={70} height={30} rx={10} fill={KC.red} stroke={KC.ink} strokeWidth={6} /></g>} />
-          <Consejo x={540} y={1040} p={kprog(T, K.Consejo + 3.1, K.Consejo + 3.6, kEase.sale)} ok={kprog(T, K.Consejo + 3.7, K.Consejo + 4.0, kEase.rebote)} texto="suelta el celular"
+          <Consejo x={540} y={950} p={kprog(T, K.Consejo + 3.1, K.Consejo + 3.6, kEase.sale)} ok={kprog(T, K.Consejo + 3.7, K.Consejo + 4.0, kEase.rebote)} texto="suelta el celular"
             icono={<g><Celular x={0} y={0} s={0.27} T={T} /><path d="M -55 -55 L 55 55" stroke={KC.red} strokeWidth={12} strokeLinecap="round" /></g>} />
+          </g>
         </Lienzo>
       </Escena>
       {/* 9 · barcos, aviones, videojuegos y realidad virtual */}
       <Escena T={T} a={K.Barco} b={K.Ninos}>
         <FondoLunares color={KC.lilac} />
-        <Lienzo>
+        <Lienzo><g transform="translate(540 960) scale(1.08) translate(-540 -740)">
           {T > K.Barco + 0.2 && <g opacity={kprog(T, K.Barco + 0.2, K.Barco + 0.6)}><Barco x={300} y={640} s={0.95} T={T} /><Olas T={T} y={690} /></g>}
           {T > K.Barco + 1.3 && <g transform={`translate(${klerp(-500, 0, kprog(T, K.Barco + 1.3, K.Barco + 2.0, kEase.sale))} ${Math.sin(T * 2) * 20})`}><Avion x={720} y={470} s={0.85} rot={-8 + Math.sin(T * 2.2) * 6} /></g>}
           {T > K.Barco + 2.6 && <g transform={`translate(0 ${(1 - kprog(T, K.Barco + 2.6, K.Barco + 3.1, kEase.rebote)) * 600})`}><LentesVR x={330} y={930} s={0.85} T={T} /><Control x={830} y={950} s={0.9} /></g>}
-        </Lienzo>
-        <Etq T={T} at={K.Barco + 0.6} until={K.Ninos - 0.2} x={560} y={820} texto="barcos" lado="der" color={KC.texto} tam={40} />
-        <Etq T={T} at={K.Barco + 1.9} until={K.Ninos - 0.2} x={600} y={640} texto="aviones" lado="der" color={KC.texto} tam={40} />
-        <Etq T={T} at={K.Barco + 3.2} until={K.Ninos - 0.2} x={100} y={1110} texto="videojuegos y realidad virtual" lado="der" color={KC.texto} tam={36} />
+        </g></Lienzo>
+        <Etq T={T} at={K.Barco + 0.6} until={K.Ninos - 0.2} x={562} y={1046} texto="barcos" lado="der" color={KC.texto} tam={40} />
+        <Etq T={T} at={K.Barco + 1.9} until={K.Ninos - 0.2} x={605} y={850} texto="aviones" lado="der" color={KC.texto} tam={40} />
+        <Etq T={T} at={K.Barco + 3.2} until={K.Ninos - 0.2} x={100} y={1365} texto="videojuegos y realidad virtual" lado="der" color={KC.texto} tam={36} />
       </Escena>
       {/* 10 · los niños de 7 a 12 años */}
       <Escena T={T} a={K.Ninos} b={K.Cierre}>
         <FondoLunares color={KC.yellow} />
-        <Lienzo>
+        <Lienzo><g transform="translate(540 1400) scale(1.12) translate(-540 -1190)">
           {[[230, 470, KC.pink, 0.2], [540, 560, KC.cyan, 0.45], [850, 500, KC.orange, 0.7]].map(([nx, alto, c, d], i) =>
             <g key={i} transform={`translate(0 ${(1 - kprog(T, K.Ninos + d, K.Ninos + d + 0.5, kEase.rebote)) * 900})`}>
               <PersonaSimple x={nx} yPies={1190} alto={alto} color={c} piel={PVERDE} cara="o" />
               <Espiral x={nx} y={1190 - alto - 40} T={T + i} s={0.8} />
             </g>)}
-        </Lienzo>
-        <Chip T={T} at={K.Ninos + 1.2} until={K.Cierre - 0.15} texto="7 a 12 años: se marean más" x={540} y={420} tam={48} borde={KC.pink} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Ninos + 1.2} until={K.Cierre - 0.15} texto="7 a 12 años: se marean más" x={540} y={460} tam={48} borde={KC.pink} />
       </Escena>
       {/* 11 · cierre: el mismo carro, el niño mira por la ventana y está bien */}
       <Escena T={T} a={K.Cierre} b={FIN}>
         <FondoLunares color={KC.pink} />
-        <Lienzo>
+        <Lienzo><g transform="translate(0 170)">
+          <rect x={-100} y={1265} width={KW + 200} height={700} fill={cineMix(KC.leaf, CINE.fondo, 0.8)} />
           <SolDibujo x={900} y={560} r={60} T={T} />
           <Paisaje T={T} y={1150} />
           <Carro x={540} y={1090} s={1.05} T={T} rot={balanceo * 0.4} nino="bien" />
           <path d="M 470 830 L 830 600" stroke="#fff" strokeWidth={6} strokeDasharray="14 12" opacity={kprog(T, K.Cierre + 0.8, K.Cierre + 1.3)} />
-        </Lienzo>
-        <Chip T={T} at={K.Cierre + 0.6} until={K.Outro - 0.1} texto="ojos contra oídos" x={620} y={340} tam={44} borde={KC.gold} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Cierre + 0.6} until={K.Outro - 0.1} texto="ojos contra oídos" x={480} y={520} tam={44} borde={KC.gold} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Oido - 0.1} texto="No es tu estómago: *es tu cerebro.*" />

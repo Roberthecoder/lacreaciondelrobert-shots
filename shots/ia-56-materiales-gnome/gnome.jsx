@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #56 · La IA que "descubrió" 2.2 millones de cristales — NARRADO (N2 "El número" + N4 "La imagen que se llena").
 // Datos: Merchant et al., Nature 624:80 (2023) · Szymanski et al., Nature 624:86 (2023) y su Author Correction, Nature 650:E1 (2026)
 // · Cheetham y Seshadri, Chem. Mater. 36:3490 (2024). Ver guion.md y verificacion.md. Todo el dibujo es esquemático.
@@ -20,7 +21,7 @@ function Cristal({ x, y, s = 40, color = KC.pink, gris = false, o = 1, rot = 0, 
 
 // Lluvia de cristales que se acumulan (posiciones fijas por semilla).
 const LLUVIA = (() => { const r = krng(56), out = [];
-  for (let i = 0; i < 64; i++) out.push({ x: 70 + r() * 940, y: 640 + r() * 520, s: 26 + r() * 22, c: GCOL[i % GCOL.length], rot: (r() - 0.5) * 30, d: r() * 2.6 });
+  for (let i = 0; i < 64; i++) out.push({ x: 70 + r() * 940, y: 560 + r() * 880, s: 40 + r() * 30, c: GCOL[i % GCOL.length], rot: (r() - 0.5) * 30, d: r() * 2.6 - 0.95 });
   return out; })();
 function Lluvia({ T, t0, atenua = 0, marca = null }) {
   return <>{LLUVIA.map((p, i) => { const k = kprog(T, t0 + p.d, t0 + p.d + 0.55, kEase.sale); if (k <= 0) return null;
@@ -111,7 +112,8 @@ function Rejilla({ T, x, y, cols = 10, filas = 6, paso = 68, rev = 0 }) {
     const cambia = orden !== azar, u = cambia ? rev : 0;
     const jit = rev * 5 * Math.sin(T * 9 + k);
     out.push(<circle key={k} cx={x + i * paso + jit} cy={y + j * paso + jit * 0.6} r={paso * 0.34 * (1 - 0.5 * Math.sin(Math.PI * u))}
-      fill={(u > 0.5 ? azar : orden) ? KC.pink : KC.cyan} stroke={KC.ink} strokeWidth={5} />); }
+      fill={(u > 0.5 ? azar : orden) ? KC.pink : KC.cyan} stroke={KC.ink} strokeWidth={5} />);
+    out.push(<circle key={`b${k}`} cx={x + i * paso + jit - paso * 0.11} cy={y + j * paso + jit * 0.6 - paso * 0.11} r={paso * 0.09 * (1 - 0.5 * Math.sin(Math.PI * u))} fill="#ffffff" opacity=".55" />); }
   return <>
     {Array.from({ length: filas }, (_, j) => <line key={`h${j}`} x1={x} y1={y + j * paso} x2={x + (cols - 1) * paso} y2={y + j * paso} stroke={KC.texto} strokeOpacity=".18" strokeWidth={4} />)}
     {Array.from({ length: cols }, (_, i) => <line key={`v${i}`} x1={x + i * paso} y1={y} x2={x + i * paso} y2={y + (filas - 1) * paso} stroke={KC.texto} strokeOpacity=".18" strokeWidth={4} />)}
@@ -173,12 +175,12 @@ function TituloArticulo({ T, at, until, tacha, y = 470 }) {
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'sube'), r = kprog(T, tacha, tacha + 0.4, kEase.sale), n = kprog(T, tacha + 0.4, tacha + 0.8, kEase.sale);
   return <div style={{ position:'absolute', left:70, right:70, top:y, zIndex:42, opacity:e.o, transform:`translateY(${e.y}px) rotate(-1.5deg)`,
-    background:'#ffffff', border:`6px solid ${KC.ink}`, borderRadius:18, padding:'18px 26px', boxShadow:`10px 10px 0 ${KC.ink}`, textAlign:'left' }}>
-    <div style={{ font:`700 24px ${KF.mono}`, color:'#7a6f62', marginBottom:8 }}>Nature · título del artículo</div>
-    <div style={{ font:`700 34px/1.3 ${KF.mono}`, color:KC.ink }}>An autonomous laboratory for the accelerated synthesis of{' '}
-      <span style={{ position:'relative', color: r > 0.5 ? '#9a9088' : KC.ink }}>novel
+    background:'linear-gradient(160deg,#ffffff 0%,#e9edf5 100%)', border:'6px solid #0b1020', borderRadius:18, padding:'18px 26px', boxShadow:'0 14px 34px rgba(0,0,0,.55)', textAlign:'left' }}>
+    <div style={{ font:`700 26px ${KF.mono}`, color:'#5d5448', marginBottom:8 }}>Nature · título del artículo</div>
+    <div style={{ font:`700 34px/1.3 ${KF.mono}`, color:'#0b1020' }}>An autonomous laboratory for the accelerated synthesis of{' '}
+      <span style={{ position:'relative', color: r > 0.5 ? '#9a9088' : '#0b1020' }}>novel
         <span style={{ position:'absolute', left:-6, top:'52%', height:7, width:`calc(${r * 100}% + 12px)`, background:KC.red, borderRadius:4 }}></span></span>
-      {n > 0 && <span style={{ background:KC.mint, padding:'0 8px', borderRadius:6, marginLeft:10, opacity:n }}>inorganic</span>} materials</div>
+      {n > 0 && <span style={{ background:KC.mint, color:'#0b1020', padding:'0 8px', borderRadius:6, marginLeft:10, opacity:n }}>inorganic</span>} materials</div>
   </div>;
 }
 
@@ -200,10 +202,10 @@ function Gnome() {
   const svg = (c, z = 0) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{c}</svg>;
 
   // Gancho: los 10 "estables" elegidos al azar salen de la caja y van a una cuadrícula 5 × 2.
-  const CAJA = { x: 70, y: 600, w: 470, h: 580 };
+  const CAJA = { x: 40, y: 530, w: 490, h: 970 };
   const ESTABLES = LLUVIA.map((p, i) => i).filter((i) => LLUVIA[i].x < 500).slice(0, 10);
   const tSaca = K.G + 6.6, tGemelo = K.G + 7.8;
-  const lupaX = klerp(180, 430, 0.5 + 0.5 * Math.sin((T - K.G) * 1.6)), lupaY = klerp(760, 1040, 0.5 + 0.5 * Math.cos((T - K.G) * 1.1));
+  const lupaX = klerp(180, 430, 0.5 + 0.5 * Math.sin((T - K.G) * 1.6)), lupaY = klerp(720, 1300, 0.5 + 0.5 * Math.cos((T - K.G) * 1.1));
   const cajaK = kprog(T, K.G + 4.0, K.G + 4.5, kEase.sale) * (1 - kprog(T, tSaca, tSaca + 0.6));
   const gancho = <>
     <Lluvia T={T} t0={K.G + 0.05} atenua={0.25 * cajaK + 0.8 * kprog(T, tSaca, tSaca + 0.8)}
@@ -213,22 +215,29 @@ function Gnome() {
       <rect x={CAJA.x + 20} y={CAJA.y - 34} width={250} height={64} rx={20} fill={KC.ink} />
       <text x={CAJA.x + 145} y={CAJA.y + 10} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.mint}>estables</text>
     </g>}
-    {T > K.G + 4.6 && T < tSaca + 0.6 && <g opacity={kprog(T, K.G + 4.6, K.G + 5.0) * (1 - kprog(T, tSaca, tSaca + 0.5))}><LupaDib x={lupaX} y={lupaY} s={0.85} /></g>}
+    {T > K.G + 4.6 && T < tSaca + 0.6 && <g opacity={kprog(T, K.G + 4.6, K.G + 5.0) * (1 - kprog(T, tSaca, tSaca + 0.5))}><LupaDib x={lupaX} y={lupaY} s={1.15} /></g>}
     {ESTABLES.map((i, k) => { const p = LLUVIA[i], t0 = tSaca + k * 0.08, m = kprog(T, t0, t0 + 0.6, kEase.sale); if (m <= 0) return null;
-      const gx = 160 + (k % 5) * 190, gy = 760 + Math.floor(k / 5) * 250;
+      const gx = 155 + (k % 5) * 172, gy = 820 + Math.floor(k / 5) * 400;
       const X = klerp(p.x, gx, m), Y = klerp(p.y, gy, m), tg = tGemelo + k * 0.18, g = kprog(T, tg, tg + 0.35, kEase.rebote);
       return <g key={i}>
-        {g > 0 && <Cristal x={X + 52} y={Y + 26} s={44 * g} gris />}
-        <Cristal x={X} y={Y} s={klerp(p.s, 50, m)} color={p.c} />
-        {g > 0 && <text x={X + 30} y={Y + 108} textAnchor="middle" style={{ font:`400 ${56 * g}px ${KF.titulo}` }} fill={KC.ink}>≈</text>}
+        {g > 0 && <Cristal x={X + 60} y={Y + 30} s={50 * g} gris />}
+        <Cristal x={X} y={Y} s={klerp(p.s, 60, m)} color={p.c} />
+        {g > 0 && <text x={X + 32} y={Y + 138} textAnchor="middle" style={{ font:`400 ${68 * g}px ${KF.titulo}` }} fill={KC.ink}>≈</text>}
       </g>; })}
+  </>;
+
+  // Robot de laboratorio (horno + brazo + crisoles), reutilizado en «Robot» y, atenuado, en «Correccion».
+  const robotDib = (brillo, fase) => <>
+    <Horno x={790} y={980} T={T} brillo={brillo} />
+    <BrazoRobot T={T} x={330} y={1060} p={0.5 + 0.5 * Math.sin(fase)} />
+    {[0, 1, 2, 3].map((i) => <path key={i} d={`M ${70 + i * 60} 1110 L ${110 + i * 60} 1110 L ${104 + i * 60} 1160 L ${76 + i * 60} 1160 Z`} fill="#f4efe4" stroke={KC.ink} strokeWidth={5} />)}
   </>;
 
   // Cierre: la misma lluvia; la química revisa y marca uno por uno.
   const marcas = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33];
   const marcaCierre = (i, TT) => { const k = marcas.indexOf(i); if (k < 0) return null; const t0 = K.C + 1.6 + k * 0.28, e = kprog(TT, t0, t0 + 0.3, kEase.rebote); if (e <= 0) return null;
     const p = LLUVIA[i], ok = k % 3 !== 2;
-    return <g transform={`translate(${p.x + 28} ${p.y - 40}) scale(${e})`}><circle r={24} fill={ok ? KC.mint : KC.white} stroke={KC.ink} strokeWidth={5} />
+    return <g transform={`translate(${p.x + p.s * 0.7} ${p.y - p.s}) scale(${e * 1.3})`}><circle r={24} fill={ok ? KC.mint : KC.white} stroke={KC.ink} strokeWidth={5} />
       <text y={12} textAnchor="middle" style={{ font:`900 32px ${KF.texto}` }} fill={KC.ink}>{ok ? '✓' : '?'}</text></g>; };
 
   return (
@@ -238,107 +247,109 @@ function Gnome() {
         <FondoLunares color={KC.cyan} />
         {svg(gancho)}
       </Escena>
-      <NumeroGigante T={T} at={K.G + 0.05} until={tSaca - 0.2} valor={2200000} dur={3.4} etiqueta="cristales «nuevos»" x={310} y={440} tam={130} color={KC.yellow} />
-      <Chip T={T} at={K.G + 4.3} until={tSaca - 0.2} texto="10 estables, al azar" x={770} y={540} tam={40} borde={KC.ink} />
-      <Chip T={T} at={tGemelo - 0.2} until={K.Cr - 0.2} texto="estructura conocida ≈" x={540} y={600} tam={46} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.G + 0.05} until={tSaca - 0.2} valor={2200000} dur={3.4} etiqueta="cristales «nuevos»" x={540} y={300} tam={160} color={KC.yellow} />
+      <Chip T={T} at={K.G + 4.3} until={tSaca - 0.2} texto="10 estables, al azar" x={800} y={478} tam={40} borde={KC.ink} />
+      <Chip T={T} at={tGemelo - 0.2} until={K.Cr - 0.2} texto="estructura conocida ≈" x={540} y={560} tam={52} borde={KC.ink} />
 
       {/* 2 · de cristales son los chips y la batería */}
       <Escena T={T} a={K.Cr} b={K.Gn}>
         <FondoLunares color={KC.yellow} />
-        {svg(<CelularPorDentro T={T} x={360} y={860} abre={kprog(T, K.Cr + 0.2, K.Cr + 0.9, kEase.sale)} />)}
+        {svg(<g transform="translate(400 950) scale(1.4)"><CelularPorDentro T={T} x={0} y={0} abre={kprog(T, K.Cr + 0.2, K.Cr + 0.9, kEase.sale)} /></g>)}
       </Escena>
-      <Etq T={T} at={K.Cr + 0.9} until={K.Gn - 0.2} x={500} y={670} texto="chip" color={KC.ink} tam={44} />
-      <Etq T={T} at={K.Cr + 1.5} until={K.Gn - 0.2} x={500} y={1000} texto="batería" color={KC.ink} tam={44} />
-      <Chip T={T} at={K.Cr + 2.0} until={K.Gn - 0.2} texto="por dentro: átomos en orden" x={740} y={830} tam={30} borde={KC.ink} />
+      <Etq T={T} at={K.Cr + 0.9} until={K.Gn - 0.2} x={690} y={684} texto="chip" color={KC.ink} tam={52} />
+      <Etq T={T} at={K.Cr + 1.5} until={K.Gn - 0.2} x={690} y={1146} texto="batería" color={KC.ink} tam={52} />
+      <Chip T={T} at={K.Cr + 2.0} until={K.Gn - 0.2} texto="por dentro: átomos en orden" x={540} y={320} tam={38} borde={KC.ink} />
 
       {/* 3 · GNoME (por dentro de la máquina) */}
       <Escena T={T} a={K.Gn} b={K.Ro}>
         <FondoCircuito T={T} />
-        <RedNeuronal T={T} x={380} y={560} ancho={420} alto={380} capas={[4, 6, 6, 3]} onda={((T - K.Gn) * 0.7) % 1} />
+        <RedNeuronal T={T} x={150} y={520} ancho={640} alto={640} capas={[4, 6, 6, 3]} onda={((T - K.Gn) * 0.7) % 1} />
         {svg(<>{Array.from({ length: 6 }, (_, i) => { const t0 = K.Gn + 0.8 + i * 0.6, u = ((T - t0) % 3.6) / 3.6; if (T < t0) return null;
-          return <Cristal key={i} x={klerp(830, 1000, u) + (i % 2) * 20} y={600 + i * 60 + Math.sin(T * 2 + i) * 10} s={30} color={GCOL[i]} o={Math.sin(Math.PI * u)} />; })}</>)}
+          return <Cristal key={i} x={klerp(850, 1010, u) + (i % 2) * 20} y={580 + i * 104 + Math.sin(T * 2 + i) * 10} s={44} color={GCOL[i]} o={Math.sin(Math.PI * u)} />; })}</>)}
       </Escena>
-      <Chip T={T} at={K.Gn + 0.3} until={K.Ro - 0.2} texto="GNoME · Google DeepMind" x={600} y={470} tam={42} borde={KC.cyan} />
-      <NumeroGigante T={T} at={K.Gn + 1.8} until={K.Ro - 0.2} valor={381000} desde={0} dur={1.2} prefijo="≈ " etiqueta="estables, según su cálculo (Nature, 2023)" x={540} y={1080} tam={120} color={KC.mint} />
+      <Chip T={T} at={K.Gn + 0.3} until={K.Ro - 0.2} texto="GNoME · Google DeepMind" x={540} y={400} tam={46} borde={KC.cyan} />
+      <NumeroGigante T={T} at={K.Gn + 1.8} until={K.Ro - 0.2} valor={381000} desde={0} dur={1.2} prefijo="≈ " etiqueta="estables, según su cálculo (Nature, 2023)" x={540} y={1370} tam={140} color={KC.mint} />
 
       {/* 4 · el laboratorio robot A-Lab */}
       <Escena T={T} a={K.Ro} b={K.P}>
         <FondoLunares color={KC.mint} />
-        {svg(<>
-          <Horno x={790} y={980} T={T} brillo={kprog(T, K.Ro + 1.2, K.Ro + 2.0)} />
-          <BrazoRobot T={T} x={330} y={1060} p={0.5 + 0.5 * Math.sin((T - K.Ro) * 1.8)} />
-          {[0, 1, 2, 3].map((i) => <path key={i} d={`M ${70 + i * 60} 1110 L ${110 + i * 60} 1110 L ${104 + i * 60} 1160 L ${76 + i * 60} 1160 Z`} fill="#f4efe4" stroke={KC.ink} strokeWidth={5} />)}
-        </>)}
+        {svg(<g transform="translate(520 1180) scale(1.06) translate(-505 -970)">{robotDib(kprog(T, K.Ro + 1.2, K.Ro + 2.0), (T - K.Ro) * 1.8)}</g>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.Ro + 0.2} until={K.Ro + 2.6} anio="2023" quien="A-Lab · Berkeley" revista="Szymanski et al. · Nature" y={560} />
-      <NumeroGigante T={T} at={K.Ro + 2.8} until={K.P - 0.2} valor={41} dur={0.8} sufijo=" / 58" etiqueta="cristales «nuevos» hechos" x={540} y={520} tam={170} color={KC.yellow} />
-      <Chip T={T} at={K.Ro + 4.0} until={K.P - 0.2} texto="en 17 días" x={540} y={700} tam={44} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Ro + 0.2} until={K.Ro + 2.6} anio="2023" quien="A-Lab · Berkeley" revista="Szymanski et al. · Nature" y={500} />
+      <NumeroGigante T={T} at={K.Ro + 2.8} until={K.P - 0.2} valor={41} dur={0.8} sufijo=" / 58" etiqueta="cristales «nuevos» hechos" x={540} y={580} tam={190} color={KC.yellow} />
+      <Chip T={T} at={K.Ro + 4.0} until={K.P - 0.2} texto="en 17 días" x={540} y={790} tam={48} borde={KC.ink} />
 
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.Ct} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<text x={290} y={1100} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 900)`}>?</text>)}
+        {svg(<text x={540} y={820} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 760)`}>?</text>)}
       </Escena>
 
       {/* 6 · la crítica de Santa Bárbara */}
       <Escena T={T} a={K.Ct} b={K.Rv}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          {[0, 1, 2].map((k) => { const t0 = K.Ct + 2.9 + k * 0.35, e = kprog(T, t0, t0 + 0.4, kEase.rebote), o = 1 - kprog(T, K.Ct + 5.3, K.Ct + 5.8); if (e <= 0 || o <= 0) return null;
-            const cx = 200 + k * 340;
-            return <g key={k} opacity={o} transform={`translate(${cx} 900) scale(${e})`}>
-              <Cristal x={-80} y={0} s={58} color={GCOL[k * 2]} /><Cristal x={80} y={0} s={58} gris />
-              <text x={0} y={22} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink}>≈</text>
-              <text x={-80} y={112} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>«nuevo»</text>
-              <text x={80} y={152} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>conocido</text>
+          {/* los cristales «nuevos» están en cuadro desde que empieza la escena; su gemelo conocido llega con la frase */}
+          {[0, 1, 2].map((k) => { const tA = K.Ct + 0.05 + k * 0.12, eA = kprog(T, tA, tA + 0.4, kEase.rebote);
+            const t0 = K.Ct + 2.9 + k * 0.35, e = kprog(T, t0, t0 + 0.4, kEase.rebote), o = 1 - kprog(T, K.Ct + 5.3, K.Ct + 5.8); if (eA <= 0 || o <= 0) return null;
+            return <g key={k} opacity={o} transform={`translate(540 ${650 + k * 310}) scale(1.7)`}>
+              <g transform={`translate(${-88 * e} 0) scale(${eA * (1.35 - 0.35 * e)})`}><Cristal x={0} y={0} s={58} color={GCOL[k * 2]} /></g>
+              {e > 0 && <g transform={`translate(88 0) scale(${e})`}><Cristal x={0} y={0} s={58} gris /></g>}
+              {e > 0 && <g opacity={e}>
+                <text x={0} y={22} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink}>≈</text>
+                <text x={-88} y={104} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>«nuevo»</text>
+                <text x={88} y={104} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>conocido</text>
+              </g>}
             </g>; })}
           {Array.from({ length: 9 }, (_, i) => { const t0 = K.Ct + 5.7 + i * 0.12, e = kprog(T, t0, t0 + 0.4, kEase.rebote); if (e <= 0) return null;
-            const x = 300 + (i % 3) * 150 + (Math.floor(i / 3) % 2) * 75, y = 1080 - Math.floor(i / 3) * 105;
-            return <g key={i} transform={`translate(${x} ${y}) scale(${e})`}><Cristal x={0} y={0} s={54} color={'#9be564'} /></g>; })}
-          {T > K.Ct + 6.3 && <g transform={`scale(${kprog(T, K.Ct + 6.3, K.Ct + 6.7, kEase.rebote)})`} style={{ transformOrigin:'820px 900px' }}><Trebol x={820} y={900} r={80} /></g>}
+            const x = 170 + (i % 3) * 230 + (Math.floor(i / 3) % 2) * 115, y = 1330 - Math.floor(i / 3) * 170;
+            return <g key={i} transform={`translate(${x} ${y}) scale(${e})`}><Cristal x={0} y={0} s={88} color={'#9be564'} /></g>; })}
+          {T > K.Ct + 6.3 && <g transform={`scale(${kprog(T, K.Ct + 6.3, K.Ct + 6.7, kEase.rebote)})`} style={{ transformOrigin:'860px 690px' }}><Trebol x={860} y={690} r={105} /></g>}
         </>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.Ct + 0.2} until={K.Ct + 2.7} anio="2024" quien="UC Santa Bárbara" revista="Cheetham y Seshadri · Chem. Mater." y={600} />
-      <Chip T={T} at={K.Ct + 3.0} until={K.Ct + 5.4} texto="muchas: variaciones de lo conocido" x={540} y={720} tam={40} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Ct + 5.8} until={K.Rv - 0.2} valor={18000} dur={0.8} sufijo="+" etiqueta="con elementos radiactivos raros" x={420} y={655} tam={130} color={KC.yellow} />
-      <Chip T={T} at={K.Ct + 6.6} until={K.Rv - 0.2} texto="prometio · actinio · protactinio" x={540} y={480} tam={34} mono borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Ct + 0.2} until={K.Ct + 2.7} anio="2024" quien="UC Santa Bárbara" revista="Cheetham y Seshadri · Chem. Mater." y={300} />
+      <Chip T={T} at={K.Ct + 3.0} until={K.Ct + 5.4} texto="muchas: variaciones de lo conocido" x={540} y={420} tam={44} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Ct + 5.8} until={K.Rv - 0.2} valor={18000} dur={0.8} sufijo="+" etiqueta="con elementos radiactivos raros" x={420} y={690} tam={150} color={KC.yellow} />
+      <Chip T={T} at={K.Ct + 6.6} until={K.Rv - 0.2} texto="prometio · actinio · protactinio" x={540} y={420} tam={36} mono borde={KC.ink} />
 
       {/* 7 · átomos ordenados vs. revueltos (por dentro) */}
       <Escena T={T} a={K.Rv} b={K.Co}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {svg(<Rejilla T={T} x={235} y={780} rev={kprog(T, K.Rv + 2.0, K.Rv + 3.0, kEase.suave)} />)}
+        {svg(<Rejilla T={T} x={144} y={760} paso={88} rev={kprog(T, K.Rv + 2.0, K.Rv + 3.0, kEase.suave)} />)}
       </Escena>
-      <Chip T={T} at={K.Rv + 0.3} until={K.Rv + 2.0} texto="en la computadora: todo en su lugar" x={600} y={680} tam={36} borde={KC.cyan} />
-      <Chip T={T} at={K.Rv + 2.2} until={K.Co - 0.2} texto="en la vida real: revueltos" x={640} y={680} tam={40} borde={KC.pink} />
+      <Chip T={T} at={K.Rv + 0.3} until={K.Rv + 2.0} texto="en la computadora: todo en su lugar" x={540} y={590} tam={42} borde={KC.cyan} />
+      <Chip T={T} at={K.Rv + 2.2} until={K.Co - 0.2} texto="en la vida real: revueltos" x={540} y={590} tam={46} borde={KC.pink} />
 
       {/* 8 · la corrección de 2026 */}
       <Escena T={T} a={K.Co} b={K.B}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
+        {/* el mismo robot de Berkeley sigue en cuadro, atenuado, mientras se corrige su cuenta */}
+        {svg(<g opacity=".5" transform="translate(505 1360) translate(-505 -970)">{robotDib(1, (T - K.Co) * 1.2)}</g>)}
       </Escena>
-      <TituloArticulo T={T} at={K.Co + 0.2} until={K.Co + 4.2} tacha={K.Co + 1.6} y={400} />
-      <Sello T={T} at={K.Co + 0.9} until={K.Co + 4.2} texto="CORRECCIÓN" sub="Nature · enero 2026" x={760} y={1110} />
-      <Marcador T={T} at={K.Co + 0.3} until={K.B - 0.2} tacha={K.Co + 2.2} y={840} />
-      <Chip T={T} at={K.Co + 4.4} until={K.B - 0.2} texto="nuevos para su base de datos ✔" x={540} y={1075} tam={40} borde={KC.leaf} />
-      <Chip T={T} at={K.Co + 5.6} until={K.B - 0.2} texto="¿para la ciencia? no necesariamente" x={540} y={1170} tam={38} borde={KC.red} />
+      <TituloArticulo T={T} at={K.Co + 0.2} until={K.Co + 4.2} tacha={K.Co + 1.6} y={290} />
+      <Sello T={T} at={K.Co + 0.9} until={K.Co + 4.2} texto="CORRECCIÓN" sub="Nature · enero 2026" x={720} y={1010} />
+      <Marcador T={T} at={K.Co + 0.3} until={K.B - 0.2} tacha={K.Co + 2.2} y={740} />
+      <Chip T={T} at={K.Co + 4.4} until={K.B - 0.2} texto="nuevos para su base de datos ✔" x={540} y={990} tam={42} borde={KC.leaf} />
+      <Chip T={T} at={K.Co + 5.6} until={K.B - 0.2} texto="¿para la ciencia? no necesariamente" x={540} y={1085} tam={40} borde={KC.red} />
 
       {/* 9 · balance */}
       <Escena T={T} a={K.B} b={K.C}>
         <FondoLunares color={KC.mint} />
-        {svg(<Balanza x={540} y={760} inc={6 * Math.sin((T - K.B) * 1.5)} />)}
+        {svg(<g transform="translate(540 800) scale(1.08) translate(-540 -760)"><Balanza x={540} y={760} inc={6 * Math.sin((T - K.B) * 1.5)} /></g>)}
       </Escena>
-      <Chip T={T} at={K.B + 0.4} until={K.C - 0.2} texto="el método promete" x={300} y={1150} tam={36} borde={KC.leaf} />
-      <Chip T={T} at={K.B + 1.0} until={K.C - 0.2} texto="falta química" x={800} y={1150} tam={36} borde={KC.orange} />
+      <Chip T={T} at={K.B + 0.4} until={K.C - 0.2} texto="el método promete" x={280} y={1290} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.B + 1.0} until={K.C - 0.2} texto="falta química" x={820} y={1290} tam={40} borde={KC.orange} />
 
       {/* 10 · cierre: la misma lluvia, revisada */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
           <Lluvia T={T} t0={K.C - 3} marca={marcaCierre} />
-          <Quimica x={860} y={940} T={T} />
+          <g transform="translate(800 1090) scale(1.55)"><Quimica x={0} y={0} T={T} /></g>
         </>)}
       </Escena>
-      <NumeroGigante T={T} at={K.C + 0.1} until={K.Ou} valor={2200000} dur={0.01} etiqueta="2.2 millones de cristales…" x={310} y={440} tam={130} color={KC.yellow} />
-      <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="≠ 2.2 millones de materiales" x={540} y={690} tam={42} borde={KC.red} />
+      <NumeroGigante T={T} at={K.C + 0.1} until={K.Ou} valor={2200000} dur={0.01} etiqueta="2.2 millones de cristales…" x={540} y={300} tam={160} color={KC.yellow} />
+      <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="≠ 2.2 millones de materiales" x={540} y={490} tam={46} borde={KC.red} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.G + 7.5} texto="2.2 millones de cristales *nuevos…*" />

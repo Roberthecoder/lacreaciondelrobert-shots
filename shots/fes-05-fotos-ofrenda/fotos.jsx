@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Festivo #05 · Día de Muertos · IA: la IA que restaura las fotos de tu ofrenda — NARRADO (N2 "El número" + viaje N1).
 // Guion y fuentes: guion.md. El dibujo es esquemático: la bisabuela, las caras y los pixeleados son ilustraciones, no fotos reales.
 const SEPIA = { fondo:'#c9a77c', piel:'#dcb48a', pelo:'#e9e1d2', rebozo:'#6e5136', ojo:'#3a2a1c' };
@@ -142,117 +143,121 @@ function FotosOfrenda() {
       {/* 1 · gancho: la foto restaurada en la ofrenda; se marca lo inventado */}
       <Escena T={T} a={K.G} b={K.Pi} zoom={0.04}>
         <FondoOfrenda T={T} />
-        {svg(<Retrato id="g" T={T} x={390} y={klerp(-400, 860, cae)} s={1.02} rot={klerp(-14, -3, cae)} color={1} marca={kprog(T, K.G + 2.4, K.G + 3.0) * (0.75 + 0.25 * Math.sin(T * 8))} escaneo={T < K.G + 2.4 ? ((T - K.G) / 2.4) % 1 : null} />)}
+        {svg(<Retrato id="g" T={T} x={540} y={klerp(560, 880, cae)} s={1.55} rot={klerp(-10, -3, cae)} color={1} marca={kprog(T, K.G + 2.4, K.G + 3.0) * (0.75 + 0.25 * Math.sin(T * 8))} escaneo={T < K.G + 2.4 ? ((T - K.G) / 2.4) % 1 : null} />)}
       </Escena>
       {/* 2 · lo que pierde una foto vieja */}
       <Escena T={T} a={K.Pi} b={K.Ad}>
         <FondoOfrenda T={T} color={KC.yellow} />
-        {svg(<Retrato id="p" T={T} x={440} y={860} s={1.0} rot={-3} color={0} dano={kprog(T, K.Pi + 0.4, K.Pi + 3.0)} hueco={kprog(T, K.Pi + 2.6, K.Pi + 3.2)} />)}
+        {svg(<Retrato id="p" T={T} x={380} y={900} s={1.4} rot={-3} color={0} dano={kprog(T, K.Pi + 0.4, K.Pi + 3.0)} hueco={kprog(T, K.Pi + 2.6, K.Pi + 3.2)} />)}
       </Escena>
       {/* 3 · lo borrado ya no está: la IA lo adivina (oscuro: por dentro de la máquina) */}
       <Escena T={T} a={K.Ad} b={K.Ap}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {svg(<>
-          <Retrato id="a" T={T} x={540} y={850} s={1.0} dano={1 - kprog(T, K.Ad + 2.6, K.Ad + 4.0)} hueco={1} relleno={kprog(T, K.Ad + 2.6, K.Ad + 4.0)} marca={kprog(T, K.Ad + 2.6, K.Ad + 3.2)} escaneo={T < K.Ad + 2.5 ? ((T - K.Ad) / 1.2) % 1 : null} />
-          {T < K.Ad + 2.7 && <text x={640} y={1000} textAnchor="middle" style={{ font:`400 170px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.Ad + 0.6, K.Ad + 1.0) * (0.6 + 0.4 * Math.sin(T * 9))}>?</text>}
+          <Retrato id="a" T={T} x={540} y={930} s={1.5} dano={1 - kprog(T, K.Ad + 2.6, K.Ad + 4.0)} hueco={1} relleno={kprog(T, K.Ad + 2.6, K.Ad + 4.0)} marca={kprog(T, K.Ad + 2.6, K.Ad + 3.2)} escaneo={T < K.Ad + 2.5 ? ((T - K.Ad) / 1.2) % 1 : null} />
+          {T < K.Ad + 2.7 && <text x={690} y={1180} textAnchor="middle" style={{ font:`400 250px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.Ad + 0.6, K.Ad + 1.0) * (0.6 + 0.4 * Math.sin(T * 9))}>?</text>}
         </>)}
       </Escena>
       {/* 4 · aprendió de muchísimas fotos */}
       <Escena T={T} a={K.Ap} b={K.Co}>
         <FondoCircuito T={T} color={KC.orange} />
         {svg(Array.from({ length: 18 }, (_, i) => { const at = K.Ap - 0.2 + i * 0.17, u = kprog(T, at, at + 1.1, kEase.suave); if (u <= 0 || u >= 1) return null;
-          return <g key={i} transform={`translate(${klerp(-120, 330, u)} ${klerp(560 + (i % 6) * 110, 860, u)})`} opacity={1 - u * 0.6}><CaraSimple x={0} y={0} s={0.32} piel={PIELES[(i * 5) % 12]} pelo={PELOS[(i * 7) % 12]} peinado={i % 3} fondo={[KC.cyan, KC.pink, KC.yellow, KC.mint][i % 4]} /></g>; }))}
-        <RedNeuronal T={T} x={330} y={620} ancho={420} alto={480} onda={((T - K.Ap) * 0.5) % 1} />
-        {svg(<g opacity={kprog(T, K.Ap + 1.8, K.Ap + 2.3)}><Retrato id="ap" T={T} x={920} y={860} s={0.42} color={0.2} hueco={1} relleno={kprog(T, K.Ap + 2.2, K.Ap + 3.4)} marca={1} /></g>)}
+          return <g key={i} transform={`translate(${klerp(-120, 150, u)} ${klerp(560 + (i % 6) * 150, 940, u)})`} opacity={1 - u * 0.6}><CaraSimple x={0} y={0} s={0.45} piel={PIELES[(i * 5) % 12]} pelo={PELOS[(i * 7) % 12]} peinado={i % 3} fondo={[KC.cyan, KC.pink, KC.yellow, KC.mint][i % 4]} /></g>; }))}
+        <RedNeuronal T={T} x={150} y={560} ancho={580} alto={760} onda={((T - K.Ap) * 0.5) % 1} />
+        {svg(<g opacity={0.3 + 0.7 * kprog(T, K.Ap + 1.8, K.Ap + 2.3)}><Retrato id="ap" T={T} x={905} y={940} s={0.58} color={0.2} hueco={1} relleno={kprog(T, K.Ap + 2.2, K.Ap + 3.4)} marca={1} /></g>)}
       </Escena>
       {/* 5 · color: la foto en blanco y negro no guarda colores; la IA los elige */}
       <Escena T={T} a={K.Co} b={K.P}>
         <FondoOfrenda T={T} color={KC.mint} />
         {svg(<>
-          <Retrato id="c" T={T} x={650} y={790} s={0.98} gris={T < K.Co + 1.2 ? 1 : 0} color={kprog(T, K.Co + 1.2, K.Co + 3.2)} rebozo={rebozoElegido} />
-          {REBOZOS.map((col, i) => <circle key={i} cx={500 + i * 150} cy={1150} r={36 * kprog(T, K.Co + 1.0 + i * 0.6, K.Co + 1.3 + i * 0.6, kEase.rebote)} fill={col} stroke={ciclo === i ? KC.yellow : KC.ink} strokeWidth={ciclo === i ? 12 : 6} />)}
+          <Retrato id="c" T={T} x={540} y={860} s={1.5} gris={T < K.Co + 1.2 ? 1 : 0} color={kprog(T, K.Co + 1.2, K.Co + 3.2)} rebozo={rebozoElegido} />
+          {REBOZOS.map((col, i) => <circle key={i} cx={390 + i * 150} cy={1390} r={50 * kprog(T, K.Co + 1.0 + i * 0.6, K.Co + 1.3 + i * 0.6, kEase.rebote)} fill={col} stroke={ciclo === i ? KC.yellow : KC.ink} strokeWidth={ciclo === i ? 12 : 6} />)}
         </>)}
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<text x={290} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 900)`}>?</text>)}
+        {svg(<text x={215} y={800} textAnchor="middle" style={{ font:`400 420px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 215 650)`}>?</text>)}
       </Escena>
       {/* 7 · el estudio: PULSE inventa una cara nítida que encaje con la pixeleada */}
       <Escena T={T} a={K.E} b={K.Ob}>
         <FondoCircuito T={T} color={KC.cyan} />
         {svg(<>
-          <g opacity={kprog(T, K.E + 3.4, K.E + 3.8)}><Pixelado x={250} y={1000} tam={300} piel="#d8a07a" pelo="#5a3a1c" /></g>
-          <Flecha x1={430} y1={1000} x2={620} y2={1000} p={kprog(T, K.E + 4.0, K.E + 4.6)} />
-          <g opacity={kprog(T, K.E + 4.6, K.E + 5.2)}><CaraSimple x={820} y={1000} s={1.0} piel="#e2a67c" pelo="#5a3a1c" peinado={0} /><Chispas T={T} x={820} y={1000} o={kprog(T, K.E + 4.8, K.E + 5.3)} /></g>
+          {/* pase a mano: la foto pixeleada está desde que empieza la escena (atenuada hasta que la voz llega a ella) y el hueco de la cara que falta se ve punteado */}
+          <g opacity={1}><Pixelado x={300} y={900} tam={460} piel="#d8a07a" pelo="#5a3a1c" /></g>
+          <rect x={560} y={1130} width={420} height={420} rx={34} fill="none" stroke={KC.ink} strokeWidth={6} strokeDasharray="22 16" opacity={0.6 * (1 - kprog(T, K.E + 4.6, K.E + 5.2))} />
+          <g opacity={0.6 * (1 - kprog(T, K.E + 4.6, K.E + 5.2))}><circle cx={770} cy={1290} r={95} fill="#8fa3bd" /><path d="M 620 1530 Q 630 1400 770 1395 Q 910 1400 920 1530 Z" fill="#8fa3bd" /></g>
+          <Flecha x1={400} y1={1170} x2={525} y2={1320} p={kprog(T, K.E + 4.0, K.E + 4.6)} />
+          <g opacity={kprog(T, K.E + 4.6, K.E + 5.2)}><CaraSimple x={770} y={1340} s={1.4} piel="#e2a67c" pelo="#5a3a1c" peinado={0} /><g transform="translate(770 1340) scale(1.4)"><Chispas T={T} x={0} y={0} o={kprog(T, K.E + 4.8, K.E + 5.3)} /></g></g>
         </>)}
       </Escena>
       {/* 8 · Obama: la foto pixeleada → la cara de un hombre blanco (2020). Esquemático, sin retratar a nadie. */}
       <Escena T={T} a={K.Ob} b={K.Se}>
         <FondoCircuito T={T} color={KC.red} />
         {svg(<>
-          <Pixelado x={260} y={900} tam={320} piel="#7a4a30" pelo="#1d1410" fondo="#6f86a8" ropa="#1a2236" />
-          <Flecha x1={450} y1={900} x2={610} y2={900} p={kprog(T, K.Ob + 1.6, K.Ob + 2.2)} color={KC.red} />
-          <g opacity={kprog(T, K.Ob + 2.2, K.Ob + 2.8)}><CaraSimple x={820} y={900} s={1.0} piel="#f3cdb2" pelo="#7a4a22" ojos="#2f6dff" fondo="#9cc7d9" sonrisa={0.3} /></g>
+          <Pixelado x={300} y={900} tam={460} piel="#7a4a30" pelo="#1d1410" fondo="#6f86a8" ropa="#1a2236" />
+          <rect x={560} y={1130} width={420} height={420} rx={34} fill="none" stroke={KC.ink} strokeWidth={6} strokeDasharray="22 16" opacity={0.6 * (1 - kprog(T, K.Ob + 2.2, K.Ob + 2.8))} />
+          <Flecha x1={400} y1={1170} x2={525} y2={1320} p={kprog(T, K.Ob + 1.6, K.Ob + 2.2)} color={KC.red} />
+          <g opacity={kprog(T, K.Ob + 2.2, K.Ob + 2.8)}><CaraSimple x={770} y={1340} s={1.4} piel="#f3cdb2" pelo="#7a4a22" ojos="#2f6dff" fondo="#9cc7d9" sonrisa={0.3} /></g>
         </>)}
       </Escena>
       {/* 9 · se apoyaba en otra IA que generaba sobre todo caras blancas (unas 9 de 12 claras) */}
       <Escena T={T} a={K.Se} b={K.Da}>
         <FondoCircuito T={T} color={KC.lilac} />
-        {svg(PIELES.map((p, i) => { const at = K.Se + 0.6 + i * 0.22, e = kprog(T, at, at + 0.3, kEase.rebote); const c = i % 4, r = Math.floor(i / 4);
-          return e > 0 ? <g key={i} transform={`translate(${210 + c * 220} ${650 + r * 190}) scale(${e})`}><CaraSimple x={0} y={0} s={0.55} piel={p} pelo={PELOS[i]} peinado={i % 3} fondo={[KC.cyan, KC.pink, KC.yellow, KC.mint][(i + r) % 4]} /></g> : null; }))}
+        {svg(PIELES.map((p, i) => { const at = K.Se + 0.15 + i * 0.22, e = kprog(T, at, at + 0.3, kEase.rebote); const c = i % 4, r = Math.floor(i / 4);
+          return e > 0 ? <g key={i} transform={`translate(${192 + c * 232} ${700 + r * 250}) scale(${e})`}><CaraSimple x={0} y={0} s={0.72} piel={p} pelo={PELOS[i]} peinado={i % 3} fondo={[KC.cyan, KC.pink, KC.yellow, KC.mint][(i + r) % 4]} /></g> : null; }))}
       </Escena>
       {/* 10 · más daño, más relleno: muchas caras distintas dan la misma foto pixeleada (fig. 3 de PULSE) */}
       <Escena T={T} a={K.Da} b={K.Or}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {svg(<>
-          {[0, 1, 2, 3].map((i) => { const at = K.Da + 0.4 + i * 0.35, e = kprog(T, at, at + 0.35, kEase.rebote);
-            return <g key={i}><g transform={`translate(${390 + i * 190} 700) scale(${e})`}><CaraSimple x={0} y={0} s={0.52} piel={['#e2a67c', '#d8a07a', '#cf9670', '#e6ad84'][i]} pelo={['#5a3a1c', '#3a2a1c', '#7a4a22', '#4a2e18'][i]} peinado={i % 3} /></g>
-              <Flecha x1={390 + i * 190} y1={800} x2={klerp(390 + i * 190, 675, 0.75)} y2={930} p={kprog(T, K.Da + 2.0 + i * 0.15, K.Da + 2.5 + i * 0.15)} color={KC.cyan} /></g>; })}
-          <g opacity={kprog(T, K.Da + 2.6, K.Da + 3.0)}><Pixelado x={675} y={1060} tam={230} n={6} piel="#d8a07a" pelo="#4a2e18" /></g>
+          {[0, 1, 2, 3].map((i) => { const at = K.Da + 0.1 + i * 0.35, e = kprog(T, at, at + 0.35, kEase.rebote);
+            return <g key={i}><g transform={`translate(${187 + i * 235} 740) scale(${e})`}><CaraSimple x={0} y={0} s={0.68} piel={['#e2a67c', '#d8a07a', '#cf9670', '#e6ad84'][i]} pelo={['#5a3a1c', '#3a2a1c', '#7a4a22', '#4a2e18'][i]} peinado={i % 3} /></g>
+              <Flecha x1={187 + i * 235} y1={865} x2={klerp(187 + i * 235, 540, 0.75)} y2={1010} p={kprog(T, K.Da + 2.0 + i * 0.15, K.Da + 2.5 + i * 0.15)} color={KC.cyan} /></g>; })}
+          <g opacity={kprog(T, K.Da + 2.6, K.Da + 3.0)}><Pixelado x={540} y={1200} tam={340} n={6} piel="#d8a07a" pelo="#4a2e18" /></g>
         </>)}
       </Escena>
       {/* 11 · guarda también la original */}
       <Escena T={T} a={K.Or} b={K.C}>
         <FondoOfrenda T={T} color={KC.pink} />
         {svg(<>
-          <g transform={`translate(${klerp(-300, 0, kprog(T, K.Or, K.Or + 0.7, kEase.sale))} 0)`}><Retrato id="o1" T={T} x={290} y={880} s={0.6} rot={-4} dano={1} hueco={1} /></g>
-          <g transform={`translate(${klerp(300, 0, kprog(T, K.Or + 0.2, K.Or + 0.9, kEase.sale))} 0)`}><Retrato id="o2" T={T} x={790} y={900} s={0.6} rot={4} color={1} marca={0.6} /></g>
+          <g transform={`translate(${klerp(-300, 0, kprog(T, K.Or, K.Or + 0.7, kEase.sale))} 0)`}><Retrato id="o1" T={T} x={275} y={900} s={0.92} rot={-4} dano={1} hueco={1} /></g>
+          <g transform={`translate(${klerp(300, 0, kprog(T, K.Or + 0.2, K.Or + 0.9, kEase.sale))} 0)`}><Retrato id="o2" T={T} x={805} y={900} s={0.92} rot={4} color={1} marca={0.6} /></g>
         </>)}
       </Escena>
       {/* 12 · cierre: la misma foto del inicio, con lo inventado marcado */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoOfrenda T={T} />
-        {svg(<Retrato id="cz" T={T} x={390} y={860} s={1.02} rot={-3} color={1} marca={kprog(T, K.C + 1.0, K.C + 1.8) * (0.75 + 0.25 * Math.sin(T * 8))} />)}
+        {svg(<Retrato id="cz" T={T} x={540} y={900} s={1.65} rot={-3} color={1} marca={kprog(T, K.C + 1.0, K.C + 1.8) * (0.75 + 0.25 * Math.sin(T * 8))} />)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 0.3} until={K.Pi - 0.3} texto="Especial Día de Muertos" x={300} y={420} tam={30} borde={KC.pink} />
-      <Etq T={T} at={K.G + 3.0} until={K.Pi - 0.3} x={40} y={1150} texto="inventado por la IA" tam={30} color={KC.cyan} />
-      <Etq T={T} at={K.Pi + 0.6} until={K.Ad - 0.3} x={700} y={820} texto="rayones" tam={38} />
-      <Etq T={T} at={K.Pi + 1.2} until={K.Ad - 0.3} x={700} y={890} texto="manchas" tam={38} />
-      <Etq T={T} at={K.Pi + 1.8} until={K.Ad - 0.3} x={700} y={960} texto="polvo" tam={38} />
-      <Etq T={T} at={K.Pi + 2.4} until={K.Ad - 0.3} x={700} y={1030} texto="grano" tam={38} />
-      <Chip T={T} at={K.Ad + 0.3} until={K.Ap - 0.3} texto="lo borrado ya no está" y={470} tam={42} borde={KC.yellow} />
-      <Etq T={T} at={K.Ad + 3.2} until={K.Ap - 0.3} x={760} y={1150} texto="adivinado" tam={32} color={KC.cyan} />
-      <Chip T={T} at={K.Ap + 0.2} until={K.Co - 0.3} texto="aprende de muchísimas fotos" y={470} tam={40} borde={KC.orange} />
-      <Etq T={T} at={K.Ap + 2.4} until={K.Co - 0.3} x={1040} y={1130} texto="lo más probable" lado="izq" tam={28} color={KC.yellow} />
-      <Chip T={T} at={K.Co + 0.2} until={K.P - 0.3} texto="blanco y negro: sin color" x={650} y={420} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.Co + 1.2} until={K.P - 0.3} x={420} y={1150} texto="¿cuál?" lado="izq" tam={30} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 2.3} until={K.Ob - 0.3} anio="2020" quien="Universidad Duke · PULSE" revista="presentado en CVPR 2020" y={600} />
-      <Etq T={T} at={K.E + 3.6} until={K.Ob - 0.3} x={110} y={820} texto="foto pixeleada" tam={28} />
-      <Etq T={T} at={K.E + 5.0} until={K.Ob - 0.3} x={1040} y={820} texto="cara inventada" lado="izq" tam={28} color={KC.yellow} />
-      <Etq T={T} at={K.Ob + 0.4} until={K.Se - 0.3} x={110} y={700} texto="foto pixeleada de Obama" tam={28} />
-      <Etq T={T} at={K.Ob + 2.6} until={K.Se - 0.3} x={1040} y={1065} texto="cara inventada" lado="izq" tam={28} color={KC.yellow} />
-      <Chip T={T} at={K.Ob + 3.0} until={K.Se - 0.3} texto="2020: le devolvió un hombre blanco" y={1140} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.Se + 0.2} until={K.Da - 0.3} texto="la IA de apoyo (StyleGAN)" y={470} tam={38} borde={KC.lilac} />
-      <Etq T={T} at={K.Se + 3.4} until={K.Da - 0.3} x={60} y={1170} texto="sobre todo: caras blancas" tam={32} color={KC.yellow} />
-      <Chip T={T} at={K.Da + 0.2} until={K.Or - 0.3} texto="menos información = más relleno" x={660} y={470} tam={34} borde={KC.cyan} />
-      <Etq T={T} at={K.Da + 3.0} until={K.Or - 0.3} x={545} y={1060} texto="la misma foto borrosa" lado="izq" tam={28} />
-      <Etq T={T} at={K.Or + 0.8} until={K.C - 0.3} x={120} y={1130} texto="original" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Or + 1.0} until={K.C - 0.3} x={990} y={1160} texto="restaurada (IA)" lado="izq" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Or + 1.8} until={K.C - 0.3} texto="guarda la original" y={420} x={420} tam={40} borde={KC.yellow} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="lo que la IA cree que era" x={420} y={420} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={K.G + 0.3} until={K.Pi - 0.3} texto="Especial Día de Muertos" x={540} y={300} tam={30} borde={KC.pink} />
+      <Etq T={T} at={K.G + 3.0} until={K.Pi - 0.3} x={560} y={1445} texto="inventado por la IA" tam={32} color={KC.cyan} />
+      <Etq T={T} at={K.Pi + 0.6} until={K.Ad - 0.3} x={755} y={790} texto="rayones" tam={40} />
+      <Etq T={T} at={K.Pi + 1.2} until={K.Ad - 0.3} x={755} y={870} texto="manchas" tam={40} />
+      <Etq T={T} at={K.Pi + 1.8} until={K.Ad - 0.3} x={755} y={950} texto="polvo" tam={40} />
+      <Etq T={T} at={K.Pi + 2.4} until={K.Ad - 0.3} x={755} y={1030} texto="grano" tam={40} />
+      <Chip T={T} at={K.Ad + 0.3} until={K.Ap - 0.3} texto="lo borrado ya no está" y={380} tam={42} borde={KC.yellow} />
+      <Etq T={T} at={K.Ad + 3.2} until={K.Ap - 0.3} x={640} y={1445} texto="adivinado" tam={34} color={KC.cyan} />
+      <Chip T={T} at={K.Ap + 0.2} until={K.Co - 0.3} texto="aprende de muchísimas fotos" y={400} tam={40} borde={KC.orange} />
+      <Etq T={T} at={K.Ap + 2.4} until={K.Co - 0.3} x={1040} y={1175} texto="lo más probable" lado="izq" tam={28} color={KC.yellow} />
+      <Chip T={T} at={K.Co + 0.2} until={K.P - 0.3} texto="blanco y negro: sin color" x={540} y={330} tam={36} borde={KC.ink} />
+      <Etq T={T} at={K.Co + 1.2} until={K.P - 0.3} x={300} y={1390} texto="¿cuál?" lado="izq" tam={30} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.3} until={K.Ob - 0.3} anio="2020" quien="Universidad Duke · PULSE" revista="presentado en CVPR 2020" x={540} y={420} />
+      <Etq T={T} at={K.E + 3.6} until={K.Ob - 0.3} x={560} y={800} texto="foto pixeleada" tam={30} />
+      <Etq T={T} at={K.E + 5.0} until={K.Ob - 0.3} x={540} y={1480} texto="cara inventada" lado="izq" tam={30} color={KC.yellow} />
+      <Etq T={T} at={K.Ob + 0.4} until={K.Se - 0.3} x={560} y={800} texto="foto pixeleada de Obama" tam={30} />
+      <Etq T={T} at={K.Ob + 2.6} until={K.Se - 0.3} x={540} y={1480} texto="cara inventada" lado="izq" tam={30} color={KC.yellow} />
+      <Chip T={T} at={K.Ob + 3.0} until={K.Se - 0.3} texto="2020: le devolvió un hombre blanco" y={340} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.Se + 0.2} until={K.Da - 0.3} texto="la IA de apoyo (StyleGAN)" y={420} tam={38} borde={KC.lilac} />
+      <Etq T={T} at={K.Se + 3.4} until={K.Da - 0.3} x={60} y={1445} texto="sobre todo: caras blancas" tam={36} color={KC.yellow} />
+      <Chip T={T} at={K.Da + 0.2} until={K.Or - 0.3} texto="menos información = más relleno" x={540} y={470} tam={34} borde={KC.cyan} />
+      <Etq T={T} at={K.Da + 3.0} until={K.Or - 0.3} x={330} y={1470} texto="la misma foto borrosa" tam={30} />
+      <Etq T={T} at={K.Or + 0.8} until={K.C - 0.3} x={70} y={1250} texto="original" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Or + 1.0} until={K.C - 0.3} x={1010} y={1250} texto="restaurada (IA)" lado="izq" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Or + 1.8} until={K.C - 0.3} texto="guarda la original" y={480} x={540} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="lo que la IA cree que era" x={540} y={300} tam={36} borde={KC.cyan} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Pi - 0.1} texto="Una parte no es real: *la inventó.*" />

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #59 · ¿Por qué NO barrer ni aspirar el mercurio de un termómetro roto? — NARRADO (N1 por dentro + medidor).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const HG = '#c9d1db', HG_OSC = '#6f7b88', VAPOR = 'rgba(200,225,255,.55)', GUANTE = '#3f7bff', CARTON = '#c8955a';
@@ -20,12 +21,12 @@ function Gota({ x, y, r = 20, o = 1 }) {
   </g>;
 }
 // Piso de losetas (vista desde arriba).
-function Piso({ color = KC.yellow, claro = '#fff3a6', paso = 180 }) {
+function Piso({ color = '#3a310f', claro = '#4d4218', paso = 180 }) {
   const out = [];
   for (let r = 0; r < Math.ceil(KH / paso); r++) for (let c = 0; c < Math.ceil(KW / paso) + 1; c++) if ((r + c) % 2) out.push(<rect key={`${r}-${c}`} x={c * paso} y={r * paso} width={paso} height={paso} fill={claro} />);
   return <g><rect width={KW} height={KH} fill={color} />{out}
-    {Array.from({ length: Math.ceil(KW / paso) + 1 }, (_, i) => <line key={'v' + i} x1={i * paso} x2={i * paso} y1={0} y2={KH} stroke="rgba(0,0,0,.12)" strokeWidth={4} />)}
-    {Array.from({ length: Math.ceil(KH / paso) + 1 }, (_, i) => <line key={'h' + i} y1={i * paso} y2={i * paso} x1={0} x2={KW} stroke="rgba(0,0,0,.12)" strokeWidth={4} />)}</g>;
+    {Array.from({ length: Math.ceil(KW / paso) + 1 }, (_, i) => <line key={'v' + i} x1={i * paso} x2={i * paso} y1={0} y2={KH} stroke="rgba(0,0,0,.35)" strokeWidth={4} />)}
+    {Array.from({ length: Math.ceil(KH / paso) + 1 }, (_, i) => <line key={'h' + i} y1={i * paso} y2={i * paso} x1={0} x2={KW} stroke="rgba(0,0,0,.35)" strokeWidth={4} />)}</g>;
 }
 // Termómetro clínico de vidrio. roto 0..1 separa las dos mitades.
 function TermoHg({ x, y, s = 1, rot = 0, roto = 0 }) {
@@ -147,7 +148,7 @@ function Reloj({ T, x, y, r = 90, vel = 720, texto }) {
     <line x1={0} y1={0} x2={0} y2={-r * 0.7} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" transform={`rotate(${a})`} />
     <line x1={0} y1={0} x2={0} y2={-r * 0.45} stroke={KC.red} strokeWidth={10} strokeLinecap="round" transform={`rotate(${a / 12})`} />
     <circle r={9} fill={KC.ink} />
-    {texto && <text y={r + 62} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink} stroke="#fff" strokeWidth={3} paintOrder="stroke">{texto}</text>}
+    {texto && <text y={r + 62} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink} stroke="#0b1020" strokeWidth={6} paintOrder="stroke">{texto}</text>}
   </g>;
 }
 // Bolsa con cierre hermético, con las gotas adentro y etiqueta.
@@ -171,13 +172,13 @@ function Mercurio() {
   const cae = kprog(T, K.G - 0.3, K.G + 0.3, kEase.entra || ((p) => p * p));
   const roto = kprog(T, K.G + 0.32, K.G + 0.7, kEase.sale);
   const R = krng(11);
-  const gotas = Array.from({ length: 9 }, (_, i) => [300 + R() * 520, 860 + R() * 300, 12 + R() * 22, i * 0.07]);
+  const gotas = Array.from({ length: 9 }, (_, i) => [250 + R() * 620, 800 + R() * 420, 20 + R() * 32, i * 0.07]);
   const salen = (i) => kprog(T, K.G + 0.4 + gotas[i][3], K.G + 1.4 + gotas[i][3], kEase.sale);
   const X0 = 360, Y0 = 1010;                     // de donde salen (bulbo)
   // escoba
   const barre = kprog(T, K.E + 0.4, K.E + 1.6, kEase.suave);
   const R2 = krng(4);
-  const gotitas = Array.from({ length: 22 }, () => [(R2() - 0.5) * 520, (R2() - 0.5) * 300, 6 + R2() * 7]);
+  const gotitas = Array.from({ length: 22 }, () => [(R2() - 0.5) * 720, (R2() - 0.5) * 460, 11 + R2() * 12]);
   // aspiradora
   const succion = kprog(T, K.A + 0.3, K.A + 1.4);
   const calor = kprog(T, K.A + 1.0, K.A + 2.2);
@@ -186,7 +187,7 @@ function Mercurio() {
   const PS = [K.H + 1.9, K.H + 3.6, K.H + 4.6, K.H + 5.6, K.H + 7.5];
   const paso = PS.filter((t) => T >= t).length;
   const R3 = krng(7);
-  const gotasCuarto = Array.from({ length: 8 }, () => [470 + R3() * 220, 860 + R3() * 150, 10 + R3() * 10]);
+  const gotasCuarto = Array.from({ length: 8 }, () => [420 + R3() * 320, 740 + R3() * 220, 18 + R3() * 14]);
   const junta = kprog(T, PS[3], PS[3] + 1.5, kEase.suave);
 
   return (
@@ -195,32 +196,32 @@ function Mercurio() {
       <Escena T={T} a={K.G} b={K.Q} zoom={0.05}>
         <SvgCapa><HgDefs /><Piso />
           {gotas.map(([x, y, r], i) => <Gota key={i} x={klerp(X0, x, salen(i))} y={klerp(Y0, y, salen(i))} r={r * kprog(T, K.G + 0.35, K.G + 0.6)} />)}
-          <TermoHg x={540} y={klerp(-300, 1010, cae)} rot={klerp(-40, -8, cae)} roto={roto} />
+          <TermoHg x={550} y={klerp(-300, 1010, cae)} s={1.12} rot={klerp(-40, -8, cae)} roto={roto} />
           <g opacity={kprog(T, K.G + 1.8, K.G + 2.2)} transform={`translate(${klerp(-200, 0, kprog(T, K.G + 1.8, K.G + 2.3, kEase.sale))} 0)`}>
-            <Escoba x={230} y={640} s={0.85} rot={-20} /><SenalNo x={230} y={560} r={150} o={kprog(T, K.G + 2.4, K.G + 2.8, kEase.sale)} /></g>
+            <Escoba x={250} y={620} s={1.05} rot={-20} /><SenalNo x={250} y={520} r={185} o={kprog(T, K.G + 2.4, K.G + 2.8, kEase.sale)} /></g>
           <g opacity={kprog(T, K.G + 2.8, K.G + 3.2)} transform={`translate(${klerp(300, 0, kprog(T, K.G + 2.8, K.G + 3.3, kEase.sale))} 0)`}>
-            <Aspiradora T={T} x={760} y={1580} s={0.75} /><SenalNo x={720} y={1560} r={170} o={kprog(T, K.G + 3.4, K.G + 3.8, kEase.sale)} /></g>
+            <Aspiradora T={T} x={770} y={1440} s={0.85} /><SenalNo x={725} y={1420} r={200} o={kprog(T, K.G + 3.4, K.G + 3.8, kEase.sale)} /></g>
         </SvgCapa>
       </Escena>
       {/* 1 · qué es: por dentro de una gota */}
       <Escena T={T} a={K.Q} b={K.P} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa><HgDefs />
-          <clipPath id="clipGota"><circle cx={540} cy={1020} r={300} /></clipPath>
-          <circle cx={540} cy={1020} r={300} fill="url(#hgGrad)" stroke={KC.texto} strokeWidth={8} />
+          <clipPath id="clipGota"><circle cx={540} cy={950} r={370} /></clipPath>
+          <circle cx={540} cy={950} r={370} fill="url(#hgGrad)" stroke={KC.texto} strokeWidth={8} />
           <g clipPath="url(#clipGota)" opacity={kprog(T, K.Q + 0.4, K.Q + 1.2)}>
-            {Array.from({ length: 15 }, (_, r) => Array.from({ length: 15 }, (_, c) => { const x = 220 + c * 46 + (r % 2) * 23, y = 720 + r * 40;
+            {Array.from({ length: 20 }, (_, r) => Array.from({ length: 18 }, (_, c) => { const x = 150 + c * 46 + (r % 2) * 23, y = 570 + r * 40;
               return <circle key={`${r}-${c}`} cx={x + Math.sin(T * 6 + r + c) * 2} cy={y + Math.cos(T * 5 + r * c) * 2} r={19} fill="#aab4c0" stroke="#4f5964" strokeWidth={3} />; }))}
           </g>
-          <Vapor T={T} x={540} y={720} w={460} h={520} n={34} seed={5} vel={110} o={kprog(T, K.Q + 1.6, K.Q + 2.4)} r={12} color="rgba(190,215,240,.5)" />
-          <text x={540} y={1400} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="rgba(246,243,236,.7)">POR DENTRO · átomos de mercurio</text>
+          <Vapor T={T} x={540} y={600} w={560} h={440} n={34} seed={5} vel={110} o={kprog(T, K.Q + 1.6, K.Q + 2.4)} r={12} color="rgba(190,215,240,.5)" />
+          <text x={540} y={1395} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="rgba(246,243,236,.7)">POR DENTRO · átomos de mercurio</text>
         </SvgCapa>
       </Escena>
       {/* 2 · pulmón */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa><HgDefs />
-          <g transform="translate(300 860)">
+          <g transform="translate(300 860) scale(1.2)">
             <path d="M -120 -260 Q -150 -420 0 -440 Q 150 -440 150 -300 L 180 -250 L 150 -230 L 150 -170 Q 120 -140 60 -150 L 60 -90 L 230 -40 L 230 420 L -230 420 L -230 -40 L -60 -90 L -60 -150 Q -120 -170 -120 -260 Z" fill="#f1b48f" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
             <path d="M -20 -40 Q -170 0 -160 220 Q -140 300 -40 260 Q -20 120 -20 -40 Z" fill="#ff8fa3" stroke={KC.ink} strokeWidth={7} />
             <path d="M 20 -40 Q 170 0 160 220 Q 140 300 40 260 Q 20 120 20 -40 Z" fill="#ff8fa3" stroke={KC.ink} strokeWidth={7} />
@@ -228,26 +229,28 @@ function Mercurio() {
           </g>
           {Array.from({ length: 18 }, (_, i) => { const t0 = K.P + 0.2 + i * 0.22, u = kprog(T, t0, t0 + 1.6);
             if (u <= 0 || u >= 1) return null;
-            const pts = [[1000, 600], [460, 650], [300, 750], [300 + ((i % 2) ? 80 : -80), 1020]];
+            const pts = [[1040, 560], [500, 612], [300, 720], [300 + ((i % 2) ? 96 : -96), 1050]];
             const seg = Math.min(2, Math.floor(u * 3)), f = u * 3 - seg, [ax, ay] = pts[seg], [bx, by] = pts[seg + 1];
             return <circle key={i} cx={klerp(ax, bx, f)} cy={klerp(ay, by, f)} r={10} fill="rgba(200,225,255,.85)" />; })}
-          <g opacity={kprog(T, K.P + 1.6, K.P + 2.2)}>
-            <line x1={380} y1={1020} x2={640} y2={950} stroke={KC.texto} strokeWidth={4} strokeDasharray="10 8" />
+          <g opacity={klerp(0.28, 1, kprog(T, K.P + 1.6, K.P + 2.2))}>
+            <line x1={396} y1={1050} x2={612} y2={965} stroke={KC.texto} strokeWidth={4} strokeDasharray="10 8" />
+            <g transform="translate(825 930) scale(1.16) translate(-800 -940)">
             <circle cx={800} cy={940} r={190} fill="#ffc2cc" stroke={KC.texto} strokeWidth={8} />
             <path d="M 640 1020 Q 800 1090 960 1020 L 960 1100 Q 800 1150 640 1100 Z" fill="#d7263d" stroke={KC.ink} strokeWidth={5} />
             {Array.from({ length: 8 }, (_, i) => { const t0 = K.P + 2.2 + i * 0.3, u = kprog(T, t0, t0 + 1.2); if (u <= 0) return null;
               return <circle key={i} cx={700 + i * 28} cy={klerp(840, 1070, u)} r={10} fill={mixHex('#c8e1ff', '#ffe0e0', u)} stroke={u > 0.8 ? KC.ink : 'none'} strokeWidth={2} />; })}
-            <text x={800} y={830} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>pulmón</text>
+            <text x={800} y={832} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill="#0b1020">pulmón</text>
             <text x={800} y={1085} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill="#fff">sangre</text>
+            </g>
           </g>
         </SvgCapa>
       </Escena>
       {/* 3 · la escoba */}
       <Escena T={T} a={K.E} b={K.A} zoom={0.04}>
         <SvgCapa><HgDefs /><Piso />
-          {barre < 0.5 ? <Gota x={540} y={950} r={60} /> : gotitas.map(([dx, dy, r], i) => <Gota key={i} x={540 + dx * kprog(T, K.E + 1.0, K.E + 1.8, kEase.sale)} y={950 + dy * kprog(T, K.E + 1.0, K.E + 1.8, kEase.sale)} r={r} />)}
-          <Escoba x={klerp(1100, 100, barre)} y={1060} s={1} rot={-70 + Math.sin(T * 10) * 6} />
-          {T > K.E + 2.0 && gotitas.map(([dx, dy], i) => <path key={i} d={`M ${540 + dx} ${950 + dy - 20} l 0 ${-30 - ((T * 60 + i * 13) % 40)}`} stroke="rgba(60,90,140,.6)" strokeWidth={4} strokeLinecap="round" opacity={kprog(T, K.E + 2.0, K.E + 2.4)} />)}
+          {barre < 0.5 ? <Gota x={540} y={950} r={120} /> : gotitas.map(([dx, dy, r], i) => <Gota key={i} x={540 + dx * kprog(T, K.E + 1.0, K.E + 1.8, kEase.sale)} y={950 + dy * kprog(T, K.E + 1.0, K.E + 1.8, kEase.sale)} r={r} />)}
+          <Escoba x={klerp(1180, 70, barre)} y={1090} s={1.5} rot={-70 + Math.sin(T * 10) * 6} />
+          {T > K.E + 2.0 && gotitas.map(([dx, dy], i) => <path key={i} d={`M ${540 + dx} ${950 + dy - 30} l 0 ${-40 - ((T * 60 + i * 13) % 50)}`} stroke="rgba(200,225,255,.7)" strokeWidth={5} strokeLinecap="round" opacity={kprog(T, K.E + 2.0, K.E + 2.4)} />)}
         </SvgCapa>
       </Escena>
       {/* 4 · la aspiradora (en corte) */}
@@ -255,10 +258,10 @@ function Mercurio() {
         <FondoLunares color={KC.cyan} />
         <SvgCapa><HgDefs />
           {Array.from({ length: 6 }, (_, i) => { const u = kprog(T, K.A + 0.3 + i * 0.12, K.A + 1.2 + i * 0.12); if (u >= 1) return null;
-            return <Gota key={i} x={klerp(250 + i * 20, 230, u)} y={klerp(1210, 1130, u)} r={14 * (1 - u * 0.5)} />; })}
-          <Aspiradora T={T} x={620} y={980} s={1.25} calor={calor} corte={kprog(T, K.A + 0.6, K.A + 1.0)} gris={kprog(T, K.A + 3.0, K.A + 3.8) * 0.6} />
-          <Vapor T={T} x={980} y={900} w={160} h={520} n={30} seed={9} vel={160} o={avienta} r={12} color="rgba(255,255,255,.75)" />
-          {calor > 0.3 && <text x={710} y={790} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.orange} stroke={KC.ink} strokeWidth={4} paintOrder="stroke" opacity={calor}>CALOR</text>}
+            return <Gota key={i} x={klerp(190 + i * 26, 160, u)} y={klerp(1262, 1215, u)} r={20 * (1 - u * 0.5)} />; })}
+          <Aspiradora T={T} x={650} y={1000} s={1.45} calor={calor} corte={kprog(T, K.A + 0.6, K.A + 1.0)} gris={kprog(T, K.A + 3.0, K.A + 3.8) * 0.6} />
+          <Vapor T={T} x={985} y={930} w={160} h={560} n={30} seed={9} vel={160} o={avienta} r={12} color="rgba(255,255,255,.75)" />
+          {calor > 0.3 && <text x={751} y={745} textAnchor="middle" style={{ font:`400 84px ${KF.titulo}` }} fill={KC.orange} stroke={KC.ink} strokeWidth={4} paintOrder="stroke" opacity={calor}>CALOR</text>}
         </SvgCapa>
       </Escena>
       {/* 5 · pregunta */}
@@ -271,25 +274,25 @@ function Mercurio() {
       </Escena>
       {/* 6a · 2004: la familia aspira el mercurio */}
       <Escena T={T} a={K.Es} b={GAR} zoom={0.04}>
-        <SvgCapa><HgDefs /><Piso color={KC.lilac} claro="#cdb6ff" />
-          {Array.from({ length: 6 }, (_, i) => { const u = kprog(T, K.Es + 1.5 + i * 0.3, K.Es + 2.2 + i * 0.3); return u < 1 ? <Gota key={i} x={klerp(180 + i * 50, 180, u)} y={klerp(1150 + (i % 2) * 40, 1170, u)} r={16} /> : null; })}
-          <Aspiradora T={T} x={640} y={1000} s={1} />
+        <SvgCapa><HgDefs /><Piso color="#2a2150" claro="#372c66" />
+          {Array.from({ length: 6 }, (_, i) => { const u = kprog(T, K.Es + 1.5 + i * 0.3, K.Es + 2.2 + i * 0.3); return u < 1 ? <Gota key={i} x={klerp(190 + i * 62, 185, u)} y={klerp(1300 + (i % 2) * 50, 1320, u)} r={24} /> : null; })}
+          <Aspiradora T={T} x={670} y={1090} s={1.4} />
         </SvgCapa>
       </Escena>
       {/* 6b · un mes después, en el garaje */}
       <Escena T={T} a={GAR} b={K.H} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:'#9fb3c8' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'#18222e' }}></div>
         <SvgCapa><HgDefs />
-          {Array.from({ length: 6 }, (_, i) => <rect key={i} x={0} y={380 + i * 130} width={KW} height={8} fill="rgba(0,0,0,.08)" />)}
-          <rect x={0} y={1180} width={KW} height={KH - 1180} fill="#6f7f90" />
+          {Array.from({ length: 6 }, (_, i) => <rect key={i} x={0} y={380 + i * 130} width={KW} height={8} fill="rgba(255,255,255,.05)" />)}
+          <rect x={0} y={1180} width={KW} height={KH - 1180} fill="#0d131b" />
           {Array.from({ length: 26 }, (_, i) => { const R4 = krng(i + 30); return <path key={i} d="M 0 -14 L 4 0 L 0 14 L -4 0 Z M -14 0 L 0 4 L 14 0 L 0 -4 Z" transform={`translate(${R4() * KW} ${360 + R4() * 820}) scale(${0.8 + R4()})`} fill="#ffffff" opacity={0.7} />; })}
           {(() => { const tira = kprog(T, K.Es + 10.2, K.Es + 11.6, kEase.entra || ((p) => p * p));
             return <g>
-              <g transform={`translate(${klerp(0, 260, tira)} ${klerp(0, 260, tira)}) rotate(${tira * 20} 560 1050)`}>
-                <Aspiradora T={T} x={560} y={1050} s={1} gris={0.4} />
-                <Vapor T={T} x={560} y={930} w={360} h={420} n={26} seed={12} vel={60} o={kprog(T, K.Es + 5.6, K.Es + 6.4) * (1 - tira)} r={11} color="rgba(255,255,255,.8)" />
+              <g transform={`translate(${klerp(0, 250, tira)} ${klerp(0, 270, tira)}) rotate(${tira * 20} 600 985)`}>
+                <Aspiradora T={T} x={600} y={985} s={1.4} gris={0.4} />
+                <Vapor T={T} x={600} y={800} w={460} h={420} n={26} seed={12} vel={60} o={kprog(T, K.Es + 5.6, K.Es + 6.4) * (1 - tira)} r={11} color="rgba(255,255,255,.8)" />
               </g>
-              <Marca x={560} y={900} ok={false} s={1.1} o={kprog(T, K.Es + 9.8, K.Es + 10.2) * (1 - tira)} />
+              <Marca x={620} y={960} ok={false} s={1.5} o={kprog(T, K.Es + 9.8, K.Es + 10.2) * (1 - tira)} />
               <g opacity={kprog(T, K.Es + 9.9, K.Es + 10.3)}>
                 <path d="M 700 1380 L 1000 1380 L 970 1660 L 730 1660 Z" fill="#3d4a57" stroke={KC.ink} strokeWidth={8} />
                 <rect x={680} y={1350} width={340} height={40} rx={10} fill="#2d3640" stroke={KC.ink} strokeWidth={7} />
@@ -303,82 +306,82 @@ function Mercurio() {
       <Escena T={T} a={K.H} b={K.D} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <SvgCapa><HgDefs />
-          <rect x={70} y={420} width={940} height={760} rx={20} fill="#fff3a6" stroke={KC.ink} strokeWidth={12} />
+          <rect x={70} y={380} width={940} height={920} rx={20} fill="#2b2814" stroke={KC.ink} strokeWidth={12} />
           {/* puerta (izquierda) */}
-          <rect x={58} y={900} width={24} height={200} fill="#fff3a6" />
+          <rect x={58} y={900} width={24} height={200} fill="#2b2814" />
           <path d={`M 70 900 L ${70 + 180 * Math.cos(kprog(T, PS[0] - 0.4, PS[0]) * 1.2)} ${900 + 180 * Math.sin(kprog(T, PS[0] - 0.4, PS[0]) * 1.2)}`} stroke="#8a5a2b" strokeWidth={14} strokeLinecap="round" />
           {/* ventana (arriba) */}
           {(() => { const ab = kprog(T, PS[1], PS[1] + 0.5, kEase.sale); return <g>
-            <rect x={240} y={404} width={300} height={34} fill={mixHex('#8fd3ff', '#e9f8ff', ab)} stroke={KC.ink} strokeWidth={6} />
-            <rect x={240 + ab * 150} y={398} width={150} height={46} fill="#5aa9e6" stroke={KC.ink} strokeWidth={6} />
-            {ab > 0.5 && [0, 1, 2].map((k) => <path key={k} d={`M ${300 + k * 80} ${300 - ((T * 120 + k * 30) % 60)} q 20 30 0 60`} stroke="#fff" strokeWidth={8} fill="none" strokeLinecap="round" opacity={0.9} />)}
+            <rect x={240} y={364} width={300} height={34} fill={mixHex('#8fd3ff', '#e9f8ff', ab)} stroke={KC.ink} strokeWidth={6} />
+            <rect x={240 + ab * 150} y={358} width={150} height={46} fill="#5aa9e6" stroke={KC.ink} strokeWidth={6} />
+            {ab > 0.5 && [0, 1, 2].map((k) => <path key={k} d={`M ${300 + k * 80} ${262 - ((T * 120 + k * 30) % 60)} q 20 30 0 60`} stroke="#fff" strokeWidth={8} fill="none" strokeLinecap="round" opacity={0.9} />)}
           </g>; })()}
-          {gotasCuarto.map(([x, y, r], i) => <Gota key={i} x={klerp(x, 560 + (i % 3) * 18, junta)} y={klerp(y, 930 + Math.floor(i / 3) * 16, junta)} r={r * (1 - kprog(T, PS[3] + 1.6, PS[3] + 2.0) * 0.999)} />)}
+          {gotasCuarto.map(([x, y, r], i) => <Gota key={i} x={klerp(x, 560 + (i % 3) * 30, junta)} y={klerp(y, 880 + Math.floor(i / 3) * 26, junta)} r={r * (1 - kprog(T, PS[3] + 1.6, PS[3] + 2.0) * 0.999)} />)}
           {/* la familia sale sin pisar las gotas */}
           {[[0, 'a'], [0.25, 'n'], [0.45, 'p']].map(([d, q], i) => { const u = kprog(T, PS[0] + d, PS[0] + d + 1.3, kEase.suave); if (u >= 1) return null;
-            const x = klerp(820 - i * 40, 40, u), y = klerp(1080, 1000, u) + Math.abs(Math.sin(T * 9)) * -8;
-            return q === 'a' ? <Adulto key={i} x={x} y={y + 60} s={0.42} /> : q === 'n' ? <Nino key={i} x={x} y={y + 40} s={0.5} T={T} /> : <Perro key={i} x={x} y={y + 40} s={0.7} T={T} />; })}
+            const x = klerp(880 - i * 170, 40, u), y = klerp(1170, 1010, u) + Math.abs(Math.sin(T * 9)) * -8;
+            return q === 'a' ? <Adulto key={i} x={x} y={y + 60} s={0.64} /> : q === 'n' ? <Nino key={i} x={x} y={y + 40} s={0.74} T={T} /> : <Perro key={i} x={x} y={y + 40} s={1.05} T={T} />; })}
           {/* guantes, cartón y gotero */}
           {T > PS[2] && <g opacity={kprog(T, PS[2], PS[2] + 0.3) * (1 - kprog(T, PS[4] - 0.2, PS[4] + 0.2))}>
-            <g transform={`translate(${klerp(840, 700, junta)} 0)`}>
-              <rect x={-10} y={800} width={40} height={240} rx={6} fill={CARTON} stroke={KC.ink} strokeWidth={6} opacity={T > PS[3] ? 1 : 0} />
-              <Guante x={60} y={940} s={0.9} rot={90} />
+            <g transform={`translate(${klerp(800, 690, junta)} 0)`}>
+              <rect x={-10} y={740} width={50} height={330} rx={6} fill={CARTON} stroke={KC.ink} strokeWidth={6} opacity={T > PS[3] ? 1 : 0} />
+              <Guante x={95} y={905} s={1.3} rot={90} />
             </g>
-            {T > PS[3] + 1.0 && <g transform={`translate(565 ${klerp(760, 900, kprog(T, PS[3] + 1.0, PS[3] + 1.5))})`}><Gotero x={0} y={0} s={1} /><Guante x={0} y={-150} s={0.75} rot={0} /></g>}
+            {T > PS[3] + 1.0 && <g transform={`translate(590 ${klerp(700, 860, kprog(T, PS[3] + 1.0, PS[3] + 1.5))})`}><Gotero x={0} y={0} s={1.4} /><Guante x={0} y={-210} s={1.05} rot={0} /></g>}
           </g>}
-          {T > PS[4] && <g opacity={kprog(T, PS[4], PS[4] + 0.3)}><Reloj T={T} x={700} y={760} r={110} vel={2000} texto="≥ 24 h" /></g>}
+          {T > PS[4] && <g opacity={kprog(T, PS[4], PS[4] + 0.3)}><Reloj T={T} x={560} y={800} r={165} vel={2000} texto="≥ 24 h" /></g>}
         </SvgCapa>
-        <div style={{ position:'absolute', left:0, right:0, top:1600, display:'flex', justifyContent:'center', gap:22, zIndex:41 }}>
-          {[0, 1, 2, 3, 4].map((k) => <div key={k} style={{ width:46, height:46, borderRadius:23, border:`5px solid ${KC.ink}`, background: k < paso ? KC.yellow : 'rgba(255,255,255,.5)', display:'flex', alignItems:'center', justifyContent:'center', font:`900 28px ${KF.texto}`, color:KC.ink }}>{k < paso ? '✓' : k + 1}</div>)}
+        <div style={{ position:'absolute', left:0, right:0, top:1325, display:'flex', justifyContent:'center', gap:22, zIndex:41 }}>
+          {[0, 1, 2, 3, 4].map((k) => <div key={k} style={{ width:46, height:46, borderRadius:23, border:`5px solid ${KC.ink}`, background: k < paso ? KC.yellow : 'rgba(255,255,255,.12)', display:'flex', alignItems:'center', justifyContent:'center', font:`900 28px ${KF.texto}`, color: k < paso ? '#0b1020' : KC.ink }}>{k < paso ? '✓' : k + 1}</div>)}
         </div>
-        <div style={{ position:'absolute', left:0, right:0, top:1680, textAlign:'center', font:`700 30px ${KF.mono}`, color:KC.ink, zIndex:41 }}>Fuente: EPA (EE. UU.)</div>
+        <div style={{ position:'absolute', left:0, right:0, top:1500, textAlign:'center', font:`700 30px ${KF.mono}`, color:KC.ink, zIndex:41 }}>Fuente: EPA (EE. UU.)</div>
       </Escena>
       {/* 8 · el vapor se queda abajo */}
       <Escena T={T} a={K.D} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
-        <SvgCapa>
-          <rect x={0} y={1160} width={KW} height={KH - 1160} fill="#8a6a4a" />
-          <rect x={0} y={1160 - 150 * kprog(T, K.D + 0.6, K.D + 2.0)} width={KW} height={150 * kprog(T, K.D + 0.6, K.D + 2.0)} fill="rgba(255,255,255,.5)" />
-          <Vapor T={T} x={760} y={500} w={640} h={640} n={40} seed={14} vel={140} o={1} r={11} color="rgba(255,255,255,.9)" dir={1} />
-          <Adulto x={650} y={1160} s={1} color={KC.blue} />
-          <Nino x={860} y={1160} s={0.9} T={T} />
+        <SvgCapa><g transform="translate(0 190)">
+          <rect x={0} y={1160} width={KW} height={KH - 1160} fill="#241c17" />
+          <rect x={0} y={1160 - 150 * kprog(T, K.D + 0.6, K.D + 2.0)} width={KW} height={150 * kprog(T, K.D + 0.6, K.D + 2.0)} fill="rgba(200,225,255,.26)" />
+          <Vapor T={T} x={600} y={420} w={860} h={720} n={46} seed={14} vel={140} o={1} r={11} color="rgba(255,255,255,.9)" dir={1} />
+          <Adulto x={400} y={1160} s={1.4} color={KC.blue} />
+          <Nino x={770} y={1160} s={1.3} T={T} />
           <line x1={0} y1={1010} x2={KW} y2={1010} stroke="#fff" strokeWidth={5} strokeDasharray="16 12" opacity={kprog(T, K.D + 1.6, K.D + 2.0)} />
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 9 · cierre: el piso del inicio, ya limpio y ventilado */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <SvgCapa><HgDefs /><Piso />
-          <rect x={160} y={300} width={460} height={90} fill="#e9f8ff" stroke={KC.ink} strokeWidth={9} />
-          <rect x={390} y={292} width={230} height={106} fill="#5aa9e6" stroke={KC.ink} strokeWidth={8} />
-          <Vapor T={T} x={390} y={760} w={260} h={460} n={26} seed={21} vel={170} o={1} r={13} color="rgba(255,138,31,.95)" />
-          <BolsaHg x={420} y={1000} s={1.1} />
-          <TermoHg x={820} y={860} s={0.45} rot={-20} roto={1} />
-          <g transform="translate(560 1530) scale(.55)"><Escoba x={-140} y={60} s={1} rot={-20} /><SenalNo x={-140} y={-40} r={170} /></g>
-          <g transform="translate(620 1530) scale(.5)"><Aspiradora T={T} x={300} y={0} s={1} manguera={false} /><SenalNo x={300} y={0} r={240} /></g>
+          <rect x={110} y={250} width={640} height={120} fill="#e9f8ff" stroke={KC.ink} strokeWidth={9} />
+          <rect x={430} y={240} width={320} height={140} fill="#5aa9e6" stroke={KC.ink} strokeWidth={8} />
+          <Vapor T={T} x={300} y={650} w={300} h={290} n={26} seed={21} vel={170} o={1} r={13} color="rgba(255,138,31,.95)" />
+          <BolsaHg x={430} y={890} s={1.75} />
+          <TermoHg x={900} y={860} s={0.5} rot={-70} roto={1} />
+          <g transform="translate(500 1390) scale(.62)"><Escoba x={-140} y={60} s={1} rot={-20} /><SenalNo x={-140} y={-40} r={170} /></g>
+          <g transform="translate(590 1390) scale(.56)"><Aspiradora T={T} x={300} y={0} s={1} manguera={false} /><SenalNo x={300} y={0} r={240} /></g>
         </SvgCapa>
       </Escena>
 
       {/* textos */}
       <Chip T={T} at={K.Q + 0.4} until={K.Q + 2.6} texto="Hg · mercurio: metal líquido" y={1480} tam={42} borde={HG} />
       <Chip T={T} at={K.Q + 2.8} until={K.P - 0.3} texto="gas sin color · sin olor" y={1480} tam={42} borde="#bfe8ff" />
-      <Chip T={T} at={K.Q + 1.2} until={K.P - 0.3} texto="ambiente: 20–25 °C" y={1590} tam={38} borde={KC.orange} />
+      <Chip T={T} at={K.Q + 1.2} until={K.P - 0.3} texto="ambiente: 20–25 °C" y={1548} tam={38} borde={KC.orange} />
       <Medidor T={T} at={K.P + 2.0} until={K.E - 0.3} valor={(t) => klerp(0, 0.85, kprog(t, K.P + 2.2, K.P + 3.6, kEase.sale))} etiqueta="vapor que absorbe un adulto" texto={(v) => v < 0.69 ? Math.round(v * 100) + ' %' : '69–85 %'} y={1440} color={KC.orange} />
       <Etq T={T} at={K.P + 2.6} until={K.E - 0.3} x={90} y={1560} texto="ATSDR 2024 · adultos" tam={30} color={KC.texto} />
       <Chip T={T} at={K.E + 2.0} until={K.A - 0.3} texto="gotitas chicas → más vapor" y={1500} tam={42} borde={KC.red} />
       <Chip T={T} at={K.A + 1.2} until={K.Pr - 0.2} texto="calienta · avienta al aire" y={1500} tam={42} borde={KC.orange} />
       <Chip T={T} at={K.A + 3.0} until={K.Pr - 0.2} texto="queda contaminada" y={1600} tam={36} borde={HG} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.9} anio="2004" quien="St. Louis, Michigan (EE. UU.)" revista="Depto. de Salud de Michigan · ATSDR" y={600} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.9} anio="2004" quien="St. Louis, Michigan (EE. UU.)" revista="Depto. de Salud de Michigan · ATSDR" y={470} />
       <Chip T={T} at={K.Es + 1.4} until={GAR - 0.2} texto="aspiraron el mercurio" y={1500} tam={42} borde={KC.red} />
       <Chip T={T} at={GAR + 0.3} until={K.H - 0.3} texto="ENE 2004 → 3 FEB 2004" x={760} y={470} tam={36} borde={KC.gold} mono />
       <Chip T={T} at={GAR + 1.3} until={K.H - 0.3} texto="garaje: −7 a −1 °C" x={760} y={570} tam={36} borde="#bfe8ff" />
       <Chip T={T} at={K.Es + 6.6} until={K.Es + 9.6} texto="2000 ng/m³ junto a la aspiradora" y={1500} tam={36} borde={KC.yellow} mono />
-      <Chip T={T} at={K.Es + 9.8} until={K.H - 0.3} texto="Salud de Michigan: inutilizarla y tirarla" y={1720} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.H + 0.2} until={PS[0] - 0.2} texto="sin pánico" y={1480} tam={46} borde={KC.gold} />
+      <Chip T={T} at={K.Es + 9.8} until={K.H - 0.3} texto="Salud de Michigan: inutilizarla y tirarla" y={1500} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.H + 0.2} until={PS[0] - 0.2} texto="sin pánico" y={1445} tam={46} borde={KC.gold} />
       {['que salgan todos (y las mascotas)', 'abre las ventanas', 'ponte guantes', 'cartón y gotero', 'ventila al menos 24 h'].map((t, k) =>
-        <Chip key={k} T={T} at={PS[k]} until={(PS[k + 1] || K.D) - 0.15} texto={`${k + 1} · ${t}`} y={1480} tam={k === 0 ? 36 : 42} borde={KC.blue} />)}
+        <Chip key={k} T={T} at={PS[k]} until={(PS[k + 1] || K.D) - 0.15} texto={`${k + 1} · ${t}`} y={1445} tam={k === 0 ? 36 : 42} borde={KC.blue} />)}
       <Chip T={T} at={K.D + 1.6} until={K.Ci - 0.2} texto="↓ más pesado que el aire" y={1500} tam={42} borde="#bfe8ff" />
-      <Etq T={T} at={K.D + 2.2} until={K.Ci - 0.2} x={1060} y={985} texto="nariz del niño" lado="izq" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Ci + 0.6} until={K.Ou} texto="bolsa hermética · nunca de vidrio" y={1720} tam={34} borde={KC.blue} />
+      <Etq T={T} at={K.D + 2.2} until={K.Ci - 0.2} x={1060} y={1175} texto="nariz del niño" lado="izq" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Ci + 0.6} until={K.Ou} texto="bolsa hermética · nunca de vidrio" y={1545} tam={34} borde={KC.blue} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Q - 0.1} texto="¿Por qué *NO barrer ni aspirar?*" />

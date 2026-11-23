@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Químico #01 · El agar, la "gelatina" de la microbiología — NARRADA (N3 "Capítulos y medidores") y MUDO (M2 "¿Por qué NO…?").
 // Guion y fuentes: guion.md. El dibujo es esquemático (las cadenas y hélices no están a escala).
 const AVS = (n) => 'assets/stickers/' + n + '.png';
@@ -22,8 +23,8 @@ function AlgaRoja({ T, x, y, s = 1, seed = 1 }) {
 function Bacilo({ x, y, rot = 0, s = 1, color = KC.mint, T = 0, come = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot + mece(T, x, 0.4) * 6}) scale(${s})`}>
     <rect x={-46} y={-20} width={92} height={40} rx={20} fill={color} stroke={KC.ink} strokeWidth={5} />
-    <circle cx={-14} cy={-4} r={5} fill={KC.ink} /><circle cx={10} cy={-4} r={5} fill={KC.ink} />
-    {come > 0 ? <path d={`M -10 8 Q 0 ${8 + 10 * Math.abs(Math.sin(T * 10))} 10 8`} fill="none" stroke={KC.ink} strokeWidth={4} /> : <path d="M -8 10 L 8 10" stroke={KC.ink} strokeWidth={4} />}
+    <circle cx={-14} cy={-4} r={5} fill={"#0b1020"} /><circle cx={10} cy={-4} r={5} fill={"#0b1020"} />
+    {come > 0 ? <path d={`M -10 8 Q 0 ${8 + 10 * Math.abs(Math.sin(T * 10))} 10 8`} fill="none" stroke={"#0b1020"} strokeWidth={4} /> : <path d="M -8 10 L 8 10" stroke={"#0b1020"} strokeWidth={4} />}
     <path d="M 46 0 q 20 -10 34 6" fill="none" stroke={KC.ink} strokeWidth={4} />
   </g>;
 }
@@ -79,125 +80,143 @@ function AgarNarrado() {
   const tempT = T < K.Tp + 2.8 ? klerp(20, 100, kprog(T, K.Tp + 0.2, K.Tp + 2.8)) : klerp(100, 20, kprog(T, K.Tp + 2.9, K.Tp + 5.6));
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
-      {/* 0 · gancho: la placa tiembla como gelatina */}
+      {/* 0 · gancho: la placa, en primer plano, tiembla como gelatina; las algas asoman detrás (hacia allá va la historia) */}
       <Escena T={T} a={K.G} b={K.Al} fondo={KC.yellow}>
-        <div style={fondoPuntos(KC.yellow)}></div>
+        <FondoMarca color={KC.yellow} T={T} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g transform={`translate(520 1000) scale(${1 + 0.04 * tembla(K.G + 0.05)}, ${1 - 0.04 * tembla(K.G + 0.05)})`}>
-            <PlacaPetri x={0} y={0} r={320} agar={AGAR} id="pg"><Colonias g={kprog(T, K.G + 2.2, K.G + 4.5)} n={16} /></PlacaPetri>
+          <g opacity={0.6 * kprog(T, K.G + 1.5, K.G + 2.4)}>
+            <AlgaRoja T={T} x={70} y={1990} s={1.9} seed={1} /><AlgaRoja T={T} x={1010} y={1990} s={1.9} seed={3} />
+          </g>
+          <g transform={`translate(540 980) scale(${1 + 0.04 * tembla(K.G + 0.05)}, ${1 - 0.04 * tembla(K.G + 0.05)})`}>
+            <PlacaPetri x={0} y={0} r={448} agar={AGAR} id="pg"><g transform="scale(1.4)"><Colonias g={kprog(T, K.G + 2.2, K.G + 4.5)} n={16} /></g></PlacaPetri>
           </g>
         </svg>
       </Escena>
       {/* 1 · algas rojas → hervir, filtrar, secar */}
-      <Escena T={T} a={K.Al} b={K.Q} fondo="linear-gradient(#00d2ff, #2346ff)">
+      <Escena T={T} a={K.Al} b={K.Q} fondo="linear-gradient(#074257, #0d1c57 55%, #080d24)">
+        <Ambiente T={T} n={26} seed={7} color="rgba(223,231,255,.2)" tam={[3, 9]} vel={16} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          {[[200, 1500, 1.4, 1], [520, 1560, 1.8, 2], [860, 1500, 1.3, 3]].map(([x, y, s, k]) => <AlgaRoja key={k} T={T} x={x} y={y} s={s} seed={k} />)}
+          {[[190, 1640, 1.7, 1], [540, 1720, 2.15, 2], [890, 1640, 1.6, 3]].map(([x, y, s, k]) => <AlgaRoja key={k} T={T} x={x} y={y} s={s} seed={k} />)}
           {[0, 1, 2].map((i) => { const at = K.Al + 1.2 + i * 1.0, e = kentrada(T, at, null, 'pop'); if (T < at) return null;
-            return <g key={i} transform={`translate(${200 + i * 340} 640) scale(${e.s})`} opacity={e.o}>
+            return <g key={i} transform={`translate(${200 + i * 340} 680) scale(${e.s})`} opacity={e.o}>
               <circle r={120} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
               {i === 0 && <g><path d="M -70 -10 L -60 60 Q 0 75 60 60 L 70 -10 Z" fill="#9aa4ae" stroke={KC.ink} strokeWidth={6} />{[0, 1, 2].map((k) => <path key={k} d={`M ${-30 + k * 30} -25 q 12 -20 0 -40`} fill="none" stroke="#9aa4ae" strokeWidth={6} transform={`translate(0 ${-((T * 30 + k * 10) % 20)})`} />)}</g>}
               {i === 1 && <g><path d="M -70 -50 L 70 -50 L 10 30 L 10 70 L -10 70 L -10 30 Z" fill="#cfe9f5" stroke={KC.ink} strokeWidth={6} /><circle cx={0} cy={80 + ((T * 60) % 30)} r={7} fill="#5ac8ff" /></g>}
               {i === 2 && <g>{[-1, 0, 1].map((k) => <rect key={k} x={-80} y={-50 + k * 40} width={160} height={26} rx={6} fill={AGAR} stroke={KC.ink} strokeWidth={5} transform={`rotate(${k * 4})`} />)}</g>}
             </g>; })}
         </svg>
-        {['hervir', 'filtrar', 'secar'].map((t, i) => <Chip key={t} T={T} at={K.Al + 1.4 + i * 1.0} until={K.Q - 0.2} texto={t} x={200 + i * 340} y={810} borde={KC.red} tam={36} />)}
+        {['hervir', 'filtrar', 'secar'].map((t, i) => <Chip key={t} T={T} at={K.Al + 1.4 + i * 1.0} until={K.Q - 0.2} texto={t} x={200 + i * 340} y={850} borde={KC.red} tam={36} />)}
       </Escena>
-      {/* 2 · polisacárido: cadenas de anillos */}
+      {/* 2 · polisacárido: cadenas de anillos (detrás, tenues, las cadenas larguísimas de la escena que sigue) */}
       <Escena T={T} a={K.Q} b={K.Rd} fondo="radial-gradient(circle at 50% 45%, #1b2333 0%, #0E0F12 75%)">
+        <div style={{ position:'absolute', left:0, top:170, width:KW, height:KH, opacity:0.16 }}><RedAgarosa T={T} forma={0} agua={0} /></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <CadenaAnillos x={110} y={620} n={8} p={kprog(T, K.Q + 0.3, K.Q + 2.4)} s={1} ondula={0.4} T={T} />
-          <CadenaAnillos x={110} y={1000} n={8} p={kprog(T, K.Q + 2.2, K.Q + 4.2)} s={1} ondula={0.4} T={T} color="#ff9fb4" marca={(i) => (i % 3 === 1 ? KC.lilac : null)} />
+          <CadenaAnillos x={90} y={860} n={8} p={kprog(T, K.Q, K.Q + 2.1)} s={1.05} ondula={0.4} T={T} />
+          <CadenaAnillos x={90} y={1280} n={8} p={kprog(T, K.Q + 2.2, K.Q + 4.2)} s={1.05} ondula={0.4} T={T} color="#ff9fb4" marca={(i) => (i % 3 === 1 ? KC.lilac : null)} />
         </svg>
-        <Etq T={T} at={K.Q + 1.4} until={K.Rd - 0.2} x={110} y={520} texto="agarosa (≈ 70 %)" color={KC.gold2} />
-        <Etq T={T} at={K.Q + 3.4} until={K.Rd - 0.2} x={110} y={900} texto="agaropectina (con sulfato)" color="#ff9fb4" tam={30} />
-        <Chip T={T} at={K.Q + 0.2} until={K.Rd - 0.2} texto="polisacárido = muchos azúcares" y={450} borde={KC.gold} tam={38} />
+        <Etq T={T} at={K.Q + 1.4} until={K.Rd - 0.2} x={90} y={750} texto="agarosa (≈ 70 %)" color={KC.gold2} />
+        <Etq T={T} at={K.Q + 3.4} until={K.Rd - 0.2} x={90} y={1170} texto="agaropectina (con sulfato)" color="#ff9fb4" tam={30} />
+        <Chip T={T} at={K.Q + 0.2} until={K.Rd - 0.2} texto="polisacárido = muchos azúcares" y={580} borde={KC.gold} tam={38} />
       </Escena>
       {/* 3 · al enfriarse: hélices y red que atrapa agua */}
       <Escena T={T} a={K.Rd} b={K.Tp} fondo="radial-gradient(circle at 50% 45%, #1b2333 0%, #0E0F12 75%)">
-        <RedAgarosa T={T} forma={kprog(T, K.Rd + 1, K.Rd + 4, kEase.suave)} agua={1} />
-        <Medidor T={T} at={K.Rd + 0.2} until={K.Tp - 0.2} etiqueta="TEMPERATURA" valor={(t) => 0.9 - 0.55 * kprog(t, K.Rd + 0.6, K.Rd + 4)} texto={(v) => Math.round(v * 100) + ' °C'} y={450} color={KC.cyan} />
-        <Etq T={T} at={K.Rd + 4.2} until={K.Tp - 0.2} x={980} y={1320} texto="agua atrapada" color="#5ac8ff" lado="izq" />
+        <div style={{ position:'absolute', left:0, top:90, width:KW, height:KH }}><RedAgarosa T={T} forma={kprog(T, K.Rd + 1, K.Rd + 4, kEase.suave)} agua={1} /></div>
+        <Medidor T={T} at={K.Rd + 0.2} until={K.Tp - 0.2} etiqueta="TEMPERATURA" valor={(t) => 0.9 - 0.55 * kprog(t, K.Rd + 0.6, K.Rd + 4)} texto={(v) => Math.round(v * 100) + ' °C'} y={470} color={KC.cyan} />
+        <Etq T={T} at={K.Rd + 4.2} until={K.Tp - 0.2} x={980} y={1410} texto="agua atrapada" color="#5ac8ff" lado="izq" />
       </Escena>
-      {/* 4 · histéresis */}
+      {/* 4 · histéresis: la curva y, debajo, la placa que se derrite y vuelve a cuajar al mismo tiempo */}
       <Escena T={T} a={K.Tp} b={K.P} fondo={KC.lilac}>
-        <div style={fondoPuntos(KC.lilac)}></div>
-        <CurvaAgar T={T} temp={tempT} fase={T < K.Tp + 2.85 ? 'sube' : 'baja'} />
-        <Chip T={T} at={K.Tp + 2.4} until={K.Tp + 3.2} texto="se derrite: ~85 °C" y={430} borde={KC.red} tam={42} />
-        <Chip T={T} at={K.Tp + 5.2} until={K.P - 0.1} texto="cuaja: ~35 °C" y={430} borde={KC.cyan} tam={42} />
+        <FondoMarca color={KC.lilac} T={T} />
+        <CurvaAgar T={T} temp={tempT} fase={T < K.Tp + 2.85 ? 'sube' : 'baja'} y={470} h={540} />
+        {(() => { const liq = T < K.Tp + 2.85 ? tempT >= 85 : tempT > 35;
+          return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+            <g transform={`translate(540 1285) scale(${liq ? 1 + 0.012 * Math.sin(T * 9) : 1}, ${liq ? 1 - 0.012 * Math.sin(T * 9) : 1})`}>
+              <PlacaPetri x={0} y={0} r={235} agar={liq ? '#ffe9b8' : AGAR} id="ptp">
+                {liq && Array.from({ length: 10 }, (_, i) => <circle key={i} cx={Math.cos(T * 3 + i) * 130} cy={Math.sin(T * 2 + i) * 100} r={14} fill="#fff" opacity=".7" />)}</PlacaPetri>
+            </g>
+          </svg>; })()}
+        <Chip T={T} at={K.Tp + 2.4} until={K.Tp + 3.2} texto="se derrite: ~85 °C" x={680} y={380} borde={KC.red} tam={42} />
+        <Chip T={T} at={K.Tp + 5.2} until={K.P - 0.1} texto="cuaja: ~35 °C" x={680} y={380} borde={KC.cyan} tam={42} />
       </Escena>
-      {/* 5-6 · incubadora a 37 °C: gelatina vs agar */}
+      {/* 5-6 · incubadora a 37 °C: gelatina vs agar (fondo opaco propio: esta escena empieza en «Pregunta» y no debe quedar como velo) */}
       <Escena T={T} a={K.P} b={K.E} fondo={KC.orange}>
-        <div style={fondoPuntos(KC.orange)}></div>
+        <div style={{ position:'absolute', inset:0, background:`radial-gradient(ellipse 90% 60% at 50% 46%, ${cineMix(KC.orange, CINE.fondo, 0.8)} 0%, ${CINE.fondo} 62%, ${CINE.borde} 100%)` }}>
+          <Ambiente T={T} n={26} seed={11} color="rgba(223,231,255,.2)" tam={[3, 9]} vel={16} /></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <rect x={60} y={460} width={960} height={760} rx={40} fill="#e9edf1" stroke={KC.ink} strokeWidth={10} />
-          <rect x={90} y={490} width={900} height={700} rx={26} fill="#c9d2da" />
+          <defs><radialGradient id="incg" cx="50%" cy="45%" r="70%"><stop offset="0" stopColor="#3a2a22" /><stop offset="1" stopColor="#161b28" /></radialGradient></defs>
+          <rect x={50} y={480} width={980} height={840} rx={40} fill="#2b3442" stroke={KC.ink} strokeWidth={10} />
+          <rect x={80} y={510} width={920} height={780} rx={26} fill="url(#incg)" />
           {(() => { const d = kprog(T, K.I + 1, K.I + 4, kEase.suave); return <>
-            <g transform={`translate(300 860) rotate(${-8 * d})`}><PlacaPetri x={0} y={0} r={190} agar={mixHex('#f6c36a', '#f9dca0', d)} id="pgel" tapa={0}>
+            <g transform={`translate(295 890) rotate(${-8 * d}) scale(1.14)`}><PlacaPetri x={0} y={0} r={190} agar={mixHex('#f6c36a', '#f9dca0', d)} id="pgel" tapa={0}>
               <Colonias g={1} n={9} R={170} escurre={d} seed={5} />
               {d > 0 && <ellipse cx={0} cy={110 * d} rx={180} ry={70 * d} fill="#f9dca0" opacity={0.8 * d} />}</PlacaPetri></g>
-            <g transform="translate(780 860)"><PlacaPetri x={0} y={0} r={190} agar={AGAR} id="pag"><Colonias g={1} n={9} R={170} seed={5} /></PlacaPetri></g>
+            <g transform="translate(785 890) scale(1.14)"><PlacaPetri x={0} y={0} r={190} agar={AGAR} id="pag"><Colonias g={1} n={9} R={170} seed={5} /></PlacaPetri></g>
           </>; })()}
         </svg>
-        <Chip T={T} at={K.I + 0.2} until={K.E - 0.2} texto="gelatina" x={300} y={1110} borde={KC.red} tam={38} />
-        <Chip T={T} at={K.I + 0.4} until={K.E - 0.2} texto="agar" x={780} y={1110} borde={KC.mint} tam={38} />
-        <Chip T={T} at={K.P + 0.3} until={K.E - 0.2} texto="incubadora · 37 °C" x={400} y={1300} borde={KC.gold} tam={42} mono />
+        <Chip T={T} at={K.I + 0.2} until={K.E - 0.2} texto="gelatina" x={295} y={1190} borde={KC.red} tam={38} />
+        <Chip T={T} at={K.I + 0.4} until={K.E - 0.2} texto="agar" x={785} y={1190} borde={KC.mint} tam={38} />
+        <Chip T={T} at={K.P + 0.3} until={K.E - 0.2} texto="incubadora · 37 °C" x={540} y={1410} borde={KC.gold} tam={42} mono />
       </Escena>
-      {/* 7 · el estudio: Fanny Hesse, 1881 */}
+      {/* 7 · el estudio: Fanny Hesse, 1881. El postre está desde el inicio; la placa espera atenuada y se enciende a su tiempo */}
       <Escena T={T} a={K.E} b={K.C} fondo={KC.pink}>
-        <div style={fondoPuntos(KC.pink)}></div>
-        <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="1881" quien="Fanny Hesse" revista="se lo sugiere a Walther Hesse · lab. de Robert Koch" y={760} />
-        {T > K.E + 3.2 && <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g opacity={kprog(T, K.E + 3.2, K.E + 3.7)}><Postre T={T} x={300} y={1040} s={1.1} /></g>
-          <path d="M 520 900 L 640 900" stroke={KC.ink} strokeWidth={12} opacity={kprog(T, K.E + 3.8, K.E + 4.2)} />
-          <path d="M 620 870 L 660 900 L 620 930" fill="none" stroke={KC.ink} strokeWidth={12} opacity={kprog(T, K.E + 3.8, K.E + 4.2)} strokeLinejoin="round" />
-          <g opacity={kprog(T, K.E + 4.2, K.E + 4.7)}><PlacaPetri x={830} y={900} r={170} agar={AGAR} id="pes"><Colonias g={kprog(T, K.E + 4.4, K.E + 6)} n={8} R={150} /></PlacaPetri></g>
-        </svg>}
-        <Chip T={T} at={K.E + 3.4} until={K.C - 0.2} texto="de la cocina al laboratorio" y={430} borde={KC.gold} tam={40} />
+        <FondoMarca color={KC.pink} T={T} />
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+          <Postre T={T} x={330} y={1010} s={1.5} />
+          <path d="M 610 900 Q 770 900 772 1040" fill="none" stroke={KC.ink} strokeWidth={12} strokeLinecap="round" opacity={kprog(T, K.E + 3.8, K.E + 4.2)} />
+          <path d="M 742 1012 L 772 1052 L 802 1012" fill="none" stroke={KC.ink} strokeWidth={12} opacity={kprog(T, K.E + 3.8, K.E + 4.2)} strokeLinejoin="round" strokeLinecap="round" />
+          <g opacity={0.28 + 0.72 * kprog(T, K.E + 4.2, K.E + 4.7)}><PlacaPetri x={770} y={1300} r={220} agar={AGAR} id="pes"><g transform="scale(1.3)"><Colonias g={kprog(T, K.E + 4.4, K.E + 6)} n={8} R={150} /></g></PlacaPetri></g>
+        </svg>
+        <div style={{ position:'absolute', left:0, top:0, width:KW * 2, height:KH, transform:'scale(.78)', transformOrigin:'0 0' }}>
+          <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="1881" quien="Fanny Hesse" revista="se lo sugiere a Walther Hesse · lab. de Robert Koch" x={840} y={520} /></div>
+        <Chip T={T} at={K.E + 3.4} until={K.C - 0.2} texto="de la cocina al laboratorio" x={620} y={480} borde={KC.gold} tam={40} />
       </Escena>
       {/* 8 · casi nadie se lo come */}
       <Escena T={T} a={K.C} b={K.X} fondo="radial-gradient(circle at 50% 45%, #1b2333 0%, #0E0F12 75%)">
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><g transform="translate(540 1000) scale(1.7) translate(-560 -960)">
-          <rect x={-400} y={960} width={KW + 800} height={980} fill={AGAR} stroke={KC.ink} strokeWidth={8} />
-          {(() => { const p = kprog(T, K.C + 2.6, K.C + 5); return <path d={`M 640 962 Q 780 ${962 + 160 * p} 920 962 Z`} fill="#c9a85e" opacity={p} />; })()}
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+          <defs><linearGradient id="agarCorte" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={cineMix(AGAR, CINE.fondo, 0.56)} /><stop offset="0.45" stopColor={cineMix(AGAR, CINE.fondo, 0.8)} /><stop offset="1" stopColor={cineMix(AGAR, CINE.fondo, 0.9)} /></linearGradient></defs>
+          <g transform="translate(540 1150) scale(1.7) translate(-560 -960)">
+          <rect x={-400} y={960} width={KW + 800} height={980} fill="url(#agarCorte)" stroke={KC.ink} strokeWidth={8} />
+          {(() => { const p = kprog(T, K.C + 2.6, K.C + 5); return <path d={`M 640 962 Q 780 ${962 + 160 * p} 920 962 Z`} fill="#0d1220" opacity={0.85 * p} />; })()}
           {[160, 320, 470].map((x, i) => <g key={i}><Bacilo x={x} y={930} T={T} s={1.1} come={0} />
             <ellipse cx={x} cy={940} rx={70 * kprog(T, K.C + 1 + i * 0.3, K.C + 4)} ry={30 * kprog(T, K.C + 1 + i * 0.3, K.C + 4)} fill="#f4efe4" stroke="#c9b48c" strokeWidth={4} opacity={0.9} /></g>)}
           <Bacilo x={780} y={960 + 120 * kprog(T, K.C + 2.6, K.C + 5)} T={T} s={1.2} color={KC.lilac} come={1} />
         </g></svg>
-        <Chip T={T} at={K.C + 0.3} until={K.X - 0.2} texto="sin enzimas para romperlo" x={540} y={620} borde={KC.mint} tam={34} />
-        <Etq T={T} at={K.C + 3} until={K.X - 0.2} x={1010} y={800} texto="bacteria marina con agarasa" lado="izq" tam={30} color={KC.lilac} />
+        <Chip T={T} at={K.C + 0.3} until={K.X - 0.2} texto="sin enzimas para romperlo" x={540} y={760} borde={KC.mint} tam={34} />
+        <Etq T={T} at={K.C + 3} until={K.X - 0.2} x={1010} y={950} texto="bacteria marina con agarasa" lado="izq" tam={30} color={KC.lilac} />
       </Escena>
       {/* 9 · dato extra: genes del mar en el intestino */}
       <Escena T={T} a={K.X} b={K.Ci} fondo={KC.mint}>
-        <div style={fondoPuntos(KC.mint)}></div>
+        <FondoMarca color={KC.mint} T={T} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {/* rollo de sushi con nori */}
           <g transform={`translate(270 720) rotate(${mece(T, 1, 0.2) * 4})`}><circle r={130} fill="#1f3d2b" stroke={KC.ink} strokeWidth={8} /><circle r={100} fill="#fbfbf5" /><circle r={42} fill={KC.coral} /><circle cx={-50} cy={30} r={18} fill={KC.leaf} /></g>
           {/* intestino */}
           <path d="M 560 1000 C 560 880, 980 880, 980 1000 C 980 1120, 560 1120, 560 1240 C 560 1360, 980 1360, 980 1240" fill="none" stroke="#e88aa0" strokeWidth={110} strokeLinecap="round" />
           <path d="M 560 1000 C 560 880, 980 880, 980 1000 C 980 1120, 560 1120, 560 1240 C 560 1360, 980 1360, 980 1240" fill="none" stroke="#f6c1cd" strokeWidth={80} strokeLinecap="round" />
-          <Bacilo x={300} y={980} T={T} s={1} color={KC.cyan} />
-          <Bacilo x={760} y={1120} T={T} s={1} color={KC.gold2} come={kprog(T, K.X + 4, K.X + 4.5)} />
+          <Bacilo x={290} y={1000} T={T} s={1.5} color={KC.cyan} />
+          <Bacilo x={760} y={1120} T={T} s={1.5} color={KC.gold2} come={kprog(T, K.X + 4, K.X + 4.5)} />
           {/* un trocito de ADN que viaja de la bacteria marina a la del intestino */}
-          {(() => { const u = kprog(T, K.X + 1.8, K.X + 4, kEase.suave), x = klerp(300, 760, u), y = klerp(980, 1120, u) - Math.sin(Math.PI * u) * 260;
-            return T > K.X + 1.6 && <g transform={`translate(${x} ${y}) rotate(${T * 90})`}>{Array.from({ length: 6 }, (_, k) => <g key={k}><circle cx={-50 + k * 20} cy={Math.sin(k) * 14} r={7} fill={KC.red} /><circle cx={-50 + k * 20} cy={-Math.sin(k) * 14} r={7} fill={KC.blue} /></g>)}</g>; })()}
+          {(() => { const u = kprog(T, K.X + 1.8, K.X + 4, kEase.suave), x = klerp(290, 760, u), y = klerp(1000, 1120, u) - Math.sin(Math.PI * u) * 260;
+            return T > K.X + 1.6 && <g transform={`translate(${x} ${y}) rotate(${T * 90}) scale(1.4)`}>{Array.from({ length: 6 }, (_, k) => <g key={k}><circle cx={-50 + k * 20} cy={Math.sin(k) * 14} r={7} fill={KC.red} /><circle cx={-50 + k * 20} cy={-Math.sin(k) * 14} r={7} fill={KC.blue} /></g>)}</g>; })()}
         </svg>
-        <Etq T={T} at={K.X + 0.6} until={K.Ci - 0.2} x={420} y={970} texto="nori (alga)" tam={28} color={KC.ink} />
-        <Etq T={T} at={K.X + 1.2} until={K.Ci - 0.2} x={150} y={1050} texto="Zobellia (del mar)" it tam={26} color={KC.ink} />
-        <Etq T={T} at={K.X + 4.2} until={K.Ci - 0.2} x={1010} y={860} texto="Bacteroides plebeius" it tam={28} color={KC.ink} lado="izq" />
-        <TarjetaEstudio T={T} at={K.X + 0.1} until={K.X + 1.6} anio="2010" quien="Hehemann et al." revista="Nature 464: 908" y={560} />
+        <Etq T={T} at={K.X + 0.6} until={K.X + 4.0} x={412} y={720} texto="nori (alga)" tam={28} color={KC.ink} />
+        <Etq T={T} at={K.X + 1.2} until={K.Ci - 0.2} x={130} y={1100} texto="Zobellia (del mar)" it tam={26} color={KC.ink} />
+        <Etq T={T} at={K.X + 4.2} until={K.Ci - 0.2} x={1030} y={780} texto="Bacteroides plebeius" it tam={28} color={KC.ink} lado="izq" />
+        <div style={{ position:'absolute', left:0, top:0, width:KW * 2, height:KH, transform:'scale(.78)', transformOrigin:'0 0' }}>
+          <TarjetaEstudio T={T} at={K.X + 0.1} until={K.X + 1.6} anio="2010" quien="Hehemann et al." revista="Nature 464: 908" x={1010} y={500} /></div>
       </Escena>
       {/* 10 · cierre: la misma placa del inicio, ahora llena de colonias */}
       <Escena T={T} a={K.Ci} b={FIN} fondo={KC.yellow} zoom={0.03}>
-        <div style={fondoPuntos(KC.yellow)}></div>
+        <FondoMarca color={KC.yellow} T={T} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g transform="translate(540 900)"><PlacaPetri x={0} y={0} r={360} agar={AGAR} id="pc"><Colonias g={1} n={16} /><Colonias g={kprog(T, K.Ci + 0.5, K.Ci + 3)} n={24} seed={8} color="#ffd1dc" borde="#d98aa0" /></PlacaPetri></g>
+          <g transform="translate(540 980)"><PlacaPetri x={0} y={0} r={448} agar={AGAR} id="pc"><g transform="scale(1.3)"><Colonias g={1} n={16} /><Colonias g={kprog(T, K.Ci + 0.5, K.Ci + 3)} n={24} seed={8} color="#ffd1dc" borde="#d98aa0" /></g></PlacaPetri></g>
         </svg>
       </Escena>
 
       <Capitulo T={T} caps={caps} hasta={K.Ci} />
-      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.4} until={K.Al - 0.3} texto="gelatina" x={330} y={420} />
-      <Chip T={T} at={K.G + 1.8} until={K.Al - 0.2} texto="azúcar de alga" y={1500} x={400} borde={KC.red} tam={44} />
-      <Etq T={T} at={K.Al + 0.4} until={K.Q - 0.2} x={540} y={1180} texto="Gelidium (alga roja)" it tam={30} />
+      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.4} until={K.G + 3.4} texto="gelatina" x={330} y={420} />
+      <Chip T={T} at={K.G + 1.8} until={K.Al - 0.2} texto="azúcar de alga" y={1500} x={540} borde={KC.red} tam={44} />
+      <Etq T={T} at={K.Al + 0.4} until={K.Q - 0.2} x={560} y={1250} texto="Gelidium (alga roja)" it tam={30} />
       <Chip T={T} at={K.Ci + 0.3} until={K.O} texto="el piso de la microbiología" y={430} borde={KC.gold} tam={42} />
 
       <Subtitulo T={T} idx={0} at={K.G + 0.2} until={K.Al - 0.1} texto="No es gelatina: *es azúcar de alga.*" />

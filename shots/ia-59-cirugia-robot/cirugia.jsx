@@ -263,15 +263,15 @@ function Cirugia() {
       {/* 8 · lo que falta */}
       <Escena T={T} a={K.Fa} b={K.C}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<g transform="translate(540 820) scale(1.5) translate(-480 -550)">
+        {svg(<g transform="translate(540 880) scale(2.2) translate(-480 -560)">
           <rect x={270} y={640} width={420} height={60} rx={20} fill="#3a4458" stroke={KC.ink} strokeWidth={7} />
           <Vesicula x={480} y={500} s={0.65} clips={3} corte={1} />
         </g>)}
       </Escena>
-      <Chip T={T} at={K.Fa + 0.3} until={K.C - 0.2} texto="fuera del cuerpo (ex vivo)" x={540} y={1110} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Fa + 1.8} until={K.C - 0.2} texto="falta: con sangrado ⏳" x={540} y={1215} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.Fa + 2.6} until={K.C - 0.2} texto="falta: tejido que se mueve ⏳" x={540} y={1320} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.Fa + 3.2} until={K.C - 0.2} texto="en estos estudios: ninguna persona operada" x={540} y={1425} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Fa + 0.3} until={K.C - 0.2} texto="fuera del cuerpo (ex vivo)" x={540} y={1245} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Fa + 1.8} until={K.C - 0.2} texto="falta: con sangrado ⏳" x={540} y={1330} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Fa + 2.6} until={K.C - 0.2} texto="falta: tejido que se mueve ⏳" x={540} y={1415} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Fa + 3.2} until={K.C - 0.2} texto="en estos estudios: ninguna persona operada" x={540} y={1500} tam={30} borde={KC.ink} />
 
       {/* 9 · cierre: el mismo intestino, ahora con alguien vigilando */}
       <Escena T={T} a={K.C} b={FIN}>

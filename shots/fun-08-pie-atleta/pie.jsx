@@ -138,9 +138,9 @@ function PieDeAtleta() {
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 2.2} until={K.G + 4.6} texto="¿solo humedad?" x={360} y={290} tam={52} />
-      <Etq T={T} at={K.N + 0.4} until={K.Q - 0.3} x={60} y={205} texto="pie de atleta (tinea pedis)" tam={38} color={KC.ink} />
-      <Etq T={T} at={K.N + 1.2} until={K.Q - 0.3} x={60} y={250} texto="Trichophyton rubrum" it tam={36} color={KC.ink} />
-      <Etq T={T} at={K.N + 1.8} until={K.Q - 0.3} x={60} y={295} texto="Trichophyton interdigitale" it tam={36} color={KC.ink} />
+      <Etq T={T} at={K.N + 0.4} until={K.Q - 0.3} x={140} y={222} texto="pie de atleta (tinea pedis)" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.N + 1.2} until={K.Q - 0.3} x={140} y={264} texto="Trichophyton rubrum" it tam={32} color={KC.ink} />
+      <Etq T={T} at={K.N + 1.8} until={K.Q - 0.3} x={140} y={304} texto="Trichophyton interdigitale" it tam={32} color={KC.ink} />
       <Etq T={T} at={K.Q + 0.6} until={K.L - 0.3} x={60} y={540} texto="capa córnea: queratina" tam={40} color={KC.yellow} />
       <Etq T={T} at={K.Q + 1.2} until={K.L - 0.3} x={60} y={1335} texto="piel viva" tam={38} />
       <Etq T={T} at={K.En + 0.4} until={K.L - 0.3} x={60} y={470} texto="hifas del hongo + enzimas" tam={38} color={KC.gold2} />

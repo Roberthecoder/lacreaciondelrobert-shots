@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #48 · Esta célula de tu piel no es solo piel (células iPS, Yamanaka) — NARRADO (N1 por dentro + toque N6).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 // Escala del micro: 1 µm = 2 px (pxPorMm 2000): fibroblasto ~150 µm de largo, célula iPS ~12 µm, colonia de cientos de µm.
@@ -19,8 +20,10 @@ function Mano({ x, y, s = 1, rot = 0 }) {
     <rect x={-150} y={180} width={300} height={500} rx={60} {...st} />
   </g>;
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
+    <defs><linearGradient id="manoIps" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fff" stopOpacity=".2" /><stop offset=".45" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#8a4a2a" stopOpacity=".3" /></linearGradient></defs>
     {formas({ fill: KC.ink, stroke: KC.ink, strokeWidth: 20 })}
     {formas({ fill: PIEL })}
+    {formas({ fill: 'url(#manoIps)' })}{/* belleza: volumen de la mano (luz arriba-izquierda, sombra abajo-derecha) */}
     {dedos.map(([dx, dy, w, h, r], i) => <g key={i} transform={`rotate(${r} ${dx} ${dy + h})`}>
       <path d={`M ${dx - 16} ${dy + 70} q 16 -8 32 0`} stroke={PIEL_OSC} strokeWidth={5} fill="none" strokeLinecap="round" />
       <rect x={dx - 18} y={dy + 10} width={36} height={34} rx={14} fill="#f7cdb4" stroke={PIEL_OSC} strokeWidth={4} />
@@ -161,12 +164,15 @@ function Ips() {
   const K = { G: CUES.Gancho, Pi: CUES.Piel, Ge: CUES.Genes, Ol: CUES.Olvida, In: CUES.Interruptores, Hu: CUES.Humana, Pr: CUES.Pregunta,
     De: CUES.Destino, Re: CUES.Retina, Pa: CUES.Parkinson, Pl: CUES.Plato, Ve: CUES.Veinticuatro, Ci: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
-  const trio = (t0, cx, cy, sx = 1) => {   // neurona · retina · corazón en burbujas, con flechas desde (cx, cy)
-    const pts = [[190, 1030], [540, 1090], [890, 1030]].map(([a, b]) => [klerp(cx, a, sx), b]);
-    return <g>{pts.map(([a, b], i) => { const p = kprog(T, t0 + i * 0.45, t0 + i * 0.45 + 0.6, kEase.sale); return <g key={i}>
-      <FlechaCurva x1={cx} y1={cy} x2={a} y2={b - 120} p={p} curva={i === 1 ? 0 : (i ? -60 : 60)} color={KC.gold2} T={T} />
+  // zoom de cámara que la capa cine le da al gancho (20 %) y al cierre (10 %): el puntero de la lupa sigue al dedo
+  const zG = (t) => 1 + 0.2 * kprog(t, K.G - 0.45, K.Pi + 1.35, kEase.suave), zC = (t) => 1 + 0.1 * kprog(t, K.Ci - 0.45, FIN + 0.45, kEase.suave);
+  // neurona · retina · corazón en burbujas grandes (radio r), con flechas: flechas[i] = [x1, y1, x2, y2, curva]
+  const trio = (t0, pts, flechas, r = 110) => {
+    const k = r / 110;
+    return <g>{pts.map(([a, b], i) => { const p = kprog(T, t0 + i * 0.45, t0 + i * 0.45 + 0.6, kEase.sale), [x1, y1, x2, y2, cv] = flechas[i]; return <g key={i}>
+      <FlechaCurva x1={x1} y1={y1} x2={x2} y2={y2} p={p} curva={cv} color={KC.gold2} T={T} />
       <g opacity={p} transform={`translate(${a} ${b}) scale(${klerp(0.4, 1, p)}) translate(${-a} ${-b})`}>
-        <Burbuja x={a} y={b} r={110}>{i === 0 ? <Neurona x={a - 20} y={b} s={0.62} T={T} /> : i === 1 ? <Retina x={a} y={b - 14} s={0.95} /> : <Cardio x={a - 6} y={b + 6} s={0.72} T={T} />}</Burbuja>
+        <Burbuja x={a} y={b} r={r} fondo="#101a33">{i === 0 ? <Neurona x={a - 20 * k} y={b} s={0.62 * k} T={T} /> : i === 1 ? <Retina x={a} y={b - 14 * k} s={0.95 * k} /> : <Cardio x={a - 6 * k} y={b + 6 * k} s={0.72 * k} T={T} />}</Burbuja>
       </g></g>; })}</g>;
   };
   const tachaEn = (i) => (['Oct4', 'Sox2', 'Klf4', 'c-Myc'].includes(GENES24[i]) ? Infinity : (DIEZ.includes(GENES24[i]) ? K.Ve + 2.6 + (DIEZ.indexOf(GENES24[i]) * 0.12) : K.Ve + 0.9 + (i % 14) * 0.08));
@@ -175,10 +181,14 @@ function Ips() {
       {/* 0 · gancho: la mano, la Lupa y las tres células posibles */}
       <Escena T={T} a={K.G} b={K.Pi} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        <Capa><Mano x={540} y={1500} s={1.15} rot={-6} />{trio(K.G + 1.4, 330, 860)}</Capa>
+        {/* pase a mano: la mano llena el cuadro de lado a lado (2.3×), la lupa crece y las tres células salen de la lupa */}
+        <Capa><Mano x={540} y={1700} s={2.3} rot={-6} /></Capa>
       </Escena>
-      <Lupa T={T} at={K.G} until={K.Pi - 0.2} x={330} y={620} r={220} fx={500} fy={1330} etiqueta="AL MICROSCOPIO · piel" tinte={KC.pink}
-        interior={(t) => <svg width={440} height={440}><rect width={440} height={440} fill="#14081a" />
+      {/* el trío va fuera de la escena para que la cámara (20 % en el gancho) no lo saque del cuadro ni lo despegue de la lupa */}
+      {T < K.Pi + 0.4 && <div style={{ position:'absolute', inset:0, zIndex:33, opacity:1 - kprog(T, K.Pi - 0.2, K.Pi + 0.3) }}><Capa>
+        {trio(K.G + 1.4, [[845, 330], [900, 610], [845, 890]], [[572, 462, 708, 356, -40], [592, 560, 762, 604, 0], [566, 662, 708, 858, 40]], 122)}</Capa></div>}
+      <Lupa T={T} at={K.G} until={K.Pi - 0.2} x={320} y={540} r={265} fx={(t) => 540 - 162 * zG(t)} fy={(t) => 864 + 506 * zG(t)} etiqueta="AL MICROSCOPIO · piel" tinte={KC.pink}
+        interior={(t) => <svg width={530} height={530} viewBox="0 0 440 440"><rect width={440} height={440} fill="#14081a" />
           <Fibro x={220} y={220} s={1.2} rot={-14} T={t} seed={2} />
           <Fibro x={120} y={360} s={0.7} rot={20} T={t} seed={5} color="#f78ca8" /><Fibro x={350} y={90} s={0.6} rot={-30} T={t} seed={7} color="#f78ca8" /></svg>} />
 
@@ -186,12 +196,13 @@ function Ips() {
       <Escena T={T} a={K.Pi} b={K.Ge}>
         <FondoLunares color={KC.yellow} />
         <Capa>{[['piel', 0.05, 0.3, '#ff9fb5'], ['neurona', 0.38, 0.62, '#ffe11a'], ['corazón', 0.7, 0.95, '#ff5a6e']].map(([n, a, b, c], i) => {
-          const y = 680 + i * 200, e = kprog(T, K.Pi + 0.2 + i * 0.35, K.Pi + 0.7 + i * 0.35, kEase.sale);
+          // pase a mano: las tres hebras ocupan el alto del cuadro (antes 560 px en la mitad de arriba)
+          const y = 590 + i * 310, e = kprog(T, K.Pi + 0.2 + i * 0.35, K.Pi + 0.7 + i * 0.35, kEase.sale);
           return <g key={i} opacity={e} transform={`translate(${(1 - e) * -200} 0)`}>
-            <rect x={60} y={y - 80} width={960} height={160} rx={30} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={6} />
-            <circle cx={140} cy={y - 16} r={42} fill={c} stroke={KC.ink} strokeWidth={6} /><circle cx={140} cy={y - 16} r={16} fill="#7a3fb0" />
-            <ADNHebra T={T} x={220} y={y} largo={760} alto={70} vueltas={5} colores={['#5b6070']} grosor={7} resalta={(u) => u >= a && u <= b && T > K.Pi + 1.6 + i * 0.3} />
-            <text x={140} y={y + 60} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.texto}>{n}</text>
+            <rect x={72} y={y - 125} width={936} height={250} rx={40} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={6} />
+            <circle cx={180} cy={y - 24} r={66} fill={c} stroke={KC.ink} strokeWidth={7} /><circle cx={180} cy={y - 24} r={25} fill="#7a3fb0" />
+            <ADNHebra T={T} x={286} y={y} largo={690} alto={112} vueltas={5} colores={['#5b6070']} grosor={9} resalta={(u) => u >= a && u <= b && T > K.Pi + 1.6 + i * 0.3} />
+            <text x={180} y={y + 92} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.texto}>{n}</text>
           </g>; })}</Capa>
       </Escena>
 
@@ -199,34 +210,39 @@ function Ips() {
       <Escena T={T} a={K.Ge} b={K.Ol} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <Capa>
-          <g opacity={1 - kprog(T, K.Ge + 2.0, K.Ge + 2.5)}><Raton x={600} y={650} s={0.9} T={T} /></g>
-          <PlacaPetri x={540} y={1000} r={250} agar="#ffd5df" id="pg">
-            {[[-120, -60, 20], [60, -110, -30], [-40, 60, 60], [120, 40, 10], [-150, 90, -40], [30, 150, 25], [150, -40, 70]].map(([a, b, r], i) => <Fibro key={i} x={a} y={b} s={0.55} rot={r} T={T} seed={i} />)}
+          {/* pase a mano: caja de cultivo 1.6× (r 250→400) al centro, ratón 1.4× arriba, genes 1.25× que caen dentro de la caja */}
+          <g opacity={1 - kprog(T, K.Ge + 2.0, K.Ge + 2.5)}><Raton x={590} y={470} s={1.25} T={T} /></g>
+          <PlacaPetri x={540} y={1010} r={400} agar="#ffd5df" id="pg">
+            {[[-120, -60, 20], [60, -110, -30], [-40, 60, 60], [120, 40, 10], [-150, 90, -40], [30, 150, 25], [150, -40, 70]].map(([a, b, r], i) => <Fibro key={i} x={a * 1.6} y={b * 1.6} s={0.88} rot={r} T={T} seed={i} />)}
           </PlacaPetri>
           {GEN.map(([n, c], i) => { const t0 = K.Ge + 2.2 + i * 0.55, p = kprog(T, t0, t0 + 0.6, kEase.sale), hund = kprog(T, K.Ge + 5.0, K.Ol, kEase.entra);
-            const x0 = 165 + i * 250; return p > 0 ? <g key={i} opacity={1 - hund * 0.8}><GenPieza T={T} x={klerp(x0, klerp(x0, 540, 0.6), hund)} y={klerp(-100, 690, p) + hund * 260} nombre={n} color={c} s={1 - hund * 0.5} /></g> : null; })}
+            const x0 = 150 + i * 260; return p > 0 ? <g key={i} opacity={1 - hund * 0.8}><GenPieza T={T} x={klerp(x0, klerp(x0, 540, 0.6), hund)} y={klerp(-100, 500, p) + hund * 450} nombre={n} color={c} s={1.25 * (1 - hund * 0.5)} /></g> : null; })}
         </Capa>
-        <NumeroGigante T={T} at={K.Ge + 2.2} until={K.Ol - 0.3} valor={4} dur={2.2} sufijo=" genes" x={600} y={470} tam={150} color={KC.yellow} />
+        <NumeroGigante T={T} at={K.Ge + 2.2} until={K.Ol - 0.3} valor={4} dur={2.2} sufijo=" genes" x={540} y={300} tam={150} color={KC.yellow} />
       </Escena>
-      <Chip T={T} at={K.Ge + 0.3} until={K.Ge + 2.1} texto="2006 · Kioto · Yamanaka" x={640} y={470} tam={38} borde={KC.mint} />
-      <Etq T={T} at={K.Ge + 0.8} until={K.Ol - 0.2} x={1040} y={1290} lado="izq" texto="fibroblastos (embrión y cola de ratón)" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Ge + 0.3} until={K.Ge + 2.1} texto="2006 · Kioto · Yamanaka" x={540} y={250} tam={38} borde={KC.mint} />
+      <Etq T={T} at={K.Ge + 0.8} until={K.Ol - 0.2} x={1040} y={1470} lado="izq" texto="fibroblastos (embrión y cola de ratón)" tam={30} color={KC.ink} />
 
       {/* 3–4 · se olvida de ser piel → colonia; por dentro: los interruptores */}
       <Escena T={T} a={K.Ol} b={K.Hu}>
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={30} color="rgba(255,225,26,.25)" />
-        <Capa>
-          {T < K.Ol + 2.4 ? [[-160, -120, 20], [140, -150, -30], [-60, 40, 60], [170, 60, 10], [-190, 170, -40], [40, 200, 25]].map(([a, b, r], i) => {
+        {/* pase a mano: todo el grupo al doble (la barra de escala lleva z = 2: «50 µm» mide lo mismo que antes «100 µm»).
+            Las células ya redondas no se amontonan en un punto: se reparten en lugares de la colonia, y la colonia
+            empieza a llenarse 0.9 s antes entre ellas para que el cuadro no se quede casi vacío (lo marcaba el auditor). */}
+        <Capa><g transform="translate(540 880) scale(2)">
+          {T >= K.Ol + 1.4 && <Colonia x={0} y={0} n={70} p={kprog(T, K.Ol + 1.4, K.Ol + 3.4, kEase.sale)} T={T} R={190} brilla={kprog(T, K.Ol + 3.0, K.Ol + 3.8)} />}
+          {T < K.Ol + 3.5 && <g opacity={1 - kprog(T, K.Ol + 3.1, K.Ol + 3.5)}>{[[-160, -120, 20], [140, -150, -30], [-60, 40, 60], [170, 60, 10], [-190, 170, -40], [40, 200, 25]].map(([a, b, r], i) => {
             const red = kprog(T, K.Ol + 0.3 + i * 0.1, K.Ol + 1.8 + i * 0.1, kEase.suave), m = kprog(T, K.Ol + 1.2, K.Ol + 2.4, kEase.suave);
-            return <Fibro key={i} x={540 + a * (1 - m)} y={820 + b * (1 - m)} s={1} rot={r * (1 - red)} red={red} T={T} seed={i} />; })
-            : <Colonia x={540} y={820} n={70} p={kprog(T, K.Ol + 2.3, K.Ol + 3.6, kEase.sale)} T={T} R={190} brilla={kprog(T, K.Ol + 3.0, K.Ol + 3.8)} />}
-        </Capa>
-        {T < K.In && <Escala T={T} z={1} pxPorMm={PX_MM} />}
+            const j = [4, 17, 29, 41, 54, 66][i], ang = j * 2.39996, dist = Math.sqrt((j + 0.5) / 70) * 190, tx = Math.cos(ang) * dist, ty = Math.sin(ang) * dist * 0.8;
+            return <Fibro key={i} x={klerp(a, tx, m)} y={klerp(b, ty, m)} s={1} rot={r * (1 - red)} red={red} T={T} seed={i} />; })}</g>}
+        </g></Capa>
+        {T < K.In && <Escala T={T} z={2} pxPorMm={PX_MM} />}
       </Escena>
-      <MitoTachado T={T} at={K.Ol + 0.3} tacharEn={K.Ol + 1.6} until={K.Ol + 2.2} texto="piel" x={540} y={470} tam={52} />
-      <Chip T={T} at={K.Ol + 2.4} until={K.In - 0.2} texto="como de embrión" y={470} tam={44} borde={KC.gold2} />
-      <Lupa T={T} at={K.In} until={K.Hu - 0.25} x={470} y={790} r={260} fx={560} fy={820} etiqueta="POR DENTRO · el núcleo" tinte={KC.gold2}
-        interior={(t) => <svg width={520} height={520} viewBox="0 0 600 600"><rect width={600} height={600} fill="#1a0b26" />
+      <MitoTachado T={T} at={K.Ol + 0.3} tacharEn={K.Ol + 1.6} until={K.Ol + 2.2} texto="piel" x={540} y={330} tam={52} />
+      <Chip T={T} at={K.Ol + 2.4} until={K.In - 0.2} texto="como de embrión" y={400} tam={44} borde={KC.gold2} />
+      <Lupa T={T} at={K.In} until={K.Hu - 0.25} x={540} y={930} r={390} fx={540} fy={880} etiqueta="POR DENTRO · el núcleo" tinte={KC.gold2}
+        interior={(t) => <svg width={780} height={780} viewBox="0 0 600 600"><rect width={600} height={600} fill="#1a0b26" />
           <ADNHebra T={t} x={40} y={330} largo={520} alto={80} vueltas={4} colores={['#6b5a86']} grosor={7} />
           {[90, 190, 300, 410, 510].map((fx, i) => { const piel = i === 1 || i === 3, on = piel ? 1 - kprog(t, K.In + 1.6, K.In + 2.4) : kprog(t, K.In + 0.9 + i * 0.3, K.In + 1.3 + i * 0.3);
             return <g key={i}><Foco x={fx} y={220} on={on} color={piel ? '#ff9fb5' : KC.gold2} />
@@ -238,93 +254,107 @@ function Ips() {
         </svg>} />
 
       {/* 5 · se llaman iPS; 2007, piel humana */}
-      <Escena T={T} a={K.Hu} b={K.Pr} zoom={0.05}>
+      {/* pase a mano: mano 2× y caja de cultivo 1.8× (r 150→270) llenando la mitad de abajo; «iPS» arriba y los chips sin encimarse.
+          La escena termina 0.1 s antes de la «Pregunta» para que no se quede de fondo bajo la colonia grande (se encimaban). */}
+      <Escena T={T} a={K.Hu} b={K.Pr - 0.1} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
         <Capa>
-          <text x={540} y={810} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12}
-            transform={`translate(540 700) scale(${klerp(0.6, 1, kprog(T, K.Hu, K.Hu + 0.5, kEase.rebote))}) translate(-540 -700)`}>iPS</text>
-          <Mano x={250} y={1110} s={0.4} rot={14} />
-          <g opacity={kprog(T, K.Hu + 1.4, K.Hu + 1.9)}><PlacaPetri x={760} y={1060} r={150} agar="#ffd5df" id="ph"><Colonia x={0} y={0} n={34} p={1} T={T} R={70} /></PlacaPetri>
-            <FlechaCurva x1={360} y1={1020} x2={590} y2={1050} p={kprog(T, K.Hu + 1.0, K.Hu + 1.6)} color={KC.ink} T={T} /></g>
+          <text x={540} y={610} textAnchor="middle" style={{ font:`400 340px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12}
+            transform={`translate(540 500) scale(${klerp(0.6, 1, kprog(T, K.Hu, K.Hu + 0.5, kEase.rebote))}) translate(-540 -500)`}>iPS</text>
+          <Mano x={250} y={1270} s={0.8} rot={14} />
+          <g opacity={kprog(T, K.Hu + 1.4, K.Hu + 1.9)}><PlacaPetri x={750} y={1130} r={270} agar="#ffd5df" id="ph"><g transform="scale(1.75)"><Colonia x={0} y={0} n={34} p={1} T={T} R={70} /></g></PlacaPetri>
+            <FlechaCurva x1={330} y1={930} x2={540} y2={930} p={kprog(T, K.Hu + 1.0, K.Hu + 1.6)} curva={-70} color={KC.ink} T={T} /></g>
         </Capa>
       </Escena>
-      <Chip T={T} at={K.Hu + 0.4} until={K.Pr - 0.2} texto="células madre pluripotentes inducidas" y={900} tam={36} borde={KC.yellow} />
-      <Chip T={T} at={K.Hu + 1.4} until={K.Pr - 0.2} texto="2007 · piel humana adulta" y={470} tam={40} borde={KC.pink} />
+      <Chip T={T} at={K.Hu + 0.4} until={K.Pr - 0.2} texto="células madre pluripotentes inducidas" y={720} tam={38} borde={KC.yellow} />
+      <Chip T={T} at={K.Hu + 1.4} until={K.Pr - 0.2} texto="2007 · piel humana adulta" y={250} tam={40} borde={KC.pink} />
 
       {/* 6–7 · ¿para qué? → de ahí, a lo que haga falta */}
       <Escena T={T} a={K.Pr} b={K.Re} zoom={0.04}>
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={30} color="rgba(255,225,26,.25)" />
         <Capa>
-          <Colonia x={T < K.De ? 330 : 540} y={T < K.De ? 820 : 700} n={70} p={1} T={T} R={150} brilla={1} />
-          {T < K.De && <text x={330} y={720} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} opacity={0.9} transform={`rotate(${Math.sin(T * 3) * 6} 330 620)`}>?</text>}
-          {T >= K.De && trio(K.De + 0.1, 540, 760)}
+          {/* pase a mano: colonia al doble y al centro (barra con z = 2); en «Destino» sube deslizándose (ya no salta) y las
+              tres burbujas (r 110→150) llenan la mitad de abajo */}
+          {(() => { const m = kprog(T, K.De, K.De + 0.5, kEase.suave);
+            return <g transform={`translate(540 ${klerp(1020, 620, m)}) scale(${klerp(2, 1.4, m)})`}><Colonia x={0} y={0} n={70} p={1} T={T} R={150} brilla={1} /></g>; })()}
+          {T < K.De + 0.3 && <text x={540} y={700} textAnchor="middle" style={{ font:`400 400px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} opacity={0.9 * (1 - kprog(T, K.De, K.De + 0.3))} transform={`rotate(${Math.sin(T * 3) * 6} 540 560)`}>?</text>}
+          {/* belleza: colonia y burbujas bajan 120 px (la colonia quedaba pegada al logo) */}
+          {T >= K.De && trio(K.De + 0.1, [[212, 1250], [540, 1360], [868, 1250]], [[430, 760, 212, 1092, 70], [540, 840, 540, 1202, 0], [650, 760, 868, 1092, -70]], 140)}
         </Capa>
-        {T < K.De && <Escala T={T} z={1} pxPorMm={PX_MM} />}
+        {T < K.De && <Escala T={T} z={2} pxPorMm={PX_MM} />}
       </Escena>
 
       {/* 8 · 2014, Kobe: retina de su propia piel */}
       <Escena T={T} a={K.Re} b={K.Pa} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         <Capa>
-          <Ojo x={520} y={900} r={220} lamina={kprog(T, K.Re + 2.6, K.Re + 4.2, kEase.suave)} T={T} />
-          <g opacity={kprog(T, K.Re + 2.4, K.Re + 2.9)}><Mano x={940} y={1110} s={0.26} rot={-20} />
-            <FlechaCurva x1={900} y1={1010} x2={770} y2={910} p={kprog(T, K.Re + 2.6, K.Re + 3.4)} color={KC.ink} T={T} /></g>
+          {/* pase a mano: ojo 1.5× (r 220→330) al centro; la mano (1.7×) baja desde arriba a la derecha; tarjeta y chip arriba, sin tapar el ojo */}
+          <Ojo x={480} y={980} r={330} lamina={kprog(T, K.Re + 2.6, K.Re + 4.2, kEase.suave)} T={T} />
+          <g opacity={kprog(T, K.Re + 2.4, K.Re + 2.9)}><Mano x={900} y={470} s={0.44} rot={168} />
+            <FlechaCurva x1={905} y1={640} x2={860} y2={900} p={kprog(T, K.Re + 2.6, K.Re + 3.4)} curva={-50} color={KC.ink} T={T} /></g>
         </Capa>
       </Escena>
-      <TarjetaEstudio T={T} at={K.Re + 0.2} until={K.Re + 2.6} anio="2014" quien="Kobe, Japón · RIKEN" revista="células de su propia piel → retina" x={420} y={500} />
-      <Chip T={T} at={K.Re + 3.0} until={K.Pa - 0.2} texto="lámina de 1.3 × 3 mm" x={400} y={600} tam={34} borde={KC.gold} />
+      <TarjetaEstudio T={T} at={K.Re + 0.2} until={K.Re + 2.6} anio="2014" quien="Kobe, Japón · RIKEN" revista="células de su propia piel → retina" x={400} y={370} />
+      <Chip T={T} at={K.Re + 3.0} until={K.Pa - 0.2} texto="lámina de 1.3 × 3 mm" x={380} y={470} tam={36} borde={KC.gold} />
 
       {/* 9 · Kioto: párkinson */}
       <Escena T={T} a={K.Pa} b={K.Pl} zoom={0.03}>
         <FondoLunares color={KC.orange} />
         <Capa>
-          <Cerebro x={540} y={860} s={1.2} T={T} pulso={kprog(T, K.Pa + 3.2, K.Pa + 4.2)} />
-          {Array.from({ length: 7 }, (_, i) => <Personita key={i} x={150 + i * 130} y={1170} s={0.6} color={[KC.cyan, KC.pink, KC.yellow, KC.mint, KC.lilac, KC.cyan, KC.pink][i]} o={kprog(T, K.Pa + 0.4 + i * 0.15, K.Pa + 0.7 + i * 0.15)} />)}
+          {/* pase a mano: cerebro 1.4× (s 1.2→1.7) a lo ancho del cuadro; los siete pacientes más grandes debajo; tarjeta y chips arriba */}
+          <Cerebro x={540} y={900} s={1.7} T={T} pulso={kprog(T, K.Pa + 3.2, K.Pa + 4.2)} />
+          {Array.from({ length: 7 }, (_, i) => <Personita key={i} x={120 + i * 140} y={1420} s={0.9} color={[KC.cyan, KC.pink, KC.yellow, KC.mint, KC.lilac, KC.cyan, KC.pink][i]} o={kprog(T, K.Pa + 0.4 + i * 0.15, K.Pa + 0.7 + i * 0.15)} />)}
         </Capa>
       </Escena>
-      <TarjetaEstudio T={T} at={K.Pa + 0.2} until={K.Pa + 3.0} anio="2018–2025" quien="Universidad de Kioto" revista="Nature 2025 · 7 pacientes" x={460} y={540} />
-      <Chip T={T} at={K.Pa + 3.3} until={K.Pl - 0.2} texto="✓ hicieron dopamina" x={330} y={470} tam={36} borde={KC.gold2} />
-      <Chip T={T} at={K.Pa + 4.4} until={K.Pl - 0.2} texto="✓ sin tumores" x={330} y={560} tam={36} borde={KC.mint} />
+      <TarjetaEstudio T={T} at={K.Pa + 0.2} until={K.Pa + 3.0} anio="2018–2025" quien="Universidad de Kioto" revista="Nature 2025 · 7 pacientes" x={540} y={330} />
+      <Chip T={T} at={K.Pa + 3.3} until={K.Pl - 0.2} texto="✓ hicieron dopamina" x={320} y={380} tam={36} borde={KC.gold2} />
+      <Chip T={T} at={K.Pa + 4.4} until={K.Pl - 0.2} texto="✓ sin tumores" x={790} y={380} tam={36} borde={KC.mint} />
 
       {/* 10 · enfermedades en un plato */}
       <Escena T={T} a={K.Pl} b={K.Ve} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <Capa>
-          <PlacaPetri x={540} y={960} r={270} agar="#ffe9a8" id="pl">
-            {[[-120, -80], [90, -110], [-30, 50], [140, 80], [-150, 120]].map(([a, b], i) => <Neurona key={i} x={a} y={b} s={0.55} T={T + i} />)}
+          {/* pase a mano: plato 1.5× (r 270→400) y gotero 1.5×; el chip sube y ya no toca el gotero */}
+          <PlacaPetri x={540} y={1030} r={400} agar="#ffe9a8" id="pl">
+            {[[-120, -80], [90, -110], [-30, 50], [140, 80], [-150, 120]].map(([a, b], i) => <Neurona key={i} x={a * 1.5} y={b * 1.5} s={0.85} T={T + i} />)}
           </PlacaPetri>
-          <Gotero x={700} y={klerp(380, 600, kprog(T, K.Pl, K.Pl + 0.6, kEase.sale))} s={1.1} />
-          <Goteo T={T} x={700} y0={610} y1={900} cada={0.45} color="#7fc8ff" desde={K.Pl + 0.7} hasta={K.Ve} />
+          <Gotero x={780} y={klerp(420, 660, kprog(T, K.Pl, K.Pl + 0.6, kEase.sale))} s={1.5} />
+          <Goteo T={T} x={780} y0={675} y1={1000} cada={0.45} color="#7fc8ff" desde={K.Pl + 0.7} hasta={K.Ve} r={16} />
         </Capa>
       </Escena>
-      <Chip T={T} at={K.Pl + 0.6} until={K.Ve - 0.2} texto="ej.: ELA · ropinirol · Keio 2023" x={420} y={470} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.Pl + 0.6} until={K.Ve - 0.2} texto="ej.: ELA · ropinirol · Keio 2023" x={390} y={300} tam={34} borde={KC.gold} />
 
       {/* 11 · 24 → 10 → 4 */}
       <Escena T={T} a={K.Ve} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
-        <Capa>{GENES24.map((g, i) => { const c = i % 4, r = Math.floor(i / 4), x = 160 + c * 190, y = 680 + r * 92, t = tachaEn(i), raya = kprog(T, t, t + 0.25), clave = !isFinite(t);
+        {/* pase a mano: la tabla de 24 genes 1.3× y centrada (antes cargada a la izquierda y arriba); letra oscura sobre ficha clara */}
+        {/* belleza: la célula de piel (la que recibe los genes) queda a media luz detrás de la tabla: ya no es una lista sola */}
+        <Capa><g opacity={0.32}><Fibro x={540} y={900} s={4.2} rot={-18} T={T} seed={3} /></g></Capa>
+        <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse at 50% 47%, rgba(10,14,26,.1), rgba(10,14,26,.5))' }}></div>
+        <Capa>{GENES24.map((g, i) => { const c = i % 4, r = Math.floor(i / 4), x = 540 + (c - 1.5) * 236, y = 560 + r * 128, t = tachaEn(i), raya = kprog(T, t, t + 0.25), clave = !isFinite(t);
           const col = clave ? GEN.find((q) => q[0] === g)[1] : '#f6f3ec';
-          return <g key={i} opacity={1 - raya * 0.6} transform={`translate(${x} ${y}) scale(${clave ? 1 + 0.12 * kprog(T, K.Ve + 3.6, K.Ve + 4.0) : 1})`}>
+          return <g key={i} opacity={1 - raya * 0.6} transform={`translate(${x} ${y}) scale(${1.3 * (clave ? 1 + 0.12 * kprog(T, K.Ve + 3.6, K.Ve + 4.0) : 1)})`}>
             <rect x={-82} y={-36} width={164} height={72} rx={16} fill={T > K.Ve + 3.4 && clave ? col : '#f6f3ec'} stroke={KC.ink} strokeWidth={5} />
-            <text y={11} textAnchor="middle" style={{ font:`700 28px ${KF.mono}`, fontStyle:'italic' }} fill={KC.ink}>{g}</text>
+            <text y={11} textAnchor="middle" style={{ font:`700 28px ${KF.mono}`, fontStyle:'italic', stroke:'none' }} fill="#0b1020">{g}</text>
             {raya > 0 && <line x1={-90} y1={0} x2={-90 + 180 * raya} y2={-4} stroke={KC.red} strokeWidth={9} strokeLinecap="round" />}
           </g>; })}</Capa>
       </Escena>
-      {T < K.Ci - 0.1 && <Contador T={T} at={K.Ve + 0.4} desde={24} hasta={4} dur={3.0} sufijo=" genes" x={360} y={470} tam={72} color={KC.ink} />}
-      <Chip T={T} at={K.Ve + 3.0} until={K.Ci - 0.2} texto="Nobel 2012 · Yamanaka y John Gurdon" y={1250} tam={34} borde={KC.gold} />
+      {T < K.Ci - 0.1 && <Contador T={T} at={K.Ve + 0.4} desde={24} hasta={4} dur={3.0} sufijo=" genes" x={540} y={370} tam={96} color={KC.ink} />}
+      <Chip T={T} at={K.Ve + 3.0} until={K.Ci - 0.2} texto="Nobel 2012 · Yamanaka y John Gurdon" y={1400} tam={34} borde={KC.gold} />
 
       {/* 12 · cierre: la mano del inicio, a cuatro genes de distancia */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        <Capa><Mano x={540} y={1500} s={1.15} rot={-6} /></Capa>
+        {/* pase a mano: la misma mano grande del gancho, con la lupa al centro (r 230→290) */}
+        <Capa><Mano x={540} y={1700} s={2.3} rot={-6} /></Capa>
       </Escena>
-      <Lupa T={T} at={K.Ci + 0.2} until={K.Ou + 0.2} x={330} y={700} r={230} fx={500} fy={1330} etiqueta="AL MICROSCOPIO · piel" tinte={KC.gold2}
-        interior={(t) => <svg width={460} height={460}><rect width={460} height={460} fill="#14081a" />
+      <Lupa T={T} at={K.Ci + 0.2} until={K.Ou + 0.2} x={540} y={510} r={290} fx={(t) => 540 - 162 * zC(t)} fy={(t) => 864 + 506 * zC(t)} etiqueta="AL MICROSCOPIO · piel" tinte={KC.gold2}
+        interior={(t) => <svg width={580} height={580} viewBox="0 0 460 460"><rect width={460} height={460} fill="#14081a" />
           <Fibro x={230} y={230} s={1.2} rot={-14} T={t} seed={2} brilla={kprog(t, K.Ci + 1.5, K.Ci + 2.5)} />
           {GEN.map(([n, c], i) => { const a = t * 1.4 + i * Math.PI / 2, p = kprog(t, K.Ci + 1.0 + i * 0.3, K.Ci + 1.4 + i * 0.3);
             return <circle key={i} cx={230 + Math.cos(a) * 160} cy={230 + Math.sin(a) * 120} r={22 * p} fill={c} stroke={KC.ink} strokeWidth={4} />; })}</svg>} />
-      <Chip T={T} at={K.Ci + 1.6} until={K.Ou} texto="a 4 genes de distancia" x={540} y={1110} tam={44} borde={KC.gold2} />
+      <Chip T={T} at={K.Ci + 1.6} until={K.Ou} texto="a 4 genes de distancia" x={540} y={950} tam={44} borde={KC.gold2} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Pi - 0.1} texto="No es solo piel: *puede ser neurona.*" />

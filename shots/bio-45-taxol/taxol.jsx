@@ -176,8 +176,13 @@ function Paciente({ x, y, s = 1 }) {
 function TanqueMini({ T, x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <line x1={-80} y1={180} x2={-110} y2={260} stroke={KC.ink} strokeWidth={10} /><line x1={80} y1={180} x2={110} y2={260} stroke={KC.ink} strokeWidth={10} />
-    <rect x={-130} y={-200} width={260} height={400} rx={50} fill="#cfd8e0" stroke={KC.ink} strokeWidth={10} />
-    <rect x={-110} y={-120} width={220} height={300} rx={36} fill="#cfe7a8" />
+    <defs>
+      <linearGradient id="txTanq" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#8e9aa6" /><stop offset="0.3" stopColor="#e6edf2" /><stop offset="0.65" stopColor="#c3ced8" /><stop offset="1" stopColor="#6e7a86" /></linearGradient>
+      <linearGradient id="txCaldo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#b9d68c" /><stop offset="1" stopColor="#5a7a3a" /></linearGradient>
+    </defs>
+    <rect x={-130} y={-200} width={260} height={400} rx={50} fill="url(#txTanq)" stroke={KC.ink} strokeWidth={10} />
+    <rect x={-110} y={-120} width={220} height={300} rx={36} fill="url(#txCaldo)" />
+    <rect x={-100} y={-112} width={200} height={14} rx={7} fill="#fff" opacity={0.35} />
     {Array.from({ length: 9 }, (_, i) => { const g = krng(i * 5 + 1); return <circle key={i} cx={-90 + g() * 180} cy={170 - ((T * 70 + g() * 300) % 290)} r={6 + g() * 6} fill="rgba(255,255,255,.6)" />; })}
     <rect x={-60} y={-250} width={120} height={50} rx={14} fill="#6f7a84" stroke={KC.ink} strokeWidth={8} />
     <circle cx={0} cy={30} r={50} fill="none" stroke={KC.ink} strokeWidth={6} />
@@ -314,7 +319,15 @@ function Taxol() {
       </Escena>
       {/* 10 · Cap. 3 tanque: células de tejo en el caldo */}
       <Escena T={T} a={K.Ta} b={K.Ci} zoom={0.03}>
-        <MundoBiorreactor T={T} turbio={0.25} burbujas={1} fondo={KC.cyan} etiquetaTanque="hasta 75,000 litros" />
+        {/* modo cine: fondo oscuro con motas y el tanque del propio shot, grande (antes fondo cian con puntos) */}
+        <FondoLunares color={KC.leaf} />
+        <TxSvg>
+          <ellipse cx={540} cy={1490} rx={320} ry={32} fill="#000" opacity={0.4} />
+          <TanqueMini T={T} x={540} y={940} s={2.15} />
+          <line x1={540} y1={410} x2={540} y2={1250} stroke="#5a6672" strokeWidth={12} />
+          {[0, 1].map((k) => <g key={k} transform={`translate(540 ${1000 + k * 200})`}><ellipse rx={150 * Math.abs(Math.cos(T * 3 + k))} ry={16} fill="#8e9aa6" stroke={KC.ink} strokeWidth={5} /></g>)}
+        </TxSvg>
+        <Chip T={T} at={K.Ta + 0.6} until={K.Ci - 0.2} texto="hasta 75,000 litros" x={540} y={1556} tam={30} borde={KC.leaf} />
       </Escena>
       <Lupa T={T} at={K.Ta + 1.2} until={K.Ci - 0.4} x={560} y={880} r={250} fx={540} fy={1010} tinte={KC.leaf} etiqueta="AL MICROSCOPIO · CÉLULAS DE TEJO" interior={(Tl, r) => <CelulasTejo T={Tl} r={r} />} />
       {/* 11 · cierre: el mismo tejo y la misma bolsa del inicio; ahora la bolsa se llena desde el tanque y el árbol sigue de pie */}

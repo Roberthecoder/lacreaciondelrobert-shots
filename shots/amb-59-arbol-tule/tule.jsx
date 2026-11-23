@@ -1,10 +1,11 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #59 · No son varios árboles: es uno solo (el árbol del Tule) — NARRADO (N5 el experimento + N2 el número).
 // Datos: Dorado et al. 1996 (Madroño 43: 445-452), Guinness/Van Pelt 2005, Hall et al. 1990, Conzatti 1921, Gymnosperm Database,
 // Rodríguez-Trejo y Vázquez Soto (Taxodium huegelii). Ver guion.md y verificacion.md. Todo el dibujo es esquemático.
 // Morfología: ahuehuete (Taxodium mucronatum) con tronco de contrafuertes (lóbulos y surcos), copa más ancha que alta,
 // ramillas colgantes y hojas lineales en dos filas sobre la ramilla.
 
-const TU_BARK = '#8a5a3a', TU_BARK2 = '#6b4128', TU_HOJA = '#2f7d3a', TU_HOJA2 = '#4fa34f', TU_AGUA = '#2f8fd8';
+const TU_BARK = '#8a5a3a', TU_BARK2 = '#6b4128', TU_HOJA = '#2f7d3a', TU_HOJA2 = '#4fa34f', TU_AGUA = '#1c5a94';
 
 // Copa: racimos de follaje sobre una elipse más ancha que alta (44 m de ancho, 35 m de alto: Van Pelt 2005).
 const TU_COPA = (() => { const r = krng(59), out = [];
@@ -24,11 +25,17 @@ function Ahuehuete({ x, y, s = 1, separa = 0, T = 0, numeros = 0, marca = 0, int
     const d = `M ${X - w / 2 - 10} 0 C ${X - w / 2 - 20} -70 ${X - w / 2 + 14} -170 ${X - w / 3} -250 L ${X + w / 3} -250 C ${X + w / 2 - 14} -170 ${X + w / 2 + 20} -70 ${X + w / 2 + 10} 0 Z`;
     return <g key={i}>
       <path d={d} fill={i % 2 ? TU_BARK : '#94633f'} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+      <path d={d} fill="url(#tuLado)" />
       {[-0.22, 0.05, 0.28].map((q, k) => <path key={k} d={`M ${X + q * w} -8 q ${8 - k * 5} -90 ${-5 + k * 4} -215`} stroke={TU_BARK2} strokeWidth={6} fill="none" strokeLinecap="round" />)}
       {marca > 0 && <path d={d} fill="none" stroke={KC.yellow} strokeWidth={6} strokeDasharray="16 12" opacity={marca} transform={`translate(0 0)`} />}
     </g>;
   });
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    {/* pase de belleza: volumen (luz arriba-izquierda en la copa; cada contrafuerte con luz y sombra lateral) */}
+    <defs>
+      <radialGradient id="tuCopa" gradientUnits="userSpaceOnUse" cx={-150} cy={-760} r={620}><stop offset="0" stopColor="#7cc46a" /><stop offset="0.45" stopColor="#2f7d3a" /><stop offset="1" stopColor="#123d1c" /></radialGradient>
+      <linearGradient id="tuLado" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#fff" stopOpacity="0.22" /><stop offset="0.5" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.35" /></linearGradient>
+    </defs>
     {/* ramas principales (debajo de la copa) */}
     <g transform={`rotate(${sw * 0.3} 0 -200)`}>
       {TU_RAMAS.map(([x0, y0, x1, y1], i) => <g key={i}>
@@ -42,6 +49,7 @@ function Ahuehuete({ x, y, s = 1, separa = 0, T = 0, numeros = 0, marca = 0, int
     <g transform={`rotate(${sw} 0 -200)`}>
       {TU_COPA.map((c, i) => <circle key={'b' + i} cx={c.cx} cy={c.cy} r={c.r} fill={TU_HOJA} stroke={KC.ink} strokeWidth={14} />)}
       {TU_COPA.map((c, i) => <circle key={'f' + i} cx={c.cx} cy={c.cy} r={c.r} fill={TU_HOJA} />)}
+      <g opacity={0.6}>{TU_COPA.map((c, i) => <circle key={'v' + i} cx={c.cx} cy={c.cy} r={c.r} fill="url(#tuCopa)" />)}</g>
       {TU_LUZ.map(([cx, cy, r], i) => <circle key={'l' + i} cx={cx} cy={cy} r={r} fill={TU_HOJA2} opacity={0.75} />)}
       {/* ramillas colgantes */}
       {Array.from({ length: 16 }, (_, i) => { const xx = -300 + i * 40, yy = -540 + Math.sqrt(Math.max(0, 1 - (xx / 360) ** 2)) * 190 + 55;
@@ -88,8 +96,8 @@ function Huella({ x, y, a = 380, b = 190, cinta = 0 }) {
 }
 
 // Persona vista desde arriba (cabeza + hombros), girada hacia afuera del tronco.
-function PersonaArriba({ x, y, rot, color }) {
-  return <g transform={`translate(${x} ${y}) rotate(${rot})`}>
+function PersonaArriba({ x, y, rot, color, s = 1 }) {
+  return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     <ellipse rx={13} ry={26} fill={color} stroke={KC.ink} strokeWidth={4} />
     <circle cx={4} r={12} fill="#f1c9a0" stroke={KC.ink} strokeWidth={4} />
   </g>;
@@ -99,16 +107,16 @@ function PersonaArriba({ x, y, rot, color }) {
 function Suelo({ T, y0, agua = 1, pantano = 0, raices = 1, x0 = 540 }) {
   const top = y0 + 150, alto = 140 * agua;
   return <g>
-    <rect x={0} y={y0} width={KW} height={KH - y0} fill="#8b5a2b" />
+    <rect x={0} y={y0} width={KW} height={KH - y0} fill="#4a3424" />
     {Array.from({ length: 40 }, (_, i) => <circle key={i} cx={(i * 197) % KW} cy={y0 + 20 + ((i * 89) % 260)} r={4 + (i % 3) * 2} fill="#6e4520" />)}
     <rect x={0} y={top} width={KW} height={alto + 300} fill={TU_AGUA} opacity={0.9} />
     {Array.from({ length: 7 }, (_, i) => <path key={'w' + i} d={`M ${60 + i * 150} ${top + 40 + (i % 2) * 40} q 25 ${-8 + Math.sin(T * 2 + i) * 5} 50 0`} stroke="#bfe7ff" strokeWidth={6} fill="none" strokeLinecap="round" />)}
     <line x1={0} y1={top} x2={KW} y2={top} stroke={KC.ink} strokeWidth={5} strokeDasharray="18 12" />
     {raices > 0 && [[-120, -300, 180], [-60, -150, 175], [0, -20, 180], [60, 140, 176], [120, 300, 180], [-90, -420, 120], [90, 420, 120]].map(([a, b, h], i) =>
       <path key={'r' + i} d={`M ${x0 + a} ${y0} Q ${x0 + (a + b) / 2} ${y0 + h * 0.4} ${x0 + b} ${y0 + h * raices}`} stroke="#5a3a1e" strokeWidth={14 - (i > 4 ? 5 : 0)} fill="none" strokeLinecap="round" />)}
-    <rect x={0} y={y0 - 6} width={KW} height={14} fill="#5c9a3c" stroke={KC.ink} strokeWidth={4} />
+    <rect x={0} y={y0 - 6} width={KW} height={14} fill="#33542c" stroke={KC.ink} strokeWidth={4} />
     {pantano > 0 && <g opacity={pantano}>
-      <rect x={0} y={y0 - 18} width={KW} height={34} fill="#5fb3e6" stroke={KC.ink} strokeWidth={4} />
+      <rect x={0} y={y0 - 18} width={KW} height={34} fill="#346181" stroke={KC.ink} strokeWidth={4} />
       {Array.from({ length: 14 }, (_, i) => { const xx = 30 + i * 78; if (Math.abs(xx - x0) < 200) return null; const h = 90 + (i % 3) * 30, m = mece(T, i, 0.6) * 6;
         return <g key={'t' + i}><path d={`M ${xx} ${y0} q ${m} ${-h / 2} ${m * 1.5} ${-h}`} stroke="#3f8f3a" strokeWidth={6} fill="none" />
           <rect x={xx + m * 1.5 - 8} y={y0 - h - 6} width={16} height={46} rx={8} fill="#7a4a22" stroke={KC.ink} strokeWidth={3} /></g>; })}
@@ -147,8 +155,8 @@ function Anillos({ T, x, y, r = 240 }) {
   </g>;
 }
 
-function Tubo({ x, y, lleno = 0 }) {
-  return <g transform={`translate(${x} ${y})`}>
+function Tubo({ x, y, lleno = 0, s = 1 }) {
+  return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d="M -22 -90 L -22 -10 Q 0 22 22 -10 L 22 -90" fill="rgba(255,255,255,.75)" stroke={KC.ink} strokeWidth={5} />
     {lleno > 0 && <Ramita x={-4} y={-14} L={70} rot={-90} s={0.8} o={lleno} />}
     <rect x={-28} y={-104} width={56} height={18} rx={6} fill={KC.pink} stroke={KC.ink} strokeWidth={4} />
@@ -167,8 +175,8 @@ function TuleShot() {
   const cinta = kprog(T, K.Ci + 0.8, K.Ci + 3.3, kEase.suave);
   // personas tomadas de la mano: 21 (36.18 m / ~1.7 m de brazos abiertos)
   const NP = 21, pp = kprog(T, K.Ab + 0.3, K.Ab + 3.6), nP = Math.floor(pp * NP + 0.001);
-  const gentes = Array.from({ length: NP }, (_, i) => { const t = (i / NP) * Math.PI * 2 - Math.PI / 2, ax = 328, by = 178;
-    return { x: 540 + Math.cos(t) * ax, y: 860 + Math.sin(t) * by, rot: Math.atan2(Math.sin(t) * ax, Math.cos(t) * by) * 180 / Math.PI, c: [KC.pink, KC.cyan, KC.yellow, KC.orange, KC.lilac, KC.mint][i % 6] }; });
+  const gentes = Array.from({ length: NP }, (_, i) => { const t = (i / NP) * Math.PI * 2 - Math.PI / 2, ax = 476, by = 258;
+    return { x: 540 + Math.cos(t) * ax, y: 1000 + Math.sin(t) * by, rot: Math.atan2(Math.sin(t) * ax, Math.cos(t) * by) * 180 / Math.PI, c: [KC.pink, KC.cyan, KC.yellow, KC.orange, KC.lilac, KC.mint][i % 6] }; });
   // muestras: hojas de las seis ramas a los tubos
   const hojaP = (i) => kprog(T, K.E + 1.2 + i * 0.4, K.E + 2.0 + i * 0.4, kEase.suave);
   const gelP = kprog(T, K.A + 0.3, K.A + 3.0);
@@ -178,25 +186,25 @@ function TuleShot() {
       {/* 1 · gancho: parecen varios árboles pegados… y es uno solo */}
       <Escena T={T} a={K.G} b={K.Ci}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><rect x={0} y={1150} width={KW} height={800} fill="#c8a46a" /><rect x={0} y={1144} width={KW} height={14} fill="#5c9a3c" stroke={KC.ink} strokeWidth={4} />
-          <Ahuehuete x={370} y={1150} s={0.8} separa={sepG} marca={sepG} T={T} /></>)}
+        {svg(<><rect x={0} y={1330} width={KW} height={800} fill="#3a3023" /><rect x={0} y={1324} width={KW} height={14} fill="#33542c" stroke={KC.ink} strokeWidth={4} />
+          <Ahuehuete x={540} y={1330} s={1.12} separa={sepG} marca={sepG} T={T} /></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 2 · la cinta: 36.18 m de contorno (2005) */}
       <Escena T={T} a={K.Ci} b={K.Ab}>
         <FondoLunares color={KC.mint} />
-        {svg(<Huella x={470} y={880} a={380} b={190} cinta={cinta} />)}
-        <EscalaFija texto="5 m" largo={254} y={1480} color={KC.ink} />
+        {svg(<Huella x={540} y={960} a={480} b={240} cinta={cinta} />)}
+        <EscalaFija texto="5 m" largo={321} y={1480} color={KC.ink} />
       </Escena>
       {/* 3 · más de veinte personas para abrazarlo */}
       <Escena T={T} a={K.Ab} b={K.P}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><Huella x={540} y={860} a={300} b={150} />
+        {svg(<><Huella x={540} y={1000} a={435} b={218} />
           {gentes.map((g, i) => i < nP ? <g key={i}>
-            {i > 0 && <line x1={gentes[i - 1].x} y1={gentes[i - 1].y} x2={g.x} y2={g.y} stroke={KC.ink} strokeWidth={6} strokeLinecap="round" />}
+            {i > 0 && <line x1={gentes[i - 1].x} y1={gentes[i - 1].y} x2={g.x} y2={g.y} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />}
             {i === NP - 1 && <line x1={g.x} y1={g.y} x2={gentes[0].x} y2={gentes[0].y} stroke={KC.ink} strokeWidth={6} strokeLinecap="round" />}
           </g> : null)}
-          {gentes.map((g, i) => i < nP ? <PersonaArriba key={'p' + i} x={g.x} y={g.y} rot={g.rot} color={g.c} /> : null)}
+          {gentes.map((g, i) => i < nP ? <PersonaArriba key={'p' + i} x={g.x} y={g.y} rot={g.rot} color={g.c} s={1.45} /> : null)}
           {nP > 0 && <text x={540} y={560} textAnchor="middle" style={{ font:`400 190px ${KF.titulo}` }} fill={KC.pink} stroke={KC.ink} strokeWidth={9} paintOrder="stroke">{nP}</text>}
           <text x={540} y={620} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>personas con los brazos abiertos</text></>)}
         <EscalaFija texto="esquema · vista desde arriba" largo={0} y={1480} color={KC.ink} />
@@ -204,74 +212,74 @@ function TuleShot() {
       {/* 4 · pregunta: ¿varios árboles fusionados? */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><rect x={0} y={1150} width={KW} height={800} fill="#c8a46a" /><rect x={0} y={1144} width={KW} height={14} fill="#5c9a3c" stroke={KC.ink} strokeWidth={4} />
-          <Ahuehuete x={300} y={1150} s={0.66} separa={sepP} marca={sepP} interrog={sepP} T={T} /></>)}
+        {svg(<><rect x={0} y={1330} width={KW} height={800} fill="#3a3023" /><rect x={0} y={1324} width={KW} height={14} fill="#33542c" stroke={KC.ink} strokeWidth={4} />
+          <Ahuehuete x={540} y={1330} s={1.08} separa={sepP} marca={sepP} interrog={sepP} T={T} /></>)}
       </Escena>
       {/* 5 · el estudio de 1996: hojas de las seis ramas principales */}
       <Escena T={T} a={K.E} b={K.A}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<><Ahuehuete x={540} y={990} s={0.62} T={T} numeros={kprog(T, K.E + 0.4, K.E + 1.4)} />
-          <rect x={0} y={990} width={KW} height={14} fill="#5c9a3c" stroke={KC.ink} strokeWidth={4} />
-          {TU_RAMAS.map(([, , x1, y1], i) => { const p = hojaP(i), sx = 540 + x1 * 0.62, sy = 990 + y1 * 0.62, tx = 240 + i * 120, ty = 1120;
-            return <g key={i}><Tubo x={tx} y={1180} lleno={p >= 1 ? 1 : 0} />{p > 0 && p < 1 && <Ramita x={klerp(sx, tx, p)} y={klerp(sy, ty, p) - Math.sin(p * Math.PI) * 120} L={90} rot={p * 200} s={0.9} />}</g>; })}</>)}
+        {svg(<><Ahuehuete x={540} y={1090} s={0.9} T={T} numeros={kprog(T, K.E + 0.4, K.E + 1.4)} />
+          <rect x={0} y={1090} width={KW} height={14} fill="#33542c" stroke={KC.ink} strokeWidth={4} />
+          {TU_RAMAS.map(([, , x1, y1], i) => { const p = hojaP(i), sx = 540 + x1 * 0.9, sy = 1090 + y1 * 0.9, tx = 165 + i * 150, ty = 1210;
+            return <g key={i}><Tubo x={tx} y={1340} s={1.5} lleno={p >= 1 ? 1 : 0} />{p > 0 && p < 1 && <Ramita x={klerp(sx, tx, p)} y={klerp(sy, ty, p) - Math.sin(p * Math.PI) * 120} L={90} rot={p * 200} s={1.3} />}</g>; })}</>)}
       </Escena>
       {/* 6 · ADN: 149 marcas, las seis ramas idénticas */}
       <Escena T={T} a={K.A} b={K.Ed}>
-        <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 60% 45%, #1a2b4a 0%, ${KC.noche} 70%)` }}></div>
-        {svg(<Gel T={T} x={350} y={470} w={640} h={530} p={gelP} />)}
-        <EscalaFija texto="esquema de un gel de ADN" largo={0} y={1480} color={KC.texto} />
+        <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 48%, #1a2b4a 0%, ${KC.noche} 70%)` }}></div>
+        {svg(<Gel T={T} x={110} y={530} w={860} h={720} p={gelP} />)}
+        <EscalaFija texto="esquema de un gel de ADN" largo={0} y={1540} color={KC.texto} />
       </Escena>
       {/* 7 · edad: sin fechado confiable */}
       <Escena T={T} a={K.Ed} b={K.Ag}>
         <FondoLunares color={KC.orange} />
-        {svg(<Anillos T={T} x={540} y={800} r={240} />)}
+        {svg(<Anillos T={T} x={540} y={900} r={380} />)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 8 · ahuehuete = viejo del agua; raíces y agua del suelo */}
       <Escena T={T} a={K.Ag} b={K.Pa}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Suelo T={T} y0={900} raices={kprog(T, K.Ag + 0.4, K.Ag + 2.2, kEase.sale)} agua={kprog(T, K.Ag + 1.6, K.Ag + 2.8, kEase.sale)} />
-          <Ahuehuete x={540} y={900} s={0.55} T={T} /></>)}
+        {svg(<><Suelo T={T} y0={1140} raices={kprog(T, K.Ag + 0.4, K.Ag + 2.2, kEase.sale)} agua={kprog(T, K.Ag + 1.6, K.Ag + 2.8, kEase.sale)} />
+          <Ahuehuete x={540} y={1140} s={0.9} T={T} /></>)}
       </Escena>
-      <Lupa T={T} at={K.Ag + 2.6} until={K.Pa - 0.3} x={850} y={470} r={150} fx={700} fy={700} tinte={KC.leaf} etiqueta="DE CERCA · hojas"
+      <Lupa T={T} at={K.Ag + 2.6} until={K.Pa - 0.3} x={880} y={330} r={150} fx={700} fy={640} tinte={KC.leaf} etiqueta="DE CERCA · hojas"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#e9f5df" /><Ramita x={30} y={r} L={r * 2 - 50} s={1.15} /></svg>} />
       {/* 9 · antes era un pantano: agua que nunca falta */}
       <Escena T={T} a={K.Pa} b={K.C}>
         <FondoLunares color={KC.mint} />
-        {svg(<><Suelo T={T} y0={900} pantano={kprog(T, K.Pa + 0.3, K.Pa + 1.4, kEase.suave) * (1 - kprog(T, K.Pa + 4.6, K.Pa + 5.6))} agua={aguaPa} />
-          <Ahuehuete x={540} y={900} s={0.55} T={T} /></>)}
+        {svg(<><Suelo T={T} y0={1140} pantano={kprog(T, K.Pa + 0.3, K.Pa + 1.4, kEase.suave) * (1 - kprog(T, K.Pa + 4.6, K.Pa + 5.6))} agua={aguaPa} />
+          <Ahuehuete x={540} y={1140} s={0.9} T={T} /></>)}
       </Escena>
       {/* 10 · cierre: la imagen del inicio, ya entendida: uno solo, que vive del agua */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Suelo T={T} y0={1060} />
-          <Ahuehuete x={370} y={1060} s={0.75} separa={0.6 * (1 - kprog(T, K.C + 0.2, K.C + 1.4, kEase.suave))} T={T} />
-          <Goteo T={T} x={300} y0={1060} y1={1200} cada={0.9} desde={K.C + 1.2} color={TU_AGUA} r={14} /></>)}
+        {svg(<><Suelo T={T} y0={1250} />
+          <Ahuehuete x={540} y={1250} s={1.05} separa={0.6 * (1 - kprog(T, K.C + 0.2, K.C + 1.4, kEase.suave))} T={T} />
+          <Goteo T={T} x={442} y0={1250} y1={1400} cada={0.9} desde={K.C + 1.2} color={TU_AGUA} r={14} /></>)}
       </Escena>
 
       {/* datos y etiquetas */}
-      <Chip T={T} at={K.G + 1.6} until={K.Ci - 0.2} texto="1 solo árbol" y={460} x={330} tam={46} borde={KC.yellow} />
-      <NumeroGigante T={T} at={K.Ci + 0.8} until={K.Ab - 0.2} valor={36.18} dec={2} dur={2.5} sufijo=" m" etiqueta="contorno del tronco (2005)" x={420} y={480} tam={150} color={KC.yellow} />
-      <Etq T={T} at={K.Ci + 0.3} until={K.Ab - 0.2} x={130} y={1130} texto="Árbol del Tule · Oaxaca" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Ci + 3.4} until={K.Ab - 0.2} texto="vista desde arriba · con contrafuertes" y={680} x={470} tam={26} borde={KC.ink} />
-      <Chip T={T} at={K.Ab + 3.7} until={K.P - 0.2} texto="más de 20 personas" y={1140} x={540} tam={38} borde={KC.pink} />
-      <Chip T={T} at={K.E + 0.2} until={K.A - 0.2} texto="1996 · Univ. Autónoma del Edo. de Morelos" y={420} x={560} tam={28} borde={KC.gold} />
-      <Etq T={T} at={K.E + 2.6} until={K.A - 0.2} x={960} y={1040} texto="6 muestras" lado="izq" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.A + 2.4} until={K.Ed - 0.2} texto="149 marcas · 0 diferencias" y={1170} x={670} tam={34} borde={KC.mint} />
-      <Chip T={T} at={K.A + 4.4} until={K.Ed - 0.2} texto="casi seguro: 1 individuo" y={400} x={680} tam={34} borde={KC.yellow} />
-      <MitoTachado T={T} at={K.Ed + 0.3} tacharEn={K.Ed + 2.5} until={K.Ed + 3.0} texto="¿500 años?" x={250} y={470} tam={40} />
-      <MitoTachado T={T} at={K.Ed + 0.8} tacharEn={K.Ed + 2.6} until={K.Ed + 3.0} texto="¿4,000 años?" x={790} y={470} tam={40} />
-      <MitoTachado T={T} at={K.Ed + 1.3} tacharEn={K.Ed + 2.7} until={K.Ed + 3.0} texto="¿6,000 años?" x={540} y={1120} tam={40} />
-      <Chip T={T} at={K.Ed + 0.2} until={K.Ed + 3.0} texto="ninguna con fechado confiable" y={380} x={540} tam={30} borde={KC.red} />
-      <Chip T={T} at={K.Ed + 3.6} until={K.Ag - 0.2} texto="Conzatti, 1921: menos de 2,000 años (estimación)" y={1100} x={540} tam={26} borde={KC.gold} />
-      <Chip T={T} at={K.Ag + 0.3} until={K.Pa - 0.2} texto="atl (agua) + huehuetl (viejo)" y={410} x={430} tam={30} borde={KC.cyan} />
-      <Etq T={T} at={K.Ag + 0.8} until={K.Pa - 0.2} x={20} y={815} texto="ahuehuete" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ag + 1.1} until={K.Pa - 0.2} x={20} y={858} texto="Taxodium mucronatum" it tam={24} color={KC.ink} />
-      <Etq T={T} at={K.Ag + 2.0} until={K.Pa - 0.2} x={120} y={1110} texto="agua del suelo" tam={30} color={KC.texto} />
-      <Chip T={T} at={K.Pa + 0.6} until={K.Pa + 4.6} texto="antes: un pantano" y={420} x={640} tam={34} borde={KC.cyan} />
-      <Chip T={T} at={K.Pa + 3.4} until={K.C - 0.2} texto="tamaño gigante: agua abundante y segura" y={500} x={640} tam={28} borde={KC.yellow} />
-      <Etq T={T} at={K.Pa + 3.4} until={K.C - 0.2} x={120} y={1110} texto="agua del suelo" tam={30} color={KC.texto} />
-      <Chip T={T} at={K.C + 0.6} until={K.Ou - 0.1} texto="1 solo árbol · viejo del agua" y={390} x={380} tam={34} borde={KC.yellow} />
+      <Chip T={T} at={K.G + 1.6} until={K.Ci - 0.2} texto="1 solo árbol" y={300} x={540} tam={46} borde={KC.yellow} />
+      <NumeroGigante T={T} at={K.Ci + 0.8} until={K.Ab - 0.2} valor={36.18} dec={2} dur={2.5} sufijo=" m" etiqueta="contorno del tronco (2005)" x={540} y={470} tam={150} color={KC.yellow} />
+      <Etq T={T} at={K.Ci + 0.3} until={K.Ab - 0.2} x={130} y={1380} texto="Árbol del Tule · Oaxaca" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Ci + 3.4} until={K.Ab - 0.2} texto="vista desde arriba · con contrafuertes" y={1290} x={540} tam={26} borde={KC.ink} />
+      <Chip T={T} at={K.Ab + 3.7} until={K.P - 0.2} texto="más de 20 personas" y={1380} x={540} tam={38} borde={KC.pink} />
+      <Chip T={T} at={K.E + 0.2} until={K.A - 0.2} texto="1996 · Univ. Autónoma del Edo. de Morelos" y={235} x={540} tam={28} borde={KC.gold} />
+      <Etq T={T} at={K.E + 2.6} until={K.A - 0.2} x={1010} y={1440} texto="6 muestras" lado="izq" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.A + 2.4} until={K.Ed - 0.2} texto="149 marcas · 0 diferencias" y={1460} x={540} tam={34} borde={KC.mint} />
+      <Chip T={T} at={K.A + 4.4} until={K.Ed - 0.2} texto="casi seguro: 1 individuo" y={375} x={540} tam={34} borde={KC.yellow} />
+      <MitoTachado T={T} at={K.Ed + 0.3} tacharEn={K.Ed + 2.5} until={K.Ed + 3.0} texto="¿500 años?" x={250} y={410} tam={40} />
+      <MitoTachado T={T} at={K.Ed + 0.8} tacharEn={K.Ed + 2.6} until={K.Ed + 3.0} texto="¿4,000 años?" x={810} y={410} tam={40} />
+      <MitoTachado T={T} at={K.Ed + 1.3} tacharEn={K.Ed + 2.7} until={K.Ed + 3.0} texto="¿6,000 años?" x={540} y={1390} tam={40} />
+      <Chip T={T} at={K.Ed + 0.2} until={K.Ed + 3.0} texto="ninguna con fechado confiable" y={290} x={540} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.Ed + 3.6} until={K.Ag - 0.2} texto="Conzatti, 1921: menos de 2,000 años (estimación)" y={1390} x={540} tam={26} borde={KC.gold} />
+      <Chip T={T} at={K.Ag + 0.3} until={K.Pa - 0.2} texto="atl (agua) + huehuetl (viejo)" y={240} x={400} tam={30} borde={KC.cyan} />
+      <Etq T={T} at={K.Ag + 0.8} until={K.Pa - 0.2} x={20} y={310} texto="ahuehuete" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ag + 1.1} until={K.Pa - 0.2} x={20} y={353} texto="Taxodium mucronatum" it tam={24} color={KC.ink} />
+      <Etq T={T} at={K.Ag + 2.0} until={K.Pa - 0.2} x={120} y={1400} texto="agua del suelo" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.Pa + 0.6} until={K.Pa + 4.6} texto="antes: un pantano" y={235} x={540} tam={34} borde={KC.cyan} />
+      <Chip T={T} at={K.Pa + 3.4} until={K.C - 0.2} texto="tamaño gigante: agua abundante y segura" y={315} x={540} tam={28} borde={KC.yellow} />
+      <Etq T={T} at={K.Pa + 3.4} until={K.C - 0.2} x={120} y={1400} texto="agua del suelo" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.C + 0.6} until={K.Ou - 0.1} texto="1 solo árbol · viejo del agua" y={285} x={540} tam={34} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ci - 0.1} texto="No son varios árboles: *es uno solo.*" />

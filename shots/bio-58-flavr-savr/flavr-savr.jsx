@@ -1,9 +1,14 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #58 · El primer transgénico del súper fue un jitomate (Flavr Savr, 1994) — NARRADO (N1 por dentro + N5).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const VERDE = '#7cc24a', NARANJA = '#f39a2b', ROJO = '#e8361f', PG = '#9b5de5', MADERA = '#c98a4b', MADERA2 = '#a86a33';
 
 function SvgCapa({ children, z }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{children}</svg>;
+}
+// Pase a mano (cine): agranda un grupo alrededor de (cx, cy) y lo lleva a (tx, ty).
+function Zm({ k = 1.35, cx = 540, cy = 1000, tx = 540, ty = 980, children }) {
+  return <g transform={`translate(${tx} ${ty}) scale(${k}) translate(${-cx} ${-cy})`}>{children}</g>;
 }
 function colorTom(m) { return m < 0.5 ? mixHex(VERDE, NARANJA, m * 2) : mixHex(NARANJA, ROJO, (m - 0.5) * 2); }
 
@@ -52,7 +57,7 @@ function Letrero({ x, y, s = 1, rot = 0, texto = 'FLAVR SAVR', sub = 'jitomate',
     <rect x={-8} y={0} width={16} height={190} fill="#8a5a2b" stroke={KC.ink} strokeWidth={5} />
     <rect x={-170} y={-120} width={340} height={130} rx={18} fill="#fff" stroke={KC.ink} strokeWidth={8} />
     <text x={0} y={-48} textAnchor="middle" style={{ font:`400 62px ${KF.titulo}` }} fill={ROJO}>{texto}</text>
-    <text x={0} y={-12} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>{sub}</text>
+    <text x={0} y={-12} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill="#0b1020">{sub}</text>
   </g>;
 }
 // California esquemática con un alfiler en Davis.
@@ -95,19 +100,19 @@ function Tijera({ x, y, s = 1, abre = 0, rot = 0 }) {
   const a = 12 + abre * 22;
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     <path d={`M 0 0 L ${Math.cos(a * Math.PI / 180) * 46} ${-Math.sin(a * Math.PI / 180) * 46} A 46 46 0 1 0 ${Math.cos(a * Math.PI / 180) * 46} ${Math.sin(a * Math.PI / 180) * 46} Z`} fill={PG} stroke={KC.ink} strokeWidth={5} />
-    <circle cx={-6} cy={-22} r={7} fill="#fff" /><circle cx={-4} cy={-22} r={3.5} fill={KC.ink} />
+    <circle cx={-6} cy={-22} r={7} fill="#fff" /><circle cx={-4} cy={-22} r={3.5} fill="#0b1020" />
   </g>;
 }
 // Interior del fruto para la Lupa: células pegadas con pectina; corte = 0..1 (la PG corta el pegamento).
-function Celulas({ T, r, corte = 0, tijeras = 0 }) {
-  const D = r * 2, cw = 104, ch = 90, cells = [];
+function Celulas({ T, r: rLupa, corte = 0, tijeras = 0, k = 1 }) {
+  const r = rLupa / k, D = r * 2, cw = 104, ch = 90, cells = [];
   for (let j = -1; j < D / ch + 1; j++) for (let i = -1; i < D / cw + 1; i++) {
     const cx = i * cw + (j % 2 ? cw / 2 : 0) + 20, cy = j * ch + 30, g = krng(i * 31 + j * 7 + 99);
     const sep = corte * 9, ox = (g() - 0.5) * sep * 2 + Math.sin(T * 1.4 + i + j) * 2 * corte, oy = (g() - 0.5) * sep * 2;
     cells.push({ cx: cx + ox, cy: cy + oy, k: (i * 7 + j * 3) % 4, g: g() });
   }
   const ruta = (u) => ({ x: r + Math.cos(u * 6.28) * r * 0.55, y: r + Math.sin(u * 12.56) * r * 0.4 });
-  return <svg width={D} height={D}>
+  return <svg width={rLupa * 2} height={rLupa * 2} viewBox={`0 0 ${D} ${D}`}>
     <rect width={D} height={D} fill="#120a12" />
     <rect width={D} height={D} fill={KC.gold2} opacity={0.85 * (1 - corte * 0.85)} />
     {cells.map((c, i) => { const w = cw - 14 - corte * 10, h = ch - 14 - corte * 10;
@@ -184,18 +189,20 @@ function FlavrSavr() {
       <Escena T={T} a={K.G} b={K.Cm} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          <Zm>
           {seVa < 1 && <Mazorca x={klerp(-200, 300, entra) - seVa * 600} y={740} s={1.1} rot={-20 + seVa * -40} />}
           {T > K.G + 1.4 && seVa < 1 && <g opacity={1 - seVa}><line x1={170} y1={560} x2={430} y2={920} stroke={KC.red} strokeWidth={30} strokeLinecap="round" /><line x1={430} y1={560} x2={170} y2={920} stroke={KC.red} strokeWidth={30} strokeLinecap="round" /></g>}
           <Caja x={540} y={1000} T={T} m={1} n={4} cae={T > K.G + 2.1 ? <Jitomate x={-220 + 4 * 110} y={klerp(-1300, -70, cae)} r={78} m={1} rot={-8} /> : null} />
-          {T > K.Ca && <Letrero x={740} y={klerp(400, 800, clava)} rot={6} />}
-          {T > K.Ca + 1.0 && <California x={60} y={420} s={0.62} T={T} pin={kprog(T, K.Ca + 1.2, K.Ca + 1.6, kEase.rebote)} />}
+          {T > K.Ca && <Letrero x={680} y={klerp(400, 800, clava)} rot={6} />}
+          </Zm>
+          {T > K.Ca + 1.0 && <California x={110} y={330} s={0.62} T={T} pin={kprog(T, K.Ca + 1.2, K.Ca + 1.6, kEase.rebote)} />}
         </SvgCapa>
       </Escena>
       {/* 2 · el camión aplasta */}
       <Escena T={T} a={K.Cm} b={K.V}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <g transform={`translate(${klerp(80, -40, kprog(T, K.Cm, K.V))} 0)`}>
+          <g transform={`translate(${klerp(30, -30, kprog(T, K.Cm, K.V))} 0)`}><Zm k={1.25} cx={570} cy={990} tx={525} ty={960}>
             <Camion x={560} y={1060} T={T}>
               <g transform="translate(-100 -40) scale(0.72)">
                 {[0, 1, 2, 3, 4].map((i) => <Jitomate key={i} x={-240 + i * 120} y={-72} r={70} m={1} aplasta={aplast * (0.6 + (i % 2) * 0.3)} machucado={aplast} />)}
@@ -204,29 +211,31 @@ function FlavrSavr() {
               </g>
             </Camion>
             {aplast > 0.2 && [0, 1, 2, 3, 4, 5].map((i) => { const ph = (T * 1.6 + i / 6) % 1; return <circle key={i} cx={300 + i * 60 + ph * 40} cy={1010 + ph * 160} r={12 * (1 - ph)} fill={ROJO} stroke={KC.ink} strokeWidth={3} />; })}
-          </g>
+          </Zm></g>
         </SvgCapa>
       </Escena>
       {/* 3 · Florida: verdes y etileno */}
       <Escena T={T} a={K.V} b={K.Pe}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
+          <Zm>
           <Caja x={540} y={1000} T={T} m={madura(K.V + 1.4)} n={5} />
           <Gas T={T} x={540} y={760} o={kprog(T, K.V + 0.8, K.V + 1.6)} w={760} />
+          </Zm>
         </SvgCapa>
       </Escena>
       {/* 4–5 · por dentro: pectina y la enzima que la corta */}
       <Escena T={T} a={K.Pe} b={K.Ar} zoom={0.03}>
         <FondoLunares color={KC.pink} />
-        <SvgCapa><Jitomate x={540} y={1060} r={170} m={1} rot={Math.sin(T) * 3} /></SvgCapa>
-        <Lupa T={T} at={K.Pe + 0.2} until={K.Ar - 0.3} x={560} y={810} r={290} fx={580} fy={1080} tinte={KC.gold2} etiqueta="AL MICROSCOPIO · JITOMATE"
-          interior={(Tl, r) => <Celulas T={Tl} r={r} corte={corte} tijeras={kprog(Tl, K.En + 0.3, K.En + 0.6)} />} />
+        <SvgCapa><Jitomate x={540} y={1310} r={150} m={1} rot={Math.sin(T) * 3} /></SvgCapa>
+        <Lupa T={T} at={K.Pe + 0.2} until={K.Ar - 0.3} x={540} y={860} r={390} fx={560} fy={1322} tinte={KC.gold2} etiqueta="AL MICROSCOPIO · JITOMATE"
+          interior={(Tl, r) => <Celulas T={Tl} r={r} k={390 / 290} corte={corte} tijeras={kprog(Tl, K.En + 0.3, K.En + 0.6)} />} />
       </Escena>
       {/* 6–7 · el gen al revés */}
       <Escena T={T} a={K.Ar} b={K.Ma}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(180,200,255,.25)" />
-        <SvgCapa>
+        <SvgCapa><Zm k={1.32} cx={550} cy={830} tx={600} ty={1000}>
           <ADNHebra T={T} x={250} y={700} largo={600} alto={80} vueltas={3} />
           <g opacity={kprog(T, K.Ar + 0.2, K.Ar + 0.6)} transform={`rotate(${gira * 180} 550 ${klerp(860, 860, 1)})`}>
             <ADNHebra T={T} x={250} y={860} largo={600} alto={80} vueltas={3} colores={[KC.gold2, KC.orange, KC.gold2, KC.coral]} />
@@ -239,59 +248,59 @@ function FlavrSavr() {
             <g transform={`translate(${klerp(140, 230, kprog(T, K.Ap + 1.0, K.Ap + 1.5)) - 30 * kprog(T, K.Ap + 1.5, K.Ap + 1.9, kEase.rebote)} 1010)`}><Ribosoma x={0} y={0} s={0.9} /></g>
             {T > K.Ap + 1.6 && <g transform="translate(210 880)"><line x1={-36} y1={-36} x2={36} y2={36} stroke={KC.red} strokeWidth={14} strokeLinecap="round" /><line x1={36} y1={-36} x2={-36} y2={36} stroke={KC.red} strokeWidth={14} strokeLinecap="round" /></g>}
           </g>}
-        </SvgCapa>
+        </Zm></SvgCapa>
         <Medidor T={T} at={K.Ap + 0.8} until={K.Ma - 0.3} valor={(t) => 1 - 0.92 * kprog(t, K.Ap + 1.4, K.Ap + 2.6)} etiqueta="enzima PG" texto={(v) => (v < 0.2 ? 'casi nada' : 'normal')} y={1470} color={PG} />
       </Escena>
       {/* 8 · madurar en la mata */}
       <Escena T={T} a={K.Ma} b={K.F}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa><Mata T={T} x={540} y={1240} m={madura(K.Ma + 0.4)} /></SvgCapa>
+        <SvgCapa><Mata T={T} x={540} y={1480} s={1.35} m={madura(K.Ma + 0.4)} /></SvgCapa>
       </Escena>
       {/* 9 · FDA, mayo de 1994, y el anaquel */}
       <Escena T={T} a={K.F} b={K.Pr}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          {T > K.F + 2.2 && <g opacity={kprog(T, K.F + 2.2, K.F + 2.6)}>
-            <rect x={90} y={1050} width={900} height={36} fill="#8a5a2b" stroke={KC.ink} strokeWidth={8} />
-            {[0, 1, 2, 3, 4, 5].map((i) => <Jitomate key={i} x={180 + i * 140} y={990} r={62} m={1} rot={(i * 17) % 14 - 7} />)}
-            <Letrero x={540} y={klerp(700, 870, kprog(T, K.F + 2.4, K.F + 2.8, kEase.rebote))} s={0.8} sub="nuevo · 1994" />
-          </g>}
+          <g opacity={0.55 + 0.45 * kprog(T, K.F + 2.2, K.F + 2.6)}>
+            <rect x={70} y={1120} width={940} height={44} fill="#8a5a2b" stroke={KC.ink} strokeWidth={8} />
+            {T > K.F + 2.4 && <Letrero x={540} y={klerp(700, 890, kprog(T, K.F + 2.4, K.F + 2.8, kEase.rebote))} s={1.1} sub="nuevo · 1994" />}
+            {[0, 1, 2, 3, 4].map((i) => <Jitomate key={i} x={190 + i * 175} y={1038} r={84} m={1} rot={(i * 17) % 14 - 7} />)}
+          </g>
         </SvgCapa>
-        <TarjetaEstudio T={T} at={K.F + 0.2} until={K.F + 2.2} anio="1994" quien="FDA · mayo" revista="visto bueno al jitomate Flavr Savr" y={900} />
+        <TarjetaEstudio T={T} at={K.F + 0.2} until={K.F + 2.2} anio="1994" quien="FDA · mayo" revista="visto bueno al jitomate Flavr Savr" y={470} />
       </Escena>
       {/* 10 · ¿y sí aguantó? */}
       <Escena T={T} a={K.Pr} b={K.Es + 1.4} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Jitomate x={760} y={880} r={210} m={1} rot={Math.sin(T * 3) * 6} sudor={1} T={T} />
-          <text x={760} y={560} textAnchor="middle" style={{ font:`400 220px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={10} transform={`rotate(${Math.sin(T * 3) * 8} 760 500)`}>?</text>
+          <Jitomate x={540} y={1010} r={290} m={1} rot={Math.sin(T * 3) * 6} sudor={1} T={T} />
+          <text x={540} y={600} textAnchor="middle" style={{ font:`400 260px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={10} transform={`rotate(${Math.sin(T * 3) * 8} 540 520)`}>?</text>
         </SvgCapa>
       </Escena>
       {/* 11 · el estudio de 1997 */}
       <Escena T={T} a={K.Es + 1.4} b={K.Fr}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          {T > K.Es + 3.4 && <g opacity={kprog(T, K.Es + 3.4, K.Es + 3.8)}>
+          <Zm k={1.2} cx={617} cy={800} tx={540} ty={950}><g opacity={0.5 + 0.5 * kprog(T, K.Es + 3.4, K.Es + 3.8)}>
             {[[400, 0.45, 'normal', 0.5], [760, 0.36, 'PG apagada (<1 %)', 0.58]].map(([x, ap, et, firm], i) => <g key={i}>
               <Prensa x={x} y={960} baja={prensa} />
               <Jitomate x={x} y={960} r={100} m={1} aplasta={ap * prensa} />
-              <text x={x} y={1120} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>{et}</text>
+              <text x={x} y={1120} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Es + 3.4, K.Es + 3.8)}>{et}</text>
               <rect x={x + 125} y={1060 - 300 * firm * kprog(T, K.Es + 5.0, K.Es + 6.0)} width={50} height={300 * firm * kprog(T, K.Es + 5.0, K.Es + 6.0)} fill={i ? PG : '#8a8f99'} stroke={KC.ink} strokeWidth={6} />
             </g>)}
-          </g>}
+          </g></Zm>
         </SvgCapa>
-        <TarjetaEstudio T={T} at={K.Es + 1.5} until={K.Es + 3.3} anio="1997" quien="Universidad de California, Davis" revista="Plant Physiology · Brummell y Labavitch" y={860} />
+        <TarjetaEstudio T={T} at={K.Es + 1.5} until={K.Es + 3.3} anio="1997" quien="Universidad de California, Davis" revista="Plant Physiology · Brummell y Labavitch" y={380} />
       </Escena>
       {/* 12 · el fracaso, en tres golpes */}
       <Escena T={T} a={K.Fr} b={K.Ci}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          {T < f2 + 0.2 && <g opacity={1 - kprog(T, f2 - 0.1, f2 + 0.2)}><Caja x={540} y={1000} T={T} m={1} n={5} />
-            <Jitomate x={560} y={790} r={110} m={1} aplasta={0.4 * kprog(T, f1 + 0.3, f1 + 0.7)} machucado={1} rot={10} /></g>}
-          {T > f2 - 0.1 && T < f3 + 0.2 && <g opacity={kprog(T, f2 - 0.1, f2 + 0.2) * (1 - kprog(T, f3 - 0.1, f3 + 0.2))}><Mata T={T} x={540} y={1240} m={1} frutos={1} /></g>}
+          {T < f2 + 0.2 && <g opacity={1 - kprog(T, f2 - 0.1, f2 + 0.2)}><Zm ty={1010}><Caja x={540} y={1000} T={T} m={1} n={5} />
+            <Jitomate x={560} y={790} r={110} m={1} aplasta={0.4 * kprog(T, f1 + 0.3, f1 + 0.7)} machucado={1} rot={10} /></Zm></g>}
+          {T > f2 - 0.1 && T < f3 + 0.2 && <g opacity={kprog(T, f2 - 0.1, f2 + 0.2) * (1 - kprog(T, f3 - 0.1, f3 + 0.2))}><Mata T={T} x={540} y={1420} s={1.35} m={1} frutos={1} /></g>}
           {T > f3 - 0.1 && <g opacity={kprog(T, f3 - 0.1, f3 + 0.2)}>
-            <rect x={90} y={1050} width={900} height={36} fill="#8a5a2b" stroke={KC.ink} strokeWidth={8} />
-            <Letrero x={540 + letreroCae * 120} y={870 + letreroCae * 700} s={0.8} rot={letreroCae * 70} sub="1994 → 1997" o={1 - letreroCae * 0.6} />
+            <rect x={70} y={1120} width={940} height={44} fill="#8a5a2b" stroke={KC.ink} strokeWidth={8} />
+            <Letrero x={540 + letreroCae * 120} y={890 + letreroCae * 340} s={1.1} rot={letreroCae * 70} sub="1994 → 1997" o={1 - letreroCae * 0.35} />
           </g>}
         </SvgCapa>
       </Escena>
@@ -299,26 +308,28 @@ function FlavrSavr() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          <Zm>
           <Caja x={540} y={1000} T={T} m={madura(K.Ci + 1.4)} n={5} />
-          {letreroCierre < 1 && <Letrero x={740 + letreroCierre * 150} y={800 + letreroCierre * 800} rot={6 + letreroCierre * 80} />}
+          {letreroCierre < 1 && <Letrero x={680 + letreroCierre * 150} y={800 + letreroCierre * 800} rot={6 + letreroCierre * 80} />}
           <Gas T={T} x={540} y={760} o={kprog(T, K.Ci + 0.9, K.Ci + 1.6)} w={760} seed={7} />
+          </Zm>
         </SvgCapa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.4} until={K.G + 2.3} texto="¿el maíz?" x={300} y={520} tam={50} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.4} until={K.G + 2.3} texto="¿el maíz?" x={250} y={330} tam={50} />
       <Chip T={T} at={K.G + 2.7} until={K.Ca - 0.2} texto="1er alimento entero transgénico" y={1500} tam={40} borde={ROJO} />
-      <Etq T={T} at={K.Ca + 1.6} until={K.Cm - 0.3} x={60} y={395} texto="Calgene · Davis, California" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 1.6} until={K.Cm - 0.3} x={230} y={440} texto="Calgene · Davis, California" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Ca + 0.6} until={K.Cm - 0.2} texto="Flavr Savr · Calgene" y={1500} tam={44} borde={ROJO} />
       <Medidor T={T} at={K.Cm + 0.5} until={K.V - 0.3} valor={(t) => 1 - 0.8 * kprog(t, K.Cm + 1.2, K.Cm + 3.0)} etiqueta="firmeza" texto={(v) => (v < 0.4 ? 'aplastado' : 'firme')} y={1470} color={ROJO} />
-      <Chip T={T} at={K.V + 0.3} until={K.Pe - 0.2} texto="Florida · se cortan verdes" y={1500} tam={44} borde={VERDE} />
-      <Etq T={T} at={K.V + 1.6} until={K.Pe - 0.3} x={1020} y={1650} texto="etileno: hormona de la maduración" lado="izq" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.V + 0.3} until={K.V + 1.5} texto="Florida · se cortan verdes" y={1500} tam={44} borde={VERDE} />
+      <Etq T={T} at={K.V + 1.6} until={K.Pe - 0.3} x={300} y={285} texto="etileno: hormona de la maduración" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Pe + 0.8} until={K.En - 0.1} texto="pectina = el pegamento" y={1500} tam={44} borde={KC.gold2} />
       <Chip T={T} at={K.En + 0.4} until={K.Ar - 0.3} texto="poligalacturonasa (PG)" y={1500} tam={44} borde={PG} />
       <Chip T={T} at={K.Ar + 0.5} until={K.Ap - 0.1} texto="gen antisentido (al revés)" y={1500} tam={44} borde={KC.gold2} />
-      <Etq T={T} at={K.Ar + 0.3} until={K.Ap - 0.2} x={250} y={610} texto="gen de la PG" tam={32} />
-      <Etq T={T} at={K.Ap + 0.4} until={K.Ma - 0.3} x={820} y={1090} texto="mensaje + copia al revés" lado="izq" tam={30} />
-      <Chip T={T} at={K.Ma + 0.4} until={K.F - 0.2} texto="la idea: madurar en la mata" y={1500} tam={44} borde={KC.leaf} />
+      <Etq T={T} at={K.Ar + 0.3} until={K.Ap - 0.2} x={200} y={730} texto="gen de la PG" tam={32} />
+      <Etq T={T} at={K.Ap + 0.4} until={K.Ma - 0.3} x={946} y={1350} texto="mensaje + copia al revés" lado="izq" tam={30} />
+      <Chip T={T} at={K.Ma + 0.4} until={K.F - 0.2} texto="la idea: madurar en la mata" y={1555} tam={44} borde={KC.leaf} />
       <Chip T={T} at={K.F + 2.6} until={K.Pr - 0.2} texto="a los 3 días: a la venta" y={1500} tam={44} borde={ROJO} />
       <Chip T={T} at={K.Es + 5.6} until={K.Fr - 0.2} texto="apenas un poco más firme" y={1500} tam={44} borde={PG} />
       <Chip T={T} at={f1 + 0.3} until={f2 - 0.1} texto="se maltrataba en el viaje" y={1500} tam={44} borde={ROJO} />

@@ -1,14 +1,17 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #06 · El hongo que caza gusanos (Arthrobotrys oligospora) — NARRADO (N5 "El experimento" + viaje N1).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático (proporciones de la red y del gusano ilustrativas).
 const PX_MM = 700;   // microscopio: 1 mm = 700 px (un C. elegans adulto mide ~1 mm de largo y ~100 µm de ancho)
 const TRAMPA = { x: 470, y: 800 };
+const MK = 2.2, MC = { x: 480, y: 900 };   // pase a mano: el microscopio se ve MK veces más cerca; la trampa queda en MC
+const zm = (c) => <g transform={`translate(${MC.x} ${MC.y}) scale(${MK}) translate(${-TRAMPA.x} ${-TRAMPA.y})`}>{c}</g>;
 
 // Fondo de microscopio: oscuro, con hifas tenues alrededor.
 function Micro({ T, seed = 4 }) {
   return <>
     <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 45% 45%, #18263a 0%, #0b111c 70%)' }}></div>
     <Ambiente T={T} n={26} color="rgba(180,220,255,.18)" />
-    {fsvg(<><RedHifas T={T} x={TRAMPA.x - 220} y={TRAMPA.y + 20} g={1} seed={seed} n={200} escala={0.3} ancho={2.5} color="rgba(255,244,214,.35)" circ={true} /></>, 5)}
+    {fsvg(zm(<RedHifas T={T} x={TRAMPA.x - 220} y={TRAMPA.y + 20} g={1} seed={seed} n={200} escala={0.3} ancho={1.6} color="rgba(255,244,214,.35)" circ={true} />), 5)}
   </>;
 }
 // Suelo (macro): cielo con lunares arriba, tierra con piedritas y restos de hojas.
@@ -17,12 +20,14 @@ function Suelo({ T, comer = 0, hifas = 0, gusanos = 0 }) {
   return <>
     <FondoLunares color={KC.yellow} />
     {fsvg(<>
-      <rect x={0} y={520} width={KW} height={KH} fill={FK.tierra} stroke={KC.ink} strokeWidth={8} />
-      <rect x={0} y={510} width={KW} height={22} fill={FK.pasto} stroke={KC.ink} strokeWidth={6} />
-      {pied.map(([x, y, r], i) => <ellipse key={i} cx={x} cy={y} rx={r} ry={r * 0.7} fill={i % 3 ? '#8a6a4a' : '#a88664'} stroke={KC.ink} strokeWidth={4} />)}
+      <rect x={0} y={520} width={KW} height={KH} fill={FK.suelo} />
+      <rect x={0} y={510} width={KW} height={22} fill="#2c7a36" stroke="#8fd99a" strokeWidth={3} />
+      <g transform="translate(540 520) scale(1.4) translate(-540 -520)">
+      {pied.map(([x, y, r], i) => <ellipse key={i} cx={x} cy={y} rx={r} ry={r * 0.7} fill={i % 3 ? '#4a3826' : '#5c4732'} stroke="#a08a6c" strokeWidth={2.5} />)}
       {[[260, 760], [720, 690], [560, 980]].map(([x, y], i) => <path key={i} d="M -60 0 Q 0 -40 60 0 Q 0 40 -60 0 Z" transform={`translate(${x} ${y}) rotate(${i * 40 - 20}) scale(${1 - comer * 0.55})`} fill="#c0702a" stroke={KC.ink} strokeWidth={5} />)}
       {hifas > 0 && <RedHifas T={T} x={480} y={820} g={hifas} seed={9} n={260} escala={0.2} ancho={3} color={FK.hifa} circ={true} />}
-      {gusanos > 0 && [[880, 760, 0], [180, 1000, 2], [800, 1060, 4]].map(([x, y, f], i) => <g key={i} opacity={kprog(gusanos, i * 0.2, i * 0.2 + 0.3)}><Gusano T={T} x={x + Math.sin(T + f) * 20} y={y} largo={130} ancho={12} ang={170 + i * 20} fase={f} /></g>)}
+      {gusanos > 0 && [[760, 760, 0], [260, 1000, 2], [700, 1060, 4]].map(([x, y, f], i) => <g key={i} opacity={kprog(gusanos, i * 0.2, i * 0.2 + 0.3)}><Gusano T={T} x={x + Math.sin(T + f) * 20} y={y} largo={130} ancho={12} ang={170 + i * 20} fase={f} /></g>)}
+      </g>
     </>)}
   </>;
 }
@@ -40,17 +45,17 @@ function Cazador() {
   const FIN = K.Ou + 4;
   const llega = kprog(T, K.G, K.G + 2.2, kEase.sale);           // el gusano llega a la trampa
   const atorado = kprog(T, K.G + 2.0, K.G + 2.4);
-  const cabezaX = klerp(1150, TRAMPA.x + 40, llega);
+  const cabezaX = klerp(740, TRAMPA.x + 40, llega);
   const lleno = kprog(T, K.Pe + 1.0, K.D + 1.6), apagado = kprog(T, K.D + 0.4, K.D + 3.0);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: el gusano llega y se queda pegado en la red */}
       <Escena T={T} a={K.G} b={K.Ti} zoom={0.05} origen="45% 45%">
         <Micro T={T} />
-        {fsvg(<>
+        {fsvg(zm(<>
           <TrampaRed T={T} x={TRAMPA.x} y={TRAMPA.y} s={1.3} r={26} prog={1} gotas={1} />
           <Gusano T={T} x={cabezaX} y={TRAMPA.y + 10} largo={PX_MM} ancho={70} ang={180} ondula={1 - atorado * 0.4} />
-        </>, 20)}
+        </>), 20)}
       </Escena>
       {/* 2–3 · en la tierra: come restos; le falta comida y aparecen nematodos */}
       <Escena T={T} a={K.Ti} b={K.R} zoom={0.04}>
@@ -59,7 +64,7 @@ function Cazador() {
       {/* 4 · la hifa se enrosca: red pegajosa */}
       <Escena T={T} a={K.R} b={K.P} zoom={0.06}>
         <Micro T={T} seed={7} />
-        {fsvg(<TrampaRed T={T} x={430} y={860} s={2.2} r={26} prog={kprog(T, K.R + 0.1, K.R + 2.2)} gotas={kprog(T, K.R + 2.0, K.R + 2.8)} />, 20)}
+        {fsvg(zm(<TrampaRed T={T} x={TRAMPA.x} y={TRAMPA.y} s={1.3} r={26} prog={kprog(T, K.R + 0.1, K.R + 2.2)} gotas={kprog(T, K.R + 2.0, K.R + 2.8)} />), 20)}
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
@@ -69,77 +74,78 @@ function Cazador() {
       {/* 6–7 · el experimento: solo moléculas, sin gusanos → trampas */}
       <Escena T={T} a={K.E} b={K.O}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
-          <Petri x={470} y={900} r={240}>
+        {fsvg(<g transform="translate(540 980) scale(1.7) translate(-470 -900)">
+          <g transform="translate(470 900)"><circle r={254} fill="rgba(255,255,255,.3)" stroke={KC.ink} strokeWidth={7} /><circle r={240} fill="#2e2613" stroke={KC.ink} strokeWidth={4} />
             <RedHifas T={T} x={0} y={0} g={1} seed={12} n={240} escala={0.13} ancho={2.5} color="#e9dcc0" circ={true} />
             {Array.from({ length: 7 }, (_, i) => { const at = K.Es + 0.4 + i * 0.35; const a = i * 0.9 + 0.4, rr = 60 + (i % 3) * 55;
-              return T > at ? <TrampaRed key={i} T={T} x={Math.cos(a) * rr} y={Math.sin(a) * rr} s={0.42} r={26} prog={kprog(T, at, at + 0.8)} gotas={kprog(T, at + 0.6, at + 1)} color="#7a4a22" /> : null; })}
-          </Petri>
+              return T > at ? <TrampaRed key={i} T={T} x={Math.cos(a) * rr} y={Math.sin(a) * rr} s={0.42} r={26} prog={kprog(T, at, at + 0.8)} gotas={kprog(T, at + 0.6, at + 1)} /> : null; })}
+          </g>
           {Array.from({ length: 6 }, (_, i) => { const t0 = K.E + 1.4 + i * 0.4, u = kprog(T, t0, t0 + 1.0, kEase.suave);
             return T > t0 ? <g key={i} opacity={1 - kprog(T, t0 + 1.0, t0 + 1.6)}><Ascarosido x={260 + i * 80} y={klerp(560, 820 + (i % 2) * 90, u)} s={1.1} rot={T * 40 + i * 30} /></g> : null; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 8 · olores que atraen: los gusanos van hacia el hongo */}
       <Escena T={T} a={K.O} b={K.Pe}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
-          <circle cx={250} cy={920} r={170} fill="#f3e6c4" stroke={KC.ink} strokeWidth={7} />
-          <RedHifas T={T} x={250} y={920} g={1} seed={2} n={200} escala={0.09} ancho={2.5} color="#7a5a3a" circ={true} />
+        {/* belleza: todo el conjunto baja 100 px (antes arriba; el auditor marcaba ARRIBA) */}
+        {fsvg(<g transform="translate(300 1100) scale(1.5) translate(-250 -920)">
+          <circle cx={250} cy={920} r={170} fill="#3a311a" stroke={KC.ink} strokeWidth={7} />
+          <RedHifas T={T} x={250} y={920} g={1} seed={2} n={200} escala={0.09} ancho={2.2} color="#e9dcc0" circ={true} />
           {[0, 1, 2, 3].map((k) => { const u = ((T - K.O) * 0.45 + k / 4) % 1; return <circle key={k} cx={250} cy={920} r={180 + u * 520} fill="none" stroke={KC.violet} strokeWidth={8} strokeDasharray="30 22" opacity={(1 - u) * 0.7} />; })}
           <g opacity={kprog(T, K.O + 0.8, K.O + 1.2)}><circle cx={430} cy={560} r={34} fill={KC.leaf} stroke={KC.ink} strokeWidth={5} /><rect x={410} y={548} width={40} height={24} rx={12} fill="#fff" opacity=".6" /></g>
           <g opacity={kprog(T, K.O + 2.2, K.O + 2.6)}><path d="M 430 660 c -20 -30 -60 -10 -40 20 l 40 40 l 40 -40 c 20 -30 -20 -50 -40 -20 z" fill={KC.pink} stroke={KC.ink} strokeWidth={5} /><text x={490} y={690} style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>?</text></g>
-          {[[0, 820, 0], [1, 1000, 2], [2, 1150, 4]].map(([i, y, f]) => { const u = kprog(T, K.O + 2.6 + i * 0.3, K.Pe, kEase.suave); return <Gusano key={i} T={T} x={klerp(1000, 470, u)} y={y} largo={240} ancho={22} ang={180} fase={f} />; })}
-        </>)}
+          {[[0, 820, 0], [1, 1000, 2], [2, 1150, 4]].map(([i, y, f]) => { const u = kprog(T, K.O + 2.6 + i * 0.3, K.Pe, kEase.suave); return <Gusano key={i} T={T} x={klerp(740, 470, u)} y={y} largo={240} ancho={22} ang={180} fase={f} />; })}
+        </g>)}
       </Escena>
       {/* 9–10 · pegado: el hongo atraviesa la cutícula, crece por dentro y lo digiere */}
       <Escena T={T} a={K.Pe} b={K.Da}>
         <Micro T={T} />
-        {fsvg(<>
+        {fsvg(zm(<>
           <TrampaRed T={T} x={TRAMPA.x} y={TRAMPA.y} s={1.3} r={26} prog={1} gotas={1} />
           <Gusano T={T} x={TRAMPA.x + 40} y={TRAMPA.y + 10} largo={PX_MM} ancho={70} ang={180} ondula={0.6 * (1 - apagado)} lleno={lleno} apagado={apagado} />
           {kprog(T, K.Pe + 0.5, K.Pe + 1.0) > 0 && <circle cx={TRAMPA.x + 50} cy={TRAMPA.y + 10} r={14 * kprog(T, K.Pe + 0.5, K.Pe + 1.0, kEase.rebote)} fill={KC.gold2} stroke={KC.ink} strokeWidth={4} />}
           {T > K.D && Array.from({ length: 16 }, (_, i) => { const u = ((T - K.D) * 0.6 + i / 16) % 1; return <circle key={i} cx={TRAMPA.x + 80 + i * 38} cy={TRAMPA.y + 10 + Math.sin(i * 2 + T * 3) * 22} r={5} fill={KC.cyan} opacity={(1 - u) * 0.9} />; })}
-        </>, 20)}
+        </>), 20)}
       </Escena>
       {/* 11 · más de 200 especies (dato de 2013) */}
       <Escena T={T} a={K.Da} b={K.C}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(Array.from({ length: 20 }, (_, i) => { const at = K.Da + 1.0 + i * 0.1; const c = i % 5, r = Math.floor(i / 5);
-          return T > at ? <TrampaRed key={i} T={T} x={190 + c * 175} y={760 + r * 120} s={0.55 * kprog(T, at, at + 0.3, kEase.rebote)} r={26} prog={1} gotas={0.6} color="#fffaf0" /> : null; }))}
+        {fsvg(Array.from({ length: 20 }, (_, i) => { const at = K.Da + 0.3 + i * 0.1; const c = i % 5, r = Math.floor(i / 5);
+          return T > at ? <TrampaRed key={i} T={T} x={150 + c * 195} y={800 + r * 150} s={0.72 * kprog(T, at, at + 0.3, kEase.rebote)} r={26} prog={1} gotas={0.6} color="#fffaf0" /> : null; }))}
       </Escena>
       {/* 12 · cierre: la misma trampa del inicio, ya con su presa digerida */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="45% 45%">
         <Micro T={T} />
-        {fsvg(<>
+        {fsvg(zm(<>
           <TrampaRed T={T} x={TRAMPA.x} y={TRAMPA.y} s={1.3} r={26} prog={1} gotas={1} />
           <Gusano T={T} x={TRAMPA.x + 40} y={TRAMPA.y + 10} largo={PX_MM} ancho={70} ang={180} ondula={0} lleno={1} apagado={0.8} />
-        </>, 20)}
+        </>), 20)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 2.5} until={K.Ti - 0.3} texto="trampa pegajosa" x={360} y={560} tam={44} borde={KC.cyan} />
-      <Etq T={T} at={K.G + 0.6} until={K.G + 2.4} x={1040} y={760} texto="nematodo" lado="izq" tam={34} />
-      <Etq T={T} at={K.Ti + 0.6} until={K.H - 0.3} x={60} y={600} texto="Arthrobotrys oligospora" it tam={36} color={KC.texto} />
-      <Etq T={T} at={K.Ti + 2.4} until={K.H - 0.3} x={340} y={1100} texto="come restos de hojas" tam={30} />
-      <Medidor T={T} at={K.H + 0.2} until={K.R - 0.3} valor={(t) => klerp(0.9, 0.08, kprog(t, K.H + 0.4, K.H + 2.2))} etiqueta="comida" x={420} y={600} ancho={580} color={KC.orange} />
-      <Etq T={T} at={K.H + 2.6} until={K.R - 0.3} x={60} y={1150} texto="nematodos (gusanos diminutos)" tam={30} />
-      <Chip T={T} at={K.R + 1.0} until={K.P - 0.3} texto="red pegajosa" x={360} y={560} tam={44} borde={KC.cyan} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="2013" quien="Hsueh et al. · Caltech" revista="Current Biology 23: 83–86" y={560} />
-      <Etq T={T} at={K.E + 3.5} until={K.Es - 0.2} x={60} y={560} texto="moléculas de gusano (ascarósidos)" tam={30} />
-      <Chip T={T} at={K.Es + 0.6} until={K.O - 0.3} texto="0 gusanos → trampas" x={380} y={560} tam={42} borde={KC.yellow} />
-      <Chip T={T} at={K.O + 0.3} until={K.O + 2.8} texto="2017 · eLife" x={300} y={480} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.O + 1.0} until={K.Pe - 0.3} x={480} y={560} texto="olor a comida" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.O + 2.4} until={K.Pe - 0.3} x={540} y={680} texto="¿pareja?" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Pe + 0.8} until={K.D - 0.2} x={TRAMPA.x + 60} y={TRAMPA.y - 120} texto="atraviesa la cutícula" tam={32} />
-      <Etq T={T} at={K.D + 0.4} until={K.Da - 0.3} x={TRAMPA.x + 60} y={TRAMPA.y + 130} texto="enzimas: lo digiere" tam={32} color={KC.cyan} />
+      <Chip T={T} at={K.G + 2.5} until={K.Ti - 0.3} texto="trampa pegajosa" x={420} y={640} tam={44} borde={KC.cyan} />
+      <Etq T={T} at={K.G + 0.6} until={K.G + 2.4} x={1040} y={700} texto="nematodo" lado="izq" tam={34} />
+      <Etq T={T} at={K.Ti + 0.6} until={K.H - 0.3} x={60} y={440} texto="Arthrobotrys oligospora" it tam={36} color={KC.texto} />
+      <Etq T={T} at={K.Ti + 2.4} until={K.H - 0.3} x={520} y={1215} texto="come restos de hojas" tam={30} />
+      <Medidor T={T} at={K.H + 0.2} until={K.R - 0.3} valor={(t) => klerp(0.9, 0.08, kprog(t, K.H + 0.4, K.H + 2.2))} etiqueta="comida" x={250} y={380} ancho={580} color={KC.orange} />
+      <Etq T={T} at={K.H + 2.6} until={K.R - 0.3} x={60} y={1420} texto="nematodos (gusanos diminutos)" tam={30} />
+      <Chip T={T} at={K.R + 1.0} until={K.P - 0.3} texto="red pegajosa" x={420} y={640} tam={44} borde={KC.cyan} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="2013" quien="Hsueh et al. · Caltech" revista="Current Biology 23: 83–86" x={380} y={330} />
+      <Etq T={T} at={K.E + 3.5} until={K.Es - 0.2} x={60} y={470} texto="moléculas de gusano (ascarósidos)" tam={30} />
+      <Chip T={T} at={K.Es + 0.6} until={K.O - 0.3} texto="0 gusanos → trampas" x={540} y={440} tam={42} borde={KC.yellow} />
+      <Chip T={T} at={K.O + 0.3} until={K.O + 2.8} texto="2017 · eLife" x={300} y={320} tam={40} borde={KC.ink} />
+      <Etq T={T} at={K.O + 1.0} until={K.Pe - 0.3} x={640} y={560} texto="olor a comida" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.O + 2.4} until={K.Pe - 0.3} x={730} y={740} texto="¿pareja?" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Pe + 0.8} until={K.D - 0.2} x={520} y={725} texto="atraviesa la cutícula" tam={32} />
+      <Etq T={T} at={K.D + 0.4} until={K.Da - 0.3} x={600} y={1115} texto="enzimas: lo digiere" tam={32} color={KC.cyan} />
       <NumeroGigante T={T} at={K.Da + 0.2} until={K.C - 0.3} valor={200} prefijo="+" dur={1.0} etiqueta="especies que atacan gusanos" x={420} y={520} tam={170} />
-      <Etq T={T} at={K.Da + 2.2} until={K.C - 0.3} x={110} y={1180} texto="1 ícono = 10 especies · conteo de 2013" tam={28} />
-      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="la boca de un cazador" x={380} y={560} tam={44} borde={KC.yellow} />
+      <Etq T={T} at={K.Da + 2.2} until={K.C - 0.3} x={110} y={1370} texto="1 ícono = 10 especies · conteo de 2013" tam={28} />
+      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="la boca de un cazador" x={420} y={640} tam={44} borde={KC.yellow} />
 
       {/* escala */}
-      {[[K.G, K.Ti], [K.R, K.P], [K.Pe, K.Da], [K.C, K.Ou]].map(([a, b], i) => T >= a && T < b ? <Escena key={i} T={T} a={a} b={b} zoom={0}><Escala T={T} z={1} pxPorMm={PX_MM} /></Escena> : null)}
-      <BarraEscala T={T} at={K.Ti} until={K.R} texto="1 cm" largo={180} />
-      <BarraEscala T={T} at={K.E} until={K.O} texto="2 cm" largo={160} />
+      {[[K.G, K.Ti], [K.R, K.P], [K.Pe, K.Da], [K.C, K.Ou]].map(([a, b], i) => T >= a && T < b ? <Escena key={i} T={T} a={a} b={b} zoom={0}><Escala T={T} z={1} pxPorMm={PX_MM * MK} /></Escena> : null)}
+      <BarraEscala T={T} at={K.Ti} until={K.R} texto="1 cm" largo={252} />
+      <BarraEscala T={T} at={K.E} until={K.O} texto="2 cm" largo={272} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ti - 0.1} texto="No es moho: *es una trampa.*" />

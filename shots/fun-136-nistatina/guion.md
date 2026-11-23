@@ -1,0 +1,94 @@
+# Shot Fungi Mati #136 · Esta medicina para el algodoncillo salió de la tierra y viajó por correo
+
+- **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #136 · rama `claude/fun-135-139-micologos`.
+- **Ángulo del lote:** descubrimientos y personas de la micología (Elizabeth Lee Hazen y Rachel Fuller Brown).
+- **Formato:** N1 Por dentro + N5 El experimento (RECETARIO: "N1 + N5: viaje por dentro, y a la mitad se recrea el experimento
+  que lo descubrió"). Viaje: frasquito de medicina (macro) → boca → levaduras de *Candida* → membrana del hongo (micro) →
+  el experimento por correo de 1948–1950 → bacteria *Streptomyces noursei* → el mismo frasquito, ya "leído".
+- **Gancho (de los 7):** #3 "Tu vida o tu cuerpo en una imagen" / #1 sobre algo en pantalla: «Esta medicina para el algodoncillo salió
+  de un microbio de la tierra que viajó por correo.»
+- **Duración:** voz 170 palabras / 962 caracteres (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Voz:** pendiente de aprobación de Robert.
+- **Tono:** admiración por las dos científicas; nada de consejo médico (aviso chiquito al final).
+- **Estado:** guion corregido según `verificacion.md` (3 ⚠️ atendidas: «se pega menos», sin cifra de µm, caja de correo con frasco mason del cultivo); animación, música y `publicacion.md` hechos; **pendiente la re-verificación** (`VEREDICTO`).
+
+## Versión narrada
+
+| # | Escena | Voz | Lo que se ve |
+|---|---|---|---|
+| 0 | Gancho | Esta medicina para el algodoncillo salió de un microbio de la tierra que viajó por correo. | Fondo amarillo de lunares. Un frasquito gotero genérico "nistatina · suspensión oral" (sin marca real) cae y rebota (cuadro 0.3); detrás, una caja de correo con estampilla se abre y deja ver un frasco de vidrio tipo mason con el cultivo. Robert (gancho) sorprendido. |
+| 1 | Boca | El algodoncillo son manchitas blancas en la boca, por un hongo: Candida. | Fondo rosa. Boca esquemática abierta con lengua y placas blancas. Etiquetas "algodoncillo · candidiasis oral" y "*Candida*". Barra de escala 1 cm. |
+| 2 | Candida | Suele vivir en ti, pero a veces crece de más. | Zoom a fondo oscuro ("POR DENTRO"). Levaduras ovaladas de *Candida albicans* a las que les brotan yemas y se multiplican; algunas alargadas en pseudohifas. Contador "pocas → muchas". Barra 5 µm. |
+| 3 | Parecidas | Matarlo sin dañarte es difícil: sus células se parecen a las tuyas. | Dos células lado a lado: "levadura" y "célula humana", las dos con núcleo y membrana; chip "las dos son eucariontes". |
+| 4 | Ergosterol | La nistatina se pega al ergosterol de su membrana y le abre poros. | Acercamiento a la membrana del hongo (bicapa esquemática) con moléculas de ergosterol en dorado. Llegan moléculas de nistatina (barritas largas), se agrupan con el ergosterol y forman un poro; salen puntitos "K⁺" (potasio). Etiquetas "ergosterol", "nistatina", "poro". Escala 5 nm (esquemático). |
+| 5 | Colesterol | Tus células usan colesterol, y a ese se pega menos. | Membrana humana con colesterol en azul; se pegan menos moléculas de nistatina; chip "se pega menos". |
+| 6 | Pregunta | ¿Y quién la encontró? | **Re-gancho.** Fondo cian: el frasquito con un "?" gigante; Robert grande (presentador), pensativo. |
+| 7 | Hazen | En 1948, en Nueva York, la microbióloga Elizabeth Hazen buscaba en la tierra microbios que mataran hongos. | Fondo menta. Ilustración genérica (silueta con bata, sin inventar rasgos) "Elizabeth Lee Hazen · microbióloga". Tarjeta de estudio "1948 · Depto. de Salud del Estado de NY · Nueva York (ciudad) · 1948–1950". Tres muestras de tierra y una caja Petri con levadura donde aparece un halo; chip "¿mata hongos? → halo sin levadura". |
+| 8 | Correo | Se los mandaba en frascos, por correo, a la química Rachel Brown, a unos doscientos cuarenta kilómetros. | Fondo lila. Mapa esquemático del estado de Nueva York: una caja de correo con estampilla, con un frasco mason con el cultivo, viaja de "Nueva York (ciudad)" a "Albany"; medidor "≈ 240 km (150 millas)". Silueta genérica "Rachel Fuller Brown · química". |
+| 9 | Brown | Brown aislaba la sustancia y se la regresaba para probarla. | Fondo naranja. Silueta genérica de Brown junto a un matraz con la sustancia aislada; la caja de correo regresa a Nueva York; en la caja Petri aparece un halo donde no crece la levadura. |
+| 10 | Streptomyces | La ganadora vino de la tierra de un amigo: una bacteria, Streptomyces noursei, no un hongo. | Fondo oscuro. Filamentos muy finos y ramificados (~1 µm de ancho) con cadenas de esporas: *Streptomyces noursei*. Chip "bacteria (actinomiceto), no hongo", etiqueta "cadenas de esporas" y chip "de la tierra de unos amigos de Hazen (Nourse)". Barra 10 µm. |
+| 11 | Regalias | La llamaron nistatina, por New York State, y sus regalías, más de trece millones de dólares, fueron para la ciencia. | Fondo naranja. Letras "N·Y·STATIN" → "**N**ew **Y**ork **State**". Luego número grande "US$13.4 mill. · regalías 1955–1976", monedas que caen en una caja "Research Corporation · Fondo Brown-Hazen" y chip "para la investigación". |
+| 12 | Cierre | Así que ese frasquito es tierra, correo y dos científicas contra un hongo. | **Regreso a la imagen del inicio:** el mismo frasquito, ahora con la etiqueta "tierra · correo · Hazen y Brown", la caja de correo con estampilla, el frasco mason y la caja Petri con su halo. Aviso chiquito "No es consejo médico". |
+| — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
+
+**Música (`gen-audio.mjs`, 100 BPM, según `composicion-musical.md`):** pieza tipo "carta antigua" con forma: A (la menor, tema de 4 compases
+motivo → respuesta → secuencia → cadencia, arpegio pulsado) · B al microscopio (re menor, grave y tapada, bajo que sube por semitonos) · respiro en la
+pregunta · C la historia (el tema en do mayor, I–V–vi–IV, con respuesta de campanita) · D bacteria y regalías (tema una octava arriba) · coda que
+regresa al motivo y resuelve en do mayor; el acorde se queda sonando en la tarjeta. Siempre debajo de la voz. Efectos en el mismo cuadro: frasquito
+que cae y rebota, cartón de la caja que se abre, burbujitas de las placas y de las levaduras, tics de la nistatina, golpe del poro, gotitas del
+potasio, caja que viaja y llega, matraz, esporas, monedas.
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande (`grande`, medio cuerpo) en «¿Y quién la encontró?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 2.8 | 11_sorprendido | `gancho` | «salió de un microbio de la tierra» (cuadro 0) |
+| 2 | 6.0 | 9.5 | 06_pensativo_menton | `arriba-der` | «manchitas blancas en la boca» |
+| 3 | 12.8 | 16.4 | 10_serio_molesto | `izq-alto` | «matarlo sin dañarte es difícil» |
+| 4 | 18.9 | 20.5 | 13_senalando_arriba | `arriba-der` | «le abre poros» |
+| 5 | 23.9 | 25.5 | 07_pensativo_puno | `grande` | «¿Y quién la encontró?» |
+| 6 | 32.6 | 37.5 | 04_bajando_lentes | `arriba-der` | «por correo… a unos 240 kilómetros» |
+| 7 | 42.3 | 46.5 | 11_sorprendido | `arriba-der` | «una bacteria, no un hongo» |
+| 8 | 51.1 | 53.3 | 02_apuntando_camara | `arriba-der` | «fueron para la ciencia» |
+| 9 | 53.9 | 57.9 | 13_senalando_arriba | `arriba-der` | «dos científicas contra un hongo» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 9 · **28.4 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas · nunca tapa datos ni subtítulo.
+
+## Fuentes (investigación previa del guionista; la verificación independiente va en `verificacion.md`)
+
+1. Science History Institute, *Elizabeth Lee Hazen and Rachel Fuller Brown* (biografía).
+   https://www.sciencehistory.org/education/scientific-biographies/elizabeth-lee-hazen-and-rachel-fuller-brown/
+   > "Nystatin, one of the first effective antifungal medicines, was discovered in 1950 by two women scientists"
+   > "If she found such activity, she would mail the particular culture to Albany in a mason jar."
+   > Soil from "the garden of Hazen's friends, the Walter B. Nourses"
+   > "They then renamed the substance nystatin (for New York State)."
+   > "has been used for years as an effective treatment for fungal infections of the skin, mouth, vagina, and intestinal tract"
+2. National Inventors Hall of Fame, *Nystatin* (historia de inductees). https://www.invent.org/blog/inventors/nystatin
+   > "Though they lived about 150 miles apart" · "she would mail that culture to Brown in a jar"
+   > "Introduced in practical form in 1954 following Food and Drug Administration approval, nystatin was patented in 1957."
+   > "named 'nystatin' for the New York State Department of Health"
+3. Steib, P. A., "Hazen, Elizabeth Lee and Rachel Fuller Brown", *Women in World History: A Biographical Encyclopedia* (vía encyclopedia.com).
+   > "Hazen and Brown would continue to work 150 miles away from each other"
+   > "a total of $13.4 million in royalties were paid to The Research Corporation between 1955 and 1976"
+   > "The other half, some $6.7 million over the next 20 years, was designated to be used to support the Brown-Hazen Fund"
+4. Lemelson-MIT, *Rachel Brown and Elizabeth Hazen*. https://lemelson.mit.edu/resources/rachel-brown
+   > "Hazen and Brown invested all their royalties from Nystatin (over $13 million) in the nonprofit Research Corporation"
+5. MedlinePlus, *Nystatin*. https://medlineplus.gov/druginfo/meds/a682758.html
+   > "Nystatin is used to treat fungal infections of the inside of the mouth and lining of the stomach and intestines." · "polyenes"
+6. Mecanismo (ergosterol vs colesterol): por verificar en una fuente primaria/revisión (p. ej. Récamier et al., *Biophys J*, PMC1304795,
+   y revisiones de polienos). El guionista no pudo abrir aún el texto completo: **el verificador debe confirmarlo**.
+7. *Candida* como comensal y algodoncillo (candidiasis orofaríngea): por verificar en CDC.
+
+**Descartado del guion por falta de fuente primaria (posibles derivados si se verifican):** uso en obras de arte con moho tras la
+inundación de Florencia de 1966 y contra la enfermedad holandesa del olmo (solo lo dicen enciclopedias y fichas biográficas).
+También se evita decir "el primer antimicótico": las fuentes dicen "one of the first" (SHI) o "first successful fungus-fighting
+antibiotic" (NIHF); no concuerdan.
+**Ojo con el terreno de Nourse:** unas fuentes dicen jardín (SHI, NIHF), otras granja lechera en Virginia; por eso la voz dice solo
+"la tierra de un amigo".
+
+El dibujo es esquemático. No es consejo médico.
+
+> Estado (5 nov 2026): verificación aprobada en dos rondas (ver `verificacion.md`); listo para render de revisión sin voz.

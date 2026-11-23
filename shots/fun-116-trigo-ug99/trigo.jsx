@@ -149,7 +149,7 @@ function MapaAfrica({ x, y, k = 5.2, children }) {
   const P = (lon, lat) => [(lon + 18) * k, (38 - lat) * k];
   const d = 'M ' + AFRICA.map(([a, b]) => P(a, b).map((v) => v.toFixed(1)).join(' ')).join(' L ') + ' Z';
   return <g transform={`translate(${x} ${y})`}>
-    <path d={d} fill="#ffe9a8" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
+    <path d={d} fill="#4a4128" stroke="#ffe9a8" strokeWidth={6} strokeLinejoin="round" style={{ filter:'drop-shadow(0 0 10px rgba(255,233,168,.4))' }} />   {/* belleza: ocre oscuro con contorno luminoso (antes crema claro) */}
     {children && children(P)}
   </g>;
 }
@@ -166,11 +166,13 @@ function Parcela({ T, x, y, roya = 0, letrero = 'Sr31', seed = 1, s = 1 }) {
 // Globo terráqueo esquemático con trigales.
 function Globo({ T, x, y, r = 230 }) {
   return <g transform={`translate(${x} ${y})`}>
-    <circle r={r} fill="#5fb7ff" stroke={KC.ink} strokeWidth={8} />
-    <path d={`M ${-r * 0.75} ${-r * 0.35} Q ${-r * 0.4} ${-r * 0.75} ${-r * 0.05} ${-r * 0.5} Q ${-r * 0.2} ${-r * 0.15} ${-r * 0.5} ${-r * 0.05} Q ${-r * 0.8} ${-r * 0.05} ${-r * 0.75} ${-r * 0.35} Z`} fill="#8fd16a" stroke={KC.ink} strokeWidth={5} />
-    <path d={`M ${r * 0.1} ${-r * 0.7} Q ${r * 0.6} ${-r * 0.8} ${r * 0.8} ${-r * 0.3} Q ${r * 0.6} ${r * 0.1} ${r * 0.25} ${-r * 0.05} Q ${r * 0.05} ${-r * 0.35} ${r * 0.1} ${-r * 0.7} Z`} fill="#8fd16a" stroke={KC.ink} strokeWidth={5} />
-    <path d={`M ${-r * 0.35} ${r * 0.2} Q ${-r * 0.05} ${r * 0.15} ${-r * 0.05} ${r * 0.5} Q ${-r * 0.2} ${r * 0.85} ${-r * 0.35} ${r * 0.6} Q ${-r * 0.5} ${r * 0.4} ${-r * 0.35} ${r * 0.2} Z`} fill="#8fd16a" stroke={KC.ink} strokeWidth={5} />
-    <path d={`M ${r * 0.3} ${r * 0.25} Q ${r * 0.7} ${r * 0.2} ${r * 0.6} ${r * 0.55} Q ${r * 0.4} ${r * 0.7} ${r * 0.3} ${r * 0.25} Z`} fill="#8fd16a" stroke={KC.ink} strokeWidth={5} />
+    <defs><radialGradient id="globo-mar" cx=".38" cy=".34" r=".75"><stop offset="0" stopColor="#3f86c4" /><stop offset=".65" stopColor="#1f4f86" /><stop offset="1" stopColor="#12304f" /></radialGradient></defs>
+    <circle r={r + 12} fill="none" stroke="#7fc4ff" strokeWidth={16} opacity=".15" />
+    <circle r={r} fill="url(#globo-mar)" stroke={KC.ink} strokeWidth={8} />
+    <path d={`M ${-r * 0.75} ${-r * 0.35} Q ${-r * 0.4} ${-r * 0.75} ${-r * 0.05} ${-r * 0.5} Q ${-r * 0.2} ${-r * 0.15} ${-r * 0.5} ${-r * 0.05} Q ${-r * 0.8} ${-r * 0.05} ${-r * 0.75} ${-r * 0.35} Z`} fill="#5f9a4a" stroke={KC.ink} strokeWidth={5} />
+    <path d={`M ${r * 0.1} ${-r * 0.7} Q ${r * 0.6} ${-r * 0.8} ${r * 0.8} ${-r * 0.3} Q ${r * 0.6} ${r * 0.1} ${r * 0.25} ${-r * 0.05} Q ${r * 0.05} ${-r * 0.35} ${r * 0.1} ${-r * 0.7} Z`} fill="#5f9a4a" stroke={KC.ink} strokeWidth={5} />
+    <path d={`M ${-r * 0.35} ${r * 0.2} Q ${-r * 0.05} ${r * 0.15} ${-r * 0.05} ${r * 0.5} Q ${-r * 0.2} ${r * 0.85} ${-r * 0.35} ${r * 0.6} Q ${-r * 0.5} ${r * 0.4} ${-r * 0.35} ${r * 0.2} Z`} fill="#5f9a4a" stroke={KC.ink} strokeWidth={5} />
+    <path d={`M ${r * 0.3} ${r * 0.25} Q ${r * 0.7} ${r * 0.2} ${r * 0.6} ${r * 0.55} Q ${r * 0.4} ${r * 0.7} ${r * 0.3} ${r * 0.25} Z`} fill="#5f9a4a" stroke={KC.ink} strokeWidth={5} />
     {[[-0.55, -0.3], [-0.3, -0.45], [0.35, -0.55], [0.55, -0.35], [-0.2, 0.45], [0.45, 0.4]].map(([a, b], i) => <Trigo key={i} T={T} x={a * r} y={b * r + 20} h={70} s={0.6} seed={i + 50} />)}
     <ellipse cx={-r * 0.4} cy={-r * 0.55} rx={r * 0.25} ry={r * 0.1} fill="#fff" opacity=".3" transform={`rotate(-30 ${-r * 0.4} ${-r * 0.55})`} />
   </g>;
@@ -391,7 +393,7 @@ function TrigoShot() {
       <Escena T={T} a={K.B} b={K.N} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <MapaMexico x={80} y={440} ancho={1100} conCA={false}>
+          <MapaMexico x={80} y={440} ancho={1100} conCA={false} color="#4a4128" borde="#ffe9a8">
             {(() => { const [cx, cy] = mxProy(-98.85, 19.53); const on = kprog(T, K.B + 0.5, K.B + 0.9, kEase.rebote); return <g>
               {[[-110, 28.5], [-104, 26], [-101, 21], [-106, 31]].map(([lo, la], i) => { const [a, b] = mxProy(lo, la); const c = kprog(T, K.B + 1.0 + i * 0.2, K.B + 1.6 + i * 0.2, kEase.sale); return c > 0 ? <Trigo key={i} T={T} x={a} y={b} h={105 * c} s={0.9} seed={i + 70} /> : null; })}
               <circle cx={cx} cy={cy} r={16 * on} fill={KC.red} stroke={KC.ink} strokeWidth={4} />

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #45 · La punta de tu lápiz no es plomo: es el mismo carbono que un diamante — NARRADO (N1 por dentro + toque N5).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (átomos como bolitas, distancias no a escala).
 const GRAF = '#3c3f46', MADERA = '#f2c48d', DIAM = '#bfeaff', CINTA = 'rgba(255,240,190,.72)';
@@ -212,38 +213,48 @@ function LapizShot() {
   const ciclo = Math.max(0, T - (K.Es + 1.0)), veces = Math.min(20, Math.floor(ciclo / 0.28) + (T > K.Es + 1.0 ? 1 : 0));
   const pres = T > K.Es + 1.0 && veces < 20 ? Math.max(0, Math.sin((ciclo / 0.28) * Math.PI)) : 0;
   const mitadCu = K.Cu + 3.4;
+  // pase a mano (cine): la hoja de papel llena el cuadro; g0p pasa un punto del papel a la pantalla
+  // vuelta de encuadre: todo el conjunto (papel, lápiz, diamante) baja 130 px para centrarlo en el cuadro
+  const G0 = 'translate(540 990) scale(1.45) translate(-440 -910)', g0p = (p) => [(p[0] - 440) * 1.45 + 540, (p[1] - 910) * 1.45 + 990];
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: el lápiz escribe; aparece el diamante */}
       <Escena T={T} a={K.G} b={K.Mi} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Papel w={w0} />
-          <Lapiz x={tx0} y={ty0} s={0.78} rot={-20 + Math.sin(T * 9) * 1.5} />
-          <Diamante T={T} x={860} y={1010} s={0.85} o={diam0} />
-          {diam0 > 0.5 && <text x={760} y={860} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.G + 2.6, K.G + 3.0)}>=</text>}
+          <g transform={G0}>
+            <Papel w={w0} />
+            <Lapiz x={tx0} y={ty0} s={0.78} rot={-20 + Math.sin(T * 9) * 1.5} />
+          </g>
+          <Diamante T={T} x={800} y={1290} s={1.1} o={diam0} />
+          {diam0 > 0.5 && <text x={600} y={1305} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill="#0b1020" opacity={kprog(T, K.G + 2.6, K.G + 3.0)}>=</text>}
         </SvgCapa>
       </Escena>
       {/* 1 · la mina: grafito + arcilla, nada de plomo */}
       <Escena T={T} a={K.Mi} b={K.Ca} zoom={0.12} origen="37% 43%">
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Seccion T={T} x={400} y={720} nucleo={1 - parte} />
-          <Montoncito x={klerp(400, 250, parte)} y={klerp(720, 1080, parte)} color={GRAF} f={parte} seed={4} brillo borde="#0d0f12" />
-          <Montoncito x={klerp(400, 600, parte)} y={klerp(720, 1080, parte)} color="#d9a77a" f={parte} seed={9} />
-          {salePb < 1 && <Teselita x={klerp(850, 1320, salePb)} y={klerp(-120, 960, caePb) - salePb * 200} rot={salePb * 140 + (1 - caePb) * -20} s={0.95} />}
-          {[[120, 'grafito', K.Mi + 1.9, 'start'], [700, 'arcilla', K.Mi + 2.1, 'end']].map(([x, t, at, an]) => <text key={t} x={x} y={1000} textAnchor={an} opacity={kprog(T, at, at + 0.3)} style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>{t}</text>)}
-          <Marca x={850} y={960} ok={false} s={0.9} o={kprog(T, K.Mi + 1.6, K.Mi + 1.9) * (1 - salePb)} />
+          <g transform="translate(400 780) scale(1.3) translate(-400 -720)"><Seccion T={T} x={400} y={720} nucleo={1 - parte} /></g>
+          <g transform="scale(1.3)">
+            <Montoncito x={klerp(308, 208, parte)} y={klerp(600, 992, parte)} color={GRAF} f={parte} seed={4} brillo borde="#0d0f12" />
+            <Montoncito x={klerp(308, 492, parte)} y={klerp(600, 992, parte)} color="#d9a77a" f={parte} seed={9} />
+          </g>
+          {salePb < 1 && <Teselita x={klerp(890, 1400, salePb)} y={klerp(-160, 1000, caePb) - salePb * 200} rot={salePb * 140 + (1 - caePb) * -20} s={1.2} />}
+          {[[80, 'grafito', K.Mi + 1.9, 'start'], [830, 'arcilla', K.Mi + 2.1, 'end']].map(([x, t, at, an]) => <text key={t} x={x} y={1180} textAnchor={an} opacity={kprog(T, at, at + 0.3)} style={{ font:`700 48px ${KF.mono}` }} fill={KC.ink}>{t}</text>)}
+          <Marca x={890} y={1000} ok={false} s={1.15} o={kprog(T, K.Mi + 1.6, K.Mi + 1.9) * (1 - salePb)} />
         </SvgCapa>
       </Escena>
       {/* 2 · por dentro: hojas de hexágonos apiladas */}
       <Escena T={T} a={K.Ca} b={K.De}>
         <Noche />
         <SvgCapa>
-          <Pila T={T} cx={560} base={1170} gap={150} n={5} H={180} aparece={(i) => kprog(T, K.Ca + 0.3 + i * 0.75, K.Ca + 0.9 + i * 0.75, kEase.sale)} />
+          <g transform="translate(540 930) scale(1.4) translate(-560 -870)">
+            <g opacity={0.22}><Pila T={T} cx={560} base={1170} gap={150} n={5} H={180} /></g>
+            <Pila T={T} cx={560} base={1170} gap={150} n={5} H={180} aparece={(i) => { const r = [3, 1, 0, 2, 4][i]; return kprog(T, K.Ca + 0.3 + r * 0.75, K.Ca + 0.9 + r * 0.75, kEase.sale); }} />
+          </g>
           {T > K.Ca + 4.0 && <g opacity={kprog(T, K.Ca + 4.0, K.Ca + 4.4)}>
-            <path d="M 905 570 L 925 570 L 925 720 L 905 720" fill="none" stroke={KC.gold2} strokeWidth={6} />
-            <text x={1000} y={556} textAnchor="end" style={{ font:`700 34px ${KF.mono}` }} fill={KC.gold2}>≈ 0.33 nm</text>
+            <path d="M 966 510 L 986 510 L 986 720 L 966 720" fill="none" stroke={KC.gold2} strokeWidth={6} />
+            <text x={1004} y={412} textAnchor="end" style={{ font:`700 40px ${KF.mono}` }} fill={KC.gold2}>≈ 0.33 nm</text>
           </g>}
         </SvgCapa>
       </Escena>
@@ -251,105 +262,119 @@ function LapizShot() {
       <Escena T={T} a={K.De} b={K.Di} zoom={0.03}>
         <Noche />
         <SvgCapa>
-          <rect x={90} y={1140} width={900} height={74} rx={8} fill="#fffdf6" stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.De + 2.6, K.De + 3.1)} />
-          <Pila T={T} cx={520} base={1000} gap={120} H={180} n={suelta > 0 ? 3 : 4} debiles={1 - slide * 0.6} dx={(i) => slide * i * 60 + Math.sin(T * 2 + i) * 4} />
-          {suelta > 0 && <Hoja cx={klerp(520 + 180, 540, suelta)} cy={klerp(640, 1176, suelta)} W={300} H={180} tilt={klerp(0.3, 0.14, suelta)} />}
+          <rect x={40} y={1236} width={1000} height={92} rx={8} fill="#fffdf6" stroke={KC.ink} strokeWidth={6} opacity={0.3 + 0.7 * kprog(T, K.De + 2.6, K.De + 3.1)} />
+          <g transform="translate(540 830) scale(1.25) translate(-610 -820)">
+            <Pila T={T} cx={520} base={1000} gap={120} H={180} n={suelta > 0 ? 3 : 4} debiles={1 - slide * 0.6} dx={(i) => slide * i * 60 + Math.sin(T * 2 + i) * 4} />
+            {suelta > 0 && <Hoja cx={klerp(520 + 180, 610, suelta)} cy={klerp(640, 1181, suelta)} W={300} H={180} tilt={klerp(0.3, 0.14, suelta)} />}
+          </g>
         </SvgCapa>
       </Escena>
       {/* 4 · diamante: cada carbono con 4 vecinos, red 3D */}
       <Escena T={T} a={K.Di} b={K.Du}>
         <Noche />
         <SvgCapa>
-          <RedDiamante T={T} cx={560} cy={860} S={235} ang={0.5 + (T - K.Di) * 0.35} brillo={kprog(T, K.Di + 1.2, K.Di + 1.8)} />
+          <RedDiamante T={T} cx={540} cy={900} S={320} ang={0.5 + (T - K.Di) * 0.35} brillo={kprog(T, K.Di + 1.2, K.Di + 1.8)} />
         </SvgCapa>
       </Escena>
       {/* 5 · durísimo: disco con diamantes corta roca */}
       <Escena T={T} a={K.Du} b={K.Pr} zoom={0.06}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <Roca x={560} y={1000} corte={kprog(T, K.Du + 0.4, K.Du + 2.8)} />
-          <Disco T={T} x={560} y={klerp(620, 700, kprog(T, K.Du + 0.2, K.Du + 2.8))} r={210} />
-          <Chispas T={T} x={560} y={870} on={kprog(T, K.Du + 0.3, K.Du + 0.6)} />
+          <g transform="translate(540 900) scale(1.3) translate(-560 -800)">
+            <Roca x={560} y={1000} corte={kprog(T, K.Du + 0.4, K.Du + 2.8)} />
+            <Disco T={T} x={560} y={klerp(620, 700, kprog(T, K.Du + 0.2, K.Du + 2.8))} r={210} />
+            <Chispas T={T} x={560} y={870} on={kprog(T, K.Du + 0.3, K.Du + 0.6)} />
+          </g>
         </SvgCapa>
       </Escena>
       {/* 6 · pregunta: ¿una sola hoja? */}
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.08}>
         <Noche />
         <SvgCapa>
-          <Pila T={T} cx={290} base={1120} gap={115} n={3} W={220} H={180} />
-          <Hoja cx={290} cy={klerp(775, 680, kprog(T, K.Pr + 0.3, K.Pr + 1.4, kEase.sale))} W={220} H={180} tilt={0.3} brillo={0.5 + 0.5 * Math.sin(T * 5)} />
-          <text x={290} y={590} textAnchor="middle" style={{ font:`400 280px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 290 520)`}>?</text>
+          <g transform="translate(540 1010) scale(1.5) translate(-290 -850)">
+            <Pila T={T} cx={290} base={1120} gap={115} n={3} W={220} H={180} />
+            <Hoja cx={290} cy={klerp(775, 680, kprog(T, K.Pr + 0.3, K.Pr + 1.4, kEase.sale))} W={220} H={180} tilt={0.3} brillo={0.5 + 0.5 * Math.sin(T * 5)} />
+            <text x={290} y={590} textAnchor="middle" style={{ font:`400 280px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 290 520)`}>?</text>
+          </g>
         </SvgCapa>
       </Escena>
       {/* 7 · 2004, Manchester: cinta adhesiva una y otra vez */}
       <Escena T={T} a={K.Es} b={K.Gr} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
+          <g transform="translate(540 1040) scale(1.4) translate(-540 -1000)">
           <Grafito x={540} y={1090} s={1.1} />
           <g transform={`translate(0 ${-pres * -120})`}>
             <rect x={250} y={840} width={580} height={110} rx={6} fill={CINTA} stroke={KC.ink} strokeWidth={6} transform={`rotate(${-pres * 0 + Math.sin(T * 3) * 1.5} 540 895)`} />
             <rect x={400} y={865} width={280} height={60} rx={20} fill="#55585f" opacity={0.85 * Math.pow(0.86, veces)} />
           </g>
+          </g>
         </SvgCapa>
-        {T > K.Es + 1.0 && <div style={{ position:'absolute', left:880, top:780, transform:'translate(-50%,-50%)', zIndex:41, font:`400 110px ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}` }}>×{veces}</div>}
+        {T > K.Es + 1.0 && <div style={{ position:'absolute', left:840, top:600, transform:'translate(-50%,-50%)', zIndex:41, font:`400 130px ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}` }}>×{veces}</div>}
       </Escena>
       {/* 8 · grafeno: una sola capa, Nobel 2010 */}
       <Escena T={T} a={K.Gr} b={K.Cu}>
         <Noche />
         <SvgCapa>
-          <Hoja cx={540} cy={820 + Math.sin(T * 1.6) * 10} W={380} H={300} tilt={0.42 + Math.sin(T * 0.8) * 0.05} brillo={0.25} />
-          <Medalla x={830} y={1090} s={0.9} o={kprog(T, K.Gr + 2.4, K.Gr + 2.9, kEase.rebote)} />
+          <g transform="translate(540 880) scale(1.25) translate(-540 -820)">
+            <Hoja cx={540} cy={820 + Math.sin(T * 1.6) * 10} W={380} H={300} tilt={0.6 + Math.sin(T * 0.8) * 0.05} brillo={0.25} />
+          </g>
+          <Medalla x={800} y={1235} s={1.1} o={kprog(T, K.Gr + 2.4, K.Gr + 2.9, kEase.rebote)} />
         </SvgCapa>
       </Escena>
       {/* 9 · 1 mm = 3 millones de capas; quizá dejaste una en el papel */}
-      <Escena T={T} a={K.Cu} b={mitadCu}>
+      <Escena T={T} a={K.Cu} b={mitadCu} origen="30% 45%">
         <FondoLunares color={KC.mint} />
         <SvgCapa>
+          <g transform="translate(270 960) scale(1.3) translate(-235 -860)">
           <rect x={150} y={600} width={220} height={520} fill={GRAF} stroke={KC.ink} strokeWidth={8} />
           {Array.from({ length: 52 }, (_, i) => <line key={i} x1={154} x2={366} y1={610 + i * 10} y2={610 + i * 10} stroke="#6b707a" strokeWidth={2} opacity={kprog(T, K.Cu + 0.2 + i * 0.02, K.Cu + 0.4 + i * 0.02)} />)}
           <path d="M 120 600 L 100 600 L 100 1120 L 120 1120" fill="none" stroke={KC.ink} strokeWidth={6} />
           <text x={80} y={870} textAnchor="middle" transform="rotate(-90 80 870)" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>1 mm</text>
+          </g>
         </SvgCapa>
-        <Contador T={T} at={K.Cu + 0.5} hasta={3000000} dur={1.8} x={700} y={820} tam={84} color={KC.texto} />
-        {T > K.Cu + 0.5 && <div style={{ position:'absolute', left:700, top:930, transform:'translate(-50%,-50%)', zIndex:41, whiteSpace:'nowrap', font:`900 52px ${KF.texto}`, color:KC.ink }}>capas de carbono</div>}
+        <Contador T={T} at={K.Cu + 0.5} hasta={3000000} dur={1.8} x={770} y={900} tam={80} color={KC.texto} />
+        {T > K.Cu + 0.5 && <div style={{ position:'absolute', left:770, top:1005, transform:'translate(-50%,-50%)', zIndex:41, whiteSpace:'nowrap', font:`900 50px ${KF.texto}`, color:KC.ink }}>capas de carbono</div>}
       </Escena>
       <Escena T={T} a={mitadCu} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa><Papel w={1} /></SvgCapa>
+        <SvgCapa><g transform={G0}><Papel w={1} /></g></SvgCapa>
       </Escena>
       {/* 10 · cierre: el lápiz del inicio, ahora por dentro */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Papel w={1} />
-          <Lapiz x={LINEA(1)[0]} y={LINEA(1)[1]} s={0.78} rot={-20} />
-          <Diamante T={T} x={860} y={1010} s={0.85} />
+          <g transform={G0}>
+            <Papel w={1} />
+            <Lapiz x={LINEA(1)[0]} y={LINEA(1)[1]} s={0.78} rot={-20} />
+          </g>
+          <Diamante T={T} x={800} y={1290} s={1.1} />
         </SvgCapa>
       </Escena>
 
       {/* lupas */}
-      <Lupa T={T} at={mitadCu + 0.3} until={K.Ci - 0.3} x={430} y={600} r={190} fx={LINEA(0.55)[0]} fy={LINEA(0.55)[1]} tinte={KC.gold2} etiqueta="POR DENTRO · ¿1 capa?"
+      <Lupa T={T} at={mitadCu + 0.3} until={K.Ci - 0.3} x={540} y={420} r={200} fx={g0p(LINEA(0.55))[0]} fy={g0p(LINEA(0.55))[1]} tinte={KC.gold2} etiqueta="POR DENTRO · ¿1 capa?"
         interior={(TT, r) => <svg width={2 * r} height={2 * r}><rect width={2 * r} height={2 * r} fill="#0d1424" /><Hoja cx={r} cy={r} W={150} H={120} b={30} rA={7} tilt={0.5} /></svg>} />
-      <Lupa T={T} at={K.Ci + 0.6} until={K.Ou} x={330} y={560} r={170} fx={LINEA(1)[0] - 6} fy={LINEA(1)[1] - 20} tinte={KC.cyan} etiqueta="POR DENTRO · grafito"
+      <Lupa T={T} at={K.Ci + 0.6} until={K.Ou} x={290} y={420} r={185} fx={g0p(LINEA(1))[0] - 8} fy={g0p(LINEA(1))[1] - 28} tinte={KC.cyan} etiqueta="POR DENTRO · grafito"
         interior={(TT, r) => <svg width={2 * r} height={2 * r}><rect width={2 * r} height={2 * r} fill="#0d1424" /><Pila T={TT} cx={r} base={r + 95} gap={62} n={4} W={130} H={90} /></svg>} />
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.4} until={K.G + 2.6} texto="plomo" x={540} y={1500} tam={52} />
-      <Chip T={T} at={K.G + 2.8} until={K.Mi - 0.2} texto="grafito = diamante = C" y={1500} tam={46} borde={KC.ink} />
-      <Etq T={T} at={K.G + 2.9} until={K.Mi - 0.2} x={1040} y={1170} lado="izq" texto="diamante" tam={34} color={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.4} until={K.G + 2.6} texto="plomo" x={320} y={1470} tam={60} />
+      <Chip T={T} at={K.G + 2.8} until={K.Mi - 0.2} texto="grafito = diamante = C" y={1540} tam={46} borde={KC.ink} />
+      <Etq T={T} at={K.G + 2.9} until={K.Mi - 0.2} x={680} y={1468} lado="izq" texto="diamante" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Mi + 0.2} until={K.Mi + 1.5} texto="corte de la punta" y={1500} tam={40} borde={KC.yellow} />
       <Chip T={T} at={K.Mi + 2.2} until={K.Ca - 0.2} texto="la mina: grafito + arcilla" y={1500} tam={42} borde={KC.yellow} />
-      <BarraEscala T={T} at={K.Mi + 0.3} until={K.Mi + 1.4} texto="1 mm" largo={75} x={60} y={1640} />
-      <Chip T={T} at={K.Ca + 0.6} until={K.De - 0.2} texto="carbono en hojas de hexágonos" x={620} y={420} tam={36} borde={KC.gold2} />
-      <Chip T={T} at={K.De + 0.6} until={K.De + 3.2} texto="unión débil entre hojas" x={620} y={470} tam={38} borde="#7fd6ff" />
-      <Chip T={T} at={K.De + 3.4} until={K.Di - 0.2} texto="una hoja queda en el papel" x={620} y={470} tam={36} borde="#7fd6ff" />
-      <Chip T={T} at={K.Di + 0.4} until={K.Du - 0.2} texto="diamante: red en 3D" x={620} y={470} tam={40} borde={DIAM} />
+      <BarraEscala T={T} at={K.Mi + 0.3} until={K.Mi + 1.4} texto="1 mm" largo={98} x={60} y={1400} />
+      <Chip T={T} at={K.Ca + 0.6} until={K.De - 0.2} texto="carbono en hojas de hexágonos" x={440} y={262} tam={38} borde={KC.gold2} />
+      <Chip T={T} at={K.De + 0.6} until={K.De + 3.2} texto="unión débil entre hojas" x={540} y={330} tam={40} borde="#7fd6ff" />
+      <Chip T={T} at={K.De + 3.4} until={K.Di - 0.2} texto="una hoja queda en el papel" x={540} y={330} tam={40} borde="#7fd6ff" />
+      <Chip T={T} at={K.Di + 0.4} until={K.Du - 0.2} texto="diamante: red en 3D" x={540} y={300} tam={42} borde={DIAM} />
       <Chip T={T} at={K.Di + 1.6} until={K.Du - 0.2} texto="cada C se une a 4" y={1500} tam={44} borde={KC.orange} />
       <Chip T={T} at={K.Du + 0.4} until={K.Pr - 0.2} texto="disco con diamantes" y={1500} tam={42} borde={KC.ink} />
-      <SvgCapa z={41}><Onomato T={T} at={K.Du + 0.6} until={K.Pr - 0.2} x={850} y={760} texto="¡zzzz!" color={KC.yellow} tam={90} /></SvgCapa>
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.6} anio="2004" quien="Geim y Novoselov" revista="Univ. de Manchester · Science" y={560} />
+      <SvgCapa z={41}><Onomato T={T} at={K.Du + 0.6} until={K.Pr - 0.2} x={880} y={600} texto="¡zzzz!" color={KC.yellow} tam={100} /></SvgCapa>
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.6} anio="2004" quien="Geim y Novoselov" revista="Univ. de Manchester · Science" y={380} />
       <Chip T={T} at={K.Es + 3.8} until={K.Gr - 0.2} texto="cinta adhesiva, otra y otra vez" y={1500} tam={38} borde={KC.yellow} />
-      <Chip T={T} at={K.Gr + 0.4} until={K.Cu - 0.2} texto="grafeno · 1 átomo de grosor" x={620} y={470} tam={38} borde={KC.gold2} />
+      <Chip T={T} at={K.Gr + 0.4} until={K.Cu - 0.2} texto="grafeno · 1 átomo de grosor" x={540} y={400} tam={42} borde={KC.gold2} />
       <Chip T={T} at={K.Gr + 2.6} until={K.Cu - 0.2} texto="Geim y Novoselov · 2010" y={1500} tam={40} borde={KC.gold} />
       <Chip T={T} at={mitadCu + 0.2} until={K.Ci - 0.2} texto="quizá… una sola capa" y={1500} tam={42} borde={KC.gold2} />
       <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="mismo C · otro acomodo" y={1500} tam={44} borde={KC.ink} />

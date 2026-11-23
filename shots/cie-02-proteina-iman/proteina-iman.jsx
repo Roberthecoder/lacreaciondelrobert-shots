@@ -168,17 +168,20 @@ function ImanNarrado() {
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0b1222, #090d19)' }}></div>
         <Ambiente T={T} n={22} seed={11} color="rgba(120,180,255,.3)" tam={[3, 9]} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g opacity={0.95}><Proteina T={T} x={540} y={990} s={2.0} excita={0.5} emite={0.75} rot={(T - K.N) * 6} /></g>
+          <g opacity={0.95}><Proteina T={T} x={540} y={1030} s={2.35} excita={0.5} emite={0.75} rot={(T - K.N) * 6} /></g>   {/* belleza: más grande y más abajo (antes y 990, s 2.0: quedaba ARRIBA) */}
         </svg>
       </EscenaFundido>
       <TarjetaEstudio T={T} at={K.N + 0.2} until={K.A - 0.3} anio="2026" quien="Abrahams y colegas · Oxford" revista="Nature" y={330} />
-      <Chip T={T} at={K.N + 1.6} until={K.A - 0.3} texto="MagLOV" y={1420} borde={FLAVINA} tam={52} mono />
+      <Chip T={T} at={K.N + 0.7} until={K.A - 0.3} texto="MagLOV" y={1480} borde={FLAVINA} tam={52} mono />
 
       {/* 4 · AVENA — de dónde salió */}
       <EscenaFundido T={T} a={K.A} b={K.Q} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2d4757 0%, #074257 68%, #284549 100%)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <rect x={0} y={1420} width={KW} height={500} fill={cineMix(KC.leaf, CINE.fondo, 0.55)} />
+          <defs><linearGradient id="avena-suelo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={cineMix(KC.leaf, CINE.fondo, 0.5)} /><stop offset=".45" stopColor={cineMix(KC.leaf, CINE.fondo, 0.72)} /><stop offset="1" stopColor="#081008" /></linearGradient></defs>
+          <rect x={0} y={1420} width={KW} height={500} fill="url(#avena-suelo)" />
+          {(() => { const g = krng(33); return Array.from({ length: 60 }, (_, i) => { const v = g(), y = 1450 + v * v * 440, k = 0.6 + (y - 1420) / 220, x = g() * 1080, h = (14 + g() * 14) * k, l = (g() - 0.5) * 10 * k;
+            return <path key={i} d={`M ${x.toFixed(0)} ${y.toFixed(0)} q ${(l * 0.4).toFixed(1)} ${(-h * 0.6).toFixed(1)} ${l.toFixed(1)} ${(-h).toFixed(1)}`} stroke={['#3f6b3a', '#2f5530', '#4d7a40'][i % 3]} strokeWidth={2.5 * k} fill="none" strokeLinecap="round" opacity=".75" />; }); })()}
           <path d="M0 1420 Q 270 1392 540 1420 T 1080 1420" fill={cineMix(KC.leaf, CINE.fondo, 0.4)} stroke={KC.ink} strokeWidth={8} />
           <Avena T={T} x={290} y={1430} s={1.35} />
           <Avena T={T} x={140} y={1470} s={0.85} seed={8} />
@@ -243,11 +246,11 @@ function ImanNarrado() {
           <g transform={`translate(${klerp(1400, 820, entraIman(K.Ca + 0.3))} 680) rotate(-96)`}>
             <Iman T={T} s={1.3} activo={entraIman(K.Ca + 0.3)} />
           </g>
-          <g opacity={kprog(T, K.Ca + 0.2, K.Ca + 0.8)}>
+          <g opacity={kprog(T, K.Ca - 0.3, K.Ca + 0.15)}>
             <Espines T={T} x={420} y={930} s={1.35} alineado={1 - kprog(T, K.Ca + 1.4, K.Ca + 2.6)} sep={140} />
           </g>
         </svg>
-        <Balanza T={T} at={K.Ca + 0.6} until={K.M - 0.3} y={1270}
+        <Balanza T={T} at={K.Ca + 0.25} until={K.M - 0.3} y={1270}
           p={klerp(0.35, 0.72, kprog(T, K.Ca + 1.2, K.Ca + 3.0, kEase.suave))} />
         <Chip T={T} at={K.Ca + 2.6} until={K.M - 0.3} texto="no los empuja: cambia la probabilidad" y={470} borde={AZUL} tam={36} />
       </EscenaFundido>

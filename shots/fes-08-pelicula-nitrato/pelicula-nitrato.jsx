@@ -358,9 +358,9 @@ function PeliculaNitrato() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(255,190,120,.2)" />
         {svg(<>
-          <g transform="translate(540 900) scale(1.6) translate(-540 -900)"><Cadena T={T} y={900} nitro={nitroM} /></g>
-          {/* barra de escala recalculada: una glucosa de la celulosa mide ≈0.52 nm y aquí ocupa 344 px (215 × 1.6) → 0.5 nm = 334 px */}
-          <g opacity={kprog(T, K.M + 0.1, K.M + 0.5) * (1 - kprog(T, K.P - 0.3, K.P))}><rect x={630} y={262} width={334} height={8} rx={4} fill={KC.texto} /><text x={630} y={246} style={{ font:`700 26px ${KF.mono}` }} fill={KC.texto}>0.5 nm</text></g>
+          <g transform="translate(540 1000) scale(1.9) translate(-540 -900)"><Cadena T={T} y={900} nitro={nitroM} /></g>
+          {/* barra de escala recalculada (pase de belleza: cadena 1.6 → 1.9 y bajada al centro): una glucosa mide ≈0.52 nm y ocupa 408 px (215 × 1.9) → 0.5 nm = 397 px */}
+          <g opacity={kprog(T, K.M + 0.1, K.M + 0.5) * (1 - kprog(T, K.P - 0.3, K.P))}><rect x={600} y={400} width={397} height={8} rx={4} fill={KC.texto} /><text x={600} y={384} style={{ font:`700 26px ${KF.mono}` }} fill={KC.texto}>0.5 nm</text></g>
         </>)}
       </Escena>
       {/* 6 · prima del algodón pólvora, con menos nitrógeno */}
@@ -473,8 +473,8 @@ function PeliculaNitrato() {
       <Chip T={T} at={K.R + 1.0} until={K.M - 0.3} texto="HNO₃ + H₂SO₄" x={540} y={1500} tam={44} borde={KC.ink} mono />
       <Etq T={T} at={K.R + 1.2} until={K.M - 0.3} x={120} y={1590} texto="ácido nítrico + ácido sulfúrico" tam={30} color={KC.ink} />
       
-      <Etq T={T} at={K.M + 0.3} until={K.M + 1.4} x={80} y={520} texto="celulosa = cadena de glucosas" tam={36} />
-      <Chip T={T} at={K.M + 1.8} until={K.P - 0.3} texto="–OH → –ONO₂ (nitrato)" x={540} y={1380} tam={48} borde={KC.orange} />
+      <Etq T={T} at={K.M + 0.3} until={K.M + 1.4} x={80} y={640} texto="celulosa = cadena de glucosas" tam={36} />
+      <Chip T={T} at={K.M + 1.8} until={K.P - 0.3} texto="–OH → –ONO₂ (nitrato)" x={540} y={1420} tam={48} borde={KC.orange} />
       <Medidor T={T} at={K.P + 0.6} until={K.O - 0.3} y={1440} ancho={900} etiqueta="película de nitrato" valor={(t) => (12 / 14) * kprog(t, K.P + 0.7, K.P + 1.5)} texto={() => '≈ 12 % N'} color={KC.yellow} />
       <Medidor T={T} at={K.P + 1.2} until={K.O - 0.3} y={1560} ancho={900} etiqueta="algodón pólvora" valor={(t) => (13.4 / 14) * kprog(t, K.P + 1.3, K.P + 2.1)} texto={() => '> 13 % N'} color={KC.red} />
       <Chip T={T} at={K.P + 2.4} until={K.O - 0.3} texto="primas, no gemelas" x={540} y={460} tam={50} borde={KC.yellow} />

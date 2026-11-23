@@ -117,7 +117,7 @@ function BioplasticosNarrado() {
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <Maiz x={200} y={700} s={1.9 * kentrada(T, K.Q + 0.1, null, 'pop').s} />
           <g transform="translate(540 700) scale(1.7)" opacity={kprog(T, K.Q + 0.8, K.Q + 1.2)}>{[0, 1, 2].map((i) => <rect key={i} x={-50 + i * 34} y={-30 - (i % 2) * 34} width={60} height={60} rx={8} fill="#fff" stroke={KC.ink} strokeWidth={5} transform={`rotate(${i * 8})`} />)}</g>
-          {T > K.Q + 1.6 && [0, 1, 2].map((i) => <Bacteria key={i} x={790 + i * 95} y={640 + (i % 2) * 130} rot={T * 40 + i * 70} s={1.0} T={T} seed={i} color={KC.mint} />)}
+          {T > K.Q + 1.6 && [0, 1, 2].map((i) => <Bacteria key={i} x={750 + i * 90} y={630 + (i % 2) * 150} rot={T * 40 + i * 70} s={1.4} T={T} seed={i} color={KC.mint} />)}
           {/* ácido láctico que se une en cadena */}
           {Array.from({ length: 9 }, (_, i) => { const at = K.Q + 2.4 + i * 0.18; if (T < at) return null; const p = kprog(T, at, at + 0.3, kEase.rebote);
             return <g key={i} transform={`translate(${110 + i * 107} ${1240 + Math.sin(i * 0.9 + T) * 26}) scale(${p})`}>{i < 8 && <line x1={0} y1={0} x2={107} y2={0} stroke="#2a8fd8" strokeWidth={11} />}<circle r={40} fill="#ffd36b" stroke={KC.ink} strokeWidth={5} /></g>; })}
@@ -127,7 +127,7 @@ function BioplasticosNarrado() {
       {/* problema 1 (por dentro): la cadena solo se corta con calor y humedad */}
       <Escena T={T} a={K.U} b={K.Do}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 50%, #12304a 0%, #0E0F12 75%)' }}></div>
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><PilaIndustrial x={540} y={1530} s={1.2} T={T} temp={klerp(25, 58, kprog(T, K.U + 0.5, K.U + 3))} /></svg>
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><PilaIndustrial x={540} y={1510} s={1.5} T={T} temp={klerp(25, 58, kprog(T, K.U + 0.5, K.U + 3))} /></svg>
       </Escena>
       <Escena T={T} a={K.Do} b={K.E}>
         <FondoLunares color={KC.mint} />

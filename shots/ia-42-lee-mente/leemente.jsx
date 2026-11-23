@@ -48,7 +48,11 @@ function Cabeza({ x, y, s = 1, T = 0, piel = PIEL, pelo = PELO, ojos = 'abiertos
 // Globo de pensamiento con bolitas que bajan hacia la cabeza (hacia). children = lo que se piensa.
 function Globo({ x, y, rx = 230, ry = 150, hacia = [0, 300], o = 1, fill = '#fff', children }) {
   const b = 14, bumps = Array.from({ length: b }, (_, i) => { const a = (i / b) * Math.PI * 2; return [Math.cos(a) * rx * 0.9, Math.sin(a) * ry * 0.88]; });
+  // belleza: la nube de pensamiento con volumen (degradado de arriba a abajo) en vez de blanco plano
+  const gid = 'globo-' + rx + '-' + ry, f = fill === '#fff' ? `url(#${gid})` : fill;
+  fill = f;
   return <g transform={`translate(${x} ${y})`} opacity={o}>
+    <defs><linearGradient id={gid} gradientUnits="userSpaceOnUse" x1={0} y1={-ry * 1.3} x2={0} y2={ry * 1.3}><stop offset="0" stopColor="#f7f9ff" /><stop offset=".55" stopColor="#dfe6f4" /><stop offset="1" stopColor="#a9b5cc" /></linearGradient></defs>
     {[0.25, 0.5, 0.78].map((k, i) => <circle key={i} cx={hacia[0] * k} cy={ry * 0.9 + (hacia[1] - ry * 0.9) * k} r={26 - i * 7} fill={fill} stroke={KC.ink} strokeWidth={6} />)}
     {bumps.map(([bx, by], i) => <circle key={i} cx={bx} cy={by} r={Math.min(rx, ry) * 0.42} fill={fill} stroke={KC.ink} strokeWidth={8} />)}
     <ellipse cx={0} cy={0} rx={rx * 0.92} ry={ry * 0.86} fill={fill} />
@@ -81,12 +85,16 @@ function Foco({ x, y, s = 1, T = 0, encendido = 1 }) {
 function Resonador({ x, y, s = 1, T = 0, zumba = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {zumba > 0 && [0, 1, 2].map((k) => { const u = ((T * 0.9 + k / 3) % 1); return <rect key={k} x={-260 - 70 * u} y={-260 - 70 * u} width={520 + 140 * u} height={520 + 140 * u} rx={120 + 40 * u} fill="none" stroke={KC.blue} strokeWidth={6} opacity={(1 - u) * 0.6 * zumba} />; })}
-    <rect x={-260} y={-260} width={520} height={520} rx={120} fill="#f4f6fb" stroke={KC.ink} strokeWidth={10} />
-    <rect x={-230} y={190} width={460} height={40} rx={14} fill="#dfe4ee" />
-    <text x={0} y={225} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#6a7385">fMRI</text>
+    <defs><linearGradient id="reso-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#aab5c6" /><stop offset=".5" stopColor="#6c7789" /><stop offset="1" stopColor="#3a4252" /></linearGradient>
+      <linearGradient id="reso-cama" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#9aa4b6" /><stop offset="1" stopColor="#4d5668" /></linearGradient></defs>
+    <ellipse cx={0} cy={340} rx={300} ry={26} fill="#000" opacity=".4" />
+    <rect x={-260} y={-260} width={520} height={520} rx={120} fill="url(#reso-g)" stroke={KC.ink} strokeWidth={10} />
+    <path d="M -220 -200 Q -180 -240 -100 -240" stroke="#fff" strokeWidth={12} fill="none" opacity=".3" strokeLinecap="round" />
+    <rect x={-230} y={190} width={460} height={40} rx={14} fill="#252c3a" />
+    <text x={0} y={225} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#b8c2d6">fMRI</text>
     <circle r={165} fill="#283247" stroke={KC.ink} strokeWidth={10} />
     <circle r={150} fill="#1d2536" />
-    <path d="M -150 70 L 150 70 L 240 330 L -240 330 Z" fill="#cfd6e3" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <path d="M -150 70 L 150 70 L 240 330 L -240 330 Z" fill="url(#reso-cama)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     <path d="M -120 70 L 120 70 L 120 40 C 60 20 -60 20 -120 40 Z" fill="#7fb2ff" stroke={KC.ink} strokeWidth={6} />
     {[-48, 48].map((fx) => <ellipse key={fx} cx={fx} cy={20} rx={30} ry={46} fill={PIEL} stroke={KC.ink} strokeWidth={6} />)}
     <g transform={`translate(0 -70)`} opacity={0.9}>

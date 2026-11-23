@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #52 · El gato que una computadora aprendió sola — NARRADO (N1 "Por dentro" + N2 "El número").
 // Datos: Le, Ranzato, Monga, Devin, Chen, Corrado, Dean y Ng, "Building High-level Features Using Large Scale Unsupervised Learning",
 // ICML 2012 (Edimburgo), arXiv:1112.6209; blog de Google (Dean y Ng, 26 jun 2012). Ver guion.md y verificacion.md.
@@ -160,158 +161,172 @@ function GatoGoogle() {
   const cuadroVideo = TIPOS[Math.floor(Math.max(0, T - K.V) * 4) % TIPOS.length];
   const onRacks = kprog(T, K.Ma + 2.5, K.Ma + 3.6, kEase.suave);
   const est = K.E + 4.3; // segunda frase de la escena Estudio
+  const oyO = klerp(170, 0, kprog(T, K.O + 3.1, K.O + 3.6, kEase.suave)); // las fotos con nombre suben cuando entran las barras
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
-      {/* 1 · gancho: la cara borrosa se enfoca */}
+      {/* 1 · gancho: la cara borrosa llena el cuadro y se enfoca */}
       <Escena T={T} a={K.G} b={K.V}>
         <FondoCircuito T={T} color={KC.lilac} />
-        {svg(<CaraNeurona id="g" x={390} y={880} s={1.05} T={T} nitidez={kprog(T, K.G + 0.05, K.G + 3.2, kEase.suave)} />)}
+        {svg(<CaraNeurona id="g" x={540} y={880} s={1.8} T={T} nitidez={kprog(T, K.G + 0.05, K.G + 3.2, kEase.suave)} />)}
       </Escena>
-      <Chip T={T} at={K.G + 0.3} until={K.G + 1.9} texto="¿un fantasma?" x={330} y={470} tam={44} borde={KC.lilac} />
-      <Chip T={T} at={K.G + 2.1} until={K.V - 0.2} texto="es un gato 🐱" x={330} y={470} tam={48} borde={KC.yellow} />
-      <Chip T={T} at={K.G + 3.6} until={K.V - 0.2} texto="nadie le dijo qué es un gato" x={360} y={560} tam={28} borde={KC.texto} />
+      <Chip T={T} at={K.G + 0.3} until={K.G + 1.9} texto="¿un fantasma?" x={540} y={250} tam={44} borde={KC.lilac} />
+      <Chip T={T} at={K.G + 2.1} until={K.V - 0.2} texto="es un gato 🐱" x={540} y={250} tam={48} borde={KC.yellow} />
+      <Chip T={T} at={K.G + 3.6} until={K.V - 0.2} texto="nadie le dijo qué es un gato" x={540} y={1512} tam={30} borde={KC.texto} />
 
       {/* 2 · diez millones de cuadros de YouTube, sin etiquetas */}
       <Escena T={T} a={K.V} b={K.Ma}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Reproductor x={360} y={640} w={560} T={T} prog={kprog(T, K.V, K.Ma, null)}>
-            <Miniatura x={0} y={0} w={560} tipo={cuadroVideo} borde={0} />
+          <defs><clipPath id="pant-v"><rect x={-410} y={-254} width={820} height={508} rx={14} /></clipPath></defs>
+          <Reproductor x={540} y={790} w={820} T={T} prog={kprog(T, K.V, K.Ma, null)}>
+            <g clipPath="url(#pant-v)"><Miniatura x={0} y={0} w={820} tipo={cuadroVideo} borde={0} /></g>
           </Reproductor>
-          {/* la pila de cuadros */}
+          {/* la pila de cuadros, justo debajo de la pantalla */}
           {Array.from({ length: 6 }, (_, k) => <g key={k} opacity={kprog(T, K.V + 1.0 + k * 0.5, K.V + 1.3 + k * 0.5)}>
-            <Miniatura x={860 + (k % 2) * 10} y={900 - k * 14} w={170} tipo={TIPOS[(k * 5) % TIPOS.length]} rot={(k % 3 - 1) * 6} borde={4} /></g>)}
+            <Miniatura x={540 + (k % 2) * 12} y={1250 - k * 12} w={250} tipo={TIPOS[(k * 5) % TIPOS.length]} rot={(k % 3 - 1) * 6} borde={4} /></g>)}
           {Array.from({ length: 16 }, (_, i) => { const t0 = K.V + 0.6 + i * 0.3, u = kprog(T, t0, t0 + 0.8, kEase.suave);
             if (u <= 0 || u >= 1) return null;
-            return <Miniatura key={i} x={klerp(360, 860, u)} y={klerp(640, 890, u) - Math.sin(Math.PI * u) * 160} w={klerp(220, 170, u)} tipo={TIPOS[i % TIPOS.length]} rot={u * 20 - 10} borde={4} />; })}
+            return <Miniatura key={i} x={540 + Math.sin(Math.PI * u) * (i % 2 ? 150 : -150)} y={klerp(1100, 1235, u)} w={klerp(200, 250, u)} tipo={TIPOS[i % TIPOS.length]} rot={u * 20 - 10} borde={4} />; })}
         </>)}
       </Escena>
-      <Chip T={T} at={K.V + 0.2} until={K.Ma - 0.2} texto="estudio publicado en 2012" x={360} y={400} tam={34} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.V + 2.2} until={K.Ma - 0.2} valor={10000000} dur={1.2} etiqueta="" x={540} y={1010} tam={120} color={KC.yellow} />
-      <Chip T={T} at={K.V + 2.6} until={K.Ma - 0.2} texto="imágenes · 1 por video · 200 × 200 píxeles" x={540} y={1110} tam={28} borde={KC.ink} />
-      <MitoTachado T={T} at={K.V + 4.0} tacharEn={K.V + 4.7} until={K.Ma - 0.2} texto="etiqueta: «gato»" x={330} y={920} tam={40} />
+      <Chip T={T} at={K.V + 0.2} until={K.Ma - 0.2} texto="estudio publicado en 2012" x={540} y={430} tam={34} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.V + 2.2} until={K.Ma - 0.2} valor={10000000} dur={1.2} etiqueta="" x={540} y={1425} tam={120} color={KC.yellow} />
+      <Chip T={T} at={K.V + 2.6} until={K.Ma - 0.2} texto="imágenes · 1 por video · 200 × 200 píxeles" x={540} y={1515} tam={28} borde={KC.ink} />
+      <MitoTachado T={T} at={K.V + 4.0} tacharEn={K.V + 4.7} until={K.Ma - 0.2} texto="etiqueta: «gato»" x={872} y={1200} tam={36} />
 
       {/* 3 · la máquina: conexiones, computadoras, días */}
       <Escena T={T} a={K.Ma} b={K.N}>
         <FondoCircuito T={T} />
-        {svg(<>{[0, 1, 2, 3, 4].map((i) => <Rack key={i} x={150 + i * 195} y={960} T={T} on={onRacks} seed={i + 2} />)}
+        {svg(<g transform="translate(540 1010) scale(1) translate(-540 -960)">{[0, 1, 2, 3, 4].map((i) => <Rack key={i} x={150 + i * 195} y={960} T={T} on={onRacks} seed={i + 2} />)}
           {[0, 1, 2].map((d) => { const o = kprog(T, K.Ma + 3.9 + d * 0.3, K.Ma + 4.2 + d * 0.3);
-            return <g key={d} opacity={o} transform={`translate(${420 + d * 120} 690) rotate(${T * 40})`}>
+            return <g key={d} opacity={o} transform={`translate(${420 + d * 120} 678) rotate(${T * 40})`}>
               <circle r={30} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
               {Array.from({ length: 8 }, (_, k) => <line key={k} x1={0} y1={-40} x2={0} y2={-54} stroke={KC.yellow} strokeWidth={7} strokeLinecap="round" transform={`rotate(${k * 45})`} />)}
             </g>; })}
-        </>)}
+        </g>)}
       </Escena>
       <NumeroGigante T={T} at={K.Ma + 0.6} until={K.Ma + 2.3} valor={1000000000} dur={1.0} etiqueta="conexiones" x={540} y={500} tam={118} color={KC.cyan} />
-      <NumeroGigante T={T} at={K.Ma + 2.5} until={K.Ma + 3.6} valor={1000} dur={0.8} etiqueta="computadoras" x={540} y={500} tam={170} color={KC.mint} />
-      <Chip T={T} at={K.Ma + 2.8} until={K.Ma + 3.6} texto="16,000 núcleos" x={540} y={660} tam={34} borde={KC.mint} />
-      <NumeroGigante T={T} at={K.Ma + 3.8} until={K.N - 0.2} valor={3} dur={0.4} sufijo=" días" etiqueta="entrenando" x={540} y={500} tam={170} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.Ma + 2.5} until={K.Ma + 3.6} valor={1000} dur={0.8} etiqueta="computadoras" x={540} y={470} tam={170} color={KC.mint} />
+      <Chip T={T} at={K.Ma + 2.8} until={K.Ma + 3.6} texto="16,000 núcleos" x={540} y={640} tam={34} borde={KC.mint} />
+      <NumeroGigante T={T} at={K.Ma + 3.8} until={K.N - 0.2} valor={3} dur={0.4} sufijo=" días" etiqueta="entrenando" x={540} y={470} tam={170} color={KC.yellow} />
 
       {/* 4 · una neurona se enciende con caras de gato */}
       <Escena T={T} a={K.N} b={K.P}>
         <FondoCircuito T={T} />
-        <RedNeuronal T={T} x={330} y={700} ancho={600} alto={440} capas={[5, 6, 6, 6, 1]} onda={kprog(T, K.N + 0.2, K.N + 1.6)} />
+        <RedNeuronal T={T} x={330} y={560} ancho={530} alto={800} capas={[5, 6, 6, 6, 1]} onda={kprog(T, K.N + 0.2, K.N + 1.6)} />
         {svg(<>
-          <Miniatura x={160} y={920} w={200} tipo="gato" />
-          <path d="M 262 920 L 312 920" stroke={KC.cyan} strokeWidth={8} markerEnd="" />
+          <Miniatura x={150} y={960} w={240} tipo="gato" />
+          <path d="M 274 960 L 306 960" stroke={KC.cyan} strokeWidth={8} markerEnd="" />
           {(() => { const e = kprog(T, K.N + 1.5, K.N + 2.0, kEase.rebote); return <g opacity={e}>
-            <circle cx={930} cy={920} r={70 + 8 * Math.sin(T * 6)} fill={KC.yellow} opacity=".35" />
-            <circle cx={930} cy={920} r={58} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />
-            <CaraNeurona id="n" x={930} y={920} s={0.17} T={T} nitidez={0.9} marco={false} />
+            <circle cx={860} cy={960} r={118 + 12 * Math.sin(T * 6)} fill={KC.yellow} opacity=".35" />
+            <circle cx={860} cy={960} r={98} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
+            <CaraNeurona id="n" x={860} y={960} s={0.29} T={T} nitidez={0.9} marco={false} />
           </g>; })()}
         </>, 20)}
       </Escena>
-      <Chip T={T} at={K.N + 1.8} until={K.P - 0.2} texto="1 neurona → «cara de gato»" x={620} y={600} tam={36} borde={KC.yellow} />
+      <Chip T={T} at={K.N + 1.8} until={K.P - 0.2} texto="1 neurona → «cara de gato»" x={600} y={490} tam={38} borde={KC.yellow} />
 
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.Me} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>)}
+        {svg(<text x={540} y={1150} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 960)`}>?</text>)}
       </Escena>
-      <Chip T={T} at={K.P + 0.3} until={K.Me - 0.2} texto="¿sin maestro?" x={300} y={470} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.P + 0.3} until={K.Me - 0.2} texto="¿sin maestro?" x={540} y={490} tam={42} borde={KC.ink} />
 
       {/* 6 · el truco: resumir y volver a dibujar; lo que más se repite */}
       <Escena T={T} a={K.Me} b={K.E}>
         <FondoLunares color={KC.mint} />
         {svg(<>
           <g opacity={1 - kprog(T, K.Me + 2.6, K.Me + 3.0)}>
-            <g opacity={kprog(T, K.Me + 0.2, K.Me + 0.5)}><Miniatura x={210} y={840} w={240} tipo="gato" /></g>
+            <g opacity={kprog(T, K.Me + 0.05, K.Me + 0.35)}><Miniatura x={540} y={530} w={420} tipo="gato" /></g>
             <g opacity={kprog(T, K.Me + 0.8, K.Me + 1.1)}>
-              <path d="M 345 840 L 430 840" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" /><polygon points="430,822 456,840 430,858" fill={KC.ink} />
-              {Array.from({ length: 6 }, (_, k) => <rect key={k} x={490 + (k % 2) * 54} y={760 + Math.floor(k / 2) * 54} width={44} height={44} rx={8}
-                fill={['#f6a03c', '#262626', '#d2d2d2', '#e2557a', '#ffd28a', '#7d7d7d'][k]} stroke={KC.ink} strokeWidth={5} />)}
+              <path d="M 540 706 L 540 750" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" /><polygon points="522,750 540,776 558,750" fill={KC.ink} />
+              {Array.from({ length: 6 }, (_, k) => <rect key={k} x={400 + (k % 3) * 100} y={800 + Math.floor(k / 3) * 100} width={80} height={80} rx={14}
+                fill={['#f6a03c', '#262626', '#d2d2d2', '#e2557a', '#ffd28a', '#7d7d7d'][k]} stroke={KC.ink} strokeWidth={6} />)}
             </g>
             <g opacity={kprog(T, K.Me + 1.6, K.Me + 1.9)}>
-              <path d="M 624 840 L 700 840" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" /><polygon points="700,822 726,840 700,858" fill={KC.ink} />
-              <defs><filter id="reblur"><feGaussianBlur stdDeviation={klerp(14, 3.5, kprog(T, K.Me + 1.7, K.Me + 2.5))} /></filter></defs>
-              <g filter="url(#reblur)"><Miniatura x={880} y={840} w={240} tipo="gato" /></g>
+              <path d="M 540 1000 L 540 1044" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" /><polygon points="522,1044 540,1070 558,1044" fill={KC.ink} />
+              <defs><filter id="reblur"><feGaussianBlur stdDeviation={klerp(24, 6, kprog(T, K.Me + 1.7, K.Me + 2.5))} /></filter></defs>
+              <g filter="url(#reblur)"><Miniatura x={540} y={1250} w={420} tipo="gato" /></g>
             </g>
           </g>
           {Array.from({ length: 12 }, (_, i) => { const c = i % 4, rr = Math.floor(i / 4), t0 = K.Me + 2.8 + i * 0.09, o = kprog(T, t0, t0 + 0.3);
-            const gato = TIPOS[i] === 'gato', late = gato ? 1 + 0.06 * Math.max(0, Math.sin((T - K.Me) * 5)) * kprog(T, K.Me + 4.4, K.Me + 4.8) : 1;
-            return <g key={i} opacity={o} transform={`translate(${180 + c * 240} ${745 + rr * 165}) scale(${late})`}>
-              {gato && T > K.Me + 4.4 && <rect x={-112} y={-86} width={224} height={172} rx={16} fill="none" stroke={KC.yellow} strokeWidth={10} />}
-              <Miniatura x={0} y={0} w={196} tipo={TIPOS[i]} borde={5} /></g>; })}
+            const gato = TIPOS[i] === 'gato', late = gato ? 1 + 0.05 * Math.max(0, Math.sin((T - K.Me) * 5)) * kprog(T, K.Me + 4.4, K.Me + 4.8) : 1;
+            return <g key={i} opacity={o} transform={`translate(${157 + c * 255} ${745 + rr * 215}) scale(${late})`}>
+              {gato && T > K.Me + 4.4 && <rect x={-125} y={-97} width={250} height={194} rx={16} fill="none" stroke={KC.yellow} strokeWidth={10} />}
+              <Miniatura x={0} y={0} w={226} tipo={TIPOS[i]} borde={5} /></g>; })}
         </>)}
       </Escena>
-      <Chip T={T} at={K.Me + 0.4} until={K.Me + 2.6} texto="1 · resume" x={210} y={1000} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Me + 1.7} until={K.Me + 2.6} texto="2 · vuelve a dibujar" x={820} y={1000} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Me + 4.4} until={K.E - 0.2} texto="lo que más se repite → se guarda" x={620} y={570} tam={32} borde={KC.yellow} />
+      <Chip T={T} at={K.Me + 0.4} until={K.Me + 2.6} texto="1 · resume" x={850} y={890} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Me + 1.7} until={K.Me + 2.6} texto="2 · vuelve a dibujar" x={540} y={1480} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Me + 4.4} until={K.E - 0.2} texto="lo que más se repite → se guarda" x={540} y={540} tam={34} borde={KC.yellow} />
 
-      {/* 7 · el estudio y las otras neuronas */}
+      {/* 7 · el estudio (la cara del gato sigue en cuadro, atenuada) y las otras neuronas */}
       <Escena T={T} a={K.E} b={K.O}>
         <FondoLunares color={KC.lilac} />
-        {svg(<>{[['gato', 'e1'], ['humana', 'e2'], ['cuerpo', 'e3']].map(([c, id], i) => { const o = kprog(T, est + i * 0.35, est + 0.35 + i * 0.35);
-          return <g key={id} opacity={o}><CaraNeurona id={id} cara={c} x={200 + i * 340} y={900} s={0.55} T={T} nitidez={kprog(T, est + i * 0.35, est + 1.6 + i * 0.35)} /></g>; })}</>)}
+        {svg(<>{(() => { const m = kprog(T, est - 0.15, est + 0.55, kEase.suave);
+            return <g opacity={klerp(0.6, 1, m)}><CaraNeurona id="e1" cara="gato" x={540} y={klerp(1010, 690, m)} s={klerp(1.5, 0.9, m)} T={T} nitidez={0.9} /></g>; })()}
+          {[['humana', 'e2', 290], ['cuerpo', 'e3', 790]].map(([c, id, x], i) => { const t0 = est + 0.35 + i * 0.35, o = kprog(T, t0, t0 + 0.35);
+            return <g key={id} opacity={o}><CaraNeurona id={id} cara={c} x={x} y={1230} s={0.8} T={T} nitidez={kprog(T, t0, t0 + 1.25)} /></g>; })}</>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={est - 0.3} anio="2012" quien="Google y Stanford" revista="Le, Ng, Dean y 5 más · congreso ICML, Edimburgo" y={860} />
-      <Chip T={T} at={est} until={K.O - 0.2} texto="otras neuronas, solas:" x={360} y={560} tam={36} borde={KC.ink} />
-      {[['gato', 200], ['cara humana', 540], ['cuerpo', 880]].map(([t, x], i) =>
-        <Chip key={t} T={T} at={est + 0.4 + i * 0.35} until={K.O - 0.2} texto={t} x={x} y={1100} tam={32} borde={KC.ink} />)}
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={est - 0.3} anio="2012" quien="Google y Stanford" revista="Le, Ng, Dean y 5 más · congreso ICML, Edimburgo" y={360} />
+      <Chip T={T} at={est} until={K.O - 0.2} texto="otras neuronas, solas:" x={540} y={370} tam={36} borde={KC.ink} />
+      {[['gato', 540, 962], ['cara humana', 290, 1478], ['cuerpo', 790, 1478]].map(([t, x, y], i) =>
+        <Chip key={t} T={T} at={est + 0.4 + i * 0.35} until={K.O - 0.2} texto={t} x={x} y={y} tam={32} borde={KC.ink} />)}
 
-      {/* 8 · con fotos etiquetadas: +70 %… pero 16 de cada 100 */}
+      {/* 8 · con fotos etiquetadas: +70 %… pero 16 de cada 100. Las fotos con su etiqueta están en cuadro toda la escena */}
       <Escena T={T} a={K.O} b={K.Ce}>
         <FondoLunares color={KC.yellow} />
+        {svg(<g transform={`translate(0 ${oyO})`}>{['perro', 'coche', 'pelota'].map((t, i) => { const o = kprog(T, K.O + 0.05 + i * 0.15, K.O + 0.35 + i * 0.15);
+          return <g key={t} opacity={o} transform={`rotate(${(i - 1) * 3} ${210 + i * 330} 740)`}>
+            <Miniatura x={210 + i * 330} y={720} w={290} tipo={t} borde={5} />
+            {/* la etiqueta con nombre (rayita, sin texto) */}
+            <rect x={210 + i * 330 - 95} y={855} width={190} height={54} rx={12} fill="#e9e4d6" stroke={KC.ink} strokeWidth={5} />
+            <circle cx={210 + i * 330 - 68} cy={882} r={8} fill="#0b1020" />
+            <path d={`M ${210 + i * 330 - 44} 882 L ${210 + i * 330 + 70 - i * 14} 882`} stroke="#0b1020" strokeWidth={9} strokeLinecap="round" />
+          </g>; })}</g>)}
       </Escena>
-      <Chip T={T} at={K.O + 0.3} until={K.O + 6.6} texto="después: fotos con nombre" x={540} y={420} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.O + 1.9} until={K.O + 6.6} texto="ImageNet · 22,000 tipos de objetos" x={540} y={520} tam={34} borde={KC.ink} />
-      <BarrasEsc T={T} at={K.O + 3.6} until={K.O + 6.6} top={630} max={20} filas={[{ valor: 9.3, etiqueta: 'mejor sistema previo', color: '#9aa3b5' }, { valor: 15.8, etiqueta: 'esta red', color: KC.pink, at: K.O + 4.4 }]} />
-      <Chip T={T} at={K.O + 5.0} until={K.O + 6.6} texto="+70 % relativo" x={540} y={1010} tam={48} borde={KC.pink} />
-      <Chip T={T} at={K.O + 5.3} until={K.O + 6.6} texto="con ajuste usando fotos etiquetadas" x={540} y={1100} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.O + 0.3} until={K.O + 6.6} texto="después: fotos con nombre" x={540} y={500 + oyO} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.O + 1.9} until={K.O + 6.6} texto="ImageNet · 22,000 tipos de objetos" x={540} y={985 + oyO} tam={34} borde={KC.ink} />
+      <BarrasEsc T={T} at={K.O + 3.6} until={K.O + 6.6} top={1050} max={20} filas={[{ valor: 9.3, etiqueta: 'mejor sistema previo', color: '#9aa3b5' }, { valor: 15.8, etiqueta: 'esta red', color: KC.pink, at: K.O + 4.4 }]} />
+      <Chip T={T} at={K.O + 5.0} until={K.O + 6.6} texto="+70 % relativo" x={540} y={1400} tam={48} borde={KC.pink} />
+      <Chip T={T} at={K.O + 5.3} until={K.O + 6.6} texto="con ajuste usando fotos etiquetadas" x={540} y={1480} tam={28} borde={KC.ink} />
       {T > K.O + 6.7 && <div style={{ opacity:kprog(T, K.O + 6.8, K.O + 7.2) * (1 - kprog(T, K.Ce - 0.05, K.Ce + 0.4)) }}>
-        <Cuadricula T={T} cols={10} filas={10} x={380} y={690} ancho={600} alto={420} llenado={kprog(T, K.O + 7.0, K.O + 8.2, kEase.suave) * 0.16} vacio="rgba(22,18,15,.18)" lleno={KC.pink} />
+        <Cuadricula T={T} cols={10} filas={10} x={240} y={1040} ancho={600} alto={500} llenado={kprog(T, K.O + 7.0, K.O + 8.2, kEase.suave) * 0.16} vacio="rgba(255,255,255,.24)" lleno={KC.pink} />
       </div>}
-      <Chip T={T} at={K.O + 7.4} until={K.Ce - 0.2} texto="aciertos: 16 de cada 100" x={680} y={620} tam={34} borde={KC.pink} />
+      <Chip T={T} at={K.O + 7.4} until={K.Ce - 0.2} texto="aciertos: 16 de cada 100" x={540} y={985} tam={36} borde={KC.pink} />
 
       {/* 9 · y era chiquita */}
       <Escena T={T} a={K.Ce} b={K.C}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <g opacity={kprog(T, K.Ce + 0.2, K.Ce + 0.5)}>
-            <circle cx={150} cy={960} r={9} fill={KC.cyan} stroke={KC.ink} strokeWidth={4} />
-            <text x={150} y={920} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>la red</text>
+          <g opacity={kprog(T, K.Ce + 0.05, K.Ce + 0.3)}>
+            <circle cx={120} cy={1010} r={9} fill={KC.cyan} stroke={KC.ink} strokeWidth={4} />
+            <path d="M 120 992 L 120 950" stroke={KC.ink} strokeWidth={3} opacity=".7" />
+            <text x={120} y={930} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>la red</text>
           </g>
-          <g opacity={kprog(T, K.Ce + 0.6, K.Ce + 1.1)}><Cerebro x={600} y={960} s={klerp(0.5, 0.8, kprog(T, K.Ce + 0.6, K.Ce + 1.6, kEase.rebote))} T={T} /></g>
+          <g opacity={kprog(T, K.Ce + 0.15, K.Ce + 0.6)}><Cerebro x={625} y={1000} s={klerp(0.9, 1.5, kprog(T, K.Ce + 0.15, K.Ce + 1.4, kEase.rebote))} T={T} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.Ce + 2.2} until={K.C - 0.2} texto="≈ 100,000 × más conexiones" x={540} y={690} tam={42} borde={KC.ink} />
-      <Chip T={T} at={K.Ce + 2.6} until={K.C - 0.2} texto="comparación muy aproximada (Google, 2012)" x={540} y={760} tam={24} borde={KC.ink} />
+      <Chip T={T} at={K.Ce + 2.2} until={K.C - 0.2} texto="≈ 100,000 × más conexiones" x={540} y={480} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.Ce + 2.6} until={K.C - 0.2} texto="comparación muy aproximada (Google, 2012)" x={540} y={560} tam={26} borde={KC.ink} />
 
-      {/* 10 · cierre: la misma cara, ahora dentro de un video */}
+      {/* 10 · cierre: la misma cara del inicio, ahora dentro de un video */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          {[[960, 980, 'gato', -8], [940, 760, 'gato', 7], [130, 1090, 'gato', 6], [960, 1100, 'gato', -6], [640, 1110, 'gato', 3]].map(([x, y, t, r], i) =>
-            <g key={i} opacity={kprog(T, K.C + 0.8 + i * 0.2, K.C + 1.1 + i * 0.2)}><Miniatura x={x} y={y} w={180} tipo={t} rot={r} /></g>)}
-          <CaraNeurona id="c" x={390} y={880} s={klerp(1.05, 0.9, kprog(T, K.C, K.C + 1.2, kEase.suave))} T={T} nitidez={1} />
-          <g opacity={kprog(T, K.C + 0.3, K.C + 0.8)}>
-            <rect x={390 - 260 * 0.95 - 22} y={880 - 260 * 0.95 - 22} width={520 * 0.95 + 44} height={520 * 0.95 + 80} rx={30} fill="none" stroke="#1d1d22" strokeWidth={22} />
-            <rect x={390 - 247} y={880 + 247 + 22} width={494} height={10} rx={5} fill="#555" />
-            <rect x={390 - 247} y={880 + 247 + 22} width={494 * kprog(T, K.C + 0.3, K.Ou)} height={10} rx={5} fill={KC.red} />
-          </g>
+          {[[180, 340, -8], [540, 300, 4], [900, 340, 7], [215, 1545, 6], [865, 1545, -6]].map(([x, y, r], i) =>
+            <g key={i} opacity={kprog(T, K.C + 0.8 + i * 0.2, K.C + 1.1 + i * 0.2)}><Miniatura x={x} y={y} w={230} tipo="gato" rot={r} /></g>)}
+          {(() => { const sf = klerp(1.8, 1.5, kprog(T, K.C, K.C + 1.2, kEase.suave)), m = 260 * sf; return <>
+            <CaraNeurona id="c" x={540} y={900} s={sf} T={T} nitidez={1} />
+            <g opacity={kprog(T, K.C + 0.3, K.C + 0.8)}>
+              <rect x={540 - m - 22} y={900 - m - 22} width={2 * m + 44} height={2 * m + 80} rx={30} fill="none" stroke="#1d1d22" strokeWidth={22} />
+              <rect x={540 - m + 13} y={900 + m + 22} width={2 * m - 26} height={10} rx={5} fill="#555" />
+              <rect x={540 - m + 13} y={900 + m + 22} width={(2 * m - 26) * kprog(T, K.C + 0.3, K.Ou)} height={10} rx={5} fill={KC.red} />
+            </g></>; })()}
         </>)}
       </Escena>
-      <Chip T={T} at={K.C + 1.5} until={K.Ou} texto="aprendido de videos sin etiquetas" x={400} y={540} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.C + 1.5} until={K.Ou} texto="aprendido de videos sin etiquetas" x={540} y={1420} tam={32} borde={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.V - 0.1} texto="No es un fantasma: *es un gato.*" />

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #51 · Por qué ves estrellitas al pararte rápido — NARRADO (N1 "Por dentro").
 // Datos: Smit et al. 1999 (J Physiol), Arnold y Shibao 2013, Harms et al. 2021, Cleveland Clinic, NHS. Ver guion.md y verificacion.md.
 const SANGRE = '#e23b3b', SANGRE2 = '#ff6b6b';
@@ -66,7 +67,7 @@ function Sala({ x0, color = KC.pink }) {
   return <>
     <FondoLunares color={color} />
     <Lienzo z={1}>
-      <rect x={0} y={1180} width={KW} height={KH - 1180} fill="#c98a4b" />
+      <rect x={0} y={1180} width={KW} height={KH - 1180} fill="#6a4c34" />
       {Array.from({ length: 8 }, (_, i) => <line key={i} x1={i * 150} y1={1180} x2={i * 150 - 60} y2={KH} stroke="rgba(0,0,0,.18)" strokeWidth={5} />)}
       <line x1={0} y1={1180} x2={KW} y2={1180} stroke={KC.ink} strokeWidth={10} />
       <Sofa x0={x0} />
@@ -204,6 +205,9 @@ function Pararte() {
   const { T, CUES } = useComposition();
   const K = CUES, FIN = K.Outro + 4;
   const X0 = 200;                                                       // sillón
+  // pase a mano (cine): la sala se agranda alrededor de la persona para que llene el cuadro
+  const GK = 1.4, GOX = 15, GOY = 310, gz = (x, y) => [GOX + GK * (x - GOX), GOY + GK * (y - GOY)];
+  const CK = 1.25, COX = 450, COY = -200;
   // gancho: se para de golpe
   const pG = kprog(T, K.Gancho + 0.15, K.Gancho + 0.6, kEase.sale);
   const poseG = mixPose(POSE.sent, POSE.pie, pG); poseG.t += 30 * Math.sin(Math.PI * pG);
@@ -230,6 +234,7 @@ function Pararte() {
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', background: KC.dark }}>
       {/* 0 · gancho: te paras de golpe y ves estrellitas */}
       <Escena T={T} a={K.Gancho} b={K.Gravedad}>
+        <div style={{ position: 'absolute', inset: 0, transform: `scale(${GK})`, transformOrigin: `${GOX}px ${GOY}px` }}>
         <div style={{ position: 'absolute', inset: 0, filter: `blur(${nubla * 3.5}px)` }}>
           <Sala x0={X0} />
           <Lienzo><Lampara x={70} y={560} />
@@ -241,35 +246,36 @@ function Pararte() {
           {Array.from({ length: 9 }, (_, i) => { const a = i / 9 * 360 + T * 60, rr = 150 + 30 * Math.sin(T * 3 + i), e = kprog(T, K.Gancho + 0.7 + i * 0.06, K.Gancho + 1.0 + i * 0.06, kEase.rebote);
             const [sx, sy] = kadd(headG, a, rr * e); return <Estrellita key={i} x={sx} y={sy - 20} r={(22 + (i % 3) * 10) * (0.7 + 0.3 * Math.abs(Math.sin(T * 6 + i)))} color={i % 2 ? '#fff' : KC.yellow} rot={T * 90 + i * 20} o={e * (1 - kprog(T, K.Gancho + 4.6, K.Gravedad))} />; })}
         </Lienzo>
-        <Etq T={T} at={K.Gancho + 3.0} until={K.Gravedad - 0.2} x={hipG[0] + 90} y={hipG[1] + 230} texto="tu sangre ↓" color={KC.texto} />
+        </div>
+        <Etq T={T} at={K.Gancho + 3.0} until={K.Gravedad - 0.2} x={gz(hipG[0] + 62, 0)[0]} y={gz(0, hipG[1] + 230)[1]} texto="tu sangre ↓" color={KC.texto} />
       </Escena>
 
       {/* 1–3 · el cuerpo de frente: la gravedad, más de medio litro, la presión baja */}
-      <Escena T={T} a={K.Gravedad} b={K.Ojos} fondo={KC.cyan} zoom={0.03}>
+      <Escena T={T} a={K.Gravedad} b={K.Ojos} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
           <g transform={`translate(0 ${(1 - kprog(T, K.Gravedad - 0.3, K.Gravedad + 0.5, kEase.sale)) * 120})`}>
-            <CuerpoFrente x={330} y={1180} s={0.95} pool={pool} cabeza={cab} T={T} gotas={kprog(T, K.Gravedad + 1.2, K.Gravedad + 1.8) * (1 - kprog(T, K.Cantidad + 2.0, K.Cantidad + 2.6))} />
+            <CuerpoFrente x={350} y={1520} s={1.2} pool={pool} cabeza={cab} T={T} gotas={kprog(T, K.Gravedad + 1.2, K.Gravedad + 1.8) * (1 - kprog(T, K.Cantidad + 2.0, K.Cantidad + 2.6))} />
           </g>
           {T < K.Cantidad + 0.2 && [0, 1, 2].map((i) => { const a = K.Gravedad + 1.2 + i * 0.35, f = ((T - a) * 0.7) % 1;
-            return T > a && <FlechaRecta key={i} x1={720 + i * 110} y1={760 + (i % 2) * 60} x2={720 + i * 110} y2={1060 + (i % 2) * 60} p={kprog(T, a, a + 0.5, kEase.sale)} color={KC.yellow} />; })}
-          {T > K.Gravedad + 1.2 && T < K.Cantidad + 0.2 && <TextoSvg x={830} y={735} tam={64} color={KC.yellow} s={kprog(T, K.Gravedad + 1.2, K.Gravedad + 1.6, kEase.rebote)}>GRAVEDAD</TextoSvg>}
+            return T > a && <FlechaRecta key={i} x1={730 + i * 115} y1={900 + (i % 2) * 60} x2={730 + i * 115} y2={1300 + (i % 2) * 60} p={kprog(T, a, a + 0.5, kEase.sale)} color={KC.yellow} />; })}
+          {T > K.Gravedad + 1.2 && T < K.Cantidad + 0.2 && <TextoSvg x={790} y={850} tam={72} color={KC.yellow} s={kprog(T, K.Gravedad + 1.2, K.Gravedad + 1.6, kEase.rebote)}>GRAVEDAD</TextoSvg>}
           {T > K.Cantidad - 0.1 && T < K.Presion + 0.3 && <g opacity={kprog(T, K.Cantidad - 0.1, K.Cantidad + 0.3) * (1 - kprog(T, K.Presion, K.Presion + 0.3))}>
-            <Jarra x={790} y={1100} s={1.05} nivel={kprog(T, K.Cantidad + 0.3, K.Cantidad + 2.0, kEase.sale)} T={T} />
-            <TextoSvg x={760} y={560} tam={92} color={KC.yellow} s={kprog(T, K.Cantidad + 0.6, K.Cantidad + 1.0, kEase.rebote)}>MÁS DE</TextoSvg>
-            <TextoSvg x={760} y={670} tam={92} color={KC.yellow} s={kprog(T, K.Cantidad + 0.8, K.Cantidad + 1.2, kEase.rebote)}>½ LITRO</TextoSvg>
+            <Jarra x={775} y={1330} s={1.1} nivel={kprog(T, K.Cantidad + 0.3, K.Cantidad + 2.0, kEase.sale)} T={T} />
+            <TextoSvg x={815} y={720} tam={92} color={KC.yellow} s={kprog(T, K.Cantidad + 0.6, K.Cantidad + 1.0, kEase.rebote)}>MÁS DE</TextoSvg>
+            <TextoSvg x={815} y={835} tam={92} color={KC.yellow} s={kprog(T, K.Cantidad + 0.8, K.Cantidad + 1.2, kEase.rebote)}>½ LITRO</TextoSvg>
           </g>}
-          {T > K.Presion + 1.8 && <g transform={`scale(${kprog(T, K.Presion + 1.8, K.Presion + 2.3, kEase.rebote)})`} style={{ transformOrigin: '790px 640px' }}>
-            <Manometro x={790} y={640} r={180} v={1 - 0.85 * kprog(T, K.Presion + 2.5, K.Presion + 3.5, kEase.suave)} T={T} /></g>}
+          {T > K.Presion + 1.8 && <g transform={`scale(${kprog(T, K.Presion + 1.8, K.Presion + 2.3, kEase.rebote)})`} style={{ transformOrigin: '822px 840px' }}>
+            <Manometro x={822} y={840} r={165} v={1 - 0.85 * kprog(T, K.Presion + 2.5, K.Presion + 3.5, kEase.suave)} T={T} /></g>}
         </Lienzo>
-        <Etq T={T} at={K.Gravedad + 3.2} until={K.Cantidad + 2.6} x={480} y={980} texto="piernas" color={KC.ink} />
-        <Etq T={T} at={K.Gravedad + 4.0} until={K.Cantidad + 2.6} x={480} y={700} texto="panza" color={KC.ink} />
-        <Etq T={T} at={K.Presion + 0.5} until={K.Ojos - 0.2} x={430} y={380} texto="menos sangre arriba" color={KC.ink} />
+        <Etq T={T} at={K.Gravedad + 3.2} until={K.Cantidad + 2.6} x={520} y={1270} texto="piernas" color={KC.ink} />
+        <Etq T={T} at={K.Gravedad + 4.0} until={K.Cantidad + 2.6} x={540} y={965} texto="panza" color={KC.ink} />
+        <Etq T={T} at={K.Presion + 0.5} until={K.Ojos - 0.2} x={462} y={440} texto="menos sangre arriba" color={KC.ink} />
       </Escena>
 
       {/* 4 · lo que ves: vista nublada, puntitos, mareo */}
-      <Escena T={T} a={K.Ojos} b={K.Corrige} fondo={KC.yellow} zoom={0.08}>
-        <div style={{ position: 'absolute', inset: 0, filter: `blur(${blur}px)`, transform: `rotate(${kprog(T, K.Ojos + 3.9, K.Ojos + 4.3) * 3 * Math.sin(T * 2.4)}deg) scale(1.06)` }}>
+      <Escena T={T} a={K.Ojos} b={K.Corrige} zoom={0.08}>
+        <div style={{ position: 'absolute', inset: 0, filter: `blur(${blur}px)`, transform: `rotate(${kprog(T, K.Ojos + 3.9, K.Ojos + 4.3) * 3 * Math.sin(T * 2.4)}deg) scale(1.3)`, transformOrigin: '540px 500px' }}>
           <FondoLunares color={KC.yellow} />
           <Lienzo>
             <rect x={290} y={420} width={500} height={420} rx={14} fill="#8fd8ff" stroke={KC.ink} strokeWidth={12} />
@@ -278,100 +284,112 @@ function Pararte() {
             <Lampara x={150} y={760} />
             <rect x={840} y={900} width={140} height={150} rx={20} fill={KC.orange} stroke={KC.ink} strokeWidth={8} />
             {[-1, 0, 1].map((i) => <ellipse key={i} cx={910 + i * 40} cy={850} rx={28} ry={70} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} transform={`rotate(${i * 25} 910 900)`} />)}
-            <rect x={0} y={1180} width={KW} height={KH - 1180} fill="#c98a4b" />
+            <rect x={0} y={1180} width={KW} height={KH - 1180} fill="#6a4c34" />
             <rect x={180} y={1000} width={720} height={260} rx={50} fill={KC.teal} stroke={KC.ink} strokeWidth={10} />
           </Lienzo>
         </div>
         <Lienzo z={5}>
-          {Array.from({ length: 16 }, (_, i) => { const g = krng(30 + i), x = 80 + g() * 920, y = 380 + g() * 800, a = K.Ojos + 3.0 + i * 0.07;
+          {Array.from({ length: 16 }, (_, i) => { const g = krng(30 + i), x = 80 + g() * 920, y = 380 + g() * 1100, a = K.Ojos + 3.0 + i * 0.07;
             return T > a && <g key={i}><circle cx={x} cy={y} r={14 + 22 * g()} fill="#2a1840" opacity={0.55 * kprog(T, a, a + 0.3) * (0.6 + 0.4 * Math.sin(T * 7 + i))} />
               <Estrellita x={x + 40} y={y - 30} r={16} rot={T * 120 + i * 30} o={kprog(T, a, a + 0.3) * Math.abs(Math.sin(T * 5 + i))} /></g>; })}
         </Lienzo>
         <div style={{ position: 'absolute', inset: 0, zIndex: 6, opacity: kprog(T, K.Ojos + 1.9, K.Ojos + 2.8) * 0.8, background: 'radial-gradient(circle at 50% 45%, transparent 30%, rgba(20,10,30,.85) 80%)' }}></div>
-        <Chip T={T} at={K.Ojos + 0.2} until={K.Corrige - 0.1} texto="cerebro y ojos" x={660} y={430} tam={40} borde={SANGRE} />
-        <Chip T={T} at={K.Ojos + 2.0} until={K.Corrige - 0.1} texto="vista nublada" x={660} y={515} tam={40} borde={KC.gold} />
-        <Chip T={T} at={K.Ojos + 3.0} until={K.Corrige - 0.1} texto="puntitos" x={660} y={600} tam={40} borde={KC.gold} />
-        <Chip T={T} at={K.Ojos + 4.0} until={K.Corrige - 0.1} texto="mareo" x={660} y={685} tam={40} borde={KC.gold} />
+        <Chip T={T} at={K.Ojos + 0.2} until={K.Ojos + 1.85} texto="cerebro y ojos" x={540} y={300} tam={40} borde={SANGRE} />
+        <Chip T={T} at={K.Ojos + 2.0} until={K.Ojos + 2.85} texto="vista nublada" x={540} y={300} tam={40} borde={KC.gold} />
+        <Chip T={T} at={K.Ojos + 3.0} until={K.Ojos + 3.85} texto="puntitos" x={540} y={300} tam={40} borde={KC.gold} />
+        <Chip T={T} at={K.Ojos + 4.0} until={K.Corrige - 0.1} texto="mareo" x={540} y={300} tam={40} borde={KC.gold} />
       </Escena>
 
       {/* 5 · por dentro: sensores del cuello, corazón más rápido, vasos que se aprietan */}
       <Escena T={T} a={K.Corrige} b={K.Pregunta} fondo={KC.noche}>
         <Ambiente T={T} n={22} color="rgba(255,255,255,.12)" />
         <Lienzo>
-          <g opacity={1 - kprog(T, K.Corrige + 3.7, K.Corrige + 4.2)}>
-            <g transform="translate(330 700) scale(1.3)">
+          <g opacity={1 - 0.86 * kprog(T, K.Corrige + 3.7, K.Corrige + 4.2)}>
+            <g transform="translate(290 800) scale(1.6)">
               <path d="M -170 330 C -170 260 -120 230 -40 225 L 90 225 C 170 230 220 260 220 330 Z" fill={KC.blue} stroke={KC.ink} strokeWidth={9} />
             </g>
-            <CabezaPerfil x={330} y={700} s={1.3} />
-            <g transform="translate(330 700) scale(1.3)" opacity={0.95}>
+            <CabezaPerfil x={290} y={800} s={1.6} />
+            <g transform="translate(290 800) scale(1.6)" opacity={0.95}>
               <path d="M 20 330 L 20 205 M 20 205 C 12 185 8 170 6 150 M 20 205 C 30 185 36 170 40 150" stroke={KC.ink} strokeWidth={26} fill="none" strokeLinecap="round" />
               <path d="M 20 330 L 20 205 M 20 205 C 12 185 8 170 6 150 M 20 205 C 30 185 36 170 40 150" stroke={SANGRE} strokeWidth={16} fill="none" strokeLinecap="round" />
               <circle cx={20} cy={203} r={14 + 3 * Math.sin(T * 8)} fill={KC.gold2} stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.Corrige + 1.4, K.Corrige + 1.8)} />
             </g>
           </g>
-          {T > K.Corrige + 3.8 && <g opacity={kprog(T, K.Corrige + 3.8, K.Corrige + 4.3)}><Corazon x={290} y={760} s={1.25} fase={faseC} /></g>}
-          {T > K.Corrige + 5.3 && <g opacity={kprog(T, K.Corrige + 5.3, K.Corrige + 5.7)}><Vaso x={800} y={730} T={T} apriete={kprog(T, K.Corrige + 5.6, K.Corrige + 6.6, kEase.suave)} /></g>}
-          {T > K.Corrige + 6.2 && <g transform={`scale(${kprog(T, K.Corrige + 6.2, K.Corrige + 6.6, kEase.rebote)})`} style={{ transformOrigin: '540px 470px' }}>
-            <Manometro x={540} y={470} r={120} v={klerp(0.15, 1, kprog(T, K.Corrige + 6.5, K.Pregunta - 0.1, kEase.sale))} T={T} /></g>}
+          {T > K.Corrige + 3.8 && <g opacity={kprog(T, K.Corrige + 3.8, K.Corrige + 4.3)}><Corazon x={330} y={1030} s={1.45} fase={faseC} /></g>}
+          {T > K.Corrige + 5.3 && <g opacity={kprog(T, K.Corrige + 5.3, K.Corrige + 5.7)}><Vaso x={800} y={1030} largo={620} ancho={190} T={T} apriete={kprog(T, K.Corrige + 5.6, K.Corrige + 6.6, kEase.suave)} /></g>}
+          {T > K.Corrige + 6.2 && <g transform={`scale(${kprog(T, K.Corrige + 6.2, K.Corrige + 6.6, kEase.rebote)})`} style={{ transformOrigin: '540px 560px' }}>
+            <Manometro x={540} y={560} r={150} v={klerp(0.15, 1, kprog(T, K.Corrige + 6.5, K.Pregunta - 0.1, kEase.sale))} T={T} /></g>}
         </Lienzo>
-        <Lupa T={T} at={K.Corrige + 1.5} until={K.Corrige + 3.7} x={790} y={560} r={180} fx={356} fy={964} tinte={KC.gold2} etiqueta="POR DENTRO · CUELLO" interior={(t, r) => <Carotida r={r} T={t} />} />
-        <Chip T={T} at={K.Corrige + 1.4} until={K.Corrige + 3.7} texto="sensores del cuello" x={480} y={420} tam={40} borde={KC.gold2} />
-        <Chip T={T} at={K.Corrige + 4.1} until={K.Pregunta - 0.1} texto="corazón más rápido" x={290} y={1060} tam={34} borde={SANGRE} />
-        <Chip T={T} at={K.Corrige + 5.6} until={K.Pregunta - 0.1} texto="vasos que se aprietan" x={800} y={1060} tam={34} borde={KC.gold2} />
+        <Lupa T={T} at={K.Corrige + 1.5} until={K.Corrige + 3.7} x={805} y={440} r={200} fx={322} fy={1125} tinte={KC.gold2} etiqueta="POR DENTRO · CUELLO" interior={(t, r) => <Carotida r={r} T={t} />} />
+        <Chip T={T} at={K.Corrige + 1.4} until={K.Corrige + 3.7} texto="sensores del cuello" x={290} y={330} tam={40} borde={KC.gold2} />
+        <Chip T={T} at={K.Corrige + 4.1} until={K.Pregunta - 0.1} texto="corazón más rápido" x={300} y={1470} tam={36} borde={SANGRE} />
+        <Chip T={T} at={K.Corrige + 5.6} until={K.Pregunta - 0.1} texto="vasos que se aprietan" x={782} y={1470} tam={36} borde={KC.gold2} />
       </Escena>
 
       {/* 6 · pregunta */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Factores} />
 
       {/* 7 · factores: deshidratación, calor, mucho rato acostado */}
-      <Escena T={T} a={K.Factores} b={K.Nombre} fondo={KC.orange}>
+      <Escena T={T} a={K.Factores} b={K.Nombre}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <Tarjeta x={190} y={760} e={kprog(T, K.Factores + 0.5, K.Factores + 0.9, kEase.rebote)}><VasoVacio x={0} y={0} s={1} /></Tarjeta>
-          <Tarjeta x={540} y={760} e={kprog(T, K.Factores + 1.7, K.Factores + 2.1, kEase.rebote)}><SolDibujo x={0} y={0} r={80} T={T} /></Tarjeta>
-          <Tarjeta x={890} y={760} e={kprog(T, K.Factores + 2.9, K.Factores + 3.3, kEase.rebote)}><Cama x={0} y={40} s={0.95} T={T} /></Tarjeta>
-          {[[190, 'deshidratación', 0.7], [540, 'calor', 1.9], [875, 'mucho rato acostado', 3.1]].map(([x, t, d]) => <text key={t} x={x} y={975} textAnchor="middle" opacity={kprog(T, K.Factores + d, K.Factores + d + 0.3)}
-            style={{ font: `700 26px ${KF.mono}` }} fill={KC.ink}>{t}</text>)}
-          {T > K.Factores + 4.0 && <g transform={`scale(${kprog(T, K.Factores + 4.0, K.Factores + 4.4, kEase.rebote)})`} style={{ transformOrigin: '540px 470px' }}>
-            <Manometro x={540} y={470} r={120} v={0.2 + 0.25 * kprog(T, K.Factores + 4.4, K.Nombre, kEase.suave)} T={T} tiembla={1} /></g>}
+          {/* pase a mano: el cuerpo del video sigue en cuadro (quieto, con la sangre abajo) y las tarjetas van en columna, grandes */}
+          <g opacity={0.62}><CuerpoFrente x={300} y={1440} s={0.95} pool={0.52} cabeza={0.25} T={0} id="cfF" /></g>
+          <Tarjeta x={800} y={500} e={0.9 * kprog(T, K.Factores + 0.5, K.Factores + 0.9, kEase.rebote)}><VasoVacio x={0} y={0} s={1} /></Tarjeta>
+          <Tarjeta x={800} y={850} e={0.9 * kprog(T, K.Factores + 1.7, K.Factores + 2.1, kEase.rebote)}><SolDibujo x={0} y={0} r={80} T={T} /></Tarjeta>
+          <Tarjeta x={800} y={1200} e={0.9 * kprog(T, K.Factores + 2.9, K.Factores + 3.3, kEase.rebote)}><Cama x={0} y={40} s={0.95} T={T} /></Tarjeta>
+          {[[500, 'deshidratación', 0.7], [850, 'calor', 1.9], [1200, 'mucho rato acostado', 3.1]].map(([y, t, d]) => <text key={t} x={800} y={y + 178} textAnchor="middle" opacity={kprog(T, K.Factores + d, K.Factores + d + 0.3)}
+            style={{ font: `700 30px ${KF.mono}` }} fill={KC.ink}>{t}</text>)}
+          {T > K.Factores + 4.0 && <g transform={`scale(${kprog(T, K.Factores + 4.0, K.Factores + 4.4, kEase.rebote)})`} style={{ transformOrigin: '300px 420px' }}>
+            <Manometro x={300} y={420} r={130} v={0.2 + 0.25 * kprog(T, K.Factores + 4.4, K.Nombre, kEase.suave)} T={T} tiembla={1} /></g>}
         </Lienzo>
-        <Chip T={T} at={K.Factores + 4.0} until={K.Nombre - 0.1} texto="a tu cuerpo le cuesta más corregirlo" x={540} y={1110} tam={34} borde={KC.ink} />
+        <Chip T={T} at={K.Factores + 4.0} until={K.Nombre - 0.1} texto="a tu cuerpo le cuesta más corregirlo" x={540} y={1480} tam={34} borde={KC.ink} />
       </Escena>
 
       {/* 8 · el nombre */}
-      <Escena T={T} a={K.Nombre} b={K.Medico} fondo={KC.lilac}>
+      <Escena T={T} a={K.Nombre} b={K.Medico}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <g transform={`scale(${kprog(T, K.Nombre + 0.1, K.Nombre + 0.5, kEase.rebote)})`} style={{ transformOrigin: '540px 600px' }}>
-            <Manometro x={540} y={600} r={190} v={klerp(1, 0.04, kprog(T, K.Nombre + 0.6, K.Nombre + 1.8, kEase.suave))} T={T} tiembla={kprog(T, K.Nombre + 1.8, K.Nombre + 2.2)} /></g>
-          <TextoSvg x={540} y={870} tam={124} color={KC.yellow} s={kprog(T, K.Nombre + 2.4, K.Nombre + 2.8, kEase.rebote)}>HIPOTENSIÓN</TextoSvg>
-          <TextoSvg x={540} y={995} tam={124} color={KC.yellow} s={kprog(T, K.Nombre + 2.7, K.Nombre + 3.1, kEase.rebote)}>ORTOSTÁTICA</TextoSvg>
+          {/* pase a mano: la persona del gancho (de pie, mareada, con sus estrellitas) sigue en cuadro: a eso se le pone nombre */}
+          <g opacity={0.8}>
+            <PersonaLado x={270} y={1010} s={1.22} {...POSE.pie} color={KC.blue} cara="mareo" T={T} />
+            {Array.from({ length: 6 }, (_, i) => { const [sx, sy] = kadd([276, 540], i / 6 * 360 + T * 50, 150 + 20 * Math.sin(T * 3 + i));
+              return <Estrellita key={i} x={sx} y={sy} r={20 + (i % 3) * 8} color={i % 2 ? '#fff' : KC.yellow} rot={T * 90 + i * 20} />; })}
+          </g>
+          <g transform={`scale(${kprog(T, K.Nombre + 0.1, K.Nombre + 0.5, kEase.rebote)})`} style={{ transformOrigin: '725px 820px' }}>
+            <Manometro x={725} y={820} r={190} v={klerp(1, 0.04, kprog(T, K.Nombre + 0.6, K.Nombre + 1.8, kEase.suave))} T={T} tiembla={kprog(T, K.Nombre + 1.8, K.Nombre + 2.2)} /></g>
+          <TextoSvg x={690} y={1015} tam={78} color={KC.yellow} s={kprog(T, K.Nombre + 2.4, K.Nombre + 2.8, kEase.rebote)}>HIPOTENSIÓN</TextoSvg>
+          <TextoSvg x={690} y={1105} tam={78} color={KC.yellow} s={kprog(T, K.Nombre + 2.7, K.Nombre + 3.1, kEase.rebote)}>ORTOSTÁTICA</TextoSvg>
         </Lienzo>
-        <Chip T={T} at={K.Nombre + 0.8} until={K.Medico - 0.1} texto="baja de más al pararte" x={540} y={1105} tam={36} borde={KC.red} />
+        <Chip T={T} at={K.Nombre + 0.8} until={K.Medico - 0.1} texto="baja de más al pararte" x={725} y={1240} tam={36} borde={KC.red} />
       </Escena>
 
       {/* 9 · cuándo ir al médico */}
-      <Escena T={T} a={K.Medico} b={K.Consejo} fondo={KC.mint}>
+      <Escena T={T} a={K.Medico} b={K.Consejo}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <g opacity={kprog(T, K.Medico + 0.3, K.Medico + 0.6)}><Repite x={520} y={560} s={1.1} T={T} /></g>
-          <g opacity={kprog(T, K.Medico + 1.4, K.Medico + 1.7)}>
-            <rect x={640} y={690} width={420} height={30} rx={14} fill="rgba(0,0,0,.18)" />
-            <PersonaLado x={880} y={660} s={0.42} {...POSE.acost} color={KC.blue} cara="mareo" T={T} />
-            {[0, 1, 2].map((i) => <Estrellita key={i} x={760 + i * 40} y={560 - (i % 2) * 30} r={18} color={KC.yellow} rot={T * 100 + i * 30} />)}
+          {/* pase a mano: mismas piezas, grandes y repartidas en todo el cuadro; entran con la voz desde el arranque */}
+          <g transform="translate(0 230)">{/* belleza: el conjunto baja al centro y la persona crece */}
+          <g opacity={kprog(T, K.Medico + 0.1, K.Medico + 0.4)}><Repite x={215} y={640} s={1.7} T={T} /></g>
+          <g opacity={0.25 + 0.75 * kprog(T, K.Medico + 1.4, K.Medico + 1.7)}>
+            <rect x={465} y={738} width={540} height={34} rx={16} fill="rgba(0,0,0,.35)" />
+            <PersonaLado x={745} y={700} s={0.62} {...POSE.acost} color={KC.blue} cara="mareo" T={T} />
+            {[0, 1, 2].map((i) => <Estrellita key={i} x={585 + i * 54} y={570 - (i % 2) * 40} r={25} color={KC.yellow} rot={T * 100 + i * 30} />)}
           </g>
-          <TextoSvg x={720} y={620} tam={70} color={KC.ink} o={kprog(T, K.Medico + 0.9, K.Medico + 1.2)}>o</TextoSvg>
-          <FlechaRecta x1={540} y1={770} x2={540} y2={850} p={kprog(T, K.Medico + 2.0, K.Medico + 2.3)} color={KC.red} />
-          <g transform={`scale(${kprog(T, K.Medico + 2.2, K.Medico + 2.6, kEase.rebote)})`} style={{ transformOrigin: '540px 960px' }}><CruzMedica x={540} y={960} s={0.75} /></g>
+          <TextoSvg x={425} y={668} tam={92} fuente="texto" color={KC.ink} o={kprog(T, K.Medico + 0.9, K.Medico + 1.2)}>o</TextoSvg>
+          <FlechaRecta x1={540} y1={810} x2={540} y2={880} p={kprog(T, K.Medico + 2.0, K.Medico + 2.3)} color={KC.red} />
+          {/* la cruz está desde el inicio, tenue, y se enciende con su frase */}
+          <g opacity={0.4 + 0.6 * kprog(T, K.Medico + 2.2, K.Medico + 2.5)} transform={`scale(${0.85 + 0.15 * kprog(T, K.Medico + 2.2, K.Medico + 2.6, kEase.rebote)})`} style={{ transformOrigin: '540px 1040px' }}><CruzMedica x={540} y={1040} s={1.2} /></g>
+          </g>
         </Lienzo>
-        <Chip T={T} at={K.Medico + 0.4} until={K.Consejo - 0.1} texto="muy seguido o desmayos → médico" x={540} y={1100} tam={36} borde={KC.red} />
+        <Chip T={T} at={K.Medico + 0.4} until={K.Consejo - 0.1} texto="muy seguido o desmayos → médico" x={540} y={1500} tam={36} borde={KC.red} />
       </Escena>
 
       {/* 10 · el truco: de acostado, primero sentado (~20 s) y luego de pie despacio */}
-      <Escena T={T} a={K.Consejo} b={K.Cierre} fondo={KC.cyan}>
+      <Escena T={T} a={K.Consejo} b={K.Cierre}>
         <FondoLunares color={KC.cyan} />
-        <Lienzo>
-          <rect x={0} y={1150} width={KW} height={KH - 1150} fill="#c98a4b" /><line x1={0} y1={1150} x2={KW} y2={1150} stroke={KC.ink} strokeWidth={10} />
+        <Lienzo><g transform="translate(0 230)">
+          <rect x={0} y={1150} width={KW} height={KH - 1150} fill="#6a4c34" /><line x1={0} y1={1150} x2={KW} y2={1150} stroke={KC.ink} strokeWidth={10} />
           <rect x={30} y={800} width={44} height={350} rx={12} fill="#7a4a22" stroke={KC.ink} strokeWidth={8} />
           <rect x={60} y={1040} width={30} height={110} fill="#7a4a22" stroke={KC.ink} strokeWidth={6} /><rect x={960} y={1040} width={30} height={110} fill="#7a4a22" stroke={KC.ink} strokeWidth={6} />
           <rect x={60} y={975} width={950} height={75} rx={18} fill="#fff" stroke={KC.ink} strokeWidth={9} />
@@ -382,13 +400,14 @@ function Pararte() {
             <path d={arco(0, 0, 66, -90, -90 + 359.9 * anillo)} stroke={KC.gold2} strokeWidth={18} fill="none" strokeLinecap="round" />
             <text y={16} textAnchor="middle" style={{ font: `400 50px ${KF.titulo}` }} fill={KC.texto}>~20 s</text>
           </g>}
-        </Lienzo>
-        <Chip T={T} at={K.Consejo + 1.3} until={K.Cierre - 0.1} texto="1 · siéntate ~20 s" x={330} y={430} tam={38} borde={KC.gold2} />
-        <Chip T={T} at={K.Consejo + 3.8} until={K.Cierre - 0.1} texto="2 · párate despacio" x={350} y={520} tam={38} borde={KC.mint} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Consejo + 1.3} until={K.Consejo + 3.6} texto="1 · siéntate ~20 s" x={330} y={600} tam={40} borde={KC.gold2} />
+        <Chip T={T} at={K.Consejo + 3.9} until={K.Cierre - 0.1} texto="2 · párate despacio" x={330} y={600} tam={40} borde={KC.mint} />
       </Escena>
 
       {/* 11 · cierre: la misma sala; la sangre baja en elevador y regresa */}
       <Escena T={T} a={K.Cierre} b={FIN}>
+        <div style={{ position: 'absolute', inset: 0, transform: `scale(${CK})`, transformOrigin: `${COX}px ${COY}px` }}>
         <Sala x0={X0} />
         <Lienzo>
           <Lampara x={70} y={560} />
@@ -396,10 +415,11 @@ function Pararte() {
           {Array.from({ length: 7 }, (_, i) => { const a = i / 7 * 360 + T * 60, o = kprog(T, K.Cierre + 0.1, K.Cierre + 0.4) * (1 - kprog(T, K.Cierre + 1.6, K.Cierre + 2.2));
             const [sx, sy] = kadd([X0 + 194, 350], a, 150); return <Estrellita key={i} x={sx} y={sy + kprog(T, K.Cierre + 0.8, K.Cierre + 2.2) * 500} r={24} color={i % 2 ? '#fff' : KC.yellow} rot={T * 90} o={o} />; })}
           <g opacity={kprog(T, K.Cierre + 0.3, K.Cierre + 0.7)}><Elevador x={800} y0={620} y1={1150} p={pEl} sube={subeEl} /></g>
-          <text x={940} y={650} style={{ font: `700 28px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Cierre + 0.5, K.Cierre + 0.9)}>cabeza</text>
-          <text x={940} y={1130} style={{ font: `700 28px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Cierre + 0.5, K.Cierre + 0.9)}>pies</text>
+          <text x={672} y={650} textAnchor="end" style={{ font: `700 28px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Cierre + 0.5, K.Cierre + 0.9)}>cabeza</text>
+          <text x={672} y={1130} textAnchor="end" style={{ font: `700 28px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Cierre + 0.5, K.Cierre + 0.9)}>pies</text>
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 0.5} until={K.Outro - 0.1} texto="tu sangre en elevador" x={700} y={485} tam={38} borde={SANGRE} />
+        </div>
+        <Chip T={T} at={K.Cierre + 0.5} until={K.Outro - 0.1} texto="tu sangre en elevador" x={790} y={640} tam={38} borde={SANGRE} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Gravedad - 0.1} texto="Te paras y *ves estrellitas.*" />

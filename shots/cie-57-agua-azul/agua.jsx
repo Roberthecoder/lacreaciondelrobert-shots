@@ -1,6 +1,8 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #57 · El agua es azul (y no por el cielo) — NARRADO (N1 "Por dentro" + N5 Braun y Smirnov 1993).
 // Datos: Braun y Smirnov 1993 (J. Chem. Educ.), NOAA, USGS. Ver guion.md y verificacion.md. El dibujo es esquemático.
-const AZ1 = '#1f86e0', AZ2 = '#0a2f7a', AZ3 = '#041633';
+// belleza: azules menos chillones (antes AZ1 '#1f86e0' llenaba la pantalla de azul saturado)
+const AZ1 = '#2a72bd', AZ2 = '#0d3270', AZ3 = '#041633';
 const ARCO = ['#ff3b2f', '#ff8a1f', '#ffe11a', '#2fe0a8', '#00d2ff', '#2346ff', '#7a4dff'];
 const ABS = [5.2, 3.4, 2.2, 1.3, 0.55, 0.35, 0.8];           // absorción esquemática por color (rojo la más alta)
 
@@ -12,7 +14,7 @@ function hexMezcla(a, b, f) {
 function Mar({ T, id, y0 = 900, alto = KH, c1 = AZ1, c2 = AZ2, brillo = 0 }) {
   const ola = Array.from({ length: 28 }, (_, i) => { const x = i * 42 - 40; return `${x},${(y0 + Math.sin(T * 2.2 + i * 0.7) * 14).toFixed(1)}`; }).join(' ');
   return <g>
-    <defs><linearGradient id={id} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={c1} /><stop offset="1" stopColor={c2} /></linearGradient></defs>
+    <defs><linearGradient id={id} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={c1} /><stop offset=".38" stopColor={c2} /><stop offset="1" stopColor="#06132b" /></linearGradient></defs>
     <polygon points={`-40,${alto} ${ola} ${KW + 40},${alto}`} fill={`url(#${id})`} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
     {Array.from({ length: 9 }, (_, i) => { const yy = y0 + 70 + (i % 3) * 120 + Math.floor(i / 3) * 40, xx = ((i * 260 + T * 60 * (i % 2 ? 1 : -1)) % 1300 + 1300) % 1300 - 110;
       return <path key={i} d={`M ${xx} ${yy} q 30 -18 60 0 q 30 18 60 0`} fill="none" stroke="#fff" strokeWidth={6} strokeLinecap="round" opacity={0.35 + 0.3 * brillo} />; })}
@@ -92,31 +94,33 @@ function AguaAzul() {
       <Escena T={T} a={K.Gancho} b={K.Luz} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <SolDibujo x={330} y={420} r={70} T={T} />
-          <Nube x={300} y={640} s={0.8} />
+          <SolDibujo x={300} y={400} r={120} T={T} />
+          <Nube x={340} y={690} s={1.25} />
           <Mar T={T} id="marA" y0={880} />
-          <FlechaRecta x1={480} y1={560} x2={480} y2={860} p={kprog(T, K.Gancho + 0.15, K.Gancho + 0.8, kEase.sale)} color="#fff" />
-          <TextoSvg x={250} y={800} tam={64} color="#fff" o={kprog(T, K.Gancho + 0.5, K.Gancho + 0.9)}>¿REFLEJO?</TextoSvg>
-          <line x1={110} y1={810} x2={klerp(110, 270, kprog(T, K.Gancho + 1.6, K.Gancho + 2.0, kEase.sale))} y2={770} stroke={KC.red} strokeWidth={14} strokeLinecap="round" opacity={T > K.Gancho + 1.6 ? 1 : 0} />
-          <TextoSvg x={540} y={1130} tam={110} color={KC.yellow} rot={-3} s={klerp(0.4, 1, kprog(T, K.Gancho + 2.4, K.Gancho + 2.9, kEase.rebote))} o={kprog(T, K.Gancho + 2.4, K.Gancho + 2.6)}>EL AGUA ES AZUL</TextoSvg>
+          <FlechaRecta x1={620} y1={470} x2={620} y2={860} p={kprog(T, K.Gancho + 0.15, K.Gancho + 0.8, kEase.sale)} color="#fff" />
+          <TextoSvg x={760} y={420} tam={70} color="#fff" o={kprog(T, K.Gancho + 0.5, K.Gancho + 0.9)}>¿REFLEJO?</TextoSvg>
+          <line x1={585} y1={420} x2={klerp(585, 940, kprog(T, K.Gancho + 1.6, K.Gancho + 2.0, kEase.sale))} y2={klerp(420, 370, kprog(T, K.Gancho + 1.6, K.Gancho + 2.0, kEase.sale))} stroke={KC.red} strokeWidth={14} strokeLinecap="round" opacity={T > K.Gancho + 1.6 ? 1 : 0} />
+          <TextoSvg x={540} y={1130} tam={82} color={KC.yellow} rot={-3} s={klerp(0.4, 1, kprog(T, K.Gancho + 2.4, K.Gancho + 2.9, kEase.rebote))} o={kprog(T, K.Gancho + 2.4, K.Gancho + 2.6)}>EL AGUA ES AZUL</TextoSvg>
         </Lienzo>
       </Escena>
       {/* 1 · la luz del Sol trae todos los colores */}
       <Escena T={T} a={K.Luz} b={K.Rojo} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
-        <Lienzo>
+        <Lienzo><g transform="translate(-20 170)">
           <SolDibujo x={200} y={470} r={90} T={T} />
           <Rayo x1={290} y1={540} x2={560} y2={800} p={kprog(T, K.Luz + 0.05, K.Luz + 0.6, kEase.sale)} ancho={44} />
           {ARCO.map((c, i) => <Rayo key={i} x1={560} y1={800} x2={980} y2={640 + i * 75} p={kprog(T, K.Luz + 0.7 + i * 0.07, K.Luz + 1.4 + i * 0.07, kEase.sale)} color={c} ancho={30} />)}
           <circle cx={560} cy={800} r={26} fill="#fff" stroke={KC.ink} strokeWidth={8} />
-        </Lienzo>
-        <Chip T={T} at={K.Luz + 0.3} until={K.Rojo - 0.1} texto="luz blanca = todos los colores" x={540} y={1150} tam={42} borde={KC.ink} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Luz + 0.3} until={K.Rojo - 0.1} texto="luz blanca = todos los colores" x={540} y={1350} tam={42} borde={KC.ink} />
       </Escena>
       {/* 2 · por dentro del agua: el rojo se apaga primero */}
       <Escena T={T} a={K.Rojo} b={K.Regresa} fondo={AZ3}>
         <Lienzo>
           <defs><linearGradient id="profR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={AZ1} /><stop offset="1" stopColor={AZ3} /></linearGradient></defs>
-          <rect x={0} y={0} width={KW} height={440} fill={KC.cyan} />
+          {/* belleza: todo baja 150 px para que la columna de colores quede al centro del cuadro */}
+          <g transform="translate(0 150)">
+          <rect x={0} y={-150} width={KW} height={590} fill={cineMix(KC.cyan, CINE.fondo, 0.55)} />
           <rect x={0} y={440} width={KW} height={KH - 440} fill="url(#profR)" />
           <Rayo x1={880} y1={170} x2={590} y2={430} ancho={60} p={kprog(T, K.Rojo - 0.3, K.Rojo + 0.2)} />
           {ARCO.map((c, i) => { const x = 300 + i * 90, L = 760 * kprog(T, K.Rojo + 0.2, K.Rojo + 3.2, kEase.suave);
@@ -125,8 +129,9 @@ function AguaAzul() {
           <line x1={0} y1={440} x2={KW} y2={440} stroke={KC.ink} strokeWidth={10} />
           <FlechaRecta x1={140} y1={520} x2={140} y2={1160} p={kprog(T, K.Rojo + 0.4, K.Rojo + 1.4, kEase.sale)} color="#fff" grosor={12} />
           <text x={205} y={1170} style={{ font:`900 40px ${KF.texto}` }} fill="#fff" opacity={kprog(T, K.Rojo + 1.2, K.Rojo + 1.6)} transform="rotate(-90 205 1170)">más hondo</text>
+          </g>
         </Lienzo>
-        <Etq T={T} at={K.Rojo + 2.2} until={K.Regresa - 0.2} x={330} y={880} texto="el rojo se apaga" lado="der" color="#fff" />
+        <Etq T={T} at={K.Rojo + 2.2} until={K.Regresa - 0.2} x={330} y={1030} texto="el rojo se apaga" lado="der" color="#fff" />
         <Chip T={T} at={K.Rojo + 0.6} until={K.Regresa - 0.1} texto="POR DENTRO · LUZ EN EL AGUA" x={380} y={330} tam={34} mono borde={KC.cyan} />
       </Escena>
       {/* 3 · regresa luz azulada a tus ojos */}
@@ -144,39 +149,39 @@ function AguaAzul() {
       <Escena T={T} a={K.Pregunta} b={K.Poquita} fondo={KC.lilac} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <Vaso x={270} y={950} s={1.25} tinte={0} />
-          <TextoSvg x={270} y={720} tam={300} color={KC.yellow} rot={Math.sin(T * 3) * 6} s={klerp(0.5, 1, kprog(T, K.Pregunta + 0.1, K.Pregunta + 0.5, kEase.rebote))}>?</TextoSvg>
+          <Vaso x={540} y={960} s={2.1} tinte={0} />
+          <TextoSvg x={540} y={540} tam={300} color={KC.yellow} rot={Math.sin(T * 3) * 6} s={klerp(0.5, 1, kprog(T, K.Pregunta + 0.1, K.Pregunta + 0.5, kEase.rebote))}>?</TextoSvg>
         </Lienzo>
-        <Etq T={T} at={K.Pregunta + 0.6} until={K.Poquita - 0.1} x={110} y={460} texto="se ve transparente" lado="der" color="#fff" />
+        <Etq T={T} at={K.Pregunta + 0.6} until={K.Poquita - 0.1} x={316} y={1450} texto="se ve transparente" lado="der" color="#fff" />
       </Escena>
       {/* 5 · es muy poquita: con metros de agua aparece el color */}
       <Escena T={T} a={K.Poquita} b={K.Alberca} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
-        <Lienzo>
-          <Vaso x={190} y={650} s={0.8} tinte={0.05} />
+        <Lienzo><g transform="translate(0 80)">
+          <Vaso x={250} y={600} s={1.3} tinte={0.05} />
           {(() => { const p = kprog(T, K.Poquita + 0.8, K.Poquita + 3.2, kEase.suave), L = 840 * p;
             return <g>
               <defs><linearGradient id="tubo" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#e9f8ff" /><stop offset="0.5" stopColor="#62b8ff" /><stop offset="1" stopColor={AZ2} /></linearGradient></defs>
-              <rect x={120} y={930} width={Math.max(10, L)} height={150} fill="url(#tubo)" />
-              <rect x={120} y={930} width={840} height={150} rx={20} fill="none" stroke={KC.ink} strokeWidth={10} opacity={kprog(T, K.Poquita + 0.5, K.Poquita + 0.8)} />
-              <Rayo x1={60} y1={1005} x2={120 + Math.max(10, L)} y2={1005} p={p > 0 ? 1 : 0} ancho={14} o={0.8} />
+              <rect x={120} y={1010} width={Math.max(10, L)} height={230} fill="url(#tubo)" />
+              <rect x={120} y={1010} width={840} height={230} rx={20} fill="none" stroke={KC.ink} strokeWidth={10} opacity={kprog(T, K.Poquita + 0.5, K.Poquita + 0.8)} />
+              <Rayo x1={60} y1={1125} x2={120 + Math.max(10, L)} y2={1125} p={p > 0 ? 1 : 0} ancho={14} o={0.8} />
             </g>; })()}
-          <TextoSvg x={140} y={900} tam={44} color="#fff" ancla="start" fuente="texto" o={kprog(T, K.Poquita + 0.6, K.Poquita + 1)}>poquita agua</TextoSvg>
-          <TextoSvg x={960} y={900} tam={52} color={KC.cyan} ancla="end" o={kprog(T, K.Poquita + 2.8, K.Poquita + 3.2)}>METROS DE AGUA → AZUL</TextoSvg>
-        </Lienzo>
-        <Etq T={T} at={K.Poquita + 0.3} until={K.Alberca - 0.2} x={320} y={640} texto="un vaso: casi sin color" lado="der" color={KC.ink} />
+          <TextoSvg x={140} y={975} tam={44} color="#fff" ancla="start" fuente="texto" o={kprog(T, K.Poquita + 0.6, K.Poquita + 1)}>poquita agua</TextoSvg>
+          <TextoSvg x={960} y={975} tam={52} color={KC.cyan} ancla="end" o={kprog(T, K.Poquita + 2.8, K.Poquita + 3.2)}>METROS DE AGUA → AZUL</TextoSvg>
+        </g></Lienzo>
+        <Etq T={T} at={K.Poquita + 0.3} until={K.Alberca - 0.2} x={415} y={700} texto="un vaso: casi sin color" lado="der" color={KC.ink} />
       </Escena>
       {/* 6 · alberca honda, techada, con fondo blanco */}
       <Escena T={T} a={K.Alberca} b={K.Buzo} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <path d="M 40 640 L 540 400 L 1040 640 Z" fill={KC.red} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
-          <rect x={80} y={640} width={920} height={40} fill="#ddd" stroke={KC.ink} strokeWidth={8} />
+          <path d="M 40 640 L 540 400 L 1040 640 Z" fill="#a8483e" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+          <rect x={80} y={640} width={920} height={40} fill="#8f989f" stroke={KC.ink} strokeWidth={8} />
           {[300, 540, 780].map((x) => <g key={x}><line x1={x} y1={680} x2={x} y2={720} stroke={KC.ink} strokeWidth={6} /><circle cx={x} cy={735} r={18} fill="#fff6c8" stroke={KC.ink} strokeWidth={6} /></g>)}
           {(() => { const p = kprog(T, K.Alberca + 0.4, K.Alberca + 2.2, kEase.suave), top = klerp(1180, 820, p);
             return <g>
-              <defs><linearGradient id="alb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#7fd6ff" /><stop offset="1" stopColor="#0f66d0" /></linearGradient></defs>
-              <path d="M 140 800 L 140 1190 L 940 1190 L 940 800" fill="#fbfbfb" stroke={KC.ink} strokeWidth={12} strokeLinejoin="round" />
+              <defs><linearGradient id="alb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#4a9fd4" /><stop offset="1" stopColor="#0d4a95" /></linearGradient></defs>
+              <path d="M 140 800 L 140 1190 L 940 1190 L 940 800" fill="#b9c4cd" stroke={KC.ink} strokeWidth={12} strokeLinejoin="round" />
               <rect x={146} y={top} width={788} height={1184 - top} fill="url(#alb)" opacity={0.92} />
               <path d={`M 146 ${top} ${Array.from({ length: 21 }, (_, i) => `L ${146 + i * 39.4} ${top + Math.sin(T * 3 + i) * 6}`).join(' ')}`} fill="none" stroke="#fff" strokeWidth={6} opacity={p} />
             </g>; })()}
@@ -192,55 +197,59 @@ function AguaAzul() {
             <defs><linearGradient id="hondo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={hexMezcla(AZ1, AZ2, p)} /><stop offset="1" stopColor={hexMezcla(AZ2, AZ3, p)} /></linearGradient></defs>
             <rect width={KW} height={KH} fill="url(#hondo)" />
             {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${150 + i * 160} 0 L ${250 + i * 160} 0 L ${200 + i * 170} 1200 L ${120 + i * 160} 1200 Z`} fill="#fff" opacity={0.07 * (1 - p)} />)}
-            <Buzo x={820} y={klerp(690, 880, p)} s={1.25} T={T} traje={hexMezcla(KC.red, '#3b3f63', kprog(T, K.Buzo + 0.8, K.Buzo + 4))} />
-            {ARCO.map((c, i) => { const r = [0, 1, 2, 3, 5, 6, 4][i]; return <rect key={i} x={100} y={430 + i * 100} width={130} height={80} rx={16} fill={hexMezcla(c, '#23305a', [1, 0.9, 0.8, 0.65, 0.45, 0.25, 0.55][i] * kprog(T, K.Buzo + 0.6 + r * 0.5, K.Buzo + 1.4 + r * 0.5))} stroke={KC.ink} strokeWidth={7} />; })}
+            <Buzo x={820} y={klerp(860, 1040, p)} s={1.25} T={T} traje={hexMezcla(KC.red, '#3b3f63', kprog(T, K.Buzo + 0.8, K.Buzo + 4))} />
+            {ARCO.map((c, i) => { const r = [0, 1, 2, 3, 5, 6, 4][i]; return <rect key={i} x={100} y={560 + i * 108} width={130} height={80} rx={16} fill={hexMezcla(c, '#23305a', [1, 0.9, 0.8, 0.65, 0.45, 0.25, 0.55][i] * kprog(T, K.Buzo + 0.6 + r * 0.5, K.Buzo + 1.4 + r * 0.5))} stroke={KC.ink} strokeWidth={7} />; })}
           </Lienzo>; })()}
-        <Etq T={T} at={K.Buzo + 1.6} until={K.Estudio - 0.2} x={240} y={470} texto="rojo: de lo primero en perderse" lado="der" color="#fff" tam={30} />
+        <Etq T={T} at={K.Buzo + 1.6} until={K.Estudio - 0.2} x={240} y={600} texto="rojo: de lo primero en perderse" lado="der" color="#fff" tam={30} />
         <Chip T={T} at={K.Buzo + 0.3} until={K.Estudio - 0.1} texto="más hondo = más azul" x={600} y={360} tam={40} borde={KC.cyan} />
       </Escena>
       {/* 8 · el estudio: la molécula vibra y se come el rojo */}
       <Escena T={T} a={K.Estudio} b={K.Unico} fondo={KC.noche}>
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={20} color="rgba(255,255,255,.14)" />
-        {T > K.Estudio + 2.6 && <Lienzo o={kprog(T, K.Estudio + 2.6, K.Estudio + 3.1)}>
-          <OndaLuz T={T} x0={-20} x1={1100} y={640} color={KC.red} p={kprog(T, K.Estudio + 3.0, K.Estudio + 4.0)} corte={0.46} />
-          <OndaLuz T={T} x0={-20} x1={1100} y={1080} color={KC.cyan} p={kprog(T, K.Estudio + 3.4, K.Estudio + 5.0)} amp={28} lam={70} />
-          <MoleculaAgua x={600} y={720} s={1.15} T={T} amp={0.25 + 0.75 * kprog(T, K.Estudio + 3.8, K.Estudio + 4.4)} />
-        </Lienzo>}
-        <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Estudio + 2.5} anio="1993" quien="Charles Braun y Sergei Smirnov" revista="Journal of Chemical Education" x={540} y={760} />
-        <Etq T={T} at={K.Estudio + 4.2} until={K.Unico - 0.2} x={560} y={480} texto="el rojo se absorbe" lado="der" color={KC.red} />
-        <Etq T={T} at={K.Estudio + 4.8} until={K.Unico - 0.2} x={260} y={985} texto="el azul pasa" lado="der" color={KC.cyan} />
+        {/* pase a mano: la molécula de agua está en pantalla desde el inicio (atenuada tras la tarjeta) y más grande; tarjeta chica y arriba */}
+        <Lienzo o={0.45 + 0.55 * kprog(T, K.Estudio + 2.4, K.Estudio + 3.0)}>
+          <OndaLuz T={T} x0={-20} x1={1100} y={760} color={KC.red} p={kprog(T, K.Estudio + 3.0, K.Estudio + 4.0)} corte={0.4} amp={44} />
+          <OndaLuz T={T} x0={-20} x1={1100} y={1190} color={KC.cyan} p={kprog(T, K.Estudio + 3.4, K.Estudio + 5.0)} amp={36} lam={70} />
+          <MoleculaAgua x={560} y={800} s={1.6} T={T} amp={0.25 + 0.75 * kprog(T, K.Estudio + 3.8, K.Estudio + 4.4)} />
+        </Lienzo>
+        <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Estudio + 2.5} anio="1993" quien="Charles Braun y Sergei Smirnov" revista="Journal of Chemical Education" x={540} y={400} />
+        <Etq T={T} at={K.Estudio + 4.2} until={K.Unico - 0.2} x={430} y={590} texto="el rojo se absorbe" lado="der" color={KC.red} />
+        <Etq T={T} at={K.Estudio + 4.8} until={K.Unico - 0.2} x={120} y={1095} texto="el azul pasa" lado="der" color={KC.cyan} />
         <Chip T={T} at={K.Estudio + 3.2} until={K.Unico - 0.1} texto="AL MICROSCOPIO · MOLÉCULA DE AGUA" x={540} y={380} tam={30} mono borde={KC.cyan} />
       </Escena>
       {/* 9 · caso casi único */}
       <Escena T={T} a={K.Unico} b={K.Cielo} fondo={KC.lilac}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <MoleculaAgua x={790} y={820} s={0.85} T={T} amp={0.8} brillo={kprog(T, K.Unico + 0.8, K.Unico + 1.6)} />
-          <TextoSvg x={790} y={1150} tam={70} color={KC.cyan} o={kprog(T, K.Unico + 1.8, K.Unico + 2.2)}>COLOR = VIBRACIÓN</TextoSvg>
+          <MoleculaAgua x={540} y={790} s={1.5} T={T} amp={0.8} brillo={kprog(T, K.Unico + 0.8, K.Unico + 1.6)} />
+          <TextoSvg x={540} y={1300} tam={72} color={KC.cyan} o={kprog(T, K.Unico + 1.8, K.Unico + 2.2)}>COLOR = VIBRACIÓN</TextoSvg>
         </Lienzo>
-        <Chip T={T} at={K.Unico + 0.15} until={K.Cielo - 0.1} texto="caso casi único en la naturaleza" x={540} y={440} tam={44} borde={KC.gold} />
+        <Chip T={T} at={K.Unico + 0.15} until={K.Cielo - 0.1} texto="caso casi único en la naturaleza" x={540} y={330} tam={44} borde={KC.gold} />
       </Escena>
       {/* 10 · el reflejo del cielo también ayuda: depende del ángulo */}
       <Escena T={T} a={K.Cielo} b={K.Hielo} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
+          {/* belleza: los dos paneles bajan 160 px (antes se cargaban arriba) */}
+          <g transform="translate(0 160)">
           {/* arriba: mar visto de lado → más reflejo */}
           <g opacity={kprog(T, K.Cielo, K.Cielo + 0.4)}>
-            <rect x={60} y={360} width={960} height={400} rx={30} fill="#bfeaff" stroke={KC.ink} strokeWidth={9} />
+            <rect x={60} y={360} width={960} height={400} rx={30} fill="#7fb3d1" stroke={KC.ink} strokeWidth={9} />
             <rect x={60} y={600} width={960} height={160} fill={hexMezcla('#8fd3ff', AZ1, 0.35)} stroke={KC.ink} strokeWidth={9} />
             <Rayo x1={140} y1={420} x2={560} y2={600} p={kprog(T, K.Cielo + 0.5, K.Cielo + 1.1, kEase.sale)} ancho={26} />
             <Rayo x1={560} y1={600} x2={880} y2={470} p={kprog(T, K.Cielo + 1.1, K.Cielo + 1.6, kEase.sale)} ancho={26} />
-            <Ojo x={930} y={450} s={0.45} rot={150} />
-            <text x={90} y={735} style={{ font:`900 38px ${KF.texto}` }} fill="#fff" stroke={KC.ink} strokeWidth={8} paintOrder="stroke">de lado: más reflejo del cielo</text>
+            <Ojo x={920} y={455} s={0.7} rot={150} />
+            <text x={90} y={735} style={{ font:`900 38px ${KF.texto}` }} fill="#fff" stroke="#0b1020" strokeWidth={8} paintOrder="stroke">de lado: más reflejo del cielo</text>
           </g>
           {/* abajo: visto desde arriba → más color del agua */}
-          <g opacity={kprog(T, K.Cielo + 2.0, K.Cielo + 2.4)}>
+          <g opacity={0.3 + 0.7 * kprog(T, K.Cielo + 2.0, K.Cielo + 2.4)}>
             <rect x={60} y={800} width={960} height={400} rx={30} fill={AZ1} stroke={KC.ink} strokeWidth={9} />
             <rect x={60} y={940} width={960} height={260} fill={AZ2} stroke={KC.ink} strokeWidth={9} />
-            <Rayo x1={540} y1={1150} x2={540} y2={900} p={kprog(T, K.Cielo + 2.4, K.Cielo + 3.0, kEase.sale)} color={KC.cyan} ancho={30} />
-            <Ojo x={540} y={860} s={0.45} rot={0} />
-            <text x={90} y={1175} style={{ font:`900 38px ${KF.texto}` }} fill="#fff" stroke={KC.ink} strokeWidth={8} paintOrder="stroke">desde arriba: más color del agua</text>
+            <Rayo x1={540} y1={1150} x2={540} y2={950} p={kprog(T, K.Cielo + 2.4, K.Cielo + 3.0, kEase.sale)} color={KC.cyan} ancho={30} />
+            <Ojo x={540} y={885} s={0.7} rot={0} />
+            <text x={90} y={1175} style={{ font:`900 38px ${KF.texto}` }} fill="#fff" stroke="#0b1020" strokeWidth={8} paintOrder="stroke">desde arriba: más color del agua</text>
+          </g>
           </g>
         </Lienzo>
       </Escena>
@@ -252,17 +261,17 @@ function AguaAzul() {
           <Montana x={800} y={760} ancho={700} alto={420} color="#7a6d92" />
           <Glaciar x={540} y={920} s={1.15} T={T} azul={kprog(T, K.Hielo + 0.4, K.Hielo + 2.2, kEase.suave)} />
         </Lienzo>
-        <Chip T={T} at={K.Hielo + 0.4} until={K.Cierre - 0.1} texto="hielo grueso = mucha agua" x={540} y={440} tam={42} borde={KC.cyan} />
+        <Chip T={T} at={K.Hielo + 0.4} until={K.Cierre - 0.1} texto="hielo grueso = mucha agua" x={540} y={1340} tam={42} borde={KC.cyan} />
       </Escena>
       {/* 12 · cierre: el mismo mar; el azul sale del agua */}
       <Escena T={T} a={K.Cierre} b={FIN} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <SolDibujo x={330} y={420} r={70} T={T} />
-          <Nube x={300} y={640} s={0.8} />
+          <SolDibujo x={300} y={400} r={120} T={T} />
+          <Nube x={340} y={690} s={1.25} />
           <Mar T={T} id="marC" y0={880} c1="#2a97ff" c2="#082a78" brillo={1} />
-          {[300, 540, 780].map((x, i) => <FlechaRecta key={x} x1={x} y1={1180} x2={x} y2={960} p={kprog(T, K.Cierre + 0.2 + i * 0.15, K.Cierre + 0.8 + i * 0.15, kEase.sale)} color={KC.cyan} />)}
-          <TextoSvg x={540} y={1130} tam={100} color={KC.yellow} rot={-3} s={klerp(0.4, 1, kprog(T, K.Cierre + 0.9, K.Cierre + 1.4, kEase.rebote))} o={kprog(T, K.Cierre + 0.9, K.Cierre + 1.1)}>EL AGUA YA ES AZUL</TextoSvg>
+          {[300, 540, 780].map((x, i) => <FlechaRecta key={x} x1={x} y1={1440} x2={x} y2={1230} p={kprog(T, K.Cierre + 0.2 + i * 0.15, K.Cierre + 0.8 + i * 0.15, kEase.sale)} color={KC.cyan} />)}
+          <TextoSvg x={540} y={1130} tam={72} color={KC.yellow} rot={-3} s={klerp(0.4, 1, kprog(T, K.Cierre + 0.9, K.Cierre + 1.4, kEase.rebote))} o={kprog(T, K.Cierre + 0.9, K.Cierre + 1.1)}>EL AGUA YA ES AZUL</TextoSvg>
         </Lienzo>
       </Escena>
 

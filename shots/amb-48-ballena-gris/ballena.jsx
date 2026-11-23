@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #48 · Un año de ballena gris en un mapa: 16 mil km que dependen del Ártico — NARRADO (N4 la imagen que se llena).
 // Datos: NOAA Fisheries (ficha de especie, evento de mortandad inusual 2019-2023, notas del 18 jun 2025 y 15 jul 2026) y ficha IMMA
 // de la UICN (lagunas de crianza). Ver guion.md y verificacion.md. Mapa, ruta y ballenas son esquemáticos.
@@ -20,20 +21,21 @@ function bgRutaParcial(p0, p1) {
   pts.push([B.x, B.y]);
   return pts.map((q) => q.join(',')).join(' ');
 }
+const BG_TIERRA = '#4a4430';   // tierra oscurecida (estilo cine), conserva el tinte arena
 const BG_LAGUNAS = [{ n: 'Ojo de Liebre', x: 912, y: 1200 }, { n: 'San Ignacio', x: 934, y: 1235 }, { n: 'Bahía Magdalena', x: 986, y: 1300 }];
 // hielo y comida del Ártico. gris 0..1 = el Ártico se apaga; comida 0..1 = aparecen anfípodos.
 function Hielo({ T, gris = 0, comida = 0 }) {
   const bl = [[60,150,110,40],[230,120,90,34],[380,95,70,26],[560,110,120,38],[760,140,100,34],[960,120,130,40],[150,215,70,22],[650,200,80,24],[1100,190,90,26]];
   return <g>
-    {bl.map(([x, y, rx, ry], i) => <ellipse key={i} cx={x} cy={y + Math.sin(T * 0.8 + i) * 3} rx={rx} ry={ry} fill={mixHex('#ffffff', '#9aa3ad', gris)} stroke={KC.ink} strokeWidth={4} />)}
+    {bl.map(([x, y, rx, ry], i) => <ellipse key={i} cx={x} cy={y + Math.sin(T * 0.8 + i) * 3} rx={rx} ry={ry} fill={mixHex('#c3d1de', '#6d7682', gris)} stroke={KC.ink} strokeWidth={4} />)}
     {comida > 0 && Array.from({ length: 9 }, (_, i) => <Anfipodo key={i} x={110 + i * 120 + Math.sin(T + i) * 6} y={175 + (i % 3) * 22} s={0.55} rot={i * 37} o={comida} />)}
   </g>;
 }
 function Mapa({ T, gris = 0, comida = 0, ruta = 0, rutaDesde = 0, ballena = null, lagunas = 0, puntos = 0, mexico = 0 }) {
   return <g>
     <Hielo T={T} gris={gris} comida={comida} />
-    <path d={BG_SIBERIA} fill="#ffe9a8" stroke={KC.ink} strokeWidth={7} />
-    <path d={BG_AMERICA} fill="#ffe9a8" stroke={KC.ink} strokeWidth={7} />
+    <path d={BG_SIBERIA} fill={BG_TIERRA} stroke={KC.ink} strokeWidth={7} />
+    <path d={BG_AMERICA} fill={BG_TIERRA} stroke={KC.ink} strokeWidth={7} />
     {mexico > 0 && <path d="M 880 1120 Q 905 1210 960 1265 L 1012 1335 L 1040 1318 Q 1000 1235 958 1150 Q 1010 1160 1300 1320 L 1300 1110 Z" fill={KC.orange} opacity={0.55 * mexico} />}
     {ruta > 0 && <polyline points={bgRutaParcial(rutaDesde, ruta)} fill="none" stroke={KC.ink} strokeWidth={9} strokeDasharray="18 14" strokeLinecap="round" strokeDashoffset={-T * 30} />}
     {ruta > 0 && <polyline points={bgRutaParcial(rutaDesde, ruta)} fill="none" stroke="#fff" strokeWidth={4} strokeDasharray="18 14" strokeLinecap="round" strokeDashoffset={-T * 30} />}
@@ -61,6 +63,9 @@ function BallenaGris({ T = 0, flaca = 0, color = '#8b96a1', cria = false }) {
     <path d={`M -196 0 C -212 ${-4 + ola} -228 ${-30 + ola} -250 ${-52 + ola} C -262 ${-44 + ola} -268 ${-30 + ola} -262 ${-20 + ola} C -254 ${-10 + ola} -246 -4 -238 0 C -246 4 -254 ${10 + ola} -262 ${20 + ola} C -268 ${30 + ola} -262 ${44 + ola} -250 ${52 + ola} C -228 ${30 + ola} -212 4 -196 0 Z`} fill={color} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
     <g transform={`scale(1 ${1 - 0.18 * flaca})`}>
       <path d="M 200 2 C 190 -22 150 -38 90 -44 C 30 -50 -40 -46 -95 -34 C -140 -24 -175 -12 -200 -4 L -200 6 C -170 16 -130 30 -80 38 C -10 48 90 46 150 30 C 180 22 196 12 200 2 Z" fill={color} stroke={KC.ink} strokeWidth={6} />
+      {/* belleza: volumen del cuerpo (lomo con luz, vientre en sombra) */}
+      <defs><linearGradient id="balVol" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#fff" stopOpacity=".28" /><stop offset=".45" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#0b1830" stopOpacity=".38" /></linearGradient></defs>
+      <path d="M 196 2 C 186 -20 148 -35 90 -41 C 30 -47 -40 -43 -95 -31 C -140 -21 -173 -10 -196 -3 L -196 5 C -168 14 -128 27 -80 35 C -10 45 90 43 148 27 C 178 20 193 11 196 2 Z" fill="url(#balVol)" />
       {Array.from({ length: 6 }, (_, i) => <circle key={i} cx={-108 - i * 16} cy={-31 + i * 4.4} r={5} fill={color} stroke={KC.ink} strokeWidth={3} />)}
       {!cria && [[40,-30,18,7],[-30,-20,22,8],[-90,6,16,6],[10,18,14,5],[100,-20,10,4]].map(([x, y, rx, ry], i) => <ellipse key={i} cx={x} cy={y} rx={rx} ry={ry} fill="#dfe5ea" opacity=".85" />)}
       {!cria && [[150,-26],[160,-20],[140,-30],[170,-12]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r={5} fill="#f4efe0" stroke={KC.ink} strokeWidth={2} />)}
@@ -98,8 +103,8 @@ function BallenaGrisShot() {
   const K = { G: CUES.Gancho, A: CUES.Artico, Co: CUES.Comida, V: CUES.Viaje, L: CUES.Lagunas, P: CUES.Pregunta, Va: CUES.Varadas, Cr: CUES.Crias, Po: CUES.Poblacion, M: CUES.Misterio, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{c}</svg>;
-  const MAPA = 'translate(60 60) scale(0.85)';                       // mapa completo
-  const bal = (p, s = 0.3) => { const q = bgRutaEn(p); return { x: q.x, y: q.y, ang: q.ang, s }; };
+  const MAPA = 'translate(-240 -10) scale(1.2)';                     // mapa completo: llena el cuadro de arriba abajo
+  const bal = (p, s = 0.42) => { const q = bgRutaEn(p); return { x: q.x, y: q.y, ang: q.ang, s }; };
   // gancho: la ballena baja del Ártico a Baja California mientras se dibuja la ruta
   const pG = kprog(T, K.G + 0.1, K.A - 0.4, kEase.suave);
   // viaje: segunda bajada, rápida
@@ -110,36 +115,38 @@ function BallenaGrisShot() {
   const nCrias = Math.round(85 * kprog(T, K.Cr + 0.5, K.Cr + 5.5));
   // población: 27 íconos (1 = 1,000 ballenas)
   const vivas = T < K.M ? klerp(27, 13, kprog(T, K.Po + 1.6, K.Po + 3.2, kEase.suave)) : klerp(13, 17.75, kprog(T, K.M + 0.3, K.M + 2.2, kEase.suave));
-  const icono = (i, x, y) => { const f = kclamp(vivas - i, 0, 1); return <g key={i} transform={`translate(${x} ${y}) scale(0.19)`} opacity={0.18 + 0.82 * f}><BallenaGris T={T + i} color={f > 0.5 ? '#8b96a1' : '#c9cfd5'} /></g>; };
-  const rejilla = Array.from({ length: 27 }, (_, i) => icono(i, 150 + (i % 9) * 98, 800 + Math.floor(i / 9) * 110));
+  const icono = (i, x, y) => { const f = kclamp(vivas - i, 0, 1); return <g key={i} transform={`translate(${x} ${y}) scale(0.6)`} opacity={0.18 + 0.82 * f}><BallenaGris T={T + i} color={f > 0.5 ? '#8b96a1' : '#c9cfd5'} /></g>; };
+  const rejilla = Array.from({ length: 27 }, (_, i) => icono(i, 210 + (i % 3) * 330, 720 + Math.floor(i / 3) * 86));
+  // la ballena en grande (sujeto del video) nadando en el Pacífico del mapa; flaca 0..1 = desnutrida
+  const granBallena = (flaca = 0, dx = 0, dy = 0) => <g transform={`translate(${450 + dx + Math.sin(T * 0.7) * 12} ${1280 + dy + Math.sin(T * 1.1) * 7}) scale(1.45)`}>{/* belleza: la ballena grande ×1.45 (antes 1.1) */}<BallenaGris T={T} flaca={flaca} color={mixHex('#8b96a1', '#a3acb5', flaca)} /></g>;
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: un año de su vida en un mapa */}
       <Escena T={T} a={K.G} b={K.A}>
         <FondoLunares color={KC.cyan} />
-        {svg(<g transform={MAPA}><Mapa T={T} ruta={pG} ballena={bal(pG)} /></g>)}
+        {svg(<><g transform={MAPA}><Mapa T={T} ruta={pG} ballena={bal(pG)} /></g>{granBallena()}</>)}
         <EscalaFija texto="mapa esquemático" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 2 · el Ártico: mares de Bering y Chukchi */}
       <Escena T={T} a={K.A} b={K.Co}>
         <FondoLunares color={KC.cyan} />
-        {svg(<g transform="translate(420 760) scale(1.9) translate(-410 -330)"><Mapa T={T} comida={kprog(T, K.A + 1.0, K.A + 2.0)} ruta={0.2} ballena={{ x: 395 + Math.sin(T) * 10, y: 455, ang: 0, s: 0.14 }} />
-          <text x={418} y={205} textAnchor="middle" style={{ font:`900 22px ${KF.texto}` }} fill={KC.ink}>Mar de Chukchi</text>
-          <text x={300} y={505} textAnchor="middle" style={{ font:`900 22px ${KF.texto}` }} fill={KC.ink}>Mar de Bering</text></g>)}
+        {svg(<g transform="translate(460 1010) scale(2.3) translate(-410 -340)">{/* belleza (encuadre): el Ártico baja 110 px (estaba ARRIBA) */}<Mapa T={T} comida={kprog(T, K.A + 1.0, K.A + 2.0)} ruta={0.2} ballena={{ x: 395 + Math.sin(T) * 10, y: 455, ang: 0, s: 0.3 }} />
+          <text x={418} y={205} textAnchor="middle" style={{ font:`900 19px ${KF.texto}` }} fill={KC.ink}>Mar de Chukchi</text>
+          <text x={318} y={507} textAnchor="middle" style={{ font:`900 19px ${KF.texto}` }} fill={KC.ink}>Mar de Bering</text></g>)}
         <EscalaFija texto="mapa esquemático" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 3 · cómo come: de lado, lodo del fondo, barbas, anfípodos */}
       <Escena T={T} a={K.Co} b={K.V} zoom={0.03}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#123a5c, #0d1424 70%)' }}></div>
-        {svg(<>
-          <path d="M 0 1000 Q 270 970 540 990 T 1080 985 L 1080 1920 L 0 1920 Z" fill="#6b4a2e" stroke={KC.ink} strokeWidth={6} />
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0c1a2d, #0b101e 70%)' }}></div>
+        {svg(<g transform="translate(0 140)">{/* belleza (encuadre): fondo marino, ballena y lodo bajan 140 px (estaban ARRIBA) */}
+          <path d="M 0 1000 Q 270 970 540 990 T 1080 985 L 1080 1920 L 0 1920 Z" fill="#3a2a1c" stroke={KC.ink} strokeWidth={6} />
           {Array.from({ length: 10 }, (_, i) => <Anfipodo key={i} x={60 + i * 105} y={1030 + (i % 3) * 30} s={0.6} rot={i * 25} o={0.9} />)}
-          <g transform={`translate(640 ${840 + Math.sin(T * 1.5) * 6}) scale(-1.25 ${1.25 * klerp(1, 0.75, kprog(T, K.Co + 0.2, K.Co + 1.2))}) rotate(22)`}><BallenaGris T={T} /></g>
+          <g transform="translate(395 950) scale(1.15) translate(-395 -950)"><g transform={`translate(640 ${840 + Math.sin(T * 1.5) * 6}) scale(-1.25 ${1.25 * klerp(1, 0.75, kprog(T, K.Co + 0.2, K.Co + 1.2))}) rotate(22)`}><BallenaGris T={T} /></g></g>
           {Array.from({ length: 9 }, (_, i) => { const u = ((T - K.Co) * 0.6 + i / 9) % 1; return <circle key={i} cx={400 + Math.sin(i * 2) * 60 + u * 80} cy={985 - u * 160} r={20 + u * 50} fill="#8a6a48" opacity={0.55 * (1 - u)} />; })}
-        </>)}
+        </g>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.texto} />
       </Escena>
-      <Lupa T={T} at={K.Co + 2.0} until={K.V - 0.2} x={300} y={560} r={210} fx={395} fy={950} zoom={6} tinte={KC.yellow} etiqueta="BARBAS"
+      <Lupa T={T} at={K.Co + 2.0} until={K.V - 0.2} x={300} y={690} r={210} fx={395} fy={1090} zoom={6} tinte={KC.yellow} etiqueta="BARBAS"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#1d2b3a" />
           {Array.from({ length: 11 }, (_, i) => <path key={i} d={`M ${30 + i * 36} 0 L ${44 + i * 36} 0 L ${40 + i * 36} ${r * 2 - 40} Q ${34 + i * 36} ${r * 2 - 20} ${28 + i * 36} ${r * 2 - 40} Z`} fill="#e8d7a0" stroke={KC.ink} strokeWidth={3} />)}
           {Array.from({ length: 14 }, (_, i) => { const u = ((t * 0.8 + i / 14) % 1); return <circle key={i} cx={u * r * 2} cy={60 + (i * 53) % (r * 2 - 120)} r={6} fill="#8a6a48" />; })}
@@ -147,16 +154,15 @@ function BallenaGrisShot() {
       {/* 4 · el viaje al sur, pegada a la costa */}
       <Escena T={T} a={K.V} b={K.L}>
         <FondoLunares color={KC.cyan} />
-        {svg(<g transform={MAPA}><Mapa T={T} ruta={pV} ballena={bal(pV)} /></g>)}
+        {svg(<><g transform={MAPA}><Mapa T={T} ruta={pV} ballena={bal(pV)} /></g>{granBallena()}</>)}
         <EscalaFija texto="mapa esquemático" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 5 · las lagunas de Baja California Sur */}
       <Escena T={T} a={K.L} b={K.P}>
         <FondoLunares color={KC.cyan} />
         {svg(<><g transform="translate(600 800) scale(2.6) translate(-930 -1230)"><Mapa T={T} ruta={1} rutaDesde={0.7} lagunas={kprog(T, K.L + 0.4, K.L + 2.6)} /></g>
-          <g opacity={kprog(T, K.L + 2.8, K.L + 3.4)}>
-            <g transform={`translate(${300 + Math.sin(T) * 12} 1060) scale(0.5)`}><BallenaGris T={T} /></g>
-            <g transform={`translate(${430 + Math.sin(T + 1) * 12} 1100) scale(0.22)`}><BallenaGris T={T + 1} cria color="#6f7a85" /></g></g></>)}
+          {granBallena()}
+          <g opacity={kprog(T, K.L + 2.8, K.L + 3.4)} transform={`translate(${560 + Math.sin(T * 0.7 + 0.6) * 12} ${1412 + Math.sin(T * 1.1 + 0.6) * 7}) scale(0.45)`}><BallenaGris T={T + 1} cria color="#6f7a85" /></g></>)}
         <EscalaFija texto="mapa esquemático" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 6 · pregunta */}
@@ -169,19 +175,19 @@ function BallenaGrisShot() {
       <Escena T={T} a={K.Va} b={K.Cr}>
         <FondoLunares color={KC.cyan} />
         {svg(<><g transform={MAPA}><Mapa T={T} gris={0.7} ruta={1} puntos={kprog(T, K.Va + 0.4, K.Va + 3.0)} mexico={kprog(T, K.Va + 3.2, K.Va + 3.8)} /></g>
-          <g opacity={kprog(T, K.Va + 4.0, K.Va + 4.6)} transform="translate(300 1110) scale(0.42)"><BallenaGris T={0} flaca={1} color="#a3acb5" /></g></>)}
+          {granBallena(kprog(T, K.Va + 4.0, K.Va + 4.8, kEase.suave), -50, -20)}</>)}
         <EscalaFija texto="mapa esquemático · 1 punto = 10 ballenas" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 8 · 85 crías frente al faro (centro de California, 2025) */}
       <Escena T={T} a={K.Cr} b={K.Po}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <path d="M 760 0 Q 720 400 780 760 Q 820 1000 760 1300 L 1080 1300 L 1080 0 Z" fill="#ffe9a8" stroke={KC.ink} strokeWidth={7} />
-          <Faro x={850} y={900} T={T} />
-          {Array.from({ length: 4 }, (_, i) => { const u = ((T - K.Cr) * 0.32 + i / 4) % 1, yy = 1300 - u * 1200;
-            return T > K.Cr + 0.3 && <g key={i} opacity={Math.min(1, u * 6, (1 - u) * 6)}>
-              <g transform={`translate(500 ${yy}) rotate(-90) scale(0.4)`}><BallenaGris T={T + i} /></g>
-              <g transform={`translate(575 ${yy + 70}) rotate(-90) scale(0.18)`}><BallenaGris T={T + i} cria color="#6f7a85" /></g></g>; })}
+          <path d="M 850 -20 Q 810 400 870 760 Q 910 1000 850 1300 Q 820 1620 880 1940 L 1100 1940 L 1100 -20 Z" fill={BG_TIERRA} stroke={KC.ink} strokeWidth={7} />
+          <g transform="translate(955 900) scale(1.5)"><Faro x={0} y={0} T={T} /></g>
+          {Array.from({ length: 3 }, (_, i) => { const u = ((T - K.Cr) * 0.26 + 0.12 + i / 3) % 1, yy = 1560 - u * 1700;
+            return <g key={i} opacity={Math.min(1, u * 8, (1 - u) * 8)}>
+              <g transform={`translate(560 ${yy}) rotate(-90) scale(0.7)`}><BallenaGris T={T + i} /></g>
+              <g transform={`translate(668 ${yy + 120}) rotate(-90) scale(0.32)`}><BallenaGris T={T + i} cria color="#6f7a85" /></g></g>; })}
         </>)}
         <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
       </Escena>
@@ -198,37 +204,37 @@ function BallenaGrisShot() {
       {/* 11 · cierre: el mismo mapa, ruta completa y un Ártico lleno de comida */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
-        {svg(<g transform={MAPA}><Mapa T={T} ruta={1} comida={kprog(T, K.C + 0.8, K.C + 2.2)} lagunas={1} ballena={bal(pC)} /></g>)}
+        {svg(<><g transform={MAPA}><Mapa T={T} ruta={1} comida={kprog(T, K.C + 0.8, K.C + 2.2)} lagunas={1} ballena={bal(pC)} /></g>{granBallena()}</>)}
         <EscalaFija texto="mapa esquemático" largo={0} y={1480} color={KC.ink} />
       </Escena>
 
       {/* datos y etiquetas */}
       <NumeroGigante T={T} at={K.G + 0.8} until={K.A - 0.2} valor={16000} dur={4} etiqueta="ida y vuelta:" sufijo=" km" x={330} y={880} tam={96} color={KC.yellow} />
-      <Chip T={T} at={K.G + 0.3} until={K.A - 0.2} texto="1 año de ballena gris" y={1130} x={330} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.G + 0.3} until={K.A - 0.2} texto="1 año de ballena gris" y={1075} x={330} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.A + 0.3} until={K.Co - 0.2} texto="verano: a comer en el Ártico" y={300} x={560} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.A + 1.4} until={K.Co - 0.2} x={140} y={1130} texto="anfípodos" lado="der" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.A + 1.4} until={K.Co - 0.2} x={300} y={735} texto="anfípodos" lado="izq" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Co + 0.3} until={K.V - 0.2} texto="se pone de lado y chupa lodo" y={300} x={540} tam={32} borde={KC.yellow} />
-      <Chip T={T} at={K.Co + 2.6} until={K.V - 0.2} texto="130 a 180 barbas por lado" y={830} x={300} tam={26} borde={KC.yellow} />
-      <Etq T={T} at={K.Co + 3.2} until={K.V - 0.2} x={130} y={1100} texto="anfípodos (crustáceos)" lado="der" tam={30} color={KC.texto} />
-      <Chip T={T} at={K.V + 0.3} until={K.L - 0.2} texto="del Ártico a Baja California Sur" y={1130} x={380} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Co + 2.6} until={K.V - 0.2} texto="130 a 180 barbas por lado" y={430} x={300} tam={26} borde={KC.yellow} />
+      <Etq T={T} at={K.Co + 3.2} until={K.V - 0.2} x={290} y={1278} texto="anfípodos (crustáceos)" lado="der" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.V + 0.3} until={K.L - 0.2} texto="del Ártico a Baja California Sur" y={1075} x={380} tam={30} borde={KC.ink} />
       {BG_LAGUNAS.map((l, i) => { const sx = 600 + 2.6 * (l.x - 930), sy = 800 + 2.6 * (l.y - 1230);
         return <Etq key={i} T={T} at={K.L + 0.6 + i * 0.7} until={K.P - 0.2} x={sx - 24} y={sy} texto={l.n} lado="izq" tam={32} color={KC.ink} />; })}
       <Chip T={T} at={K.L + 3.0} until={K.P - 0.2} texto="enero y febrero: nacen las crías" y={300} x={480} tam={30} borde={KC.pink} />
       <Chip T={T} at={K.Va + 0.3} until={K.Cr - 0.2} texto="2019–2023 · mortandad inusual (NOAA)" y={300} x={560} tam={26} borde={KC.red} />
       <NumeroGigante T={T} at={K.Va + 0.4} until={K.Cr - 0.2} valor={690} dur={2.6} etiqueta="varadas:" x={330} y={860} tam={130} color={KC.red} />
-      <Etq T={T} at={K.Va + 3.4} until={K.Cr - 0.2} x={830} y={1060} texto="316 en México" lado="izq" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Va + 4.2} until={K.Cr - 0.2} x={420} y={1180} texto="muchas de las revisadas: desnutrición" lado="der" tam={22} color={KC.ink} />
-      <NumeroGigante T={T} at={K.Cr + 0.5} until={K.Po - 0.2} valor={nCrias} desde={nCrias} dur={0.01} etiqueta="crías estimadas, 2025:" x={300} y={560} tam={200} color={KC.yellow} />
-      <Etq T={T} at={K.Cr + 1.0} until={K.Po - 0.2} x={1060} y={1090} texto="centro de California" lado="izq" tam={24} color={KC.ink} />
-      <Chip T={T} at={K.Cr + 4.0} until={K.Po - 0.2} texto="lo más bajo desde 1994" y={860} x={300} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.Cr + 5.0} until={K.Po - 0.2} texto="rango estimado: 56 a 294" y={960} x={300} tam={24} borde={KC.ink} mono />
-      <NumeroGigante T={T} at={K.Po + 0.2} until={K.Po + 1.6} valor={27000} desde={27000} dur={0.01} prefijo="≈" etiqueta="hacia 2016:" x={640} y={500} tam={150} color={KC.yellow} />
-      <NumeroGigante T={T} at={K.Po + 1.6} until={K.M - 0.2} valor={13000} desde={27000} dur={1.6} prefijo="≈" etiqueta="2025:" x={640} y={500} tam={150} color={KC.red} />
-      <Etq T={T} at={K.Po + 0.6} until={K.C - 0.2} x={140} y={1095} texto="1 ícono = 1,000 ballenas" lado="der" tam={26} color={KC.ink} />
-      <NumeroGigante T={T} at={K.M + 0.2} until={K.C - 0.2} valor={17750} desde={13000} dur={2.0} prefijo="≈" etiqueta="2026:" x={400} y={500} tam={150} color={KC.mint} />
-      <Chip T={T} at={K.M + 2.8} until={K.C - 0.2} texto="al parecer, más de lo que explican sus crías" y={700} x={420} tam={26} borde={KC.ink} />
-      <Chip T={T} at={K.M + 4.0} until={K.C - 0.2} texto="pregunta abierta (NOAA, jul 2026)" y={300} x={480} tam={26} borde={KC.yellow} />
-      <Chip T={T} at={K.C + 0.4} until={K.Ou - 0.1} texto="16,000 km · un Ártico con comida" y={1130} x={420} tam={30} borde={KC.ink} />
+      <Etq T={T} at={K.Va + 3.4} until={K.Cr - 0.2} x={860} y={1415} texto="316 en México" lado="izq" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Va + 4.2} until={K.Cr - 0.2} x={90} y={1175} texto="muchas de las revisadas: desnutrición" lado="der" tam={22} color={KC.ink} />
+      <NumeroGigante T={T} at={K.Cr + 0.5} until={K.Po - 0.2} valor={nCrias} desde={nCrias} dur={0.01} etiqueta="crías estimadas, 2025:" x={255} y={520} tam={180} color={KC.yellow} />
+      <Etq T={T} at={K.Cr + 1.0} until={K.Po - 0.2} x={1060} y={1215} texto="centro de California" lado="izq" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.Cr + 4.0} until={K.Po - 0.2} texto="lo más bajo desde 1994" y={860} x={255} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.Cr + 5.0} until={K.Po - 0.2} texto="rango estimado: 56 a 294" y={960} x={255} tam={24} borde={KC.ink} mono />
+      <NumeroGigante T={T} at={K.Po + 0.2} until={K.Po + 1.6} valor={27000} desde={27000} dur={0.01} prefijo="≈" etiqueta="hacia 2016:" x={540} y={430} tam={150} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.Po + 1.6} until={K.M - 0.2} valor={13000} desde={27000} dur={1.6} prefijo="≈" etiqueta="2025:" x={540} y={430} tam={150} color={KC.red} />
+      <Etq T={T} at={K.Po + 0.6} until={K.C - 0.2} x={140} y={1482} texto="1 ícono = 1,000 ballenas" lado="der" tam={26} color={KC.ink} />
+      <NumeroGigante T={T} at={K.M + 0.2} until={K.C - 0.2} valor={17750} desde={13000} dur={2.0} prefijo="≈" etiqueta="2026:" x={540} y={430} tam={150} color={KC.mint} />
+      <Chip T={T} at={K.M + 2.8} until={K.C - 0.2} texto="al parecer, más de lo que explican sus crías" y={612} x={540} tam={26} borde={KC.ink} />
+      <Chip T={T} at={K.M + 4.0} until={K.C - 0.2} texto="pregunta abierta (NOAA, jul 2026)" y={250} x={540} tam={26} borde={KC.yellow} />
+      <Chip T={T} at={K.C + 0.4} until={K.Ou - 0.1} texto="16,000 km · un Ártico con comida" y={1075} x={420} tam={30} borde={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.A - 0.1} texto="Un año de ballena gris: *16,000 km.*" />

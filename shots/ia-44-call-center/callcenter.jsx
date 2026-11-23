@@ -285,6 +285,7 @@ function CallCenter() {
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.M} zoom={0.1}>
         <FondoLunares color={KC.orange} />
+        {svg(<g opacity={0.8} transform="translate(540 1330) scale(1.7)"><Cubiculo x={0} y={0} T={T} quien="nuevo" pend={0} calma={1} robot={1} /></g>)}
         {svg(<text x={540} y={1140} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 960)`}>?</text>)}
       </Escena>
 
@@ -328,6 +329,8 @@ function CallCenter() {
       <Escena T={T} a={K.Cl} b={K.Co}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
+          {/* el sujeto sigue en cuadro: el cubículo del novato con su IA, atenuado detrás de las tarjetas */}
+          <g opacity={0.28} transform="translate(540 1380) scale(1.55) translate(-290 -1110)"><Cubiculo x={290} y={1110} T={T} quien="nuevo" pend={0} calma={1} robot={1} /></g>
           <TarjetaCli T={T} at={K.Cl + 0.2} x={290} y={720} k={1.3} titulo={['clientes', 'más amables']}><CaraCliente T={T} u={kprog(T, K.Cl + 0.8, K.Cl + 1.6, kEase.sale)} /></TarjetaCli>
           <TarjetaCli T={T} at={K.Cl + 1.6} x={790} y={720} k={1.3} titulo={['menos piden', 'al supervisor']}><Supervisor T={T} u={kprog(T, K.Cl + 2.4, K.Cl + 2.9, kEase.sale)} /></TarjetaCli>
           <TarjetaCli T={T} at={K.Cl + 3.2} x={540} y={1225} k={1.3} titulo={['menos novatos', 'renuncian']}><Puerta T={T} at={K.Cl + 3.4} /></TarjetaCli>

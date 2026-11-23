@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #55 · Seis semanas con un tutor de IA que valieron como hasta dos años de escuela — NARRADO (N2 "El número" + N5).
 // Datos: De Simone et al., "From Chalkboards to Chatbots", World Bank Policy Research Working Paper 11125 (2025; piloto de 2024
 // en Benin City, Nigeria) y blog del Banco Mundial (9 ene 2025). Ver guion.md y verificacion.md. Dibujos esquemáticos.
@@ -154,153 +155,170 @@ function Tutor() {
   const bolas = Array.from({ length: 12 }, (_, i) => ({ t: K.So + 0.5 + i * 0.16, izq: i % 2 === 0, i }));
   // 10 programas (barras grises, esquemáticas) y la línea del piloto por encima de 8
   const alturas = [60, 85, 105, 120, 140, 160, 185, 210, 300, 360];
+  // pase a mano cine: el calendario llena el cuadro y se recoge hacia arriba cuando entra el número
+  const calG = kprog(T, K.G + 4.2, K.G + 4.9, kEase.suave);
+  // en «Equivalencia» el calendario empieza grande y se hace a un lado cuando entran las barras
+  const calE = kprog(T, K.E + 1.75, K.E + 2.3, kEase.suave);
+  const visPe = kprog(T, K.Pe - 0.45, K.Pe + 0.05) * (1 - kprog(T, K.Ch - 0.05, K.Ch + 0.45));
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: 6 semanas de tardes que se tachan */}
       <Escena T={T} a={K.G} b={K.L}>
         <FondoLunares color={KC.yellow} />
-        {svgT(<Calendario x={330} y={720} s={1} tachados={30 * kprog(T, K.G + 0.05, K.G + 3.6, kEase.suave)} />)}
+        {svgT(<Calendario x={540} y={klerp(1030, 860, calG)} s={klerp(1.75, 1.05, calG)} tachados={30 * kprog(T, K.G + 0.05, K.G + 3.6, kEase.suave)} />)}
       </Escena>
-      <Chip T={T} at={K.G + 4.7} until={K.L - 0.2} texto="6 semanas =" x={800} y={430} tam={44} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.G + 5.0} until={K.L - 0.2} valor={2} dur={0.6} prefijo="≈" sufijo=" años*" etiqueta="hasta" x={800} y={650} tam={130} color={KC.mint} />
-      <Chip T={T} at={K.G + 5.6} until={K.L - 0.2} texto="*equivalencia estimada · investigadores del Banco Mundial" x={540} y={1070} tam={27} borde={KC.ink} />
+      <Chip T={T} at={K.G + 4.7} until={K.L - 0.2} texto="6 semanas =" x={540} y={1200} tam={44} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.G + 5.0} until={K.L - 0.2} valor={2} dur={0.6} prefijo="≈" sufijo=" años*" etiqueta="hasta" x={540} y={1375} tam={220} color={KC.mint} />
+      <Chip T={T} at={K.G + 5.6} until={K.L - 0.2} texto="*equivalencia estimada · investigadores del Banco Mundial" x={540} y={1540} tam={27} borde={KC.ink} />
 
       {/* 1 · lugar */}
       <Escena T={T} a={K.L} b={K.S}>
         <FondoLunares color={KC.mint} />
         {svgT(<>
-          <MapaAfrica T={T} x={330} y={740} k={8} pin={kprog(T, K.L + 0.4, K.L + 0.9, kEase.rebote)} />
-          {Array.from({ length: 9 }, (_, i) => <Escuela key={i} x={120 + i * 105} y={1120} s={0.95} o={kprog(T, K.L + 3.0 + i * 0.12, K.L + 3.3 + i * 0.12)} />)}
+          <MapaAfrica T={T} x={540} y={880} k={12} pin={kprog(T, K.L + 0.4, K.L + 0.9, kEase.rebote)} />
+          {Array.from({ length: 9 }, (_, i) => <Escuela key={i} x={124 + i * 104} y={1420} s={1} o={kprog(T, K.L + 3.0 + i * 0.12, K.L + 3.3 + i * 0.12)} />)}
         </>)}
       </Escena>
-      <Chip T={T} at={K.L + 0.8} until={K.S - 0.2} texto="Benin City, Nigeria" x={800} y={770} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.L + 1.5} until={K.S - 0.2} texto="junio–julio 2024" x={800} y={870} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.L + 2.3} until={K.S - 0.2} texto="1.º de prepa · ~15 años" x={790} y={970} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.L + 3.6} until={K.S - 0.2} texto="9 escuelas públicas" x={540} y={1210} tam={36} borde={KC.leaf} />
+      <Chip T={T} at={K.L + 0.8} until={K.S - 0.2} texto="Benin City, Nigeria" x={235} y={1005} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.L + 1.5} until={K.S - 0.2} texto="junio–julio 2024" x={235} y={1098} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.L + 2.3} until={K.S - 0.2} texto="1.º de prepa · ~15 años" x={235} y={1190} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.L + 3.6} until={K.S - 0.2} texto="9 escuelas públicas" x={540} y={1540} tam={36} borde={KC.leaf} />
 
       {/* 2 · sesiones en el laboratorio */}
       <Escena T={T} a={K.S} b={K.M}>
         <FondoLunares color={KC.cyan} />
         {svgT(<>
-          <Alumno x={480} y={1060} s={0.9} seed={1} T={T} />
-          <Alumno x={720} y={1060} s={0.9} seed={2} chica T={T} />
+          <Alumno x={390} y={1290} s={1.5} seed={1} T={T} />
+          <Alumno x={690} y={1290} s={1.5} seed={2} chica T={T} />
         </>, 25)}
       </Escena>
       {T > K.S - 0.45 && T < K.M + 0.45 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.S - 0.45, K.S + 0.05) * (1 - kprog(T, K.M - 0.05, K.M + 0.45)) }}>
-        <Monitor T={T} x={630} y={750} mensajes={[
+        <Monitor T={T} x={540} y={800} s={1.5} mensajes={[
           { at: K.S + 0.8, yo: true, texto: 'Ayúdame a practicar el pasado en inglés' },
           { at: K.S + 2.2, yo: false, texto: '¡Claro! Completa: «Yesterday I ___ (go) to school».' },
           { at: K.S + 3.8, yo: true, texto: 'went' }]} />
       </div>}
-      <Chip T={T} at={K.S + 0.3} until={K.M - 0.2} texto="hasta 12 sesiones × 90 min" x={600} y={410} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.S + 2.6} until={K.M - 0.2} texto="en parejas · 2 por semana" x={600} y={475} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.S + 4.0} until={K.M - 0.2} texto="diálogo ilustrativo" x={800} y={985} tam={24} borde={KC.texto} />
+      <Chip T={T} at={K.S + 0.3} until={K.M - 0.2} texto="hasta 12 sesiones × 90 min" x={540} y={300} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.S + 2.6} until={K.M - 0.2} texto="en parejas · 2 por semana" x={540} y={385} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.S + 4.0} until={K.M - 0.2} texto="diálogo ilustrativo" x={850} y={1150} tam={24} borde={KC.texto} />
 
       {/* 3 · los maestros guían */}
       <Escena T={T} a={K.M} b={K.So}>
         <FondoLunares color={KC.orange} />
         {svgT(<>
-          <rect x={90} y={360} width={900} height={300} rx={18} fill="#1f4d3a" stroke="#7a4a2a" strokeWidth={22} />
-          <text x={130} y={450} style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto}>{'Instrucción 1:'.slice(0, Math.round(14 * kprog(T, K.M + 0.2, K.M + 0.9)))}</text>
-          <text x={130} y={510} style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>{'«Pídele a Copilot que te ponga'.slice(0, Math.round(30 * kprog(T, K.M + 0.8, K.M + 1.8)))}</text>
-          <text x={130} y={560} style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>{'ejercicios de este tema.»'.slice(0, Math.round(25 * kprog(T, K.M + 1.8, K.M + 2.6)))}</text>
-          {[0, 1, 2].map((i) => <g key={i}><rect x={110 + i * 310} y={1040} width={240} height={30} rx={6} fill="#9b6a3c" stroke={KC.ink} strokeWidth={5} />
-            <rect x={160 + i * 310} y={960} width={140} height={84} rx={8} fill="#10131a" stroke={KC.ink} strokeWidth={5} /></g>)}
-          <path d="M 200 900 Q 540 760 880 900" stroke={KC.ink} strokeWidth={5} strokeDasharray="14 14" fill="none" opacity={kprog(T, K.M + 1.2, K.M + 1.6)} />
-          <Maestra x={klerp(200, 860, kprog(T, K.M + 1.0, K.So + 0.2, kEase.suave))} y={790} s={0.62} T={T} camina={T > K.M + 1 ? 1 : 0} />
+          <rect x={90} y={400} width={900} height={300} rx={18} fill="#1f4d3a" stroke="#7a4a2a" strokeWidth={22} />
+          <text x={130} y={490} style={{ font:`700 44px ${KF.mono}` }} fill={KC.texto}>{'Instrucción 1:'.slice(0, Math.round(14 * kprog(T, K.M + 0.2, K.M + 0.9)))}</text>
+          <text x={130} y={570} style={{ font:`700 38px ${KF.mono}` }} fill={KC.texto}>{'«Pídele a Copilot que te ponga'.slice(0, Math.round(30 * kprog(T, K.M + 0.8, K.M + 1.8)))}</text>
+          <text x={130} y={632} style={{ font:`700 38px ${KF.mono}` }} fill={KC.texto}>{'ejercicios de este tema.»'.slice(0, Math.round(25 * kprog(T, K.M + 1.8, K.M + 2.6)))}</text>
+          {[0, 1, 2].map((i) => <g key={i}><rect x={110 + i * 310} y={1330} width={240} height={34} rx={6} fill="#9b6a3c" stroke={KC.ink} strokeWidth={5} />
+            <rect x={140 + i * 310} y={1224} width={180} height={108} rx={8} fill="#10131a" stroke={KC.ink} strokeWidth={5} /></g>)}
+          <path d="M 200 1090 Q 540 950 880 1090" stroke={KC.ink} strokeWidth={5} strokeDasharray="14 14" fill="none" opacity={kprog(T, K.M + 1.2, K.M + 1.6)} />
+          <Maestra x={klerp(200, 860, kprog(T, K.M + 1.0, K.So + 0.2, kEase.suave))} y={950} s={1} T={T} camina={T > K.M + 1 ? 1 : 0} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.M + 2.4} until={K.So - 0.2} texto="la maestra guía, no da la clase" x={600} y={300} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.M + 2.4} until={K.So - 0.2} texto="la maestra guía, no da la clase" x={540} y={310} tam={36} borde={KC.ink} />
 
       {/* 4 · sorteo y mismo examen */}
       <Escena T={T} a={K.So} b={K.P}>
         <FondoLunares color={KC.pink} />
         {svgT(<>
-          <Tombola x={420} y={560} T={T} gira={T < K.So + 2.6 ? 1 : 0.2} />
+          <g transform="translate(540 640) scale(1.8)"><Tombola x={0} y={0} T={T} gira={T < K.So + 2.6 ? 1 : 0.2} /></g>
           {bolas.map((b) => { if (T < b.t) return null; const u = kprog(T, b.t, b.t + 0.5, kEase.suave);
-            const x0 = 420, y0 = 690, x1 = b.izq ? 220 + (b.i % 6) * 18 : 640 + (b.i % 6) * 18, y1 = 940;
-            return <circle key={b.i} cx={klerp(x0, x1, u)} cy={klerp(y0, y1, u) - Math.sin(u * Math.PI) * 60} r={18} fill={b.izq ? KC.cyan : KC.yellow} stroke={KC.ink} strokeWidth={4} />; })}
-          <rect x={120} y={960} width={340} height={110} rx={18} fill={KC.cyan} stroke={KC.ink} strokeWidth={7} />
-          <rect x={560} y={960} width={340} height={110} rx={18} fill={KC.yellow} stroke={KC.ink} strokeWidth={7} />
-          <text x={290} y={1010} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>con tutor de IA</text>
-          <text x={730} y={1010} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>clases normales</text>
+            const x0 = 540, y0 = 880, x1 = b.izq ? 200 + (b.i % 6) * 36 : 700 + (b.i % 6) * 36, y1 = 1172;
+            return <circle key={b.i} cx={klerp(x0, x1, u)} cy={klerp(y0, y1, u) - Math.sin(u * Math.PI) * 60} r={26} fill={b.izq ? KC.cyan : KC.yellow} stroke={KC.ink} strokeWidth={4} />; })}
+          <rect x={80} y={1200} width={420} height={170} rx={18} fill={KC.cyan} stroke={KC.ink} strokeWidth={7} />
+          <rect x={580} y={1200} width={420} height={170} rx={18} fill={KC.yellow} stroke={KC.ink} strokeWidth={7} />
+          <text x={290} y={1268} textAnchor="middle" style={{ font:`900 42px ${KF.texto}` }} fill="#0b1020">con tutor de IA</text>
+          <text x={790} y={1268} textAnchor="middle" style={{ font:`900 42px ${KF.texto}` }} fill="#0b1020">clases normales</text>
           {[0, 1, 2].map((i) => <g key={i}>
-            <Examen x={210 + i * 80} y={1050 + 0 * i} s={0.6} o={kprog(T, K.So + 2.6 + i * 0.1, K.So + 2.9 + i * 0.1)} />
-            <Examen x={650 + i * 80} y={1050} s={0.6} o={kprog(T, K.So + 2.6 + i * 0.1, K.So + 2.9 + i * 0.1)} /></g>)}
+            <Examen x={190 + i * 100} y={1360} s={1} o={kprog(T, K.So + 2.6 + i * 0.1, K.So + 2.9 + i * 0.1)} />
+            <Examen x={690 + i * 100} y={1360} s={1} o={kprog(T, K.So + 2.6 + i * 0.1, K.So + 2.9 + i * 0.1)} /></g>)}
         </>)}
       </Escena>
-      <Chip T={T} at={K.So + 0.3} until={K.So + 2.5} texto="por sorteo" x={420} y={360} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.So + 2.7} until={K.P - 0.15} texto="el mismo examen" x={420} y={360} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.So + 0.3} until={K.So + 2.5} texto="por sorteo" x={540} y={320} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.So + 2.7} until={K.P - 0.15} texto="el mismo examen" x={540} y={320} tam={40} borde={KC.ink} />
 
       {/* 5 · re-gancho */}
       <Escena T={T} a={K.P} b={K.R} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svgT(<text x={290} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 900)`}>?</text>)}
+        {svgT(<text x={540} y={1130} textAnchor="middle" style={{ font:`400 620px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 920)`}>?</text>)}
       </Escena>
 
       {/* 6 · resultado */}
-      <Escena T={T} a={K.R} b={K.E}>
+      <Escena T={T} a={K.R} b={K.E - 0.5}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svgT(<>
-          <line x1={90} y1={1120} x2={990} y2={1120} stroke={KC.ink} strokeWidth={6} />
-          {alturas.map((h, i) => { const g = kprog(T, K.R + 1.6 + i * 0.08, K.R + 2.2 + i * 0.08, kEase.sale), abajo = i < 8 && T > K.R + 3.4;
-            return <rect key={i} x={110 + i * 88} y={1120 - h * g} width={64} height={h * g} rx={6} fill={abajo ? '#9aa0ab' : (i < 8 ? '#c9ccd3' : '#c9ccd3')} stroke={KC.ink} strokeWidth={4} />; })}
+          <line x1={90} y1={1400} x2={990} y2={1400} stroke={KC.ink} strokeWidth={6} />
+          {alturas.map((h0, i) => { const h = h0 * 1.9; const g = kprog(T, K.R - 0.2 + i * 0.12, K.R + 0.8 + i * 0.12, kEase.sale), abajo = i < 8 && T > K.R + 3.4;
+            return <rect key={i} x={110 + i * 88} y={1400 - h * g} width={64} height={h * g} rx={6} fill={abajo ? '#9aa0ab' : (i < 8 ? '#c9ccd3' : '#c9ccd3')} stroke={KC.ink} strokeWidth={4} />; })}
           {T > K.R + 2.8 && <g opacity={kprog(T, K.R + 2.8, K.R + 3.2)}>
-            <line x1={90} y1={900} x2={90 + 900 * kprog(T, K.R + 2.8, K.R + 3.5, kEase.sale)} y2={900} stroke={KC.gold} strokeWidth={12} strokeLinecap="round" />
-            <text x={980} y={880} textAnchor="end" style={{ font:`900 32px ${KF.texto}` }} fill={KC.ink}>el piloto</text>
+            <line x1={90} y1={982} x2={90 + 900 * kprog(T, K.R + 2.8, K.R + 3.5, kEase.sale)} y2={982} stroke={KC.gold} strokeWidth={12} strokeLinecap="round" />
+            <text x={800} y={955} textAnchor="end" style={{ font:`900 42px ${KF.texto}` }} fill={KC.gold}>el piloto</text>
           </g>}
-          {T > K.R + 3.4 && <text x={380} y={870} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.R + 3.4, K.R + 3.8)}>8 de 10 quedan abajo</text>}
+          {T > K.R + 3.4 && <text x={380} y={1050} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.R + 3.4, K.R + 3.8)}>8 de 10 quedan abajo</text>}
         </>)}
       </Escena>
-      <NumeroGigante T={T} at={K.R + 0.2} until={K.E - 0.2} valor={0.31} dec={2} prefijo="+" sufijo=" σ" etiqueta="" x={420} y={470} tam={170} color={KC.gold2} />
-      <Chip T={T} at={K.R + 0.7} until={K.E - 0.2} texto="examen completo · inglés: +0.23 σ" x={420} y={630} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.R + 2.0} until={K.E - 0.2} texto="programas probados con sorteo · países de ingreso bajo y medio (esquemático)" x={540} y={740} tam={22} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.R + 0.2} until={K.E - 0.6} valor={0.31} dec={2} prefijo="+" sufijo=" σ" etiqueta="" x={540} y={400} tam={190} color={KC.gold2} />
+      <Chip T={T} at={K.R + 0.7} until={K.E - 0.6} texto="examen completo · inglés: +0.23 σ" x={540} y={560} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.R + 2.0} until={K.E - 0.6} texto="programas probados con sorteo · países de ingreso bajo y medio (esquemático)" x={540} y={1475} tam={22} borde={KC.ink} />
 
       {/* 7 · la equivalencia */}
-      <Escena T={T} a={K.E} b={K.Pe}>
+      <Escena T={T} a={K.E} b={K.Pe - 0.5}>
         <FondoLunares color={KC.yellow} />
+        {svgT(<Calendario x={klerp(540, 780, calE)} y={klerp(1140, 800, calE)} s={klerp(1.45, 0.92, calE)} tachados={30} />)}
       </Escena>
-      <MitoTachado T={T} at={K.E + 0.2} tacharEn={K.E + 1.2} until={K.E + 3.0} texto="«aprendieron 2 años de temario»" y={430} tam={40} />
-      <NumeroGigante T={T} at={K.E + 0.4} until={K.E + 1.8} valor={2} dur={0.5} sufijo=" años" etiqueta="¿de temario?" x={540} y={800} tam={200} color={KC.red} />
-      <BarraTiempo T={T} at={K.E + 2.0} until={K.Pe - 0.2} x={90} y={570} ancho={70} color={KC.gold2} etiqueta="piloto con tutor de IA" valor="6 semanas" />
-      <BarraTiempo T={T} at={K.E + 3.2} until={K.Pe - 0.2} x={90} y={770} ancho={760} color={KC.mint} etiqueta="mejora equivalente a…" valor="" dur={1.6} />
-      <Chip T={T} at={K.E + 4.6} until={K.Pe - 0.2} texto="1.5 a 2 años de escuela normal en Nigeria" x={540} y={990} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.E + 5.2} until={K.Pe - 0.2} texto="equivalencia estimada (método EYOS)" x={540} y={1100} tam={28} borde={KC.ink} />
+      <MitoTachado T={T} at={K.E + 0.2} tacharEn={K.E + 1.2} until={K.E + 3.0} texto="«aprendieron 2 años de temario»" y={270} tam={40} />
+      <NumeroGigante T={T} at={K.E + 0.4} until={K.E + 1.8} valor={2} dur={0.5} sufijo=" años" etiqueta="¿de temario?" x={540} y={455} tam={170} color={KC.red} />
+      <BarraTiempo T={T} at={K.E + 2.0} until={K.Pe - 0.6} x={70} y={700} ancho={70} color={KC.gold2} etiqueta="piloto con tutor de IA" valor="6 semanas" />
+      <BarraTiempo T={T} at={K.E + 3.2} until={K.Pe - 0.6} x={70} y={1170} ancho={760} color={KC.mint} etiqueta="mejora equivalente a…" valor="" dur={1.6} />
+      <Chip T={T} at={K.E + 4.6} until={K.Pe - 0.6} texto="1.5 a 2 años de escuela normal en Nigeria" x={540} y={1380} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.E + 5.2} until={K.Pe - 0.6} texto="equivalencia estimada (método EYOS)" x={540} y={1470} tam={28} borde={KC.ink} />
 
       {/* 8 · los peros */}
       <Escena T={T} a={K.Pe} b={K.Ch}>
         <FondoLunares color={KC.cyan} />
+        {svgT(<g opacity={0.6}>
+          <Alumno x={410} y={1385} s={1.2} seed={1} T={T} />
+          <Alumno x={670} y={1385} s={1.2} seed={2} chica T={T} />
+        </g>, 25)}
       </Escena>
-      <Nota T={T} at={K.Pe + 0.9} texto="Piloto: 1 ciudad, 6 semanas" until={K.Ch - 0.2} x={400} y={500} rot={-3} color={KC.yellow} ancho={580} />
-      <Nota T={T} at={K.Pe + 2.0} texto="El otro grupo: sin horas extra" until={K.Ch - 0.2} x={420} y={730} rot={2} color={KC.pink} ancho={600} />
-      <Nota T={T} at={K.Pe + 3.4} texto="¿Dura? Aún no se sabe" until={K.Ch - 0.2} x={400} y={960} rot={-2} color={KC.mint} ancho={580} />
+      {visPe > 0 && <div style={{ position:'absolute', inset:0, opacity:visPe * 0.6 }}>
+        <Monitor T={T} x={540} y={1030} s={1.1} mensajes={[
+          { at: K.S + 0.8, yo: true, texto: 'Ayúdame a practicar el pasado en inglés' },
+          { at: K.S + 2.2, yo: false, texto: '¡Claro! Completa: «Yesterday I ___ (go) to school».' },
+          { at: K.S + 3.8, yo: true, texto: 'went' }]} />
+      </div>}
+      <Nota T={T} at={K.Pe + 0.9} texto="Piloto: 1 ciudad, 6 semanas" until={K.Ch - 0.2} x={540} y={340} rot={-2} color={KC.yellow} ancho={780} />
+      <Nota T={T} at={K.Pe + 2.0} texto="El otro grupo: sin horas extra" until={K.Ch - 0.2} x={540} y={500} rot={1.5} color={KC.pink} ancho={780} />
+      <Nota T={T} at={K.Pe + 3.4} texto="¿Dura? Aún no se sabe" until={K.Ch - 0.2} x={540} y={660} rot={-1.5} color={KC.mint} ancho={780} />
 
       {/* 9 · las chicas */}
-      <Escena T={T} a={K.Ch} b={K.C}>
+      <Escena T={T} a={K.Ch} b={K.C - 0.5}>
         <FondoLunares color={KC.lilac} />
         {svgT(<>
-          <line x1={420} y1={1100} x2={1000} y2={1100} stroke={KC.ink} strokeWidth={6} />
-          {[{ x: 500, a: 170, b: 400, c: KC.pink, t: 'chicas' }, { x: 780, a: 250, b: 360, c: AZUL, t: 'chicos' }].map((o, i) => {
+          <line x1={150} y1={1400} x2={930} y2={1400} stroke={KC.ink} strokeWidth={6} />
+          {[{ x: 230, a: 170 * 1.9, b: 400 * 1.9, c: KC.pink, t: 'chicas' }, { x: 620, a: 250 * 1.9, b: 360 * 1.9, c: AZUL, t: 'chicos' }].map((o, i) => {
             const h = klerp(o.a, o.b, kprog(T, K.Ch + 1.0, K.Ch + 2.6, kEase.sale));
-            return <g key={i}><rect x={o.x} y={1100 - h} width={150} height={h} rx={10} fill={o.c} stroke={KC.ink} strokeWidth={6} />
-              <line x1={o.x - 10} y1={1100 - o.a} x2={o.x + 160} y2={1100 - o.a} stroke={KC.ink} strokeWidth={4} strokeDasharray="10 8" />
-              <text x={o.x + 75} y={1150} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>{o.t}</text></g>; })}
+            return <g key={i}><Alumno x={o.x + 115} y={1400 - h - 104} s={0.9} seed={i + 1} chica={i === 0} espalda={false} T={T} />
+              <rect x={o.x} y={1400 - h} width={230} height={h} rx={10} fill={o.c} stroke={KC.ink} strokeWidth={6} />
+              <line x1={o.x - 14} y1={1400 - o.a} x2={o.x + 244} y2={1400 - o.a} stroke={KC.ink} strokeWidth={5} strokeDasharray="12 9" />
+              <text x={o.x + 115} y={1462} textAnchor="middle" style={{ font:`900 48px ${KF.texto}` }} fill={KC.ink}>{o.t}</text></g>; })}
         </>)}
       </Escena>
-      <Chip T={T} at={K.Ch + 0.4} until={K.C - 0.2} texto="antes - - -  ·  después ▮" x={720} y={560} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.Ch + 1.8} until={K.C - 0.2} texto="con cautela · esquemático" x={720} y={640} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.Ch + 0.4} until={K.C - 0.6} texto="antes - - -  ·  después ▮" x={540} y={290} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Ch + 1.8} until={K.C - 0.6} texto="con cautela · esquemático" x={540} y={372} tam={28} borde={KC.ink} />
 
       {/* 10 · cierre: el mismo calendario, ahora con la maestra al lado */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
         {svgT(<>
-          <Calendario x={330} y={720} s={1} tachados={30} />
-          <g opacity={kprog(T, K.C + 1.6, K.C + 2.2)}><Robotito x={750} y={920} s={0.7} T={T} cara="feliz" /></g>
-          <g opacity={kprog(T, K.C + 2.4, K.C + 3.0)}><Maestra x={950} y={850} s={0.6} T={T} /></g>
+          <Calendario x={540} y={650} s={1.25} tachados={30} />
+          <g opacity={kprog(T, K.C + 1.6, K.C + 2.2)}><Robotito x={350} y={1285} s={1.1} T={T} cara="feliz" /></g>
+          <g opacity={kprog(T, K.C + 2.4, K.C + 3.0)}><Maestra x={700} y={1200} s={0.9} T={T} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.C + 0.4} until={K.Ou} texto="hasta 2 años*" x={330} y={1060} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.C + 3.0} until={K.Ou} texto="IA + maestro" x={830} y={1100} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 0.4} until={K.Ou} texto="hasta 2 años*" x={540} y={1040} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.C + 3.0} until={K.Ou} texto="IA + maestro" x={540} y={1545} tam={40} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.L - 0.1} texto="6 semanas de tardes… *¿como 2 años de escuela?*" />

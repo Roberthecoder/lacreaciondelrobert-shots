@@ -180,7 +180,8 @@ function TemporadaShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <g transform={G_TR}><PisoBosque y={1150} T={T} /></g>
-          <CalPared x={100} y={260} s={1.05} ini={Math.round(klerp(12, 7, corre))} fin={Math.round(klerp(18, 26, corre))} hoja={T > K.G + 0.5 && T < K.G + 3.0 ? hojaG : 0} />
+          {/* belleza: el calendario baja (su anillado ya no toca el logo) */}
+          <CalPared x={80} y={370} s={0.9} ini={Math.round(klerp(12, 7, corre))} fin={Math.round(klerp(18, 26, corre))} hoja={T > K.G + 0.5 && T < K.G + 3.0 ? hojaG : 0} />
           <g transform={G_TR}>
             <Seta x={360} y={1152} s={1.7} crece={klerp(0.5, 1, brota)} rot={mece(T, 3, 0.4) * 2} />
             {brota > 0 && brota < 1 && <circle cx={360} cy={1150} r={30 + brota * 90} fill="none" stroke="#fff" strokeWidth={6} opacity={1 - brota} />}
@@ -191,15 +192,16 @@ function TemporadaShot() {
       <Escena T={T} a={K.N} b={K.S} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <MapaGB x={690} y={390} s={1.2} punto={kprog(T, K.N + 0.3, K.N + 0.8)} />
+          {/* belleza: todo baja 150 px para que el conjunto quede centrado */}
+          <MapaGB x={690} y={540} s={1.2} punto={kprog(T, K.N + 0.3, K.N + 0.8)} />
           {(() => { const b1 = kprog(T, K.N + 1.0, K.N + 1.8, kEase.sale), b2 = kprog(T, K.N + 1.3, K.N + 2.1, kEase.sale), b2b = kprog(T, K.N + 4.0, K.N + 5.4, kEase.sale);
             const w1 = 33 * PXD * b1, w2 = klerp(33, 69, b2b) * PXD * b2;
             return <>
-              <text x={80} y={1000} style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink}>años 50</text>
-              <rect x={80} y={1024} width={w1} height={104} rx={18} fill={TH.viejo} stroke={KC.ink} strokeWidth={6} />
-              <text x={80} y={1220} style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink}>años 2000</text>
-              <rect x={80} y={1244} width={w2} height={104} rx={18} fill={TH.marca} stroke={KC.ink} strokeWidth={6} />
-              {b2b > 0.05 && <path d={`M ${80 + 33 * PXD} 1232 L ${80 + 33 * PXD} 1360`} stroke={KC.ink} strokeWidth={4} strokeDasharray="10 8" />}
+              <text x={80} y={1150} style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink}>años 50</text>
+              <rect x={80} y={1174} width={w1} height={104} rx={18} fill={TH.viejo} stroke={KC.ink} strokeWidth={6} />
+              <text x={80} y={1370} style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink}>años 2000</text>
+              <rect x={80} y={1394} width={w2} height={104} rx={18} fill={TH.marca} stroke={KC.ink} strokeWidth={6} />
+              {b2b > 0.05 && <path d={`M ${80 + 33 * PXD} 1382 L ${80 + 33 * PXD} 1510`} stroke={KC.ink} strokeWidth={4} strokeDasharray="10 8" />}
             </>; })()}
         </>)}
       </Escena>
@@ -260,7 +262,9 @@ function TemporadaShot() {
       {/* 6 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Li} zoom={0.1}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<Interrogacion T={T} x={320} y={1480} tam={640} />)}
+        {/* belleza: la seta del gancho regresa, a media luz, junto a la pregunta (un velo oscuro tapa la escena anterior para no encimar dos composiciones) */}
+        <div style={{ position:'absolute', inset:0, background:'rgba(10,15,28,.82)' }}></div>
+        {fsvg(<><g opacity={0.55} transform={G_TR}><PisoBosque y={1150} T={T} /><Seta x={400} y={1152} s={1.7} crece={1} rot={mece(T, 3, 0.4) * 2} /></g><Interrogacion T={T} x={300} y={1480} tam={640} /></>)}
       </Escena>
       {/* 7–8 · la libreta de Edward Gange y el estudio de 2007 */}
       <Escena T={T} a={K.Li} b={K.Ca} zoom={0.04}>
@@ -335,7 +339,7 @@ function TemporadaShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <g transform={G_TR}><PisoBosque y={1150} T={T} /></g>
-          <CalPared x={100} y={260} s={1.05} ini={7} fin={26} nota={['su calendario lo marca', 'sobre todo el clima']} notaP={kprog(T, K.C + 2.2, K.C + 2.8)} />
+          <CalPared x={80} y={370} s={0.9} ini={7} fin={26} nota={['su calendario lo marca', 'sobre todo el clima']} notaP={kprog(T, K.C + 2.2, K.C + 2.8)} />
           <g transform={G_TR}>
             <Seta x={360} y={1152} s={1.7} crece={1} rot={mece(T, 3, 0.4) * 2} />
             <Canasta x={170} y={1190} s={0.8 * kprog(T, K.C + 0.8, K.C + 1.3, kEase.rebote)} />
@@ -345,10 +349,10 @@ function TemporadaShot() {
 
       {/* textos */}
       <Chip T={T} at={K.G + 1.4} until={K.N - 0.3} texto="NO SALIÓ TARDE" x={310} y={1100} tam={46} borde={KC.red} />
-      <Chip T={T} at={K.N + 0.1} until={K.S - 0.3} texto="SUR DE INGLATERRA" x={300} y={360} tam={30} borde={KC.ink} mono />
-      <NumeroGigante T={T} at={K.N + 0.6} until={K.N + 3.9} valor={33} dur={0.9} sufijo=" días" etiqueta="temporada de setas, años 50" x={370} y={620} tam={150} color={KC.yellow} />
-      <Chip T={T} at={K.N + 4.0} until={K.S - 0.3} texto="unos 33 días → más del doble" x={380} y={890} tam={38} borde={TH.marca} />
-      <Etq T={T} at={K.N + 1.0} until={K.S - 0.3} x={842} y={804} texto="Salisbury" tam={28} color={KC.ink} lado="izq" />
+      <Chip T={T} at={K.N + 0.1} until={K.S - 0.3} texto="SUR DE INGLATERRA" x={300} y={440} tam={30} borde={KC.ink} mono />
+      <NumeroGigante T={T} at={K.N + 0.6} until={K.N + 3.9} valor={33} dur={0.9} sufijo=" días" etiqueta="temporada de setas, años 50" x={370} y={770} tam={150} color={KC.yellow} />
+      <Chip T={T} at={K.N + 4.0} until={K.S - 0.3} texto="unos 33 días → más del doble" x={380} y={1040} tam={38} borde={TH.marca} />
+      <Etq T={T} at={K.N + 1.0} until={K.S - 0.3} x={842} y={954} texto="Salisbury" tam={28} color={KC.ink} lado="izq" />
       <Etq T={T} at={K.S + 0.4} until={K.M - 0.3} x={60} y={300} texto="seta = cuerpo fructífero" tam={30} color={KC.ink} />
       <Etq T={T} at={K.S + 1.6} until={K.M - 0.3} x={830} y={1080} texto="esporas" tam={28} color={KC.ink} />
       <Chip T={T} at={K.M + 0.5} until={K.Se - 0.3} texto="POR DENTRO · EL SUELO" x={250} y={590} tam={28} borde={KC.mint} mono />

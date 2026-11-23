@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #57 · Tu celular no te ve la cara: te la mide — NARRADO (N1 "Por dentro" + N2 "El número").
 // Datos: Apple Support "About Face ID advanced technology" (2026), Apple Platform Security Guide (2024),
 // Apple Support "About Touch ID advanced security technology" (2023) y comunicado del iPhone X (2017). Ver guion.md y verificacion.md.
@@ -164,147 +165,148 @@ function FaceId() {
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: tu cara frente al celular se llena de puntos */}
-      <Escena T={T} a={K.G} b={K.Ma} zoom={0.08} origen="35% 45%">
+      <Escena T={T} a={K.G} b={K.Ma} zoom={0.08} origen="64% 47%">
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <Haz x0={835} y0={1000 - 223 * 0.8} x1={360} y1={800} alto={500} o={kprog(T, K.G + 0.15, K.G + 0.5)} />
-          <Cara x={340} y={820} s={1.15} T={T} puntos={kprog(T, K.G + 0.3, K.G + 3.2)} boca={T > K.G + 1.2 ? 'o' : 'sonrisa'} />
-          <Celular x={850} y={1000} s={0.8} T={T} proyector={kprog(T, K.G + 0.1, K.G + 0.3)} />
+          <Haz x0={855} y0={1150 - 223} x1={430} y1={880} alto={760} o={kprog(T, K.G + 0.15, K.G + 0.5)} />
+          <Cara x={400} y={900} s={1.75} T={T} puntos={kprog(T, K.G + 0.3, K.G + 3.2)} boca={T > K.G + 1.2 ? 'o' : 'sonrisa'} />
+          <Celular x={865} y={1150} s={1} T={T} proyector={kprog(T, K.G + 0.1, K.G + 0.3)} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.G + 1.4} until={K.Ma - 0.2} texto="luz infrarroja: tú no la ves" x={330} y={400} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.G + 1.4} until={K.Ma - 0.2} texto="luz infrarroja: tú no la ves" x={400} y={380} tam={36} borde={KC.red} />
 
       {/* 2 · por dentro: mapa de profundidad + foto infrarroja */}
       <Escena T={T} a={K.Ma} b={K.R} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche, backgroundImage:'linear-gradient(rgba(0,210,255,.06) 2px, transparent 2px), linear-gradient(90deg, rgba(0,210,255,.06) 2px, transparent 2px)', backgroundSize:'60px 60px' }}></div>
         {svg(<>
-          <MallaProfundidad x={560} y={880} s={0.95} lev={kprog(T, K.Ma + 0.6, K.Ma + 2.6, kEase.suave)} aparece={kprog(T, K.Ma + 0.05, K.Ma + 1.2)} giro={0.35 * Math.sin((T - K.Ma) * 0.9)} />
+          <MallaProfundidad x={540} y={990} s={1.45} lev={kprog(T, K.Ma + 0.6, K.Ma + 2.6, kEase.suave)} aparece={kprog(T, K.Ma + 0.05, K.Ma + 1.2)} giro={0.35 * Math.sin((T - K.Ma) * 0.9)} />
           <g opacity={kprog(T, K.Ma + 3.3, K.Ma + 3.8)}>
-            <rect x={70} y={330} width={260} height={300} rx={18} fill="#1a1a1a" stroke={KC.texto} strokeWidth={6} />
-            <clipPath id="fiClip"><rect x={76} y={336} width={248} height={288} rx={14} /></clipPath>
-            <g clipPath="url(#fiClip)"><Cara x={200} y={500} s={0.5} gris /></g>
+            <rect x={50} y={240} width={260} height={300} rx={18} fill="#1a1a1a" stroke={KC.texto} strokeWidth={6} />
+            <clipPath id="fiClip"><rect x={56} y={246} width={248} height={288} rx={14} /></clipPath>
+            <g clipPath="url(#fiClip)"><Cara x={180} y={410} s={0.5} gris /></g>
           </g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.Ma + 1.4} until={K.R - 0.2} texto="mapa de profundidad" x={560} y={1150} tam={40} borde={KC.cyan} />
-      <Chip T={T} at={K.Ma + 3.6} until={K.R - 0.2} texto="+ foto infrarroja" x={200} y={680} tam={28} borde={KC.texto} />
+      <Chip T={T} at={K.Ma + 1.4} until={K.R - 0.2} texto="mapa de profundidad" x={540} y={1490} tam={40} borde={KC.cyan} />
+      <Chip T={T} at={K.Ma + 3.6} until={K.R - 0.2} texto="+ foto infrarroja" x={180} y={590} tam={28} borde={KC.texto} />
 
       {/* 3 · la red neuronal en la zona protegida del chip */}
       <Escena T={T} a={K.R} b={K.F} zoom={0.04}>
         <FondoCircuito T={T} />
         {svg(<g>
-          <rect x={200} y={480} width={680} height={560} rx={40} fill="#141b2e" stroke={KC.gold} strokeWidth={8} />
-          {Array.from({ length: 9 }, (_, i) => <g key={i}><rect x={250 + i * 68} y={452} width={22} height={28} fill={KC.gold} /><rect x={250 + i * 68} y={1040} width={22} height={28} fill={KC.gold} /></g>)}
-          <g transform="translate(540 540)"><rect x={-20} y={-6} width={40} height={30} rx={6} fill={KC.gold} /><path d="M -12 -6 L -12 -16 Q -12 -30 0 -30 Q 12 -30 12 -16 L 12 -6" stroke={KC.gold} strokeWidth={6} fill="none" /></g>
-          <g opacity={1 - kprog(T, K.R + 2.2, K.R + 2.8)}><MallaProfundidad x={140} y={760} s={0.28} lev={1} aparece={kprog(T, K.R, K.R + 0.6)} /></g>
+          <rect x={90} y={520} width={760} height={760} rx={44} fill="#141b2e" stroke={KC.gold} strokeWidth={8} />
+          {Array.from({ length: 9 }, (_, i) => <g key={i}><rect x={140 + i * 80} y={488} width={26} height={32} fill={KC.gold} /><rect x={140 + i * 80} y={1280} width={26} height={32} fill={KC.gold} /></g>)}
+          <g transform="translate(470 600) scale(1.5)"><rect x={-20} y={-6} width={40} height={30} rx={6} fill={KC.gold} /><path d="M -12 -6 L -12 -16 Q -12 -30 0 -30 Q 12 -30 12 -16 L 12 -6" stroke={KC.gold} strokeWidth={6} fill="none" /></g>
+          <g opacity={1 - kprog(T, K.R + 2.2, K.R + 2.8)}><MallaProfundidad x={96} y={950} s={0.3} lev={1} aparece={kprog(T, K.R, K.R + 0.6)} /></g>
         </g>)}
-        <RedNeuronal T={T} x={340} y={600} ancho={440} alto={380} capas={[5, 7, 7, 4]} onda={T > K.R + 0.8 && T < K.R + 3.6 ? kprog(T, K.R + 0.8, K.R + 3.4) : null} />
-        <div style={{ position:'absolute', left:905, top:560, width:150, textAlign:'center' }}>
-          {NUMS.map((n, i) => <div key={i} style={{ font:`700 30px/1.5 ${KF.mono}`, color:KC.mint, opacity:kprog(T, K.R + 2.6 + i * 0.1, K.R + 2.8 + i * 0.1) }}>{n}</div>)}
+        <RedNeuronal T={T} x={210} y={700} ancho={520} alto={500} capas={[5, 7, 7, 4]} onda={T > K.R + 0.8 && T < K.R + 3.6 ? kprog(T, K.R + 0.8, K.R + 3.4) : null} />
+        <div style={{ position:'absolute', left:865, top:690, width:200, textAlign:'center' }}>
+          {NUMS.map((n, i) => <div key={i} style={{ font:`700 40px/1.55 ${KF.mono}`, color:KC.mint, opacity:kprog(T, K.R + 2.6 + i * 0.1, K.R + 2.8 + i * 0.1) }}>{n}</div>)}
         </div>
       </Escena>
-      <Chip T={T} at={K.R + 0.3} until={K.F - 0.2} texto="zona protegida del chip" x={540} y={400} tam={34} borde={KC.gold} />
-      <Chip T={T} at={K.R + 3.0} until={K.F - 0.2} texto="(números ilustrativos)" x={900} y={1080} tam={22} borde={KC.texto} mono />
-      <Chip T={T} at={K.R + 4.0} until={K.F - 0.2} texto="¿es tu cara guardada? ✔" x={540} y={1140} tam={40} borde={KC.mint} />
+      <Chip T={T} at={K.R + 0.3} until={K.F - 0.2} texto="zona protegida del chip" x={470} y={420} tam={38} borde={KC.gold} />
+      <Chip T={T} at={K.R + 3.0} until={K.F - 0.2} texto="(números ilustrativos)" x={860} y={1350} tam={22} borde={KC.texto} mono />
+      <Chip T={T} at={K.R + 4.0} until={K.F - 0.2} texto="¿es tu cara guardada? ✔" x={540} y={1450} tam={42} borde={KC.mint} />
 
       {/* 4 · una foto impresa no tiene profundidad */}
       <Escena T={T} a={K.F} b={K.P}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <g transform={`translate(330 840) rotate(${-6 + Math.sin(T * 2) * 1.5})`}>
+          <g transform={`translate(370 960) rotate(${-6 + Math.sin(T * 2) * 1.5}) scale(1.45)`}>
             <rect x={-200} y={-250} width={400} height={500} rx={10} fill="#fff" stroke={KC.ink} strokeWidth={8} />
             <rect x={-178} y={-228} width={356} height={400} fill="#bfe8ff" />
             <clipPath id="fiFoto"><rect x={-178} y={-228} width={356} height={400} /></clipPath>
             <g clipPath="url(#fiFoto)"><Cara x={0} y={-10} s={0.75} /></g>
             <path d="M -200 120 Q -260 160 -240 260 L -150 260 Q -150 200 -150 160 Z" fill="#e7b48f" stroke={KC.ink} strokeWidth={7} />
           </g>
-          <Haz x0={835} y0={900 - 223 * 0.8} x1={360} y1={800} alto={420} o={kprog(T, K.F + 0.3, K.F + 0.6) * (1 - kprog(T, K.F + 1.8, K.F + 2.2))} />
-          <Celular x={850} y={900} s={0.8} T={T} proyector={1} estado={T > K.F + 1.8 ? 'error' : 'cerrado'} />
+          <Haz x0={860} y0={1120 - 223} x1={420} y1={900} alto={600} o={kprog(T, K.F + 0.3, K.F + 0.6) * (1 - kprog(T, K.F + 1.8, K.F + 2.2))} />
+          <Celular x={870} y={1120} s={1} T={T} proyector={1} estado={T > K.F + 1.8 ? 'error' : 'cerrado'} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.F + 1.6} until={K.P - 0.2} texto="profundidad: 0" x={330} y={420} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.F + 1.6} until={K.P - 0.2} texto="profundidad: 0" x={370} y={480} tam={46} borde={KC.red} />
 
       {/* 5 · re-gancho: ¿y otra persona? */}
       <Escena T={T} a={K.P} b={K.N} zoom={0.1}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <text x={290} y={620} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 290 500)`}>?</text>
-          <Cara x={290} y={930} s={0.85} T={T} piel="#c98d64" pelo="#111" peinado={2} camisa={KC.lilac} boca="recta" />
+          <text x={830} y={690} textAnchor="middle" style={{ font:`400 400px ${KF.titulo}` }} fill={KC.yellow} stroke="#0b1020" strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 830 560)`}>?</text>
+          <Cara x={470} y={1050} s={1.5} T={T} piel="#c98d64" pelo="#111" peinado={2} camisa={KC.lilac} boca="recta" />
         </>)}
       </Escena>
 
       {/* 6 · el número */}
       <Escena T={T} a={K.N} b={K.C}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>{extranos.map((c, i) => { const xx = 115 + i * 170, a0 = K.N + 1.2 + i * 0.35, v = kprog(T, a0, a0 + 0.3, kEase.sale);
-          return <g key={i} opacity={v} transform={`translate(0 ${(1 - v) * 40})`}>
-            <Cara x={xx} y={960} s={0.3} {...c} camisa={[KC.pink, KC.cyan, KC.lilac, KC.orange, KC.mint, KC.blue][i]} boca="recta" />
-            <g opacity={kprog(T, a0 + 0.3, a0 + 0.45)}><circle cx={xx + 40} cy={880} r={24} fill={KC.red} stroke={KC.ink} strokeWidth={5} /><path d={`M ${xx + 30} 870 L ${xx + 50} 890 M ${xx + 50} 870 L ${xx + 30} 890`} stroke="#fff" strokeWidth={6} strokeLinecap="round" /></g>
+        {svg(<>{extranos.map((c, i) => { const xx = 190 + (i % 3) * 350, yy = i < 3 ? 990 : 1330, a0 = K.N + 0.3 + i * 0.35, v = kprog(T, a0, a0 + 0.3, kEase.sale);
+          return <g key={i} opacity={0.45 + 0.55 * v} transform={`translate(0 ${(1 - v) * 24})`}>
+            <Cara x={xx} y={yy} s={0.56} {...c} camisa={[KC.pink, KC.cyan, KC.lilac, KC.orange, KC.mint, KC.blue][i]} boca="recta" />
+            <g opacity={kprog(T, a0 + 0.3, a0 + 0.45)}><circle cx={xx + 82} cy={yy - 120} r={38} fill={KC.red} stroke={KC.ink} strokeWidth={5} /><path d={`M ${xx + 66} ${yy - 136} L ${xx + 98} ${yy - 104} M ${xx + 98} ${yy - 136} L ${xx + 66} ${yy - 104}`} stroke="#fff" strokeWidth={9} strokeLinecap="round" /></g>
           </g>; })}</>)}
       </Escena>
-      <NumeroGigante T={T} at={K.N + 0.2} until={K.C - 0.2} valor={1000000} dur={1.2} prefijo="1 en " etiqueta="menos de" y={560} tam={130} color={KC.red} />
-      <Chip T={T} at={K.N + 1.0} until={K.C - 0.2} texto="alguien al azar · 1 apariencia registrada" x={540} y={760} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.N + 1.6} until={K.C - 0.2} texto="cifra de Apple" x={540} y={1150} tam={30} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.N + 0.2} until={K.C - 0.2} valor={1000000} dur={1.2} prefijo="1 en " etiqueta="menos de" y={440} tam={130} color={KC.red} />
+      <Chip T={T} at={K.N + 1.0} until={K.C - 0.2} texto="alguien al azar · 1 apariencia registrada" x={540} y={625} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.N + 1.6} until={K.C - 0.2} texto="cifra de Apple" x={540} y={720} tam={30} borde={KC.ink} />
 
       {/* 7 · comparativa */}
       <Escena T={T} a={K.C} b={K.E}>
         <FondoLunares color={KC.cyan} />
+        {svg(<g opacity={0.3}><Cara x={540} y={930} s={2.5} T={T} malla={1} boca="recta" /></g>)}
       </Escena>
-      <TarjetaDato T={T} at={K.C + 0.1} until={K.E - 0.2} y={410} icono={<IcoCara />} titulo="cara (Face ID)" valor="1 en 1,000,000" fuente="menos de · Apple, 2026" color={KC.red} />
-      <TarjetaDato T={T} at={K.C + 0.6} until={K.E - 0.2} y={640} icono={<IcoHuella />} titulo="huella (Touch ID), 1 dedo registrado" valor="1 en 50,000" fuente="Apple, 2023" color={KC.orange} />
-      <TarjetaDato T={T} at={K.C + 3.2} until={K.E - 0.2} y={870} icono={<IcoCodigo />} titulo="adivinar un código de 4 dígitos" valor="1 en 10,000" fuente="Apple, 2023" color={KC.blue} />
-      <Chip T={T} at={K.C + 1.2} until={K.E - 0.2} texto="cifras de Apple" x={380} y={1140} tam={30} borde={KC.ink} />
+      <TarjetaDato T={T} at={K.C + 0.1} until={K.E - 0.2} y={500} x={170} ancho={740} icono={<IcoCara />} titulo="cara (Face ID)" valor="1 en 1,000,000" fuente="menos de · Apple, 2026" color={KC.red} />
+      <TarjetaDato T={T} at={K.C + 0.6} until={K.E - 0.2} y={760} x={170} ancho={740} icono={<IcoHuella />} titulo="huella (Touch ID), 1 dedo registrado" valor="1 en 50,000" fuente="Apple, 2023" color={KC.orange} />
+      <TarjetaDato T={T} at={K.C + 3.2} until={K.E - 0.2} y={1020} x={170} ancho={740} icono={<IcoCodigo />} titulo="adivinar un código de 4 dígitos" valor="1 en 10,000" fuente="Apple, 2023" color={KC.blue} />
+      <Chip T={T} at={K.C + 1.2} until={K.E - 0.2} texto="cifras de Apple" x={540} y={1330} tam={32} borde={KC.ink} />
 
       {/* 8 · el estudio: la presentación de 2017 */}
       <Escena T={T} a={K.E} b={K.Ge}>
         <FondoLunares color={KC.lilac} />
-        {svg(<g opacity={kprog(T, K.E + 1.4, K.E + 1.8)}>{FI_PUNTOS.slice(0, 120).map((p, i) => <circle key={i} cx={540 + p.nx * 480} cy={980 + p.ny * 200} r={5} fill={KC.red} opacity={0.35 + 0.35 * Math.sin(T * 7 + i)} />)}</g>)}
+        {svg(<Cara x={540} y={1070} s={1.3} T={T} puntos={0.25 + 0.75 * kprog(T, K.E + 0.4, K.E + 2.4)} />)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ge - 0.3} anio="2017" quien="Cupertino, California" revista="Apple presenta el iPhone X · 12 sep 2017" x={620} y={560} />
-      <NumeroGigante T={T} at={K.E + 1.6} until={K.Ge - 0.3} valor={30000} dur={1.0} etiqueta="más de" y={960} tam={170} color={KC.red} />
-      <Chip T={T} at={K.E + 2.4} until={K.Ge - 0.3} texto="puntos infrarrojos · hoy Apple dice «miles»" x={540} y={1150} tam={28} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ge - 0.3} anio="2017" quien="Cupertino, California" revista="Apple presenta el iPhone X · 12 sep 2017" x={540} y={320} />
+      <NumeroGigante T={T} at={K.E + 1.6} until={K.Ge - 0.3} valor={30000} dur={1.0} etiqueta="más de" y={545} tam={130} color={KC.red} />
+      <Chip T={T} at={K.E + 2.4} until={K.Ge - 0.3} texto="puntos infrarrojos · hoy Apple dice «miles»" x={540} y={665} tam={30} borde={KC.ink} />
 
       {/* 9 · gemelos, hermanos y niños */}
       <Escena T={T} a={K.Ge} b={K.O}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<>
           <g opacity={kprog(T, K.Ge + 0.6, K.Ge + 1.0)}>
-            <Cara x={170} y={880} s={0.45} T={T} piel="#d9a27c" pelo="#2a1a12" camisa={KC.pink} malla={kprog(T, K.Ge + 1.4, K.Ge + 2.0)} />
-            <Cara x={400} y={880} s={0.45} T={T} piel="#d9a27c" pelo="#2a1a12" camisa={KC.cyan} malla={kprog(T, K.Ge + 1.4, K.Ge + 2.0)} />
-            <text x={285} y={900} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={4} opacity={kprog(T, K.Ge + 2.0, K.Ge + 2.3)}>≈</text>
+            <Cara x={270} y={820} s={0.82} T={T} piel="#d9a27c" pelo="#2a1a12" camisa={KC.pink} malla={kprog(T, K.Ge + 1.4, K.Ge + 2.0)} />
+            <Cara x={810} y={820} s={0.82} T={T} piel="#d9a27c" pelo="#2a1a12" camisa={KC.cyan} malla={kprog(T, K.Ge + 1.4, K.Ge + 2.0)} />
+            <text x={540} y={860} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.Ge + 2.0, K.Ge + 2.3)}>≈</text>
           </g>
-          <g opacity={kprog(T, K.Ge + 3.0, K.Ge + 3.4)}><Cara x={650} y={880} s={0.42} T={T} piel="#d9a27c" pelo="#3a2414" camisa={KC.orange} peinado={1} /></g>
-          <g opacity={kprog(T, K.Ge + 4.4, K.Ge + 4.8)}><Cara x={890} y={930} s={0.32} T={T} piel="#e2b08a" pelo="#2a1a12" camisa={KC.mint} /></g>
+          <g opacity={kprog(T, K.Ge + 3.0, K.Ge + 3.4)}><Cara x={320} y={1300} s={0.62} T={T} piel="#d9a27c" pelo="#3a2414" camisa={KC.orange} peinado={1} /></g>
+          <g opacity={kprog(T, K.Ge + 4.4, K.Ge + 4.8)}><Cara x={790} y={1345} s={0.46} T={T} piel="#e2b08a" pelo="#2a1a12" camisa={KC.mint} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.Ge + 0.3} until={K.O - 0.2} texto="aviso de Apple: probabilidad ↑" x={380} y={520} tam={34} borde={KC.red} />
-      <Chip T={T} at={K.Ge + 1.0} until={K.O - 0.2} texto="gemelos" x={285} y={1100} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.Ge + 3.2} until={K.O - 0.2} texto="hermanos parecidos" x={650} y={1040} tam={26} borde={KC.ink} />
-      <Chip T={T} at={K.Ge + 4.6} until={K.O - 0.2} texto="menores de 13" x={880} y={1130} tam={26} borde={KC.ink} />
-      <Chip T={T} at={K.Ge + 5.4} until={K.O - 0.2} texto="sus rasgos pueden no estar del todo desarrollados" x={540} y={640} tam={24} borde={KC.texto} />
+      <Chip T={T} at={K.Ge + 0.3} until={K.O - 0.2} texto="aviso de Apple: probabilidad ↑" x={540} y={410} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Ge + 1.0} until={K.O - 0.2} texto="gemelos" x={540} y={1010} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Ge + 3.2} until={K.O - 0.2} texto="hermanos parecidos" x={320} y={1500} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Ge + 4.6} until={K.O - 0.2} texto="menores de 13" x={790} y={1500} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Ge + 5.4} until={K.O - 0.2} texto="sus rasgos pueden no estar del todo desarrollados" x={540} y={505} tam={28} borde={KC.texto} />
 
       {/* 10 · ojos abiertos */}
       <Escena T={T} a={K.O} b={K.Ci}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Cara x={330} y={880} s={0.95} T={T} ojos={kprog(T, K.O + 3.0, K.O + 3.3)} boca={T > K.O + 3.3 ? 'sonrisa' : 'recta'} camisa={KC.blue} />
-          {T < K.O + 3.0 && [0, 1, 2].map((k) => { const u = ((T - K.O) * 0.6 + k / 3) % 1; return <text key={k} x={470 + u * 80} y={620 - u * 160} style={{ font:`400 ${80 + k * 20}px ${KF.titulo}` }} fill={KC.violet} stroke={KC.ink} strokeWidth={3} opacity={Math.sin(Math.PI * u)}>Z</text>; })}
-          <Celular x={830} y={1000} s={0.75} T={T} proyector={1} estado={T > K.O + 3.5 ? 'abierto' : 'cerrado'} abre={kprog(T, K.O + 3.5, K.O + 3.9, kEase.sale)} />
+          <Cara x={400} y={900} s={1.75} T={T} ojos={kprog(T, K.O + 3.0, K.O + 3.3)} boca={T > K.O + 3.3 ? 'sonrisa' : 'recta'} camisa={KC.blue} />
+          {T < K.O + 3.0 && [0, 1, 2].map((k) => { const u = ((T - K.O) * 0.6 + k / 3) % 1; return <text key={k} x={680 + u * 130} y={560 - u * 250} style={{ font:`400 ${130 + k * 34}px ${KF.titulo}` }} fill={KC.violet} stroke={KC.ink} strokeWidth={3} opacity={Math.sin(Math.PI * u)}>Z</text>; })}
+          <Celular x={865} y={1150} s={1} T={T} proyector={1} estado={T > K.O + 3.5 ? 'abierto' : 'cerrado'} abre={kprog(T, K.O + 3.5, K.O + 3.9, kEase.sale)} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.O + 0.5} until={K.O + 2.9} texto="ojos cerrados: no abre" x={330} y={420} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.O + 3.6} until={K.Ci - 0.2} texto="de fábrica · se puede apagar en Accesibilidad" x={540} y={1160} tam={26} borde={KC.ink} />
+      <Chip T={T} at={K.O + 0.5} until={K.O + 2.9} texto="ojos cerrados: no abre" x={340} y={380} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.O + 3.6} until={K.Ci - 0.2} texto="de fábrica · se puede apagar en Accesibilidad" x={540} y={380} tam={32} borde={KC.ink} />
 
       {/* 11 · cierre: la misma imagen del inicio, ya como mapa */}
-      <Escena T={T} a={K.Ci} b={FIN} zoom={0.06} origen="35% 45%">
+      <Escena T={T} a={K.Ci} b={FIN} zoom={0.06} origen="42% 47%">
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <Cara x={340} y={820} s={1.15} T={T} puntos={1 - kprog(T, K.Ci + 0.6, K.Ci + 1.6)} malla={kprog(T, K.Ci + 0.4, K.Ci + 1.4)} />
-          <Celular x={850} y={1000} s={0.8} T={T} proyector={1} estado="abierto" abre={1} />
+          <Cara x={400} y={900} s={1.75} T={T} puntos={1 - kprog(T, K.Ci + 0.6, K.Ci + 1.6)} malla={kprog(T, K.Ci + 0.4, K.Ci + 1.4)} />
+          <Celular x={865} y={1150} s={1} T={T} proyector={1} estado="abierto" abre={1} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.Ci + 1.0} until={K.Ci + 2.4} texto="tu cara = un mapa" x={330} y={400} tam={40} borde={KC.cyan} />
-      <Chip T={T} at={K.Ci + 2.6} until={K.Ou} texto="¿gemelo? usa un código ••••" x={420} y={400} tam={36} borde={KC.gold} />
+      <Chip T={T} at={K.Ci + 1.0} until={K.Ci + 2.4} texto="tu cara = un mapa" x={480} y={370} tam={44} borde={KC.cyan} />
+      <Chip T={T} at={K.Ci + 2.6} until={K.Ou} texto="¿gemelo? usa un código ••••" x={500} y={370} tam={40} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ma - 0.1} texto="No te ve la cara: *te la mide.*" />
