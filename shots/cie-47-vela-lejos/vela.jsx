@@ -19,9 +19,14 @@ function Noche({ T, colina = '#184f45', horizonte = 1060 }) {
 function VelaDib({ x, y, s = 1, T = 0, glow = 1, id = 'v' }) {
   const fl = 1 + 0.08 * Math.sin(T * 23) + 0.05 * Math.sin(T * 37 + 1), ld = Math.sin(T * 9) * 4;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <defs><radialGradient id={`g${id}`}><stop offset="0%" stopColor="#fff3b0" stopOpacity=".9" /><stop offset="35%" stopColor={LLAMA} stopOpacity=".45" /><stop offset="100%" stopColor={LLAMA2} stopOpacity="0" /></radialGradient></defs>
+    <defs><radialGradient id={`g${id}`}><stop offset="0%" stopColor="#fff3b0" stopOpacity=".9" /><stop offset="35%" stopColor={LLAMA} stopOpacity=".45" /><stop offset="100%" stopColor={LLAMA2} stopOpacity="0" /></radialGradient>
+      <linearGradient id={`c${id}`} x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#fffaf0" /><stop offset="0.45" stopColor={CERA} /><stop offset="1" stopColor="#d9c29a" /></linearGradient>
+      <linearGradient id={`l${id}`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#ffe9a0" /><stop offset="1" stopColor="#fff4dc" stopOpacity="0" /></linearGradient></defs>
+    <ellipse cx={0} cy={10} rx={110} ry={20} fill="#000" opacity={0.35} />
     <circle cx={0} cy={-250} r={170 * glow * (0.95 + 0.05 * Math.sin(T * 11))} fill={`url(#g${id})`} />
-    <rect x={-48} y={-200} width={96} height={200} rx={12} fill={CERA} stroke={KC.ink} strokeWidth={8} />
+    <rect x={-48} y={-200} width={96} height={200} rx={12} fill={`url(#c${id})`} stroke={KC.ink} strokeWidth={8} />
+    <rect x={-44} y={-196} width={88} height={70} rx={10} fill={`url(#l${id})`} opacity={0.55 * glow} />
+    <line x1={-30} y1={-170} x2={-30} y2={-24} stroke="#fff" strokeWidth={8} strokeLinecap="round" opacity={0.45} />
     <path d="M -48 -190 Q -20 -170 0 -188 Q 22 -205 48 -186" fill="none" stroke="#e8d8b4" strokeWidth={6} />
     <line x1={0} y1={-200} x2={0} y2={-222} stroke={KC.ink} strokeWidth={6} strokeLinecap="round" />
     <g transform={`translate(0 -218) scale(1 ${fl})`}>
@@ -48,9 +53,12 @@ function Estrella({ x, y, b = 1, T = 0, color = '#fffbe6', fase = 0 }) {
 // Cámara CCD pequeña sobre tripié, con el objetivo hacia la izquierda.
 function CamaraCCD({ x, y, s = 1, T = 0, luz = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <defs><linearGradient id="ccdCuerpo" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stopColor="#4a5366" /><stop offset="1" stopColor="#232833" /></linearGradient></defs>
+    <ellipse cx={0} cy={345} rx={130} ry={18} fill="#000" opacity={0.35} />
     {[[-90, 330], [0, 340], [90, 330]].map(([dx, dy], i) => <line key={i} x1={0} y1={90} x2={dx} y2={dy} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" />)}
     <rect x={-30} y={70} width={60} height={40} rx={8} fill="#555" stroke={KC.ink} strokeWidth={7} />
-    <rect x={-120} y={-80} width={240} height={160} rx={20} fill="#2f3542" stroke={KC.ink} strokeWidth={9} />
+    <rect x={-120} y={-80} width={240} height={160} rx={20} fill="url(#ccdCuerpo)" stroke={KC.ink} strokeWidth={9} />
+    <path d="M -100 -62 L 90 -62" stroke="#8a93a8" strokeWidth={6} strokeLinecap="round" opacity={0.6} />
     {Array.from({ length: 6 }, (_, i) => <line key={i} x1={30 + i * 14} y1={-60} x2={30 + i * 14} y2={-10} stroke="#556" strokeWidth={6} />)}
     <rect x={-215} y={-55} width={100} height={110} rx={14} fill="#3b4252" stroke={KC.ink} strokeWidth={9} />
     <ellipse cx={-218} cy={0} rx={18} ry={52} fill="#123" stroke={KC.ink} strokeWidth={7} />
@@ -74,7 +82,8 @@ function OjoGrande({ x, y, s = 1, pupila = 0.3, T = 0 }) {
   const rp = klerp(34, 96, pupila);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d="M -300 0 Q 0 -230 300 0 Q 0 230 -300 0 Z" fill="#f4efe4" stroke={KC.ink} strokeWidth={12} strokeLinejoin="round" />
-    <circle r={140} fill={KC.teal} stroke={KC.ink} strokeWidth={9} />
+    <defs><radialGradient id="irisVela" cx="40%" cy="35%" r="70%"><stop offset="0" stopColor="#5fe0d2" /><stop offset="0.6" stopColor={KC.teal} /><stop offset="1" stopColor="#064a45" /></radialGradient></defs>
+    <circle r={140} fill="url(#irisVela)" stroke={KC.ink} strokeWidth={9} />
     {Array.from({ length: 18 }, (_, i) => { const a = i / 18 * Math.PI * 2; return <line key={i} x1={Math.cos(a) * (rp + 8)} y1={Math.sin(a) * (rp + 8)} x2={Math.cos(a) * 132} y2={Math.sin(a) * 132} stroke="#0b6f68" strokeWidth={5} />; })}
     <circle r={rp} fill="#07080b" />
     <circle cx={-rp * 0.4} cy={-rp * 0.45} r={14} fill="#fff" opacity=".9" />
@@ -117,7 +126,7 @@ function Vela() {
       {/* 2 · la vela a 338 m y Vega */}
       <Escena T={T} a={K.Vela} b={K.Camara} zoom={0.04}>
         <Noche T={T} horizonte={1130} />
-        <Lienzo>
+        <Lienzo><g transform="translate(540 1130) scale(1.1) translate(-500 -1130)">
           <g transform="translate(240 1230) scale(1.08)"><PersonaSimple x={0} yPies={0} alto={460} color={KC.pink} /></g>
           <VelaDib x={890} y={1230} s={0.9} T={T} id="m" />
           {(() => { const p = kprog(T, K.Vela + 0.4, K.Vela + 1.6, kEase.sale), x1 = 330, x2 = klerp(330, 860, p);
@@ -129,8 +138,8 @@ function Vela() {
             <line x1={804} y1={660} x2={880} y2={940} stroke="#fff" strokeWidth={7} strokeDasharray="16 14" strokeDashoffset={-T * 40} opacity={kprog(T, K.Vela + 4.2, K.Vela + 4.8)} />
             <TextoSvg x={730} y={830} tam={84} color={KC.cyan} o={kprog(T, K.Vela + 4.2, K.Vela + 4.8)}>VS</TextoSvg>
           </g>
-        </Lienzo>
-        <Chip T={T} at={K.Vela + 3.3} until={K.Camara - 0.1} texto="Vega: una estrella muy brillante" x={560} y={370} tam={38} borde={KC.cyan} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Vela + 3.3} until={K.Camara - 0.1} texto="Vega: una estrella muy brillante" x={540} y={250} tam={38} borde={KC.cyan} />
       </Escena>
 
       {/* 3 · la cámara CCD */}
@@ -176,7 +185,8 @@ function Vela() {
       <Escena T={T} a={K.Calculo} b={K.Resultado} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <path d="M 60 1220 L 300 640 L 360 640 L 600 1220 Z" fill="#3f3078" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+          <defs><linearGradient id="conoVela" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#2a2058" /><stop offset="1" stopColor="#4d3c94" /></linearGradient></defs>
+          <path d="M 60 1220 L 300 640 L 360 640 L 600 1220 Z" fill="url(#conoVela)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
           <VelaDib x={330} y={klerp(1180, 660, alejar)} s={klerp(0.9, 0.12, alejar)} T={T} id="k" glow={brillo} />
           {/* medidor de brillo */}
           <g transform="translate(880 520)">
@@ -189,15 +199,15 @@ function Vela() {
           {T > K.Calculo + 4.2 && <circle cx={880} cy={520 + 12 + 616 * 0.88} r={40 + 90 * kprog(T, K.Calculo + 4.2, K.Calculo + 4.9)} fill="none" stroke={KC.yellow} strokeWidth={10} opacity={1 - kprog(T, K.Calculo + 4.2, K.Calculo + 4.9)} />}
         </Lienzo>
         <Chip T={T} at={K.Calculo + 1.0} until={K.Resultado - 0.1} texto="★ = estrella de magnitud 6" x={540} y={1340} tam={38} borde={KC.cyan} />
-        <Contador T={T} at={K.Calculo + 0.4} desde={338} hasta={2576} dur={3.8} sufijo=" m" x={330} y={470} tam={76} color={KC.yellow} />
+        <div style={{ position:'absolute', inset:0, zIndex:41, opacity:1 - kprog(T, K.Resultado - 0.3, K.Resultado + 0.05) }}><Contador T={T} at={K.Calculo + 0.4} desde={338} hasta={2576} dur={3.8} sufijo=" m" x={330} y={470} tam={76} color={KC.yellow} /></div>
       </Escena>
 
       {/* 6 · el resultado */}
       <Escena T={T} a={K.Resultado} b={K.Pregunta}>
         <FondoLunares color={KC.yellow} />
-        <NumeroGigante T={T} at={K.Resultado + 0.2} until={K.Pregunta - 0.1} valor={2.6} desde={0} dec={1} prefijo="≈ " sufijo=" km" etiqueta="su resultado" x={540} y={400} tam={210} color={KC.pink} />
+        <NumeroGigante T={T} at={K.Resultado + 0.2} until={K.Pregunta - 0.1} valor={2.6} desde={2.6} dec={1} prefijo="≈ " sufijo=" km" etiqueta="su resultado" x={540} y={400} tam={210} color={KC.pink} />
         <Chip T={T} at={K.Resultado + 2.3} until={K.Pregunta - 0.1} texto="en condiciones ideales" x={540} y={640} tam={44} borde={KC.ink} />
-        <Lienzo><VelaDib x={540} y={1500} s={1.8} T={T} id="r" /></Lienzo>
+        <Lienzo><VelaDib x={540} y={1420} s={2.0} T={T} id="r" /></Lienzo>
       </Escena>
 
       {/* 7 · pregunta */}
