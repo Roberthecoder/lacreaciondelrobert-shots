@@ -6,11 +6,21 @@ const PIELC = '#5e3a30';   // piel en corte, oscurecida para el modo cine (conse
 const PX_UM = 86; // en el mundo micro: 1 µm ≈ 86 px (cocos de ~0.85 µm). Esquemático.
 
 /* ---------- macro: la persona con el brazo arriba (origen = la axila) ---------- */
+// Volumen (pase de belleza): degradados de luz arriba a la izquierda.
+function DoDefs() {
+  return <defs>
+    <radialGradient id="do-piel" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stopColor="#fff" stopOpacity="0.28" /><stop offset="0.6" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#7a3f1f" stopOpacity="0.3" /></radialGradient>
+    <linearGradient id="do-brillo" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#fff" stopOpacity="0.32" /><stop offset="0.45" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.25" /></linearGradient>
+  </defs>;
+}
 function Persona({ T, x, y, s = 1, brazo = 1 }) {
   const ang = klerp(95, -92, brazo), bend = klerp(-10, -150, brazo);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <DoDefs />
     <path d="M -470 -110 Q -260 -170 -40 -110 Q 10 -80 10 0 L 40 760 L -480 760 Z" fill={PIEL} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
     <path d="M -430 -60 Q -390 -110 -350 -112 L -320 -60 Q -245 -10 -175 -60 L -150 -112 Q -70 -112 -40 -40 Q -15 15 -12 70 L 22 760 L -462 760 Z" fill={KC.teal} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    <path d="M -430 -60 Q -390 -110 -350 -112 L -320 -60 Q -245 -10 -175 -60 L -150 -112 Q -70 -112 -40 -40 Q -15 15 -12 70 L 22 760 L -462 760 Z" fill="url(#do-brillo)" />
+    <path d="M -380 100 Q -300 160 -330 320 M -120 140 Q -170 260 -110 420" stroke="#000" strokeWidth={6} opacity={0.14} fill="none" strokeLinecap="round" />
     <g opacity={brazo}>
       <ellipse cx={-6} cy={-30} rx={40} ry={78} fill={PIEL2} />
       {[[-14, -60], [4, -44], [-10, -22], [8, -6]].map(([dx, dy], i) => <path key={i} d={`M ${dx} ${dy} q 6 10 2 20`} stroke="#8a5a3c" strokeWidth={4} fill="none" opacity={0.45} strokeLinecap="round" />)}
@@ -24,6 +34,7 @@ function Persona({ T, x, y, s = 1, brazo = 1 }) {
     </g>
     <rect x={-300} y={-240} width={110} height={150} fill={PIEL} stroke={KC.ink} strokeWidth={9} />
     <circle cx={-245} cy={-330} r={125} fill={PIEL} stroke={KC.ink} strokeWidth={10} />
+    <circle cx={-245} cy={-330} r={125} fill="url(#do-piel)" />
     <path d="M -372 -330 Q -380 -470 -245 -462 Q -110 -470 -118 -330 Q -150 -410 -245 -400 Q -340 -410 -372 -330 Z" fill="#3a2418" stroke={KC.ink} strokeWidth={8} />
     <circle cx={-290} cy={-332} r={11} fill={KC.ink} /><circle cx={-200} cy={-332} r={11} fill={KC.ink} />
     <ellipse cx={-315} cy={-290} rx={20} ry={12} fill="#ff8fa3" opacity={0.6} /><ellipse cx={-175} cy={-290} rx={20} ry={12} fill="#ff8fa3" opacity={0.6} />
@@ -98,7 +109,10 @@ function PielCorte({ T, y = 1120, poro = 540, gota = 1, children }) {
 function Barra({ x, y, s = 1, rot = 0, color = KC.white, banda = KC.pink, texto = '' }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     <path d="M -70 -200 Q -70 -250 0 -252 Q 70 -250 70 -200 Z" fill="#f6f3ec" stroke={KC.ink} strokeWidth={8} />
+    <DoDefs />
+    <ellipse cx={0} cy={214} rx={100} ry={16} fill="#000" opacity={0.3} />
     <rect x={-90} y={-200} width={180} height={400} rx={36} fill={color} stroke={KC.ink} strokeWidth={9} />
+    <rect x={-90} y={-200} width={180} height={400} rx={36} fill="url(#do-brillo)" />
     <rect x={-90} y={-60} width={180} height={130} fill={banda} stroke={KC.ink} strokeWidth={7} />
     <text x={0} y={30} textAnchor="middle" style={{ font:`400 ${texto.length > 3 ? 30 : 80}px ${KF.titulo}` }} fill={KC.ink}>{texto}</text>
   </g>;
@@ -151,7 +165,7 @@ function Desodorante() {
   const brazo = kprog(T, K.G - 0.2, K.G + 0.55, kEase.sale);
   const micro = K.Su + 1.8;                        // entra al microscopio
   // precursores en la gota: [x, y, tipo, momento del corte, vuelo hacia (vx, vy)]
-  const PRE = [[420, 930, 'tiol', K.Ba + 2.4, -40, -420], [600, 880, 'acido', K.Ba + 2.9, -150, -380], [700, 990, 'tiol', K.Ba + 3.4, -260, -470]];
+  const PRE = [[420, 930, 'tiol', K.Ba + 2.4, -40, -250], [600, 880, 'acido', K.Ba + 2.9, -150, -210], [700, 990, 'tiol', K.Ba + 3.4, -260, -300]];
   // iones de aluminio
   const R = krng(29);
   const IONES = Array.from({ length: 9 }, (_, i) => [540 + (R() - 0.5) * 360, 300 + R() * 160, K.An + 0.8 + i * 0.22]);
@@ -182,7 +196,8 @@ function Desodorante() {
             return <Bacteria key={i} x={klerp(x < 540 ? -120 : 1200, x, e) + Math.sin(T * 1.3 + i) * 6} y={y} rot={r} s={1} color={CORY} T={T} seed={i + 1} flagelo={false} />; })}
           {[[330, 1060, 0], [790, 830, 1]].map(([x, y, i]) => { const e = kprog(T, K.Ba + 0.4 + i * 0.3, K.Ba + 1.5 + i * 0.3, kEase.sale);
             return <Racimo key={i} T={T} x={klerp(x < 540 ? -150 : 1250, x, e)} y={y} s={0.9} seed={i} />; })}
-          <Nube T={T} x={420} y={520} f={kprog(T, K.Ol + 1.2, K.Ol + 3.2)} r={170} color={OLOR} seed={4} />
+          {/* belleza: la nube de olor queda arriba de la gota pero lejos del logo (antes llegaba a y≈140) */}
+          <Nube T={T} x={420} y={690} f={kprog(T, K.Ol + 1.2, K.Ol + 3.2)} r={150} color={OLOR} seed={4} />
           {[[K.Ba + 2.4, 400, 980], [K.Ba + 2.9, 580, 930], [K.Ba + 3.4, 680, 1040]].map(([t, x, y], i) => <Onomato key={i} T={T} at={t} until={t + 0.7} x={x} y={y} texto="¡clic!" color={KC.white} tam={52} rot={-10 + i * 8} />)}
           </g>
         </SvgCapa>
@@ -229,8 +244,9 @@ function Desodorante() {
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <Bacteria x={250} y={700} rot={-20} s={2.0} color={CORY} T={T} seed={4} flagelo={false} />
-          <Racimo T={T} x={700} y={760} s={1.8} />
+          {/* belleza: las bacterias bajan al centro y crecen (antes cargadas arriba) */}
+          <Bacteria x={260} y={900} rot={-20} s={2.4} color={CORY} T={T} seed={4} flagelo={false} />
+          <Racimo T={T} x={790} y={930} s={2.3} />
           <text x={540} y={1360} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 1160)`}>?</text>
         </SvgCapa>
       </Escena>
@@ -239,7 +255,7 @@ function Desodorante() {
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
           {(() => { const ent = kprog(T, K.Es, K.Es + 0.5, kEase.sale), mov = kprog(T, K.Es + 3.6, K.Es + 4.6, kEase.suave), c = kprog(T, K.Es + 4.6, K.Es + 5.0), v = kprog(T, K.Es + 5.0, K.Es + 6.8);
-            return <g opacity={ent} transform="translate(540 980) scale(1.3) translate(-480 -920)">
+            return <g opacity={ent} transform="translate(560 980) scale(1.45) translate(-480 -920)">
               <Racimo T={T} x={260} y={920} s={1.7} />
               <Tijera x={klerp(330, 560, mov)} y={klerp(920, 960, mov)} s={1} abre={c > 0 ? 1 - c : Math.abs(Math.sin(T * 6))} />
               <Precursor T={T} x={680} y={960} tipo="tiol" s={1.1} corte={c} vuelo={v} vx={40} vy={-200} />
@@ -252,7 +268,7 @@ function Desodorante() {
       <Escena T={T} a={K.Pb} b={K.Cu}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <g transform="translate(540 980) scale(1.1) translate(-530 -850)">
+          <g transform="translate(535 980) scale(1.12) translate(-530 -850)">
           <Racimo T={T} x={230} y={900} s={1.4} />
           <Racimo T={T} x={830} y={960} s={1.4} color={AUR} seed={3} />
           <path d="M 300 820 Q 540 600 780 860" stroke={KC.ink} strokeWidth={6} fill="none" strokeDasharray="16 12" strokeDashoffset={-T * 40} opacity={kprog(T, K.Pb + 0.3, K.Pb + 0.6)} />
@@ -261,8 +277,8 @@ function Desodorante() {
           {(() => { const v = kprog(T, K.Pb + 2.1, K.Pb + 3.8); return v > 0 ? <g><Odorante x={850} y={klerp(860, 700, v)} tipo="tiol" s={0.9} brillo={T} /><Nube T={T} x={860} y={720} f={v * 0.7} r={100} color={OLOR} seed={11} /></g> : null; })()}
           </g>
         </SvgCapa>
-        <Etq T={T} at={K.Pb + 0.3} until={K.Cu - 0.3} x={67} y={1211} texto="S. hominis" it tam={36} color={KC.ink} />
-        <Etq T={T} at={K.Pb + 0.6} until={K.Cu - 0.3} x={1030} y={1255} texto="S. aureus (no lo hacía)" it lado="izq" tam={34} color={KC.ink} />
+        <Etq T={T} at={K.Pb + 0.3} until={K.Cu - 0.3} x={67} y={1290} texto="S. hominis" it tam={36} color={KC.ink} />
+        <Etq T={T} at={K.Pb + 0.6} until={K.Cu - 0.3} x={1030} y={1340} texto="S. aureus (no lo hacía)" it lado="izq" tam={34} color={KC.ink} />
       </Escena>
       {/* 9 · lo curioso: antes que nuestra especie */}
       <Escena T={T} a={K.Cu} b={K.Al}>
@@ -274,9 +290,10 @@ function Desodorante() {
             <text x={90} y={1070} style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink} opacity={L}>antes</text>
             <text x={1000} y={1070} textAnchor="end" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Cu + 1.4, K.Cu + 1.8)}>ahora</text>
           </g>; })()}
-          <Racimo T={T} x={200} y={880} s={1} />
-          <Nube T={T} x={240} y={760} f={kprog(T, K.Cu + 0.4, K.Cu + 1.4) * 0.6} r={80} color={OLOR} seed={13} />
-          {(() => { const e = kprog(T, K.Cu + 2.0, K.Cu + 2.8, kEase.rebote); return e > 0 ? <Personita x={klerp(1150, 880, e)} y={900} s={3} color={KC.orange} /> : null; })()}
+          {/* belleza: bacterias y persona crecen para llenar el cuadro sobre la línea del tiempo */}
+          <Racimo T={T} x={230} y={840} s={1.7} />
+          <Nube T={T} x={260} y={650} f={kprog(T, K.Cu + 0.4, K.Cu + 1.4) * 0.6} r={120} color={OLOR} seed={13} />
+          {(() => { const e = kprog(T, K.Cu + 2.0, K.Cu + 2.8, kEase.rebote); return e > 0 ? <Personita x={klerp(1150, 860, e)} y={900} s={5} color={KC.orange} /> : null; })()}
         </SvgCapa>
         <Etq T={T} at={K.Cu + 2.6} until={K.Al - 0.3} x={820} y={1130} texto="nuestra especie" lado="izq" tam={34} color={KC.ink} />
       </Escena>
@@ -284,17 +301,20 @@ function Desodorante() {
       <Escena T={T} a={K.Al} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
+          {/* belleza: todo crece ×1.2 y la tarjeta se acerca para no salirse */}
+          <g transform="translate(520 1000) scale(1.2) translate(-520 -940)">
           <Barra x={240} y={960} texto="Al" banda="#d6dbe3" color={KC.white} />
           {(() => { const L = kprog(T, K.Al + 0.8, K.Al + 1.8, kEase.suave); return <g>
             <line x1={360} y1={940} x2={360 + 300 * L} y2={940} stroke="#6b6f78" strokeWidth={14} strokeDasharray="22 18" strokeLinecap="round" />
             <text x={510} y={900} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={6} opacity={L}>?</text>
           </g>; })()}
-          {(() => { const e = kprog(T, K.Al + 1.2, K.Al + 1.7, kEase.rebote); return e > 0 ? <g transform={`translate(830 940) scale(${e})`}>
+          {(() => { const e = kprog(T, K.Al + 1.2, K.Al + 1.7, kEase.rebote); return e > 0 ? <g transform={`translate(770 940) scale(${e})`}>
             <rect x={-160} y={-80} width={320} height={160} rx={30} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
             <path d="M -20 -40 Q 0 -70 20 -40 L -10 40 M 20 -40 L -30 50" stroke="#ff6fa8" strokeWidth={14} fill="none" strokeLinecap="round" transform="translate(-95 0)" />
             <text x={30} y={-6} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>cáncer</text>
             <text x={30} y={40} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>de mama</text>
           </g> : null; })()}
+          </g>
         </SvgCapa>
       </Escena>
       {/* 11 · cierre: la misma axila, ahora leída por dentro */}
