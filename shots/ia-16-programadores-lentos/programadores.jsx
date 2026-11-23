@@ -12,13 +12,26 @@ function Escritorio({ T, reloj = 0, robot = 1, codigo = 1, fondoPared = null }) 
   const teclea = Math.sin(T * 18) * 4, ang = T * 240;
   const n = Math.min(7, Math.floor(codigo * 7 + (T * 1.6) % 7));
   return <g transform={MESA}>
-    {/* escritorio */}
-    <rect x={-200} y={1130} width={1480} height={60} rx={10} fill="#b8794a" stroke={KC.ink} strokeWidth={8} />
+    <defs>
+      <linearGradient id="prgMadera" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#d0925f" /><stop offset="1" stopColor="#9a6238" /></linearGradient>
+      <linearGradient id="prgFrente" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#6e4428" /><stop offset="1" stopColor="#2e1c12" /></linearGradient>
+      <radialGradient id="prgPlayera" cx="35%" cy="20%" r="85%"><stop offset="0" stopColor="#ff9ec4" /><stop offset="0.6" stopColor={KC.pink} /><stop offset="1" stopColor="#a8336a" /></radialGradient>
+      <radialGradient id="prgCara" cx="35%" cy="30%" r="75%"><stop offset="0" stopColor="#f6c9a2" /><stop offset="1" stopColor="#c98a5e" /></radialGradient>
+      <linearGradient id="prgLaptop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#3d4a62" /><stop offset="1" stopColor="#1d2433" /></linearGradient>
+      <linearGradient id="prgPantalla" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#13203a" /><stop offset="1" stopColor="#080d18" /></linearGradient>
+    </defs>
+    {/* escritorio: cubierta con veta y frente con cajones */}
+    <rect x={-200} y={1226} width={1480} height={124} fill="url(#prgFrente)" stroke={KC.ink} strokeWidth={6} />
+    {[150, 930].map((cx) => <g key={cx}><rect x={cx - 150} y={1250} width={300} height={78} rx={10} fill="none" stroke="#8a5632" strokeWidth={5} opacity={0.7} />
+      <rect x={cx - 40} y={1282} width={80} height={14} rx={7} fill="#c9a27a" opacity={0.8} /></g>)}
+    <rect x={-200} y={1130} width={1480} height={60} rx={10} fill="url(#prgMadera)" stroke={KC.ink} strokeWidth={8} />
+    {[0, 1, 2].map((k) => <path key={k} d={`M -180 ${1146 + k * 14} Q 300 ${1140 + k * 14} 700 ${1150 + k * 13} T 1260 ${1146 + k * 14}`} stroke="#8a5632" strokeWidth={3} fill="none" opacity={0.45} />)}
     <rect x={-200} y={1186} width={1480} height={40} fill="#8a5632" stroke={KC.ink} strokeWidth={6} />
+    <ellipse cx={540} cy={1134} rx={300} ry={14} fill="#000" opacity={0.3} />
     {/* programadora (detrás de la laptop) */}
-    <path d="M 340 1135 Q 350 930 540 915 Q 730 930 740 1135 Z" fill={KC.pink} stroke={KC.ink} strokeWidth={8} />
+    <path d="M 340 1135 Q 350 930 540 915 Q 730 930 740 1135 Z" fill="url(#prgPlayera)" stroke={KC.ink} strokeWidth={8} />
     <rect x={505} y={860} width={70} height={70} fill="#d99a6c" stroke={KC.ink} strokeWidth={7} />
-    <circle cx={540} cy={790} r={92} fill="#e8ad7f" stroke={KC.ink} strokeWidth={8} />
+    <circle cx={540} cy={790} r={92} fill="url(#prgCara)" stroke={KC.ink} strokeWidth={8} />
     <path d="M 446 790 Q 440 680 545 690 Q 650 690 636 800 Q 622 730 560 735 Q 500 720 470 760 Z" fill="#2a1c18" stroke={KC.ink} strokeWidth={7} />
     <circle cx={505} cy={800} r={24} fill="none" stroke={KC.ink} strokeWidth={6} /><circle cx={578} cy={800} r={24} fill="none" stroke={KC.ink} strokeWidth={6} />
     <line x1={529} y1={800} x2={554} y2={800} stroke={KC.ink} strokeWidth={6} />
@@ -28,8 +41,9 @@ function Escritorio({ T, reloj = 0, robot = 1, codigo = 1, fondoPared = null }) 
     <ellipse cx={440} cy={1118 + teclea} rx={34} ry={20} fill="#e8ad7f" stroke={KC.ink} strokeWidth={6} />
     <ellipse cx={640} cy={1118 - teclea} rx={34} ry={20} fill="#e8ad7f" stroke={KC.ink} strokeWidth={6} />
     {/* laptop */}
-    <rect x={330} y={880} width={420} height={250} rx={18} fill="#2b3445" stroke={KC.ink} strokeWidth={9} />
-    <rect x={352} y={902} width={376} height={206} rx={8} fill="#0d1424" />
+    <rect x={330} y={880} width={420} height={250} rx={18} fill="url(#prgLaptop)" stroke={KC.ink} strokeWidth={9} />
+    <rect x={352} y={902} width={376} height={206} rx={8} fill="url(#prgPantalla)" />
+    <path d="M 600 908 L 720 908 L 640 1100 L 560 1100 Z" fill="#fff" opacity={0.05} />
     {lineas.slice(0, n).map((L, i) => <rect key={i} x={372 + L.ind * 24} y={920 + i * 26} width={L.l} height={12} rx={6} fill={L.c} opacity=".85" />)}
     <path d="M 290 1130 L 790 1130 L 760 1146 L 320 1146 Z" fill="#7f8ba3" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     {/* taza */}
@@ -155,10 +169,16 @@ function Repositorio({ T, x, y, s = 1, alto = 1 }) {
 // Hoja de calendario.
 function Calendario({ x, y, s = 1, anio = '2026' }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-170} y={-150} width={340} height={300} rx={24} fill={KC.paper} stroke={KC.ink} strokeWidth={9} />
-    <rect x={-170} y={-150} width={340} height={90} rx={24} fill={KC.red} stroke={KC.ink} strokeWidth={9} />
-    {[-90, 90].map((cx) => <rect key={cx} x={cx - 12} y={-180} width={24} height={60} rx={10} fill={KC.ink} />)}
-    <text y={90} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.ink}>{anio}</text>
+    <defs>
+      <linearGradient id="prgHoja" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#f6f2ea" /><stop offset="1" stopColor="#cfc8ba" /></linearGradient>
+      <linearGradient id="prgRojo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#ff6b5e" /><stop offset="1" stopColor="#b8322a" /></linearGradient>
+    </defs>
+    <ellipse cx={0} cy={172} rx={160} ry={16} fill="#000" opacity={0.35} />
+    <rect x={-170} y={-150} width={340} height={300} rx={24} fill="url(#prgHoja)" stroke={KC.ink} strokeWidth={9} />
+    <rect x={-170} y={-150} width={340} height={90} rx={24} fill="url(#prgRojo)" stroke={KC.ink} strokeWidth={9} />
+    <rect x={-150} y={-140} width={300} height={14} rx={7} fill="#fff" opacity={0.25} />
+    {[-90, 90].map((cx) => <rect key={cx} x={cx - 12} y={-180} width={24} height={60} rx={10} fill="#3a4152" stroke={KC.ink} strokeWidth={4} />)}
+    <text y={80} textAnchor="middle" style={{ font:`400 118px ${KF.titulo}` }} fill="#0b1020">{anio}</text>
   </g>;
 }
 
@@ -195,13 +215,13 @@ function Programadores() {
         <FondoLunares color={KC.lilac} />
         {svg(<>{Array.from({ length: 16 }, (_, i) => { const c = i % 4, f = Math.floor(i / 4), t0 = K.E + 0.05 + i * 0.03, t1 = K.E + 3.4 + i * 0.07;
           // los 16 están desde el inicio (atenuados, detrás de la tarjeta) y se encienden cuando la voz los nombra
-          return <g key={i} opacity={kprog(T, t0, t0 + 0.2) * klerp(0.4, 1, kprog(T, t1, t1 + 0.25))}><Carita x={210 + c * 220} y={545 + f * 185} s={1.6 * klerp(0.9, 1, kprog(T, t1, t1 + 0.35, kEase.rebote))}
+          return <g key={i} opacity={kprog(T, t0, t0 + 0.2) * klerp(0.4, 1, kprog(T, t1, t1 + 0.25))}><Carita x={195 + c * 230} y={640 + f * 195} s={1.72 * klerp(0.9, 1, kprog(T, t1, t1 + 0.35, kEase.rebote))}
             piel={['#e8ad7f', '#c98a5e', '#f1c7a0', '#8d5a3b'][i % 4]} pelo={['#2a1c18', '#6b3e1f', '#151515', '#c99a4a'][(i * 3) % 4]} playera={[KC.cyan, KC.pink, KC.yellow, VERDE, KC.orange][i % 5]} /></g>; })}</>)}
-        <Contador T={T} at={K.E + 4.0} hasta={246} dur={2.6} x={540} y={1318} tam={110} color={KC.yellow} />
+        <Contador T={T} at={K.E + 4.0} hasta={246} dur={2.6} x={540} y={1400} tam={110} color={KC.yellow} />
       </Escena>
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.2} anio="2025" quien="laboratorio METR" revista="Becker, Rush, Barnes y Rein · arXiv 2507.09089" y={330} />
       <Chip T={T} at={K.E + 3.5} until={K.S - 0.25} texto="16 programadores con experiencia" x={540} y={335} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.E + 4.2} until={K.S - 0.25} texto="tareas reales de sus proyectos" x={540} y={1475} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.E + 4.2} until={K.S - 0.25} texto="tareas reales de sus proyectos" x={540} y={1530} tam={36} borde={KC.ink} />
 
       {/* 4 · el sorteo: con IA / sin IA, pantallas grabadas */}
       <Escena T={T} a={K.S} b={K.P}>
@@ -255,7 +275,7 @@ function Programadores() {
       <Escena T={T} a={K.Co} b={K.Gi}>
         <FondoLunares color={KC.yellow} />
         {/* la programadora con su asistente sigue en pantalla: primero se ve bien, luego se atenúa detrás de las barras */}
-        <div style={{ position:'absolute', inset:0, opacity:klerp(0.6, 0.16, kprog(T, K.Co + 2.5, K.Co + 3.1)) }}>{svg(<Escritorio T={T} reloj={1} />)}</div>
+        <div style={{ position:'absolute', inset:0, opacity:klerp(0.6, 0.1, kprog(T, K.Co + 2.5, K.Co + 3.1)) }}>{svg(<Escritorio T={T} reloj={1} />)}</div>
       </Escena>
       <TarjetaEstudio T={T} at={K.Co + 0.2} until={K.Co + 2.6} anio="2023" quien="Peng y colegas · Copilot" revista="Microsoft Research, GitHub y MIT · arXiv 2302.06590" y={340} />
       <Chip T={T} at={K.Co + 2.7} until={K.Co + 4.3} texto="tarea sencilla: un servidor web" x={540} y={470} tam={40} borde={KC.ink} />
@@ -268,7 +288,7 @@ function Programadores() {
         <FondoLunares color={KC.lilac} />
         {svg(<>
           <Calendario x={500} y={930} s={klerp(1.5, 1.9, kprog(T, K.Gi + 0.1, K.Gi + 0.6, kEase.rebote))} />
-          <g opacity={kprog(T, K.Gi + 1.6, K.Gi + 2.0)} transform={`translate(890 ${1290 - Math.sin(T * 3) * 8}) scale(1.7) translate(-870 -895)`}>
+          <g opacity={kprog(T, K.Gi + 1.6, K.Gi + 2.0)} transform={`translate(850 ${1350 - Math.sin(T * 3) * 8}) scale(1.7) translate(-870 -895)`}>
             <path d="M 830 1000 L 830 880 L 790 880 L 870 790 L 950 880 L 910 880 L 910 1000 Z" fill={VERDE} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
             <text x={870} y={980} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.paper} stroke={KC.ink} strokeWidth={3}>?</text>
           </g>
