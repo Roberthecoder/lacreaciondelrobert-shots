@@ -361,7 +361,7 @@ function Estrellitas34() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa><Defs /><Techo T={T} luz={1} /><Foco x={840} y={380} on={0} s={0.9} /></SvgCapa>
-        <Lupa T={T} at={K.Ci + 0.4} until={K.Ou - 0.2} x={400} y={760} r={210} fx={470} fy={690} tinte={VERDE2} etiqueta="luz guardada" interior={(t, r) => {
+        <Lupa T={T} at={K.Ci + 0.4} until={K.Ou - 0.2} x={540} y={1010} r={250} fx={470} fy={690} tinte={VERDE2} etiqueta="luz guardada" interior={(t, r) => {
           const p = ((t - K.Ci) % 1.6) / 1.6, sale = kprog(p, 0.3, 0.7, kEase.suave), fl = p > 0.7 ? Math.exp(-(p - 0.7) * 8) : 0;
           return <svg width={r * 2} height={r * 2}><g transform={`translate(${r} ${r})`}>
             <filter id="b3"><feGaussianBlur stdDeviation="10" /></filter>
