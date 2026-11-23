@@ -168,7 +168,7 @@ function Fecal() {
   const ciclo = (T > K.Re + 1.2 ? Math.sin((T - K.Re - 1.2) / 0.9 * Math.PI) : 0);
   const cdiffs = [[540, 790, 20], [540 - 210 * divide, 700 - 40 * divide, 70], [540 + 200 * divide, 880 + 30 * divide, -30]];
   const microVisible = T > K.An - 0.5 && T < K.Pr + 0.5;
-  const Micro = ({ bilis = 0 }) => <CapaF><g transform="translate(0 120)">
+  const Micro = ({ bilis = 0 }) => <CapaF><g transform="translate(0 220)">   {/* belleza: bosque bajado 100 px más para centrarlo */}
     {BOSQUE.map((b, i) => <g key={i} opacity={huecoO(b)}><BichoBosque T={T} b={b} vida={vidaDe(b)} /></g>)}
     {bilis === 0 && T > K.Di && T < K.Pr + 0.5 && cdiffs.map(([x, y, r], i) => (i === 0 || divide > 0) &&
       <CDiff key={i} T={T} x={x} y={y} rot={r + Math.sin(T + i) * 6} s={1.35 * crece * (i === 0 ? 1 : divide) * (1 - 0.25 * Math.max(0, ciclo))} espora={esporaK} o={1 - kprog(T, K.Re + 0.9, K.Re + 1.2) * 0.6 + 0.6 * Math.max(0, ciclo)} seed={i + 2} />)}
@@ -315,16 +315,16 @@ function Fecal() {
       <NumeroGigante T={T} at={K.Bo + 0.9} until={K.An - 0.2} valor={38} dur={1.0} sufijo=" billones" etiqueta="bacterias en el colon (estimación 2016)" y={1560} tam={120} color={KC.mint} />
       {((T > K.Bo + 0.5 && T < K.Pr) || (T > K.Bi && T < K.Rb)) && <Escala T={T} z={1} pxPorMm={40000} x={60} y={1720} />}
       <Chip T={T} at={K.An + 0.5} until={K.Di - 0.3} texto="antibiótico: el bosque se desordena" y={1490} tam={38} borde={KC.red} />
-      <Etq T={T} at={K.Di + 1.0} until={K.Re - 0.2} x={450} y={770} texto="Clostridioides difficile" it tam={32} color={CDIF} />
+      <Etq T={T} at={K.Di + 1.0} until={K.Re - 0.2} x={450} y={870} texto="Clostridioides difficile" it tam={32} color={CDIF} />
       <Chip T={T} at={K.Di + 1.4} until={K.Re - 0.3} texto="toxinas → diarrea" y={1490} tam={42} borde={TOX} />
-      <Etq T={T} at={K.Re + 0.8} until={K.Pr - 0.2} x={335} y={865} texto="espora" lado="izq" tam={36} color="#fff7dc" />
+      <Etq T={T} at={K.Re + 0.8} until={K.Pr - 0.2} x={335} y={965} texto="espora" lado="izq" tam={36} color="#fff7dc" />
       <Chip T={T} at={K.Re + 0.9} until={K.Pr - 0.2} texto={`recaída ${recaida}`} y={1490} tam={46} borde={CDIF} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 1.6} anio="2013" quien="Ámsterdam · van Nood et al." revista="New England Journal of Medicine" y={380} />
       <Chip T={T} at={K.Es + 1.9} until={es2 - 0.4} texto="sonda: nariz → intestino delgado" y={1490} tam={38} borde={CAFE} />
       <Chip T={T} at={es2 + 0.4} until={K.Pa - 0.2} texto="curados sin recaída a las 10 semanas" y={1490} tam={36} borde={KC.mint} />
       <Chip T={T} at={K.Pa + 1.4} until={K.Bi - 0.3} texto="se detuvo: el trasplante iba muy por delante" y={1490} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Bi + 0.4} until={K.Rb - 0.3} texto="hipótesis: se cree que…" y={1490} tam={40} borde={BILIS} />
-      <Etq T={T} at={K.Bi + 1.2} until={K.Rb - 0.3} x={60} y={1290} texto="ácidos biliares (hipótesis)" tam={36} color={BILIS} />
+      <Etq T={T} at={K.Bi + 1.2} until={K.Rb - 0.3} x={60} y={1390} texto="ácidos biliares (hipótesis)" tam={36} color={BILIS} />
       <TarjetaEstudio T={T} at={K.Rb + 0.2} until={K.Vo - 0.3} anio="2022" quien="FDA · Rebyota" revista="1.er producto de microbiota fecal aprobado" y={400} />
       <Chip T={T} at={K.Rb + 1.2} until={K.Vo - 0.3} texto="una sola dosis, por vía rectal" y={1490} tam={40} borde={KC.blue} />
       <Chip T={T} at={K.Vo + 0.1} until={K.Do - 0.2} texto="2023 · FDA · Vowst" x={540} y={540} tam={48} borde={KC.blue} />
