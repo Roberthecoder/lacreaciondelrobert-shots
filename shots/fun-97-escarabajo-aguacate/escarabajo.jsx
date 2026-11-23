@@ -222,7 +222,8 @@ function EscarabajoShot() {
       {/* 4 · por dentro de la madera: cava el túnel, siembra el hongo, larvas que lo comen */}
       <Escena T={T} a={K.Tu} b={K.D} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:'#1a120c' }}></div>
-        {fsvg(<>
+        {/* belleza (2.ª pasada): el túnel ×1.5 y la cámara sigue al escarabajo */}
+        {fsvg(<g transform={`translate(${-320 * cava} 995) scale(1.5) translate(0 -995)`}>
           {Array.from({ length: 14 }, (_, i) => <path key={i} d={`M -20 ${760 + i * 40} Q 540 ${740 + i * 40 + (i % 2 ? 30 : -10)} 1100 ${760 + i * 40}`} stroke="#3a281a" strokeWidth={6} fill="none" />)}
           <rect x={0} y={740} width={80} height={560} fill={EC.corteza} stroke={KC.ink} strokeWidth={6} />
           <rect x={40} y={940} width={klerp(40, 900, cava)} height={110} rx={55} fill={EC.tunel} stroke="#6a4a2a" strokeWidth={6} />
@@ -234,12 +235,13 @@ function EscarabajoShot() {
             {[[610, 870], [600, 905], [625, 940]].map(([ex, ey], i) => <ellipse key={i} cx={ex} cy={ey} rx={12} ry={17} fill="#fffaf0" stroke={KC.ink} strokeWidth={3} />)}
           </g>}
           <Escarabajo T={T} x={klerp(120, 820, cava)} y={995} s={0.62} camina={cava < 1 ? 1 : 0.2} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 5 · el árbol se defiende: tapa sus propios tubos de agua (tilosis y gomas) */}
       <Escena T={T} a={K.D} b={K.Ma} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {fsvg(<>
+        {/* belleza (2.ª pasada): los tubos del xilema ×1.3, llenan el cuadro */}
+        {fsvg(<g transform="translate(540 1070) scale(1.3) translate(-540 -900)">
           {[0, 1, 2, 3, 4, 5].map((i) => { const tx = 150 + i * 150, k = tapa(i);
             return <g key={i}>
               <rect x={tx - 42} y={620} width={84} height={560} rx={20} fill="#16304a" stroke="#7fa6c9" strokeWidth={5} />
@@ -248,7 +250,7 @@ function EscarabajoShot() {
               {[0.25, 0.5, 0.75].map((q, j) => <circle key={'t' + j} cx={tx + (j - 1) * 10} cy={620 + 560 * q} r={34 * k} fill={EC.tilosis} stroke={KC.ink} strokeWidth={3} opacity={k > 0 ? 1 : 0} />)}
               <path d={`M ${tx - 6} 1170 Q ${tx + 18} ${1170 - 180 * hongoSube} ${tx - 10} ${1170 - 380 * hongoSube}`} stroke={EC.mancha} strokeWidth={6} fill="none" opacity=".9" />
             </g>; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 6 · sin agua se marchita: hojas rojizo-café que se quedan colgadas; manchas oscuras en la albura */}
       <Escena T={T} a={K.Ma} b={K.P} zoom={0.05}>
@@ -381,8 +383,8 @@ function EscarabajoShot() {
       <Etq T={T} at={K.B + 1.6} until={K.Tu - 0.3} x={60} y={1300} texto="micangios (2 bolsitas)" tam={32} color={KC.gold2} />
       <Etq T={T} at={K.B + 2.4} until={K.Tu - 0.3} x={60} y={1355} texto={<>esporas de <i>Raffaelea lauricola</i></>} tam={28} color={KC.gold2} />
       <Caja T={T} at={K.Tu + 0.2} until={K.D - 0.3} x={50} y={420} texto="POR DENTRO · esquemático" tam={28} />
-      <Etq T={T} at={K.Tu + 1.5} until={K.D - 0.3} x={60} y={1110} texto="jardín de hongo" tam={32} color={EC.hongo} />
-      <Etq T={T} at={K.Tu + 2.3} until={K.D - 0.3} x={60} y={870} texto="larvas que comen el hongo" tam={30} />
+      <Etq T={T} at={K.Tu + 1.5} until={K.D - 0.3} x={60} y={1150} texto="jardín de hongo" tam={32} color={EC.hongo} />
+      <Etq T={T} at={K.Tu + 2.3} until={K.D - 0.3} x={60} y={840} texto="larvas que comen el hongo" tam={30} />
       <Caja T={T} at={K.Tu + 2.6} until={K.D - 0.3} x={50} y={500} texto="no come madera: come el hongo" tam={28} />
       <Caja T={T} at={K.D + 0.2} until={K.Ma - 0.3} x={50} y={420} texto="xilema · tubos de agua" tam={30} />
       <Etq T={T} at={K.D + 1.0} until={K.Ma - 0.3} x={60} y={500} texto="tapones del árbol (tilosis)" tam={30} color={EC.tilosis} />
