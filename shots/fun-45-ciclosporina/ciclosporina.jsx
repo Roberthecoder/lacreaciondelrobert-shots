@@ -7,11 +7,14 @@ function Mano({ x, y, s = 1, abre = 1 }) {
   const piel = '#f2c29b', piel2 = '#d99a72';
   const giro = klerp(-70, 8, abre);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -260 40 Q -270 170 -40 190 Q 190 185 230 60 L 250 20 Q 120 70 -40 70 Q -180 70 -260 40 Z" fill={piel} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
-    <path d="M -260 40 Q -330 90 -420 120 L -420 230 Q -300 210 -180 175" fill={piel} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <defs><linearGradient id="manoPiel" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stopColor="#f8d3b2" /><stop offset="0.6" stopColor={piel} /><stop offset="1" stopColor="#c98a62" /></linearGradient></defs>
+    <ellipse cx={-60} cy={250} rx={330} ry={30} fill="#000" opacity={0.3} />
+    <path d="M -260 40 Q -270 170 -40 190 Q 190 185 230 60 L 250 20 Q 120 70 -40 70 Q -180 70 -260 40 Z" fill="url(#manoPiel)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <path d="M -260 40 Q -330 90 -420 120 L -420 230 Q -300 210 -180 175" fill="url(#manoPiel)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     <path d="M -150 140 Q -40 160 90 140" stroke={piel2} strokeWidth={6} fill="none" strokeLinecap="round" />
     {[0, 1, 2, 3].map((k) => <g key={k} transform={`translate(${210 - k * 8} ${40 + k * 22}) rotate(${giro - k * 4})`}>
       <rect x={-10} y={-34 + k * 2} width={150 - k * 14} height={44} rx={22} fill={piel} stroke={KC.ink} strokeWidth={7} />
+      <rect x={4} y={-28 + k * 2} width={110 - k * 14} height={10} rx={5} fill="#fff" opacity={0.22} />
     </g>)}
     <g transform={`translate(-230 30) rotate(${klerp(60, -18, abre)})`}><rect x={-20} y={-30} width={130} height={50} rx={25} fill={piel} stroke={KC.ink} strokeWidth={7} /></g>
   </g>;
@@ -22,7 +25,8 @@ function Punado({ T, x, y, s = 1, cae = 1, seed = 4 }) {
   const granos = Array.from({ length: 26 }, () => [g() * 340 - 170, -g() * 110, 6 + g() * 10, g()]);
   const h = 130 * kEase.sale(kclamp(cae, 0, 1));
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d={`M -200 0 Q -150 ${-h * 0.9} -30 ${-h} Q 90 ${-h * 1.05} 160 ${-h * 0.6} Q 210 ${-h * 0.2} 200 0 Z`} fill={FK.tierra} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <defs><radialGradient id="tierraGrad" cx="35%" cy="15%" r="90%"><stop offset="0" stopColor="#8a5f3a" /><stop offset="0.6" stopColor={FK.tierra} /><stop offset="1" stopColor="#3d2614" /></radialGradient></defs>
+    <path d={`M -200 0 Q -150 ${-h * 0.9} -30 ${-h} Q 90 ${-h * 1.05} 160 ${-h * 0.6} Q 210 ${-h * 0.2} 200 0 Z`} fill="url(#tierraGrad)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     {granos.map(([gx, gy, r, c], i) => (-gy < h * 0.85 && Math.abs(gx) < 170 - (-gy) * 0.6) ? <circle key={i} cx={gx} cy={gy - 8} r={r} fill={c > 0.6 ? '#8a5a35' : c > 0.3 ? FK.tierra2 : '#a77b4f'} /> : null)}
     {cae > 0.8 && <path d="M 40 -60 q 30 -20 60 -10 q 20 8 40 -6" stroke="#e9d6a8" strokeWidth={5} fill="none" strokeLinecap="round" />}
   </g>;
@@ -41,6 +45,8 @@ function Frasco({ x, y, s = 1, o = 1 }) {
     <rect x={-80} y={-200} width={160} height={60} rx={14} fill={KC.orange} stroke={KC.ink} strokeWidth={8} />
     <rect x={-56} y={-110} width={112} height={100} rx={10} fill={KC.mint} stroke={KC.ink} strokeWidth={5} />
     <path d="M 0 -90 L 0 -30 M -30 -60 L 30 -60" stroke="#fff" strokeWidth={14} strokeLinecap="round" />
+    <rect x={-63} y={-136} width={9} height={160} rx={4} fill="#fff" opacity={0.6} />
+    <rect x={58} y={-136} width={8} height={168} rx={4} fill="#c9bfa8" opacity={0.6} />
   </g>;
 }
 // Riñón (forma de frijol). brillo 0..1 = halo verde de "funciona".
@@ -144,8 +150,9 @@ function Senales({ T, x, y, fuerza = 1, n = 8 }) {
 // Persona (silueta) con el riñón trasplantado.
 function Silueta({ x, y, s = 1, color = '#8fb6ff' }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <circle cx={0} cy={-330} r={95} fill={color} stroke={KC.ink} strokeWidth={8} />
-    <path d="M -230 360 L -230 -80 Q -230 -200 -110 -210 L 110 -210 Q 230 -200 230 -80 L 230 360 Z" fill={color} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <defs><linearGradient id="silGrad" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stopColor="#b6cfff" /><stop offset="0.5" stopColor={color} /><stop offset="1" stopColor="#5f80c4" /></linearGradient></defs>
+    <circle cx={0} cy={-330} r={95} fill="url(#silGrad)" stroke={KC.ink} strokeWidth={8} />
+    <path d="M -230 360 L -230 -80 Q -230 -200 -110 -210 L 110 -210 Q 230 -200 230 -80 L 230 360 Z" fill="url(#silGrad)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
   </g>;
 }
 // Científico en silueta (sin cara): bata blanca y cabeza oscura.
@@ -160,7 +167,9 @@ function Cientifico({ x, y, s = 1 }) {
 function Raton({ T, x, y, s = 1, parche = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d={`M -120 10 Q -200 ${-10 + Math.sin(T * 3) * 10} -260 30`} stroke="#e9a0b4" strokeWidth={8} fill="none" strokeLinecap="round" />
-    <ellipse cx={0} cy={0} rx={130} ry={72} fill="#f4f1ec" stroke={KC.ink} strokeWidth={7} />
+    <defs><radialGradient id="ratGrad" cx="35%" cy="25%" r="85%"><stop offset="0" stopColor="#ffffff" /><stop offset="0.6" stopColor="#e9e4dc" /><stop offset="1" stopColor="#a9a39a" /></radialGradient></defs>
+    <ellipse cx={0} cy={96} rx={170} ry={16} fill="#000" opacity={0.3} />
+    <ellipse cx={0} cy={0} rx={130} ry={72} fill="url(#ratGrad)" stroke={KC.ink} strokeWidth={7} />
     <path d="M 100 -40 Q 190 -20 200 20 Q 150 50 100 40 Z" fill="#f4f1ec" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     <circle cx={110} cy={-50} r={28} fill="#f7c9d4" stroke={KC.ink} strokeWidth={6} />
     <circle cx={160} cy={0} r={7} fill={KC.ink} /><circle cx={202} cy={20} r={8} fill="#e9a0b4" />
@@ -242,14 +251,17 @@ function CiclosporinaShot() {
       {/* 3 · Sandoz: el caldo con el moho y la molécula de 11 piezas */}
       <Escena T={T} a={K.S} b={K.R}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<g transform="translate(510 930) scale(1.35) translate(-480 -930)">
+        {fsvg(<g transform="translate(590 930) scale(1.55) translate(-470 -930)">
           <g transform="translate(330 1000)">
             <path d="M -50 -300 L -50 -150 L -190 140 Q -200 170 -170 170 L 170 170 Q 200 170 190 140 L 50 -150 L 50 -300 Z" fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
-            <path d="M -125 10 L -190 140 Q -200 170 -170 170 L 170 170 Q 200 170 190 140 L 125 10 Z" fill="#e8c46a" stroke={KC.ink} strokeWidth={5} />
+            <defs><linearGradient id="caldoGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#f2d684" /><stop offset="1" stopColor="#b8923c" /></linearGradient></defs>
+            <ellipse cx={0} cy={186} rx={210} ry={18} fill="#000" opacity={0.3} />
+            <path d="M -125 10 L -190 140 Q -200 170 -170 170 L 170 170 Q 200 170 190 140 L 125 10 Z" fill="url(#caldoGrad)" stroke={KC.ink} strokeWidth={5} />
+            <path d="M -32 -280 L -32 -150 L -110 10" stroke="#fff" strokeWidth={10} fill="none" strokeLinecap="round" opacity={0.45} />
             {[[-80, 90], [0, 60], [70, 110], [-20, 130], [110, 140]].map(([a, b], i) => <circle key={i} cx={a} cy={b + Math.sin(T * 2 + i) * 6} r={26} fill="#fffaf0" stroke={KC.ink} strokeWidth={4} />)}
             <rect x={-62} y={-318} width={124} height={34} rx={10} fill="#d9d2c4" stroke={KC.ink} strokeWidth={6} />
           </g>
-          {(() => { const v = kprog(T, K.S + 0.8, K.S + 1.6, kEase.sale); return <Ciclo x={klerp(330, 720, v)} y={klerp(1000, 760, v)} r={90} p={kprog(T, K.S + 1.2, K.S + 2.4)} rot={T * 15} />; })()}
+          {(() => { const v = kprog(T, K.S + 0.8, K.S + 1.6, kEase.sale); return <Ciclo x={klerp(330, 650, v)} y={klerp(1000, 820, v)} r={90} p={kprog(T, K.S + 1.2, K.S + 2.4)} rot={T * 15} />; })()}
         </g>)}
       </Escena>
       {/* 4 · el rechazo: los linfocitos T atacan el riñón nuevo */}
@@ -286,8 +298,8 @@ function CiclosporinaShot() {
       <Escena T={T} a={K.Ra} b={K.Cn}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Cientifico x={200} y={860} s={1.05} />
-          <Cientifico x={880} y={860} s={1.05} />
+          <Cientifico x={200} y={870} s={1.3} />
+          <Cientifico x={880} y={870} s={1.3} />
           <Raton T={T} x={560} y={1170} s={1.5} parche={kprog(T, K.Ra + 2.4, K.Ra + 2.9)} />
         </>)}
       </Escena>
@@ -343,7 +355,7 @@ function CiclosporinaShot() {
       <Etq T={T} at={NM + 1.8} until={K.S - 0.3} x={760} y={560} texto="esporas" tam={28} color="#bfe3ff" />
       <Chip T={T} at={K.S + 0.3} until={K.R - 0.3} texto="Sandoz · Basilea, Suiza" x={420} y={430} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.S + 2.0} until={K.R - 0.3} x={670} y={520} texto="ciclosporina" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.S + 2.6} until={K.R - 0.3} x={630} y={885} texto="anillo de 11 piezas" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.S + 2.6} until={K.R - 0.3} x={590} y={985} texto="anillo de 11 piezas" tam={28} color={KC.ink} />
       <Chip T={T} at={K.R + 2.6} until={K.P - 0.3} texto="rechazo" x={870} y={400} tam={46} borde={KC.red} />
       <Etq T={T} at={K.R + 0.6} until={K.P - 0.3} x={40} y={400} texto="linfocitos T" tam={30} color={KC.ink} />
       <Etq T={T} at={K.R + 1.2} until={K.P - 0.3} x={792} y={945} texto="riñón nuevo" tam={26} color={KC.ink} />
@@ -353,8 +365,8 @@ function CiclosporinaShot() {
       <Etq T={T} at={K.Ca + 2.0} until={K.Ra - 0.3} x={606} y={1022} texto="calcineurina" lado="izq" tam={26} color={KC.leaf} />
       <Chip T={T} at={K.Al + 0.6} until={K.Ra - 0.3} texto="señales de ataque: apagadas" x={540} y={392} tam={34} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.Ra + 0.2} until={K.Cn - 0.3} anio="1976" quien="Borel, Feurer, Gubler y Stähelin" revista="Sandoz · Agents and Actions" x={540} y={370} />
-      <Etq T={T} at={K.Ra + 1.2} until={K.Cn - 0.3} x={85} y={965} texto="Borel" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Ra + 1.4} until={K.Cn - 0.3} x={995} y={965} texto="Stähelin" lado="izq" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Ra + 1.2} until={K.Cn - 0.3} x={85} y={985} texto="Borel" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Ra + 1.4} until={K.Cn - 0.3} x={995} y={985} texto="Stähelin" lado="izq" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Ra + 3.0} until={K.Cn - 0.3} texto="injerto de piel: tarda en rechazarse" x={540} y={1380} tam={36} borde={KC.leaf} />
       <TarjetaEstudio T={T} at={K.Cn + 0.2} until={K.Cn + 2.3} anio="1983" quien="Canadá · 209 trasplantes de riñón" revista="N Engl J Med, 1983" y={420} />
       <Chip T={T} at={K.Cn + 2.6} until={K.Es - 0.3} texto="riñones funcionando al año (estimado)" x={540} y={540} tam={34} borde={KC.ink} />
@@ -372,7 +384,7 @@ function CiclosporinaShot() {
       <BarraEscala T={T} at={K.G} until={K.N} texto="5 cm" largo={338} />
       <BarraEscala T={T} at={K.N} until={NM} texto="200 km" largo={128} color={KC.ink} />
       <BarraEscala T={T} at={NM} until={K.S} texto="10 µm" largo={140} />
-      <BarraEscala T={T} at={K.S} until={K.R} texto="5 cm" largo={162} />
+      <BarraEscala T={T} at={K.S} until={K.R} texto="5 cm" largo={186} />
       <BarraEscala T={T} at={K.R} until={K.P} texto="10 cm" largo={125} />
       <BarraEscala T={T} at={K.Ca} until={K.Ra} texto="2 µm" largo={221} />
       <BarraEscala T={T} at={K.Es} until={K.H} texto="1 cm" largo={240} />
