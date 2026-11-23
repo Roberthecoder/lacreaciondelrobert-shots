@@ -1,0 +1,1 @@
+- bio-28-dolly: ovejas con volumen (degradado radial en la lana, brillo, sombra en el piso); en Dolly edificio y oveja bajados 100 px y algo más grandes; puntos del Estudio con brillo y sombra; Rasgos con las tres ovejas ×1.12, centradas y sin cortarse; Clones en 2×2 más grandes (0.44→0.6) con tarjeta arriba y chips abajo.
