@@ -313,7 +313,7 @@ function Captopril() {
             return <g>
               <Inhibidor x={560} y={klerp(900, 1000, p)} s={klerp(2.3, 0.3, p)} azufre o={1 - kprog(T, K.C + 1.2, K.C + 1.5)} />
               <g transform={`translate(540 ${klerp(940, 1000, p)}) scale(${2 * kprog(T, K.C + 1.2, K.C + 1.6, kEase.rebote)})`}><circle r={120} fill="#fffdf7" stroke={KC.ink} strokeWidth={9} /><line x1={-80} y1={0} x2={80} y2={0} stroke="#c9c2b4" strokeWidth={8} />
-                <text x={0} y={-30} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}`, stroke:'none' }} fill={OSC}>CAPTOPRIL</text></g>
+                <text x={0} y={-30} textAnchor="middle" textLength={196} lengthAdjust="spacingAndGlyphs" style={{ font:`400 40px ${KF.titulo}`, stroke:'none' }} fill={OSC}>CAPTOPRIL</text></g>
             </g>; })()}
         </CpSvg>
         <Chip T={T} at={K.C + 1.8} until={K.Se - 0.2} texto="1981 · FDA · primer inhibidor de la ECA en pastilla" y={1500} tam={32} borde={KC.blue} />
@@ -323,7 +323,8 @@ function Captopril() {
         <FondoLunares color={KC.mint} />
         {/* pase a mano: «su dibujo» (el hueco de gis con su zinc) sobre la barra de los ~60, desde que empieza la escena */}
         <CpSvg>
-          <g transform="translate(0 -80)">
+          {/* belleza: todo 160 px más abajo (quedaba cargado arriba) */}
+          <g transform="translate(0 80)">
           <g stroke="#f6f3ec" strokeWidth={9} fill="none" strokeLinecap="round" strokeLinejoin="round">
             <path d="M 620 600 L 620 860 Q 620 975 740 975 Q 860 975 860 860 L 860 600" />
             <path d="M 520 600 L 620 600 M 860 600 L 960 600" />
@@ -332,7 +333,7 @@ function Captopril() {
           </g>
         </CpSvg>
       </Escena>
-      <Comparativa T={T} at={K.Se + 0.3} until={K.Ci - 0.2} max={2000} y={500} alto={640}
+      <Comparativa T={T} at={K.Se + 0.3} until={K.Ci - 0.2} max={2000} y={660} alto={640}
         izq={{ valor:2000, etiqueta:'al azar', color:CP.gris, texto:'~2,000' }} der={{ valor:60, etiqueta:'con su dibujo', color:KC.yellow, texto:'~60' }} />
       <Chip T={T} at={K.Se + 1.6} until={K.Ci - 0.2} texto="compuestos probados (Cushman y Ondetti, 1991)" y={1500} tam={28} borde={KC.ink} />
       {/* 12 · cierre: la misma pastilla, ahora con su familia «pril» y la víbora */}
