@@ -1,0 +1,1 @@
+- fun-82-tesguino: tesgüinada: los tres cargadores ×1.35 con volumen y sombra (antes chiquitos), el palo sube a sus manos, la barra de 1 m crece igual (212→286 px) y los chips suben para no taparlos; el resto ya tenía buen nivel (ollas con volumen, micro con resplandor). Auditores: sin láminas, encuadre bien.
