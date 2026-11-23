@@ -63,6 +63,9 @@ function BallenaGris({ T = 0, flaca = 0, color = '#8b96a1', cria = false }) {
     <path d={`M -196 0 C -212 ${-4 + ola} -228 ${-30 + ola} -250 ${-52 + ola} C -262 ${-44 + ola} -268 ${-30 + ola} -262 ${-20 + ola} C -254 ${-10 + ola} -246 -4 -238 0 C -246 4 -254 ${10 + ola} -262 ${20 + ola} C -268 ${30 + ola} -262 ${44 + ola} -250 ${52 + ola} C -228 ${30 + ola} -212 4 -196 0 Z`} fill={color} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
     <g transform={`scale(1 ${1 - 0.18 * flaca})`}>
       <path d="M 200 2 C 190 -22 150 -38 90 -44 C 30 -50 -40 -46 -95 -34 C -140 -24 -175 -12 -200 -4 L -200 6 C -170 16 -130 30 -80 38 C -10 48 90 46 150 30 C 180 22 196 12 200 2 Z" fill={color} stroke={KC.ink} strokeWidth={6} />
+      {/* belleza: volumen del cuerpo (lomo con luz, vientre en sombra) */}
+      <defs><linearGradient id="balVol" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#fff" stopOpacity=".28" /><stop offset=".45" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#0b1830" stopOpacity=".38" /></linearGradient></defs>
+      <path d="M 196 2 C 186 -20 148 -35 90 -41 C 30 -47 -40 -43 -95 -31 C -140 -21 -173 -10 -196 -3 L -196 5 C -168 14 -128 27 -80 35 C -10 45 90 43 148 27 C 178 20 193 11 196 2 Z" fill="url(#balVol)" />
       {Array.from({ length: 6 }, (_, i) => <circle key={i} cx={-108 - i * 16} cy={-31 + i * 4.4} r={5} fill={color} stroke={KC.ink} strokeWidth={3} />)}
       {!cria && [[40,-30,18,7],[-30,-20,22,8],[-90,6,16,6],[10,18,14,5],[100,-20,10,4]].map(([x, y, rx, ry], i) => <ellipse key={i} cx={x} cy={y} rx={rx} ry={ry} fill="#dfe5ea" opacity=".85" />)}
       {!cria && [[150,-26],[160,-20],[140,-30],[170,-12]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r={5} fill="#f4efe0" stroke={KC.ink} strokeWidth={2} />)}
@@ -115,7 +118,7 @@ function BallenaGrisShot() {
   const icono = (i, x, y) => { const f = kclamp(vivas - i, 0, 1); return <g key={i} transform={`translate(${x} ${y}) scale(0.6)`} opacity={0.18 + 0.82 * f}><BallenaGris T={T + i} color={f > 0.5 ? '#8b96a1' : '#c9cfd5'} /></g>; };
   const rejilla = Array.from({ length: 27 }, (_, i) => icono(i, 210 + (i % 3) * 330, 720 + Math.floor(i / 3) * 86));
   // la ballena en grande (sujeto del video) nadando en el Pacífico del mapa; flaca 0..1 = desnutrida
-  const granBallena = (flaca = 0, dx = 0, dy = 0) => <g transform={`translate(${380 + dx + Math.sin(T * 0.7) * 12} ${1295 + dy + Math.sin(T * 1.1) * 7}) scale(1.1)`}><BallenaGris T={T} flaca={flaca} color={mixHex('#8b96a1', '#a3acb5', flaca)} /></g>;
+  const granBallena = (flaca = 0, dx = 0, dy = 0) => <g transform={`translate(${450 + dx + Math.sin(T * 0.7) * 12} ${1280 + dy + Math.sin(T * 1.1) * 7}) scale(1.45)`}>{/* belleza: la ballena grande ×1.45 (antes 1.1) */}<BallenaGris T={T} flaca={flaca} color={mixHex('#8b96a1', '#a3acb5', flaca)} /></g>;
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: un año de su vida en un mapa */}
@@ -127,7 +130,7 @@ function BallenaGrisShot() {
       {/* 2 · el Ártico: mares de Bering y Chukchi */}
       <Escena T={T} a={K.A} b={K.Co}>
         <FondoLunares color={KC.cyan} />
-        {svg(<g transform="translate(460 900) scale(2.3) translate(-410 -340)"><Mapa T={T} comida={kprog(T, K.A + 1.0, K.A + 2.0)} ruta={0.2} ballena={{ x: 395 + Math.sin(T) * 10, y: 455, ang: 0, s: 0.3 }} />
+        {svg(<g transform="translate(460 1010) scale(2.3) translate(-410 -340)">{/* belleza (encuadre): el Ártico baja 110 px (estaba ARRIBA) */}<Mapa T={T} comida={kprog(T, K.A + 1.0, K.A + 2.0)} ruta={0.2} ballena={{ x: 395 + Math.sin(T) * 10, y: 455, ang: 0, s: 0.3 }} />
           <text x={418} y={205} textAnchor="middle" style={{ font:`900 19px ${KF.texto}` }} fill={KC.ink}>Mar de Chukchi</text>
           <text x={318} y={507} textAnchor="middle" style={{ font:`900 19px ${KF.texto}` }} fill={KC.ink}>Mar de Bering</text></g>)}
         <EscalaFija texto="mapa esquemático" largo={0} y={1480} color={KC.ink} />
@@ -135,15 +138,15 @@ function BallenaGrisShot() {
       {/* 3 · cómo come: de lado, lodo del fondo, barbas, anfípodos */}
       <Escena T={T} a={K.Co} b={K.V} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0c1a2d, #0b101e 70%)' }}></div>
-        {svg(<>
+        {svg(<g transform="translate(0 140)">{/* belleza (encuadre): fondo marino, ballena y lodo bajan 140 px (estaban ARRIBA) */}
           <path d="M 0 1000 Q 270 970 540 990 T 1080 985 L 1080 1920 L 0 1920 Z" fill="#3a2a1c" stroke={KC.ink} strokeWidth={6} />
           {Array.from({ length: 10 }, (_, i) => <Anfipodo key={i} x={60 + i * 105} y={1030 + (i % 3) * 30} s={0.6} rot={i * 25} o={0.9} />)}
           <g transform="translate(395 950) scale(1.15) translate(-395 -950)"><g transform={`translate(640 ${840 + Math.sin(T * 1.5) * 6}) scale(-1.25 ${1.25 * klerp(1, 0.75, kprog(T, K.Co + 0.2, K.Co + 1.2))}) rotate(22)`}><BallenaGris T={T} /></g></g>
           {Array.from({ length: 9 }, (_, i) => { const u = ((T - K.Co) * 0.6 + i / 9) % 1; return <circle key={i} cx={400 + Math.sin(i * 2) * 60 + u * 80} cy={985 - u * 160} r={20 + u * 50} fill="#8a6a48" opacity={0.55 * (1 - u)} />; })}
-        </>)}
+        </g>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.texto} />
       </Escena>
-      <Lupa T={T} at={K.Co + 2.0} until={K.V - 0.2} x={300} y={560} r={210} fx={395} fy={950} zoom={6} tinte={KC.yellow} etiqueta="BARBAS"
+      <Lupa T={T} at={K.Co + 2.0} until={K.V - 0.2} x={300} y={690} r={210} fx={395} fy={1090} zoom={6} tinte={KC.yellow} etiqueta="BARBAS"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#1d2b3a" />
           {Array.from({ length: 11 }, (_, i) => <path key={i} d={`M ${30 + i * 36} 0 L ${44 + i * 36} 0 L ${40 + i * 36} ${r * 2 - 40} Q ${34 + i * 36} ${r * 2 - 20} ${28 + i * 36} ${r * 2 - 40} Z`} fill="#e8d7a0" stroke={KC.ink} strokeWidth={3} />)}
           {Array.from({ length: 14 }, (_, i) => { const u = ((t * 0.8 + i / 14) % 1); return <circle key={i} cx={u * r * 2} cy={60 + (i * 53) % (r * 2 - 120)} r={6} fill="#8a6a48" />; })}
@@ -207,13 +210,13 @@ function BallenaGrisShot() {
 
       {/* datos y etiquetas */}
       <NumeroGigante T={T} at={K.G + 0.8} until={K.A - 0.2} valor={16000} dur={4} etiqueta="ida y vuelta:" sufijo=" km" x={330} y={880} tam={96} color={KC.yellow} />
-      <Chip T={T} at={K.G + 0.3} until={K.A - 0.2} texto="1 año de ballena gris" y={1130} x={330} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.G + 0.3} until={K.A - 0.2} texto="1 año de ballena gris" y={1075} x={330} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.A + 0.3} until={K.Co - 0.2} texto="verano: a comer en el Ártico" y={300} x={560} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.A + 1.4} until={K.Co - 0.2} x={300} y={625} texto="anfípodos" lado="izq" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.A + 1.4} until={K.Co - 0.2} x={300} y={735} texto="anfípodos" lado="izq" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Co + 0.3} until={K.V - 0.2} texto="se pone de lado y chupa lodo" y={300} x={540} tam={32} borde={KC.yellow} />
-      <Chip T={T} at={K.Co + 2.6} until={K.V - 0.2} texto="130 a 180 barbas por lado" y={830} x={300} tam={26} borde={KC.yellow} />
-      <Etq T={T} at={K.Co + 3.2} until={K.V - 0.2} x={290} y={1138} texto="anfípodos (crustáceos)" lado="der" tam={30} color={KC.texto} />
-      <Chip T={T} at={K.V + 0.3} until={K.L - 0.2} texto="del Ártico a Baja California Sur" y={1130} x={380} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Co + 2.6} until={K.V - 0.2} texto="130 a 180 barbas por lado" y={430} x={300} tam={26} borde={KC.yellow} />
+      <Etq T={T} at={K.Co + 3.2} until={K.V - 0.2} x={290} y={1278} texto="anfípodos (crustáceos)" lado="der" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.V + 0.3} until={K.L - 0.2} texto="del Ártico a Baja California Sur" y={1075} x={380} tam={30} borde={KC.ink} />
       {BG_LAGUNAS.map((l, i) => { const sx = 600 + 2.6 * (l.x - 930), sy = 800 + 2.6 * (l.y - 1230);
         return <Etq key={i} T={T} at={K.L + 0.6 + i * 0.7} until={K.P - 0.2} x={sx - 24} y={sy} texto={l.n} lado="izq" tam={32} color={KC.ink} />; })}
       <Chip T={T} at={K.L + 3.0} until={K.P - 0.2} texto="enero y febrero: nacen las crías" y={300} x={480} tam={30} borde={KC.pink} />
@@ -231,7 +234,7 @@ function BallenaGrisShot() {
       <NumeroGigante T={T} at={K.M + 0.2} until={K.C - 0.2} valor={17750} desde={13000} dur={2.0} prefijo="≈" etiqueta="2026:" x={540} y={430} tam={150} color={KC.mint} />
       <Chip T={T} at={K.M + 2.8} until={K.C - 0.2} texto="al parecer, más de lo que explican sus crías" y={612} x={540} tam={26} borde={KC.ink} />
       <Chip T={T} at={K.M + 4.0} until={K.C - 0.2} texto="pregunta abierta (NOAA, jul 2026)" y={250} x={540} tam={26} borde={KC.yellow} />
-      <Chip T={T} at={K.C + 0.4} until={K.Ou - 0.1} texto="16,000 km · un Ártico con comida" y={1130} x={420} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.C + 0.4} until={K.Ou - 0.1} texto="16,000 km · un Ártico con comida" y={1075} x={420} tam={30} borde={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.A - 0.1} texto="Un año de ballena gris: *16,000 km.*" />
