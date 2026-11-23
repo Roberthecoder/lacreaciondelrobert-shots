@@ -91,17 +91,17 @@ function Ondas({ T, x, y, n = 3, dir = 'der', color = KC.ink, o = 1, r0 = 30 }) 
 function Sala({ T, luz = 0, globo, globoO = 0, fondo = KC.mint }) {
   return <>
     <FondoLunares color={fondo} />
-    {svgL(<>
-      <rect x={0} y={1060} width={KW} height={KH - 1060} fill="#2b241f" />
+    {svgL(<g transform="translate(0 -130)">
+      <rect x={0} y={1060} width={KW} height={KH - 1060 + 130} fill="#2b241f" />
       <g transform="translate(540 1060) scale(1.15) translate(-540 -1060)">
       <Mueble y={1060} />
       <Tele x={330} y={870} s={0.95} T={T} />
       <Ondas T={T} x={590} y={860} />
       <Bocina x={820} y={1066} s={1.05} T={T} luz={luz} />
-      {globo && <Globo x={420} y={560} w={420} h={120} texto={globo} o={globoO} s={klerp(0.6, 1, globoO)} tam={44} />}
+      {globo && <Globo x={420} y={640} w={420} h={120} texto={globo} o={globoO} s={klerp(0.6, 1, globoO)} tam={44} />}
       </g>
       <Sofa T={T} />
-    </>)}
+    </g>)}
   </>;
 }
 // Sofá con "tú" viendo la tele, de espaldas.
@@ -179,7 +179,7 @@ function Bocinas() {
       <Escena T={T} a={K.G} b={K.Es} zoom={0.04} origen="75% 60%">
         <Sala T={T} luz={kprog(T, K.G + 0.5, K.G + 0.8)} globo="bla bla bla…" globoO={kprog(T, K.G + 0.05, K.G + 0.4, kEase.sale)} />
       </Escena>
-      <Chip T={T} at={K.G + 2.6} until={K.Es - 0.2} texto="nadie la llamó" x={840} y={800} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.G + 2.6} until={K.Es - 0.2} texto="nadie la llamó" x={840} y={680} tam={38} borde={KC.red} />
       {/* 2 · escucha su nombre: por dentro */}
       <Escena T={T} a={K.Es} b={K.Ex}>
         <FondoCircuito T={T} />
@@ -244,8 +244,8 @@ function Bocinas() {
       <Escena T={T} a={K.P} b={K.D} zoom={0.1}>
         <FondoLunares color={KC.orange} />
         {svgL(<>
-          <text x={540} y={1130} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 950)`}>?</text>
-          <Bocina x={540} y={1500} s={2.6} T={T} luz={1} />
+          <text x={540} y={900} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 720)`}>?</text>
+          <Bocina x={540} y={1290} s={2.6} T={T} luz={1} />
         </>)}
       </Escena>
       {/* 7 · cuánto dura */}
@@ -310,7 +310,7 @@ function Bocinas() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.04} origen="75% 60%">
         <Sala T={T} luz={kprog(T, K.C + 0.6, K.C + 0.9)} globo="bla bla bla…" globoO={kprog(T, K.C + 0.2, K.C + 0.5, kEase.sale)} />
       </Escena>
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="fue la tele, no tú" x={770} y={600} tam={42} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="fue la tele, no tú" x={770} y={480} tam={42} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Es - 0.1} texto="No la llamaste: *la prendió la tele.*" />
