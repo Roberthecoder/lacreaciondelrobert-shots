@@ -184,20 +184,21 @@ function FotosOfrenda() {
         <FondoCircuito T={T} color={KC.cyan} />
         {svg(<>
           {/* pase a mano: la foto pixeleada está desde que empieza la escena (atenuada hasta que la voz llega a ella) y el hueco de la cara que falta se ve punteado */}
-          <g opacity={0.45 + 0.55 * kprog(T, K.E + 3.4, K.E + 3.8)}><Pixelado x={300} y={720} tam={440} piel="#d8a07a" pelo="#5a3a1c" /></g>
-          <rect x={560} y={1040} width={420} height={420} rx={34} fill="none" stroke={KC.ink} strokeWidth={6} strokeDasharray="22 16" opacity={0.4 * (1 - kprog(T, K.E + 4.6, K.E + 5.2))} />
-          <Flecha x1={400} y1={980} x2={525} y2={1200} p={kprog(T, K.E + 4.0, K.E + 4.6)} />
-          <g opacity={kprog(T, K.E + 4.6, K.E + 5.2)}><CaraSimple x={770} y={1250} s={1.4} piel="#e2a67c" pelo="#5a3a1c" peinado={0} /><g transform="translate(770 1250) scale(1.4)"><Chispas T={T} x={0} y={0} o={kprog(T, K.E + 4.8, K.E + 5.3)} /></g></g>
+          <g opacity={1}><Pixelado x={300} y={900} tam={460} piel="#d8a07a" pelo="#5a3a1c" /></g>
+          <rect x={560} y={1130} width={420} height={420} rx={34} fill="none" stroke={KC.ink} strokeWidth={6} strokeDasharray="22 16" opacity={0.6 * (1 - kprog(T, K.E + 4.6, K.E + 5.2))} />
+          <g opacity={0.6 * (1 - kprog(T, K.E + 4.6, K.E + 5.2))}><circle cx={770} cy={1290} r={95} fill="#8fa3bd" /><path d="M 620 1530 Q 630 1400 770 1395 Q 910 1400 920 1530 Z" fill="#8fa3bd" /></g>
+          <Flecha x1={400} y1={1170} x2={525} y2={1320} p={kprog(T, K.E + 4.0, K.E + 4.6)} />
+          <g opacity={kprog(T, K.E + 4.6, K.E + 5.2)}><CaraSimple x={770} y={1340} s={1.4} piel="#e2a67c" pelo="#5a3a1c" peinado={0} /><g transform="translate(770 1340) scale(1.4)"><Chispas T={T} x={0} y={0} o={kprog(T, K.E + 4.8, K.E + 5.3)} /></g></g>
         </>)}
       </Escena>
       {/* 8 · Obama: la foto pixeleada → la cara de un hombre blanco (2020). Esquemático, sin retratar a nadie. */}
       <Escena T={T} a={K.Ob} b={K.Se}>
         <FondoCircuito T={T} color={KC.red} />
         {svg(<>
-          <Pixelado x={300} y={720} tam={440} piel="#7a4a30" pelo="#1d1410" fondo="#6f86a8" ropa="#1a2236" />
-          <rect x={560} y={1040} width={420} height={420} rx={34} fill="none" stroke={KC.ink} strokeWidth={6} strokeDasharray="22 16" opacity={0.4 * (1 - kprog(T, K.Ob + 2.2, K.Ob + 2.8))} />
-          <Flecha x1={400} y1={980} x2={525} y2={1200} p={kprog(T, K.Ob + 1.6, K.Ob + 2.2)} color={KC.red} />
-          <g opacity={kprog(T, K.Ob + 2.2, K.Ob + 2.8)}><CaraSimple x={770} y={1250} s={1.4} piel="#f3cdb2" pelo="#7a4a22" ojos="#2f6dff" fondo="#9cc7d9" sonrisa={0.3} /></g>
+          <Pixelado x={300} y={900} tam={460} piel="#7a4a30" pelo="#1d1410" fondo="#6f86a8" ropa="#1a2236" />
+          <rect x={560} y={1130} width={420} height={420} rx={34} fill="none" stroke={KC.ink} strokeWidth={6} strokeDasharray="22 16" opacity={0.6 * (1 - kprog(T, K.Ob + 2.2, K.Ob + 2.8))} />
+          <Flecha x1={400} y1={1170} x2={525} y2={1320} p={kprog(T, K.Ob + 1.6, K.Ob + 2.2)} color={KC.red} />
+          <g opacity={kprog(T, K.Ob + 2.2, K.Ob + 2.8)}><CaraSimple x={770} y={1340} s={1.4} piel="#f3cdb2" pelo="#7a4a22" ojos="#2f6dff" fondo="#9cc7d9" sonrisa={0.3} /></g>
         </>)}
       </Escena>
       {/* 9 · se apoyaba en otra IA que generaba sobre todo caras blancas (unas 9 de 12 claras) */}
@@ -243,11 +244,11 @@ function FotosOfrenda() {
       <Etq T={T} at={K.Ap + 2.4} until={K.Co - 0.3} x={1040} y={1175} texto="lo más probable" lado="izq" tam={28} color={KC.yellow} />
       <Chip T={T} at={K.Co + 0.2} until={K.P - 0.3} texto="blanco y negro: sin color" x={540} y={330} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.Co + 1.2} until={K.P - 0.3} x={300} y={1390} texto="¿cuál?" lado="izq" tam={30} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.3} until={K.Ob - 0.3} anio="2020" quien="Universidad Duke · PULSE" revista="presentado en CVPR 2020" x={540} y={290} />
-      <Etq T={T} at={K.E + 3.6} until={K.Ob - 0.3} x={540} y={640} texto="foto pixeleada" tam={30} />
-      <Etq T={T} at={K.E + 5.0} until={K.Ob - 0.3} x={540} y={1390} texto="cara inventada" lado="izq" tam={30} color={KC.yellow} />
-      <Etq T={T} at={K.Ob + 0.4} until={K.Se - 0.3} x={540} y={640} texto="foto pixeleada de Obama" tam={30} />
-      <Etq T={T} at={K.Ob + 2.6} until={K.Se - 0.3} x={540} y={1390} texto="cara inventada" lado="izq" tam={30} color={KC.yellow} />
+      <TarjetaEstudio T={T} at={K.E + 0.3} until={K.Ob - 0.3} anio="2020" quien="Universidad Duke · PULSE" revista="presentado en CVPR 2020" x={540} y={420} />
+      <Etq T={T} at={K.E + 3.6} until={K.Ob - 0.3} x={560} y={800} texto="foto pixeleada" tam={30} />
+      <Etq T={T} at={K.E + 5.0} until={K.Ob - 0.3} x={540} y={1480} texto="cara inventada" lado="izq" tam={30} color={KC.yellow} />
+      <Etq T={T} at={K.Ob + 0.4} until={K.Se - 0.3} x={560} y={800} texto="foto pixeleada de Obama" tam={30} />
+      <Etq T={T} at={K.Ob + 2.6} until={K.Se - 0.3} x={540} y={1480} texto="cara inventada" lado="izq" tam={30} color={KC.yellow} />
       <Chip T={T} at={K.Ob + 3.0} until={K.Se - 0.3} texto="2020: le devolvió un hombre blanco" y={340} tam={34} borde={KC.red} />
       <Chip T={T} at={K.Se + 0.2} until={K.Da - 0.3} texto="la IA de apoyo (StyleGAN)" y={420} tam={38} borde={KC.lilac} />
       <Etq T={T} at={K.Se + 3.4} until={K.Da - 0.3} x={60} y={1445} texto="sobre todo: caras blancas" tam={36} color={KC.yellow} />
