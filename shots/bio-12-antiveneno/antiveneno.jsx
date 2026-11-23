@@ -175,12 +175,12 @@ function Antiveneno() {
   const alaX = klerp(60, 520, kprog(T, K.G, K.G + 2.4, kEase.sale));
   const asoma = kprog(T, K.G + 2.6, K.G + 3.3, kEase.rebote);
   // dosis: la jeringa llega al cuello y empuja en escalones
-  const HX = 700, HY = 1180, HS = 1.05;
+  const HX = 700, HY = 1330, HS = 1.25;
   const cueX = HX + CUELLO[0] * HS, cueY = HY + CUELLO[1] * HS;
   const llega = kprog(T, K.Do + 0.2, K.Do + 1.0, kEase.sale);
   const escalon = (t) => { const u = (t - K.Do - 1.0) / 0.75; return kclamp(Math.floor(u) + 1, 0, 4) / 4; };
   // anticuerpo
-  const AX = 600, AY = 960, AS = 1.15;
+  const AX = 540, AY = 1000, AS = 1.6;
   const tox = [[-1, 0], [1, 0.5], [-1, 1.1], [1, 1.6]];
   const corte = kprog(T, K.Pe + 1.3, K.Pe + 1.6), migas = kprog(T, K.Pe + 1.5, K.Pe + 3.6, kEase.sale);
   // estudio: 8 + 7 camitas
@@ -199,7 +199,7 @@ function Antiveneno() {
       <Escena T={T} a={K.G} b={K.Do} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <CapaAV>
-          <g transform="translate(540 1185) scale(1.5) translate(-540 -1185)">
+          <g transform="translate(600 1300) scale(1.6) translate(-540 -1185)">
           <ellipse cx={540} cy={1185} rx={520} ry={40} fill="rgba(0,0,0,.12)" />
           <Frasco x={380} y={1090} s={1.25} rot={Math.sin(T * 2.2) * 3} />
           {asoma > 0 && <g transform={`translate(${klerp(1300, 820, asoma)} 1190)`}><Caballo T={T} x={0} y={0} s={0.75} /></g>}
@@ -218,7 +218,7 @@ function Antiveneno() {
             <Jeringa x={klerp(cueX + 420, cueX + 160, llega)} y={cueY - 40} s={1} rot={-15} emb={escalon(T)} />
             <Goteo T={T} x={cueX + 10} y0={cueY - 20} y1={cueY + 10} cada={0.75} color={ALA} desde={K.Do + 1.1} hasta={K.Ap - 0.2} r={9} />
           </g>}
-          {T > K.Ap && <g transform={`translate(110 470) rotate(-4)`} opacity={kprog(T, K.Ap, K.Ap + 0.3)}>
+          {T > K.Ap && <g transform={`translate(370 235) rotate(-4)`} opacity={kprog(T, K.Ap, K.Ap + 0.3)}>
             <rect x={0} y={0} width={240} height={200} rx={18} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
             <rect x={0} y={0} width={240} height={56} rx={18} fill={KC.red} stroke={KC.ink} strokeWidth={8} />
             <circle cx={60} cy={0} r={12} fill={KC.ink} /><circle cx={180} cy={0} r={12} fill={KC.ink} />
@@ -226,7 +226,7 @@ function Antiveneno() {
           </g>}
         </CapaAV>
       </Escena>
-      <Lupa T={T} at={K.Ap + 0.3} until={K.Pl - 0.2} x={760} y={640} r={190} fx={cueX + 30} fy={cueY + 40} tinte={KC.red} etiqueta="POR DENTRO · SANGRE"
+      <Lupa T={T} at={K.Ap + 0.3} until={K.Pl - 0.2} x={820} y={560} r={190} fx={cueX + 30} fy={cueY + 40} tinte={KC.red} etiqueta="POR DENTRO · SANGRE"
         interior={(t, r) => { const n = Math.floor(2 + kprog(t, K.Ap + 0.5, K.Pl - 0.5) * 14); const Rr = krng(9);
           return <svg width={r * 2} height={r * 2}>
             <rect width={r * 2} height={r * 2} fill="#3a0a14" />
@@ -238,11 +238,11 @@ function Antiveneno() {
       <Escena T={T} a={K.Pl} b={K.An} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <CapaAV>
-          <Bolsa x={330} y={900} s={1} sep={kprog(T, K.Pl + 0.3, K.Pl + 2.0, kEase.suave)} />
-          <Caballo T={T} x={830} y={1190} s={0.62} />
-          <path d={`M 350 1140 Q 520 1260 ${830 + CUELLO[0] * 0.62} ${1190 + CUELLO[1] * 0.62 + 30}`} stroke={SANGRE} strokeWidth={14} fill="none" strokeDasharray="26 16" strokeDashoffset={-T * 80}
+          <Bolsa x={300} y={960} s={1.3} sep={kprog(T, K.Pl + 0.3, K.Pl + 2.0, kEase.suave)} />
+          <Caballo T={T} x={780} y={1300} s={0.9} />
+          <path d={`M 320 1285 Q 520 1420 ${780 + CUELLO[0] * 0.9} ${1300 + CUELLO[1] * 0.9 + 30}`} stroke={SANGRE} strokeWidth={14} fill="none" strokeDasharray="26 16" strokeDashoffset={-T * 80}
             opacity={kprog(T, K.Pl + 2.0, K.Pl + 2.4)} strokeLinecap="round" />
-          <FlechaCurva x1={420} y1={1180} x2={640} y2={1100} p={kprog(T, K.Pl + 2.0, K.Pl + 2.6)} color={SANGRE} T={T} />
+          <FlechaCurva x1={400} y1={1340} x2={610} y2={1250} p={kprog(T, K.Pl + 2.0, K.Pl + 2.6)} color={SANGRE} T={T} />
         </CapaAV>
       </Escena>
       {/* 4–5 · el anticuerpo por dentro y la pepsina */}
@@ -254,7 +254,7 @@ function Antiveneno() {
           {tox.map(([lado, d], i) => { const t0 = K.An + 1.0 + d, [px, py] = puntaBrazo(AX, AY, AS, lado), u = kprog(T, t0, t0 + 0.8, kEase.sale);
             const sx = px + lado * 300, sy = py - 220 + i * 40;
             return <Toxina key={i} x={klerp(sx, px + lado * 26 * (i < 2 ? 1 : 2.2), u)} y={klerp(sy, py - 30 - (i < 2 ? 0 : 40), u)} s={0.9} rot={T * 40 + i * 50} o={kprog(T, t0 - 0.3, t0)} />; })}
-          {T > K.Pe - 0.2 && <Pepsina x={klerp(1180, AX + 70, kprog(T, K.Pe, K.Pe + 1.2, kEase.sale))} y={AY + 12} s={1} boca={Math.abs(Math.sin(T * 9))}
+          {T > K.Pe - 0.2 && <Pepsina x={klerp(1180, AX + 70, kprog(T, K.Pe, K.Pe + 1.2, kEase.sale))} y={AY + 12} s={1.3} boca={Math.abs(Math.sin(T * 9))}
             rot={180} />}
         </CapaAV>
         <Escala T={T} z={1} pxPorMm={AS * 465 / 15e-6} x={70} y={1430} />
@@ -271,10 +271,12 @@ function Antiveneno() {
       <Escena T={T} a={K.Es} b={K.Fd} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <CapaAV>
+          <g transform="translate(0 80)">
           {camas.map((c, i) => <Cama key={i} x={c.x} y={c.y} s={1.25} sano={sanoDe(c, i)} grupo={c.g === 0 ? AC_H : '#9aa3b5'} />)}
           <text x={237} y={640} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>con suero</text>
           <text x={762} y={640} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>con placebo</text>
           <line x1={500} y1={610} x2={500} y2={1290} stroke={KC.ink} strokeWidth={6} strokeDasharray="16 12" />
+          </g>
         </CapaAV>
         <Cronometro T={T} at={crono0} until={K.Fd - 0.3} factor={4 * 3600 / (K.Fd - 0.25 - crono0)} x={330} y={470} etiqueta="TIEMPO DESDE EL SUERO" />
       </Escena>
@@ -284,10 +286,10 @@ function Antiveneno() {
         <CapaAV>
           <Frasco x={540} y={1150} s={2.1} />
           {(() => { const p = kprog(T, K.Fd + 0.4, K.Fd + 0.7, kEase.rebote); return p > 0 && <g transform={`translate(770 780) rotate(-14) scale(${klerp(2.2, 1, p)})`} opacity={Math.min(1, p * 1.5)}>
-            <circle r={120} fill="rgba(255,255,255,.85)" stroke={KC.red} strokeWidth={12} />
-            <circle r={98} fill="none" stroke={KC.red} strokeWidth={4} />
-            <text y={-6} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={KC.red}>FDA</text>
-            <text y={52} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.red}>2011</text>
+            <circle r={120} fill="rgba(12,16,30,.88)" stroke="#e8707a" strokeWidth={10} />
+            <circle r={98} fill="none" stroke="#e8707a" strokeWidth={4} />
+            <text y={-6} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill="#f3a0a6">FDA</text>
+            <text y={52} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill="#f3a0a6">2011</text>
           </g>; })()}
           <g opacity={kprog(T, K.Fd + 1.4, K.Fd + 1.8)}><BanderaMX x={120} y={560} s={0.9} ondea={Math.sin(T * 3) * 3} /></g>
         </CapaAV>
@@ -325,7 +327,7 @@ function Antiveneno() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <CapaAV>
-          <g transform="translate(540 1185) scale(1.5) translate(-540 -1185)">
+          <g transform="translate(600 1300) scale(1.6) translate(-540 -1185)">
           <ellipse cx={540} cy={1185} rx={520} ry={40} fill="rgba(0,0,0,.12)" />
           <Frasco x={380} y={1090} s={1.25} rot={Math.sin(T * 2.2) * 3} caballo={kprog(T, K.Ci + 0.4, K.Ci + 1.2)} />
           <Alacran T={T} x={klerp(380, 1250, kprog(T, K.Ci + 1.0, K.Ou, kEase.suave))} y={1185} s={0.8} />
@@ -340,12 +342,12 @@ function Antiveneno() {
       <Medidor T={T} at={K.Do + 1.0} until={K.Ap - 0.2} valor={(t) => escalon(t)} etiqueta="dosis de veneno" texto={(v) => (v < 0.3 ? 'poquito' : v < 0.8 ? 'un poco más' : 'más')} x={90} y={1440} color={ALA} />
       <Chip T={T} at={K.Ap + 0.4} until={K.Pl - 0.3} texto="anticuerpos contra el veneno" y={1500} tam={40} borde={AC_H} />
       <Chip T={T} at={K.Pl + 1.0} until={K.An - 0.3} texto="plasma = lo rico en anticuerpos" y={1500} tam={38} borde={PLASMA} />
-      <Etq T={T} at={K.Pl + 1.2} until={K.An - 0.3} x={490} y={640} texto="plasma" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.Pl + 2.2} until={K.An - 0.3} x={640} y={1290} texto="el resto regresa" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.An + 0.6} until={K.Pe - 0.2} x={1040} y={600} texto="brazos: atrapan" lado="izq" tam={32} color={KC.gold2} />
-      <Etq T={T} at={K.An + 1.0} until={K.Pe + 1.3} x={650} y={1100} texto="base (Fc)" tam={32} color={AC_H} />
+      <Etq T={T} at={K.Pl + 1.2} until={K.An - 0.3} x={480} y={600} texto="plasma" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Pl + 2.2} until={K.An - 0.3} x={640} y={1440} texto="el resto regresa" lado="izq" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.An + 0.6} until={K.Pe - 0.2} x={1040} y={560} texto="brazos: atrapan" lado="izq" tam={32} color={KC.gold2} />
+      <Etq T={T} at={K.An + 1.0} until={K.Pe + 1.3} x={620} y={1200} texto="base (Fc)" tam={32} color={AC_H} />
       <Chip T={T} at={K.An + 2.0} until={K.Pe - 0.2} texto="toxina atrapada = toxina neutralizada" y={1520} tam={34} borde={TOX} />
-      <Etq T={T} at={K.Pe + 0.5} until={K.Pe + 1.4} x={960} y={1050} texto="pepsina" lado="izq" tam={34} color={PEP} />
+      <Etq T={T} at={K.Pe + 0.5} until={K.Pe + 1.4} x={960} y={1140} texto="pepsina" lado="izq" tam={34} color={PEP} />
       <Chip T={T} at={K.Pe + 2.2} until={K.Pr - 0.2} texto="F(ab')₂ · faboterápico" y={1520} tam={46} borde={KC.gold2} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Re - 0.2} anio="2004" quien="y 2005 · Tucson, Arizona" revista="15 niños · doble ciego · NEJM 2009" y={430} />
       <Chip T={T} at={K.Re + 3.6} until={K.Fd - 0.3} texto="suero: 8 de 8 · placebo: 1 de 7" y={1500} tam={42} borde={KC.mint} />
