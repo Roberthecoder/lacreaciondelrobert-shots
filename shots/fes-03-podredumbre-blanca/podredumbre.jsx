@@ -240,8 +240,9 @@ function Podredumbre() {
         <FondoLunares color={KC.lilac} />
         {svgF(<>
           <text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>
-          <g opacity={kprog(T, K.P + 0.3, K.P + 0.8)}><Enzima T={T} x={230} y={1160} at={K.P + 0.3} s={1.4} />
-            <line x1={160} y1={1100} x2={330} y2={1220} stroke={KC.red} strokeWidth={18} strokeLinecap="round" opacity={kprog(T, K.P + 1.0, K.P + 1.3)} /></g>
+          {/* pase de belleza: la enzima (lo que se pregunta) más grande y dentro del cuadro central, junto al «?» */}
+          <g opacity={kprog(T, K.P + 0.3, K.P + 0.8)}><Enzima T={T} x={480} y={1050} at={K.P + 0.3} s={1.8} />
+            <line x1={390} y1={975} x2={580} y2={1125} stroke={KC.red} strokeWidth={20} strokeLinecap="round" opacity={kprog(T, K.P + 1.0, K.P + 1.3)} /></g>
         </>)}
       </Escena>
       {/* 8 · el estudio: 31 genomas de hongos */}
