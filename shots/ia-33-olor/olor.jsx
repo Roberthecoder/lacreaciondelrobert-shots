@@ -168,7 +168,7 @@ function Olor() {
   const nMapa = Math.round(1600 * kprog(T, K.M + 0.4, K.M + 3.6, (p) => p * p));
   const dimMapa = 1 - 0.55 * kprog(T, K.M + 3.9, K.M + 4.4);
   // Red: la molécula entra como grafo, cruza la red y cae en el mapa
-  const gR = kprog(T, K.R + 0.2, K.R + 1.2, kEase.suave), onda = kprog(T, K.R + 1.2, K.R + 2.6);
+  const gR = kprog(T, K.R - 0.5, K.R + 0.4, kEase.suave), onda = kprog(T, K.R + 1.2, K.R + 2.6);
   const vuelo = kprog(T, K.R + 2.6, K.R + 3.4, kEase.sale);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -216,19 +216,21 @@ function Olor() {
       <Escena T={T} a={K.R} b={K.P}>
         <FondoCircuito T={T} />
         {svg(<>
-          <Carvona x={620} y={560} s={1.05} g={gR} T={T} brillo={onda > 0 && onda < 1 ? 1 : 0} />
-          <MapaOlores x={190} y={1250} w={700} h={250} T={T} n={260} tam={28} o={0.35 + 0.65 * kprog(T, K.R + 2.2, K.R + 2.6)}
+          <Carvona x={560} y={560} s={1.55} g={gR} T={T} brillo={onda > 0 && onda < 1 ? 1 : 0} />
+          <MapaOlores x={190} y={1250} w={700} h={250} T={T} n={260} tam={28} o={0.6 + 0.4 * kprog(T, K.R + 2.2, K.R + 2.6)}
             nuevo={{ x: 0.24, y: 0.3, o: kprog(T, K.R + 3.3, K.R + 3.4) }} />
           {vuelo > 0 && vuelo < 1 && <circle cx={klerp(960, 190 + 0.24 * 700, vuelo)} cy={klerp(1025, 1250 + 0.3 * 250, vuelo) - Math.sin(Math.PI * vuelo) * 150} r={18} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} />}
         </>)}
-        <RedNeuronal T={T} x={120} y={860} ancho={840} alto={330} capas={[4, 6, 6, 3]} onda={onda > 0 && onda < 1 ? onda : null} o={0.45 + 0.55 * kprog(T, K.R + 0.8, K.R + 1.2)} />
+        <RedNeuronal T={T} x={120} y={860} ancho={840} alto={330} capas={[4, 6, 6, 3]} onda={onda > 0 && onda < 1 ? onda : null} o={0.75 + 0.25 * kprog(T, K.R + 0.8, K.R + 1.2)} />
       </Escena>
       <Chip T={T} at={K.R + 0.5} until={K.P - 0.2} texto="átomos = puntos · enlaces = líneas" x={540} y={800} tam={34} borde={IAC} />
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.orange} />
         {/* detrás queda la escena anterior a media luz (la pone cine.jsx); el signo, al centro */}
-        {svg(<text x={540} y={1210} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 1000)`}>?</text>)}
+        {/* belleza (2.ª pasada): la molécula encendida en el mismo lugar que en Red (sin doble imagen); el «?» chico a su lado */}
+        {svg(<><Carvona x={560} y={560} s={1.55} g={1} T={T} brillo={0.6 + 0.4 * Math.sin(T * 3)} />
+          <text x={860} y={470} textAnchor="middle" paintOrder="stroke" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} transform={`rotate(${Math.sin(T * 3) * 8} 860 420)`}>?</text></>)}
       </Escena>
       {/* 6 · el estudio */}
       <Escena T={T} a={K.Es} b={K.Re}>
