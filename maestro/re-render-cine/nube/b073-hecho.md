@@ -1,0 +1,1 @@
+- fun-84-hongo-yema: Regla: los dos «huevos» de la escena anterior siguen nítidos en el suelo del bosque (antes un huevo fantasma atenuado detrás de los íconos) y foto/regla/app tachadas van arriba sin encimarse; chips de «experto» y «médico» abajo sobre el suelo. El resto ya cumplía (revisadas las 13 escenas). Auditores: sin láminas · encuadre bien.
