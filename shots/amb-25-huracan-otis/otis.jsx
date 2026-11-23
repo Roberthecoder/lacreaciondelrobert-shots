@@ -59,8 +59,8 @@ function Huracan({ T, x, y, r, org = 1, ojo = 0, inclina = 0, vel = 1, o = 1, se
     <g transform={`translate(${dx} 0) rotate(${rot})`}>
       {puffs.map((p, i) => <circle key={'b' + i} cx={p.x} cy={p.y} r={p.r + 5} fill={KC.ink} />)}
       <circle r={r * 0.34 + 5} fill={KC.ink} />
-      {puffs.map((p, i) => <circle key={'w' + i} cx={p.x} cy={p.y} r={p.r} fill="#f5f8ff" />)}
-      <circle r={r * 0.34} fill="#ffffff" />
+      {puffs.map((p, i) => <circle key={'w' + i} cx={p.x} cy={p.y} r={p.r} fill="url(#ot-nube)" />)}
+      <circle r={r * 0.34} fill="url(#ot-nube)" />
     </g>
     {ojo > 0 && <circle cx={dx * 0.3} cy={0} r={r * 0.09 * ojo} fill="#1c3f6e" stroke={KC.ink} strokeWidth={4} />}
   </g>;
@@ -101,7 +101,9 @@ function OtisShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, To: CUES.Tormenta, Ma: CUES.Mar, Mo: CUES.Motor, P: CUES.Pregunta, R: CUES.Rapida, Av: CUES.Avion, Ti: CUES.Tierra, Re: CUES.Record, Vi: CUES.Victimas, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
-  const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{c}</svg>;
+  // pase de belleza: las nubes del huracán con volumen (centro claro, borde gris azulado)
+  const defs = <defs><radialGradient id="ot-nube" cx=".38" cy=".32" r=".75"><stop offset="0" stopColor="#ffffff" /><stop offset=".6" stopColor="#eef2fb" /><stop offset="1" stopColor="#b9c4d8" /></radialGradient></defs>;
+  const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{defs}{c}</svg>;
   const PRON = 55 * KT, REAL = 140 * KT; // 102 km/h (pronóstico de 24 h de la discusión #7) · 259 km/h al tocar tierra
   // aguja del gancho: sube al pronóstico y luego se dispara al valor real
   const vG = klerp(0, 105, kprog(T, K.G + 0.15, K.G + 1.1, kEase.sale)) + (REAL - 105) * kprog(T, K.G + 5.8, K.G + 6.9, kEase.sale);
@@ -161,6 +163,7 @@ function OtisShot() {
       </Escena>
       {/* 2 · cap. 2: mar de 30–31 °C y el viento de altura afloja */}
       <Escena T={T} a={K.Ma} b={K.Mo}>
+        <div style={{ position:'absolute', inset:0, opacity:1 - kprog(T, K.Mo - 0.05, K.Mo + 0.35) }}>
         {svg(mapa(hMa, kprog(T, K.Ma + 0.4, K.Ma + 2.2), <>
           <Huracan T={T} x={otP(pMa.lon, pMa.lat)[0]} y={otP(pMa.lon, pMa.lat)[1]} r={122} org={klerp(0.2, 0.8, 1 - shearMa)} inclina={shearMa} vel={0.8} />
           <VientoAltura T={T} x={otP(pMa.lon, pMa.lat)[0] + 80} y={otP(pMa.lon, pMa.lat)[1] - 260} f={shearMa} />
@@ -172,6 +175,7 @@ function OtisShot() {
             <circle cy={14} r={40} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
           </g>
         </>))}
+        </div>
       </Escena>
       {/* 3 · el motor: evaporación → nubes → calor (corte esquemático) */}
       <Escena T={T} a={K.Mo} b={K.P}>
@@ -183,7 +187,7 @@ function OtisShot() {
             return <path key={i} d={`M ${xx} ${1000 - u * 320} q 14 -20 0 -40 q -14 -20 0 -40`} stroke="#ffffff" strokeWidth={8} fill="none" strokeLinecap="round" opacity={op} />; })}
           <g opacity={kprog(T, K.Mo - 0.4, K.Mo + 0.1)} transform={`translate(540 ${klerp(700, 640, kprog(T, K.Mo - 0.4, K.Mo + 2.5, kEase.sale))})`}>
             {[[-200, 60, 90], [-110, -10, 110], [0, -90, 130], [110, -10, 110], [200, 60, 90], [-60, 80, 100], [70, 80, 100], [0, -200, 110], [-80, -170, 90], [90, -170, 90]].map(([a, b, rr], i) => <circle key={'k' + i} cx={a} cy={b} r={rr + 6} fill={KC.ink} />)}
-            {[[-200, 60, 90], [-110, -10, 110], [0, -90, 130], [110, -10, 110], [200, 60, 90], [-60, 80, 100], [70, 80, 100], [0, -200, 110], [-80, -170, 90], [90, -170, 90]].map(([a, b, rr], i) => <circle key={'w' + i} cx={a} cy={b} r={rr} fill="#f5f8ff" />)}
+            {[[-200, 60, 90], [-110, -10, 110], [0, -90, 130], [110, -10, 110], [200, 60, 90], [-60, 80, 100], [70, 80, 100], [0, -200, 110], [-80, -170, 90], [90, -170, 90]].map(([a, b, rr], i) => <circle key={'w' + i} cx={a} cy={b} r={rr} fill="url(#ot-nube)" />)}
           </g>
           {Array.from({ length: 4 }, (_, i) => { const e = kprog(T, K.Mo + 2.1 + i * 0.15, K.Mo + 2.6 + i * 0.15), u = ((T * 0.9 + i * 0.25) % 1);
             const lado = i % 2 ? 1 : -1, xx = 540 + lado * (330 + u * 120), yy = 520 + Math.floor(i / 2) * 170;
@@ -202,7 +206,7 @@ function OtisShot() {
       {/* 5 · intensificación rápida: +56 km/h en 24 h (umbral) vs. Otis +167 km/h en 21 h */}
       <Escena T={T} a={K.R} b={K.Av}>
         <FondoLunares color={KC.mint} />
-        {svg(<>
+        {svg(<g opacity={1 - kprog(T, K.Av - 0.05, K.Av + 0.3)}>
           <Huracan T={T} x={560} y={1250} r={230} org={klerp(0.35, 1, kprog(T, K.R + 3.6, K.R + 6.6, kEase.suave))} ojo={kprog(T, K.R + 4.6, K.R + 6.6)} vel={klerp(0.8, 2.4, kprog(T, K.R + 3.6, K.R + 6.6))} />
           <text x={80} y={635} style={{ font:`700 31px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.R + 0.2, K.R + 0.7)}>intensificación rápida (NHC):</text>
           <rect x={80} y={660} width={30 * KT * 5} height={90} rx={16} fill="none" stroke={KC.cyan} strokeWidth={4} strokeDasharray="14 10" opacity={0.5 * kprog(T, K.R + 0.2, K.R + 0.7)} />
@@ -219,7 +223,7 @@ function OtisShot() {
             <circle r={110} fill="none" stroke={KC.ink} strokeWidth={8} />
             <text y={30} textAnchor="middle" style={{ font:`400 92px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={7} paintOrder="stroke">{Math.floor(horas)} h</text>
           </g>}
-        </>)}
+        </g>)}
         <Etq T={T} at={K.R + 6.4} until={K.Av - 0.2} x={140} y={990} texto="de 102 a 269 km/h (pico)" tam={30} color={KC.ink} />
       </Escena>
       {/* 6 · el avión cazahuracanes: −10 mb en 85 min (24 oct 2023) */}
@@ -258,6 +262,7 @@ function OtisShot() {
       </Escena>
       {/* 9 · víctimas: escena quieta y sobria */}
       <Escena T={T} a={K.Vi} b={K.C}>
+        <div style={{ position:'absolute', inset:0, opacity:1 - kprog(T, K.C - 0.5, K.C + 0.05) }}>
         {svg(<>
           <rect width={KW} height={KH} fill="#0e1c34" />
           <g transform="translate(0 -60)" opacity={0.9}>{costa(0.6, false)}</g>
@@ -268,6 +273,7 @@ function OtisShot() {
         </div>
         <div style={{ position:'absolute', left:0, right:0, top:1110, textAlign:'center', zIndex:41, opacity:kprog(T, K.Vi + 1.6, K.Vi + 2.3), font:`700 30px ${KF.mono}`, color:'#aab3bf' }}>
           gobierno de México · nov 2023<br />el total es incierto
+        </div>
         </div>
       </Escena>
       {/* 10 · cierre: regreso al medidor del inicio */}
@@ -288,7 +294,7 @@ function OtisShot() {
       <Etq T={T} at={K.To + 1.0} until={K.Ma - 0.2} x={zs(otP(pTo.lon, pTo.lat))[0] - 100} y={zs(otP(pTo.lon, pTo.lat))[1] - 400} texto="viento de altura" tam={28} color={KC.white} />
       <Chip T={T} at={K.Ma + 0.3} until={K.Mo - 0.2} texto="24 oct 2023" x={220} y={450} tam={28} borde={KC.orange} mono />
       <Chip T={T} at={K.Ma + 1.4} until={K.Mo - 0.2} texto="mar: 30–31 °C" x={230} y={810} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.Ma + 2.0} until={K.Mo - 0.2} texto="+1–2 °C de lo normal (oct)" x={250} y={890} tam={22} borde={KC.orange} />
+      <Chip T={T} at={K.Ma + 2.0} until={K.Mo - 0.2} texto="+1–2 °C de lo normal (oct)" x={260} y={890} tam={26} borde={KC.orange} />
       <Etq T={T} at={K.Mo + 0.1} until={K.P - 0.2} x={120} y={1050} texto="vapor" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Mo + 1.4} until={K.P - 0.2} x={800} y={590} texto="nubes" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Mo + 2.3} until={K.P - 0.2} x={880} y={930} texto="calor" tam={30} color={KC.ink} lado="izq" />
