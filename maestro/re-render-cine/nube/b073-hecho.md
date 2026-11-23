@@ -1,2 +1,4 @@
 - fun-84-hongo-yema: Regla: los dos «huevos» de la escena anterior siguen nítidos en el suelo del bosque (antes un huevo fantasma atenuado detrás de los íconos) y foto/regla/app tachadas van arriba sin encimarse; chips de «experto» y «médico» abajo sobre el suelo. El resto ya cumplía (revisadas las 13 escenas). Auditores: sin láminas · encuadre bien.
 - bio-31-car-t: Receptor: el linfocito T ×1.2 (r 250→300, antes chico al centro); Hoy: la niña (el sujeto) ×1.6 sobre la línea de tiempo bajada al centro, el «13 años» sube para no encimarse y nada se corta a la derecha. Auditores: sin láminas · encuadre bien.
+- fun-85-tina-gato: sin cambios: ya cumplía (revisadas las 12 escenas en hoja de cuadros: sujeto grande y centrado, sin números fantasma ni encimados; las únicas mezclas son disolvencias de 0.9 s). Auditores: sin láminas · encuadre bien.
+GRUPO TERMINADO
