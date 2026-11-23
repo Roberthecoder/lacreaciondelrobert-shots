@@ -148,7 +148,7 @@ function DesperdicioShot() {
   // cierre: la puerta se cierra al final
   const abreC = 1 - kprog(T, K.C + 3.6, K.C + 4.6, kEase.suave);
   // barra de 10 kilos (Casa)
-  const kilo = (i) => kprog(T, K.Cs + 0.5 + i * 0.14, K.Cs + 0.75 + i * 0.14, kEase.sale);
+  const kilo = (i) => kprog(T, K.Cs - 0.3 + i * 0.1, K.Cs - 0.05 + i * 0.1, kEase.sale);   // belleza (2.ª pasada): la escena ya no arranca casi vacía
   const colK = (i) => (i < 6 ? KC.orange : i < 9 ? KC.cyan : KC.yellow);
   const barras = [['ingreso alto', 81], ['medio-alto', 88], ['medio-bajo', 86]];
   const g9 = kprog(T, K.Ga + 0.8, K.Ga + 2.2, kEase.sale);
@@ -191,7 +191,7 @@ function DesperdicioShot() {
           {Array.from({ length: 10 }, (_, i) => { const e = kilo(i); return <g key={i} transform={`translate(${135 + i * 90} 1160) scale(1 ${e})`}>
             <rect x={-40} y={-270} width={80} height={270} rx={12} fill={colK(i)} stroke={KC.ink} strokeWidth={6} /><rect x={-36} y={-266} width={72} height={262} rx={10} fill="url(#kgVol)" />
             <text y={-122} transform="rotate(-90 0 -135)" textAnchor="middle" style={{ font:`900 40px ${KF.texto}`, letterSpacing:2 }} fill="#0b1020" opacity={kprog(e, 0.8, 1)}>1 kg</text></g>; })}
-          <g opacity={kprog(T, K.Cs + 1.4, K.Cs + 1.8)} transform={`translate(0 ${(1 - kprog(T, K.Cs + 1.4, K.Cs + 2.0, kEase.rebote)) * -60})`}>
+          <g opacity={kprog(T, K.Cs + 0.2, K.Cs + 0.6)} transform={`translate(0 ${(1 - kprog(T, K.Cs + 0.2, K.Cs + 0.8, kEase.rebote)) * -60})`}>
             <path d="M 95 870 h 530" stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
             <ellipse cx={360} cy={850} rx={190} ry={16} fill="#000" opacity=".3" />
             <path d="M 170 640 L 360 470 L 550 640 Z" fill={KC.orange} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
