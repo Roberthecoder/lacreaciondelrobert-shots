@@ -1,0 +1,1 @@
+- fun-46-estatinas: Hígado: el cuerpo azul claro plano pasa a oscuro con degradado de volumen, cara sombreada y sombra en el suelo (el hígado queda como punto de atención); Arroz→microscopio: los pinceles de Penicillium crecen más pronto, sin el segundo casi vacío al entrar. Auditores: sin láminas · encuadre bien.

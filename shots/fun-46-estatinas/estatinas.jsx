@@ -44,8 +44,15 @@ function BolsaArroz({ x, y, s = 1 }) {
 // Silueta esquemática de cuerpo con hígado. luz 0..1 = el hígado brilla.
 function CuerpoHigado({ T, x, y, s = 1, luz = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <circle cx={0} cy={-330} r={80} fill="#f2c29b" stroke={KC.ink} strokeWidth={8} />
-    <path d="M -150 -230 Q -170 -150 -150 120 L 150 120 Q 170 -150 150 -230 Q 0 -260 -150 -230 Z" fill="#8fb6ff" stroke={KC.ink} strokeWidth={8} />
+    {/* belleza: cuerpo oscuro con volumen (antes: bloque azul claro plano); así el hígado es el punto de atención */}
+    <defs>
+      <linearGradient id="estCuerpo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#4a6491" /><stop offset=".5" stopColor="#2c3d5e" /><stop offset="1" stopColor="#151d30" /></linearGradient>
+      <radialGradient id="estCara" cx=".38" cy=".32" r=".75"><stop offset="0" stopColor="#ffdcbc" /><stop offset=".6" stopColor="#f2c29b" /><stop offset="1" stopColor="#c58f68" /></radialGradient>
+    </defs>
+    <ellipse cx={10} cy={135} rx={170} ry={22} fill="#000" opacity=".3" />
+    <circle cx={0} cy={-330} r={80} fill="url(#estCara)" stroke={KC.ink} strokeWidth={8} />
+    <path d="M -150 -230 Q -170 -150 -150 120 L 150 120 Q 170 -150 150 -230 Q 0 -260 -150 -230 Z" fill="url(#estCuerpo)" stroke={KC.ink} strokeWidth={8} />
+    <path d="M -128 -205 Q -146 -120 -132 60" stroke="#6f8ab8" strokeWidth={6} fill="none" strokeLinecap="round" opacity=".4" />
     <path d="M -110 -80 Q -120 -150 -20 -150 Q 100 -160 110 -110 Q 90 -60 30 -50 Q -60 -30 -110 -80 Z" fill={mixHex('#a0442e', '#e2603f', luz)} stroke={KC.ink} strokeWidth={6}
       style={luz ? { filter:`drop-shadow(0 0 ${18 * luz}px ${COLES})` } : null} />
   </g>;
@@ -234,12 +241,12 @@ function EstatinasShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<g transform="translate(0 -80)">
-          <Pincel x={230} y={1545} s={1.0} crece={kprog(T, AM - 0.2, AM + 1.2)} color="#2f7f6d" />
-          <Pincel x={930} y={1520} s={1.15} crece={kprog(T, AM - 0.1, AM + 1.4)} color="#2f7f6d" />
+          <Pincel x={230} y={1545} s={1.0} crece={kprog(T, AM - 0.3, AM + 0.8)} color="#2f7f6d" />
+          <Pincel x={930} y={1520} s={1.15} crece={kprog(T, AM - 0.3, AM + 0.9)} color="#2f7f6d" />
           {/* grano por dentro: oscurecido (conserva el tinte) para que el peso del cuadro quede en el pincel */}
           <path d="M -60 1560 Q 540 1380 1140 1560 L 1140 2400 L -60 2400 Z" fill="#3b3829" stroke={KC.ink} strokeWidth={8} />
           <path d="M -60 1560 Q 540 1380 1140 1560 L 1140 1610 Q 540 1440 -60 1610 Z" fill={VERDEAZUL} opacity={0.85} />
-          <Pincel x={600} y={1440} s={2.1} crece={kprog(T, AM - 0.3, AM + 1.5)} />
+          <Pincel x={600} y={1440} s={2.1} crece={kprog(T, AM - 0.4, AM + 1.0)} />
         </g>)}
       </Escena>
       {/* 7 · pregunta */}
