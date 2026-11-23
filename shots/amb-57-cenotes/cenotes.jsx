@@ -4,7 +4,8 @@
 // Todo el dibujo es esquemático (mapa, cueva, capas de agua y conductos).
 
 const CE = { G: 640, W: 800, H: 980, B: 1130, C: 330 };       // suelo, nivel del agua, haloclina, fondo, centro del cenote
-const CE_ROCA = '#ead9a4', CE_ROCA2 = '#d6c07f', CE_DULCE = '#5cc3ef', CE_SAL = '#1b3f8f', CE_SELVA = '#3fae4f';
+// belleza: caliza más oscura (conserva el tinte arena); antes '#ead9a4' / '#d6c07f' llenaban media pantalla de claro
+const CE_ROCA = '#a3905c', CE_ROCA2 = '#867446', CE_DULCE = '#5cc3ef', CE_SAL = '#1b3f8f', CE_SELVA = '#3fae4f';
 
 // Pase a mano (cine): cámara sobre el corte de perfil. k = aumento, x0 = borde izquierdo de la ventana; el suelo (CE.G) no se mueve.
 const camP = (k, x0) => `translate(${-x0 * k} ${CE.G * (1 - k)}) scale(${k})`;
@@ -38,17 +39,17 @@ function Perfil({ T, cueva = 1, colapso = 1, capas = 0, flujo = 1, mar = 0, marX
     <line x1={-10} y1={W} x2={1100} y2={W} stroke="#2a89c9" strokeWidth={5} strokeDasharray="18 12" />
     {/* conducto: el río que corre bajo tus pies */}
     <path d={tubo} stroke={KC.ink} strokeWidth={84} fill="none" />
-    <path d={tubo} stroke={mixHex('#86dbff', '#9a8a48', sucio)} strokeWidth={70} fill="none" />
+    <path d={tubo} stroke={mixHex('#4cb2dd', '#9a8a48', sucio)} strokeWidth={70} fill="none" />
     {flechas}
     {/* cueva que crece */}
     {cueva > 0 && <g><ellipse cx={C} cy={W + 10} rx={rx} ry={ry} fill="#5a4a35" stroke={KC.ink} strokeWidth={7} />
-      <path d={`M ${C - rx} ${W + 10} A ${rx} ${ry} 0 0 0 ${C + rx} ${W + 10} Z`} fill={mixHex('#86dbff', '#9a8a48', sucio)} />
+      <path d={`M ${C - rx} ${W + 10} A ${rx} ${ry} 0 0 0 ${C + rx} ${W + 10} Z`} fill={mixHex('#4cb2dd', '#9a8a48', sucio)} />
       <line x1={C - rx * 0.98} y1={W + 10} x2={C + rx * 0.98} y2={W + 10} stroke="#2a89c9" strokeWidth={5} /></g>}
     {/* grietas y techo que se cae */}
     {grieta > 0 && cae < 1 && <g opacity={1 - abre}>
       <path d={`M ${C - 60} ${G} l 20 ${50 * grieta} l -15 ${40 * grieta} l 25 ${45 * grieta}`} stroke={KC.ink} strokeWidth={6} fill="none" />
       <path d={`M ${C + 70} ${G} l -18 ${55 * grieta} l 22 ${40 * grieta} l -20 ${40 * grieta}`} stroke={KC.ink} strokeWidth={6} fill="none" /></g>}
-    {abre > 0 && <path d={hueco} fill="#bff3ff" opacity={abre} />}
+    {abre > 0 && <path d={hueco} fill="#5aa9c4" opacity={abre} />}
     {abre > 0 && <path d={`M ${C - 175} ${W} L ${C + 175} ${W} L ${C + 175} ${W + 120} L ${C - 175} ${W + 120} Z`} fill={mixHex('#3ec9e0', '#8f8240', sucio)} opacity={abre} />}
     {abre > 0 && <path d={hueco} fill="none" stroke={KC.ink} strokeWidth={7} opacity={abre} />}
     {colapso > 0.3 && colapso < 1 && <g transform={`translate(0 ${cae * 230})`} opacity={1 - kprog(colapso, 0.75, 1)}>
@@ -157,7 +158,7 @@ function PlantaTrat({ x, y, s = 1 }) {
 }
 // Mapa esquemático de la Península de Yucatán (recorte del mapa de México del kit).
 function MapaPeninsula({ children }) {
-  return <g transform="translate(-3130 -1079)"><MapaMexico x={0} y={0} ancho={5300} color="#f3e3a6" centro="#cfe8b8" conCA={true}>{null}</MapaMexico><g transform="translate(3130 1079)">{children}</g></g>;
+  return <g transform="translate(-3130 -1079)"><MapaMexico x={0} y={0} ancho={5300} color="#9d8a58" centro="#5f7d52" conCA={true}>{null}</MapaMexico><g transform="translate(3130 1079)">{children}</g></g>;
 }
 
 function CenotesShot() {
@@ -206,7 +207,7 @@ function CenotesShot() {
           <g transform="translate(560 380)" opacity={kprog(T, K.S + 2.6, K.S + 3.0)}><ellipse rx={150} ry={56} fill="#e6edf5" stroke={KC.ink} strokeWidth={6} /><ellipse cx={-70} cy={-30} rx={70} ry={50} fill="#e6edf5" stroke={KC.ink} strokeWidth={6} /><ellipse cx={-70} cy={-30} rx={66} ry={46} fill="#e6edf5" /></g>
           {[460, 520, 580, 640].map((x, i) => <Goteo key={i} T={T} x={x} y0={440} y1={760 + (i % 2) * 40} cada={0.45} desde={K.S + 3.0 + i * 0.1} hasta={K.A} color="#2f8fd8" r={10} />)}
           {T > K.S + 3.5 && [480, 560, 620].map((x, i) => { const u = ((T - K.S - 3.5 + i * 0.3) % 0.9) / 0.9; return <ellipse key={i} cx={x} cy={790} rx={10 + u * 30} ry={(10 + u * 30) * 0.4} fill="none" stroke="#1f6fd0" strokeWidth={4} opacity={1 - u} />; })}
-          <text x={460} y={880} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={CE_OSC}>Península de Yucatán</text>
+          <text x={460} y={880} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill="#f6f1e4" stroke={CE_OSC} strokeWidth={7} paintOrder="stroke">Península de Yucatán</text>
         </MapaPeninsula>)}
         <Chip T={T} at={K.S + 1.5} until={K.A - 0.2} texto="casi toda la península: sin ríos en la superficie" y={1460} tam={28} borde={KC.ink} />
         <EscalaFija texto="mapa esquemático" largo={0} y={1650} color={KC.ink} />
@@ -304,7 +305,7 @@ function CenotesShot() {
         <FondoLunares color={KC.yellow} />
         {svg(<g transform="translate(430 900) scale(1.2) translate(-430 -900)">
           <rect x={-10} y={1060} width={1100} height={150} fill={CE_DULCE} opacity={0.6} />
-          <rect x={-10} y={900} width={760} height={160} fill="#f3d58a" stroke={KC.ink} strokeWidth={6} />
+          <rect x={-10} y={900} width={760} height={160} fill="#b09656" stroke={KC.ink} strokeWidth={6} />
           <path d="M 740 900 Q 800 940 1100 930 L 1100 1210 L 740 1210 Z" fill="#1f6fd0" stroke={KC.ink} strokeWidth={6} />
           {Array.from({ length: 4 }, (_, i) => <path key={i} d={`M ${800 + i * 70} ${960 + (i % 2) * 30} q 14 ${-10 + Math.sin(T * 3 + i) * 4} 28 0`} stroke="#bfe7ff" strokeWidth={5} fill="none" />)}
           <PlantaTrat x={170} y={898} s={1} />
