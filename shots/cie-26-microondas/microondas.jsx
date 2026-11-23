@@ -290,11 +290,11 @@ function MicroondasShot() {
           <TextoSvg x={540} y={540} tam={104} color={KC.yellow} rot={-4} s={klerp(0.4, 1, kprog(T, K.Wifi + 0.05, K.Wifi + 0.45, kEase.rebote))}>¡DATO RARO!</TextoSvg>
           <OndaSeno x0={70} x1={1010} y={760} lam={150} amp={44} T={T} color={MONDA} o={kprog(T, K.Wifi + 1.6, K.Wifi + 2.1)} etiqueta="wifi" />
           <OndaSeno x0={70} x1={1010} y={970} lam={148} amp={44} T={T} color={KC.pink} o={kprog(T, K.Wifi + 2.1, K.Wifi + 2.6)} etiqueta="microondas" />
-          <Router x={240} y={1360} s={0.85} T={T} />
-          <OndasArco x={240} y={1150} ang={-90} T={T} color={MONDA} largo={80} n={3} grosor={8} />
-          <Microondas x={800} y={1330} s={0.6} T={T} id="w" luz={1} giro={giro} />
+          <Router x={245} y={1405} s={1.12} T={T} />
+          <OndasArco x={245} y={1140} ang={-90} T={T} color={MONDA} largo={80} n={3} grosor={8} />
+          <Microondas x={790} y={1355} s={0.8} T={T} id="w" luz={1} giro={giro} />
         </Lienzo>
-        <Chip T={T} at={K.Wifi + 2.8} until={K.Cierre - 0.1} texto="casi la misma frecuencia" x={540} y={1105} tam={48} borde={KC.ink} />
+        <Chip T={T} at={K.Wifi + 2.8} until={K.Cierre - 0.1} texto="casi la misma frecuencia" x={610} y={1095} tam={44} borde={KC.ink} />
       </Escena>
 
       {/* 10 · cierre: el mismo microondas, la puerta se abre y la comida sale pareja */}

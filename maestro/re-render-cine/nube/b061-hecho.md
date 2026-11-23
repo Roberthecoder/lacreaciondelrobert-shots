@@ -1,1 +1,2 @@
 - amb-26-jaguar: Jaguar con volumen (luz arriba y sombra en el vientre y la cabeza, sombra en el suelo) en todas las escenas; Lados: la escena de las 2 cámaras en par agrandada ×1.32 (jaguar, troncos y cámaras), chip subido a y 290.
+- cie-26-microondas: Wifi: router (×1.3) y microondas (×1.33) agrandados para que el par llene el tercio de abajo; chip «casi la misma frecuencia» sin encimarse con las ondas del router. Lo demás ya cumplía (mapa de calor, corte, plato).
