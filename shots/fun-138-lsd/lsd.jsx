@@ -280,8 +280,8 @@ function LsdShot() {
         <Ambiente T={T} n={26} />
         {fsvg(<>
           <Ergolina x={480} y={1260} s={2.4} p={kprog(T, HM + 0.1, HM + 1.2)} brillo={0.6 + 0.4 * Math.sin(T * 3)} />
-          {[[160, 1330, 'ergotamina'], [880, 1330, 'ergometrina']].map(([ex, ey, n], i) => { const q = kprog(T, HM + 1.6 + i * 0.4, HM + 2.0 + i * 0.4, kEase.rebote);
-            return q > 0 ? <g key={n} opacity={q}><Ergolina x={ex - 30} y={ey} s={0.6 * q} p={1} color={KC.gold2} relleno="rgba(244,194,90,.15)" /></g> : null; })}
+          {[[150, 1330, 'ergotamina'], [930, 1330, 'ergometrina']].map(([ex, ey, n], i) => { const q = kprog(T, HM + 1.6 + i * 0.4, HM + 2.0 + i * 0.4, kEase.rebote);
+            return q > 0 ? <g key={n} opacity={q}><Ergolina x={ex - 30} y={ey} s={0.72 * q} p={1} color={KC.gold2} relleno="rgba(244,194,90,.15)" /></g> : null; })}
         </>)}
       </Escena>
       {/* 2 · Sandoz, Basilea: el químico modifica el núcleo */}
@@ -336,7 +336,8 @@ function LsdShot() {
       <Escena T={T} a={K.Pi} b={PI2} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Zoom cx={560} cy={1000} k={1.35} x={600} y={1000}><Dedo x={260} y={980} s={1.25} />
+          {/* belleza: dedo y lupa bajan al centro del cuadro; el calendario baja y crece (antes todo quedaba arriba) */}
+          <Zoom cx={560} cy={1000} k={1.35} x={600} y={1110}><Dedo x={260} y={980} s={1.25} />
           <g transform="translate(330 960)">
             <circle r={160} fill="rgba(255,255,255,.3)" stroke={KC.ink} strokeWidth={14} />
             <line x1={112} y1={112} x2={230} y2={230} stroke={KC.ink} strokeWidth={30} strokeLinecap="round" />
@@ -347,7 +348,7 @@ function LsdShot() {
       <Escena T={T} a={PI2} b={K.B} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Calendario x={540} y={940} s={1.6} mes="ABRIL" anio="1943" dia={T < PI2 + 0.9 ? '16' : (T < PI2 + 1.2 ? '18' : '19')} rot={-3} />
+          <Calendario x={540} y={1010} s={1.75} mes="ABRIL" anio="1943" dia={T < PI2 + 0.9 ? '16' : (T < PI2 + 1.2 ? '18' : '19')} rot={-3} />
         </>)}
       </Escena>
       {/* 8 · a casa en bicicleta */}
@@ -407,7 +408,7 @@ function LsdShot() {
       <Etq T={T} at={HM + 1.2} until={K.S - 0.3} x={60} y={606} texto="núcleo de sus" tam={28} color={KC.gold2} />
       <Etq T={T} at={HM + 1.3} until={K.S - 0.3} x={60} y={644} texto="alcaloides principales" tam={28} color={KC.gold2} />
       <Etq T={T} at={HM + 1.7} until={K.S - 0.3} x={20} y={1420} texto="ergotamina" tam={26} color={KC.gold2} />
-      <Etq T={T} at={HM + 2.1} until={K.S - 0.3} x={720} y={1420} texto="ergometrina" tam={26} color={KC.gold2} />
+      <Etq T={T} at={HM + 2.1} until={K.S - 0.3} x={770} y={1420} texto="ergometrina" tam={26} color={KC.gold2} />
       <Chip T={T} at={K.S + 0.2} until={K.L - 0.3} texto="Sandoz · Basilea, Suiza" x={540} y={440} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.S + 0.7} until={K.L - 0.3} x={60} y={540} texto="Albert Hofmann, químico" tam={34} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.L + 0.1} until={K.L + 2.1} anio="1938" quien="Sandoz, Basilea" revista="derivados del ácido lisérgico" x={360} y={540} />
@@ -420,7 +421,7 @@ function LsdShot() {
       <Chip T={T} at={K.Co + 0.9} until={K.Pi - 0.3} texto="«una corazonada»" x={720} y={760} tam={36} borde={KC.gold} />
       <Chip T={T} at={K.Pi + 0.4} until={PI2 - 0.2} texto="¿una traza, por la piel?" x={360} y={520} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.Pi + 0.9} until={PI2 - 0.2} x={60} y={610} texto="(lo que él sospechó)" tam={28} color={KC.ink} />
-      <Chip T={T} at={PI2 + 1.3} until={K.B - 0.3} texto="19 abr 1943 · autoexperimento" x={540} y={1340} tam={36} borde={KC.ink} />
+      <Chip T={T} at={PI2 + 1.3} until={K.B - 0.3} texto="19 abr 1943 · autoexperimento" x={540} y={1420} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.B + 0.4} until={K.D - 0.3} x={40} y={1420} texto="Hofmann y su asistente de laboratorio" tam={26} color={KC.ink} />
       <Chip T={T} at={K.B + 1.7} until={K.D - 0.3} texto="por la guerra: sin coche" x={360} y={440} tam={36} borde={KC.red} />
       <Chip T={T} at={K.D + 0.2} until={K.Le - 0.3} texto="fármaco experimental" x={540} y={330} tam={40} borde={KC.ink} />

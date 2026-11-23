@@ -1,0 +1,2 @@
+- ia-50-etiquetadores: sin cambios: ya cumplía (revisadas las 11 escenas: sujeto en cuadro, sin números fantasma ni piezas encimadas fuera de las disolvencias). Auditores: sin láminas · encuadre bien.
+- fun-138-lsd: Piel: el dedo con la lupa y el calendario de abril bajan al centro y el calendario crece (antes todo arriba con el tercio de abajo vacío; el auditor marcaba ARRIBA); Hongo (molécula): ergotamina y ergometrina un poco más grandes y separadas del núcleo, con sus etiquetas sin encimarse. Auditores: sin láminas · encuadre bien.
