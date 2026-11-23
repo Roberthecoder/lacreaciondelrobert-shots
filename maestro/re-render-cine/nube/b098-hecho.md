@@ -1,0 +1,1 @@
+- qui-40-mayonesa: Gancho y Cierre: frasco 1.8→1.65 y 30 px más adentro, lupa r 258→245 (con la cámara del gancho el frasco y «MAYONESA» se cortaban a la izquierda y la lupa a la derecha). Lo demás ya cumplía (vaso por capas, gotas, escudo, tazones del estudio, ley). Sin láminas · encuadre bien.

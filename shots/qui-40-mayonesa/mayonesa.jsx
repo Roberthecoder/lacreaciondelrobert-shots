@@ -116,11 +116,12 @@ function Mayonesa() {
       <Escena T={T} a={K.G} b={K.Q} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Frasco x={320} y={1450} s={1.8} hueco={sube} />
+          {/* belleza: frasco un poco más chico y más adentro (con la cámara del gancho «MAYONESA» se cortaba a la izquierda) */}
+          <Frasco x={350} y={1450} s={1.65} hueco={sube} />
           <Cuchara x={cx} y={cy} rot={klerp(-60, -25, sube)} s={1.8} carga={sube} />
         </SvgCapa>
       </Escena>
-      <Lupa T={T} at={K.G + 1.9} until={K.Q - 0.3} x={805} y={1210} r={258} fx={592} fy={500} tinte={KC.orange} interior={InteriorMayo({ forro: 0 })} etiqueta="gotitas de aceite" />
+      <Lupa T={T} at={K.G + 1.9} until={K.Q - 0.3} x={790} y={1210} r={245} fx={592} fy={500} tinte={KC.orange} interior={InteriorMayo({ forro: 0 })} etiqueta="gotitas de aceite" />
 
       {/* 1 · qué tiene */}
       <Escena T={T} a={K.Q} b={K.Pb}>
@@ -285,11 +286,11 @@ function Mayonesa() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Frasco x={320} y={1450} s={1.8} hueco={1} />
+          <Frasco x={350} y={1450} s={1.65} hueco={1} />   {/* belleza: igual que en el gancho */}
           <Cuchara x={590} y={520} rot={-25} s={1.8} carga={1} />
         </SvgCapa>
       </Escena>
-      <Lupa T={T} at={K.Ci + 0.6} until={K.Ou + 0.2} x={785} y={1210} r={258} fx={592} fy={500} tinte={CABEZA} interior={InteriorMayo({ forro: 1 })} etiqueta="aceite + yema = emulsión" />
+      <Lupa T={T} at={K.Ci + 0.6} until={K.Ou + 0.2} x={790} y={1210} r={245} fx={592} fy={500} tinte={CABEZA} interior={InteriorMayo({ forro: 1 })} etiqueta="aceite + yema = emulsión" />
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.G + 2.6} texto="¿pasta?" x={250} y={400} tam={54} />
