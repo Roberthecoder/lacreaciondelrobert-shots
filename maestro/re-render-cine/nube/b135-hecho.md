@@ -1,0 +1,1 @@
+- amb-55-agua-cafe: Estudio: el mapa del mundo (cuadritos que se encienden) baja al centro y la tarjeta Mekonnen y Hoekstra queda arriba sin taparlo (antes todo en la mitad de arriba con el tercio de abajo vacío). Lo demás ya cumplía. Auditores: sin láminas · encuadre bien.

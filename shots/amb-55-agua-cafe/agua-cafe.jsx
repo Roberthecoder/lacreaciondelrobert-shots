@@ -229,7 +229,7 @@ function AguaCafeShot() {
       {/* 8 · el estudio: el mundo en cuadritos, datos 1996–2005 */}
       <Escena T={T} a={K.E} b={K.Go}>
         <FondoLunares color={KC.cyan} />
-        {svg(<g transform="translate(85 770) scale(1)">
+        {svg(<g transform="translate(85 960) scale(1)">
           <rect x={-10} y={-10} width={920} height={395} rx={18} fill="#0d1424" stroke={KC.ink} strokeWidth={7} />
           {MUNDO.map((fila, r) => fila.split('').map((c, k) => { const on = c === '#'; const t0 = K.E + 0.3 + k * 0.05; const p = kprog(T, t0, t0 + 0.4);
             return <rect key={r + '-' + k} x={k * 25 + 1} y={r * 25 + 1} width={23} height={23} rx={3}
@@ -273,7 +273,7 @@ function AguaCafeShot() {
       <Etq T={T} at={K.Re + 2.2} until={K.E - 0.2} x={40} y={940} texto="promedio" lado="der" tam={28} color={KC.ink} />
       <Etq T={T} at={K.Re + 3.0} until={K.E - 0.2} x={570} y={940} texto="México" lado="der" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Re + 3.6} until={K.E - 0.2} texto="café verde por hectárea · 1995–99" x={540} y={1460} tam={26} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.6} until={K.Go - 0.2} anio="2010–2011" quien="Mekonnen y Hoekstra" revista="U. de Twente, Países Bajos · datos 1996–2005" y={500} />
+      <TarjetaEstudio T={T} at={K.E + 0.6} until={K.Go - 0.2} anio="2010–2011" quien="Mekonnen y Hoekstra" revista="U. de Twente, Países Bajos · datos 1996–2005" y={640} />
       <NumeroGigante T={T} at={K.Go + 0.2} until={K.C - 0.2} valor={1000} dur={2.0} prefijo="×" sufijo="+" x={720} y={1350} tam={170} color={KC.cyan} />
       <Etq T={T} at={K.Go + 0.4} until={K.C - 0.2} x={40} y={1500} texto="1 gota de café" lado="der" tam={28} color={KC.ink} />
       <Chip T={T} at={K.C + 1.2} until={K.Ou - 0.1} texto="≈ 96 % lluvia" x={670} y={410} tam={44} borde={VERDE} />
