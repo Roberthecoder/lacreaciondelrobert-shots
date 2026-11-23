@@ -1,1 +1,2 @@
 - cie-46-elevador-cae: gancho y cierre: cabina más grande (580→680 px de ancho) y centrada, rieles más abiertos como en «mito»; «saltar te salva», el sello ¿MITO? y «no lo vas a necesitar» bajados para no encimarse con la cabina; el resto ya cumplía.
+- qui-46-platano-etileno: qué es: la molécula de etileno ya se arma desde el primer cuadro (antes casi vacío); hormona: «¡MADURA!» más chico y dentro de la célula (antes se salía del borde); cuarto de maduración: las cajas de bananas entran al empezar (antes el cuarto se veía vacío).

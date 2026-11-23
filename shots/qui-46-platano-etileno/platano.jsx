@@ -172,7 +172,7 @@ function Platanos() {
   const ventana = kprog(T, K.N + 3.5, K.N + 4.0, kEase.sale);
   const llena = kprog(T, K.Cu + 2.4, K.Cu + 3.6);
   const cuartoMad = kprog(T, K.Cu + 3.2, K.Cu + 5.4, kEase.suave);
-  const entra = kprog(T, K.Cu + 0.2, K.Cu + 1.6, kEase.sale);
+  const entra = kprog(T, K.Cu - 0.5, K.Cu + 0.8, kEase.sale);
   const dia = Math.floor(Math.max(0, T - (K.B + 0.9)) / 0.55);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -195,7 +195,7 @@ function Platanos() {
           {[...Array(14)].map((_, i) => <circle key={i} cx={(i * 173) % 1080} cy={420 + (i * 271) % 1100} r={3 + (i % 3)} fill="rgba(255,255,255,.18)" />)}
         </Capa>
         <CapaZ k={1.6} lx={540} ly={960} gx={540} gy={1000}>
-          <MolEt x={540} y={960} s={3} rot={Math.sin(T * 0.8) * 6} f={kprog(T, K.Q + 0.1, K.Q + 1.6)} />
+          <MolEt x={540} y={960} s={3} rot={Math.sin(T * 0.8) * 6} f={kprog(T, K.Q - 0.4, K.Q + 0.8)} />
           <g opacity={kprog(T, K.Q + 3.4, K.Q + 3.8)}>
             <line x1={300} y1={1160} x2={780} y2={1160} stroke={KC.gold2} strokeWidth={8} />
             <line x1={300} y1={1140} x2={300} y2={1180} stroke={KC.gold2} strokeWidth={8} /><line x1={780} y1={1140} x2={780} y2={1180} stroke={KC.gold2} strokeWidth={8} />
@@ -214,7 +214,7 @@ function Platanos() {
           <MolEt x={540} y={klerp(500, 770, kprog(T, K.H + 0.3, K.H + 1.5, kEase.sale))} s={0.55} rot={0} o={kprog(T, K.H + 0.2, K.H + 0.5)} />
           {T > K.H + 1.5 && <circle cx={540} cy={770} r={60 + 40 * kprog(T, K.H + 1.5, K.H + 2.1)} fill="none" stroke={KC.gold2} strokeWidth={6} opacity={1 - kprog(T, K.H + 1.5, K.H + 2.1)} />}
           <g opacity={kprog(T, K.H + 2.0, K.H + 2.3)} transform={`translate(400 1010) scale(${klerp(0.6, 1, kprog(T, K.H + 2.0, K.H + 2.4, kEase.rebote))})`}>
-            <text x={0} y={30} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">¡MADURA!</text>
+            <text x={0} y={30} textAnchor="middle" style={{ font:`400 84px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={7} paintOrder="stroke">¡MADURA!</text>
           </g>
         </CapaZ>
       </Escena>
