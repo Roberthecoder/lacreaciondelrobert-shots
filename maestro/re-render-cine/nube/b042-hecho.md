@@ -1,2 +1,4 @@
 - fun-51-queroseno: Daño (el avión del shot queda grande y atenuado detrás de los cortes de filtro, aluminio y ala; cortes 1.24× y centrados, barra «1 cm» recalculada 207→223 px); Gatwick (el avión está desde el inicio atenuado bajo el «≈38×», ya no hay pista vacía, y es ~1.35× más grande al volar, barra «10 m» recalculada 140→189 px).
 - bio-19-xantana: Alcohol (el vaso donde se junta la goma 1.3×→1.7×, botella y chorro reacomodados); Cadena (la cadena se arma desde el inicio en 1.3 s, ya no hay medio segundo vacío, y baja al centro); Red (la red de cadenas baja ~100 px y queda centrada, sin tercio de abajo vacío). Sin barras de escala en esas escenas (esquema).
+- fun-52-trufas: Raíces (el paso al microscopio ya no deja un rectángulo gris claro a pantalla completa: fondo oscuro del cine); Olor (la trufa bajo tierra 1.45× y las ondas de olor reacomodadas; barra «5 cm» recalculada 161→233 px). Láminas y encuadre ya estaban bien.
+GRUPO TERMINADO
