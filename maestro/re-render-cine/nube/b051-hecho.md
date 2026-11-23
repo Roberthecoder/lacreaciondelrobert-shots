@@ -1,2 +1,4 @@
 - cie-22-agujetas: Gancho: la persona arranca un escalón más abajo y se ve completa desde el cuadro 0 (antes salía cortada a la izquierda); el resto de las escenas ya cumplía (revisadas las 11). Auditores: sin láminas · encuadre bien.
 - fun-61-cerveza-patagonia: Estudio: el bosque de Nothofagus baja 220 px con suelo en degradado hasta el borde (antes arriba con el tercio de abajo vacío) y la etiqueta de Cyttaria en naranja legible; Tíbet: mapa ×1.15 bajado al centro, etiquetas movidas con él y «Tíbet: más parecida» arriba sobre fondo oscuro (antes tapada por el mapa). Auditores: sin láminas · encuadre bien.
+- qui-22-estatua-libertad: Piel: la cota y el «2.4 mm» se apagan al cambiar de escena (antes quedaban de número fantasma detrás de la estatua en Café); Estudio: muestras y rayos X ×1.28 y centradas (antes chicas; ya no se cortan con el avance de cámara). Auditores: sin láminas · encuadre bien.
+GRUPO TERMINADO

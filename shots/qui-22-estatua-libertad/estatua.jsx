@@ -178,7 +178,8 @@ function Estatua22() {
           {[300, 480, 640].map((rx) => <circle key={rx} cx={rx} cy={730} r={9} fill="#b8683e" stroke={KC.ink} strokeWidth={4} />)}
           <MonedaCanto x={920} h={76} y={klerp(380, 842, kprog(T, K.P + 1.4, K.P + 1.9, kEase.rebote))} />
           <MonedaCanto x={920} h={76} y={klerp(380, 766, kprog(T, K.P + 2.0, K.P + 2.5, kEase.rebote))} />
-          <g opacity={kprog(T, K.P + 0.6, K.P + 1.0)}>
+          {/* belleza: la cota y el «2.4 mm» se apagan al cambiar de escena (antes quedaban de fantasma detrás de la estatua) */}
+          <g opacity={kprog(T, K.P + 0.6, K.P + 1.0) * (1 - kprog(T, K.Ca - 0.3, K.Ca + 0.1))}>
             <line x1={100} y1={760} x2={100} y2={880} stroke={KC.ink} strokeWidth={8} />
             <line x1={84} y1={760} x2={116} y2={760} stroke={KC.ink} strokeWidth={8} />
             <line x1={84} y1={880} x2={116} y2={880} stroke={KC.ink} strokeWidth={8} />
@@ -240,7 +241,8 @@ function Estatua22() {
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
           <g opacity={klerp(1, 0.16, kprog(T, K.St + 2.8, K.St + 3.4))}><Estatua T={T} x={420} y={1560} s={1.1} f={1} /></g>
-          <g transform="translate(560 900) scale(1.2) translate(-560 -900)">
+          {/* belleza: muestras y rayos X ×1.28 y centradas (antes ×1.2, piezas chicas) */}
+          <g transform="translate(540 900) scale(1.28) translate(-560 -900)">
           <g opacity={emisor}>
             <rect x={470} y={640} width={180} height={90} rx={14} fill="#dfe6ee" stroke={KC.ink} strokeWidth={8} />
             <rect x={530} y={730} width={60} height={30} fill="#9aa3b5" stroke={KC.ink} strokeWidth={6} />
