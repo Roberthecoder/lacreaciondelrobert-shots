@@ -1,0 +1,1 @@
+- bio-25-bt: escena «Tú» con el estómago ×1.22 (antes chico), línea divisoria y etiqueta reacomodadas; volumen con luz radial en estómago (con brillo), mochila Bt, lechugas, costal y receptores. Auditores: sin láminas, encuadre bien.

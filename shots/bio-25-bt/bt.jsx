@@ -6,7 +6,16 @@ const ORUGA = '#7d8a4e', ORUGA2 = '#55603a', CABEZA = '#3a2a1a', ALCA = '#6b4dff
 
 // Capa SVG de pantalla completa.
 function SvgBt({ children, z }) {
-  return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{children}</svg>;
+  return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}><BtDefs />{children}</svg>;
+}
+// Pase de belleza: luz de volumen (claro arriba-izquierda, sombra abajo-derecha) para poner encima de piezas planas.
+function BtDefs() {
+  return <defs>
+    <radialGradient id="bt-luz" cx=".32" cy=".26" r=".85">
+      <stop offset="0" stopColor="#ffffff" stopOpacity=".45" /><stop offset=".42" stopColor="#ffffff" stopOpacity="0" />
+      <stop offset=".78" stopColor="#000000" stopOpacity=".08" /><stop offset="1" stopColor="#000000" stopOpacity=".3" />
+    </radialGradient>
+  </defs>;
 }
 // Texto chico "esquema · sin escala" para las escenas al microscopio.
 function SinEscala({ x = 60, y = 1440, color = 'rgba(246,243,236,.75)' }) {
@@ -124,6 +133,7 @@ function Cry({ T = 0, x, y, s = 1, rot = 0, activa = 0, rota = 0, o = 1 }) {
 function Receptor({ x, y, s = 1, ocupado = 0, color = KC.cyan, redondo = false }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-30} y={-58} width={60} height={64} rx={redondo ? 30 : 12} fill={color} stroke={KC.ink} strokeWidth={5} />
+    <rect x={-27} y={-55} width={54} height={58} rx={redondo ? 27 : 10} fill="url(#bt-luz)" />
     {redondo ? <circle cx={0} cy={-26} r={10} fill={KC.ink} /> : <path d="M 0 -42 a 10 10 0 1 1 -0.1 0 Z M -6 -30 L 6 -30 L 9 -8 L -9 -8 Z" fill={KC.ink} />}
     {ocupado > 0 && <circle cx={0} cy={-30} r={40 * ocupado} fill="none" stroke={CRY} strokeWidth={5} opacity={1 - ocupado * 0.4} />}
   </g>;
@@ -132,6 +142,7 @@ function Receptor({ x, y, s = 1, ocupado = 0, color = KC.cyan, redondo = false }
 function Aspersor({ T, x, y, s = 1, rocia = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-80} y={-200} width={160} height={240} rx={40} fill="#f6f3ec" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-76} y={-196} width={152} height={232} rx={36} fill="url(#bt-luz)" />
     <rect x={-40} y={-230} width={80} height={36} rx={10} fill={KC.orange} stroke={KC.ink} strokeWidth={6} />
     <text x={0} y={-50} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.leaf} stroke={KC.ink} strokeWidth={4}>Bt</text>
     <path d="M 80 -20 Q 180 0 230 -60 L 360 -110" stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" />
@@ -144,6 +155,7 @@ function Lechuga({ x, y, s = 1, T = 0, seed = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s}) rotate(${w})`}>
     {[-50, -20, 20, 50].map((d, i) => <ellipse key={i} cx={d} cy={-30} rx={46} ry={56} fill={i % 2 ? '#7ed957' : '#5fc24a'} stroke={KC.ink} strokeWidth={6} />)}
     <ellipse cx={0} cy={-50} rx={52} ry={48} fill="#a9ee7c" stroke={KC.ink} strokeWidth={6} />
+    <ellipse cx={0} cy={-40} rx={96} ry={64} fill="url(#bt-luz)" />
   </g>;
 }
 // Isla de Puerto Rico (contorno esquemático).
@@ -166,6 +178,7 @@ function Mazorca({ x, y, s = 1, rot = 0, color = '#f7d65a' }) {
 function Costal({ x, y, s = 1, texto = 'semilla', tachado = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d="M -110 -120 Q -130 -150 -90 -160 L 90 -160 Q 130 -150 110 -120 Q 140 40 100 110 L -100 110 Q -140 40 -110 -120 Z" fill="#e3c99a" stroke={KC.ink} strokeWidth={7} />
+    <path d="M -110 -120 Q -130 -150 -90 -160 L 90 -160 Q 130 -150 110 -120 Q 140 40 100 110 L -100 110 Q -140 40 -110 -120 Z" fill="url(#bt-luz)" />
     <path d="M -90 -130 Q 0 -110 90 -130" stroke={KC.ink} strokeWidth={5} fill="none" />
     <text x={0} y={0} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>{texto}</text>
     {tachado > 0 && <g opacity={tachado}><circle r={170} fill="none" stroke={KC.red} strokeWidth={18} /><line x1={-120} y1={-120} x2={120} y2={120} stroke={KC.red} strokeWidth={18} strokeLinecap="round" /></g>}
@@ -175,6 +188,8 @@ function Costal({ x, y, s = 1, texto = 'semilla', tachado = 0 }) {
 function Estomago({ T, x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d="M -60 -220 Q -40 -150 -120 -60 Q -200 60 -100 170 Q 20 270 160 160 Q 220 100 170 20 Q 140 -40 60 -10 Q 0 10 -10 -120 L -20 -220 Z" fill="#ff8fa3" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    <path d="M -60 -220 Q -40 -150 -120 -60 Q -200 60 -100 170 Q 20 270 160 160 Q 220 100 170 20 Q 140 -40 60 -10 Q 0 10 -10 -120 L -20 -220 Z" fill="url(#bt-luz)" />
+    <path d="M -130 -20 Q -170 60 -120 130" stroke="#ffd0da" strokeWidth={10} fill="none" strokeLinecap="round" opacity={0.6} />
     <path d="M -95 100 Q 20 200 140 120" stroke="#e46a7a" strokeWidth={8} fill="none" />
     {Array.from({ length: 9 }, (_, i) => { const u = (T * 0.5 + i / 9) % 1; return <circle key={i} cx={-80 + (i * 37) % 200} cy={150 - u * 160} r={7 + (i % 3) * 3} fill={ACIDO} opacity={0.75 * (1 - u)} stroke={KC.ink} strokeWidth={2} />; })}
   </g>;
@@ -319,17 +334,19 @@ function Bt() {
       <Escena T={T} a={K.Tu} b={K.Or} zoom={0.04}>
         <FondoMarca patron="oscuro" />
         <SvgBt>
-          <line x1={540} y1={760} x2={540} y2={1250} stroke="rgba(255,255,255,.3)" strokeWidth={5} strokeDasharray="14 12" />
+          <line x1={572} y1={700} x2={572} y2={1300} stroke="rgba(255,255,255,.3)" strokeWidth={5} strokeDasharray="14 12" />
+          <g transform="translate(275 995) scale(1.22) translate(-280 -1000)">
           <Estomago T={T} x={280} y={1000} s={1.0} />
           {[0, 1, 2].map((i) => { const t0 = K.Tu + 0.3 + i * 0.4, entra = kprog(T, t0, t0 + 0.7, kEase.suave), rompe = kprog(T, t0 + 0.8, t0 + 1.6);
             return <Cry key={i} T={T} x={klerp(240, 230 + i * 40, entra)} y={klerp(780, 980 + i * 40, entra)} rot={i * 40} activa={1} rota={rompe} s={1} />; })}
+          </g>
           {[650, 800, 950].map((rx, i) => <Receptor key={i} x={rx} y={1150} redondo color="#c9d3ff" />)}
           <rect x={590} y={1150} width={440} height={90} fill="#ffcfa8" stroke={KC.ink} strokeWidth={6} />
           {(() => { const t0 = K.Tu + 2.0, u = kprog(T, t0, t0 + 0.7, kEase.suave), reb = kprog(T, t0 + 0.7, t0 + 1.3, kEase.sale);
             return T > t0 ? <g><Cry T={T} x={800 + reb * 120} y={klerp(860, 1040, u) - reb * 160} rot={90 + reb * 140} activa={1} s={1.1} />
               {reb > 0 && <g transform="translate(800 1010)" opacity={reb}><line x1={-30} y1={-30} x2={30} y2={30} stroke={KC.red} strokeWidth={14} strokeLinecap="round" /><line x1={30} y1={-30} x2={-30} y2={30} stroke={KC.red} strokeWidth={14} strokeLinecap="round" /></g>}</g> : null; })()}
         </SvgBt>
-        <Etq T={T} at={K.Tu + 0.4} until={K.Or - 0.3} x={60} y={730} texto="tu estómago: ácido" tam={32} color="#ffb08a" />
+        <Etq T={T} at={K.Tu + 0.4} until={K.Or - 0.3} x={60} y={665} texto="tu estómago: ácido" tam={32} color="#ffb08a" />
         <Etq T={T} at={K.Tu + 1.9} until={K.Or - 0.3} x={1030} y={1290} texto="sin esos receptores" lado="izq" tam={32} color="#c9d3ff" />
         <SinEscala />
       </Escena>
