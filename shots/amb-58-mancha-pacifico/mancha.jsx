@@ -199,16 +199,16 @@ function ManchaShot() {
       <Escena T={T} a={K.S} b={K.P}>
         <FondoLunares color={KC.cyan} />
         {svg(<><Olas T={T} seed={11} n={10} area={[0, 400, 1080, 960]} color="rgba(255,255,255,.5)" />
-          <Zm c={[420, 750]} a={[470, 880]} k={1.2}>
+          <Zm c={[420, 750]} a={[540, 960]} k={1.55}>{/* belleza (2.ª pasada): el metro cuadrado de océano ×1.55 (antes ×1.2), llena el cuadro */}
           <rect x={120} y={450} width={600} height={600} fill="rgba(255,255,255,.12)" stroke="#fff" strokeWidth={8} strokeDasharray="30 18" strokeDashoffset={-T * 30}
             opacity={kprog(T, K.S + 0.1, K.S + 0.6)} />
           <text x={420} y={1095} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.S + 0.3, K.S + 0.8)}>1 m</text>
-          <text x={765} y={700} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.S + 0.3, K.S + 0.8)}>1 m</text>
+          <text x={680} y={490} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.S + 0.3, K.S + 0.8)}>1 m</text>
           <circle cx={430} cy={760} r={34 + 8 * Math.sin(T * 6)} fill="none" stroke={KC.yellow} strokeWidth={6} opacity={kprog(T, K.S + 0.8, K.S + 1.2)} /><Frag x={430 + Math.sin(T * 1.3) * 4} y={760 + Math.cos(T) * 3} r={13} c="#fff" rot={T * 20} o={kprog(T, K.S + 0.8, K.S + 1.2)} />
           </Zm></>)}
-        <EscalaFija texto="50 cm" largo={360} y={1480} color={KC.ink} />
+        <EscalaFija texto="50 cm" largo={465} y={1480} color={KC.ink} />
       </Escena>
-      <Lupa T={T} at={K.S + 3.6} until={K.P - 0.2} x={840} y={1125} r={200} fx={482} fy={892} tinte={KC.yellow} etiqueta="AUMENTADO"
+      <Lupa T={T} at={K.S + 3.6} until={K.P - 0.2} x={800} y={1210} r={200} fx={555} fy={975} tinte={KC.yellow} etiqueta="AUMENTADO"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0d3550" /><g transform={`scale(${r / 170})`}>
           <rect x={-10} y={70} width={150} height={150} rx={8} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
           <rect x={130} y={66} width={40} height={158} fill="#c0c7cf" stroke={KC.ink} strokeWidth={5} />
@@ -220,8 +220,9 @@ function ManchaShot() {
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><text x={420} y={1010} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 420 850)`}>?</text>
-          <Bascula x={440} y={1200} T={T} aguja={0.25 * Math.sin(T * 5)} /></>)}
+        {/* belleza (2.ª pasada): la báscula grande al centro y el «?» chico (440 → 150 px) */}
+        {svg(<><text x={790} y={760} textAnchor="middle" paintOrder="stroke" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} transform={`rotate(${Math.sin(T * 3) * 8} 790 710)`}>?</text>
+          <g transform="translate(540 1060) scale(1.7) translate(-440 -1200)"><Bascula x={440} y={1200} T={T} aguja={0.25 * Math.sin(T * 5)} /></g></>)}
       </Escena>
       {/* 6 · el estudio: 18 barcos en 2015 y un avión en 2016 */}
       <Escena T={T} a={K.E} b={K.R}>

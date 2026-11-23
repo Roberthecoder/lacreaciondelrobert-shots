@@ -70,9 +70,10 @@ function Focos({ T, at, until, x, y, lado = 600, apaga }) {
   const e = kentrada(T, at, until, 'pop'), c = lado / 100, off = kprog(T, apaga, apaga + 0.3, kEase.sale), anillo = kprog(T, apaga + 0.2, apaga + 0.9, kEase.sale);
   const fx = x + 63 * c, fy = y + 41 * c;
   return <div style={{ position:'absolute', left:x, top:y, width:lado, height:lado, zIndex:30, opacity:e.o, transform:`scale(${e.s})`, transformOrigin:'50% 50%',
-    background:KC.yellow, backgroundImage:`radial-gradient(circle, #fff6b0 ${c * 0.22}px, ${KC.yellow} ${c * 0.3}px, #b88a00 ${c * 0.5}px)`, backgroundSize:`${c}px ${c}px`,
+    // belleza (2.ª pasada): 10 000 estrellitas que brillan sobre azul noche (antes un cuadro amarillo plano)
+    background:'#0e1830', backgroundImage:`radial-gradient(circle, #fffbe0 ${c * 0.12}px, ${KC.yellow} ${c * 0.24}px, rgba(255,200,40,.25) ${c * 0.38}px, rgba(14,24,48,0) ${c * 0.5}px)`, backgroundSize:`${c}px ${c}px`,
     border:`7px solid ${KC.ink}`, borderRadius:12, boxShadow:'0 0 60px rgba(255,225,26,.55)' }}>
-    <div style={{ position:'absolute', left:63 * c, top:41 * c, width:c, height:c, background:'#000', opacity:off }}></div>
+    <div style={{ position:'absolute', left:63 * c, top:41 * c, width:c, height:c, background:'#0e1830', opacity:off }}></div>
     <div style={{ position:'absolute', left:fx - x + c / 2, top:fy - y + c / 2, width:120, height:120, marginLeft:-60, marginTop:-60, borderRadius:'50%', border:`6px solid ${KC.red}`,
       opacity:anillo, transform:`scale(${klerp(3, 1, anillo)})`, boxShadow:'0 0 0 4px #000' }}></div>
   </div>;
@@ -211,9 +212,9 @@ function Exoplaneta() {
       <Escena T={T} a={K.Bu} b={K.H}>
         <FondoLunares color={KC.mint} />
         {svg(<g opacity={0.85 + 0.15 * kprog(T, K.Bu + 2.3, K.Bu + 2.8)}>
-          <rect x={80} y={540} width={920} height={900} rx={26} fill={KC.noche} stroke={KC.ink} strokeWidth={8} />
+          <rect x={80} y={540} width={920} height={900} rx={26} fill="#0e1830" stroke={KC.ink} strokeWidth={8} />
           {Array.from({ length: 670 }, (_, i) => { const c = i % 26, rr = Math.floor(i / 26), u = (rr + c / 26) / 26, hecho = scan > u;
-            return <circle key={i} cx={115 + c * 34} cy={578 + rr * 33} r={hecho ? 9 : 6.5} fill={hecho ? KC.yellow : '#8794b5'} />; })}
+            return <circle key={i} cx={115 + c * 34} cy={578 + rr * 33} r={hecho ? 10 : 7} fill={hecho ? KC.yellow : '#c9d6f5'} style={{ filter:`drop-shadow(0 0 ${hecho ? 8 : 5}px ${hecho ? KC.yellow : '#9fb6ff'})` }} />; })}
           <rect x={94} y={560 + scan * 850} width={892} height={16} rx={8} fill={KC.cyan} opacity={scan > 0 && scan < 1 ? 0.8 : 0} />
         </g>)}
       </Escena>
@@ -225,7 +226,7 @@ function Exoplaneta() {
         {svg(<>
           <CurvaLuz x={50} y={450} w={980} h={360} prog={kprog(T, K.H + 0.1, K.H + 1.4)} caidas={[{ c: 0.62, w: 0.035, d: 0.022 }]} ruido={0.007} seed={21} escala={0.12}
             marca={T > K.H + 1.5 ? { c: 0.62, w: 0.035, o: kprog(T, K.H + 1.5, K.H + 1.8) } : null} />
-          <g opacity={klerp(0.3, 1, kprog(T, K.H + 1.9, K.H + 2.4))}>
+          <g opacity={klerp(0.7, 1, kprog(T, K.H + 1.9, K.H + 2.4))}>{/* belleza (2.ª pasada): la estrella visible desde el inicio */}
             <Estrella x={540} y={1180} r={200} T={T} id="k90" />
             {[275, 325, 385].map((ro, i) => <ellipse key={i} cx={540} cy={1180} rx={ro} ry={ro * 0.32} fill="none" stroke="rgba(246,243,236,.35)" strokeWidth={4} />)}
             <ellipse cx={540} cy={1180} rx={325} ry={104} fill="none" stroke={KC.mint} strokeWidth={7} strokeDasharray="14 9" opacity={kprog(T, K.H + 2.5, K.H + 2.9)} />

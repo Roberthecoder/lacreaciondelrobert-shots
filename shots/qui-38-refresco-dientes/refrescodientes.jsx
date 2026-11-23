@@ -157,7 +157,7 @@ function RefrescoDientes() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(127,200,255,.25)" />
         <SvgCapa>
-          {Array.from({ length: NCR }, (_, i) => { const p = kprog(T, micro + i * 0.06, micro + 0.5 + i * 0.06, kEase.sale);
+          {Array.from({ length: NCR }, (_, i) => { const p = kprog(T, micro - 0.4 + i * 0.025, micro + 0.1 + i * 0.025, kEase.sale);   // belleza (2.ª pasada): el esmalte ya está casi completo al entrar
             return <Cristal key={i} T={T} i={i} x={70 + i * 78} y={1340} w={72} h={470 + (i % 3) * 60} o={p} come={T > K.Er ? come(i) : (T > K.C + 3.2 && T < K.A ? 0.04 : 0)} />; })}
           {/* superficie del esmalte */}
           <text x={70} y={1382} style={{ font:`700 30px ${KF.mono}` }} fill="#7fc8ff">esmalte (corte)</text>
@@ -203,7 +203,7 @@ function RefrescoDientes() {
       <Escena T={T} a={K.Es} b={K.Co}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          {T < estMid + 0.4 && Array.from({ length: 379 }, (_, i) => { const c = i % 20, r = Math.floor(i / 20), on = T >= K.Es + 2.6 + i * 0.004, rojo = i < 354 && T > K.Es + 4.3;
+          {T < estMid + 0.4 && Array.from({ length: 379 }, (_, i) => { const c = i % 20, r = Math.floor(i / 20), on = T >= K.Es + 0.3 + i * 0.006,   /* belleza (2.ª pasada): las 379 bebidas se encienden desde el inicio */ rojo = i < 354 && T > K.Es + 4.3;
             return <rect key={i} x={93 + c * 45} y={610 + r * 42} width={32} height={30} rx={6} fill={!on ? '#22344d' : rojo ? KC.red : '#7fc8ff'} stroke={on ? KC.ink : '#4a6a8f'} strokeWidth={on ? 3 : 2} opacity={(on ? 1 : 0.7) * (1 - kprog(T, estMid, estMid + 0.4))} />; })}
           {T > estMid && <g opacity={kprog(T, estMid, estMid + 0.4)}><Lata x={290} y={1140} s={1.5} rot={-6} /><Vaso x={800} y={1180} s={1.25} popote={false} /></g>}
         </SvgCapa>

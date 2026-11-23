@@ -1,4 +1,4 @@
-# Segunda pasada de belleza (18)
+# Segunda pasada de belleza (24)
 bio-07-polio
 fun-22-arrieras
 amb-13-tortugas-arena
@@ -17,3 +17,9 @@ cie-37-luna-horizonte
 ia-17-energia-pregunta
 ia-33-olor
 qui-39-antiacido
+qui-37-sal-yodada
+qui-38-refresco-dientes
+amb-58-mancha-pacifico
+bio-59-b12
+cie-59-calor-cabeza
+ia-48-exoplaneta
