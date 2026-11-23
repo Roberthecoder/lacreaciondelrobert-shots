@@ -1,0 +1,1 @@
+- qui-57-leche-blanca: bolitas/rebote/blanco y descremar (microscopio): todo el campo de gotitas, micelas, rayos y ojo bajado 80 px al centro del cuadro, con sus etiquetas movidas igual; el resto ya cumplía.

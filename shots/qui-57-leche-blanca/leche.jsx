@@ -201,7 +201,7 @@ function Leche() {
       <Escena T={T} a={K.Bo} b={K.Pr} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(180,200,255,.25)" tam={[2, 6]} vel={10} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(0 80)">
           {mundoMicro(true, T > K.Bo + 3.6)}
           {T > K.Bo + 3.6 && T < K.Re && <g opacity={kprog(T, K.Bo + 3.6, K.Bo + 4.1) * (1 - kprog(T, K.Re - 0.4, K.Re))}>
             <circle cx={540} cy={860} r={190} fill="rgba(13,20,36,.92)" stroke={KC.gold2} strokeWidth={8} />
@@ -212,7 +212,7 @@ function Leche() {
           {T > K.Bl && colores.map(([c, p0], i) => <RayoLuz key={i} T={T} pts={[[p0[0], p0[1]], [klerp(p0[0], OJO[0], 0.5) + (i - 1) * 40, klerp(p0[1], OJO[1], 0.5) - 60], OJO]} t0={K.Bl + 0.3 + i * 0.25} t1={K.Bl + 1.6 + i * 0.25} color={c} ancho={9} chispas={false} />)}
           {T > K.Bl && <g opacity={kprog(T, K.Bl, K.Bl + 0.4)}><Ojo x={OJO[0]} y={OJO[1]} s={1.5} T={T} /></g>}
           {T > K.Bl + 2.0 && <circle cx={OJO[0]} cy={OJO[1]} r={60 + 110 * kprog(T, K.Bl + 2.0, K.Bl + 2.6, kEase.sale)} fill="#fff" opacity={0.55 * (1 - 0.5 * kprog(T, K.Bl + 2.6, K.Bl + 3.4))} />}
-        </SvgCapa>
+        </g></SvgCapa>
         <Escala T={T} z={1} pxPorMm={300000} y={1430} x={60} />
       </Escena>
       {/* 4 · pregunta: entera vs descremada */}
@@ -230,12 +230,12 @@ function Leche() {
       <Escena T={T} a={K.Az} b={K.Es}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(180,200,255,.25)" tam={[2, 6]} vel={10} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(0 80)">
           {mundoMicro(true, false)}
           <RayoLuz T={T} pts={rectoRojo} t0={K.Az + 2.4} t1={K.Az + 3.3} color={ROJO} ancho={10} chispas={false} />
           <RayoLuz T={T} pts={zzAzul} t0={K.Az + 2.6} t1={K.Az + 5.4} color={AZUL} ancho={10} />
           {sale > 0 && sale < 1 && <g opacity={1 - sale}><path d="M 540 760 L 540 520" stroke={KC.gold2} strokeWidth={16} strokeLinecap="round" /><path d="M 500 560 L 540 500 L 580 560" stroke={KC.gold2} strokeWidth={16} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g>}
-        </SvgCapa>
+        </g></SvgCapa>
         <Escala T={T} z={1} pxPorMm={300000} y={1430} x={60} />
       </Escena>
       {/* 6–8 · 2008, Granada: el tanque */}
@@ -289,15 +289,15 @@ function Leche() {
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.G + 2.6} texto="¿pintura blanca?" x={770} y={430} tam={44} />
       <Chip T={T} at={K.G + 2.9} until={K.Bo - 0.3} texto="luz rebotando" x={770} y={430} tam={46} borde={KC.gold} />
-      <Etq T={T} at={K.Bo + 0.6} until={K.Bo + 3.5} x={285} y={650} texto="gotita de grasa" tam={34} color={GRASA} />
-      <Etq T={T} at={K.Bo + 1.9} until={K.Bo + 3.5} x={505} y={930} texto="micela de caseína" tam={34} color={CASEINA} />
-      <Etq T={T} at={K.Bo + 4.2} until={K.Re - 0.3} x={745} y={730} texto="Ca  ·  PO₄" tam={36} color={KC.cyan} />
+      <Etq T={T} at={K.Bo + 0.6} until={K.Bo + 3.5} x={285} y={730} texto="gotita de grasa" tam={34} color={GRASA} />
+      <Etq T={T} at={K.Bo + 1.9} until={K.Bo + 3.5} x={505} y={1010} texto="micela de caseína" tam={34} color={CASEINA} />
+      <Etq T={T} at={K.Bo + 4.2} until={K.Re - 0.3} x={745} y={810} texto="Ca  ·  PO₄" tam={36} color={KC.cyan} />
       <Chip T={T} at={K.Bo + 3.8} until={K.Re - 0.3} texto="proteína + calcio + fosfato" y={1500} tam={38} borde={KC.cyan} />
       <Chip T={T} at={K.Re + 0.4} until={K.Bl - 0.2} texto={`rebotes: ${Math.min(7, Math.floor(kprog(T, K.Re + 0.3, K.Re + 4.6) * 7.99))}`} y={1500} tam={44} borde="#fffbe6" mono />
       <Chip T={T} at={K.Bl + 1.0} until={K.Pr - 0.2} texto="rojo + verde + azul = blanco" y={1500} tam={38} borde="#ffffff" />
       <Chip T={T} at={K.Az + 0.3} until={K.Az + 2.2} texto="descremar = quitar la grasa" x={540} y={1500} tam={40} borde={KC.gold2} />
       <Chip T={T} at={K.Az + 2.6} until={K.Es - 0.2} texto="más chica → desvía más el azul" y={1500} tam={38} borde={AZUL} />
-      <Etq T={T} at={K.Az + 3.2} until={K.Es - 0.3} x={90} y={385} texto="rojo: pasa casi derecho" tam={30} color={ROJO} />
+      <Etq T={T} at={K.Az + 3.2} until={K.Es - 0.3} x={90} y={465} texto="rojo: pasa casi derecho" tam={30} color={ROJO} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.6} anio="2008" quien="Univ. de Granada (España) + EE. UU." revista="Applied Optics · leche descremada en agua" x={340} y={400} />
       <Etq T={T} at={K.Es + 3.0} until={K.Rs - 0.2} x={705} y={400} texto="leche descremada" lado="izq" tam={34} color={KC.ink} />
       <Etq T={T} at={K.Rs + 0.3} until={K.Ro - 0.1} x={860} y={1238} texto="de lado: azul" lado="izq" tam={36} color={KC.ink} />
