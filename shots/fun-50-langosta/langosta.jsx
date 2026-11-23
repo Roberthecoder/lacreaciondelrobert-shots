@@ -34,6 +34,9 @@ function Langosta({ T = 0, x, y, s = 1, color = '#e2b93b', ala = '#c9a45a', gris
     <ellipse cx={-212} cy={-128} rx={56} ry={62} fill={c} stroke={KC.ink} strokeWidth={7} />
     <ellipse cx={-226} cy={-150} rx={20} ry={27} fill={mixHex('#6b4a1c', '#444', gris)} stroke={KC.ink} strokeWidth={4} />
     <ellipse cx={-232} cy={-160} rx={6} ry={8} fill="#fff" opacity=".7" />
+    <path d="M -60 -134 Q 90 -142 220 -110" stroke="#fff" strokeWidth={6} fill="none" opacity={0.25 * (1 - gris)} strokeLinecap="round" />
+    <path d="M -240 -170 Q -214 -186 -186 -176" stroke="#fff" strokeWidth={6} fill="none" opacity={0.3 * (1 - gris)} strokeLinecap="round" />
+    <path d="M -70 -80 Q 90 -70 230 -88" stroke="#000" strokeWidth={8} fill="none" opacity={0.18} strokeLinecap="round" />
     <path d="M -252 -82 Q -262 -66 -246 -60 Q -232 -64 -236 -80 Z" fill={osc} stroke={KC.ink} strokeWidth={4} />
     <path d={`M -238 -184 Q -272 ${-230 + ant} -316 ${-252 + ant}`} stroke={KC.ink} strokeWidth={6} fill="none" strokeLinecap="round" />
     <path d={`M -224 -186 Q -250 ${-236 - ant} -290 ${-268 - ant}`} stroke={KC.ink} strokeWidth={5} fill="none" strokeLinecap="round" />
@@ -65,6 +68,18 @@ function Calor({ T, x, y, n = 4, k = 1, ancho = 300 }) {
   if (k <= 0) return null;
   return <g opacity={k}>{Array.from({ length: n }, (_, i) => { const u = ((T * 0.7 + i / n) % 1);
     return <path key={i} d={`M ${x - ancho / 2 + i * ancho / (n - 1)} ${y - u * 160} q 14 -20 0 -40 t 0 -40`} stroke={KC.orange} strokeWidth={8} fill="none" strokeLinecap="round" opacity={Math.sin(u * Math.PI)} />; })}</g>;
+}
+// Suelo (modo cine: tierra oscura con degradado, piedritas y matitas, en lugar de un rectángulo café plano).
+function Suelo({ y, seed = 5 }) {
+  const g = krng(seed);
+  return <g>
+    <defs><linearGradient id={'lgSuelo' + seed} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#4a3f2c" /><stop offset="0.25" stopColor="#3a3122" /><stop offset="1" stopColor="#1c1710" /></linearGradient></defs>
+    <rect x={0} y={y} width={KW} height={KH - y + 200} fill={`url(#lgSuelo${seed})`} />
+    <line x1={0} y1={y} x2={KW} y2={y} stroke={KC.ink} strokeWidth={6} opacity={0.8} />
+    {Array.from({ length: 30 }, (_, i) => { const cx = g() * KW, cy = y + 30 + g() * (KH - y), r = 4 + g() * 12 * (1 - (cy - y) / 1100);
+      return <ellipse key={i} cx={cx} cy={cy} rx={r * 1.5} ry={r} fill={i % 3 ? '#4d4433' : '#5e5440'} stroke="#6b604a" strokeWidth={2} opacity={0.7} />; })}
+    {Array.from({ length: 14 }, (_, i) => { const cx = g() * KW; return <path key={'m' + i} d={`M ${cx} ${y + 4} q -6 -24 4 -40 M ${cx + 8} ${y + 4} q 4 -20 16 -30`} stroke="#5f7a3a" strokeWidth={4} fill="none" strokeLinecap="round" opacity={0.8} />; })}
+  </g>;
 }
 // Rama donde se asolea la langosta.
 function Rama({ x, y, largo = 900 }) {
@@ -250,19 +265,20 @@ function LangostaShot() {
       {/* 0 · gancho: la langosta se calienta al sol = fiebre */}
       <Escena T={T} a={K.G} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
+        {fsvg(<><g transform="translate(0 170)">{/* modo cine: la escena bajada al centro del cuadro y la langosta más grande (1.15→1.3) */}
           <Sol T={T} x={250} y={540} r={95} />
           <Rama x={520} y={1040} />
           <Calor T={T} x={500} y={730} k={calor} ancho={420} n={5} />
-          <Langosta T={T} x={540} y={1030} s={1.15} rot={klerp(0, -6, calor)} />
-          <Termo x={970} y={1060} alto={240} nivel={klerp(0.25, 0.92, calor)} />
+          <Langosta T={T} x={540} y={1030} s={1.3} rot={klerp(0, -6, calor)} />
+          <Termo x={955} y={1060} alto={240} nivel={klerp(0.25, 0.92, calor)} />
+          </g>
         </>)}
       </Escena>
       {/* 1 · el hongo especialista */}
       <Escena T={T} a={K.H} b={K.Es} zoom={0.06}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <rect x={0} y={1160} width={KW} height={800} fill="#4e4433" stroke={KC.ink} strokeWidth={8} />
+          <Suelo y={1160} seed={5} />
           <Langosta T={T} x={360} y={1160} s={1.0} />
           <Chapulin T={T} x={850} y={1160} s={0.6} seed={3} />
           {Array.from({ length: 14 }, (_, i) => { const u = kprog(T, K.H + 0.3 + i * 0.12, K.H + 2.2 + i * 0.12); const tx = i % 2 ? 360 + (i - 7) * 22 : 850 + (i - 7) * 12, ty = i % 2 ? 1030 : 1090;
@@ -303,7 +319,7 @@ function LangostaShot() {
       <Escena T={T} a={K.E} b={K.L} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={900} width={KW} height={1100} fill="#4e4433" stroke={KC.ink} strokeWidth={8} />
+          <Suelo y={900} seed={6} />
           {Array.from({ length: 9 }, (_, i) => <path key={i} d={`M ${40 + i * 125} 920 q 30 -60 60 0 q 20 -40 40 0`} fill={KC.leaf} stroke={KC.ink} strokeWidth={5} />)}
           {campo.map(([cx, cy], i) => { const m = muerta(i); return <Langosta key={i} T={T} x={cx} y={cy} s={0.34} rot={m * 90} gris={m} seed={i} flip={i % 3 === 0} />; })}
           <MapaAfrica T={T} x={300} y={420} k={8.4} p={kprog(T, K.E + 1.4, K.E + 1.8) * (1 - kprog(T, K.E + 3.0, K.E + 3.4))} punto={kprog(T, K.E + 2.0, K.E + 2.4, kEase.rebote)} />
@@ -320,7 +336,7 @@ function LangostaShot() {
           <rect x={60} y={710} width={600} height={200} rx={30} fill="rgba(20,24,40,.88)" stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.L + 0.9, K.L + 1.2)} />
           <text x={90} y={790} style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.L + 0.9, K.L + 1.2)}>el hongo</text>
           <text x={90} y={870} style={{ font:`700 40px ${KF.mono}` }} fill={KC.leaf} opacity={kprog(T, K.L + 1.3, K.L + 1.6)}>tarda días o semanas</text>
-          <rect x={0} y={1180} width={KW} height={950} fill="#4e4433" stroke={KC.ink} strokeWidth={8} />
+          <Suelo y={1180} seed={7} />
           {[0, 1, 2, 3].map((i) => <Hormiga key={i} T={T} x={130 + i * 150 + ((T * 30) % 60)} y={1140 + (i % 2) * 34} s={1.9} seed={i} />)}
           <AveVuelo T={T} x={klerp(1150, 840, kprog(T, K.L, K.L + 1.0, kEase.sale))} y={1060} s={2.0} seed={2} />
           {[[360, 1080], [840, 1040]].map(([cx, cy], i) => { const k = kprog(T, K.L + 3.0 + i * 0.3, K.L + 3.3 + i * 0.3, kEase.rebote); return k > 0 ? <g key={i} transform={`translate(${cx} ${cy - 90}) scale(${k})`}><circle r={40} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} /><path d="M -18 0 L -5 14 L 20 -12" stroke="#fff" strokeWidth={9} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g> : null; })}
@@ -330,7 +346,7 @@ function LangostaShot() {
       <Escena T={T} a={K.C} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <rect x={0} y={1172} width={KW} height={1000} fill="#4e4433" stroke={KC.ink} strokeWidth={8} />
+          <Suelo y={1172} seed={8} />
           {Array.from({ length: 7 }, (_, i) => { const u = kprog(T, K.C + 0.2 + i * 0.25, K.C + 2.2 + i * 0.25, kEase.sale); const izq = i % 2 === 0;
             return u > 0 ? <AveVuelo key={i} T={T} x={klerp(izq ? -120 : 1200, 160 + i * 120, u)} y={klerp(380, 560 + (i % 3) * 110, u) + mece(T, i, 0.6) * 20} s={0.7 + (i % 3) * 0.15} seed={i} color={i % 3 ? '#6e5a40' : '#8a8f99'} /> : null; })}
           <rect x={282} y={1028} width={40} height={150} fill="#8a5a34" stroke={KC.ink} strokeWidth={6} />
@@ -355,20 +371,21 @@ function LangostaShot() {
       {/* 12 · cierre: la misma langosta al sol, ahora vista por dentro */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
+        {fsvg(<><g transform="translate(0 170)">{/* modo cine: la escena bajada al centro del cuadro y la langosta más grande (1.15→1.3) */}
           <Sol T={T} x={250} y={540} r={95} />
           <Rama x={520} y={1040} />
           <Calor T={T} x={500} y={730} k={1} ancho={420} n={5} />
-          <Langosta T={T} x={540} y={1030} s={1.15} rot={-6} />
-          <Termo x={970} y={1060} alto={240} nivel={0.92} />
+          <Langosta T={T} x={540} y={1030} s={1.3} rot={-6} />
+          <Termo x={955} y={1060} alto={240} nivel={0.92} />
+          </g>
         </>)}
       </Escena>
-      <Lupa T={T} at={K.Ci + 0.6} until={K.Ou - 0.2} x={340} y={600} r={150} fx={660} fy={900} tinte={KC.gold2} etiqueta="POR DENTRO · el hongo sigue"
+      <Lupa T={T} at={K.Ci + 0.6} until={K.Ou - 0.2} x={340} y={600} r={150} fx={660} fy={1070} tinte={KC.gold2} etiqueta="POR DENTRO · el hongo sigue"
         interior={(T2, rr) => { const q = krng(77); return <svg width={rr * 2} height={rr * 2}><rect width={rr * 2} height={rr * 2} fill="#163a3a" />
           {Array.from({ length: 9 }, (_, i) => <CuerpoLevadura key={i} x={40 + q() * (rr * 2 - 80)} y={40 + q() * (rr * 2 - 80)} s={0.9} rot={q() * 180 + T2 * 12} yema={(Math.sin(T2 * 2 + i) + 1) / 2} />)}</svg>; }} />
 
       {/* textos */}
-      <Chip T={T} at={K.G + 1.2} until={K.H - 0.2} texto="no es descanso: es FIEBRE" x={300} y={720} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.G + 1.2} until={K.H - 0.2} texto="no es descanso: es FIEBRE" x={540} y={420} tam={34} borde={KC.red} />
       <Etq T={T} at={K.G + 2.0} until={K.H - 0.2} x={60} y={1400} texto="langosta del desierto" tam={28} color={KC.ink} />
       <Etq T={T} at={K.G + 2.3} until={K.H - 0.2} x={60} y={1450} texto="Schistocerca gregaria" it tam={28} color={KC.ink} />
       <Etq T={T} at={K.H + 0.5} until={K.Es - 0.3} x={60} y={470} texto="hongo de las langostas" tam={34} color={KC.ink} />
@@ -411,10 +428,10 @@ function LangostaShot() {
       <Etq T={T} at={K.M + 1.9} until={K.Ci - 0.2} x={40} y={1450} texto="Schistocerca piceifrons" it tam={28} color={KC.ink} />
       <Chip T={T} at={K.M + 3.6} until={K.Ci - 0.2} texto="2020 · cepa donada a Costa Rica" x={380} y={470} tam={34} borde={KC.blue} />
       <Etq T={T} at={K.M + 4.8} until={K.Ci - 0.2} x={mx(cr)[0] - 50} y={mx(cr)[1] + 10} lado="izq" texto="Costa Rica" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="fiebre vs. hongo" x={300} y={1150} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="fiebre vs. hongo" x={540} y={1420} tam={36} borde={KC.red} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={190} x={600} color={KC.ink} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={215} x={600} color={KC.ink} />
       <BarraEscala T={T} at={K.H} until={K.Es} texto="5 cm" largo={173} x={600} color={KC.ink} />
       <BarraEscala T={T} at={K.Es} until={K.P} texto="10 µm" largo={150} x={600} />
       <BarraEscala T={T} at={K.P} until={K.F} texto="5 cm" largo={165} x={600} color={KC.ink} />
@@ -423,7 +440,7 @@ function LangostaShot() {
       <BarraEscala T={T} at={K.L} until={K.C} texto="1 cm" largo={104} x={600} color={KC.ink} />
       <BarraEscala T={T} at={K.C} until={K.M} texto="10 cm" largo={237} x={600} color={KC.ink} />
       <BarraEscala T={T} at={K.M} until={K.Ci} texto="500 km" largo={115} x={600} color={KC.ink} />
-      <BarraEscala T={T} at={K.Ci} until={K.Ou} texto="5 cm" largo={190} x={600} color={KC.ink} />
+      <BarraEscala T={T} at={K.Ci} until={K.Ou} texto="5 cm" largo={215} x={600} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No se calienta por gusto: *tiene fiebre.*" />
