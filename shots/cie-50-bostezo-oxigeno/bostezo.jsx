@@ -91,7 +91,7 @@ function Portapapeles({ x, y, T, at, filas }) {
     <rect x={-290} y={-300} width={580} height={600} rx={30} fill="#a8743f" stroke={KC.ink} strokeWidth={9} />
     <rect x={-250} y={-250} width={500} height={520} rx={12} fill="#fff" stroke={KC.ink} strokeWidth={6} />
     <rect x={-90} y={-325} width={180} height={60} rx={16} fill="#bfc6cf" stroke={KC.ink} strokeWidth={7} />
-    <text x={0} y={-175} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}`, stroke:'none' }} fill="#0b1020">CONTAR BOSTEZOS</text>
+    <text x={0} y={-175} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}`, stroke:'none' }} fill="#0b1020">CONTAR BOSTEZOS</text>
     {filas.map(([txt, t], i) => { const ok = kprog(T, t, t + 0.3, kEase.rebote);
       return <g key={i} transform={`translate(-200 ${-60 + i * 120})`}>
         <rect x={0} y={-40} width={70} height={70} rx={10} fill="#fff" stroke="#0b1020" strokeWidth={6} />
@@ -136,7 +136,7 @@ function Bostezo() {
   const mv = kprog(T, K.Gancho + 3.4, K.Gancho + 4.1, kEase.suave);
   const CX = klerp(540, 400, mv), CY = 930, CS = klerp(1.9, 1.5, mv);
   const FX = 540, FY = 1010, FS = 1.7;         // la misma persona en el cierre, al centro
-  const CGX = [190, 420, 660, 890], CGY = [470, 850, 470, 850], CGS = 0.62;   // cadena del contagio en zigzag
+  const CGX = [190, 420, 660, 890], CGY = [600, 980, 600, 980], CGS = 0.62;   // cadena del contagio en zigzag
   // gancho: bosteza desde el cuadro 0; con la mascarilla de oxígeno, vuelve a bostezar
   const bGancho = Math.max(bz(T, K.Gancho - 0.5, 3.2), bz(T, K.Gancho + 4.4, 2.4));
   const masc = kprog(T, K.Gancho + 3.6, K.Gancho + 4.1, kEase.sale);
@@ -194,14 +194,14 @@ function Bostezo() {
       {/* 3 · los gases: dos voluntarios grandes con mascarilla; tanques y conteo debajo */}
       <Escena T={T} a={K.Gases} b={K.Resultado} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
-        <Lienzo>
+        <Lienzo><g transform="translate(0 130)">
           <Tanque x={115} y={1260} s={0.75} color={BO2} etq="O₂" /><Tanque x={965} y={1260} s={0.75} color={BCO2} etq="CO₂" />
           <CaraBostezo x={270} y={710} s={0.95} b={Math.max(...yI.map((t) => bz(T, t, 1.9)))} mascara={BO2} ropa={KC.pink} />
           <CaraBostezo x={810} y={710} s={0.95} b={Math.max(...yD.map((t) => bz(T, t, 1.9)))} mascara={BCO2} ropa={KC.orange} pelo="#6b3b1f" />
           <Manguera x1={115} y1={1086} x2={270} y2={870} p={kprog(T, K.Gases + 0.4, K.Gases + 0.9)} />
           <Manguera x1={965} y1={1086} x2={810} y2={870} p={kprog(T, K.Gases + 0.6, K.Gases + 1.1)} />
           <g opacity={kprog(T, K.Gases + 3.2, K.Gases + 3.6)}><Rayitas x={250} y={1310} n={cuenta(yI)} etq="bostezos" tam={1.3} /><Rayitas x={630} y={1310} n={cuenta(yD)} etq="bostezos" tam={1.3} /></g>
-        </Lienzo>
+        </g></Lienzo>
         <Chip T={T} at={K.Gases + 0.3} until={K.Resultado - 0.1} texto="más O₂" x={270} y={390} tam={46} borde={BO2} />
         <Chip T={T} at={K.Gases + 1.0} until={K.Resultado - 0.1} texto="más CO₂" x={810} y={390} tam={46} borde={BCO2} />
       </Escena>
@@ -284,8 +284,8 @@ function Bostezo() {
           {[0, 1, 2].map((i) => { const dx = CGX[i + 1] - CGX[i], dy = CGY[i + 1] - CGY[i], L = Math.hypot(dx, dy), ux = dx / L, uy = dy / L;
             return <FlechaRecta key={i} x1={CGX[i] + ux * 165} y1={CGY[i] + uy * 165 + 20} x2={CGX[i + 1] - ux * 165} y2={CGY[i + 1] - uy * 165 + 20} p={kprog(T, K.Contagio + 0.8 + i * 0.6, K.Contagio + 1.1 + i * 0.6, kEase.sale)} color={KC.yellow} grosor={12} punta={30} />; })}
           <g opacity={kprog(T, K.Contagio + 3.0, K.Contagio + 3.4)}>
-            <Libro x={300} y={1320} s={0.85} abre={kprog(T, K.Contagio + 3.0, K.Contagio + 3.7, kEase.sale)} />
-            <CaraBostezo x={800} y={1290} s={0.62} b={bz(T, K.Contagio + 4.4, 1.5)} ropa={KC.pink} />
+            <Libro x={300} y={1360} s={0.85} abre={kprog(T, K.Contagio + 3.0, K.Contagio + 3.7, kEase.sale)} />
+            <CaraBostezo x={800} y={1330} s={0.62} b={bz(T, K.Contagio + 4.4, 1.5)} ropa={KC.pink} />
           </g>
         </Lienzo>
         <Chip T={T} at={K.Contagio + 0.3} until={K.Cierre - 0.1} texto="se contagia" x={540} y={230} tam={46} borde={KC.yellow} />

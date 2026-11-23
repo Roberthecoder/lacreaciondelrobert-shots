@@ -1,0 +1,1 @@
+- cie-50-bostezo-oxigeno: Estudio con el título «CONTAR BOSTEZOS» que ya cabe en el portapapeles (antes se salía por los dos lados); Gases (voluntarios, tanques y conteo) bajado al centro; Contagio con la cadena de caras bajada y el libro con quien lo lee un poco más abajo, sin tercio de abajo vacío. Auditores: sin láminas / encuadre bien.
