@@ -112,7 +112,8 @@ function Rejilla({ T, x, y, cols = 10, filas = 6, paso = 68, rev = 0 }) {
     const cambia = orden !== azar, u = cambia ? rev : 0;
     const jit = rev * 5 * Math.sin(T * 9 + k);
     out.push(<circle key={k} cx={x + i * paso + jit} cy={y + j * paso + jit * 0.6} r={paso * 0.34 * (1 - 0.5 * Math.sin(Math.PI * u))}
-      fill={(u > 0.5 ? azar : orden) ? KC.pink : KC.cyan} stroke={KC.ink} strokeWidth={5} />); }
+      fill={(u > 0.5 ? azar : orden) ? KC.pink : KC.cyan} stroke={KC.ink} strokeWidth={5} />);
+    out.push(<circle key={`b${k}`} cx={x + i * paso + jit - paso * 0.11} cy={y + j * paso + jit * 0.6 - paso * 0.11} r={paso * 0.09 * (1 - 0.5 * Math.sin(Math.PI * u))} fill="#ffffff" opacity=".55" />); }
   return <>
     {Array.from({ length: filas }, (_, j) => <line key={`h${j}`} x1={x} y1={y + j * paso} x2={x + (cols - 1) * paso} y2={y + j * paso} stroke={KC.texto} strokeOpacity=".18" strokeWidth={4} />)}
     {Array.from({ length: cols }, (_, i) => <line key={`v${i}`} x1={x + i * paso} y1={y} x2={x + i * paso} y2={y + (filas - 1) * paso} stroke={KC.texto} strokeOpacity=".18" strokeWidth={4} />)}
@@ -174,12 +175,12 @@ function TituloArticulo({ T, at, until, tacha, y = 470 }) {
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'sube'), r = kprog(T, tacha, tacha + 0.4, kEase.sale), n = kprog(T, tacha + 0.4, tacha + 0.8, kEase.sale);
   return <div style={{ position:'absolute', left:70, right:70, top:y, zIndex:42, opacity:e.o, transform:`translateY(${e.y}px) rotate(-1.5deg)`,
-    background:'#ffffff', border:`6px solid ${KC.ink}`, borderRadius:18, padding:'18px 26px', boxShadow:`10px 10px 0 ${KC.ink}`, textAlign:'left' }}>
-    <div style={{ font:`700 24px ${KF.mono}`, color:'#7a6f62', marginBottom:8 }}>Nature · título del artículo</div>
-    <div style={{ font:`700 34px/1.3 ${KF.mono}`, color:KC.ink }}>An autonomous laboratory for the accelerated synthesis of{' '}
-      <span style={{ position:'relative', color: r > 0.5 ? '#9a9088' : KC.ink }}>novel
+    background:'linear-gradient(160deg,#ffffff 0%,#e9edf5 100%)', border:'6px solid #0b1020', borderRadius:18, padding:'18px 26px', boxShadow:'0 14px 34px rgba(0,0,0,.55)', textAlign:'left' }}>
+    <div style={{ font:`700 26px ${KF.mono}`, color:'#5d5448', marginBottom:8 }}>Nature · título del artículo</div>
+    <div style={{ font:`700 34px/1.3 ${KF.mono}`, color:'#0b1020' }}>An autonomous laboratory for the accelerated synthesis of{' '}
+      <span style={{ position:'relative', color: r > 0.5 ? '#9a9088' : '#0b1020' }}>novel
         <span style={{ position:'absolute', left:-6, top:'52%', height:7, width:`calc(${r * 100}% + 12px)`, background:KC.red, borderRadius:4 }}></span></span>
-      {n > 0 && <span style={{ background:KC.mint, padding:'0 8px', borderRadius:6, marginLeft:10, opacity:n }}>inorganic</span>} materials</div>
+      {n > 0 && <span style={{ background:KC.mint, color:'#0b1020', padding:'0 8px', borderRadius:6, marginLeft:10, opacity:n }}>inorganic</span>} materials</div>
   </div>;
 }
 
@@ -272,7 +273,7 @@ function Gnome() {
       {/* 4 · el laboratorio robot A-Lab */}
       <Escena T={T} a={K.Ro} b={K.P}>
         <FondoLunares color={KC.mint} />
-        {svg(<g transform="translate(505 1120) scale(1.1) translate(-505 -970)">{robotDib(kprog(T, K.Ro + 1.2, K.Ro + 2.0), (T - K.Ro) * 1.8)}</g>)}
+        {svg(<g transform="translate(520 1180) scale(1.06) translate(-505 -970)">{robotDib(kprog(T, K.Ro + 1.2, K.Ro + 2.0), (T - K.Ro) * 1.8)}</g>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.Ro + 0.2} until={K.Ro + 2.6} anio="2023" quien="A-Lab · Berkeley" revista="Szymanski et al. · Nature" y={500} />
       <NumeroGigante T={T} at={K.Ro + 2.8} until={K.P - 0.2} valor={41} dur={0.8} sufijo=" / 58" etiqueta="cristales «nuevos» hechos" x={540} y={580} tam={190} color={KC.yellow} />
@@ -281,7 +282,7 @@ function Gnome() {
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.Ct} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<text x={290} y={1230} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 1030)`}>?</text>)}
+        {svg(<text x={540} y={820} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 760)`}>?</text>)}
       </Escena>
 
       {/* 6 · la crítica de Santa Bárbara */}
@@ -303,7 +304,7 @@ function Gnome() {
           {Array.from({ length: 9 }, (_, i) => { const t0 = K.Ct + 5.7 + i * 0.12, e = kprog(T, t0, t0 + 0.4, kEase.rebote); if (e <= 0) return null;
             const x = 170 + (i % 3) * 230 + (Math.floor(i / 3) % 2) * 115, y = 1330 - Math.floor(i / 3) * 170;
             return <g key={i} transform={`translate(${x} ${y}) scale(${e})`}><Cristal x={0} y={0} s={88} color={'#9be564'} /></g>; })}
-          {T > K.Ct + 6.3 && <g transform={`scale(${kprog(T, K.Ct + 6.3, K.Ct + 6.7, kEase.rebote)})`} style={{ transformOrigin:'860px 870px' }}><Trebol x={860} y={870} r={105} /></g>}
+          {T > K.Ct + 6.3 && <g transform={`scale(${kprog(T, K.Ct + 6.3, K.Ct + 6.7, kEase.rebote)})`} style={{ transformOrigin:'860px 690px' }}><Trebol x={860} y={690} r={105} /></g>}
         </>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.Ct + 0.2} until={K.Ct + 2.7} anio="2024" quien="UC Santa Bárbara" revista="Cheetham y Seshadri · Chem. Mater." y={300} />
@@ -323,13 +324,13 @@ function Gnome() {
       <Escena T={T} a={K.Co} b={K.B}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {/* el mismo robot de Berkeley sigue en cuadro, atenuado, mientras se corrige su cuenta */}
-        {svg(<g opacity=".5" transform="translate(505 1300) translate(-505 -970)">{robotDib(1, (T - K.Co) * 1.2)}</g>)}
+        {svg(<g opacity=".5" transform="translate(505 1360) translate(-505 -970)">{robotDib(1, (T - K.Co) * 1.2)}</g>)}
       </Escena>
-      <TituloArticulo T={T} at={K.Co + 0.2} until={K.Co + 4.2} tacha={K.Co + 1.6} y={230} />
-      <Sello T={T} at={K.Co + 0.9} until={K.Co + 4.2} texto="CORRECCIÓN" sub="Nature · enero 2026" x={800} y={935} />
-      <Marcador T={T} at={K.Co + 0.3} until={K.B - 0.2} tacha={K.Co + 2.2} y={680} />
-      <Chip T={T} at={K.Co + 4.4} until={K.B - 0.2} texto="nuevos para su base de datos ✔" x={540} y={930} tam={42} borde={KC.leaf} />
-      <Chip T={T} at={K.Co + 5.6} until={K.B - 0.2} texto="¿para la ciencia? no necesariamente" x={540} y={1025} tam={40} borde={KC.red} />
+      <TituloArticulo T={T} at={K.Co + 0.2} until={K.Co + 4.2} tacha={K.Co + 1.6} y={290} />
+      <Sello T={T} at={K.Co + 0.9} until={K.Co + 4.2} texto="CORRECCIÓN" sub="Nature · enero 2026" x={720} y={1010} />
+      <Marcador T={T} at={K.Co + 0.3} until={K.B - 0.2} tacha={K.Co + 2.2} y={740} />
+      <Chip T={T} at={K.Co + 4.4} until={K.B - 0.2} texto="nuevos para su base de datos ✔" x={540} y={990} tam={42} borde={KC.leaf} />
+      <Chip T={T} at={K.Co + 5.6} until={K.B - 0.2} texto="¿para la ciencia? no necesariamente" x={540} y={1085} tam={40} borde={KC.red} />
 
       {/* 9 · balance */}
       <Escena T={T} a={K.B} b={K.C}>
