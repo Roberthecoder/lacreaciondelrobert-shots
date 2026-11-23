@@ -254,18 +254,18 @@ function Gel() {
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
           {(() => { const w = Math.sin(T * 14) * 22; return <g>
-            <Palma x={470} y={1120 + w} s={1.0} rot={22} brillo={1 - seca} />
-            <Palma x={610} y={1120 - w} s={1.0} rot={-22} espejo brillo={1 - seca} />
+            <Palma x={470} y={960 + w} s={1.0} rot={22} brillo={1 - seca} />
+            <Palma x={610} y={960 - w} s={1.0} rot={-22} espejo brillo={1 - seca} />
           </g>; })()}
           {Array.from({ length: 7 }, (_, i) => { const t0 = K.F + 0.6 + i * 0.32, u = kprog(T, t0, t0 + 1.4); if (u <= 0 || u >= 1) return null;
-            const x = 400 + i * 45; return <path key={i} d={`M ${x} ${880 - u * 260} q 16 -20 0 -40 t 0 -40`} stroke="#fff" strokeWidth={6} fill="none" strokeLinecap="round" opacity={(1 - u) * 0.8} />; })}
+            const x = 400 + i * 45; return <path key={i} d={`M ${x} ${720 - u * 220} q 16 -20 0 -40 t 0 -40`} stroke="#fff" strokeWidth={6} fill="none" strokeLinecap="round" opacity={(1 - u) * 0.8} />; })}
         </SvgCapa>
-        <NumeroGigante T={T} at={K.F + 0.3} until={K.Pr - 0.2} valor={20} dur={2.6} sufijo=" s" etiqueta="frota hasta que seque" x={620} y={560} tam={190} color={KC.yellow} />
+        <NumeroGigante T={T} at={K.F + 0.3} until={K.Pr - 0.2} valor={20} dur={2.6} sufijo=" s" etiqueta="frota hasta que seque" x={620} y={430} tam={170} color={KC.yellow} />
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.Pr} b={K.N} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        <SvgCapa><text x={280} y={1100} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 900)`}>?</text></SvgCapa>
+        <SvgCapa><text x={300} y={820} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 620)`}>?</text></SvgCapa>
       </Escena>
       {/* 6 · norovirus y esporas: el alcohol rebota */}
       <Escena T={T} a={K.N} b={K.E} fondo={KC.noche} zoom={0.03}>
@@ -313,10 +313,10 @@ function Gel() {
       <Escena T={T} a={K.Gr} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          <Palma x={540} y={1120} s={1.5} mugre={1} />
+          <Palma x={540} y={960} s={1.5} mugre={1} />
           {[[-60, -50], [40, 50], [70, -70], [-30, 90], [0, 10], [-90, 40]].map(([dx, dy], i) => { const u = kprog(T, K.Gr + 0.4 + i * 0.12, K.Gr + 0.7 + i * 0.12, kEase.rebote); return u > 0 &&
-            <g key={i} transform={`translate(${540 + dx * 1.5} ${1120 + dy * 1.5 - 16}) scale(${u * 1.3})`}><circle r={20} fill={GEL} stroke={GELB} strokeWidth={4} opacity={0.9} /><circle cx={-6} cy={-7} r={6} fill="#fff" /></g>; })}
-          <Marca x={860} y={800} ok={false} s={1.0} o={kprog(T, K.Gr + 1.2, K.Gr + 1.5)} />
+            <g key={i} transform={`translate(${540 + dx * 1.5} ${960 + dy * 1.5 - 16}) scale(${u * 1.3})`}><circle r={20} fill={GEL} stroke={GELB} strokeWidth={4} opacity={0.9} /><circle cx={-6} cy={-7} r={6} fill="#fff" /></g>; })}
+          <Marca x={860} y={640} ok={false} s={1.0} o={kprog(T, K.Gr + 1.2, K.Gr + 1.5)} />
         </SvgCapa>
         <Chip T={T} at={K.Gr + 0.8} until={K.M - 0.3} texto="sucias o grasosas → agua y jabón" y={1500} tam={36} borde={KC.ink} />
       </Escena>
@@ -343,7 +343,7 @@ function Gel() {
       {/* 10 · cierre: la misma mano, ya desinfectada */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa><g transform={GM}>
+        <SvgCapa><g transform={`translate(0 -150) ${GM}`}>
           <Palma x={420} y={1000} s={1.15} />
           {(() => { const u = kprog(T, K.C + 0.3, K.C + 0.8, kEase.rebote); return <g transform={`translate(420 1034) scale(${u})`}><ellipse rx={60} ry={34} fill={GEL} opacity={0.6} stroke={GELB} strokeWidth={4} strokeDasharray="12 8" /></g>; })()}
           {[[310, 740], [540, 680], [580, 920], [280, 980]].map(([x, y], i) => { const k = Math.max(0, Math.sin(T * 4 + i * 1.7)); return <path key={i} d="M 0 -26 L 7 -7 L 26 0 L 7 7 L 0 26 L -7 7 L -26 0 L -7 -7 Z" transform={`translate(${x} ${y}) scale(${0.6 + k * 0.6})`} fill="#fff" stroke={KC.ink} strokeWidth={3} opacity={kprog(T, K.C + 0.6, K.C + 1.0)} />; })}
