@@ -1,0 +1,1 @@
+- fun-139-potter: Vidrio: sombrero, esporas y placa bajan 120 px al centro (el tercio de abajo ya no queda vacío); Massee: el chip de «solo hombres» cede su lugar, nunca más de tres chips y ninguno de 14–20 px (todos ≥26 px); chips y etiquetas chicas de Autora, Cartero, Microscopio, Perdido y Enoki suben a ≥26 px. Auditores: sin láminas, encuadre bien.

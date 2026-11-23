@@ -372,7 +372,7 @@ function PotterShot() {
       {/* 6 · sobre vidrio: las esporas caen del sombrero a una gota en la placa */}
       <Escena T={T} a={K.V} b={K.Hi} zoom={0.08} origen="50% 55%">
         <FondoLunares color={KC.cyan} />
-        {psvg(<g transform={AG(540, 0, 1.2, 540, 80)}>
+        {psvg(<g transform={AG(540, 0, 1.2, 540, 200)}>{/* belleza: sombrero y placa bajan 120 px al centro */}
           <DefsAcuarela id="acuV" />
           <path d="M 528 420 Q 520 200 540 -90 L 580 -90 Q 560 200 556 420 Z" fill="#e8c87a" stroke={KC.ink} strokeWidth={6} />
           <g transform="translate(540 560)"><g transform="rotate(4)">
@@ -459,33 +459,33 @@ function PotterShot() {
       {/* textos */}
       <Chip T={T} at={K.Au + 0.2} until={K.Ci - 0.3} texto="Beatrix Potter" x={540} y={250} tam={64} borde={KC.ink} />
       <Chip T={T} at={K.Au + 0.5} until={K.Ci - 0.3} texto="1866–1943 · Inglaterra" x={540} y={345} tam={36} borde={KC.gold} mono />
-      <Chip T={T} at={K.Au + 1.2} until={K.Ci - 0.3} texto="dibujo esquemático, al estilo de sus estudios" x={540} y={422} tam={24} borde={KC.white} mono />
+      <Chip T={T} at={K.Au + 1.2} until={K.Ci - 0.3} texto="dibujo esquemático, al estilo de sus estudios" x={540} y={422} tam={36} borde={KC.white} mono />
       <Chip T={T} at={K.Ci + 0.3} until={K.Ca - 0.3} texto="cientos de dibujos de hongos" x={540} y={400} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.Ca + 0.3} until={K.Mi - 0.3} texto="Charles McIntosh" x={540} y={430} tam={54} borde={KC.ink} />
-      <Chip T={T} at={K.Ca + 0.7} until={K.Mi - 0.3} texto="cartero y naturalista · Perthshire, Escocia" x={540} y={525} tam={28} borde={KC.gold} mono />
+      <Chip T={T} at={K.Ca + 0.7} until={K.Mi - 0.3} texto="cartero y naturalista · Perthshire, Escocia" x={540} y={525} tam={36} borde={KC.gold} mono />
       <Etq T={T} at={K.Mi + 2.2} until={K.P - 0.3} x={130} y={545} texto="esporas" tam={34} color={KC.texto} />
       <Etq T={T} at={K.Mi + 2.5} until={K.P - 0.3} x={130} y={595} texto="Flammulina velutipes" it tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.Mi + 2.6} until={K.P - 0.3} x={420} y={350} texto="su dibujo a lápiz" tam={24} color={KC.texto} />
-      <Etq T={T} at={K.V + 0.6} until={K.Hi - 0.3} x={120} y={1350} texto="placa de vidrio" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.V + 1.0} until={K.Hi - 0.3} x={705} y={1196} texto="gota" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.V + 0.2} until={K.Hi - 0.3} texto="AL MICROSCOPIO · 1896" x={285} y={330} tam={26} borde={KC.ink} mono />
+      <Etq T={T} at={K.Mi + 2.6} until={K.P - 0.3} x={420} y={350} texto="su dibujo a lápiz" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.V + 0.6} until={K.Hi - 0.3} x={120} y={1470} texto="placa de vidrio" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.V + 1.0} until={K.Hi - 0.3} x={705} y={1316} texto="gota" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.V + 0.2} until={K.Hi - 0.3} texto="AL MICROSCOPIO · 1896" x={285} y={330} tam={36} borde={KC.ink} mono />
       <Etq T={T} at={K.Hi + 0.4} until={K.E - 0.3} x={60} y={420} texto="espora" tam={32} color={KC.texto} />
       <Etq T={T} at={K.Hi + 1.4} until={K.E - 0.3} x={60} y={470} texto="tubo germinativo" tam={32} color={KC.cyan} />
       <Etq T={T} at={K.Hi + 2.8} until={K.E - 0.3} x={60} y={520} texto="hifas (con tabiques)" tam={32} color={KC.mint} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ms - 0.3} anio="1897" quien="Beatrix Potter · germinación de esporas" revista="On the germination of the spores of Agaricineae" x={540} y={470} />
-      <Chip T={T} at={K.Ms + 0.8} until={K.Pe - 0.2} texto="miembros: solo hombres (hasta 1905)" x={540} y={290} tam={24} borde={KC.red} mono />
-      <Chip T={T} at={K.Ms + 2.0} until={K.Pe - 0.2} texto="George Massee · micólogo de Kew" x={540} y={362} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Ms + 2.4} until={K.Pe - 0.2} texto="lo leyó el 1 abr 1897" x={540} y={438} tam={28} borde={KC.gold} mono />
-      <Chip T={T} at={K.Ms + 4.3} until={K.Pe - 0.2} texto="costumbre: lo leía otra persona" x={540} y={506} tam={20} borde={KC.ink} mono />
-      <Chip T={T} at={K.Pe + 0.4} until={K.Pe + 3.0} texto="8 abr 1897 · ella lo retira" x={540} y={380} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Pe + 1.8} until={K.Pe + 3.0} texto="nunca se publicó" x={540} y={462} tam={30} borde={KC.red} mono />
+      <Chip T={T} at={K.Ms + 0.8} until={K.Ms + 1.9} texto="miembros: solo hombres (hasta 1905)" x={540} y={300} tam={36} borde={KC.red} mono />{/* belleza: cede su lugar a Massee; nunca más de tres chips y todos legibles */}
+      <Chip T={T} at={K.Ms + 2.0} until={K.Pe - 0.2} texto="George Massee · micólogo de Kew" x={540} y={300} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Ms + 2.4} until={K.Pe - 0.2} texto="lo leyó el 1 abr 1897" x={540} y={378} tam={36} borde={KC.gold} mono />
+      <Chip T={T} at={K.Ms + 4.3} until={K.Pe - 0.2} texto="costumbre: lo leía otra persona" x={540} y={456} tam={36} borde={KC.ink} mono />
+      <Chip T={T} at={K.Pe + 0.4} until={K.Pe + 3.0} texto="8 abr 1897 · ella lo retira" x={540} y={380} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Pe + 1.8} until={K.Pe + 3.0} texto="nunca se publicó" x={540} y={462} tam={36} borde={KC.red} mono />
       <TarjetaEstudio T={T} at={K.Pe + 3.1} until={K.En - 0.3} anio="1997" quien="secretario de la Sociedad Linneana:" revista="“la trataron vilmente” (The Sunday Times)" x={540} y={400} />
       <Etq T={T} at={K.En + 0.8} until={K.C - 0.3} x={60} y={370} texto="Flammulina velutipes" it tam={34} color={KC.ink} />
-      <Etq T={T} at={K.En + 1.2} until={K.C - 0.3} x={60} y={418} texto="silvestre · en madera, en invierno" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.En + 1.2} until={K.C - 0.3} x={60} y={418} texto="silvestre · en madera, en invierno" tam={26} color={KC.ink} />
       <Etq T={T} at={K.En + 0.9} until={K.C - 0.3} x={60} y={480} texto="el hongo de su trabajo" tam={26} color={KC.ink} />
       <Etq T={T} at={K.En + 3.0} until={K.C - 0.3} x={1040} y={770} texto="enoki · Flammulina filiformis" it tam={28} color={KC.ink} lado="izq" />
-      <Chip T={T} at={K.En + 3.8} until={K.C - 0.3} texto="se separaron en 2018 por su ADN" x={680} y={670} tam={30} borde={KC.gold} />
-      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="el cuaderno de una científica" x={540} y={245} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.En + 3.8} until={K.C - 0.3} texto="se separaron en 2018 por su ADN" x={680} y={670} tam={36} borde={KC.gold} />
+      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="el cuaderno de una científica" x={540} y={245} tam={36} borde={KC.ink} />
 
       {/* barras de escala: recalculadas con el factor de cada escena (pase a mano cine) y con el avance de cámara */}
       <BarraEscalaP T={T} at={K.G} until={K.Au} texto="5 cm (hoja)" largo={150 * 1.4 * cam(K.G, K.Au + 0.9, 0.2)} />
