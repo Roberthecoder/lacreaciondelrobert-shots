@@ -1,0 +1,1 @@
+- amb-08-vaquita: volumen con degradados en vaquita, totoaba (escamas y línea lateral), manos, bloques (textura) y barcos (sin azul chillón, ventanas); Quién: la vaquita entra centrada y sube al llegar el mapa; Vejiga→Caída: la red se disuelve antes y las barras ya no se enciman; Caída: barras en tonos sobrios y conjunto más centrado

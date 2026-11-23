@@ -7,13 +7,15 @@
 function Vaquita({ x, y, s = 1, T = 0, flip = false, aleta = 'normal', fase = 0 }) {
   const ond = Math.sin(T * 4 + fase) * 6;
   return <g transform={`translate(${x} ${y + ond}) scale(${flip ? -s : s} ${s})`}>
-    <path d="M -150 0 Q -120 -48 -20 -50 Q 100 -50 150 -8 Q 120 20 40 30 Q -60 40 -150 0 Z" fill="#8f9aa6" stroke={KC.ink} strokeWidth={6} />
-    <path d="M -110 10 Q -40 34 60 24" fill="none" stroke="#c9d1da" strokeWidth={10} strokeLinecap="round" />
+    <ellipse cx={0} cy={78} rx={150} ry={14} fill="#02101e" opacity={0.35} />
+    <path d="M -150 0 Q -120 -48 -20 -50 Q 100 -50 150 -8 Q 120 20 40 30 Q -60 40 -150 0 Z" fill="url(#vqPiel)" stroke={KC.ink} strokeWidth={5} />
+    <path d="M -100 -30 Q -20 -46 90 -36" fill="none" stroke="#e8eef5" strokeWidth={7} strokeLinecap="round" opacity={0.35} />
+    <path d="M -110 10 Q -40 34 60 24" fill="none" stroke="#c9d1da" strokeWidth={10} strokeLinecap="round" opacity={0.8} />
     {aleta === 'doblada'
-      ? <path d="M -20 -48 Q 10 -100 40 -92 Q 20 -84 22 -50 Z" fill="#6c7782" stroke={KC.ink} strokeWidth={5} />
-      : <path d="M -20 -48 L 10 -98 L 30 -50 Z" fill="#6c7782" stroke={KC.ink} strokeWidth={5} />}
-    <path d={`M -150 0 L -205 ${-30 + ond * 0.6} L -195 0 L -205 ${30 + ond * 0.6} Z`} fill="#6c7782" stroke={KC.ink} strokeWidth={5} />
-    <path d="M 40 20 Q 60 50 30 60 Q 10 40 20 22 Z" fill="#6c7782" stroke={KC.ink} strokeWidth={4} />
+      ? <path d="M -20 -48 Q 10 -100 40 -92 Q 20 -84 22 -50 Z" fill="url(#vqAleta)" stroke={KC.ink} strokeWidth={4} />
+      : <path d="M -20 -48 L 10 -98 L 30 -50 Z" fill="url(#vqAleta)" stroke={KC.ink} strokeWidth={4} />}
+    <path d={`M -150 0 L -205 ${-30 + ond * 0.6} L -195 0 L -205 ${30 + ond * 0.6} Z`} fill="url(#vqAleta)" stroke={KC.ink} strokeWidth={4} />
+    <path d="M 40 20 Q 60 50 30 60 Q 10 40 20 22 Z" fill="url(#vqAleta)" stroke={KC.ink} strokeWidth={4} />
     <circle cx={104} cy={-18} r={16} fill={KC.ink} /><circle cx={108} cy={-21} r={4} fill="#fff" />
     <path d="M 128 4 Q 140 8 148 -4" stroke={KC.ink} strokeWidth={8} fill="none" strokeLinecap="round" />
   </g>;
@@ -21,9 +23,12 @@ function Vaquita({ x, y, s = 1, T = 0, flip = false, aleta = 'normal', fase = 0 
 // Totoaba (pez grande) de perfil. vejiga: muestra la vejiga natatoria.
 function Totoaba({ x, y, s = 1, T = 0, vejiga = 0 }) {
   return <g transform={`translate(${x} ${y + Math.sin(T * 3) * 5}) scale(${s})`}>
-    <path d="M -170 0 Q -100 -60 40 -55 Q 140 -40 170 0 Q 140 40 40 50 Q -100 55 -170 0 Z" fill="#b9b49a" stroke={KC.ink} strokeWidth={6} />
-    <path d={`M -170 0 L -230 -45 L -215 0 L -230 45 Z`} fill="#9d977a" stroke={KC.ink} strokeWidth={5} />
-    <path d="M -40 -55 L 0 -90 L 60 -52 Z" fill="#9d977a" stroke={KC.ink} strokeWidth={5} />
+    <path d="M -170 0 Q -100 -60 40 -55 Q 140 -40 170 0 Q 140 40 40 50 Q -100 55 -170 0 Z" fill="url(#vqToto)" stroke={KC.ink} strokeWidth={5} />
+    {[-110, -70, -30, 10, 50, 90].map((ex, i) => [-24, 0, 24].map((ey) => <path key={i + '_' + ey} d={`M ${ex} ${ey - 10} q 14 10 0 20`} fill="none" stroke="#6f6a52" strokeWidth={3} opacity={0.45} />))}
+    <path d="M -160 -2 Q -20 -14 150 -6" fill="none" stroke="#f1ead0" strokeWidth={4} opacity={0.5} />
+    <path d="M 100 -40 Q 118 0 104 40" fill="none" stroke="#6f6a52" strokeWidth={4} opacity={0.7} />
+    <path d={`M -170 0 L -230 -45 L -215 0 L -230 45 Z`} fill="url(#vqTotoA)" stroke={KC.ink} strokeWidth={4} />
+    <path d="M -40 -55 L 0 -90 L 60 -52 Z" fill="url(#vqTotoA)" stroke={KC.ink} strokeWidth={4} />
     <circle cx={120} cy={-12} r={12} fill={KC.ink} />
     {vejiga > 0 && <ellipse cx={-10} cy={0} rx={90 * vejiga} ry={22 * vejiga} fill="#f5e6b8" stroke={KC.ink} strokeWidth={4} />}
   </g>;
@@ -32,10 +37,11 @@ function Totoaba({ x, y, s = 1, T = 0, vejiga = 0 }) {
 function Mano({ x, y, n = 0, posibles = 0, espejo = false, s = 1 }) {
   const dedos = [[-70, -150, -14], [-30, -190, -5], [10, -200, 0], [50, -185, 6], [100, -60, 40]];
   return <g transform={`translate(${x} ${y}) scale(${espejo ? -s : s} ${s})`}>
-    <rect x={-95} y={-80} width={185} height={170} rx={60} fill="#f1b48f" stroke={KC.ink} strokeWidth={7} />
+    <rect x={-95} y={-80} width={185} height={170} rx={60} fill="url(#vqMano)" stroke={KC.ink} strokeWidth={6} />
+    <path d="M -60 40 Q -10 64 50 44" fill="none" stroke="#b9714c" strokeWidth={5} strokeLinecap="round" opacity={0.5} />
     {dedos.map(([dx, dy, rot], i) => { const on = i < n, pos = !on && i < n + posibles;
       return <g key={i} transform={`translate(${dx} ${dy}) rotate(${rot})`}>
-        <rect x={-18} y={-10} width={36} height={i === 4 ? 100 : 150} rx={18} fill={on ? KC.yellow : '#f1b48f'} stroke={pos ? KC.ink : KC.ink} strokeWidth={pos ? 5 : 7} strokeDasharray={pos ? '10 8' : 'none'} />
+        <rect x={-18} y={-10} width={36} height={i === 4 ? 100 : 150} rx={18} fill={on ? 'url(#vqDedoOn)' : 'url(#vqMano)'} stroke={pos ? KC.ink : KC.ink} strokeWidth={pos ? 5 : 7} strokeDasharray={pos ? '10 8' : 'none'} />
         {on && <circle cx={0} cy={10} r={9} fill={KC.ink} />}
       </g>; })}
   </g>;
@@ -43,7 +49,9 @@ function Mano({ x, y, n = 0, posibles = 0, espejo = false, s = 1 }) {
 // Bloque de concreto con ganchos en el fondo del mar.
 function Bloque({ x, y, T, red = false }) {
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={-70} y={-50} width={140} height={60} rx={6} fill="#a8a8a8" stroke={KC.ink} strokeWidth={6} />
+    <ellipse cx={0} cy={16} rx={82} ry={9} fill="#000" opacity={0.35} />
+    <rect x={-70} y={-50} width={140} height={60} rx={6} fill="url(#vqConcreto)" stroke={KC.ink} strokeWidth={5} />
+    {[[-44, -30], [-10, -18], [30, -34], [50, -10], [-30, -4]].map(([px, py], i) => <circle key={i} cx={px} cy={py} r={3} fill="#5d6166" opacity={0.6} />)}
     {[-40, 0, 40].map((gx) => <path key={gx} d={`M ${gx} -50 L ${gx} -90 Q ${gx + 16} -100 ${gx + 18} -82`} stroke={KC.ink} strokeWidth={6} fill="none" />)}
     {red && <path d={`M -120 -150 Q -40 ${-90 + Math.sin(T * 2) * 6} 0 -88 Q 60 -80 140 -140`} stroke="#e6e0c8" strokeWidth={4} fill="none" strokeDasharray="6 6" />}
   </g>;
@@ -53,13 +61,26 @@ function VaquitaShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, Q: CUES.Quien, P: CUES.Pregunta, To: CUES.Totoaba, V: CUES.Vejiga, Ca: CUES.Caida, E: CUES.Estudio, Cr: CUES.Crias, B: CUES.Bloques, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
-  const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{c}</svg>;
+  const defs = <defs>
+    <linearGradient id="vqPiel" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stopColor="#b6c1cc" /><stop offset="0.55" stopColor="#8b96a3" /><stop offset="1" stopColor="#5f6a77" /></linearGradient>
+    <linearGradient id="vqAleta" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#87929e" /><stop offset="1" stopColor="#525c68" /></linearGradient>
+    <linearGradient id="vqToto" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0" stopColor="#d6d1b4" /><stop offset="0.6" stopColor="#b2ad92" /><stop offset="1" stopColor="#857f64" /></linearGradient>
+    <linearGradient id="vqTotoA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#ada788" /><stop offset="1" stopColor="#7a7459" /></linearGradient>
+    <linearGradient id="vqMano" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stopColor="#f6c7a6" /><stop offset="1" stopColor="#d48f69" /></linearGradient>
+    <linearGradient id="vqDedoOn" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stopColor="#ffe27a" /><stop offset="1" stopColor="#e0a92e" /></linearGradient>
+    <linearGradient id="vqConcreto" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stopColor="#c4c6c8" /><stop offset="1" stopColor="#7d8186" /></linearGradient>
+    <linearGradient id="vqBarco" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#5a7ba6" /><stop offset="1" stopColor="#2c4366" /></linearGradient>
+    <linearGradient id="vqBarco2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#56647a" /><stop offset="1" stopColor="#2d3646" /></linearGradient>
+    <linearGradient id="vqCabina" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stopColor="#f2f5f8" /><stop offset="1" stopColor="#aeb8c4" /></linearGradient>
+  </defs>;
+  const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{defs}{c}</svg>;
   const mar = (oscuro = 0) => <div style={{ position:'absolute', inset:0, background:`linear-gradient(${mixHex('#38c6e8', '#0b2a4a', 0.95 + 0.05 * oscuro)}, ${mixHex('#127ea8', '#061a30', 0.8 + 0.2 * oscuro)})` }} />;
   // gancho: los dedos se encienden uno por uno hasta 7; luego 3 más punteados (hasta 10)
   const cuenta = Math.floor(kprog(T, K.G + 0.2, K.G + 3.2) * 7 + 0.001);
   const manos = (n, extra) => <><Mano x={290} y={1010} s={2.1} n={Math.min(5, n)} posibles={n >= 5 ? 0 : 0} espejo />
     <Mano x={790} y={1010} s={2.1} n={Math.max(0, n - 5)} posibles={extra} /></>;
   const vx = klerp(-260, 1340, kprog(T, K.G - 0.3, K.G + 5.5));
+  const qBaja = 260 * (1 - kprog(T, K.Q + 2.4, K.Q + 3.4, kEase.suave));
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: cuéntalas con los dedos */}
@@ -70,9 +91,9 @@ function VaquitaShot() {
       {/* 2 · quién es y dónde vive */}
       <Escena T={T} a={K.Q} b={K.P}>
         {mar(0)}
-        {svg(<><Vaquita x={590} y={680} s={2.2} T={T} />
+        {svg(<><g transform={`translate(0 ${qBaja})`}><Vaquita x={590} y={680} s={2.2} T={T} />
           <line x1={590 - 2.2 * 205} y1={880} x2={590 + 2.2 * 150} y2={880} stroke="#fff" strokeWidth={6} />
-          <text x={590 - 60} y={928} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="#fff" stroke={KC.ink} strokeWidth={5} paintOrder="stroke">≈ 1.5 m</text>
+          <text x={590 - 60} y={928} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="#fff" stroke={KC.ink} strokeWidth={5} paintOrder="stroke">≈ 1.5 m</text></g>
           <g opacity={kprog(T, K.Q + 3.0, K.Q + 3.6)}>
             <MapaMexico x={250} y={975} ancho={760} conCA={false}><circle cx={mxProy(-114.6, 31.2)[0]} cy={mxProy(-114.6, 31.2)[1]} r={34} fill={KC.red} opacity={0.75} stroke={KC.ink} strokeWidth={8} /></MapaMexico></g></>)}
         <EscalaFija texto="50 cm" largo={Math.round(2.2 * 355 / 1.5 * 0.5)} y={1480} color={KC.texto} />
@@ -84,7 +105,7 @@ function VaquitaShot() {
           <Vaquita x={300} y={1100} s={0.6} T={T} /></g>)}
       </Escena>
       {/* 4–5 · la totoaba, su vejiga y las redes */}
-      <Escena T={T} a={K.To} b={K.Ca}>
+      <Escena T={T} a={K.To} b={K.Ca - 0.5}>
         {mar(0.2)}
         {svg(<g transform="translate(0 130)"><Totoaba x={570} y={700} s={1.9} T={T} vejiga={kprog(T, K.V + 0.3, K.V + 1.0)} />
           <Vaquita x={590} y={1130} s={1.5} T={T} fase={1} />
@@ -95,15 +116,16 @@ function VaquitaShot() {
       {/* 6 · la caída: 1997, 2015 y 2025 */}
       <Escena T={T} a={K.Ca} b={K.E}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<g opacity={0.5}><Vaquita x={560} y={1225} s={1.6} T={T} /></g>)}
+        {svg(<g opacity={0.55}><Vaquita x={560} y={1330} s={1.6} T={T} /></g>)}
       </Escena>
       {/* 7 · el crucero: dos barcos, binoculares gigantes y micrófonos bajo el agua */}
       <Escena T={T} a={K.E} b={K.Cr}>
         {mar(0.1)}
         {svg(<><rect x={0} y={0} width={KW} height={900} fill="#182634" /><g transform="translate(0 130)">
           {[[285, 740], [800, 728]].map(([bx, by], i) => <g key={i} transform={`translate(${bx} ${by + Math.sin(T * 1.5 + i) * 6}) scale(1.45)`}>
-            <path d="M -170 0 L 170 0 L 130 70 L -130 70 Z" fill={i ? '#3a475c' : '#2346ff'} stroke={KC.ink} strokeWidth={6} />
-            <rect x={-80} y={-90} width={140} height={90} fill="#fff" stroke={KC.ink} strokeWidth={6} />
+            <path d="M -170 0 L 170 0 L 130 70 L -130 70 Z" fill={i ? 'url(#vqBarco2)' : 'url(#vqBarco)'} stroke={KC.ink} strokeWidth={5} />
+            <rect x={-80} y={-90} width={140} height={90} fill="url(#vqCabina)" stroke={KC.ink} strokeWidth={5} />
+            {[-56, -18, 20].map((wx) => <rect key={wx} x={wx} y={-70} width={26} height={22} rx={4} fill="#28405e" />)}
             <rect x={-60} y={-120} width={50} height={22} rx={8} fill={KC.ink} /><circle cx={-14} cy={-109} r={12} fill="#9fdcff" stroke={KC.ink} strokeWidth={4} />
           </g>)}
           {[200, 540, 880].map((mx, i) => <g key={i} transform={`translate(${mx} 1190) scale(1.4)`}>
@@ -134,14 +156,14 @@ function VaquitaShot() {
 
       {/* datos y etiquetas */}
       <NumeroGigante T={T} at={K.G + 0.2} until={K.Q - 0.2} valor={7} dur={3.0} sufijo=" a 10" etiqueta="vaquitas vistas en 2025" x={540} y={390} tam={110} color={KC.yellow} />
-      <Etq T={T} at={K.Q + 0.4} until={K.P - 0.2} x={150} y={400} texto="vaquita · Phocoena sinus" it tam={30} />
+      <Etq T={T} at={K.Q + 0.4} until={K.P - 0.2} x={150} y={klerp(560, 400, kprog(T, K.Q + 2.4, K.Q + 3.4, kEase.suave))} texto="vaquita · Phocoena sinus" it tam={30} />
       <Chip T={T} at={K.Q + 3.2} until={K.P - 0.2} texto="solo en el norte del Golfo de California" y={1440} tam={30} borde={KC.red} />
       <Etq T={T} at={K.To + 0.4} until={K.Ca - 0.2} x={170} y={1035} texto="totoaba · Totoaba macdonaldi" it tam={28} />
       <Chip T={T} at={K.To + 2.2} until={K.V - 0.1} texto="redes ilegales" y={380} x={540} tam={36} borde={KC.red} />
       <Chip T={T} at={K.V + 0.6} until={K.Ca - 0.2} texto="vejiga natatoria → China (sopa)" y={380} x={540} tam={32} borde={KC.yellow} />
-      <Comparativa T={T} at={K.Ca + 0.1} until={K.E - 0.2} max={567} y={340} alto={600}
-        izq={{ valor: 567, texto: '567', etiqueta: '1997', color: KC.blue }} der={{ valor: 59, texto: '59', etiqueta: '2015', color: KC.red }} />
-      <Chip T={T} at={K.Ca + 3.6} until={K.E - 0.2} texto="2025: entre 7 y 10 vistas" y={1440} tam={34} borde={KC.ink} />
+      <Comparativa T={T} at={K.Ca + 0.3} until={K.E - 0.2} max={567} y={430} alto={620}
+        izq={{ valor: 567, texto: '567', etiqueta: '1997', color: '#5b8fbf' }} der={{ valor: 59, texto: '59', etiqueta: '2015', color: '#e0645a' }} />
+      <Chip T={T} at={K.Ca + 3.6} until={K.E - 0.2} texto="2025: entre 7 y 10 vistas" y={1500} tam={34} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="2025" quien="crucero de observación" revista="septiembre · 2 barcos · detectores acústicos" y={340} x={540} />
       <Etq T={T} at={K.E + 3.8} until={K.Cr - 0.2} x={250} y={620} texto="binoculares de 25 aumentos" tam={28} color={KC.ink} />
       <Etq T={T} at={K.E + 4.6} until={K.Cr - 0.2} x={330} y={1070} texto="micrófonos bajo el agua" tam={28} />
