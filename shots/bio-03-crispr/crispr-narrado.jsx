@@ -37,16 +37,17 @@ function CrisprNarrado() {
       <Escena T={T} a={C.Ataque} b={C.Captura} zoom={0.05}>
         <FondoMarca T={T} patron="oscuro" />
         <Ambiente T={T} n={26} seed={4} color="rgba(234,255,247,.3)" tam={[3, 8]} />
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+        {/* belleza: la cadena y los fagos 1.2× y bajados al centro (quedaba cargado arriba); escala recalculada (z 1.2) */}
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><g transform="translate(540 1000) scale(1.2) translate(-540 -860)">
           <Cadena T={T} x={540} y={860} n={5} r={90} revienta={{ i: 2, p: kprog(T, C.Ataque + 3.6, C.Ataque + 4.6) }} />
           {[[-2, 0.2], [0, 0.0], [1, 0.5]].map(([k, d], j) => { const at = C.Ataque + 0.3 + d, cx = 540 + k * 162, aterriza = kprog(T, at, at + 1.0, kEase.sale);
             if (k === 0 && T > C.Ataque + 3.6) return null;
             return <FagoSifo key={j} T={T} x={cx + (1 - aterriza) * 200 * (j - 1)} y={klerp(300, 770, aterriza)} s={1.15} color={VIRUS[0]} seed={j} inyecta={kprog(T, at + 1.2, at + 2.4)} />; })}
           {T > C.Ataque + 3.7 && Array.from({ length: 9 }, (_, i) => { const a = (i / 9) * 6.28, f = kprog(T, C.Ataque + 3.7, C.Ataque + 5.5, kEase.sale); return <FagoSifo key={'n' + i} T={T} x={540 + Math.cos(a) * 320 * f} y={860 + Math.sin(a) * 320 * f} s={0.6} rot={a * 57 + 90} color={VIRUS[0]} seed={i} />; })}
-        </svg>
-        <Etq T={T} at={C.Ataque + 1.4} until={C.Captura - 0.2} x={700} y={460} texto="fago" color={KC.pink} />
-        <Escala T={T} z={1} pxPorMm={200000} y={1440} />
-        <Chip T={T} at={C.Ataque + 1.0} until={C.Captura - 0.2} texto="fagos agrandados ×5" x={780} y={1060} tam={26} mono borde={KC.pink} />
+        </g></svg>
+        <Etq T={T} at={C.Ataque + 1.4} until={C.Captura - 0.2} x={745} y={530} texto="fago" color={KC.pink} />
+        <Escala T={T} z={1.2} pxPorMm={200000} y={1440} />
+        <Chip T={T} at={C.Ataque + 1.0} until={C.Captura - 0.2} texto="fagos agrandados ×5" x={780} y={1280} tam={26} mono borde={KC.pink} />
       </Escena>
 
       {/* CAPTURA + PREGUNTA + CORTE: adentro de una bacteria sobreviviente */}
