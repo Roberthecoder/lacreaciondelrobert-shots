@@ -96,7 +96,7 @@ function TierraNoRedonda() {
             <TextoSvg x={540} y={442} tam={104} color={KC.yellow} rot={-4} s={klerp(0.5, 1, kprog(T, K.Gancho + 0.15, K.Gancho + 0.55, kEase.rebote))}>PERFECTA?</TextoSvg>
           </g>
         </Lienzo>
-        <Chip T={T} at={K.Gancho + 2.0} until={K.Gira - 0.1} texto="exagerado para que se vea" x={540} y={1400} tam={34} borde={KC.yellow} />
+        <Chip T={T} at={K.Gancho + 2.0} until={K.Gira - 0.1} texto="exagerado para que se vea" x={540} y={1400} tam={37} borde={KC.yellow} />
         <MitoTachado T={T} at={K.Gancho + 4.4} tacharEn={K.Gancho + 5.6} until={K.Gira - 0.1} texto="¿lo más lejano del centro: el Everest?" x={540} y={400} tam={42} />
       </Escena>
       {/* 1 · gira: se ensancha en el ecuador, se aplana en los polos */}
@@ -110,7 +110,7 @@ function TierraNoRedonda() {
         </Lienzo>
         <Etq T={T} at={K.Gira + 1.0} until={K.Medida - 0.2} x={560} y={1005} texto="ecuador" color={KC.yellow} />
         <Etq T={T} at={K.Gira + 2.4} until={K.Medida - 0.2} x={755} y={488} texto="polos" color={KC.texto} />
-        <Chip T={T} at={K.Gira + 0.3} until={K.Medida - 0.1} texto="exagerado para que se vea" x={540} y={330} tam={34} borde={KC.yellow} />
+        <Chip T={T} at={K.Gira + 0.3} until={K.Medida - 0.1} texto="exagerado para que se vea" x={540} y={330} tam={37} borde={KC.yellow} />
       </Escena>
       {/* 2 · medida: 43 km más de ecuador a ecuador */}
       <Escena T={T} a={K.Medida} b={K.Poco}>
@@ -127,10 +127,10 @@ function TierraNoRedonda() {
               <TextoSvg x={562} y={1200} tam={58} color={KC.pink} ancla="start" o={kprog(T, K.Medida + 2.4, K.Medida + 2.7)}>12,714 km</TextoSvg>
             </g>; })()}
         </Lienzo>
-        <Etq T={T} at={K.Medida + 0.9} until={K.Poco - 0.2} x={120} y={1052} texto="ecuador a ecuador" color={KC.texto} tam={28} />
+        <Etq T={T} at={K.Medida + 0.9} until={K.Poco - 0.2} x={120} y={1052} texto="ecuador a ecuador" color={KC.texto} tam={30} />
         <Etq T={T} at={K.Medida + 2.1} until={K.Poco - 0.2} x={562} y={745} texto="polo a polo" color={KC.texto} tam={30} />
         <NumeroGigante T={T} at={K.Medida + 2.9} until={K.Poco - 0.1} valor={43} desde={0} prefijo="≈ " sufijo=" km más" etiqueta="de ecuador a ecuador" y={400} tam={150} />
-        <Chip T={T} at={K.Medida + 0.2} until={K.Poco - 0.1} texto="dibujo exagerado" x={540} y={1410} tam={32} borde={KC.ink} />
+        <Chip T={T} at={K.Medida + 0.2} until={K.Poco - 0.1} texto="dibujo exagerado" x={540} y={1410} tam={37} borde={KC.ink} />
       </Escena>
       {/* 3 · poco: sin exagerar, desde el espacio se ve redonda */}
       <Escena T={T} a={K.Poco} b={K.Pregunta} fondo={KC.noche}>
@@ -160,7 +160,7 @@ function TierraNoRedonda() {
             {p > 0.98 && <><line x1={905} y1={600} x2={1025} y2={600} stroke={KC.ink} strokeWidth={8} /><line x1={540} y1={600} x2={905} y2={600} stroke={KC.ink} strokeWidth={4} strokeDasharray="12 10" /></>}
           </g>; })()}
         </Lienzo>
-        <Chip T={T} at={K.Everest + 0.3} until={K.Chimborazo - 0.1} texto="desde el nivel del mar" x={540} y={300} tam={36} borde={KC.cyan} />
+        <Chip T={T} at={K.Everest + 0.3} until={K.Chimborazo - 0.1} texto="desde el nivel del mar" x={540} y={300} tam={37} borde={KC.cyan} />
         <Chip T={T} at={K.Everest + 2.6} until={K.Chimborazo - 0.1} texto="≈ 8,849 m (medición 2020)" x={540} y={392} tam={46} borde={KC.yellow} />
         <Etq T={T} at={K.Everest + 1.0} until={K.Chimborazo - 0.2} x={440} y={770} texto="Everest" lado="izq" color={KC.texto} />
         <Etq T={T} at={K.Everest + 1.3} until={K.Chimborazo - 0.2} x={40} y={1470} texto="nivel del mar" color={KC.texto} tam={32} />
@@ -186,9 +186,9 @@ function TierraNoRedonda() {
         <Etq T={T} at={K.Chimborazo + 2.0} until={K.Peso - 0.2} x={880} y={C.y + 146} texto="volcán de Ecuador" lado="izq" color={KC.texto} tam={30} />
         <Etq T={T} at={K.Panza + 0.8} until={K.Peso - 0.2} x={EV[0] - 20} y={EV[1] - 40} texto="Everest" lado="izq" color={KC.texto} />
         <Chip T={T} at={K.Chimborazo + 0.3} until={K.Panza - 0.1} texto="desde el centro de la Tierra" x={540} y={300} tam={40} borde={KC.yellow} />
-        <Chip T={T} at={K.Panza + 0.3} until={K.Peso - 0.1} texto="casi sobre el ecuador: la parte más ancha" x={540} y={290} tam={34} borde={KC.yellow} />
-        <Chip T={T} at={K.Panza + 2.6} until={K.Peso - 0.1} texto="su cima: ≈ 2 km más lejos del centro" x={540} y={372} tam={36} borde={KC.cyan} />
-        <Chip T={T} at={K.Chimborazo + 0.3} until={K.Peso - 0.1} texto="dibujo exagerado" x={300} y={1470} tam={30} borde={KC.ink} />
+        <Chip T={T} at={K.Panza + 0.3} until={K.Peso - 0.1} texto="casi sobre el ecuador: la parte más ancha" x={540} y={290} tam={37} borde={KC.yellow} />
+        <Chip T={T} at={K.Panza + 2.6} until={K.Peso - 0.1} texto="su cima: ≈ 2 km más lejos del centro" x={540} y={372} tam={37} borde={KC.cyan} />
+        <Chip T={T} at={K.Chimborazo + 0.3} until={K.Peso - 0.1} texto="dibujo exagerado" x={300} y={1470} tam={37} borde={KC.ink} />
       </Escena>
       {/* 8 · peso: en el ecuador pesas un poquito menos */}
       <Escena T={T} a={K.Peso} b={K.Cierre}>
@@ -204,8 +204,8 @@ function TierraNoRedonda() {
         </Lienzo>
         <Etq T={T} at={K.Peso + 0.7} until={K.Cierre - 0.2} x={150} y={775} texto="ecuador" color={KC.texto} tam={32} />
         <Etq T={T} at={K.Peso + 0.9} until={K.Cierre - 0.2} x={670} y={775} texto="polo" color={KC.texto} tam={32} />
-        <Chip T={T} at={K.Peso + 0.4} until={K.Peso + 3.2} texto="1 · el giro" x={400} y={250} tam={36} borde={KC.yellow} />
-        <Chip T={T} at={K.Peso + 1.4} until={K.Peso + 3.2} texto="2 · la panza" x={700} y={330} tam={36} borde={KC.pink} />
+        <Chip T={T} at={K.Peso + 0.4} until={K.Peso + 3.2} texto="1 · el giro" x={400} y={250} tam={37} borde={KC.yellow} />
+        <Chip T={T} at={K.Peso + 1.4} until={K.Peso + 3.2} texto="2 · la panza" x={700} y={330} tam={37} borde={KC.pink} />
         <Chip T={T} at={K.Peso + 3.6} until={K.Cierre - 0.1} texto="en el ecuador: ≈ 0.5 % menos" x={540} y={290} tam={42} borde={KC.yellow} />
       </Escena>
       {/* 9 · cierre: la misma pelota del inicio, ahora panzona y simpática */}
@@ -219,7 +219,7 @@ function TierraNoRedonda() {
           <TextoSvg x={540} y={345} tam={92} color={KC.yellow} rot={-4} s={klerp(0.5, 1, kprog(T, K.Cierre + 2.4, K.Cierre + 2.8, kEase.rebote))} o={kprog(T, K.Cierre + 2.4, K.Cierre + 2.5)}>UN POQUITO</TextoSvg>
           <TextoSvg x={540} y={452} tam={106} color={KC.yellow} rot={-4} s={klerp(0.5, 1, kprog(T, K.Cierre + 2.6, K.Cierre + 3.0, kEase.rebote))} o={kprog(T, K.Cierre + 2.6, K.Cierre + 2.7)}>PANZONA</TextoSvg>
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 0.3} until={K.Outro - 0.1} texto="exagerado para que se vea" x={540} y={1400} tam={34} borde={KC.yellow} />
+        <Chip T={T} at={K.Cierre + 0.3} until={K.Outro - 0.1} texto="exagerado para que se vea" x={540} y={1400} tam={37} borde={KC.yellow} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Gira - 0.1} texto="No es pelota: *está aplastada.*" />
