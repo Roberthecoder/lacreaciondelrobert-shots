@@ -1,0 +1,1 @@
+- fes-04-esqueleto: calavera del gancho y del cierre bajada 100 px al centro con su lupa reacomodada (quitada la marca ARRIBA del gancho); conteo de 300→206 huesos bajado al centro con su número y etiquetas (quitada la marca ARRIBA del dato). Auditores: sin láminas · encuadre bien.

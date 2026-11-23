@@ -3,7 +3,7 @@
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (la calavera es de Día de Muertos, no una anatomía exacta).
 const HUESO = '#efe2c4', HUESO2 = '#dcc89f', MEDULA = '#3a1420';
 const MATRIZ = '#4d3f29', HUESO_OSC = '#5c4b31'; // hueso como fondo (corte y superficie): oscuro, con el mismo tinte
-const CAL = { x: 540, y: 880, s: 1.5 };       // calavera del gancho y del cierre: llena el cuadro
+const CAL = { x: 540, y: 980, s: 1.5 };       // calavera del gancho y del cierre: llena el cuadro
 const K_SUP = 1.6;                            // la superficie del hueso (osteoclasto y osteoblastos) se dibuja 1.6×
 const PX_MM = 3; // calavera dibujada a ~3 px por mm a z = 1 (esquemático)
 
@@ -147,7 +147,7 @@ function Esqueleto() {
           {svg(<Calavera T={T} x={CAL.x} y={CAL.y} s={klerp(0.9, 1.0, llega) * CAL.s} gira={giraG} />)}
         </div>
       </Escena>
-      <Lupa T={T} at={K.G + 2.0} until={K.V - 0.3} x={830} y={1440} r={160} fx={CAL.x} fy={CAL.y - 60} tinte={KC.cyan} etiqueta="hueso vivo"
+      <Lupa T={T} at={K.G + 2.0} until={K.V - 0.3} x={850} y={1490} r={160} fx={CAL.x} fy={CAL.y - 60} tinte={KC.cyan} etiqueta="hueso vivo"
         interior={(Tl, r) => <svg width={r * 2} height={r * 2} viewBox="0 400 1080 1080" preserveAspectRatio="xMidYMid slice"><g><HuesoCortePlano T={Tl} /></g></svg>} />
 
       {/* 2 · por dentro: periostio con vasos y nervios, osteonas con su canal */}
@@ -213,13 +213,13 @@ function Esqueleto() {
       {/* 11 · dato: ~300 al nacer → 206 de adulto */}
       <Escena T={T} a={K.Da} b={K.C}>
         <FondoLunares color={KC.yellow} />
-        {svg(Array.from({ length: 300 }, (_, i) => { const c = i % 25, r = Math.floor(i / 25), x0 = 84 + c * 38, y0 = 600 + r * 58;
+        {svg(Array.from({ length: 300 }, (_, i) => { const c = i % 25, r = Math.floor(i / 25), x0 = 84 + c * 38, y0 = 690 + r * 58;
           const junta = i >= 206 ? kprog(T, K.Da + 1.6 + (i % 7) * 0.12, K.Da + 2.4 + (i % 7) * 0.12, kEase.suave) : 0;
-          const j = i - 206, dst = (j * 7) % 206, tx = 84 + (dst % 25) * 38, ty = 600 + Math.floor(dst / 25) * 58;
+          const j = i - 206, dst = (j * 7) % 206, tx = 84 + (dst % 25) * 38, ty = 690 + Math.floor(dst / 25) * 58;
           return junta < 1 ? <rect key={i} x={klerp(x0, tx, junta) - 15} y={klerp(y0, ty, junta) - 18} width={30} height={36} rx={11} fill={HUESO} stroke={KC.ink} strokeWidth={3} opacity={1 - junta * 0.3} /> : null; }))}
-        <Contador T={T} at={K.Da + 1.5} desde={300} hasta={206} dur={1.6} x={540} y={1400} tam={150} color={KC.ink} />
-        <Etq T={T} at={K.Da + 0.4} until={K.Da + 1.5} x={70} y={500} texto="al nacer: unos 300" tam={34} color={KC.ink} />
-        <Etq T={T} at={K.Da + 3.2} until={K.C - 0.3} x={70} y={500} texto="de adulto: 206" tam={34} color={KC.ink} />
+        <Contador T={T} at={K.Da + 1.5} desde={300} hasta={206} dur={1.6} x={540} y={1470} tam={150} color={KC.ink} />
+        <Etq T={T} at={K.Da + 0.4} until={K.Da + 1.5} x={70} y={590} texto="al nacer: unos 300" tam={34} color={KC.ink} />
+        <Etq T={T} at={K.Da + 3.2} until={K.C - 0.3} x={70} y={590} texto="de adulto: 206" tam={34} color={KC.ink} />
       </Escena>
       {/* 12 · cierre: la misma calavera, ya entendida: obra viva */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
@@ -227,7 +227,7 @@ function Esqueleto() {
         <PapelPicado T={T} />
         {svg(<Calavera T={T} x={CAL.x} y={CAL.y} s={CAL.s} brilla={kprog(T, K.C + 1.0, K.C + 2.0)} />)}
       </Escena>
-      <Lupa T={T} at={K.C + 2.2} until={K.Ou - 0.2} x={830} y={1440} r={160} fx={CAL.x} fy={CAL.y - 60} tinte={KC.mint} etiqueta="en obra"
+      <Lupa T={T} at={K.C + 2.2} until={K.Ou - 0.2} x={850} y={1490} r={160} fx={CAL.x} fy={CAL.y - 60} tinte={KC.mint} etiqueta="en obra"
         interior={(Tl, r) => <svg width={r * 2} height={r * 2} viewBox="200 650 680 680" preserveAspectRatio="xMidYMid slice"><SuperficieRelleno T={Tl} /></svg>} />
 
       {/* escala real (macro y micro) */}
