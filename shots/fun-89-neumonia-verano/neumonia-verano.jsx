@@ -318,6 +318,8 @@ function NeumoniaVeranoShot() {
       <Escena T={T} a={K.Cu} b={K.Al} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
+        {/* belleza (2.ª pasada): «y tú los respiras»: la persona grande y atenuada detrás de las hifas */}
+        {fsvg(<g opacity={0.22 + 0.13 * kprog(T, K.Cu + 2.2, K.Cu + 3.2)}><g transform={`translate(540 360) scale(${ZB * 1.35})`}><Busto T={T} x={0} y={0} /></g></g>)}
         {fsvg(<g transform={ZHT}>
           <HifaTricho T={T} x0={60} x1={1040} y={790} seed={3} crece={kprog(T, K.Cu - 0.3, K.Cu + 0.8)} parte={kprog(T, K.Cu + 0.6, K.Cu + 1.8)} vuela={kprog(T, K.Cu + 2.2, K.Cu + 5.0)} />
           <HifaTricho T={T} x0={20} x1={980} y={960} seed={5} crece={kprog(T, K.Cu - 0.2, K.Cu + 1.0)} parte={0} />

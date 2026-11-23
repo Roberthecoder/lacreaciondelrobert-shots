@@ -200,6 +200,8 @@ function Antiacido() {
       <Escena T={T} a={K.B} b={K.Ga} fondo={KC.noche}>
         <SvgCapa>
           {T < mitadB ? <g opacity={1 - kprog(T, mitadB - 0.3, mitadB)}>
+            {/* belleza (2.ª pasada): el torso con su estómago detrás de la pastilla */}
+            <g opacity={0.45}><Torso T={T} x={TX} y={TY} s={TS} sube={0} ardor={0} id="b" /></g>
             <Pastilla x={540} y={klerp(760, 590, kprog(T, K.B + 0.3, K.B + 0.8, kEase.suave))} s={klerp(7, 5.2, kprog(T, K.B + 0.3, K.B + 0.8, kEase.suave))} rot={Math.sin(T * 3) * 6} trazo={1.6} />
             {[['CaCO₃', 'carbonato de calcio', 190, '#f6f3ec'], ['Mg(OH)₂', 'hidróxido de magnesio', 540, OHM], ['NaHCO₃', 'bicarbonato', 890, KC.mint]].map(([f, n, cx, c], i) => {
               const e = kprog(T, K.B + 0.6 + i * 1.1, K.B + 1.0 + i * 1.1, kEase.rebote), v = kprog(T, K.B + 0.6 + i * 1.1, K.B + 1.0 + i * 1.1, kEase.sale);

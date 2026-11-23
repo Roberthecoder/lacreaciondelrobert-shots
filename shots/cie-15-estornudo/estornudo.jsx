@@ -197,7 +197,10 @@ function Estornudo() {
       <Escena T={T} a={K.Calculo} b={K.Estudio} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <g transform="translate(520 980) scale(1.18) translate(-480 -830)">
+          {/* belleza (2.ª pasada): la cabeza que estornuda sigue detrás, grande; la hoja de cálculos más chica */}
+          <g opacity={0.5}><CabezaPerfil x={300} y={960} s={1.75} boca={0.4} gesto="mueca" />
+            {Array.from({ length: 5 }, (_, i) => <path key={i} d={blobPath(620 + i * 105, 1130 + Math.sin(i * 2) * 40 + Math.sin(T * 1.5 + i) * 8, 55 + i % 2 * 20 + i * 6, 50 + i, T)} fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={6} />)}</g>
+          <g transform="translate(600 900) scale(0.86) translate(-480 -830)">
           <g transform="rotate(-5 470 800)">
             <rect x={150} y={540} width={620} height={560} rx={14} fill="#cdb886" stroke={KC.ink} strokeWidth={9} />
             <rect x={150} y={540} width={620} height={560} rx={14} fill="none" stroke="#b9975a" strokeWidth={3} strokeDasharray="4 10" />
@@ -222,6 +225,8 @@ function Estornudo() {
       <Escena T={T} a={K.Estudio} b={K.Sombras} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
+          {/* belleza (2.ª pasada): los voluntarios ×1.12 y la fila baja al centro */}
+          <g transform="translate(540 1420) scale(1.12) translate(-540 -1330)">
           <line x1={20} y1={1332} x2={1060} y2={1332} stroke={KC.ink} strokeWidth={10} />
           {Array.from({ length: 6 }, (_, i) => { const at = K.Estudio + 0.05 + i * 0.08, e = kprog(T, at, at + 0.35, kEase.rebote), ach = PIM0 + (PIM1 - PIM0) * (i + 0.5) / 6 + 0.25;
             const brinco = T > ach ? Math.exp(-(T - ach) * 6) * Math.sin((T - ach) * 30) * 6 : 0;
@@ -235,6 +240,7 @@ function Estornudo() {
             <Pimentero x={pimX} y={780} rot={160 + Math.sin(T * 26) * 14} s={1.1} />
             {Array.from({ length: 26 }, (_, i) => { const g = krng(300 + i), tt = ((T * 1.6 + g()) % 1); return T < PIM1 && <circle key={i} cx={pimX + (g() - 0.5) * 60} cy={880 + tt * 170} r={4 + g() * 3} fill="#2a211c" opacity={1 - tt * 0.6} />; })}
           </>}
+          </g>
         </Lienzo>
         <Chip T={T} at={K.Estudio + 0.3} until={K.Sombras - 0.1} texto="2013 · 6 voluntarios · pimienta" x={540} y={480} tam={44} borde={KC.yellow} />
       </Escena>

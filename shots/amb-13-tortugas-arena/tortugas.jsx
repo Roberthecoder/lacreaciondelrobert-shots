@@ -154,8 +154,8 @@ function TortugasShot() {
   const nHuevos = Math.floor(10 * kprog(T, K.N + 0.3, K.N + 2.2));
   const tapa = kprog(T, K.N + 2.2, K.N + 2.8);
   // cierre: crías que salen y corren al mar
-  const crias = Array.from({ length: 12 }, (_, i) => { const t0 = K.C + 0.6 + i * 0.22, u = kprog(T, t0, t0 + 3.4, (p) => p);
-    return { x: xN + ((i % 6) - 2.5) * 46 * (1 + u * 1.7) + Math.sin(T * 9 + i) * 6 + (i >= 6 ? 18 : 0), y: klerp(yNido, 380, u), o: kprog(T, t0, t0 + 0.2) * (1 - kprog(T, t0 + 3.2, t0 + 3.5)), ph: T * 12 + i }; });
+  const crias = Array.from({ length: 12 }, (_, i) => { const t0 = K.C + 0.05 + i * 0.2, u = kprog(T, t0, t0 + 3.4, (p) => p);
+    return { x: xN + ((i % 6) - 2.5) * 70 * (1 + u * 1.1) + Math.sin(T * 9 + i) * 6 + (i >= 6 ? 26 : 0), y: klerp(yNido, 380, u), o: kprog(T, t0, t0 + 0.2) * (1 - kprog(T, t0 + 3.2, t0 + 3.5)), ph: T * 12 + i }; });
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       <svg width={0} height={0} style={{ position:'absolute' }}><defs>
@@ -274,12 +274,29 @@ function TortugasShot() {
       </Escena>
       {/* 10 · cierre: la misma playa, ahora salen las crías y corren al mar */}
       <Escena T={T} a={K.C} b={FIN}>
-        {svg(<>
+        {/* belleza (2.ª pasada): nido grande con cascarones y crías grandes; luego regresa la imagen del gancho, transformada */}
+        <div style={{ position:'absolute', inset:0, opacity:1 - kprog(T, K.C + 2.4, K.C + 3.0) }}>{svg(<>
           <PlayaArriba T={T} />
-          <ellipse cx={xN} cy={yNido} rx={150} ry={100} fill="#3d2f1a" stroke={KC.ink} strokeWidth={6} strokeDasharray="12 9" opacity={0.6} />
-          {crias.map((c, i) => <Tortuga key={i} x={c.x} y={c.y} s={0.5} ph={c.ph} o={c.o} color="#3d4038" piel="#5b6158" />)}
-        </>)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
+          <ellipse cx={xN} cy={yNido} rx={250} ry={165} fill="#3d2f1a" stroke={KC.ink} strokeWidth={7} strokeDasharray="14 10" />
+          {Array.from({ length: 9 }, (_, i) => <g key={i} transform={`translate(${xN + ((i % 3) - 1) * 120 + (i % 2) * 20} ${yNido - 70 + Math.floor(i / 3) * 70}) rotate(${i * 47})`}>
+            <path d="M -30 0 A 30 30 0 0 1 30 0 L 18 -6 L 8 4 L -4 -6 L -16 4 Z" fill="url(#huevoVol)" stroke={KC.ink} strokeWidth={4} /></g>)}
+          {crias.map((c, i) => <Tortuga key={i} x={c.x} y={c.y} s={0.95} ph={c.ph} o={c.o} color="#3d4038" piel="#5b6158" />)}
+        </>)}</div>
+        {T > K.C + 2.3 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.C + 2.4, K.C + 3.0) }}>
+          <FondoLunares color={KC.lilac} />
+          <div style={{ position:'absolute', left:540, top:0, width:540, height:KH, background:`linear-gradient(180deg, ${TC.arena}, ${TC.arenaO})` }}></div>
+          {svg(<>
+            <line x1={540} y1={0} x2={540} y2={KH} stroke={KC.ink} strokeWidth={10} />
+            <text x={300} y={720} textAnchor="middle" style={{ font:`400 170px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={7} paintOrder="stroke">TÚ</text>
+            <Cromo x={190} y={1040} tipo="X" s={2.6} color={KC.pink} rot={-8 + 6 * Math.sin(T * 3)} />
+            <Cromo x={410} y={1058} tipo={Math.floor((T - K.G) / 1.2) % 2 ? 'Y' : 'X'} s={2.6} color={KC.cyan} rot={8 - 6 * Math.sin(T * 3)} />
+            <text x={300} y={1310} textAnchor="middle" style={{ font:`700 60px ${KF.mono}` }} fill={KC.ink}>XX · XY</text>
+            <NidoCorte x={800} y={880} w={540} prof={520} n={0} r={30} />
+            {[0, 1, 2, 3].map((i) => { const u = ((T - K.C - 2.4) * 0.35 + i * 0.25) % 1;
+              return <Tortuga key={i} x={760 + (i % 2) * 70 + Math.sin(T * 6 + i) * 8} y={klerp(1320, 640, u)} s={0.55} ph={T * 10 + i} o={kprog(u, 0, 0.1) * (1 - kprog(u, 0.85, 1))} color={mixHex(TC.macho, TC.hembra, i / 3)} piel="#4b524a" />; })}
+          </>)}
+        </div>}
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} o={1 - kprog(T, K.C + 0.9, K.C + 1.2)} />
       </Escena>
 
       {/* datos y etiquetas */}
@@ -306,8 +323,8 @@ function TortugasShot() {
       <Chip T={T} at={K.O + 4.8} until={K.S - 0.2} texto="96.3 % hembras (calculado por temperatura)" y={1260} x={540} tam={26} borde={TC.hembra} />
       <Chip T={T} at={K.S + 0.6} until={K.C - 0.2} texto="malla de sombra" y={1260} x={330} tam={30} borde={KC.leaf} />
       <Chip T={T} at={K.S + 2.5} until={K.C - 0.2} texto="riego" y={1260} x={770} tam={30} borde={KC.cyan} />
-      <Chip T={T} at={K.C + 1.2} until={K.Ou - 0.1} texto="tú: cromosomas" x={540} y={1385} tam={32} borde={KC.pink} />
-      <Chip T={T} at={K.C + 2.6} until={K.Ou - 0.1} texto="ella: unos grados de arena" x={540} y={1455} tam={32} borde={KC.orange} />
+      <Chip T={T} at={K.C + 1.2} until={K.Ou - 0.1} texto="tú: cromosomas" x={300} y={1520} tam={32} borde={KC.pink} />
+      <Chip T={T} at={K.C + 2.6} until={K.Ou - 0.1} texto="ella: unos grados de arena" x={760} y={1520} tam={30} borde={KC.orange} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="Tú: cromosomas. *Ella: la arena.*" />

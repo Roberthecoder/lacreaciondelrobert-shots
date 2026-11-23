@@ -137,7 +137,7 @@ function LunaHorizonte() {
       {/* 1 · la misma regla: abajo y arriba, casi lo mismo */}
       <Escena T={T} a={K.Medida} b={K.Foto}>
         <FondoLunares color={KC.lilac} />
-        <Lienzo><g transform="translate(450 880) scale(1.5) translate(-450 -880)">
+        <Lienzo><g transform="translate(530 1000) scale(2.0) translate(-430 -880)">{/* belleza (2.ª pasada): ×2, llena el cuadro (antes ×1.5) */}
           {mS > 0.02 && <g opacity={0.9}>
             <circle cx={260} cy={1010} r={70} fill="none" stroke={KC.ink} strokeWidth={5} strokeDasharray="12 10" />
             <ReglaLH x={260 - 100} y={1010 - 150} ancho={200} color="#fff3a0" o={0.8} />
@@ -148,15 +148,15 @@ function LunaHorizonte() {
           <rect x={0} y={1170} width={KW} height={KH - 1170} fill="#221e44" stroke={KC.ink} strokeWidth={8} />
           <MideLuna x={mX} y={mY} r={mR} o={kprog(T, K.Medida + 0.4, K.Medida + 0.8)} />
         </g></Lienzo>
-        <Etq T={T} at={K.Medida + 1.2} until={K.Foto - 0.1} x={290} y={1065} texto="en el horizonte" lado="der" color={KC.ink} tam={36} />
-        <Etq T={T} at={K.Medida + 4.0} until={K.Foto - 0.1} x={555} y={600} texto="más arriba" lado="izq" color={KC.ink} tam={32} />
+        <Etq T={T} at={K.Medida + 1.2} until={K.Foto - 0.1} x={350} y={1270} texto="en el horizonte" lado="der" color={KC.ink} tam={36} />
+        <Etq T={T} at={K.Medida + 4.0} until={K.Foto - 0.1} x={710} y={640} texto="más arriba" lado="izq" color={KC.ink} tam={32} />
         <Chip T={T} at={K.Medida + 4.3} until={K.Foto - 0.1} texto="casi el mismo tamaño" x={540} y={265} tam={44} borde={KC.yellow} />
       </Escena>
 
       {/* 2 · fotos: misma cámara, mismo zoom → todas del mismo ancho */}
       <Escena T={T} a={K.Foto} b={K.Dedo}>
         <FondoLunares color={KC.yellow} />
-        <Lienzo><g transform="translate(0 130)">
+        <Lienzo><g transform="translate(540 990) scale(1.08) translate(-540 -835)">
           <rect x={70} y={490} width={940} height={690} rx={14} fill="#8f98ad" stroke={KC.ink} strokeWidth={9} transform={`rotate(-1.5 540 835)`} />
           <g transform="rotate(-1.5 540 835)">
             <rect x={96} y={516} width={888} height={638} fill={LH_CIELO_A} stroke={KC.ink} strokeWidth={6} />
@@ -179,7 +179,7 @@ function LunaHorizonte() {
       {/* 3 · haz la prueba: la uña del meñique la tapa abajo y arriba */}
       <Escena T={T} a={K.Dedo} b={K.Pregunta}>
         <FondoLunares color={KC.mint} />
-        <Lienzo><g transform="translate(0 30) translate(560 900) scale(1.3) translate(-560 -900)">
+        <Lienzo><g transform="translate(560 980) scale(1.6) translate(-560 -900)">
           <path d="M -200 1010 Q 200 960 420 1000 T 820 990 T 1280 1000 L 1280 2100 L -200 2100 Z" fill="#164a39" stroke={KC.ink} strokeWidth={8} />
           <LunaH x={dX} y={dY} r={24} halo={1} />
           <g transform={`translate(${dX} ${dY + (1 - dMano) * 1400}) scale(0.8)`}><ManoMenique x={0} y={0} /></g>
@@ -188,8 +188,8 @@ function LunaHorizonte() {
           {T < K.Dedo + 2.3 && <circle cx={dX} cy={dY} r={44} fill="none" stroke="#fff" strokeWidth={5} strokeDasharray="8 8" opacity={kprog(T, K.Dedo + 1.3, K.Dedo + 1.5)} />}
         </g></Lienzo>
         <Chip T={T} at={K.Dedo + 0.2} until={K.Pregunta - 0.1} texto="haz la prueba · brazo estirado" x={540} y={420} tam={40} borde={KC.yellow} />
-        <Etq T={T} at={K.Dedo + 1.6} until={K.Dedo + 2.6} x={300} y={900} texto="cuando sale" lado="der" color={KC.ink} tam={36} />
-        <Etq T={T} at={K.Dedo + 4.9} until={K.Pregunta - 0.1} x={354} y={540} texto="ya arriba" lado="izq" color={KC.ink} tam={36} />
+        <Etq T={T} at={K.Dedo + 1.6} until={K.Dedo + 2.6} x={250} y={960} texto="cuando sale" lado="der" color={KC.ink} tam={36} />
+        <Etq T={T} at={K.Dedo + 4.9} until={K.Pregunta - 0.1} x={330} y={500} texto="ya arriba" lado="izq" color={KC.ink} tam={36} />
       </Escena>
 
       {/* 4 · ¿entonces por qué la ves enorme? */}

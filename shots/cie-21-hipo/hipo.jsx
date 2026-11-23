@@ -282,9 +282,10 @@ function Hipo() {
       <Escena T={T} a={K.Pregunta} b={K.Hipotesis} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <g opacity={0.5}><Cuerpo x={540} y={1060} s={1.05} uid="pr" dentro={1} camisa={KC.yellow} glowD={0.4} /></g>
-          <text x={330} y={1360} textAnchor="middle" fill={KC.yellow} stroke={KC.ink} strokeWidth={14}
-            transform={`rotate(${Math.sin(T * 3) * 6} 330 1100) scale(${klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote))})`} style={{ font:`400 760px ${KF.titulo}`, transformOrigin:'330px 1100px' }}>?</text>
+          {/* belleza (2.ª pasada): la persona con su diafragma, plena y grande; el «?» chico junto a la cabeza */}
+          <Cuerpo x={540} y={1060} s={1.15} uid="pr" dentro={1} camisa={KC.yellow} glowD={0.6 + 0.4 * Math.sin(T * 5)} />
+          <text x={790} y={560} textAnchor="middle" fill={KC.yellow} stroke={KC.ink} strokeWidth={6} paintOrder="stroke"
+            transform={`rotate(${Math.sin(T * 3) * 8} 790 510) scale(${klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote))})`} style={{ font:`400 150px ${KF.titulo}`, transformOrigin:'790px 510px' }}>?</text>
         </Lienzo>
       </Escena>
       {/* 7 · hipótesis 1: las branquias de los renacuajos */}

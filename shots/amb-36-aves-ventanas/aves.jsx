@@ -250,6 +250,9 @@ function AvesShot() {
       {/* 6 · la cifra: 365 a 988 millones de aves al año (EE. UU.) */}
       <Escena T={T} a={K.Ci} b={K.Ca}>
         <FondoLunares color={KC.yellow} />
+        {/* belleza (2.ª pasada): la ventana del inicio y un ave grande detrás de la cifra */}
+        {svg(<g opacity={0.42}><g transform="translate(300 1000) scale(1.25) translate(-300 -800)"><Fachada T={T} id="fci" /></g>
+          <Gorrion x={820} y={1330} s={1.4} dir={-1} ala={aleteo} rot={-8} /></g>)}
         {svg(<>
           <rect x={90} y={1070} width={900} height={36} rx={18} fill="rgba(223,231,255,.18)" stroke={KC.ink} strokeWidth={6} />
           {cMax > 365 && <rect x={barra(365)} y={1070} width={barra(cMax) - barra(365)} height={36} fill={KC.red} stroke={KC.ink} strokeWidth={6} />}
@@ -257,9 +260,9 @@ function AvesShot() {
           {[0, 500, 1000].map((v) => <text key={v} x={barra(v)} y={1145} textAnchor="middle" style={{ font: `700 26px ${KF.mono}` }} fill={KC.ink}>{v === 1000 ? '1,000' : v}</text>)}
           {Array.from({ length: 14 }, (_, i) => { const u = ((T - K.Ci) * 0.35 + i / 14) % 1, abajo = i % 2; return <Gorrion key={i} x={100 + (i * 157) % 900} y={(abajo ? 1220 : 360) + u * 200} s={0.5} ala={aleteo + i} rot={10} o={0.7 * Math.sin(Math.PI * u) * kprog(T, K.Ci - 0.3, K.Ci + 0.3)} />; })}
         </>)}
-        <div style={{ position: 'absolute', left: 0, right: 0, top: 650, textAlign: 'center', zIndex: 41 }}>
+        <div style={{ position: 'absolute', left: 0, right: 0, top: 650, textAlign: 'center', zIndex: 41, opacity: 1 - kprog(T, K.Ca - 0.6, K.Ca - 0.15) }}>
           <div style={{ font: `900 44px ${KF.texto}`, color: KC.ink, opacity: kprog(T, K.Ci + 0.4, K.Ci + 0.8) }}>entre</div>
-          <div style={{ font: `400 190px/1 ${KF.titulo}`, color: '#fff', WebkitTextStroke: `7px ${KC.ink}`, textShadow: `8px 8px 0 ${KC.ink}`, opacity: kprog(T, K.Ci + 1.2, K.Ci + 1.5) }}>
+          <div style={{ font: `400 160px/1 ${KF.titulo}`, color: '#fff', WebkitTextStroke: `6px ${KC.ink}`, textShadow: `8px 8px 0 ${KC.ink}`, opacity: kprog(T, K.Ci + 1.2, K.Ci + 1.5) }}>
             {kformato(cMin, 0)}{cMax > 0 ? ' – ' + kformato(cMax, 0) : ''}</div>
           <div style={{ font: `900 46px ${KF.texto}`, color: KC.ink, marginTop: 6, opacity: kprog(T, K.Ci + 2.6, K.Ci + 3.0) }}>millones de aves al año</div>
         </div>
@@ -273,7 +276,7 @@ function AvesShot() {
           <Casita x={360} y={1150} w={250} h={170} />
           <EdificioBajo x={720} y={1150} w={250} h={340} />
         </g>)}
-        <div style={{ position: 'absolute', left: 285, width: 400, top: 790, textAlign: 'center', zIndex: 41, opacity: kprog(T, K.Ca + 0.3, K.Ca + 0.7) }}>
+        <div style={{ position: 'absolute', left: 285, width: 400, top: 790, textAlign: 'center', zIndex: 41, opacity: kprog(T, K.Ca + 0.3, K.Ca + 0.7) * (1 - kprog(T, K.Ca + 1.2, K.Ca + 1.55)) }}>
           <div style={{ font: `400 130px/1 ${KF.titulo}`, whiteSpace: 'nowrap', color: KC.yellow, WebkitTextStroke: `6px ${KC.ink}`, textShadow: `6px 6px 0 ${KC.ink}` }}>{kformato(klerp(0, 44, kprog(T, K.Ca + 0.3, K.Ca + 1.3, kEase.sale)))} %</div>
           <div style={{ font: `700 26px/1.2 ${KF.mono}`, color: KC.ink, marginTop: 6 }}>casas y depas<br />de 1–3 pisos</div>
         </div>
@@ -282,7 +285,7 @@ function AvesShot() {
           <div style={{ font: `400 96px/1 ${KF.titulo}`, color: '#fff', WebkitTextStroke: `5px ${KC.ink}`, textShadow: `5px 5px 0 ${KC.ink}` }}>{'< 1 %'}</div>
           <div style={{ font: `700 24px/1.2 ${KF.mono}`, color: KC.texto, background: 'rgba(16,23,40,.85)', padding: '2px 8px', borderRadius: 8 }}>rascacielos (12+ pisos)</div>
         </div>
-        <div style={{ position: 'absolute', left: 690, width: 310, top: 880, textAlign: 'center', zIndex: 41, opacity: kprog(T, K.Ca + 1.6, K.Ca + 2.0) }}>
+        <div style={{ position: 'absolute', left: 690, width: 310, top: 880, textAlign: 'center', zIndex: 41, opacity: kprog(T, K.Ca + 1.6, K.Ca + 2.0) * (1 - kprog(T, K.Ca + 2.55, K.Ca + 2.95)) }}>
           <div style={{ font: `400 96px/1 ${KF.titulo}`, color: '#fff', WebkitTextStroke: `5px ${KC.ink}`, textShadow: `5px 5px 0 ${KC.ink}` }}>56 %</div>
           <div style={{ font: `700 22px/1.2 ${KF.mono}`, color: KC.texto, background: 'rgba(16,23,40,.85)', padding: '2px 8px', borderRadius: 8, display: 'inline-block' }}>otros edificios bajos<br />(≤ 11 pisos)</div>
         </div>

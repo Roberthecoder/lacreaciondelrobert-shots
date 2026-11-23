@@ -265,23 +265,24 @@ function LoboNieve() {
       {/* 6 · tres hospitales, neumonía muy distinta */}
       <Escena T={T} a={K.H} b={K.Fi}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<g opacity={1 - kprog(T, H2 - 0.4, H2 + 0.1)} transform="translate(0 90)">
-          {[['NIH', 200], ['Mount Sinai', 540], ['Indiana', 880]].map(([n, x], i) => <g key={n} opacity={kprog(T, K.H + 0.5 + i * 0.3, K.H + 0.9 + i * 0.3)}>
-            <Hospital x={x} y={930} s={0.95} nombre={n} />
-            <g transform={`translate(${x + 70} ${760}) rotate(8)`}><rect width={80} height={92} rx={6} fill="#10141c" stroke={KC.ink} strokeWidth={4} /><ellipse cx={27} cy={46} rx={12} ry={28} fill="#5a6476" /><ellipse cx={53} cy={46} rx={12} ry={28} fill="#5a6476" /></g>
+        {/* belleza (2.ª pasada): los tres hospitales grandes desde el inicio de la escena, en dos filas que llenan el cuadro */}
+        {svg(<g opacity={1 - kprog(T, H2 - 0.4, H2 + 0.1)}>
+          {[['NIH', 290, 900], ['Mount Sinai', 790, 900], ['Indiana', 540, 1420]].map(([n, x, y], i) => <g key={n} opacity={kprog(T, K.H - 0.2 + i * 0.25, K.H + 0.2 + i * 0.25)} transform={`translate(${x} ${y}) scale(1.55) translate(${-x} ${-y})`}>
+            <Hospital x={x} y={y} s={0.95} nombre={n} />
+            <g transform={`translate(${x + 70} ${y - 170}) rotate(8)`}><rect width={80} height={92} rx={6} fill="#10141c" stroke={KC.ink} strokeWidth={4} /><ellipse cx={27} cy={46} rx={12} ry={28} fill="#5a6476" /><ellipse cx={53} cy={46} rx={12} ry={28} fill="#5a6476" /></g>
           </g>)}
         </g>)}
-        {T > H2 - 0.3 && svg(<g opacity={kprog(T, H2 - 0.3, H2 + 0.3)}><Radiografia x={40} y={720} s={1.25} T={T} ficha={0.5} /></g>)}
+        {T > H2 - 0.3 && svg(<g opacity={kprog(T, H2 - 0.3, H2 + 0.3)}><Radiografia x={176} y={680} s={1.4} T={T} ficha={0.5} /></g>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.H + 0.2} until={K.H + 2.6} anio="2018" quien="3 hospitales de EE. UU." revista="Zech et al. · PLOS Medicine" y={560} />
-      <Chip T={T} at={K.H + 3.2} until={H2 - 0.3} texto="IA que busca neumonía" x={540} y={620} tam={38} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.H + 0.2} until={K.H + 2.6} anio="2018" quien="3 hospitales de EE. UU." revista="Zech et al. · PLOS Medicine" y={450} />
+      <Chip T={T} at={K.H + 3.2} until={H2 - 0.3} texto="IA que busca neumonía" x={540} y={440} tam={38} borde={KC.ink} />
       <Chip T={T} at={H2 + 0.1} until={K.Fi - 0.2} texto="radiografías con neumonía" x={540} y={330} tam={36} borde={KC.ink} />
       <BarrasLN T={T} at={H2 + 0.2} until={K.Fi - 0.2} top={384} filas={[{ valor: 34.2, texto: '34 %', etiqueta: 'Mount Sinai: 1 de cada 3', color: KC.red }, { valor: 1.2, texto: '1 %', etiqueta: 'NIH: casi ninguna', color: LN_AZUL, at: H2 + 1.8 }]} />
 
       {/* 7 · por dentro: la red reconoce el hospital, hasta por la ficha de metal */}
       <Escena T={T} a={K.Fi} b={K.L}>
         <FondoCircuito T={T} />
-        {svg(<Radiografia x={40} y={720} s={1.25} T={T} ficha={0.5 + 0.5 * kprog(T, K.Fi + 1.6, K.Fi + 2.0)} calor={kprog(T, K.Fi + 1.8, K.Fi + 2.6, kEase.sale)} scan={kprog(T, K.Fi + 0.3, K.Fi + 1.5)} />)}
+        {svg(<Radiografia x={klerp(176, 40, kprog(T, K.Fi, K.Fi + 0.8, kEase.suave))} y={klerp(680, 720, kprog(T, K.Fi, K.Fi + 0.8, kEase.suave))} s={klerp(1.4, 1.25, kprog(T, K.Fi, K.Fi + 0.8, kEase.suave))} T={T} ficha={0.5 + 0.5 * kprog(T, K.Fi + 1.6, K.Fi + 2.0)} calor={kprog(T, K.Fi + 1.8, K.Fi + 2.6, kEase.sale)} scan={kprog(T, K.Fi + 0.3, K.Fi + 1.5)} />)}
       </Escena>
       <Chip T={T} at={K.Fi + 0.3} until={K.L - 0.2} texto="¿de qué hospital es esta placa?" x={380} y={550} tam={32} borde={KC.cyan} />
       <Chip T={T} at={K.Fi + 2.0} until={K.L - 0.2} texto="ficha de metal (lado R/L)" x={330} y={640} tam={30} borde={KC.yellow} />

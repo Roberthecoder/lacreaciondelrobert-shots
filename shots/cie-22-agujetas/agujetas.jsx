@@ -251,7 +251,10 @@ function Agujetas() {
       {/* 2 · las agujetas llegan tarde: calendario con dolor */}
       <Escena T={T} a={K.Tarde} b={K.Estudio} fondo={KC.pink}>
         <FondoLunares color={KC.pink} />
-        <Lienzo><g transform="translate(0 170)">
+        <Lienzo>
+          {/* belleza (2.ª pasada): el muslo (el músculo que duele) grande detrás; las barras de los días más chicas y arriba */}
+          <g opacity={0.5} transform="translate(540 1130) scale(1.2) translate(-540 -1130)"><MusloCorte x={540} y={1130} T={T} corte={1} /></g>
+          <g transform="translate(540 600) scale(0.68) translate(-540 -840)">
           {dias.map((d, i) => { const cx = 165 + i * 250, e = kprog(T, K.Tarde + 0.2 + i * 0.25, K.Tarde + 0.6 + i * 0.25, kEase.rebote);
             const v = d.v * kprog(T, K.Tarde + 1.4 + i * 0.75, K.Tarde + 2.2 + i * 0.75, kEase.sale);
             return <g key={i} transform={`translate(${cx} 860) scale(${e}) translate(${-cx} -860)`}>
@@ -262,9 +265,9 @@ function Agujetas() {
               <rect x={cx - 40} y={1070 - Math.max(30, 380 * v)} width={80} height={Math.max(30, 380 * v)} rx={40} fill={CDOL} stroke={KC.ink} strokeWidth={6} opacity={v > 0.01 ? 1 : 0.3} />
             </g>; })}
           {T > K.Tarde + 1.0 && <g opacity={kprog(T, K.Tarde + 1.0, K.Tarde + 1.4)}><Reloj x={165} y={500} r={46} T={T} vel={4} /></g>}
-          <text x={640} y={525} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Tarde + 1.5, K.Tarde + 2)}>(dolor ilustrativo)</text>
+          <text x={640} y={525} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Tarde + 1.5, K.Tarde + 2)}>(dolor ilustrativo)</text>
         </g></Lienzo>
-        <Chip T={T} at={K.Tarde + 0.3} until={K.Estudio - 0.1} texto="el dolor llega tarde" x={600} y={570} tam={42} borde={CDOL} />
+        <Chip T={T} at={K.Tarde + 0.3} until={K.Estudio - 0.1} texto="el dolor llega tarde" x={540} y={290} tam={42} borde={CDOL} />
       </Escena>
       {/* 3 · el estudio de 1983: caminadora en plano y en bajada */}
       <Escena T={T} a={K.Estudio} b={K.Bajada} fondo={KC.mint}>
@@ -282,8 +285,11 @@ function Agujetas() {
       {/* 4 · resultado: en bajada el lactato no sube, pero duele más */}
       <Escena T={T} a={K.Bajada} b={K.Pregunta} fondo={KC.lilac}>
         <FondoLunares color={KC.lilac} />
-        <Lienzo><DZ k={1.1} de={[540, 825]} a={[540, 940]}>
-          <rect x={60} y={420} width={960} height={810} rx={36} fill="rgba(10,12,20,.82)" stroke={KC.ink} strokeWidth={8} />
+        <Lienzo>
+          {/* belleza (2.ª pasada): el muslo grande detrás; la tarjeta de barras más chica y arriba */}
+          <g opacity={0.85} transform="translate(540 1150) scale(1.2) translate(-540 -1150)"><MusloCorte x={540} y={1150} T={T} corte={1} /></g>
+          <DZ k={0.8} de={[540, 825]} a={[540, 690]}>
+          <rect x={60} y={420} width={960} height={810} rx={36} fill="rgba(10,12,20,.7)" stroke={KC.ink} strokeWidth={8} />
           <Caminadora x={290} y={640} s={0.42} T={T} inclina={0} color={KC.orange} />
           <Caminadora x={790} y={640} s={0.42} T={T} inclina={9} color={KC.lilac} />
           <TextoSvg x={290} y={740} tam={52} color={KC.yellow}>PLANO</TextoSvg>
@@ -296,9 +302,9 @@ function Agujetas() {
               <BarraV x={cx + 85} base={1110} alto={330} ancho={120} v={Math.max(0.0, dol)} color={CDOL} etiqueta="dolor" />
               <line x1={cx - 160} y1={1110 - 330 * 0.18} x2={cx - 10} y2={1110 - 330 * 0.18} stroke={KC.texto} strokeWidth={4} strokeDasharray="10 8" />
             </g>; })}
-          <text x={290 - 160} y={1110 - 330 * 0.18 - 14} style={{ font:`700 24px ${KF.mono}` }} fill={KC.texto}>reposo</text>
-          <text x={790 - 160} y={1110 - 330 * 0.18 - 14} style={{ font:`700 24px ${KF.mono}` }} fill={KC.texto}>reposo</text>
-          <text x={540} y={812} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill="rgba(246,243,236,.8)">(barras ilustrativas)</text>
+          <text x={290 - 160} y={1110 - 330 * 0.18 - 14} style={{ font:`700 32px ${KF.mono}` }} fill={KC.texto}>reposo</text>
+          <text x={790 - 160} y={1110 - 330 * 0.18 - 14} style={{ font:`700 32px ${KF.mono}` }} fill={KC.texto}>reposo</text>
+          <text x={540} y={812} textAnchor="middle" style={{ font:`700 33px ${KF.mono}` }} fill="rgba(246,243,236,.8)">(barras ilustrativas)</text>
           {T > K.Bajada + 1.6 && <TextoSvg x={705} y={1000} tam={44} color={CLAC} rot={-6} o={kprog(T, K.Bajada + 1.6, K.Bajada + 2.0) * (1 - kprog(T, K.Bajada + 3.0, K.Bajada + 3.3))}>no subió</TextoSvg>}
         </DZ></Lienzo>
       </Escena>
@@ -346,11 +352,14 @@ function Agujetas() {
       {/* 9 · la siguiente vez duele mucho menos */}
       <Escena T={T} a={K.Repetida} b={K.Cierre} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
-        <Lienzo><DZ k={1.1} de={[540, 845]} a={[540, 960]}>
-          <rect x={70} y={500} width={940} height={690} rx={36} fill="rgba(10,12,20,.82)" stroke={KC.ink} strokeWidth={8} />
+        <Lienzo>
+          {/* belleza (2.ª pasada): el muslo grande detrás; la tarjeta de barras más chica y arriba */}
+          <g opacity={0.55} transform="translate(540 1170) scale(1.2) translate(-540 -1170)"><MusloCorte x={540} y={1170} T={T} corte={1} /></g>
+          <DZ k={0.8} de={[540, 845]} a={[540, 660]}>
+          <rect x={70} y={500} width={940} height={690} rx={36} fill="rgba(10,12,20,.7)" stroke={KC.ink} strokeWidth={8} />
           <BarraH x={140} y={620} ancho={800} v={0.92 * kprog(T, K.Repetida + 0.4, K.Repetida + 1.6, kEase.sale)} color={CDOL} etiqueta="dolor · la primera vez" />
           <BarraH x={140} y={830} ancho={800} v={0.22 * kprog(T, K.Repetida + 2.2, K.Repetida + 3.2, kEase.sale)} color={CREP} etiqueta="dolor · la siguiente vez" />
-          <text x={540} y={970} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill="rgba(246,243,236,.8)">(barras ilustrativas)</text>
+          <text x={540} y={970} textAnchor="middle" style={{ font:`700 33px ${KF.mono}` }} fill="rgba(246,243,236,.8)">(barras ilustrativas)</text>
           {/* la fibra está desde el inicio (atenuada) y se enciende cuando se adapta */}
           {T > K.Repetida - 0.45 && <g transform={`translate(540 1080) scale(${0.85 + 0.15 * kprog(T, K.Repetida + 3.8, K.Repetida + 4.3, kEase.rebote)})`} opacity={0.4 + 0.6 * kprog(T, K.Repetida + 3.8, K.Repetida + 4.1)}>
             <rect x={-260} y={-50} width={520} height={100} rx={50} fill={CMUS} stroke={KC.ink} strokeWidth={8} />
@@ -358,7 +367,7 @@ function Agujetas() {
             <rect x={-260} y={-50} width={520} height={100} rx={50} fill="none" stroke={CREP} strokeWidth={10} opacity={kprog(T, K.Repetida + 3.8, K.Repetida + 4.1) * (0.6 + 0.4 * Math.sin(T * 6))} />
           </g>}
         </DZ></Lienzo>
-        <Chip T={T} at={K.Repetida + 3.8} until={K.Cierre - 0.1} texto="tu músculo se adapta" x={540} y={520} tam={44} borde={CREP} />
+        <Chip T={T} at={K.Repetida + 3.8} until={K.Cierre - 0.1} texto="tu músculo se adapta" x={540} y={290} tam={44} borde={CREP} />
       </Escena>
       {/* 10 · cierre: la misma escalera; ahora baja sin dolor */}
       <Escena T={T} a={K.Cierre} b={FIN}>

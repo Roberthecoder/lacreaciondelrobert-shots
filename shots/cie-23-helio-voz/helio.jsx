@@ -252,21 +252,26 @@ function Helio() {
           <g opacity={0.95}><CabezaPerfil x={HC.x} y={HC.y} s={HC.s} boca={habla(K.Pregunta, K.Igual)} corte={0.25}>
             <TuboVoz T={T} o={1} luz={0.6} ondas={1} color={HE_HELIO} />
           </CabezaPerfil></g>
-          <text x={820} y={1240} textAnchor="middle" fill={KC.yellow} stroke={KC.ink} strokeWidth={14}
-          transform={`rotate(${Math.sin(T * 3) * 6} 820 1020) scale(${klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote))})`} style={{ font:`400 600px ${KF.titulo}`, transformOrigin:'820px 1020px' }}>?</text></Lienzo>
+          <text x={860} y={760} textAnchor="middle" fill={KC.yellow} stroke={KC.ink} strokeWidth={6} paintOrder="stroke"
+          transform={`rotate(${Math.sin(T * 3) * 8} 860 710) scale(${klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote))})`} style={{ font:`400 150px ${KF.titulo}`, transformOrigin:'860px 710px' }}>?</text></Lienzo>
       </Escena>
 
       {/* 7 · la nota casi no cambia; cambia el color de la onda */}
       <Escena T={T} a={K.Igual} b={K.Pesado} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
-        <Lienzo><g transform="translate(0 150)">
+        <Lienzo>
+          {/* belleza (2.ª pasada): la cabeza con su laringe, grande y visible detrás; el pentagrama y las ondas más chicos y arriba */}
+          <g opacity={0.9} transform="translate(0 210)"><CabezaPerfil x={HC.x} y={HC.y} s={HC.s} boca={habla(K.Igual, K.Pesado)} corte={0.25}>
+            <TuboVoz T={T} o={1} luz={0.6} ondas={1} color={HE_HELIO} />
+          </CabezaPerfil></g>
+          <g transform="translate(540 600) scale(0.72) translate(-540 -850)">
           {[0, 1, 2, 3, 4].map((i) => <line key={i} x1={100} y1={520 + i * 40} x2={980} y2={520 + i * 40} stroke={KC.ink} strokeWidth={5} />)}
           <text x={110} y={670} style={{ font:`400 190px ${KF.titulo}` }} fill={KC.ink}>𝄞</text>
           <NotaMusical x={420} y={600} s={1.1} color={HE_AIRE} o={kprog(T, K.Igual + 0.2, K.Igual + 0.5)} />
           <NotaMusical x={760} y={600} s={1.1} color={HE_HELIO} o={kprog(T, K.Igual + 1.0, K.Igual + 1.3)} />
           {T > K.Igual + 1.2 && <line x1={460} y1={600} x2={720} y2={600} stroke={KC.ink} strokeWidth={6} strokeDasharray="16 12" opacity={kprog(T, K.Igual + 1.2, K.Igual + 1.6)} />}
-          <text x={440} y={780} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Igual + 0.2, K.Igual + 0.5)}>en aire</text>
-          <text x={780} y={780} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Igual + 1.0, K.Igual + 1.3)}>en helio</text>
+          <text x={440} y={780} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Igual + 0.2, K.Igual + 0.5)}>en aire</text>
+          <text x={780} y={780} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Igual + 1.0, K.Igual + 1.3)}>en helio</text>
           <rect x={90} y={830} width={900} height={350} rx={30} fill="rgba(10,12,20,.85)" stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.Igual + 0.1, K.Igual + 0.5)} />
           <g opacity={kprog(T, K.Igual + 2.4, K.Igual + 2.9)}>
             {[0, 1, 2, 3].map((i) => <line key={i} x1={130 + i * 260} y1={845} x2={130 + i * 260} y2={1165} stroke="rgba(255,255,255,.3)" strokeWidth={4} strokeDasharray="10 10" />)}
@@ -274,8 +279,8 @@ function Helio() {
             <OndaLinea x={130} y={1085} ancho={780} periodo={260} amp={55} fase={-T * 4} color={HE_HELIO} forma={(u) => (Math.sin(u) + 0.55 * Math.sin(3 * u) + 0.4 * Math.sin(5 * u)) / 1.5} />
           </g>
         </g></Lienzo>
-        <Chip T={T} at={K.Igual + 0.3} until={K.Igual + 2.6} texto="casi la misma nota" x={540} y={500} tam={42} borde={KC.ink} />
-        <Chip T={T} at={K.Igual + 2.8} until={K.Pesado - 0.1} texto="cambia el color del sonido" x={540} y={500} tam={40} borde={HE_HELIO} />
+        <Chip T={T} at={K.Igual + 0.3} until={K.Igual + 2.6} texto="casi la misma nota" x={540} y={290} tam={42} borde={KC.ink} />
+        <Chip T={T} at={K.Igual + 2.8} until={K.Pesado - 0.1} texto="cambia el color del sonido" x={540} y={290} tam={40} borde={HE_HELIO} />
       </Escena>
 
       {/* 8 · gas pesado: al revés, los picos bajan y la voz suena grave */}

@@ -208,10 +208,10 @@ function HistoplasmaShot() {
         {fsvg(<>
           <g transform="translate(540 1000) scale(1.12) translate(-540 -880)">
           <circle cx={540} cy={880} r={380} fill="rgba(255,143,168,.12)" stroke="#ff8fa8" strokeWidth={14} />
-          {[[400, 760], [620, 720], [520, 900], [700, 960], [380, 1000]].map(([x, y], i) => { const v = kprog(T, K.Ca + 1.0 + i * 0.15, K.Ca + 2.0 + i * 0.15, kEase.suave);
+          {[[370, 700], [690, 680], [540, 880], [720, 1070], [360, 1060]].map(([x, y], i) => { const v = kprog(T, K.Ca + 1.0 + i * 0.15, K.Ca + 2.0 + i * 0.15, kEase.suave);
             return <g key={i}>
-              {v < 1 && <circle cx={x} cy={y} r={21} fill="#fffbe6" stroke={KC.ink} strokeWidth={4} opacity={1 - v} />}
-              {v > 0 && <LevaduraH x={x} y={y + Math.sin(T * 2 + i) * 4} s={v} yema={kprog(T, K.Ca + 2.4 + i * 0.1, K.Ca + 3.2 + i * 0.1)} rot={i * 50} />}
+              {v < 1 && <circle cx={x} cy={y} r={63} fill="#fffbe6" stroke={KC.ink} strokeWidth={6} opacity={1 - v} />}
+              {v > 0 && <LevaduraH x={x} y={y + Math.sin(T * 2 + i) * 4} s={3 * v} yema={kprog(T, K.Ca + 2.4 + i * 0.1, K.Ca + 3.2 + i * 0.1)} rot={i * 50} />}
             </g>; })}
           </g>
         </>)}
@@ -222,7 +222,7 @@ function HistoplasmaShot() {
         {fsvg(<>
           <g transform="translate(540 1000) scale(1.12) translate(-540 -880)" opacity=".75">
             <circle cx={540} cy={880} r={380} fill="rgba(255,143,168,.12)" stroke="#ff8fa8" strokeWidth={14} />
-            {[[400, 760], [620, 720], [520, 900], [700, 960], [380, 1000]].map(([x, y], i) => <LevaduraH key={i} x={x} y={y + Math.sin(T * 2 + i) * 4} yema={1} rot={i * 50} />)}
+            {[[370, 700], [690, 680], [540, 880], [720, 1070], [360, 1060]].map(([x, y], i) => <LevaduraH key={i} x={x} y={y + Math.sin(T * 2 + i) * 4} s={3} yema={1} rot={i * 50} />)}
           </g>
           <Interrogacion T={T} x={540} y={1220} tam={560} />
         </>)}
@@ -347,7 +347,7 @@ function HistoplasmaShot() {
       <BarraEscala T={T} at={K.H} until={K.A} texto="10 µm" largo={188} />
       <BarraEscala T={T} at={K.A} until={K.Pu} texto="1 m" largo={232} />
       <BarraEscala T={T} at={K.Pu} until={K.Ca} texto="10 cm" largo={140} />
-      <BarraEscala T={T} at={K.Ca} until={K.P} texto="10 µm" largo={168} />
+      <BarraEscala T={T} at={K.Ca} until={K.P} texto="5 µm" largo={252} />
       <BarraEscala T={T} at={K.M} until={K.S} texto="10 µm" largo={240} />
       <BarraEscala T={T} at={K.E} until={K.En} texto="10 m" largo={234} />
       <BarraEscala T={T} at={K.Ce} until={K.N} texto="10 m" largo={234} />

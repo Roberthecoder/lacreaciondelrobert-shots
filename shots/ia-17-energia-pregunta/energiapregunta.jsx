@@ -174,9 +174,10 @@ function EnergiaPregunta() {
 
   // cierre: aparecen miles de teles y celulares
   const mosaico = () => { const r = krng(17), out = [];
-    for (let i = 0; i < 60; i++) { const c = i % 6, f = Math.floor(i / 6), px = 90 + c * 180 + (f % 2) * 40, py = 540 + f * 92, d = r() * 1.4, on = kprog(T, K.C + 2.6 + d, K.C + 3.0 + d);
-      if (on <= 0) continue;
-      out.push(<g key={i} opacity={on}>{(i + f) % 2 ? <Tele x={px} y={py} s={0.16} on={1} mini T={T} /> : <Celu x={px} y={py} s={0.11} env={1} resp={1} />}</g>); }
+    // belleza (2.ª pasada): el mosaico más grande y apretado alrededor de la imagen central
+    for (let i = 0; i < 50; i++) { const c = i % 5, f = Math.floor(i / 5), px = 120 + c * 210 + (f % 2) * 40, py = 560 + f * 112, d = r() * 1.4, on = kprog(T, K.C + 2.6 + d, K.C + 3.0 + d);
+      if (on <= 0 || (Math.abs(px - 600) < 330 && Math.abs(py - 990) < 320)) continue;
+      out.push(<g key={i} opacity={on}>{(i + f) % 2 ? <Tele x={px} y={py} s={0.27} on={1} mini T={T} /> : <Celu x={px} y={py} s={0.19} env={1} resp={1} />}</g>); }
     return out; };
   const zoomFuera = kprog(T, K.C + 2.4, K.C + 3.6, kEase.suave);
 
@@ -242,8 +243,9 @@ function EnergiaPregunta() {
       {/* 5 · re-gancho */}
       <Escena T={T} a={K.P} b={K.O} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svgK(<g opacity={0.4}><Celu x={540} y={1000} s={1.6} env={1} resp={1} T={T} /></g>, 19)}
-        {svgK(<text x={540} y={1250} textAnchor="middle" style={{ font:`400 700px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={16} transform={`rotate(${Math.sin(T * 3) * 6} 540 1000)`}>?</text>)}
+        {svgK(<g opacity={0.85}><Celu x={540} y={1000} s={1.6} env={1} resp={1} T={T} /></g>, 19)}
+        {/* belleza (2.ª pasada): el celular pleno y el «?» chico a su lado */}
+        {svgK(<text x={880} y={640} textAnchor="middle" paintOrder="stroke" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} transform={`rotate(${Math.sin(T * 3) * 8} 880 590)`}>?</text>)}
       </Escena>
 
       {/* 6 · ojo: la pregunta de en medio, autorreportada; imágenes y video fuera */}
@@ -273,15 +275,15 @@ function EnergiaPregunta() {
         <FondoLunares color={KC.noche} punto="rgba(255,255,255,.05)" />
       </Escena>
       {T >= K.S - 0.3 && T <= K.A + 0.4 && <div style={{ position:'absolute', inset:0, zIndex:30, opacity:kprog(T, K.S - 0.3, K.S + 0.2) * (1 - kprog(T, K.A - 0.1, K.A + 0.4)) }}>
-        <Cuadricula T={T} cols={40} filas={30} x={60} y={600} ancho={960} alto={720} llenado={kprog(T, K.S + 0.2, K.S + 3.2, kEase.suave)} lleno={KC.yellow} vacio="rgba(255,255,255,.2)" />
+        <Cuadricula T={T} cols={40} filas={30} x={60} y={520} ancho={960} alto={900} llenado={kprog(T, K.S + 0.2, K.S + 3.2, kEase.suave)} lleno={KC.yellow} vacio="rgba(255,255,255,.2)" />
       </div>}
-      <Chip T={T} at={K.S + 0.3} until={K.A - 0.2} texto="cada cuadrito = una pregunta" x={540} y={540} tam={30} borde={KC.yellow} />
+      <Chip T={T} at={K.S + 0.3} until={K.A - 0.2} texto="cada cuadrito = una pregunta" x={540} y={450} tam={30} borde={KC.yellow} />
 
       {/* 8 · la AIE: en 2030, un poco más que todo Japón */}
       <Escena T={T} a={K.A} b={K.R}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svgK(<>
-          <Planeta x={540} y={640} r={230} T={T} luces={kprog(T, K.A + 0.6, K.A + 3.6)} />
+          <Planeta x={540} y={720} r={270} T={T} luces={kprog(T, K.A + 0.6, K.A + 3.6)} />
           
         </>)}
       </Escena>
@@ -297,12 +299,12 @@ function EnergiaPregunta() {
         const icoDatos = <svg width={104} height={104} viewBox="-60 -60 120 120"><rect x={-40} y={-50} width={80} height={100} rx={8} fill="#232a3a" stroke={KC.ink} strokeWidth={6} />{[-30, -6, 18].map((yy) => <g key={yy}><rect x={-30} y={yy} width={60} height={16} rx={3} fill="#151a24" /><circle cx={-20} cy={yy + 8} r={4} fill={KC.mint} /></g>)}</svg>;
         const icoJapon = <svg width={104} height={104} viewBox="-130 -150 260 280"><Japon x={0} y={0} s={1} T={T} /></svg>;
         return <div style={{ position:'absolute', inset:0, zIndex:40, opacity:o }}>
-          {fila('Centros de datos del mundo', '· 2030', 800, g1, KC.orange, icoDatos, 1000)}
-          {fila('Japón entero', '· hoy', 760, g2, KC.coral, icoJapon, 1185)}
-          <div style={{ position:'absolute', left:780, top:1188, font:`900 28px ${KF.texto}`, color:KC.red, whiteSpace:'nowrap', opacity:kprog(T, K.A + 6.9, K.A + 7.3) }}>▲ un poco más</div>
+          {fila('Centros de datos del mundo', '· 2030', 800, g1, KC.orange, icoDatos, 1080)}
+          {fila('Japón entero', '· hoy', 760, g2, KC.coral, icoJapon, 1265)}
+          <div style={{ position:'absolute', left:780, top:1268, font:`900 28px ${KF.texto}`, color:KC.red, whiteSpace:'nowrap', opacity:kprog(T, K.A + 6.9, K.A + 7.3) }}>▲ un poco más</div>
         </div>; })()}
 
-      {T >= L9 && T <= K.R + 0.4 && <div style={{ position:'absolute', inset:0, zIndex:44, opacity:1 - kprog(T, K.R - 0.1, K.R + 0.4) }}>{svgK(<><g transform={`translate(640 1108) rotate(-6) scale(${klerp(1.8, 1, kprog(T, L9, L9 + 0.35, kEase.sale))})`} opacity={kprog(T, L9, L9 + 0.25)}>
+      {T >= L9 && T <= K.R + 0.4 && <div style={{ position:'absolute', inset:0, zIndex:44, opacity:1 - kprog(T, K.R - 0.1, K.R + 0.4) }}>{svgK(<><g transform={`translate(640 1188) rotate(-6) scale(${klerp(1.8, 1, kprog(T, L9, L9 + 0.35, kEase.sale))})`} opacity={kprog(T, L9, L9 + 0.25)}>
             <rect x={-250} y={-60} width={500} height={120} rx={16} fill="rgba(255,59,47,.15)" stroke={KC.red} strokeWidth={10} />
             <text y={30} textAnchor="middle" style={{ font:`400 88px ${KF.titulo}` }} fill={KC.red}>PROYECCIÓN</text>
           </g></>)}</div>}
@@ -316,7 +318,7 @@ function EnergiaPregunta() {
       {/* 10 · cierre: la misma imagen… multiplicada */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
-        <div style={{ position:'absolute', inset:0, transform:`scale(${klerp(1, 0.38, zoomFuera)})`, transformOrigin:'50% 50%' }}>
+        <div style={{ position:'absolute', inset:0, transform:`scale(${klerp(1, 0.5, zoomFuera)})`, transformOrigin:'50% 50%' }}>
           {svgK(escenaTele(K.C, false))}
         </div>
         {svgK(<>{mosaico()}</>, 25)}
