@@ -15,6 +15,8 @@ function Gorrion({ x, y, s = 1, ala = 0, rot = 0, dir = 1, vuela = true, o = 1, 
     {/* cuerpo y panza */}
     <ellipse cx={0} cy={0} rx={62} ry={38} fill={AV.cafe} stroke={KC.ink} strokeWidth={6} />
     <path d="M -40 14 Q 0 42 50 12 Q 30 34 -10 36 Q -34 30 -40 14 Z" fill={AV.panza} />
+    <path d="M -38 -22 Q 0 -38 36 -24" stroke="#d6a676" strokeWidth={7} fill="none" strokeLinecap="round" opacity={0.6} />
+    <path d="M -30 30 Q 0 40 34 26" stroke="#000" strokeWidth={5} fill="none" strokeLinecap="round" opacity={0.18} />
     {/* cabeza: corona gris, mejilla clara, babero negro */}
     <circle cx={52} cy={-26} r={30} fill={AV.panza} stroke={KC.ink} strokeWidth={6} />
     <path d="M 26 -40 Q 48 -62 76 -40 Q 60 -34 40 -32 Z" fill="#8d8d8d" />
@@ -91,10 +93,12 @@ function Ventana({ T, x, y, w = 460, h = 520, id = 'v', rayasH = 0, rayasV = 0, 
 // Fachada de casa con ventana (mismo encuadre en Gancho y Cierre).
 function Fachada({ T, rayasH = 0, id = 'fa' }) {
   return <g>
-    <rect x={0} y={1150} width={KW} height={300} fill={AV.pasto} stroke={KC.ink} strokeWidth={6} />
-    <rect x={-10} y={420} width={760} height={740} fill={AV.muro} stroke={KC.ink} strokeWidth={7} />
+    <rect x={0} y={1150} width={KW} height={900} fill="url(#avPasto)" stroke={KC.ink} strokeWidth={6} />
+    {[60, 210, 820, 960, 1040].map((gx, i) => <path key={'p' + i} d={`M ${gx - 18} 1200 q 6 -30 12 0 q 6 -38 12 0 q 6 -28 12 0`} stroke="#4f8a3f" strokeWidth={5} fill="none" strokeLinecap="round" opacity={0.7} />)}
+    <rect x={-10} y={1150} width={770} height={26} fill="#000" opacity={0.3} />
+    <rect x={-10} y={420} width={760} height={740} fill="url(#avMuro)" stroke={KC.ink} strokeWidth={7} />
     {Array.from({ length: 9 }, (_, i) => <line key={i} x1={-10} y1={500 + i * 80} x2={750} y2={500 + i * 80} stroke={AV.muro2} strokeWidth={4} />)}
-    <rect x={-10} y={380} width={790} height={50} fill="#c9563c" stroke={KC.ink} strokeWidth={7} />
+    <rect x={-10} y={380} width={790} height={50} fill="url(#avTecho)" stroke={KC.ink} strokeWidth={7} />
     <Ventana T={T} x={130} y={560} w={460} h={500} id={id} rayasH={rayasH} />
     <rect x={100} y={1080} width={520} height={34} rx={6} fill={AV.marco} stroke={KC.ink} strokeWidth={6} />
   </g>;
@@ -102,7 +106,7 @@ function Fachada({ T, rayasH = 0, id = 'fa' }) {
 // Edificios para la pregunta y el reparto.
 function Rascacielos({ x, y, w = 200, h = 700 }) {
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={0} y={-h} width={w} height={h} fill="#2c6f99" stroke={KC.ink} strokeWidth={7} />
+    <rect x={0} y={-h} width={w} height={h} fill="url(#avRasc)" stroke={KC.ink} strokeWidth={7} />
     {Array.from({ length: Math.floor(h / 46) }, (_, i) => <line key={i} x1={0} y1={-h + 40 + i * 46} x2={w} y2={-h + 40 + i * 46} stroke="#7fc4ea" strokeWidth={4} opacity=".55" />)}
     {[1, 2, 3].map((i) => <line key={'c' + i} x1={(w / 4) * i} y1={-h} x2={(w / 4) * i} y2={0} stroke="#7fc4ea" strokeWidth={4} opacity=".55" />)}
     <path d={`M ${w * 0.15} ${-h + 10} L ${w * 0.55} ${-h + 10} L ${w * 0.15} ${-h + 220} Z`} fill="#fff" opacity=".35" />
@@ -110,7 +114,7 @@ function Rascacielos({ x, y, w = 200, h = 700 }) {
 }
 function Casita({ x, y, w = 240, h = 170 }) {
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={0} y={-h} width={w} height={h} fill={AV.muro} stroke={KC.ink} strokeWidth={7} />
+    <rect x={0} y={-h} width={w} height={h} fill="url(#avMuro)" stroke={KC.ink} strokeWidth={7} />
     <path d={`M -20 ${-h} L ${w / 2} ${-h - 110} L ${w + 20} ${-h} Z`} fill="#c9563c" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     <rect x={w * 0.12} y={-h + 40} width={w * 0.36} height={70} fill={AV.vidrio} stroke={KC.ink} strokeWidth={5} />
     <rect x={w * 0.6} y={-h + 50} width={w * 0.26} height={h - 50} fill="#8a5a33" stroke={KC.ink} strokeWidth={5} />
@@ -139,7 +143,13 @@ function AvesShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, Re: CUES.Reflejo, A: CUES.Atraves, P: CUES.Pregunta, E: CUES.Estudio, Ci: CUES.Cifra, Ca: CUES.Casas, H: CUES.Halcon, Rg: CUES.Regla, Go: CUES.Golpe, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
-  const svg = (c) => <svg width={KW} height={KH} style={{ position: 'absolute', left: 0, top: 0 }}>{c}</svg>;
+  const DEFS = <defs>
+    <linearGradient id="avMuro" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#86684a" /><stop offset="1" stopColor="#4a3824" /></linearGradient>
+    <linearGradient id="avPasto" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#2f5a29" /><stop offset="0.35" stopColor={AV.pasto} /><stop offset="1" stopColor="#0f1d0e" /></linearGradient>
+    <linearGradient id="avTecho" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#e07457" /><stop offset="1" stopColor="#9c3f2a" /></linearGradient>
+    <linearGradient id="avRasc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#3a86b5" /><stop offset="1" stopColor="#1c4e6e" /></linearGradient>
+  </defs>;
+  const svg = (c) => <svg width={KW} height={KH} style={{ position: 'absolute', left: 0, top: 0 }}>{DEFS}{c}</svg>;
   const aleteo = T * 22;
 
   // gancho: el ave vuela hacia el reflejo
@@ -173,16 +183,16 @@ function AvesShot() {
       {/* 1 · gancho: la ventana refleja el cielo; el ave vuela hacia ella */}
       <Escena T={T} a={K.G} b={K.Re}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><g transform="translate(300 800) scale(1.2) translate(-300 -800)"><Fachada T={T} id="fg" /></g>
-          <Gorrion x={klerp(1000, 560, g1)} y={klerp(1060, 840, g1)} s={klerp(1.15, 0.8, g1)} dir={-1} ala={aleteo} rot={-8} /></>)}
+        {svg(<><g transform="translate(300 1000) scale(1.25) translate(-300 -800)"><Fachada T={T} id="fg" /></g>
+          <Gorrion x={klerp(1000, 560, g1)} y={klerp(1260, 1040, g1)} s={klerp(1.15, 0.8, g1)} dir={-1} ala={aleteo} rot={-8} /></>)}
       </Escena>
-      <Lupa T={T} at={K.G + 1.0} until={K.Re - 0.15} x={380} y={440} r={210} fx={372} fy={812} zoom={1.6} tinte={KC.yellow} etiqueta="LO QUE VE EL AVE"
+      <Lupa T={T} at={K.G + 1.0} until={K.Re - 0.15} x={380} y={470} r={210} fx={375} fy={1012} zoom={1.6} tinte={KC.yellow} etiqueta="LO QUE VE EL AVE"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><Reflejo T={t} w={r * 2} h={r * 2} id="lu" /></svg>} />
       {/* 2 · corte lateral: el reflejo del árbol "detrás" del vidrio */}
       <Escena T={T} a={K.Re} b={K.A}>
         <FondoLunares color={KC.mint} />
-        {svg(<>
-          <rect x={0} y={1100} width={KW} height={400} fill={AV.pasto} stroke={KC.ink} strokeWidth={6} />
+        {svg(<g transform="translate(0 180)">
+          <rect x={0} y={1100} width={KW} height={900} fill="url(#avPasto)" stroke={KC.ink} strokeWidth={6} />
           <rect x={VX} y={380} width={KW - VX + 20} height={720} fill="rgba(150,185,210,.22)" stroke={KC.ink} strokeWidth={6} />
           <Arbol x={2 * VX - arbolX} y={1100} o={0.55 * virt} dash />
           <rect x={VX} y={380} width={KW - VX + 20} height={720} fill="rgba(150,185,210,.16)" opacity={virt} />
@@ -195,14 +205,14 @@ function AvesShot() {
           {rayo1 > 0.5 && <line x1={VX} y1={yR} x2={klerp(VX, ojo[0] + 64, rayo1 * 2 - 1)} y2={klerp(yR, ojo[1] - 30, rayo1 * 2 - 1)} stroke={KC.yellow} strokeWidth={8} strokeLinecap="round" />}
           {virt > 0 && <line x1={VX} y1={yR} x2={klerp(VX, 2 * VX - copa[0], virt)} y2={klerp(yR, copa[1], virt)} stroke={KC.ink} strokeWidth={5} strokeDasharray="14 10" />}
           <Gorrion x={ojo[0]} y={ojo[1]} s={0.85} ala={aleteo} rot={-4} />
-        </>)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1108} color={KC.ink} />
+        </g>)}
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1288} color={KC.ink} />
       </Escena>
       {/* 3 · a través del vidrio: la planta de tu sala */}
       <Escena T={T} a={K.A} b={K.P}>
         <FondoLunares color={KC.mint} />
-        {svg(<>
-          <rect x={0} y={1100} width={KW} height={400} fill={AV.pasto} stroke={KC.ink} strokeWidth={6} />
+        {svg(<g transform="translate(0 180)">
+          <rect x={0} y={1100} width={KW} height={900} fill="url(#avPasto)" stroke={KC.ink} strokeWidth={6} />
           <rect x={VX} y={380} width={KW - VX + 20} height={720} fill="#3e382e" stroke={KC.ink} strokeWidth={6} />
           <rect x={VX} y={1060} width={KW - VX + 20} height={40} fill="#c79a6a" stroke={KC.ink} strokeWidth={5} />
           <rect x={VX - 8} y={560} width={16} height={420} fill="rgba(159,227,245,.45)" stroke={KC.ink} strokeWidth={4} strokeDasharray="10 8" />
@@ -212,26 +222,26 @@ function AvesShot() {
           <Arbol x={arbolX} y={1100} o={0.5} />
           {rayo2 > 0 && <line x1={ojo[0] + 64} y1={ojo[1] - 30} x2={klerp(ojo[0] + 64, planta[0], rayo2)} y2={klerp(ojo[1] - 30, planta[1] - 150, rayo2)} stroke={KC.yellow} strokeWidth={8} strokeLinecap="round" />}
           <Gorrion x={ojo[0] + kprog(T, K.A, K.P, kEase.suave) * 60} y={ojo[1]} s={0.85} ala={aleteo} rot={-4} />
-        </>)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1108} color={KC.ink} />
+        </g>)}
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1288} color={KC.ink} />
       </Escena>
       {/* 4 · pregunta: ¿rascacielos o casas? */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
-        {svg(<>
-          <rect x={0} y={1150} width={KW} height={300} fill={AV.pasto} stroke={KC.ink} strokeWidth={6} />
+        {svg(<g transform="translate(0 200)">
+          <rect x={0} y={1150} width={KW} height={900} fill="url(#avPasto)" stroke={KC.ink} strokeWidth={6} />
           <Rascacielos x={70} y={1150} w={220} h={kprog(T, K.P + 0.2, K.P + 1.0, kEase.rebote) * 760} />
           <Casita x={380} y={1150} w={290} h={200} />
           <text x={820} y={860} textAnchor="middle" style={{ font: `400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 820 760)`} opacity={kprog(T, K.P + 1.0, K.P + 1.5)}>?</text>
-        </>)}
+        </g>)}
       </Escena>
       {/* 5 · el estudio: 23 estudios juntos */}
       <Escena T={T} a={K.E} b={K.Ci}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<>
-          <g opacity={0.5} transform="translate(300 800) scale(1.2) translate(-300 -800)"><Fachada T={T} id="fe" /></g>
+          <g opacity={0.5} transform="translate(300 1000) scale(1.25) translate(-300 -800)"><Fachada T={T} id="fe" /></g>
           {Array.from({ length: 23 }, (_, i) => { const p = kprog(T, K.E + 0.7 + i * 0.09, K.E + 1.0 + i * 0.09, kEase.rebote); const c = i % 8, r = Math.floor(i / 8);
-          return p > 0 && <g key={i} transform={`translate(${150 + c * 110} ${900 + r * 120}) scale(${p}) rotate(${(i % 3 - 1) * 5})`}>
+          return p > 0 && <g key={i} transform={`translate(${150 + c * 110} ${1000 + r * 120}) scale(${p}) rotate(${(i % 3 - 1) * 5})`}>
             <rect x={-38} y={-50} width={76} height={100} rx={6} fill="#fff" stroke={KC.ink} strokeWidth={5} />
             {[0, 1, 2, 3].map((k) => <line key={k} x1={-24} y1={-28 + k * 18} x2={k === 3 ? 6 : 24} y2={-28 + k * 18} stroke="#9a9086" strokeWidth={5} />)}
           </g>; })}</>)}
@@ -257,22 +267,22 @@ function AvesShot() {
       {/* 7 · dónde: casas, otros edificios bajos y rascacielos */}
       <Escena T={T} a={K.Ca} b={K.H}>
         <FondoLunares color={KC.cyan} />
-        {svg(<>
-          <rect x={0} y={1150} width={KW} height={300} fill={AV.pasto} stroke={KC.ink} strokeWidth={6} />
+        {svg(<g transform="translate(0 200)">
+          <rect x={0} y={1150} width={KW} height={900} fill="url(#avPasto)" stroke={KC.ink} strokeWidth={6} />
           <Rascacielos x={70} y={1150} w={180} h={720} />
           <Casita x={360} y={1150} w={250} h={170} />
           <EdificioBajo x={720} y={1150} w={250} h={340} />
-        </>)}
-        <div style={{ position: 'absolute', left: 300, width: 370, top: 640, textAlign: 'center', zIndex: 41, opacity: kprog(T, K.Ca + 0.3, K.Ca + 0.7) }}>
-          <div style={{ font: `400 150px/1 ${KF.titulo}`, color: KC.yellow, WebkitTextStroke: `6px ${KC.ink}`, textShadow: `6px 6px 0 ${KC.ink}` }}>{kformato(klerp(0, 44, kprog(T, K.Ca + 0.3, K.Ca + 1.3, kEase.sale)))} %</div>
+        </g>)}
+        <div style={{ position: 'absolute', left: 285, width: 400, top: 790, textAlign: 'center', zIndex: 41, opacity: kprog(T, K.Ca + 0.3, K.Ca + 0.7) }}>
+          <div style={{ font: `400 130px/1 ${KF.titulo}`, whiteSpace: 'nowrap', color: KC.yellow, WebkitTextStroke: `6px ${KC.ink}`, textShadow: `6px 6px 0 ${KC.ink}` }}>{kformato(klerp(0, 44, kprog(T, K.Ca + 0.3, K.Ca + 1.3, kEase.sale)))} %</div>
           <div style={{ font: `700 26px/1.2 ${KF.mono}`, color: KC.ink, marginTop: 6 }}>casas y depas<br />de 1–3 pisos</div>
         </div>
         <div style={{ position: 'absolute', left: 30, width: 260, top: 1190, textAlign: 'center', zIndex: 41, opacity: 0 }} />
-        <div style={{ position: 'absolute', left: 250, top: 300, zIndex: 41, opacity: kprog(T, K.Ca + 3.0, K.Ca + 3.4), transform: `scale(${klerp(0.6, 1, kprog(T, K.Ca + 3.0, K.Ca + 3.5, kEase.rebote))})`, transformOrigin: '0 50%' }}>
+        <div style={{ position: 'absolute', left: 250, top: 500, zIndex: 41, opacity: kprog(T, K.Ca + 3.0, K.Ca + 3.4), transform: `scale(${klerp(0.6, 1, kprog(T, K.Ca + 3.0, K.Ca + 3.5, kEase.rebote))})`, transformOrigin: '0 50%' }}>
           <div style={{ font: `400 96px/1 ${KF.titulo}`, color: '#fff', WebkitTextStroke: `5px ${KC.ink}`, textShadow: `5px 5px 0 ${KC.ink}` }}>{'< 1 %'}</div>
           <div style={{ font: `700 24px/1.2 ${KF.mono}`, color: KC.texto, background: 'rgba(16,23,40,.85)', padding: '2px 8px', borderRadius: 8 }}>rascacielos (12+ pisos)</div>
         </div>
-        <div style={{ position: 'absolute', left: 690, width: 310, top: 680, textAlign: 'center', zIndex: 41, opacity: kprog(T, K.Ca + 1.6, K.Ca + 2.0) }}>
+        <div style={{ position: 'absolute', left: 690, width: 310, top: 880, textAlign: 'center', zIndex: 41, opacity: kprog(T, K.Ca + 1.6, K.Ca + 2.0) }}>
           <div style={{ font: `400 96px/1 ${KF.titulo}`, color: '#fff', WebkitTextStroke: `5px ${KC.ink}`, textShadow: `5px 5px 0 ${KC.ink}` }}>56 %</div>
           <div style={{ font: `700 22px/1.2 ${KF.mono}`, color: KC.texto, background: 'rgba(16,23,40,.85)', padding: '2px 8px', borderRadius: 8, display: 'inline-block' }}>otros edificios bajos<br />(≤ 11 pisos)</div>
         </div>
@@ -280,71 +290,71 @@ function AvesShot() {
       {/* 8 · la calcomanía del halcón */}
       <Escena T={T} a={K.H} b={K.Rg}>
         <FondoLunares color={KC.orange} />
-        {svg(<>
-          <rect x={0} y={1150} width={KW} height={300} fill={AV.pasto} stroke={KC.ink} strokeWidth={6} />
-          <rect x={-10} y={480} width={760} height={680} fill={AV.muro} stroke={KC.ink} strokeWidth={7} />
+        {svg(<g transform="translate(0 200)">
+          <rect x={0} y={1150} width={KW} height={900} fill="url(#avPasto)" stroke={KC.ink} strokeWidth={6} />
+          <rect x={-10} y={480} width={760} height={680} fill="url(#avMuro)" stroke={KC.ink} strokeWidth={7} />
           <Ventana T={T} x={130} y={600} w={460} h={480} id="vh" halcon={kprog(T, K.H + 0.2, K.H + 0.6, kEase.rebote)} />
           {hv < 1 ? <Gorrion x={hx} y={hy} s={0.7} dir={-1} ala={aleteo} rot={-6} /> : <Gorrion x={540} y={1110 - 30 * (1 - kprog(T, K.H + 2.4, K.H + 2.7))} s={0.6} dir={-1} vuela={false} ko rot={-70} />}
           <Pum x={520} y={960} s={kprog(T, K.H + 2.4, K.H + 2.6, kEase.rebote)} o={1 - kprog(T, K.H + 3.2, K.H + 3.6)} />
-        </>)}
+        </g>)}
       </Escena>
-      <MitoTachado T={T} at={K.H + 0.6} tacharEn={K.H + 2.6} until={K.Rg - 0.15} texto="1 halcón pegado" x={360} y={480} tam={42} />
+      <MitoTachado T={T} at={K.H + 0.6} tacharEn={K.H + 2.6} until={K.Rg - 0.15} texto="1 halcón pegado" x={360} y={610} tam={42} />
       {/* 9 · lo que sí sirve: rayas por fuera (≤ 5 cm acostadas, ≤ 10 cm paradas) o mosquitero */}
       <Escena T={T} a={K.Rg} b={K.Go}>
         <FondoLunares color={KC.mint} />
-        {svg(<>
-          <rect x={0} y={1150} width={KW} height={300} fill={AV.pasto} stroke={KC.ink} strokeWidth={6} />
-          <rect x={-10} y={480} width={760} height={680} fill={AV.muro} stroke={KC.ink} strokeWidth={7} />
+        {svg(<g transform="translate(0 200)">
+          <rect x={0} y={1150} width={KW} height={900} fill="url(#avPasto)" stroke={KC.ink} strokeWidth={6} />
+          <rect x={-10} y={480} width={760} height={680} fill="url(#avMuro)" stroke={KC.ink} strokeWidth={7} />
           <Ventana T={T} x={130} y={600} w={460} h={480} id="vr" rayasH={rH} rayasV={rV} malla={ml} />
           <Cota x={630} y1={600 + 24 * 2.5} y2={600 + 24 * 3.5} texto="≤ 5 cm" o={kprog(T, K.Rg + 1.2, K.Rg + 1.5) * (1 - kprog(T, K.Rg + 2.4, K.Rg + 2.7))} />
           {rV > 0.3 && <g opacity={1 - kprog(T, K.Rg + 4.5, K.Rg + 4.8)}><line x1={130 + 48 * 2.5} y1={1110} x2={130 + 48 * 3.5} y2={1110} stroke={KC.ink} strokeWidth={5} />
             <text x={130 + 48 * 3} y={1145} textAnchor="middle" style={{ font: `700 32px ${KF.mono}` }} fill={KC.ink}>≤ 10 cm</text></g>}
           <Gorrion x={rgx} y={rgy} s={0.7} dir={rv < 0.5 ? -1 : 1} ala={aleteo} rot={rv < 0.5 ? -6 : -30} o={1 - kprog(T, K.Rg + 2.3, K.Rg + 2.5)} />
-        </>)}
+        </g>)}
       </Escena>
-      <Chip T={T} at={K.Rg + 0.3} until={K.Rg + 4.5} texto="rayas por fuera del vidrio" x={400} y={470} tam={34} borde={KC.leaf} />
-      <Chip T={T} at={K.Rg + 4.8} until={K.Go - 0.15} texto="o un mosquitero" x={400} y={470} tam={38} borde={KC.leaf} />
+      <Chip T={T} at={K.Rg + 0.3} until={K.Rg + 4.5} texto="rayas por fuera del vidrio" x={400} y={610} tam={34} borde={KC.leaf} />
+      <Chip T={T} at={K.Rg + 4.8} until={K.Go - 0.15} texto="o un mosquitero" x={400} y={610} tam={38} borde={KC.leaf} />
       {/* 10 · el golpe: parece bien, pero… */}
       <Escena T={T} a={K.Go} b={K.C}>
         <FondoLunares color={KC.lilac} />
-        {svg(<>
-          <rect x={0} y={1150} width={KW} height={300} fill={AV.pasto} stroke={KC.ink} strokeWidth={6} />
-          <rect x={-10} y={480} width={520} height={680} fill={AV.muro} stroke={KC.ink} strokeWidth={7} />
+        {svg(<g transform="translate(0 200)">
+          <rect x={0} y={1150} width={KW} height={900} fill="url(#avPasto)" stroke={KC.ink} strokeWidth={6} />
+          <rect x={-10} y={480} width={520} height={680} fill="url(#avMuro)" stroke={KC.ink} strokeWidth={7} />
           <Ventana T={T} x={70} y={620} w={360} h={440} id="vg" />
           {sube <= 0 ? <Gorrion x={560} y={1100} s={1.15} vuela={false} ko={T < K.Go + 1.8} rot={T < K.Go + 1.8 ? -70 : 0} />
             : <Gorrion x={klerp(560, 1100, sube)} y={klerp(1090, 780, sube)} s={1.15} ala={aleteo} rot={-12} />}
-        </>)}
+        </g>)}
       </Escena>
-      <Lupa T={T} at={K.Go + 0.4} until={K.Go + 2.5} x={720} y={720} r={230} fx={600} fy={1060} zoom={2} tinte={KC.red} etiqueta="GOLPE (ESQUEMA)"
+      <Lupa T={T} at={K.Go + 0.4} until={K.Go + 2.5} x={720} y={900} r={230} fx={600} fy={1260} zoom={2} tinte={KC.red} etiqueta="GOLPE (ESQUEMA)"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill={KC.noche} />
           <g transform={`translate(${r - 52 * 3.2 * r / 150} ${r + 26 * 3.2 * r / 150}) scale(${3.2 * r / 150})`}><Gorrion x={0} y={0} s={1} vuela={false} ko /></g>
           <circle cx={r + 4} cy={r - 50 * r / 150} r={r * 0.3} fill={KC.red} opacity={0.35 + 0.25 * Math.sin(t * 8)} />
           {[0, 1, 2].map((i) => <path key={i} d={`M ${r - 40 + i * 40} ${r - 120 * r / 150} l 10 -24 l 10 24`} stroke={KC.yellow} strokeWidth={6} fill="none" opacity={0.6 + 0.4 * Math.sin(t * 9 + i)} />)}</svg>} />
-      <Chip T={T} at={K.Go + 2.7} until={K.C - 0.15} texto="parece bien… pero puede morir después" x={660} y={470} tam={26} borde={KC.red} />
+      <Chip T={T} at={K.Go + 2.7} until={K.C - 0.15} texto="parece bien… pero puede morir después" x={660} y={610} tam={26} borde={KC.red} />
       {/* 11 · cierre: la misma ventana, ahora con rayas */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><g transform="translate(300 800) scale(1.2) translate(-300 -800)"><Fachada T={T} id="fc" rayasH={kprog(T, K.C - 0.3, K.C + 0.8)} /></g>
-          <Arbol x={900} y={1150} s={0.8} />
-          {c1 < 1 ? <Gorrion x={klerp(560, 940, c1)} y={klerp(860, 860 - 80 * Math.sin(Math.PI * c1), c1)} s={0.6} ala={aleteo} rot={-10} />
-            : <Gorrion x={940} y={862} s={0.6} vuela={false} />}
+        {svg(<><g transform="translate(300 1000) scale(1.25) translate(-300 -800)"><Fachada T={T} id="fc" rayasH={kprog(T, K.C - 0.3, K.C + 0.8)} /></g>
+          <Arbol x={940} y={1440} s={0.95} />
+          {c1 < 1 ? <Gorrion x={klerp(560, 980, c1)} y={klerp(1060, 1072 - 90 * Math.sin(Math.PI * c1), c1)} s={0.66} ala={aleteo} rot={-10} />
+            : <Gorrion x={980} y={1074} s={0.66} vuela={false} />}
         </>)}
       </Escena>
-      <Chip T={T} at={K.C + 0.6} until={K.Ou - 0.1} texto="con rayas: para el ave, ya es pared" x={410} y={470} tam={30} borde={KC.yellow} />
+      <Chip T={T} at={K.C + 0.6} until={K.Ou - 0.1} texto="con rayas: para el ave, ya es pared" x={410} y={400} tam={30} borde={KC.yellow} />
 
       {/* datos y etiquetas */}
-      <Chip T={T} at={K.G + 0.2} until={K.Re - 0.2} texto="¿pared… o cielo?" x={380} y={1270} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.Re + 0.4} until={K.A - 0.2} x={VX + 30} y={1030} texto="vidrio" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Re + 1.6} until={K.A - 0.2} x={VX - 40} y={yR - 70} texto="reflejo" lado="izq" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Re + 2.8} until={K.A - 0.2} x={1060} y={600} texto="lo que cree ver" lado="izq" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.A + 0.4} until={K.P - 0.2} x={VX - 40} y={1030} texto="transparencia" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.A + 1.6} until={K.P - 0.2} x={1040} y={1120} texto="la planta de tu sala" lado="izq" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.P + 0.3} until={K.E - 0.2} texto="¿dónde mueren más aves en total?" x={540} y={430} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.E + 2.0} until={K.Ci - 0.2} texto="23 estudios" x={540} y={1150} tam={34} borde={KC.ink} mono />
+      <Chip T={T} at={K.G + 0.2} until={K.Re - 0.2} texto="¿pared… o cielo?" x={380} y={1510} tam={40} borde={KC.ink} />
+      <Etq T={T} at={K.Re + 0.4} until={K.A - 0.2} x={VX + 30} y={1210} texto="vidrio" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Re + 1.6} until={K.A - 0.2} x={VX - 40} y={yR + 110} texto="reflejo" lado="izq" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Re + 2.8} until={K.A - 0.2} x={1060} y={780} texto="lo que cree ver" lado="izq" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.A + 0.4} until={K.P - 0.2} x={VX - 40} y={1210} texto="transparencia" lado="izq" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.A + 1.6} until={K.P - 0.2} x={1040} y={1330} texto="la planta de tu sala" lado="izq" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.P + 0.3} until={K.E - 0.2} texto="¿dónde mueren más aves en total?" x={540} y={520} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.E + 2.0} until={K.Ci - 0.2} texto="23 estudios" x={540} y={1380} tam={34} borde={KC.ink} mono />
       <Chip T={T} at={K.Ci + 3.4} until={K.Ca - 0.2} texto="EE. UU. · choques con edificios" x={540} y={1008} tam={28} borde={KC.ink} />
-      <Etq T={T} at={K.Rg + 1.0} until={K.Rg + 2.5} x={620} y={540} texto="acostadas" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Rg + 3.0} until={K.Rg + 4.5} x={620} y={540} texto="paradas" tam={28} color={KC.ink} />
-      <EscalaFija T={T} texto="esquema (no a escala)" largo={0} x={60} y={1112} color={KC.ink} o={T > K.Rg && T < K.Go ? 1 : 0} />
+      <Etq T={T} at={K.Rg + 1.0} until={K.Rg + 2.5} x={640} y={740} texto="acostadas" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Rg + 3.0} until={K.Rg + 4.5} x={640} y={740} texto="paradas" tam={28} color={KC.ink} />
+      <EscalaFija T={T} texto="esquema (no a escala)" largo={0} x={60} y={1312} color={KC.ink} o={T > K.Rg && T < K.Go ? 1 : 0} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Re - 0.1} texto="Para un pájaro, esa ventana *es cielo.*" />
