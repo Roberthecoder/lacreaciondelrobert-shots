@@ -89,7 +89,10 @@ function Nieve({ T, n = 70, seed = 3, o = 1 }) {
     return <circle key={i} cx={x0 + Math.sin(T * 0.9 + i) * 22} cy={((y0 + T * v) % (KH + 40)) - 20} r={r} fill="#fff" opacity=".9" />; })}</g>;
 }
 function SueloNieve({ y = 1470 }) {
-  return <path d={`M -20 ${y} Q 260 ${y - 60} 540 ${y - 10} T 1100 ${y - 30} L 1100 1940 L -20 1940 Z`} fill="#9fb0cc" stroke={KC.ink} strokeWidth={9} />;
+  return <g>
+    <defs><linearGradient id="nieveNoche" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#3d4b63" /><stop offset="100%" stopColor="#1f2737" /></linearGradient></defs>
+    <path d={`M -20 ${y} Q 260 ${y - 60} 540 ${y - 10} T 1100 ${y - 30} L 1100 1940 L -20 1940 Z`} fill="url(#nieveNoche)" stroke="#9fb0cc" strokeWidth={7} />
+  </g>;
 }
 // Ondas de calor que suben (líneas onduladas).
 function OndasCalor({ T, x, y, n = 3, ancho = 110, alto = 220, color = '#ff8a3d', o = 1, sep = 46 }) {
@@ -127,7 +130,7 @@ function Manual({ x, y, s = 1, rot = -3, num = 1, tacha = 0, T = 0 }) {
     <rect x={-330} y={-400} width={660} height={800} rx={14} fill="#a9b18a" stroke={KC.ink} strokeWidth={10} transform="translate(18 18)" />
     <rect x={-330} y={-400} width={660} height={800} rx={14} fill={KC.paper} stroke={KC.ink} strokeWidth={10} />
     <rect x={-330} y={-400} width={660} height={120} rx={14} fill="#6b7a3f" stroke={KC.ink} strokeWidth={10} />
-    <text x={0} y={-322} textAnchor="middle" style={{ font:`400 62px ${KF.titulo}` }} fill={KC.paper}>MANUAL DEL EJÉRCITO</text>
+    <text x={0} y={-324} textAnchor="middle" style={{ font:`400 50px ${KF.titulo}` }} fill="#f3efe2">MANUAL DEL EJÉRCITO</text>
     {[0, 1, 2].map((i) => <rect key={i} x={-270} y={-230 + i * 44} width={i === 2 ? 320 : 540} height={16} rx={8} fill="#cfc6b6" />)}
     <text x={0} y={-60} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>por la cabeza se va</text>
     <g transform={`translate(0 120) scale(${klerp(0.4, 1, num)})`} opacity={num}>
@@ -200,7 +203,7 @@ function CalorCabeza() {
           <g transform={`translate(0 ${(1 - kprog(T, K.Ejercito - 0.2, K.Ejercito + 0.4, kEase.rebote)) * 900})`}>
             <Carpeta x={540} y={900} s={1.2} abre={kprog(T, K.Ejercito + 0.8, K.Ejercito + 1.5, kEase.sale)} />
           </g>
-          <TextoSvg x={540} y={1220} tam={62} color={KC.paper} o={kprog(T, K.Ejercito + 0.5, K.Ejercito + 0.8)}>VIEJAS PRUEBAS MILITARES</TextoSvg>
+          <TextoSvg x={540} y={1220} tam={50} color={KC.paper} o={kprog(T, K.Ejercito + 0.5, K.Ejercito + 0.8)}>VIEJAS PRUEBAS MILITARES</TextoSvg>
           <Sello T={T} at={K.Ejercito + 1.7} x={780} y={637} texto="EE. UU." tam={95} rot={10} color={KC.blue} />
         </Lienzo>
         <Chip T={T} at={K.Ejercito + 0.3} until={K.Trajes - 0.1} texto="se cree" x={300} y={440} tam={46} borde={KC.pink} />
@@ -209,15 +212,15 @@ function CalorCabeza() {
       <Escena T={T} a={K.Trajes} b={K.Claro} fondo={KC.lilac}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <SueloNieve y={1500} />
-          {[200, 540, 880].map((xx, i) => <g key={xx} transform={`translate(0 ${(1 - kprog(T, K.Trajes + i * 0.25, K.Trajes + 0.5 + i * 0.25, kEase.rebote)) * 900})`}>
-            <Persona x={xx} yPies={1560} s={1.0} T={T + i} ropa="traje" tiembla={0.5} cara="frio" id={'t' + i} /></g>)}
-          {[200, 540, 880].map((xx, i) => <ellipse key={i} cx={xx} cy={1560 - 532} rx={93} ry={101} fill="none" stroke={KC.yellow} strokeWidth={10} strokeDasharray="18 12" strokeDashoffset={-T * 40} opacity={kprog(T, K.Trajes + 3.3 + i * 0.15, K.Trajes + 3.7 + i * 0.15)} />)}
+          <SueloNieve y={1420} />
+          {[205, 540, 875].map((xx, i) => <g key={xx} transform={`translate(0 ${(1 - kprog(T, K.Trajes + i * 0.25, K.Trajes + 0.5 + i * 0.25, kEase.rebote)) * 900})`}>
+            <Persona x={xx} yPies={1470} s={0.98} T={T + i} ropa="traje" tiembla={0.5} cara="frio" id={'t' + i} /></g>)}
+          {[205, 540, 875].map((xx, i) => <ellipse key={i} cx={xx} cy={1470 - 532 * 0.98} rx={92} ry={100} fill="none" stroke={KC.yellow} strokeWidth={10} strokeDasharray="18 12" strokeDashoffset={-T * 40} opacity={kprog(T, K.Trajes + 3.3 + i * 0.15, K.Trajes + 3.7 + i * 0.15)} />)}
           <Nieve T={T} n={90} seed={7} />
         </Lienzo>
         <Chip T={T} at={K.Trajes + 0.4} until={K.Claro - 0.1} texto="mucho frío" x={540} y={440} tam={46} borde={KC.cyan} />
         <Chip T={T} at={K.Trajes + 1.8} until={K.Claro - 0.1} texto="traje que cubre todo" x={540} y={540} tam={40} borde={KC.orange} />
-        <Etq T={T} at={K.Trajes + 3.4} until={K.Claro - 0.2} x={624} y={900} texto="cabeza destapada" lado="der" color={KC.yellow} tam={28} />
+        <Etq T={T} at={K.Trajes + 3.4} until={K.Claro - 0.2} x={560} y={690} texto="cabeza destapada" lado="der" color={KC.yellow} tam={28} />
       </Escena>
       {/* 3 · cámara térmica: solo brilla la cabeza */}
       <Escena T={T} a={K.Claro} b={K.Manual} fondo={KC.noche} zoom={0.08}>
