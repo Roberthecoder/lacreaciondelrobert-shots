@@ -267,7 +267,16 @@ function GatosShot() {
       {/* 7 · la presa más común: una lagartija */}
       <Escena T={T} a={K.L} b={K.I}>
         <FondoLunares color={KC.mint} />
-        {svg(<g transform="translate(0 90)"><path d="M -20 1006 C 300 986 600 1026 1100 986" stroke="#7a4a22" strokeWidth={44} fill="none" strokeLinecap="round" />
+        {svg(<g transform="translate(0 90)">
+          {/* ramitas y hojas del arbusto donde vive la lagartija (escenario) */}
+          <path d="M 180 1000 C 150 1110 90 1200 -20 1260" stroke="#5e3a1c" strokeWidth={18} fill="none" strokeLinecap="round" />
+          <path d="M 860 992 C 900 1120 980 1220 1100 1280" stroke="#5e3a1c" strokeWidth={18} fill="none" strokeLinecap="round" />
+          {[[60, 1210, -20], [120, 1130, 30], [-10, 1280, 10], [150, 1060, -40], [930, 1150, 30], [1010, 1220, 60], [880, 1080, 10], [1060, 1270, 20], [320, 1050, 160], [640, 1060, 200], [470, 970, -20]].map(([lx, ly, r], i) =>
+            <g key={'h' + i} transform={`translate(${lx} ${ly}) rotate(${r + 4 * Math.sin(T * 1.5 + i)})`}>
+              <path d="M 0 0 C 30 -40 110 -40 150 0 C 110 40 30 40 0 0 Z" fill={i % 2 ? '#2f6b34' : '#3c7d3c'} stroke={KC.ink} strokeWidth={4} />
+              <path d="M 6 0 L 140 0" stroke="#5fa35a" strokeWidth={3} /></g>)}
+          <path d="M -20 1006 C 300 986 600 1026 1100 986" stroke="#7a4a22" strokeWidth={44} fill="none" strokeLinecap="round" />
+          <path d="M -20 996 C 300 976 600 1016 1100 976" stroke="#a06a3a" strokeWidth={8} fill="none" strokeLinecap="round" opacity={0.6} />
           <path d="M 760 990 q 60 -60 140 -70" stroke="#7a4a22" strokeWidth={14} fill="none" strokeLinecap="round" />
           <Anolis x={klerp(440, 580, kprog(T, K.L + 0.1, K.L + 1.0, kEase.sale))} y={950} s={3.2} T={T} papada={kprog(T, K.L + 1.4, K.L + 1.8)} /></g>)}
       </Escena>

@@ -1,0 +1,1 @@
+- amb-35-gatos-aves: lagartijas: la rama ahora es un arbusto con ramitas y hojas que se mecen (llenan el tercio de abajo) y la rama tiene brillo; el resto ya cumplía (encuadre bien, sin láminas).
