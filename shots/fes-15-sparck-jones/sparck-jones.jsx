@@ -320,12 +320,12 @@ function SparckJones() {
       {/* 5 · la balanza */}
       <Escena T={T} a={K.Rr} b={K.Re}>
         <FondoLunares color={KC.mint} />
-        {svg(<Balanza T={T} x={540} y={700} incl={incl} pesas={kprog(T, K.Rr + 0.6, K.Rr + 1.6)} />)}
+        {svg(<g transform="translate(540 1010) scale(1.12) translate(-540 -910)"><Balanza T={T} x={540} y={700} incl={incl} pesas={kprog(T, K.Rr + 0.6, K.Rr + 1.6)} /></g>)}
       </Escena>
       {/* 6 · la página que repite «tamales» sube en la lista */}
       <Escena T={T} a={K.Re} b={K.P}>
         <FondoLunares color={KC.coral} />
-        {svg(<Lista T={T} x={110} y={520} sube={kprog(T, K.Re + 1.2, K.Re + 2.4, kEase.suave)} />)}
+        {svg(<Lista T={T} x={110} y={590} sube={kprog(T, K.Re + 1.2, K.Re + 2.4, kEase.suave)} />)}
       </Escena>
       {/* 7 · ¿quién pensó en esto antes de la web? */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.08}>
@@ -363,16 +363,16 @@ function SparckJones() {
       <Escena T={T} a={K.IA} b={K.Da}>
         <div style={{ position: 'absolute', inset: 0, background: KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(0,210,255,.22)" />
-        {svg(<g transform="translate(0 100)"><Asistente T={T} at={K.IA} /></g>)}
+        {svg(<g transform="translate(540 960) scale(1.04) translate(-520 -830)"><Asistente T={T} at={K.IA} /></g>)}
       </Escena>
       {/* 12 · niñas y computación; su lema */}
       <Escena T={T} a={K.Da} b={K.Ci}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <g opacity={1 - kprog(T, K.Da + 3.0, K.Da + 3.4)}><Karen T={T} x={300} y={klerp(380, 560, kprog(T, K.Da, K.Da + 0.6, kEase.rebote))} s={0.78} rot={-4} sonrie={0.8} /></g>
-          <Nina T={T} x={190} y={klerp(1400, 920, kprog(T, K.Da + 0.6, K.Da + 1.1, kEase.sale))} playera={KC.yellow} peinado={0} k={0} />
-          <Nina T={T} x={540} y={klerp(1400, 900, kprog(T, K.Da + 0.9, K.Da + 1.4, kEase.sale))} playera={KC.mint} peinado={1} pelo="#5a3a22" piel="#e3b08e" k={1} />
-          <Nina T={T} x={890} y={klerp(1400, 920, kprog(T, K.Da + 1.2, K.Da + 1.7, kEase.sale))} playera={KC.cyan} peinado={2} pelo="#1e1410" piel="#c98d6a" k={2} />
+          <g opacity={1 - kprog(T, K.Da + 3.0, K.Da + 3.4)}><Karen T={T} x={300} y={klerp(500, 680, kprog(T, K.Da, K.Da + 0.6, kEase.rebote))} s={0.78} rot={-4} sonrie={0.8} /></g>
+          <Nina T={T} x={190} y={klerp(1500, 1070, kprog(T, K.Da + 0.6, K.Da + 1.1, kEase.sale))} playera={KC.yellow} peinado={0} k={0} />
+          <Nina T={T} x={540} y={klerp(1500, 1050, kprog(T, K.Da + 0.9, K.Da + 1.4, kEase.sale))} playera={KC.mint} peinado={1} pelo="#5a3a22" piel="#e3b08e" k={1} />
+          <Nina T={T} x={890} y={klerp(1500, 1070, kprog(T, K.Da + 1.2, K.Da + 1.7, kEase.sale))} playera={KC.cyan} peinado={2} pelo="#1e1410" piel="#c98d6a" k={2} />
         </>)}
       </Escena>
       {/* 13 · cierre: el mismo celular del inicio, ahora con el peso de cada palabra */}
@@ -395,8 +395,8 @@ function SparckJones() {
       <Medidor T={T} at={K.Ra + 1.6} until={K.Rr - 0.3} y={1300} ancho={900} etiqueta="peso de «rajas»" valor={(t) => 0.95 * kprog(t, K.Ra + 1.8, K.Ra + 2.8, kEase.sale)} texto={() => 'mucho'} color={KC.mint} />
       <Chip T={T} at={K.Ra + 2.4} until={K.Rr - 0.3} texto="sale en pocas = pesa mucho" x={540} y={1440} tam={38} borde={KC.mint} />
       <Chip T={T} at={K.Rr + 2.4} until={K.Re - 0.3} texto="la palabra rara pesa más" x={540} y={1480} tam={42} borde={KC.ink} />
-      <Chip T={T} at={K.Re + 1.6} until={K.P - 0.3} texto="TF: cuántas veces en la página" x={540} y={1310} tam={36} borde={KC.orange} />
-      <Chip T={T} at={K.Re + 2.4} until={K.P - 0.3} texto="× IDF: qué tan rara es" x={540} y={1410} tam={36} borde={KC.mint} />
+      <Chip T={T} at={K.Re + 1.6} until={K.P - 0.3} texto="TF: cuántas veces en la página" x={540} y={1375} tam={36} borde={KC.orange} />
+      <Chip T={T} at={K.Re + 2.4} until={K.P - 0.3} texto="× IDF: qué tan rara es" x={540} y={1470} tam={36} borde={KC.mint} />
       <Etq T={T} at={K.P + 1.4} until={K.E - 0.3} x={60} y={1460} texto="mucho antes de la web (1989)" tam={30} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.7} anio="1972" quien="Karen Spärck Jones" revista="Cambridge, Inglaterra · Journal of Documentation" x={540} y={400} />
       <Chip T={T} at={K.E + 3.2} until={K.Pr - 0.3} texto="más rara = más peso" x={540} y={1440} tam={40} borde={KC.ink} />
@@ -407,7 +407,7 @@ function SparckJones() {
       <Etq T={T} at={K.IA + 2.2} until={K.Da - 0.3} x={60} y={1490} texto="BM25: heredera de TF-IDF" tam={30} />
       {/* el lema, atribuido */}
       {kvisible(T, K.Da + 3.3, K.Ci - 0.3) && (() => { const e = kentrada(T, K.Da + 3.3, K.Ci - 0.3, 'pop');
-        return <div style={{ position: 'absolute', left: 540, top: 600, zIndex: 43, width: 900, transform: `translate(-50%,-50%) scale(${e.s}) rotate(-1.5deg)`, opacity: e.o,
+        return <div style={{ position: 'absolute', left: 540, top: 700, zIndex: 43, width: 900, transform: `translate(-50%,-50%) scale(${e.s}) rotate(-1.5deg)`, opacity: e.o,
           background: KC.paper, border: `7px solid ${KC.ink}`, borderRadius: 30, padding: '30px 44px 26px', boxShadow: `14px 14px 0 ${KC.ink}`, textAlign: 'center' }}>
           <div style={{ font: `400 64px/1.08 ${KF.titulo}`, color: KC.ink }}>«La computación es demasiado importante para dejársela a los hombres»</div>
           <div style={{ font: `700 26px ${KF.mono}`, color: '#5a524a', marginTop: 16 }}>Karen Spärck Jones · entrevista BCS (publicada en 2009)</div>
