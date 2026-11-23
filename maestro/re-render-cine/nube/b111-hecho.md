@@ -1,0 +1,1 @@
+- ia-45-pronostico-clima: Gancho: supercomputadora, chip, relojes, chip de núcleos y las dos barras de carrera bajados 110 px juntos (antes todo cargado arriba con el último tercio vacío). Las demás escenas ya cumplían (globo, red, mapas, cuadrícula, ciclones, monitores, celular).

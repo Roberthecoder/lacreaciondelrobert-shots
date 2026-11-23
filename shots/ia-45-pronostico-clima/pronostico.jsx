@@ -258,16 +258,16 @@ function Pronostico() {
         <FondoLunares color={KC.cyan} />
         <SVGF>
           {/* pase a mano: la supercomputadora llena el cuadro; el chip espera chico en la esquina y pasa al centro cuando la voz dice "Esta IA" */}
-          <g opacity={1 - 0.62 * kprog(T, iaAt, iaAt + 0.5)}><Rack x={82} y={320} s={2.1} T={T} n={4} /></g>
+          <g opacity={1 - 0.62 * kprog(T, iaAt, iaAt + 0.5)}><Rack x={82} y={430} s={2.1} T={T} n={4} /></g>
           {(() => { const u = kprog(T, iaAt - 0.1, iaAt + 0.5, kEase.sale);
-            return <g opacity={klerp(0.6 * kprog(T, K.G + 1.6, K.G + 2.2), 1, kprog(T, iaAt - 0.1, iaAt + 0.3))}><ChipIA x={klerp(880, 540, u)} y={klerp(1030, 740, u)} s={klerp(0.7, 1.8, u)} T={T} brillo={pIA} /></g>; })()}
+            return <g opacity={klerp(0.6 * kprog(T, K.G + 1.6, K.G + 2.2), 1, kprog(T, iaAt - 0.1, iaAt + 0.3))}><ChipIA x={klerp(880, 540, u)} y={klerp(1140, 850, u)} s={klerp(0.7, 1.8, u)} T={T} brillo={pIA} /></g>; })()}
         </SVGF>
       </Escena>
-      <Chip T={T} at={K.G + 0.6} until={K.E - 0.2} texto="usando 11,664 núcleos" x={540} y={1168} tam={36} borde={KC.ink} />
-      <Reloj T={T} at={K.G + 0.2} until={K.E - 0.2} x={300} y={250} seg={segSuper} color={KC.cyan} />
-      <Reloj T={T} at={iaAt} until={K.E - 0.2} x={800} y={250} seg={segIA} color={KC.mint} />
-      <Carrera T={T} at={K.G + 0.15} until={K.E - 0.2} y={1235} etiqueta="supercomputadora · 10 días" p={pSuper} color={KC.orange} fin={pSuper > 0.97 ? '≈ 1 h' : '…'} />
-      <Carrera T={T} at={iaAt + 0.2} until={K.E - 0.2} y={1380} etiqueta="IA en 1 chip · 10 días" p={pIA} color={KC.mint} fin={pIA >= 1 ? '< 1 min ✔' : '…'} />
+      <Chip T={T} at={K.G + 0.6} until={K.E - 0.2} texto="usando 11,664 núcleos" x={540} y={1278} tam={36} borde={KC.ink} />
+      <Reloj T={T} at={K.G + 0.2} until={K.E - 0.2} x={300} y={350} seg={segSuper} color={KC.cyan} />
+      <Reloj T={T} at={iaAt} until={K.E - 0.2} x={800} y={350} seg={segIA} color={KC.mint} />
+      <Carrera T={T} at={K.G + 0.15} until={K.E - 0.2} y={1345} etiqueta="supercomputadora · 10 días" p={pSuper} color={KC.orange} fin={pSuper > 0.97 ? '≈ 1 h' : '…'} />
+      <Carrera T={T} at={iaAt + 0.2} until={K.E - 0.2} y={1490} etiqueta="IA en 1 chip · 10 días" p={pIA} color={KC.mint} fin={pIA >= 1 ? '< 1 min ✔' : '…'} />
 
       {/* 2 · el estudio */}
       <Escena T={T} a={K.E} b={K.A}>
