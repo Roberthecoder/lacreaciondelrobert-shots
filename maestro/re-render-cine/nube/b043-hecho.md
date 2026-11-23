@@ -1,0 +1,1 @@
+- amb-19-desperdicio-comida: casa (6 de cada 10 kilos): antes una franja chica con una casita; ahora 10 columnas altas con volumen y sombra, la casa grande (ventanas, chimenea, volumen) encima de sus 6 kilos, todo bajado al centro y el chip arriba; el resto ya cumplía. Auditores: sin láminas, encuadre bien.
