@@ -259,7 +259,7 @@ function NaranjaShot() {
             <path d="M 700 1100 L 760 1040 L 820 1100 Z" fill="#9aa3ad" stroke={KC.ink} strokeWidth={6} />
             <Naranja x={klerp(380, 640, caida)} y={klerp(500, 950, caida)} r={150} seed={8} raspon={kprog(T, K.H + 0.6, K.H + 0.8)} mpos={[0.2, 0.6]} rot={caida * 90} />
           </g>}
-          {corte > 0 && <g opacity={corte}><CorteCascara T={T} sup={640} herida={kprog(T, K.H + 1.6, K.H + 2.4, kEase.sale)} rota={0} /></g>}
+          {corte > 0 && <g opacity={corte}><CorteCascara T={T} sup={760} herida={kprog(T, K.H + 1.6, K.H + 2.4, kEase.sale)} rota={0} /></g>}
         </>)}
       </Escena>
       {/* 3 · al microscopio: sale aceite y azúcar; la espora germina */}
@@ -281,22 +281,24 @@ function NaranjaShot() {
       <Escena T={T} a={K.E} b={K.P}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {fsvg(<>
+          <g transform="translate(0 150)">
           <CelulasCascara T={T} frente={frente} x0={160} y0={1000} />
           <defs><clipPath id="clipEnz"><rect x={0} y={540} width={1080} height={640} /></clipPath></defs>
           <g clipPath="url(#clipEnz)"><RedHifas T={T} x={160} y={1000} g={0.2 + frente * 0.8} seed={7} n={120} escala={0.9} color={NJ.blanco} ancho={7} rot={-30} /></g>
           {Array.from({ length: 8 }, (_, i) => { const u = kclamp(frente * 1.3 - i * 0.06, 0, 1); return u > 0 ? <Tijera key={i} T={T} i={i} x={160 + Math.cos(-0.5 + i * 0.18) * 650 * u} y={1000 + Math.sin(-0.5 + i * 0.18) * 650 * u - 120} s={1.1} /> : null; })}
+          </g>
         </>)}
       </Escena>
       {/* 5 · se ablanda, pelusa blanca y polvo verde olivo */}
       <Escena T={T} a={K.P} b={K.Az} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Naranja x={420} y={880} r={300} seed={5} mancha={pelusa} mpos={[0.05, 0]} mr={0.62} />
+          <Naranja x={420} y={1010} r={300} seed={5} mancha={pelusa} mpos={[0.05, 0]} mr={0.62} />
           <g opacity={kprog(T, K.P + 2.4, K.P + 2.8)}>
-            <circle cx={820} cy={1010} r={180} fill={KC.noche} stroke={KC.white} strokeWidth={10} />
-            <Pincel x={820} y={1150} s={0.5} p={kprog(T, K.P + 2.5, K.P + 4.2)} />
-            <line x1={880} y1={1140} x2={915} y2={1140} stroke={KC.texto} strokeWidth={6} />
-            <text x={898} y={1128} textAnchor="middle" style={{ font:`700 18px ${KF.mono}` }} fill={KC.texto}>10 µm</text>
+            <circle cx={820} cy={1140} r={180} fill={KC.noche} stroke={KC.white} strokeWidth={10} />
+            <Pincel x={820} y={1280} s={0.5} p={kprog(T, K.P + 2.5, K.P + 4.2)} />
+            <line x1={880} y1={1270} x2={915} y2={1270} stroke={KC.texto} strokeWidth={6} />
+            <text x={898} y={1258} textAnchor="middle" style={{ font:`700 18px ${KF.mono}` }} fill={KC.texto}>10 µm</text>
           </g>
         </>)}
       </Escena>
@@ -304,13 +306,13 @@ function NaranjaShot() {
       <Escena T={T} a={K.Az} b={K.Q}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Naranja x={270} y={720} r={140} seed={5} mancha={1} mr={0.6} />
-          <Naranja x={270} y={1010} r={130} seed={61} mancha={0} />
-          <Naranja x={800} y={720} r={140} seed={6} mancha={1} tipo="azul" mr={0.6} />
-          <Naranja x={800} y={1010} r={130} seed={62} mancha={contagio} tipo="azul" mpos={[0, -0.75]} mr={0.5} />
+          <Naranja x={260} y={830} r={160} seed={5} mancha={1} mr={0.6} />
+          <Naranja x={260} y={1170} r={150} seed={61} mancha={0} />
+          <Naranja x={820} y={830} r={160} seed={6} mancha={1} tipo="azul" mr={0.6} />
+          <Naranja x={820} y={1170} r={150} seed={62} mancha={contagio} tipo="azul" mpos={[0, -0.75]} mr={0.5} />
           <g opacity={kprog(T, K.Az + 1.6, K.Az + 2.0)}>
-            <Termometro x={540} y={940} nivel={0.2} color="#4aa8ff" s={0.8} />
-            <path d="M 540 680 L 540 760 M 505 700 L 575 740 M 505 740 L 575 700" stroke="#fff" strokeWidth={9} strokeLinecap="round" />
+            <Termometro x={540} y={1070} nivel={0.2} color="#4aa8ff" s={0.8} />
+            <path d="M 540 810 L 540 890 M 505 830 L 575 870 M 505 870 L 575 830" stroke="#fff" strokeWidth={9} strokeLinecap="round" />
           </g>
         </>)}
       </Escena>
@@ -325,7 +327,7 @@ function NaranjaShot() {
       {/* 8–9 · la empacadora y la cera */}
       <Escena T={T} a={K.Em} b={K.Ce}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<g transform="translate(540 990) scale(1.15) translate(-574 -930)"><Empacadora T={T} a={K.Em} /></g>)}
+        {fsvg(<g transform="translate(540 1130) scale(1.25) translate(-574 -930)"><Empacadora T={T} a={K.Em} /></g>)}
       </Escena>
       <Escena T={T} a={K.Ce} b={K.Es} zoom={0.05}>
         <FondoLunares color={KC.pink} />
@@ -341,7 +343,7 @@ function NaranjaShot() {
         {fsvg(<>
           {T < K.B + 0.3 && <g opacity={1 - kprog(T, K.B - 0.2, K.B + 0.3)} transform="translate(540 1050) scale(1.0) translate(-540 -1010)">
             {[0, 1, 2, 3, 4].map((i) => { const on = kprog(T, K.Es + 0.2 + i * 0.1, K.Es + 0.6 + i * 0.1, kEase.rebote); return on > 0 ? <g key={i} transform={`translate(${150 + i * 195} 1010) scale(${on})`}>
-              <Naranja x={0} y={0} r={80} seed={80 + i} raspon={1} mpos={[0, -0.3]} />
+              <Naranja x={0} y={0} r={95} seed={80 + i} raspon={1} mpos={[0, -0.3]} />
               {Array.from({ length: 5 }, (_, q) => { const u = kprog(T, K.Es + 2.4 + q * 0.1, K.Es + 3.0 + q * 0.1); return <circle key={q} cx={-20 + q * 10} cy={-24 - (1 - u) * 160} r={6} fill={NJ.olivo2} stroke={KC.ink} strokeWidth={2} opacity={u > 0 ? 1 : 0} />; })}
             </g> : null; })}
           </g>}
@@ -377,24 +379,24 @@ function NaranjaShot() {
       <Etq T={T} at={K.G + 3.2} until={K.H - 0.3} x={60} y={935} texto="Penicillium digitatum" it tam={36} />
       <Chip T={T} at={K.H + 0.7} until={K.H + 1.5} texto="¡raspón!" x={380} y={460} tam={44} borde={KC.red} />
       <Chip T={T} at={K.H + 1.7} until={K.A - 0.3} texto="la herida le abre la puerta" x={400} y={470} tam={34} borde={KC.red} />
-      <Etq T={T} at={K.H + 2.0} until={K.A - 0.3} x={60} y={600} texto="cáscara" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.H + 2.2} until={K.A - 0.3} x={60} y={700} texto="glándula de aceite" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.H + 2.4} until={K.A - 0.3} x={60} y={860} texto="parte blanca" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.H + 2.0} until={K.A - 0.3} x={60} y={720} texto="cáscara" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.H + 2.2} until={K.A - 0.3} x={60} y={820} texto="glándula de aceite" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.H + 2.4} until={K.A - 0.3} x={60} y={980} texto="parte blanca" tam={26} color={KC.ink} />
       <Chip T={T} at={K.A + 0.2} until={K.E - 0.3} texto="AL MICROSCOPIO" x={360} y={430} tam={30} mono borde={KC.cyan} />
       <Etq T={T} at={K.A + 0.6} until={K.E - 0.3} x={60} y={640} texto="aceite" tam={30} color={NJ.glandula} />
       <Etq T={T} at={K.A + 1.2} until={K.E - 0.3} x={1040} y={1040} lado="izq" texto="azúcares" tam={30} />
       <Etq T={T} at={K.A + 2.4} until={K.E - 0.3} x={60} y={1100} texto="espora germinando" tam={30} color={NJ.olivo2} />
       <Chip T={T} at={K.A + 1.0} until={K.E - 0.3} texto="esquemático, sin proporción" x={360} y={510} tam={24} borde={KC.ink} />
       <MedidorAcido T={T} at={K.E + 0.3} until={K.P - 0.3} nivel={kprog(T, K.E + 0.4, K.E + 1.8)} x={70} y={380} />
-      <Etq T={T} at={K.E + 2.3} until={K.P - 0.3} x={380} y={470} texto="enzimas = «tijeritas»" tam={30} color={KC.yellow} />
-      <Etq T={T} at={K.E + 0.8} until={K.P - 0.3} x={60} y={1080} texto="hifa" tam={30} color={NJ.blanco} />
-      <Etq T={T} at={K.P + 1.4} until={K.Az - 0.3} x={60} y={470} texto="pelusa blanca: el hongo joven" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.P + 2.4} until={K.Az - 0.3} x={60} y={530} texto="verde olivo: esporas" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Az + 0.3} until={K.Q - 0.3} texto="moho verde" x={270} y={450} tam={36} borde={NJ.olivo} />
-      <Chip T={T} at={K.Az + 0.6} until={K.Q - 0.3} texto="moho azul" x={800} y={450} tam={36} borde={NJ.azul} />
-      <Etq T={T} at={K.Az + 0.5} until={K.Q - 0.3} x={60} y={555} texto="P. digitatum" it tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Az + 0.8} until={K.Q - 0.3} x={1040} y={555} lado="izq" texto="P. italicum" it tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Az + 1.8} until={K.Q - 0.3} texto="aguanta más el frío" x={540} y={1160} tam={30} borde="#4aa8ff" />
+      <Etq T={T} at={K.E + 2.3} until={K.P - 0.3} x={380} y={600} texto="enzimas = «tijeritas»" tam={30} color={KC.yellow} />
+      <Etq T={T} at={K.E + 0.8} until={K.P - 0.3} x={60} y={1230} texto="hifa" tam={30} color={NJ.blanco} />
+      <Etq T={T} at={K.P + 1.4} until={K.Az - 0.3} x={60} y={600} texto="pelusa blanca: el hongo joven" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.P + 2.4} until={K.Az - 0.3} x={60} y={660} texto="verde olivo: esporas" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Az + 0.3} until={K.Q - 0.3} texto="moho verde" x={260} y={560} tam={36} borde={NJ.olivo} />
+      <Chip T={T} at={K.Az + 0.6} until={K.Q - 0.3} texto="moho azul" x={820} y={560} tam={36} borde={NJ.azul} />
+      <Etq T={T} at={K.Az + 0.5} until={K.Q - 0.3} x={60} y={640} texto="P. digitatum" it tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Az + 0.8} until={K.Q - 0.3} x={1040} y={640} lado="izq" texto="P. italicum" it tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Az + 1.8} until={K.Q - 0.3} texto="aguanta más el frío" x={540} y={1400} tam={30} borde="#4aa8ff" />
       <Chip T={T} at={K.Em + 0.4} until={K.Ce - 0.3} texto="1 · lavar" x={260} y={460} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.Em + 1.6} until={K.Ce - 0.3} texto="2 · sacar las podridas" x={330} y={540} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Em + 3.0} until={K.Ce - 0.3} texto="3 · fungicida en agua o en la cera" x={400} y={620} tam={30} borde={KC.ink} />
@@ -416,11 +418,11 @@ function NaranjaShot() {
       <BarraEscala T={T} at={K.A} until={K.E} texto="10 µm" largo={96} />
       <BarraEscala T={T} at={K.E} until={K.P} texto="10 µm" largo={80} />
       <BarraEscala T={T} at={K.P} until={K.Az} texto="5 cm" largo={140} />
-      <BarraEscala T={T} at={K.Az} until={K.Q} texto="5 cm" largo={180} />
+      <BarraEscala T={T} at={K.Az} until={K.Q} texto="5 cm" largo={206} />
       <BarraEscala T={T} at={K.Q} until={K.Em} texto="5 cm" largo={227} />
-      <BarraEscala T={T} at={K.Em} until={K.Ce} texto="10 cm" largo={184} />
+      <BarraEscala T={T} at={K.Em} until={K.Ce} texto="10 cm" largo={200} />
       <BarraEscala T={T} at={K.Ce} until={K.Es} texto="5 cm" largo={216} />
-      <BarraEscala T={T} at={K.Es} until={K.B} texto="10 cm" largo={160} />
+      <BarraEscala T={T} at={K.Es} until={K.B} texto="10 cm" largo={190} />
       <BarraEscala T={T} at={K.B} until={K.B + 3.2} texto="10 cm" largo={201} />
       <BarraEscala T={T} at={K.B + 3.2} until={K.Ai} texto="10 cm" largo={170} />
       <BarraEscala T={T} at={K.Ai} until={K.Ou} texto="5 cm" largo={260} />
