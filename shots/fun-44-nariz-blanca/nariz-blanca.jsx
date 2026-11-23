@@ -9,7 +9,11 @@ function TechoCueva({ y = 380, seed = 7 }) {
   const g = krng(seed); let d = `M 0 0 L ${KW} 0 L ${KW} ${y}`;
   for (let x = KW; x >= 0; x -= 60) d += ` L ${x} ${y + (g() - 0.5) * 40}`;
   d += ' Z';
-  return <g><path d={d} fill={NB.roca} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+  const gr = krng(seed + 3);
+  return <g><defs><linearGradient id="nbRoca" x1="0" y1="0" x2="0.2" y2="1"><stop offset="0" stopColor="#171c26" /><stop offset="0.7" stopColor={NB.roca} /><stop offset="1" stopColor="#4a5262" /></linearGradient></defs>
+    <path d={d} fill="url(#nbRoca)" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
+    {Array.from({ length: 26 }, (_, i) => { const px = gr() * KW, py = 40 + gr() * (y - 90), rr = 8 + gr() * 18; return <ellipse key={'p' + i} cx={px} cy={py} rx={rr * 1.6} ry={rr} fill="#0e121a" opacity={0.12 + gr() * 0.1} />; })}
+    {Array.from({ length: 14 }, (_, i) => { const px = gr() * KW, py = 60 + gr() * (y - 120); return <path key={'g' + i} d={`M ${px} ${py} l ${30 + gr() * 40} ${8 + gr() * 10} l ${20 + gr() * 30} ${-6 - gr() * 8}`} stroke="#6c7486" strokeWidth={3} fill="none" opacity={0.35} strokeLinecap="round" />; })}
     {Array.from({ length: 7 }, (_, i) => <path key={i} d={`M ${80 + i * 150} ${y - 60} q 30 -30 70 -10`} stroke={NB.roca2} strokeWidth={8} fill="none" strokeLinecap="round" />)}
     {[180, 520, 880].map((x, i) => <path key={'e' + i} d={`M ${x - 22} ${y + 6} L ${x} ${y + 70 + i * 10} L ${x + 22} ${y + 6} Z`} fill={NB.roca2} stroke={KC.ink} strokeWidth={5} />)}
   </g>;
@@ -191,12 +195,12 @@ function NarizBlancaShot() {
         </>)}
       </Escena>
       {/* 7 · la grasa: sano vs. enfermo */}
-      <Escena T={T} a={K.Gr} b={K.E}>
+      <Escena T={T} a={K.Gr} b={K.E - 0.5}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Murcielago T={T} x={130} y={760} s={0.55} hongo={0} ojos={0} seed={8} />
+          <Murcielago T={T} x={128} y={735} s={0.72} hongo={0} ojos={0} seed={8} />
           <FilaGrasa T={T} a={K.Gr + 0.4} dur={3.4} y={870} wakes={[0.25, 0.55, 0.82]} titulo="SANO" />
-          {T > K.Gr + 3.6 && <Murcielago T={T} x={130} y={1010} s={0.55} hongo={1} ojos={0} flaco={kprog(T, K.Gr + 6.0, K.Gr + 7.0)} seed={9} />}
+          {T > K.Gr + 3.6 && <Murcielago T={T} x={128} y={985} s={0.72} hongo={1} ojos={0} flaco={kprog(T, K.Gr + 6.0, K.Gr + 7.0)} seed={9} />}
           {T > K.Gr + 3.6 && <FilaGrasa T={T} a={K.Gr + 4.0} dur={3.9} y={1120} wakes={[0.08, 0.17, 0.26, 0.35, 0.44, 0.53, 0.62, 0.7]} titulo="ENFERMO" enfermo />}
         </>)}
       </Escena>
@@ -204,14 +208,14 @@ function NarizBlancaShot() {
       <Escena T={T} a={K.E} b={K.F}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Murcielago T={T} x={300} y={640} s={0.95} hongo={0} ojos={0} seed={8} />
-          <Murcielago T={T} x={780} y={640} s={0.95} hongo={1} ojos={0} flaco={0.6} seed={9} />
-          <Calendario T={T} at={K.E + 3.2} y={1090} n={16} titulo="sanos: unos 16 días seguidos" />
-          <Calendario T={T} at={K.E + 5.2} y={1340} n={8} titulo="enfermos que murieron: unos 8" />
+          <Murcielago T={T} x={300} y={640} s={1.1} hongo={0} ojos={0} seed={8} />
+          <Murcielago T={T} x={780} y={640} s={1.1} hongo={1} ojos={0} flaco={0.6} seed={9} />
+          <Calendario T={T} at={K.E + 3.2} y={1160} n={16} titulo="sanos: unos 16 días seguidos" />
+          <Calendario T={T} at={K.E + 5.2} y={1400} n={8} titulo="enfermos que murieron: unos 8" />
         </>)}
       </Escena>
       {/* 9 · la primera foto: Nueva York, 2006 */}
-      <Escena T={T} a={K.F} b={K.Mi}>
+      <Escena T={T} a={K.F} b={K.Mi - 0.5}>
         <FondoLunares color={KC.orange} />
         {fsvg(<g transform={`translate(0 ${(1 - kprog(T, K.F, K.F + 0.6, kEase.sale)) * -900}) translate(540 960) scale(1.25) translate(-540 -840) rotate(-3 540 830)`}>
           <rect x={240} y={500} width={600} height={680} rx={10} fill="#fff" stroke={KC.ink} strokeWidth={8} />
@@ -220,7 +224,7 @@ function NarizBlancaShot() {
           <Murcielago T={T} x={540} y={590} s={1.1} hongo={1} seed={1} />
           <text x={540} y={1100} textAnchor="middle" style={{ font:`900 42px ${KF.texto}` }} fill={KC.ink}>Nueva York · feb 2006</text>
         </g>)}
-        <div style={{ position:'absolute', inset:0, background:'#fff', zIndex:30, opacity:kprog(T, K.F + 0.15, K.F + 0.25) * (1 - kprog(T, K.F + 0.25, K.F + 0.8)) }}></div>
+        <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 48%, #fffaf0, rgba(255,250,240,.35) 55%, rgba(255,250,240,0) 80%)', zIndex:30, opacity:0.6 * kprog(T, K.F + 0.15, K.F + 0.25) * (1 - kprog(T, K.F + 0.25, K.F + 0.8)) }}></div>
       </Escena>
       {/* 10 · millones; tres especies cayeron más del 90 % */}
       <Escena T={T} a={K.Mi} b={K.Eu}>
@@ -297,7 +301,7 @@ function NarizBlancaShot() {
       <Chip T={T} at={K.P + 2.0} until={K.D - 0.3} texto="hocico · orejas · alas" x={790} y={620} tam={30} borde={KC.yellow} />
       <Chip T={T} at={K.Gr + 1.6} until={K.Gr + 3.9} texto="sano: la mayor parte, en despertar" x={540} y={650} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.Gr + 6.6} until={K.E - 0.3} texto="enfermo: sin grasa antes de la primavera" x={540} y={1340} tam={28} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="2012" quien="murciélagos silvestres de EE. UU." revista="Reeder et al., PLOS ONE" y={1230} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="2012" quien="murciélagos silvestres de EE. UU." revista="Reeder et al., PLOS ONE" y={420} />
       <Chip T={T} at={K.Mi + 2.6} until={K.Eu - 0.3} texto="más del 90 %" x={540} y={880} tam={44} borde={KC.red} />
       <Chip T={T} at={K.Eu + 1.0} until={K.Mx - 0.3} texto="Europa: sin matanzas" x={810} y={820} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.Eu + 0.4} until={K.Mx - 0.3} x={60} y={470} texto="murciélago europeo con el hongo" tam={26} color={KC.ink} />
