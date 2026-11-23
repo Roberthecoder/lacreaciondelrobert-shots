@@ -272,7 +272,8 @@ function CornezueloShot() {
       <Escena T={T} a={K.F} b={K.Po} zoom={0.06}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <g transform="translate(540 1000) scale(1.25) translate(-540 -1000)">
+          {/* belleza: la flor crece (1.25 → 1.45) y queda al centro; barra de 1 mm 200 → 232 px */}
+          <g transform="translate(540 960) scale(1.45) translate(-600 -857)">
           <Florecita T={T} x={600} y={1060} s={1.5} />
           {(() => { const u = kprog(T, K.F + 0.6, K.F + 2.0, kEase.suave); return <g transform={`translate(${klerp(-40, 560, u)} ${klerp(380, 610, u) + Math.sin(T * 5) * 10 * (1 - u)}) rotate(${70 + u * 20})`}>
             <ellipse rx={34} ry={7} fill="#fff" stroke={KC.ink} strokeWidth={4} /><path d="M -50 0 L -120 0" stroke="#fff" strokeWidth={4} strokeDasharray="8 10" opacity={1 - u} /></g>; })()}
@@ -290,10 +291,12 @@ function CornezueloShot() {
       <Escena T={T} a={ES2} b={K.Cu} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <g transform="translate(540 1000) scale(1.2) translate(-540 -1000)">
+          {/* belleza: la flor crece (1.2 → 1.5) al centro; barra de 1 mm 168 → 210 px */}
+          <g transform="translate(630 990) scale(1.5) translate(-480 -857)">
           <Florecita T={T} x={420} y={1060} s={1.5} ovario={1} gota={kprog(T, ES2, ES2 + 0.6, kEase.sale)} />
           {(() => { const u = kprog(T, ES2 + 0.4, K.Cu - 0.2); const xx = u < 0.45 ? klerp(1100, 560, u / 0.45) : u < 0.65 ? 560 : klerp(560, 1150, (u - 0.65) / 0.35); const yy = u < 0.45 ? klerp(700, 840, u / 0.45) : u < 0.65 ? 840 : klerp(840, 620, (u - 0.65) / 0.35);
-            return <g><Mosca T={T} x={xx} y={yy} rot={u < 0.65 ? -8 : -20} />{u > 0.55 && <circle cx={xx - 6} cy={yy + 34} r={9} fill={CZ.miel} stroke={KC.ink} strokeWidth={2} />}</g>; })()}
+            return <g><Mosca T={T} x={xx} y={yy} rot={u < 0.65 ? -8 : -20} />
+              <g opacity={kprog(u, 0.2, 0.4)}><line x1={xx + 30} y1={yy - 40} x2={xx + 60} y2={yy - 80} stroke="#dfe7ff" strokeWidth={1.6} /><text x={xx + 64} y={yy - 84} style={{ font:`700 20px ${KF.mono}` }} fill="#dfe7ff">INSECTO</text></g>{u > 0.55 && <circle cx={xx - 6} cy={yy + 34} r={9} fill={CZ.miel} stroke={KC.ink} strokeWidth={2} />}</g>; })()}
           </g>
         </>)}
       </Escena>
@@ -325,7 +328,7 @@ function CornezueloShot() {
       <Escena T={T} a={K.SA} b={K.E} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <g transform="translate(400 960) scale(1.3) translate(-400 -960)">
+          <g transform="translate(540 990) scale(1.3) translate(-390 -910)">{/* belleza: la lámina del grabado se centra en x */}
           <rect x={90} y={590} width={600} height={640} rx={18} fill={CZ.papel} stroke={KC.ink} strokeWidth={9} transform="rotate(-2 390 910)" />
           <rect x={120} y={620} width={540} height={580} rx={10} fill="none" stroke="#9c6b3b" strokeWidth={4} strokeDasharray="10 8" transform="rotate(-2 390 910)" />
           <FiguraFuego T={T} x={390} y={1000} s={0.85} />
@@ -337,15 +340,15 @@ function CornezueloShot() {
       <Escena T={T} a={K.E} b={K.Cul} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <MapaEtiopia X={40} Y={820} k={36} T={T} at={K.E + 1.0} />
-          {Array.from({ length: 18 }, (_, i) => { const on = kprog(T, K.E + 1.6 + i * 0.08, K.E + 1.9 + i * 0.08, kEase.rebote); return on > 0 ? <Persona key={i} x={600 + (i % 6) * 84} y={1000 + Math.floor(i / 6) * 135} s={0.85 * on} color={KC.blue} apagada={i < 3 ? kprog(T, K.E + 4.0 + i * 0.25, K.E + 4.4 + i * 0.25) : 0} /> : null; })}
+          <g opacity={kprog(T, K.E, K.E + 0.6)}><MapaEtiopia X={40} Y={820} k={36} T={T} at={K.E + 1.0} /></g>
+          {Array.from({ length: 18 }, (_, i) => { const on = kprog(T, K.E + 1.6 + i * 0.08, K.E + 1.9 + i * 0.08, kEase.rebote); return on > 0 ? <Persona key={i} x={612 + (i % 6) * 74} y={1010 + Math.floor(i / 6) * 128} s={0.78 * on} color={KC.blue} apagada={i < 3 ? kprog(T, K.E + 4.0 + i * 0.25, K.E + 4.4 + i * 0.25) : 0} /> : null; })}
         </>)}
       </Escena>
       {/* 9 · el culpable: avena silvestre con cornezuelo en la cebada */}
       <Escena T={T} a={K.Cul} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <g transform="translate(540 1050) scale(1.3) translate(-540 -1050)">
+          <g transform="translate(540 1190) scale(1.3) translate(-540 -1050)">{/* belleza: el montón baja 140 px al centro */}
           <MontonCebada T={T} x={430} y={1180} s={1.05} avenas={kprog(T, K.Cul + 0.8, K.Cul + 1.4)} />
           {(() => { const u = kprog(T, K.Cul + 1.0, K.Cul + 2.0, kEase.sale), gx = klerp(900, 440, u), gy = klerp(560, 760, u); return <g transform={`translate(${gx} ${gy})`}>
             <circle r={150} fill="rgba(220,245,255,.92)" stroke={KC.ink} strokeWidth={14} />
@@ -400,40 +403,39 @@ function CornezueloShot() {
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.7} until={K.F - 0.3} texto="centeno quemado" x={330} y={440} tam={44} />
-      <Etq T={T} at={K.F + 0.4} until={K.Po - 0.3} x={60} y={420} texto="cornezuelo" tam={44} color={KC.ink} />
-      <Etq T={T} at={K.F + 0.8} until={K.Po - 0.3} x={60} y={480} texto="Claviceps purpurea" it tam={40} color={KC.ink} />
-      <Etq T={T} at={K.F + 1.8} until={K.Po - 0.3} x={30} y={700} texto="flor del centeno" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.F + 2.2} until={K.Po - 0.3} x={30} y={620} texto="espora" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.F + 0.4} until={K.Po - 0.3} x={60} y={300} texto="cornezuelo" tam={44} color={KC.ink} />
+      <Etq T={T} at={K.F + 0.8} until={K.Po - 0.3} x={60} y={360} texto="Claviceps purpurea" it tam={40} color={KC.ink} />
+      <Etq T={T} at={K.F + 1.8} until={K.Po - 0.3} x={60} y={430} texto="flor del centeno" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.F + 2.2} until={K.Po - 0.3} x={60} y={560} texto="espora" tam={28} color={KC.ink} />
       <Etq T={T} at={K.Po + 0.4} until={ES2 - 0.3} x={426} y={559} texto="estigma" lado="izq" tam={30} />
       <Etq T={T} at={K.Po + 0.9} until={K.Es - 0.4} x={498} y={851} texto="camino del polen" lado="izq" tam={28} color={KC.lilac} />
       <Etq T={T} at={K.Po + 1.4} until={ES2 - 0.3} x={602} y={1017} texto="hifa" tam={34} color="#ffe7a0" />
       <Etq T={T} at={K.Po + 2.2} until={ES2 - 0.3} x={810} y={1162} texto="ovario" tam={32} />
-      <Chip T={T} at={ES2 + 0.5} until={K.Cu - 0.3} texto="mielecilla: jarabe de azúcar + esporas" x={500} y={470} tam={32} borde={CZ.miel} />
-      <Etq T={T} at={ES2 + 1.2} until={K.Cu - 0.3} x={60} y={600} texto="insecto" tam={30} color={KC.ink} />
+      <Chip T={T} at={ES2 + 0.5} until={K.Cu - 0.3} texto="mielecilla: jarabe de azúcar + esporas" x={540} y={400} tam={36} borde={CZ.miel} />
       <Etq T={T} at={K.Cu + 1.0} until={K.P - 0.3} x={440} y={830} texto="esclerocio (cornezuelo)" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Cu + 1.3} until={K.P - 0.3} x={270} y={640} texto="grano de centeno" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Cu + 1.8} until={K.P - 0.3} texto="alcaloides: ergotamina, ergometrina…" x={390} y={440} tam={27} borde={KC.lilac} />
+      <Chip T={T} at={K.Cu + 1.8} until={K.P - 0.3} texto="alcaloides: ergotamina, ergometrina…" x={730} y={330} tam={36} borde={KC.lilac} />
       <Chip T={T} at={K.V + 2.4} until={K.SA - 0.3} texto="gangrena" x={850} y={690} tam={40} borde={KC.red} />
       <Chip T={T} at={K.SA + 0.3} until={K.E - 0.3} texto="Edad Media · ergotismo" x={400} y={470} tam={34} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Cul - 0.3} anio="2001" quien="Arsi, Etiopía · 18 casos" revista="Urga et al., Ethiop. J. Health Dev., 2002" x={380} y={530} />
-      <Chip T={T} at={K.E + 2.8} until={K.Cul - 0.3} texto="de 5 a 30 años" x={790} y={830} tam={32} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.5} until={K.Cul - 0.3} anio="2001" quien="Arsi, Etiopía · 18 casos" revista="Urga et al., Ethiop. J. Health Dev., 2002" x={380} y={530} />
+      <Chip T={T} at={K.E + 2.8} until={K.Cul - 0.3} texto="de 5 a 30 años" x={800} y={850} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.E + 4.3} until={K.Cul - 0.3} x={60} y={1330} texto="3 murieron" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Cul + 0.4} until={K.M - 0.3} x={800} y={1100} texto="cebada" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Cul + 2.0} until={K.M - 0.3} x={60} y={470} texto="avena silvestre" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Cul + 2.3} until={K.M - 0.3} x={60} y={520} texto="+ cornezuelo" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Cul + 0.4} until={K.M - 0.3} x={800} y={1240} texto="cebada" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Cul + 2.0} until={K.M - 0.3} x={630} y={700} texto="avena silvestre" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Cul + 2.3} until={K.M - 0.3} x={630} y={752} texto="+ cornezuelo" tam={32} color={KC.ink} />
       <Chip T={T} at={K.M + 1.4} until={K.H - 0.3} texto="migraña · dihidroergotamina" x={540} y={1330} tam={32} borde={KC.cyan} />
-      <Chip T={T} at={K.M + 2.4} until={K.H - 0.3} texto="sangrado después del parto · ergometrina" x={540} y={1415} tam={28} borde={KC.cyan} />
+      <Chip T={T} at={K.M + 2.4} until={K.H - 0.3} texto="sangrado después del parto · ergometrina" x={540} y={1415} tam={36} borde={KC.cyan} />
       <Chip T={T} at={K.H + 0.2} until={K.Mo - 0.3} texto="1938 · Albert Hofmann" x={330} y={470} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.H + 1.2} until={K.Mo - 0.3} x={1040} y={1110} texto="ácido lisérgico → LSD (esquema)" lado="izq" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Mo + 0.6} until={K.C - 0.3} texto="UE: límite de cornezuelo en el grano" x={640} y={470} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Mo + 0.6} until={K.C - 0.3} texto="UE: límite de cornezuelo en el grano" x={540} y={470} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.Mo + 1.4} until={K.C - 0.3} x={609} y={1254} texto="cornezuelo fuera" lado="izq" tam={28} color={KC.ink} />
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="veneno → medicina" x={330} y={440} tam={40} borde={KC.yellow} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.F} texto="2 cm" largo={210} />
-      <BarraEscala T={T} at={K.F} until={K.Po} texto="1 mm" largo={200} />
+      <BarraEscala T={T} at={K.F} until={K.Po} texto="1 mm" largo={232} />
       <BarraEscala T={T} at={K.Po} until={ES2} texto="1 mm" largo={260} />
-      <BarraEscala T={T} at={ES2} until={K.Cu} texto="1 mm" largo={168} />
+      <BarraEscala T={T} at={ES2} until={K.Cu} texto="1 mm" largo={210} />
       <BarraEscala T={T} at={K.Cu} until={K.P} texto="1 cm" largo={160} />
       <BarraEscala T={T} at={K.P} until={K.V} texto="10 cm" largo={296} />
       <BarraEscala T={T} at={K.V} until={K.SA} texto="2 cm" largo={180} />
