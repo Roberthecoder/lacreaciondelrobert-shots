@@ -1,0 +1,1 @@
+- fun-89-neumonia-verano: el cuarto (muro, shoji y tatami) oscurecido conservando su tinte: ya no es una plancha beige clara a media pantalla; el título «¿POR QUÉ EN VERANO?» de la pregunta salía cortado por los dos lados: ahora cabe completo (112→68 px). Auditores: sin láminas · encuadre bien.

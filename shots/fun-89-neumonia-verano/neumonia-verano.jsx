@@ -3,8 +3,8 @@
 // La neumonitis por hipersensibilidad tipo verano de Japón (Trichosporon). Guion y fuentes: guion.md · verificacion.md.
 // El dibujo es esquemático. No es consejo médico.
 
-const NV = { muro:'#f1e3c2', muro2:'#e2cfa6', madera:'#a8743f', madera2:'#7d5229', tatami:'#d9c98a', tatami2:'#c4b170', heri:'#2f3a2a',
-  shoji:'#fbf6e8', cielo:'#8fd8ff', lluvia:'#8796a8', piel:'#f2c29b', pelo:'#2a1d15', camisa:'#4aa3ff', pants:'#2b3b5c',
+const NV = { muro:'#75684c', muro2:'#615640', madera:'#a8743f', madera2:'#7d5229', tatami:'#8c7f54', tatami2:'#766b46', heri:'#2f3a2a',
+  shoji:'#cfc6ad', cielo:'#8fd8ff', lluvia:'#8796a8', piel:'#f2c29b', pelo:'#2a1d15', camisa:'#4aa3ff', pants:'#2b3b5c',
   hongo:'#fffaf0', hongo2:'#e9dcc0', humedad:'#b89d6e', hifa:'rgba(220,240,255,.22)', hifaB:'#cfe6ff', pulmon:'#ff9fb0', pulmon2:'#e8718a' };
 const CUARTO = { x0: 60, x1: 1020, y0: 360, y1: 1220, piso: 960 };
 // Encuadres del pase a mano (estilo cine): cada dibujo se agranda para llenar el cuadro; su barra de escala crece igual.
@@ -354,7 +354,7 @@ function NeumoniaVeranoShot() {
             {Array.from({ length: 10 }, (_, k) => { const a = k * Math.PI / 5 + T * 0.8; return <line key={k} x1={Math.cos(a) * 124} y1={Math.sin(a) * 124} x2={Math.cos(a) * 168} y2={Math.sin(a) * 168} stroke={KC.ink} strokeWidth={12} strokeLinecap="round" />; })}</g>
           <Interrogacion T={T} x={800} y={1360} tam={460} />
           <g transform={`translate(540 ${600 + Math.sin(T * 10) * 3})`} opacity={kprog(T, K.P, K.P + 0.25)}>
-            <text textAnchor="middle" style={{ font:`400 112px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={10} paintOrder="stroke">¿POR QUÉ EN VERANO?</text>
+            <text textAnchor="middle" style={{ font:`400 68px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">¿POR QUÉ EN VERANO?</text>
           </g>
         </>)}
       </Escena>
