@@ -201,11 +201,11 @@ function Fosfenos52() {
       <Escena T={T} a={K.Gancho} b={K.Retina} zoom={0.02}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <g transform={`translate(${klerp(662, OJ.cx, zEntra)} ${klerp(1147, OJ.cy, zEntra)}) scale(${1 + zEntra * 2.2}) translate(-662 -1147)`}>
-            <CaraFrente x={540} y={1130} s={1.7} T={T} manos={1 - kprog(T, K.Nombre + 2.2, K.Nombre + 2.8)} frota={T < K.Nombre + 2.2 ? 1 : 0} gesto={T < K.Nombre ? 'mueca' : 'normal'} />
+          <g transform={`translate(${klerp(662, OJ.cx, zEntra)} ${klerp(1077, OJ.cy, zEntra)}) scale(${1 + zEntra * 2.2}) translate(-662 -1077)`}>
+            <CaraFrente x={540} y={1060} s={1.7} T={T} manos={1 - kprog(T, K.Nombre + 2.2, K.Nombre + 2.8)} frota={T < K.Nombre + 2.2 ? 1 : 0} gesto={T < K.Nombre ? 'mueca' : 'normal'} />
           </g>
-          <BurbujaVision x={540} y={385} rx={360} ry={190} T={T} p={kprog(T, K.Gancho + 0.25, K.Gancho + 1.6)} cola={[540, 740]} o={1 - zEntra} />
-          <TextoSvg x={540} y={655} tam={92} color={KC.yellow} rot={-3} o={kprog(T, K.Gancho + 4.4, K.Gancho + 4.8) * (1 - kprog(T, K.Nombre - 0.3, K.Nombre))}
+          <BurbujaVision x={540} y={385} rx={360} ry={190} T={T} p={kprog(T, K.Gancho + 0.25, K.Gancho + 1.6)} cola={[540, 680]} o={1 - zEntra} />
+          <TextoSvg x={540} y={600} tam={72} color={KC.yellow} rot={-3} o={kprog(T, K.Gancho + 4.4, K.Gancho + 4.8) * (1 - kprog(T, K.Nombre - 0.3, K.Nombre))}
             s={klerp(0.5, 1, kprog(T, K.Gancho + 4.4, K.Gancho + 4.9, kEase.rebote))}>LAS FABRICA TU OJO</TextoSvg>
         </Lienzo>
         <Chip T={T} at={K.Nombre + 0.2} until={K.Retina - 1} texto="fosfenos" x={540} y={655} tam={64} borde={KC.yellow} />
@@ -286,9 +286,9 @@ function Fosfenos52() {
       <Escena T={T} a={K.Ojo} b={K.Destellos} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <CaraFrente x={540} y={1130} s={1.6} T={T} manos={1} frota={1} gesto="mueca" color={KC.pink} />
-          <g transform={`translate(540 575) scale(${klerp(0.5, 2.0, kprog(T, K.Ojo + 0.3, K.Ojo + 0.7, kEase.rebote))})`}><Alerta x={0} y={0} s={1} color={KC.orange} /></g>
-          {T > K.Ojo + 1.2 && <g opacity={kprog(T, K.Ojo + 1.2, K.Ojo + 1.5)} transform="translate(540 1145) scale(1.8)">
+          <CaraFrente x={540} y={1070} s={1.6} T={T} manos={1} frota={1} gesto="mueca" color={KC.pink} />
+          <g transform={`translate(540 535) scale(${klerp(0.5, 2.0, kprog(T, K.Ojo + 0.3, K.Ojo + 0.7, kEase.rebote))})`}><Alerta x={0} y={0} s={1} color={KC.orange} /></g>
+          {T > K.Ojo + 1.2 && <g opacity={kprog(T, K.Ojo + 1.2, K.Ojo + 1.5)} transform="translate(540 1085) scale(1.8)">
             <line x1={-200} y1={-150} x2={200} y2={150} stroke={KC.ink} strokeWidth={46} strokeLinecap="round" />
             <line x1={-200} y1={-150} x2={200} y2={150} stroke={KC.red} strokeWidth={30} strokeLinecap="round" />
           </g>}
@@ -321,13 +321,13 @@ function Fosfenos52() {
       <Escena T={T} a={K.Cierre} b={FIN} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <CaraFrente x={540} y={1130} s={1.7} T={T} manos={0} gesto="sonrie" />
+          <CaraFrente x={540} y={1060} s={1.7} T={T} manos={0} gesto="sonrie" />
           {(() => { const p = kprog(T, K.Cierre + 0.8, K.Cierre + 1.6, kEase.sale);
-            return <g opacity={p} transform="translate(540 1130) scale(1.848) translate(-400 -860)">
+            return <g opacity={p} transform="translate(540 1060) scale(1.848) translate(-400 -860)">
               <path d="M 466 869 Q 560 760 490 720 Q 430 690 380 720" fill="none" stroke={SENAL} strokeWidth={12} strokeDasharray="22 14" strokeDashoffset={-T * 80} strokeLinecap="round" style={{ filter:`drop-shadow(0 0 10px ${SENAL})` }} />
               <circle cx={466} cy={869} r={18} fill={SENAL} stroke={KC.ink} strokeWidth={5} />
             </g>; })()}
-          <BurbujaVision x={540} y={385} rx={360} ry={190} T={T} p={kprog(T, K.Cierre + 0.3, K.Cierre + 1.4)} cola={[540, 740]} />
+          <BurbujaVision x={540} y={385} rx={360} ry={190} T={T} p={kprog(T, K.Cierre + 0.3, K.Cierre + 1.4)} cola={[540, 680]} />
         </Lienzo>
         <Chip T={T} at={K.Cierre + 1.4} until={K.Outro - 0.1} texto="tu ojo hablando sin luz" x={540} y={640} tam={48} borde={KC.yellow} />
       </Escena>
