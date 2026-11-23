@@ -44,7 +44,11 @@ function Letrero({ x, y, w, texto, fondo = RN.verde2, color = '#fff', tam = 64, 
     font:`400 ${tam}px/1.25 ${KF.titulo}`, color, letterSpacing:'.04em', boxShadow:`8px 8px 0 ${KC.ink}` }}>{texto}</div>;
 }
 function Repisa({ x, y, w, color = RN.estante, color2 = RN.estante2 }) {
-  return <g><rect x={x} y={y} width={w} height={34} fill={color} stroke={KC.ink} strokeWidth={7} /><rect x={x} y={y + 34} width={w} height={22} fill={color2} stroke={KC.ink} strokeWidth={6} /></g>;
+  // pase de belleza: el mueble del súper debajo de la repisa (antes la repisa flotaba y el tercio de abajo quedaba vacío)
+  return <g><defs><linearGradient id={`rnMueble${x}`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#3a2a1c" /><stop offset="1" stopColor="#130d08" /></linearGradient></defs>
+    <rect x={x} y={y + 56} width={w} height={760} fill={`url(#rnMueble${x})`} stroke={KC.ink} strokeWidth={5} />
+    {[150, 330].map((dy) => <line key={dy} x1={x} y1={y + 56 + dy} x2={x + w} y2={y + 56 + dy} stroke="#4a3624" strokeWidth={6} />)}
+    <rect x={x} y={y} width={w} height={34} fill={color} stroke={KC.ink} strokeWidth={7} /><rect x={x} y={y + 34} width={w} height={22} fill={color2} stroke={KC.ink} strokeWidth={6} /></g>;
 }
 
 /* ---------- LIBRO DE LINNEO (esquemático) ---------- */
@@ -248,7 +252,7 @@ function ReinoShot() {
       {/* 0 · gancho: el champiñón en el pasillo de verduras */}
       <Escena T={T} a={K.G} b={K.L} zoom={0.05} origen="50% 60%">
         <FondoLunares color={KC.yellow} />
-        <Letrero x={60} y={300} w={560} texto="VERDURAS" tam={80} />
+        <Letrero x={260} y={430} w={560} texto="VERDURAS" tam={80} />
         {zoomR(-270, -380, 1.5, svgR(<>
           <Repisa x={-200} y={1120} w={1480} />
           <Lechuga T={T} x={215} y={1120} s={1.15} />
@@ -261,7 +265,7 @@ function ReinoShot() {
       {/* 1 · Linneo: el libro de las plantas */}
       <Escena T={T} a={K.L} b={K.Pa} zoom={0.06}>
         <FondoLunares color="#f3d9a4" />
-        {svgR(<LibroLinneo T={T} at={K.L + 0.1} x={540} y={900} />)}
+        {svgR(<LibroLinneo T={T} at={K.L + 0.1} x={540} y={1000} />)}
       </Escena>
       {/* 2–3 · parecía planta · pista 1: sin clorofila */}
       <Escena T={T} a={K.Pa} b={K.P2} zoom={0.04} origen="50% 70%">
@@ -286,7 +290,7 @@ function ReinoShot() {
       <Escena T={T} a={K.P2} b={K.P3} zoom={0.05} origen="45% 45%">
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={20} />
-        {zoomR(-316, -262, 1.4, svgR(<>
+        {zoomR(-316, -162, 1.4, svgR(<>
           <Paja T={T} x={600} y={720} q={1 - 0.6 * kprog(T, K.P2 + 1.0, K.P2 + 3.6)} />
           <Hifa T={T} x0={-60} x1={560} y={830} ancho={92} p={kprog(T, K.P2 - 0.3, K.P2 + 0.9, kEase.sale)} />
           {T > K.P2 + 0.7 && Array.from({ length: 40 }, (_, k) => { const ida = k % 2 === 0, u = ((T - K.P2) * 0.5 + k / 40) % 1;
@@ -299,7 +303,7 @@ function ReinoShot() {
       {/* 5 · pista 3: la pared (lechuga vs hongo) */}
       <Escena T={T} a={K.P3} b={K.Pr} zoom={0.04}>
         <FondoMarca patron="oscuro" />
-        {svgR(<>
+        {svgR(<g transform="translate(0 100)">
           <CelulaLechuga T={T} x={275} y={860} w={410} h={560} fibras={kprog(T, K.P3 + 0.2, K.P3 + 1.0)} />
           <g opacity={kprog(T, K.P3 + 0.6, K.P3 + 1.0)}>
             <rect x={565} y={580} width={470} height={560} rx={40} fill="#14202a" stroke="#9fd9c4" strokeWidth={6} />
@@ -307,7 +311,7 @@ function ReinoShot() {
             <line x1={800} y1={760} x2={800} y2={850} stroke={KC.gold2} strokeWidth={4} strokeDasharray="10 8" />
             {[0, 1].map((r) => <CadenaAnillos key={r} x={620} y={920 + r * 90} n={4} s={0.62} paso={118} color={r === 1 ? '#7fd8ff' : KC.gold2} T={T} ondula={0.15} p={kprog(T, K.P3 + 1.0 + r * 0.25, K.P3 + 1.9 + r * 0.25)} />)}
           </g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 6 · re-gancho: ¿dónde guarda su energía? */}
       <Escena T={T} a={K.Pr} b={K.P4} zoom={0.1}>
@@ -318,7 +322,7 @@ function ReinoShot() {
       <Escena T={T} a={K.P4} b={K.W} zoom={0.04}>
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={14} />
-        {svgR(<>
+        {svgR(<g transform="translate(0 100)">
           <Hifa T={T} x0={-60} x1={640} y={640} ancho={130} onda={10} septos={300}>{(yy) => [60, 150, 230, 330, 420, 500, 560, 120, 280, 460].map((gx, i) =>
             <Glucogeno key={i} x={gx} y={yy(gx) + ((i % 3) - 1) * 30} s={0.75} on={kprog(T, K.P4 + 0.6 + i * 0.12, K.P4 + 1.0 + i * 0.12)} />)}</Hifa>
           <Higado x={270} y={1010} s={0.95}>{[[-120, -40], [-40, -70], [60, -60], [130, -60], [-90, 30], [10, 10], [-10, -20]].map(([a, b], i) =>
@@ -326,7 +330,7 @@ function ReinoShot() {
           <Papa x={800} y={1010} s={0.95}>{[[-110, -50], [-20, -70], [80, -40], [-60, 30], [40, 30], [130, 10]].map(([a, b], i) =>
             <GranoAlmidon key={i} x={a} y={b} s={0.9} rot={i * 30} />)}</Papa>
           {(() => { const t = kprog(T, K.P4 + 3.0, K.P4 + 3.4, kEase.sale); return t > 0 && <path d={`M 640 900 L ${klerp(640, 960, t)} ${klerp(900, 1110, t)} M 960 900 L ${klerp(960, 640, t)} ${klerp(900, 1110, t)}`} stroke={KC.red} strokeWidth={16} strokeLinecap="round" opacity=".9" />; })()}
-        </>)}
+        </g>)}
       </Escena>
       {/* 8 · Whittaker 1959: un reino por cómo comen */}
       <Escena T={T} a={K.W} b={K.Ci} zoom={0.04}>
@@ -352,8 +356,8 @@ function ReinoShot() {
       <Escena T={T} a={K.A} b={K.Co} zoom={0.04}>
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={16} />
-        {svgR(<ADNHebra T={T} x={140} y={500} largo={800} alto={100} vueltas={3} resalta={(u) => u < kprog(T, K.A + 0.2, K.A + 2.0)} />)}
-        {zoomR(-108, -120, 1.2, svgR(<>
+        {svgR(<ADNHebra T={T} x={140} y={690} largo={800} alto={100} vueltas={3} resalta={(u) => u < kprog(T, K.A + 0.2, K.A + 2.0)} />)}
+        {zoomR(-108, -20, 1.2, svgR(<>
           {(() => { const p = kprog(T, K.A + 1.4, K.A + 2.6, kEase.sale), q = kprog(T, K.A + 2.4, K.A + 3.4, kEase.sale);
             return <g strokeLinecap="round" fill="none">
               <path d={`M 540 1170 L 540 ${klerp(1170, 1060, p)}`} stroke={KC.texto} strokeWidth={12} />
@@ -399,19 +403,19 @@ function ReinoShot() {
       <Capitulo T={T} hasta={K.W - 0.1} caps={[{ at:K.P1, titulo:'Pista: clorofila' }, { at:K.P2, titulo:'Pista: cómo come' }, { at:K.P3, titulo:'Pista: la pared' }, { at:K.P4, titulo:'Pista: la reserva' }]} />
       <Chip T={T} at={K.P1 + 1.2} until={K.P2 - 0.2} texto="0 clorofila" x={235} y={745} tam={44} borde={KC.red} />
       <Etq T={T} at={K.P1 + 1.5} until={K.P2 - 0.2} x={730} y={660} texto="fotosíntesis" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.P2 + 0.6} until={K.P3 - 0.2} texto="1 · digiere afuera (enzimas)" x={500} y={590} tam={38} borde={KC.yellow} />
-      <Chip T={T} at={K.P2 + 2.1} until={K.P3 - 0.2} texto="2 · absorbe" x={300} y={1150} tam={40} borde={KC.mint} />
-      <Etq T={T} at={K.P2 + 0.5} until={K.P3 - 0.2} x={60} y={1030} texto="hifa" tam={36} color={KC.texto} />
-      <Etq T={T} at={K.P2 + 1.0} until={K.P3 - 0.2} x={640} y={1175} texto="paja (composta)" tam={32} color={RN.paja} />
+      <Chip T={T} at={K.P2 + 0.6} until={K.P3 - 0.2} texto="1 · digiere afuera (enzimas)" x={500} y={690} tam={38} borde={KC.yellow} />
+      <Chip T={T} at={K.P2 + 2.1} until={K.P3 - 0.2} texto="2 · absorbe" x={300} y={1250} tam={40} borde={KC.mint} />
+      <Etq T={T} at={K.P2 + 0.5} until={K.P3 - 0.2} x={60} y={1130} texto="hifa" tam={36} color={KC.texto} />
+      <Etq T={T} at={K.P2 + 1.0} until={K.P3 - 0.2} x={640} y={1275} texto="paja (composta)" tam={32} color={RN.paja} />
       <Chip T={T} at={K.P3 + 0.3} until={K.Pr - 0.2} texto="LECHUGA" x={275} y={500} tam={36} borde={RN.verde} mono />
       <Chip T={T} at={K.P3 + 0.7} until={K.Pr - 0.2} texto="HONGO" x={800} y={500} tam={36} borde={KC.gold2} mono />
-      <Etq T={T} at={K.P3 + 0.9} until={K.Pr - 0.2} x={95} y={1170} texto="pared de celulosa" tam={28} color={'#b7f28a'} />
-      <Chip T={T} at={K.P3 + 2.0} until={K.Pr - 0.2} texto="quitina (+ glucanos)" x={800} y={1085} tam={30} borde={KC.gold2} />
-      <MitoTachado T={T} at={K.P3 + 1.1} tacharEn={K.P3 + 1.8} until={K.Pr - 0.2} texto="celulosa" x={800} y={810} tam={32} />
+      <Etq T={T} at={K.P3 + 0.9} until={K.Pr - 0.2} x={95} y={1270} texto="pared de celulosa" tam={28} color={'#b7f28a'} />
+      <Chip T={T} at={K.P3 + 2.0} until={K.Pr - 0.2} texto="quitina (+ glucanos)" x={800} y={1185} tam={30} borde={KC.gold2} />
+      <MitoTachado T={T} at={K.P3 + 1.1} tacharEn={K.P3 + 1.8} until={K.Pr - 0.2} texto="celulosa" x={800} y={910} tam={32} />
       <Chip T={T} at={K.P4 + 0.3} until={K.W - 0.2} texto="glucógeno = como los animales" x={360} y={460} tam={34} borde={'#ff9ec2'} />
-      <Etq T={T} at={K.P4 + 0.8} until={K.W - 0.2} x={60} y={740} texto="hifa con glucógeno" tam={26} color={'#ff9ec2'} />
-      <Etq T={T} at={K.P4 + 1.7} until={K.W - 0.2} x={130} y={1150} texto="tu hígado" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.P4 + 2.5} until={K.W - 0.2} x={630} y={1150} texto="almidón (papa)" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.P4 + 0.8} until={K.W - 0.2} x={60} y={840} texto="hifa con glucógeno" tam={26} color={'#ff9ec2'} />
+      <Etq T={T} at={K.P4 + 1.7} until={K.W - 0.2} x={130} y={1250} texto="tu hígado" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.P4 + 2.5} until={K.W - 0.2} x={630} y={1250} texto="almidón (papa)" tam={32} color={KC.texto} />
       <TarjetaEstudio T={T} at={K.W + 0.2} until={K.Ci - 0.2} anio="1959" quien="Robert H. Whittaker · ecólogo" revista="Quarterly Review of Biology · 4 reinos" x={540} y={590} />
       {[['1753 · Linneo', 'plantas'], ['Haeckel', 'Protista'], ['1956 · Copeland', 'Protoctista'], ['1959 · Whittaker', 'Fungi']].map(([a, b], i) =>
         <div key={i} style={{ position:'absolute', left:20 + i * 262, top:318, width:250, zIndex:42, textAlign:'center', opacity:kprog(T, K.W + 0.6 + i * 0.25, K.W + 0.9 + i * 0.25) * (1 - kprog(T, K.Ci - 0.3, K.Ci)),
@@ -422,11 +426,11 @@ function ReinoShot() {
       <TarjetaEstudio T={T} at={K.Ci + 0.1} until={K.A - 0.2} anio="1969" quien="R. H. Whittaker · Universidad Cornell" revista="Science 163: 150–160 · cinco reinos" x={540} y={520} />
       <Etq T={T} at={K.Ci + 3.2} until={K.A - 0.2} x={630} y={1215} texto="libros de texto" tam={34} color={KC.ink} />
       <Etq T={T} at={K.Ci + 3.5} until={K.A - 0.2} x={630} y={1265} texto="años 80 y 90" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.A + 0.3} until={K.Co - 0.2} x={140} y={610} texto="leyendo ADN…" tam={32} color={KC.lilac} />
-      <Etq T={T} at={K.A + 2.0} until={K.Co - 0.2} x={30} y={715} texto="plantas" tam={34} color={RN.verde} />
-      <Etq T={T} at={K.A + 3.0} until={K.Co - 0.2} x={440} y={700} texto="hongos" tam={34} color={KC.gold2} />
-      <Etq T={T} at={K.A + 3.2} until={K.Co - 0.2} x={745} y={700} texto="animales" tam={34} color={KC.gold2} />
-      <Etq T={T} at={K.A + 3.5} until={K.Co - 0.2} x={720} y={1115} texto="opistocontos" tam={28} color={KC.gold2} />
+      <Etq T={T} at={K.A + 0.3} until={K.Co - 0.2} x={140} y={600} texto="leyendo ADN…" tam={32} color={KC.lilac} />
+      <Etq T={T} at={K.A + 2.0} until={K.Co - 0.2} x={30} y={830} texto="plantas" tam={34} color={RN.verde} />
+      <Etq T={T} at={K.A + 3.0} until={K.Co - 0.2} x={440} y={825} texto="hongos" tam={34} color={KC.gold2} />
+      <Etq T={T} at={K.A + 3.2} until={K.Co - 0.2} x={745} y={825} texto="animales" tam={34} color={KC.gold2} />
+      <Etq T={T} at={K.A + 3.5} until={K.Co - 0.2} x={720} y={1215} texto="opistocontos" tam={28} color={KC.gold2} />
       <Chip T={T} at={K.Co + 0.3} until={K.C - 0.2} texto="hasta 2011" x={540} y={420} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.Co + 2.0} until={K.C - 0.2} texto="Melbourne, 2011" x={540} y={1445} tam={36} borde={KC.gold2} mono />
       {[['sin clorofila', 0], ['absorbe', 1], ['quitina', 2], ['glucógeno', 3]].map(([t, i]) =>
