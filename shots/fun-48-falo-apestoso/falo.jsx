@@ -306,13 +306,13 @@ function FaloShot() {
         <FondoLunares color={KC.mint} />
         {fsvg(<>
           <PisoBosque y={1400} seed={15} />
-          <Falo T={T} id="si" x={110} y={1410} s={0.9} h={420} />
+          <Falo T={T} id="si" x={170} y={1410} s={1.25} h={420} />
           {(() => { const u = kprog(T, K.Si, K.He, (p) => p); const mx = klerp(-80, 1160, u), my = 640 + Math.sin(u * 9) * 60;
             const gotas = [];
             for (let i = 0; i < 9; i++) { const t0 = K.Si + 0.3 + i * 0.42; if (T < t0) break; const ux = kprog(T, K.Si, K.He, (p) => p) ; const gx = klerp(-80, 1160, kprog(t0, K.Si, K.He, (p) => p)); const f = kprog(T, t0, t0 + 0.6);
               gotas.push(<g key={i}><circle cx={gx} cy={klerp(660, 1390, f * f)} r={11} fill={FL.gleba} stroke={KC.ink} strokeWidth={3} />
                 {f >= 1 && <ellipse cx={gx} cy={1396} rx={18} ry={7} fill={FL.gleba} stroke={KC.ink} strokeWidth={3} />}</g>); }
-            return <>{gotas}<Mosca T={T} x={mx} y={my} s={1.6} ang={0} seed={6} /></>; })()}
+            return <>{gotas}<Mosca T={T} x={mx} y={my} s={2.2} ang={0} seed={6} /></>; })()}
         </>)}
       </Escena>
       <Lupa T={T} at={K.Si + 2.0} until={K.He - 0.3} x={480} y={1010} r={250} fx={() => klerp(-80, 1160, kprog(T, K.Si, K.He, (p) => p))} fy={680} interior={(t, r) => <PataCerca T={t} r={r} />} etiqueta="DE CERCA · pata de mosca" tinte={KC.yellow} />
@@ -386,7 +386,7 @@ function FaloShot() {
       <BarraEscala T={T} at={K.Az} until={K.P} texto="1 nm" largo={400} />
       <BarraEscala T={T} at={K.P} until={K.E} texto="10 cm" largo={320} />
       <BarraEscala T={T} at={K.E} until={K.Si} texto="5 cm" largo={180} />
-      <BarraEscala T={T} at={K.Si} until={K.He} texto="10 cm" largo={180} />
+      <BarraEscala T={T} at={K.Si} until={K.He} texto="10 cm" largo={250} />{/* belleza: falo 0.9 → 1.25 */}
       <BarraEscala T={T} at={K.L} until={K.Mx} texto="10 cm" largo={290} />
       <BarraEscala T={T} at={K.Mx} until={K.C} texto="500 km" largo={93} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={420} />
