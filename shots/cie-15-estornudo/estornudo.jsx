@@ -247,8 +247,8 @@ function Estornudo() {
           <PlumaSombra T={T} t0={K.Sombras + 2.3} x={sbx} y={sby} ang={3} alcance={580} n={22} seed={11} dur={1.8} />
         </Lienzo>
         <Chip T={T} at={K.Sombras + 0.3} until={K.Medida - 0.1} texto="técnica de sombras" x={540} y={440} tam={46} borde={ES_SIL} />
-        <Etq T={T} at={K.Sombras + 0.6} until={K.Sombras + 2.0} x={640} y={1200} texto="aire de la nariz" lado="der" color={KC.ink} />
-        <Etq T={T} at={K.Sombras + 3.0} until={K.Medida - 0.1} x={650} y={840} texto="aire de la boca" lado="der" color={KC.ink} />
+        <Etq T={T} at={K.Sombras + 0.6} until={K.Sombras + 2.0} x={570} y={1200} texto="aire de la nariz" lado="der" color={KC.ink} />
+        <Etq T={T} at={K.Sombras + 3.0} until={K.Medida - 0.1} x={580} y={840} texto="aire de la boca" lado="der" color={KC.ink} />
       </Escena>
       {/* 5 · la medida: se ve hasta 60 cm · lo más rápido 4.5 m/s */}
       <Escena T={T} a={K.Medida} b={K.Tos} fondo={ES_GRIS} zoom={0.03}>
@@ -315,7 +315,7 @@ function Estornudo() {
           <PlumaSombra T={T} t0={K.Nariz + 0.2} x={snx} y={sny} ang={25} alcance={500} n={14} seed={33} modo="tranquilo" />
           <g transform={`translate(0 ${Math.sin(T * 2) * 4})`}><CabezaPerfil x={sx} y={sy} s={ss} piel={ES_SIL} pelo={ES_SIL2} ojo={0} /></g>
         </Lienzo>
-        <Etq T={T} at={K.Nariz + 0.8} until={K.Cierre - 0.1} x={600} y={820} texto="respiración tranquila" lado="der" color={KC.ink} tam={30} />
+        <Etq T={T} at={K.Nariz + 0.8} until={K.Cierre - 0.1} x={520} y={820} texto="respiración tranquila" lado="der" color={KC.ink} tam={30} />
         <NumeroGigante T={T} at={K.Nariz + 2.6} until={K.Cierre - 0.15} valor={1.4} desde={1.4} dec={1} dur={0.8} prefijo="máx. ≈ " sufijo=" m/s" x={540} y={430} tam={120} color={KC.mint} />
       </Escena>
       {/* 11 · cierre: la misma cara del inicio, ahora estornuda en el codo */}
