@@ -3,6 +3,15 @@
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const P_ROJO = '#c0392b', CAB = '#d7263d', MADERA = '#e8c48a', TIRA = '#6b3a1e', P_BLANCO = '#fbf6dc', VERDOSO = '#b6ff9e';
 
+// Sombreado de volumen (pase de belleza): capa de luz arriba-izquierda y sombra abajo-derecha sobre cualquier color.
+function DefsCer() {
+  return <defs>
+    <radialGradient id="crVol" cx="35%" cy="28%" r="80%"><stop offset="0" stopColor="#fff" stopOpacity="0.45" /><stop offset="0.45" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.35" /></radialGradient>
+    <linearGradient id="crLado" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#fff" stopOpacity="0.3" /><stop offset="0.5" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.3" /></linearGradient>
+    <linearGradient id="crCaja" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stopColor="#fff" stopOpacity="0.28" /><stop offset="0.5" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.3" /></linearGradient>
+    <linearGradient id="crPiel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#f8cdb0" /><stop offset="0.55" stopColor="#eeae88" /><stop offset="1" stopColor="#c47e5e" /></linearGradient>
+  </defs>;
+}
 // Llama de cerillo (gota naranja con centro amarillo y base azul). f = 0..1 tamaño.
 function Flama({ T, x, y, s = 1, f = 1 }) {
   if (f <= 0) return null;
@@ -16,12 +25,15 @@ function Flama({ T, x, y, s = 1, f = 1 }) {
 // Cerillo con el origen en la cabeza; el palito sale hacia +y (rot en grados). quema = 0..1 (madera que se oscurece).
 function Cerillo({ T, x, y, rot = 0, s = 1, cabeza = CAB, flama = 0, quema = 0, mano = true }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
+    <DefsCer />
     <rect x={-13} y={0} width={26} height={330} rx={6} fill={MADERA} stroke={KC.ink} strokeWidth={6} />
+    <rect x={-13} y={0} width={26} height={330} rx={6} fill="url(#crLado)" />
     {quema > 0 && <rect x={-13} y={0} width={26} height={90 * quema} rx={6} fill="#3a2414" />}
     <ellipse cx={0} cy={-6} rx={28} ry={38} fill={quema > 0.3 ? '#2b1d14' : cabeza} stroke={KC.ink} strokeWidth={6} />
+    <ellipse cx={0} cy={-6} rx={25} ry={35} fill="url(#crVol)" />
     <ellipse cx={-9} cy={-20} rx={8} ry={12} fill="#fff" opacity={0.35} />
     {mano && <g transform="translate(0 300)">
-      <path d="M -60 -30 Q -70 40 -20 70 Q 40 90 70 40 Q 85 0 60 -40 Q 30 -60 -10 -55 Q -50 -52 -60 -30 Z" fill="#f1b48f" stroke={KC.ink} strokeWidth={7} />
+      <path d="M -60 -30 Q -70 40 -20 70 Q 40 90 70 40 Q 85 0 60 -40 Q 30 -60 -10 -55 Q -50 -52 -60 -30 Z" fill="url(#crPiel)" stroke="#ffd9c2" strokeOpacity={0.8} strokeWidth={5} />
       <path d="M -20 -50 Q -60 -40 -50 -5" fill="none" stroke={KC.ink} strokeWidth={5} />
       {[-20, 5, 30].map((d, i) => <path key={i} d={`M ${-40} ${d} Q 10 ${d + 6} 55 ${d - 4}`} fill="none" stroke="#c97f5c" strokeWidth={5} />)}
     </g>}
@@ -32,11 +44,16 @@ function Cerillo({ T, x, y, rot = 0, s = 1, cabeza = CAB, flama = 0, quema = 0, 
 function Caja({ x, y, s = 1 }) {
   const R = krng(11);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -300 -130 L 300 -130 L 300 130 L -300 130 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={9} />
+    <DefsCer />
+    <path d="M -286 -112 L 314 -112 L 314 244 L -286 244 Z" fill="rgba(0,0,0,.4)" />
+    <path d="M -300 -130 L 300 -130 L 300 130 L -300 130 Z" fill="#f2c94c" stroke={KC.ink} strokeWidth={9} />
+    <path d="M -300 -130 L 300 -130 L 300 130 L -300 130 Z" fill="url(#crCaja)" />
     <rect x={-250} y={-95} width={500} height={190} rx={18} fill={KC.red} stroke={KC.ink} strokeWidth={7} />
+    <rect x={-250} y={-95} width={500} height={190} rx={18} fill="url(#crCaja)" />
     <text x={0} y={-10} textAnchor="middle" style={{ font:`400 78px ${KF.titulo}` }} fill={KC.paper} stroke={KC.ink} strokeWidth={3} paintOrder="stroke">CERILLOS</text>
     <text x={0} y={52} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.paper}>de seguridad</text>
     <path d="M -300 130 L 300 130 L 300 225 L -300 225 Z" fill={TIRA} stroke={KC.ink} strokeWidth={9} />
+    <path d="M -300 130 L 300 130 L 300 225 L -300 225 Z" fill="url(#crCaja)" />
     {Array.from({ length: 70 }, (_, i) => <circle key={i} cx={-290 + R() * 580} cy={140 + R() * 76} r={2 + R() * 4} fill={i % 3 ? '#8e4a2a' : '#c0392b'} />)}
   </g>;
 }
@@ -81,8 +98,9 @@ function Fabrica({ x, y, s = 1, T }) {
 // Cabeza de perfil (esquemática) con el hueso de la mandíbula visible; mal = 0..1 (zona del hueso que se apaga, sin nada gráfico).
 function Perfil({ x, y, s = 1, mal = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -150 -260 Q 40 -330 150 -200 Q 190 -140 175 -80 L 215 -10 Q 222 8 196 14 L 186 40 Q 196 60 180 72 Q 192 96 170 116 Q 150 170 70 180 L 20 180 L 0 290 L -170 290 L -150 120 Q -230 0 -210 -140 Q -200 -220 -150 -260 Z" fill="#f1b48f" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
-    <circle cx={110} cy={-120} r={12} fill={KC.ink} />
+    <DefsCer />
+    <path d="M -150 -260 Q 40 -330 150 -200 Q 190 -140 175 -80 L 215 -10 Q 222 8 196 14 L 186 40 Q 196 60 180 72 Q 192 96 170 116 Q 150 170 70 180 L 20 180 L 0 290 L -170 290 L -150 120 Q -230 0 -210 -140 Q -200 -220 -150 -260 Z" fill="url(#crPiel)" stroke="#ffd9c2" strokeOpacity={0.8} strokeWidth={6} strokeLinejoin="round" />
+    <circle cx={110} cy={-120} r={12} fill="#0b1020" />
     <path d="M -110 10 Q -60 160 60 160 Q 130 158 160 100" fill="none" stroke="#fffaf0" strokeWidth={30} strokeLinecap="round" opacity={0.95} />
     <path d="M -110 10 Q -60 160 60 160 Q 130 158 160 100" fill="none" stroke={KC.ink} strokeWidth={4} strokeDasharray="10 8" />
     {mal > 0 && <ellipse cx={20} cy={150} rx={70 * mal} ry={22 * mal} fill="#6d6d6d" opacity={0.85} />}
@@ -154,7 +172,10 @@ function Cerillo32() {
         <SvgCapa>
           <DZ k={1.3} de={[540, 820]} a={[540, 800]}>
           <rect x={480} y={1060} width={120} height={500} rx={20} fill={MADERA} stroke={KC.ink} strokeWidth={9} />
+          <rect x={480} y={1060} width={120} height={500} rx={20} fill="url(#crLado)" />
+          <DefsCer />
           <ellipse cx={540} cy={820} rx={230} ry={300} fill={CAB} stroke={KC.ink} strokeWidth={12} />
+          <ellipse cx={540} cy={820} rx={222} ry={292} fill="url(#crVol)" opacity={1 - kprog(T, K.Ca + 0.3, K.Ca + 1.0)} />
           <clipPath id="cabclip"><ellipse cx={540} cy={820} rx={222} ry={292} /></clipPath>
           <g clipPath="url(#cabclip)" opacity={kprog(T, K.Ca + 0.3, K.Ca + 1.0)}>
             <rect x={300} y={500} width={480} height={640} fill="#7a1420" />
@@ -173,7 +194,7 @@ function Cerillo32() {
         <Ambiente T={T} n={30} seed={9} color="rgba(255,190,120,.25)" />
         <SvgCapa>
           {/* cámara: muy cerca de la tira mientras se habla de ella; se abre cuando llega la cabeza del cerillo */}
-          <g transform={`translate(540 ${klerp(960, 1112, kprog(T, K.Fr - 0.6, K.Fr + 0.3, kEase.suave))}) scale(${klerp(1.7, 1.2, kprog(T, K.Fr - 0.6, K.Fr + 0.3, kEase.suave))}) translate(-540 -1010)`}>
+          <g transform={`translate(540 ${klerp(960, 1200, kprog(T, K.Fr - 0.6, K.Fr + 0.3, kEase.suave))}) scale(${klerp(1.7, 1.2, kprog(T, K.Fr - 0.6, K.Fr + 0.3, kEase.suave))}) translate(-540 -1010)`}>
           <rect x={0} y={810} width={KW} height={400} fill="#593c24" opacity={0.9} />
           <rect x={0} y={810} width={KW} height={14} fill="#6e5438" />
           {vidrios.map(([x, y, r, k], i) => <path key={i} d={`M ${-k} ${k * 0.6} L ${k * 0.2} ${-k} L ${k} ${k * 0.4} Z`} transform={`translate(${x} ${y}) rotate(${r})`} fill="rgba(200,240,255,.75)" stroke="#e8fbff" strokeWidth={3} />)}
@@ -185,6 +206,7 @@ function Cerillo32() {
             return <Mol key={i} tipo="o2" x={klerp(tx + (i % 2 ? 160 : -160), tx + (i % 2 ? 40 : -40), p)} y={klerp(380 + i * 30, 730, p)} s={0.6} rot={T * 40 + i * 30} o={1 - kprog(T, K.Ch + 1.4, K.Ch + 1.8)} />; })}
           {T > K.Fr - 0.3 && <g transform={`translate(${cabX} 560)`}>
             <ellipse cx={0} cy={0} rx={260} ry={250} fill={CAB} stroke={KC.ink} strokeWidth={10} />
+            <DefsCer /><ellipse cx={0} cy={0} rx={252} ry={242} fill="url(#crVol)" />
             {cristales.slice(0, 7).map(([dx, dy, r], i) => <rect key={i} x={dx * 0.7 - 20} y={dy * 0.5 - 20} width={40} height={40} rx={5} transform={`rotate(${r} ${dx * 0.7} ${dy * 0.5})`} fill="#f4f8ff" stroke={KC.ink} strokeWidth={3} />)}
             {azufres.slice(0, 6).map(([dx, dy], i) => <circle key={i} cx={dx * 0.7} cy={dy * 0.5 + 30} r={16} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} />)}
             <rect x={-260} y={200} width={520} height={60} fill={`rgba(255,${klerp(200, 90, calor)},40,${0.6 * calor})`} />
@@ -281,9 +303,9 @@ function Cerillo32() {
       <Chip T={T} at={K.Ca + 2.5} until={K.Ti - 0.3} texto="azufre · S" x={540} y={1610} tam={40} borde={KC.yellow} />
       <Chip T={T} at={K.Ti + 0.2} until={K.Fr - 0.2} texto="fósforo rojo + pegamento + vidrio" x={540} y={1450} tam={36} borde={P_ROJO} />
       <Etq T={T} at={K.Ti + 0.5} until={K.Fr - 0.2} x={40} y={540} texto="AL MICROSCOPIO · la tira" lado="der" tam={32} color={KC.texto} />
-      <Chip T={T} at={K.Fr + 0.6} until={K.Ch - 0.2} texto="fricción = calor" x={540} y={1450} tam={44} borde={KC.orange} />
-      <Chip T={T} at={K.Fr + 2.4} until={K.Ch - 0.2} texto="una pizca: rojo → blanco (P₄)" x={540} y={1555} tam={36} borde={P_BLANCO} />
-      <Chip T={T} at={K.Ch + 0.3} until={K.Ll - 0.2} texto="fósforo blanco + aire = chispa" x={540} y={1450} tam={38} borde={KC.yellow} />
+      <Chip T={T} at={K.Fr + 0.6} until={K.Ch - 0.2} texto="fricción = calor" x={540} y={270} tam={44} borde={KC.orange} />
+      <Chip T={T} at={K.Fr + 2.4} until={K.Ch - 0.2} texto="una pizca: rojo → blanco (P₄)" x={540} y={1520} tam={36} borde={P_BLANCO} />
+      <Chip T={T} at={K.Ch + 0.3} until={K.Ll - 0.2} texto="fósforo blanco + aire = chispa" x={540} y={1520} tam={38} borde={KC.yellow} />
       <Chip T={T} at={K.Ll + 0.3} until={K.Ll + 2.1} texto="clorato → oxígeno" x={540} y={1500} tam={44} borde="#bfe8ff" />
       <Chip T={T} at={K.Ll + 2.2} until={K.Pr - 0.2} texto="arde el azufre → la madera" x={540} y={1500} tam={40} borde={KC.orange} />
       <Chip T={T} at={K.Pr + 0.4} until={K.Hu - 0.2} texto="antes: fósforo blanco en la cabeza" x={540} y={1500} tam={34} borde={P_BLANCO} />
