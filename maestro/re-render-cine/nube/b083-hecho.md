@@ -1,1 +1,2 @@
 - ia-34-herculano: Premio (columnas de texto bajadas y agrandadas al centro, 00,000 y chips recolocados abajo sin encimarse), Matiz (mismas columnas en el mismo lugar que Premio para que la disolvencia no muestre dos hojas; tarjetas IA/papirólogos recolocadas).
+- fun-95-cigarra: Aleteo (cuadrícula «23 de 25» y sus textos bajados: ya no se encima con el logo). Lo demás ya cumplía.
