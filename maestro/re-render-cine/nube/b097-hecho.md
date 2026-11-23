@@ -1,0 +1,1 @@
+- amb-40-humo-lena: Cabello: el cabello, la partícula PM2.5 y sus rótulos bajan 60 px al centro (el auditor la marcaba ARRIBA); el resto de las escenas ya cumplía (casa a todo lo ancho, pulmones, globo, mapa y estufa Patsari centrados). Auditores: sin láminas, encuadre bien.
