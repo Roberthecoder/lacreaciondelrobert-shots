@@ -56,7 +56,11 @@ function MataSeca({ x, y, s = 1, T = 0, seed = 1 }) {
 function Tazon({ x, y, s = 1, nivel = 0, blanco = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {nivel > 0 && <ellipse cx={0} cy={-6 - nivel * 40} rx={250} ry={40} fill={mixHex('#c79a5a', ML.crema, blanco)} stroke={KC.ink} strokeWidth={5} />}
-    <path d="M -280 0 Q -270 200 0 210 Q 270 200 280 0 Z" fill="#ff8a6b" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    {/* belleza: tazón de barro con volumen (antes: coral plano chillón) */}
+    <defs><linearGradient id="mlTazon" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#e9906f" /><stop offset=".5" stopColor="#c4664a" /><stop offset="1" stopColor="#6e3424" /></linearGradient></defs>
+    <ellipse cx={10} cy={222} rx={230} ry={20} fill="#000" opacity=".35" />
+    <path d="M -280 0 Q -270 200 0 210 Q 270 200 280 0 Z" fill="url(#mlTazon)" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    <path d="M -240 30 Q -225 150 -110 188" stroke="#ffd0b8" strokeWidth={8} fill="none" strokeLinecap="round" opacity=".35" />
     <ellipse cx={0} cy={0} rx={280} ry={34} fill="none" stroke={KC.ink} strokeWidth={8} />
   </g>;
 }
@@ -229,11 +233,12 @@ function MicelioShot() {
       {/* 3 · al molde, y se aprieta */}
       <Escena T={T} a={K.M} b={K.H} zoom={0.12} origen="50% 55%">
         <FondoLunares color={KC.orange} />
-        {fsvg(<g transform="translate(540 1210) scale(1.15) translate(-540 -1100)">
+        {/* belleza: moldes más juntos y más grandes (×1.22 en vez de ×1.15) para que llenen el cuadro */}
+        {fsvg(<g transform="translate(540 1190) scale(1.22) translate(-540 -1100)">
           <rect x={-100} y={1120} width={KW + 200} height={900} fill="#42342b" stroke={KC.ink} strokeWidth={8} />
-          <Molde x={210} y={1100} tipo="L" lleno={kprog(T, K.M + 0.2, K.M + 1.0)} prensa={kprog(T, K.M + 1.2, K.M + 1.6) * (1 - kprog(T, K.M + 2.0, K.M + 2.4))} />
+          <Molde x={272} y={1100} tipo="L" lleno={kprog(T, K.M + 0.2, K.M + 1.0)} prensa={kprog(T, K.M + 1.2, K.M + 1.6) * (1 - kprog(T, K.M + 2.0, K.M + 2.4))} />
           <Molde x={540} y={1100} tipo="ladrillo" lleno={kprog(T, K.M + 0.4, K.M + 1.2)} prensa={kprog(T, K.M + 1.4, K.M + 1.8) * (1 - kprog(T, K.M + 2.1, K.M + 2.5))} />
-          <Molde x={860} y={1100} tipo="charola" lleno={kprog(T, K.M + 0.6, K.M + 1.4)} prensa={kprog(T, K.M + 1.6, K.M + 2.0) * (1 - kprog(T, K.M + 2.2, K.M + 2.6))} />
+          <Molde x={815} y={1100} tipo="charola" lleno={kprog(T, K.M + 0.6, K.M + 1.4)} prensa={kprog(T, K.M + 1.6, K.M + 2.0) * (1 - kprog(T, K.M + 2.2, K.M + 2.6))} />
         </g>)}
       </Escena>
       {/* 4 · al microscopio: las hifas amarran los pedacitos */}
@@ -374,7 +379,7 @@ function MicelioShot() {
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.R} texto="10 cm" largo={255} />
       <BarraEscala T={T} at={K.R} until={K.M} texto="10 cm" largo={237} />
-      <BarraEscala T={T} at={K.M} until={K.H} texto="10 cm" largo={172} />
+      <BarraEscala T={T} at={K.M} until={K.H} texto="10 cm" largo={182} />
       <BarraEscala T={T} at={K.H} until={K.B} texto="50 µm" largo={173} />
       <BarraEscala T={T} at={K.B} until={K.O} texto="10 cm" largo={390} />
       <BarraEscala T={T} at={K.O} until={K.P} texto="10 cm" largo={225} />

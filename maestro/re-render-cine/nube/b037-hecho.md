@@ -1,2 +1,4 @@
 - fun-46-estatinas: Hígado: el cuerpo azul claro plano pasa a oscuro con degradado de volumen, cara sombreada y sombra en el suelo (el hígado queda como punto de atención); Arroz→microscopio: los pinceles de Penicillium crecen más pronto, sin el segundo casi vacío al entrar. Auditores: sin láminas · encuadre bien.
 - bio-17-hepatitis-b: Bebé (gancho, bebé y cierre): la cobija menta chillona pasa a verde agua apagado con degradado y pliegues, pañal y cara con volumen, sombra en el suelo; Virus/Plasma: la silueta blanca plana que deslumbraba pasa a gris azulado con degradado y sombra (el hígado rojo queda como punto de atención). Auditores: sin láminas · encuadre bien.
+- fun-47-micelio-ladrillo: Molde: los tres moldes más juntos y más grandes (×1.22 en vez de ×1.15), barra de 10 cm recalculada (172 → 182 px); Receta: el tazón coral plano pasa a barro con degradado, brillo y sombra. Auditores: sin láminas · encuadre bien.
+GRUPO TERMINADO
