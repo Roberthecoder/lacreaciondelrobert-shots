@@ -233,12 +233,12 @@ function Polvo() {
             <Batidor T={T} x={540} y={1030} s={1.5} />
             {[0, 1, 2, 3, 4, 5, 6, 7].map((k) => { const t0 = K.Es + 2.8 + k * 0.2, u = kprog(T, t0, t0 + 1.2, kEase.sale); return u > 0 && u < 1 ? <Mol key={k} tipo="co2" x={295 + k * 70 + Math.sin(T * 3 + k) * 20} y={960 - u * 520} s={0.75} rot={T * 50 + k * 30} o={1 - u} /> : null; })}
           </g> : <g>
-            <Pastel T={T} x={300} y={1020} s={0.95} h={kprog(T, mitadEs + 0.2, mitadEs + 1.4, kEase.sale) * 0.95} cocido={1} poros={1} seed={3} />
-            <Pastel T={T} x={790} y={1020} s={0.95} h={kprog(T, mitadEs + 0.2, mitadEs + 1.4, kEase.sale) * 0.35} cocido={1} poros={0.5} seed={6} />
+            <Pastel T={T} x={280} y={1110} s={1.1} h={kprog(T, mitadEs + 0.2, mitadEs + 1.4, kEase.sale) * 0.95} cocido={1} poros={1} seed={3} />
+            <Pastel T={T} x={800} y={1110} s={1.1} h={kprog(T, mitadEs + 0.2, mitadEs + 1.4, kEase.sale) * 0.35} cocido={1} poros={0.5} seed={6} />
           </g>}
         </SvgCapa>
-        {T >= mitadEs && <Etq T={T} at={mitadEs + 0.6} until={K.Cu - 0.3} x={150} y={1110} texto="ácido lento" tam={34} color={KC.ink} lado="der" />}
-        {T >= mitadEs && <Etq T={T} at={mitadEs + 0.9} until={K.Cu - 0.3} x={1010} y={1110} texto="ácido rápido" tam={34} color={KC.ink} lado="izq" />}
+        {T >= mitadEs && <Etq T={T} at={mitadEs + 0.6} until={K.Cu - 0.3} x={150} y={1215} texto="ácido lento" tam={34} color={KC.ink} lado="der" />}
+        {T >= mitadEs && <Etq T={T} at={mitadEs + 0.9} until={K.Cu - 0.3} x={1010} y={1215} texto="ácido rápido" tam={34} color={KC.ink} lado="izq" />}
       </Escena>
 
       {/* 7 · cuaja cerca de 88 °C; después, el gas extra se escapa */}
