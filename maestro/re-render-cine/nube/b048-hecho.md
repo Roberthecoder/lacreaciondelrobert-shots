@@ -1,3 +1,4 @@
 - amb-21-focos-led: Calor (foco ×1.4 y barras bajadas al centro, sin encimarse), Chip (corte del LED ×1.12), Nobel («rojo + verde + azul = BLANCO» ya no se corta), Ahorro (75 W / 9 W se van del todo al entrar las barras: sin números fantasma).
 - fun-58-boulardii: Estudio (cifras «18.7 de 100» y «8.5 de 100» ya no se enciman ni se cortan), Límite (C. difficile y gráfica bajadas al centro), Riesgo (sobrecito y manos bajados, lejos del logo).
 - cie-21-hipo: Pregunta (cuerpo alineado con el de Causas: la disolvencia ya no muestra dos personas), Récord (≈ 68 años como rótulo chico: un solo número grande, el del calendario), Remedios (reloj, días y maletín bajados al centro y sin salirse del cuadro).
+GRUPO TERMINADO
