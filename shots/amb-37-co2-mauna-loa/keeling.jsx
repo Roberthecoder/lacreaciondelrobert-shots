@@ -174,10 +174,10 @@ function KeelingShot() {
             {(() => { const [mx, my] = kMolPos(17, T); return <circle cx={mx} cy={my} r={58} fill="none" stroke={KC.yellow} strokeWidth={6} opacity={kprog(T, K.Pp + 1.0, K.Pp + 1.4)} />; })()}
           </g>
           <g opacity={kprog(T, K.Pp + 2.8, K.Pp + 3.3)}>
-            <defs><pattern id="kgrid" x={140} y={540} width={8} height={8} patternUnits="userSpaceOnUse"><circle cx={4} cy={4} r={2.6} fill="#7fa6c9" /></pattern></defs>
+            <defs><pattern id="kgrid" x={140} y={540} width={8} height={8} patternUnits="userSpaceOnUse"><circle cx={4} cy={4} r={2.8} fill="#9fc4e6" /></pattern></defs>
             <rect x={140} y={540} width={800} height={800} fill="url(#kgrid)" />
-            {[[3, 71], [52, 18], [77, 88], [29, 46]].map(([c, f], i) => <g key={i}><circle cx={140 + c * 8 + 4} cy={540 + f * 8 + 4} r={5} fill={KC.yellow} />
-              <circle cx={140 + c * 8 + 4} cy={540 + f * 8 + 4} r={26} fill="none" stroke={KC.yellow} strokeWidth={5} opacity={kprog(T, K.Pp + 3.4 + i * 0.25, K.Pp + 3.7 + i * 0.25)} /></g>)}
+            {[[3, 71], [52, 18], [77, 88], [29, 46]].map(([c, f], i) => <g key={i}><circle cx={140 + c * 8 + 4} cy={540 + f * 8 + 4} r={10} fill={KC.yellow} stroke={KC.ink} strokeWidth={2} />
+              <circle cx={140 + c * 8 + 4} cy={540 + f * 8 + 4} r={36} fill="none" stroke={KC.yellow} strokeWidth={6} opacity={kprog(T, K.Pp + 3.4 + i * 0.25, K.Pp + 3.7 + i * 0.25)} /></g>)}
           </g></>)}
         <Etq T={T} at={K.Pp + 0.4} until={K.Pp + 2.6}  x={100} y={560} texto="N2 · O2 · Ar · CO2" tam={30} />
         <Etq T={T} at={K.Pp + 1.2} until={K.Pp + 2.6} x={760} y={560} texto="esquema" tam={26} color={KC.gold2} />
@@ -187,10 +187,12 @@ function KeelingShot() {
       {/* 4 · el primer día: 313 */}
       <Escena T={T} a={K.I} b={K.Re}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><Grafica T={T} box={box} hasta={0} pluma={false} />
-          <circle cx={X(1958.2)} cy={Y(313)} r={16 * kprog(T, K.I + 0.3, K.I + 0.7, kEase.rebote)} fill={KC.red} stroke={KC.ink} strokeWidth={5} /></>)}
-        <Etq T={T} at={K.I + 0.6} until={K.Re - 0.2} x={X(1958.2) + 20} y={Y(313) - 40} texto="marzo 1958 · 313 ppm" tam={30} color={KC.ink} />
-        <NumeroGigante T={T} at={K.I + 0.4} until={K.Re - 0.2} valor={313} desde={250} dur={1.0} etiqueta="el primer día:" x={360} y={450} tam={220} color={KC.red} />
+        {/* belleza (2.ª pasada): el volcán con el observatorio grande abajo (donde se midió) y la gráfica más chica arriba */}
+        {svg(<g opacity={0.9} transform="translate(0 380)"><Escudo x={540} T={T} /></g>)}
+        {svg(<><g transform="translate(540 760) scale(0.6) translate(-570 -940)"><Grafica T={T} box={box} hasta={0} pluma={false} />
+          <circle cx={X(1958.2)} cy={Y(313)} r={26 * kprog(T, K.I + 0.3, K.I + 0.7, kEase.rebote)} fill={KC.red} stroke={KC.ink} strokeWidth={7} /></g></>)}
+        <Etq T={T} at={K.I + 0.6} until={K.Re - 0.2} x={540 + (X(1958.2) + 30 - 570) * 0.6} y={760 + (Y(313) - 30 - 940) * 0.6} texto="marzo 1958 · 313 ppm" tam={28} color={KC.ink} />
+        <NumeroGigante T={T} at={K.I + 0.4} until={K.Re - 0.2} valor={313} desde={250} dur={1.0} etiqueta="el primer día:" x={540} y={360} tam={170} color={KC.red} />
       </Escena>
       {/* 5 · la curva respira (1958–1960) */}
       <Escena T={T} a={K.Re} b={K.P}>
