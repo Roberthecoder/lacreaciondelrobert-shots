@@ -303,7 +303,7 @@ function BebeKJ() {
         <Capa><g transform="translate(0 150)">
           {/* el cerebro ya no se apaga: sube y queda atenuado detrás del 50 % */}
           <g opacity={1 - 0.5 * grave}>
-            <Cerebro T={T} x={540} y={klerp(850, 650, grave)} s={klerp(1.7, 1.35, grave)} alarma={kprog(T, K.Pe + 0.6, K.Pe + 1.6) * (1 - 0.6 * grave)} />
+            <Cerebro T={T} x={540} y={klerp(900, 760, grave)} s={klerp(1.7, 1.35, grave)} alarma={kprog(T, K.Pe + 0.6, K.Pe + 1.6) * (1 - 0.6 * grave)} />
           </g></g>
           <g opacity={1 - grave}>
             {Array.from({ length: 6 }, (_, i) => <NubeNH3 key={i} x={150 + i * 156} y={1250 - ((T - K.Pe) * 60 + i * 50) % 360} s={0.85} o={kprog(T, K.Pe + i * 0.2, K.Pe + i * 0.2 + 0.4)} />)}
@@ -445,8 +445,8 @@ function BebeKJ() {
       <Medidor T={T} at={K.Pe + 0.3} until={K.Pe + 2.8} valor={(t) => kprog(t, K.Pe + 0.4, K.Pe + 2.3) * 0.92} etiqueta="amoniaco · primeros 2 días"
         texto={(v) => (v > 0.9 ? 'más de 1,000' : kformato(Math.round(v * 1090))) + ' µmol/L'} x={90} y={1400} color={KC.red} />
       <Chip T={T} at={K.Pe + 1.0} until={K.Pe + 2.8} texto="normal: 9–33 µmol/L" y={1345} tam={32} borde={KC.mint} mono />
-      <NumeroGigante T={T} at={K.Pe + 3.0} until={K.Tr - 0.3} valor={50} dur={0.5} sufijo=" %" etiqueta="forma grave" x={540} y={1160} tam={280} color={KC.yellow} />
-      <Chip T={T} at={K.Pe + 3.3} until={K.Tr - 0.3} texto="mortalidad estimada en los primeros meses" y={1440} tam={32} borde={KC.red} />
+      <NumeroGigante T={T} at={K.Pe + 3.0} until={K.Tr - 0.3} valor={50} dur={0.5} sufijo=" %" etiqueta="forma grave" x={540} y={1240} tam={280} color={KC.yellow} />
+      <Chip T={T} at={K.Pe + 3.3} until={K.Tr - 0.3} texto="mortalidad estimada en los primeros meses" y={1480} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Tr + 0.3} until={K.Se - 0.3} texto="lo usual: trasplante de hígado" y={470} tam={40} borde={KC.blue} />
       <Etq T={T} at={K.Tr + 1.4} until={K.Se - 0.3} x={960} y={1480} texto="hay que crecer" lado="izq" tam={36} color={KC.ink} />
       <Chip T={T} at={K.Se + 0.8} until={K.Ed - 0.3} texto="CHOP + Penn · Filadelfia · ~6 meses" y={1470} tam={36} borde={KC.gold} />
