@@ -98,25 +98,25 @@ function AgarNarrado() {
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {[[190, 1640, 1.7, 1], [540, 1720, 2.15, 2], [890, 1640, 1.6, 3]].map(([x, y, s, k]) => <AlgaRoja key={k} T={T} x={x} y={y} s={s} seed={k} />)}
           {[0, 1, 2].map((i) => { const at = K.Al + 1.2 + i * 1.0, e = kentrada(T, at, null, 'pop'); if (T < at) return null;
-            return <g key={i} transform={`translate(${200 + i * 340} 560) scale(${e.s})`} opacity={e.o}>
+            return <g key={i} transform={`translate(${200 + i * 340} 680) scale(${e.s})`} opacity={e.o}>
               <circle r={120} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
               {i === 0 && <g><path d="M -70 -10 L -60 60 Q 0 75 60 60 L 70 -10 Z" fill="#9aa4ae" stroke={KC.ink} strokeWidth={6} />{[0, 1, 2].map((k) => <path key={k} d={`M ${-30 + k * 30} -25 q 12 -20 0 -40`} fill="none" stroke="#9aa4ae" strokeWidth={6} transform={`translate(0 ${-((T * 30 + k * 10) % 20)})`} />)}</g>}
               {i === 1 && <g><path d="M -70 -50 L 70 -50 L 10 30 L 10 70 L -10 70 L -10 30 Z" fill="#cfe9f5" stroke={KC.ink} strokeWidth={6} /><circle cx={0} cy={80 + ((T * 60) % 30)} r={7} fill="#5ac8ff" /></g>}
               {i === 2 && <g>{[-1, 0, 1].map((k) => <rect key={k} x={-80} y={-50 + k * 40} width={160} height={26} rx={6} fill={AGAR} stroke={KC.ink} strokeWidth={5} transform={`rotate(${k * 4})`} />)}</g>}
             </g>; })}
         </svg>
-        {['hervir', 'filtrar', 'secar'].map((t, i) => <Chip key={t} T={T} at={K.Al + 1.4 + i * 1.0} until={K.Q - 0.2} texto={t} x={200 + i * 340} y={730} borde={KC.red} tam={36} />)}
+        {['hervir', 'filtrar', 'secar'].map((t, i) => <Chip key={t} T={T} at={K.Al + 1.4 + i * 1.0} until={K.Q - 0.2} texto={t} x={200 + i * 340} y={850} borde={KC.red} tam={36} />)}
       </Escena>
       {/* 2 · polisacárido: cadenas de anillos (detrás, tenues, las cadenas larguísimas de la escena que sigue) */}
       <Escena T={T} a={K.Q} b={K.Rd} fondo="radial-gradient(circle at 50% 45%, #1b2333 0%, #0E0F12 75%)">
-        <div style={{ position:'absolute', left:0, top:90, width:KW, height:KH, opacity:0.16 }}><RedAgarosa T={T} forma={0} agua={0} /></div>
+        <div style={{ position:'absolute', left:0, top:170, width:KW, height:KH, opacity:0.16 }}><RedAgarosa T={T} forma={0} agua={0} /></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <CadenaAnillos x={90} y={780} n={8} p={kprog(T, K.Q, K.Q + 2.1)} s={1.05} ondula={0.4} T={T} />
-          <CadenaAnillos x={90} y={1200} n={8} p={kprog(T, K.Q + 2.2, K.Q + 4.2)} s={1.05} ondula={0.4} T={T} color="#ff9fb4" marca={(i) => (i % 3 === 1 ? KC.lilac : null)} />
+          <CadenaAnillos x={90} y={860} n={8} p={kprog(T, K.Q, K.Q + 2.1)} s={1.05} ondula={0.4} T={T} />
+          <CadenaAnillos x={90} y={1280} n={8} p={kprog(T, K.Q + 2.2, K.Q + 4.2)} s={1.05} ondula={0.4} T={T} color="#ff9fb4" marca={(i) => (i % 3 === 1 ? KC.lilac : null)} />
         </svg>
-        <Etq T={T} at={K.Q + 1.4} until={K.Rd - 0.2} x={90} y={670} texto="agarosa (≈ 70 %)" color={KC.gold2} />
-        <Etq T={T} at={K.Q + 3.4} until={K.Rd - 0.2} x={90} y={1090} texto="agaropectina (con sulfato)" color="#ff9fb4" tam={30} />
-        <Chip T={T} at={K.Q + 0.2} until={K.Rd - 0.2} texto="polisacárido = muchos azúcares" y={500} borde={KC.gold} tam={38} />
+        <Etq T={T} at={K.Q + 1.4} until={K.Rd - 0.2} x={90} y={750} texto="agarosa (≈ 70 %)" color={KC.gold2} />
+        <Etq T={T} at={K.Q + 3.4} until={K.Rd - 0.2} x={90} y={1170} texto="agaropectina (con sulfato)" color="#ff9fb4" tam={30} />
+        <Chip T={T} at={K.Q + 0.2} until={K.Rd - 0.2} texto="polisacárido = muchos azúcares" y={580} borde={KC.gold} tam={38} />
       </Escena>
       {/* 3 · al enfriarse: hélices y red que atrapa agua */}
       <Escena T={T} a={K.Rd} b={K.Tp} fondo="radial-gradient(circle at 50% 45%, #1b2333 0%, #0E0F12 75%)">
@@ -174,15 +174,15 @@ function AgarNarrado() {
       <Escena T={T} a={K.C} b={K.X} fondo="radial-gradient(circle at 50% 45%, #1b2333 0%, #0E0F12 75%)">
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <defs><linearGradient id="agarCorte" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={cineMix(AGAR, CINE.fondo, 0.56)} /><stop offset="0.45" stopColor={cineMix(AGAR, CINE.fondo, 0.8)} /><stop offset="1" stopColor={cineMix(AGAR, CINE.fondo, 0.9)} /></linearGradient></defs>
-          <g transform="translate(540 1000) scale(1.7) translate(-560 -960)">
+          <g transform="translate(540 1150) scale(1.7) translate(-560 -960)">
           <rect x={-400} y={960} width={KW + 800} height={980} fill="url(#agarCorte)" stroke={KC.ink} strokeWidth={8} />
           {(() => { const p = kprog(T, K.C + 2.6, K.C + 5); return <path d={`M 640 962 Q 780 ${962 + 160 * p} 920 962 Z`} fill="#0d1220" opacity={0.85 * p} />; })()}
           {[160, 320, 470].map((x, i) => <g key={i}><Bacilo x={x} y={930} T={T} s={1.1} come={0} />
             <ellipse cx={x} cy={940} rx={70 * kprog(T, K.C + 1 + i * 0.3, K.C + 4)} ry={30 * kprog(T, K.C + 1 + i * 0.3, K.C + 4)} fill="#f4efe4" stroke="#c9b48c" strokeWidth={4} opacity={0.9} /></g>)}
           <Bacilo x={780} y={960 + 120 * kprog(T, K.C + 2.6, K.C + 5)} T={T} s={1.2} color={KC.lilac} come={1} />
         </g></svg>
-        <Chip T={T} at={K.C + 0.3} until={K.X - 0.2} texto="sin enzimas para romperlo" x={540} y={620} borde={KC.mint} tam={34} />
-        <Etq T={T} at={K.C + 3} until={K.X - 0.2} x={1010} y={800} texto="bacteria marina con agarasa" lado="izq" tam={30} color={KC.lilac} />
+        <Chip T={T} at={K.C + 0.3} until={K.X - 0.2} texto="sin enzimas para romperlo" x={540} y={760} borde={KC.mint} tam={34} />
+        <Etq T={T} at={K.C + 3} until={K.X - 0.2} x={1010} y={950} texto="bacteria marina con agarasa" lado="izq" tam={30} color={KC.lilac} />
       </Escena>
       {/* 9 · dato extra: genes del mar en el intestino */}
       <Escena T={T} a={K.X} b={K.Ci} fondo={KC.mint}>

@@ -1,2 +1,5 @@
 - amb-01-vinazas: «Estudio» (2025): el reactor de fondo se veía casi apagado (0.45) antes de que entren los garrafones y el auditor lo marcaba lámina; ahora entra al 0.9 y baja a 0.45 cuando aparecen los productos. Las demás escenas ya cumplían. Encuadre bien, sin láminas.
 - 003-semillas-luna: «Estudio» (1972): macetas LUNA/TIERRA ×1.62 (antes ×1.5) y subidas 70 px, para que macetas y plántulas llenen el centro en vez de quedar abajo con medio cuadro vacío. Las demás escenas ya cumplían. Encuadre bien, sin láminas.
+- qui-01-agar: «Química»: cadenas de agarosa y agaropectina, etiquetas y chip bajados 80 px (antes arriba); «Casi nadie se lo come»: superficie de agar y bacterias bajadas 150 px para que las bacterias queden al centro (chip y etiqueta con ellas); «Alga»: íconos hervir/filtrar/secar y sus chips bajados 120 px. El medidor aún marca «Alga» ARRIBA por el degradado del mar; mirándola, las algas llenan de y≈840 a la base y los íconos quedan arriba de ellas. Sin láminas.
+
+GRUPO TERMINADO
