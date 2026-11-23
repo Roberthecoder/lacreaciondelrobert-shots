@@ -179,13 +179,13 @@ function Vph() {
       {/* 1 · el VPH y el cáncer cervicouterino */}
       <Escena T={T} a={K.Vi} b={K.Ca}>
         <FondoMarca T={T} color={KC.yellow} />
-        <Capa><Utero x={540} y={900} s={1.6} tr={0.7} punto={kprog(T, K.Vi + 1.6, K.Vi + 2.2)} T={T} /></Capa>
+        <Capa><Utero x={540} y={1040} s={1.6} tr={0.7} punto={kprog(T, K.Vi + 1.6, K.Vi + 2.2)} T={T} /></Capa>
       </Escena>
       {/* 2 · por dentro: el virus de verdad, con su ADN */}
       <Escena T={T} a={K.Ca} b={K.L1} zoom={0.02}>
         <FondoMarca T={T} color={KC.yellow} />
-        <Capa><Utero x={540} y={900} s={1.6} tr={0.7} punto={1} T={T} /></Capa>
-        <Lupa T={T} at={K.Ca + 0.1} until={K.L1 - 0.2} x={540} y={620} r={350} fx={540} fy={1108} tinte={KC.mint} etiqueta="AL MICROSCOPIO · VPH"
+        <Capa><Utero x={540} y={1040} s={1.6} tr={0.7} punto={1} T={T} /></Capa>
+        <Lupa T={T} at={K.Ca + 0.1} until={K.L1 - 0.2} x={540} y={860} r={350} fx={540} fy={1248} tinte={KC.mint} etiqueta="AL MICROSCOPIO · VPH"
           interior={(TT, r) => <svg width={r * 2} height={r * 2}><Capside T={TT} x={r} y={r} r={270} abierto={kprog(TT, K.Ca + 1.4, K.Ca + 2.4)} adn={kprog(TT, K.Ca + 1.6, K.Ca + 2.6)} /></svg>} />
       </Escena>
       {/* 3 · 360 copias de L1: la cáscara se separa en sus piezas */}
@@ -250,8 +250,8 @@ function Vph() {
         <Capa>
           {/* las vacunadas a los 12–13 años: en cuadro desde que empieza la escena; la palomita llega con el "ni un caso" */}
           {[220, 540, 860].map((x, i) => { const on = kprog(T, K.Es + 3.4 + i * 0.12, K.Es + 3.8 + i * 0.12, kEase.sale);
-            return <g key={i}><Nino x={x} y={1150} s={2.1} color={KC.pink} nina T={T} />
-              <g transform={`translate(${x + 84} ${1010}) scale(${on})`} opacity={on}><circle r={52} fill="#0b1020" stroke={KC.leaf} strokeWidth={7} />
+            return <g key={i}><Nino x={x} y={1060} s={2.1} color={KC.pink} nina T={T} />
+              <g transform={`translate(${x + 84} ${920}) scale(${on})`} opacity={on}><circle r={52} fill="#0b1020" stroke={KC.leaf} strokeWidth={7} />
                 <path d="M -24 2 l 17 20 l 32 -42" stroke={KC.leaf} strokeWidth={12} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g></g>; })}
         </Capa>
       </Escena>
@@ -297,7 +297,7 @@ function Vph() {
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.G + 2.4} texto="VIRUS" x={780} y={380} tam={60} />
       <Chip T={T} at={K.G + 2.2} until={K.Vi - 0.2} texto="CÁSCARA VACÍA" x={760} y={380} tam={50} borde={L1B} />
       <Chip T={T} at={K.Vi + 0.4} until={K.Ca - 0.2} texto="VPH = virus del papiloma humano" y={1440} tam={36} borde={VIRC} />
-      <Etq T={T} at={K.Vi + 2.0} until={K.Ca - 0.2} x={610} y={1108} texto="cuello uterino" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Vi + 2.0} until={K.Ca - 0.2} x={610} y={1248} texto="cuello uterino" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Ca + 2.4} until={K.L1 - 0.2} texto="ADN del virus" x={540} y={1440} tam={38} borde={ADNV} />
       {T < K.No - 0.1 && <Contador T={T} at={K.L1 + 0.6} hasta={360} dur={1.6} x={420} y={330} tam={110} sufijo=" × L1" color={L1C} />}
       <Chip T={T} at={K.L1 + 2.3} until={K.No - 0.2} texto="+ algo de L2 (proteína menor)" y={1520} tam={32} borde={L1C} />
