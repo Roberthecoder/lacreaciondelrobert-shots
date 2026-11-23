@@ -128,12 +128,13 @@ function Tierra({ x, y, color = KC.ink }) {
 function CieloCables({ T, tarde = 0, flujo = 1 }) {
   const ys = [930, 1030];
   return <g>
-    <defs><linearGradient id="pjTarde" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#ff7a59" /><stop offset="0.6" stopColor="#ffb05c" /><stop offset="1" stopColor="#ffd98a" /></linearGradient></defs>
+    <defs><linearGradient id="pjTarde" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#1c1630" /><stop offset="0.55" stopColor="#4a2a38" /><stop offset="1" stopColor="#6e3a34" /></linearGradient></defs>
     {tarde > 0 && <rect width={KW} height={KH} fill="url(#pjTarde)" opacity={tarde} />}
-    {tarde > 0 ? <circle cx={760} cy={1500} r={170} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} opacity={tarde} /> : <SolDibujo x={180} y={560} r={60} T={T} />}
-    <Nube x={350 + Math.sin(T * 0.3) * 20} y={420} s={0.9} />
+    {tarde > 0 ? <circle cx={790} cy={1360} r={150} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} opacity={tarde} /> : <SolDibujo x={180} y={560} r={60} T={T} />}
+    {/* belleza: la nube baja (antes tapaba el logo) y el atardecer es oscuro con tinte cálido (antes naranja chillón a pantalla completa) */}
+    <Nube x={520 + Math.sin(T * 0.3) * 20} y={560} s={0.9} />
     <Nube x={860 - Math.sin(T * 0.25) * 20} y={1560} s={0.8} />
-    <path d="M 0 1600 Q 200 1520 420 1590 T 820 1570 T 1080 1560 L 1080 1920 L 0 1920 Z" fill={tarde ? '#c46a3c' : KC.leaf} stroke={KC.ink} strokeWidth={8} />
+    <path d="M 0 1600 Q 200 1520 420 1590 T 820 1570 T 1080 1560 L 1080 1920 L 0 1920 Z" fill={tarde ? '#6a3826' : KC.leaf} stroke={KC.ink} strokeWidth={8} />
     {[[120, 1640], [330, 1680], [930, 1660]].map(([hx, hy], i) => <Casa key={i} x={hx} y={hy} s={0.45} luz={tarde > 0.5 ? 1 : 0} />)}
     <Poste x={150} yTop={880} /><Poste x={930} yTop={880} />
     {[150, 930].map((px) => <rect key={px} x={px - 120} y={900} width={240} height={26} rx={6} fill={PJ_MADERA} stroke={KC.ink} strokeWidth={7} />)}
@@ -156,14 +157,14 @@ function Pajaros() {
   const ATERRIZA = 0.9, vuelo = kprog(T, 0, ATERRIZA, kEase.suave);
   const bx = klerp(-120, 420, vuelo), by = klerp(640, cableY(420, 1030), vuelo) - Math.sin(vuelo * Math.PI) * 120;
   // escenas 2-3: primer plano del pajarito en un cable grueso
-  const CY = 1150;
+  const CY = 1250; // belleza (encuadre): el cable del primer plano baja 100 px (antes 1150; el pajarito quedaba cargado arriba)
   // escena 5: dos cables y un poste
   const D = K.Dos, Y1 = 640, Y2 = 920, PX = 880;
   // escena 7: los cables se separan y se cubren
   const sep = kprog(T, K.Postes + 0.6, K.Postes + 2.0, kEase.suave), fun = kprog(T, K.Postes + 2.9, K.Postes + 3.6, kEase.sale);
   // escena 8: la persona se aleja arrastrando los pies (pasos cortitos)
   const TU0 = K.Tu + 1.6, pasos = Math.max(0, Math.min(14, (T - TU0) / 0.32)), pasoN = Math.floor(pasos), pasoF = pasos - pasoN;
-  const perX = 600 + 22 * (pasoN + kEase.suave(kclamp(pasoF * 1.6, 0, 1)));
+  const perX = 600 + 16 * (pasoN + kEase.suave(kclamp(pasoF * 1.6, 0, 1)));
   return (
     <div style={{ position:'absolute', inset:0, overflow:'hidden', background:KC.cyan }}>
       {/* 0 · gancho: el pajarito aterriza en el cable de luz */}
@@ -181,6 +182,9 @@ function Pajaros() {
       {/* 1 · corriente: dos puntos con distinto voltaje y un camino */}
       <Escena T={T} a={K.Corriente} b={K.Patas} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
+        {/* belleza: el pajarito sigue en su cable, a media luz, detrás del esquema de voltajes (antes el esquema flotaba en el vacío) */}
+        <Lienzo><g opacity={0.3}><Zg {...ZG}><CieloCables T={T} flujo={0.6} /><Pajarito x={420} y={cableY(420, 1030)} s={1.5} T={T} /></Zg></g></Lienzo>
+        <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse at 45% 42%, rgba(10,14,26,.55), rgba(10,14,26,.25) 70%)' }}></div>
         <Lienzo>
           {(() => { const c = kprog(T, K.Corriente + 1.4, K.Corriente + 2.2, kEase.sale), A = [230, 700], B = [780, 1000];
             const pts = [A, [230, 1000], B];
@@ -230,7 +234,7 @@ function Pajaros() {
             <text x={240} y={150} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.texto}>patas</text>
             <text x={240} y={425} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.yellow}>metal del cable</text>
           </svg>} />
-        <Chip T={T} at={K.Nada + 3.4} until={K.Pregunta - 0.2} texto="el cable conduce mucho mejor" x={540} y={1330} tam={40} borde={KC.yellow} />
+        <Chip T={T} at={K.Nada + 3.4} until={K.Pregunta - 0.2} texto="el cable conduce mucho mejor" x={540} y={1450} tam={40} borde={KC.yellow} />
       </Escena>
       {/* 4 · ¿y cuándo sí? */}
       {/* (pase a mano: el pajarito sigue en su cable y el «?» baja junto a él, en vez de quedar solo arriba a la izquierda) */}
@@ -310,9 +314,9 @@ function Pajaros() {
       {/* 8 · tú: nunca te acerques a un cable caído */}
       <Escena T={T} a={K.Tu} b={K.Cierre} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
-        <Lienzo>
-          <rect x={0} y={1140} width={KW} height={KH} fill="#42342b" stroke={KC.ink} strokeWidth={8} />
-          <rect x={0} y={1140} width={KW} height={26} fill={cineMix(KC.leaf, CINE.fondo, 0.55)} stroke={KC.ink} strokeWidth={6} />
+        <Lienzo><g transform="translate(490 1060) scale(1.08) translate(-540 -1000)">{/* belleza: la escena del cable caído ×1.08 (la persona era chica) */}
+          <rect x={-100} y={1140} width={KW + 200} height={KH} fill="#42342b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={-100} y={1140} width={KW + 200} height={26} fill={cineMix(KC.leaf, CINE.fondo, 0.55)} stroke={KC.ink} strokeWidth={6} />
           <g transform="rotate(-8 120 1150)"><Poste x={120} yTop={520} yBase={1160} ancho={52} /></g>
           <path d="M 170 560 Q 230 900 300 1140 L 470 1150" fill="none" stroke={PJ_CABLE} strokeWidth={14} strokeLinecap="round" />
           {[1, 2, 3].map((i) => { const f = ((T - K.Tu) * 0.6 + i / 3) % 1; return <ellipse key={i} cx={470} cy={1160} rx={40 + f * 340} ry={12 + f * 70} fill="none" stroke={KC.yellow} strokeWidth={8} opacity={(1 - f) * kprog(T, K.Tu + 0.4, K.Tu + 1)} />; })}
@@ -322,11 +326,11 @@ function Pajaros() {
           <g transform={`translate(0 ${-Math.sin(pasoF * Math.PI) * 6 * (pasos > 0 && pasos < 14 ? 1 : 0)})`}>
             <PersonaSimple x={perX} yPies={1150} alto={330} color={KC.blue} cara="o" brazos={0.08} />
           </g>
-          {pasos > 0 && Array.from({ length: Math.min(pasoN, 13) }, (_, i) => <ellipse key={i} cx={600 + 22 * i} cy={1158} rx={10} ry={4} fill="rgba(0,0,0,.25)" />)}
-        </Lienzo>
+          {pasos > 0 && Array.from({ length: Math.min(pasoN, 13) }, (_, i) => <ellipse key={i} cx={600 + 16 * i} cy={1158} rx={10} ry={4} fill="rgba(0,0,0,.25)" />)}
+        </g></Lienzo>
         <Chip T={T} at={K.Tu + 0.5} until={K.Cierre - 0.1} texto="nunca te acerques" x={540} y={420} tam={52} borde={KC.red} />
-        <Etq T={T} at={K.Tu + 1.8} until={K.Cierre - 0.1} x={1050} y={640} texto="pies juntos, pasos cortos" lado="izq" color={KC.ink} tam={30} />
-        <Etq T={T} at={K.Tu + 3.6} until={K.Cierre - 0.1} x={1060} y={760} texto="tú, en el suelo" lado="izq" color={KC.ink} tam={30} />
+        <Etq T={T} at={K.Tu + 1.8} until={K.Cierre - 0.1} x={1050} y={600} texto="pies juntos, pasos cortos" lado="izq" color={KC.ink} tam={30} />
+        <Etq T={T} at={K.Tu + 3.6} until={K.Cierre - 0.1} x={1060} y={690} texto="tú, en el suelo" lado="izq" color={KC.ink} tam={30} />
       </Escena>
       {/* 9 · cierre: el mismo pajarito, tranquilo al atardecer */}
       <Escena T={T} a={K.Cierre} b={FIN} fondo={KC.cyan}>
