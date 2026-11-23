@@ -214,10 +214,12 @@ function HuellaShot() {
       {/* 5 · pregunta: ¿y si viene del rancho de al lado? */}
       <Escena T={T} a={K.P} b={K.Tr} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
-        {/* belleza: el rancho y la taquería entran arriba, donde siguen en «Transporte» (antes caían encima de las barras veladas) */}
-        {svg(<><text x={540} y={700} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 540 640)`}>?</text>
-          <Rancho x={180} y={740} s={1.6} /><Taqueria x={890} y={740} s={1.5} />
-          <line x1={300} y1={770} x2={740} y2={770} stroke={KC.ink} strokeWidth={6} strokeDasharray="14 10" /></>)}
+        {/* belleza: el rancho y la taquería, grandes y al centro, sobre un panel oscuro que separa de las barras veladas
+            (antes caían encima de ellas y sus etiquetas se enciman) */}
+        {svg(<><rect x={40} y={740} width={1000} height={450} rx={40} fill="rgba(9,13,24,.92)" stroke="rgba(223,231,255,.25)" strokeWidth={4} opacity={kprog(T, K.P, K.P + 0.3)} />
+          <text x={540} y={960} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 540 900)`}>?</text>
+          <Rancho x={230} y={1070} s={1.9} /><Taqueria x={850} y={1070} s={1.8} />
+          <line x1={370} y1={1105} x2={700} y2={1105} stroke={KC.ink} strokeWidth={6} strokeDasharray="14 10" /></>)}
       </Escena>
       {/* 6 · transporte: casi nada; pesa la granja y el suelo */}
       <Escena T={T} a={K.Tr} b={K.Es}>
