@@ -263,7 +263,7 @@ function FaloShot() {
         <Ambiente T={T} n={24} color="rgba(159,220,74,.35)" />
         {fsvg(<>
           <path d={`M -40 1260 Q 200 ${1200 + Math.sin(T * 2) * 10} 540 1230 Q 860 ${1260 + Math.cos(T * 2) * 10} 1120 1210 L 1120 1960 L -40 1960 Z`} fill={FL.gleba} stroke={KC.ink} strokeWidth={8} />
-          {[0, 1, 2].map((i) => { const t0 = K.Az + 0.3 + i * 0.7, u = kprog(T, t0, t0 + 3.2); return u > 0 ? <Trisulfuro key={i} x={[300, 600, 420][i] + Math.sin(T + i) * 20} y={klerp(1200, [620, 860, 1040][i], kEase.sale(u))} s={0.9} rot={Math.sin(T * 0.8 + i) * 18} o={kprog(T, t0, t0 + 0.3)} /> : null; })}
+          {[0, 1, 2].map((i) => { /* belleza: los gases ya vienen subiendo al empezar la escena */ const t0 = K.Az - 0.2 + i * 0.45, u = 0.22 + 0.78 * kprog(T, t0, t0 + 3.2); return T > t0 ? <Trisulfuro key={i} x={[300, 600, 420][i] + Math.sin(T + i) * 20} y={klerp(1200, [700, 900, 1060][i], kEase.sale(u))} s={0.9} rot={Math.sin(T * 0.8 + i) * 18} o={kprog(T, t0, t0 + 0.3)} /> : null; })}
         </>)}
       </Escena>
       {/* 7 · pregunta */}
