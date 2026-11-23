@@ -78,11 +78,21 @@ function MapaZona({ T, at }) {
       <path d="M 0 0 C -30 -40 -30 -70 0 -75 C 30 -70 30 -40 0 0 Z" fill={KC.red} stroke={KC.ink} strokeWidth={6} /><circle cx={0} cy={-50} r={11} fill="#fff" /></g>}
   </g>;
 }
+// Volumen (pase de belleza): brillo arriba-izquierda y sombra abajo-derecha sobre cualquier color.
+function FvDefs() {
+  return <defs>
+    <radialGradient id="fv-esfera" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stopColor="#fff" stopOpacity="0.42" /><stop offset="0.6" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.28" /></radialGradient>
+    <linearGradient id="fv-brillo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fff" stopOpacity="0.32" /><stop offset="0.5" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.25" /></linearGradient>
+  </defs>;
+}
 // Persona (ícono). mal = tono enfermo.
 function Persona({ x, y, s = 1, color = '#8fb6ff', cara = '#f2c29b' }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <FvDefs />
     <circle cx={0} cy={-62} r={26} fill={cara} stroke={KC.ink} strokeWidth={5} />
+    <circle cx={0} cy={-62} r={26} fill="url(#fv-esfera)" />
     <path d="M -38 20 Q -40 -26 0 -28 Q 40 -26 38 20 Z" fill={color} stroke={KC.ink} strokeWidth={5} />
+    <path d="M -38 20 Q -40 -26 0 -28 Q 40 -26 38 20 Z" fill="url(#fv-brillo)" />
   </g>;
 }
 // Perro de perfil (mirando a la izquierda).
@@ -92,8 +102,11 @@ function Perro({ x, y, s = 1, T }) {
     <path d={`M 95 -70 Q 140 ${-110 + cola} 150 ${-130 + cola}`} fill="none" strokeWidth={12} strokeLinecap="round" />
     <path d={`M 95 -70 Q 140 ${-110 + cola} 150 ${-130 + cola}`} fill="none" stroke="#d9a35f" strokeWidth={6} strokeLinecap="round" />
     {[-60, -30, 50, 80].map((dx, i) => <rect key={i} x={dx} y={-40} width={22} height={60} rx={8} fill="#d9a35f" />)}
+    <FvDefs />
     <ellipse cx={10} cy={-70} rx={100} ry={45} fill="#d9a35f" />
+    <ellipse cx={10} cy={-70} rx={100} ry={45} fill="url(#fv-esfera)" stroke="none" />
     <circle cx={-95} cy={-120} r={48} fill="#d9a35f" />
+    <circle cx={-95} cy={-120} r={48} fill="url(#fv-esfera)" stroke="none" />
     <ellipse cx={-140} cy={-108} rx={30} ry={20} fill="#d9a35f" />
     <circle cx={-170} cy={-110} r={9} fill={KC.ink} />
     <path d="M -80 -165 Q -50 -150 -60 -100 Q -85 -120 -80 -165 Z" fill="#a8743a" />
@@ -114,13 +127,19 @@ function Pulmones({ x, y, s = 1, brillo = 0 }) {
     <path d="M -8 -70 L -8 -20 M 8 -70 L 8 -20" fill="none" />
     <path d="M -14 -30 Q -60 -60 -80 0 Q -90 70 -30 70 Q -12 60 -14 -30 Z" fill={mixHex('#ff9fb0', '#ff5470', brillo)} />
     <path d="M 14 -30 Q 60 -60 80 0 Q 90 70 30 70 Q 12 60 14 -30 Z" fill={mixHex('#ff9fb0', '#ff5470', brillo)} />
+    <FvDefs />
+    <path d="M -14 -30 Q -60 -60 -80 0 Q -90 70 -30 70 Q -12 60 -14 -30 Z" fill="url(#fv-esfera)" stroke="none" />
+    <path d="M 14 -30 Q 60 -60 80 0 Q 90 70 30 70 Q 12 60 14 -30 Z" fill="url(#fv-esfera)" stroke="none" />
   </g>;
 }
 // Retroexcavadora esquemática (mira a la izquierda). pala = ángulo de excavar.
 function Retro({ x, y, s = 1, T }) {
   const ang = -20 + Math.sin(T * 2.4) * 22;
   return <g transform={`translate(${x} ${y}) scale(${s})`} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round">
+    <FvDefs />
+    <ellipse cx={70} cy={4} rx={170} ry={14} fill="#000" opacity={0.3} stroke="none" />
     <rect x={-40} y={-150} width={210} height={90} rx={12} fill={KC.yellow} />
+    <rect x={-40} y={-150} width={210} height={90} rx={12} fill="url(#fv-brillo)" stroke="none" />
     <rect x={40} y={-250} width={110} height={105} rx={10} fill={KC.yellow} /><rect x={58} y={-232} width={74} height={56} rx={6} fill="#bfe8ff" />
     <circle cx={0} cy={-40} r={42} fill="#333" /><circle cx={140} cy={-40} r={42} fill="#333" />
     <circle cx={0} cy={-40} r={14} fill="#888" /><circle cx={140} cy={-40} r={14} fill="#888" />
@@ -221,13 +240,15 @@ function FiebreValleShot() {
       <Escena T={T} a={K.Es} b={K.V}>
         <div style={{ position:'absolute', inset:0, background:mixHex('#24170e', '#3a2a1a', seca) }}></div>
         <Ambiente T={T} n={16} color="rgba(255,220,170,.25)" />
-        {fsvg(<>
+        {/* belleza: el suelo microscópico baja 120 px para quedar centrado (etiquetas igual) */}
+        {fsvg(<g transform="translate(0 120)">
           {[[90, 560, 60, 1], [960, 640, 80, 2], [150, 1110, 70, 3], [930, 1060, 66, 4], [540, 1180, 50, 6], [600, 560, 46, 7]].map(([x, y, r, s], i) => <Grano key={i} x={x} y={y} r={r} seed={s} color="#6b4a2b" />)}
           {[[300, 640], [760, 980], [420, 1110], [880, 760]].map(([x, y], i) => <circle key={'w' + i} cx={x} cy={y} r={26 * (1 - seca)} fill="#7cc8ff" stroke={KC.ink} strokeWidth={3} opacity={1 - seca} />)}
           <HifaParte T={T} y={720} p={seca} suelta={suelta} seed={1} x0={70} />
           <HifaParte T={T} y={880} p={seca} suelta={suelta} seed={2} x0={37} />
           <HifaParte T={T} y={1020} p={seca} suelta={suelta} seed={3} x0={70} />
-        </>)}
+          {[[300, 1320, 54, 8], [800, 1300, 62, 9]].map(([x, y, r, s], i) => <Grano key={'b' + i} x={x} y={y} r={r} seed={s} color="#6b4a2b" />)}
+        </g>)}
       </Escena>
       {/* 4 · el viento o una excavación las levantan, y tú las respiras */}
       <Escena T={T} a={K.V} b={K.P}>
@@ -269,20 +290,26 @@ function FiebreValleShot() {
         <div style={{ position:'absolute', left:KW / 2, top:0, width:KW / 2, height:KH, background:FV.pulmon }}></div>
         {fsvg(<>
           <line x1={540} y1={0} x2={540} y2={KH} stroke={KC.gold2} strokeWidth={8} />
-          <HifaParte T={T} y={780} p={0} n={7} x0={70} />
-          <HifaParte T={T} y={920} p={1} n={7} x0={70} seed={4} />
-          <HifaParte T={T} y={1060} p={0.3} n={7} x0={70} seed={5} />
-          <Esferula T={T} x={810} y={800} r={130} llena={1} seed={21} nEndo={70} />
-          <Esferula T={T} x={700} y={1040} r={70} seed={22} nEndo={0} />
-          <Esferula T={T} x={930} y={1050} r={60} llena={1} seed={23} nEndo={18} />
+          {/* belleza: cinco hilos reparten la mitad de la tierra de arriba abajo; las esferas crecen ×1.23 (barra igual) y ocupan su mitad */}
+          <HifaParte T={T} y={720} p={0} n={7} x0={70} />
+          <HifaParte T={T} y={870} p={1} n={7} x0={70} seed={4} />
+          <HifaParte T={T} y={1020} p={0.3} n={7} x0={70} seed={5} />
+          <HifaParte T={T} y={1170} p={0} n={7} x0={70} seed={6} />
+          <HifaParte T={T} y={1320} p={0.7} n={7} x0={70} seed={7} />
+          <Esferula T={T} x={810} y={840} r={160} llena={1} seed={21} nEndo={90} />
+          <Esferula T={T} x={680} y={1150} r={86} seed={22} nEndo={0} />
+          <Esferula T={T} x={925} y={1170} r={74} llena={1} seed={23} nEndo={20} />
+          <Esferula T={T} x={800} y={1360} r={60} llena={1} seed={24} nEndo={14} />
         </>)}
       </Escena>
       {/* 9 · el estudio: terremoto de 1994, deslaves y nubes de polvo */}
       <Escena T={T} a={K.Et} b={K.Cl}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
+          <g opacity={1 - 0.6 * kprog(T, K.Ca + 0.3, K.Ca + 1.0)}>
           <Montes T={T} sacude={T < K.Ca ? kprog(T, K.Et, K.Et + 0.3) * (1 - kprog(T, K.Et + 1.6, K.Et + 2.2)) : 0} deslave={kprog(T, K.Et + 1.0, K.Et + 2.4, kEase.sale)} />
           <NubePolvo T={T} x={520} y={1080} p={kprog(T, K.Et + 1.6, K.Ca + 1.0, kEase.sale)} ancho={900} n={18} o={T > K.Ca ? 0.55 : 0.85} />
+          </g>
           {T > K.Ca && Array.from({ length: 203 }, (_, i) => { const t0 = K.Ca + 0.5 + i * 0.012, on = kprog(T, t0, t0 + 0.25, kEase.rebote); if (on <= 0) return null;
             const c = i % 23, f = Math.floor(i / 23); return <g key={i} transform={`translate(${100 + c * 38} ${760 + f * 44}) scale(${on})`}><circle cy={-8} r={8} fill={KC.red} stroke={KC.ink} strokeWidth={2.5} /><rect x={-9} y={0} width={18} height={14} rx={6} fill={KC.red} stroke={KC.ink} strokeWidth={2.5} /></g>; })}
         </>)}
@@ -290,12 +317,15 @@ function FiebreValleShot() {
       {/* 10 · seis de cada diez no sienten nada */}
       <Escena T={T} a={K.Cl} b={K.Si}>
         <FondoLunares color={KC.mint} />
+        {/* belleza: las personas están en el mismo desierto (atenuado) y crecen 1.7 → 2.3 (barra 1 m igual) */}
+        <div style={{ position:'absolute', inset:0, opacity:0.3 }}><Desierto T={T} /></div>
         {fsvg(<>{Array.from({ length: 10 }, (_, i) => { const on = kprog(T, K.Cl + 0.3 + i * 0.1, K.Cl + 0.6 + i * 0.1, kEase.rebote), sin = i < 6;
-          return on > 0 ? <Persona key={i} x={150 + (i % 5) * 195} y={900 + Math.floor(i / 5) * 230} s={1.7 * on} color={sin ? '#3fbf4a' : KC.orange} /> : null; })}</>)}
+          return on > 0 ? <Persona key={i} x={150 + (i % 5) * 195} y={880 + Math.floor(i / 5) * 320} s={2.3 * on} color={sin ? '#3fbf4a' : KC.orange} /> : null; })}</>)}
       </Escena>
       {/* 11 · síntomas, no se contagia entre personas, y los perros también */}
       <Escena T={T} a={K.Si} b={K.C}>
         <FondoLunares color={KC.pink} />
+        <div style={{ position:'absolute', inset:0, opacity:0.3 }}><Desierto T={T} /></div>
         {fsvg(<>
           {T < K.Si + 2.9 && <g opacity={1 - kprog(T, K.Si + 2.5, K.Si + 2.9)} transform="translate(540 980) scale(1.25) translate(-548 -660)">
             <g transform={`translate(200 640) scale(${kprog(T, K.Si + 0.2, K.Si + 0.5, kEase.rebote)})`}>
@@ -330,9 +360,9 @@ function FiebreValleShot() {
       <Chip T={T} at={K.Su + 0.3} until={K.Es - 0.3} texto="mapa esquemático" x={790} y={1060} tam={22} mono borde={KC.ink} />
       <Chip T={T} at={K.Es + 0.2} until={K.V - 0.3} texto="POR DENTRO · SUELO" x={540} y={470} tam={30} mono borde={KC.gold2} />
       <Chip T={T} at={K.Es + 0.7} until={K.Es + 2.6} texto="la tierra se seca" x={540} y={560} tam={32} borde={KC.orange} />
-      <Etq T={T} at={K.Es + 0.4} until={K.Es + 1.9} x={400} y={640} texto="hilos (hifas)" tam={30} />
-      <Etq T={T} at={K.Es + 2.0} until={K.V - 0.3} x={140} y={1120} texto="artroconidias (~3 × 4.5 µm)" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.Es + 2.4} until={K.V - 0.3} x={136} y={680} texto="celda vacía" tam={26} />
+      <Etq T={T} at={K.Es + 0.4} until={K.Es + 1.9} x={400} y={760} texto="hilos (hifas)" tam={30} />
+      <Etq T={T} at={K.Es + 2.0} until={K.V - 0.3} x={140} y={1240} texto="artroconidias (~3 × 4.5 µm)" tam={30} color={KC.gold2} />
+      <Etq T={T} at={K.Es + 2.4} until={K.V - 0.3} x={136} y={800} texto="celda vacía" tam={26} />
       <Etq T={T} at={K.V + 0.3} until={K.P - 0.3} x={620} y={830} texto="excavación" tam={30} color={KC.ink} />
       <Etq T={T} at={K.V + 2.0} until={K.P - 0.3} x={330} y={1060} texto="pulmones" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Ef + 0.6} until={K.D - 0.3} texto="AL MICROSCOPIO · PULMÓN" x={400} y={470} tam={30} mono borde={KC.cyan} />
@@ -342,8 +372,8 @@ function FiebreValleShot() {
       <Chip T={T} at={K.En + 0.6} until={K.D - 0.3} texto="100–300 endosporas" x={420} y={560} tam={36} borde={KC.gold2} />
       <Etq T={T} at={K.En + 0.9} until={K.En + 2.4} x={700} y={760} texto="endosporas" tam={30} />
       <Chip T={T} at={K.D + 0.2} until={K.Et - 0.3} texto="hongo dimórfico: 2 formas" x={420} y={470} tam={32} borde={KC.gold2} />
-      <Etq T={T} at={K.D + 0.4} until={K.Et - 0.3} x={60} y={640} texto="EN LA TIERRA: hilos (ampliados)" tam={28} />
-      <Etq T={T} at={K.D + 0.8} until={K.Et - 0.3} x={1030} y={1150} texto="EN TI: esferas" tam={28} lado="izq" />
+      <Etq T={T} at={K.D + 0.4} until={K.Et - 0.3} x={60} y={600} texto="EN LA TIERRA: hilos (ampliados)" tam={28} />
+      <Etq T={T} at={K.D + 0.8} until={K.Et - 0.3} x={1030} y={1470} texto="EN TI: esferas" tam={28} lado="izq" />
       <TarjetaEstudio T={T} at={K.Et + 0.2} until={K.Ca - 0.3} anio="1994" quien="terremoto de Northridge, California" revista="Schneider et al., JAMA, 1997" y={520} />
       <Etq T={T} at={K.Et + 1.4} until={K.Ca - 0.3} x={600} y={760} texto="deslaves" tam={30} color={KC.ink} />
       <NumeroGigante T={T} at={K.Ca + 0.3} until={K.Cl - 0.3} valor={203} dur={1.6} etiqueta="casos · condado de Ventura" x={370} y={470} tam={170} color={KC.red} />
@@ -362,9 +392,11 @@ function FiebreValleShot() {
       <BarraEscala T={T} at={K.Es} until={K.V} texto="10 µm" largo={115} />
       <BarraEscala T={T} at={K.V} until={K.P} texto="1 m" largo={130} />
       <BarraEscala T={T} at={K.Ef} until={K.D} texto="50 µm" largo={230} />
-      <BarraEscala T={T} at={K.D} until={K.Et} texto="50 µm (esferas)" largo={130} />
+      <BarraEscala T={T} at={K.D} until={K.Et} texto="50 µm (esferas)" largo={160} />
       <BarraEscala T={T} at={K.Et} until={K.Cl} texto="1 km" largo={120} />
-      <BarraEscala T={T} at={K.Cl} until={K.C} texto="1 m" largo={110} />
+      <BarraEscala T={T} at={K.Cl} until={K.Si} texto="1 m" largo={149} />
+      <BarraEscala T={T} at={K.Si} until={K.Si + 2.6} texto="1 m" largo={129} />
+      <BarraEscala T={T} at={K.Si + 2.6} until={K.C} texto="1 m" largo={157} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 m" largo={176} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
