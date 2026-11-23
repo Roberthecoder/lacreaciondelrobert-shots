@@ -209,8 +209,10 @@ function CervezaShot() {
           <g opacity={1 - kprog(T, K.E + 2.7, K.E + 3.1)}>
             <MapaMundo x={-298} y={122} s={2.2} puntos={[[260, 450, KC.red, 18, kprog(T, K.E + 0.6, K.E + 1.0)]]} />
           </g>
-          <g opacity={kprog(T, K.E + 2.8, K.E + 3.2)}>
-            <rect x={0} y={1180} width={1080} height={120} fill={CV.suelo} />
+          {/* belleza: el bosque baja 220 px (antes el tercio de abajo quedaba vacío) y el suelo llega al borde */}
+          <g opacity={kprog(T, K.E + 2.8, K.E + 3.2)} transform="translate(0 220)">
+            <defs><linearGradient id="cv-suelo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={CV.suelo} /><stop offset="1" stopColor="#120c08" /></linearGradient></defs>
+            <rect x={0} y={1180} width={1080} height={620} fill="url(#cv-suelo)" />
             <Nothofagus T={T} x={300} y={1200} s={1.1} cyttaria={kprog(T, K.E + 3.6, K.E + 4.6)} seed={2} />
             <Nothofagus T={T} x={790} y={1210} s={1.0} cyttaria={kprog(T, K.E + 3.8, K.E + 4.8)} seed={5} />
             {[[262, 1090], [325, 1010], [770, 1120], [180, 1230], [860, 1240]].map(([lx, ly], i) => { const k = kprog(T, K.E + 4.6 + i * 0.15, K.E + 5.0 + i * 0.15, kEase.rebote);
@@ -251,6 +253,8 @@ function CervezaShot() {
       <Escena T={T} a={K.Ti} b={K.Mu} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
+          {/* belleza: mapa ×1.15 y bajado al centro del cuadro (antes arriba con el tercio de abajo vacío); etiquetas movidas igual */}
+          <g transform="translate(540 1010) scale(1.15) translate(-540 -905)">
           <MapaMundo x={60} y={640} s={1.1} puntos={[[260, 450, KC.red, 18, kprog(T, K.Ti + 0.3, K.Ti + 0.7)], [680, 140, KC.gold2, 24, kprog(T, K.Ti + 0.9, K.Ti + 1.3)], [418, 72, KC.mint, 13, kprog(T, K.Ti + 3.0, K.Ti + 3.4)]]} />
           {(() => { const gx = 130, gy = 1060, a = kprog(T, K.Ti + 1.4, K.Ti + 2.2, kEase.sale), b = kprog(T, K.Ti + 1.8, K.Ti + 2.6, kEase.sale);
             const P1 = [60 + 680 * 1.1, 640 + 140 * 1.1], P2 = [60 + 260 * 1.1, 640 + 450 * 1.1];
@@ -259,6 +263,7 @@ function CervezaShot() {
               {b > 0 && <line x1={gx} y1={gy - 60} x2={klerp(gx, P2[0], b)} y2={klerp(gy - 60, P2[1], b)} stroke={KC.ink} strokeWidth={5} strokeDasharray="14 12" />}
             </>; })()}
           <Levadura x={130} y={1000} r={56} color={CV.cel} mezcla={1} />
+          </g>
         </>)}
       </Escena>
       {/* 12 · hoy, la gran mayoría de la cerveza del mundo es lager */}
@@ -303,7 +308,7 @@ function CervezaShot() {
       <TarjetaEstudio T={T} at={K.E + 0.3} until={K.E + 2.7} anio="2011" quien="Argentina · EE. UU. · Portugal" revista="Libkind et al., PNAS 2011 · Patagonia" x={650} y={820} />
       <Etq T={T} at={K.E + 0.8} until={K.E + 2.7} x={300} y={1150} texto="Patagonia, Argentina" tam={28} color={KC.ink} />
       <Etq T={T} at={K.E + 3.2} until={K.Gn - 0.3} x={40} y={420} texto="Nothofagus · hayas del sur" it tam={32} color={KC.ink} />
-      <Etq T={T} at={K.E + 4.2} until={K.Gn - 0.3} x={40} y={470} texto="hongos Cyttaria en las ramas" it tam={28} color="#8a3a06" />
+      <Etq T={T} at={K.E + 4.2} until={K.Gn - 0.3} x={40} y={470} texto="hongos Cyttaria en las ramas" it tam={28} color={KC.orange} />
       <Etq T={T} at={K.E + 4.9} until={K.Gn - 0.3} x={40} y={520} texto="levaduras en corteza y suelo" tam={28} color={KC.ink} />
       <NumeroGigante T={T} at={K.Gn + 3.0} until={K.F - 0.3} valor={99.5} dec={1} dur={1.2} sufijo=" %" etiqueta="idéntico" x={340} y={600} tam={150} color={CV.verde} />
       <Etq T={T} at={K.Gn + 0.5} until={K.F - 0.3} x={100} y={820} texto="Saccharomyces eubayanus (silvestre)" it tam={28} color={CV.verde2} />
@@ -312,8 +317,8 @@ function CervezaShot() {
       <Etq T={T} at={K.F + 0.6} until={K.F + 4.4} x={150} y={1190} texto="aguanta el frío" tam={28} color={KC.ink} />
       <Etq T={T} at={K.F + 3.0} until={K.F + 4.4} x={660} y={1190} texto="come maltotriosa" tam={28} color={KC.ink} />
       <Chip T={T} at={K.F + 5.4} until={K.Ti - 0.3} texto="10–15 °C · fermentación lager" x={380} y={560} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Ti + 0.5} until={K.Mu - 0.3} x={380} y={1135} texto="Patagonia" tam={26} color={KC.red} />
-      <Etq T={T} at={K.Ti + 1.1} until={K.Mu - 0.3} x={560} y={900} texto="Tíbet: más parecida" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Ti + 0.5} until={K.Mu - 0.3} x={356} y={1275} texto="Patagonia" tam={26} color={KC.red} />
+      <Etq T={T} at={K.Ti + 1.1} until={K.Mu - 0.3} x={600} y={680} texto="Tíbet: más parecida" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Ti + 3.0} until={K.Mu - 0.3} texto="en 2022, también en Irlanda" x={340} y={470} tam={28} borde={KC.mint} />
       <Chip T={T} at={K.Ti + 3.6} until={K.Mu - 0.3} texto="su historia aún se investiga" x={340} y={555} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.Mu + 0.8} until={K.C - 0.3} texto="la gran mayoría del mercado mundial" x={540} y={520} tam={34} borde={KC.ink} />
