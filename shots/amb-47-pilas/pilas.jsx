@@ -11,12 +11,15 @@ function Garrafon({ x, y, tinte = 0, T = 0, s = 1, children }) {
   const cuerpo = 'M -150 0 Q -170 0 -170 -30 L -170 -300 Q -170 -350 -110 -370 L -60 -385 L -60 -420 L 60 -420 L 60 -385 L 110 -370 Q 170 -350 170 -300 L 170 -30 Q 170 0 150 0 Z';
   const ola = Math.sin(T * 3) * 6;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <defs><clipPath id={`gf${Math.round(x)}`}><path d={cuerpo} /></clipPath></defs>
-    <path d={cuerpo} fill="rgba(255,255,255,.55)" />
+    <defs><clipPath id={`gf${Math.round(x)}`}><path d={cuerpo} /></clipPath>
+      <linearGradient id="garrVid" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#fff" stopOpacity="0.7" /><stop offset="0.5" stopColor="#fff" stopOpacity="0.45" /><stop offset="1" stopColor="#9fb4c8" stopOpacity="0.55" /></linearGradient></defs>
+    <ellipse cx={0} cy={6} rx={190} ry={22} fill="#000" opacity={0.35} />
+    <path d={cuerpo} fill="url(#garrVid)" />
     <g clipPath={`url(#gf${Math.round(x)})`}>
       <path d={`M -180 -330 Q -90 ${-345 + ola} 0 -330 T 180 -330 L 180 10 L -180 10 Z`} fill={col} opacity={0.9} />
       {[-110, -40, 50, 120].map((bx, i) => <circle key={i} cx={bx} cy={-60 - ((T * 70 + i * 60) % 240)} r={7 + (i % 2) * 4} fill="#fff" opacity={0.45} />)}
       {children}
+      <rect x={110} y={-360} width={60} height={360} fill="#0b1020" opacity={0.14} />
     </g>
     <path d={cuerpo} fill="none" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     {[-250, -170, -90].map((yy) => <path key={yy} d={`M -170 ${yy} Q 0 ${yy + 24} 170 ${yy}`} stroke={KC.ink} strokeWidth={4} fill="none" opacity={0.35} />)}
@@ -32,6 +35,7 @@ function PilaAA({ x, y, s = 1, rot = 0, o = 1, banda = KC.orange, cuerpo = '#262
     <rect x={-48} y={-132} width={96} height={86} rx={18} fill={banda} stroke={KC.ink} strokeWidth={7} />
     <rect x={-48} y={-60} width={96} height={14} fill={banda} />
     <rect x={-34} y={-120} width={14} height={236} rx={7} fill="#fff" opacity={0.25} />
+    <rect x={18} y={-126} width={24} height={252} rx={10} fill="#000" opacity={0.22} />
     <text x={0} y={-80} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>+</text>
     <text x={4} y={20} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill="#fff">{texto}</text>
     <text x={4} y={70} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#fff">{sub}</text>
@@ -114,7 +118,9 @@ function GotasMetal({ T, x, y0, y1, desde, hasta, cada = 0.6, letras = [] }) {
 // Bote de basura (base en y).
 function Bote({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -120 -280 L 120 -280 L 100 0 L -100 0 Z" fill="#8f99a3" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <defs><linearGradient id="boteGr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#b4bdc6" /><stop offset="0.45" stopColor="#8f99a3" /><stop offset="1" stopColor="#5d656d" /></linearGradient></defs>
+    <ellipse cx={0} cy={4} rx={130} ry={16} fill="#000" opacity={0.35} />
+    <path d="M -120 -280 L 120 -280 L 100 0 L -100 0 Z" fill="url(#boteGr)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     {[-50, 0, 50].map((xx) => <line key={xx} x1={xx} y1={-240} x2={xx * 0.85} y2={-30} stroke={KC.ink} strokeWidth={5} opacity={0.5} />)}
     <rect x={-138} y={-312} width={276} height={36} rx={12} fill="#6c757e" stroke={KC.ink} strokeWidth={8} />
     <rect x={-30} y={-334} width={60} height={24} rx={8} fill="#6c757e" stroke={KC.ink} strokeWidth={6} />
@@ -124,7 +130,10 @@ function Bote({ x, y, s = 1 }) {
 function Acopio({ x, y, s = 1, brillo = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {brillo > 0 && <circle cx={0} cy={-150} r={200} fill={KC.yellow} opacity={0.35 * brillo} />}
-    <rect x={-120} y={-300} width={240} height={300} rx={18} fill={KC.leaf} stroke={KC.ink} strokeWidth={8} />
+    <defs><linearGradient id="acopGr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#7fd36a" /><stop offset="0.5" stopColor={KC.leaf} /><stop offset="1" stopColor="#2f7a2c" /></linearGradient></defs>
+    <ellipse cx={0} cy={4} rx={140} ry={18} fill="#000" opacity={0.35} />
+    <rect x={-120} y={-300} width={240} height={300} rx={18} fill="url(#acopGr)" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-104} y={-284} width={18} height={250} rx={9} fill="#fff" opacity={0.2} />
     <rect x={-70} y={-270} width={140} height={22} rx={11} fill="#0b1020" />
     <text x={0} y={-180} textAnchor="middle" style={{ font:`400 50px ${KF.titulo}` }} fill="#fff" stroke="#0b1020" strokeWidth={5} paintOrder="stroke">ACOPIO</text>
     <text x={0} y={-128} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill="#fff" stroke="#0b1020" strokeWidth={5} paintOrder="stroke">DE PILAS</text>
@@ -234,7 +243,7 @@ function PilasShot() {
       {/* 7-8 · estudio de Chiang Mai: columnas de prueba y lo que escurre */}
       <Escena T={T} a={K.Es} b={K.Li} zoom={0.03}>
         <FondoLunares color={KC.mint} />
-        {svg(<g opacity={col} transform={`translate(540 ${930 + (1 - col) * 60}) scale(1.15) translate(-540 -885)`}>
+        {svg(<g opacity={col} transform={`translate(540 ${990 + (1 - col) * 60}) scale(1.2) translate(-540 -885)`}>
           <Columna x={230} y0={600} h={480} n={0} seed={3} lleno={llena(0.25)} tinte={0.05} />
           <Columna x={540} y0={600} h={480} n={5} seed={5} lleno={llena(0.45)} tinte={0.4} />
           <Columna x={850} y0={600} h={480} n={14} seed={8} lleno={llena(0.8)} tinte={0.9} />
@@ -249,7 +258,7 @@ function PilasShot() {
       {/* 9 · litio: si se dañan, fuego */}
       <Escena T={T} a={K.Li} b={K.Mx}>
         <FondoLunares color={KC.pink} />
-        {svg(<g transform="translate(540 1180) scale(1.35) translate(-502 -1080)"><rect x={170} y={900} width={260} height={180} rx={12} fill="#c9a256" stroke={KC.ink} strokeWidth={7} />
+        {svg(<g transform="translate(540 1150) scale(1.4) translate(-505 -1000)"><rect x={170} y={900} width={260} height={180} rx={12} fill="#c9a256" stroke={KC.ink} strokeWidth={7} />
           <PilaBoton x={300} y={856 + 20 * aplasta} s={1.6} texto="Li" color="#e3e7ec" sy={1 - 0.5 * aplasta} />
           <PilaAA x={700} y={1080 - 150 * (1 - 0.35 * aplasta)} s={1} banda={KC.leaf} cuerpo="#1f6b3a" texto="Li-ion" sub="recargable" sy={1 - 0.35 * aplasta} />
           {fuego > 0 && <><Fuego T={T} x={300} y={850} s={0.8 * fuego} /><Fuego T={T} x={700} y={900} s={1.1 * fuego} /></>}
@@ -258,7 +267,7 @@ function PilasShot() {
           <text x={300} y={1125} textAnchor="middle" style={{ font:`900 32px ${KF.texto}` }} fill={KC.ink}>botón de litio</text>
           <text x={700} y={1125} textAnchor="middle" style={{ font:`900 32px ${KF.texto}` }} fill={KC.ink}>recargable Li-ion</text></g>)}
       </Escena>
-      <Chip T={T} at={K.Li + 1.9} until={K.Mx - 0.2} texto="dañadas: chispa o incendio" y={1440} x={540} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.Li + 1.9} until={K.Mx - 0.2} texto="dañadas: chispa o incendio" y={1470} x={540} tam={44} borde={KC.red} />
       {/* 10 · México: plan de manejo y residuo peligroso */}
       <Escena T={T} a={K.Mx} b={K.C}>
         <FondoLunares color={KC.cyan} />
@@ -281,7 +290,7 @@ function PilasShot() {
       <Chip T={T} at={K.Ci + 0.4} until={K.F - 0.1} texto="lo que dicen distintas notas:" y={330} x={540} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.F + 0.6} until={K.M - 0.2} texto="¿qué estudio? ¿cómo se midió?" y={330} x={540} tam={42} borde={KC.red} />
       <NumeroGigante T={T} at={K.M + 0.3} until={K.Le - 0.2} valor={600000} dur={0.6} desde={600000} sufijo=" L" x={540} y={500} tam={150} color={KC.yellow} />
-      <Chip T={T} at={K.Esc + 0.6} until={K.Li - 0.2} texto="más pilas → más manganeso (Mn) y zinc (Zn)" y={1410} x={540} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.Esc + 0.6} until={K.Li - 0.2} texto="más pilas → más manganeso (Mn) y zinc (Zn)" y={1450} x={540} tam={38} borde={KC.ink} />
       <MitoTachado T={T} at={K.C + 0.2} tacharEn={K.C + 1.1} until={K.Ou - 0.1} texto="600,000 L" x={540} y={440} tam={84} />
       <Chip T={T} at={K.C + 2.6} until={K.Ou - 0.1} texto="no la tires: llévala a acopio" y={1470} x={540} tam={44} borde={KC.leaf} />
 

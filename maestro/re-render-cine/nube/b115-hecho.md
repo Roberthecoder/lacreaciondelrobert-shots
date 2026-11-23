@@ -1,0 +1,1 @@
+- amb-47-pilas: volumen en garrafón (vidrio con degradado y sombras), pilas AA, bote de basura y contenedor de acopio; Estudio/Escurre: columnas 1.15→1.2× bajadas al centro, chip bajo los vasos; Litio: botón y pila Li-ion 1.4× centrados (antes cargados a la izquierda), chip bajado. Auditores: sin láminas · encuadre bien.
