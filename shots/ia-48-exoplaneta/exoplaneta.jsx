@@ -140,9 +140,9 @@ function Exoplaneta() {
       <Escena T={T} a={K.G} b={K.Tr} zoom={0.04} origen="50% 35%">
         <Cielo T={T} />
         {svg(<>
-          <Estrella x={540} y={650} r={300} T={T} apaga={apagaG} id="g" />
-          <circle cx={540 + cruce(progG, CA[0]) * 300} cy={682} r={10} fill="#05060a" opacity={Math.abs(cruce(progG, CA[0])) < 1.05 ? 1 : 0} />
-          <CurvaLuz x={50} y={1090} w={980} h={350} prog={progG} caidas={CA} seed={2} grosor={8} />
+          <Estrella x={540} y={820} r={300} T={T} apaga={apagaG} id="g" />
+          <circle cx={540 + cruce(progG, CA[0]) * 300} cy={852} r={10} fill="#05060a" opacity={Math.abs(cruce(progG, CA[0])) < 1.05 ? 1 : 0} />
+          <CurvaLuz x={50} y={1200} w={980} h={340} prog={progG} caidas={CA} seed={2} grosor={8} />
         </>)}
       </Escena>
       <Chip T={T} at={K.G + 1.2} until={K.Tr - 0.2} texto="planeta: invisible" x={540} y={236} tam={38} borde={KC.red} />
@@ -194,11 +194,11 @@ function Exoplaneta() {
       {/* 6 · entrenar la red neuronal */}
       <Escena T={T} a={K.En} b={K.Bu}>
         <FondoCircuito T={T} />
-        <RedNeuronal T={T} x={330} y={580} ancho={660} alto={800} capas={[4, 6, 6, 3, 2]} onda={onda} />
+        <RedNeuronal T={T} x={330} y={660} ancho={660} alto={800} capas={[4, 6, 6, 3, 2]} onda={onda} />
         {svg(<>
           {Array.from({ length: 4 }, (_, i) => { const ciclo = 1.6, t0 = K.En + 0.8 + i * ciclo, u = kprog(T, t0, t0 + ciclo * 0.9, kEase.suave), planeta = i % 2 === 0;
             if (T < t0 || T > t0 + ciclo) return null;
-            return <g key={i} transform={`translate(${klerp(-460, 20, Math.min(1, u * 1.6))} ${850 + (i % 2) * 200}) scale(${klerp(1.25, 0.75, Math.max(0, u * 2 - 1))})`} opacity={1 - Math.max(0, u * 3 - 2)}>
+            return <g key={i} transform={`translate(${klerp(-460, 20, Math.min(1, u * 1.6))} ${930 + (i % 2) * 200}) scale(${klerp(1.25, 0.75, Math.max(0, u * 2 - 1))})`} opacity={1 - Math.max(0, u * 3 - 2)}>
               <MiniCurva x={0} y={0} w={340} h={100} caidas={planeta ? [{ c: 0.5, w: 0.06, d: 0.07 }] : [{ c: 0.5, w: 0.2, d: 0.05 }, { c: 0.2, w: 0.04, d: -0.03 }]} ruido={0.004} seed={i + 9}
                 etiqueta={planeta ? 'planeta ✔' : 'falsa alarma'} colorEt={planeta ? KC.mint : KC.coral} />
             </g>; })}
@@ -223,28 +223,28 @@ function Exoplaneta() {
       <Escena T={T} a={K.H} b={H2}>
         <Cielo T={T} seed={13} />
         {svg(<>
-          <CurvaLuz x={50} y={300} w={980} h={360} prog={kprog(T, K.H + 0.1, K.H + 1.4)} caidas={[{ c: 0.62, w: 0.035, d: 0.022 }]} ruido={0.007} seed={21} escala={0.12}
+          <CurvaLuz x={50} y={450} w={980} h={360} prog={kprog(T, K.H + 0.1, K.H + 1.4)} caidas={[{ c: 0.62, w: 0.035, d: 0.022 }]} ruido={0.007} seed={21} escala={0.12}
             marca={T > K.H + 1.5 ? { c: 0.62, w: 0.035, o: kprog(T, K.H + 1.5, K.H + 1.8) } : null} />
-          <g opacity={kprog(T, K.H + 1.9, K.H + 2.4)}>
-            <Estrella x={540} y={1060} r={200} T={T} id="k90" />
-            {[275, 325, 385].map((ro, i) => <ellipse key={i} cx={540} cy={1060} rx={ro} ry={ro * 0.32} fill="none" stroke="rgba(246,243,236,.35)" strokeWidth={4} />)}
-            <ellipse cx={540} cy={1060} rx={325} ry={104} fill="none" stroke={KC.mint} strokeWidth={7} strokeDasharray="14 9" opacity={kprog(T, K.H + 2.5, K.H + 2.9)} />
-            <g opacity={kprog(T, K.H + 2.5, K.H + 2.9)}><Planeta x={540 + Math.cos(T * 1.4) * 325} y={1060 + Math.sin(T * 1.4) * 104} r={34} color={ROCA} T={T} lava /></g>
+          <g opacity={klerp(0.3, 1, kprog(T, K.H + 1.9, K.H + 2.4))}>
+            <Estrella x={540} y={1180} r={200} T={T} id="k90" />
+            {[275, 325, 385].map((ro, i) => <ellipse key={i} cx={540} cy={1180} rx={ro} ry={ro * 0.32} fill="none" stroke="rgba(246,243,236,.35)" strokeWidth={4} />)}
+            <ellipse cx={540} cy={1180} rx={325} ry={104} fill="none" stroke={KC.mint} strokeWidth={7} strokeDasharray="14 9" opacity={kprog(T, K.H + 2.5, K.H + 2.9)} />
+            <g opacity={kprog(T, K.H + 2.5, K.H + 2.9)}><Planeta x={540 + Math.cos(T * 1.4) * 325} y={1180 + Math.sin(T * 1.4) * 104} r={34} color={ROCA} T={T} lava /></g>
           </g>
         </>)}
       </Escena>
-      <Etq T={T} at={K.H + 2.0} until={H2 - 0.2} x={640} y={775} texto="estrella Kepler-90" tam={32} />
-      <Chip T={T} at={K.H + 2.7} until={H2 - 0.2} texto="¡nuevo: Kepler-90i!" x={540} y={1420} tam={48} borde={KC.mint} />
+      <Etq T={T} at={K.H + 2.0} until={H2 - 0.2} x={640} y={895} texto="estrella Kepler-90" tam={32} />
+      <Chip T={T} at={K.H + 2.7} until={H2 - 0.2} texto="¡nuevo: Kepler-90i!" x={540} y={1520} tam={48} borde={KC.mint} />
       <Escena T={T} a={H2} b={K.Em}>
         <FondoLunares color={KC.coral} />
         {svg(<>
-          <Planeta x={540} y={740} r={340 * kprog(T, H2 - 0.1, H2 + 0.5, kEase.rebote)} color={ROCA} T={T} lava />
+          <Planeta x={540} y={880} r={350 * kprog(T, H2 - 0.1, H2 + 0.5, kEase.rebote)} color={ROCA} T={T} lava />
         </>)}
       </Escena>
-      <Chip T={T} at={H2 + 0.3} until={K.Em - 0.2} texto="probablemente rocoso" x={540} y={320} tam={40} borde={KC.ink} />
-      <Chip T={T} at={H2 + 1.6} until={K.Em - 0.2} texto="1 vuelta = 14.4 días" x={540} y={1190} tam={42} borde={KC.yellow} />
-      <Chip T={T} at={H2 + 3.0} until={K.Em - 0.2} texto="> 400 °C (estimado)" x={540} y={1285} tam={42} borde={KC.red} />
-      <Chip T={T} at={H2 + 3.8} until={K.Em - 0.2} texto="≈ 30 % más grande que la Tierra" x={540} y={1375} tam={34} borde={KC.ink} />
+      <Chip T={T} at={H2 + 0.3} until={K.Em - 0.2} texto="probablemente rocoso" x={540} y={440} tam={40} borde={KC.ink} />
+      <Chip T={T} at={H2 + 1.6} until={K.Em - 0.2} texto="1 vuelta = 14.4 días" x={540} y={1320} tam={42} borde={KC.yellow} />
+      <Chip T={T} at={H2 + 3.0} until={K.Em - 0.2} texto="> 400 °C (estimado)" x={540} y={1410} tam={42} borde={KC.red} />
+      <Chip T={T} at={H2 + 3.8} until={K.Em - 0.2} texto="≈ 30 % más grande que la Tierra" x={540} y={1495} tam={34} borde={KC.ink} />
       {/* 9 · empate: 8 = 8 */}
       <Escena T={T} a={K.Em} b={K.C}>
         <FondoLunares color={KC.yellow} />
@@ -259,10 +259,10 @@ function Exoplaneta() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.04} origen="50% 35%">
         <Cielo T={T} />
         {svg(<>
-          <Estrella x={540} y={650} r={300} T={T} apaga={apagaC} id="c" />
-          <ellipse cx={540} cy={682} rx={395} ry={62} fill="none" stroke={KC.mint} strokeWidth={5} strokeDasharray="14 9" opacity={0.7} />
-          <Planeta x={540 + cruce(progC, CA[0]) * 252} y={682} r={25} color={ROCA} T={T} lava />
-          <CurvaLuz x={50} y={1090} w={980} h={350} prog={progC} caidas={CA} seed={2} grosor={8} marca={progC > 0.6 ? { c: 0.55, w: 0.07, o: kprog(T, K.C + 2.0, K.C + 2.4) } : null} />
+          <Estrella x={540} y={820} r={300} T={T} apaga={apagaC} id="c" />
+          <ellipse cx={540} cy={852} rx={395} ry={62} fill="none" stroke={KC.mint} strokeWidth={5} strokeDasharray="14 9" opacity={0.7} />
+          <Planeta x={540 + cruce(progC, CA[0]) * 252} y={852} r={25} color={ROCA} T={T} lava />
+          <CurvaLuz x={50} y={1200} w={980} h={340} prog={progC} caidas={CA} seed={2} grosor={8} marca={progC > 0.6 ? { c: 0.55, w: 0.07, o: kprog(T, K.C + 2.0, K.C + 2.4) } : null} />
         </>)}
       </Escena>
       <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="un mundo pasando enfrente" x={540} y={236} tam={38} borde={KC.mint} />
