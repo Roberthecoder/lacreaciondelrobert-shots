@@ -194,6 +194,7 @@ function Pupila() {
       <Escena T={T} a={K.Resultado} b={K.Pregunta} zoom={0.02}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
+          <g transform="translate(0 100)">{/* belleza: ojo y gráfica bajan 100 px al centro (también la «Pregunta», que la deja detrás) */}
           <rect x={100} y={830} width={900} height={570} rx={30} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
           <line x1={G.x0} y1={G.y0} x2={G.x1} y2={G.y0} stroke={KC.texto} strokeWidth={5} />
           <line x1={G.x0} y1={G.y0} x2={G.x0} y2={G.y1 - 10} stroke={KC.texto} strokeWidth={5} />
@@ -205,6 +206,7 @@ function Pupila() {
           {fR > 0 && <circle cx={cxR} cy={cyR} r={14} fill="#fff" stroke={KC.ink} strokeWidth={5} />}
           <circle cx={540} cy={530} r={215} fill="#fff" stroke={KC.ink} strokeWidth={9} />
           <OjoPupila x={540} y={530} s={0.72} pup={0.3 + 0.5 * vR} id="r" />
+          </g>
         </Lienzo>
         <Chip T={T} at={K.Resultado + 0.5} until={K.Pregunta - 0.1} texto="dibujo exagerado" x={860} y={330} tam={30} borde={KC.ink} />
       </Escena>
@@ -212,6 +214,10 @@ function Pupila() {
       {/* El «?» baja y crece sobre la gráfica: la escena anterior (ojo y curva) se ve detrás a media luz y el conjunto queda centrado. */}
       <Escena T={T} a={K.Pregunta} b={K.Locus} zoom={0.1}>
         <FondoLunares color={KC.cyan} />
+        {/* belleza: la curva de la pupila (lo que se pregunta) sigue encendida sobre el velo, en su mismo lugar */}
+        <Lienzo><g transform="translate(0 100)" opacity={0.9}>
+          {ptsR.length > 1 && <polyline points={ptsR.join(' ')} fill="none" stroke={KC.mint} strokeWidth={10} strokeLinejoin="round" strokeLinecap="round" />}
+          <circle cx={cxR} cy={cyR} r={14} fill="#fff" stroke={KC.ink} strokeWidth={5} /></g></Lienzo>
         <Lienzo><text x={540} y={1450} textAnchor="middle" fill={KC.yellow} stroke={KC.ink} strokeWidth={16}
           transform={`rotate(${Math.sin(T * 3) * 6} 540 1150) scale(${klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote))})`} style={{ font:`400 700px ${KF.titulo}`, transformOrigin:'540px 1150px' }}>?</text></Lienzo>
       </Escena>
