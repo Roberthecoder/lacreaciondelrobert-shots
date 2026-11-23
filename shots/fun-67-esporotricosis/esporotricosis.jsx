@@ -47,7 +47,9 @@ function Puro({ x, y, s = 1, rot = 0, yema = 0 }) {
 function Brazo({ x, y, s = 1, n = 0, linfa = 0 }) {
   const B = [[-330, 10], [-190, -6], [-60, -16], [70, -24]];
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -470 -60 Q -500 0 -470 60 L 300 90 Q 420 90 440 0 Q 420 -90 300 -100 Z" fill={SP.piel} stroke={KC.ink} strokeWidth={9} />
+    <defs><linearGradient id="gBrazoEsp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#f9d6b8" /><stop offset="0.5" stopColor={SP.piel} /><stop offset="1" stopColor="#c98a63" /></linearGradient></defs>
+    <path d="M -470 -60 Q -500 0 -470 60 L 300 90 Q 420 90 440 0 Q 420 -90 300 -100 Z" fill="url(#gBrazoEsp)" stroke={KC.ink} strokeWidth={9} />
+    <path d="M -440 -40 Q 0 -70 300 -80" stroke="rgba(255,255,255,.35)" strokeWidth={8} fill="none" strokeLinecap="round" />
     <path d="M -520 -40 Q -600 -50 -620 -10 Q -600 30 -520 40 Z" fill={SP.piel} stroke={KC.ink} strokeWidth={8} />
     {linfa > 0 && <path d="M -440 20 Q -200 -10 60 -24 T 380 -40" pathLength={1} stroke={SP.linfa} strokeWidth={10} fill="none" strokeDasharray={`${linfa} 2`} strokeLinecap="round" opacity=".85" />}
     {B.map(([bx, by], i) => { const on = kclamp(n - i, 0, 1); return on > 0 ? <g key={i}><circle cx={bx} cy={by} r={30 * on} fill={SP.bulto} stroke={KC.ink} strokeWidth={5} /><circle cx={bx - 8} cy={by - 8} r={8 * on} fill="#ffd0c4" /></g> : null; })}
@@ -57,8 +59,10 @@ function Gato({ x, y, s = 1, T, zarpa = 0 }) {
   const c = Math.sin(T * 3) * 8;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d={`M 140 40 Q 260 ${-20 + c} 250 ${-140 + c}`} stroke="#e39b3a" strokeWidth={26} fill="none" strokeLinecap="round" />
-    <ellipse cx={40} cy={40} rx={150} ry={95} fill="#f0a94a" stroke={KC.ink} strokeWidth={8} />
-    <circle cx={-110} cy={-50} r={85} fill="#f0a94a" stroke={KC.ink} strokeWidth={8} />
+    <defs><radialGradient id="gGatoEsp" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stopColor="#ffc879" /><stop offset="0.6" stopColor="#f0a94a" /><stop offset="1" stopColor="#c97f2c" /></radialGradient></defs>
+    <ellipse cx={40} cy={40} rx={150} ry={95} fill="url(#gGatoEsp)" stroke={KC.ink} strokeWidth={8} />
+    {[-20, 30, 80].map((dx) => <path key={dx} d={`M ${dx} -40 q 10 25 0 50`} stroke="#c97f2c" strokeWidth={8} fill="none" strokeLinecap="round" opacity=".7" />)}
+    <circle cx={-110} cy={-50} r={85} fill="url(#gGatoEsp)" stroke={KC.ink} strokeWidth={8} />
     <path d="M -180 -100 L -170 -175 L -120 -125 Z M -60 -110 L -50 -180 L -100 -130 Z" fill="#f0a94a" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     <ellipse cx={-140} cy={-60} rx={9} ry={14} fill={KC.ink} /><ellipse cx={-80} cy={-60} rx={9} ry={14} fill={KC.ink} />
     <path d="M -120 -25 l 10 8 l 10 -8" stroke={KC.ink} strokeWidth={5} fill="none" />
@@ -135,7 +139,7 @@ function EsporoShot() {
       <Escena T={T} a={K.En} b={K.Di} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<><Mano x={760} y={1330} s={1.2} gota={0.4} />
-          <g transform="translate(130 800) scale(1.3)"><rect x={-26} y={-220} width={52} height={330} rx={26} fill="#fff" stroke={KC.ink} strokeWidth={6} />
+          <g transform="translate(175 820) scale(1.3)"><rect x={-26} y={-220} width={52} height={330} rx={26} fill="#fff" stroke={KC.ink} strokeWidth={6} />
             <circle cy={140} r={50} fill={KC.red} stroke={KC.ink} strokeWidth={6} /><rect x={-12} y={100 - (tmp - 20) * 16} width={24} height={(tmp - 20) * 16 + 40} fill={KC.red} />
             <text x={0} y={-250} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>{`${Math.round(tmp)} °C`}</text></g></>)}
         <Lupa T={T} at={K.En + 0.3} until={K.Di - 0.2} x={630} y={830} r={280} fx={516} fy={1284} interior={interiorPiel} tinte={KC.gold2} etiqueta="POR DENTRO · piel" />
@@ -145,9 +149,9 @@ function EsporoShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
         {fsvg(<g transform="translate(540 940) scale(1.3) translate(-540 -900)">
-          <line x1={540} y1={600} x2={540} y2={1200} stroke="rgba(255,255,255,.3)" strokeWidth={4} strokeDasharray="14 10" />
-          {[[150, 760, -10], [180, 900, 15], [130, 1040, -5]].map(([x, y, a], i) => <HifaFlor key={i} x={x} y={y} s={1.15} rot={a} p={kprog(T, K.Di - 1.0 + i * 0.15, K.Di + 0.3 + i * 0.15)} />)}
-          {[[660, 740, 20, 0], [830, 800, -30, 1], [700, 920, 60, 0], [860, 970, 10, 1], [740, 1060, -20, 0]].map(([x, y, a, yv], i) => { const p = kprog(T, K.Di + 2.0 + i * 0.2, K.Di + 2.5 + i * 0.2, kEase.rebote);
+          <line x1={540} y1={560} x2={540} y2={1250} stroke="rgba(255,255,255,.3)" strokeWidth={4} strokeDasharray="14 10" />
+          {[[150, 680, -10], [180, 900, 15], [130, 1120, -5]].map(([x, y, a], i) => <HifaFlor key={i} x={x} y={y} s={1.15} rot={a} p={kprog(T, K.Di - 1.0 + i * 0.15, K.Di + 0.3 + i * 0.15)} />)}
+          {[[670, 680, 20, 0], [840, 790, -30, 1], [700, 920, 60, 0], [860, 1030, 10, 1], [730, 1150, -20, 0]].map(([x, y, a, yv], i) => { const p = kprog(T, K.Di + 2.0 + i * 0.2, K.Di + 2.5 + i * 0.2, kEase.rebote);
             return p > 0 ? <Puro key={i} x={x} y={y} s={1.5 * p} rot={a} yema={yv * (0.5 + 0.5 * Math.sin(T * 2 + i))} /> : null; })}
         </g>)}
       </Escena>
@@ -155,8 +159,8 @@ function EsporoShot() {
       <Escena T={T} a={K.Bu} b={K.Ca} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Brazo x={600} y={1040} s={1.25} n={kprog(T, K.Bu + 2.2, K.Bu + 2.8)} />
-          <g transform="translate(300 700) scale(1.3)"><rect x={-150} y={-120} width={300} height={220} rx={20} fill="#fff" stroke={KC.ink} strokeWidth={7} />
+          <Brazo x={660} y={1080} s={1.6} n={kprog(T, K.Bu + 2.2, K.Bu + 2.8)} />
+          <g transform="translate(330 650) scale(1.3)"><rect x={-150} y={-120} width={300} height={220} rx={20} fill="#fff" stroke={KC.ink} strokeWidth={7} />
             <rect x={-150} y={-120} width={300} height={60} rx={20} fill={KC.red} stroke={KC.ink} strokeWidth={7} />
             <text y={60} textAnchor="middle" style={{ font:`400 100px ${KF.titulo}` }} fill={KC.ink}>{Math.max(1, Math.round(12 * kprog(T, K.Bu + 0.3, K.Bu + 2.2)))}</text>
             <text y={-78} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill="#fff">SEMANAS</text></g>
@@ -165,7 +169,7 @@ function EsporoShot() {
       {/* 5 · en fila, subiendo por el brazo (vasos linfáticos) */}
       <Escena T={T} a={K.Ca} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<Brazo x={600} y={1040} s={1.25} n={1 + nB * 0.75} linfa={kprog(T, K.Ca + 0.2, K.Ca + 1.6)} />)}
+        {fsvg(<Brazo x={660} y={1080} s={1.6} n={1 + nB * 0.75} linfa={kprog(T, K.Ca + 0.2, K.Ca + 1.6)} />)}
       </Escena>
       {/* 6 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Ga} zoom={0.08}>
@@ -214,33 +218,33 @@ function EsporoShot() {
       <Chip T={T} at={K.G + 1.8} until={K.N - 0.2} texto="un hongo" x={290} y={420} tam={44} borde={KC.gold} />
       <Etq T={T} at={K.N + 0.4} until={K.En - 0.3} x={60} y={500} texto="Sporothrix" it tam={44} color={KC.ink} />
       <Etq T={T} at={K.En + 1.0} until={K.Di - 0.3} x={60} y={1290} texto="cortada o raspón" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.En + 2.2} until={K.Di - 0.3} texto="con tu calor, cambia de forma" x={540} y={470} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Di + 0.2} until={K.Bu - 0.3} texto="afuera · 25 °C · moho" x={280} y={500} tam={28} borde={SP.hifa} />
-      <Chip T={T} at={K.Di + 1.9} until={K.Bu - 0.3} texto="adentro · 37 °C · levadura" x={800} y={500} tam={28} borde={SP.lev} />
-      <Etq T={T} at={K.Di + 1.2} until={K.Bu - 0.3} x={60} y={1380} texto="conidios agrupados en flor" tam={24} color={SP.hifa} />
-      <Etq T={T} at={K.Di + 2.8} until={K.Bu - 0.3} x={1030} y={1380} lado="izq" texto="forma de puro" tam={26} color={SP.lev} />
-      <Etq T={T} at={K.Bu + 2.6} until={K.Ca - 0.3} x={60} y={1190} texto="donde te picaste" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ca + 1.2} until={K.P - 0.3} x={60} y={1190} texto="vaso linfático" tam={30} color="#147a4a" />
+      <Chip T={T} at={K.En + 2.2} until={K.Di - 0.3} texto="con tu calor, cambia de forma" x={600} y={400} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.Di + 0.2} until={K.Bu - 0.3} texto="afuera · 25 °C · moho" x={280} y={470} tam={37} borde={SP.hifa} />
+      <Chip T={T} at={K.Di + 1.9} until={K.Bu - 0.3} texto="adentro · 37 °C · levadura" x={810} y={470} tam={37} borde={SP.lev} />
+      <Etq T={T} at={K.Di + 1.2} until={K.Bu - 0.3} x={60} y={1420} texto="conidios agrupados en flor" tam={30} color={SP.hifa} />
+      <Etq T={T} at={K.Di + 2.8} until={K.Bu - 0.3} x={1030} y={1420} lado="izq" texto="forma de puro" tam={30} color={SP.lev} />
+      <Etq T={T} at={K.Bu + 2.6} until={K.Ca - 0.3} x={60} y={1300} texto="donde te picaste" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 1.2} until={K.P - 0.3} x={60} y={1300} texto="vaso linfático" tam={32} color={SP.linfa} />
       <Chip T={T} at={K.Ca + 2.0} until={K.P - 0.3} texto="en fila, subiendo" x={540} y={800} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.Ga + 0.5} until={K.E - 0.3} x={60} y={1370} texto="Sporothrix brasiliensis" it tam={36} color={KC.ink} />
       <Chip T={T} at={K.Ga + 1.8} until={K.E - 0.3} texto="arañazos y mordidas" x={400} y={470} tam={36} borde={KC.red} />
       <Etq T={T} at={K.Ga + 0.8} until={K.E - 0.3} x={700} y={560} lado="izq" texto="Brasil" tam={28} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 2.4} anio="1997–2011" quien="Fiocruz · Río de Janeiro" revista="Gremião et al., PLoS Pathogens, 2017" y={390} />
-            <Chip T={T} at={K.E + 2.5} until={K.Mx - 0.3} texto="casos humanos registrados" x={540} y={520} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Mx + 0.2} until={K.Mi - 0.3} texto="una de las micosis bajo la piel más frecuentes" x={540} y={470} tam={28} borde={KC.ink} />
-      <Etq T={T} at={K.Mx + 1.4} until={K.Mi - 0.3} x={60} y={1490} texto="casos publicados 1914–2019 · Toriello et al., 2020" tam={22} color={KC.ink} />
-      <Chip T={T} at={K.Mx + 2.8} until={K.Mi - 0.3} texto="hasta 2019" x={880} y={1110} tam={32} borde={KC.gold} />
+            <Chip T={T} at={K.E + 2.5} until={K.Mx - 0.3} texto="casos humanos registrados" x={540} y={520} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.Mx + 0.2} until={K.Mi - 0.3} texto="una de las micosis bajo la piel más frecuentes" x={540} y={470} tam={37} borde={KC.ink} />
+      <Etq T={T} at={K.Mx + 1.4} until={K.Mi - 0.3} x={70} y={545} texto="casos publicados 1914–2019 · Toriello et al., 2020" tam={27} color={KC.ink} />
+      <Chip T={T} at={K.Mx + 2.8} until={K.Mi - 0.3} texto="hasta 2019" x={880} y={1110} tam={38} borde={KC.gold} />
       <Chip T={T} at={K.Mi + 0.4} until={K.C - 0.3} texto="Sudáfrica · años 40" x={300} y={470} tam={36} borde={KC.gold} />
       <Chip T={T} at={K.Mi + 1.4} until={K.C - 0.3} texto="+3,000 mineros de oro" x={300} y={560} tam={36} borde={KC.gold} />
       <Etq T={T} at={K.Mi + 2.2} until={K.C - 0.3} x={115} y={900} texto="el hongo estaba en la madera" tam={28} color={KC.texto} />
-      <Chip T={T} at={K.C + 0.3} until={K.Ou} texto="tiene tratamiento (antifúngicos)" x={340} y={300} tam={32} borde={KC.mint} />
+      <Chip T={T} at={K.C + 0.3} until={K.Ou} texto="tiene tratamiento (antifúngicos)" x={350} y={300} tam={37} borde={KC.mint} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="guantes y manga larga" x={340} y={390} tam={36} borde={KC.gold} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.N} texto="5 cm" largo={166} />
       <BarraEscala T={T} at={K.En} until={K.Di} texto="5 cm" largo={147} />
       <BarraEscala T={T} at={K.Di} until={K.Bu} texto="5 µm" largo={130} />
-      <BarraEscala T={T} at={K.Bu} until={K.P} texto="10 cm" largo={163} />
+      <BarraEscala T={T} at={K.Bu} until={K.P} texto="10 cm" largo={209} />
       <BarraEscala T={T} at={K.Ga} until={K.E} texto="10 cm" largo={156} />
       <BarraEscala T={T} at={K.Mx} until={K.Mi} texto="500 km" largo={138} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={166} />
