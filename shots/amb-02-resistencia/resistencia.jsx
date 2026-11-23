@@ -95,7 +95,7 @@ function ResistenciaNarrado() {
         <FondoLunares color={KC.pink} punto="rgba(255,255,255,.25)" />
         <Tu T={T} abre={kprog(T, K.G + 0.1, K.G + 0.6)} k={1.4} cy={1230} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Capsula x={klerp(200, 540, kprog(T, K.G, K.G + 1.1, kEase.suave))} y={klerp(330, 1020, kprog(T, K.G, K.G + 1.4, kEase.suave))} s={klerp(1.5, 0.6, kprog(T, K.G, K.G + 1.4))} rot={T * 200} />
+          <Capsula x={klerp(340, 540, kprog(T, K.G, K.G + 1.1, kEase.suave))} y={klerp(440, 1020, kprog(T, K.G, K.G + 1.4, kEase.suave))} s={klerp(1.5, 0.6, kprog(T, K.G, K.G + 1.4))} rot={T * 200} />
         </svg>
       </Escena>
       {/* micro: la colonia, de la gancho a "comparten" */}

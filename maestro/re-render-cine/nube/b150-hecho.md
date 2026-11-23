@@ -1,1 +1,2 @@
 - bio-02-vacas: rumen y cierre: vaca, horizonte del pasto, lupa del estómago y etiquetas bajados 150 px para centrar (antes la lupa cargaba todo arriba); proteína: intestino bajado 140 px con su etiqueta y chip. Sin láminas · encuadre bien (antes 3 escenas ARRIBA).
+- amb-02-resistencia: gancho: la cápsula arranca más adentro del cuadro (antes, en el cuadro 0, se encimaba con el logo de arriba a la izquierda). Resto de escenas ya cumplía (colonia grande y centrada, bacterias atenuadas detrás de los números). Sin láminas · encuadre bien.
