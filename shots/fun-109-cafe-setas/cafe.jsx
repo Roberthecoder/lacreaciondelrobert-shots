@@ -35,8 +35,10 @@ function Monton({ x, y, s = 1, p = 1, paja = 0, seed = 4 }) {
   const granos = Array.from({ length: 70 }, () => ({ u: g() * 2 - 1, v: g(), r: 3 + g() * 5, c: g() < 0.5 ? CF.poso2 : CF.poso3 }));
   const tallos = Array.from({ length: 16 }, () => ({ u: g() * 1.6 - 0.8, v: 0.15 + g() * 0.6, a: g() * 180, l: 50 + g() * 60 }));
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <ellipse cx={0} cy={6} rx={w + 20} ry={22} fill="rgba(0,0,0,.18)" />
-    <path d={`M ${-w} 0 Q ${-w * 0.55} ${-h * 1.25} 0 ${-h} Q ${w * 0.55} ${-h * 1.25} ${w} 0 Z`} fill={CF.poso} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <defs><radialGradient id="cfMonton" cx="38%" cy="22%" r="85%"><stop offset="0" stopColor="#6a4529" /><stop offset=".55" stopColor={CF.poso} /><stop offset="1" stopColor="#1e120a" /></radialGradient></defs>
+    <ellipse cx={0} cy={8} rx={w + 30} ry={26} fill="rgba(0,0,0,.35)" />
+    <path d={`M ${-w} 0 Q ${-w * 0.55} ${-h * 1.25} 0 ${-h} Q ${w * 0.55} ${-h * 1.25} ${w} 0 Z`} fill="url(#cfMonton)" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <path d={`M ${-w * 0.55} ${-h * 0.62} Q ${-w * 0.3} ${-h * 0.98} ${-w * 0.02} ${-h * 0.96}`} stroke="#a07a55" strokeWidth={8} fill="none" opacity=".35" strokeLinecap="round" />
     {granos.map((q, i) => { const xx = q.u * w * 0.85, top = -h * (1 - (xx / w) * (xx / w)) * 0.95; const yy = top * q.v;
       return <circle key={i} cx={xx} cy={yy - 4} r={q.r} fill={q.c} />; })}
     {paja > 0 && tallos.map((t, i) => { const xx = t.u * w, yy = -h * (1 - (xx / w) * (xx / w)) * t.v * 0.9;
@@ -86,6 +88,8 @@ function Balanza({ x, y, L = 160, ang = 0, izq, der, tIzq, tDer }) {
 function Costal({ x, y, s = 1, color = '#d9c08a', texto }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d="M -70 0 Q -84 -90 -56 -150 L -30 -168 Q 0 -150 30 -168 L 56 -150 Q 84 -90 70 0 Z" fill={color} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <path d="M 22 -150 Q 70 -90 62 -8 L 30 -8 Q 44 -90 10 -146 Z" fill="rgba(0,0,0,.16)" />
+    <path d="M -50 -130 Q -66 -80 -54 -24" stroke="#fff" strokeWidth={8} fill="none" opacity=".25" strokeLinecap="round" />
     <path d="M -34 -160 Q 0 -140 34 -160" stroke={KC.ink} strokeWidth={6} fill="none" />
     {[-40, 0, 40].map((d) => <line key={d} x1={d} y1={-130} x2={d * 1.1} y2={-10} stroke="rgba(0,0,0,.15)" strokeWidth={4} />)}
     {texto && <text x={0} y={-60} textAnchor="middle" style={{ font:`400 30px ${KF.titulo}` }} fill={CF.pulpa2}>{texto}</text>}
@@ -129,8 +133,9 @@ function Granito({ x, y, r, seed = 1, rot = 0 }) {
   const g = krng(seed), n = 9, pts = Array.from({ length: n }, (_, i) => { const a = i / n * Math.PI * 2, k = 0.7 + g() * 0.35; return [Math.cos(a) * r * k, Math.sin(a) * r * k]; });
   const d = 'M ' + pts.map((q) => q.map((v) => v.toFixed(1)).join(' ')).join(' L ') + ' Z';
   return <g transform={`translate(${x} ${y}) rotate(${rot})`}>
-    <path d={d} fill="#4a2c18" stroke="#1b0f08" strokeWidth={6} strokeLinejoin="round" />
-    <path d={d} fill="none" stroke="#7a4a2a" strokeWidth={3} transform="scale(.7)" />
+    <path d={d} fill="none" stroke="#e0a670" strokeWidth={16} strokeLinejoin="round" opacity=".18" />
+    <path d={d} fill="#4a2c18" stroke="#d29a64" strokeWidth={5} strokeLinejoin="round" />
+    <path d={d} fill="none" stroke="#8a5a34" strokeWidth={3} transform="scale(.7)" />
     {Array.from({ length: 8 }, (_, i) => <circle key={i} cx={(g() - 0.5) * r} cy={(g() - 0.5) * r} r={4 + g() * 8} fill="#2a180c" opacity=".7" />)}
   </g>;
 }
@@ -166,6 +171,8 @@ function Globo({ T, x, y, r = 230 }) {
       {[[-180, -80, 120, 70], [-60, 60, 90, 120], [90, -60, 140, 80], [150, 90, 70, 60], [-300, 40, 90, 110], [300, -40, 120, 90]].map(([a, b, c, d], i) =>
         <ellipse key={i} cx={a} cy={b} rx={c} ry={d} fill="#4fc35a" stroke="#2a7a34" strokeWidth={5} transform={`rotate(${i * 23} ${a} ${b})`} />)}
     </g>
+    <defs><radialGradient id="cfGlobo" cx="35%" cy="30%" r="75%"><stop offset="0" stopColor="#fff" stopOpacity=".18" /><stop offset=".6" stopColor="#000" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".45" /></radialGradient></defs>
+    <circle r={r} fill="url(#cfGlobo)" />
     <path d={`M ${-r * 0.6} ${-r * 0.6} A ${r} ${r} 0 0 1 ${r * 0.2} ${-r * 0.92}`} stroke="#fff" strokeWidth={14} fill="none" opacity=".4" strokeLinecap="round" />
   </g>;
 }
@@ -179,8 +186,12 @@ function Sol({ T, x, y, r = 70 }) {
 // Maceta de barro con bolsa negra y posos (el intento de Robert).
 function Maceta({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -150 -260 L 150 -260 L 110 0 L -110 0 Z" fill="#d0703a" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
-    <rect x={-172} y={-300} width={344} height={56} rx={10} fill="#e0824a" stroke={KC.ink} strokeWidth={8} />
+    <defs><linearGradient id="cfMaceta" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#e08a52" /><stop offset=".45" stopColor="#c8693a" /><stop offset="1" stopColor="#8a4222" /></linearGradient></defs>
+    <ellipse cx={0} cy={6} rx={170} ry={18} fill="rgba(0,0,0,.35)" />
+    <path d="M -150 -260 L 150 -260 L 110 0 L -110 0 Z" fill="url(#cfMaceta)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    {[-70, -140, -210].map((yy) => <line key={yy} x1={-150 + (260 + yy) * 0.15} y1={yy} x2={150 - (260 + yy) * 0.15} y2={yy} stroke="#7a3a1c" strokeWidth={3} opacity=".35" />)}
+    <path d="M -118 -236 L -92 -24" stroke="#f3b080" strokeWidth={10} strokeLinecap="round" opacity=".35" />
+    <rect x={-172} y={-300} width={344} height={56} rx={10} fill="url(#cfMaceta)" stroke={KC.ink} strokeWidth={8} />
     <path d="M -160 -300 Q -170 -340 -120 -330 Q -60 -350 0 -334 Q 60 -352 120 -332 Q 172 -340 160 -300 Z" fill="#1b1b1f" stroke={KC.ink} strokeWidth={6} />
     <path d="M -130 -312 Q 0 -350 130 -312 L 130 -300 L -130 -300 Z" fill={CF.poso} />
     {Array.from({ length: 16 }, (_, i) => <circle key={i} cx={-115 + i * 15} cy={-312 - (i % 3) * 6} r={5} fill={CF.poso3} />)}
@@ -210,19 +221,19 @@ function CafeShot() {
   // pase a mano cine: agrandar un grupo (el punto cx,cy del dibujo original queda en tx,ty)
   const zz = (k, cx, cy, tx, ty) => `translate(${tx} ${ty}) scale(${k}) translate(${-cx} ${-cy})`;
   // mezcla: la bolsa empieza grande al centro y se recorre a la izquierda cuando entra la balanza
-  const mv = kprog(T, K.M + 2.3, K.M + 3.0, kEase.suave), kM = klerp(1.5, 1.2, mv);
+  const mv = kprog(T, K.M + 2.3, K.M + 3.0, kEase.suave), kM = klerp(1.7, 1.3, mv);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: "esto no es tierra" — los posos caen del filtro junto a la taza */}
       <Escena T={T} a={K.G} b={K.R} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform={zz(1.2, 600, 1000, 560, 1060)}>
           <Taza T={T} x={800} y={1040} s={1.26} vapor={1} />
           <Monton x={400} y={1260} s={1.4} p={monton} />
           {gotas.map((q, i) => { const t = T - K.G - 0.3 - q.d * 0.6; if (t < 0 || t > 0.55) return null; const u = t / 0.55;
             return <circle key={i} cx={400 + q.dx * 1.4 * u + 42 * (1 - u)} cy={770 + u * u * 460} r={q.r * 1.4} fill={i % 2 ? CF.poso : CF.poso3} />; })}
           <g opacity={1 - kprog(T, K.G + 1.4, K.G + 1.9)}><Filtro x={400} y={600 - tilt * 42} s={1.4} rot={tilt * 150} lleno={1 - kprog(T, K.G + 0.3, K.G + 1.0)} /></g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 1 · Robert a los 10 años: maceta con posos que no dio */}
       <Escena T={T} a={K.R} b={K.O} zoom={0.05}>
@@ -238,7 +249,7 @@ function CafeShot() {
       <Escena T={T} a={K.O} b={K.D} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <g transform={zz(1.5, 360, 860, 420, 1010)}>
+          <g transform={zz(1.75, 360, 860, 420, 1020)}>
             <BolsaMix T={T} x={360} y={860} w={380} h={500} frac={1} />
             <Setas T={T} x={330} y={900} s={0.55} n={3} abre={0.22 * kprog(T, K.O + 0.6, K.O + 1.6)} gris={0.6} seed={5} />
           </g>
@@ -249,11 +260,11 @@ function CafeShot() {
       <Escena T={T} a={K.D} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <g transform={zz(1.5, 540, 880, 540, 980)}>
+          <g transform={zz(1.75, 540, 880, 540, 990)}>
             <BolsaMix T={T} x={540} y={880} w={380} h={420} frac={frac} seed={11} />
             <Setas T={T} x={540} y={890} s={0.9} abre={klerp(1, 0.38, freno) * kprog(T, K.D + 0.6, K.D + 1.6)} gris={freno * 0.7} seed={8} />
           </g>
-          <Sello T={T} at={K.D + 0.15} x={140} y={700} texto="DATO" color="#118a3a" r={90} rot={8} />
+          <Sello T={T} at={K.D + 0.15} x={150} y={560} texto="DATO" color="#118a3a" r={90} rot={8} />
           <g transform="translate(0 290)">
             <rect x={120} y={1110} width={840} height={38} rx={19} fill="rgba(255,255,255,.6)" stroke={KC.ink} strokeWidth={6} />
             <rect x={126} y={1116} width={(828 * frac / 0.6)} height={26} rx={13} fill={freno > 0 ? KC.red : CF.poso} />
@@ -267,12 +278,12 @@ function CafeShot() {
       <Escena T={T} a={K.M} b={K.H} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <g transform={zz(kM, 260, 850, klerp(380, 295, mv), klerp(980, 960, mv))}>
+          <g transform={zz(kM, 260, 850, klerp(370, 280, mv), 1000)}>
             <BolsaMix T={T} x={260} y={850} w={330} h={480} capas={[{ c: CF.poso, c2: CF.poso3 }, { c: CF.paja, c2: CF.paja2 }, { c: CF.olivo, c2: CF.olivo2 }]} seed={13} col={kprog(T, K.M + 1.2, K.M + 3.0)} />
             <Setas T={T} x={260} y={900} s={0.65} abre={kprog(T, K.M + 2.4, K.M + 3.6)} seed={4} />
           </g>
-          <g opacity={kprog(T, K.M + 2.8, K.M + 3.2)} transform={zz(1.05, 770, 830, 765, 900)}>
-            <Balanza x={770} y={830} L={150} ang={-2 * kprog(T, K.M + 3.0, K.M + 3.8, kEase.rebote)}
+          <g opacity={kprog(T, K.M + 2.8, K.M + 3.2)} transform={zz(1.1, 770, 830, 765, 840)}>
+            <Balanza x={770} y={830} L={130} ang={-2 * kprog(T, K.M + 3.0, K.M + 3.8, kEase.rebote)}
               izq={<Costal x={0} y={-4} s={0.5} color={mixHex(CF.poso2, '#d8b47a', 0.4)} />} tIzq="sustrato seco"
               der={<Setas T={T} x={0} y={-10} s={0.45} n={5} abre={1} seed={6} />} tDer="setas frescas" />
           </g>
@@ -282,7 +293,7 @@ function CafeShot() {
       <Escena T={T} a={K.H} b={K.P} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
-        <div style={{ position:'absolute', inset:0, opacity:1 - 0.75 * kprog(T, K.Ca - 0.2, K.Ca + 0.4) }}>
+        <div style={{ position:'absolute', inset:0, opacity:1 - 0.85 * kprog(T, K.Ca - 0.2, K.Ca + 0.4) }}>
           {fsvg(<>
             <Granito x={150} y={690} r={170} seed={2} />
             <Granito x={640} y={600} r={160} seed={5} rot={30} />
@@ -290,7 +301,7 @@ function CafeShot() {
             <Granito x={930} y={900} r={150} seed={3} rot={60} />
             <Granito x={150} y={1050} r={100} seed={9} />
           </>, 0)}
-          <HifasMicro T={T} g={kprog(T, K.H + 0.2, K.H + 3.2)} ancho={16} comida={{ x: -800, y: -800 }} />
+          <HifasMicro T={T} g={0.15 + 0.85 * kprog(T, K.H, K.H + 3.2)} ancho={16} comida={{ x: -800, y: -800 }} />
         </div>
         {fsvg(<g opacity={kprog(T, K.Ca, K.Ca + 0.4)}>
           <Cafeina T={T} x={480} y={900} s={2.4} q={[0, 1, 2].map((i) => kprog(T, K.Ca + 0.9 + i * 0.6, K.Ca + 1.5 + i * 0.6))} />
@@ -299,7 +310,7 @@ function CafeShot() {
       {/* 7 · re-gancho: ¿salen con cafeína? */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.08}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><Setas T={T} x={540} y={1240} s={1.9} abre={1} seed={3} /><Interrogacion T={T} x={540} y={830} tam={380} /></>)}
+        {fsvg(<><Setas T={T} x={540} y={1260} s={2.3} abre={1} seed={3} /><Interrogacion T={T} x={540} y={800} tam={380} /></>)}
       </Escena>
       {/* 8 · 250 kg de setas frescas = la cafeína de un espresso */}
       <Escena T={T} a={K.E} b={K.Mx} zoom={0.04}>
@@ -307,8 +318,8 @@ function CafeShot() {
         {fsvg(<>
           {/* las setas de la pregunta siguen en cuadro mientras se dice "sí, trazas" y se van al apilarse las cajas */}
           <g opacity={1 - kprog(T, K.E + 1.0, K.E + 2.2)}><Setas T={T} x={640} y={1130} s={1.7} abre={1} seed={3} /></g>
-          <Espresso x={225} y={1390} s={1.7} />
-          <text x={225} y={1474} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink}>1 espresso</text>
+          <Espresso x={210} y={1330} s={1.7} />
+          <text x={210} y={1420} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink}>1 espresso</text>
           {Array.from({ length: 20 }, (_, i) => { const c = i % 4, r = Math.floor(i / 4); return <Caja key={i} x={420 + c * 172} y={1150 - r * 97} s={1.35} p={kprog(T, K.E + 0.8 + i * 0.09, K.E + 1.1 + i * 0.09)} />; })}
         </>)}
       </Escena>
@@ -338,7 +349,7 @@ function CafeShot() {
           <Sol T={T} x={170} y={670} r={84} />
           <g transform={zz(1.5, 330, 600, 350, 640)}><Petate x={330} y={600} w={400} seco={kprog(T, K.X + 0.3, K.X + 2.2)} /></g>
           {[0, 1, 2].map((i) => { const p = kprog(T, K.X + 2.0 + i * 0.2, K.X + 2.4 + i * 0.2, kEase.rebote); return p > 0 ? <Costal key={i} x={170 + i * 215} y={1080} s={1.3 * p} texto={i === 1 ? '2 AÑOS' : ''} /> : null; })}
-          <g opacity={kprog(T, K.X + 3.0, K.X + 3.4)} transform={zz(1.2, 800, 800, 720, 1200)}>
+          <g opacity={kprog(T, K.X + 3.0, K.X + 3.4)} transform={zz(1.2, 800, 800, 740, 1130)}>
             <Balanza x={800} y={800} L={140} ang={12 * kprog(T, K.X + 3.4, K.X + 4.4, kEase.rebote)}
               izq={<Costal x={0} y={-4} s={0.45} color={CF.pulpa2} />} tIzq="pulpa seca"
               der={<Setas T={T} x={0} y={-10} s={0.5} n={6} abre={1} seed={12} />} tDer="setas frescas" />
@@ -356,30 +367,30 @@ function CafeShot() {
       {/* 12 · cierre: el mismo montón del inicio, ahora mezclado con paja y con setas */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform={zz(1.2, 600, 1000, 560, 1060)}>
           <Taza T={T} x={800} y={1040} s={1.26} vapor={1} />
           <Monton x={400} y={1260} s={1.4} p={1} paja={kprog(T, K.C + 0.2, K.C + 1.0)} />
           <Setas T={T} x={372} y={1064} s={1.47} n={7} abre={kprog(T, K.C + 0.8, K.C + 2.6)} seed={3} />
-        </>)}
+        </g>)}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.3} until={K.G + 2.0} texto="¿tierra?" x={400} y={900} tam={60} />
-      <Chip T={T} at={K.G + 1.9} until={K.R - 0.3} texto="posos de café usados" x={400} y={880} tam={44} borde={CF.poso} />
+      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.3} until={K.G + 2.0} texto="¿tierra?" x={330} y={975} tam={60} />
+      <Chip T={T} at={K.G + 1.9} until={K.R - 0.3} texto="posos de café usados" x={330} y={975} tam={44} borde={CF.poso} />
       <Chip T={T} at={K.R + 0.3} until={K.O - 0.3} texto="Robert · 10 años" x={540} y={520} tam={40} borde={KC.ink} />
       <Etq T={T} at={K.R + 1.6} until={K.O - 0.3} x={330} y={690} texto="mi sustrato de café" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.O + 0.4} until={K.D - 0.3} texto="100 % posos" x={420} y={470} tam={40} borde={CF.poso} />
-      <Etq T={T} at={K.O + 1.4} until={K.D - 0.3} x={745} y={1140} texto="casi no salen" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.O + 0.4} until={K.D - 0.3} texto="100 % posos" x={420} y={420} tam={40} borde={CF.poso} />
+      <Etq T={T} at={K.O + 1.4} until={K.D - 0.3} x={770} y={1140} texto="casi no salen" tam={30} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.D + 0.4} until={K.D + 3.2} anio="2021" quien="Malasia · Chai y col." revista="Future Foods, 2021" x={540} y={400} />
       <Chip T={T} at={K.D + 3.6} until={K.M - 0.3} texto="más de 30 %: se frenan" x={540} y={440} tam={38} borde={KC.red} />
-      <Etq T={T} at={K.M + 0.3} until={K.M + 2.2} x={640} y={788} texto="ramas de olivo · 1/3" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.M + 0.7} until={K.M + 2.2} x={640} y={1008} texto="paja · 1/3" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.M + 1.1} until={K.M + 2.2} x={640} y={1229} texto="posos · 1/3" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.M + 0.3} until={K.M + 2.2} x={650} y={782} texto="ramas de olivo · 1/3" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.M + 0.7} until={K.M + 2.2} x={650} y={1031} texto="paja · 1/3" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.M + 1.1} until={K.M + 2.2} x={650} y={1280} texto="posos · 1/3" tam={28} color={KC.ink} />
       <Chip T={T} at={K.M + 3.4} until={K.H - 0.3} texto="eficiencia biológica 95 %" x={540} y={440} tam={38} borde="#118a3a" />
-      <Etq T={T} at={K.M + 3.8} until={K.H - 0.3} x={60} y={1500} texto="2021 · setas frescas ÷ sustrato seco" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.M + 3.8} until={K.H - 0.3} x={60} y={1435} texto="2021 · setas frescas ÷ sustrato seco" tam={26} color={KC.ink} />
       <Chip T={T} at={K.H + 0.1} until={K.Ca - 0.3} texto="POR DENTRO · AL MICROSCOPIO" x={400} y={470} tam={30} borde={KC.cyan} mono />
       <Etq T={T} at={K.H + 1.0} until={K.Ca - 0.3} x={60} y={880} texto="granito de café" tam={28} color={KC.gold2} />
-      <Etq T={T} at={K.H + 1.8} until={K.Ca - 0.3} x={560} y={1010} texto="hifas de Pleurotus" it tam={30} color={KC.mint} />
+      <Etq T={T} at={K.H + 1.8} until={K.Ca - 0.3} x={620} y={1110} texto="hifas de Pleurotus" it tam={30} color={KC.mint} />
       <Etq T={T} at={K.Ca + 0.3} until={K.Ca + 2.4} x={60} y={440} texto="cafeína" tam={44} color={KC.texto} />
       <Etq T={T} at={K.Ca + 2.5} until={K.P - 0.3} x={60} y={440} texto="xantina" tam={44} color={KC.yellow} />
       <Chip T={T} at={K.Ca + 1.0} until={K.P - 0.3} texto="el micelio rompe solo una parte · 2019" x={540} y={1450} tam={30} borde={KC.mint} />
@@ -393,25 +404,25 @@ function CafeShot() {
       <Chip T={T} at={K.X + 0.2} until={K.Mu - 0.3} texto="Xalapa, Veracruz · 1987" x={540} y={440} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.X + 0.8} until={K.X + 3.2} x={400} y={585} texto="pulpa secada al sol" tam={30} color={KC.ink} />
       <NumeroGigante T={T} at={K.X + 3.6} until={K.Mu - 0.3} valor={100} desde={100} prefijo="> " sufijo=" %" etiqueta="eficiencia biológica" x={235} y={1370} tam={90} color={KC.mint} />
-      <Etq T={T} at={K.X + 4.0} until={K.Mu - 0.3} x={60} y={1600} texto="setas frescas (con agua) ÷ sustrato seco" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.X + 4.0} until={K.Mu - 0.3} x={330} y={1525} texto="setas frescas (con agua) ÷ sustrato seco" tam={26} color={KC.ink} />
       <NumeroGigante T={T} at={K.Mu + 0.3} until={K.C - 0.3} valor={6} dur={0.6} sufijo=" millones" etiqueta="de toneladas de posos al año" x={540} y={420} tam={130} color={KC.yellow} />
-      <Chip T={T} at={K.Mu + 1.6} until={K.C - 0.3} texto="estimación 2022 · en todo el mundo" x={540} y={1530} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Mu + 1.6} until={K.C - 0.3} texto="estimación 2022 · en todo el mundo" x={660} y={1530} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="de residuo a comida" x={400} y={560} tam={44} borde="#118a3a" />
-      <Etq T={T} at={K.C + 2.0} until={K.Ou} x={60} y={1500} texto="Pleurotus ostreatus · el dibujo es esquemático" it tam={22} color={KC.ink} />
+      <Etq T={T} at={K.C + 2.0} until={K.Ou} x={60} y={1445} texto="Pleurotus ostreatus · el dibujo es esquemático" it tam={26} color={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.R} texto="5 cm" largo={154} color={KC.ink} />
+      <BarraEscala T={T} at={K.G} until={K.R} texto="5 cm" largo={185} color={KC.ink} />
       <BarraEscala T={T} at={K.R} until={K.O} texto="10 cm" largo={271} y={1580} color={KC.ink} />
-      <BarraEscala T={T} at={K.O} until={K.M} texto="10 cm" largo={240} y={1580} color={KC.ink} />
+      <BarraEscala T={T} at={K.O} until={K.M} texto="10 cm" largo={280} y={1580} color={KC.ink} />
       <BarraEscala T={T} at={K.M} until={K.H} texto="10 cm" largo={Math.round(160 * kM)} y={1580} color={KC.ink} />
       <BarraEscala T={T} at={K.H} until={K.Ca} texto="100 µm" largo={220} />
       <BarraEscala T={T} at={K.Ca} until={K.P} texto="0.5 nm (esquema)" largo={293} />
-      <BarraEscala T={T} at={K.P} until={K.E} texto="5 cm" largo={183} y={1580} color={KC.ink} />
+      <BarraEscala T={T} at={K.P} until={K.E} texto="5 cm" largo={222} y={1580} color={KC.ink} />
       <BarraEscala T={T} at={K.E} until={K.Mx} texto="50 cm" largo={216} color={KC.ink} />
       <BarraEscala T={T} at={K.Mx} until={K.X} texto="cereza: 1 cm · mapa esquemático" largo={138} color={KC.ink} />
       <BarraEscala T={T} at={K.X} until={K.Mu} texto="50 cm" largo={225} y={1580} color={KC.ink} />
       <BarraEscala T={T} at={K.Mu} until={K.C} texto="dibujo esquemático" largo={0} color={KC.ink} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={154} y={1580} color={KC.ink} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={185} y={1580} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.R - 0.1} texto="Esto no es tierra: *es café usado.*" />
