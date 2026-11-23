@@ -1,0 +1,1 @@
+- amb-03-bioplasticos: Qué es: bacterias 1.4× (antes chiquitas junto al maíz y el azúcar); Uno (calor): el montón de composta industrial 1.25× más grande y centrado bajo la lupa. El resto ya cumplía. Auditores: sin láminas · encuadre bien.
