@@ -340,7 +340,8 @@ function RazasMaiz() {
         <Ambiente T={T} n={30} color="rgba(200,230,255,.35)" tam={[3, 8]} />
         {svg((() => { const cal = kprog(T, K.B + 3.0, K.B + 5.0);
           return <>
-            <g transform="translate(540 1000) scale(1.12) translate(-540 -900)"><Banco T={T} t0={K.B} brilla={kprog(T, K.B + 3.6, K.B + 4.2)} /></g>
+            {/* belleza: el banco bajado al centro del cuadro (antes dejaba vacío el tercio de abajo) */}
+            <g transform="translate(540 1060) scale(1.1) translate(-540 -912)"><Banco T={T} t0={K.B} brilla={kprog(T, K.B + 3.6, K.B + 4.2)} /></g>
             <g opacity={kprog(T, K.B + 2.8, K.B + 3.2)}>
               <circle cx={880} cy={430} r={60 + 10 * cal} fill={KC.orange} opacity={0.6 + 0.4 * cal} />
               {Array.from({ length: 10 }, (_, i) => { const a = (i / 10) * Math.PI * 2 + T * 0.4; return <line key={i} x1={880 + Math.cos(a) * 80} y1={430 + Math.sin(a) * 80} x2={880 + Math.cos(a) * (110 + 20 * cal)} y2={430 + Math.sin(a) * (110 + 20 * cal)} stroke={KC.orange} strokeWidth={8} strokeLinecap="round" />; })}
