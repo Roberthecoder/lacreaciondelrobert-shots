@@ -100,7 +100,7 @@ const PUNTOS = (() => { const r = krng(33), out = [];
 function MapaOlores({ x, y, w, h, T, n = 0, etiquetas = 1, nuevo = null, o = 1, tam = 30 }) {
   return <g transform={`translate(${x} ${y})`} opacity={o}>
     <rect width={w} height={h} rx={28} fill="#0f1830" stroke={KC.ink} strokeWidth={8} />
-    {ZONAS.map((z, i) => <circle key={i} cx={z.x * w} cy={z.y * h} r={Math.min(w, h) * 0.2} fill={z.c} opacity={0.16} />)}
+    {ZONAS.map((z, i) => <circle key={i} cx={z.x * w} cy={z.y * h} r={Math.min(w, h) * 0.2} fill={z.c} opacity={0.24} />)}
     {PUNTOS.slice(0, n).map((p, i) => <circle key={i} cx={p.x * w} cy={p.y * h} r={Math.max(3, w / 160)} fill={p.c} opacity={0.85} />)}
     {etiquetas > 0 && ZONAS.map((z, i) => <text key={'t' + i} x={z.x * w} y={z.y * h + tam * 0.35} textAnchor="middle" opacity={etiquetas}
       style={{ font:`900 ${tam}px ${KF.texto}` }} fill="#fff" stroke={KC.ink} strokeWidth={tam / 6} paintOrder="stroke">{z.n}</text>)}
@@ -166,7 +166,7 @@ function Olor() {
   const pintadas = Math.round(100 * kprog(T, K.Re + 0.3, K.Re + 2.6, kEase.suave));
   // Mapa: medio millón de puntos (esquema: 1,600 puntos dibujados)
   const nMapa = Math.round(1600 * kprog(T, K.M + 0.4, K.M + 3.6, (p) => p * p));
-  const dimMapa = 1 - 0.82 * kprog(T, K.M + 3.9, K.M + 4.4);
+  const dimMapa = 1 - 0.55 * kprog(T, K.M + 3.9, K.M + 4.4);
   // Red: la molécula entra como grafo, cruza la red y cae en el mapa
   const gR = kprog(T, K.R + 0.2, K.R + 1.2, kEase.suave), onda = kprog(T, K.R + 1.2, K.R + 2.6);
   const vuelo = kprog(T, K.R + 2.6, K.R + 3.4, kEase.sale);
@@ -199,7 +199,7 @@ function Olor() {
       {/* 3 · el catálogo: 5,000 moléculas ya descritas */}
       <Escena T={T} a={K.Ca} b={K.R}>
         <FondoLunares color={KC.mint} />
-        {svg(<g transform="translate(60 650) scale(1.2)">
+        {svg(<g transform="translate(40 690) scale(1.25)">
           {Array.from({ length: 50 }, (_, i) => { const c = i % 10, r = Math.floor(i / 10), on = i < llenos, e = kprog(T, K.Ca + 0.3 + i * 0.058, K.Ca + 0.5 + i * 0.058, kEase.rebote);
             return <g key={i} transform={`translate(${c * 80 + 36} ${r * 80 + 36}) scale(${on ? klerp(0.4, 1, e) : 1})`}>
               <rect x={-33} y={-33} width={66} height={66} rx={12} fill={on ? pal[(i * 3) % pal.length] : 'rgba(255,255,255,.35)'} stroke={KC.ink} strokeWidth={on ? 5 : 3} />
@@ -208,10 +208,10 @@ function Olor() {
         </g>)}
       </Escena>
       <ContadorH T={T} at={K.Ca + 0.3} until={K.R - 0.2} prefijo="≈ " hasta={5000} dur={2.9} x={540} y={545} tam={76} sufijo=" moléculas" />
-      <Chip T={T} at={K.Ca + 1.4} until={K.R - 0.2} texto="1 cuadrito = 100 moléculas" x={540} y={1200} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Ca + 3.3} until={K.R - 0.2} texto="cremoso" x={250} y={1320} tam={46} borde={KC.yellow} />
-      <Chip T={T} at={K.Ca + 3.9} until={K.R - 0.2} texto="a ajo" x={540} y={1365} tam={46} borde={KC.yellow} />
-      <Chip T={T} at={K.Ca + 4.5} until={K.R - 0.2} texto="a pasto" x={830} y={1320} tam={46} borde={KC.yellow} />
+      <Chip T={T} at={K.Ca + 1.4} until={K.R - 0.2} texto="1 cuadrito = 100 moléculas" x={540} y={1260} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Ca + 3.3} until={K.R - 0.2} texto="cremoso" x={250} y={1375} tam={46} borde={KC.yellow} />
+      <Chip T={T} at={K.Ca + 3.9} until={K.R - 0.2} texto="a ajo" x={540} y={1420} tam={46} borde={KC.yellow} />
+      <Chip T={T} at={K.Ca + 4.5} until={K.R - 0.2} texto="a pasto" x={830} y={1375} tam={46} borde={KC.yellow} />
       {/* 4 · por dentro de la máquina: átomos y enlaces → red → mapa */}
       <Escena T={T} a={K.R} b={K.P}>
         <FondoCircuito T={T} />
@@ -271,12 +271,12 @@ function Olor() {
       {/* 9 · el mapa: medio millón de moléculas de olor desconocido */}
       <Escena T={T} a={K.M} b={K.C}>
         <FondoLunares color={KC.cyan} />
-        {svg(<MapaOlores x={70} y={610} w={940} h={820} T={T} n={nMapa} tam={38} etiquetas={kprog(T, K.M + 0.2, K.M + 0.6)} o={dimMapa} />)}
+        {svg(<MapaOlores x={70} y={690} w={940} h={820} T={T} n={nMapa} tam={38} etiquetas={kprog(T, K.M + 0.2, K.M + 0.6) * (1 - kprog(T, K.M + 3.7, K.M + 4.2))} o={dimMapa} />)}
       </Escena>
-      <ContadorH T={T} at={K.M + 0.4} until={K.C - 0.2} prefijo="≈ " hasta={500000} dur={3.2} x={360} y={440} tam={76} />
-      <Chip T={T} at={K.M + 1.0} until={K.C - 0.2} texto="moléculas de olor desconocido" x={360} y={530} tam={34} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.M + 4.0} until={K.C - 0.2} valor={70} dur={1.4} sufijo=" años" etiqueta="olerlas todas: 1 persona" x={540} y={980} tam={210} color={KC.yellow} />
-      <Chip T={T} at={K.M + 5.0} until={K.C - 0.2} texto="oliendo sin parar" x={540} y={1200} tam={44} borde={KC.yellow} />
+      <ContadorH T={T} at={K.M + 0.4} until={K.C - 0.2} prefijo="≈ " hasta={500000} dur={3.2} x={360} y={500} tam={76} />
+      <Chip T={T} at={K.M + 1.0} until={K.C - 0.2} texto="moléculas de olor desconocido" x={360} y={590} tam={34} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.M + 4.0} until={K.C - 0.2} valor={70} dur={1.4} sufijo=" años" etiqueta="olerlas todas: 1 persona" x={540} y={1070} tam={210} color={KC.yellow} />
+      <Chip T={T} at={K.M + 5.0} until={K.C - 0.2} texto="oliendo sin parar" x={540} y={1290} tam={44} borde={KC.yellow} />
       {/* 10 · cierre: la misma imagen del inicio, ya con su punto en el mapa */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.pink} />
