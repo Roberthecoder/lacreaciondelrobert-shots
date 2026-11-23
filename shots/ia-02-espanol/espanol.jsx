@@ -10,7 +10,7 @@ const IDIOMAS = [
   { k: 'otros', nombre: 'los demás idiomas', pct: 100 - 92.64708 - 1.81853 - 1.46937 - 0.77289, color: '#8d96a8' },
   { k: 'es', nombre: 'español', pct: 0.77289, color: KC.red },
 ];
-const GX = 170, GY = 420, GL = 740, GC = GL / 10;   // cuadrícula de 10 × 10 (pase a mano cine: grande y centrada)
+const GX = 190, GY = 500, GL = 700, GC = GL / 10;   // cuadrícula de 10 × 10 (belleza: bajada al centro del cuadro; antes 170, 420, 740 y quedaba arriba)
 
 // Cuadrícula: cada idioma se llena hasta "lleno[k]" (0..1 de su porcentaje). gris = 0..1 (todo leído, sin color aún).
 function Cien({ T, lleno = {}, gris = 0, brilla = -1 }) {
@@ -70,9 +70,12 @@ function Espanol() {
       {/* 1–6 · los cien cuadritos (fondo noche: es "por dentro" de la IA) */}
       <Escena T={T} a={K.G} b={K.M} zoom={0.02}>
         <FondoCircuito T={T} color={KC.cyan} />
+        {/* belleza: mientras no hay leyenda, la cuadrícula va 120 px más abajo (al centro); sube cuando entran francés y alemán */}
+        <div style={{ position:'absolute', inset:0, transform:`translateY(${120 * (1 - kprog(T, K.O + 0.5, K.O + 1.3, kEase.suave))}px)` }}>
         {svg(palabras.map((w, i) => { const at = K.G + 0.05 + i * 0.28, u = kprog(T, at, at + 0.9, kEase.suave); return u > 0 && u < 1 ? <Ficha key={i} x={klerp(1150, GX + 60 + ((i * 137) % 480) * (GL - 120) / 480, u)} y={klerp(380 + (i % 4) * 150, GY + 60 + ((i * 89) % 480) * (GL - 120) / 480, u)} texto={w} tam={44} color="#2f6dff" o={1 - u * 0.6} s={1 - u * 0.4} /> : null; }))}
         <Cien T={T} gris={T < K.R + 0.6 ? gris : 0} lleno={T < K.I ? {} : lleno} brilla={T > K.Cu + 0.4 && T < K.R ? 44 : T > K.E + 0.9 ? 99 : -1} />
         <Leyenda T={T} filas={[[K.I + 0.6, 'en', '92.6 %'], [K.O + 0.2, 'fr', '1.8 %'], [K.O + 1.3, 'de', '1.5 %'], [K.E + 0.3, 'otros', '3.3 %'], [K.E + 1.2, 'es', '0.77 %']]} />
+        </div>
       </Escena>
       {/* 7 · "suena a mucho": 1,510 millones contra 181,015 millones */}
       <Escena T={T} a={K.M} b={K.P}>
@@ -95,7 +98,7 @@ function Espanol() {
       {/* 9 · de internet y de libros a un embudo donde casi todo es inglés */}
       <Escena T={T} a={K.In} b={K.F}>
         <FondoLunares color={KC.yellow} />
-        {svg(<g transform="translate(540 930) scale(1.15) translate(-540 -800)">
+        {svg(<g transform="translate(540 1040) scale(1.15) translate(-540 -800)">
           <g transform={`translate(260 560) rotate(${T * 20})`}><circle r={150} fill={KC.cyan} stroke={KC.ink} strokeWidth={9} /><ellipse rx={150} ry={60} fill="none" stroke={KC.ink} strokeWidth={6} /><ellipse rx={60} ry={150} fill="none" stroke={KC.ink} strokeWidth={6} /><line x1={-150} y1={0} x2={150} y2={0} stroke={KC.ink} strokeWidth={6} /></g>
           <text x={260} y={770} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>internet</text>
           {[0, 1, 2].map((i) => <Libro key={i} x={780 + i * 70} y={560 - i * 20} rot={-10 + i * 10} color={[KC.orange, KC.pink, KC.mint][i]} />)}
@@ -141,7 +144,7 @@ function Espanol() {
       <Chip T={T} at={K.Cu + 0.3} until={K.R - 0.2} texto="1 cuadrito = 1 de cada 100 palabras" x={540} y={315} tam={40} borde={KC.yellow} />
       <Chip T={T} at={K.R + 0.2} until={K.I - 0.1} texto="¿cuántos en español?" x={540} y={300} tam={50} borde={KC.red} />
       <NumeroGigante T={T} at={K.E + 2.0} until={K.M - 0.2} valor={0.77} dec={2} dur={0.8} sufijo=" %" etiqueta="español" x={540} y={250} tam={96} color={KC.red} />
-      <Lupa T={T} at={K.E + 1.6} until={K.M - 0.3} x={845} y={1400} r={130} fx={540 + (GX + 9.5 * GC - 540) * zG} fy={864 + (GY + 9.5 * GC - 864) * zG} tinte={KC.red} etiqueta="el último cuadrito"
+      <Lupa T={T} at={K.E + 1.6} until={K.M - 0.3} x={840} y={1440} r={120} fx={540 + (GX + 9.5 * GC - 540) * zG} fy={864 + (GY + 9.5 * GC - 864) * zG} tinte={KC.red} etiqueta="el último cuadrito"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#3a4152" /><rect x={0} y={0} width={r * 2 * 0.227} height={r * 2} fill="#8d96a8" /><rect x={r * 2 * 0.227} y={0} width={r * 2 * 0.773} height={r * 2} fill={KC.red} /></svg>} />
       <NumeroGigante T={T} at={K.M + 0.4} until={K.M + 4.0} valor={1510} dur={1.0} sufijo=" millones" etiqueta="palabras en español" x={540} y={770} tam={128} color={KC.red} />
       <NumeroGigante T={T} at={K.M + 4.2} until={K.P - 0.2} valor={181015} dur={1.2} sufijo=" millones" etiqueta="palabras en inglés" x={560} y={400} tam={100} color="#2f6dff" />
