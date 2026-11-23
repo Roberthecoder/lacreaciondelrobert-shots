@@ -16,7 +16,9 @@ function Corazones({ T, n = 14, seed = 4, color = 'rgba(255,255,255,.5)' }) {
 function Bombon({ x, y, s = 1, rot = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     <ellipse cx={0} cy={58} rx={78} ry={14} fill="rgba(0,0,0,.25)" />
+<defs><radialGradient id="chocVol" cx="30%" cy="25%" r="85%"><stop offset="0" stopColor="#fff" stopOpacity=".22" /><stop offset=".55" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".35" /></radialGradient></defs>
     <path d="M -80 30 C -86 -60 86 -60 80 30 C 76 62 -76 62 -80 30 Z" fill={CHOCO} stroke={KC.ink} strokeWidth={7} />
+    <path d="M -80 30 C -86 -60 86 -60 80 30 C 76 62 -76 62 -80 30 Z" fill="url(#chocVol)" />
     <path d="M -50 -12 q 25 -22 50 0 t 50 0" stroke={CHOCO2} strokeWidth={9} fill="none" strokeLinecap="round" />
     <path d="M -58 10 q 29 -18 58 0 t 58 0" stroke={CHOCO2} strokeWidth={7} fill="none" strokeLinecap="round" opacity=".7" />
     <ellipse cx={-30} cy={-26} rx={18} ry={8} fill="#fff" opacity=".25" />
@@ -92,6 +94,8 @@ function Semilla({ x, y, s = 1, rot = 0, color = MORADO, pulpa = 0, corte = true
     <path d="M -118 0 C -110 -80 110 -80 118 0 C 110 80 -110 80 -118 0 Z" fill={corte ? '#c9a27a' : '#b07a52'} stroke={KC.ink} strokeWidth={7} />
     {corte && <g>
       <path d="M -104 0 C -96 -66 96 -66 104 0 C 96 66 -96 66 -104 0 Z" fill={color} />
+      <defs><radialGradient id="chocVol" cx="30%" cy="25%" r="85%"><stop offset="0" stopColor="#fff" stopOpacity=".22" /><stop offset=".55" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".35" /></radialGradient></defs>
+      <path d="M -104 0 C -96 -66 96 -66 104 0 C 96 66 -96 66 -104 0 Z" fill="url(#chocVol)" />
       {[-50, 0, 50].map((k) => <path key={k} d={`M ${k - 20} -46 q 20 46 0 92`} stroke="rgba(0,0,0,.25)" strokeWidth={5} fill="none" />)}
       {germen > 0 && <g opacity={germen}>
         <ellipse cx={-80} cy={0} rx={22} ry={13} fill={germenVivo > 0.5 ? '#9be36a' : '#8a8f99'} stroke={KC.ink} strokeWidth={4} />
@@ -264,9 +268,11 @@ function Chocolate() {
         <FondoLunares color={ROSA} />
         {svg(<>
           <Corazones T={T} />
+          <g transform="translate(540 1000) scale(1.15) translate(-550 -900)">
           <CajaCorazon x={350} y={1010} s={klerp(0.85, 1.05, kprog(T, K.G, K.G + 0.5, kEase.rebote))} abre={kprog(T, K.G + 0.1, K.G + 0.5, kEase.sale)} conBombon={[true, salta < 0.05, true]} />
           {salta > 0.05 && <Bombon x={klerp(350, 370, salta)} y={klerp(1060, 690, salta) + Math.abs(Math.sin((T - K.G) * 4)) * -16 * salta} s={klerp(0.65, 1.5, salta)} rot={Math.sin(T * 3) * 6} />}
           <g opacity={kprog(T, K.G + 1.8, K.G + 2.2)}><Levadura T={T} x={780} y={1000} s={klerp(0.3, 1.55, kprog(T, K.G + 1.8, K.G + 2.3, kEase.rebote))} brote={0.6} mono cara /></g>
+          </g>
         </>)}
       </Escena>
       {/* 2 · la mazorca se abre: semillas en pulpa blanca llena de azúcares */}
@@ -433,14 +439,16 @@ function Chocolate() {
         <FondoLunares color={ROSA} />
         {svg(<>
           <Corazones T={T} />
+          <g transform="translate(540 1070) scale(1.15) translate(-550 -900)">
           <CajaCorazon x={350} y={1010} s={1.05} abre={1} conBombon={[true, false, true]} />
           <Bombon x={370} y={690 + Math.sin(T * 3) * 8} s={1.5} rot={Math.sin(T * 3) * 6} />
           <Levadura T={T} x={780} y={1000} s={1.55} brote={0.6} mono cara />
+          </g>
           <g opacity={kprog(T, K.Ci + 1.6, K.Ci + 2.2)} transform={`translate(0 ${(1 - kprog(T, K.Ci + 1.6, K.Ci + 2.2, kEase.sale)) * 40})`}>
-            <circle cx={520} cy={575} r={14} fill="#fff" stroke={KC.ink} strokeWidth={4} /><circle cx={500} cy={540} r={20} fill="#fff" stroke={KC.ink} strokeWidth={4} />
-            <ellipse cx={330} cy={430} rx={230} ry={120} fill="#fff" stroke={KC.ink} strokeWidth={6} />
-            <g transform="translate(330 450) scale(.28)"><Monton T={T} x={0} y={0} cubre={1} /></g>
-            <Levadura T={T} x={460} y={380} s={0.35} brote={0.5} />
+            <circle cx={790} cy={890} r={16} fill="#fff" stroke={KC.ink} strokeWidth={4} /><circle cx={750} cy={820} r={24} fill="#fff" stroke={KC.ink} strokeWidth={4} />
+            <ellipse cx={600} cy={560} rx={270} ry={150} fill="#fff" stroke={KC.ink} strokeWidth={6} />
+            <g transform="translate(600 585) scale(.34)"><Monton T={T} x={0} y={0} cubre={1} /></g>
+            <Levadura T={T} x={760} y={500} s={0.42} brote={0.5} />
           </g>
         </>)}
       </Escena>
@@ -449,7 +457,7 @@ function Chocolate() {
 
       {/* textos */}
       <Chip T={T} at={K.G + 0.2} until={K.Mz - 0.2} texto="Especial San Valentín" x={540} y={1390} tam={40} borde={KC.yellow} />
-      <Etq T={T} at={K.G + 2.3} until={K.Mz - 0.3} x={720} y={1240} texto="levadura (un hongo)" tam={34} color={KC.ink} lado="izq" />
+      <Etq T={T} at={K.G + 2.3} until={K.Mz - 0.3} x={540} y={880} texto="levadura (un hongo)" tam={34} color={KC.ink} lado="der" />
       <Etq T={T} at={K.Mz + 1.4} until={K.Am - 0.3} x={60} y={1330} texto="cacao" tam={36} color={KC.ink} />
       <Etq T={T} at={K.Mz + 1.6} until={K.Am - 0.3} x={60} y={1386} texto="Theobroma cacao" it tam={34} color={KC.ink} />
       <Chip T={T} at={K.Mz + 2.4} until={K.Am - 0.3} texto="pulpa llena de azúcares" x={620} y={1470} tam={40} borde={KC.yellow} />
@@ -482,7 +490,7 @@ function Chocolate() {
       <Etq T={T} at={K.E + 4.6} until={K.R - 0.3} x={350} y={1400} texto="las bacterias siguen" tam={30} color={KC.ink} />
       <Chip T={T} at={K.R + 1.2} until={K.Da - 0.2} texto="más ácido · sin su sabor" x={540} y={1400} tam={44} borde={KC.red} />
       <Chip T={T} at={K.Da + 2.2} until={K.Ci - 0.2} texto="morado violeta" x={540} y={1300} tam={50} borde={MORADO2} />
-      <Chip T={T} at={K.Ci + 2.6} until={K.Ou} texto="hecho con ayuda de levaduras" x={540} y={1390} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.Ci + 2.6} until={K.Ou} texto="hecho con ayuda de levaduras" x={540} y={1470} tam={40} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Mz - 0.1} texto="El chocolate también *lo hizo un hongo.*" />
