@@ -199,12 +199,20 @@ function Computo() {
         <FondoCircuito T={T} />
       </Escena>
       {T > K.D - 0.45 && T < K.P + 0.45 && <div style={{ position:'absolute', inset:0, zIndex:30, opacity:kprog(T, K.D - 0.45, K.D + 0.05) * (1 - kprog(T, K.P - 0.05, K.P + 0.45)) }}>
-        <Cuadricula T={T} cols={100} filas={100} x={110} y={520} ancho={860} alto={860} vacio="rgba(255,255,255,.13)" lleno={KC.mint}
-          tramos={[{ desde: 0, hasta: 0.0001, color: KC.yellow }]} llenado={(t) => t < K.D + 1.0 ? 0.0001 : 0.0001 + 0.9999 * Math.pow(kprog(t, K.D + 1.0, K.D + 3.8), 2.2)} />
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:31 }}><rect x={102} y={512} width={876} height={876} rx={14} fill="none" stroke={KC.mint} strokeWidth={5} opacity=".85" /></svg>
+        {/* pase de belleza: la cuadrícula (10 000 cuadritos) se llena de abajo hacia arriba; el cuadrito de 2020 queda abajo a la izquierda */}
+        <Cuadricula T={T} cols={100} filas={100} x={110} y={600} ancho={860} alto={860} vacio="rgba(255,255,255,.13)" lleno={KC.mint} llenado={0} />
+        {(() => { const f = T < K.D + 1.0 ? 0.0001 : 0.0001 + 0.9999 * Math.pow(kprog(T, K.D + 1.0, K.D + 3.8), 2.2), k = Math.floor(f * 10000), filas = Math.floor(k / 100), resto = k % 100, c = 8.6;
+          return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:30 }}>
+            <defs><pattern id="celdaD" x={110} y={600} width={c} height={c} patternUnits="userSpaceOnUse"><rect x={c * 0.09} y={c * 0.09} width={c * 0.82} height={c * 0.82} rx={c * 0.12} fill={KC.mint} /></pattern></defs>
+            {filas > 0 && <rect x={110} y={1460 - filas * c} width={860} height={filas * c} fill="url(#celdaD)" />}
+            {resto > 0 && <rect x={110} y={1460 - (filas + 1) * c} width={resto * c} height={c} fill="url(#celdaD)" />}
+            <rect x={110 + c * 0.09} y={1460 - c + c * 0.09} width={c * 0.82} height={c * 0.82} rx={c * 0.12} fill={KC.yellow} />
+          </svg>; })()}
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:31 }}><rect x={102} y={592} width={876} height={876} rx={14} fill="none" stroke={KC.mint} strokeWidth={5} opacity=".85" /></svg>
       </div>}
       {/* lupa: el cuadrito de 2020 (la esquina de la cuadrícula) visto de cerca */}
       {T > K.D && T < K.D + 2.4 && <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:35, opacity:oD }}>
+        <g transform="matrix(1 0 0 -1 0 1980)">
         <defs><clipPath id="lupaD"><circle cx={330} cy={790} r={150} /></clipPath></defs>
         <line x1={124} y1={534} x2={224} y2={684} stroke={KC.yellow} strokeWidth={5} />
         <circle cx={114} cy={524} r={16 + 5 * Math.sin(T * 8)} fill="none" stroke={KC.yellow} strokeWidth={5} />
@@ -213,10 +221,11 @@ function Computo() {
           {[0, 1, 2].map((j) => [0, 1, 2].map((i) => <rect key={`${i}-${j}`} x={236 + i * 104} y={696 + j * 104} width={90} height={90} rx={12} fill={i + j === 0 ? KC.yellow : 'rgba(255,255,255,.16)'} />))}
         </g>
         <circle cx={330} cy={790} r={150} fill="none" stroke={KC.yellow} strokeWidth={7} />
+        </g>
       </svg>}
-      <Chip T={T} at={K.D + 0.3} until={K.D + 2.4} texto="■ = cómputo de 2020" x={540} y={430} tam={36} borde={KC.yellow} />
-      <Chip T={T} at={K.D + 2.5} until={K.P - 0.2} texto="tendencia de los modelos más grandes" x={540} y={430} tam={32} borde={KC.mint} />
-      <NumeroGigante T={T} at={K.D + 3.0} until={K.P - 0.2} valor={10000} desde={1} dur={0.8} prefijo="×" x={540} y={950} tam={190} color={KC.yellow} />
+      <Chip T={T} at={K.D + 0.3} until={K.D + 2.4} texto="■ = cómputo de 2020" x={540} y={500} tam={36} borde={KC.yellow} />
+      <Chip T={T} at={K.D + 2.5} until={K.P - 0.2} texto="tendencia de los modelos más grandes" x={540} y={500} tam={32} borde={KC.mint} />
+      <NumeroGigante T={T} at={K.D + 3.0} until={K.P - 0.2} valor={10000} desde={1} dur={0.8} prefijo="×" x={540} y={1030} tam={190} color={KC.yellow} />
       {/* 6 · la pregunta: el vaso casi vacío, con la duda adentro */}
       <Escena T={T} a={K.P} b={K.F} zoom={0.1}>
         <FondoLunares color={KC.orange} />

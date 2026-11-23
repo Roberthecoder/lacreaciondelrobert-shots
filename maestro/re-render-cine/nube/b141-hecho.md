@@ -1,0 +1,1 @@
+- ia-58-computo-duplica: escena «×10 000» centrada: la cuadrícula de 10 000 cuadritos baja al centro y se llena de abajo hacia arriba (antes cargaba todo arriba), con el cuadrito de 2020 abajo a la izquierda y la lupa apuntándole; chips y número reacomodados. El resto (vaso, chip de Moore, gráfica, casas) ya estaba al nivel.
