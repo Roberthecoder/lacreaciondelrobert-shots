@@ -1,0 +1,1 @@
+- fun-08-pie-atleta: Nombre (rótulos de la especie movidos a la derecha del logo: ya no se enciman con él). Las demás escenas ya cumplían.
