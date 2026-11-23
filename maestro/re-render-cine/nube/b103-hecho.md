@@ -1,0 +1,1 @@
+- qui-42-queso-limon: la olla (gancho, calor, cierre) pasa de gris claro plano a acero con degradado y sombra en la estufa; Polonia en ocre oscuro con contorno y letras doradas luminosas (antes amarillo claro a media pantalla); cartón de leche con degradado, pliegue y sombra (antes blanco plano). Composición ya centrada. Auditores: sin láminas · encuadre bien.

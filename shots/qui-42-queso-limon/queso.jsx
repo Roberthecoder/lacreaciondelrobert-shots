@@ -19,7 +19,9 @@ function Olla({ T, x, y, s = 1, cuaja = 0, vapor = 1, queso = 0, fuego = 1 }) {
     <rect x={-370} y={-200} width={80} height={34} rx={14} fill="#2d2f35" stroke={KC.ink} strokeWidth={7} />
     <rect x={290} y={-200} width={80} height={34} rx={14} fill="#2d2f35" stroke={KC.ink} strokeWidth={7} />
     {/* cuerpo */}
-    <path d="M -300 -220 L -282 70 Q -280 110 -236 110 L 236 110 Q 280 110 282 70 L 300 -220 Z" fill={METAL} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+    <defs><linearGradient id="olla-acero" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#8f9aa6" /><stop offset=".28" stopColor="#b4bec9" /><stop offset=".55" stopColor="#6f7a86" /><stop offset="1" stopColor="#3f4852" /></linearGradient></defs>
+    <ellipse cx={0} cy={168} rx={360} ry={22} fill="#000" opacity=".35" />
+    <path d="M -300 -220 L -282 70 Q -280 110 -236 110 L 236 110 Q 280 110 282 70 L 300 -220 Z" fill="url(#olla-acero)" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
     <path d="M -250 -150 L -238 60" stroke="#fff" strokeWidth={14} opacity={0.5} strokeLinecap="round" />
     <ellipse cx={0} cy={-220} rx={300} ry={70} fill="#7d8894" />
     <ellipse cx={0} cy={-200} rx={284} ry={58} fill={mixHex(LECHE, SUERO, cuaja)} />
@@ -142,14 +144,17 @@ function VasijaColadera({ T, x, y, s = 1, brillo = 0 }) {
 function Polonia({ x, y, s = 1, o = 1 }) {
   if (o <= 0) return null;
   return <g transform={`translate(${x} ${y}) scale(${s})`} opacity={o}>
-    <path d="M -180 -120 L -60 -160 L 40 -150 L 120 -170 L 190 -120 L 200 -20 L 220 60 L 160 130 L 60 150 L -40 170 L -120 140 L -190 80 L -210 -20 Z" fill="#ffe9a8" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
-    <text x={0} y={30} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>POLONIA</text>
+    <path d="M -180 -120 L -60 -160 L 40 -150 L 120 -170 L 190 -120 L 200 -20 L 220 60 L 160 130 L 60 150 L -40 170 L -120 140 L -190 80 L -210 -20 Z" fill="#4a4128" stroke="#ffe9a8" strokeWidth={8} strokeLinejoin="round" style={{ filter:'drop-shadow(0 0 10px rgba(255,233,168,.4))' }} />
+    <text x={0} y={30} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill="#ffe9a8">POLONIA</text>
   </g>;
 }
 // Cartón de leche y cubito de queso.
 function Carton({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -110 -120 L -110 220 L 110 220 L 110 -120 L 60 -200 L -60 -200 Z" fill="#fff" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    <defs><linearGradient id="carton-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#f1efe8" /><stop offset=".6" stopColor="#c9c6bc" /><stop offset="1" stopColor="#8e8b82" /></linearGradient></defs>
+    <ellipse cx={0} cy={226} rx={140} ry={16} fill="#000" opacity=".4" />
+    <path d="M -110 -120 L -110 220 L 110 220 L 110 -120 L 60 -200 L -60 -200 Z" fill="url(#carton-g)" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    <path d="M -60 -200 L 0 -120 L 60 -200" stroke="#8e8b82" strokeWidth={5} fill="none" />
     <path d="M -110 -120 L 110 -120" stroke={KC.ink} strokeWidth={7} />
     <rect x={-90} y={-40} width={180} height={150} rx={14} fill={KC.blue} stroke={KC.ink} strokeWidth={6} />
     <text x={0} y={40} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill="#fff">1 kg</text>
