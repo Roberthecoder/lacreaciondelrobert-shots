@@ -260,7 +260,7 @@ function MohoShot() {
   const pPin = kprog(T, K.Pi - 0.45, K.Pi + 1.3);   // el pincel ya viene creciendo cuando empieza la escena
   const zC = kprog(T, K.Ca - 0.2, K.Ca + 0.8, kEase.suave) * (1 - kprog(T, K.P - 0.5, K.P, kEase.suave));
   const cadPin = T < K.Ca ? 1.5 + kprog(T, K.Pi + 1.3, K.Ca) * 2 : 3.5 + (T - K.Ca) * 0.9;
-  const pAsp = kprog(T, K.A + 0.1, K.A + 1.6), cadAsp = 2 + kprog(T, K.A + 1.6, K.A + 4.4) * 7;
+  const pAsp = klerp(0.4, 1, kprog(T, K.A - 0.2, K.A + 1.4)), cadAsp = 2 + kprog(T, K.A + 1.6, K.A + 4.4) * 7;
   const pMil = kprog(T, K.Mil, K.Mil + 0.01), sueltaMil = kprog(T, K.Mil + 0.4, K.Mil + 2.4);
   const bubble = kprog(T, K.Mil + 2.4, K.Mil + 3.0, kEase.rebote);
   // seguridad
@@ -334,9 +334,9 @@ function MohoShot() {
       <Escena T={T} a={K.P} b={K.A} zoom={0.06}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <g transform="translate(290 990) scale(1.45)"><Petri x={0} y={0} r={150} medio="#f2e6bd"><Colonia cx={0} cy={0} r={110} color={MM.micelio} seed={2} /><Colonia cx={0} cy={0} r={80} color={MM.moho} seed={4} /></Petri></g>
-          <g transform="translate(790 990) scale(1.45)"><Petri x={0} y={0} r={150} medio="#f2e6bd"><Colonia cx={0} cy={0} r={115} color="#e9f0e4" seed={6} /><Colonia cx={0} cy={0} r={85} color="#6f8f6a" seed={7} /></Petri></g>
-          <Interrogacion T={T} x={620} y={1480} tam={300} />
+          <g transform="translate(285 1110) scale(1.5)"><Petri x={0} y={0} r={150} medio="#f2e6bd"><Colonia cx={0} cy={0} r={110} color={MM.micelio} seed={2} /><Colonia cx={0} cy={0} r={80} color={MM.moho} seed={4} /></Petri></g>
+          <g transform="translate(795 1110) scale(1.5)"><Petri x={0} y={0} r={150} medio="#f2e6bd"><Colonia cx={0} cy={0} r={115} color="#e9f0e4" seed={6} /><Colonia cx={0} cy={0} r={85} color="#6f8f6a" seed={7} /></Petri></g>
+          <Interrogacion T={T} x={640} y={1530} tam={300} />
         </>)}
       </Escena>
       {/* 8 · Aspergillus fumigatus al microscopio */}
@@ -425,7 +425,7 @@ function MohoShot() {
       <Etq T={T} at={K.Pi + 2.0} until={K.Ca - 0.2} x={670} y={670} texto="fiálides" tam={28} color={KC.texto} />
       <ChipI T={T} at={K.Pi + 2.6} until={K.Ca - 0.2} partes={[['Penicillium', true], [' = pincel (Link, 1809)', false]]} x={400} y={290} tam={32} borde={KC.gold} />
       <Chip T={T} at={K.Ca + 1.0} until={K.P - 0.3} texto="la espora más joven: abajo" x={540} y={1440} tam={30} borde={KC.gold2} />
-      <Chip T={T} at={K.P + 0.3} until={K.A - 0.2} texto="✓ pincel" x={290} y={1270} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.P + 0.3} until={K.A - 0.2} texto="✓ pincel" x={285} y={1400} tam={32} borde={KC.leaf} />
       <Etq T={T} at={K.A + 0.6} until={K.Mi - 0.2} x={60} y={1200} texto="tallo liso, sin tabiques" tam={26} color={KC.texto} />
       <Etq T={T} at={K.A + 1.0} until={K.Mi - 0.2} x={60} y={300} texto="Aspergillus fumigatus" it tam={38} color={KC.texto} />
       <Etq T={T} at={K.A + 1.4} until={K.Mi - 0.2} x={60} y={935} texto="vesícula · 20–30 µm" tam={26} color={KC.gold2} />
@@ -452,7 +452,7 @@ function MohoShot() {
       <BarraEscala T={T} at={K.Ti} until={K.Pi} texto="1 cm" largo={128} y={1450} color={KC.ink} />
       <BarraEscala T={T} at={K.Pi} until={K.Ca} texto="10 µm" largo={115} y={1450} />
       <BarraEscala T={T} at={K.Ca} until={K.P} texto="10 µm" largo={196} y={1450} />
-      <BarraEscala T={T} at={K.P} until={K.A} texto="5 cm" largo={247} y={1450} color={KC.ink} />
+      <BarraEscala T={T} at={K.P} until={K.A} texto="5 cm" largo={255} y={1450} color={KC.ink} />
       <BarraEscala T={T} at={K.A} until={K.Mi} texto="20 µm" largo={230} y={1450} />
       <BarraEscala T={T} at={K.Mi} until={K.Mil} texto="dibujo esquemático" largo={0} y={1450} color={KC.ink} />
       <BarraEscala T={T} at={K.Mil} until={K.Mil + 2.4} texto="20 µm" largo={200} y={1450} />
