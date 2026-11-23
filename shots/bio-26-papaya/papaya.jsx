@@ -26,13 +26,20 @@ function HojaPapaya({ x = 0, y = 0, s = 1, rot = 0, enferma = 0, T = 0, seed = 1
 }
 
 // Fruto de papaya entero (oblongo, piriforme), colgado del pico. maduro 0..1, anillos 0..1 (manchas anulares de la PRSV), brilloGen = hebra dorada adentro.
+// belleza: sombreado de volumen para las frutas (luz arriba-izquierda, sombra abajo-derecha)
+function PpVol() {
+  return <defs><radialGradient id="pp-vol" cx="0.32" cy="0.28" r="0.85"><stop offset="0" stopColor="#fff" stopOpacity=".22" /><stop offset="0.45" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".38" /></radialGradient></defs>;
+}
 function Papaya({ x = 0, y = 0, s = 1, rot = 0, maduro = 0.6, anillos = 0, brilloGen = 0, T = 0 }) {
   const piel = mixHex(PV.piel, PV.pielMad, maduro);
   const R = krng(11);
   const an = Array.from({ length: 9 }, () => [(R() - 0.5) * 120, -150 + R() * 300, 14 + R() * 16]);
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     <rect x={-14} y={-232} width={28} height={40} rx={8} fill={PV.troncoOsc} stroke={KC.ink} strokeWidth={6} />
+    <PpVol />
+    <ellipse cx={14} cy={222} rx={100} ry={16} fill="rgba(0,0,0,.3)" />
     <path d="M 0 -200 C 70 -200 105 -120 108 -20 C 112 110 80 210 0 215 C -80 210 -112 110 -108 -20 C -105 -120 -70 -200 0 -200 Z" fill={piel} stroke={KC.ink} strokeWidth={9} />
+    <path d="M 0 -200 C 70 -200 105 -120 108 -20 C 112 110 80 210 0 215 C -80 210 -112 110 -108 -20 C -105 -120 -70 -200 0 -200 Z" fill="url(#pp-vol)" />
     {[-50, 0, 50].map((dx, i) => <path key={i} d={`M ${dx * 0.4} -190 Q ${dx * 1.2} 0 ${dx * 0.5} 205`} stroke="rgba(0,0,0,.12)" strokeWidth={6} fill="none" />)}
     <path d="M -62 -120 Q -84 -20 -66 80" stroke="rgba(255,255,255,.55)" strokeWidth={16} fill="none" strokeLinecap="round" />
     {anillos > 0 && an.map(([ax, ay, r], i) => { const q = kclamp(anillos * 9 - i, 0, 1); return q > 0 ? <g key={i} opacity={q}>
@@ -50,7 +57,9 @@ function PapayaAbierta({ x = 0, y = 0, s = 1, pulpa = PV.pulpa, T = 0 }) {
   const R = krng(4);
   const sem = Array.from({ length: 34 }, () => [(R() - 0.5) * 70, -90 + R() * 210, 9 + R() * 5]);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <PpVol />
     <path d="M 0 -200 C 70 -200 105 -120 108 -20 C 112 110 80 210 0 215 C -80 210 -112 110 -108 -20 C -105 -120 -70 -200 0 -200 Z" fill={PV.pielMad} stroke={KC.ink} strokeWidth={9} />
+    <path d="M 0 -200 C 70 -200 105 -120 108 -20 C 112 110 80 210 0 215 C -80 210 -112 110 -108 -20 C -105 -120 -70 -200 0 -200 Z" fill="url(#pp-vol)" />
     <path d="M 0 -180 C 58 -180 88 -110 90 -20 C 94 100 66 192 0 196 C -66 192 -94 100 -90 -20 C -88 -110 -58 -180 0 -180 Z" fill={pulpa} />
     <path d="M 0 -110 C 34 -110 50 -40 50 30 C 50 110 30 150 0 152 C -30 150 -50 110 -50 30 C -50 -40 -34 -110 0 -110 Z" fill="#f7d98a" stroke="rgba(0,0,0,.25)" strokeWidth={4} />
     {sem.map(([sx, sy, r], i) => <ellipse key={i} cx={sx * (1 - Math.abs(sy) / 300)} cy={sy} rx={r} ry={r * 1.1} fill={PV.semilla} stroke="#3d342b" strokeWidth={2} transform={`rotate(${i * 23} ${sx} ${sy})`} />)}
@@ -234,12 +243,15 @@ function Papaya26() {
       <Escena T={T} a={K.D} b={K.Ca} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         <Capa>
+          {/* belleza: fruto, hoja y medidor 1.25× y centrados (el fruto medía ~700 px de alto) */}
+          <g transform="translate(560 985) scale(1.25) translate(-620 -900)">
           <Papaya x={420} y={900} s={1.55} rot={6} maduro={0.45} anillos={kprog(T, K.D + 0.2, K.D + 2.0)} T={T} />
           <HojaPapaya x={860} y={760} s={0.9} rot={30} enferma={1} T={T} seed={5} />
           <g transform="translate(860 1080)">
             <rect x={-60} y={-260} width={120} height={260} rx={18} fill="rgba(0,0,0,.35)" stroke={KC.ink} strokeWidth={7} />
             <rect x={-48} y={-248 + 236 * (1 - azucar)} width={96} height={236 * azucar} rx={12} fill={KC.yellow} />
             <text x={0} y={50} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>azúcar</text>
+          </g>
           </g>
         </Capa>
       </Escena>
@@ -252,7 +264,7 @@ function Papaya26() {
             return <g key={i}><rect x={bx - 100} y={1180 - h} width={200} height={h} fill={c} stroke={KC.ink} strokeWidth={8} />
               <text x={bx} y={1240} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>{a}</text>
               {p > 0.9 && <text x={bx + 150} y={1160 - h} textAnchor="middle" style={{ font:`400 72px ${KF.titulo}` }} fill={KC.ink}>{kformato(v, 1)}</text>}
-              <Papaya x={bx} y={1180 - h - 175} s={0.42 * p} maduro={0.8} /></g>; })}
+              <Papaya x={bx} y={1180 - h - 225} s={0.54 * p} maduro={0.8} /></g>; })}
           <text x={540} y={1440} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>millones de libras de papaya fresca · Hawái</text>
         </Capa>
       </Escena>
@@ -281,22 +293,25 @@ function Papaya26() {
       <Escena T={T} a={K.Di} b={K.Si} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         <Capa>
+          {/* belleza: la escena 1.12× y bajada al centro (quedaba cargada arriba) */}
+          <g transform="translate(540 1030) scale(1.12) translate(-540 -880)">
           <PistolaGenes x={540} y={820} s={1.2} T={T} disparo={disparo} />
           <PlacaCelulas x={540} y={1110} s={1.6} T={T} brillo={kprog(T, K.Di + 1.8, K.Di + 2.6)} />
           {disparo > 0 && disparo < 1 && Array.from({ length: 16 }, (_, i) => { const u = kclamp(disparo * 1.6 - (i % 5) * 0.12, 0, 1), xx = 540 + ((i * 37) % 200) - 100;
             return u > 0 && u < 1 ? <circle key={i} cx={xx} cy={klerp(700, 1100, u)} r={9} fill={PV.gen} stroke={KC.ink} strokeWidth={3} /> : null; })}
           <text x={540} y={1270} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>células de papaya en cultivo</text>
+          </g>
         </Capa>
       </Escena>
       {/* 8 · por dentro: la planta lee el gen y corta el ARN parecido */}
       <Escena T={T} a={K.Si} b={K.Es} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <Capa>
-          <HojaPapaya x={540} y={1560} s={2.4} rot={0} T={T} seed={8} />
-          <BarraEscala x={40} y={1120} ancho={180} texto="≈ 15 cm" color={KC.ink} />
+          <HojaPapaya x={540} y={1420} s={2.0} rot={0} T={T} seed={8} />
+          <BarraEscala x={40} y={1180} ancho={150} texto="≈ 15 cm" color={KC.ink} />
         </Capa>
       </Escena>
-      <Lupa T={T} at={K.Si + 0.2} until={K.Es - 0.3} x={540} y={760} r={360} fx={540} fy={1330} tinte={KC.mint} etiqueta="POR DENTRO · célula de la hoja" interior={(T2, r) => {
+      <Lupa T={T} at={K.Si + 0.2} until={K.Es - 0.3} x={540} y={790} r={360} fx={540} fy={1300} tinte={KC.mint} etiqueta="POR DENTRO · célula de la hoja" interior={(T2, r) => {
         const lee = kprog(T2, K.Si + 0.6, K.Si + 1.6), entra = kprog(T2, K.Si + 2.4, K.Si + 3.4, kEase.suave), corta = kprog(T2, K.Si + 3.5, K.Si + 4.6);
         return <svg width={2 * r} height={2 * r}>
           <rect width={2 * r} height={2 * r} fill="#0d2a1c" />
@@ -376,14 +391,14 @@ function Papaya26() {
       <Chip T={T} at={K.L + 0.9} until={K.Pu - 0.3} texto="Puna, Hawái · 1992" y={300} tam={44} borde={KC.red} />
       <Etq T={T} at={K.L + 1.0} until={K.Pu - 0.3} x={880} y={700} texto="Puna" lado="der" tam={40} color={KC.ink} />
       <Chip T={T} at={K.Pu + 1.4} until={K.D - 0.3} texto="un piquete de segundos" y={420} tam={42} borde={PV.virus} />
-      <Etq T={T} at={K.D + 0.6} until={K.Ca - 0.3} x={560} y={600} texto="manchas en anillo" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.D + 0.6} until={K.Ca - 0.3} x={500} y={520} texto="manchas en anillo" tam={34} color={KC.ink} />
       <Chip T={T} at={K.D + 2.4} until={K.Ca - 0.3} texto="puede bajar 50 % o más" x={540} y={1490} tam={40} borde={KC.yellow} />
       <Chip T={T} at={K.Ca + 2.7} until={K.Pr - 0.2} texto="−36 % en 5 años" y={1520} tam={46} borde={KC.red} />
       <Etq T={T} at={K.Pr + 1.0} until={K.Ge - 0.2} x={520} y={1090} texto="virus de la mancha anular" tam={30} />
       <Chip T={T} at={K.Ge + 2.0} until={K.Di - 0.3} texto="gen de la cubierta del virus" y={1500} tam={40} borde={PV.gen} />
       <Etq T={T} at={K.Ge + 0.4} until={K.Ge + 2.0} x={500} y={840} texto="cubierta de proteína" tam={32} />
       <Etq T={T} at={K.Ge + 0.8} until={K.Ge + 2.2} x={500} y={1050} texto="ARN" tam={32} color={PV.arn} />
-      <Chip T={T} at={K.Di + 1.6} until={K.Si - 0.3} texto="bombardeo con microbalines" y={1380} tam={40} borde={PV.gen} />
+      <Chip T={T} at={K.Di + 1.6} until={K.Si - 0.3} texto="bombardeo con microbalines" y={1540} tam={40} borde={PV.gen} />
       <Chip T={T} at={K.Si + 1.2} until={K.Es - 0.4} texto="silenciamiento de ARN" y={320} tam={40} borde={KC.lilac} />
       <TarjetaEstudio T={T} at={K.Es + 0.1} until={K.Es + 2.9} anio="1995" quien="Puna, Hawái · ensayo de campo" revista="Ferreira et al. · Plant Disease (2002)" y={430} />
       <Chip T={T} at={K.Es + 3.1} until={K.Ra - 0.3} texto="control: 100 % enfermas · con el gen: 0" y={1500} tam={34} borde={KC.mint} />
