@@ -2,3 +2,4 @@
 - fun-93-hongo-sal: Pregunta: velo oscuro sobre la escena anterior para que la célula del hongo y el «?» no se encimen con la célula seca; Genoma: el hongo ya está en cuadro desde el inicio y la escena se disuelve antes de que entre el bacalao (sin encimarse sobre las barras)
 - amb-34-pez-diablo: pleco con volumen (cuerpo en degradado y brillo en el lomo, en todas las escenas); Harina: costales y crías ×1.2 más grandes y centrados, chip arriba sin tapar los costales, etiqueta de crías reubicada
 GRUPO TERMINADO
+- amb-34-pez-diablo: (ajuste) Harina: conjunto bajado al centro para encuadre bien

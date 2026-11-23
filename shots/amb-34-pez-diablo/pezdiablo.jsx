@@ -265,7 +265,7 @@ function PezDiabloShot() {
       {/* 10 · lo bueno: su harina sustituyó a la de sardina para criar tilapias (Tabasco, 2021) */}
       <Escena T={T} a={K.H} b={K.C}>
         <FondoLunares color={KC.mint} />
-        {svg(<g transform="translate(590 960) scale(1.5) translate(-600 -880)">
+        {svg(<g transform="translate(590 1090) scale(1.5) translate(-600 -880)">
           <Costal x={760} y={760} texto={'harina\nde sardina'} color="#d6e4ef" tacha={kprog(T, K.H + 2.0, K.H + 2.6, kEase.sale)} s={0.9} />
           <g opacity={kprog(T, K.H + 2.4, K.H + 2.9)} transform={`translate(0 ${(1 - kprog(T, K.H + 2.4, K.H + 3.0, kEase.rebote)) * -300})`}>
             <Costal x={480} y={800} texto={'harina\nde pleco'} color="#e9c98d" s={1} />
@@ -315,8 +315,8 @@ function PezDiabloShot() {
       <Chip T={T} at={K.R + 2.6} until={K.Tu - 0.2} texto="CONABIO, 2007" x={540} y={1440} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.R + 5.2} until={K.Tu - 0.2} x={980} y={1110} texto="redes dañadas" lado="izq" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Tu + 3.0} until={K.H - 0.2} texto="erosionan las orillas" x={540} y={1440} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.H + 0.4} until={K.C - 0.2} texto="Tabasco · experimento, 2021" x={600} y={380} tam={32} borde={KC.leaf} />
-      <Etq T={T} at={K.H + 3.6} until={K.C - 0.2} x={130} y={1215} texto="crías de tilapia" lado="der" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.H + 0.4} until={K.C - 0.2} texto="Tabasco · experimento, 2021" x={600} y={500} tam={32} borde={KC.leaf} />
+      <Etq T={T} at={K.H + 3.6} until={K.C - 0.2} x={130} y={1345} texto="crías de tilapia" lado="der" tam={28} color={KC.ink} />
       <Chip T={T} at={K.C + 2.4} until={K.Ou - 0.1} texto="no lo sueltes" x={540} y={1440} tam={48} borde={KC.red} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
