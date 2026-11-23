@@ -196,7 +196,7 @@ function Silica() {
       {/* 4 · absorción vs. adsorción */}
       <Escena T={T} a={K.Ad} b={K.Pr}>
         <FondoLunares color={KC.lilac} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 960) scale(1.1) translate(-545 -885)">
           <g opacity={kprog(T, K.Ad + 0.1, K.Ad + 0.5)}>
             <rect x={90} y={760} width={380} height={300} rx={40} fill={KC.yellow} stroke={KC.ink} strokeWidth={9} />
             <clipPath id="esponja"><rect x={90} y={760} width={380} height={300} rx={40} /></clipPath>
@@ -218,7 +218,7 @@ function Silica() {
             <text x={800} y={700} textAnchor="middle" style={{ font:`400 66px ${KF.titulo}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={7} paintOrder="stroke">A<tspan fill={KC.gold2} style={{ font:`400 ${66 + 30 * kprog(T, K.Ad + 2.6, K.Ad + 3.0, kEase.rebote)}px ${KF.titulo}` }}>D</tspan>SORBE</text>
             <text x={800} y={740} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>(con d: encima)</text>
           </g>
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.Pr} b={K.Ri} zoom={0.1}>
@@ -247,14 +247,15 @@ function Silica() {
       {/* 6b · riesgo: cloruro de cobalto, azul → rosa */}
       <Escena T={T} a={riMitad} b={K.Es}>
         <FondoLunares color={KC.lilac} />
-        <SvgCapa><g transform="translate(540 960) scale(1.2) translate(-540 -960)">
-          {[0, 1, 2, 3, 4].map((i) => { const x = 220 + i * 160, cambia = kprog(T, riMitad + 1.0 + i * 0.45, riMitad + 1.6 + i * 0.45);
+        <SvgCapa><g>
+          {/* belleza: las cinco bolitas más grandes, en dos filas (antes una línea delgada en medio del cuadro) */}
+          {[[300, 900], [540, 900], [780, 900], [420, 1100], [660, 1100]].map(([x, by], i) => { const cambia = kprog(T, riMitad + 1.0 + i * 0.45, riMitad + 1.6 + i * 0.45);
             return <g key={i}>
-              {Array.from({ length: 3 }, (_, k) => { const ph = (T * 0.8 + k / 3 + i * 0.13) % 1; return <path key={k} d={`M ${x - 30 + k * 30} ${720 + ph * 180} q 10 -14 0 -28 q -10 -14 0 -28`} fill="none" stroke={AGUA} strokeWidth={6} strokeLinecap="round" opacity={Math.sin(ph * Math.PI) * (1 - cambia * 0.6)} />; })}
-              <Bolita x={x} y={1000 + Math.sin(T * 2 + i) * 6} r={62} color={mixHex(AZUL_CO, ROSA_CO, cambia)} />
+              {Array.from({ length: 3 }, (_, k) => { const ph = (T * 0.8 + k / 3 + i * 0.13) % 1; return <path key={k} d={`M ${x - 30 + k * 30} ${by - 100 - ph * 110} q 10 -14 0 -28 q -10 -14 0 -28`} fill="none" stroke={AGUA} strokeWidth={6} strokeLinecap="round" opacity={Math.sin(ph * Math.PI) * (1 - cambia * 0.6)} />; })}
+              <Bolita x={x} y={by + Math.sin(T * 2 + i) * 6} r={92} color={mixHex(AZUL_CO, ROSA_CO, cambia)} />
             </g>; })}
-          <text x={300} y={1150} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink}>seca: azul</text>
-          <text x={800} y={1150} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, riMitad + 2.5, riMitad + 3.0)}>mojada: rosa</text>
+          <text x={300} y={1270} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink}>seca: azul</text>
+          <text x={780} y={1270} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, riMitad + 2.5, riMitad + 3.0)}>mojada: rosa</text>
         </g></SvgCapa>
       </Escena>
       {/* 7 · el estudio de Israel */}
