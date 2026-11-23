@@ -1,0 +1,1 @@
+- qui-04-col-morada: volumen (degradado claro→oscuro y sombra en el piso) en vasos, col (con textura), limón (con brillo), pescado (escamas), pollo, flor (venas), licuadora y charola; jamaica: vaso, flor y pollo más grandes y centrados, chip reacomodado; casa: caja de BICARBONATO más ancha con texto oscuro que ya no se sale. Láminas: sin láminas · encuadre bien.

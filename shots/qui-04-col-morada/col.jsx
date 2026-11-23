@@ -12,13 +12,21 @@ function colorPH(ph) {
 const MORADO = colorPH(6.5);
 // Pase a mano, 2ª vuelta: agranda el dibujo de una escena alrededor de (cx, cy) y lo lleva a (nx, ny).
 const enc = (k, cx, cy, nx = 540, ny = 930) => ({ k, t: `translate(${nx} ${ny}) scale(${k}) translate(${-cx} ${-cy})`, x: (x) => nx + (x - cx) * k, y: (y) => ny + (y - cy) * k });
-const eV = enc(1.75, 540, 870, 540, 950), eP = enc(1.2, 540, 1050, 540, 980);
+const eV = enc(1.75, 540, 870, 540, 950), eP = enc(1.2, 540, 1050, 540, 980), eJ = enc(1, 540, 960, 540, 960);
 
+// Belleza: volumen suave (claro arriba-izq, oscuro abajo-der) que se pone ENCIMA de cualquier relleno plano.
+const VolDefs = () => <defs>
+  <linearGradient id="qcVol" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fff" stopOpacity=".32" /><stop offset=".45" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".38" /></linearGradient>
+  <radialGradient id="qcSombra"><stop offset="0" stopColor="#000" stopOpacity=".55" /><stop offset="1" stopColor="#000" stopOpacity="0" /></radialGradient>
+</defs>;
+const SombraPiso = ({ x, y, rx, ry = 26 }) => <ellipse cx={x} cy={y} rx={rx} ry={ry} fill="url(#qcSombra)" />;
 // Vaso de vidrio (x, y = centro de la base).
 function Vaso({ T = 0, x, y, s = 1, color = MORADO, nivel = 0.75, hielo = 0, gira = 0 }) {
   const h = 420, wTop = 150, wBot = 115, yl = -h * nivel, wl = klerp(wBot, wTop, nivel);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <VolDefs /><SombraPiso x={0} y={4} rx={wBot + 40} ry={22} />
     <path d={`M ${-wBot + 6} -6 L ${wBot - 6} -6 L ${wl - 6} ${yl} L ${-wl + 6} ${yl} Z`} fill={color} />
+    <path d={`M ${-wBot + 6} -6 L ${wBot - 6} -6 L ${wl - 6} ${yl} L ${-wl + 6} ${yl} Z`} fill="url(#qcVol)" />
     <ellipse cx={0} cy={yl} rx={wl - 6} ry={14} fill={mixHex(color, '#ffffff', 0.25)} />
     {hielo > 0 && [[-50, 0.2], [30, 1.3], [-5, 2.4]].map(([dx, p], i) => <rect key={i} x={dx + Math.sin(T * 1.3 + p) * 8} y={yl - 10 + i * 34 + Math.cos(T * 1.1 + p) * 5} width={56} height={50} rx={10} fill="rgba(255,255,255,.55)" stroke="rgba(0,0,0,.35)" strokeWidth={3} transform={`rotate(${10 + i * 20 + gira} ${dx + 28} ${yl + i * 34})`} opacity={hielo} />)}
     <path d={`M ${-wBot} 0 L ${wBot} 0 L ${wTop} ${-h} L ${-wTop} ${-h} Z`} fill="rgba(255,255,255,.14)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
@@ -28,17 +36,23 @@ function Vaso({ T = 0, x, y, s = 1, color = MORADO, nivel = 0.75, hielo = 0, gir
 // Col morada partida a la mitad (venas blancas).
 function ColMorada({ x, y, s = 1, rot = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
+    <VolDefs />
     <circle r={150} fill="#5b2a86" stroke={KC.ink} strokeWidth={9} />
+    {Array.from({ length: 22 }, (_, i) => <circle key={'t' + i} cx={Math.cos(i * 2.4) * (40 + (i * 37) % 95)} cy={Math.sin(i * 2.4) * (40 + (i * 37) % 95)} r={4} fill="#3e1a63" opacity={0.6} />)}
     {[0, 1, 2, 3, 4].map((i) => <path key={i} d={`M ${-120 + i * 8} ${-60 + i * 30} Q 0 ${-120 + i * 40} ${120 - i * 8} ${-60 + i * 30}`} stroke="#efe3ff" strokeWidth={9} fill="none" opacity={0.9} />)}
     <path d="M -20 150 L 20 150 L 12 70 L -12 70 Z" fill="#f2ecff" stroke={KC.ink} strokeWidth={5} />
+    <circle r={146} fill="url(#qcVol)" />
   </g>;
 }
 // Limón (verde, mexicano) partido.
 function Limon({ x, y, s = 1, rot = 0, aprieta = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s * (1 - aprieta * 0.12)}, ${s * (1 + aprieta * 0.05)})`}>
+    <VolDefs />
     <ellipse rx={100} ry={90} fill="#5fbf3a" stroke={KC.ink} strokeWidth={8} />
     <ellipse rx={82} ry={72} fill="#e3f59a" />
     {Array.from({ length: 8 }, (_, i) => { const a = i * Math.PI / 4; return <line key={i} x1={0} y1={0} x2={Math.cos(a) * 74} y2={Math.sin(a) * 66} stroke="#b7d86a" strokeWidth={5} />; })}
+    <ellipse rx={98} ry={88} fill="url(#qcVol)" />
+    <ellipse cx={-38} cy={-36} rx={20} ry={11} fill="#fff" opacity={0.45} transform="rotate(-35 -38 -36)" />
   </g>;
 }
 // Molécula de antocianina esquemática: dos anillos fusionados + uno colgado. forma 0 = catión (cerrado, +), 1 = base (cerrada), 2 = abierta (chalcona).
@@ -58,27 +72,35 @@ function Antocianina({ x, y, s = 1, color = MORADO, forma = 0, T = 0 }) {
 }
 function Pescado({ x, y, s = 1, T = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <VolDefs />
     <path d="M -230 0 Q -80 -120 140 -30 L 240 -100 L 220 0 L 240 100 L 140 30 Q -80 120 -230 0 Z" fill="#a9c4d6" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    {Array.from({ length: 14 }, (_, i) => <path key={'e' + i} d={`M ${-60 + (i % 7) * 28} ${-26 + Math.floor(i / 7) * 34} q 12 10 0 20`} stroke="#7f9bb0" strokeWidth={3} fill="none" opacity={0.7} />)}
+    <path d="M -230 0 Q -80 -120 140 -30 L 240 -100 L 220 0 L 240 100 L 140 30 Q -80 120 -230 0 Z" fill="url(#qcVol)" />
     <circle cx={-150} cy={-14} r={16} fill="#fff" stroke={KC.ink} strokeWidth={5} /><circle cx={-148} cy={-14} r={7} fill={KC.ink} />
     {[0, 1, 2].map((i) => <path key={i} d={`M ${-70 + i * 60} -50 q 20 50 0 100`} stroke="rgba(0,0,0,.25)" strokeWidth={6} fill="none" />)}
   </g>;
 }
 function Pollo({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <VolDefs /><SombraPiso x={0} y={150} rx={190} ry={28} />
     <path d="M -140 -60 Q -200 40 -110 110 Q 0 160 60 60 L 150 10 Q 190 -10 170 -40 Q 150 -70 120 -40 L 30 -20 Q -60 -150 -140 -60 Z" fill="#f1b48f" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <path d="M -140 -60 Q -200 40 -110 110 Q 0 160 60 60 L 150 10 Q 190 -10 170 -40 Q 150 -70 120 -40 L 30 -20 Q -60 -150 -140 -60 Z" fill="url(#qcVol)" />
     <circle cx={175} cy={-60} r={26} fill="#fff4e0" stroke={KC.ink} strokeWidth={6} /><circle cx={195} cy={-30} r={22} fill="#fff4e0" stroke={KC.ink} strokeWidth={6} />
   </g>;
 }
 function FlorJamaica({ x, y, s = 1, rot = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     {Array.from({ length: 5 }, (_, i) => <path key={i} d="M 0 0 Q -40 -70 0 -130 Q 40 -70 0 0 Z" fill="#b5122e" stroke={KC.ink} strokeWidth={6} transform={`rotate(${i * 72})`} />)}
+    {Array.from({ length: 5 }, (_, i) => <path key={'v' + i} d="M 0 -20 L 0 -110" stroke="#e0566c" strokeWidth={4} opacity={0.6} transform={`rotate(${i * 72})`} />)}
     <circle r={26} fill="#7a0b1f" stroke={KC.ink} strokeWidth={5} />
   </g>;
 }
 function Licuadora({ x, y, s = 1, T = 0, on = 0 }) {
   const vib = on * Math.sin(T * 60) * 3;
   return <g transform={`translate(${x + vib} ${y}) scale(${s})`}>
+    <VolDefs /><SombraPiso x={0} y={134} rx={170} ry={24} />
     <rect x={-120} y={0} width={240} height={130} rx={20} fill="#c3cbd3" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-116} y={4} width={232} height={122} rx={18} fill="url(#qcVol)" />
     <circle cx={0} cy={65} r={22} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
     <path d="M -100 0 L -130 -330 L 130 -330 L 100 0 Z" fill="rgba(255,255,255,.2)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     <path d={`M -96 -10 L -118 -${150 + on * 60} Q 0 -${190 + on * 70 + Math.sin(T * 20) * 20 * on} 118 -${150 + on * 60} L 96 -10 Z`} fill={MORADO} opacity={0.9} />
@@ -173,7 +195,9 @@ function Col() {
       <Escena T={T} a={K.Et} b={K.Ja}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa><g transform={eP.t}>
+          <VolDefs /><SombraPiso x={540} y={1214} rx={430} ry={34} />
           <rect x={150} y={900} width={780} height={300} rx={30} fill="#8a857a" stroke={KC.ink} strokeWidth={8} />
+          <rect x={154} y={904} width={772} height={292} rx={28} fill="url(#qcVol)" />
           <Pescado x={540} y={1050} s={1.25} T={T} />
           <rect x={170} y={920} width={740} height={260} rx={24} fill="rgba(255,255,255,.25)" stroke="rgba(0,0,0,.35)" strokeWidth={4} opacity={kprog(T, K.Et + 1.5, K.Et + 2.5)} />
           <rect x={740} y={950} width={130} height={90} rx={14} fill={colorPH(klerp(2.5, 8, dias))} stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.Et + 2.2, K.Et + 2.8)} />
@@ -184,12 +208,12 @@ function Col() {
       {/* 9 · lo curioso: jamaica y pollo */}
       <Escena T={T} a={K.Ja} b={K.Ca}>
         <FondoLunares color={KC.orange} />
-        <SvgCapa>
-          <FlorJamaica x={300} y={440} s={1.3} rot={T * 10} />
-          <Vaso T={T} x={300} y={1060} s={1.25} color="#9e0f2a" hielo={1} />
-          <Pollo x={690} y={1320} s={1.5} />
-          <rect x={590} y={1208} width={162} height={112} rx={17} fill={mixHex('#d81b3c', '#4b2a8f', pollo)} stroke={KC.ink} strokeWidth={6} />
-        </SvgCapa>
+        <SvgCapa><g transform={eJ.t}>
+          <FlorJamaica x={330} y={430} s={1.4} rot={T * 10} />
+          <Vaso T={T} x={330} y={1070} s={1.45} color="#9e0f2a" hielo={1} />
+          <Pollo x={720} y={1325} s={1.55} />
+          <rect x={617} y={1209} width={167} height={116} rx={18} fill={mixHex('#d81b3c', '#4b2a8f', pollo)} stroke={KC.ink} strokeWidth={6} />
+        </g></SvgCapa>
       </Escena>
       {/* 10 · pruébalo en casa */}
       <Escena T={T} a={K.Ca} b={K.Ci}>
@@ -198,7 +222,7 @@ function Col() {
           <Licuadora x={250} y={1260} s={1.3} T={T} on={kprog(T, K.Ca + 0.3, K.Ca + 0.6) * (1 - kprog(T, K.Ca + 1.6, K.Ca + 1.9))} />
           <g opacity={kprog(T, K.Ca + 1.6, K.Ca + 2.0)}><Vaso T={T} x={620} y={1420} s={0.9} color={mixHex(MORADO, colorPH(2), kprog(T, K.Ca + 2.4, K.Ca + 3.2))} /><Vaso T={T} x={895} y={1420} s={0.9} color={mixHex(MORADO, colorPH(8.3), kprog(T, K.Ca + 3.0, K.Ca + 3.8))} /></g>
           <Limon x={620} y={900} s={0.78} rot={-20} />
-          <g transform="translate(895 895) scale(1.35)"><rect x={-60} y={-70} width={120} height={140} rx={14} fill="#f6f3ec" stroke={KC.ink} strokeWidth={6} /><text y={10} textAnchor="middle" style={{ font:`400 26px ${KF.titulo}` }} fill={KC.ink}>BICARBONATO</text></g>
+          <g transform="translate(880 895) scale(1.3)"><rect x={-92} y={-70} width={184} height={140} rx={14} fill="#f6f3ec" stroke={KC.ink} strokeWidth={6} /><rect x={-88} y={-66} width={176} height={132} rx={12} fill="url(#qcVol)" /><text y={10} textAnchor="middle" textLength={160} lengthAdjust="spacingAndGlyphs" style={{ font:`400 26px ${KF.titulo}` }} fill="#0b1020">BICARBONATO</text></g>
         </SvgCapa>
       </Escena>
       {/* 11 · cierre: el vaso del inicio se reparte en la escala */}
@@ -224,7 +248,7 @@ function Col() {
       <TarjetaEstudio T={T} at={K.Et + 0.2} until={K.Pe - 0.2} anio="2026" quien="Dong et al. · Ningbo, China" revista="Food Chemistry: X · película de empaque" y={470} />
       <Chip T={T} at={K.Pe + 0.4} until={K.Ja - 0.3} texto="se echa a perder → compuestos básicos" y={400} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.Pe + 2.0} until={K.Ja - 0.3} x={1000} y={1240} texto="la etiqueta cambia de color" lado="izq" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Ja + 0.4} until={K.Ca - 0.3} texto="jamaica · Hibiscus sabdariffa" x={800} y={700} tam={30} borde="#9e0f2a" />
+      <Chip T={T} at={K.Ja + 0.4} until={K.Ca - 0.3} texto="jamaica · Hibiscus sabdariffa" x={790} y={640} tam={30} borde="#9e0f2a" />
       <Etq T={T} at={K.Ja + 2.4} until={K.Ca - 0.3} x={1000} y={1085} texto="2026 · Vietnam · pollo" lado="izq" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Ca + 0.2} until={K.Ci - 0.3} texto="licúa · cuela · limón o bicarbonato" y={590} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.Ci + 1.6} until={K.Ou} texto="un laboratorio de pH en un vaso" y={330} tam={40} borde={KC.yellow} />
