@@ -1,0 +1,1 @@
+- cie-43-tripa-ruge: sin cambios: revisadas las 13 escenas en hoja de cuadros; sujeto grande y centrado, un punto de atención, nada cortado ni encimado. Auditores: sin láminas, encuadre bien.
