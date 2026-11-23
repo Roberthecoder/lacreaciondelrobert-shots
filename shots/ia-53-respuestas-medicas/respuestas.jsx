@@ -261,27 +261,27 @@ function Respuestas() {
       <Escena T={T} a={K.Ca} b={K.Em}>
         <FondoLunares color={KC.mint} />
         {/* pase a mano cine: los evaluadores siguen en cuadro (atenuados) mientras salen sus calificaciones */}
-        {svg(<Jurado T={T} y={480} s={0.95} o={0.6} />)}
+        {svg(<Jurado T={T} y={700} s={1.05} o={0.6} />)}
       </Escena>
-      <Chip T={T} at={K.Ca + 0.2} until={K.Em - 0.2} texto="calidad buena o muy buena" x={540} y={800} tam={40} borde={KC.ink} />
-      <BarrasH T={T} at={K.Ca + 0.3} until={K.Em - 0.2} top={880} filas={[{ valor: 78.5, etiqueta: 'chatbot', color: KC.cyan }, { valor: 22.1, etiqueta: 'médicos', color: '#5b8cff', quien: 'medico', at: K.Ca + 2.6 }]} />
+      <Chip T={T} at={K.Ca + 0.2} until={K.Em - 0.2} texto="calidad buena o muy buena" x={540} y={1010} tam={40} borde={KC.ink} />
+      <BarrasH T={T} at={K.Ca + 0.3} until={K.Em - 0.2} top={1090} filas={[{ valor: 78.5, etiqueta: 'chatbot', color: KC.cyan }, { valor: 22.1, etiqueta: 'médicos', color: '#5b8cff', quien: 'medico', at: K.Ca + 2.6 }]} />
       {/* 6 · empatía */}
       <Escena T={T} a={K.Em} b={K.P}>
         <FondoLunares color={KC.pink} />
-        {svg(<g opacity={kprog(T, K.Em, K.Em + 0.4)}><Corazon x={540} y={500} s={2.3} T={T} /></g>)}
+        {svg(<g opacity={kprog(T, K.Em, K.Em + 0.4)}><Corazon x={540} y={700} s={2.5} T={T} /></g>)}
       </Escena>
-      <Chip T={T} at={K.Em + 0.2} until={K.P - 0.2} texto="empáticas o muy empáticas" x={540} y={800} tam={40} borde={KC.ink} />
-      <BarrasH T={T} at={K.Em + 0.3} until={K.P - 0.2} top={880} filas={[{ valor: 45.1, etiqueta: 'chatbot', color: KC.cyan }, { valor: 4.6, etiqueta: 'médicos', color: '#5b8cff', quien: 'medico', at: K.Em + 2.4 }]} />
+      <Chip T={T} at={K.Em + 0.2} until={K.P - 0.2} texto="empáticas o muy empáticas" x={540} y={1010} tam={40} borde={KC.ink} />
+      <BarrasH T={T} at={K.Em + 0.3} until={K.P - 0.2} top={1090} filas={[{ valor: 45.1, etiqueta: 'chatbot', color: KC.cyan }, { valor: 4.6, etiqueta: 'médicos', color: '#5b8cff', quien: 'medico', at: K.Em + 2.4 }]} />
       {/* 7 · pregunta */}
       <Escena T={T} a={K.P} b={K.L} zoom={0.1}>
         <FondoLunares color={KC.orange} />
         {/* pase a mano cine: la pregunta es sobre el médico, así que el médico está en cuadro junto al signo */}
         {svg(<>
-          <CaraMedico x={740} y={960} s={4} />
-          <text x={290} y={1140} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 960)`}>?</text>
+          <CaraMedico x={720} y={1110} s={4.5} />
+          <text x={290} y={1330} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 1150)`}>?</text>
         </>)}
       </Escena>
-      <Chip T={T} at={K.P + 1.3} until={K.L - 0.1} texto="Calma." x={740} y={690} tam={56} borde={KC.yellow} />
+      <Chip T={T} at={K.P + 1.3} until={K.L - 0.1} texto="Calma." x={720} y={820} tam={56} borde={KC.yellow} />
       {/* 8 · más largas */}
       <Escena T={T} a={K.L} b={K.F2}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
