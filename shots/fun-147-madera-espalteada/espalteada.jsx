@@ -117,8 +117,10 @@ function Hifas({ H, g, color, oscuro = 0 }) {
 // Células de madera (fibras) vistas de lado, al microscopio.
 function CelulasMadera({ y0 = 580, alto = 610, tinte }) {
   return <g>{Array.from({ length: 15 }, (_, i) => <g key={i}>
-    <rect x={18 + i * 72} y={y0 + (i % 2) * 24} width={62} height={alto} rx={30} fill={tinte || ES.celda} stroke={ES.celda2} strokeWidth={6} />
-    {[0.2, 0.45, 0.7].map((k, j) => <ellipse key={j} cx={49 + i * 72} cy={y0 + alto * k + (i % 3) * 18} rx={7} ry={11} fill="none" stroke={ES.celda2} strokeWidth={3} />)}
+    <rect x={18 + i * 72} y={y0 + (i % 2) * 24} width={62} height={alto} rx={30} fill={tinte || ES.celda} stroke="#b48d5c" strokeOpacity=".75" strokeWidth={4} />
+    {/* belleza: al microscopio, contorno claro con brillo y rellenos apagados (antes, oscuro sobre oscuro) */}
+    <rect x={26 + i * 72} y={y0 + (i % 2) * 24 + 30} width={8} height={alto - 60} rx={4} fill="#e8c99a" opacity=".16" />
+    {[0.2, 0.45, 0.7].map((k, j) => <ellipse key={j} cx={49 + i * 72} cy={y0 + alto * k + (i % 3) * 18} rx={7} ry={11} fill="none" stroke="#d6b27f" strokeOpacity=".6" strokeWidth={3} />)}
   </g>)}</g>;
 }
 // Muro de melanina en la frontera (dos franjas, una de cada colonia). m 0..1.
@@ -270,8 +272,8 @@ function EspalteadaShot() {
         <Ambiente T={T} n={16} />
         {fsvg(<g transform="translate(540 960) scale(1.3) translate(-540 -895)">
           <CelulasMadera />
-          <Hifas H={HROSA} g={kprog(T, K.H + 0.2, K.Ch + 0.6)} color={KC.pink} oscuro={kprog(T, K.M, K.M + 1.5)} />
-          <Hifas H={HCIAN} g={kprog(T, K.H + 0.5, K.Ch + 0.8)} color={KC.cyan} oscuro={kprog(T, K.M, K.M + 1.5)} />
+          <Hifas H={HROSA} g={kprog(T, K.H - 0.5, K.Ch + 0.6)} color={KC.pink} oscuro={kprog(T, K.M, K.M + 1.5)} />
+          <Hifas H={HCIAN} g={kprog(T, K.H - 0.3, K.Ch + 0.8)} color={KC.cyan} oscuro={kprog(T, K.M, K.M + 1.5)} />
           {T > K.Ch + 0.3 && T < K.M + 0.6 && [...HROSA.contactos, ...HCIAN.contactos].slice(0, 16).map(([cx, cy], i) => { const f = 0.5 + 0.5 * Math.sin(T * 9 + i * 1.7);
             return <g key={i} opacity={1 - kprog(T, K.M, K.M + 0.6)}><circle cx={cx} cy={cy} r={10 + 10 * f} fill="none" stroke={KC.yellow} strokeWidth={4} opacity={0.7 * f} /></g>; })}
           <Muro m={kprog(T, K.M + 0.1, K.M + 2.0, kEase.sale)} />
