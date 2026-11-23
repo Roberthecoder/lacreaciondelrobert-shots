@@ -96,6 +96,13 @@ function Chubasco({ T, seed = 7, n = 46, x0 = 0, x1 = KW, y0 = 260, y1 = HOR, ve
 function NubesLluvia({ T, y = 200, xs = [80, 380, 700, 1000] }) {
   return <g>{xs.map((x, i) => <Nube key={i} x={x + Math.sin(T * 0.3 + i) * 12} y={y + (i % 2) * 40} s={1.25} color="#8f99ad" />)}</g>;
 }
+// Pase de belleza: luz de volumen (claro arriba-izquierda, sombra abajo-derecha) para las piezas planas.
+function ArDefs() {
+  return <defs><radialGradient id="ar-luz" cx=".32" cy=".26" r=".85">
+    <stop offset="0" stopColor="#ffffff" stopOpacity=".42" /><stop offset=".42" stopColor="#ffffff" stopOpacity="0" />
+    <stop offset=".78" stopColor="#000000" stopOpacity=".08" /><stop offset="1" stopColor="#000000" stopOpacity=".3" />
+  </radialGradient></defs>;
+}
 // Persona de espaldas (se ve la nuca). (x, yPies) = pies.
 function PersonaEspalda({ x, yPies = PIES, alto = PALTO, color = KC.pink, o = 1 }) {
   const s = alto / 600;
@@ -104,11 +111,14 @@ function PersonaEspalda({ x, yPies = PIES, alto = PALTO, color = KC.pink, o = 1 
     <rect x={10} y={-240} width={60} height={240} rx={24} fill="#3a3f5c" stroke={KC.ink} strokeWidth={9} />
     <rect x={-150} y={-470} width={60} height={200} rx={26} fill={color} stroke={KC.ink} strokeWidth={9} transform="rotate(14 -120 -450)" />
     <rect x={90} y={-470} width={60} height={200} rx={26} fill={color} stroke={KC.ink} strokeWidth={9} transform="rotate(-14 120 -450)" />
+    <ArDefs />
     <rect x={-95} y={-480} width={190} height={260} rx={46} fill={color} stroke={KC.ink} strokeWidth={9} />
+    <rect x={-90} y={-475} width={180} height={250} rx={42} fill="url(#ar-luz)" />
     <rect x={-24} y={-505} width={48} height={40} fill={CPIEL} stroke={KC.ink} strokeWidth={8} />
     <circle cx={-62} cy={-545} r={15} fill={CPIEL} stroke={KC.ink} strokeWidth={7} />
     <circle cx={62} cy={-545} r={15} fill={CPIEL} stroke={KC.ink} strokeWidth={7} />
     <circle cx={0} cy={-550} r={64} fill={CPELO} stroke={KC.ink} strokeWidth={9} />
+    <circle cx={0} cy={-550} r={60} fill="url(#ar-luz)" />
     <path d="M -30 -590 Q 0 -605 30 -590" stroke="#4a3a30" strokeWidth={8} fill="none" strokeLinecap="round" />
   </g>;
 }
@@ -162,17 +172,19 @@ function PersonaPerfil({ x = PX, yPies = GY, color = KC.pink }) {
   return <g>
     <rect x={x - 32} y={yPies - 150} width={42} height={150} rx={18} fill="#3a3f5c" stroke={KC.ink} strokeWidth={8} />
     <rect x={x - 5} y={yPies - 150} width={42} height={150} rx={18} fill="#3a3f5c" stroke={KC.ink} strokeWidth={8} />
+    <ArDefs />
     <rect x={x - 55} y={yPies - 315} width={105} height={190} rx={36} fill={color} stroke={KC.ink} strokeWidth={8} />
+    <rect x={x - 51} y={yPies - 311} width={97} height={182} rx={32} fill="url(#ar-luz)" />
     <rect x={x - 16} y={yPies - 300} width={44} height={150} rx={20} fill={color} stroke={KC.ink} strokeWidth={8} transform={`rotate(-12 ${x} ${yPies - 290})`} />
     <CabezaPerfil x={x} y={yPies - 385} s={0.42} />
   </g>;
 }
 // Paisaje de lado: Sol detrás (izquierda), persona, lluvia enfrente (derecha).
 function VistaLado({ T, children, lluvia = 1 }) {
-  // pase a mano: la escena baja 100 px para quedar centrada en el cuadro
+  // pase a mano: la escena baja 230 px para quedar centrada en el cuadro (pase de belleza: antes 100, quedaba arriba)
   return <>
     <FondoLunares color={KC.cyan} />
-    <Lienzo><g transform="translate(0 100)">
+    <Lienzo><g transform="translate(0 230)">
       <rect x={600} y={460} width={KW - 600} height={GY - 460} fill="rgba(35,55,120,.3)" />
       <Chubasco T={T} x0={620} x1={KW} y0={480} y1={GY} n={26} o={lluvia} seed={11} />
       <Nube x={700} y={470} s={1.0} color="#8f99ad" />
@@ -259,8 +271,8 @@ function Arcoiris36() {
           {Array.from({ length: 14 }, (_, i) => { const g = krng(60 + i), x = 650 + g() * 410, y = 520 + (((T - K.Gotas) * 160 + g() * 560) % 560);
             return <circle key={i} cx={x} cy={y} r={11} fill="#8fdcff" stroke={KC.ink} strokeWidth={4} opacity={kprog(T, K.Gotas + 2.5, K.Gotas + 3.0)} />; })}
         </VistaLado>
-        <Chip T={T} at={K.Gotas + 0.3} until={K.Rebote - 0.1} texto="Sol detrás de ti" x={290} y={260} tam={38} borde={KC.yellow} />
-        <Chip T={T} at={K.Gotas + 2.5} until={K.Rebote - 0.1} texto="lluvia enfrente" x={800} y={260} tam={38} borde={KC.cyan} />
+        <Chip T={T} at={K.Gotas + 0.3} until={K.Rebote - 0.1} texto="Sol detrás de ti" x={290} y={420} tam={38} borde={KC.yellow} />
+        <Chip T={T} at={K.Gotas + 2.5} until={K.Rebote - 0.1} texto="lluvia enfrente" x={800} y={420} tam={38} borde={KC.cyan} />
       </Escena>
       {/* 2 · la luz dentro de la gota: entra, se dobla, rebota en el fondo y sale en colores */}
       <Escena T={T} a={K.Rebote} b={K.Angulo} fondo={KC.noche}>
@@ -268,13 +280,13 @@ function Arcoiris36() {
         <Lienzo>
           {Array.from({ length: 22 }, (_, i) => { const g = krng(90 + i), x = g() * KW, y = 300 + (((T - K.Rebote) * 80 + g() * 1300) % 1300);
             return <circle key={i} cx={x} cy={y} r={6 + g() * 8} fill="#8fdcff" opacity=".35" />; })}
-          <circle cx={860} cy={500} r={16} fill="#8fdcff" stroke="#fff" strokeWidth={4} />
+          <circle cx={880} cy={480} r={16} fill="#8fdcff" stroke="#fff" strokeWidth={4} />
         </Lienzo>
-        <Lupa T={T} at={K.Rebote} until={K.Angulo - 0.35} x={540} y={735} r={315} fx={860} fy={500} tinte={KC.cyan}
+        <Lupa T={T} at={K.Rebote} until={K.Angulo - 0.35} x={540} y={930} r={330} fx={880} fy={480} tinte={KC.cyan}
           etiqueta="AL MICROSCOPIO · GOTA" interior={(Tl, r) => <GotaPorDentro T={Tl} t0={K.Rebote + 0.3} r={r} reb={1} />} />
-        <Chip T={T} at={K.Rebote + 0.8} until={K.Rebote + 2.3} texto="entra y se dobla" x={540} y={360} tam={40} borde={KC.white} />
-        <Chip T={T} at={K.Rebote + 2.6} until={K.Rebote + 3.6} texto="rebota en el fondo" x={540} y={360} tam={40} borde={KC.yellow} />
-        <Chip T={T} at={K.Rebote + 3.8} until={K.Angulo - 0.1} texto="sale en colores" x={540} y={360} tam={40} borde={KC.pink} />
+        <Chip T={T} at={K.Rebote + 0.8} until={K.Rebote + 2.3} texto="entra y se dobla" x={540} y={520} tam={40} borde={KC.white} />
+        <Chip T={T} at={K.Rebote + 2.6} until={K.Rebote + 3.6} texto="rebota en el fondo" x={540} y={520} tam={40} borde={KC.yellow} />
+        <Chip T={T} at={K.Rebote + 3.8} until={K.Angulo - 0.1} texto="sale en colores" x={540} y={520} tam={40} borde={KC.pink} />
       </Escena>
       {/* 3 · cada color, otro ángulo; el rojo a ≈ 42° de la sombra de la cabeza */}
       <Escena T={T} a={K.Angulo} b={K.Cono} fondo={FONDO_ARC}>
@@ -301,8 +313,8 @@ function Arcoiris36() {
               <TextoSvg x={OJO[0] + 330} y={OJO[1] + 70} tam={96} color={KC.yellow} s={klerp(0.4, 1, kprog(T, AG + 3.3, AG + 3.7, kEase.rebote))} o={kprog(T, AG + 3.3, AG + 3.5)}>≈ 42°</TextoSvg>
             </g>; })()}
         </VistaLado>
-        <Chip T={T} at={AG + 1.4} until={AG + 2.9} texto="cada color, otro ángulo" x={540} y={260} tam={40} borde={KC.white} />
-        <Chip T={T} at={AG + 3.1} until={K.Cono - 0.1} texto="rojo: ≈ 42° de tu sombra" x={540} y={260} tam={40} borde={AR_COL[0]} />
+        <Chip T={T} at={AG + 1.4} until={AG + 2.9} texto="cada color, otro ángulo" x={540} y={420} tam={40} borde={KC.white} />
+        <Chip T={T} at={AG + 3.1} until={K.Cono - 0.1} texto="rojo: ≈ 42° de tu sombra" x={540} y={420} tam={40} borde={AR_COL[0]} />
       </Escena>
       {/* 4 · solo ves rojas las gotas a ese ángulo: un círculo alrededor de tu sombra */}
       <Escena T={T} a={K.Cono} b={K.Pregunta} fondo={FONDO_ARC}>
