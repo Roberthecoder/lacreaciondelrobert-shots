@@ -4,7 +4,7 @@
 const MADERA = { ambar: '#c98a2b', celulosa: '#f3e6c8', lumen: '#2a1d12', blanca: '#efeadb', corteza: '#6b4423', cortezaOsc: '#4a2e17' };
 const PXMM_MACRO = 1.25;   // macro: el tronco (~30 cm de grueso) se dibuja de 300 px y la escena lo agranda 1.25
 const PXMM_CORTE = 760 / 300; // corte del tronco en «blanca»: 30 cm = 760 px
-const ENC = 'translateY(100px) scale(1.25)', ENC_O = '540px 850px'; // encuadre del bosque: el tronco llena el ancho
+const ENC = 'translateY(210px) scale(1.25)', ENC_O = '540px 850px'; // pase de belleza: antes translateY(100px), quedaba arriba // encuadre del bosque: el tronco llena el ancho
 const PXMM_MICRO = 5000;   // micro: una célula de 150 px ≈ 30 µm
 
 const svgF = (c, extra) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, ...extra }}>{c}</svg>;
@@ -186,7 +186,7 @@ function Podredumbre() {
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: el tronco caído con la ofrenda; el hongo asoma en manchas blancas; la cámara entra al corte */}
       <Escena T={T} a={K.G} b={K.L} zoom={0}>
-        <div style={{ position:'absolute', inset:0, transformOrigin:'965px 950px', transform:`scale(${1 + 6 * kprog(T, K.L - 1.2, K.L + 0.4, kEase.entra || kEase.suave)})` }}>
+        <div style={{ position:'absolute', inset:0, transformOrigin:'965px 1060px', transform:`scale(${1 + 6 * kprog(T, K.L - 1.2, K.L + 0.4, kEase.entra || kEase.suave)})` }}>
           <div style={{ position:'absolute', inset:0, transformOrigin:ENC_O, transform:ENC }}>
           <Bosque T={T} />
           {svgF(<>
@@ -222,7 +222,7 @@ function Podredumbre() {
       </Escena>
       {/* 6 · lo que fue árbol: suelo, agua y CO₂ */}
       <Escena T={T} a={K.S} b={K.P} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, transformOrigin:ENC_O, transform:'translateY(170px) scale(1.25)' }}>
+        <div style={{ position:'absolute', inset:0, transformOrigin:ENC_O, transform:'translateY(400px) scale(1.3)' }}>
         <Bosque T={T} color={KC.yellow} />
         {svgF(<>
           <Tronco T={T} x={160} y={640} hongo={1} blanco={1} deshace={kprog(T, K.S + 0.2, K.S + 1.6, kEase.suave)} />
@@ -316,8 +316,8 @@ function Podredumbre() {
       {T < K.S - 0.3 && <Escala T={T} z={1} pxPorMm={pxmm} x={60} y={1430} />}
 
       {/* textos */}
-      <Chip T={T} at={K.G + 0.2} until={K.L - 1.2} texto="Especial Día de Muertos" y={300} tam={34} borde={KC.orange} />
-      <Etq T={T} at={K.G + 1.4} until={K.L - 1.1} x={565} y={715} texto="hongo (micelio)" tam={32} />
+      <Chip T={T} at={K.G + 0.2} until={K.L - 1.2} texto="Especial Día de Muertos" y={380} tam={34} borde={KC.orange} />
+      <Etq T={T} at={K.G + 1.4} until={K.L - 1.1} x={565} y={825} texto="hongo (micelio)" tam={32} />
       <Chip T={T} at={K.L + 0.6} until={K.H - 0.2} texto="lignina: endurece la pared" y={462} x={540} tam={40} borde={MADERA.ambar} />
       <Etq T={T} at={K.L + 1.4} until={K.H - 0.2} x={1000} y={1380} texto="celulosa (pared)" lado="izq" tam={28} />
       <Etq T={T} at={K.H + 0.6} until={K.E - 0.2} x={1000} y={470} texto="hifas" lado="izq" tam={38} color={KC.texto} />
@@ -325,9 +325,9 @@ function Podredumbre() {
       <Chip T={T} at={K.E + 0.3} until={K.B - 0.2} texto="peroxidasas y lacasas" y={462} x={540} tam={36} borde={KC.pink} />
       <Chip T={T} at={K.B + 0.4} until={K.S - 0.2} texto="podredumbre blanca" y={420} tam={48} borde={KC.ink} fondo={KC.paper} color={KC.ink} />
       <Etq T={T} at={K.B + 2.0} until={K.S - 0.2} x={760} y={1120} texto="blanda" tam={34} />
-      <Etq T={T} at={K.S + 1.6} until={K.P - 0.2} x={60} y={1300} texto="suelo" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.S + 1.9} until={K.P - 0.2} x={440} y={500} texto="CO₂" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.S + 2.5} until={K.P - 0.2} x={1040} y={1345} texto="agua" lado="izq" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.S + 1.6} until={K.P - 0.2} x={60} y={1535} texto="suelo" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.S + 1.9} until={K.P - 0.2} x={470} y={720} texto="CO₂" tam={40} color={KC.ink} />
+      <Etq T={T} at={K.S + 2.5} until={K.P - 0.2} x={1050} y={1530} texto="agua" lado="izq" tam={36} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.R - 0.3} anio="2012" quien="Floudas, Hibbett et al. · U. Clark" revista="Science · consorcio internacional · 31 genomas" y={390} />
       <NumeroGigante T={T} at={K.R + 0.6} until={K.C - 0.3} valor={290} dur={2.8} etiqueta="millones de años (aprox.)" x={540} y={430} tam={170} />
       <Chip T={T} at={K.R + 3.5} until={K.C - 0.3} texto="reloj molecular" x={540} y={1130} tam={38} borde={KC.cyan} />
@@ -336,7 +336,7 @@ function Podredumbre() {
       <Chip T={T} at={K.C + 4.6} until={K.D - 0.2} texto="2016: en duda" x={540} y={672} tam={40} borde={KC.red} />
       <Chip T={T} at={K.D + 0.6} until={K.Ci - 0.2} texto="pantanos empapados: casi no se pudren" y={420} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.D + 1.4} until={K.Ci - 0.2} x={110} y={600} texto="huella de planta (esquemática)" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Ci + 3.4} until={K.Ou} texto="todo regresa a la tierra" x={540} y={300} tam={38} borde={KC.orange} />
+      <Chip T={T} at={K.Ci + 3.4} until={K.Ou} texto="todo regresa a la tierra" x={540} y={380} tam={38} borde={KC.orange} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.L - 0.1} texto="Muerto, pero no solo: *lo come un hongo.*" />
