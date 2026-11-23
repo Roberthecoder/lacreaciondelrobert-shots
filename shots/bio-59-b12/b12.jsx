@@ -53,7 +53,9 @@ function Cereal({ x, y, s = 1, T = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <ellipse cx={0} cy={-10} rx={200} ry={56} fill="#fff7e0" stroke={KC.ink} strokeWidth={8} />
     {hoj.map(([a, b, r, k], i) => <ellipse key={i} cx={a} cy={-18 + b + Math.sin(T * 2 + i) * 2} rx={26} ry={16} fill={k < 0.5 ? '#f4b942' : '#e8932a'} stroke={KC.ink} strokeWidth={4} transform={`rotate(${r} ${a} ${-18 + b})`} />)}
-    <path d="M -200 -10 Q -190 140 0 150 Q 190 140 200 -10" fill={KC.cyan} stroke={KC.ink} strokeWidth={8} />
+    <defs><linearGradient id="b12Tazon" x1="0" y1="0" x2="1" y2="0.4"><stop offset="0" stopColor="#7fd6ee" /><stop offset="0.5" stopColor="#2fa9cc" /><stop offset="1" stopColor="#156f8e" /></linearGradient></defs>
+    <ellipse cx={14} cy={160} rx={170} ry={22} fill="rgba(0,0,0,.4)" />
+    <path d="M -200 -10 Q -190 140 0 150 Q 190 140 200 -10" fill="url(#b12Tazon)" stroke="#cdeffa" strokeOpacity={0.8} strokeWidth={5} />
     <path d="M -150 40 Q 0 70 150 40" stroke="#fff" strokeWidth={8} fill="none" opacity=".5" />
   </g>;
 }
@@ -293,10 +295,10 @@ function B12() {
           <Cereal x={760} y={1110} s={1} T={T} />
           <ellipse cx={360} cy={1100} rx={130 * klerp(0.4, 1, cae)} ry={22} fill="rgba(0,0,0,.18)" />
           <Pastilla x={360} y={pastY} s={1} rot={klerp(-30, 0, cae)} T={T} />
-          <Planta x={170} y={830} s={0.8} T={T} />
-          <MarcaB x={230} y={720} ok={false} s={0.8} o={kprog(T, K.G + 1.6, K.G + 2.0)} />
-          <g transform={`translate(440 820) scale(0.26)`}><VacaB T={T} mastica={T * 6} /></g>
-          <MarcaB x={500} y={720} ok={false} s={0.8} o={kprog(T, K.G + 2.1, K.G + 2.5)} />
+          <Planta x={160} y={850} s={1.05} T={T} />
+          <MarcaB x={235} y={690} ok={false} s={0.9} o={kprog(T, K.G + 1.6, K.G + 2.0)} />
+          <g transform={`translate(450 850) scale(0.36)`}><VacaB T={T} mastica={T * 6} /></g>
+          <MarcaB x={540} y={680} ok={false} s={0.9} o={kprog(T, K.G + 2.1, K.G + 2.5)} />
           {anillo(K.G + 3.0, 360, 1060, 1)}
         </Zm></SvgB>
       </Escena>
