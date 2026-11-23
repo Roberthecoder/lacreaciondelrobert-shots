@@ -67,10 +67,14 @@ function CadenaBolitas({ x1, x2, y, n = 9, p = 0, r = 26, empuje = 28 }) {
     const activa = q > 0 && q < 1.6;
     return <circle key={i} cx={xi + d} cy={y} r={r} fill={activa ? KC.yellow : AIRE} stroke={KC.ink} strokeWidth={6} />; })}</g>;
 }
-function Planeta({ x, y, r, color, sombra, anillo = false, rot = 0 }) {
+function Planeta({ x, y, r, color, sombra, anillo = false, rot = 0, id = 'pl' }) {
+  const gid = 'grad56' + id;
   return <g transform={`translate(${x} ${y}) rotate(${rot})`}>
+    <defs><radialGradient id={gid} cx="35%" cy="32%" r="75%"><stop offset="0%" stopColor="#fff" stopOpacity=".35" /><stop offset="45%" stopColor="#fff" stopOpacity="0" /><stop offset="100%" stopColor="#000" stopOpacity=".45" /></radialGradient></defs>
     {anillo && <ellipse rx={r * 1.8} ry={r * 0.45} fill="none" stroke={KC.gold2} strokeWidth={10} />}
     <circle r={r} fill={color} stroke={KC.ink} strokeWidth={8} />
+    {[0.3, -0.15, 0.55].map((k, i) => <ellipse key={i} cx={-r * 0.1} cy={r * k} rx={r * 0.85} ry={r * 0.07} fill="#000" opacity=".12" />)}
+    <circle r={r} fill={`url(#${gid})`} />
     <path d={`M ${r * 0.2} ${-r * 0.98} A ${r} ${r} 0 0 1 ${r * 0.2} ${r * 0.98} A ${r * 0.8} ${r} 0 0 0 ${r * 0.2} ${-r * 0.98} Z`} fill={sombra} opacity=".55" />
     {anillo && <path d={`M ${-r * 1.8} 0 A ${r * 1.8} ${r * 0.45} 0 0 0 ${r * 1.8} 0`} fill="none" stroke={KC.gold2} strokeWidth={10} />}
   </g>;
@@ -222,11 +226,11 @@ function Espacio() {
             <Explosion x={540} y={PANT.y + 480} r={360} p={boom} T={T} />
           </PantallaCine>
           {T > K.Gancho + 0.6 && <g>
-            <TextoSvg x={340} y={PANT.y - 60} tam={170} color={KC.yellow} rot={-6} s={klerp(0.3, 1, kprog(T, K.Gancho + 0.6, K.Gancho + 0.9, kEase.rebote))}
+            <TextoSvg x={540} y={PANT.y - 40} tam={170} color={KC.yellow} rot={-6} s={klerp(0.3, 1, kprog(T, K.Gancho + 0.6, K.Gancho + 0.9, kEase.rebote))}
               o={1 - 0.55 * kprog(T, K.Gancho + 2.6, K.Gancho + 3.0)}>¡BOOM!</TextoSvg>
             {(() => { const q = kprog(T, K.Gancho + 2.5, K.Gancho + 2.9, kEase.sale); return q > 0 && <g>
-              <line x1={110} y1={PANT.y - 170} x2={110 + 460 * q} y2={PANT.y - 170 + 130 * q} stroke={KC.ink} strokeWidth={34} strokeLinecap="round" />
-              <line x1={110} y1={PANT.y - 170} x2={110 + 460 * q} y2={PANT.y - 170 + 130 * q} stroke={KC.red} strokeWidth={20} strokeLinecap="round" /></g>; })()}
+              <line x1={290} y1={PANT.y - 165} x2={290 + 500 * q} y2={PANT.y - 165 + 120 * q} stroke={KC.ink} strokeWidth={34} strokeLinecap="round" />
+              <line x1={290} y1={PANT.y - 165} x2={290 + 500 * q} y2={PANT.y - 165 + 120 * q} stroke={KC.red} strokeWidth={20} strokeLinecap="round" /></g>; })()}
           </g>}
           {T > K.Gancho + 3.2 && <g transform={`translate(${PANT.x + PANT.w - 180} ${PANT.y + 180}) scale(${klerp(0.3, 1.5, kprog(T, K.Gancho + 3.2, K.Gancho + 3.6, kEase.rebote))})`}><Mudo x={0} y={0} /></g>}
         </Lienzo>
@@ -238,6 +242,7 @@ function Espacio() {
       <Escena T={T} a={K.Sonido} b={K.Cadena} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
+          <g transform="translate(0 130)">
           <rect x={40} y={380} width={1000} height={470} rx={46} fill="rgba(14,15,18,.82)" stroke={KC.ink} strokeWidth={9} />
           {/* bocina que vibra a la izquierda */}
           <g transform={`translate(${112 + Math.sin(T * 30) * 6} 615) scale(1.5)`}>
@@ -252,6 +257,7 @@ function Espacio() {
               <OndaBolitas T={T} x={bx + 10} y={965} w={290} h={340} cols={c} filas={f} amp={i === 2 ? 6 : 12} lambda={180} vel={1.4} r={r} />
               <text x={bx + 155} y={948} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>{nom}</text>
             </g>; })}
+          </g>
         </Lienzo>
         <Chip T={T} at={K.Sonido + 0.4} until={K.Cadena - 0.1} texto="sonido = vibración que empuja" x={540} y={300} tam={40} borde={KC.yellow} />
       </Escena>
@@ -277,24 +283,24 @@ function Espacio() {
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 40%, #1d1f5e 0%, ${KC.noche} 75%)` }}></div>
         <Lienzo>
           <EstrellasFondo T={T} n={60} />
-          <Planeta x={130} y={1420} r={200} color={KC.blue} sombra={KC.ink} />
-          <Planeta x={950} y={1400} r={135} color={KC.orange} sombra={KC.ink} />
+          <Planeta x={130} y={1290} r={200} color={KC.blue} sombra={KC.ink} id="pa" />
+          <Planeta x={950} y={1270} r={135} color={KC.orange} sombra={KC.ink} id="pb" />
           {/* en el Vacío: 3 partículas muy separadas; en Nada: la onda se apaga */}
-          {T < K.Nada + 0.2 && [[150, 600], [900, 1130], [420, 1300]].map(([px, py], i) => <circle key={i} cx={px + Math.sin(T + i) * 18} cy={py + Math.cos(T * 0.8 + i) * 14} r={16}
+          {T < K.Nada + 0.2 && [[150, 600], [900, 1080], [420, 1180]].map(([px, py], i) => <circle key={i} cx={px + Math.sin(T + i) * 18} cy={py + Math.cos(T * 0.8 + i) * 14} r={16}
             fill={AIRE} stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.Vacio + 1.2 + i * 0.3, K.Vacio + 1.6 + i * 0.3)} />)}
-          {T > K.Nada - 0.2 && <g transform="translate(130 900) scale(1.7) translate(-190 -760)">
+          {T > K.Nada - 0.2 && <g transform="translate(120 930) scale(1.85) translate(-190 -760)">
             <CadenaBolitas x1={190} x2={320} y={760} n={3} p={((T - K.Nada) / 1.2) % 1.3} />
             {[0, 1, 2, 3].map((i) => { const f = ((T - K.Nada) * 0.5 + i / 4) % 1; return <path key={i} d={`M ${360 + f * 520} ${700 - 60 * (1 - f)} Q ${400 + f * 520} 760 ${360 + f * 520} ${820 + 60 * (1 - f)}`}
               fill="none" stroke={KC.cyan} strokeWidth={10} strokeLinecap="round" opacity={(1 - f) * (1 - f) * 0.9} />; })}
           </g>}
         </Lienzo>
-        <Lupa T={T} at={K.Vacio + 0.5} until={K.Nada - 0.2} x={540} y={820} r={330} fx={900} fy={1130} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · ENTRE PLANETAS"
+        <Lupa T={T} at={K.Vacio + 0.5} until={K.Nada - 0.2} x={540} y={820} r={330} fx={900} fy={1080} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · ENTRE PLANETAS"
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#070b1c" />
             {[[0.3, 0.35], [0.72, 0.6]].map(([u, v], i) => <circle key={i} cx={u * r * 2 + Math.sin(t + i) * 10} cy={v * r * 2 + Math.cos(t + i) * 10} r={24} fill="#fff" stroke={KC.ink} strokeWidth={5} />)}</svg>} />
         <Chip T={T} at={K.Vacio + 0.3} until={K.Nada - 0.1} texto="casi vacío" x={300} y={290} tam={44} borde={KC.cyan} />
         <Chip T={T} at={K.Vacio + 2.0} until={K.Nada - 0.1} texto="poquísimas partículas" x={420} y={390} tam={38} borde={KC.cyan} />
         <Chip T={T} at={K.Nada + 0.4} until={K.Pregunta - 0.1} texto="sin nada que empujar" x={540} y={520} tam={40} borde={KC.red} />
-        <Etq T={T} at={K.Nada + 1.0} until={K.Pregunta - 0.2} x={380} y={1170} texto="el sonido se apaga" lado="der" color={KC.texto} />
+        <Etq T={T} at={K.Nada + 1.0} until={K.Pregunta - 0.2} x={380} y={1080} texto="el sonido se apaga" lado="der" color={KC.texto} />
       </Escena>
 
       {/* 5 · pregunta */}
@@ -349,7 +355,7 @@ function Espacio() {
             const tam = klerp(18, 96, aire);
             return <g opacity={kprog(T, K.Boyle, K.Boyle + 0.4) * klerp(0.45, 1, kprog(T, K.Boyle + 2.0, K.Boyle + 2.4))} transform="translate(530 1010) scale(1.25) translate(-500 -888)">
               <Boyle1660 T={T} aire={aire} bombeo={bom} x={370} y={1150} />
-              {[0, 1].map((i) => { const ph = (T * 2 + i * 0.5) % 1; return <text key={i} x={370 + (i ? 120 : -120)} y={640 - ph * 60} textAnchor="middle" opacity={(1 - ph) * (0.25 + 0.75 * aire)}
+              {[0, 1].map((i) => { const ph = (T * 2 + i * 0.5) % 1; return <text key={i} x={370 + (i ? 120 : -120)} y={640 - ph * 60} textAnchor="middle" opacity={(1 - ph) * (0.25 + 0.75 * aire) * kprog(T, K.Boyle + 2.0, K.Boyle + 2.4)}
                 style={{ font:`400 ${tam}px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={tam / 9} paintOrder="stroke">{i ? 'TAC' : 'TIC'}</text>; })}
             </g>; })()}
         </Lienzo>
@@ -365,16 +371,16 @@ function Espacio() {
         <Lienzo>
           <EstrellasFondo T={T} n={50} seed={12} />
           {(() => { const q = kprog(T, K.Galaxias + 3.6, K.Galaxias + 4.4, kEase.suave);
-            return <Cumulo T={T} x={klerp(540, 300, q)} y={klerp(900, 600, q)} s={klerp(1.25, 0.52, q)} ondas={kprog(T, K.Galaxias + 1.0, K.Galaxias + 1.6)} />; })()}
+            return <Cumulo T={T} x={540} y={klerp(940, 640, q)} s={klerp(1.25, 0.72, q)} ondas={kprog(T, K.Galaxias + 1.0, K.Galaxias + 1.6)} />; })()}
           {T > K.Galaxias + 4.2 && <g opacity={kprog(T, K.Galaxias + 4.2, K.Galaxias + 4.6)}>
-            <EscaleraOctavas x={240} y={1400} p={kprog(T, K.Galaxias + 4.6, K.Galaxias + 7.4)} T={T} alto={620} ancho={560} pasos={9} />
-            <OrejaIcono x={740} y={610} s={1.15} />
+            <EscaleraOctavas x={200} y={1440} p={kprog(T, K.Galaxias + 4.6, K.Galaxias + 7.4)} T={T} alto={500} ancho={600} pasos={9} />
+            <OrejaIcono x={900} y={1000} s={1.0} />
           </g>}
         </Lienzo>
         <Chip T={T} at={K.Galaxias + 0.3} until={K.Cierre - 0.1} texto="NASA 2022" x={260} y={290} tam={46} borde={KC.lilac} />
         <Etq T={T} at={K.Galaxias + 1.2} until={K.Galaxias + 3.8} x={1010} y={1420} texto="cúmulo de galaxias" lado="izq" color={KC.texto} tam={32} />
         <Etq T={T} at={K.Galaxias + 1.8} until={K.Galaxias + 3.8} x={650} y={560} texto="ondas en el gas" lado="der" color="#ffd6f4" tam={32} />
-        <Chip T={T} at={K.Galaxias + 4.6} until={K.Cierre - 0.1} texto="↑ muchísimas octavas" x={520} y={1475} tam={36} borde={KC.yellow} />
+        <Chip T={T} at={K.Galaxias + 4.6} until={K.Cierre - 0.1} texto="↑ muchísimas octavas" x={520} y={1520} tam={36} borde={KC.yellow} />
       </Escena>
 
       {/* 10 · cierre: la misma explosión, enorme… y en silencio */}
