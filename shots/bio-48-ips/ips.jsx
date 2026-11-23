@@ -20,8 +20,10 @@ function Mano({ x, y, s = 1, rot = 0 }) {
     <rect x={-150} y={180} width={300} height={500} rx={60} {...st} />
   </g>;
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
+    <defs><linearGradient id="manoIps" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fff" stopOpacity=".2" /><stop offset=".45" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#8a4a2a" stopOpacity=".3" /></linearGradient></defs>
     {formas({ fill: KC.ink, stroke: KC.ink, strokeWidth: 20 })}
     {formas({ fill: PIEL })}
+    {formas({ fill: 'url(#manoIps)' })}{/* belleza: volumen de la mano (luz arriba-izquierda, sombra abajo-derecha) */}
     {dedos.map(([dx, dy, w, h, r], i) => <g key={i} transform={`rotate(${r} ${dx} ${dy + h})`}>
       <path d={`M ${dx - 16} ${dy + 70} q 16 -8 32 0`} stroke={PIEL_OSC} strokeWidth={5} fill="none" strokeLinecap="round" />
       <rect x={dx - 18} y={dy + 10} width={36} height={34} rx={14} fill="#f7cdb4" stroke={PIEL_OSC} strokeWidth={4} />
@@ -275,9 +277,10 @@ function Ips() {
           {/* pase a mano: colonia al doble y al centro (barra con z = 2); en «Destino» sube deslizándose (ya no salta) y las
               tres burbujas (r 110→150) llenan la mitad de abajo */}
           {(() => { const m = kprog(T, K.De, K.De + 0.5, kEase.suave);
-            return <g transform={`translate(540 ${klerp(1020, 500, m)}) scale(${klerp(2, 1.4, m)})`}><Colonia x={0} y={0} n={70} p={1} T={T} R={150} brilla={1} /></g>; })()}
+            return <g transform={`translate(540 ${klerp(1020, 620, m)}) scale(${klerp(2, 1.4, m)})`}><Colonia x={0} y={0} n={70} p={1} T={T} R={150} brilla={1} /></g>; })()}
           {T < K.De + 0.3 && <text x={540} y={700} textAnchor="middle" style={{ font:`400 400px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} opacity={0.9 * (1 - kprog(T, K.De, K.De + 0.3))} transform={`rotate(${Math.sin(T * 3) * 6} 540 560)`}>?</text>}
-          {T >= K.De && trio(K.De + 0.1, [[212, 1130], [540, 1240], [868, 1130]], [[430, 640, 212, 972, 70], [540, 720, 540, 1082, 0], [650, 640, 868, 972, -70]], 140)}
+          {/* belleza: colonia y burbujas bajan 120 px (la colonia quedaba pegada al logo) */}
+          {T >= K.De && trio(K.De + 0.1, [[212, 1250], [540, 1360], [868, 1250]], [[430, 760, 212, 1092, 70], [540, 840, 540, 1202, 0], [650, 760, 868, 1092, -70]], 140)}
         </Capa>
         {T < K.De && <Escala T={T} z={2} pxPorMm={PX_MM} />}
       </Escena>
@@ -326,6 +329,9 @@ function Ips() {
       <Escena T={T} a={K.Ve} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         {/* pase a mano: la tabla de 24 genes 1.3× y centrada (antes cargada a la izquierda y arriba); letra oscura sobre ficha clara */}
+        {/* belleza: la célula de piel (la que recibe los genes) queda a media luz detrás de la tabla: ya no es una lista sola */}
+        <Capa><g opacity={0.32}><Fibro x={540} y={900} s={4.2} rot={-18} T={T} seed={3} /></g></Capa>
+        <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse at 50% 47%, rgba(10,14,26,.1), rgba(10,14,26,.5))' }}></div>
         <Capa>{GENES24.map((g, i) => { const c = i % 4, r = Math.floor(i / 4), x = 540 + (c - 1.5) * 236, y = 560 + r * 128, t = tachaEn(i), raya = kprog(T, t, t + 0.25), clave = !isFinite(t);
           const col = clave ? GEN.find((q) => q[0] === g)[1] : '#f6f3ec';
           return <g key={i} opacity={1 - raya * 0.6} transform={`translate(${x} ${y}) scale(${1.3 * (clave ? 1 + 0.12 * kprog(T, K.Ve + 3.6, K.Ve + 4.0) : 1)})`}>
