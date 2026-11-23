@@ -234,7 +234,7 @@ function Vela35() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
           {estrellas.map(([sx, sy, r], i) => <circle key={i} cx={sx} cy={sy} r={r} fill="#fff" opacity={0.35 + 0.35 * Math.sin(T * 2 + i)} />)}
-          <g transform="translate(540 760) scale(1.3) translate(-540 -760)">
+          <g transform="translate(540 960) scale(1.3) translate(-540 -760)">
           <Vela T={T} x={290} y={820} s={0.8} H={250} />
           {[200, 380].map((fx, i) => <Flecha key={i} T={T} x={fx} y={740} alto={260} color={KC.orange} fase={i * 20} o={kprog(T, K.Es + 0.6, K.Es + 1.1)} />)}
           <g opacity={0.35 + 0.65 * kprog(T, K.Es + 1.3, K.Es + 1.8)}>
@@ -247,8 +247,8 @@ function Vela35() {
             </g>; })()}
           </g>
           </g>
-          <text x={215} y={1235} textAnchor="middle" style={{ font:`400 58px ${KF.titulo}` }} fill={KC.texto} opacity={kprog(T, K.Es + 0.4, K.Es + 0.9)}>TIERRA</text>
-          <text x={865} y={1235} textAnchor="middle" style={{ font:`400 50px ${KF.titulo}` }} fill="#9cc3ff" opacity={kprog(T, K.Es + 1.6, K.Es + 2.1)}>MICROGRAVEDAD</text>
+          <text x={215} y={1410} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={KC.texto} opacity={kprog(T, K.Es + 0.4, K.Es + 0.9)}>TIERRA</text>
+          <text x={845} y={1410} textAnchor="middle" style={{ font:`400 32px ${KF.titulo}` }} fill="#9cc3ff" opacity={kprog(T, K.Es + 1.6, K.Es + 2.1)}>MICROGRAVEDAD</text>
         </SvgCapa>
       </Escena>
       {/* 9 · cierre: la misma vela del inicio, ya entendida */}

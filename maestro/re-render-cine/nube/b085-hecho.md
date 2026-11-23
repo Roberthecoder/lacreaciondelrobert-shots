@@ -1,0 +1,1 @@
+- qui-35-vela: Espacio: las dos velas (Tierra y microgravedad) bajan al centro (antes en la mitad de arriba con el tercio de abajo vacío); los rótulos TIERRA y MICROGRAVEDAD pasan debajo de las velas y «MICROGRAVEDAD» ya no se corta en el borde derecho. Lo demás ya cumplía. Auditores: sin láminas · encuadre bien.
