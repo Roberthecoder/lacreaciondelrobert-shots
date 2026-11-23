@@ -8,10 +8,14 @@ function Frasco({ x, y, s = 1, rot = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     <rect x={-60} y={-190} width={120} height={50} rx={10} fill="#c0392b" stroke={KC.ink} strokeWidth={7} />
     <rect x={-40} y={-145} width={80} height={30} fill="#d5dbe4" stroke={KC.ink} strokeWidth={6} />
+    <defs><linearGradient id="cfVidrio" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stopColor="#fff" stopOpacity=".5" /><stop offset=".3" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#2a2418" stopOpacity=".38" /></linearGradient></defs>
+    <ellipse cx={0} cy={190} rx={120} ry={16} fill="rgba(0,0,0,.35)" />
     <rect x={-110} y={-120} width={220} height={300} rx={36} fill="#f4efe4" stroke={KC.ink} strokeWidth={9} />
+    <rect x={-110} y={-120} width={220} height={300} rx={36} fill="url(#cfVidrio)" />
+    <rect x={-86} y={-100} width={16} height={240} rx={8} fill="#fff" opacity=".55" />
     <rect x={-90} y={-40} width={180} height={130} rx={12} fill="#fff" stroke={KC.ink} strokeWidth={5} />
-    <text x={0} y={18} textAnchor="middle" style={{ font:`400 30px ${KF.titulo}` }} fill={KC.ink}>CEFALOSPORINA</text>
-    <text x={0} y={60} textAnchor="middle" style={{ font:`700 18px ${KF.mono}` }} fill="#5a524a">antibiótico</text>
+    <text x={0} y={20} textAnchor="middle" textLength={164} lengthAdjust="spacingAndGlyphs" style={{ font:`400 28px ${KF.titulo}` }} fill="#0b1020">CEFALOSPORINA</text>
+    <text x={0} y={60} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill="#3a3f46">antibiótico</text>
   </g>;
 }
 // Costa con el mar, el tubo del drenaje y la mancha de agua turbia.
@@ -137,7 +141,7 @@ function CefaShot() {
             <rect x={0} y={1330} width={1080} height={150} fill={CF.mar} opacity=".85" />
             <rect x={1080 - 440 * p} y={1180} width={440 * p + 20} height={90} rx={18} fill={CF.tubo} stroke={KC.ink} strokeWidth={8} />
             <path d={`M ${1080 - 440 * p} 1225 Q ${1040 - 440 * p} 1290 ${1060 - 440 * p} 1350`} stroke={CF.agua} strokeWidth={34} strokeLinecap="round" fill="none" opacity={p} /></g> : null; })()}
-          <Frasco x={400} y={klerp(420, 900, cae)} s={2.0} rot={(1 - cae) * -30} />
+          <Frasco x={430} y={klerp(420, 920, cae)} s={2.4} rot={(1 - cae) * -30} />
         </>)}
       </Escena>
       {/* 1 · Brotzu saca agua de mar junto a la descarga (Cagliari, 1945) */}
@@ -166,7 +170,7 @@ function CefaShot() {
       <Escena T={T} a={K.Mo} b={K.Ex} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
-        {fsvg(<Acremonium x={60} y={1150} s={1.6} p={klerp(0.5, 1, kprog(T, K.Mo - 0.2, K.Mo + 2.4))} T={T} />)}
+        {fsvg(<><g opacity={0.6}><Acremonium x={-60} y={1470} s={1.6} p={klerp(0.4, 1, kprog(T, K.Mo + 0.2, K.Mo + 3.0))} T={T + 1.3} /></g><Acremonium x={60} y={1150} s={1.6} p={klerp(0.5, 1, kprog(T, K.Mo - 0.2, K.Mo + 2.4))} T={T} /></>)}
       </Escena>
       {/* 5 · su extracto frenaba bacterias: halo en la placa */}
       <Escena T={T} a={K.Ex} b={K.P} zoom={0.04}>
@@ -208,11 +212,11 @@ function CefaShot() {
       {/* 11 · 2015: una de cada cinco dosis diarias en 76 países */}
       <Escena T={T} a={K.H} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><g opacity={0.35}><Frasco x={540} y={1000} s={1.6} /></g>{Array.from({ length: 5 }, (_, i) => { const p = kprog(T, K.H + 0.4 + i * 0.25, K.H + 0.8 + i * 0.25, kEase.rebote), dor = i === 2 && T > K.H + 2.0;
+        {fsvg(<><g opacity={0.45}><Frasco x={540} y={1010} s={1.6} /></g>{Array.from({ length: 5 }, (_, i) => { const p = kprog(T, K.H + 0.4 + i * 0.25, K.H + 0.8 + i * 0.25, kEase.rebote), dor = i === 2 && T > K.H + 2.0;
           return p > 0 ? <g key={i} transform={`translate(${130 + i * 205} 1110) rotate(-30) scale(${p * 1.2})`}>
             <path d="M -70 -32 L 0 -32 L 0 32 L -70 32 A 32 32 0 0 1 -70 -32 Z" fill={dor ? KC.gold : '#c9ccd4'} stroke={KC.ink} strokeWidth={6} />
             <path d="M 0 -32 L 70 -32 A 32 32 0 0 1 70 32 L 0 32 Z" fill={dor ? KC.gold2 : '#e6e1d6'} stroke={KC.ink} strokeWidth={6} /></g> : null; })}</>)}
-        <NumeroGigante T={T} at={K.H + 2.0} until={K.C - 0.2} valor={1} sufijo=" de cada 5" etiqueta="dosis diarias de antibiótico" x={540} y={760} tam={120} color={KC.gold2} />
+        <NumeroGigante T={T} at={K.H + 2.0} until={K.C - 0.2} valor={1} sufijo=" de cada 5" etiqueta="dosis diarias de antibiótico" x={540} y={590} tam={120} color={KC.gold2} />
       </Escena>
       {/* 12 · cierre: el mismo frasco; por dentro, el tanque con el moho */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
@@ -254,13 +258,13 @@ function CefaShot() {
       <Etq T={T} at={K.Pa + 0.6} until={K.H - 0.3} x={60} y={700} texto="anillo beta-lactámico" tam={28} color={CF.anillo} />
       <Etq T={T} at={K.Pa + 1.0} until={K.H - 0.3} x={1030} y={740} lado="izq" texto="pared de la bacteria" tam={28} color={CF.pared} />
       <Chip T={T} at={K.Pa + 2.8} until={K.H - 0.3} texto="¡revienta!" x={300} y={470} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.H + 0.2} until={K.C - 0.3} texto="2015 · 76 países" x={540} y={520} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.H + 2.6} until={K.C - 0.3} x={60} y={1300} texto="Klein et al., PNAS, 2018 (datos de 2015)" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.H + 0.2} until={K.C - 0.3} texto="2015 · 76 países" x={540} y={420} tam={38} borde={KC.ink} />
+      <Etq T={T} at={K.H + 2.6} until={K.C - 0.3} x={60} y={1400} texto="Klein et al., PNAS, 2018 (datos de 2015)" tam={26} color={KC.ink} />
       <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="materia prima: cefalosporina C" x={360} y={300} tam={32} borde={KC.gold} />
       <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="antibióticos: solo con receta" x={360} y={390} tam={28} borde={KC.red} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.B} texto="5 cm" largo={220} />
+      <BarraEscala T={T} at={K.G} until={K.B} texto="5 cm" largo={264} />
       <BarraEscala T={T} at={K.B} until={K.Sp} texto="10 m" largo={120} />
       <BarraEscala T={T} at={K.Mo} until={K.Ex} texto="10 µm" largo={114} />
       <BarraEscala T={T} at={K.Ex} until={K.P} texto="5 cm" largo={152} />
