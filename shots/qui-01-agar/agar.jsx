@@ -96,16 +96,16 @@ function AgarNarrado() {
       <Escena T={T} a={K.Al} b={K.Q} fondo="linear-gradient(#074257, #0d1c57 55%, #080d24)">
         <Ambiente T={T} n={26} seed={7} color="rgba(223,231,255,.2)" tam={[3, 9]} vel={16} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          {[[190, 1640, 1.7, 1], [540, 1720, 2.15, 2], [890, 1640, 1.6, 3]].map(([x, y, s, k]) => <AlgaRoja key={k} T={T} x={x} y={y} s={s} seed={k} />)}
+          {[[190, 1800, 1.7, 1], [540, 1880, 2.15, 2], [890, 1800, 1.6, 3]].map(([x, y, s, k]) => <AlgaRoja key={k} T={T} x={x} y={y} s={s} seed={k} />)}
           {[0, 1, 2].map((i) => { const at = K.Al + 1.2 + i * 1.0, e = kentrada(T, at, null, 'pop'); if (T < at) return null;
-            return <g key={i} transform={`translate(${200 + i * 340} 680) scale(${e.s})`} opacity={e.o}>
+            return <g key={i} transform={`translate(${200 + i * 340} 800) scale(${e.s})`} opacity={e.o}>
               <circle r={120} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
               {i === 0 && <g><path d="M -70 -10 L -60 60 Q 0 75 60 60 L 70 -10 Z" fill="#9aa4ae" stroke={KC.ink} strokeWidth={6} />{[0, 1, 2].map((k) => <path key={k} d={`M ${-30 + k * 30} -25 q 12 -20 0 -40`} fill="none" stroke="#9aa4ae" strokeWidth={6} transform={`translate(0 ${-((T * 30 + k * 10) % 20)})`} />)}</g>}
               {i === 1 && <g><path d="M -70 -50 L 70 -50 L 10 30 L 10 70 L -10 70 L -10 30 Z" fill="#cfe9f5" stroke={KC.ink} strokeWidth={6} /><circle cx={0} cy={80 + ((T * 60) % 30)} r={7} fill="#5ac8ff" /></g>}
               {i === 2 && <g>{[-1, 0, 1].map((k) => <rect key={k} x={-80} y={-50 + k * 40} width={160} height={26} rx={6} fill={AGAR} stroke={KC.ink} strokeWidth={5} transform={`rotate(${k * 4})`} />)}</g>}
             </g>; })}
         </svg>
-        {['hervir', 'filtrar', 'secar'].map((t, i) => <Chip key={t} T={T} at={K.Al + 1.4 + i * 1.0} until={K.Q - 0.2} texto={t} x={200 + i * 340} y={850} borde={KC.red} tam={36} />)}
+        {['hervir', 'filtrar', 'secar'].map((t, i) => <Chip key={t} T={T} at={K.Al + 1.4 + i * 1.0} until={K.Q - 0.2} texto={t} x={200 + i * 340} y={970} borde={KC.red} tam={36} />)}
       </Escena>
       {/* 2 · polisacárido: cadenas de anillos (detrás, tenues, las cadenas larguísimas de la escena que sigue) */}
       <Escena T={T} a={K.Q} b={K.Rd} fondo="radial-gradient(circle at 50% 45%, #1b2333 0%, #0E0F12 75%)">
@@ -216,7 +216,7 @@ function AgarNarrado() {
       <Capitulo T={T} caps={caps} hasta={K.Ci} />
       <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.4} until={K.G + 3.4} texto="gelatina" x={330} y={420} />
       <Chip T={T} at={K.G + 1.8} until={K.Al - 0.2} texto="azúcar de alga" y={1500} x={540} borde={KC.red} tam={44} />
-      <Etq T={T} at={K.Al + 0.4} until={K.Q - 0.2} x={560} y={1250} texto="Gelidium (alga roja)" it tam={30} />
+      <Etq T={T} at={K.Al + 0.4} until={K.Q - 0.2} x={560} y={1370} texto="Gelidium (alga roja)" it tam={30} />
       <Chip T={T} at={K.Ci + 0.3} until={K.O} texto="el piso de la microbiología" y={430} borde={KC.gold} tam={42} />
 
       <Subtitulo T={T} idx={0} at={K.G + 0.2} until={K.Al - 0.1} texto="No es gelatina: *es azúcar de alga.*" />
