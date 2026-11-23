@@ -1,2 +1,3 @@
 - ia-34-herculano: Premio (columnas de texto bajadas y agrandadas al centro, 00,000 y chips recolocados abajo sin encimarse), Matiz (mismas columnas en el mismo lugar que Premio para que la disolvencia no muestre dos hojas; tarjetas IA/papirólogos recolocadas).
 - fun-95-cigarra: Aleteo (cuadrícula «23 de 25» y sus textos bajados: ya no se encima con el logo). Lo demás ya cumplía.
+- bio-35-wolbachia: Herencia (el agua donde caen los huevos ya no es un rectángulo plano: degradado, ondas y burbujas), Resultado (un solo número grande a la vez: −77 % y luego −86 % en el mismo lugar, centrados sobre el mapa; se van antes de la disolvencia para no encimarse con el ADN).
