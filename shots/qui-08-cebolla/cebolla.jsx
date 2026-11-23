@@ -45,7 +45,9 @@ function MolS({ x, y, s = 1, rot = 0, o = 1, partida = 0 }) {
 }
 function Celula({ T, roto = 0 }) {
   return <g>
-    <rect x={110} y={560} width={860} height={660} rx={60} fill="#2b2618" stroke={KC.ink} strokeWidth={10} />
+    <defs><radialGradient id="celGrad" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stopColor="#4a3f24" /><stop offset="1" stopColor="#1f1b10" /></radialGradient></defs>
+    <rect x={110} y={560} width={860} height={660} rx={60} fill="url(#celGrad)" stroke={KC.ink} strokeWidth={10} />
+    <path d="M 180 600 Q 540 580 900 600" stroke="#ffffff" strokeOpacity={0.12} strokeWidth={14} fill="none" strokeLinecap="round" />
     <ellipse cx={560} cy={880} rx={250 + roto * 30} ry={190 + roto * 20} fill="rgba(155,93,229,.18)" stroke={ENZ1} strokeWidth={8} strokeDasharray={roto > 0.05 ? `${60 - roto * 50} ${20 + roto * 60}` : 'none'} />
     <circle cx={850} cy={680} r={60} fill="#e9c89a" stroke={KC.ink} strokeWidth={6} />
   </g>;
@@ -85,6 +87,7 @@ function Cebolla_() {
       <Escena T={T} a={K.Ce} b={K.De}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
+          <g transform="translate(540 1010) scale(1.12) translate(-540 -890)">
           <Celula T={T} roto={roto} />
           {T > K.Co && T < K.Co + 1.6 && <g transform={`translate(${klerp(-100, 1180, kprog(T, K.Co, K.Co + 1.2))} 900) rotate(90)`}><Cuchillo x={0} y={0} s={0.8} /></g>}
           {mols.map(([x, y, r], i) => { const t0 = K.Ac + 0.1 + i * 0.08, parte = kprog(T, t0, t0 + 0.5), conv = kprog(T, K.Ga + 0.5 + i * 0.12, K.Ga + 1.4 + i * 0.12), sube = kprog(T, K.Ga + 1.4 + i * 0.12, K.Ga + 4.0 + i * 0.12, kEase.suave);
@@ -93,7 +96,8 @@ function Cebolla_() {
           {enz.map(([x, y, r], i) => { const sale = kprog(T, K.Co + 1.0, K.Co + 3.0, kEase.suave), tx = klerp(x, mols[i * 2 % 9][0] - 60, sale), ty = klerp(y, mols[i * 2 % 9][1], sale);
             return <Tijera key={i} x={tx} y={ty} s={1.1} rot={r + T * 30} abre={Math.max(0, Math.sin(T * 10 + i))} />; })}
           {T > K.Ga && [0, 1, 2].map((i) => <Tijera key={'l' + i} x={klerp(-80, 300 + i * 220, kprog(T, K.Ga + 0.1, K.Ga + 0.6))} y={1060 - i * 140} s={1.1} color={ENZ2} rot={-T * 40 + i * 90} abre={Math.max(0, Math.sin(T * 9 + i))} />)}
-          {T > K.Ga + 2.6 && <g transform="translate(0 -40)"><Ojo x={540} y={410} s={1.3} rojo={kprog(T, K.Ga + 3.6, K.Ga + 5)} llora={kprog(T, K.Ga + 4.6, K.Ga + 5.4)} T={T} /></g>}
+          </g>
+          {T > K.Ga + 2.6 && <g transform="translate(0 -20)"><Ojo x={540} y={410} s={1.3} rojo={kprog(T, K.Ga + 3.6, K.Ga + 5)} llora={kprog(T, K.Ga + 4.6, K.Ga + 5.4)} T={T} /></g>}
         </SvgCapa>
       </Escena>
       {/* 5 · defensa */}
@@ -138,7 +142,7 @@ function Cebolla_() {
         <SvgCapa>
           {Array.from({ length: 16 }, (_, i) => { const x = 140 + i * 52, cut = i === 8 ? kprog(T, K.Cr + 1.0, K.Cr + 1.4) * 30 : 0; return <g key={i}><line x1={x + (i >= 8 ? cut : 0)} y1={650 + Math.sin(i * 0.8) * 40} x2={x + (i >= 8 ? cut : 0)} y2={750 + Math.sin(i * 0.8) * 40} stroke={['#ff3b6b', '#2fe0a8', '#ffe11a', '#00d2ff'][i % 4]} strokeWidth={14} /></g>; })}
           <Tijera x={560} y={700} s={1.5} color={KC.cyan} abre={Math.max(0, Math.sin(T * 8))} rot={90} />
-          <g opacity={kprog(T, K.Cr + 2.4, K.Cr + 3.0)}>
+          <g opacity={kprog(T, K.Cr + 2.4, K.Cr + 3.0)} transform="translate(560 1040) scale(1.5) translate(-560 -1040)">
             <rect x={420} y={1110} width={200} height={110} rx={10} fill="#b4542b" stroke={KC.ink} strokeWidth={7} />
             <path d={`M 520 1110 Q ${520 + Math.sin(T) * 10} 1000 480 940 Q 450 900 500 860`} stroke={KC.leaf} strokeWidth={14} fill="none" strokeLinecap="round" />
             <path d="M 500 1000 Q 560 990 580 1040" stroke={KC.leaf} strokeWidth={10} fill="none" />
@@ -161,18 +165,18 @@ function Cebolla_() {
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 3.0} texto="¿tristeza?" x={270} y={330} tam={50} />
       <Chip T={T} at={K.G + 3.1} until={K.Ce - 0.3} texto="un gas" x={230} y={300} tam={52} borde={GAS} />
-      <Etq T={T} at={K.Ce + 0.6} until={K.Co - 0.2} x={60} y={1300} texto="compuesto con azufre (S)" tam={34} color={AZUFRE} />
-      <Etq T={T} at={K.Ce + 1.4} until={K.Co - 0.2} x={1030} y={1380} texto="enzima, en su compartimento" lado="izq" tam={34} color={ENZ1} />
-      <Chip T={T} at={K.Co + 1.2} until={K.Ac - 0.2} texto="aliinasa" x={540} y={1380} tam={52} borde={ENZ1} />
-      <Chip T={T} at={K.Ac + 0.2} until={K.Ga - 0.2} texto="ácido sulfénico" x={540} y={1380} tam={48} borde={AZUFRE} />
-      <Chip T={T} at={K.Ga + 0.3} until={K.De - 0.2} texto="factor lacrimógeno" x={540} y={1420} tam={48} borde={GAS} />
-      <Etq T={T} at={K.Ga + 0.4} until={K.Ga + 2.6} x={60} y={1310} texto="2.ª enzima (LFS)" tam={34} color={ENZ2} />
+      <Etq T={T} at={K.Ce + 0.6} until={K.Co - 0.2} x={60} y={1440} texto="compuesto con azufre (S)" tam={34} color={AZUFRE} />
+      <Etq T={T} at={K.Ce + 1.4} until={K.Co - 0.2} x={1030} y={1510} texto="enzima, en su compartimento" lado="izq" tam={34} color={ENZ1} />
+      <Chip T={T} at={K.Co + 1.2} until={K.Ac - 0.2} texto="aliinasa" x={540} y={1470} tam={52} borde={ENZ1} />
+      <Chip T={T} at={K.Ac + 0.2} until={K.Ga - 0.2} texto="ácido sulfénico" x={540} y={1470} tam={48} borde={AZUFRE} />
+      <Chip T={T} at={K.Ga + 0.3} until={K.De - 0.2} texto="factor lacrimógeno" x={540} y={1490} tam={48} borde={GAS} />
+      <Etq T={T} at={K.Ga + 0.4} until={K.Ga + 2.6} x={60} y={1430} texto="2.ª enzima (LFS)" tam={34} color={ENZ2} />
       <Chip T={T} at={K.De + 0.5} until={K.Pr - 0.3} texto="defensa química" x={540} y={1480} tam={50} borde={ENZ2} />
       <TarjetaEstudio T={T} at={K.Ja + 0.2} until={K.Si - 0.3} anio="2002" quien="Imai et al. · House Foods, Japón" revista="Nature · la enzima que hace llorar" x={540} y={420} />
       <Chip T={T} at={K.Si + 0.3} until={K.Si + 2.3} texto="semillas irradiadas · 2016" x={540} y={1450} tam={42} borde={KC.pink} />
       <Etq T={T} at={K.Si + 4.0} until={K.Cr - 0.3} x={1030} y={610} texto="20 catadores: sin lágrimas" lado="izq" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Cr + 0.3} until={K.Ci - 0.3} texto="2026 · CRISPR · Front Plant Sci" x={540} y={1450} tam={40} borde={KC.cyan} />
-      <Etq T={T} at={K.Cr + 4.2} until={K.Ci - 0.3} x={60} y={1330} texto="creció mal · sin semilla" tam={34} color={KC.red} />
+      <Etq T={T} at={K.Cr + 4.2} until={K.Ci - 0.3} x={60} y={1375} texto="creció mal · sin semilla" tam={34} color={KC.red} />
       <Chip T={T} at={K.Ci + 2.0} until={K.Ou} texto="no es tristeza: es defensa" y={1480} tam={44} borde={GAS} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

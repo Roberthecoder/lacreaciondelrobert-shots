@@ -1,0 +1,1 @@
+- qui-08-cebolla: célula (Célula, Corte, Ácido, Gas) agrandada ×1.12 y bajada al centro con degradado y brillo; etiquetas y chips reacomodados debajo; ojo un poco más abajo; planta y maceta de CRISPR ×1.5. Encuadre bien, sin láminas.
