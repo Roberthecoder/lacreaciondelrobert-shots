@@ -1,0 +1,1 @@
+- ia-38-whisper-inventa: gancho (13 s, la portada): micrófono, onda, «(silencio)», hoja de transcripción y chip bajados 140 px para centrar el conjunto (antes el tercio de abajo quedaba vacío). Resto de escenas ya cumplía. Sin láminas · encuadre bien.
