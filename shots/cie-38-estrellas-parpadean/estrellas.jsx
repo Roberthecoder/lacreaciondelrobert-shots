@@ -142,11 +142,11 @@ function Estrellas38() {
             <line x1={280} y1={1150} x2={klerp(280, 930, kprog(T, K.Lejos + 1.9, K.Lejos + 2.8, kEase.sale))} y2={1150} stroke={KC.texto} strokeWidth={8} strokeLinecap="round" strokeDasharray="4 22" />
             <line x1={280} y1={1115} x2={280} y2={1185} stroke={KC.texto} strokeWidth={8} strokeLinecap="round" />
           </g>}
-          {T > K.Lejos + 2.7 && <TextoSvg x={560} y={1330} tam={112} color={KC.yellow} s={klerp(0.4, 1, kprog(T, K.Lejos + 2.7, K.Lejos + 3.1, kEase.rebote))}>MUY, MUY LEJOS</TextoSvg>}
+          {T > K.Lejos + 2.7 && <TextoSvg x={540} y={1330} tam={88} color={KC.yellow} s={klerp(0.4, 1, kprog(T, K.Lejos + 2.7, K.Lejos + 3.1, kEase.rebote))}>MUY, MUY LEJOS</TextoSvg>}
           <Pildora T={T} at={K.Lejos + 3.3} x={780} y={760} texto="puntito de luz" tam={46} fondo={KC.paper} />
         </Lienzo>
         <Etq T={T} at={K.Lejos + 1.2} until={K.Aire - 0.2} x={280} y={690} texto="tú" lado="der" color={KC.texto} tam={46} />
-        <Chip T={T} at={K.Lejos + 0.3} until={K.Aire - 0.2} texto="esquema · no está a escala" x={540} y={400} tam={32} borde={KC.lilac} mono />
+        <Chip T={T} at={K.Lejos + 0.3} until={K.Aire - 0.2} texto="esquema · no está a escala" x={540} y={400} tam={37} borde={KC.lilac} mono />
       </Escena>
       {/* 2 · aire: la luz baja por capas de aire cálidas y frías que se mueven */}
       <Escena T={T} a={K.Aire} b={K.Dobla} fondo={KC.violet} zoom={0.03}>
@@ -206,7 +206,7 @@ function Estrellas38() {
           <g transform={`translate(540 760) scale(${klerp(0.2, 1, kprog(T, K.Nombre - 0.2, K.Nombre + 0.4, kEase.rebote))}) translate(-540 -760)`}>
             <EstrellaT x={540} y={760} r={170} T={T} seed={6} fuerza={1} color="#ffffff" />
           </g>
-          <TextoSvg x={540} y={1290} tam={170} color={KC.pink} s={klerp(0.4, 1, kprog(T, K.Nombre + 0.3, K.Nombre + 0.7, kEase.rebote))} o={kprog(T, K.Nombre + 0.3, K.Nombre + 0.4)}>CENTELLEO</TextoSvg>
+          <TextoSvg x={540} y={1280} tam={124} color={KC.pink} s={klerp(0.4, 1, kprog(T, K.Nombre + 0.3, K.Nombre + 0.7, kEase.rebote))} o={kprog(T, K.Nombre + 0.3, K.Nombre + 0.4)}>CENTELLEO</TextoSvg>
           <Pildora T={T} at={K.Nombre + 0.9} x={540} y={1420} texto="el parpadeo de las estrellas" tam={42} fondo={KC.paper} />
         </Lienzo>
       </Escena>
@@ -235,7 +235,7 @@ function Estrellas38() {
           <Pildora T={T} at={K.Disco + 3.1} x={600} y={1440} texto="DISCO CHIQUITO" tam={50} fondo={KC.yellow} />
           <Pildora T={T} at={K.Disco + 0.8} x={880} y={660} texto="más cerca" tam={36} fondo={KC.mint} />
         </Lienzo>
-        <Chip T={T} at={K.Disco + 0.1} until={K.Promedio - 0.2} texto="esquema · no está a escala" x={540} y={290} tam={32} borde={KC.lilac} mono />
+        <Chip T={T} at={K.Disco + 0.1} until={K.Promedio - 0.2} texto="esquema · no está a escala" x={540} y={290} tam={37} borde={KC.lilac} mono />
       </Escena>
       {/* 7 · promedio: cada parte del disco tiembla por su lado; juntas se compensan */}
       <Escena T={T} a={K.Promedio} b={K.Truco} zoom={0.02}>
