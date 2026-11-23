@@ -4,6 +4,22 @@
 
 const KB = { te0:'#f1d58e', te1:'#b8681f', capa:'#ecdcb2', capa2:'#cdb684', vidrio:'rgba(255,255,255,.28)', fibra:'#fff1c9', lev:'#f6d77a', bac:'#8fe3c4', acido:'#ff6b5a', alcohol:'#9ad7ff' };
 
+// Pase de belleza: degradados de volumen (claro arriba-izquierda, sombra abajo-derecha).
+function KoDefs() {
+  return <defs>
+    <radialGradient id="ko-luz" cx=".32" cy=".26" r=".85">
+      <stop offset="0" stopColor="#ffffff" stopOpacity=".45" /><stop offset=".42" stopColor="#ffffff" stopOpacity="0" />
+      <stop offset=".78" stopColor="#000000" stopOpacity=".08" /><stop offset="1" stopColor="#000000" stopOpacity=".3" />
+    </radialGradient>
+    <linearGradient id="ko-fondo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stopColor="#fff6d8" stopOpacity=".18" /><stop offset=".45" stopColor="#000000" stopOpacity="0" /><stop offset="1" stopColor="#1a0c02" stopOpacity=".42" />
+    </linearGradient>
+    <linearGradient id="ko-lado" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stopColor="#000000" stopOpacity=".18" /><stop offset=".3" stopColor="#000000" stopOpacity="0" /><stop offset=".8" stopColor="#000000" stopOpacity="0" /><stop offset="1" stopColor="#000000" stopOpacity=".28" />
+    </linearGradient>
+  </defs>;
+}
+
 // Frasco de vidrio con té y la "madre" (capa) flotando. Base del frasco en (x, y).
 // te 0..1 = qué tan oscuro; capa 0..1 = grosor; capas = rayitas de capas apiladas; alza 0..1 = las pinzas levantan la capa.
 function Frasco({ T, x, y, s = 1, te = 1, capa = 1, capas = 2, alza = 0, burbujas = 1, nivel = 1, subeMax = 330 }) {
@@ -11,13 +27,19 @@ function Frasco({ T, x, y, s = 1, te = 1, capa = 1, capas = 2, alza = 0, burbuja
   const colorTe = mixHex(KB.te0, KB.te1, te);
   const borde = (yy, a = 0) => `M -196 ${yy} Q -100 ${yy - 10 + Math.sin(T * 2 + a) * 3} 0 ${yy - 4} Q 100 ${yy + 6 + Math.sin(T * 2.4 + a) * 3} 196 ${yy}`;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <KoDefs />
+    <ellipse cx={0} cy={6} rx={240} ry={26} fill="rgba(0,0,0,.35)" />
     <path d={`M -210 ${top} L -210 -30 Q -210 0 -180 0 L 180 0 Q 210 0 210 -30 L 210 ${top} Z`} fill={KB.vidrio} stroke={KC.ink} strokeWidth={9} />
     <path d={`M -200 ${liq} L -200 -34 Q -200 -10 -176 -10 L 176 -10 Q 200 -10 200 -34 L 200 ${liq} Z`} fill={colorTe} opacity=".92" />
+    <path d={`M -200 ${liq} L -200 -34 Q -200 -10 -176 -10 L 176 -10 Q 200 -10 200 -34 L 200 ${liq} Z`} fill="url(#ko-fondo)" />
+    <path d={`M -200 ${liq} L -200 -34 Q -200 -10 -176 -10 L 176 -10 Q 200 -10 200 -34 L 200 ${liq} Z`} fill="url(#ko-lado)" />
     {burbujas > 0 && Array.from({ length: 9 }, (_, i) => { const u = ((T * 0.35 + i * 0.13) % 1); return <circle key={i} cx={-160 + ((i * 47) % 320)} cy={-30 - u * (-(liq) - 60)} r={5 + (i % 3) * 3} fill="#fff" opacity={0.55 * (1 - u) * burbujas} />; })}
     {/* la capa (madre) */}
     <g transform={`translate(0 ${-sube})`}>
       <path d={`${borde(liq - grosor)} L 196 ${liq + 6} Q 0 ${liq + 16} -196 ${liq + 6} Z`} fill={KB.capa} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+      <path d={`${borde(liq - grosor)} L 196 ${liq + 6} Q 0 ${liq + 16} -196 ${liq + 6} Z`} fill="url(#ko-lado)" />
       {Array.from({ length: capas }, (_, k) => <path key={k} d={borde(liq - grosor + (grosor / (capas + 1)) * (k + 1), k)} stroke={KB.capa2} strokeWidth={5} fill="none" />)}
+      <path d={borde(liq - grosor + 4)} stroke="#fffaf0" strokeWidth={4} fill="none" opacity={0.6} />
       {alza > 0.2 && [-120, -20, 90, 150].map((dx, i) => { const u = ((T * 1.4 + i * 0.27) % 1); return <ellipse key={i} cx={dx} cy={liq + 20 + u * (sube - 30)} rx={7} ry={11} fill={colorTe} stroke={KC.ink} strokeWidth={3} opacity={1 - u} />; })}
     </g>
     {alza > 0 && <g transform={`translate(0 ${-sube})`}>
@@ -33,7 +55,9 @@ function Levadura({ x, y, s = 1, rot = 0, yema = 0.5, T = 0, seed = 1 }) {
   const b = Math.sin(T * 2 + seed) * 4;
   return <g transform={`translate(${x} ${y + b}) rotate(${rot}) scale(${s})`}>
     {yema > 0 && <ellipse cx={46 + 10 * yema} cy={0} rx={14 + 12 * yema} ry={10 + 9 * yema} fill={KB.lev} stroke={KC.ink} strokeWidth={5} />}
+    <KoDefs />
     <path d="M -44 0 Q -40 -28 0 -30 Q 38 -28 48 0 Q 38 28 0 30 Q -40 28 -44 0 Z" fill={KB.lev} stroke={KC.ink} strokeWidth={6} />
+    <path d="M -44 0 Q -40 -28 0 -30 Q 38 -28 48 0 Q 38 28 0 30 Q -40 28 -44 0 Z" fill="url(#ko-luz)" />
     <circle cx={-6} cy={-2} r={10} fill="#d49b2c" opacity=".7" />
     <ellipse cx={-18} cy={-14} rx={12} ry={5} fill="#fff" opacity=".45" />
   </g>;
@@ -98,21 +122,29 @@ function Malla({ T, x, y, w = 900, h = 640, g = 1, seed = 7, n = 26 }) {
 function Raton({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d="M 70 20 Q 120 30 130 -10" stroke={KC.ink} strokeWidth={6} fill="none" strokeLinecap="round" />
+    <KoDefs /><ellipse cx={6} cy={50} rx={86} ry={12} fill="rgba(0,0,0,.3)" />
     <ellipse cx={0} cy={0} rx={80} ry={50} fill="#c9c3cf" stroke={KC.ink} strokeWidth={6} />
+    <ellipse cx={0} cy={0} rx={77} ry={47} fill="url(#ko-luz)" />
     <circle cx={-60} cy={-46} r={24} fill="#f2b7c4" stroke={KC.ink} strokeWidth={5} /><circle cx={-82} cy={-4} r={6} fill={KC.ink} /><circle cx={-104} cy={10} r={7} fill="#f28aa0" />
   </g>;
 }
 function Tubo({ x, y, s = 1, color = KC.mint }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d="M -30 -110 L -30 60 Q -30 100 0 100 Q 30 100 30 60 L 30 -110" fill="rgba(255,255,255,.5)" stroke={KC.ink} strokeWidth={6} />
+    <KoDefs />
     <path d="M -24 0 L -24 60 Q -24 94 0 94 Q 24 94 24 60 L 24 0 Z" fill={color} />
+    <path d="M -24 0 L -24 60 Q -24 94 0 94 Q 24 94 24 60 L 24 0 Z" fill="url(#ko-lado)" />
+    <rect x={-20} y={-100} width={9} height={180} rx={4} fill="#fff" opacity=".55" />
     <rect x={-40} y={-124} width={80} height={18} rx={8} fill="#fff" stroke={KC.ink} strokeWidth={5} />
   </g>;
 }
 function PersonaK({ x, y, s = 1, color = '#8fb6ff', piel = '#f2c29b' }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <KoDefs />
     <circle cx={0} cy={-62} r={26} fill={piel} stroke={KC.ink} strokeWidth={5} />
+    <circle cx={0} cy={-62} r={24} fill="url(#ko-luz)" />
     <path d="M -38 20 Q -40 -26 0 -28 Q 40 -26 38 20 Z" fill={color} stroke={KC.ink} strokeWidth={5} />
+    <path d="M -38 20 Q -40 -26 0 -28 Q 40 -26 38 20 Z" fill="url(#ko-luz)" />
   </g>;
 }
 function Papel({ x, y, s = 1, rot = 0 }) {
@@ -137,10 +169,12 @@ function Vaso({ x, y, s = 1, color = KB.te1, etiqueta }) {
 // Botella de kombucha.
 function Botella({ x, y, s = 1, texto }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <KoDefs /><ellipse cx={0} cy={24} rx={110} ry={16} fill="rgba(0,0,0,.35)" />
     <path d="M -24 -330 L 24 -330 L 24 -250 Q 90 -220 90 -150 L 90 0 Q 90 20 70 20 L -70 20 Q -90 20 -90 0 L -90 -150 Q -90 -220 -24 -250 Z" fill="rgba(184,104,31,.85)" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     <rect x={-30} y={-356} width={60} height={30} rx={8} fill={KC.ink} />
     <rect x={-90} y={-130} width={180} height={90} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
     {texto && <text x={0} y={-74} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink}>{texto}</text>}
+    <path d="M -24 -330 L 24 -330 L 24 -250 Q 90 -220 90 -150 L 90 0 Q 90 20 70 20 L -70 20 Q -90 20 -90 0 L -90 -150 Q -90 -220 -24 -250 Z" fill="url(#ko-lado)" />
     <rect x={-70} y={-230} width={18} height={200} rx={9} fill="#fff" opacity=".35" />
   </g>;
 }
@@ -238,11 +272,11 @@ function KombuchaShot() {
       {/* 7 · las fibras se enredan (malla) y la capa crece en el frasco */}
       <Escena T={T} a={K.Ca} b={malla} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 100)" opacity={1 - kprog(T, malla - 0.05, malla + 0.35)}>
           <Malla T={T} x={90} y={500} w={900} h={680} g={kprog(T, K.Ca - 0.3, K.Ca + 1.6)} />
           {[[260, 640, 1], [640, 900, 2], [820, 620, 3]].map(([x, y, sd], i) => <Levadura key={i} x={x} y={y} s={1.1} rot={i * 40} yema={0.5} T={T} seed={sd} />)}
           {[[420, 780, 30], [720, 1080, -20], [240, 1040, 70], [900, 860, 10]].map(([x, y, r], i) => <Bacteria key={i} x={x} y={y} rot={r} s={0.75} color={KB.bac} flagelo={false} T={T} seed={i} />)}
-        </>)}
+        </g>)}
       </Escena>
       <Escena T={T} a={malla} b={K.An} zoom={0.04}>
         <FondoLunares color={T < K.P - 0.2 ? KC.mint : KC.lilac} />
@@ -257,17 +291,18 @@ function KombuchaShot() {
       {/* 9 · casi todo se probó en animales o en laboratorio */}
       <Escena T={T} a={K.An} b={K.Es} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 960) scale(1.2) translate(-515 -795)">
           <g opacity={kprog(T, K.An + 0.4, K.An + 0.8)}><Raton x={230} y={800} s={kprog(T, K.An + 0.4, K.An + 0.8, kEase.rebote)} /></g>
           <g opacity={kprog(T, K.An + 1.0, K.An + 1.4)}><Tubo x={560} y={780} s={kprog(T, K.An + 1.0, K.An + 1.4, kEase.rebote)} /></g>
           <g opacity={kprog(T, K.An + 1.8, K.An + 2.2)}><PersonaK x={860} y={1000} s={1.6 * kprog(T, K.An + 1.8, K.An + 2.2, kEase.rebote)} /></g>
           {[[230, 640], [560, 600]].map(([x, y], i) => kprog(T, K.An + 0.8 + i * 0.6, K.An + 1.1 + i * 0.6) > 0 && <path key={i} d={`M ${x - 40} ${y} L ${x - 10} ${y + 30} L ${x + 45} ${y - 35}`} stroke={KC.leaf} strokeWidth={18} fill="none" strokeLinecap="round" strokeLinejoin="round" opacity={kprog(T, K.An + 0.8 + i * 0.6, K.An + 1.1 + i * 0.6)} />)}
           {kprog(T, K.An + 2.4, K.An + 2.7) > 0 && <text x={860} y={850} textAnchor="middle" style={{ font:`400 140px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.An + 2.4, K.An + 2.7)}>?</text>}
-        </>)}
+        </g>)}
       </Escena>
       {/* 10–11 · el estudio de Georgetown (2023) y su resultado */}
       <Escena T={T} a={K.Es} b={K.Al} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
+        <div style={{ position:'absolute', inset:0, opacity:1 - kprog(T, K.Al - 0.05, K.Al + 0.3) }}>
         {fsvg(<>
           {T < K.Re + 0.2 && <g opacity={1 - kprog(T, K.Re - 0.2, K.Re + 0.2)}>
             <g opacity={kprog(T, K.Es + 1.8, K.Es + 2.2)}><Vaso x={330} y={1250} s={1.6} color={KB.te1} etiqueta="kombucha" /></g>
@@ -276,6 +311,7 @@ function KombuchaShot() {
           {T > K.Re + 2.6 && Array.from({ length: 7 }, (_, i) => { const on = kprog(T, K.Re + 2.6 + i * 0.12, K.Re + 2.9 + i * 0.12, kEase.rebote); return on > 0 ? <PersonaK key={i} x={150 + i * 130} y={1310} s={1.2 * on} /> : null; })}
         </>)}
         <BarrasGlucosa T={T} at={K.Re + 0.2} y={450} x={150} s={1.3} />
+        </div>
       </Escena>
       {/* 12 · 1.5 % de alcohol */}
       <Escena T={T} a={K.Al} b={K.C} zoom={0.05}>
@@ -315,7 +351,7 @@ function KombuchaShot() {
       <Chip T={T} at={K.Le + 0.2} until={K.Hi - 0.3} texto="AL MICROSCOPIO · el té" x={360} y={470} tam={30} borde={KC.gold} mono />
       <Etq T={T} at={K.Le + 0.8} until={K.Ac - 0.2} x={30} y={600} texto="levadura (hongo)" tam={28} />
       <Etq T={T} at={K.Le + 1.2} until={K.Ac - 0.2} x={30} y={550} texto="Brettanomyces" it tam={28} color={KC.gold2} />
-      <Etq T={T} at={K.Le + 1.6} until={K.Ac - 0.2} x={30} y={822} texto="azúcar → glucosa + fructosa" tam={24} />
+      <Etq T={T} at={K.Le + 1.6} until={K.Ac - 0.2} x={30} y={822} texto="azúcar → glucosa + fructosa" tam={26} />
       <Etq T={T} at={K.Le + 3.0} until={K.Ac + 0.1} x={90} y={1400} texto="alcohol + CO₂ (burbujas)" tam={26} color={KB.alcohol} />
       <Etq T={T} at={K.Ac + 0.3} until={K.Hi - 0.2} x={1050} y={1100} texto="bacterias del ácido acético" lado="izq" tam={26} color={KB.bac} />
       <Chip T={T} at={K.Ac + 1.8} until={K.Hi - 0.3} texto="pH ↓ (acidez ↑)" x={330} y={580} tam={34} borde={KC.red} />
@@ -325,13 +361,13 @@ function KombuchaShot() {
       <Chip T={T} at={K.Ce + 0.3} until={K.Ca - 0.3} texto="celulosa" x={340} y={590} tam={40} borde={KC.ink} />
       <Etq T={T} at={K.Ce + 1.0} until={K.Ca - 0.2} x={33} y={976} texto="papel" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Ce + 1.4} until={K.Ca - 0.2} x={405} y={976} texto="algodón" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Ca + 0.2} until={malla - 0.3} texto="AL MICROSCOPIO · la madre" x={360} y={390} tam={30} borde={KC.gold} mono />
-      <Etq T={T} at={K.Ca + 0.8} until={malla - 0.2} x={60} y={470} texto="fibras de celulosa con microbios atrapados" tam={24} color={KB.fibra} />
+      <Chip T={T} at={K.Ca + 0.2} until={malla - 0.3} texto="AL MICROSCOPIO · la madre" x={360} y={470} tam={30} borde={KC.gold} mono />
+      <Etq T={T} at={K.Ca + 0.8} until={malla - 0.2} x={60} y={560} texto="fibras de celulosa con microbios atrapados" tam={26} color={KB.fibra} />
       <Chip T={T} at={malla + 0.3} until={K.P - 0.3} texto="cada tanda, más gruesa" x={540} y={560} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.An + 0.2} until={K.Es - 0.3} texto="¿cura? ¿desintoxica?" x={330} y={420} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.An + 0.6} until={K.Es - 0.2} x={130} y={920} texto="animales" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.An + 1.2} until={K.Es - 0.2} x={480} y={940} texto="laboratorio" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.An + 2.4} until={K.Es - 0.3} texto="en personas: muy poco" x={600} y={1130} tam={32} borde={KC.red} />
+      <Etq T={T} at={K.An + 0.6} until={K.Es - 0.2} x={78} y={1110} texto="animales" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.An + 1.2} until={K.Es - 0.2} x={498} y={1134} texto="laboratorio" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.An + 2.4} until={K.Es - 0.3} texto="en personas: muy poco" x={600} y={1330} tam={32} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Re - 0.3} anio="2023" quien="Georgetown · Washington, D. C." revista="Frontiers in Nutrition · diabetes tipo 2" x={540} y={600} />
       <Chip T={T} at={K.Es + 3.0} until={K.Re - 0.3} texto="240 mL al día · 4 semanas · cruzado" x={540} y={880} tam={28} borde={KC.ink} mono />
       <Chip T={T} at={K.Re + 2.4} until={K.Al - 0.3} texto="diferencia no significativa" x={540} y={985} tam={34} borde={KC.red} />
