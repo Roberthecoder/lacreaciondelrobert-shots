@@ -66,7 +66,9 @@ function Olla({ T, x, y, s = 1, children, hierve = 1 }) {
     {/* cuerpo de barro con asas */}
     <path d="M -290 -10 C -330 -6 -340 40 -300 50" stroke={BARRO2} strokeWidth={22} fill="none" strokeLinecap="round" />
     <path d="M 290 -10 C 330 -6 340 40 300 50" stroke={BARRO2} strokeWidth={22} fill="none" strokeLinecap="round" />
-    <path d="M -260 0 C -330 120 -260 300 0 310 C 260 300 330 120 260 0 Z" fill={BARRO} stroke={KC.ink} strokeWidth={9} />
+    <defs><radialGradient id="ollaVol" cx="34%" cy="28%" r="78%"><stop offset="0%" stopColor="#d98a58" /><stop offset="55%" stopColor={BARRO} /><stop offset="100%" stopColor="#6e3418" /></radialGradient></defs>
+    <path d="M -260 0 C -330 120 -260 300 0 310 C 260 300 330 120 260 0 Z" fill="url(#ollaVol)" stroke={KC.ink} strokeWidth={9} />
+    <path d="M -235 40 C -262 120 -220 220 -150 268" stroke="#f6c9a0" strokeWidth={10} fill="none" strokeLinecap="round" opacity=".35" />
     <path d="M -230 90 Q 0 130 230 90" stroke="#f3e3b0" strokeWidth={8} fill="none" opacity=".8" />
     {[-150, -50, 50, 150].map((px, i) => <circle key={i} cx={px} cy={150 + (i % 2) * 12} r={10} fill="#f3e3b0" opacity=".8" />)}
     <ellipse cx={0} cy={0} rx={262} ry={60} fill={BARRO2} stroke={KC.ink} strokeWidth={9} />
@@ -162,6 +164,7 @@ function Frasco({ T, x, y, color = '#d8342c', cuaja = 0, etiqueta }) {
   return <g transform={`translate(${x} ${y})`}>
     <rect x={-95} y={-150} width={190} height={250} rx={30} fill="rgba(255,255,255,.4)" stroke={KC.ink} strokeWidth={7} />
     <path d={`M -85 ${klerp(-60, -100, cuaja) + tiembla} Q 0 ${klerp(-60, -125, cuaja) + tiembla} 85 ${klerp(-60, -100, cuaja) + tiembla} L 85 90 Q 0 104 -85 90 Z`} fill={color} opacity={klerp(0.65, 0.95, cuaja)} />
+    <rect x={-78} y={-130} width={18} height={200} rx={9} fill="#fff" opacity=".28" />
     <rect x={-105} y={-195} width={210} height={50} rx={12} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />
     <rect x={-70} y={-20} width={140} height={70} rx={8} fill={KC.paper} stroke={KC.ink} strokeWidth={4} />
     <text x={0} y={24} textAnchor="middle" style={{ font:`900 26px ${KF.texto}` }} fill={KC.ink}>{etiqueta}</text>
@@ -273,8 +276,8 @@ function Ponche() {
       <Escena T={T} a={K.P} b={K.De} zoom={0.1}>
         <FondoLunares color={KC.yellow} />
         {svg(<g>
-          <g transform="translate(-130 -60)"><Olla T={T} x={400} y={1000} s={0.85}><FrutasPonche T={T} /></Olla></g>
-          <text x={170} y={640} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.orange} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 170 520)`}>?</text>
+          <Olla T={T} x={540} y={960} s={1.12}><FrutasPonche T={T} /></Olla>
+          <text x={540} y={640} textAnchor="middle" style={{ font:`400 200px ${KF.titulo}` }} fill={KC.orange} stroke={KC.ink} strokeWidth={8} transform={`rotate(${Math.sin(T * 3) * 6} 540 560)`}>?</text>
         </g>)}
       </Escena>
       {/* 6 · la pectina se rompe y se disuelve; las células se separan */}
@@ -291,10 +294,10 @@ function Ponche() {
         <FondoLunares color={KC.pink} />
         {svg((() => { const cu = kprog(T, K.Pc + 3.0, K.Pc + 4.6, kEase.suave);
           return <g>
-            <Tejocote x={235} y={930} r={190} id="pc" rot={Math.sin(T * 2) * 5} />
-            {Array.from({ length: 10 }, (_, i) => { const u = kprog(T, K.Pc + 2.0 + i * 0.08, K.Pc + 3.0 + i * 0.08, kEase.suave); return u > 0 && u < 1 ? <circle key={i} cx={klerp(400, 640 + (i % 2) * 250, u)} cy={klerp(930, 820, u) - Math.sin(u * Math.PI) * 180} r={15} fill={ORO} stroke="#8a5a10" strokeWidth={3} /> : null; })}
-            <g transform="translate(640 1010) scale(1.18)"><Frasco T={T} x={0} y={0} color="#d8342c" cuaja={cu} etiqueta="JALEA" /></g>
-            <g transform="translate(890 1010) scale(1.18)"><Frasco T={T} x={0} y={0} color="#f08a1c" cuaja={cu} etiqueta="MERMELADA" /></g>
+            <Tejocote x={540} y={650} r={225} id="pc" rot={Math.sin(T * 2) * 5} />
+            {Array.from({ length: 10 }, (_, i) => { const u = kprog(T, K.Pc + 2.0 + i * 0.08, K.Pc + 3.0 + i * 0.08, kEase.suave); return u > 0 && u < 1 ? <circle key={i} cx={klerp(540 + (i % 2 ? 60 : -60), 300 + (i % 2) * 480, u)} cy={klerp(800, 990, u) - Math.sin(u * Math.PI) * 150} r={17} fill={ORO} stroke="#8a5a10" strokeWidth={3} /> : null; })}
+            <g transform="translate(300 1180) scale(1.45)"><Frasco T={T} x={0} y={0} color="#d8342c" cuaja={cu} etiqueta="JALEA" /></g>
+            <g transform="translate(780 1180) scale(1.45)"><Frasco T={T} x={0} y={0} color="#f08a1c" cuaja={cu} etiqueta="MERMELADA" /></g>
           </g>; })())}
       </Escena>
       {/* 8 · nativo de México; fruto en noviembre y diciembre */}
@@ -313,15 +316,15 @@ function Ponche() {
       <Escena T={T} a={K.E} b={K.Se}>
         <FondoLunares color={KC.yellow} />
         {svg((() => { const mez = kprog(T, K.E + 2.6, K.E + 3.8), brocha = kprog(T, K.E + 4.2, K.E + 6.4);
-          return <g transform="translate(540 1010) scale(1.08) translate(-570 -1000)">
-            <g transform="translate(300 1000)">
+          return <g>
+            <g transform="translate(540 830) scale(1.25)">
               <path d="M -130 -170 L 130 -170 L 110 170 Q 0 186 -110 170 Z" fill="rgba(255,255,255,.5)" stroke={KC.ink} strokeWidth={7} />
               <path d={`M -122 ${klerp(60, -40, mez)} L 122 ${klerp(60, -40, mez)} L 110 170 Q 0 186 -110 170 Z`} fill={mixHex('#f4e4b0', '#e9d690', mez)} opacity=".9" />
               {Array.from({ length: 10 }, (_, i) => { const u = kprog(T, K.E + 1.2 + i * 0.1, K.E + 2.2 + i * 0.1); return u > 0 && u < 1 ? <rect key={i} x={(i % 2 ? 60 : -80) + Math.sin(i) * 20} y={klerp(-360, 0, u)} width={16} height={10} rx={3} fill={i % 2 ? '#e8d27a' : '#fff'} stroke={KC.ink} strokeWidth={2} /> : null; })}
               <rect x={-8} y={-260} width={16} height={260} rx={6} fill="#c9ced8" stroke={KC.ink} strokeWidth={4} transform={`rotate(${Math.sin(T * 7) * 18 * mez})`} />
             </g>
-            {[0, 1, 2].map((k) => <Seta key={k} x={640 + k * 150} y={1080 - (k % 2) * 40} s={0.8} capa={kclamp(brocha * 3 - k, 0, 1)} rot={k * 12 - 10} />)}
-            {brocha > 0 && brocha < 1 && <g transform={`translate(${klerp(600, 960, brocha)} ${1000 + Math.sin(brocha * 30) * 20}) rotate(30)`}>
+            {[0, 1, 2].map((k) => <Seta key={k} x={270 + k * 270} y={1250 - (k % 2) * 40} s={1.2} capa={kclamp(brocha * 3 - k, 0, 1)} rot={k * 12 - 10} />)}
+            {brocha > 0 && brocha < 1 && <g transform={`translate(${klerp(230, 850, brocha)} ${1180 + Math.sin(brocha * 30) * 20}) rotate(30)`}>
               <rect x={-12} y={-200} width={24} height={150} rx={8} fill="#8a5a33" stroke={KC.ink} strokeWidth={4} />
               <rect x={-26} y={-60} width={52} height={70} rx={6} fill="#e8d27a" stroke={KC.ink} strokeWidth={4} />
             </g>}
@@ -390,8 +393,8 @@ function Ponche() {
       <Chip T={T} at={K.Na + 0.3} until={K.E - 0.3} texto="nativo de México" x={560} y={330} tam={46} borde={KC.leaf} />
       <Chip T={T} at={K.Na + 3.0} until={K.E - 0.3} texto="fruto: nov – dic" x={540} y={1500} tam={46} borde={KC.pink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.6} anio="2016" quien="U. A. Chapingo · Texcoco" revista="Agrociencia" x={540} y={470} />
-      <Etq T={T} at={K.E + 1.2} until={K.Se - 0.3} x={80} y={1290} texto="pectina + cera de candelilla" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.E + 4.2} until={K.Se - 0.3} x={560} y={880} it texto="Pleurotus ostreatus" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.E + 1.2} until={K.Se - 0.3} x={60} y={1100} texto="pectina + cera de candelilla" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.E + 4.2} until={K.Se - 0.3} x={300} y={1378} it texto="Pleurotus ostreatus" tam={30} color={KC.ink} />
       <Chip T={T} at={K.E + 3.0} until={K.Se - 0.3} texto="capa comestible" x={540} y={1440} tam={48} borde={KC.ink} />
       <Chip T={T} at={K.Se + 0.3} until={K.Da - 0.3} texto={`día ${Math.max(0, Math.min(20, Math.round(kprog(T, K.Se + 0.6, K.Se + 3.6) * 20)))} · 4 °C`} x={540} y={470} tam={44} borde={KC.cyan} mono />
       <Chip T={T} at={K.Se + 3.8} until={K.Da - 0.3} texto="con capa: pierde menos" x={540} y={1370} tam={46} borde={KC.yellow} />
