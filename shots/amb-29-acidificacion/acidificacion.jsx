@@ -217,16 +217,16 @@ function AcidificacionShot() {
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 45%, #13305a 0%, #0d1424 75%)' }}></div>
         <Ambiente T={T} n={36} color="rgba(150,210,255,.25)" />
         {/* pase a mano cine: moléculas 1.2× y bajadas al centro */}
-        {svg(<g transform="translate(540 960) scale(1.2) translate(-540 -900)">{forma < 1 && <><AcCO2 x={klerp(190, 440, choque)} y={790} s={1.4} o={1 - forma} rot={Math.sin(T * 2) * 8} /><AcH2O x={klerp(880, 650, choque)} y={760} s={1.4} o={1 - forma} /></>}
-          {forma > 0 && <><AcH2CO3 x={540} y={790} o={forma * (1 - suelta)} s={1.5} />
-            {suelta > 0 && <><g opacity={suelta}><AcCO3 x={540 + 120 * suelta} y={820 + 60 * suelta} s={1.4} atrapado={1} /></g><AcHmas x={540 - 250 * suelta} y={790 - 200 * suelta} s={1.6} T={T} o={suelta} /></>}</>}
+        {svg(<g transform="translate(540 960) scale(1.2) translate(-540 -900)">{forma < 1 && <><AcCO2 x={klerp(320, 430, choque)} y={790} s={2.0} o={1 - forma} rot={Math.sin(T * 2) * 8} /><AcH2O x={klerp(840, 660, choque)} y={760} s={2.0} o={1 - forma} /></>}
+          {forma > 0 && <><AcH2CO3 x={540} y={790} o={forma * (1 - suelta)} s={2.1} />
+            {suelta > 0 && <><g opacity={suelta}><AcCO3 x={540 + 120 * suelta} y={820 + 60 * suelta} s={2.0} atrapado={1} /></g><AcHmas x={540 - 250 * suelta} y={790 - 200 * suelta} s={2.2} T={T} o={suelta} /></>}</>}
           <text x={540} y={1090} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.texto} opacity={kprog(T, K.Ac + 0.4, K.Ac + 0.8)}>CO₂ + H₂O → H₂CO₃ → H⁺ + HCO₃⁻</text></g>)}
         <EscalaFija texto="esquema de moléculas" largo={0} y={1480} />
       </Escena>
       <Etq T={T} at={K.Ac + 0.4} until={K.Ac + 1.4} x={40} y={960} texto="dióxido de carbono" tam={30} />
       <Etq T={T} at={K.Ac + 0.4} until={K.Ac + 1.4} x={1030} y={960} texto="agua" lado="izq" tam={30} />
       <Etq T={T} at={K.Ac + 1.7} until={K.Ac + 2.4} x={300} y={1030} texto="ácido carbónico" tam={30} />
-      <Etq T={T} at={K.Ac + 2.8} until={K.Es - 0.1} x={330} y={600} texto="ion de hidrógeno" tam={30} color={AC_H} />
+      <Etq T={T} at={K.Ac + 2.8} until={K.Es - 0.1} x={380} y={575} texto="ion de hidrógeno" tam={30} color={AC_H} />
       {/* 4 · la escala de pH: 7 neutro; antes de la Revolución Industrial, 8.2 */}
       <Escena T={T} a={K.Es} b={K.Me}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
