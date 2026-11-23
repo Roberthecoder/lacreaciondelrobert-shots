@@ -39,7 +39,9 @@ function Paca({ x, y, w = 260, h = 190, seed = 1 }) {
 // Charco de lodo con burbujitas.
 function Lodo({ T, x, y, w = 760, h = 200 }) {
   return <g>
-    <ellipse cx={x} cy={y} rx={w / 2} ry={h / 2} fill="#7a5230" stroke={KC.ink} strokeWidth={8} />
+    <defs><radialGradient id="pet36lodo" cx="40%" cy="30%" r="75%"><stop offset="0" stopColor="#9a6c40" /><stop offset="0.7" stopColor="#7a5230" /><stop offset="1" stopColor="#4e331b" /></radialGradient></defs>
+    <ellipse cx={x} cy={y + h * 0.42} rx={w * 0.52} ry={h * 0.2} fill="#000" opacity={0.3} />
+    <ellipse cx={x} cy={y} rx={w / 2} ry={h / 2} fill="url(#pet36lodo)" stroke={KC.ink} strokeWidth={8} />
     <ellipse cx={x - 60} cy={y - 18} rx={w / 3} ry={h / 4} fill="#8f643c" />
     {[0, 1, 2, 3, 4].map((i) => { const p = ((T * 0.6 + i * 0.23) % 1); return <circle key={i} cx={x - 260 + i * 130} cy={y + 10 - p * 20} r={6 + p * 10} fill="none" stroke="#c9a27a" strokeWidth={3} opacity={1 - p} />; })}
   </g>;
@@ -77,6 +79,8 @@ function EnzimaTijera({ x, y, s = 1, color = ENZ_P, abre = 0.5, rot = 0, chispas
     <g transform={`rotate(${-a})`}><path d="M 30 -6 L 120 -14 Q 128 0 120 4 L 30 8 Z" fill="#e8f0ff" stroke={KC.ink} strokeWidth={5} /></g>
     <g transform={`rotate(${a})`}><path d="M 30 -8 L 120 -4 Q 128 0 120 14 L 30 6 Z" fill="#e8f0ff" stroke={KC.ink} strokeWidth={5} /></g>
     <path d="M -62 -10 Q -60 -60 -10 -62 Q 50 -60 52 -6 Q 54 50 0 60 Q -56 58 -62 -10 Z" fill={color} stroke={KC.ink} strokeWidth={6} />
+    <path d="M -40 40 Q 0 62 40 30" stroke="#000" strokeWidth={10} fill="none" strokeLinecap="round" opacity={0.22} />
+    <ellipse cx={-34} cy={-40} rx={16} ry={9} fill="#fff" opacity={0.4} transform="rotate(-35 -34 -40)" />
     <circle cx={-6} cy={-26} r={11} fill="#fff" stroke={KC.ink} strokeWidth={3} /><circle cx={-3} cy={-26} r={5} fill={KC.ink} />
     <circle cx={22} cy={-24} r={9} fill="#fff" stroke={KC.ink} strokeWidth={3} /><circle cx={24} cy={-24} r={4} fill={KC.ink} />
   </g>;
@@ -97,7 +101,10 @@ function Composta({ T, x, y }) {
   const R = krng(12);
   const hojas = Array.from({ length: 18 }, () => [(R() - 0.5) * 520, -R() * 170, R() * 360, ['#3fbf4a', '#c98a3a', '#e8a62a', '#8f643c'][Math.floor(R() * 4)]]);
   return <g transform={`translate(${x} ${y})`}>
-    <path d="M -320 60 Q -260 -200 0 -230 Q 260 -200 320 60 Z" fill="#6b4423" stroke={KC.ink} strokeWidth={8} />
+    <defs><linearGradient id="pet36comp" x1="0.2" y1="0" x2="0.8" y2="1"><stop offset="0" stopColor="#8a5a30" /><stop offset="1" stopColor="#4a2e16" /></linearGradient></defs>
+    <ellipse cx={0} cy={66} rx={340} ry={26} fill="#000" opacity={0.3} />
+    <path d="M -320 60 Q -260 -200 0 -230 Q 260 -200 320 60 Z" fill="url(#pet36comp)" stroke={KC.ink} strokeWidth={8} />
+    <path d="M -250 -40 Q -180 -170 -40 -200" stroke="#b07a48" strokeWidth={10} fill="none" strokeLinecap="round" opacity={0.4} />
     {hojas.map(([hx, hy, r, c], i) => <ellipse key={i} cx={hx * (1 + hy / 500)} cy={hy} rx={30} ry={14} fill={c} stroke={KC.ink} strokeWidth={4} transform={`rotate(${r} ${hx * (1 + hy / 500)} ${hy})`} />)}
     {[[-150, -120, 30], [80, -160, -25], [200, -60, 60]].map(([bx, by, r], i) => <rect key={i} x={bx - 70} y={by - 7} width={140} height={14} rx={6} fill="#8f643c" stroke={KC.ink} strokeWidth={4} transform={`rotate(${r} ${bx} ${by})`} />)}
     {[-80, 30, 130].map((sx, i) => { const p = (T * 0.5 + i * 0.33) % 1; return <path key={i} d={`M ${sx} ${-240 - p * 160} q 20 -30 0 -60 q -20 -30 0 -60`} stroke="rgba(255,255,255,.7)" strokeWidth={8} fill="none" strokeLinecap="round" opacity={1 - p} />; })}
@@ -144,7 +151,10 @@ function Planta({ T, x, y, grua = 0 }) {
 }
 function Contenedor({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -170 -200 L 170 -200 L 140 220 L -140 220 Z" fill="#2346ff" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    <defs><linearGradient id="pet36cont" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#3a5cff" /><stop offset="0.6" stopColor="#2346ff" /><stop offset="1" stopColor="#1428a8" /></linearGradient></defs>
+    <ellipse cx={0} cy={226} rx={190} ry={22} fill="#000" opacity={0.3} />
+    <path d="M -170 -200 L 170 -200 L 140 220 L -140 220 Z" fill="url(#pet36cont)" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    <path d="M -130 -170 L -112 180" stroke="#fff" strokeWidth={12} strokeLinecap="round" opacity={0.18} />
     <rect x={-190} y={-240} width={380} height={50} rx={12} fill="#1a35c4" stroke={KC.ink} strokeWidth={8} />
     <ellipse cx={0} cy={-240} rx={110} ry={16} fill={KC.ink} />
     <g transform="translate(0 20) scale(1.3)">{[0, 120, 240].map((r) => <path key={r} d="M 0 -60 L 30 -10 L 12 -10 L 12 20 L -12 20 L -12 -10 L -30 -10 Z" fill="#fff" transform={`rotate(${r}) translate(0 -10)`} />)}</g>
@@ -182,12 +192,12 @@ function Petasa() {
   const suelta = (i) => corte(Math.min(i, N - 2));
   const parte = (i) => K.Mh + 0.4 + i * Math.min(0.5, (D(K.Mh, K.Pz) - 0.9) / N);
   const comer = (i) => K.Pz + 1.1 + i * 0.22;
-  const BAC = { x: 540, y: 1130 };
+  const BAC = { x: 540, y: 1040 };
   const pieza = (i) => {
     const bx = X0 + i * W, by = YC + (i % 2 ? 1 : -1) * 60 * kprog(T, suelta(i), suelta(i) + 0.5, kEase.sale);
     const sp = kprog(T, parte(i), parte(i) + 0.9, kEase.suave);
-    const hx = klerp(bx, 200 + (i % 3) * 70, sp), hy = klerp(by, 1000 - Math.floor(i / 3) * 62 - (i % 2) * 10, sp);
-    const px = klerp(bx + 75, 760 + (i % 3) * 80, sp), py = klerp(by, 1000 - Math.floor(i / 3) * 50, sp);
+    const hx = klerp(bx, 200 + (i % 3) * 70, sp), hy = klerp(by, 940 - Math.floor(i / 3) * 62 - (i % 2) * 10, sp);
+    const px = klerp(bx + 75, 760 + (i % 3) * 80, sp), py = klerp(by, 940 - Math.floor(i / 3) * 50, sp);
     const ce = kprog(T, comer(i), comer(i) + 0.6, kEase.suave);
     return { hx: klerp(hx, BAC.x - 40, ce), hy: klerp(hy, BAC.y, ce), px: klerp(px, BAC.x + 40, ce), py: klerp(py, BAC.y, ce), o: 1 - kprog(T, comer(i) + 0.45, comer(i) + 0.6), sp };
   };
@@ -219,17 +229,17 @@ function Petasa() {
       {/* 1–2 · la planta de reciclaje, el lodo y la Lupa */}
       <Escena T={T} a={K.Lo} b={K.Pe} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(0 170)">
           {[[60, 560, 1], [330, 520, 2], [600, 560, 3], [195, 720, 4], [465, 720, 5], [735, 720, 6]].map(([px, py, sd], i) =>
             <g key={i} opacity={kprog(T, K.Lo + i * 0.12, K.Lo + i * 0.12 + 0.3)}><Paca x={px} y={py + Math.sin(T * 1.5 + i) * 3} seed={sd} /></g>)}
           <Lodo T={T} x={540} y={1080} />
           <BotellaPET x={700} y={1060} s={0.42} rot={95} aplasta={0.7} />
           <Pala x={klerp(980, 420, kprog(T, K.Lo + 1.3, K.Lo + 2.0, kEase.sale))} y={klerp(1060, 930, kprog(T, K.Lo + 2.1, K.Lo + 2.7, kEase.suave))} rot={-20}
             lleno={kprog(T, K.Lo + 2.0, K.Lo + 2.2)} />
-        </SvgCapa>
+        </g></SvgCapa>
         <Escala T={T} z={0.6} pxPorMm={PX_MM} x={60} y={1640} color={KC.ink} />
       </Escena>
-      <Lupa T={T} at={K.No + 0.15} until={K.Pe - 0.2} x={520} y={700} r={340} fx={560} fy={1070} tinte={KC.mint} etiqueta="AL MICROSCOPIO · esquemático"
+      <Lupa T={T} at={K.No + 0.15} until={K.Pe - 0.2} x={520} y={800} r={340} fx={560} fy={1240} tinte={KC.mint} etiqueta="AL MICROSCOPIO · esquemático"
         interior={(T2, rr) => { const r = 250; return <svg width={rr * 2} height={rr * 2}><g transform={`scale(${rr / 250})`}>
           <rect width={r * 2} height={r * 2} fill="#0b1a24" />
           <PeliculaMicro T={T2} x={-20} y={r * 1.25} w={r * 2 + 40} h={r} come={kprog(T2, K.No + 0.6, K.Pe)} />
@@ -240,7 +250,7 @@ function Petasa() {
       <Escena T={T} a={K.Pe} b={K.Pr} zoom={0.03}>
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={30} color="rgba(127,200,255,.25)" />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(-20 230) translate(560 840) scale(1.12) translate(-560 -840)">
           {Array.from({ length: N }, (_, i) => { const q = pieza(i);
             const enlace = i < N - 1 && T < corte(i);
             const nx = X0 + (i + 1) * W;
@@ -253,28 +263,28 @@ function Petasa() {
             </g>; })}
           <g opacity={1 - kprog(T, K.Mh - 0.3, K.Mh + 0.3)}><Bacteria T={T} x={250} y={470} largo={300} ancho={110} rot={-8} color="#f7b2d0" seed={9} />
             {[0, 1, 2].map((j) => { const p = ((T - K.Pe) * 0.7 + j / 3) % 1; return <circle key={j} cx={300 + p * 120} cy={510 + p * 200} r={14 * (1 - p)} fill={ENZ_P} opacity={1 - p} />; })}</g>
-          {T > K.Pe + 0.3 && T < K.Mh + 0.4 && <EnzimaTijera x={petX - 20} y={YC - 150 + Math.sin(T * 5) * 6} rot={70} color={ENZ_P} abre={petAbre} s={1.25}
+          {T > K.Pe + 0.3 && T < K.Mh + 0.4 && <EnzimaTijera x={petX - 20} y={YC - 150 + Math.sin(T * 5) * 6} rot={70} color={ENZ_P} abre={petAbre} s={1.45}
  />}
-          {T > K.Mh && T < K.Pz + 0.3 && (() => { const q = pieza(mhI); return <EnzimaTijera x={q.hx + 75 - 20} y={q.hy - 150 + Math.sin(T * 5) * 6} rot={70} color={ENZ_M} abre={mhAbre} s={1.2} />; })()}
-          {T > K.Pz + 0.6 && <Bacteria T={T} x={BAC.x} y={klerp(1400, BAC.y, kprog(T, K.Pz + 0.6, K.Pz + 1.1, kEase.sale))} largo={320} ancho={120} color="#f7b2d0" seed={7} />}
-        </SvgCapa>
+          {T > K.Mh && T < K.Pz + 0.3 && (() => { const q = pieza(mhI); return <EnzimaTijera x={q.hx + 75 - 20} y={q.hy - 150 + Math.sin(T * 5) * 6} rot={70} color={ENZ_M} abre={mhAbre} s={1.4} />; })()}
+          {T > K.Pz + 0.1 && <Bacteria T={T} x={BAC.x} y={klerp(1260, BAC.y, kprog(T, K.Pz + 0.1, K.Pz + 0.8, kEase.sale))} largo={320} ancho={120} color="#f7b2d0" seed={7} />}
+        </g></SvgCapa>
         <Chip T={T} at={K.Pe + 0.2} until={K.Pe + 1.2} texto="esquemático · no a escala" y={1580} tam={28} mono borde="#7fc8ff" />
-        <Etiqueta T={T} at={K.Pe + 0.4} until={K.Mh - 0.2} x={Math.min(petX + 40, 400)} y={YC - 250} texto="PETasa" color="#d7b8ff" tam={40} />
+        <Etiqueta T={T} at={K.Pe + 0.4} until={K.Mh - 0.2} x={Math.min(540 + (petX + 40 - 560) * 1.12, 420)} y={780} texto="PETasa" color="#d7b8ff" tam={40} />
         <Chip T={T} at={K.Pe + 1.4} until={K.Mh - 0.2} texto="PET → pedacitos (MHET)" y={1500} tam={42} borde={ENZ_P} />
-        <Etiqueta T={T} at={K.Mh + 0.3} until={K.Pz - 0.2} x={80} y={600} texto="MHETasa" color={ENZ_M} tam={40} />
+        <Etiqueta T={T} at={K.Mh + 0.3} until={K.Pz - 0.2} x={80} y={780} texto="MHETasa" color={ENZ_M} tam={40} />
         <Chip T={T} at={K.Mh + 0.6} until={K.Pz - 0.2} texto="pedacito → 2 piezas" y={1500} tam={42} borde={ENZ_M} />
-        <Etiqueta T={T} at={K.Pz + 0.1} until={K.Pr - 0.2} x={110} y={880} texto="ácido tereftálico" color={HEX_C} tam={32} />
-        <Etiqueta T={T} at={K.Pz + 0.1} until={K.Pr - 0.2} x={1010} y={880} lado="izq" texto="etilenglicol" color={EG_C} tam={32} />
+        <Etiqueta T={T} at={K.Pz + 0.1} until={K.Pr - 0.2} x={90} y={1000} texto="ácido tereftálico" color={HEX_C} tam={32} />
+        <Etiqueta T={T} at={K.Pz + 0.1} until={K.Pr - 0.2} x={1030} y={1000} lado="izq" texto="etilenglicol" color={EG_C} tam={32} />
         <Chip T={T} at={K.Pz + 1.2} until={K.Pr - 0.2} texto="y se las come" y={1500} tam={42} borde="#f7b2d0" />
       </Escena>
       {/* 6 · re-gancho: la montaña de botellas */}
       <Escena T={T} a={K.Pr} b={K.Le} zoom={0.06}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          {[[20, 1030], [230, 1030], [125, 860], [335, 870], [230, 700], [10, 1420], [280, 1440], [550, 1420], [820, 1440]].map(([px, py], i) => <g key={i} opacity={kprog(T, K.Pr + i * 0.08, K.Pr + i * 0.08 + 0.3)}>
+          {[[240, 1030], [450, 1030], [345, 860], [555, 870], [450, 700], [10, 1420], [280, 1440], [550, 1420], [820, 1440]].map(([px, py], i) => <g key={i} opacity={kprog(T, K.Pr + i * 0.08, K.Pr + i * 0.08 + 0.3)}>
             <Paca x={px} y={py + Math.sin(T * 2 + i) * 3} w={220} h={165} seed={i + 11} /></g>)}
         </SvgCapa>
-        <MitoTachado T={T} at={K.Pr + 0.2} tacharEn={K.Pr + 1.8} until={K.Le - 0.2} texto="¿adiós a la basura?" x={300} y={470} tam={44} />
+        <MitoTachado T={T} at={K.Pr + 0.2} tacharEn={K.Pr + 1.8} until={K.Le - 0.2} texto="¿adiós a la basura?" x={540} y={520} tam={44} />
       </Escena>
       {/* 7 · 2016: lentísima */}
       <Escena T={T} a={K.Le} b={K.Fr} zoom={0.03}>
@@ -364,7 +374,7 @@ function Petasa() {
       <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.3} until={K.G + 2.0} texto="basura" x={540} y={330} tam={54} />
       <Chip T={T} at={K.G + 2.0} until={K.Lo - 0.2} texto="comida para una bacteria" x={540} y={330} tam={38} borde={KC.mint} />
       <Chip T={T} at={K.Lo + 1.0} until={K.No - 0.1} texto="planta de reciclaje · Sakai, Japón" y={1500} tam={36} borde={KC.red} />
-      <Etiqueta T={T} at={K.No + 0.9} until={K.Pe - 0.2} x={170} y={1420} texto="Ideonella sakaiensis" it tam={44} color={KC.ink} />
+      <Etiqueta T={T} at={K.No + 0.9} until={K.Pe - 0.2} x={170} y={1440} texto="Ideonella sakaiensis" it tam={44} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Lo - 0.1} texto="No es basura: *es comida.*" />
