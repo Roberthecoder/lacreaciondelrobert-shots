@@ -455,3 +455,7 @@ ia-46-halicina
 ia-48-exoplaneta
 ia-52-gato-google
 qui-01-agar
+fun-139-potter
+fun-148-tintes-hongos
+ia-53-respuestas-medicas
+ia-54-nobel-fisica
