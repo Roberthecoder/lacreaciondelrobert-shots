@@ -1,0 +1,1 @@
+- cie-02-proteina-iman: «nombre» con la proteína más grande y más abajo (s 2.0 → 2.35, y 990 → 1030) y el chip MagLOV antes (antes quedaba ARRIBA); suelo de la avena con degradado y briznas en perspectiva (antes franja verde plana); «campo» con los espines y la balanza ya presentes al empezar (antes arrancaba casi vacía). Auditores: sin láminas · encuadre bien.
