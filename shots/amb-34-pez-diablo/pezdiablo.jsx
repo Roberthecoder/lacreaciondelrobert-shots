@@ -32,7 +32,9 @@ function Pleco({ x, y, s = 1, flip = false, T = 0, boca = 0, vela = 1, espinas =
     {Array.from({ length: 8 }, (_, i) => <circle key={i} cx={200 + i * 17} cy={-42 - h * (0.3 + 0.35 * ((i * 37) % 10) / 10)} r={5} fill={PD.mancha} />)}
     <path d="M 462 -20 L 492 -46 L 500 -18 Z" fill={PD.cafeO} stroke={KC.ink} strokeWidth={4} />
     {/* cuerpo */}
-    <path d={cuerpo} fill={PD.cafe} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <defs><linearGradient id="pdCuerpo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#b48a55" /><stop offset="0.6" stopColor={PD.cafe} /><stop offset="1" stopColor="#5e4224" /></linearGradient></defs>
+    <path d={cuerpo} fill="url(#pdCuerpo)" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
+    <path d="M 90 -18 Q 200 -40 420 -26" stroke="#e8cf9e" strokeWidth={6} fill="none" strokeLinecap="round" opacity={0.35} />
     <path d="M 70 64 L 262 62 Q 400 46 548 22 L 548 14 Q 400 36 262 50 L 70 54 Z" fill={PD.vientre} opacity={0.8} />
     {placas}
     {manchas.filter(enCuerpo).map((m, i) => <ellipse key={i} cx={m.x} cy={m.y} rx={m.rr} ry={m.rr * 0.75} fill={PD.mancha} opacity={0.85} />)}
@@ -263,7 +265,7 @@ function PezDiabloShot() {
       {/* 10 · lo bueno: su harina sustituyó a la de sardina para criar tilapias (Tabasco, 2021) */}
       <Escena T={T} a={K.H} b={K.C}>
         <FondoLunares color={KC.mint} />
-        {svg(<g transform="translate(600 1020) scale(1.25) translate(-600 -900)">
+        {svg(<g transform="translate(590 960) scale(1.5) translate(-600 -880)">
           <Costal x={760} y={760} texto={'harina\nde sardina'} color="#d6e4ef" tacha={kprog(T, K.H + 2.0, K.H + 2.6, kEase.sale)} s={0.9} />
           <g opacity={kprog(T, K.H + 2.4, K.H + 2.9)} transform={`translate(0 ${(1 - kprog(T, K.H + 2.4, K.H + 3.0, kEase.rebote)) * -300})`}>
             <Costal x={480} y={800} texto={'harina\nde pleco'} color="#e9c98d" s={1} />
@@ -313,8 +315,8 @@ function PezDiabloShot() {
       <Chip T={T} at={K.R + 2.6} until={K.Tu - 0.2} texto="CONABIO, 2007" x={540} y={1440} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.R + 5.2} until={K.Tu - 0.2} x={980} y={1110} texto="redes dañadas" lado="izq" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Tu + 3.0} until={K.H - 0.2} texto="erosionan las orillas" x={540} y={1440} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.H + 0.4} until={K.C - 0.2} texto="Tabasco · experimento, 2021" x={600} y={500} tam={32} borde={KC.leaf} />
-      <Etq T={T} at={K.H + 3.6} until={K.C - 0.2} x={250} y={1180} texto="crías de tilapia" lado="der" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.H + 0.4} until={K.C - 0.2} texto="Tabasco · experimento, 2021" x={600} y={380} tam={32} borde={KC.leaf} />
+      <Etq T={T} at={K.H + 3.6} until={K.C - 0.2} x={130} y={1215} texto="crías de tilapia" lado="der" tam={28} color={KC.ink} />
       <Chip T={T} at={K.C + 2.4} until={K.Ou - 0.1} texto="no lo sueltes" x={540} y={1440} tam={48} borde={KC.red} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
