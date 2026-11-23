@@ -265,7 +265,7 @@ function MareoCarro() {
       {/* 4 · la teoría más aceptada: conflicto de sentidos */}
       <Escena T={T} a={K.Teoria} b={K.Pregunta}>
         <FondoLunares color={KC.mint} />
-        <Lienzo><g transform="translate(540 900) scale(1.25) translate(-540 -800)">
+        <Lienzo><g transform="translate(540 1140) scale(1.3) translate(-540 -800)">
           <OrejaIcono x={210} y={760} s={1.0} />
           <OjoIcono x={870} y={760} s={0.8} />
           {T > K.Teoria + 0.6 && <g>
@@ -276,8 +276,8 @@ function MareoCarro() {
           <Chispas T={T} x={540} y={610} r={195} n={7} p={kprog(T, K.Teoria + 3.6, K.Teoria + 4.0)} />
           <TextoSvg x={540} y={1010} tam={170} color={KC.yellow} s={kprog(T, K.Teoria + 2.2, K.Teoria + 2.6, kEase.rebote)}>≠</TextoSvg>
         </g></Lienzo>
-        <Chip T={T} at={K.Teoria + 0.3} until={K.Pregunta - 0.15} texto="conflicto de sentidos" x={540} y={1340} tam={50} borde={KC.gold} />
-        <Chip T={T} at={K.Teoria + 1.4} until={K.Pregunta - 0.15} texto="(lo más aceptado)" x={540} y={400} tam={38} borde={KC.ink} />
+        <Chip T={T} at={K.Teoria + 0.3} until={K.Pregunta - 0.15} texto="conflicto de sentidos" x={540} y={560} tam={50} borde={KC.gold} />
+        <Chip T={T} at={K.Teoria + 1.4} until={K.Pregunta - 0.15} texto="(lo más aceptado)" x={540} y={450} tam={38} borde={KC.ink} />
       </Escena>
       {/* 5 · pregunta */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Veneno} color={KC.orange} />
