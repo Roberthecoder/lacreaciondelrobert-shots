@@ -122,7 +122,8 @@ function Sala({ T, aire = 0, abre = 0, macetas = 0, planta = true, cortina = fal
   const nMac = Math.round(macetas * 520), filas = 13, cols = 40, mac = [];
   for (let k = 0; k < nMac; k++) { const f = Math.floor(k / cols), c = k % cols, v = (f + 0.5) / filas, xs = klerp(S.bx0 + 10, S.fx0 + 20, v), xe = klerp(S.bx1 - 10, S.fx1 - 20, v);
     mac.push(<Macetita key={k} x={klerp(xs, xe, (c + 0.5 + (f % 2) * 0.3) / cols)} y={klerp(S.by1 + 10, S.fy - 4, v)} s={klerp(0.42, 0.75, v)} />); }
-  return <g>
+  // encuadre: la sala ×1.12 y centrada (y≈1000)
+  return <g transform="translate(540 1000) scale(1.12) translate(-540 -875)">
     {/* paredes y piso */}
     <path d={`M ${S.fx0} 560 L ${S.bx0} ${S.by0} L ${S.bx0} ${S.by1} L ${S.fx0} ${S.fy} Z`} fill={cineMix('#f2d7a6', '#0a0f1c', 0.4)} stroke={KC.ink} strokeWidth={7} />
     <path d={`M ${S.fx1} 560 L ${S.bx1} ${S.by0} L ${S.bx1} ${S.by1} L ${S.fx1} ${S.fy} Z`} fill={cineMix('#f2d7a6', '#0a0f1c', 0.4)} stroke={KC.ink} strokeWidth={7} />
@@ -289,7 +290,7 @@ function PlantasShot() {
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <g transform="translate(790 860) scale(1.25) translate(-705 -865)">
+          <g transform="translate(750 900) scale(1.25) translate(-705 -865)">
           <rect x={540} y={700} width={330} height={330} fill={cineMix('#9fe3ff', '#0a0f1c', 0.25)} stroke={KC.ink} strokeWidth={8} />
           <path d="M 560 960 Q 640 900 700 940 Q 770 890 850 930 L 850 1010 L 560 1010 Z" fill="#7cc46a" />
           <rect x={540} y={700} width={60} height={330} fill="rgba(255,255,255,.45)" stroke={KC.ink} strokeWidth={6} />
@@ -313,9 +314,9 @@ function PlantasShot() {
       <Chip T={T} at={K.P + 0.2} until={K.P + 1.6} texto="el químico baja ↓" y={500} x={480} tam={34} borde={KC.orange} />
       <Chip T={T} at={K.P + 2.0} until={K.S - 0.2} texto="¿y en tu sala?" y={470} x={300} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.S + 0.4} until={K.E - 0.2} texto="tu casa no está sellada" y={470} x={380} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.S + 1.8} until={K.E - 0.2} x={160} y={700} texto="puerta" lado="der" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.S + 2.6} until={K.E - 0.2} x={660} y={690} texto="ventana" lado="der" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.S + 3.4} until={K.E - 0.2} x={930} y={1130} texto="rendijas" lado="izq" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.S + 1.8} until={K.E - 0.2} x={114} y={804} texto="puerta" lado="der" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.S + 2.6} until={K.E - 0.2} x={674} y={793} texto="ventana" lado="der" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.S + 3.4} until={K.E - 0.2} x={977} y={1286} texto="rendijas" lado="izq" tam={28} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.4} until={K.L - 0.2} anio="2019" quien="Cummings y Waring · Drexel, Filadelfia" revista="J. Expo. Sci. Environ. Epidemiol." y={385} />
       <Chip T={T} at={K.E + 2.6} until={K.L - 0.2} texto="12 estudios" y={880} x={300} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.E + 4.0} until={K.L - 0.2} texto={`${kformato(Math.round(196 * kprog(T, K.E + 4.0, K.E + 5.4, kEase.suave)))} resultados`} y={880} x={720} tam={34} borde={KC.gold} />
@@ -323,8 +324,8 @@ function PlantasShot() {
       <Etq T={T} at={K.L + 1.2} until={K.Cu - 0.2} x={600} y={1300} texto="23 L" lado="der" tam={32} color={KC.ink} />
       <Etq T={T} at={K.L + 2.6} until={K.Cu - 0.2} x={980} y={610} texto="aire de afuera" lado="izq" tam={28} color={KC.ink} />
       <Chip T={T} at={K.L + 2.8} until={K.Cu - 0.2} texto="edificio típico: ~1 renovación por hora" y={430} x={540} tam={26} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Cu + 0.4} until={K.Si - 0.2} valor={1000} desde={10} dur={3.4} prefijo="10 a " etiqueta="plantas por m² de piso" x={380} y={500} tam={96} color={KC.yellow} />
-      <Chip T={T} at={K.Cu + 3.0} until={K.Si - 0.2} texto="sala de 4 × 4 m: ~1,700 plantas" y={685} x={380} tam={30} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Cu + 0.4} until={K.Si - 0.2} valor={1000} desde={10} dur={3.4} prefijo="10 a " etiqueta="plantas por m² de piso" x={380} y={460} tam={96} color={KC.yellow} />
+      <Chip T={T} at={K.Cu + 3.0} until={K.Si - 0.2} texto="sala de 4 × 4 m: ~1,700 plantas" y={615} x={380} tam={30} borde={KC.ink} />
       <Palomita T={T} at={K.Si + 1.2} until={K.C - 0.2} texto="quitar lo que contamina" x={50} y={440} />
       <Palomita T={T} at={K.Si + 2.6} until={K.C - 0.2} texto="abrir ventanas" x={50} y={540} />
       <Palomita T={T} at={K.Si + 3.8} until={K.C - 0.2} texto="campana con salida afuera" x={50} y={640} />
