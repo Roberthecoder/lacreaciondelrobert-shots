@@ -1,0 +1,1 @@
+- qui-03-cloro: pulmones con bronquios ramificados y brillo (volumen); Amoniaco: cubeta en azul apagado en lugar de cian chillón; Guerra: cielo con degradado, trinchera más oscura con costales, y la nube de gas ya asoma desde el inicio de la escena (antes entraba casi un segundo tarde con el cuadro vacío). Auditores: sin láminas · encuadre bien

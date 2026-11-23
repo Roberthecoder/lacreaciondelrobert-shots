@@ -59,21 +59,27 @@ function Pulmones({ T, dano = 0, late = 0 }) {
     <path d="M -20 -140 Q -60 -90 -120 -70 M 20 -140 Q 60 -90 120 -70" stroke={pared} strokeWidth={18} fill="none" strokeLinecap="round" />
     <path d="M -60 -120 Q -300 -150 -330 80 Q -340 300 -170 300 Q -60 300 -50 120 Z" fill={pared} stroke={KC.ink} strokeWidth={9} />
     <path d="M 60 -120 Q 300 -150 330 80 Q 340 300 170 300 Q 60 300 50 120 Z" fill={pared} stroke={KC.ink} strokeWidth={9} />
+    {[-1, 1].map((sd) => <g key={'b' + sd} stroke={mixHex(pared, '#5a0a14', 0.35)} strokeWidth={7} fill="none" strokeLinecap="round" opacity={0.55}>
+      <path d={`M ${sd * 110} -70 Q ${sd * 170} 20 ${sd * 190} 120 M ${sd * 160} 0 Q ${sd * 240} 30 ${sd * 270} 90 M ${sd * 185} 100 Q ${sd * 150} 190 ${sd * 130} 250 M ${sd * 190} 120 Q ${sd * 250} 190 ${sd * 260} 240`} />
+    </g>)}
+    {[-1, 1].map((sd) => <path key={'h' + sd} d={`M ${sd * 120} -100 Q ${sd * 250} -110 ${sd * 290} 0`} stroke="#fff" strokeWidth={12} fill="none" opacity={0.25} strokeLinecap="round" />)}
     {[[-200, 40], [-150, 160], [-240, 180], [200, 40], [150, 160], [240, 180], [-110, -40], [110, -40]].map(([x, y], i) =>
       <path key={i} d={`M ${x} ${y - 16} Q ${x + 12} ${y + 4} ${x} ${y + 12} Q ${x - 12} ${y + 4} ${x} ${y - 16} Z`} fill="#bfe8ff" stroke={KC.ink} strokeWidth={3} />)}
   </g>;
 }
 // Trinchera esquemática (Primera Guerra Mundial), en sepia.
 function Trinchera({ T, a }) {
-  const avanza = kprog(T, a + 0.3, a + 4.4);
+  const avanza = kprog(T, a - 0.3, a + 4.4); // modo cine: el gas ya asoma desde el inicio de la escena
   return <SvgCapa>
-    <rect x={0} y={0} width={KW} height={KH} fill="#14110d" />
+    <defs><linearGradient id="clCielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#0f1016" /><stop offset="1" stopColor="#2a2116" /></linearGradient></defs>
+    <rect x={0} y={0} width={KW} height={KH} fill="url(#clCielo)" />
     <path d={`M 0 1210 L 1080 1210 L 1080 1920 L 0 1920 Z`} fill="#1f180f" />
     <g transform="translate(540 1130) scale(1.7) translate(-540 -1130)">
-    <path d="M 0 1060 Q 200 1020 400 1070 T 800 1050 T 1080 1060 L 1080 1200 L 0 1200 Z" fill="#4a3b27" stroke={KC.ink} strokeWidth={8} />
+    <path d="M 0 1060 Q 200 1020 400 1070 T 800 1050 T 1080 1060 L 1080 1200 L 0 1200 Z" fill="#3e3120" stroke={KC.ink} strokeWidth={8} />
+    {Array.from({ length: 22 }, (_, i) => <ellipse key={'c' + i} cx={20 + i * 50} cy={1062 + Math.sin(i * 1.3) * 10} rx={26} ry={13} fill={i % 2 ? '#6b5a3e' : '#5e4f36'} stroke="#2a2016" strokeWidth={3} />)}
     {[120, 300, 520, 740, 940].map((x, i) => <g key={i}><line x1={x} y1={1040} x2={x + 30} y2={960} stroke="#a08a6a" strokeWidth={10} /><path d={`M ${x - 30} 990 L ${x + 60} 1010`} stroke="#a08a6a" strokeWidth={4} strokeDasharray="10 8" /></g>)}
     </g>
-    <Nube T={T} x={klerp(-260, 560, avanza)} y={880} f={1} r={420} color={VERDE} seed={12} n={14} />
+    <Nube T={T} x={klerp(-120, 560, avanza)} y={880} f={1} r={420} color={VERDE} seed={12} n={14} />
     <rect x={0} y={0} width={KW} height={KH} fill="rgba(110,80,40,.12)" />
   </SvgCapa>;
 }
@@ -114,7 +120,7 @@ function Cloro() {
       <Escena T={T} a={K.Am} b={K.P}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa><g transform="translate(540 935) scale(1.5) translate(-600 -930)">
-          <Cubeta x={480} y={1080} liquido={AZUL_CLORO} nivel={0.6} color={KC.cyan} />
+          <Cubeta x={480} y={1080} liquido={AZUL_CLORO} nivel={0.6} color="#4a8fa8" />
           <Chorro T={T} x0={662} y0={920} x1={540} y1={938} color={AMONIACO} o={kprog(T, K.Am + 0.2, K.Am + 0.5) * (1 - kprog(T, K.Am + 2.4, K.Am + 2.8))} />
           <Botella x={800} y={870} s={0.62} inclina={klerp(-60, -120, kprog(T, K.Am, K.Am + 0.4, kEase.sale))} etiqueta="AMONIACO" etqColor={KC.lilac} liquido={AMONIACO} tapa={KC.violet} />
           <Nube T={T} x={460} y={800} f={kprog(T, K.Am + 0.9, K.Am + 2.6)} r={170} color="#e9f0c9" seed={5} />
