@@ -38,9 +38,19 @@ function Calle({ T, y0 = 760, y1 = 1180, vel = 1, carriles = 2 }) {
   const off = -((T * 520 * vel) % 160), rayas = [];
   for (let c = 1; c < carriles; c++) { const yy = y0 + (y1 - y0) * c / carriles;
     for (let k = -1; k < 9; k++) rayas.push(<rect key={`${c}-${k}`} x={off + k * 160} y={yy - 7} width={90} height={14} rx={7} fill={KC.yellow} />); }
+  // pase de belleza: banquetas arriba y abajo de la calle (antes la calle era una franja y el resto del cuadro quedaba vacío)
+  const off2 = -((T * 520 * vel) % 120);
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+    <defs><linearGradient id="wyBanq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#30343e" /><stop offset="1" stopColor="#161920" /></linearGradient>
+      <linearGradient id="wyBanqA" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stopColor="#30343e" /><stop offset="1" stopColor="#161920" /></linearGradient>
+      <linearGradient id="wyAsf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#323743" /><stop offset="0.5" stopColor={ASFALTO} /><stop offset="1" stopColor="#2c313c" /></linearGradient></defs>
+    <rect x={0} y={y1 + 18} width={KW} height={KH - y1 - 18} fill="url(#wyBanq)" />
+    <rect x={0} y={Math.max(0, y0 - 220)} width={KW} height={Math.min(y0, 220)} fill="url(#wyBanqA)" opacity={0.8} />
+    {Array.from({ length: 11 }, (_, k) => <line key={'b' + k} x1={off2 + k * 120} y1={y1 + 18} x2={off2 + k * 120 - 40} y2={y1 + 230} stroke="#404552" strokeWidth={4} />)}
+    <line x1={0} y1={y1 + 230} x2={KW} y2={y1 + 230} stroke="#404552" strokeWidth={4} />
+    {Array.from({ length: 11 }, (_, k) => <line key={'a' + k} x1={off2 + k * 120} y1={y0 - 18} x2={off2 + k * 120 + 30} y2={y0 - 200} stroke="#353a46" strokeWidth={3} />)}
     <rect x={0} y={y0 - 18} width={KW} height={18} fill="#6a6969" stroke={KC.ink} strokeWidth={5} />
-    <rect x={0} y={y0} width={KW} height={y1 - y0} fill={ASFALTO} />
+    <rect x={0} y={y0} width={KW} height={y1 - y0} fill="url(#wyAsf)" />
     <rect x={0} y={y1} width={KW} height={18} fill="#6a6969" stroke={KC.ink} strokeWidth={5} />
     {rayas}
   </svg>;
@@ -207,15 +217,15 @@ function Waymo() {
       {/* 2 · millas */}
       <Escena T={T} a={K.Mi} b={K.Ci}>
         <FondoLunares color={KC.cyan} />
-        {svg(<Tablero T={T} x={540} y={880} r={330} aguja={0.15 + 0.7 * kprog(T, K.Mi + 0.2, K.Mi + 2.2, kEase.sale) + 0.02 * Math.sin(T * 7)} />)}
+        {svg(<Tablero T={T} x={540} y={990} r={330} aguja={0.15 + 0.7 * kprog(T, K.Mi + 0.2, K.Mi + 2.2, kEase.sale) + 0.02 * Math.sin(T * 7)} />)}
       </Escena>
-      <NumeroGigante T={T} at={K.Mi + 0.3} until={K.Ci - 0.2} valor={271.3} dur={2.0} dec={1} x={540} y={1160} tam={130} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.Mi + 0.3} until={K.Ci - 0.2} valor={271.3} dur={2.0} dec={1} x={540} y={1270} tam={130} color={KC.yellow} />
       <Chip T={T} at={K.Mi + 0.8} until={K.Ci - 0.2} texto="millones de millas sin conductor" x={540} y={370} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.Mi + 2.2} until={K.Ci - 0.2} texto="hasta junio de 2026" x={540} y={455} tam={32} borde={KC.gold} />
       {/* 3 · ciudades */}
       <Escena T={T} a={K.Ci} b={K.P}>
         <FondoLunares color={KC.mint} />
-        <MapaEU T={T} at={K.Ci - 0.2} pines={[
+        <MapaEU T={T} at={K.Ci - 0.2} oy={760} pines={[
           { nombre: 'San Francisco', lon: -122.4, lat: 37.8, at: K.Ci + 1.6, dx: 10, ancla: 'start', dy: -80 },
           { nombre: 'Los Ángeles', lon: -118.2, lat: 34.05, at: K.Ci + 2.3, dy: 44, ancla: 'start', dx: -40 },
           { nombre: 'Phoenix', lon: -112.1, lat: 33.45, at: K.Ci + 1.0, dy: -80 },
@@ -235,17 +245,19 @@ function Waymo() {
       <Escena T={T} a={K.E} b={K.Es}>
         <FondoLunares color={KC.lilac} />
         {svg(<g transform="translate(540 1050) scale(1.6) translate(-540 -1050)">{/* pase a mano: escritorio y reclamos ×1.6 */}
+          <rect x={316} y={1100} width={448} height={170} fill="#5e4630" stroke={KC.ink} strokeWidth={7} />
+          {[0, 1].map((i) => <g key={'c' + i}><rect x={340 + i * 216} y={1124} width={184} height={56} rx={6} fill="#6e5238" stroke={KC.ink} strokeWidth={5} /><rect x={412 + i * 216} y={1146} width={40} height={10} rx={5} fill="#c9a77a" /></g>)}
           <path d="M 300 1100 L 340 1010 L 740 1010 L 780 1100 Z" fill="#8a6a4a" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
           {[0, 1].map((i) => { const g = kprog(T, K.E + 3.2 + i * 0.6, K.E + 3.7 + i * 0.6, kEase.sale);
             return <Reclamo key={i} x={480 + i * 120} y={klerp(700, 1000, g)} s={1.6} rot={i ? 8 : -6} o={g > 0 ? 1 : 0} />; })}
         </g>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Es - 0.2} anio="2024" quien="reaseguradora Swiss Re + Waymo" revista="reclamos de seguro · 25.3 millones de millas" y={560} />
-      <Chip T={T} at={K.E + 3.4} until={K.Es - 0.2} texto="reclamos por lesiones: 2" x={540} y={1250} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.E + 3.4} until={K.Es - 0.2} texto="reclamos por lesiones: 2" x={540} y={1470} tam={40} borde={KC.red} />
       {/* 6 · lo esperado con humanos */}
       <Escena T={T} a={K.Es} b={K.O}>
         <FondoLunares color={KC.mint} />
-        {svg(<>
+        {svg(<g transform="translate(0 130)">
           {!fase2 ? <>
             <Pila T={T} at={K.Es + 0.3} n={26} x={110} y={760} cols={6} paso={62} dur={1.6} />
             <Pila T={T} at={K.Es + 2.0} n={2} x={720} y={760} cols={2} paso={80} color="#e6fbff" dur={0.3} />
@@ -256,7 +268,7 @@ function Waymo() {
           <text x={290} y={1150} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>{fase2 ? 'humanos: 78 esperados' : 'humanos: 26 esperados'}</text>
           <text x={790} y={1150} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>{fase2 ? 'Waymo: 9' : 'Waymo: 2'}</text>
           <line x1={540} y1={720} x2={540} y2={1110} stroke={KC.ink} strokeWidth={5} strokeDasharray="14 12" />
-        </>)}
+        </g>)}
       </Escena>
       <NumeroGigante T={T} at={K.Es + 0.2} until={K.Es + 3.3} valor={-92} dur={0.9} sufijo=" %" etiqueta="reclamos por lesiones" x={380} y={500} tam={180} color={KC.mint} />
       <NumeroGigante T={T} at={K.Es + 3.5} until={K.O - 0.2} valor={-88} dur={0.9} sufijo=" %" etiqueta="daños materiales" x={380} y={500} tam={180} color={KC.cyan} />
