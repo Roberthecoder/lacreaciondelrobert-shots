@@ -1,0 +1,1 @@
+- ia-43-parkinson-respiracion: Estudio: los paneles «noche A/B», el brillo, las palomitas y el chip bajan 60 px para separarse de la tarjeta 2022; Ojo: el sello «EN ESTUDIO» se movió adentro del cuadro (antes se cortaba a la derecha); Pregunta/Respuesta: pulmones con degradado de volumen y brillo (antes rosa plano). Auditores: sin láminas · encuadre bien.

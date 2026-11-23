@@ -176,10 +176,13 @@ function Pulmones({ T, x, y, s = 1, debil = 0 }) {
   const r = kResp(T) * (1 - debil * 0.7), sc = 1 + 0.06 * r;
   const lob = 'M -30 -150 C -120 -150 -200 -40 -200 80 C -200 170 -120 190 -40 160 C -20 150 -20 100 -20 -120 Z';
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-22} y={-260} width={44} height={120} rx={18} fill="#ffb3c7" stroke={KC.ink} strokeWidth={8} />
+    {/* belleza: pulmones con volumen (luz arriba a la izquierda) en vez de rosa plano */}
+    <defs><radialGradient id="pkPulmon" cx=".35" cy=".25" r=".85"><stop offset="0" stopColor="#ff9fbd" /><stop offset=".55" stopColor="#d9467a" /><stop offset="1" stopColor="#7a1a3e" /></radialGradient></defs>
+    <rect x={-22} y={-260} width={44} height={120} rx={18} fill="#e8a3b8" stroke={KC.ink} strokeWidth={8} />
     <g transform={`scale(${sc})`}>
-      <path d={lob} fill={KC.pink} stroke={KC.ink} strokeWidth={9} />
-      <path d={lob} transform="scale(-1 1)" fill={KC.pink} stroke={KC.ink} strokeWidth={9} />
+      <path d={lob} fill="url(#pkPulmon)" stroke={KC.ink} strokeWidth={9} />
+      <path d={lob} transform="scale(-1 1)" fill="url(#pkPulmon)" stroke={KC.ink} strokeWidth={9} />
+      {[-1, 1].map((k) => <ellipse key={'b' + k} cx={k * -130} cy={-40} rx={26} ry={44} fill="#fff" opacity=".18" transform={`rotate(${k * -20} ${k * -130} -40)`} />)}
       {[-1, 1].map((k) => <path key={k} d={`M ${k * -20} -120 L ${k * 60} -40 M ${k * 60} -40 L ${k * 120} 0 M ${k * 60} -40 L ${k * 90} 60`} stroke="#b0164d" strokeWidth={8} fill="none" strokeLinecap="round" />)}
     </g>
     <path d={`M -240 ${215 - 18 * r} Q 0 ${150 - 30 * r} 240 ${215 - 18 * r}`} stroke={KC.ink} strokeWidth={18} fill="none" strokeLinecap="round" />
@@ -335,11 +338,11 @@ function Parkinson() {
         {svg(<>
           {/* las dos noches están desde que empieza la escena (antes la tarjeta del año quedaba sola), grandes y apiladas */}
           <g opacity={kprog(T, K.E, K.E + 0.4) * (1 - kprog(T, K.E + dE * 0.56, K.E + dE * 0.56 + 0.4))}>
-            <g transform="translate(540 730) scale(1.6) translate(-290 -870)"><TarjetaNoche T={T} x={290} y={870} titulo="noche A" sel={T > K.E + 3.6 ? 1 : 0} o={1} /></g>
-            <g transform="translate(540 1120) scale(1.6) translate(-790 -870)"><TarjetaNoche T={T} x={790} y={870} titulo="noche B" seed={1.3} o={1} /></g>
-            {T > K.E + 3.0 && <g transform={`translate(${klerp(540, 800, kprog(T, K.E + 3.0, K.E + 3.6, kEase.sale))} ${klerp(925, 600, kprog(T, K.E + 3.0, K.E + 3.6, kEase.sale))})`}>
+            <g transform="translate(540 790) scale(1.6) translate(-290 -870)"><TarjetaNoche T={T} x={290} y={870} titulo="noche A" sel={T > K.E + 3.6 ? 1 : 0} o={1} /></g>
+            <g transform="translate(540 1170) scale(1.6) translate(-790 -870)"><TarjetaNoche T={T} x={790} y={870} titulo="noche B" seed={1.3} o={1} /></g>
+            {T > K.E + 3.0 && <g transform={`translate(${klerp(540, 800, kprog(T, K.E + 3.0, K.E + 3.6, kEase.sale))} ${klerp(985, 660, kprog(T, K.E + 3.0, K.E + 3.6, kEase.sale))})`}>
               <Brillito x={0} y={0} s={1.2} rot={T * 60} /><Brillito x={56} y={-38} s={0.6} rot={-T * 80} color={KC.white} /></g>}
-            <Palomitas T={T} at={K.E + 3.9} y={1400} buenas={9} paso={0.16} />
+            <Palomitas T={T} at={K.E + 3.9} y={1420} buenas={9} paso={0.16} />
           </g>
           <g opacity={kprog(T, K.E + dE * 0.56 + 0.2, K.E + dE * 0.56 + 0.6) * (1 - kprog(T, K.E + dE * 0.77, K.E + dE * 0.77 + 0.4))}>
             <Hospital x={540} y={920} s={1.9} />{/* encuadre: bajado al centro */}
@@ -347,7 +350,7 @@ function Parkinson() {
         </>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.E + 0.1} until={K.E + 2.2} anio="2022" quien="MIT · Katabi y col." revista="Nature Medicine" y={370} />
-      <Chip T={T} at={K.E + 5.6} until={K.E + dE * 0.56} texto="9 de cada 10" x={540} y={1500} tam={52} borde={KC.mint} />
+      <Chip T={T} at={K.E + 5.6} until={K.E + dE * 0.56} texto="9 de cada 10" x={540} y={1510} tam={52} borde={KC.mint} />
       <TextoCaja T={T} at={K.E + dE * 0.56 + 0.4} until={K.E + dE * 0.77} texto="hospital que no conocía" x={540} y={1250} tam={42} />
       {T >= K.E + dE * 0.56 + 0.8 && T < K.E + dE * 0.77 + 0.6 && <NumeroGigante T={T} at={K.E + dE * 0.56 + 0.8} until={K.E + dE * 0.77} valor={8} desde={8} dur={0.1} prefijo="+ de " sufijo=" de 10" x={540} y={1430} tam={130} color={KC.yellow} />}
       {T > K.E + dE * 0.77 && <Escena T={T} a={K.E + dE * 0.79} b={K.M}>{svg(<Velocimetro T={T} x={540} y={1230} s={1.5} v={0.62 * kprog(T, K.E + dE * 0.8 + 0.3, K.E + dE * 0.8 + 1.5, kEase.sale)} />)}</Escena>}
@@ -367,7 +370,7 @@ function Parkinson() {
         <div style={{ position:'absolute', inset:0, opacity:0.2 }}><Recamara T={T} enc={ENC_G} /></div>
         {svg(<>
           <Estetoscopio x={360} y={940} s={1.9} T={T} />
-          <g transform={`translate(765 800) rotate(-12) scale(${klerp(2.1, 1.2, kprog(T, K.O + 0.8, K.O + 1.1, kEase.sale))})`} opacity={kprog(T, K.O + 0.8, K.O + 1.0)}>
+          <g transform={`translate(690 800) rotate(-12) scale(${klerp(2.1, 1.2, kprog(T, K.O + 0.8, K.O + 1.1, kEase.sale))})`} opacity={kprog(T, K.O + 0.8, K.O + 1.0)}>
             <rect x={-190} y={-70} width={380} height={140} rx={20} fill="rgba(255,59,47,.12)" stroke={KC.red} strokeWidth={10} />
             <text y={28} textAnchor="middle" style={{ font:`400 78px ${KF.titulo}` }} fill={KC.red}>EN ESTUDIO</text>
           </g>
