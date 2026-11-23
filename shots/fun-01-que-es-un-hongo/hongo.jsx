@@ -55,6 +55,10 @@ function SueloChampi({ T, red = 1, brillo = 0, crece = 1, abre = 1, x = 540, s =
       return yy < sup - 6 ? <EsporaAg key={i} x={xx} y={yy} s={0.9} rot={i * 33} o={Math.min(1, u * 2)} /> : null; });
   }
   return <MundoSuelo T={T} red={red} brillo={brillo} ox={x} cielo={cielo}>
+    {/* pase de belleza: cielo nocturno con degradado (tapa el color plano con puntos) */}
+    <defs><linearGradient id="hg-cielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#070b14" /><stop offset="0.7" stopColor="#0d1c22" /><stop offset="1" stopColor="#163a34" /></linearGradient></defs>
+    <rect x={-2000} y={sup - 2616} width={KW + 4000} height={2600} fill="url(#hg-cielo)" />
+    {Array.from({ length: 26 }, (_, i) => { const q = krng(i + 70); const xx = q() * KW, yy = sup - 120 - q() * 1300; return <circle key={i} cx={xx + Math.sin(T * 0.4 + i) * 12} cy={yy + Math.cos(T * 0.3 + i) * 10} r={1.5 + q() * 3} fill="#cfeee6" opacity={0.18 + 0.18 * q()} />; })}
     <Champinon x={x} y={sup + 4} s={s} crece={crece} abre={abre} rot={mece(T, 2, 0.15) * 1.2} />
     {otro && <Champinon x={otro.x} y={sup + 4} s={otro.s} crece={otro.crece} abre={otro.abre} rot={mece(T, 6, 0.15) * 1.5} />}
     {esp}
