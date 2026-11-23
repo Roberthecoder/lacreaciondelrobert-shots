@@ -69,7 +69,7 @@ function VozGrabada() {
           <Celular x={300} y={1010} s={1.8} T={T} rot={-8} />
           <OndasArco x={450} y={870} ang={-20} T={T} color={KC.yellow} largo={260} />
           <g transform="translate(1650 0) scale(-1 1)"><CabezaPerfil x={860} y={1020} s={1.2} gesto="mueca" /></g>
-          <TextoSvg x={540} y={400} tam={110} color={KC.yellow} rot={-4} s={klerp(0.5, 1, kprog(T, K.Gancho + 0.1, K.Gancho + 0.5, kEase.rebote))}>¿ESA ES MI VOZ?</TextoSvg>
+          <TextoSvg x={540} y={430} tam={86} color={KC.yellow} rot={-4} s={klerp(0.5, 1, kprog(T, K.Gancho + 0.1, K.Gancho + 0.5, kEase.rebote))}>¿ESA ES MI VOZ?</TextoSvg>
         </Lienzo>
       </Escena>
       {/* 1–2 · dos caminos: aire */}
@@ -123,23 +123,23 @@ function VozGrabada() {
       <Escena T={T} a={K.Pregunta} b={K.Estudio} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <g opacity={0.8}><CabezaPerfil x={CH.x + 60} y={CH.y} s={CH.s} gesto="mueca" /></g>
-          <TextoSvg x={230} y={1050} tam={520} color={KC.yellow} rot={Math.sin(T * 3) * 6} s={klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote))}>?</TextoSvg>
+          <g opacity={0.8}><CabezaPerfil x={CH.x - 90} y={CH.y} s={CH.s} gesto="mueca" /></g>
+          <TextoSvg x={880} y={1000} tam={520} color={KC.yellow} rot={Math.sin(T * 3) * 6} s={klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote))}>?</TextoSvg>
         </Lienzo>
       </Escena>
       {/* 7 · el estudio: 80 personas calificando voces */}
       <Escena T={T} a={K.Estudio} b={K.Prueba}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          {T > K.Estudio + 0.2 && T < K.Resultado && Array.from({ length: 12 }, (_, i) => { const c = i % 3, f = Math.floor(i / 3), x = 210 + c * 330, y = 640 + f * 230, tu = [1, 6, 11].includes(i);
+          {T > K.Estudio + 0.2 && T < K.Resultado && Array.from({ length: 12 }, (_, i) => { const c = i % 3, f = Math.floor(i / 3), x = 230 + c * 310, y = 640 + f * 230, tu = [1, 6, 11].includes(i);
             const e = kprog(T, K.Estudio + 0.2 + i * 0.12, K.Estudio + 0.6 + i * 0.12, kEase.rebote);
-            return <g key={i} transform={`translate(${x} ${y}) scale(${1.2 * e})`}><rect x={-120} y={-75} width={240} height={150} rx={30} fill={tu && T > K.Estudio + 4.2 ? KC.yellow : '#fff'} stroke={KC.ink} strokeWidth={8} />
+            return <g key={i} transform={`translate(${x} ${y}) scale(${1.14 * e})`}><rect x={-120} y={-75} width={240} height={150} rx={30} fill={tu && T > K.Estudio + 4.2 ? KC.yellow : '#fff'} stroke={KC.ink} strokeWidth={8} />
               <Celular x={-60} y={0} s={0.3} T={T + i} /><text x={30} y={18} style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink}>{tu && T > K.Estudio + 4.2 ? 'TÚ' : '★?'}</text></g>; })}
           {T >= K.Resultado - 0.3 && <g opacity={kprog(T, K.Resultado - 0.3, K.Resultado + 0.2)}>
             <BarraH x={140} y={470} ancho={800} v={0.86 * kprog(T, K.Resultado + 0.3, K.Resultado + 1.6, kEase.sale)} color={KC.yellow} etiqueta="tu voz · según tú" />
             <BarraH x={140} y={690} ancho={800} v={0.62 * kprog(T, K.Resultado + 1.2, K.Resultado + 2.5, kEase.sale)} color={KC.cyan} etiqueta="tu voz · según los demás" />
             <text x={540} y={860} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>(barras ilustrativas: la tuya sale más alta)</text>
-            <CabezaPerfil x={470} y={1230} s={1.05} gesto="sonrie" />
+            <CabezaPerfil x={470} y={1210} s={1.3} gesto="sonrie" />
           </g>}
         </Lienzo>
         <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Estudio + 2.4} anio="2013" quien="80 personas · Pensilvania" revista="Hughes y Harrison · Perception" x={540} y={360} />
