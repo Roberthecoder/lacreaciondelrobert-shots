@@ -1,0 +1,1 @@
+- fun-146-violin-hongo: Gancho: el número «9 meses» ya no se encima sobre el violín y el arco: sube al hueco de arriba a la derecha. Resto ya cumplía (violín, telón con el público, corte de la madera, árbol y anillos, votos y precio llenan el cuadro con volumen). Láminas y encuadre bien.
