@@ -42,12 +42,21 @@ function Toldo({ x, y, w = 300, s = 1, alto = 170 }) {
 }
 
 // Close-up del pie de un árbol: base del tronco, raíces y el hilito blanco (micelio) en las puntas. hif 0..1 = crece el micelio.
+// Degradados de volumen (pase de belleza): corteza y copas con luz arriba a la izquierda.
+function DefsBosque() {
+  return <defs>
+    <linearGradient id="mzCorteza" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#b07a48" /><stop offset="0.45" stopColor="#8a5a32" /><stop offset="1" stopColor="#4e2f17" /></linearGradient>
+    <linearGradient id="mzAbedul" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#ffffff" /><stop offset="0.6" stopColor="#e9e4d8" /><stop offset="1" stopColor="#b9b2a2" /></linearGradient>
+    <radialGradient id="mzCopa" cx="35%" cy="30%" r="75%"><stop offset="0" stopColor="#ffffff" stopOpacity="0.35" /><stop offset="0.55" stopColor="#ffffff" stopOpacity="0" /><stop offset="1" stopColor="#000000" stopOpacity="0.28" /></radialGradient>
+  </defs>;
+}
 function PieDeArbol({ T, hif = 1 }) {
   return <g>
+    <DefsBosque />
     <rect x={0} y={700} width={KW} height={KH - 700} fill={MZ.suelo} />
     <rect x={0} y={700} width={KW} height={22} fill="#2c221e" />
     {Array.from({ length: 26 }, (_, i) => { const g = krng(i + 40); return <ellipse key={i} cx={g() * KW} cy={760 + g() * 700} rx={8 + g() * 16} ry={6 + g() * 9} fill={i % 3 ? '#56402a' : '#2e2015'} />; })}
-    <path d="M 210 -40 L 460 -40 L 470 560 Q 490 680 560 730 L 110 730 Q 180 680 200 560 Z" fill={MZ.corteza} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <path d="M 210 -40 L 460 -40 L 470 560 Q 490 680 560 730 L 110 730 Q 180 680 200 560 Z" fill="url(#mzCorteza)" stroke="#d4a77a" strokeOpacity={0.7} strokeWidth={5} strokeLinejoin="round" />
     {[[250, 40, 320], [330, 120, 260], [410, 60, 380], [290, 420, 140]].map(([x, y, h], i) => <path key={i} d={`M ${x} ${y} q 10 ${h / 2} 0 ${h}`} stroke={MZ.corteza2} strokeWidth={8} fill="none" strokeLinecap="round" />)}
     {[
       'M 300 720 Q 230 860 190 980 Q 160 1080 110 1160',
@@ -66,19 +75,21 @@ function PieDeArbol({ T, hif = 1 }) {
 // Abedul de papel joven (Betula papyrifera): tronco blanco con marcas negras, copa verde clara. Base en (x, y).
 function Abedul({ T, x, y, s = 1, seed = 2 }) {
   return <g transform={`translate(${x} ${y}) scale(${s}) rotate(${mece(T, seed, 0.3) * 1.2})`}>
-    <rect x={-20} y={-420} width={40} height={420} rx={10} fill={MZ.abedul} stroke={KC.ink} strokeWidth={6} />
+    <DefsBosque />
+    <rect x={-20} y={-420} width={40} height={420} rx={10} fill="url(#mzAbedul)" stroke="#f4f1ea" strokeWidth={4} />
     {[[-60, 8], [-140, -6], [-230, 10], [-320, -4]].map(([yy, dx], i) => <rect key={i} x={-16 + dx * 0.3} y={yy} width={22} height={7} rx={3} fill={KC.ink} />)}
     {[[-90, -440, 110], [80, -450, 100], [0, -540, 130], [-40, -380, 80], [60, -370, 80]].map(([cx, cy, r], i) =>
-      <circle key={i} cx={cx} cy={cy} r={r} fill={i % 2 ? MZ.hojaAbedul2 : MZ.hojaAbedul} stroke={KC.ink} strokeWidth={6} />)}
+      <g key={i}><circle cx={cx} cy={cy} r={r} fill={i % 2 ? MZ.hojaAbedul2 : MZ.hojaAbedul} stroke={KC.ink} strokeWidth={6} /><circle cx={cx} cy={cy} r={r - 3} fill="url(#mzCopa)" /></g>)}
   </g>;
 }
 
 // Árbol de hoja ancha (para el "video viral" y el árbol madre). corona = 0..1.
 function ArbolAncho({ T, x, y, s = 1, corona = 0, seed = 1, color = MZ.verde, color2 = MZ.verde2 }) {
   return <g transform={`translate(${x} ${y}) scale(${s}) rotate(${mece(T, seed, 0.3) * 1})`}>
-    <path d="M -34 0 L -24 -300 L 24 -300 L 34 0 Z" fill={MZ.corteza} stroke={KC.ink} strokeWidth={6} />
+    <DefsBosque />
+    <path d="M -34 0 L -24 -300 L 24 -300 L 34 0 Z" fill="url(#mzCorteza)" stroke="#d4a77a" strokeOpacity={0.7} strokeWidth={4} />
     {[[-110, -330, 120], [110, -330, 120], [0, -440, 150], [-60, -260, 90], [70, -250, 90]].map(([cx, cy, r], i) =>
-      <circle key={i} cx={cx} cy={cy} r={r} fill={i % 2 ? color2 : color} stroke={KC.ink} strokeWidth={6} />)}
+      <g key={i}><circle cx={cx} cy={cy} r={r} fill={i % 2 ? color2 : color} stroke={KC.ink} strokeWidth={6} /><circle cx={cx} cy={cy} r={r - 3} fill="url(#mzCopa)" /></g>)}
     {corona > 0 && <g transform={`translate(0 ${-640}) scale(${corona})`}>
       <path d="M -80 40 L -90 -40 L -40 0 L 0 -60 L 40 0 L 90 -40 L 80 40 Z" fill={KC.gold2} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     </g>}
@@ -262,7 +273,7 @@ function MicorrizasShot() {
       {/* 8–9 · el experimento de 1997 y el debate de 2023 */}
       <Escena T={T} a={K.Si} b={K.Ma} zoom={0.04}>
         <FondoLunares color={T < K.De ? KC.cyan : KC.yellow} />
-        {fsvg(<g transform="translate(540 1100) scale(1.3) translate(-530 -1010)"><Experimento T={T} a={K.Si} debate={K.De + 0.6} /></g>)}
+        {fsvg(<g transform="translate(540 1170) scale(1.22) translate(-530 -1010)"><Experimento T={T} a={K.Si} debate={K.De + 0.6} /></g>)}
       </Escena>
       {/* 10 · ¿el árbol madre? sin evidencia */}
       <Escena T={T} a={K.Ma} b={K.Ci} zoom={0.05}>
@@ -272,7 +283,7 @@ function MicorrizasShot() {
       {/* 11 · las citas que exageran: ×2 en 25 años */}
       <Escena T={T} a={K.Ci} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<g opacity=".6"><BosqueViral T={T} x0={540} y0={1560} s={0.78} corona={1} apagado={1} /></g>)}
+        {fsvg(<g opacity=".6"><rect x={0} y={1560} width={KW} height={KH - 1560} fill={MZ.suelo} /><BosqueViral T={T} x0={540} y0={1560} s={0.78} corona={1} apagado={1} /></g>)}
         {fsvg(<g transform="translate(0 -170)">
           <rect x={90} y={600} width={880} height={600} rx={24} fill="rgba(16,23,40,.9)" stroke={KC.ink} strokeWidth={7} />
           <line x1={170} y1={1110} x2={920} y2={1110} stroke={KC.ink} strokeWidth={6} />
@@ -315,16 +326,16 @@ function MicorrizasShot() {
       <SelloRect T={T} at={K.R + 3.0} until={K.Si - 0.3} x={890} y={1170} titulo="COMPROBADO" sub="comparten hongo" color={KC.leaf} rot={-8} tam={46} />
       <Chip T={T} at={K.R + 0.9} until={K.Si - 0.3} texto="Canadá · Beiler et al., 2010" x={400} y={548} tam={26} borde={KC.ink} mono />
       <TarjetaEstudio T={T} at={K.Si + 0.2} until={K.Si + 3.4} anio="1997" quien="oeste de Canadá" revista="Simard et al., Nature" x={610} y={400} />
-      <Etq T={T} at={K.Si + 2.0} until={K.De + 0.4} x={40} y={1150} texto="abedul de papel" tam={28} color={KC.white} />
-      <Etq T={T} at={K.Si + 2.3} until={K.De + 0.4} x={40} y={1195} texto="Betula papyrifera" it tam={26} color={KC.white} />
-      <Etq T={T} at={K.Si + 2.6} until={K.De + 0.4} x={1040} y={1150} lado="izq" texto="abeto de Douglas" tam={28} color={KC.white} />
-      <Etq T={T} at={K.Si + 2.9} until={K.De + 0.4} x={1040} y={1195} lado="izq" texto="Pseudotsuga menziesii" it tam={26} color={KC.white} />
+      <Etq T={T} at={K.Si + 2.0} until={K.De + 0.4} x={40} y={1220} texto="abedul de papel" tam={28} color={KC.white} />
+      <Etq T={T} at={K.Si + 2.3} until={K.De + 0.4} x={40} y={1265} texto="Betula papyrifera" it tam={26} color={KC.white} />
+      <Etq T={T} at={K.Si + 2.6} until={K.De + 0.4} x={1040} y={1220} lado="izq" texto="abeto de Douglas" tam={28} color={KC.white} />
+      <Etq T={T} at={K.Si + 2.9} until={K.De + 0.4} x={1040} y={1265} lado="izq" texto="Pseudotsuga menziesii" it tam={26} color={KC.white} />
       <Chip T={T} at={K.Si + 3.6} until={K.De - 0.1} texto="carbono marcado ●" x={610} y={400} tam={34} borde={KC.yellow} />
       <SelloRect T={T} at={K.De + 0.3} until={K.Ma - 0.3} x={540} y={490} titulo="EN DEBATE" color="#d99a00" rot={-7} tam={56} />
       <Chip T={T} at={K.De + 0.8} until={K.Ma - 0.3} texto="Karst, Jones y Hoeksema · 2023" x={540} y={315} tam={26} borde={KC.ink} mono />
       <Etq T={T} at={K.De + 1.6} until={K.Ma - 0.3} x={300} y={380} texto="Nature Ecology & Evolution" it tam={26} color={KC.ink} />
-      <Etq T={T} at={K.De + 1.2} until={K.Ma - 0.3} x={610} y={1175} texto="¿por el hongo?" tam={26} color={KC.white} />
-      <Etq T={T} at={K.De + 1.6} until={K.Ma - 0.3} x={660} y={1450} texto="¿por el suelo?" tam={26} color={KC.white} />
+      <Etq T={T} at={K.De + 1.2} until={K.Ma - 0.3} x={610} y={1236} texto="¿por el hongo?" tam={26} color={KC.white} />
+      <Etq T={T} at={K.De + 1.6} until={K.Ma - 0.3} x={660} y={1494} texto="¿por el suelo?" tam={26} color={KC.white} />
       <Chip T={T} at={K.Ma + 0.3} until={K.Ci - 0.3} texto="¿el árbol madre?" x={540} y={330} tam={40} borde={KC.ink} />
       <SelloRect T={T} at={K.Ma + 2.0} until={K.Ci - 0.3} x={540} y={780} titulo="SIN EVIDENCIA" sub="según Karst et al. 2023" color={KC.red} rot={-8} tam={72} />
       <Chip T={T} at={K.Ci + 1.8} until={K.C - 0.3} texto="×2 en 25 años" x={700} y={360} tam={48} borde={KC.red} />
