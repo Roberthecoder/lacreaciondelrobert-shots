@@ -57,7 +57,7 @@ function BordeRenueva({ T, p = 0, gen = 0 }) {
 
 // Acercamiento a una cripta: las células madre del fondo (doradas) hacen las células nuevas.
 function CriptaCerca({ T, a, gen = 0 }) {
-  const cx = 540, boca = 560, fondo = 1080, an = 130;   // boca, fondo y media anchura de la cripta
+  const cx = 540, boca = 720, fondo = 1240, an = 130;   // boca, fondo y media anchura de la cripta (belleza: 160 px más abajo, al centro del cuadro)
   const subiendo = Array.from({ length: 8 }, (_, i) => {
     const fase = ((T - a) * 0.3 + i / 8) % 1, y = klerp(fondo - 90, boca - 10, fase), s = klerp(0.72, 1, fase);
     const lado = i % 2 ? 1 : -1;
@@ -161,11 +161,15 @@ function LactosaNarrado() {
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 52%, #1d2433 0%, #0E0F12 72%)' }}></div>
         <Ambiente T={T} n={30} seed={5} color="rgba(230,245,255,.35)" tam={[3, 9]} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g transform={`translate(470 900) rotate(${mece(T, 2, 0.14) * 8})`}>
+          {/* belleza: la lactosa y la enzima apagada ×1.2, al centro del cuadro (antes chicas en una franja) */}
+          <g transform="translate(540 960) scale(1.2) translate(-550 -900)">
+          <ellipse cx={600} cy={1060} rx={420} ry={40} fill="#000" opacity=".25" />
+          <g transform={`translate(440 900) rotate(${mece(T, 2, 0.14) * 8})`}>
             <Molecula tipo="lactosa" r={132} gw={10} />
           </g>
-          <g transform={`translate(${880 + Math.sin((T - K.P) * 3) * 26} 900)`}>
+          <g transform={`translate(${840 + Math.sin((T - K.P) * 3) * 26} 900)`}>
             <Enzima T={T} s={3.6} rot={180} color="#6f7a84" />
+          </g>
           </g>
         </svg>
       </EscenaFundido>
@@ -191,6 +195,9 @@ function LactosaNarrado() {
         <FondoLunares color={KC.mint} paso={48} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {/* segunda vuelta: las dos ratas ×1.55 */}
+          {/* belleza: sombras suaves bajo las ratas (antes flotaban) */}
+          <ellipse cx={390 + 30 * 1.62} cy={900 + 56 * 1.62} rx={130 * 1.62} ry={16 * 1.62} fill="#000" opacity=".3" />
+          <ellipse cx={700 - 30 * 1.4} cy={1290 + 56 * 1.4} rx={130 * 1.4} ry={16 * 1.4} fill="#000" opacity=".3" />
           <Rata T={T} x={390} y={900} s={1.62} seed={1} />
           <Rata T={T} x={700} y={1290} s={1.4} seed={4} mira={-1} />
           <g opacity={kprog(T, K.R + 1.0, K.R + 1.6)} transform="translate(520 570) scale(1.6) translate(-520 -640)">
@@ -210,8 +217,16 @@ function LactosaNarrado() {
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#130f2e, #0b0f19)' }}></div>
         <Ambiente T={T} n={22} seed={13} color="rgba(177,140,255,.4)" tam={[3, 10]} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g transform={`rotate(${mece(T, 6, 0.2) * 1.2} 540 880)`}>
-            <MarcoVideo T={T} x={540} y={900} w={920} h={540} titulo="The Thought Emporium · 2018" pie="Justin Atkin" />
+          {/* belleza: ya no es lámina: el video va más chico y arriba, y abajo el sujeto (el virus con su gen y la leche) */}
+          <g transform={`rotate(${mece(T, 6, 0.2) * 1.2} 540 600)`}>
+            <MarcoVideo T={T} x={540} y={600} w={800} h={460} titulo="The Thought Emporium · 2018" pie="Justin Atkin" />
+          </g>
+          <g opacity={kprog(T, K.Au, K.Au + 0.5)}>
+            <ellipse cx={540} cy={1500} rx={430} ry={34} fill="#000" opacity=".3" />
+            <VasoLeche T={T} x={730} y={1000} s={1.65} lleno={0.86} />
+            <g transform={`translate(${klerp(300, 340, kprog(T, K.Au, K.O, kEase.suave))} ${1240 + mece(T, 1, 0.3) * 16})`}>
+              <VirusAAV T={T} s={1.45} rot={(T - K.Au) * 60} r={120} />
+            </g>
           </g>
         </svg>
       </EscenaFundido>
@@ -247,8 +262,8 @@ function LactosaNarrado() {
       <EscenaFundido T={T} a={K.Cr} b={K.Pa} zoom={0.05} fondo={KC.dark}>
         <CriptaCerca T={T} a={K.Cr} gen={kprog(T, K.Cr + 1.2, K.Cr + 2.2) * (1 - kprog(T, K.Pa - 1.4, K.Pa - 0.4))} />
       </EscenaFundido>
-      <Etiqueta T={T} at={K.Cr + 0.5} until={K.Pa - 0.3} x={650} y={1160} texto="células madre" color={KC.gold} tam={36} />
-      <Etiqueta T={T} at={K.Cr + 1.4} until={K.Pa - 0.3} x={120} y={420} texto="el gen se queda arriba" color={GEN} tam={34} />
+      <Etiqueta T={T} at={K.Cr + 0.5} until={K.Pa - 0.3} x={650} y={1320} texto="células madre" color={KC.gold} tam={36} />
+      <Etiqueta T={T} at={K.Cr + 1.4} until={K.Pa - 0.3} x={120} y={580} texto="el gen se queda arriba" color={GEN} tam={34} />
 
       {/* 11 · PASTILLA — lo que sí existe hoy */}
       <EscenaFundido T={T} a={K.Pa} b={K.C} zoom={0.05}>
