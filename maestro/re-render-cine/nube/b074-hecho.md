@@ -1,0 +1,1 @@
+- amb-31-contaminacion-luminica: Solución: farol, foco y apagador (con sus palomitas y rótulos) más hacia adentro y rótulos un poco más chicos: con la cámara, «apagada» y el apagador se salían por la derecha. Lo demás ya cumplía (cielo, ciudad, globo, conteo, tortugas, aves y cierre). Sin láminas · encuadre bien.

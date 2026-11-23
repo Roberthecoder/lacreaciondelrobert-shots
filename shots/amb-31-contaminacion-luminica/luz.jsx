@@ -288,11 +288,12 @@ function LuzShot() {
         {svg(<>{(() => { const p1 = kprog(T, K.S + 0.4, K.S + 1.2, kEase.sale), p2 = kprog(T, K.S + 1.9, K.S + 2.7, kEase.sale), p3 = kprog(T, K.S + 3.4, K.S + 4.0, kEase.sale);
             return <>
               <rect x={40} y={600} width={1000} height={660} rx={40} fill="#0b1433" stroke={KC.ink} strokeWidth={6} />
-              <g opacity={kprog(T, K.S, K.S + 0.4)} transform="translate(200 1220) scale(1.5) translate(-200 -1150)">{p1 < 0.5 ? <Farol x={200} y={1150} h={300} tipo="malo" on={1} T={T} id="fs1" /> : <Farol x={150} y={1150} h={300} tipo="bueno" on={1} T={T} id="fs2" />}</g>
-              <g opacity={kprog(T, K.S + 1.5, K.S + 1.9)}><Foco x={560} y={940} s={1.5} frio={1 - p2} /></g>
-              <g opacity={kprog(T, K.S + 3.0, K.S + 3.4)}><Apagador x={890} y={950} s={1.5} on={1 - p3} /></g>
-              {[["hacia abajo", 210, K.S + 1.2], ["cálida", 560, K.S + 2.7], ["apagada", 890, K.S + 4.0]].map(([tx, lx, ta]) => <text key={tx} x={lx} y={1350} textAnchor="middle" opacity={kprog(T, ta, ta + 0.3)} style={{ font:`900 54px ${KF.texto}` }} fill={KC.ink}>{tx}</text>)}
-              <Palomita x={210} y={680} s={1.3} p={kprog(T, K.S + 1.2, K.S + 1.5)} /><Palomita x={560} y={680} s={1.3} p={kprog(T, K.S + 2.7, K.S + 3.0)} /><Palomita x={890} y={680} s={1.3} p={kprog(T, K.S + 4.0, K.S + 4.3)} /></>; })()}</>)}
+              <g opacity={kprog(T, K.S, K.S + 0.4)} transform="translate(235 1220) scale(1.5) translate(-200 -1150)">{p1 < 0.5 ? <Farol x={200} y={1150} h={300} tipo="malo" on={1} T={T} id="fs1" /> : <Farol x={150} y={1150} h={300} tipo="bueno" on={1} T={T} id="fs2" />}</g>
+              <g opacity={kprog(T, K.S + 1.5, K.S + 1.9)}><Foco x={540} y={940} s={1.5} frio={1 - p2} /></g>
+              <g opacity={kprog(T, K.S + 3.0, K.S + 3.4)}><Apagador x={850} y={950} s={1.5} on={1 - p3} /></g>
+              {[["hacia abajo", 235, K.S + 1.2], ["cálida", 540, K.S + 2.7], ["apagada", 850, K.S + 4.0]].map(([tx, lx, ta]) => <text key={tx} x={lx} y={1350} textAnchor="middle" opacity={kprog(T, ta, ta + 0.3)} style={{ font:`900 50px ${KF.texto}` }} fill={KC.ink}>{tx}</text>)}
+              {/* belleza: los tres (farol, foco, apagador) más hacia adentro: con la cámara, «apagada» se salía por la derecha */}
+              <Palomita x={235} y={680} s={1.3} p={kprog(T, K.S + 1.2, K.S + 1.5)} /><Palomita x={540} y={680} s={1.3} p={kprog(T, K.S + 2.7, K.S + 3.0)} /><Palomita x={850} y={680} s={1.3} p={kprog(T, K.S + 4.0, K.S + 4.3)} /></>; })()}</>)}
       </Escena>
       {/* 11 · cierre: la misma casa, ahora con luz bien puesta, y vuelve la Vía Láctea */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.03}>
