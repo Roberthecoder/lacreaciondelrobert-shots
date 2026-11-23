@@ -3,21 +3,36 @@
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const AGUA = '#7fc8ff', AGUA_OSC = '#3d8fd6', SAL = '#ffffff', NA = '#b18cff', CL = '#7ee36b', ACERO = '#c9d2dc';
 
+// Degradados de volumen (pase de belleza): acero con luz a la izquierda, agua más clara arriba.
+function DefsCocina() {
+  return <defs>
+    <linearGradient id="hvAcero" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#eef2f6" /><stop offset="0.22" stopColor="#c9d2dc" /><stop offset="0.6" stopColor="#8e9aa8" /><stop offset="0.85" stopColor="#b7c1cc" /><stop offset="1" stopColor="#6c7784" /></linearGradient>
+    <linearGradient id="hvBorde" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#9aa6b4" /><stop offset="1" stopColor="#5a6573" /></linearGradient>
+    <radialGradient id="hvAgua" cx="40%" cy="35%" r="70%"><stop offset="0" stopColor="#b6e2ff" /><stop offset="0.6" stopColor="#7fc8ff" /><stop offset="1" stopColor="#3d8fd6" /></radialGradient>
+    <linearGradient id="hvRojo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#ff6a5c" /><stop offset="1" stopColor="#b8231c" /></linearGradient>
+    <linearGradient id="hvPantalla" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#e9fbdc" /><stop offset="1" stopColor="#bfe3a8" /></linearGradient>
+    <linearGradient id="hvMonte" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#4f8a52" /><stop offset="0.6" stopColor="#3a6b3c" /><stop offset="1" stopColor="#24452a" /></linearGradient>
+  </defs>;
+}
 // Olla de cocina en la estufa. hierve 0..1 = burbujas; vapor 0..1.
 function Olla({ T, x, y, s = 1, hierve = 0, vapor = 0, fuego = 1, seed = 4 }) {
   const R = krng(seed);
   const bur = Array.from({ length: 22 }, () => [(R() - 0.5) * 300, R() * 10, 6 + R() * 14]);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <DefsCocina />
+    <ellipse cx={0} cy={236} rx={300} ry={26} fill="rgba(0,0,0,.4)" />
     {/* estufa */}
     <rect x={-260} y={190} width={520} height={34} rx={10} fill="#3a3f4a" stroke={KC.ink} strokeWidth={8} />
     <Llama T={T} x={0} y={190} s={1.5} o={fuego} />
     {/* olla */}
     <rect x={-250} y={-60} width={36} height={30} rx={8} fill="#444" stroke={KC.ink} strokeWidth={7} transform="translate(-30 0)" />
     <rect x={244} y={-60} width={36} height={30} rx={8} fill="#444" stroke={KC.ink} strokeWidth={7} />
-    <path d="M -220 -80 L 220 -80 L 205 170 Q 200 190 180 190 L -180 190 Q -200 190 -205 170 Z" fill={ACERO} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+    <path d="M -220 -80 L 220 -80 L 205 170 Q 200 190 180 190 L -180 190 Q -200 190 -205 170 Z" fill="url(#hvAcero)" stroke="#e6ecf2" strokeOpacity={0.8} strokeWidth={5} strokeLinejoin="round" />
     <path d="M -190 -60 L -180 160" stroke="#fff" strokeWidth={14} opacity={0.5} strokeLinecap="round" />
-    <ellipse cx={0} cy={-80} rx={220} ry={46} fill="#7b8794" stroke={KC.ink} strokeWidth={10} />
-    <ellipse cx={0} cy={-72} rx={200} ry={36} fill={AGUA} />
+    <path d="M 120 -50 L 115 165" stroke="#fff" strokeWidth={6} opacity={0.25} strokeLinecap="round" />
+    <ellipse cx={0} cy={-80} rx={220} ry={46} fill="url(#hvBorde)" stroke="#e6ecf2" strokeOpacity={0.8} strokeWidth={5} />
+    <ellipse cx={0} cy={-72} rx={200} ry={36} fill="url(#hvAgua)" />
+    <ellipse cx={-70} cy={-82} rx={70} ry={8} fill="#fff" opacity={0.3} />
     {/* burbujas en la superficie */}
     {hierve > 0 && bur.map(([bx, ph, r], i) => i / bur.length < hierve ? <circle key={i} cx={bx * 0.6} cy={-72 + Math.sin(T * 7 + ph) * 8} r={r * (0.6 + 0.4 * Math.abs(Math.sin(T * 5 + ph)))} fill="rgba(255,255,255,.85)" stroke={AGUA_OSC} strokeWidth={3} /> : null)}
     {/* vapor */}
@@ -28,8 +43,10 @@ function Olla({ T, x, y, s = 1, hierve = 0, vapor = 0, fuego = 1, seed = 4 }) {
 function TermoCocina({ x, y, s = 1, texto = '100.00 °C', color = KC.yellow, rot = 18 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     <rect x={-8} y={0} width={16} height={260} rx={8} fill="#dfe6ee" stroke={KC.ink} strokeWidth={6} />
-    <rect x={-150} y={-150} width={300} height={160} rx={28} fill={KC.red} stroke={KC.ink} strokeWidth={9} />
-    <rect x={-125} y={-128} width={250} height={92} rx={12} fill="#d9f5c8" stroke={KC.ink} strokeWidth={6} />
+    <DefsCocina />
+    <rect x={-150} y={-150} width={300} height={160} rx={28} fill="url(#hvRojo)" stroke="#ffb0a6" strokeOpacity={0.7} strokeWidth={5} />
+    <rect x={-125} y={-128} width={250} height={92} rx={12} fill="url(#hvPantalla)" stroke="#5a1a14" strokeWidth={4} />
+    <rect x={-138} y={-142} width={200} height={10} rx={5} fill="#fff" opacity={0.25} />
     <text x={0} y={-65} textAnchor="middle" style={{ font:`700 ${texto.length > 7 ? 40 : 54}px ${KF.mono}` }} fill="#0b1020">{texto}</text>
     <circle cx={-60} cy={-12} r={10} fill={color} stroke={KC.ink} strokeWidth={4} /><circle cx={60} cy={-12} r={10} fill={color} stroke={KC.ink} strokeWidth={4} />
   </g>;
@@ -37,8 +54,9 @@ function TermoCocina({ x, y, s = 1, texto = '100.00 °C', color = KC.yellow, rot
 // Cucharadita que se voltea (gira = 0..1).
 function Cucharadita({ x, y, s = 1, gira = 0, sal = 1 }) {
   return <g transform={`translate(${x} ${y}) rotate(${klerp(-10, 75, gira)}) scale(${s})`}>
-    <rect x={-260} y={-14} width={210} height={28} rx={14} fill={ACERO} stroke={KC.ink} strokeWidth={7} />
-    <ellipse cx={0} cy={0} rx={70} ry={44} fill={ACERO} stroke={KC.ink} strokeWidth={8} />
+    <DefsCocina />
+    <rect x={-260} y={-14} width={210} height={28} rx={14} fill="url(#hvAcero)" stroke="#e6ecf2" strokeOpacity={0.8} strokeWidth={4} />
+    <ellipse cx={0} cy={0} rx={70} ry={44} fill="url(#hvAcero)" stroke="#e6ecf2" strokeOpacity={0.8} strokeWidth={5} />
     {sal > 0 && <ellipse cx={0} cy={-8} rx={56 * sal} ry={24 * sal} fill={SAL} stroke="#c9ccd2" strokeWidth={4} />}
   </g>;
 }
@@ -96,7 +114,8 @@ function GranoNucleacion({ T, x, y, s = 1, t0, seed = 3, roca = false }) {
 // Montaña con olla arriba.
 function Montana({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -420 300 L -120 -260 L -40 -170 L 60 -320 L 420 300 Z" fill="#3a6b3c" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+    <DefsCocina />
+    <path d="M -420 300 L -120 -260 L -40 -170 L 60 -320 L 420 300 Z" fill="url(#hvMonte)" stroke="#a9d1ab" strokeOpacity={0.7} strokeWidth={6} strokeLinejoin="round" />
     <path d="M 60 -320 L 10 -230 L 60 -250 L 110 -225 Z" fill="#fff" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
     <path d="M -120 -260 L -150 -200 L -110 -215 L -85 -205 Z" fill="#fff" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
   </g>;
@@ -137,7 +156,7 @@ function Hervir() {
           <rect x={0} y={980} width={KW} height={KH - 980} fill="#0f2a44" />
           <path d={`M 0 980 ${Array.from({ length: 13 }, (_, i) => `Q ${i * 90 + 45} ${980 + Math.sin(T * 3 + i) * 12} ${(i + 1) * 90} 980`).join(' ')}`} stroke={AGUA_OSC} strokeWidth={10} fill="none" />
           {molsAgua.map(([mx, my, ph], i) => { const salta = i % 4 === 0, u = ((T - K.Q) * 0.7 + ph) % 1;
-            return <Mol key={i} tipo="agua" x={mx + Math.sin(T * 3 + ph) * 14} y={salta ? klerp(1000, 760, u) : my + Math.cos(T * 2.6 + ph) * 12} s={0.9} rot={T * 60 + ph * 50} o={salta ? 1 - u * 0.7 : 1} />; })}
+            return <Mol key={i} tipo="agua" x={mx + Math.sin(T * 3 + ph) * 14} y={salta ? klerp(1000, 760, u) : my + Math.cos(T * 2.6 + ph) * 12} rot={T * 60 + ph * 50} o={salta ? 1 - u * 0.7 : 1} s={1.15} />; })}
           <Flecha x={300} y={960} largo={klerp(40, 320, kprog(T, K.Q + 0.5, K.Q + 2.6, kEase.sale))} dir={-1} color={KC.cyan} texto="vapor" />
           <Flecha x={780} y={640} largo={320} dir={1} color="#c3c8d2" texto="aire" o={kprog(T, K.Q + 0.2, K.Q + 0.8)} />
           <text x={540} y={830} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Q + 2.6, K.Q + 3.0)}>=</text>
@@ -163,7 +182,8 @@ function Hervir() {
             <text x={540} y={845} textAnchor="middle" style={{ font:`700 86px ${KF.mono}` }} fill={KC.ink}>ΔT = i·K<tspan fontSize={54} dy={14}>b</tspan><tspan dy={-14}>·m</tspan></text>
           </g>
           <g opacity={kprog(T, K.Cu + 2.0, K.Cu + 2.5)}>
-            <rect x={170} y={950} width={260} height={200} rx={16} fill={AGUA} stroke={KC.ink} strokeWidth={8} />
+            <rect x={170} y={950} width={260} height={200} rx={16} fill="url(#hvAgua)" stroke="#d6ecff" strokeWidth={5} />
+            <DefsCocina /><rect x={186} y={962} width={120} height={14} rx={7} fill="#fff" opacity={0.3} />
             <text x={300} y={1065} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill="#0b1020">1 kg</text>
             <text x={490} y={1075} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.ink}>+</text>
             {[[580, 1000], [640, 1050], [600, 1110], [690, 990], [700, 1110], [760, 1050]].map(([ax, ay], i) => <Atomo key={i} x={ax} y={ay} r={i % 2 ? 30 : 24} color={i % 2 ? CL : NA} />)}
@@ -203,12 +223,12 @@ function Hervir() {
           <Ambiente T={T} n={24} color="rgba(127,200,255,.25)" />
           <rect x={0} y={0} width={KW} height={430} fill="#142c47" />
           <path d={`M 0 430 ${Array.from({ length: 13 }, (_, i) => `Q ${i * 90 + 45} ${430 + Math.sin(T * 3 + i) * 10} ${(i + 1) * 90} 430`).join(' ')}`} stroke="#7fc8ff" strokeWidth={8} fill="none" />
-          <GranoNucleacion T={T} x={360} y={1000} s={1.1} t0={K.B + 0.4} />
+          <GranoNucleacion T={T} x={380} y={1020} s={1.5} t0={K.B + 0.4} />
           {[[150, 1100, 0.35], [560, 1120, 0.3], [260, 860, 0.25]].map(([gx, gy, gs], i) => <GranoNucleacion key={i} T={T} x={gx} y={gy} s={gs} t0={K.B + 0.8 + i * 0.3} seed={20 + i} />)}
-          <g opacity={kprog(T, K.B + 2.6, K.B + 3.1)}><GranoNucleacion T={T} x={820} y={1020} s={0.8} t0={K.B + 2.8} roca seed={7} /></g>
+          <g opacity={kprog(T, K.B + 2.6, K.B + 3.1)}><GranoNucleacion T={T} x={810} y={1040} s={1.05} t0={K.B + 2.8} roca seed={7} /></g>
         </SvgCapa>
-        <Etq T={T} at={K.B + 0.8} until={avisa - 0.3} x={160} y={1150} texto="grano de sal" tam={32} />
-        <Etq T={T} at={K.B + 3.0} until={avisa - 0.3} x={1040} y={1150} texto="piedra de ebullición" lado="izq" tam={30} />
+        <Etq T={T} at={K.B + 0.8} until={avisa - 0.3} x={160} y={1250} texto="grano de sal" tam={32} />
+        <Etq T={T} at={K.B + 3.0} until={avisa - 0.3} x={1040} y={1250} texto="piedra de ebullición" lado="izq" tam={30} />
       </Escena>
       <Escena T={T} a={avisa} b={K.E} zoom={0.05}>
         <FondoLunares color={KC.orange} />
