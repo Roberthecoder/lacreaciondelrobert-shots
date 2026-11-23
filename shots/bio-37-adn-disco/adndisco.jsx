@@ -205,19 +205,19 @@ function AdnDisco() {
       {/* 1 · ceros y unos; las cuatro letras */}
       <Escena T={T} a={K.Bi} b={K.Le} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(0 110)">
           <Celular x={300} y={880} s={1.15} T={T} foto={1} bits={kprog(T, K.Bi + 0.6, K.Bi + 2.0)} />{/* pase a mano: celular ×1.35 */}
           {LETRAS.map((l, i) => { const at = K.Bi + 2.3 + i * 0.35, p = kprog(T, at, at + 0.35, kEase.rebote);
             return p > 0 ? <g key={l}><rect x={640} y={640 + i * 130} width={320} height={110} rx={24} fill={KC.paper} stroke={KC.ink} strokeWidth={7} transform={`translate(${800 * (1 - p)} 0)`} />
               <Base x={700 + 800 * (1 - p)} y={695 + i * 130} l={l} r={40} />
               <text x={850 + 800 * (1 - p)} y={710 + i * 130} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>{l === 'A' ? 'adenina' : l === 'C' ? 'citosina' : l === 'G' ? 'guanina' : 'timina'}</text></g> : null; })}
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
 
       {/* 2 · cada par de bits se vuelve una letra (la imagen que se llena) */}
       <Escena T={T} a={K.Le} b={K.Si} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(0 120)">
           <rect x={90} y={650} width={900} height={540} rx={30} fill="rgba(14,15,18,.82)" stroke={KC.ink} strokeWidth={8} />
           {letrasCelda.map(({ l, at }, i) => { const c = i % 6, f = Math.floor(i / 6), cx = 165 + c * 150, cy = 700 + f * 86, p = kprog(T, at, at + 0.3, kEase.rebote);
             return <g key={i}>
@@ -225,9 +225,9 @@ function AdnDisco() {
               {p > 0 && <g transform={`translate(${cx} ${cy}) scale(${p})`}><rect x={-60} y={-34} width={120} height={68} rx={14} fill={LC[l]} stroke={KC.ink} strokeWidth={5} />
                 <text y={16} textAnchor="middle" style={{ font:`400 50px ${KF.titulo}`, stroke:'none' }} fill="#0b1020">{l}</text></g>}
             </g>; })}
-        </SvgCapa>
+        </g></SvgCapa>
         {/* la clave, debajo del subtítulo */}
-        <div style={{ position:'absolute', left:0, right:0, top:1240, zIndex:41, display:'flex', justifyContent:'center', gap:18, opacity:kprog(T, K.Le + 0.2, K.Le + 0.6) }}>
+        <div style={{ position:'absolute', left:0, right:0, top:1360, zIndex:41, display:'flex', justifyContent:'center', gap:18, opacity:kprog(T, K.Le + 0.2, K.Le + 0.6) }}>
           {LETRAS.map((l) => <div key={l} style={{ display:'flex', alignItems:'center', gap:10, background:'rgba(14,15,18,.85)', border:`4px solid ${LC[l]}`, borderRadius:20, padding:'8px 18px', font:`700 36px ${KF.mono}`, color:KC.texto }}>
             {PAR[l]} <span style={{ color:LC[l] }}>→ {l}</span></div>)}
         </div>
@@ -236,7 +236,7 @@ function AdnDisco() {
       {/* 3 · una máquina escribe las hebras, letra por letra */}
       <Escena T={T} a={K.Si} b={K.Se} zoom={0.03}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(0 120)">
           {LETRAS.map((l, i) => <g key={l}><rect x={250 + i * 160} y={440} width={100} height={90} rx={16} fill={LC[l]} stroke={KC.ink} strokeWidth={7} />
             <text x={300 + i * 160} y={502} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}`, stroke:'none' }} fill="#0b1020">{l}</text></g>)}
           <rect x={150} y={520} width={780} height={150} rx={26} fill="#aab3c2" stroke={KC.ink} strokeWidth={9} />
@@ -244,26 +244,26 @@ function AdnDisco() {
           <g transform={`translate(${boquilla} 690)`}><rect x={-26} y={-26} width={52} height={60} rx={8} fill="#6b7385" stroke={KC.ink} strokeWidth={6} /><path d="M -12 34 L 12 34 L 0 56 Z" fill={KC.ink} /></g>
           {ciclo > 0 && ciclo < 18 && [0, 1, 2, 3, 4].map((r) => { const u = (ciclo % 1); return <circle key={r} cx={boquilla} cy={klerp(760, 820 + r * 80, u)} r={8} fill={LC[filasS[r][Math.floor(ciclo)]]} stroke={KC.ink} strokeWidth={3} opacity={u < 0.9 ? 1 : 0} />; })}
           {filasS.map((sq, r) => <Hebra key={r} x={150} y={830 + r * 80} seq={sq} n={ciclo} T={T} seed={r} onda={3} r={18} />)}
-        </SvgCapa>
-        <Chip T={T} at={K.Si + 1.0} until={K.Se - 0.2} texto="en 2017: 72 000 hebras de 200 letras" y={1370} tam={32} borde={KC.mint} />
-        <EscalaHebra T={T} at={K.Si + 0.4} until={K.Se - 0.2} y={1200} />
+        </g></SvgCapa>
+        <Chip T={T} at={K.Si + 1.0} until={K.Se - 0.2} texto="en 2017: 72 000 hebras de 200 letras" y={1470} tam={32} borde={KC.mint} />
+        <EscalaHebra T={T} at={K.Si + 0.4} until={K.Se - 0.2} y={1320} />
       </Escena>
 
       {/* 4 · se seca: queda un polvito */}
       <Escena T={T} a={K.Se} b={K.Lc} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(0 110)">
           <Tubo x={540} y={880} s={2.0} liquido={0.75 * (1 - seca)} polvo={seca} hebritas={1 - seca} T={T} />
           {seca > 0 && seca < 1 && [0, 1, 2].map((i) => <path key={i} d={`M ${500 + i * 40} ${450 - ((T * 120 + i * 50) % 160)} q 14 -20 0 -40 q -14 -20 0 -40`} stroke="#fff" strokeWidth={8} fill="none" strokeLinecap="round" opacity=".8" />)}
-        </SvgCapa>
-        <Etq T={T} at={K.Se + 1.6} until={K.Lc - 0.2} x={650} y={1215} texto="ADN seco" lado="der" tam={36} color={KC.ink} />
-        <Chip T={T} at={K.Se + 0.6} until={K.Lc - 0.2} texto="seco, frío y oscuro" y={1380} tam={40} borde={KC.cyan} />
+        </g></SvgCapa>
+        <Etq T={T} at={K.Se + 1.6} until={K.Lc - 0.2} x={650} y={1325} texto="ADN seco" lado="der" tam={36} color={KC.ink} />
+        <Chip T={T} at={K.Se + 0.6} until={K.Lc - 0.2} texto="seco, frío y oscuro" y={1470} tam={40} borde={KC.cyan} />
       </Escena>
 
       {/* 5 · se lee con un secuenciador y vuelve a ser la foto */}
       <Escena T={T} a={K.Lc} b={K.Pr} zoom={0.03}>
         <FondoLunares color={KC.pink} />
-        <SvgCapa><g transform="translate(550 900) scale(1.15) translate(-550 -900)">{/* pase a mano: ×1.15 */}
+        <SvgCapa><g transform="translate(550 1000) scale(1.15) translate(-550 -900)">{/* pase a mano: ×1.15; pase de belleza: bajado al centro */}
           <Tubo x={170} y={840} s={0.7} liquido={kprog(T, K.Lc + 0.1, K.Lc + 0.8) * 0.5} polvo={1 - kprog(T, K.Lc + 0.1, K.Lc + 0.8)} hebritas={1} T={T} />
           {Array.from({ length: 6 }, (_, i) => { const u = ((T - K.Lc - 0.8) * 0.6 + i / 6) % 1; if (T < K.Lc + 0.8) return null;
             return <Base key={i} x={klerp(200, 430, u)} y={980 - Math.sin(u * Math.PI) * 60} l={seqL[i]} r={16} />; })}
@@ -280,12 +280,12 @@ function AdnDisco() {
       {/* 6 · re-gancho: ¿por qué no un disco? */}
       <Escena T={T} a={K.Pr} b={K.Ma} zoom={0.05}>
         <FondoLunares color={KC.teal} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(0 120)">
           <DiscoDuro x={810} y={660} s={0.62} T={T} />
           <text x={810} y={905} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={4}>VS</text>
           <Tubo x={810} y={1060} s={0.55} polvo={1} T={T} rot={Math.sin(T * 2) * 4} />
           <text x={960} y={520} textAnchor="middle" style={{ font:`400 200px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} transform={`rotate(${Math.sin(T * 3) * 8} 960 460)`} opacity={kprog(T, K.Pr + 0.3, K.Pr + 0.7)}>?</text>
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
 
       {/* 7 · ADN de mamut de más de un millón de años */}
@@ -374,14 +374,14 @@ function AdnDisco() {
       {/* 11 · el problema: lento (y caro) */}
       <Escena T={T} a={K.Pb} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.coral} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(0 90)">
           <Reloj x={560} y={700} r={225} horas={kprog(T, K.Pb + 0.4, K.Ci - 0.3) * 21} />
           {hello.map((l, i) => { const at = K.Pb + 0.7 + i * 0.6, p = kprog(T, at, at + 0.35, kEase.rebote); return p > 0 ?
             <g key={i} transform={`translate(${270 + i * 135} 1110) scale(${p * 1.2})`}><rect x={-50} y={-60} width={100} height={120} rx={16} fill={KC.paper} stroke={KC.ink} strokeWidth={7} />
               <text y={30} textAnchor="middle" style={{ font:`400 84px ${KF.titulo}` }} fill={KC.ink}>{l}</text></g> : null; })}
-        </SvgCapa>
-        <Chip T={T} at={K.Pb + 0.4} until={K.Ci - 0.2} texto="2019 · Microsoft + U. de Washington" x={560} y={985} tam={28} borde={KC.white} />
-        <Medidor T={T} at={K.Pb + 0.6} until={K.Ci - 0.2} valor={(t) => kprog(t, K.Pb + 0.6, K.Pb + 3.8)} etiqueta="escribir y leer 5 letras" texto={(v) => Math.round(v * 21) + ' h'} y={1270} color={KC.yellow} />
+        </g></SvgCapa>
+        <Chip T={T} at={K.Pb + 0.4} until={K.Ci - 0.2} texto="2019 · Microsoft + U. de Washington" x={560} y={1075} tam={28} borde={KC.white} />
+        <Medidor T={T} at={K.Pb + 0.6} until={K.Ci - 0.2} valor={(t) => kprog(t, K.Pb + 0.6, K.Pb + 3.8)} etiqueta="escribir y leer 5 letras" texto={(v) => Math.round(v * 21) + ' h'} y={1360} color={KC.yellow} />
       </Escena>
 
       {/* 12 · cierre: el mismo tubito, ya con el archivo adentro */}
