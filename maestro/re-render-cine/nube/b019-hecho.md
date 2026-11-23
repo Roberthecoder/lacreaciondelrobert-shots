@@ -1,0 +1,1 @@
+- qui-10-gelatina-pina: Kiwi: la fila de 5 gelatinitas delgada pasó a un conjunto grande en tres filas (3+2 y las dos excepciones Hort16A/Kosui abajo con ✓), chip arriba y «actinidina» sin cortarse; volumen con degradados y sombra en gelatina, plato, piña entera, rodaja y kiwi.
