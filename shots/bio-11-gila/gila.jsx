@@ -268,7 +268,7 @@ function Gila11() {
       {/* 7 · AMINOÁCIDO: A → G en la posición 2, la tijera casi no puede */}
       <Escena T={T} a={K.A} b={K.X} zoom={0.03}>
         <FondoMarca patron="oscuro" />
-        <Capa>
+        <Capa><g transform="translate(0 80)">
           {[[GLP_SEQ, GLP, 790, 'GLP-1'], [EXE_SEQ, EXE, 1040, 'exendina-4']].map(([seq, c, yy, nom], j) => {
             const cut = j === 0 ? kprog(T, K.A + 1.6, K.A + 2.2, kEase.sale) : 0;
             return <g key={j}>
@@ -279,8 +279,8 @@ function Gila11() {
           {(() => { const t0 = K.A + 0.9; const enA = T < K.A + 2.4; const xx = enA ? klerp(-80, 262, kprog(T, t0, t0 + 0.7)) : 262 + Math.sin((T - K.A) * 14) * 16;
             return <Tijera x={xx} y={enA ? 790 : 1040} s={0.7} abre={enA ? Math.abs(Math.sin((T - t0) * 8)) : 0.8} rot={enA ? 0 : 18} />; })()}
           {T > K.A + 2.6 && [0, 1, 2].map((i) => <path key={i} d={`M ${300 + i * 22} ${980 - i * 8} l 18 -26`} stroke={KC.yellow} strokeWidth={6} strokeLinecap="round" opacity={Math.abs(Math.sin(T * 10 + i))} />)}
-        </Capa>
-        <Etiqueta T={T} at={K.A + 0.5} until={K.X - 0.2} x={262} y={650} texto="posición 2: A → G" color={KC.yellow} tam={34} />
+        </g></Capa>
+        <Etiqueta T={T} at={K.A + 0.5} until={K.X - 0.2} x={262} y={730} texto="posición 2: A → G" color={KC.yellow} tam={34} />
         <Chip T={T} at={K.A + 2.8} until={K.X - 0.3} texto="la DPP-4 casi no la puede cortar" y={1500} tam={38} borde={EXE} />
       </Escena>
 
@@ -288,10 +288,10 @@ function Gila11() {
       <Escena T={T} a={K.X} b={K.F} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         <Capa>
-          <g opacity={kprog(T, K.X, K.X + 0.4)}><Pluma x={600} y={590 + Math.sin(T * 1.5) * 8} s={1.25} rot={-6} color={EXE} /></g>
+          <g opacity={kprog(T, K.X, K.X + 0.4)}><Pluma x={600} y={660 + Math.sin(T * 1.5) * 8} s={1.35} rot={-6} color={EXE} /></g>
         </Capa>
         <TarjetaEstudio T={T} at={K.X + 0.1} until={K.F - 0.2} anio="2005" quien="FDA · Byetta (exenatida)" revista="el primero de la familia" y={330} />
-        <Comparativa T={T} at={K.X + 1.4} until={K.F - 0.2} max={144} y={850} alto={330}
+        <Comparativa T={T} at={K.X + 1.4} until={K.F - 0.2} max={144} y={860} alto={430}
           izq={{ valor: 2, texto: '≈ 2 min', etiqueta: 'GLP-1', color: GLP }} der={{ valor: 144, texto: '2.4 h', etiqueta: 'exenatida', color: KC.yellow }} />
         <Chip T={T} at={K.X + 2.0} until={K.F - 0.3} texto="vida media en sangre" y={1500} tam={38} borde={KC.yellow} />
       </Escena>
@@ -299,7 +299,7 @@ function Gila11() {
       {/* 9 · FÁBRICA: no se ordeñan lagartos, es sintética */}
       <Escena T={T} a={K.F} b={K.O} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        <Capa>
+        <Capa><g transform="translate(520 1020) scale(1.15) translate(-540 -880)">
           <Gila T={T} x={300} y={640} s={0.56} lengua={lengua(K.F)} />
           <g transform="translate(290 900) scale(1.4)"><path d="M -70 -40 L 70 -40 L 54 70 L -54 70 Z" fill="#c9d1dc" stroke={KC.ink} strokeWidth={7} /><path d="M -70 -40 Q 0 -110 70 -40" fill="none" stroke={KC.ink} strokeWidth={6} /></g>
           <g opacity={kprog(T, K.F + 0.6, K.F + 0.9)} transform={`translate(290 910) scale(0.75) scale(${klerp(1.6, 1, kprog(T, K.F + 0.6, K.F + 0.9, kEase.rebote))})`}>
@@ -308,7 +308,7 @@ function Gila11() {
           {Array.from({ length: 39 }, (_, i) => { const on = kprog(T, K.F + 1.0 + i * 0.05, K.F + 1.2 + i * 0.05);
             const ang = i * 0.5, rr = (40 + i * 2.2) * 1.3;
             return on > 0 && <Perla key={i} x={790 + Math.cos(ang + T * 0.6) * rr * 0.9} y={1105 + Math.sin(ang + T * 0.6) * rr * 0.35 - i * 2} r={14} color={EXE} o={on} />; })}
-        </Capa>
+        </g></Capa>
         <Chip T={T} at={K.F + 1.2} until={K.O - 0.3} texto="exenatida: péptido sintético" y={1500} tam={40} borde={EXE} />
       </Escena>
 
@@ -316,19 +316,19 @@ function Gila11() {
       <Escena T={T} a={K.O} b={K.Co} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <Capa>
-          <g opacity={0.22}><Gila T={T} x={560} y={1250} s={0.9} /></g>
-          <g transform="translate(0 0)">
+          <g opacity={0.3}><Gila T={T} x={560} y={1490} s={0.9} /></g>
+          <g transform="translate(0 110)">
             <text x={70} y={790} style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>semaglutida (GLP-1 humano retocado)</text>
-            <Cadena T={T} x={70} y={930} n={31} paso={31} r={20} onda={30} color={(i) => (i === 1 || i === 27 ? KC.pink : SEMA)} arma={kprog(T, K.O + 1.0, K.O + 2.0)} />
+            <Cadena T={T} x={70} y={930} n={31} paso={31} r={25} onda={40} color={(i) => (i === 1 || i === 27 ? KC.pink : SEMA)} arma={kprog(T, K.O + 1.0, K.O + 2.0)} />
             <g opacity={kprog(T, K.O + 2.0, K.O + 2.5)}>
-              <path d={`M ${70 + 19 * 31} ${930 + Math.sin(19 * 0.7 + T * 2) * 30} q 30 90 -15 165 q -45 75 15 150`} fill="none" stroke="#f2c14e" strokeWidth={20} strokeLinecap="round" />
+              <path d={`M ${70 + 19 * 31} ${930 + Math.sin(19 * 0.7 + T * 2) * 40} q 30 90 -15 165 q -45 75 15 150`} fill="none" stroke="#f2c14e" strokeWidth={20} strokeLinecap="round" />
               <text x={70 + 19 * 31 + 50} y={1180} style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>colita de grasa</text>
             </g>
           </g>
         </Capa>
         <MitoTachado T={T} at={K.O + 0.1} tacharEn={K.O + 1.0} until={K.O + 2.6} texto="Ozempic = saliva de lagarto" x={330} y={560} tam={32} />
         <Chip T={T} at={K.O + 2.7} until={K.Co - 0.3} texto="94 % igual al GLP-1 humano · 2017" x={380} y={560} tam={32} borde={SEMA} />
-        <Etiqueta T={T} at={K.O + 2.2} until={K.Co - 0.2} x={100} y={1050} texto="2 cambios" color={KC.pink} tam={30} />
+        <Etiqueta T={T} at={K.O + 2.2} until={K.Co - 0.2} x={100} y={1190} texto="2 cambios" color={KC.pink} tam={30} />
       </Escena>
 
       {/* 11 · COMIDA: hasta un tercio de su peso */}
