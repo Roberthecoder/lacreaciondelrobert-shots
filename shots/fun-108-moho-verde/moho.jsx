@@ -119,10 +119,25 @@ function Estante({ T, x, y, n = 3, verdes = [] }) {
 // Mapa esquemático del Atlántico norte: Norteamérica (izq) y Europa con Irlanda (der).
 function MapaAtlantico({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M 0 40 Q 80 0 200 20 Q 300 10 360 60 Q 400 120 370 190 Q 330 240 300 300 Q 260 330 220 300 Q 180 320 150 280 Q 90 250 60 200 Q 10 150 0 40 Z" fill="#cdb777" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
-    <path d="M 720 60 Q 800 20 900 40 Q 980 70 1000 140 Q 990 220 930 260 Q 860 290 800 250 Q 760 200 770 140 Q 760 100 720 60 Z" fill="#cdb777" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <defs><linearGradient id="mapaGr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#ddc98c" /><stop offset="1" stopColor="#9e8752" /></linearGradient></defs>
+    <path d="M 0 40 Q 80 0 200 20 Q 300 10 360 60 Q 400 120 370 190 Q 330 240 300 300 Q 260 330 220 300 Q 180 320 150 280 Q 90 250 60 200 Q 10 150 0 40 Z" fill="url(#mapaGr)" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <path d="M 720 60 Q 800 20 900 40 Q 980 70 1000 140 Q 990 220 930 260 Q 860 290 800 250 Q 760 200 770 140 Q 760 100 720 60 Z" fill="url(#mapaGr)" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     <path d="M 650 120 Q 680 100 700 125 Q 705 160 680 175 Q 650 170 645 145 Z" fill="#8fc48a" stroke={KC.ink} strokeWidth={6} />
     <text x={545} y={292} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="rgba(223,231,255,.45)">océano Atlántico</text>
+  </g>;
+}
+// Cama de champiñón (composta en charola) cuyas setas y composta se van pintando de verde (verde 0..1). Coordenadas de pantalla.
+function CamaChampis({ x, y, ancho = 900, verde = 0, T = 0 }) {
+  const g = krng(310), puntos = Array.from({ length: 46 }, () => ({ x: 16 + g() * (ancho - 32), y: 14 + g() * 38, u: g() }));
+  const n = 7, paso = (ancho - 140) / (n - 1), orden = [3, 0, 5, 2, 6, 1, 4];
+  return <g>
+    <defs><linearGradient id="camaGr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#5b3a22" /><stop offset="1" stopColor="#2f1d10" /></linearGradient></defs>
+    <ellipse cx={x + ancho / 2} cy={y + 80} rx={ancho * 0.52} ry={18} fill="#000" opacity=".35" />
+    {Array.from({ length: n }, (_, i) => { const q = kclamp(verde * 1.7 - orden[i] * 0.11, 0, 1);
+      return <Champinon key={i} x={x + 70 + i * paso} y={y + 6} s={0.46 + (i % 2) * 0.06} rot={Math.sin(T * 0.8 + i) * 1.5} sombrero={mixHex('#efe2cc', '#5f7a62', q)} sombra={mixHex('#cdb795', '#2f4a35', q)} pie={mixHex('#f6eedf', '#9fb39a', q * 0.7)} />; })}
+    <rect x={x} y={y} width={ancho} height={64} rx={14} fill="url(#camaGr)" stroke={KC.ink} strokeWidth={6} />
+    <rect x={x + 10} y={y + 6} width={ancho - 20} height={8} rx={4} fill="#fff" opacity=".12" />
+    {puntos.map((p, i) => { const v = kclamp((verde - p.u * 0.8) * 4, 0, 1); return <circle key={i} cx={x + p.x} cy={y + p.y} r={4 + v * 7} fill={v > 0 ? mixHex('#8a5a2b', MV.verde2, v) : '#8a5a2b'} opacity={0.75} />; })}
   </g>;
 }
 // Báscula con platillo.
@@ -241,7 +256,7 @@ function MohoShot() {
       {/* 6 · cómo entra: personas, herramientas… y el agua */}
       <Escena T={T} a={K.E} b={K.Er}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<g transform="translate(540 1130) scale(1.36) translate(-683 -955)">
+        {fsvg(<g transform="translate(540 1075) scale(1.36) translate(-683 -955)">
           <Estante T={T} x={600} y={760} verdes={[0, kprog(T, K.E + 2.0, K.E + 3.0), 0]} />
           <Estante T={T} x={600} y={1060} verdes={[kprog(T, K.E + 3.4, K.E + 4.2), 0, 0]} />
           {(() => { const u = kprog(T, K.E + 0.1, K.E + 2.0, kEase.suave), xx = klerp(300, 560, u);
@@ -287,6 +302,8 @@ function MohoShot() {
           {/* sin flecha: Royse 1999 dice «formas parecidas» en Norteamérica, no que viajaran desde Irlanda */}
           {(() => { const r = 24 * kEase.rebote(kprog(T, K.Es + 2.5, K.Es + 3.0)); return r > 0 ? <circle cx={229} cy={753} r={r} fill={KC.red} stroke={KC.ink} strokeWidth={5} /> : null; })()}
         </g>)}
+        {/* las camas de champiñón que se pintan de verde (pérdidas de cosecha) */}
+        {fsvg(<CamaChampis x={90} y={1252} ancho={900} verde={kprog(T, K.Es + 3.6, K.Es + 7.6, kEase.suave)} T={T} />)}
       </Escena>
       {/* 10 · un gramo por kilo: la cosecha cae 68–100 % */}
       <Escena T={T} a={K.Gr} b={K.Ch}>
@@ -302,10 +319,10 @@ function MohoShot() {
           <g transform="translate(780 850) scale(1.2) translate(-810 -920)">
           <line x1={600} y1={1100} x2={1000} y2={1100} stroke={KC.ink} strokeWidth={8} />
           {(() => { const u = kprog(T, K.Gr + 1.5, K.Gr + 2.2, kEase.sale), baja = kprog(T, K.Gr + 2.4, K.Gr + 3.4, kEase.suave); return <>
-            <rect x={630} y={1100 - 360 * u} width={150} height={360 * u} fill={KC.leaf} stroke={KC.ink} strokeWidth={7} />
-            <rect x={830} y={1100 - 360 * u * klerp(1, 0.32, baja)} width={150} height={360 * u * klerp(1, 0.32, baja)} fill={KC.red} stroke={KC.ink} strokeWidth={7} />
+            <rect x={630} y={1100 - 360 * u} width={150} height={360 * u} fill="url(#barVerdeGr)" stroke={KC.ink} strokeWidth={7} />
+            <rect x={830} y={1100 - 360 * u * klerp(1, 0.32, baja)} width={150} height={360 * u * klerp(1, 0.32, baja)} fill="url(#barRojaGr)" stroke={KC.ink} strokeWidth={7} />
             {baja > 0.9 && <rect x={830} y={1100 - 360 * 0.32} width={150} height={360 * 0.32} fill="url(#rayasGr)" />}
-            <defs><pattern id="rayasGr" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="20" fill="rgba(255,255,255,.45)" /></pattern></defs></>; })()}
+            <defs><linearGradient id="barVerdeGr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#5fc46a" /><stop offset="1" stopColor="#2c7f3a" /></linearGradient><linearGradient id="barRojaGr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#e2574a" /><stop offset="1" stopColor="#a8302a" /></linearGradient><pattern id="rayasGr" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="20" fill="rgba(255,255,255,.45)" /></pattern></defs></>; })()}
           {[[705, 'sin moho'], [905, 'con 1 g/kg']].map(([xx, t]) => <text key={t} x={xx} y={1140} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>{t}</text>)}
           </g>
         </>)}
@@ -347,54 +364,56 @@ function MohoShot() {
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 2.2} until={K.G + 3.6} texto="¿tu hongo?" x={800} y={500} tam={44} />
       <Etq T={T} at={K.G + 2.4} until={K.Q + 1.4} x={430} y={1235} texto="Trichoderma" it tam={40} color={KC.ink} />
-      <Chip T={T} at={K.Q + 0.2} until={K.PD - 0.3} texto="1 · micelio blanco y denso" x={320} y={1385} tam={36} borde={KC.white} />
-      <Chip T={T} at={K.Q + 1.3} until={K.PD - 0.3} texto="2 · esporas verdes" x={320} y={1470} tam={36} borde={MV.verde2} />
+      <Chip T={T} at={K.Q + 0.2} until={K.PD - 0.3} texto="1 · micelio blanco y denso" x={320} y={1360} tam={36} borde={KC.white} />
+      <Chip T={T} at={K.Q + 1.3} until={K.PD - 0.3} texto="2 · esporas verdes" x={320} y={1432} tam={36} borde="#9fd59a" />
       <Chip T={T} at={K.PD + 0.1} until={K.L - 0.3} texto="POR DENTRO · EN LA PAJA" x={540} y={420} tam={32} borde={KC.cyan} mono />
       <Etq T={T} at={K.PD + 0.5} until={K.L - 0.3} x={50} y={640} texto="tu seta" tam={28} color={MV.crema} />
       <Etq T={T} at={K.PD + 0.6} until={K.L - 0.3} x={50} y={682} texto="Pleurotus" it tam={28} color={MV.crema} />
-      <Etq T={T} at={K.PD + 0.9} until={K.L - 0.3} x={520} y={1320} texto="Trichoderma" it tam={28} color="#9fd59a" />
-      <Chip T={T} at={K.PD + 1.4} until={K.L - 0.3} texto="compite por espacio y comida" x={540} y={1410} tam={30} borde="#9fd59a" />
-      <Etq T={T} at={K.PD + 2.0} until={K.L - 0.3} x={60} y={1482} texto="otros Trichoderma sí se enrollan en hongos" tam={22} color={KC.texto} />
-      <Etq T={T} at={K.PD + 1.4} until={K.L - 0.3} x={60} y={1522} texto="Innocenti et al., 2019 · Kosanovic et al., 2020" tam={20} color={KC.texto} />
+      <Etq T={T} at={K.PD + 0.9} until={K.L - 0.3} x={520} y={1300} texto="Trichoderma" it tam={30} color="#9fd59a" />
+      <Chip T={T} at={K.PD + 1.4} until={K.L - 0.3} texto="compite por espacio y comida" x={540} y={1368} tam={36} borde="#9fd59a" />
+      <Etq T={T} at={K.PD + 2.0} until={K.L - 0.3} x={60} y={1428} texto="otros Trichoderma sí se enrollan en hongos" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.PD + 1.4} until={K.L - 0.3} x={60} y={1464} texto="Innocenti et al., 2019 · Kosanovic et al., 2020" tam={26} color={KC.texto} />
       <Chip T={T} at={K.L + 0.4} until={K.P - 0.3} texto={'día ' + (1 + Math.floor(diaP * 5 + 0.0001))} x={540} y={410} tam={44} borde={KC.ink} mono />
-      <Etq T={T} at={K.L + 0.3} until={K.P - 0.3} x={90} y={1425} texto="seta" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.L + 0.5} until={K.P - 0.3} x={90} y={1467} texto="Pleurotus" it tam={30} color={KC.texto} />
-      <Etq T={T} at={K.L + 1.0} until={K.P - 0.3} x={580} y={1425} texto="T. pleuroticola" it tam={30} color={KC.texto} />
-      <Etq T={T} at={K.L + 1.4} until={K.P - 0.3} x={580} y={1467} texto="verde oscuro grisáceo" tam={22} color={KC.texto} />
-      <Etq T={T} at={K.L + 1.0} until={K.P - 0.3} x={60} y={1528} texto="Komoń-Zelazowska et al., 2007 · en laboratorio" tam={22} color={KC.ink} />
+      <Etq T={T} at={K.L + 0.3} until={K.P - 0.3} x={90} y={1385} texto="seta" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.L + 0.5} until={K.P - 0.3} x={90} y={1424} texto="Pleurotus" it tam={30} color={KC.texto} />
+      <Etq T={T} at={K.L + 1.0} until={K.P - 0.3} x={580} y={1385} texto="T. pleuroticola" it tam={30} color={KC.texto} />
+      <Etq T={T} at={K.L + 1.4} until={K.P - 0.3} x={580} y={1424} texto="verde oscuro grisáceo" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.L + 1.0} until={K.P - 0.3} x={60} y={1464} texto="Komoń-Zelazowska et al., 2007 · en laboratorio" tam={26} color={KC.ink} />
       <Chip T={T} at={K.E + 0.2} until={K.Er - 0.3} texto="personas y herramientas" x={360} y={420} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.E + 0.3} until={K.Er - 0.3} x={60} y={485} texto="Penn State Extension" tam={22} color={KC.ink} />
-      <Chip T={T} at={K.E + 2.4} until={K.Er - 0.3} texto="Malasia, 2024: también en el agua" x={700} y={1440} tam={32} borde={MV.agua} />
-      <Etq T={T} at={K.E + 2.8} until={K.Er - 0.3} x={60} y={1550} texto="y en el aire y las herramientas de limpieza · Ajis et al., 2024" tam={20} color={KC.ink} />
-      <Chip T={T} at={K.Er + 0.3} until={K.Er + 3.0} texto="1 a 2 horas en agua a 71 °C" x={380} y={440} tam={30} borde={KC.red} />
-      <Etq T={T} at={K.Er + 0.6} until={K.Er + 3.0} x={60} y={522} texto="(160 °F) · pasteurizar la paja" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.E + 0.3} until={K.Er - 0.3} x={60} y={485} texto="Penn State Extension" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.E + 2.4} until={K.Er - 0.3} texto="Malasia, 2024: también en el agua" x={680} y={1368} tam={36} borde={MV.agua} />
+      <Etq T={T} at={K.E + 2.8} until={K.Er - 0.3} x={380} y={1428} texto="y en el aire y las herramientas" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.E + 2.8} until={K.Er - 0.3} x={380} y={1464} texto="de limpieza · Ajis et al., 2024" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Er + 0.3} until={K.Er + 3.0} texto="1 a 2 horas en agua a 71 °C" x={380} y={440} tam={36} borde={KC.red} />
+      <Etq T={T} at={K.Er + 0.6} until={K.Er + 3.0} x={60} y={522} texto="(160 °F) · pasteurizar la paja" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Er + 3.3} until={K.V - 0.3} texto="+ salvado = + nitrógeno" x={380} y={440} tam={32} borde={KC.ink} />
       <Medidor T={T} at={K.Er + 3.6} until={K.V - 0.3} valor={(t) => klerp(0.3, 0.85, kprog(t, K.Er + 3.8, K.Er + 5.0, kEase.sale))} etiqueta="riesgo de contaminación" texto={(v) => (v > 0.6 ? 'sube' : '')} x={90} y={1360} ancho={900} color={KC.red} />
-      <Etq T={T} at={K.Er + 0.3} until={K.V - 0.3} x={60} y={1500} texto="de la Fuente, UC Cooperative Extension, 2011" tam={20} color={KC.ink} />
-      <Etq T={T} at={K.V + 0.3} until={K.Es - 0.3} x={60} y={560} texto="olla de presión = autoclave casero" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.Er + 0.3} until={K.V - 0.3} x={60} y={1470} texto="de la Fuente, UC Cooperative Extension, 2011" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.V + 0.3} until={K.Es - 0.3} x={60} y={560} texto="olla de presión = autoclave casero" tam={28} color={KC.ink} />
       <Etq T={T} at={K.V + 1.0} until={K.Es - 0.3} x={700} y={748} texto="estéril" tam={30} color={KC.ink} />
       <Chip T={T} at={K.V + 1.4} until={K.Es - 0.3} texto="vacío biológico" x={540} y={440} tam={36} borde={KC.violet} />
       <Chip T={T} at={K.V + 3.0} until={K.Es - 0.3} texto="estéril ≠ protegido" x={540} y={1290} tam={36} borde={KC.red} />
       <Etq T={T} at={K.Es + 0.4} until={K.Gr - 0.3} x={684} y={846} texto="Irlanda" lado="izq" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Es + 0.6} until={K.Es + 3.2} texto="forma agresiva · mediados de los 80" x={540} y={590} tam={30} borde={KC.red} />
       <Etq T={T} at={K.Es + 2.6} until={K.Gr - 0.3} x={60} y={700} texto="Norteamérica · inicios de los 90" tam={26} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Es + 3.4} until={K.Gr - 0.3} anio="1994–96" quien="pérdidas: 30 a 100 %" revista="cosechas de Pensilvania · Penn State" x={540} y={1310} />
-      <Etq T={T} at={K.Es + 1.0} until={K.Gr - 0.3} x={60} y={1492} texto="en los 90: más de 30 millones de dólares en el mundo" tam={22} color={KC.ink} />
-      <Etq T={T} at={K.Es + 1.0} until={K.Gr - 0.3} x={60} y={1530} texto="Royse et al., 1999 · Plant Disease" tam={20} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Es + 3.4} until={K.Gr - 0.3} anio={"1994\u2060–\u206096"} quien="pérdidas: 30 a 100 %" revista="cosechas de Pensilvania · Penn State" x={540} y={400} />
+      <Etq T={T} at={K.Es + 1.0} until={K.Gr - 0.3} x={60} y={1428} texto="en los 90: más de 30 millones de dólares en el mundo" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Es + 1.0} until={K.Gr - 0.3} x={60} y={1464} texto="Royse et al., 1999 · Plant Disease" tam={26} color={KC.ink} />
       <NumeroGigante T={T} at={K.Gr + 2.5} until={K.Gr + 4.6} valor={100} desde={100} dur={0.1} prefijo="−68 a −" sufijo=" %" etiqueta="cosecha de champiñón" x={540} y={430} tam={120} color={KC.red} />
-      <Etq T={T} at={K.Gr + 0.4} until={K.Gr + 2.3} x={60} y={1492} texto="1 kg de composta" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Gr + 0.4} until={K.Gr + 2.3} x={480} y={1160} texto="1 kg de composta" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Gr + 1.0} until={K.Gr + 2.3} x={60} y={690} texto="+ 1 g infectada" tam={28} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Gr + 4.8} until={K.Ch - 0.3} anio="2020" quien="Kosanovic, Grogan y Kavanagh" revista="Fungal Biology, 2020" x={540} y={400} />
-      <Chip T={T} at={K.Gr + 3.0} until={K.Ch - 0.3} texto={<>nombre desde 2002: <i>T. aggressivum</i></>} x={290} y={900} tam={26} borde={MV.verde2} />
+      <Chip T={T} at={K.Gr + 3.0} until={K.Ch - 0.3} texto={<>nombre desde 2002: <i>T. aggressivum</i></>} x={540} y={566} tam={36} borde="#9fd59a" />
       <Etq T={T} at={K.Ch + 0.5} until={K.Ch + 3.4} x={60} y={500} texto="Trichoderma reesei" it tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Ch + 1.0} until={K.Ch + 3.4} x={60} y={545} texto="tienda de lona de algodón del ejército de EE. UU." tam={20} color={KC.ink} />
-      <Chip T={T} at={K.Ch + 1.4} until={K.Ch + 3.4} texto="Isla de Bougainville (archipiélago de las Salomón) · 1944" x={540} y={1345} tam={26} borde={KC.ink} />
+      <Etq T={T} at={K.Ch + 1.0} until={K.Ch + 3.4} x={60} y={545} texto="tienda de lona de algodón del ejército de EE. UU." tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Ch + 1.4} until={K.Ch + 3.4} texto="Isla de Bougainville (archipiélago de las Salomón) · 1944" x={540} y={1345} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.Ch + 4.0} until={K.Ci - 0.3} x={60} y={540} texto="hoy: enzimas que cortan celulosa" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Ch + 4.8} until={K.Ci - 0.3} texto={<>y algunos <i>Trichoderma</i> protegen plantas</>} x={540} y={1330} tam={30} borde={KC.leaf} />
-      <Etq T={T} at={K.Ch + 1.0} until={K.Ci - 0.3} x={60} y={1500} texto="DSMZ (DSM 768) · Bischof et al., 2016 · Druzhinina et al., 2011" tam={20} color={KC.ink} />
+      <Chip T={T} at={K.Ch + 4.8} until={K.Ci - 0.3} texto={<>y algunos <i>Trichoderma</i> protegen plantas</>} x={540} y={1330} tam={36} borde={KC.leaf} />
+      <Etq T={T} at={K.Ch + 1.0} until={K.Ci - 0.3} x={60} y={1428} texto="DSMZ (DSM 768) · Bischof et al., 2016" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Ch + 1.0} until={K.Ci - 0.3} x={60} y={1464} texto="Druzhinina et al., 2011" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="pasteuriza · limpia manos y herramientas" x={540} y={330} tam={32} borde={KC.leaf} />
-      <Etq T={T} at={K.Ci + 2.0} until={K.Ou} x={60} y={1470} texto="A Robert también se le llenó un frasco" tam={24} color={KC.ink} />
-      <Etq T={T} at={K.Ci + 2.0} until={K.Ou} x={60} y={1508} texto="de esporas que no eran las que quería." tam={24} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 2.0} until={K.Ou} x={60} y={1428} texto="A Robert también se le llenó un frasco" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 2.0} until={K.Ou} x={60} y={1464} texto="de esporas que no eran las que quería." tam={26} color={KC.ink} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.PD} texto="10 cm" largo={288} />
