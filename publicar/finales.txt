@@ -4,3 +4,8 @@
 # Ya publicados antes del cambio no necesitan estar aquí.
 amb-04-barrenador
 cie-04-dedos-arrugados
+fun-10-huitlacoche
+ia-04-huella
+fun-11-moho-cortar
+bio-05-petunia
+fun-12-caspa
