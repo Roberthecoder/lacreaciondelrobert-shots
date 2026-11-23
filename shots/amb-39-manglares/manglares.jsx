@@ -206,14 +206,14 @@ function ManglaresShot() {
       <Escena T={T} a={K.Ca} b={K.P} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:'#0E0F12' }}></div>
         {/* belleza: el mangle (el sujeto) sobre su columna de lodo; capas más claras para que se lean */}
-        {svg(<><MangleRojo x={390} base={762} top={495} raices={1} T={T} s={0.9} />
-          <Columna x={40} y={760} w={700} h={740} capas={5 + kprog(T, K.Ca + 0.1, K.Ca + 4.0) * 3} T={T} /></>)}
+        {svg(<><MangleRojo x={390} base={862} top={600} raices={1} T={T} s={0.9} />
+          <Columna x={40} y={860} w={700} h={660} capas={5 + kprog(T, K.Ca + 0.1, K.Ca + 4.0) * 3} T={T} /></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1565} color={KC.texto} />
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><MangleRojo x={390} base={762} top={495} raices={1} T={T} s={0.9} /><Columna x={40} y={760} w={700} h={740} capas={8} T={T} />
+        {svg(<><MangleRojo x={390} base={862} top={600} raices={1} T={T} s={0.9} /><Columna x={40} y={860} w={700} h={660} capas={8} T={T} />
           <text x={905} y={1260} textAnchor="middle" style={{ font:`400 400px ${KF.titulo}` }} fill={KC.yellow} stroke="#0b1020" strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 905 1120)`}>?</text></>)}
       </Escena>
       {/* 7 · el estudio de 2011 y la hectárea que se llena */}
@@ -283,9 +283,9 @@ function ManglaresShot() {
       <Chip T={T} at={K.L + 3.0} until={K.Mi - 0.2} texto="casi sin oxígeno" y={1345} x={235} tam={36} borde={KC.yellow} />
       <Etq T={T} at={K.Mi + 0.6} until={K.Ca - 0.2} x={500} y={1215} texto="bacterias" tam={30} />
       <Chip T={T} at={K.Mi + 0.4} until={K.Ca - 0.2} texto="sin oxígeno: lentísimo" y={1330} x={540} tam={32} borde={KC.coral} />
-      <Chip T={T} at={K.Ca + 0.3} until={K.P - 0.2} texto="capa sobre capa" y={235} x={540} tam={38} borde={KC.gold} />
-      <Etq T={T} at={K.Ca + 3.6} until={K.P - 0.2} x={750} y={806} texto="capa nueva" tam={28} />
-      <Etq T={T} at={K.Ca + 1.0} until={K.P - 0.2} x={750} y={1454} texto="miles de años" tam={28} color={KC.gold2} />
+      <Chip T={T} at={K.Ca + 0.3} until={K.P - 0.2} texto="capa sobre capa" y={330} x={540} tam={38} borde={KC.gold} />
+      <Etq T={T} at={K.Ca + 3.6} until={K.P - 0.2} x={750} y={900} texto="capa nueva" tam={28} />
+      <Etq T={T} at={K.Ca + 1.0} until={K.P - 0.2} x={750} y={1478} texto="miles de años" tam={28} color={KC.gold2} />
       <TarjetaEstudio T={T} at={K.E + 0.7} until={K.E + 3.2} anio="2011" quien="25 manglares del Indo-Pacífico" revista="Donato et al. · Nature Geoscience" y={305} />
       <NumeroGigante T={T} at={K.E + 3.5} until={K.S - 0.2} valor={1023} dur={2.9} sufijo=" t" etiqueta="carbono por hectárea" x={540} y={1400} tam={130} color={KC.yellow} />
       <Chip T={T} at={K.S + 0.4} until={K.Mx - 0.2} texto="49–98 % en el suelo" y={450} x={420} tam={36} borde={KC.gold} />
