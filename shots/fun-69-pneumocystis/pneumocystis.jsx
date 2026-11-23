@@ -4,6 +4,14 @@
 
 const PC = { piel:'#f2c29b', pulmon:'#ff8fa6', pulmon2:'#e45d7a', bronquio:'#f7d2da', hongo:'#c9a7ff', hongo2:'#8f63e0', quiste:'#f4c25a', espora:'#7a4fd0', macro:'rgba(140,240,190,.5)', ergo:'#b18cff', coles:'#ffd23f', fosfo:'#7fd6ff' };
 
+// Pase de belleza: luz de volumen (claro arriba-izquierda, sombra abajo-derecha) para poner encima de piezas planas.
+function PnDefs() {
+  return <defs><radialGradient id="pn-luz" cx=".32" cy=".26" r=".85">
+    <stop offset="0" stopColor="#ffffff" stopOpacity=".45" /><stop offset=".42" stopColor="#ffffff" stopOpacity="0" />
+    <stop offset=".78" stopColor="#000000" stopOpacity=".08" /><stop offset="1" stopColor="#000000" stopOpacity=".3" />
+  </radialGradient></defs>;
+}
+
 // respiración: 0..1 (ciclo de 4 s)
 const resp = (T) => 0.5 + 0.5 * Math.sin(T * Math.PI / 2);
 
@@ -11,16 +19,21 @@ const resp = (T) => 0.5 + 0.5 * Math.sin(T * Math.PI / 2);
 function Torso({ x, y, s = 1, T, brillo = 0 }) {
   const r = resp(T), k = 1 + 0.06 * r;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <PnDefs />
     <path d="M -300 520 Q -330 120 -250 -40 Q -170 -150 -80 -170 L 80 -170 Q 170 -150 250 -40 Q 330 120 300 520 Z" fill={PC.piel} stroke={KC.ink} strokeWidth={9} />
+    <path d="M -300 520 Q -330 120 -250 -40 Q -170 -150 -80 -170 L 80 -170 Q 170 -150 250 -40 Q 330 120 300 520 Z" fill="url(#pn-luz)" opacity={0.8} />
     <rect x={-60} y={-330} width={120} height={180} rx={40} fill={PC.piel} stroke={KC.ink} strokeWidth={9} />
     <circle cx={0} cy={-420} r={120} fill={PC.piel} stroke={KC.ink} strokeWidth={9} />
+    <circle cx={0} cy={-420} r={116} fill="url(#pn-luz)" />
     <path d="M -110 -460 Q 0 -580 110 -460 Q 60 -520 0 -515 Q -60 -520 -110 -460 Z" fill="#3a2a20" stroke={KC.ink} strokeWidth={7} />
     <circle cx={-40} cy={-420} r={11} fill={KC.ink} /><circle cx={40} cy={-420} r={11} fill={KC.ink} />
     <path d="M -30 -365 Q 0 -350 30 -365" stroke={KC.ink} strokeWidth={7} fill="none" strokeLinecap="round" />
     <path d="M 0 -160 L 0 -40 M 0 -40 Q -60 -20 -90 30 M 0 -40 Q 60 -20 90 30" stroke={PC.bronquio} strokeWidth={26} fill="none" strokeLinecap="round" />
     <path d="M 0 -160 L 0 -40 M 0 -40 Q -60 -20 -90 30 M 0 -40 Q 60 -20 90 30" stroke={KC.ink} strokeWidth={4} fill="none" strokeLinecap="round" opacity=".4" />
-    <g transform={`translate(-120 140) scale(${k})`}><path d="M 40 -170 Q -120 -160 -150 40 Q -160 200 -40 210 Q 30 200 40 120 Z" fill={PC.pulmon} stroke={KC.ink} strokeWidth={8} /></g>
-    <g transform={`translate(120 140) scale(${k})`}><path d="M -40 -170 Q 120 -160 150 40 Q 160 200 40 210 Q -30 200 -40 120 Z" fill={PC.pulmon} stroke={KC.ink} strokeWidth={8} /></g>
+    <g transform={`translate(-120 140) scale(${k})`}><path d="M 40 -170 Q -120 -160 -150 40 Q -160 200 -40 210 Q 30 200 40 120 Z" fill={PC.pulmon} stroke={KC.ink} strokeWidth={8} />
+      <path d="M 40 -170 Q -120 -160 -150 40 Q -160 200 -40 210 Q 30 200 40 120 Z" fill="url(#pn-luz)" /></g>
+    <g transform={`translate(120 140) scale(${k})`}><path d="M -40 -170 Q 120 -160 150 40 Q 160 200 40 210 Q -30 200 -40 120 Z" fill={PC.pulmon} stroke={KC.ink} strokeWidth={8} />
+      <path d="M -40 -170 Q 120 -160 150 40 Q 160 200 40 210 Q -30 200 -40 120 Z" fill="url(#pn-luz)" /></g>
     {brillo > 0 && <g transform="translate(-170 190)" opacity={brillo}>
       <circle r={50 * brillo} fill={KC.gold2} opacity=".35" style={{ filter:'blur(6px)' }} />
       <circle r={16} fill={PC.hongo} stroke={KC.ink} strokeWidth={4} />
@@ -31,8 +44,11 @@ function Torso({ x, y, s = 1, T, brillo = 0 }) {
 
 function Personita({ x, y, s = 1, color = '#8fb6ff' }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <PnDefs />
     <circle cx={0} cy={-34} r={14} fill={PC.piel} stroke={KC.ink} strokeWidth={3.5} />
+    <circle cx={0} cy={-34} r={13} fill="url(#pn-luz)" />
     <path d="M -20 14 Q -22 -14 0 -16 Q 22 -14 20 14 Z" fill={color} stroke={KC.ink} strokeWidth={3.5} />
+    <path d="M -20 14 Q -22 -14 0 -16 Q 22 -14 20 14 Z" fill="url(#pn-luz)" />
   </g>;
 }
 
@@ -53,7 +69,9 @@ function Racimo({ x, y, s = 1, T }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d="M 0 -420 L 0 -160 Q -10 -120 -60 -90 M 0 -160 Q 10 -120 60 -90" stroke={PC.bronquio} strokeWidth={34} fill="none" strokeLinecap="round" />
     <path d="M 0 -420 L 0 -160 Q -10 -120 -60 -90 M 0 -160 Q 10 -120 60 -90" stroke={KC.ink} strokeWidth={5} fill="none" strokeLinecap="round" opacity=".35" />
-    {B.map(([bx, by], i) => <circle key={i} cx={bx * k} cy={by * k} r={58 * k} fill={i % 2 ? PC.pulmon : '#ffa3b6'} stroke={KC.ink} strokeWidth={6} />)}
+    <PnDefs />
+    {B.map(([bx, by], i) => <g key={i}><circle cx={bx * k} cy={by * k} r={58 * k} fill={i % 2 ? PC.pulmon : '#ffa3b6'} stroke={KC.ink} strokeWidth={6} />
+      <circle cx={bx * k} cy={by * k} r={55 * k} fill="url(#pn-luz)" /></g>)}
   </g>;
 }
 
@@ -205,9 +223,9 @@ function PneumoShot() {
       <Escena T={T} a={K.Di} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          {T < K.Di + 3.0 ? <Ficha x={540} y={800} texto="PROTOZOARIO" tachar={kprog(T, K.Di + 2.0, K.Di + 2.6, kEase.sale)} />
-            : <Ficha x={540} y={800} texto="HONGO" color="#fff4c2" sub="CLASIFICACIÓN · 1988" />}
-          <g transform="translate(540 1110)">
+          {T < K.Di + 3.0 ? <Ficha x={540} y={900} texto="PROTOZOARIO" tachar={kprog(T, K.Di + 2.0, K.Di + 2.6, kEase.sale)} />
+            : <Ficha x={540} y={900} texto="HONGO" color="#fff4c2" sub="CLASIFICACIÓN · 1988" />}
+          <g transform="translate(540 1230)">
             {Array.from({ length: 22 }, (_, i) => { const xx = -440 + i * 42, f = T * 2 + i * 0.5, on = kprog(T, K.Di + 1.0 + i * 0.04, K.Di + 1.3 + i * 0.04);
               return <g key={i}><circle cx={xx} cy={Math.sin(f) * 40} r={12} fill={on > 0.5 ? KC.gold2 : '#9fd0ff'} stroke={KC.ink} strokeWidth={3} />
                 <circle cx={xx} cy={-Math.sin(f) * 40} r={12} fill={on > 0.5 ? KC.gold : '#ff8fa6'} stroke={KC.ink} strokeWidth={3} />
@@ -227,7 +245,7 @@ function PneumoShot() {
       {/* 7 · ergosterol vs colesterol */}
       <Escena T={T} a={K.Co} b={K.An} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 150)">
           <rect x={40} y={620} width={480} height={460} rx={26} fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.25)" strokeWidth={4} />
           <rect x={560} y={620} width={480} height={460} rx={26} fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.25)" strokeWidth={4} />
           <Membrana x={70} y={900} w={420} esterol={PC.ergo} rota={fBaja > 0.95 ? 35 : 0} />
@@ -236,7 +254,7 @@ function PneumoShot() {
           <g transform={`translate(280 ${klerp(700, 830, fBaja)})`}><rect x={-22} y={-22} width={44} height={44} transform="rotate(45)" fill={KC.red} stroke={KC.ink} strokeWidth={4} /></g>
           {fBaja > 0.95 && <path d="M 230 860 L 250 890 L 240 920 L 262 950" stroke={KC.red} strokeWidth={8} fill="none" strokeLinecap="round" />}
           <g transform={`translate(${800 + 60 * Math.sin(fRebota * Math.PI) * 0} ${fRebota < 0.5 ? klerp(700, 830, fRebota * 2) : klerp(830, 700, (fRebota - 0.5) * 2)}) rotate(${fRebota * 300})`}><rect x={-22} y={-22} width={44} height={44} transform="rotate(45)" fill={KC.red} stroke={KC.ink} strokeWidth={4} /></g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 8 · en su lugar, un antibiótico */}
       <Escena T={T} a={K.An} b={K.E} zoom={0.04}>
@@ -290,14 +308,14 @@ function PneumoShot() {
       <Etq T={T} at={K.Fo + 0.6} until={K.Sa - 0.3} x={60} y={1260} texto="pared del alvéolo" tam={26} color="#ffc2d0" />
       <Etq T={T} at={K.Sa + 1.0} until={K.Di - 0.3} x={1040} y={610} lado="izq" texto="macrófago (defensa)" tam={28} color="#a8ffd3" />
       <Chip T={T} at={K.Sa + 1.8} until={K.Di - 0.3} texto="defensas bien → casi nunca neumonía" x={540} y={470} tam={32} borde={KC.mint} />
-      <Chip T={T} at={K.Di + 1.0} until={K.P - 0.3} texto="sus genes (ARN ribosomal)" x={540} y={1250} tam={32} borde={KC.gold} />
-      <Etq T={T} at={K.Di + 3.2} until={K.P - 0.3} x={60} y={470} texto="Edman et al., Nature, 1988" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Di + 1.0} until={K.P - 0.3} texto="sus genes (ARN ribosomal)" x={540} y={1345} tam={32} borde={KC.gold} />
+      <Etq T={T} at={K.Di + 3.2} until={K.P - 0.3} x={60} y={640} texto="Edman et al., Nature, 1988" tam={26} color={KC.ink} />
       <Chip T={T} at={K.P + 0.2} until={K.Co - 0.2} texto="antifúngicos comunes" x={420} y={470} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.Co + 0.2} until={K.An - 0.3} texto="hongo común" x={280} y={680} tam={30} borde={PC.ergo} />
-      <Chip T={T} at={K.Co + 0.4} until={K.An - 0.3} texto="Pneumocystis" x={800} y={680} tam={30} borde={PC.coles} />
-      <Etq T={T} at={K.Co + 0.8} until={K.An - 0.3} x={60} y={1040} texto="ergosterol" tam={30} color={PC.ergo} />
-      <Etq T={T} at={K.Co + 1.6} until={K.An - 0.3} x={580} y={1040} texto="colesterol (como tú)" tam={30} color={PC.coles} />
-      <Chip T={T} at={K.Co + 2.6} until={K.An - 0.3} texto="el antifúngico rebota" x={800} y={560} tam={28} borde={KC.red} />
+      <Chip T={T} at={K.Co + 0.2} until={K.An - 0.3} texto="hongo común" x={280} y={830} tam={30} borde={PC.ergo} />
+      <Chip T={T} at={K.Co + 0.4} until={K.An - 0.3} texto="Pneumocystis" x={800} y={830} tam={30} borde={PC.coles} />
+      <Etq T={T} at={K.Co + 0.8} until={K.An - 0.3} x={60} y={1190} texto="ergosterol" tam={30} color={PC.ergo} />
+      <Etq T={T} at={K.Co + 1.6} until={K.An - 0.3} x={580} y={1190} texto="colesterol (como tú)" tam={30} color={PC.coles} />
+      <Chip T={T} at={K.Co + 2.6} until={K.An - 0.3} texto="el antifúngico rebota" x={800} y={705} tam={28} borde={KC.red} />
       <Chip T={T} at={K.An + 0.5} until={K.E - 0.3} texto="es un antibiótico" x={540} y={420} tam={42} borde={KC.gold} />
       <Etq T={T} at={K.An + 1.0} until={K.E - 0.3} x={260} y={1300} texto="trimetoprim + sulfametoxazol" tam={30} color={KC.ink} />
       <Chip T={T} at={K.An + 1.6} until={K.E - 0.3} texto="esto no es consejo médico" x={540} y={1400} tam={26} borde={KC.red} />
