@@ -1,1 +1,2 @@
 - cie-43-tripa-ruge: sin cambios: revisadas las 13 escenas en hoja de cuadros; sujeto grande y centrado, un punto de atención, nada cortado ni encimado. Auditores: sin láminas, encuadre bien.
+- fun-118-mango-antracnosis: sin cambios: revisadas las 13 escenas en hoja de cuadros; mango/tazón y células grandes y centrados, etiquetas sin encimarse, nada cortado. Auditores: sin láminas, encuadre bien.
