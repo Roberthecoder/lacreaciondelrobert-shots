@@ -52,7 +52,9 @@ function Encendedor({ T, x, y, s = 1, rot = 0, nivel = 0.62, ola = 0, boton = 0,
 // Mano que sostiene el encendedor (dedos por delante, pulgar arriba). Origen = base del encendedor.
 function ManoAtras({ x, y, s = 1, rot = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
-    <path d="M -150 -320 Q -230 -200 -200 40 L -180 360 L 120 360 L 140 40 Q 150 -120 110 -260 Z" fill={PIEL} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    <defs><linearGradient id="manoAtrGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0.55" stopColor="#fff" /><stop offset="1" stopColor="#000" /></linearGradient>
+      <mask id="manoAtrMask" maskContentUnits="objectBoundingBox"><rect x={0} y={0} width={1} height={1} fill="url(#manoAtrGrad)" /></mask></defs>
+    <path d="M -150 -320 Q -230 -200 -200 40 L -180 360 L 120 360 L 140 40 Q 150 -120 110 -260 Z" fill={PIEL} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" mask="url(#manoAtrMask)" />
   </g>;
 }
 function ManoDedos({ x, y, s = 1, rot = 0 }) {
@@ -170,13 +172,13 @@ function EncendedorShot() {
       <Escena T={T} a={K.G} b={K.Q} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <g transform={`rotate(${sacude * 9} 540 1420)`}>
-            <ManoAtras x={540} y={1420} s={1.5} />
-            <Encendedor T={T} x={540} y={1420} s={1.5} ola={Math.abs(sacude) * 1.2 + 0.15} id="g" />
-            <ManoDedos x={540} y={1420} s={1.5} />
+          <g transform={`rotate(${sacude * 9} 540 1250)`}>
+            <ManoAtras x={540} y={1250} s={1.3} />
+            <Encendedor T={T} x={540} y={1250} s={1.3} ola={Math.abs(sacude) * 1.2 + 0.15} id="g" />
+            <ManoDedos x={540} y={1250} s={1.3} />
           </g>
         </SvgCapa>
-        <Escala T={T} z={1} pxPorMm={11.14} x={60} y={1430} color={KC.ink} />
+        <Escala T={T} z={1} pxPorMm={9.655} x={60} y={1430} color={KC.ink} />
       </Escena>
       {/* 1 · qué es: butano, isobutano, propano; hierve a ≈ −0.5 °C */}
       <Escena T={T} a={K.Q} b={K.P}>
@@ -208,14 +210,14 @@ function EncendedorShot() {
       <Escena T={T} a={K.V} b={K.Ch} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <ManoAtras x={540} y={1750} s={1.6} />
-          <Encendedor T={T} x={540} y={1750} s={1.6} boton={kprog(T, K.V + 0.4, K.V + 0.8)} ola={0.1} id="v" />
-          <ManoDedos x={540} y={1750} s={1.6} />
-          <Pulgar x={586} y={992} s={1.024} baja={kprog(T, K.V + 0.4, K.V + 0.8)} />
-          <Burbujas T={T} x={399} y={1136} w={243} h={230} n={18} f={kprog(T, K.V + 0.8, K.V + 1.4)} color="rgba(30,90,160,.8)" vel={220} />
-          {T > K.V + 0.9 && Array.from({ length: 10 }, (_, i) => { const u = ((T - K.V - 0.9) * 1.2 + i / 10) % 1; return <circle key={i} cx={606 + Math.sin(i * 2 + T * 6) * 22 * u} cy={900 - u * 420} r={15 + u * 13} fill="#ffe86b" stroke={KC.ink} strokeWidth={3} opacity={1 - u} />; })}
+          <ManoAtras x={540} y={1380} s={1.3} />
+          <Encendedor T={T} x={540} y={1380} s={1.3} boton={kprog(T, K.V + 0.4, K.V + 0.8)} ola={0.1} id="v" />
+          <ManoDedos x={540} y={1380} s={1.3} />
+          <Pulgar x={577} y={764} s={0.832} baja={kprog(T, K.V + 0.4, K.V + 0.8)} />
+          <Burbujas T={T} x={425} y={881} w={198} h={187} n={18} f={kprog(T, K.V + 0.8, K.V + 1.4)} color="rgba(30,90,160,.8)" vel={220} />
+          {T > K.V + 0.9 && Array.from({ length: 10 }, (_, i) => { const u = ((T - K.V - 0.9) * 1.2 + i / 10) % 1; return <circle key={i} cx={594 + Math.sin(i * 2 + T * 6) * 22 * u} cy={689 - u * 380} r={15 + u * 13} fill="#ffe86b" stroke={KC.ink} strokeWidth={3} opacity={1 - u} />; })}
         </SvgCapa>
-        <Etq T={T} at={K.V + 1.0} until={K.Ch - 0.2} x={680} y={560} texto="gas que sale" lado="der" tam={36} color={KC.ink} />
+        <Etq T={T} at={K.V + 1.0} until={K.Ch - 0.2} x={630} y={400} texto="gas que sale" lado="der" tam={36} color={KC.ink} />
       </Escena>
       {/* 4 · la chispa: rueda + piedrita, o cristal piezoeléctrico; el gas arde */}
       <Escena T={T} a={K.Ch} b={K.F} zoom={0.03}>
@@ -257,7 +259,7 @@ function EncendedorShot() {
       <Escena T={T} a={K.Pr} b={K.S} zoom={0.1}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          <Sol T={T} x={540} y={560} r={120} />
+          <Sol T={T} x={540} y={880} r={150} />
           <text x={550} y={1300} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 550 1100)`}>?</text>
         </SvgCapa>
       </Escena>
@@ -306,11 +308,11 @@ function EncendedorShot() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <ManoAtras x={730} y={1440} s={1.3} />
-          <Encendedor T={T} x={730} y={1440} s={1.3} ola={0.15} llama={kprog(T, K.Ci + 0.2, K.Ci + 0.6)} id="f" />
-          <ManoDedos x={730} y={1440} s={1.3} />
+          <ManoAtras x={730} y={1320} s={1.3} />
+          <Encendedor T={T} x={730} y={1320} s={1.3} ola={0.15} llama={kprog(T, K.Ci + 0.2, K.Ci + 0.6)} id="f" />
+          <ManoDedos x={730} y={1320} s={1.3} />
         </SvgCapa>
-        <Lupa T={T} at={K.Ci + 0.6} until={FIN} x={290} y={780} r={240} fx={730} fy={1180} tinte={KC.cyan} etiqueta="POR DENTRO"
+        <Lupa T={T} at={K.Ci + 0.6} until={FIN} x={290} y={720} r={240} fx={730} fy={1060} tinte={KC.cyan} etiqueta="POR DENTRO"
           interior={(TT, r) => <svg width={2 * r} height={2 * r}><Particulas T={TT} x={20} y={20} w={2 * r - 40} h={2 * r - 40} nivel={0.55} nLiq={40} nVap={5} r={14} seed={6} /></svg>} />
       </Escena>
 
