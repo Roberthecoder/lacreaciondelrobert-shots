@@ -295,13 +295,13 @@ function ArrozShot() {
       {/* 8 · el estudio: 1991, DuPont, Delaware; plástico Mylar perforado */}
       <Escena T={T} a={K.E} b={K.I} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<g opacity={klerp(0.62, 1, kprog(T, K.E + 3.0, K.E + 3.4))}>
-          <rect x={40} y={980} width={1000} height={90} rx={14} fill={AC.plastico} fillOpacity={0.85} stroke={KC.ink} strokeWidth={6} />
+        {fsvg(<g opacity={klerp(0.62, 1, kprog(T, K.E + 3.0, K.E + 3.4))} transform="translate(540 1060) scale(1.08) translate(-540 -1000)">
+          <rect x={40} y={980} width={1000} height={90} rx={14} fill={AC.plastico} fillOpacity={0.45} stroke={KC.ink} strokeWidth={6} />
           <path d="M 76 1000 L 1004 1000" stroke="#fff" strokeWidth={7} opacity=".7" />
           {[[220, 3.5], [540, 4.0], [860, 4.5]].map(([px, t0], i) => { const k = kprog(T, K.E + t0, K.E + t0 + 0.9, kEase.suave); return <g key={i}>
             {k > 0 && <><path d={`M ${px} 980 L ${px} ${980 + k * 170}`} stroke={KC.ink} strokeWidth={24} strokeLinecap="round" /><path d={`M ${px} 980 L ${px} ${980 + k * 170}`} stroke="#d8c7a4" strokeWidth={12} strokeLinecap="round" /></>}
             {k > 0.55 && <path d={`M ${px - 36} 1067 L ${px - 11} 1054 L ${px} 1070 L ${px + 14} 1054 L ${px + 38} 1067`} stroke="#0b1020" strokeWidth={4} fill="none" />}
-            <Apresorio x={px} y={980} r={140} mel={1} glic={1} T={T} n={14} seed={i + 4} /></g>; })}
+            <Apresorio x={px} y={980} r={148} mel={1} glic={1} T={T} n={14} seed={i + 4} /></g>; })}
         </g>)}
       </Escena>
       {/* 9a · al microscopio: hifas abultadas que pasan de célula en célula */}
@@ -376,7 +376,7 @@ function ArrozShot() {
       <Etq T={T} at={K.Cl + 2.0} until={K.E - 0.3} x={580} y={1170} texto="clavija de penetración" tam={28} color={KC.texto} />
       <Etq T={T} at={K.Cl + 3.2} until={K.E - 0.3} x={60} y={1470} texto="célula de la hoja" tam={28} color="#a8e08a" />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.7} anio="1991" quien="DuPont · Wilmington, Delaware" revista="Howard y cols. · PNAS, 1991 · EE. UU." y={470} />
-      <Chip T={T} at={K.E + 3.2} until={K.I - 0.3} texto="plástico (Mylar) en vez de hoja" x={540} y={1290} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.E + 3.2} until={K.I - 0.3} texto="plástico (Mylar) en vez de hoja" x={540} y={1400} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.E + 3.6} until={K.I - 0.3} texto="esquemático" x={540} y={770} tam={22} borde={KC.white} mono />
       <Chip T={T} at={K.I + 0.2} until={K.I + 2.4} texto="AL MICROSCOPIO · dentro de la hoja" x={440} y={420} tam={28} borde={KC.cyan} mono />
       <Etq T={T} at={K.I + 1.0} until={macroI - 0.2} x={60} y={1320} texto="hifas abultadas, de célula en célula" tam={28} color="#e8d9b5" />
