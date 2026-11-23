@@ -9,16 +9,29 @@ const MV = { verde:'#1aa89b', verde2:'#3fd3c4', verde3:'#0c6f67', verdeHondo:'#0
 
 // Tabla de madera clara vista de frente y su canto (grosor) abajo. verde 0..1 = cuánto se ven las vetas verdes.
 // adentro 0..1 = el canto muestra que el verde atraviesa la madera.
+// Volumen de la madera (pase de belleza): luz arriba a la izquierda, sombra abajo a la derecha.
+function DefsMV() {
+  return <defs>
+    <linearGradient id="mvLuz" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stopColor="#fff" stopOpacity="0.28" /><stop offset="0.5" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.25" /></linearGradient>
+    <linearGradient id="mvRama" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#fff" stopOpacity="0.3" /><stop offset="0.45" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.35" /></linearGradient>
+    <radialGradient id="mvMancha" cx="40%" cy="35%" r="70%"><stop offset="0" stopColor="#3fd3c4" stopOpacity="0.5" /><stop offset="1" stopColor="#0a4f4a" stopOpacity="0.35" /></radialGradient>
+  </defs>;
+}
 function Tabla({ T = 0, x, y, w = 760, h = 420, verde = 1, adentro = 1, rot = 0, s = 1, copita = 0 }) {
   const vetas = [0.16, 0.3, 0.47, 0.62, 0.78, 0.9];
   const manchas = [[0.18, 0.28, 0.26, 0.09], [0.55, 0.46, 0.34, 0.11], [0.3, 0.7, 0.22, 0.08], [0.78, 0.22, 0.18, 0.07], [0.72, 0.78, 0.25, 0.09]];
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
+    <DefsMV />
+    <rect x={18} y={26} width={w} height={h + 60} rx={14} fill="rgba(0,0,0,.4)" />
     <rect x={0} y={0} width={w} height={h} rx={14} fill={MV.madera} stroke={KC.ink} strokeWidth={8} />
     {vetas.map((v, i) => <path key={i} d={`M 20 ${h * v} Q ${w * 0.3} ${h * v - 18} ${w * 0.55} ${h * v + 6} T ${w - 20} ${h * v - 4}`} stroke={MV.veta} strokeWidth={5} fill="none" opacity=".75" />)}
     {manchas.map(([a, b, c, d], i) => <ellipse key={i} cx={w * a} cy={h * b} rx={w * c * (0.6 + 0.4 * verde)} ry={h * d} fill={MV.verde} opacity={0.85 * verde} transform={`rotate(-4 ${w * a} ${h * b})`} />)}
+    {manchas.map(([a, b, c, d], i) => <ellipse key={'s' + i} cx={w * a + 8} cy={h * b + 8} rx={w * c * (0.6 + 0.4 * verde) * 0.9} ry={h * d * 0.8} fill={MV.verdeHondo} opacity={0.45 * verde} transform={`rotate(-4 ${w * a} ${h * b})`} />)}
+    <rect x={0} y={0} width={w} height={h} rx={14} fill="url(#mvLuz)" />
     {manchas.map(([a, b, c, d], i) => <ellipse key={'b' + i} cx={w * a - 10} cy={h * b - 4} rx={w * c * 0.55} ry={h * d * 0.45} fill={MV.verde2} opacity={0.5 * verde} transform={`rotate(-4 ${w * a} ${h * b})`} />)}
     {/* canto (grosor): el verde sigue adentro */}
     <path d={`M 0 ${h - 4} L ${w} ${h - 4} L ${w - 18} ${h + 60} L 18 ${h + 60} Z`} fill={MV.madera2} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <path d={`M 0 ${h - 4} L ${w} ${h - 4} L ${w - 18} ${h + 60} L 18 ${h + 60} Z`} fill="rgba(0,0,0,.22)" />
     {adentro > 0 && [0.18, 0.55, 0.3, 0.78, 0.72].map((a, i) => <rect key={i} x={w * a - 34} y={h + 6} width={68 * adentro} height={46} rx={10} fill={MV.verde3} opacity={0.9 * adentro} />)}
     {copita > 0 && <Copita T={T} x={130} y={30} s={0.9} crece={copita} />}
   </g>;
@@ -40,9 +53,12 @@ function Copita({ T = 0, x, y, s = 1, crece = 1, inclina = 0 }) {
 // Rama caída SIN corteza, con manchas verde azulado. Cara del corte a la izquierda.
 function Rama({ x, y, w = 820, h = 150, verde = 1, rot = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot})`}>
+    <DefsMV />
+    <rect x={10} y={18} width={w} height={h} rx={h / 2} fill="rgba(0,0,0,.35)" />
     <rect x={0} y={0} width={w} height={h} rx={h / 2} fill={MV.madera2} stroke={KC.ink} strokeWidth={7} />
     {[0.28, 0.5, 0.72].map((v, i) => <path key={i} d={`M 70 ${h * v} Q ${w * 0.45} ${h * v - 12} ${w - 40} ${h * v + 4}`} stroke={MV.veta} strokeWidth={5} fill="none" />)}
     {[[0.3, 0.45, 0.16], [0.62, 0.55, 0.2], [0.85, 0.4, 0.1]].map(([a, b, c], i) => <ellipse key={i} cx={w * a} cy={h * b} rx={w * c * verde} ry={h * 0.3} fill={MV.verde} opacity={0.85 * verde} />)}
+    <rect x={0} y={0} width={w} height={h} rx={h / 2} fill="url(#mvRama)" />
     <ellipse cx={0} cy={h / 2} rx={42} ry={h / 2} fill={MV.madera} stroke={KC.ink} strokeWidth={7} />
     {[0.66, 0.36].map((k, i) => <ellipse key={i} cx={0} cy={h / 2} rx={42 * k} ry={h / 2 * k} fill="none" stroke={MV.veta} strokeWidth={4} />)}
     <path d={`M -10 ${h * 0.3} Q 14 ${h * 0.5} -6 ${h * 0.75}`} stroke={MV.verde3} strokeWidth={14} fill="none" opacity={0.9 * verde} strokeLinecap="round" />
