@@ -1,0 +1,1 @@
+- qui-47-agua-mineral: Gancho («ÁCIDO» más chico: ya no se corta en el borde derecho), pH (rótulos «aguas minerales con gas» y «agua de la llave» ya no se enciman con la barra de pH).

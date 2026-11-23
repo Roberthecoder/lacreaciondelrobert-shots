@@ -288,12 +288,12 @@ function AguaMineral() {
 
       {/* textos */}
       <ChipEncoge T={T} at={K.G + 0.4} encogeEn={K.G + 2.0} until={K.G + 4.4} texto="burbujas" sub="un poquito" x={720} y={420} />
-      <Gigante T={T} at={K.G + 2.4} until={K.Ac - 0.3} texto="ÁCIDO" x={770} y={850} tam={215} />
+      <Gigante T={T} at={K.G + 2.4} until={K.Ac - 0.3} texto="ÁCIDO" x={725} y={850} tam={165} />
       <Chip T={T} at={K.Ac + 1.9} until={K.Ac + 3.6} texto="H₂CO₃ · ácido carbónico" y={520} tam={44} borde={KC.yellow} />
       <Chip T={T} at={K.Ac + 3.8} until={K.Ph - 0.3} texto="ácido débil: suelta H⁺" y={520} tam={44} borde={HPLUS} />
       <Etq T={T} at={K.Ac + 0.3} until={K.Ac + 1.2} x={60} y={500} texto="CO₂ disuelto" color={KC.texto} />
-      <Etq T={T} at={K.Ph + 1.6} until={K.En - 0.3} x={40} y={720} texto="aguas minerales con gas" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Ph + 3.8} until={K.En - 0.3} x={930} y={600} texto="agua de la llave" lado="izq" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Ph + 1.6} until={K.En - 0.3} x={26} y={720} texto="aguas minerales con gas" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.Ph + 3.8} until={K.En - 0.3} x={1000} y={640} texto="agua de la llave" lado="izq" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Ph + 0.4} until={K.En - 0.3} texto="2016 · Reddy et al. · JADA · Birmingham, Alabama" y={1510} tam={26} borde={KC.ink} mono />
       <Chip T={T} at={K.En + 0.9} until={K.Ne - 0.2} texto="anhidrasa carbónica: ¡más rápido!" y={250} tam={36} borde={ENZ} />
       <Chip T={T} at={K.Ne + 0.3} until={K.Ag - 0.3} texto="H⁺ → nervio del dolor" y={250} tam={40} borde={NERVIO} />
