@@ -1,1 +1,1 @@
-- amb-01-vinazas: sin cambios: revisadas las 12 escenas (jarra, botellas, alambique, pH, río, reactor, bagazo, setas, granja, cierre): sujeto grande y centrado, sin encimados ni cortes. Encuadre bien, sin láminas.
+- amb-01-vinazas: «Estudio» (2025): el reactor de fondo se veía casi apagado (0.45) antes de que entren los garrafones y el auditor lo marcaba lámina; ahora entra al 0.9 y baja a 0.45 cuando aparecen los productos. Las demás escenas ya cumplían. Encuadre bien, sin láminas.

@@ -273,7 +273,7 @@ function VinazasNarrado() {
       <Escena T={T} a={K.Re} b={K.E} zoom={0.03}><ReactorInterior T={T} a={K.Re} /></Escena>
       <Escena T={T} a={K.E} b={K.B}>
         <FondoLunares color={KC.yellow} />
-        <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, opacity:0.45 }}><ReactorInterior T={T} a={K.Re} /></div>
+        <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, opacity:0.9 - 0.45 * kprog(T, K.E + 1.8, K.E + 2.4) }}><ReactorInterior T={T} a={K.Re} /></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {['flama', 'h2', 'prot', 'agua'].map((k, i) => { const at = K.E + 2.0 + i * 0.5; if (T < at) return null; const p = kprog(T, at, at + 0.4, kEase.rebote);
             return <g key={k} transform={`translate(${190 + i * 233} ${1150 + mece(T, i, 0.3) * 8}) scale(${2 * p})`}><Garrafa x={0} y={90} s={0.75} T={T} icono={ICONOS[k]} /></g>; })}
