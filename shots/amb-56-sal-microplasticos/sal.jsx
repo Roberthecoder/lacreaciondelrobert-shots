@@ -110,7 +110,7 @@ function SalShot() {
   const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{c}</svg>;
   // salero que se sacude (gancho y cierre)
   const sacude = (t0) => { const u = T - t0; return u < 2.4 ? Math.sin(u * 22) * 14 * kclamp(u * 3, 0, 1) : 0; };
-  const saleroPizca = (t0) => <g transform="translate(540 1390) scale(1.6) translate(-340 -1130)">
+  const saleroPizca = (t0) => <g transform="translate(540 1470) scale(1.6) translate(-340 -1130)">
     <Plato />
     <Pizca T={T} t0={t0 + 0.15} />
     <Salero x={340 + sacude(t0) * 0.6} y={640} rot={150 + sacude(t0)} s={1.05} motas={0.6} />
@@ -134,7 +134,7 @@ function SalShot() {
         {svg(<g opacity={1 - kprog(T, K.G + 4.2, K.G + 4.8)}>{saleroPizca(K.G)}</g>)}
         {svg(<g opacity={kprog(T, K.G + 4.4, K.G + 4.9)}>
           {[['mar', 215], ['mina', 540], ['lago', 865]].map(([n, xx], i) => { const e = kprog(T, K.G + 4.5 + i * 0.35, K.G + 5.0 + i * 0.35, kEase.rebote);
-            return <g key={n} transform={`translate(${xx} 880) scale(${0.3 + 0.7 * e}) translate(${-xx} -880)`}><Salero x={xx} y={880} s={1.3} motas={kprog(T, K.G + 5.2 + i * 0.3, K.G + 6.2 + i * 0.3)} etiqueta={n} seed={i + 7} /></g>; })}
+            return <g key={n} transform={`translate(${xx} 1000) scale(${0.3 + 0.7 * e}) translate(${-xx} -1000)`}><Salero x={xx} y={1000} s={1.3} motas={kprog(T, K.G + 5.2 + i * 0.3, K.G + 6.2 + i * 0.3)} etiqueta={n} seed={i + 7} /></g>; })}
         </g>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1600} color={KC.ink} />
       </Escena>
@@ -220,11 +220,11 @@ function SalShot() {
       {/* 8 · Colima 2026: ≈1,950 piezas por kilo en muestras de sal de mar mexicana */}
       <Escena T={T} a={K.Co} b={K.H}>
         <FondoLunares color={KC.yellow} />
-        {svg(<MapaMexico x={40} y={640} ancho={1000} conCA={false}>
+        {svg(<MapaMexico x={40} y={790} ancho={1000} conCA={false}>
           <circle cx={cx} cy={cy} r={(20 + 10 * Math.max(0, Math.sin(T * 6))) / 0.9} fill={KC.red} stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.Co + 0.5, K.Co + 0.9)} />
           <text x={cx + 10} y={cy + 90} textAnchor="middle" style={{ font:`900 ${40 / 0.9}px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Co + 0.7, K.Co + 1.1)}>Colima</text>
         </MapaMexico>)}
-        {T >= K.Co + 1.4 && <div style={{ position:'absolute', left:240, top:300, width:600, textAlign:'center', zIndex:41 }}>
+        {T >= K.Co + 1.4 && <div style={{ position:'absolute', left:240, top:400, width:600, textAlign:'center', zIndex:41 }}>
           <div style={{ font:`400 150px/1 ${KF.titulo}`, color:KC.white, WebkitTextStroke:`5px ${KC.ink}`, textShadow:`6px 6px 0 ${KC.ink}` }}>≈{kformato(klerp(0, 1950, kprog(T, K.Co + 1.4, K.Co + 3.6, kEase.sale)), 0)}</div>
           <div style={{ font:`900 40px ${KF.texto}`, color:KC.ink, marginTop:8 }}>piezas por kilo de sal</div>
         </div>}
@@ -232,10 +232,10 @@ function SalShot() {
       {/* 9 · la mayoría hilitos; solo se contaron las de ≥ 0.2 mm */}
       <Escena T={T} a={K.H} b={K.Sd}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 60% 40%, #1b2440 0%, ${KC.noche} 75%)` }}></div>
-        {svg(<>
+        {svg(<g transform="translate(0 220)">
           {parts.map((p, i) => p.tipo === 'h'
-            ? <g key={i} opacity={kprog(T, K.H + 0.2 + i * 0.08, K.H + 0.5 + i * 0.08)}><Hilito x={p.x} y={p.y - 40 * cola} l={p.l} rot={p.rot} color={p.c} T={T} seed={i} w={12} /></g>
-            : <g key={i} opacity={kprog(T, K.H + 0.2 + i * 0.08, K.H + 0.5 + i * 0.08)}><Fragmento x={p.x} y={p.y - 40 * cola} s={1.75 + (i % 3) * 0.24} rot={p.rot} color={p.c} /></g>)}
+            ? <g key={i} opacity={kprog(T, K.H - 0.3 + i * 0.05, K.H + 0.1 + i * 0.05)}><Hilito x={p.x} y={p.y - 40 * cola} l={p.l} rot={p.rot} color={p.c} T={T} seed={i} w={12} /></g>
+            : <g key={i} opacity={kprog(T, K.H - 0.3 + i * 0.05, K.H + 0.1 + i * 0.05)}><Fragmento x={p.x} y={p.y - 40 * cola} s={1.75 + (i % 3) * 0.24} rot={p.rot} color={p.c} /></g>)}
           {chicas.map((c, i) => <circle key={i} cx={c.x} cy={c.y + cola * 620} r={c.r} fill={c.c} stroke={KC.ink} strokeWidth={2} opacity={kprog(T, K.H + 0.6, K.H + 1.0) * (1 - kprog(T, K.H + 3.2, K.H + 4.4))} />)}
           {/* colador */}
           <g opacity={kprog(T, K.H + 1.8, K.H + 2.2)}>
@@ -243,8 +243,8 @@ function SalShot() {
             {Array.from({ length: 30 }, (_, i) => <line key={i} x1={100 + i * 30.3} y1={1010} x2={100 + i * 30.3} y2={1040} stroke={KC.texto} strokeWidth={4} />)}
             <text x={540} y={1110} textAnchor="middle" style={{ font:`700 44px ${KF.mono}` }} fill={KC.texto}>solo se contaron ≥ 0.2 mm</text>
           </g>
-          <text x={540} y={1400} textAnchor="middle" style={{ font:`400 230px ${KF.titulo}` }} fill={KC.gold2} opacity={kprog(T, K.H + 3.6, K.H + 4.0)}>?</text>
-        </>)}
+        </g>)}
+        {svg(<text x={540} y={1530} textAnchor="middle" style={{ font:`400 140px ${KF.titulo}` }} fill={KC.gold2} opacity={kprog(T, K.H + 3.6, K.H + 4.0)}>?</text>)}
         <EscalaFija texto="0.2 mm (aumentado)" largo={160} y={1500} color={KC.texto} />
       </Escena>
       {/* 10 · salud: incierto */}
@@ -270,7 +270,7 @@ function SalShot() {
 
       {/* datos y etiquetas */}
       <NumeroGigante T={T} at={K.G + 0.3} until={K.Sa - 0.2} valor={39} dur={1.0} sufijo=" marcas" etiqueta="de sal, en 2018:" x={540} y={270} tam={110} color={KC.yellow} />
-      <Chip T={T} at={K.G + 5.6} until={K.Sa - 0.2} texto="plástico en sal de mar, de mina y de lago" y={1250} x={540} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.G + 5.6} until={K.Sa - 0.2} texto="plástico en sal de mar, de mina y de lago" y={1380} x={540} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.Sa + 0.4} until={K.Mi - 0.2} texto="sal de mar = evaporación solar" y={250} x={700} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.Sa + 3.2} until={K.Mi - 0.2} x={420} y={1335} texto="se queda" lado="der" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Mi + 0.4} until={K.Mn - 0.2} texto="microplástico: menos de 5 mm" y={1140} x={540} tam={36} borde={KC.cyan} />
@@ -279,8 +279,8 @@ function SalShot() {
       <Etq T={T} at={K.Mi + 1.8} until={K.Mn - 0.2} x={700} y={960} texto="película" tam={30} />
       <Chip T={T} at={K.Te + 0.5} until={K.A - 0.2} texto="Kim et al. 2018 · Environ. Sci. Technol." y={1520} x={540} tam={30} borde={KC.ink} mono />
       <Chip T={T} at={K.A + 0.6} until={K.P - 0.2} texto="sal de mar de Asia: de las más cargadas" y={1340} x={540} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.Co + 2.0} until={K.H - 0.2} texto="U. de Colima · Talanta, 2026" y={1340} x={540} tam={32} borde={KC.ink} mono />
-      <Etq T={T} at={K.H + 0.8} until={K.Sd - 0.2} x={1010} y={310} texto="hilitos: la mayoría" lado="izq" tam={30} />
+      <Chip T={T} at={K.Co + 2.0} until={K.H - 0.2} texto="U. de Colima · Talanta, 2026" y={1450} x={540} tam={32} borde={KC.ink} mono />
+      <Etq T={T} at={K.H + 0.8} until={K.Sd - 0.2} x={1010} y={530} texto="hilitos: la mayoría" lado="izq" tam={30} />
       <Chip T={T} at={K.Sd + 1.0} until={K.C - 0.2} texto="OMS 2022: poca evidencia · faltan datos" y={360} x={540} tam={32} borde={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
