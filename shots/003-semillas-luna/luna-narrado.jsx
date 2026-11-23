@@ -263,7 +263,7 @@ function Estudio({ T, a, b }) {
   return <>
     <FondoLunares color={KC.yellow} />
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-      {[[285, 'LUNA', KC.lilac], [795, 'TIERRA', KC.cyan]].map(([x, texto, color], i) => <g key={i} transform={`translate(${x} 1080) scale(1.5)`}>
+      {[[290, 'LUNA', KC.lilac], [790, 'TIERRA', KC.cyan]].map(([x, texto, color], i) => <g key={i} transform={`translate(${x} 1010) scale(1.62)`}>
         {/* la semilla que se siembra en cada maceta */}
         {cae < 1 && <g opacity={kprog(T, a + 0.3, a + 0.6) * (1 - kprog(cae, 0.85, 1))}><SemillaAla x={(i ? -1 : 1) * 30 * Math.sin(cae * 5)} y={klerp(-330, -14, cae)} rot={cae * 400 + i * 90} s={1.2} /></g>}
         <Plantula x={0} y={-10} p={brota} />
