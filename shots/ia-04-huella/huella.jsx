@@ -5,14 +5,24 @@
 // La llama del dibujo es solo un guiño al nombre del modelo (no es el logo de Meta).
 const H_ANIO = 24 * 365.25;
 
+// Belleza: volumen suave encima de rellenos planos (claro arriba-izq, oscuro abajo-der) y sombra en el piso.
+const HVol = () => <defs>
+  <linearGradient id="hvVol" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fff" stopOpacity=".3" /><stop offset=".45" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".35" /></linearGradient>
+  <radialGradient id="hvSombra"><stop offset="0" stopColor="#000" stopOpacity=".55" /><stop offset="1" stopColor="#000" stopOpacity="0" /></radialGradient>
+</defs>;
 function Llamita({ x, y, s = 1, T = 0 }) {
   const m = Math.sin(T * 2.5) * 4;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <HVol /><ellipse cx={10} cy={164} rx={170} ry={26} fill="url(#hvSombra)" />
     {[-70, -30, 40, 80].map((lx, i) => <rect key={i} x={lx} y={40} width={30} height={120} rx={12} fill="#f4e6cf" stroke={KC.ink} strokeWidth={7} />)}
     <ellipse cx={0} cy={30} rx={130} ry={80} fill="#f4e6cf" stroke={KC.ink} strokeWidth={8} />
+    {Array.from({ length: 12 }, (_, i) => <path key={'p' + i} d={`M ${-100 + (i % 6) * 38} ${-8 + Math.floor(i / 6) * 40} q 8 10 0 20`} stroke="#d9c6a6" strokeWidth={4} fill="none" />)}
+    <ellipse cx={0} cy={30} rx={126} ry={76} fill="url(#hvVol)" />
     <g transform={`rotate(${m} 90 -10)`}>
       <rect x={70} y={-170} width={60} height={190} rx={28} fill="#f4e6cf" stroke={KC.ink} strokeWidth={8} />
+      <rect x={74} y={-166} width={52} height={182} rx={24} fill="url(#hvVol)" />
       <ellipse cx={120} cy={-170} rx={58} ry={40} fill="#f4e6cf" stroke={KC.ink} strokeWidth={8} />
+      <ellipse cx={120} cy={-170} rx={54} ry={36} fill="url(#hvVol)" />
       <path d="M 82 -200 l -6 -46 l 22 34 M 112 -206 l 2 -46 l 14 40" fill="#f4e6cf" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
       <circle cx={128} cy={-178} r={8} fill={KC.ink} /><path d="M 158 -160 q 10 6 0 12" stroke={KC.ink} strokeWidth={5} fill="none" />
     </g>
@@ -32,14 +42,19 @@ function Calendario({ x, y, anio, s = 1 }) {
 // Nube de CO2.
 function Nube({ x, y, s = 1, o = 1, texto = 'CO₂' }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`} opacity={o}>
+    <HVol />
     <path d="M -110 30 a 50 50 0 0 1 20 -90 a 70 70 0 0 1 130 -10 a 55 55 0 0 1 70 80 a 40 40 0 0 1 -30 50 Z" fill="#6b7180" stroke={KC.ink} strokeWidth={7} />
+    <path d="M -110 30 a 50 50 0 0 1 20 -90 a 70 70 0 0 1 130 -10 a 55 55 0 0 1 70 80 a 40 40 0 0 1 -30 50 Z" fill="url(#hvVol)" />
     <text x={0} y={22} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill="#fff">{texto}</text>
   </g>;
 }
 function Arbol({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-14} y={0} width={28} height={80} fill="#8a5a2b" stroke={KC.ink} strokeWidth={6} />
+    <HVol />
     <circle cx={0} cy={-30} r={60} fill={KC.leaf} stroke={KC.ink} strokeWidth={7} />
+    {[[-22, -48], [18, -40], [-8, -12], [26, -6]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={13} fill="#000" opacity={0.12} />)}
+    <circle cx={0} cy={-30} r={57} fill="url(#hvVol)" />
   </g>;
 }
 
@@ -70,8 +85,8 @@ function Huella() {
       <Escena T={T} a={K.H} b={K.P} zoom={0.03}>
         <FondoCircuito T={T} color={KC.orange} />
         {svg(<>
-          {T < K.Mu && <TarjetaGPU T={T} x={540} y={1080} s={2.0} calor={0.4} />}
-          {T >= K.Mu && Array.from({ length: 24 }, (_, i) => { const c = i % 4, r = Math.floor(i / 4), at = K.Mu + 0.2 + i * 0.06;
+          {T < K.Mu + 0.6 && (() => { const u = kprog(T, K.Mu, K.Mu + 0.6, kEase.suave); return <TarjetaGPU T={T} x={klerp(540, 168, u)} y={klerp(1080, 560, u)} s={klerp(2.0, 0.52, u)} calor={0.4} etiqueta={u > 0.5 ? '' : 'H100'} />; })()}
+          {T >= K.Mu && Array.from({ length: 24 }, (_, i) => { const c = i % 4, r = Math.floor(i / 4), at = i === 0 ? K.Mu + 0.6 : K.Mu + 0.05 + i * 0.035;
             return T > at ? <TarjetaGPU key={i} T={T + i * 0.1} x={168 + c * 248} y={560 + r * 150} s={0.52 * kprog(T, at, at + 0.3, kEase.rebote)} calor={kprog(T, K.W + 0.3, K.W + 1.6)} etiqueta="" /> : null; })}
         </>)}
       </Escena>
@@ -85,7 +100,19 @@ function Huella() {
         <FondoLunares color={KC.cyan} />
         {T < K.Gr && svg(Array.from({ length: 9 }, (_, i) => { const at = K.Co + 0.1 + i * 0.25; return T > at ? <Nube key={i} x={215 + (i % 3) * 325} y={klerp(1400, 800 + Math.floor(i / 3) * 215, kprog(T, at, at + 0.8, kEase.sale)) + Math.sin(T + i) * 10} s={1.2} /> : null; }))}
         {/* modo cine: en la comparación siguen en pantalla las dos versiones del modelo (llama grande y llama chica), bajo sus barras */}
-        {T >= K.Gr && svg(<g opacity={0.75 * kprog(T, K.Gr + 0.1, K.Gr + 0.6)}><Llamita x={320} y={1385} s={0.8} T={T} /><Llamita x={730} y={1440} s={0.4} T={T + 1} /></g>)}
+        {T >= K.Gr && svg((() => { const o = kprog(T, K.Gr + 0.1, K.Gr + 0.5), g = kprog(T, K.Gr + 0.2, K.Gr + 1.2, kEase.sale), base = 1110, alto = 560;
+          const barra = (cx, v, color, txt, et) => { const h = alto * (v / 1900) * g; return <g>
+            <defs><linearGradient id={'hvB' + cx} x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor={mixHex(color, '#ffffff', 0.25)} /><stop offset="1" stopColor={mixHex(color, '#000000', 0.25)} /></linearGradient></defs>
+            <rect x={cx - 120} y={base - h} width={240} height={h} rx={18} fill={`url(#hvB${cx})`} stroke={KC.ink} strokeWidth={6} />
+            <text x={cx} y={base - h - 26} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={color}>{txt}</text>
+            <text x={cx} y={base + 56} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.texto}>{et}</text>
+          </g>; };
+          return <g opacity={o}>
+            <line x1={150} y1={base} x2={930} y2={base} stroke={KC.ink} strokeWidth={6} strokeLinecap="round" />
+            {barra(330, 1900, KC.red, '1,900 t', 'grande (70B)')}
+            {barra(750, 390, KC.yellow, '390 t', 'chico (8B)')}
+            <Llamita x={318} y={1370} s={0.78} T={T} /><Llamita x={736} y={1410} s={0.42} T={T + 1} />
+          </g>; })())}
       </Escena>
       {/* 9–10 · compensar no es no emitir: báscula con nube y árboles */}
       <Escena T={T} a={K.Cm} b={K.Le}>
@@ -134,7 +161,6 @@ function Huella() {
       <Chip T={T} at={K.Mu + 0.4} until={K.W - 0.2} texto="muchísimas al mismo tiempo" x={540} y={380} tam={42} borde={KC.orange} />
       <Medidor T={T} at={K.W + 0.2} until={K.P - 0.2} valor={(t) => kprog(t, K.W + 0.3, K.W + 1.6)} etiqueta="cada tarjeta, hasta" texto={(v) => Math.round(v * 700) + ' W'} y={340} color={KC.red} />
       <NumeroGigante T={T} at={K.Co + 0.3} until={K.Gr - 0.2} valor={2290} dur={1.6} sufijo=" t" etiqueta="de CO₂ eq · 2 versiones (Meta)" y={480} tam={150} color={KC.texto} />
-      <Comparativa T={T} at={K.Gr + 0.2} until={K.Cm - 0.2} izq={{ valor: 1900, etiqueta: 'grande (70B)', color: KC.red, texto: '1,900 t' }} der={{ valor: 390, etiqueta: 'chico (8B)', color: KC.yellow, texto: '390 t' }} max={1900} y={350} alto={620} />
       <Chip T={T} at={K.Cm + 0.4} until={K.O - 0.2} texto="«100 % compensado» (según Meta)" y={560} tam={38} borde={KC.leaf} />
       <Chip T={T} at={K.O + 0.4} until={K.Le - 0.2} texto="compensar ≠ no emitir" x={420} y={560} tam={48} borde={KC.red} />
       <NumeroGigante T={T} at={K.Le + 1.6} until={K.Ex - 0.2} valor={15} dur={1.0} prefijo="+" sufijo=" billones" etiqueta="de tokens leídos" y={420} tam={110} color={KC.mint} />
