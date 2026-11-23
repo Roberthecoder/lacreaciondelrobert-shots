@@ -134,8 +134,13 @@ function PhBox({ T, at, x, y, titulo, valor, color = KC.mint }) {
   </div>;
 }
 function Pasto({ y, color = '#1c3a26' }) {
-  return <g><rect x={0} y={y} width={KW} height={KH - y} fill={color} stroke={KC.ink} strokeWidth={6} />
-    {Array.from({ length: 28 }, (_, i) => <path key={i} d={`M ${i * 40 + 10} ${y} l 8 -22 l 8 22`} fill={color} stroke={KC.ink} strokeWidth={4} />)}</g>;
+  const g = krng(Math.round(y)), id = 'pasto' + Math.round(y);
+  const briznas = Array.from({ length: 70 }, (_, i) => { const v = g(), py = y + 30 + v * v * (KH - y - 40), k = 0.6 + (py - y) / 260, px = g() * 1100 - 10, h = (16 + g() * 14) * k, ld = (g() - 0.5) * 10 * k;
+    return <path key={i} d={`M ${px.toFixed(0)} ${py.toFixed(0)} q ${(ld * 0.4).toFixed(1)} ${(-h * 0.6).toFixed(1)} ${ld.toFixed(1)} ${(-h).toFixed(1)} M ${(px + 6 * k).toFixed(0)} ${py.toFixed(0)} q ${(-ld * 0.3).toFixed(1)} ${(-h * 0.5).toFixed(1)} ${(-ld * 0.6).toFixed(1)} ${(-h * 0.8).toFixed(1)}`} stroke={['#2f5a36', '#3b6b40', '#24472b'][i % 3]} strokeWidth={2.5 * k} fill="none" strokeLinecap="round" opacity=".8" />; });
+  return <g><defs><linearGradient id={id} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#24462c" /><stop offset=".3" stopColor="#173020" /><stop offset="1" stopColor="#0a140e" /></linearGradient></defs>
+    <rect x={0} y={y} width={KW} height={KH - y} fill={`url(#${id})`} stroke={KC.ink} strokeWidth={6} />
+    {briznas}
+    {Array.from({ length: 28 }, (_, i) => <path key={i} d={`M ${i * 40 + 10} ${y} l 8 -22 l 8 22`} fill="#24462c" stroke={KC.ink} strokeWidth={4} />)}</g>;
 }
 // Cinta métrica en metros sobre el piso.
 function Cinta({ x0, y, pxm, n = 5 }) {
@@ -162,9 +167,11 @@ function Mentos() {
   const nicho = kprog(T, K.Bu + 2.5, K.Bu + 3.6, kEase.sale);
   // estudio: setup aparece tras la tarjeta
   const setup = 1; // pase a mano: el montaje se ve desde que empieza la escena (antes entraba 3.2 s tarde)
-  const pxft = 50, SBX = 130, SGY = 1260, SBS = 0.8, srot = 10, smx = SBX + Math.sin(srot * Math.PI / 180) * 600 * SBS, smy = SGY - Math.cos(srot * Math.PI / 180) * 600 * SBS;
+  const pxft = 50, SBX = 130, SGY = 1390, SBS = 0.95,   // belleza: antes SGY 1260, SBS 0.8
+    srot = 10, smx = SBX + Math.sin(srot * Math.PI / 180) * 600 * SBS, smy = SGY - Math.cos(srot * Math.PI / 180) * 600 * SBS;
   // dieta
-  const gotasO = 1 - 0.65 * kprog(T, K.Di + 3.1, K.Di + 3.5), gotasY = 250 * kprog(T, K.Di + 3.0, K.Di + 3.5, kEase.suave); // pase a mano: las gotas quedan atenuadas debajo de las barras
+  const gotasO = 1 - 0.65 * kprog(T, K.Di + 3.1, K.Di + 3.5), gotasY = 30 + 370 * kprog(T, K.Di + 3.0, K.Di + 3.5, kEase.suave);   // belleza: gotas 30 px más abajo y al final bajan bajo las barras
+  // pase a mano: las gotas quedan atenuadas debajo de las barras
   // molido
   const pxm = 165, X0 = 180, G1 = 1000, G2 = 1300, ms = 0.35, mrot = 10;
   const mbx = 110, mmx = mbx + Math.sin(mrot * Math.PI / 180) * 600 * ms, mdy = Math.cos(mrot * Math.PI / 180) * 600 * ms;
@@ -256,8 +263,8 @@ function Mentos() {
             <BotellaPet T={T} x={SBX} y={SGY} s={SBS} rot={srot} tapa={false} nivel={klerp(0.9, 0.3, kprog(T, K.Es + 5.0, K.Es + 7.0))} burbujas={kprog(T, K.Es + 4.8, K.Es + 5.2)} id="es" />
           </g>
         </SvgCapa>
-        <PhBox T={T} at={K.Es + 4.2} x={250} y={520} titulo="ANTES" valor="3.0" />
-        <PhBox T={T} at={K.Es + 6.2} x={530} y={520} titulo="DESPUÉS" valor="3.0" />
+        <PhBox T={T} at={K.Es + 4.2} x={250} y={470} titulo="ANTES" valor="3.0" />
+        <PhBox T={T} at={K.Es + 6.2} x={530} y={470} titulo="DESPUÉS" valor="3.0" />
       </Escena>
       {/* 7 · Dieta: gotas que se aplastan y distancia del chorro */}
       <Escena T={T} a={K.Di} b={K.Mo}>
@@ -271,7 +278,7 @@ function Mentos() {
                 <text x={x} y={1130} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.red}>{ang}°</text></g>; })}
           </g>
         </SvgCapa>
-        <Comparativa T={T} at={K.Di + 3.3} until={K.Mo + 0.2} izq={{ valor: 15.3, texto: '15.3 pies', etiqueta: 'de dieta', color: KC.mint }} der={{ valor: 11.6, texto: '11.6 pies', etiqueta: 'con azúcar', color: KC.orange }} max={16} y={560} alto={340} />
+        <Comparativa T={T} at={K.Di + 3.3} until={K.Mo + 0.2} izq={{ valor: 15.3, texto: '15.3 pies', etiqueta: 'de dieta', color: KC.mint }} der={{ valor: 11.6, texto: '11.6 pies', etiqueta: 'con azúcar', color: KC.orange }} max={16} y={640} alto={460} />
       </Escena>
       {/* 8 · Molido: entero vs molido */}
       <Escena T={T} a={K.Mo} b={K.Se}>
@@ -299,6 +306,7 @@ function Mentos() {
       <Escena T={T} a={K.Se} b={K.Ci}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
+          <g transform="translate(540 1300) scale(1.2) translate(-540 -1150)">
           <circle cx={180} cy={560} r={70 + Math.sin(T * 3) * 4} fill={KC.yellow} stroke={KC.ink} strokeWidth={7} />
           <Pasto y={1150} />
           <rect x={110} y={900} width={40} height={250} fill="#8a5a2b" stroke={KC.ink} strokeWidth={6} />
@@ -309,6 +317,7 @@ function Mentos() {
           <path d="M 540 1000 L 760 1000 M 540 1000 l 24 -16 M 540 1000 l 24 16 M 760 1000 l -24 -16 M 760 1000 l -24 16" stroke={KC.ink} strokeWidth={8} strokeLinecap="round" opacity={kprog(T, K.Se + 1.0, K.Se + 1.3)} />
           <text x={650} y={970} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Se + 1.0, K.Se + 1.3)}>lejos</text>
           <Marca x={420} y={760} ok={true} s={0.8} o={kprog(T, K.Se + 0.3, K.Se + 0.6)} />
+          </g>
         </SvgCapa>
       </Escena>
       {/* 10 · Cierre: la botella del inicio, explicada */}
@@ -339,11 +348,11 @@ function Mentos() {
       <Chip T={T} at={K.Ca + 3.4} until={K.Pr - 0.2} texto="sale más de 1 litro" x={760} y={1480} tam={40} borde={KC.yellow} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.6} anio="2008" quien="Coffey · Appalachian State" revista="Am. J. Phys. · publicado en 2008 · Boone, EE. UU." y={330} />
       <Chip T={T} at={K.Es + 1.6} until={K.Es + 3.6} texto="estudiantes de física" y={560} tam={40} borde={KC.gold} />
-      <Chip T={T} at={K.Es + 6.9} until={K.Es + 8.3} texto="pH igual → no es ácido-base ✗" y={1480} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.Es + 8.4} until={K.Di - 0.2} texto="con bicarbonato: pH 6.1 (esa sí)" y={1480} tam={34} borde={KC.mint} />
+      <Chip T={T} at={K.Es + 6.9} until={K.Es + 8.3} texto="pH igual → no es ácido-base ✗" y={1540} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.Es + 8.4} until={K.Di - 0.2} texto="con bicarbonato: pH 6.1 (esa sí)" y={1540} tam={34} borde={KC.mint} />
       <Chip T={T} at={K.Di + 2.4} until={K.Di + 3.2} texto="cafeína: casi no influyó" y={760} tam={38} borde="#8a8f99" />
       <Medidor T={T} at={K.Di + 0.4} until={K.Di + 3.1} valor={(t) => 0.95 - 0.35 * kprog(t, K.Di + 0.8, K.Di + 2.2)} etiqueta="trabajo para formar burbuja" texto={(v) => (v > 0.8 ? 'agua pura' : 'baja')} x={90} y={1460} color={KC.orange} />
-      <Chip T={T} at={K.Di + 3.6} until={K.Mo - 0.2} texto="distancia del chorro · promedio ±10 %" y={1480} tam={30} borde={KC.gold} />
+      <Chip T={T} at={K.Di + 3.6} until={K.Mo - 0.2} texto="distancia del chorro · promedio ±10 %" y={415} tam={30} borde={KC.gold} />
       <Chip T={T} at={K.Mo + 4.4} until={K.Se - 0.2} texto="la entera cae en 0.7 s (en agua)" x={420} y={470} tam={32} borde={KC.blue} />
       <Chip T={T} at={K.Se + 0.4} until={K.Ci - 0.2} texto="afuera ✓" x={760} y={1480} tam={44} borde={KC.mint} />
 
