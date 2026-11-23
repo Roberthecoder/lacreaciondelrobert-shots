@@ -1,2 +1,4 @@
 - amb-03-bioplasticos: Qué es: bacterias 1.4× (antes chiquitas junto al maíz y el azúcar); Uno (calor): el montón de composta industrial 1.25× más grande y centrado bajo la lupa. El resto ya cumplía. Auditores: sin láminas · encuadre bien.
 - cie-03-adn-viral: Otros: la lista de grupos de mamíferos flotaba sobre fondo vacío (casi lámina); ahora corre detrás el ADN de cada genoma (tres hebras atenuadas) y cada retrovirus de la píldora es más grande. El resto ya cumplía. Auditores: sin láminas · encuadre bien.
+- fun-07-pilobolus: Gancho/Hongo y Cierre: la boñiga con sus cañones quedaba en la mitad de arriba con el pasto oscuro abajo; ahora la cámara está más cerca (1.85×, barra de 5 cm recalculada y siguiendo el zoom) y bajada al centro, el sol ya no choca con el logo; Velocidad/Gravedad: los cuadros del video atrás del velocímetro más atenuados para que no se vean dos composiciones encimadas. Auditores: sin láminas · encuadre bien.
+GRUPO TERMINADO
