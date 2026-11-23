@@ -199,8 +199,8 @@ function LluviaShot() {
       {/* 9–10 · el estudio de 1977 (champiñón de cultivo, Agaricus bisporus): tramos marcados del pie; las marcas se separan y se ven sus células */}
       <Escena T={T} a={K.E} b={K.Al} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<g transform="translate(560 1340) scale(1.3) translate(-530 -1230)">
-          {(() => { const cr = klerp(0.42, 1, kprog(T, K.E + 3.8, K.Es + 4.6, kEase.suave)); return <g>
+        {fsvg((() => { const crE = kprog(T, K.E + 3.8, K.Es + 4.6, kEase.suave), kE = klerp(1.75, 1.3, crE); return <g transform={`translate(560 1340) scale(${kE}) translate(-530 -1230)`}>
+          {(() => { const cr = klerp(0.42, 1, crE); return <g>
             <Campestris x={360} y={1230} s={1.95} crece={cr} abre={klerp(0.1, 0.9, kprog(T, K.Es + 1, K.Es + 5))} mad={0.1} celulas={kprog(T, K.Es + 0.3, K.Es + 1.3) * (1 - kprog(T, K.Al - 0.6, K.Al - 0.1))} puntos={T > K.E + 1.6 ? PUNTOS.slice(0, Math.min(6, Math.floor((T - K.E - 1.6) / 0.25) + 1)) : null} />
             {/* regla */}
             <g transform="translate(700 1230)">
@@ -208,7 +208,7 @@ function LluviaShot() {
               {Array.from({ length: 13 }, (_, i) => <line key={i} x1={0} y1={-i * 28} x2={i % 2 ? 22 : 38} y2={-i * 28} stroke={KC.ink} strokeWidth={4} />)}
             </g>
           </g>; })()}
-        </g>)}
+        </g>; })())}
       </Escena>
       {/* 11 · desde la tierra le llegan agua y alimento */}
       <Escena T={T} a={K.Al} b={K.Ti} zoom={0.04}>
@@ -260,9 +260,9 @@ function LluviaShot() {
       <NumeroGigante T={T} at={K.A + 0.4} until={K.E - 0.3} valor={80} dur={1.6} sufijo=" %" etiqueta="agua: más de" x={400} y={520} tam={150} color={LL.agua} />
       <Etq T={T} at={K.A + 1.0} until={K.E - 0.3} x={60} y={1450} texto="Agaricus campestris" it tam={30} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.6} anio="1977" quien="Craig, Gull y Wood" revista="J. Gen. Microbiol. · Agaricus bisporus" x={500} y={560} />
-      <Etq T={T} at={K.E + 1.8} until={K.E + 3.6} x={60} y={1450} texto="tramos marcados del pie" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.E + 3.8} until={K.Al - 0.2} x={60} y={1450} texto="champiñón de cultivo" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.E + 4.1} until={K.Al - 0.2} x={60} y={1500} texto="Agaricus bisporus · pariente del de campo" it tam={26} color={KC.ink} />
+      <Etq T={T} at={K.E + 1.8} until={K.E + 3.6} x={60} y={1400} texto="tramos marcados del pie" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.E + 3.8} until={K.Al - 0.2} x={60} y={1400} texto="champiñón de cultivo" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.E + 4.1} until={K.Al - 0.2} x={60} y={1446} texto="Agaricus bisporus · pariente del de campo" it tam={26} color={KC.ink} />
       <Chip T={T} at={K.Es + 0.8} until={K.Al - 0.2} texto="abajo y en medio: se estiraron" x={350} y={500} tam={30} borde={KC.mint} />
       <Chip T={T} at={K.Es + 3.2} until={K.Al - 0.2} texto="arriba: también se dividían" x={350} y={590} tam={30} borde={KC.gold} />
       <Etq T={T} at={K.Al + 0.3} until={K.Ti - 0.2} x={370} y={1390} lado="izq" texto="agua" tam={32} color={LL.agua} />
