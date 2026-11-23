@@ -61,7 +61,8 @@ function HojaMorera({ x, y, w = 820, h = 260, rot = 0, mordida = 0 }) {
   const dd = 'M ' + sup.map((q) => q.map((v) => v.toFixed(1)).join(' ')).join(' L ') + ' L ' + inf.reverse().map((q) => q.map((v) => v.toFixed(1)).join(' ')).join(' L ') + ' Z';
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(1 0.5)`}>
     <path d={`M ${-w / 2 - 90} 30 Q ${-w / 2 - 40} 10 ${-w / 2 + 6} 0`} stroke={BS.hoja2} strokeWidth={16} fill="none" strokeLinecap="round" />
-    <path d={dd} fill={BS.hoja} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    <defs><linearGradient id="hoja-morera" x1="0" y1="0" x2=".4" y2="1"><stop offset="0" stopColor="#6aa95a" /><stop offset=".5" stopColor="#3f8237" /><stop offset="1" stopColor="#24531f" /></linearGradient></defs>
+    <path d={dd} fill="url(#hoja-morera)" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
     <path d={`M ${-w / 2 + 10} 0 L ${w / 2 - 20} 0`} stroke={BS.nervio} strokeWidth={9} />
     {[0.15, 0.3, 0.45, 0.6, 0.75].map((u, i) => <g key={i}>
       <path d={`M ${-w / 2 + u * w} 0 Q ${-w / 2 + (u + 0.08) * w} ${-h * 0.25} ${-w / 2 + (u + 0.14) * w} ${-h * 0.4}`} stroke={BS.nervio} strokeWidth={6} fill="none" />
@@ -128,7 +129,8 @@ function Naturalista({ x, y, s = 1, mira = 0 }) {
 // Libro de 1835 (portada esquemática con el título real).
 function Libro({ x, y, s = 1, rot = -4 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
-    <rect x={-200} y={-250} width={400} height={500} rx={10} fill="#e9dcb8" stroke={KC.ink} strokeWidth={8} />
+    <defs><linearGradient id="libro-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#e9dcb8" /><stop offset=".6" stopColor="#cdb98a" /><stop offset="1" stopColor="#9c8558" /></linearGradient></defs>
+    <rect x={-200} y={-250} width={400} height={500} rx={10} fill="url(#libro-g)" stroke={KC.ink} strokeWidth={8} />
     <rect x={-176} y={-226} width={352} height={452} fill="none" stroke="#8a6a3a" strokeWidth={4} />
     {['DEL MAL', 'DEL SEGNO,', 'CALCINACCIO', 'O MOSCARDINO'].map((t, i) => <text key={i} x={0} y={-140 + i * 62} textAnchor="middle" style={{ font:`400 52px ${KF.titulo}` }} fill="#3a2a14">{t}</text>)}
     <line x1={-90} y1={110} x2={90} y2={110} stroke="#8a6a3a" strokeWidth={4} />
@@ -186,7 +188,7 @@ function BassiShot() {
   // 1 cm = 80 px con s = 1; la barra de escala se multiplica por la escala del gusano y por el avance de la cámara (zc).
   const GZ = 1.5, VZ = 1.6, PX = 690, PY = 985, TY = 1200;
   const zc = (a, b, zf) => 1 + zf * kprog(T, a - 0.45, b + 0.45, kEase.suave);
-  const LAB = 'translate(540 1250) scale(1.4) translate(-540 -1080)', LABP = 'translate(540 1250) scale(1.12) translate(-437 -1080)';
+  const LAB = 'translate(540 1180) scale(1.4) translate(-540 -1080)', LABP = 'translate(540 1180) scale(1.12) translate(-437 -1080)';   // belleza: el laboratorio sube 70 px (antes la prueba quedaba ABAJO)
   const CUT = 'translate(640 760) scale(1.5) translate(-640 -700)', HEM = 'translate(540 400) scale(1.35) translate(-540 -440)';
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -279,7 +281,7 @@ function BassiShot() {
         {fsvg(<>
           <g transform={LAB}>
             <rect x={-300} y={1080} width={1680} height={36} rx={8} fill={BS.mesa} stroke={KC.ink} strokeWidth={7} />
-            <rect x={196} y={1116} width={30} height={420} fill={BS.mesa} stroke={KC.ink} strokeWidth={6} /><rect x={854} y={1116} width={30} height={420} fill={BS.mesa} stroke={KC.ink} strokeWidth={6} />
+            <rect x={196} y={1116} width={30} height={330} fill={BS.mesa} stroke={KC.ink} strokeWidth={6} /><rect x={854} y={1116} width={30} height={330} fill={BS.mesa} stroke={KC.ink} strokeWidth={6} />
             {T < K.Pr && <g opacity={1 - kprog(T, K.Pr - 0.4, K.Pr)}>
               <Naturalista x={280} y={1080} s={0.9} mira={Math.sin(T)} />
               <Microscopio x={830} y={1080} s={0.95} />
