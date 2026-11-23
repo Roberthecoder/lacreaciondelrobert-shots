@@ -120,8 +120,9 @@ function Pastel({ T, x, y, r = 300, p = 1, sale = 0 }) {
   const arco = (A, B, R, dx = 0, dy = 0) => `M ${dx} ${dy} L ${dx + Math.cos(A) * R} ${dy + Math.sin(A) * R} A ${R} ${R} 0 ${B - A > Math.PI ? 1 : 0} 1 ${dx + Math.cos(B) * R} ${dy + Math.sin(B) * R} Z`;
   const am = a0 + Math.PI * f, dx = Math.cos(am) * 50 * sale, dy = Math.sin(am) * 50 * sale;
   return <g transform={`translate(${x} ${y})`}>
-    <circle cx={0} cy={0} r={r} fill="rgba(223,231,255,.14)" />
-    {aEnd > a0 + 0.01 && <path d={arco(a0 + 2 * Math.PI * f, Math.max(a0 + 2 * Math.PI * f + 0.001, aEnd), r)} fill={KC.paper} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />}
+    <defs><radialGradient id="raPastel" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stopColor="#5a6f93" /><stop offset="1" stopColor="#2c3a55" /></radialGradient></defs>
+    <circle cx={0} cy={0} r={r} fill="rgba(223,231,255,.14)" stroke="rgba(223,231,255,.35)" strokeWidth={4} />
+    {aEnd > a0 + 0.01 && <path d={arco(a0 + 2 * Math.PI * f, Math.max(a0 + 2 * Math.PI * f + 0.001, aEnd), r)} fill="url(#raPastel)" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />}
     {a1 > a0 + 0.01 && <path d={arco(a0, a1, r * (1 + 0.04 * sale), dx, dy)} fill={KC.pink} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />}
   </g>;
 }
@@ -142,7 +143,7 @@ function TierraNace({ T, x, y, r = 120, f = 1 }) {
 function Radiactivo() {
   const { T, CUES } = useComposition();
   const K = CUES, FIN = K.Outro + 4;
-  const SX = 540, SY = 1330, SS = 1.12;                           // silueta del gancho y del cierre
+  const SX = 540, SY = 1420, SS = 1.12;                           // silueta del gancho y del cierre
   const cuenta = Math.floor(Math.max(0, T - K.Gancho) * 4000);
   // supernova
   const sn = K.Viejo + 0.5, junta = K.Viejo + 2.6;
@@ -155,22 +156,22 @@ function Radiactivo() {
         <Lienzo>
           <Silueta T={T} x={SX} yPies={SY} s={SS} chispas={kprog(T, 0, 1.2) * 0.85 + 0.15} vel={1.4} />
         </Lienzo>
-        <Etq T={T} at={1.2} until={K.Potasio - 0.3} x={SX + 255} y={830} texto="tú" lado="der" color={KC.texto} tam={40} />
+        <Etq T={T} at={1.2} until={K.Potasio - 0.3} x={SX + 255} y={920} texto="tú" lado="der" color={KC.texto} tam={40} />
       </Escena>
       {/* contador del gancho: fuera de la Escena para que la cámara (que entra 20 %) no lo saque del cuadro ni lo encime a la silueta */}
       {T < K.Potasio + 0.3 && <div style={{ position:'absolute', left:0, right:0, top:180, zIndex:41, textAlign:'center', opacity:1 - kprog(T, K.Potasio - 0.3, K.Potasio + 0.2) }}>
         <div style={{ font:`700 32px ${KF.mono}`, color:KC.texto, textShadow:KSOMBRA }}>en ti desde que empezó el video (adulto)</div>
         <div style={{ display:'inline-block', marginTop:8, font:`700 70px ${KF.mono}`, color:RA_CHISPA, background:'rgba(14,15,18,.82)', border:`5px solid ${RA_CHISPA}`, borderRadius:20, padding:'0 30px' }}>{kformato(cuenta)}</div>
       </div>}
-      {T < K.Potasio + 0.3 && <div style={{ position:'absolute', left:0, right:0, top:1462, zIndex:41, textAlign:'center', font:`700 26px ${KF.mono}`, color:'rgba(246,243,236,.85)', textShadow:KSOMBRA, opacity:1 - kprog(T, K.Potasio - 0.3, K.Potasio + 0.2) }}>chispitas esquemáticas: la radiación no se ve</div>}
+      {T < K.Potasio + 0.3 && <div style={{ position:'absolute', left:0, right:0, top:1535, zIndex:41, textAlign:'center', font:`700 26px ${KF.mono}`, color:'rgba(246,243,236,.85)', textShadow:KSOMBRA, opacity:1 - kprog(T, K.Potasio - 0.3, K.Potasio + 0.2) }}>chispitas esquemáticas: la radiación no se ve</div>}
       {/* 1 · potasio: plátano, aguacate → tú; nervios y músculos */}
       <Escena T={T} a={K.Potasio} b={K.Isotopo} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <g transform={`translate(0 ${(1 - kprog(T, K.Potasio + 0.1, K.Potasio + 0.6, kEase.rebote)) * -500})`}><Elemento x={540} y={klerp(540, 330, kprog(T, K.Potasio + 2.7, K.Potasio + 3.2, kEase.suave))} s={klerp(1.25, 0.62, kprog(T, K.Potasio + 2.7, K.Potasio + 3.2, kEase.suave))} /></g>
+          <g transform={`translate(0 ${(1 - kprog(T, K.Potasio - 0.4, K.Potasio + 0.1, kEase.rebote)) * -500})`}><Elemento x={540} y={klerp(540, 330, kprog(T, K.Potasio + 2.7, K.Potasio + 3.2, kEase.suave))} s={klerp(1.25, 0.62, kprog(T, K.Potasio + 2.7, K.Potasio + 3.2, kEase.suave))} /></g>
           {T < K.Potasio + 3.0 ? <g opacity={1 - kprog(T, K.Potasio + 2.7, K.Potasio + 3.0)}>
-            <g transform={`scale(${kprog(T, K.Potasio + 0.35, K.Potasio + 0.75, kEase.rebote)})`} style={{ transformOrigin:'300px 1020px' }}><Platano x={300} y={1020} s={1.2} rot={-12} /></g>
-            <g transform={`scale(${kprog(T, K.Potasio + 0.8, K.Potasio + 1.2, kEase.rebote)})`} style={{ transformOrigin:'810px 1010px' }}><Aguacate x={810} y={1010} s={1.2} rot={10} /></g>
+            <g transform={`scale(${kprog(T, K.Potasio - 0.2, K.Potasio + 0.2, kEase.rebote)})`} style={{ transformOrigin:'300px 1020px' }}><Platano x={300} y={1020} s={1.2} rot={-12} /></g>
+            <g transform={`scale(${kprog(T, K.Potasio + 0.2, K.Potasio + 0.6, kEase.rebote)})`} style={{ transformOrigin:'810px 1010px' }}><Aguacate x={810} y={1010} s={1.2} rot={10} /></g>
             {[[300, 1020], [810, 1010]].map(([ax, ay], j) => Array.from({ length: 3 }, (_, i) => { const f = kprog(T, K.Potasio + 1.6 + j * 0.3 + i * 0.25, K.Potasio + 2.4 + j * 0.3 + i * 0.25, kEase.suave);
               return f > 0 && f < 1 && <Atomo key={j + '-' + i} x={klerp(ax, 540, f)} y={klerp(ay, 690, f) - Math.sin(f * Math.PI) * 120} r={32} />; }))}
           </g> : <g opacity={kprog(T, K.Potasio + 3.0, K.Potasio + 3.4)} transform="translate(540 1380) scale(1.75) translate(-540 -1180)">
@@ -181,8 +182,8 @@ function Radiactivo() {
             <ellipse cx={398} cy={835} rx={44 + 10 * Math.max(0, Math.sin(T * 5))} ry={30} fill="#ff6b5a" stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.Potasio + 4.0, K.Potasio + 4.3)} />
           </g>}
         </Lienzo>
-        <Etq T={T} at={K.Potasio + 0.6} until={K.Potasio + 2.6} x={110} y={1215} texto="plátano" lado="der" color={KC.ink} />
-        <Etq T={T} at={K.Potasio + 1.1} until={K.Potasio + 2.6} x={960} y={1270} texto="aguacate" lado="izq" color={KC.ink} />
+        <Etq T={T} at={K.Potasio + 0.2} until={K.Potasio + 2.6} x={110} y={1215} texto="plátano" lado="der" color={KC.ink} />
+        <Etq T={T} at={K.Potasio + 0.6} until={K.Potasio + 2.6} x={960} y={1270} texto="aguacate" lado="izq" color={KC.ink} />
         <Etq T={T} at={K.Potasio + 3.6} until={K.Isotopo - 0.2} x={1050} y={640} texto="nervios" lado="izq" color={KC.ink} />
         <Etq T={T} at={K.Potasio + 4.1} until={K.Isotopo - 0.2} x={40} y={690} texto="músculos" lado="der" color={KC.ink} />
       </Escena>
@@ -212,7 +213,7 @@ function Radiactivo() {
       {/* 4 · el número */}
       <Escena T={T} a={K.Cuenta} b={K.Pregunta} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
-        <Lienzo><Silueta T={T} x={670} yPies={1470} s={0.74} chispas={1} vel={2.2} /></Lienzo>
+        <Lienzo><Silueta T={T} x={670} yPies={1520} s={0.9} chispas={1} vel={2.2} /></Lienzo>
         <NumeroGigante T={T} at={K.Cuenta + 0.2} until={K.Pregunta - 0.1} valor={4000} prefijo="≈ " etiqueta="átomos que se desintegran (adulto)" x={540} y={500} tam={230} color={KC.yellow} />
         <Chip T={T} at={K.Cuenta + 0.9} until={K.Pregunta - 0.1} texto="por segundo" x={540} y={715} tam={52} borde={KC.yellow} />
       </Escena>
@@ -231,16 +232,16 @@ function Radiactivo() {
         <FondoLunares color={KC.mint} />
         <Lienzo>
           {T < K.Normal + 3.6 && <g opacity={1 - kprog(T, K.Normal + 3.2, K.Normal + 3.6)} transform="translate(0 190)">
-            {[[0.42, 130], [0.68, 390], [0.95, 770]].map(([sc, sx], i) => { const e = kprog(T, K.Normal + 0.05 + i * 0.5, K.Normal + 0.45 + i * 0.5, kEase.rebote);
+            {[[0.42, 130], [0.68, 390], [0.95, 770]].map(([sc, sx], i) => { const e = kprog(T, K.Normal - 0.8 + i * 0.25, K.Normal - 0.4 + i * 0.25, kEase.rebote);
               return <g key={i} transform={`translate(${sx} 1300) scale(${e}) translate(${-sx} -1300)`}><Silueta T={T + i} x={sx} yPies={1300} s={sc} chispas={0.6} vel={1.2} /></g>; })}
           </g>}
           <g transform="translate(540 1010) scale(1.1) translate(-540 -900)">
           {T > K.Normal + 3.3 && <Pastel T={T} x={540} y={900} r={360} p={kprog(T, K.Normal + 3.4, K.Normal + 4.6, kEase.suave)} sale={kprog(T, K.Normal + 4.6, K.Normal + 5.0, kEase.rebote)} />}
           {T > K.Normal + 4.9 && <g opacity={kprog(T, K.Normal + 4.9, K.Normal + 5.2)}>
-            <line x1={722} y1={552} x2={772} y2={552} stroke={KC.ink} strokeWidth={6} strokeLinecap="round" />
-            <TextoSvg x={784} y={547} tam={44} color={KC.white} ancla="start" fuente="texto">tu propio</TextoSvg>
-            <TextoSvg x={784} y={597} tam={44} color={KC.white} ancla="start" fuente="texto">cuerpo</TextoSvg>
-            <TextoSvg x={784} y={672} tam={70} color={KC.pink} ancla="start">7–10 %</TextoSvg>
+            <line x1={712} y1={552} x2={748} y2={552} stroke={KC.ink} strokeWidth={6} strokeLinecap="round" />
+            <TextoSvg x={758} y={547} tam={42} color={KC.white} ancla="start" fuente="texto">tu propio</TextoSvg>
+            <TextoSvg x={758} y={595} tam={42} color={KC.white} ancla="start" fuente="texto">cuerpo</TextoSvg>
+            <TextoSvg x={758} y={662} tam={58} color={KC.pink} ancla="start">7–10 %</TextoSvg>
             <text x={490} y={1060} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Normal + 5.3, K.Normal + 5.6)}>el resto</text>
           </g>}
           </g>
