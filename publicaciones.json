@@ -3095,5 +3095,74 @@
   "id": "v_inbox_file~v2.7711390427781482514",
   "nota": "TikTok todavía no aprueba la publicación directa: se mandó como BORRADOR a tu app. Ábrelo en TikTok, pega el texto (Sala, pestaña TikTok) y publícalo.",
   "borrador": true
+ },
+ {
+  "clave": "cie-04-dedos-arrugados",
+  "red": "facebook",
+  "modo": "real",
+  "fecha": "2026-11-24T15:22:13Z",
+  "run": "45424448769",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "2196288387629046",
+  "url": "https://www.facebook.com/reel/2196288387629046",
+  "nota": "ready"
+ },
+ {
+  "clave": "cie-04-dedos-arrugados",
+  "red": "instagram",
+  "modo": "real",
+  "fecha": "2026-11-24T15:22:57Z",
+  "run": "45424448769",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "18186509314426708",
+  "url": "https://www.instagram.com/reel/DgIRTdLD9NF/"
+ },
+ {
+  "clave": "cie-04-dedos-arrugados",
+  "red": "threads",
+  "modo": "real",
+  "fecha": "2026-11-24T15:25:12Z",
+  "run": "45424448769",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "18120826628102715",
+  "url": "https://www.threads.com/@lacreaciondelrobert/post/DgIRZtlB3fv"
+ },
+ {
+  "clave": "cie-04-dedos-arrugados",
+  "red": "youtube",
+  "modo": "real",
+  "fecha": "2026-11-24T15:26:11Z",
+  "run": "45424448769",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "9K79_cXUq3g",
+  "url": "https://youtube.com/shorts/9K79_cXUq3g",
+  "nota": "public"
+ },
+ {
+  "clave": "cie-04-dedos-arrugados",
+  "red": "linkedin",
+  "modo": "real",
+  "fecha": "2026-11-24T15:26:13Z",
+  "run": "45424448769",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "urn:li:ugcPost:7531015420321906690",
+  "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7531015420321906690/"
+ },
+ {
+  "clave": "cie-04-dedos-arrugados",
+  "red": "tiktok",
+  "modo": "real",
+  "fecha": "2026-11-24T15:26:36Z",
+  "run": "45424448769",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "v_inbox_file~v2.7711759638374418433",
+  "nota": "TikTok todavía no aprueba la publicación directa: se mandó como BORRADOR a tu app. Ábrelo en TikTok, pega el texto (Sala, pestaña TikTok) y publícalo.",
+  "borrador": true
  }
 ]
