@@ -1,5 +1,7 @@
 # Shots de La Creación del Robert
 
+**Cerebro:** este sistema es la neurona Redes del cerebro de Robert (repositorio privado `Roberthecoder/cerebro`). Si la sesión tiene acceso a `~/cerebro`, al empezar revisa `~/cerebro/neuronas/redes/buzon/` y al terminar actualiza `~/cerebro/neuronas/redes/contexto/ESTADO.md` (una línea de resumen y lo que está en curso). Nunca copies a este repositorio público nada del cerebro.
+
 **Mapa de TODO el sistema (shots, documentales de cine, pitches, Sala, publicador, sesiones, ramas, secretos): `maestro/MAESTRO.md`.**
 El admin maestro (sesión de nube; la PC solo vía herramientas remotas o encargos locales temporales) sigue `maestro/ADMIN-MAESTRO.md` y el skill `admin-maestro`.
 Antes de entregar cualquier video, coteja `maestro/recetas/correcciones-de-robert.md`.
