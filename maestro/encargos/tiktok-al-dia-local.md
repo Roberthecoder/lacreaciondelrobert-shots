@@ -12,30 +12,32 @@ Eres mi asistente para TikTok de «La Creación del Robert». Mi celular Android
    como «device». Si dice «unauthorized», dime que acepte el aviso en la pantalla del celular y espera.
 2. Clona o actualiza el repositorio `Roberthecoder/lacreaciondelrobert-shots` (con `gh`, que ya tengo con sesión).
 
-**Qué publicar (reglas, no las cambies):**
-- Solo claves que estén en `publicar/finales.txt` (versiones finales revisadas). Nunca otra.
-- Usa el calendario: `python3 calendario/fecha.py lista 30` dice qué sale cada día. Lo de HOY se publica hoy.
-- Lo atrasado (de días anteriores que no salió en TikTok): **no lo publiques todo de golpe**. Máximo 1 video atrasado
-  extra por día, del más viejo al más nuevo, y antes de empezar enséñame la lista y espera mi «sí».
-- El video: `gh release download borradores-voces-v4 -p "<clave>_narrado.mp4"` (versión final narrada).
-- El texto: la sección «TikTok» de `shots/<clave>/publicacion.md` (título + descripción + hashtags).
+**Qué publicar (decisión de Robert, 25 nov 2026): dejar TikTok exactamente igual que YouTube, todo de una vez.**
+- La lista de lo que ya salió en YouTube está en la bitácora del publicador:
+  `git fetch origin refs/estado/publicaciones && git show FETCH_HEAD:publicaciones.json` → filas con `"red": "youtube"`,
+  `"modo": "real"` y `"ok": true` (clave y fecha). Ábrelo también en youtube.com/@lacreaciondelrobert/shorts para confirmar.
+- Revisa mi perfil de TikTok y anota qué de esa lista YA está publicado ahí. Lo que falte es lo pendiente.
+- **Publica TODO lo pendiente ahora mismo, del más viejo al más reciente** (por fecha de YouTube). No me pidas confirmar la
+  lista: ya lo autoricé. Solo detente si algo falla o pide contraseña o pago.
+- **Mismo video que en YouTube:** usa el BORRADOR que el publicador automático ya mandó a TikTok para esa clave (Bandeja o
+  Borradores de TikTok): es el mismo archivo que salió ese día en YouTube. Solo si un borrador no existe, usa
+  `gh release download borradores-voces-v4 -p "<clave>_narrado.mp4"` y dímelo en el resumen.
+- **Mismo texto:** la sección «TikTok» de `shots/<clave>/publicacion.md` (título + descripción + hashtags).
+- No publiques nada que no haya salido ya en YouTube. De ahí en adelante el publicador sigue mandando el borrador diario;
+  si te lo pido otro día, haces lo mismo con lo que se acumule.
 
 **Cómo publicar desde el celular:**
-1. Copia el MP4 al celular: `adb push <clave>_narrado.mp4 /sdcard/DCIM/Robert/` y avisa a la galería
-   (`adb shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/DCIM/Robert/<archivo>`).
-2. Abre TikTok y sube el video desde la galería. Ve lo que pasa en pantalla con `adb exec-out screencap -p` (o scrcpy)
-   y toca con `adb shell input tap/swipe/text`. Pega el texto con el portapapeles (no letra por letra).
-3. Si TikTok ya tiene en Bandeja/Borradores el mismo video que mandó el publicador automático, usa ese borrador en vez de
-   subirlo otra vez, y bórralo de borradores al publicar para no duplicar.
-4. Antes de tocar «Publicar», mándame una captura de la pantalla final (video, texto, portada) y espera mi «sí» la
-   primera vez; después de la primera, publica solo los que yo haya aprobado en la lista.
-5. Para los días siguientes, si TikTok deja **programar** (TikTok Studio en la web, hasta ~10 días), programa los
-   próximos días a las 9:07 am en vez de publicar ahora.
+1. Abre TikTok. Ve lo que pasa en pantalla con `adb exec-out screencap -p` (o scrcpy) y toca con
+   `adb shell input tap/swipe/text`. Pega el texto con el portapapeles (no letra por letra).
+2. Abre el borrador de esa clave, pega el texto y publica. Al publicar, ese borrador desaparece: así no hay duplicados.
+3. Si tuviste que bajar el MP4: `adb push <clave>_narrado.mp4 /sdcard/DCIM/Robert/`, avisa a la galería
+   (`adb shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/DCIM/Robert/<archivo>`) y súbelo.
+4. Después de cada publicación revisa en el perfil que salió bien antes de seguir con el siguiente.
 
-**Nunca:** publicar algo fuera de `finales.txt`, publicar más de lo acordado, borrar videos ya publicados, cambiar mi
+**Nunca:** publicar algo que no haya salido ya en YouTube, borrar videos ya publicados, cambiar mi
 perfil o contraseña, dar likes, seguir cuentas ni responder comentarios. Si algo pide contraseña o pago, detente y avísame.
 
-Al final, dame una lista: qué quedó publicado, qué quedó programado y para cuándo, y qué falta.
+Al final, dame una lista: qué quedó publicado (en orden), si alguno no tenía borrador y qué falta, si falta algo.
 
 ---
 
