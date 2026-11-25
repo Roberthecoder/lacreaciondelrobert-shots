@@ -106,6 +106,7 @@ jobs:
       LINKEDIN_TOKEN: ${{ secrets.LINKEDIN_TOKEN }}
       TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
       TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+      UNIPOST_API_KEY: ${{ secrets.UNIPOST_API_KEY }}   # TikTok directo por UniPost (si falta, borrador a la bandeja)
       PEDIDO: ${{ toJSON(matrix.pedido) }}
     steps:
       - uses: actions/checkout@v4

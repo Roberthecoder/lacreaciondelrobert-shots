@@ -664,6 +664,22 @@ def _tiktok_subir_archivo(at, ruta_init, cuerpo, video):
 
 
 def subir_tiktok(video, r, modo, titulo, tt=None):
+    """TikTok. Si hay secreto UNIPOST_API_KEY, publica directo con UniPost (su app de TikTok ya está aprobada).
+    Si UniPost falla, sigue el camino de siempre: la API propia de TikTok, que sin aprobación manda BORRADOR a la bandeja."""
+    tt = tt or {}
+    if tt.get('modo') != 'borrador' and ENV('UNIPOST_API_KEY', '').strip():
+        try:
+            return subir_tiktok_unipost(video, r, modo, titulo, tt)
+        except (Falla, requests.RequestException, KeyError, TypeError) as e:
+            aviso = f'UniPost falló ({str(e)[:200]}); se usó el camino de siempre: '
+            print(f'tiktok: {aviso}', flush=True)
+            out = subir_tiktok_propio(video, r, modo, titulo, tt)
+            out['nota'] = aviso + out.get('nota', '')
+            return out
+    return subir_tiktok_propio(video, r, modo, titulo, tt)
+
+
+def subir_tiktok_propio(video, r, modo, titulo, tt=None):
     """Publicación directa con su texto (por defecto) o, si tt.modo == 'borrador', a la bandeja de TikTok.
     tt = opciones que Robert elige en la Sala: privacidad, comentarios, duo, stitch, marca_propia, marca_pagada, ia, texto."""
     tt = tt or {}
@@ -740,6 +756,85 @@ def subir_tiktok_borrador(video, r, modo, titulo):
             '): Robert lo abre en la app, pega el texto y publica él'}
 
 
+# ---------- TikTok por UniPost (unipost.dev, plan gratis: 100 publicaciones al mes) ----------
+# Decisión de Robert (25 nov 2026): TikTok rechazó la auditoría de nuestra app (uso personal), así que la publicación
+# directa va por UniPost, que publica con su propia app de TikTok ya aprobada. Secreto: UNIPOST_API_KEY.
+
+UP = 'https://api.unipost.dev'
+
+
+def up(metodo, ruta, **kw):
+    """Llama a la API de UniPost; devuelve el contenido de "data" si viene envuelto."""
+    h = {'Authorization': f'Bearer {ENV("UNIPOST_API_KEY", "").strip()}', 'Content-Type': 'application/json'}
+    h.update(kw.pop('headers', {}))
+    r = requests.request(metodo, f'{UP}{ruta}', headers=h, timeout=kw.pop('timeout', 60), **kw)
+    d = j(r)
+    if r.status_code >= 300:
+        e = d.get('error') if isinstance(d, dict) else None
+        msg = f'{e.get("code", "")}: {e.get("message", "")} {e.get("hint", "") or ""}' if isinstance(e, dict) else str(d)
+        raise Falla(f'UniPost {metodo} {ruta}: HTTP {r.status_code} {msg.strip()[:300]}')
+    if isinstance(d, dict) and isinstance(d.get('data'), (dict, list)):
+        return d['data']
+    return d
+
+
+def unipost_cuenta_tiktok():
+    cuentas = up('GET', '/v1/accounts', params={'platform': 'tiktok'})
+    if isinstance(cuentas, dict):
+        cuentas = cuentas.get('accounts') or cuentas.get('items') or []
+    tk = [c for c in cuentas if c.get('platform', 'tiktok') == 'tiktok']
+    activas = [c for c in tk if c.get('status') in (None, 'active')]
+    if not activas:
+        estado = ', '.join(f'{c.get("account_name")}: {c.get("status")}' for c in tk) or 'ninguna'
+        raise Falla(f'UniPost: no hay cuenta de TikTok activa (cuentas: {estado}). Robert la conecta en unipost.dev')
+    return activas[0]
+
+
+def _unipost_falla(p):
+    if p.get('status') not in ('failed', 'partial', 'cancelled'):
+        return None
+    res = (p.get('results') or [{}])[0]
+    return ' · '.join(str(x) for x in (p.get('status'), res.get('error_code'), res.get('platform_error_code'),
+                                       res.get('next_action'), res.get('error_message')) if x) or p.get('status')
+
+
+def subir_tiktok_unipost(video, r, modo, titulo, tt):
+    priv = 'SELF_ONLY' if modo == 'privado' else tt.get('privacidad')
+    if not priv:
+        raise Falla('TikTok: falta elegir quién puede verlo (privacidad) en el botón Publicar de la Sala')
+    texto = (tt.get('texto') or (r.get('tiktok') or {}).get('texto') or titulo)[:2200]
+    cuenta = unipost_cuenta_tiktok()
+    n = os.path.getsize(video)
+    m = up('POST', '/v1/media', json={'filename': os.path.basename(video), 'content_type': 'video/mp4', 'size_bytes': n})
+    with open(video, 'rb') as f:
+        u = requests.put(m['upload_url'], data=f, timeout=900, headers={'Content-Type': 'video/mp4'})
+    if u.status_code >= 300:
+        err(u, 'UniPost subir video')
+    esperar('UniPost video', lambda: up('GET', f'/v1/media/{m["id"]}'),
+            lambda x: x.get('status') in ('uploaded', 'attached'),
+            lambda x: 'el archivo se borró' if x.get('status') == 'deleted' else None, max_s=300, paso=5)
+    cuerpo = {'platform_posts': [{'account_id': cuenta['id'], 'caption': texto, 'media_ids': [m['id']],
+                                  'platform_options': {'privacy_level': priv, 'upload_mode': 'file_upload'}}]}
+    v = up('POST', '/v1/posts/validate', json=cuerpo)
+    if isinstance(v, dict) and v.get('valid') is False:
+        raise Falla('UniPost revisión: ' + '; '.join(f'{e.get("field", "")} {e.get("code", "")}: {e.get("message", "")}'
+                                                     for e in v.get('errors') or [])[:300])
+    llave = f'tt-{ENV("GITHUB_RUN_ID", "local")}-{os.path.basename(video)}'[:64]
+    p = up('POST', '/v1/posts', json=cuerpo, headers={'Idempotency-Key': llave}, timeout=120)
+    pid = p['id']
+    print(f'tiktok: UniPost recibió la publicación {pid} ({cuenta.get("account_name")}); esperando a TikTok…', flush=True)
+    p = esperar('UniPost publicar', lambda: up('GET', f'/v1/posts/{pid}'),
+                lambda x: x.get('status') == 'published', _unipost_falla, max_s=900, paso=10)
+    res = (p.get('results') or [{}])[0]
+    url = res.get('url') or ''
+    vid = (re.search(r'/video/(\d+)', url) or [None, None])[1] or res.get('external_id') or pid
+    out = {'id': str(vid), 'via': 'unipost', 'unipost_id': pid,
+           'nota': f'publicado en TikTok con UniPost como «{TT_PRIVACIDAD.get(priv, priv)}»'}
+    if url:
+        out['url'] = url
+    return out
+
+
 SUBIR = {'facebook': subir_facebook, 'instagram': subir_instagram, 'youtube': subir_youtube, 'linkedin': subir_linkedin,
          'tiktok': subir_tiktok}
 
@@ -773,6 +868,10 @@ def probar(red):
     if red == 'linkedin':
         _, _, nombre = linkedin_yo()
         return f'perfil de {nombre} listo'
+    if red == 'tiktok' and ENV('UNIPOST_API_KEY', '').strip():
+        c = unipost_cuenta_tiktok()
+        return (f'UniPost: cuenta de TikTok «{c.get("account_name")}» ({c.get("status") or "activa"}, '
+                f'{c.get("connection_type") or "?"}) lista para publicar directo')
     if red == 'tiktok':
         at, scope, vence = tiktok_token()
         if 'video.publish' not in scope:
