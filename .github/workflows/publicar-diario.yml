@@ -62,7 +62,11 @@ jobs:
           ULTIMO=0; [ -z "$FECHA" ] && [ "$HM" -ge 1830 ] && ULTIMO=1
           # Nunca antes de las 9:00 am (si GitHub corriera algo de madrugada, no publica)
           if [ -z "$FECHA" ] && [ "$HM" -lt 900 ]; then echo "Antes de las 9 am: no se publica."; exit 0; fi
-          REDES=$(jq -r '.redes | join(",")' $CFG); TT=$(jq -c .tiktok $CFG)
+          REDES=$(jq -r '.redes | join(",")' $CFG)
+          # TikTok por UniPost: si falla, los horarios siguientes lo reintentan; solo el último intento del día (o una corrida
+          # a mano) manda el borrador a la bandeja como respaldo.
+          ULT=false; { [ $ULTIMO = 1 ] || [ -n "$FECHA" ]; } && ULT=true
+          TT=$(jq -c --argjson u "$ULT" '.tiktok + {diario: true, ultimo_intento: $u}' $CFG)
           python3 calendario/fecha.py json > cal.json
           python3 calendario/fecha.py horas > horas.json
           HHMM=$(TZ=America/Mexico_City date +%H:%M)
