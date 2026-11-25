@@ -3316,5 +3316,19 @@
   "unipost_id": "4dd5c373-b815-48d9-b273-a8d0a56b59b2",
   "nota": "publicado en TikTok con UniPost como «Solo yo»",
   "url": "https://www.tiktok.com/@lacreaciondelrobert"
+ },
+ {
+  "clave": "qui-04-col-morada",
+  "red": "tiktok",
+  "modo": "real",
+  "fecha": "2026-11-25T20:42:58Z",
+  "run": "45697339174",
+  "autorizo": "Robert, chat 25 nov 2026: prueba pública de UniPost duplicando qui-04 (él borra la copia)",
+  "ok": true,
+  "id": "v_pub_file~v2-1.7712211869477652500",
+  "via": "unipost",
+  "unipost_id": "ad0bbc62-f9e5-449f-9d03-0fdf48572b4f",
+  "nota": "publicado en TikTok con UniPost como «Todos»",
+  "url": "https://www.tiktok.com/@lacreaciondelrobert"
  }
 ]
