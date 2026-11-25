@@ -671,6 +671,11 @@ def subir_tiktok(video, r, modo, titulo, tt=None):
         try:
             return subir_tiktok_unipost(video, r, modo, titulo, tt)
         except (Falla, requests.RequestException, KeyError, TypeError) as e:
+            # Publicación diaria: si no es el último intento del día, NO se manda borrador; la falla hace que el
+            # siguiente horario reintente UniPost (los intentos fallidos no gastan del cupo de UniPost).
+            if tt.get('diario') and not tt.get('ultimo_intento'):
+                raise FallaUP(f'UniPost falló ({str(e)[:250]}); se reintenta en el siguiente horario',
+                              getattr(e, 'unipost_id', None))
             aviso = f'UniPost falló ({str(e)[:200]}); se usó el camino de siempre: '
             print(f'tiktok: {aviso}', flush=True)
             out = subir_tiktok_propio(video, r, modo, titulo, tt)
@@ -786,8 +791,53 @@ def unipost_cuenta_tiktok():
     activas = [c for c in tk if c.get('status') in (None, 'active')]
     if not activas:
         estado = ', '.join(f'{c.get("account_name")}: {c.get("status")}' for c in tk) or 'ninguna'
-        raise Falla(f'UniPost: no hay cuenta de TikTok activa (cuentas: {estado}). Robert la conecta en unipost.dev')
+        raise Falla(f'UniPost: TikTok está desconectado (cuentas: {estado}). RECONECTA TikTok en app.unipost.dev → '
+                    f'Connections → Connect Account → TikTok (2 clics); mientras tanto llega como borrador')
     return activas[0]
+
+
+class FallaUP(Falla):
+    """Falla de UniPost que recuerda la publicación ya creada, para no publicar dos veces al reintentar."""
+    def __init__(self, msg, unipost_id=None):
+        super().__init__(msg)
+        self.unipost_id = unipost_id
+
+
+def _unipost_resultado(p, pid, priv, extra=''):
+    res = (p.get('results') or [{}])[0]
+    url = res.get('url') or ''
+    vid = (re.search(r'/video/(\d+)', url) or [None, None])[1] or res.get('external_id') or pid
+    out = {'id': str(vid), 'via': 'unipost', 'unipost_id': pid,
+           'nota': f'publicado en TikTok con UniPost como «{TT_PRIVACIDAD.get(priv, priv)}»{extra}'}
+    if url:
+        out['url'] = url
+    return out
+
+
+def _unipost_previo(clave, modo, priv):
+    """Si un intento anterior (últimas 20 h) ya había creado la publicación en UniPost, revisa en qué quedó:
+    publicada → se da por hecha (no se publica otra vez); todavía en proceso → se espera al siguiente horario."""
+    if not clave or modo != 'real':
+        return None
+    limite = dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=20)
+    for x in reversed(bitacora()):
+        if not (x.get('clave') == clave and x.get('red') == 'tiktok' and x.get('modo') == 'real'
+                and not x.get('ok') and x.get('unipost_id')):
+            continue
+        try:
+            cuando = dt.datetime.strptime(x.get('fecha', ''), '%Y-%m-%dT%H:%M:%SZ').replace(tzinfo=dt.timezone.utc)
+        except ValueError:
+            continue
+        if cuando < limite:
+            break
+        pid = x['unipost_id']
+        p = up('GET', f'/v1/posts/{pid}')
+        if p.get('status') == 'published':
+            return _unipost_resultado(p, pid, priv, ' (lo terminó un intento anterior; no se repitió)')
+        if p.get('status') in ('queued', 'publishing', 'processing', 'scheduled'):
+            raise FallaUP(f'UniPost: la publicación {pid} de un intento anterior sigue en proceso', pid)
+        return None   # la anterior falló: se intenta de nuevo
+    return None
 
 
 def _unipost_falla(p):
@@ -803,6 +853,9 @@ def subir_tiktok_unipost(video, r, modo, titulo, tt):
     if not priv:
         raise Falla('TikTok: falta elegir quién puede verlo (privacidad) en el botón Publicar de la Sala')
     texto = (tt.get('texto') or (r.get('tiktok') or {}).get('texto') or titulo)[:2200]
+    previo = _unipost_previo(tt.get('_clave'), modo, priv)
+    if previo:
+        return previo
     cuenta = unipost_cuenta_tiktok()
     n = os.path.getsize(video)
     m = up('POST', '/v1/media', json={'filename': os.path.basename(video), 'content_type': 'video/mp4', 'size_bytes': n})
@@ -823,16 +876,12 @@ def subir_tiktok_unipost(video, r, modo, titulo, tt):
     p = up('POST', '/v1/posts', json=cuerpo, headers={'Idempotency-Key': llave}, timeout=120)
     pid = p['id']
     print(f'tiktok: UniPost recibió la publicación {pid} ({cuenta.get("account_name")}); esperando a TikTok…', flush=True)
-    p = esperar('UniPost publicar', lambda: up('GET', f'/v1/posts/{pid}'),
-                lambda x: x.get('status') == 'published', _unipost_falla, max_s=900, paso=10)
-    res = (p.get('results') or [{}])[0]
-    url = res.get('url') or ''
-    vid = (re.search(r'/video/(\d+)', url) or [None, None])[1] or res.get('external_id') or pid
-    out = {'id': str(vid), 'via': 'unipost', 'unipost_id': pid,
-           'nota': f'publicado en TikTok con UniPost como «{TT_PRIVACIDAD.get(priv, priv)}»'}
-    if url:
-        out['url'] = url
-    return out
+    try:
+        p = esperar('UniPost publicar', lambda: up('GET', f'/v1/posts/{pid}'),
+                    lambda x: x.get('status') == 'published', _unipost_falla, max_s=900, paso=10)
+    except (Falla, requests.RequestException) as e:
+        raise FallaUP(str(e), pid)   # la bitácora guarda el id: el siguiente intento revisa en qué quedó antes de repetir
+    return _unipost_resultado(p, pid, priv)
 
 
 SUBIR = {'facebook': subir_facebook, 'instagram': subir_instagram, 'youtube': subir_youtube, 'linkedin': subir_linkedin,
@@ -957,7 +1006,7 @@ def cmd_publicar(a):
             if a.modo == 'prueba':
                 fila.update(ok=True, nota=probar(red))
             elif red == 'tiktok':
-                fila.update(ok=True, **subir_tiktok(a.video, r, a.modo, titulo, tt))
+                fila.update(ok=True, **subir_tiktok(a.video, r, a.modo, titulo, dict(tt, _clave=a.clave)))
             elif red in ('threads', 'instagram'):
                 fn = subir_threads if red == 'threads' else subir_instagram
                 fila.update(ok=True, **fn(a.video, r, a.modo, titulo, a.video_url))
@@ -966,6 +1015,8 @@ def cmd_publicar(a):
         except (Falla, requests.RequestException, KeyError) as e:
             fallas += 1
             fila.update(ok=False, error=str(e) if not isinstance(e, KeyError) else f'respuesta inesperada (falta {e})')
+            if getattr(e, 'unipost_id', None):
+                fila['unipost_id'] = e.unipost_id
         filas.append(fila)
         detalle = fila.get('error') or ' '.join(str(fila[k]) for k in ('url', 'nota') if fila.get(k)) or fila.get('id', '')
         lineas.append(f'| {red} | {"✅" if fila["ok"] else "❌"} | {detalle} |')
