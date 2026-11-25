@@ -3302,5 +3302,19 @@
   "id": "v_inbox_file~v2.7712130428513241096",
   "nota": "TikTok todavía no aprueba la publicación directa: se mandó como BORRADOR a tu app. Ábrelo en TikTok, pega el texto (Sala, pestaña TikTok) y publícalo.",
   "borrador": true
+ },
+ {
+  "clave": "qui-04-col-morada",
+  "red": "tiktok",
+  "modo": "privado",
+  "fecha": "2026-11-25T20:31:11Z",
+  "run": "45695493807",
+  "autorizo": null,
+  "ok": true,
+  "id": "v_pub_file~v2-1.7712209318082414612",
+  "via": "unipost",
+  "unipost_id": "4dd5c373-b815-48d9-b273-a8d0a56b59b2",
+  "nota": "publicado en TikTok con UniPost como «Solo yo»",
+  "url": "https://www.tiktok.com/@lacreaciondelrobert"
  }
 ]
