@@ -2,7 +2,7 @@
 // Shot Fungi Mati #151 · Si los champiñones te caen mal, quizá no es alergia: es un azúcar — NARRADO (N1 Por dentro + N5 El experimento).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es consejo médico.
 
-const TR = { plato:'#f7f4ec', plato2:'#d9d2c4', glu:'#ffd43b', fru:'#ff8a1f', oxi:'#ff3b2f', piel:'#f1b48f', colon:'#f39aa6', colon2:'#d9667a',
+const TR = { plato:'#e4dfd3', plato2:'#aaa396', glu:'#ffd43b', fru:'#ff8a1f', oxi:'#ff3b2f', piel:'#f1b48f', colon:'#f39aa6', colon2:'#d9667a',
   agua:'#6fc3ff', mem:'#2fe0a8', prot:'#ff6b9a', vello:'#f6a6b2', vello2:'#e07c8e', naranja:'#ff8a1f' };
 
 // Trehalosa: dos glucosas unidas por su carbono 1 (cara a cara) con un oxígeno en medio. (x, y) = el puente.
@@ -112,9 +112,9 @@ function Enzima({ x, y, s = 1, color = KC.pink, abre = 0.5, rot = 0 }) {
 // Mapa esquemático: Groenlandia y Dinamarca.
 function MapaNorte({ x, y, p = 1 }) {
   return <g transform={`translate(${x} ${y})`}>
-    <path d="M 60 40 Q 120 -20 220 10 Q 300 30 290 120 Q 280 220 220 300 Q 170 360 130 330 Q 90 280 70 200 Q 20 120 60 40 Z" fill="#f4f1ea" stroke={KC.ink} strokeWidth={7} />
+    <path d="M 60 40 Q 120 -20 220 10 Q 300 30 290 120 Q 280 220 220 300 Q 170 360 130 330 Q 90 280 70 200 Q 20 120 60 40 Z" fill="#55636f" stroke={KC.ink} strokeWidth={7} />
     <text x={170} y={180} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>Groenlandia</text>
-    <path d="M 560 250 Q 590 220 620 240 Q 640 270 615 300 Q 585 320 565 295 Z" fill="#ffd34d" stroke={KC.ink} strokeWidth={6} />
+    <path d="M 560 250 Q 590 220 620 240 Q 640 270 615 300 Q 585 320 565 295 Z" fill="#c9a33a" stroke={KC.ink} strokeWidth={6} />
     <text x={600} y={350} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>Dinamarca</text>
     <FlechaCurva x1={560} y1={240} x2={300} y2={150} p={p} curva={-80} color={KC.ink} grosor={7} />
   </g>;
@@ -172,18 +172,18 @@ function TrehalosaShot() {
       {/* 1–2 · gancho: el tenedor pincha; la panza gruñe; sale la trehalosa */}
       <Escena T={T} a={K.G} b={K.Fo} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1030) scale(1.07) translate(-540 -960)">
           <Plato />
           {CHAMPIS.map(([cx, cy, s], i) => <Champinon key={i} x={cx} y={cy} s={s} />)}
           <Tenedor x={560} y={klerp(500, 900, pincha) - alza * 420} rot={8} />
           <Pancita T={T} x={210} y={720} r={95} grr={kprog(T, K.G + 0.4, K.G + 0.9) * (1 - kprog(T, K.No, K.No + 0.4))} />
           {sube > 0 && <Trehalosa x={560} y={klerp(860, 640, sube)} s={klerp(0.3, 1.2, sube)} brillo={0.8} unos />}
-        </>)}
+        </g>)}
       </Escena>
       {/* 3 · no es el azúcar de mesa */}
       <Escena T={T} a={K.Fo} b={K.Cu} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 170)">
           <Tarjeta x={50} y={640} w={470} h={380} titulo="azúcar de mesa">
             <g transform="translate(150 790)"><rect x={-50} y={-50} width={100} height={100} rx={10} fill="#fff" stroke={KC.ink} strokeWidth={6} /><path d="M -50 -50 L -20 -80 L 80 -80 L 50 -50 M 50 50 L 80 20 L 80 -80" fill="none" stroke={KC.ink} strokeWidth={6} /></g>
             <Sacarosa x={330} y={800} s={0.85} r={46} />
@@ -192,39 +192,39 @@ function TrehalosaShot() {
           <Tarjeta x={560} y={640} w={470} h={380} titulo="trehalosa">
             <Trehalosa x={795} y={840} s={0.95} unos />
           </Tarjeta>
-        </>)}
+        </g>)}
       </Escena>
       {/* 4 · cuánto trae: ≈ 1 g por kilo */}
       <Escena T={T} a={K.Cu} b={K.Es} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<><Bascula x={370} y={1080} T={T} /><Cucharita x={860} y={1020} /></>)}
+        {fsvg(<g transform="translate(540 1090) scale(1.2) translate(-535 -1000)"><Bascula x={370} y={1080} T={T} /><Cucharita x={860} y={1020} /></g>)}
       </Escena>
       {/* 5 · reserva y escudo (al microscopio) */}
       <Escena T={T} a={K.Es} b={K.Le} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <CelulaHongo T={T} llena={kprog(T, K.Es + 0.3, K.Es + 1.6)} escudo={kprog(T, K.Es + 2.6, K.Es + 3.6, kEase.suave)} estres={kprog(T, K.Es + 2.0, K.Es + 2.6)} />
-          <Sol x={170} y={500} T={T} o={kprog(T, K.Es + 2.0, K.Es + 2.4)} />
-          <Frio x={350} y={510} o={kprog(T, K.Es + 2.4, K.Es + 2.8)} />
+          <g transform="translate(540 1080) scale(1.15) translate(-540 -905)"><CelulaHongo T={T} llena={kprog(T, K.Es + 0.3, K.Es + 1.6)} escudo={kprog(T, K.Es + 2.6, K.Es + 3.6, kEase.suave)} estres={kprog(T, K.Es + 2.0, K.Es + 2.6)} /></g>
+          <Sol x={190} y={690} T={T} o={kprog(T, K.Es + 2.0, K.Es + 2.4)} />
+          <Frio x={360} y={700} o={kprog(T, K.Es + 2.4, K.Es + 2.8)} />
         </>)}
       </Escena>
       {/* 6 · levadura seca */}
       <Escena T={T} a={K.Le} b={K.P} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1080) scale(1.2) translate(-540 -960)">
           {[[200, 860], [330, 820], [260, 980], [400, 960]].map(([lx, ly], i) => <Levadura key={i} x={lx} y={ly} r={62} T={T} seed={i} />)}
           <g opacity={0.45} style={{ filter:'grayscale(1)' }}>{[[680, 860], [810, 820], [740, 980], [880, 960]].map(([lx, ly], i) => <Levadura key={i} x={lx} y={ly} r={62} T={0} seed={i} rot={20} />)}</g>
           <path d="M 250 1100 L 290 1140 L 360 1060" stroke={KC.mint} strokeWidth={16} fill="none" strokeLinecap="round" strokeLinejoin="round" opacity={kprog(T, K.Le + 1.0, K.Le + 1.3)} />
           <path d="M 740 1060 L 820 1140 M 820 1060 L 740 1140" stroke={KC.red} strokeWidth={16} strokeLinecap="round" opacity={kprog(T, K.Le + 1.4, K.Le + 1.7)} />
           <line x1={540} y1={740} x2={540} y2={1100} stroke="rgba(255,255,255,.3)" strokeWidth={4} strokeDasharray="14 10" />
-        </>)}
+        </g>)}
       </Escena>
       {/* 7 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Tr} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><Pancita T={T} x={300} y={1000} r={120} grr={1} /><Interrogacion T={T} x={300} y={830} tam={300} /><Trehalosa x={250} y={480} s={0.7} /></>)}
+        {fsvg(<><Pancita T={T} x={470} y={1110} r={170} grr={1} /><Trehalosa x={540} y={720} s={0.8} /><Interrogacion T={T} x={830} y={1010} tam={150} /></>)}
       </Escena>
       {/* 8 · la trehalasa en tus vellosidades */}
       <Escena T={T} a={K.Tr} b={K.Est} zoom={0.04}>
@@ -242,28 +242,28 @@ function TrehalosaShot() {
       {/* 9 · el estudio de 1988 */}
       <Escena T={T} a={K.Est} b={K.Oc} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<MapaNorte x={180} y={760} p={kprog(T, K.Est + 1.8, K.Est + 2.8)} />)}
+        {fsvg(<g transform="translate(540 1090) scale(1.45) translate(-330 -170)"><MapaNorte x={0} y={0} p={kprog(T, K.Est + 1.8, K.Est + 2.8)} /></g>)}
       </Escena>
       {/* 10 · al menos 8 de cada 100 (de 97 estudiados) */}
       <Escena T={T} a={K.Oc} b={K.Co} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>{P100.map(([px, py], i) => { const k = OCHO.indexOf(i); const on = k >= 0 ? kprog(T, K.Oc + 0.4 + k * 0.12, K.Oc + 0.6 + k * 0.12) : 0;
-          return <Persona key={i} x={px} y={py} color={mixHex('#f4f1ea', TR.naranja, on)} />; })}</>)}
+        {fsvg(<g transform="translate(540 1050) scale(1.3) translate(-540 -927)">{P100.map(([px, py], i) => { const k = OCHO.indexOf(i); const on = k >= 0 ? kprog(T, K.Oc + 0.4 + k * 0.12, K.Oc + 0.6 + k * 0.12) : 0;
+          return <Persona key={i} x={px} y={py} color={mixHex('#d8d3c8', TR.naranja, on)} />; })}</g>)}
       </Escena>
       {/* 11 · en el colon: jala agua y puede fermentarse */}
       <Escena T={T} a={K.Co} b={K.Ge} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={12} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 130)">
           <Colon T={T} agua={kprog(T, K.Co + 0.9, K.Co + 2.4)} bact={kprog(T, K.Co + 2.2, K.Co + 3.0)} gas={kprog(T, K.Co + 3.0, K.Co + 3.6)} />
           {[0, 1, 2].map((i) => { const u = kprog(T, K.Co + 0.1 + i * 0.2, K.Co + 1.6 + i * 0.2, kEase.sale); return <Trehalosa key={i} x={klerp(-120, 300 + i * 180, u)} y={830 + (i % 2) * 120} s={0.55} />; })}
           <Pancita T={T} x={180} y={510} r={80} infla={kprog(T, K.Co + 3.2, K.Co + 4.4)} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 12 · el gen TREH */}
       <Escena T={T} a={K.Ge} b={K.Oj} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1000) scale(1.1) translate(-560 -880)">
           <Cromosoma x={210} y={850} s={0.95} banda={kprog(T, K.Ge + 0.6, K.Ge + 1.0)} />
           <ADNHebra T={T} x={450} y={760} largo={520} alto={70} vueltas={2.5} resalta={(u) => Math.abs(u - 0.5) < 0.06} />
           {[['GG', 240, KC.mint], ['AG', 160, KC.gold2], ['AA', 80, TR.naranja]].map(([lab, h, col], i) => { const u = kprog(T, K.Ge + 2.0 + i * 0.2, K.Ge + 2.6 + i * 0.2, kEase.sale);
@@ -271,75 +271,74 @@ function TrehalosaShot() {
               <text x={550 + i * 150} y={1118} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{lab}</text></g>; })}
           <line x1={480} y1={1080} x2={960} y2={1080} stroke={KC.ink} strokeWidth={6} />
           <text x={730} y={1160} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Ge + 2.4, K.Ge + 2.8)}>actividad de la enzima · esquemático</text>
-        </>)}
+        </g>)}
       </Escena>
       {/* 13 · ojo: alergia ≠ falta de una enzima */}
       <Escena T={T} a={K.Oj} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 170)">
           <Tarjeta x={50} y={640} w={440} h={440} titulo="alergia"><Anticuerpo x={270} y={880} s={1.1} />
             <text x={270} y={1050} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>sistema inmune</text></Tarjeta>
           <text x={540} y={900} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.ink}>≠</text>
           <Tarjeta x={590} y={640} w={440} h={440} titulo="falta una enzima"><Enzima x={810} y={880} s={1.0} color={KC.pink} abre={0.6 + 0.4 * Math.sin(T * 6)} rot={180} />
             <text x={810} y={1050} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>trehalasa baja</text></Tarjeta>
-        </>)}
+        </g>)}
       </Escena>
       {/* 14 · cierre: el mismo plato, con el azúcar sin cortar */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1030) scale(1.07) translate(-540 -960)">
           <Plato />
           {CHAMPIS.map(([cx, cy, s], i) => <Champinon key={i} x={cx} y={cy} s={s} />)}
           <Tenedor x={880} y={1000} rot={40} />
           <Trehalosa x={540} y={720 + Math.sin(T * 2) * 10} s={1.0} brillo={0.7} />
           <Enzima x={300} y={720} s={0.55} color={KC.pink} rot={20} abre={0.6 + 0.4 * Math.sin(T * 5)} />
-        </>)}
+        </g>)}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.7} tacharEn={K.G + 1.8} until={K.No - 0.3} texto="¿alergia?" x={300} y={440} tam={50} />
-      <Chip T={T} at={K.G + 2.2} until={K.No - 0.3} texto="¿un azúcar?" x={300} y={540} tam={40} borde={KC.gold} />
-      <Etq T={T} at={K.No + 0.6} until={K.Fo - 0.3} x={60} y={460} texto="trehalosa" tam={44} color={KC.ink} />
-      <Chip T={T} at={K.No + 1.0} until={K.Fo - 0.3} texto="también: micosa" x={300} y={545} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.No + 1.3} until={K.Fo - 0.3} x={400} y={760} texto="glucosa + glucosa" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Fo + 0.6} until={K.Cu - 0.3} texto="sacarosa = glucosa + fructosa" x={285} y={1075} tam={22} borde={KC.ink} />
-      <Chip T={T} at={K.Fo + 1.6} until={K.Cu - 0.3} texto="enlace 1 ↔ 1: cara a cara" x={795} y={1075} tam={22} borde={KC.gold} />
-      <NumeroGigante T={T} at={K.Cu + 0.4} until={K.Es - 0.3} valor={1} dur={0.5} prefijo="≈ " sufijo=" g / kg" x={540} y={500} tam={140} color={KC.yellow} />
-      <Chip T={T} at={K.Cu + 1.0} until={K.Es - 0.3} texto="champiñón fresco · medido en 2013" x={540} y={650} tam={30} borde={KC.gold} />
-      <Etq T={T} at={K.Cu + 1.6} until={K.Es - 0.3} x={60} y={760} texto="Agaricus bisporus" it tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Es + 0.1} until={K.Le - 0.3} texto="AL MICROSCOPIO · CÉLULA DE HONGO" x={420} y={400} tam={26} borde={KC.cyan} mono />
-      <Chip T={T} at={K.Es + 0.8} until={K.Es + 2.0} texto="reserva" x={380} y={640} tam={34} borde={KC.mint} />
-      <Chip T={T} at={K.Es + 3.0} until={K.Le - 0.3} texto="escudo: membranas y proteínas" x={380} y={640} tam={26} borde={KC.mint} />
-      <Etq T={T} at={K.Es + 2.2} until={K.Le - 0.3} x={60} y={590} texto="sequedad · frío" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.Le + 0.2} until={K.P - 0.3} x={60} y={470} texto="Saccharomyces cerevisiae" it tam={30} color={KC.texto} />
-      <Chip T={T} at={K.Le + 0.5} until={K.P - 0.3} texto="tras mucho tiempo seca" x={540} y={600} tam={32} borde={KC.gold} />
-      <Etq T={T} at={K.Le + 0.9} until={K.P - 0.3} x={150} y={700} texto="con trehalosa" tam={28} color={KC.mint} />
-      <Etq T={T} at={K.Le + 1.3} until={K.P - 0.3} x={640} y={700} texto="sin trehalosa" tam={28} color={KC.red} />
-      <Chip T={T} at={K.Tr + 0.1} until={K.Est - 0.3} texto="POR DENTRO · TU INTESTINO DELGADO" x={540} y={400} tam={26} borde={KC.cyan} mono />
+      <MitoTachado T={T} at={K.G + 0.7} tacharEn={K.G + 1.6} until={K.G + 2.3} texto="¿alergia?" x={540} y={470} tam={50} />
+      <Chip T={T} at={K.G + 2.3} until={K.No - 0.3} texto="¿un azúcar?" x={540} y={470} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.No + 0.4} until={K.No + 1.6} texto="trehalosa" x={540} y={470} tam={44} borde={KC.gold} />
+      <Chip T={T} at={K.No + 1.6} until={K.Fo - 0.3} texto="trehalosa · también: micosa" x={540} y={470} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.No + 1.3} until={K.Fo - 0.3} x={420} y={815} texto="glucosa + glucosa" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Fo + 0.6} until={K.Cu - 0.3} texto="sacarosa = glucosa + fructosa" x={285} y={1245} tam={22} borde={KC.ink} />
+      <Chip T={T} at={K.Fo + 1.6} until={K.Cu - 0.3} texto="enlace 1 ↔ 1: cara a cara" x={795} y={1245} tam={22} borde={KC.gold} />
+      <NumeroGigante T={T} at={K.Cu + 0.4} until={K.Es - 0.3} valor={1} dur={0.5} prefijo="≈ " sufijo=" g / kg" etiqueta="champiñón fresco · medido en 2013" x={540} y={560} tam={140} color={KC.yellow} />
+      <Etq T={T} at={K.Cu + 1.6} until={K.Es - 0.3} x={60} y={830} texto="Agaricus bisporus" it tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Es + 0.1} until={K.Es + 0.9} texto="AL MICROSCOPIO · CÉLULA DE HONGO" x={540} y={470} tam={26} borde={KC.cyan} mono />
+      <Chip T={T} at={K.Es + 0.9} until={K.Es + 2.6} texto="reserva" x={540} y={470} tam={34} borde={KC.mint} />
+      <Chip T={T} at={K.Es + 2.6} until={K.Le - 0.3} texto="escudo: membranas y proteínas" x={540} y={470} tam={26} borde={KC.mint} />
+      <Etq T={T} at={K.Es + 2.2} until={K.Le - 0.3} x={450} y={690} texto="sequedad · frío" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Le + 0.2} until={K.P - 0.3} x={60} y={560} texto="Saccharomyces cerevisiae" it tam={30} color={KC.texto} />
+      <Chip T={T} at={K.Le + 0.5} until={K.P - 0.3} texto="tras mucho tiempo seca" x={540} y={470} tam={32} borde={KC.gold} />
+      <Etq T={T} at={K.Le + 0.9} until={K.P - 0.3} x={110} y={720} texto="con trehalosa" tam={28} color={KC.mint} />
+      <Etq T={T} at={K.Le + 1.3} until={K.P - 0.3} x={640} y={720} texto="sin trehalosa" tam={28} color={KC.red} />
+      <Chip T={T} at={K.Tr + 0.1} until={K.Est - 0.3} texto="POR DENTRO · TU INTESTINO DELGADO" x={540} y={470} tam={26} borde={KC.cyan} mono />
       <Etq T={T} at={K.Tr + 1.4} until={K.Tr + 2.6} x={60} y={600} texto="trehalasa" tam={34} color={KC.pink} />
       <Etq T={T} at={K.Tr + 2.6} until={K.Est - 0.3} x={60} y={600} texto="2 glucosas → se absorben" tam={30} color={TR.glu} />
-      <Etq T={T} at={K.Tr + 0.6} until={K.Est - 0.3} x={60} y={690} texto="vellosidades" tam={26} color={KC.texto} />
-      <TarjetaEstudio T={T} at={K.Est + 0.2} until={K.Oc - 0.3} anio="1988" quien="U. de Copenhague" revista="Scand. J. Gastroenterol., 1988" x={360} y={560} />
-      <Chip T={T} at={K.Est + 2.0} until={K.Oc - 0.3} texto="biopsias de 97 adultos" x={760} y={800} tam={30} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Oc + 0.3} until={K.Co - 0.3} valor={8} dur={0.6} prefijo="≥ " sufijo=" % de 97" x={340} y={470} tam={96} color={TR.naranja} />
-      <Chip T={T} at={K.Oc + 0.8} until={K.Co - 0.3} texto="de 97 adultos estudiados (1988)" x={400} y={585} tam={26} borde={KC.ink} />
-      <Chip T={T} at={K.Oc + 1.2} until={K.Co - 0.3} texto="trehalasa baja" x={400} y={650} tam={24} borde={TR.naranja} />
-      <Etq T={T} at={K.Co + 1.2} until={K.Ge - 0.3} x={340} y={680} texto="jala agua" tam={30} color={TR.agua} />
-      <Chip T={T} at={K.Co + 3.0} until={K.Ge - 0.3} texto="gases" x={620} y={480} tam={32} borde={KC.gold} />
-      <Chip T={T} at={K.Co + 3.3} until={K.Ge - 0.3} texto="diarrea" x={860} y={480} tam={32} borde={KC.gold} />
-      <Chip T={T} at={K.Co + 3.8} until={K.Ge - 0.3} texto="varía de persona a persona" x={740} y={575} tam={24} borde={KC.ink} />
-      <Etq T={T} at={K.Co + 2.4} until={K.Ge - 0.3} x={60} y={1120} texto="colon · bacterias" tam={26} color={KC.texto} />
-      <Etq T={T} at={K.Ge + 0.8} until={K.Oj - 0.3} x={60} y={500} texto="TREH · cromosoma 11" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Ge + 1.4} until={K.Oj - 0.3} texto="una letra cambia: G → A" x={480} y={650} tam={22} borde={KC.gold} mono />
-      <Etq T={T} at={K.Oj + 1.2} until={K.C - 0.3} x={600} y={560} texto="No es consejo médico." tam={26} color={KC.ink} />
-      <MitoTachado T={T} at={K.C + 0.2} tacharEn={K.C + 0.8} until={K.Ou} texto="¿alergia?" x={300} y={440} tam={50} />
-      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="un azúcar sin cortar" x={300} y={540} tam={36} borde={KC.gold} />
+      <Etq T={T} at={K.Tr + 0.6} until={K.Est - 0.3} x={60} y={1300} texto="vellosidades" tam={26} color={KC.texto} />
+      <TarjetaEstudio T={T} at={K.Est + 0.2} until={K.Oc - 0.3} anio="1988" quien="U. de Copenhague" revista="Scand. J. Gastroenterol., 1988" x={540} y={420} />
+      <Chip T={T} at={K.Est + 2.0} until={K.Oc - 0.3} texto="biopsias de 97 adultos" x={760} y={1420} tam={30} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Oc + 0.3} until={K.Co - 0.3} valor={8} dur={0.6} prefijo="≥ " sufijo=" % de 97" etiqueta="de 97 adultos estudiados (1988)" x={540} y={500} tam={110} color={TR.naranja} />
+      <Chip T={T} at={K.Oc + 1.2} until={K.Co - 0.3} texto="trehalasa baja" x={540} y={1420} tam={28} borde={TR.naranja} />
+      <Etq T={T} at={K.Co + 1.2} until={K.Ge - 0.3} x={340} y={810} texto="jala agua" tam={30} color={TR.agua} />
+      <Chip T={T} at={K.Co + 3.0} until={K.Ge - 0.3} texto="gases" x={620} y={600} tam={32} borde={KC.gold} />
+      <Chip T={T} at={K.Co + 3.3} until={K.Ge - 0.3} texto="diarrea" x={860} y={600} tam={32} borde={KC.gold} />
+      <Chip T={T} at={K.Co + 3.8} until={K.Ge - 0.3} texto="varía de persona a persona" x={740} y={1380} tam={24} borde={KC.ink} />
+      <Etq T={T} at={K.Co + 2.4} until={K.Ge - 0.3} x={60} y={1290} texto="colon · bacterias" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.Ge + 0.8} until={K.Oj - 0.3} x={60} y={600} texto="TREH · cromosoma 11" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Ge + 1.4} until={K.Oj - 0.3} texto="una letra cambia: G → A" x={640} y={760} tam={22} borde={KC.gold} mono />
+      <Etq T={T} at={K.Oj + 1.2} until={K.C - 0.3} x={330} y={1340} texto="No es consejo médico." tam={26} color={KC.ink} />
+      <MitoTachado T={T} at={K.C + 0.2} tacharEn={K.C + 0.8} until={K.C + 1.4} texto="¿alergia?" x={540} y={470} tam={50} />
+      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="un azúcar sin cortar" x={540} y={470} tam={36} borde={KC.gold} />
 
       {/* barras de escala (color claro del kit) */}
-      <BarraEscala T={T} at={K.G} until={K.Fo} texto="2 cm" largo={150} />
+      <BarraEscala T={T} at={K.G} until={K.Fo} texto="2 cm" largo={160} />
       <BarraEscala T={T} at={K.Fo} until={K.Cu} texto="moléculas esquemáticas" largo={0} />
-      <BarraEscala T={T} at={K.Cu} until={K.Es} texto="2 cm" largo={110} />
-      <BarraEscala T={T} at={K.Es} until={K.P} texto="5 µm" largo={140} />
+      <BarraEscala T={T} at={K.Cu} until={K.Es} texto="2 cm" largo={132} />
+      <BarraEscala T={T} at={K.Es} until={K.Le} texto="5 µm" largo={161} />
+      <BarraEscala T={T} at={K.Le} until={K.P} texto="5 µm" largo={168} />
       <BarraEscala T={T} at={K.P} until={K.Tr} texto="dibujo esquemático" largo={0} />
       <BarraEscala T={T} at={K.Tr} until={K.Est} texto="0.5 mm (vellosidades)" largo={140} />
       <BarraEscala T={T} at={K.Est} until={K.Oc} texto="mapa esquemático" largo={0} />
@@ -347,7 +346,7 @@ function TrehalosaShot() {
       <BarraEscala T={T} at={K.Co} until={K.Ge} texto="dibujo esquemático" largo={0} />
       <BarraEscala T={T} at={K.Ge} until={K.Oj} texto="esquemático" largo={0} />
       <BarraEscala T={T} at={K.Oj} until={K.C} texto="esquemático" largo={0} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="2 cm" largo={150} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="2 cm" largo={160} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.No - 0.1} texto="Quizá no es alergia: *es un azúcar.*" />
