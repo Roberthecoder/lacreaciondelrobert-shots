@@ -113,8 +113,12 @@ Tareas que necesitan el navegador o el escritorio de la PC y quedaron esperando 
 ## SISTEMA AUTÓNOMO (30 oct): todo depende solo de GitHub. Robert puede cerrar los chats.
 - Publica: publicar-diario.yml (6:17 pm CDMX) → publicar.yml. Bitácora: publicar/diario.log (commit diario = el repo nunca queda
   inactivo 60 días). Tokens: Threads/TikTok se renuevan solos (renovar-tokens.yml); Meta y YouTube no caducan.
-- Manual de Robert: LinkedIn token ~28 dic 2026 y cada 2 meses; cuando TikTok apruebe Direct Post, cambiar las claves de TikTok;
-  mientras, cada día llega un borrador a la bandeja de TikTok. Facebook publica en la PÁGINA (la API no permite perfiles).
+- Manual de Robert: LinkedIn token ~28 dic 2026 y cada 2 meses. Facebook publica en la PÁGINA (la API no permite perfiles).
+- TikTok (25 nov 2026): TikTok rechazó Direct Post para la app propia (uso personal). Ahora publica por UniPost (secreto
+  UNIPOST_API_KEY; plan gratis 100/mes; fallidos no cuentan). Si UniPost falla, el diario reintenta en el siguiente horario
+  (candado anti-duplicado con unipost_id) y solo en el último intento manda BORRADOR, que llega como aviso «AutoPosting está
+  listo» en Mensajes › Notificaciones del sistema › «Plataforma TikTok» (no en «Borradores»). Ver maestro/recetas/publicador.md.
+  TikTok quedó al corriente con YouTube el 25 nov.
 - Calendario cubierto hasta el 1 nov 2027 (370 shots). Para más videos hace falta Claude (producción) y créditos de ElevenLabs.
 
 ## LISTO (30 oct): LOS 370 SHOTS TIENEN VOZ PROFESIONAL y están en la Sala como «Narrado listo» (rama voces/v4 juntada a main).
