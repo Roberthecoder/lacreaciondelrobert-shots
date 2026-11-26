@@ -3450,5 +3450,20 @@
   "unipost_id": "e2572aec-4b8c-494d-ba79-8f888a795fd5",
   "nota": "publicado en TikTok con UniPost como «Todos»",
   "url": "https://www.tiktok.com/@lacreaciondelrobert"
+ },
+ {
+  "clave": "per-cumbre-bevisioneers-yt",
+  "red": "youtube",
+  "modo": "real",
+  "fecha": "2026-11-26T02:00:55Z",
+  "run": "45738421317",
+  "autorizo": "Chat de Claude Code del 25 nov 2026, Robert: «Apruebo todo. Publica todo en todas las redes sociales va?»",
+  "largo": true,
+  "ok": true,
+  "id": "tC3voTBLz2w",
+  "url": "https://youtu.be/tC3voTBLz2w",
+  "nota": "público · portada OK",
+  "privacidad": "public",
+  "idioma": "es-419"
  }
 ]
