@@ -3,11 +3,12 @@
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
 const YC = { ama:'#b8834f', ama2:'#d6a874', ama3:'#8a5a2e', trama:'#d9a35b', tubos:'#b58a5c', tubos2:'#9c7448', costra:'#3b3631',
-  gris1:'#8d8a86', gris2:'#6f6b67', gris3:'#a7a39d', margen:'#c8935a', corteza:'#f2efe8', lenti:'#2a2622', cuero:'#7a4a26', cuero2:'#5a3418',
-  yesca:'#1f1a17', pirita:'#d9b13b', pedernal:'#8a7d6b', piel:'#f1b48f', piel2:'#d98f6b', sangre:'#d8262f', hielo:'#dff6ff', roca:'#6d7a88' };
+  gris1:'#8d8a86', gris2:'#6f6b67', gris3:'#a7a39d', margen:'#c8935a', corteza:'#cdc7bb', lenti:'#2a2622', cuero:'#7a4a26', cuero2:'#5a3418',
+  yesca:'#1f1a17', pirita:'#d9b13b', pedernal:'#8a7d6b', piel:'#f1b48f', piel2:'#d98f6b', sangre:'#d8262f', hielo:'#4d6273', roca:'#4c5866' };
 
 // Subtítulo con *resaltado* y _cursiva_ (especies en cursiva también en subtítulos).
 function SubK({ T, at, until, texto, idx, color = KC.gold2, tam = 62 }) {
+  if (typeof CINE_OPC !== 'undefined' && !CINE_OPC.subtitulos) return null;   // modo cine: sin subtítulo quemado
   const o = idx != null && window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
   if (T < at || T > until) return null;
   const out = kprog(T, until - 0.2, until, kEase.suave);
@@ -240,9 +241,9 @@ function OtziSilueta({ x, y, s = 1, T = 0 }) {
 function Alpes({ T }) {
   return <g>
     <path d="M -40 1000 L 180 560 L 300 720 L 470 420 L 640 700 L 780 520 L 1120 1000 Z" fill={YC.roca} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
-    <path d="M 180 560 L 230 660 L 200 650 L 160 600 Z M 470 420 L 540 540 L 500 530 L 470 560 L 430 500 Z M 780 520 L 840 600 L 800 595 L 750 560 Z" fill="#ffffff" stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />
-    <path d="M -40 1000 Q 300 880 540 900 Q 800 920 1120 860 L 1120 1240 L -40 1240 Z" fill={YC.hielo} stroke={KC.ink} strokeWidth={8} />
-    {[0, 1, 2, 3].map((k) => <path key={k} d={`M ${120 + k * 240} ${980 + (k % 2) * 40} l 60 30 l 50 -20`} stroke="#9fd3ea" strokeWidth={6} fill="none" />)}
+    <path d="M 180 560 L 230 660 L 200 650 L 160 600 Z M 470 420 L 540 540 L 500 530 L 470 560 L 430 500 Z M 780 520 L 840 600 L 800 595 L 750 560 Z" fill="#a9b8c3" stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />
+    <path d="M -40 1000 Q 300 880 540 900 Q 800 920 1120 860 L 1120 1980 L -40 1980 Z" fill={YC.hielo} stroke={KC.ink} strokeWidth={8} />
+    {[0, 1, 2, 3, 4, 5, 6, 7].map((k) => <path key={k} d={`M ${(120 + k * 240) % 1080} ${980 + Math.floor(k / 4) * 320 + (k % 2) * 40} l 60 30 l 50 -20`} stroke="#7f9cb0" strokeWidth={6} fill="none" />)}
     {Array.from({ length: 30 }, (_, i) => { const g = krng(i + 3); const xx = (g() * 1080 + T * (40 + g() * 40)) % 1080, yy = (g() * 900 + 300 + T * (60 + g() * 50)) % 900 + 300; return <circle key={i} cx={xx} cy={yy} r={3 + g() * 5} fill="#fff" opacity=".8" />; })}
   </g>;
 }
@@ -276,7 +277,7 @@ function Dedo({ T, x, y, gota = 0, tapa = 0 }) {
 // Mapa esquemático de Rumania con Corund (Transilvania).
 function MapaRumania({ x, y, s = 1, p = 1, T = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M 20 140 Q 40 60 140 40 Q 220 0 320 30 Q 420 10 470 80 Q 520 120 500 190 Q 520 250 470 290 Q 380 330 280 310 Q 180 330 110 290 Q 30 260 20 200 Z" fill="#ffe9a8" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <path d="M 20 140 Q 40 60 140 40 Q 220 0 320 30 Q 420 10 470 80 Q 520 120 500 190 Q 520 250 470 290 Q 380 330 280 310 Q 180 330 110 290 Q 30 260 20 200 Z" fill="#6e6443" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     <path d="M 330 50 Q 360 150 300 230 Q 230 270 140 250" stroke="#b98a4e" strokeWidth={16} fill="none" strokeLinecap="round" opacity=".55" />
     {p > 0 && <g transform={`translate(330 150) scale(${kEase.rebote(kclamp(p, 0, 1))})`}>
       <circle r={30 + 6 * Math.sin(T * 5)} fill="rgba(255,59,47,.3)" /><circle r={18} fill={KC.red} stroke={KC.ink} strokeWidth={5} /></g>}
@@ -322,32 +323,34 @@ function YescaShot() {
       <Escena T={T} a={K.G} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Sombrero T={T} id="g" x={400} y={klerp(-300, 1060, caer) + rebote} rot={klerp(-40, 0, caer) + rebote * 0.4} s={0.95} />
-          <Chispa x0={1150} y0={420} x1={640} y1={1040} p={kprog(T, K.G + 3.0, K.G + 3.8)} alto={-80} r={14} />
+          <Sombrero T={T} id="g" x={540} y={klerp(-300, 1190, caer) + rebote} rot={klerp(-40, 0, caer) + rebote * 0.4} s={1.3} />
+          <Chispa x0={1150} y0={420} x1={865} y1={1164} p={kprog(T, K.G + 3.0, K.G + 3.8)} alto={-80} r={14} />
         </>)}
       </Escena>
       {/* 1 · el hongo yesquero en el abedul */}
       <Escena T={T} a={K.H} b={K.Ca} zoom={0.06}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Abedul x={60} y0={300} y1={1300} w={200} />
+          <g transform="translate(0 140) translate(260 860) scale(1.2) translate(-260 -860)">
+          <Abedul x={60} y0={-300} y1={2000} w={200} />
           <Yesquero id="h1" T={T} x={260} y={860} s={1.25} crece={kprog(T, K.H, K.H + 1.4)} />
           <Pezuna x={600} y={840} s={1.4} o={kprog(T, K.H + 2.3, K.H + 2.7) * (1 - kprog(T, K.H + 4.3, K.H + 4.8))} />
+          </g>
         </>)}
       </Escena>
       {/* 2 · cortado a la mitad: costra · trama · tubos */}
       <Escena T={T} a={K.Ca} b={K.M} zoom={0.12} origen="45% 48%">
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Abedul x={-120} y0={300} y1={1300} w={200} />
-          <g transform="translate(80 900) scale(1.75)">
+          <Abedul x={-120} y0={60} y1={1900} w={200} />
+          <g transform="translate(40 1010) scale(1.75)">
             <defs><clipPath id="hfc"><path d={HOOF} /></clipPath></defs>
             {kprog(T, K.Ca, K.Ca + 0.6) < 1 ? <g opacity={1 - kprog(T, K.Ca + 0.2, K.Ca + 0.6)}><Yesquero id="h2" T={T} x={0} y={0} /></g> : null}
             <g opacity={kprog(T, K.Ca + 0.2, K.Ca + 0.6)}><CorteYesquero id="c" T={T} brillo={kprog(T, K.Ca + 2.8, K.Ca + 3.4)} /></g>
             <defs><clipPath id="hfc2"><path d={HOOF} /></clipPath></defs>
           </g>
           {/* cuchillo que corta */}
-          {T < K.Ca + 0.8 && <g transform={`translate(${klerp(980, 120, kprog(T, K.Ca, K.Ca + 0.6, kEase.suave))} 900) rotate(-8)`} opacity={1 - kprog(T, K.Ca + 0.6, K.Ca + 0.8)}>
+          {T < K.Ca + 0.8 && <g transform={`translate(${klerp(980, 120, kprog(T, K.Ca, K.Ca + 0.6, kEase.suave))} 1010) rotate(-8)`} opacity={1 - kprog(T, K.Ca + 0.6, K.Ca + 0.8)}>
             <rect x={-10} y={-24} width={240} height={48} rx={10} fill="#5a3418" stroke={KC.ink} strokeWidth={6} />
             <path d="M -10 -22 L -330 -6 L -10 24 Z" fill="#dfe6ec" stroke={KC.ink} strokeWidth={6} /></g>}
         </>)}
@@ -363,6 +366,7 @@ function YescaShot() {
       <Escena T={T} a={K.Ch} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
+          <g transform="translate(540 1010) scale(1.22) translate(-540 -930)">
           <g opacity={1 - kprog(T, ch(1.4), ch(1.7))}><Olla T={T} x={540} y={980} s={1.1} /></g>
           <g opacity={kprog(T, ch(1.4), ch(1.7)) * (1 - kprog(T, ch(3.2), ch(3.5)))}>
             <rect x={140} y={1040} width={800} height={70} rx={14} fill="#a46a32" stroke={KC.ink} strokeWidth={8} />
@@ -382,22 +386,23 @@ function YescaShot() {
             <Chispa x0={680} y0={790} x1={420} y1={1000} p={kprog(T, ch(3.75), ch(4.2))} alto={90} />
             {T > ch(4.2) && <Brasa T={T} x={420} y={1000} r={30 * kprog(T, ch(4.2), ch(4.8), kEase.sale) + 4} />}
           </g>
+          </g>
         </>)}
       </Escena>
       {/* 5 · re-gancho: ¿desde cuándo? */}
       <Escena T={T} a={K.P} b={K.O} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><Yesca x={300} y={1080} s={1.2} T={T} /><Brasa T={T} x={330} y={1040} r={34} /><Interrogacion T={T} x={300} y={820} tam={380} /></>)}
+        {fsvg(<><Yesca x={540} y={1060} s={2.1} T={T} /><Brasa T={T} x={580} y={990} r={44} /><Interrogacion T={T} x={540} y={720} tam={150} /></>)}
       </Escena>
       {/* 6 · el estudio: Ötzi en el glaciar; la bolsa del cinturón con yesca */}
       <Escena T={T} a={K.O} b={K.Pi}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#284257, #3d4957)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#142233, #1f2a38)' }}></div>
         {fsvg(<g opacity={1 - kprog(T, K.O + 5.0, K.O + 5.5)}>
           <Alpes T={T} />
-          <g transform={`translate(${klerp(-120, 0, kprog(T, K.O, K.O + 1.2, kEase.sale))} 0)`}><OtziSilueta x={300} y={1130} s={1.0} T={T} /></g>
+          <g transform={`translate(${klerp(-120, 0, kprog(T, K.O, K.O + 1.2, kEase.sale))} 0)`}><OtziSilueta x={330} y={1360} s={1.6} T={T} /></g>
           {T > K.O + 0.8 && <g transform={`translate(780 ${720 - 30 * kEase.rebote(kprog(T, K.O + 0.8, K.O + 1.2))})`}><path d="M 0 0 C -40 -40 -40 -90 0 -90 C 40 -90 40 -40 0 0 Z" fill={KC.red} stroke={KC.ink} strokeWidth={5} /><circle cy={-60} r={12} fill="#fff" /></g>}
         </g>)}
-        {fsvg(<g opacity={kprog(T, K.O + 5.0, K.O + 5.5)}>
+        {fsvg(<g opacity={kprog(T, K.O + 5.0, K.O + 5.5)} transform="translate(540 1000) scale(1.18) translate(-540 -900)">
           <Bolsa x={540} y={900} s={1.25} abre={kprog(T, K.O + 6.0, K.O + 6.6, kEase.sale)} />
           {[0, 1, 2].map((k) => { const u = kprog(T, K.O + 6.5 + k * 0.2, K.O + 7.1 + k * 0.2, kEase.sale); return u > 0 ? <Yesca key={k} x={600 + k * 130} y={klerp(820, 690 - (k % 2) * 50, u)} s={0.45 * u} T={T} seed={41 + k} /> : null; })}
         </g>)}
@@ -417,94 +422,94 @@ function YescaShot() {
       {/* 8 · los dos trozos del hongo del abedul en tiras de piel */}
       <Escena T={T} a={K.A} b={K.S} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<g transform="translate(380 560) scale(1.15) translate(-380 -560)"><TrozosAbedul T={T} x={380} y={560} p={kprog(T, K.A, K.A + 0.6)} /></g>)}
+        {fsvg(<g transform="translate(420 1000) scale(1.9) translate(0 -290)"><TrozosAbedul T={T} x={0} y={0} p={kprog(T, K.A, K.A + 0.6)} /></g>)}
       </Escena>
       {/* 9 · cirujanos y barberos: detener sangrados pequeños */}
       <Escena T={T} a={K.S} b={K.Co} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<Dedo T={T} x={520} y={980} gota={kprog(T, K.S + 0.3, K.S + 1.6) * (1 - 0.3 * kprog(T, K.S + 2.0, K.S + 2.6))} tapa={kprog(T, K.S + 1.8, K.S + 2.5, kEase.sale)} />)}
+        {fsvg(<g transform="translate(540 1010) scale(1.15) translate(-520 -980)"><Dedo T={T} x={520} y={980} gota={kprog(T, K.S + 0.3, K.S + 1.6) * (1 - 0.3 * kprog(T, K.S + 2.0, K.S + 2.6))} tapa={kprog(T, K.S + 1.8, K.S + 2.5, kEase.sale)} /></g>)}
       </Escena>
       {/* 10 · Corund, Rumania: la trama se estira a mano sobre un molde */}
       <Escena T={T} a={K.Co} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <MapaRumania x={70} y={430} s={1.05} p={kprog(T, K.Co + 0.4, K.Co + 0.9)} T={T} />
-          <Lamina T={T} x={540} y={1040} estira={kprog(T, K.Co + 1.6, K.Co + 4.2)} />
+          <MapaRumania x={150} y={520} s={1.3} p={kprog(T, K.Co + 0.4, K.Co + 0.9)} T={T} />
+          <Lamina T={T} x={540} y={1230} estira={kprog(T, K.Co + 1.6, K.Co + 4.2)} />
         </>)}
       </Escena>
       {/* 11 · cierre: el mismo sombrero del inicio, ahora con su brasa y su historia */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Sombrero T={T} id="c" x={400} y={1060} s={0.95} brasa={kprog(T, K.C + 0.4, K.C + 1.0, kEase.rebote)} />
+          <Sombrero T={T} id="c" x={540} y={1190} s={1.3} brasa={kprog(T, K.C + 0.4, K.C + 1.0, kEase.rebote)} />
           <g opacity={kprog(T, K.C + 1.0, K.C + 1.5)}>
-            <g transform="translate(60 640) scale(.55)"><Yesquero id="hc" x={0} y={0} s={1} /></g>
-            <Yesca x={850} y={1110} s={0.5} T={T} seed={44} />
+            <g transform="translate(40 600) scale(.62)"><Yesquero id="hc" x={0} y={0} s={1} /></g>
+            <Yesca x={900} y={1360} s={0.55} T={T} seed={44} />
           </g>
         </>)}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 1.4} until={K.H - 0.3} texto="fieltro" x={250} y={470} tam={54} />
-      <Chip T={T} at={K.G + 1.6} until={K.H - 0.3} texto="es un hongo" x={290} y={590} tam={44} borde={KC.leaf} />
-      <Chip T={T} at={K.G + 2.6} until={K.H - 0.3} texto="…que daba fuego" x={290} y={700} tam={36} borde={KC.orange} />
+      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.1} until={K.G + 1.7} texto="fieltro" x={540} y={560} tam={54} />
+      <Chip T={T} at={K.G + 1.7} until={K.G + 2.7} texto="es un hongo" x={540} y={560} tam={44} borde={KC.leaf} />
+      <Chip T={T} at={K.G + 2.7} until={K.H - 0.3} texto="…que daba fuego" x={540} y={560} tam={40} borde={KC.orange} />
 
-      <Etq T={T} at={K.H + 1.0} until={K.Ca - 0.3} x={300} y={1015} texto="hongo yesquero" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.H + 1.4} until={K.Ca - 0.3} x={300} y={1065} texto="Fomes fomentarius" it tam={38} color={KC.ink} />
-      <Chip T={T} at={K.H + 2.4} until={K.Ca - 0.3} texto="forma de pezuña de caballo" x={390} y={420} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.H + 3.6} until={K.Ca - 0.3} x={300} y={1115} texto="en abedules y hayas" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.H + 1.0} until={K.Ca - 0.3} x={300} y={1220} texto="hongo yesquero" tam={40} color={KC.ink} />
+      <Etq T={T} at={K.H + 1.4} until={K.Ca - 0.3} x={300} y={1272} texto="Fomes fomentarius" it tam={38} color={KC.ink} />
+      <Chip T={T} at={K.H + 2.4} until={K.H + 4.3} texto="forma de pezuña de caballo" x={540} y={470} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.H + 4.3} until={K.Ca - 0.3} texto="en abedules y hayas" x={540} y={470} tam={32} borde={KC.ink} />
 
-      <Chip T={T} at={K.Ca + 0.6} until={K.M - 0.3} texto="POR DENTRO · CORTADO A LA MITAD" x={540} y={420} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Ca + 0.9} until={K.M - 0.3} x={560} y={560} texto="costra dura" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Ca + 1.7} until={K.M - 0.3} x={600} y={1110} texto="capas de tubos" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Ca + 2.8} until={K.M - 0.3} x={300} y={720} texto="LA TRAMA" tam={46} color={KC.white} />
+      <Chip T={T} at={K.Ca + 0.6} until={K.M - 0.3} texto="POR DENTRO · CORTADO A LA MITAD" x={540} y={470} tam={32} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Ca + 0.9} until={K.Ca + 1.8} x={620} y={640} texto="costra dura" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 1.8} until={K.Ca + 2.8} x={640} y={1250} texto="capas de tubos" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 2.8} until={K.M - 0.3} x={300} y={830} texto="LA TRAMA" tam={46} color={KC.white} />
 
-      <Etq T={T} at={K.M + 0.6} until={K.Ch - 0.3} x={60} y={1060} texto="hifas · los hilos del hongo" tam={32} color={KC.texto} />
-      <Chip T={T} at={K.M + 0.2} until={K.Ch - 0.3} texto="AL MICROSCOPIO · LA TRAMA" x={540} y={1150} tam={32} borde={KC.cyan} mono />
+      <Etq T={T} at={K.M + 1.4} until={K.Ch - 0.3} x={60} y={1060} texto="hifas · los hilos del hongo" tam={32} color={KC.texto} />
+      <Chip T={T} at={K.M + 0.2} until={K.M + 1.4} texto="AL MICROSCOPIO · LA TRAMA" x={540} y={470} tam={32} borde={KC.cyan} mono />
 
-      <Chip T={T} at={ch(0.2)} until={ch(1.5)} texto="se hierve" x={260} y={470} tam={40} borde={KC.cyan} />
-      <Chip T={T} at={ch(1.6)} until={ch(3.2)} texto="se golpea" x={260} y={470} tam={40} borde={KC.ink} />
-      <Chip T={T} at={ch(2.8)} until={ch(3.3)} texto="a veces: salitre" x={300} y={580} tam={36} borde={KC.white} />
-      <Chip T={T} at={ch(3.6)} until={K.P - 0.3} texto="chispa → se queda ardiendo" x={340} y={470} tam={34} borde={KC.red} />
-      <Chip T={T} at={ch(3.4)} until={K.P - 0.3} texto="pedernal + pirita" x={300} y={580} tam={32} borde={YC.pirita} />
+      <Chip T={T} at={ch(0.2)} until={ch(1.5)} texto="se hierve" x={540} y={430} tam={40} borde={KC.cyan} />
+      <Chip T={T} at={ch(1.6)} until={ch(2.75)} texto="se golpea" x={540} y={430} tam={40} borde={KC.ink} />
+      <Chip T={T} at={ch(2.75)} until={ch(3.4)} texto="a veces: salitre" x={540} y={430} tam={36} borde={KC.white} />
+      <Chip T={T} at={ch(4.1)} until={K.P - 0.3} texto="chispa → se queda ardiendo" x={540} y={430} tam={34} borde={KC.red} />
+      <Chip T={T} at={ch(3.4)} until={ch(4.1)} texto="pedernal + pirita" x={540} y={430} tam={32} borde={YC.pirita} />
 
-      <TarjetaEstudio T={T} at={K.O + 0.3} until={K.O + 2.6} anio="1991" quien="Ötzi · glaciar de los Alpes" revista="Tisenjoch, Italia (cerca de Austria)" x={540} y={520} />
-      <NumeroGigante T={T} at={K.O + 3.3} until={K.O + 5.0} valor={5300} desde={4800} dur={0.6} prefijo="" sufijo=" años" etiqueta="murió hace unos" x={340} y={540} tam={130} color={KC.yellow} />
-      <Chip T={T} at={K.O + 5.4} until={K.Pi - 0.3} texto="bolsa del cinturón" x={330} y={470} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.O + 7.0} until={K.Pi - 0.3} x={60} y={560} texto="yesca de" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.O + 7.0} until={K.Pi - 0.3} x={60} y={610} texto="Fomes fomentarius" it tam={32} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.O + 0.3} until={K.O + 2.6} anio="1991" quien="Ötzi · glaciar de los Alpes" revista="Tisenjoch, Italia (cerca de Austria)" x={600} y={370} />
+      <NumeroGigante T={T} at={K.O + 3.3} until={K.O + 5.0} valor={5300} desde={4800} dur={0.6} prefijo="" sufijo=" años" etiqueta="murió hace unos" x={600} y={390} tam={130} color={KC.yellow} />
+      <Chip T={T} at={K.O + 5.4} until={K.O + 7.0} texto="bolsa del cinturón" x={540} y={470} tam={36} borde={KC.ink} />
+      <Etq T={T} at={K.O + 7.0} until={K.Pi - 0.3} x={560} y={600} texto="yesca de" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.O + 7.0} until={K.Pi - 0.3} x={560} y={648} texto="Fomes fomentarius" it tam={32} color={KC.ink} />
 
-      <Chip T={T} at={K.Pi + 1.0} until={K.A - 0.3} texto="restos de pirita" x={300} y={470} tam={38} borde={YC.pirita} />
-      <Etq T={T} at={K.Pi + 2.6} until={K.A - 0.3} x={60} y={660} texto="raspador de pedernal" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Pi + 3.2} until={K.A - 0.3} texto="huellas de sacar chispas" x={330} y={580} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Pi + 1.0} until={K.Pi + 2.6} texto="restos de pirita" x={540} y={470} tam={38} borde={YC.pirita} />
+      <Chip T={T} at={K.Pi + 2.6} until={K.Pi + 3.6} texto="raspador de pedernal" x={540} y={470} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Pi + 3.6} until={K.A - 0.3} texto="huellas de sacar chispas" x={540} y={470} tam={32} borde={KC.ink} />
 
-      <Chip T={T} at={K.A + 0.4} until={K.S - 0.3} texto="2 trozos en tiras de piel" x={310} y={470} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.A + 1.4} until={K.S - 0.3} x={560} y={800} texto="políporo del abedul" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.A + 1.4} until={K.S - 0.3} x={560} y={845} texto="Fomitopsis betulina" it tam={30} color={KC.ink} />
-      <Chip T={T} at={K.A + 3.0} until={K.S - 0.3} texto="¿medicina? · hipótesis" x={700} y={1130} tam={34} borde={KC.yellow} />
+      <Chip T={T} at={K.A + 0.4} until={K.A + 3.0} texto="2 trozos en tiras de piel" x={540} y={470} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.A + 1.4} until={K.S - 0.3} x={650} y={830} texto="políporo del abedul" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.A + 1.4} until={K.S - 0.3} x={650} y={874} texto="Fomitopsis betulina" it tam={28} color={KC.ink} />
+      <Chip T={T} at={K.A + 3.0} until={K.S - 0.3} texto="¿medicina? · hipótesis" x={540} y={470} tam={34} borde={KC.yellow} />
 
-      <Chip T={T} at={K.S + 0.3} until={K.Co - 0.3} texto="cirujanos y barberos" x={320} y={470} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.S + 2.2} until={K.Co - 0.3} x={60} y={570} texto="Fungus chirurgorum" it tam={32} color={KC.ink} />
-      <Etq T={T} at={K.S + 2.2} until={K.Co - 0.3} x={60} y={615} texto="«hongo de los cirujanos»" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.S + 0.3} until={K.S + 2.2} texto="cirujanos y barberos" x={540} y={470} tam={36} borde={KC.ink} />
+      <Etq T={T} at={K.S + 2.2} until={K.Co - 0.3} x={140} y={700} texto="Fungus chirurgorum" it tam={32} color={KC.ink} />
+      <Etq T={T} at={K.S + 2.2} until={K.Co - 0.3} x={140} y={746} texto="«hongo de los cirujanos»" tam={28} color={KC.ink} />
 
-      <Etq T={T} at={K.Co + 0.8} until={K.C - 0.3} x={250} y={790} texto="Corund · Transilvania, Rumania" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Co + 2.0} until={K.C - 0.3} texto="estirada a mano" x={300} y={880} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Co + 0.8} until={K.C - 0.3} texto="Corund · Transilvania, Rumania" x={540} y={430} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.Co + 2.0} until={K.C - 0.3} x={140} y={1400} texto="estirada a mano" tam={32} color={KC.ink} />
 
-      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="no es fieltro: es yesca" x={330} y={470} tam={38} borde={KC.orange} />
+      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="no es fieltro: es yesca" x={540} y={470} tam={38} borde={KC.orange} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="10 cm" largo={200} />
-      <BarraEscala T={T} at={K.H} until={K.Ca} texto="10 cm" largo={190} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="10 cm" largo={274} />
+      <BarraEscala T={T} at={K.H} until={K.Ca} texto="10 cm" largo={228} />
       <BarraEscala T={T} at={K.Ca} until={K.M} texto="5 cm" largo={170} />
       <BarraEscala T={T} at={K.M} until={K.Ch} texto="20 µm (esquemático)" largo={160} />
-      <BarraEscala T={T} at={K.Ch} until={K.P} texto="5 cm" largo={120} />
+      <BarraEscala T={T} at={K.Ch} until={K.P} texto="5 cm" largo={146} />
       <BarraEscala T={T} at={K.O} until={K.O + 5.0} texto="esquemático" largo={0} />
-      <BarraEscala T={T} at={K.O + 5.0} until={K.Pi} texto="5 cm" largo={120} />
+      <BarraEscala T={T} at={K.O + 5.0} until={K.Pi} texto="5 cm" largo={142} />
       <BarraEscala T={T} at={K.Pi} until={K.A} texto="2 cm" largo={120} />
       <BarraEscala T={T} at={K.A} until={K.S} texto="esquemático" largo={0} />
-      <BarraEscala T={T} at={K.S} until={K.Co} texto="1 cm" largo={90} />
+      <BarraEscala T={T} at={K.S} until={K.Co} texto="1 cm" largo={104} />
       <BarraEscala T={T} at={K.Co} until={K.C} texto="mapa esquemático" largo={0} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={200} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={274} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <SubK T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No es fieltro: *es un hongo.*" />
