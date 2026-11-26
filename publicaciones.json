@@ -3465,5 +3465,76 @@
   "nota": "público · portada OK",
   "privacidad": "public",
   "idioma": "es-419"
+ },
+ {
+  "clave": "ia-04-huella",
+  "red": "facebook",
+  "modo": "real",
+  "fecha": "2026-11-26T15:23:14Z",
+  "run": "45848315458",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "1664354361734423",
+  "url": "https://www.facebook.com/reel/1664354361734423",
+  "nota": "ready"
+ },
+ {
+  "clave": "ia-04-huella",
+  "red": "instagram",
+  "modo": "real",
+  "fecha": "2026-11-26T15:23:48Z",
+  "run": "45848315458",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "18222420742343303",
+  "url": "https://www.instagram.com/reel/DgNa5DaBKGp/"
+ },
+ {
+  "clave": "ia-04-huella",
+  "red": "threads",
+  "modo": "real",
+  "fecha": "2026-11-26T15:25:16Z",
+  "run": "45848315458",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "18657413680000631",
+  "url": "https://www.threads.com/@lacreaciondelrobert/post/DgNa_9Xu-By"
+ },
+ {
+  "clave": "ia-04-huella",
+  "red": "youtube",
+  "modo": "real",
+  "fecha": "2026-11-26T15:26:12Z",
+  "run": "45848315458",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "PKWVWMbKDfs",
+  "url": "https://youtube.com/shorts/PKWVWMbKDfs",
+  "nota": "public"
+ },
+ {
+  "clave": "ia-04-huella",
+  "red": "linkedin",
+  "modo": "real",
+  "fecha": "2026-11-26T15:26:14Z",
+  "run": "45848315458",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "urn:li:ugcPost:7531740195637886976",
+  "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7531740195637886976/"
+ },
+ {
+  "clave": "ia-04-huella",
+  "red": "tiktok",
+  "modo": "real",
+  "fecha": "2026-11-26T15:26:35Z",
+  "run": "45848315458",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "v_pub_file~v2-1.7712501840282077205",
+  "via": "unipost",
+  "unipost_id": "d880d9c9-690d-45de-8835-574a097f4824",
+  "nota": "publicado en TikTok con UniPost como «Todos»",
+  "url": "https://www.tiktok.com/@lacreaciondelrobert"
  }
 ]
