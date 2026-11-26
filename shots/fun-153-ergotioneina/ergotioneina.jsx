@@ -67,7 +67,7 @@ function EgCelula({ T, x, y, r = 230, abierta = 0, entra = 0 }) {
   const pa = -0.6; // ángulo de la puerta
   const px = r * Math.cos(pa), py = r * Math.sin(pa);
   return <g transform={`translate(${x} ${y})`}>
-    <circle r={r} fill="rgba(255,240,245,.9)" stroke={EG.memb2} strokeWidth={26} />
+    <circle r={r} fill="rgba(74,44,72,.92)" stroke={EG.memb2} strokeWidth={26} />
     <circle r={r} fill="none" stroke={KC.ink} strokeWidth={6} />
     <circle cx={-50} cy={30} r={70} fill="#d9c2ff" stroke={KC.ink} strokeWidth={6} />
     <g transform={`translate(${px} ${py}) rotate(${pa * 57.3 + 90})`} style={abierta ? { filter:`drop-shadow(0 0 ${18 * abierta}px ${EG.oro})` } : null}>
@@ -93,7 +93,7 @@ function EgFabrica({ x, y, s = 1, tache = 0, ok = 0 }) {
 function EgPersona({ x, y, s = 1, color = '#ffd2b8' }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <circle cx={0} cy={-300} r={62} fill={color} stroke={KC.ink} strokeWidth={8} />
-    <path d="M -95 0 L -95 -170 Q -95 -225 -40 -225 L 40 -225 Q 95 -225 95 -170 L 95 0 Z" fill={KC.blue} stroke={KC.ink} strokeWidth={8} />
+    <path d="M -95 0 L -95 -170 Q -95 -225 -40 -225 L 40 -225 Q 95 -225 95 -170 L 95 0 Z" fill="#3a55a6" stroke={KC.ink} strokeWidth={8} />
   </g>;
 }
 // Planta de frijol con flor (angiosperma), en maceta.
@@ -195,37 +195,37 @@ function ErgotioneinaShot() {
       <Escena T={T} a={K.G} b={K.N} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <EgQuesadilla T={T} x={540} y={930} s={1.2} dobla={kprog(T, K.G, K.G + 0.7)} />
-          {(() => { const z = kprog(T, K.G + 1.6, K.G + 2.4, kEase.sale); return z > 0 && <g opacity={z} transform={`translate(${klerp(540, 0, z) * 0} 0)`}>
+          <EgQuesadilla T={T} x={540} y={1120} s={1.25} dobla={kprog(T, K.G, K.G + 0.7)} />
+          {(() => { const z = kprog(T, K.G + 1.6, K.G + 2.4, kEase.sale); return z > 0 && <g opacity={z} transform="translate(70 90)">
             <circle cx={300} cy={620} r={klerp(0, 250, z)} fill="rgba(14,15,18,.92)" stroke={KC.white} strokeWidth={10} />
             <g transform={`translate(300 620) scale(${0.82 * z}) translate(-300 -620)`}>
               <EgCelula T={T} x={300} y={620} r={200} abierta={kprog(T, K.G + 2.6, K.G + 3.2)} entra={kprog(T, K.G + 2.6, K.G + 5.2)} />
               {[[90, 400], [520, 820], [80, 840], [530, 430]].map(([a, b], i) => <EgOtra key={i} x={a + Math.sin(T * 3 + i) * 10} y={b + Math.cos(T * 2 + i) * 10} r={15} />)}
             </g>
-            <line x1={480} y1={880} x2={420} y2={820} stroke={KC.white} strokeWidth={6} strokeDasharray="10 10" />
+            <line x1={480} y1={960} x2={420} y2={820} stroke={KC.white} strokeWidth={6} strokeDasharray="10 10" />
           </g>; })()}
         </>)}
       </Escena>
       {/* 1 · nombre: la molécula con azufre */}
       <Escena T={T} a={K.N} b={K.NF} zoom={0.06}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<EgMolecula x={360} y={780} s={1.45} rot={Math.sin(T * 1.2) * 4} p={kprog(T, K.N + 0.1, K.N + 1.4)} />)}
+        {fsvg(<EgMolecula x={400} y={990} s={1.6} rot={Math.sin(T * 1.2) * 4} p={kprog(T, K.N + 0.1, K.N + 1.4)} />)}
       </Escena>
       {/* 2 · tu cuerpo no la fabrica; las plantas con flor tampoco */}
       <Escena T={T} a={K.NF} b={K.S} zoom={0.05}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 170)">
           <EgPersona x={280} y={1120} s={1.15} />
           <EgFabrica x={280} y={680} s={1.1} tache={kprog(T, K.NF + 0.5, K.NF + 0.8)} />
           <EgFrijol T={T} x={780} y={1120} s={1.15} />
           <EgFabrica x={780} y={600} s={1.1} tache={kprog(T, K.NF + 1.9, K.NF + 2.2)} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 3 · la hacen hongos y bacterias; la raíz la toma del suelo (corte del suelo, fondo oscuro) */}
       <Escena T={T} a={K.S} b={K.Co} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:'#2a1a10' }}></div>
-        <div style={{ position:'absolute', left:0, right:0, top:0, height:470, background:KC.cyan }}></div>
-        {fsvg(<>
+        <div style={{ position:'absolute', left:0, right:0, top:0, height:640, background:'linear-gradient(#0f2233, #1d4a5e)' }}></div>
+        {fsvg(<g transform="translate(0 170)">
           <rect x={0} y={440} width={1080} height={40} fill="#5b3a22" />
           <g transform="translate(540 470) scale(.55) translate(-780 -1120)"><EgFrijol T={T} x={780} y={1120} s={1} /></g>
           <EgRaiz x={540} y={470} p={kprog(T, K.S, K.S + 1.2)} />
@@ -236,20 +236,20 @@ function ErgotioneinaShot() {
           <EgFabrica x={870} y={1030} s={0.7} ok={kprog(T, K.S + 1.6, K.S + 1.9)} />
           {Array.from({ length: 8 }, (_, i) => { const u = kclamp(((T - K.S - 1.2 - i * 0.25) / 1.6), 0, 1); if (u <= 0) return null;
             const ox = i % 2 ? 860 : 230, oy = 860 + (i % 3) * 40; return <EgBola key={i} x={klerp(ox, 540 + (i % 2 ? 40 : -40), u)} y={klerp(oy, 700 + (i % 3) * 40, u)} r={16} o={1 - kprog(u, 0.9, 1)} brillo={0.6} />; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 4 · la que tienes llegó con lo que comiste */}
       <Escena T={T} a={K.Co} b={K.M} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
-          <ellipse cx={540} cy={960} rx={440} ry={150} fill="#fff" stroke={KC.ink} strokeWidth={9} />
+        {fsvg(<g transform="translate(0 150)">
+          <ellipse cx={540} cy={960} rx={440} ry={150} fill="#cfc8bb" stroke={KC.ink} strokeWidth={9} />
           <g transform="translate(380 940) scale(.5) translate(-540 -1060)"><EgQuesadilla T={T} x={540} y={1060} vapor={0} /></g>
           <g transform="translate(700 920)">{Array.from({ length: 14 }, (_, i) => <ellipse key={i} cx={(i % 5) * 30 - 60} cy={Math.floor(i / 5) * 24} rx={16} ry={10} fill="#2a1a2a" stroke={KC.ink} strokeWidth={3} />)}</g>
           <g transform="translate(700 1010)">{Array.from({ length: 12 }, (_, i) => <ellipse key={i} cx={(i % 6) * 22 - 55} cy={Math.floor(i / 6) * 16} rx={11} ry={6} fill="#d9b77a" stroke={KC.ink} strokeWidth={2} />)}</g>
           {Array.from({ length: 6 }, (_, i) => { const u = kclamp((T - K.Co - 0.4 - i * 0.18) / 1.2, 0, 1); if (u <= 0) return null;
             return <EgBola key={i} x={klerp(380 + i * 60, 540, u)} y={klerp(900, 640, u)} r={16} o={1 - kprog(u, 0.85, 1)} />; })}
           <g transform="translate(540 760) scale(.75)"><EgPersona x={0} y={0} /></g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 5–8 · por dentro: la membrana, la pregunta, la puerta OCTN1 y "cien veces mejor" (fondo oscuro) */}
       <Escena T={T} a={K.M} b={K.R} zoom={0.03}>
@@ -268,20 +268,20 @@ function ErgotioneinaShot() {
       {/* 9 · 2010, Japón: ratones sin la puerta */}
       <Escena T={T} a={K.R} b={K.Te} zoom={0.05}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1050) scale(1.15) translate(-480 -880)">
           <EgRaton T={T} x={480} y={740} s={1} lleno={1} seed={1} />
           <EgRaton T={T} x={480} y={1020} s={1} lleno={1 - kprog(T, K.R + 1.4, K.R + 2.6)} seed={3} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 10 · tejidos que la acumulan */}
       <Escena T={T} a={K.Te} b={K.Po} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<EgCuerpo T={T} x={400} y={1100} s={1.15} on={[kprog(T, K.Te + 1.5, K.Te + 1.9), kprog(T, K.Te + 2.3, K.Te + 2.7), kprog(T, K.Te + 2.9, K.Te + 3.3), kprog(T, K.Te + 3.6, K.Te + 4.0)]} />)}
+        {fsvg(<EgCuerpo T={T} x={400} y={1290} s={1.3} on={[kprog(T, K.Te + 1.5, K.Te + 1.9), kprog(T, K.Te + 2.3, K.Te + 2.7), kprog(T, K.Te + 2.9, K.Te + 3.3), kprog(T, K.Te + 3.6, K.Te + 4.0)]} />)}
       </Escena>
       {/* 11 · porcini contra champiñón blanco */}
       <Escena T={T} a={K.Po} b={K.A} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 170)">
           <EgPorcini x={280} y={780} s={0.9} crece={kprog(T, K.Po, K.Po + 0.6)} />
           <Champinon x={760} y={780} s={1.5} abre={0.55} crece={kprog(T, K.Po + 0.3, K.Po + 0.9)} />
           <line x1={120} y1={1120} x2={960} y2={1120} stroke={KC.ink} strokeWidth={8} />
@@ -291,66 +291,72 @@ function ErgotioneinaShot() {
           </>; })()}
           <text x={280} y={1120 - 280 * kprog(T, K.Po + 1.0, K.Po + 2.2, kEase.sale) - 18} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Po + 1.6, K.Po + 2.0)}>&gt;7 mg/g seco</text>
           <text x={760} y={1080} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Po + 1.9, K.Po + 2.3)}>~0.4 mg/g seco</text>
-        </>)}
+        </g>)}
       </Escena>
       {/* 12 · Ames: una propuesta */}
       <Escena T={T} a={K.A} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<Sello T={T} at={K.A + 2.6} x={540} y={960} texto="PROPUESTA" color={KC.violet} r={120} rot={-8} />)}
+        {fsvg(<>
+          <EgCelula T={T} x={540} y={1040} r={270} abierta={0.6 + 0.4 * Math.sin(T * 2)} entra={0.55 + 0.45 * kprog(T, K.A, K.A + 4)} />
+          {[[200, 760], [880, 800], [180, 1300], [900, 1290]].map(([a, b], i) => <EgBola key={i} x={a + Math.sin(T * 2 + i) * 14} y={b + Math.cos(T * 1.6 + i) * 14} r={22} brillo={0.5} />)}
+          <Sello T={T} at={K.A + 2.6} x={300} y={1330} texto="PROPUESTA" color={KC.lilac} r={110} rot={-8} />
+        </>)}
       </Escena>
       {/* 13 · cierre: la misma quesadilla, y la puerta ya abierta */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <EgQuesadilla T={T} x={540} y={930} s={1.2} />
+          <EgQuesadilla T={T} x={540} y={1120} s={1.25} />
+          <g transform="translate(70 90)">
           <circle cx={300} cy={620} r={250} fill="rgba(14,15,18,.92)" stroke={KC.white} strokeWidth={10} />
           <g transform="translate(300 620) scale(.82) translate(-300 -620)"><EgCelula T={T} x={300} y={620} r={200} abierta={1} entra={kprog(T, K.C + 0.6, K.C + 3.6)} /></g>
-          <line x1={480} y1={880} x2={420} y2={820} stroke={KC.white} strokeWidth={6} strokeDasharray="10 10" />
+          <line x1={480} y1={960} x2={420} y2={820} stroke={KC.white} strokeWidth={6} strokeDasharray="10 10" />
+          </g>
           {Array.from({ length: 6 }, (_, i) => { const u = kclamp((T - K.C - 0.3 - i * 0.4) / 1.4, 0, 1); if (u <= 0 || u >= 1) return null;
-            return <EgBola key={i} x={klerp(420 + i * 50, 470, u)} y={klerp(880, 470, u)} r={14} brillo={1} o={1 - kprog(u, 0.8, 1)} />; })}
+            return <EgBola key={i} x={klerp(480 + i * 50, 505, u)} y={klerp(1050, 617, u)} r={14} brillo={1} o={1 - kprog(u, 0.8, 1)} />; })}
         </>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 2.6} until={K.N - 0.3} texto="una puerta especial" x={360} y={360} tam={40} borde={KC.gold} />
-      <Etq T={T} at={K.G + 0.6} until={K.G + 1.8} x={60} y={740} texto="quesadilla de champiñones" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.N + 0.5} until={K.NF - 0.3} x={470} y={470} texto="ergotioneína" tam={52} color={KC.ink} />
-      <Etq T={T} at={K.N + 1.0} until={K.NF - 0.3} x={470} y={540} texto="aminoácido con azufre (S)" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.NF + 0.4} until={K.S - 0.3} x={120} y={1180} texto="tu cuerpo" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.NF + 1.8} until={K.S - 0.3} texto="plantas con flor: no la fabrican" x={400} y={430} tam={28} borde={KC.ink} />
-      <Etq T={T} at={K.S + 0.8} until={K.Co - 0.3} x={60} y={1110} texto="hongos" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.S + 1.4} until={K.Co - 0.3} x={1020} y={1110} lado="izq" texto="bacterias" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.S + 2.0} until={K.Co - 0.3} x={600} y={560} texto="raíz" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.Co + 0.3} until={K.M - 0.3} x={60} y={1130} texto="frijoles · salvado de avena" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.G + 2.6} until={K.N - 0.3} texto="una puerta especial" x={540} y={430} tam={40} borde={KC.gold} />
+      <Etq T={T} at={K.G + 0.6} until={K.G + 1.8} x={60} y={960} texto="quesadilla de champiñones" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.N + 0.5} until={K.NF - 0.3} x={470} y={560} texto="ergotioneína" tam={52} color={KC.ink} />
+      <Etq T={T} at={K.N + 1.0} until={K.NF - 0.3} x={470} y={625} texto="aminoácido con azufre (S)" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.NF + 0.4} until={K.S - 0.3} x={120} y={1360} texto="tu cuerpo" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.NF + 1.8} until={K.S - 0.3} texto="plantas con flor: no la fabrican" x={540} y={470} tam={28} borde={KC.ink} />
+      <Etq T={T} at={K.S + 0.8} until={K.Co - 0.3} x={60} y={1280} texto="hongos" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.S + 1.4} until={K.Co - 0.3} x={1020} y={1280} lado="izq" texto="bacterias" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.S + 2.0} until={K.Co - 0.3} x={600} y={730} texto="raíz" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Co + 0.3} until={K.M - 0.3} x={60} y={1310} texto="frijoles · salvado de avena" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Co + 1.2} until={K.M - 0.3} texto="toda llega de la comida" x={540} y={440} tam={38} borde={KC.gold} />
-      <Chip T={T} at={K.M + 0.2} until={K.P - 0.2} texto="POR DENTRO · MEMBRANA DE TU CÉLULA" x={380} y={420} tam={24} borde={KC.pink} mono />
+      <Chip T={T} at={K.M + 0.2} until={K.P - 0.2} texto="POR DENTRO · MEMBRANA DE TU CÉLULA" x={540} y={430} tam={24} borde={KC.pink} mono />
       <TarjetaEstudio T={T} at={K.E5 + 0.2} until={K.C1 - 0.3} anio="2005" quien="U. de Colonia, Alemania" revista="PNAS, 2005" x={430} y={560} />
-      <Etq T={T} at={K.E5 + 1.2} until={K.R - 0.3} x={650} y={850} texto="OCTN1 · gen SLC22A4" tam={30} color={EG.prot} />
+      <Etq T={T} at={K.E5 + 1.2} until={K.R - 0.3} x={610} y={850} texto="OCTN1 · gen SLC22A4" tam={30} color={EG.prot} />
       <NumeroGigante T={T} at={K.C1 + 0.3} until={K.R - 0.3} valor={100} dur={1.2} prefijo=">" sufijo="×" etiqueta="mejor que lo que se creía que movía" x={460} y={560} tam={170} color={EG.oro} />
-      <TarjetaEstudio T={T} at={K.R + 0.2} until={K.Te - 0.3} anio="2010" quien="U. de Kanazawa, Japón" revista="Pharm. Res., 2010" x={360} y={440} />
-      <Etq T={T} at={K.R + 0.8} until={K.Te - 0.3} x={700} y={670} texto="con OCTN1" tam={24} color={KC.ink} />
-      <Etq T={T} at={K.R + 1.2} until={K.Te - 0.3} x={560} y={885} texto="sin OCTN1 → sin ergotioneína" tam={24} color={KC.ink} />
-      <Etq T={T} at={K.Te + 1.5} until={K.Po - 0.3} x={575} y={1040} texto="glóbulos rojos" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Te + 2.3} until={K.Po - 0.3} x={575} y={812} texto="hígado" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Te + 2.9} until={K.Po - 0.3} x={575} y={950} texto="riñón" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Te + 3.6} until={K.Po - 0.3} x={500} y={548} texto="cristalino del ojo" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Po + 0.5} until={K.A - 0.3} x={60} y={370} texto="porcini · Boletus edulis" it tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Po + 0.8} until={K.A - 0.3} x={60} y={410} texto="champiñón · Agaricus bisporus" it tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Po + 2.4} until={K.A - 0.3} texto="~17×" x={760} y={930} tam={60} borde={KC.gold} />
-      <TarjetaEstudio T={T} at={K.A + 0.2} until={K.C - 0.3} anio="2018" quien="Bruce Ames: «vitamina de la longevidad»" revista="PNAS, 2018 · propuesta" x={540} y={500} />
-      <Chip T={T} at={K.A + 3.0} until={K.C - 0.3} texto="en personas: aún no probado" x={540} y={770} tam={38} borde={KC.violet} />
-      <Etq T={T} at={K.C + 2.0} until={K.Ou} x={60} y={1500} texto="No es consejo médico. El dibujo es esquemático." tam={22} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.R + 0.2} until={K.Te - 0.3} anio="2010" quien="U. de Kanazawa, Japón" revista="Pharm. Res., 2010" x={540} y={430} />
+      <Etq T={T} at={K.R + 0.8} until={K.Te - 0.3} x={720} y={760} texto="con OCTN1" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.R + 1.2} until={K.Te - 0.3} x={300} y={1420} texto="sin OCTN1 → sin ergotioneína" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.Te + 1.5} until={K.Po - 0.3} x={600} y={1230} texto="glóbulos rojos" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Te + 2.3} until={K.Po - 0.3} x={600} y={965} texto="hígado" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Te + 2.9} until={K.Po - 0.3} x={600} y={1120} texto="riñón" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Te + 3.6} until={K.Po - 0.3} x={520} y={666} texto="cristalino del ojo" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Po + 0.5} until={K.A - 0.3} x={60} y={560} texto="porcini · Boletus edulis" it tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Po + 0.8} until={K.A - 0.3} x={60} y={600} texto="champiñón · Agaricus bisporus" it tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Po + 2.4} until={K.A - 0.3} texto="~17×" x={760} y={1100} tam={60} borde={KC.gold} />
+      <TarjetaEstudio T={T} at={K.A + 0.2} until={K.C - 0.3} anio="2018" quien="Bruce Ames: «vitamina de la longevidad»" revista="PNAS, 2018 · propuesta" x={540} y={470} />
+      <Chip T={T} at={K.A + 3.0} until={K.C - 0.3} texto="en personas: aún no probado" x={600} y={1500} tam={38} borde={KC.violet} />
+      <Etq T={T} at={K.C + 2.0} until={K.Ou} x={240} y={1545} texto="No es consejo médico. El dibujo es esquemático." tam={22} color={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.N} texto="5 cm" largo={110} color={KC.ink} />
-      <BarraEscala T={T} at={K.N} until={K.NF} texto="1 nm (esquemático)" largo={300} color={KC.ink} />
+      <BarraEscala T={T} at={K.G} until={K.N} texto="5 cm" largo={115} color={KC.ink} />
+      <BarraEscala T={T} at={K.N} until={K.NF} texto="1 nm (esquemático)" largo={331} color={KC.ink} />
       <BarraEscala T={T} at={K.NF} until={K.S} texto="10 cm" largo={60} color={KC.ink} />
       <BarraEscala T={T} at={K.S} until={K.Co} texto="100 µm (suelo, esquemático)" largo={200} />
       <BarraEscala T={T} at={K.Co} until={K.M} texto="5 cm" largo={70} color={KC.ink} />
       <BarraEscala T={T} at={K.M} until={K.R} texto="10 nm (esquemático)" largo={260} />
-      <BarraEscala T={T} at={K.R} until={K.Te} texto="2 cm" largo={60} color={KC.ink} />
+      <BarraEscala T={T} at={K.R} until={K.Te} texto="2 cm" largo={69} color={KC.ink} />
       <BarraEscala T={T} at={K.Po} until={K.A} texto="5 cm" largo={90} color={KC.ink} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={110} y={1560} color={KC.ink} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={115} y={1560} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="Una *puerta especial* en tus células." />
