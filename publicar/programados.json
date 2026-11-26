@@ -1,6 +1,6 @@
 {
  "activo": false,
- "nota": "Shot Robert 01–13 (pedido de Robert, 3 nov 2026). Hora CDMX. Solo estas 4 redes; YouTube y TikTok NUNCA desde aquí. TERMINADO el 10 nov 2026: los 13 salieron en las 4 redes.",
+ "nota": "Shot Robert 01–13 (pedido de Robert, 3 nov 2026). Hora CDMX. Solo estas 4 redes; YouTube y TikTok NUNCA desde aquí. TERMINADO el 10 nov 2026: los 13 salieron en las 4 redes. Además, videos personales de Robert per-01 y per-02 (25 nov 2026), publicados con pedido manual; activo sigue en false.",
  "items": [
   {
    "clave": "rob-01",
@@ -169,6 +169,34 @@
     "instagram",
     "threads",
     "linkedin"
+   ]
+  },
+  {
+   "clave": "per-01-cumbre-bevisioneers",
+   "titulo": "Llevé setas en el equipaje de mano y regresé con amigos y aliados | beVisioneers",
+   "video": "per-01-cumbre-bevisioneers.mp4",
+   "release": "personales-2026-11",
+   "cuando": "2026-11-25T19:30",
+   "redes": [
+    "facebook",
+    "instagram",
+    "threads",
+    "youtube",
+    "tiktok"
+   ]
+  },
+  {
+   "clave": "per-02-granja-avance",
+   "titulo": "Así va mi granja de hongos | Fungi Mati",
+   "video": "per-02-granja-avance.mp4",
+   "release": "personales-2026-11",
+   "cuando": "2026-11-25T19:30",
+   "redes": [
+    "facebook",
+    "instagram",
+    "threads",
+    "youtube",
+    "tiktok"
    ]
   }
  ]
