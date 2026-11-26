@@ -1,26 +1,8 @@
-# Restantes: 20 sin narracion + 3 cancelados + 2 segunda pasada
-fun-124-sequia-suelo
-fun-125-hongo-azul-corte
-fun-126-madera-verde
-fun-127-olor-hongo
-fun-128-umami-seco
-fun-129-hongo-maple
-fun-130-espuma-rio
-fun-131-abanico-mar
-fun-132-tortuga-huevos
-fun-133-lascaux
-fun-135-bassi
-fun-136-nistatina
-fun-137-reino
-fun-139-potter
-fun-140-lavar
-fun-142-plantas
-fun-144-recalentar
-fun-145-pululano
-fun-147-madera-espalteada
-fun-148-tintes-hongos
-ia-52-gato-google
-ia-53-respuestas-medicas
-ia-54-nobel-fisica
-fun-07-pilobolus
-qui-01-agar
+# 7 Fungi Mati con voz nueva (26 nov, créditos de Robert)
+fun-149-yesca-otzi
+fun-150-saca-estomago
+fun-151-trehalosa
+fun-152-cerveza-brota
+fun-153-ergotioneina
+fun-154-antifungicos
+fun-155-iceberg-hongos
