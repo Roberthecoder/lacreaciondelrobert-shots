@@ -50,8 +50,8 @@ const SUBT = [
 /* ---------- MUNDO ---------- */
 const SEA = 1400;
 const BANDAS = [1400, 2700, 4000, 5300, 6600, 7950];
-const AGUA = ['#46d8df', '#1f93dc', '#1d4fa3', '#13204c', '#0E0F12'];
-const HIELO = ['#e8f8ff', '#c4e6f6', '#6f97cf', '#33477f', '#1f2436'];
+const AGUA = ['#1b5f73', '#164e86', '#15336e', '#0f1a3c', '#0E0F12'];   // modo cine: mar oscuro con su tinte
+const HIELO = ['#7fa9c2', '#5f88ad', '#41669a', '#2a3b6b', '#1a1f30'];   // modo cine: hielo apagado (antes casi blanco)
 // paradas de la cámara (centro del mundo que queda al centro de la pantalla)
 const P = {
   g: { x: 1350, y: 2300, z: 0.36 }, n1: { x: 1000, y: 2060, z: 1 }, pe: { x: 650, y: 3330, z: 1 }, qu: { x: 1760, y: 3420, z: 1 },
@@ -349,7 +349,7 @@ function SimboloRad({ x, y, r = 46, T = 0, p = 1 }) {
 /* ---------- PARADAS (cada una dibujada en coordenadas de pantalla de su cámara) ---------- */
 function ParadaGancho({ T, K, zc }) {
   return <g transform={enParada(P.g)}>
-    <Letrero T={T} at={K.G + 0.4} hasta={K.N1} x={50} y={440} texto={TX.punta} zc={zc} />
+    <Letrero T={T} at={K.G + 0.4} hasta={K.N1} x={150} y={440} texto={TX.punta} zc={zc} />
     <EtqW T={T} at={K.G + 1.4} x={480} y={950} texto={TX.micelio} lado="izq" linea={70} ang={-50} tam={32} zc={zc} zmax={0.38} hasta={K.N1} color={KC.gold2} />
   </g>;
 }
@@ -357,6 +357,7 @@ function ParadaN1({ T, K, zc }) {
   const t0 = K.N1, infla = kprog(T, t0 + 3.4, t0 + 5.2, kEase.suave);
   return <g transform={enParada(P.n1)}>
     <Placa T={T} at={t0 + 0.2} x={50} y={420} n="1" nombre={TX.niveles[0][1]} color={KC.mint} zc={zc} />
+    <g transform="translate(0 140)">   {/* belleza: dibujo más grande y al centro */}
     <Aparecer T={T} at={t0 + 1.7}><Planta x={170} y={830} s={1.05} T={T} /></Aparecer>
     <Tache x={170} y={760} p={kprog(T, t0 + 2.5, t0 + 2.9)} r={70} />
     <Rotulo T={T} at={t0 + 2.6} x={170} y={930} texto={TX.noPlantas} tam={28} color={KC.texto} zc={zc} />
@@ -369,6 +370,7 @@ function ParadaN1({ T, K, zc }) {
     </LupaW>
     <Rotulo T={T} at={t0 + 4.6} x={680} y={1030} texto={TX.levadura} tam={28} anchor="end" zc={zc} />
     <Rotulo T={T} at={t0 + 4.8} x={680} y={1070} texto={TX.sacch} tam={28} it anchor="end" color={KC.gold2} zc={zc} />
+    </g>
   </g>;
 }
 function Aparecer({ T, at, children, dur = 0.5 }) {
@@ -381,6 +383,7 @@ function ParadaPe({ T, K, zc }) {
   const cx = -50, cy = -20;
   return <g transform={enParada(P.pe)}>
     <Placa T={T} at={t0 + 0.1} x={50} y={420} n="2" nombre={TX.niveles[1][1]} color={KC.cyan} zc={zc} />
+    <g transform="translate(540 1050) scale(1.2) translate(-540 -870)">   {/* belleza: dibujo más grande y al centro */}
     <Aparecer T={T} at={t0 + 0.2}>
       <Petri x={540} y={870} r={262} medio="#e8c56a">
         {halo > 0 && <circle cx={cx} cy={cy} r={185 * halo} fill="#fffbea" stroke="#c9a94a" strokeWidth={4} strokeDasharray="14 10" />}
@@ -393,11 +396,13 @@ function ParadaPe({ T, K, zc }) {
     <EtqW T={T} at={t0 + 1.7} x={540 + cx - 160} y={870 + cy + 40} texto={TX.sinBact} lado="der" linea={150} ang={112} tam={26} zc={zc} />
     <EtqW T={T} at={t0 + 2.0} x={540 + 170} y={870 + 150} texto={TX.bacterias} lado="der" linea={70} ang={35} tam={26} zc={zc} />
     <BarraW T={T} at={t0 + 0.6} x={90} y={1110} largo={58} texto="1 cm" zc={zc} />
+    </g>
   </g>;
 }
 function ParadaQu({ T, K, zc }) {
   const t0 = K.Qu, pared = kprog(T, t0 + 1.0, t0 + 1.6), cad = kprog(T, t0 + 1.4, t0 + 2.6), bri = kprog(T, t0 + 3.0, t0 + 3.9);
   return <g transform={enParada(P.qu)}>
+    <g transform="translate(0 140)">   {/* belleza: dibujo más grande y al centro */}
     <Aparecer T={T} at={t0 + 0.2}><HifaCorte T={T} x={80} y={800} largo={380} alto={96} pared={pared} /></Aparecer>
     <Rotulo T={T} at={t0 + 0.9} x={70} y={720} texto={TX.pared} tam={28} anchor="start" zc={zc} />
     <BarraW T={T} at={t0 + 0.6} x={70} y={900} largo={96} texto="≈ 5 µm" zc={zc} />
@@ -408,6 +413,7 @@ function ParadaQu({ T, K, zc }) {
     <Rotulo T={T} at={t0 + 1.8} x={270} y={950} texto={TX.quitina} tam={60} peso={400} fam={KF.titulo} color={KC.gold2} zc={zc} />
     {cad > 0.5 && <g opacity={kprog(cad, 0.5, 1) * kprog(zc, 0.45, 0.75)} stroke={KC.gold2} strokeWidth={5} strokeDasharray="10 10" fill="none">
       <path d="M 240 990 Q 300 900 380 840" /><path d="M 470 1010 Q 600 1000 700 920" /></g>}
+    </g>
   </g>;
 }
 function ParadaBr({ T, K, zc }) {
@@ -417,10 +423,12 @@ function ParadaBr({ T, K, zc }) {
   return <g transform={enParada(P.br)}>
     <rect x={-1400} y={-400} width={3880} height={2800} fill="#050816" opacity={osc * 0.5} />
     <Placa T={T} at={t0 + 0.1} x={50} y={420} n="3" nombre={TX.niveles[2][1]} color={KC.lilac} zc={zc} />
+    <g transform="translate(540 1140) scale(1.2) translate(-540 -1000)">   {/* belleza: dibujo más grande y al centro */}
     <Aparecer T={T} at={t0 + 0.5}><Tronco x={110} y={980} w={800} h={120} /></Aparecer>
     {HONGOS.map(([hx, hy, k, r], i) => <Mycena key={i} T={T} x={110 + hx} y={984 + hy} s={k} rot={r} crece={kprog(T, t0 + 0.6 + i * 0.08, t0 + 1.3 + i * 0.08)} luz={kprog(T, t0 + 1.6 + i * 0.2, t0 + 2.1 + i * 0.2) * (0.85 + 0.15 * Math.sin(T * 2.4 + i))} />)}
     <EtqW T={T} at={t0 + 2.6} x={444} y={870} texto={TX.mycena} it lado="izq" linea={70} ang={-60} tam={28} zc={zc} color="#b9ff8a" />
     <BarraW T={T} at={t0 + 2.0} x={120} y={1140} largo={60} texto="≈ 1 cm" zc={zc} />
+    </g>
   </g>;
 }
 function ParadaAr({ T, K, zc }) {
@@ -428,9 +436,10 @@ function ParadaAr({ T, K, zc }) {
   // orden en que el micelio llega a cada árbol (empieza en el del centro)
   const llega = [0.55, 0.25, 0, 0.25, 0.55];
   return <g transform={enParada(P.ar)}>
+    <g transform="translate(540 1060) scale(1.05) translate(-540 -910)">   {/* belleza: dibujo más grande y al centro */}
     <defs><clipPath id="panelArm"><rect x={60} y={660} width={960} height={500} rx={30} /></clipPath></defs>
     <Aparecer T={T} at={t0 + 0.3}>
-      <rect x={60} y={660} width={960} height={500} rx={30} fill="#9fe3ff" />
+      <rect x={60} y={660} width={960} height={500} rx={30} fill="#1d3a52" />
       <g clipPath="url(#panelArm)">
         <rect x={60} y={790} width={960} height={380} fill="#4a2f1c" />
         {Array.from({ length: 14 }, (_, i) => <circle key={i} cx={90 + (i * 137) % 900} cy={850 + (i * 71) % 280} r={6 + (i % 3) * 3} fill="#3a2414" />)}
@@ -450,6 +459,7 @@ function ParadaAr({ T, K, zc }) {
     <EtqW T={T} at={t0 + 2.4} x={60 + 360} y={930} texto={TX.raiz} lado="der" linea={40} ang={0} tam={24} zc={zc} color="#fff4d6" />
     <EtqW T={T} at={t0 + 3.0} x={60 + 610} y={1110} texto={TX.armillaria} it lado="der" linea={36} ang={-40} tam={30} zc={zc} color={KC.gold2} />
     <BarraW T={T} at={t0 + 1.0} x={90} y={1125} largo={240} texto="≈ 1 km" zc={zc} color="#fff4d6" />
+    </g>
   </g>;
 }
 function ParadaHo({ T, K, zc }) {
@@ -460,6 +470,7 @@ function ParadaHo({ T, K, zc }) {
   const nx = hx + (-14) * S, ny = hy + 40 + 28 * S;
   return <g transform={enParada(P.ho)}>
     <Placa T={T} at={t0 + 0.1} x={50} y={420} n="4" nombre={TX.niveles[3][1]} color={KC.pink} zc={zc} />
+    <g transform="translate(0 150)">   {/* belleza: dibujo más grande y al centro */}
     <Aparecer T={T} at={t0 + 0.3}>
       {/* hoja vista de lado, un poco inclinada: la vena principal corre por abajo */}
       <path d="M 30 690 Q 400 610 980 660 Q 1000 676 975 692 Q 520 760 50 742 Q 15 720 30 690 Z" fill="#3fbf4a" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
@@ -473,12 +484,14 @@ function ParadaHo({ T, K, zc }) {
     <EtqW T={T} at={t0 + 4.6} x={nx + 190} y={ny + 230} texto={TX.ophio} it lado="der" linea={40} ang={10} tam={32} zc={zc} color={KC.gold2} />
     <EtqW T={T} at={t0 + 4.1} x={nx + 4} y={ny + 4} texto={TX.nuca} lado="der" linea={130} ang={12} tam={24} zc={zc} />
     <BarraW T={T} at={t0 + 1.4} x={60} y={1125} largo={300} texto="≈ 1 cm" zc={zc} />
+    </g>
   </g>;
 }
 function ParadaLa({ T, K, zc }) {
   const t0 = K.La, p0 = kprog(T, t0 + 0.2, t0 + 0.6, kEase.rebote), cam = kprog(T, t0 + 0.8, t0 + 2.2, kEase.suave), inf = kprog(T, t0 + 2.2, t0 + 2.7, kEase.rebote);
   const cx = 580, cy = 870, hx = klerp(160, 660, cam);
   return <g transform={enParada(P.la)}>
+    <g transform="translate(0 110)">   {/* belleza: dibujo más grande y al centro */}
     <defs><clipPath id="microC"><circle cx={540} cy={870} r={318} /></clipPath></defs>
     {p0 > 0 && <g transform={`translate(540 870) scale(${p0}) translate(-540 -870)`}>
       <circle cx={540} cy={870} r={340} fill={KC.ink} />
@@ -499,12 +512,14 @@ function ParadaLa({ T, K, zc }) {
     <EtqW T={T} at={t0 + 1.4} x={300} y={cy + 20} texto={TX.nematodo} lado="izq" linea={40} ang={60} tam={26} zc={zc} />
     <EtqW T={T} at={t0 + 2.6} x={cx + 40} y={cy + 50} texto={TX.anillo} lado="der" linea={70} ang={50} tam={26} zc={zc} color={KC.gold2} />
     <BarraW T={T} at={t0 + 0.6} x={300} y={1100} largo={56} texto="20 µm" zc={zc} />
+    </g>
   </g>;
 }
 function ParadaSe({ T, K, zc }) {
   const t0 = K.Se, Y = 930;
   return <g transform={enParada(P.se)}>
     <Placa T={T} at={t0 + 0.1} x={50} y={420} n="5" nombre={TX.niveles[4][1]} color={KC.orange} zc={zc} />
+    <g transform="translate(0 170)">   {/* belleza: dibujo más grande y al centro */}
     <Aparecer T={T} at={t0 + 0.8}>
       <path d={`M -40 ${Y} Q 300 ${Y - 30} 560 ${Y - 5} Q 800 ${Y + 15} 1120 ${Y - 15} L 1120 ${Y + 50} Q 800 ${Y + 75} 560 ${Y + 55} Q 300 ${Y + 35} -40 ${Y + 65} Z`} fill="#6b4320" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
       {[120, 380, 640, 900].map((bx, i) => <path key={i} d={`M ${bx} ${Y + 12} Q ${bx + 40} ${Y + 24} ${bx + 90} ${Y + 16}`} stroke="#4a2c12" strokeWidth={5} fill="none" />)}
@@ -513,15 +528,17 @@ function ParadaSe({ T, K, zc }) {
     <Abanico T={T} x={440} y={Y - 5} s={0.46} rot={6} crece={kprog(T, t0 + 1.2, t0 + 1.8)} />
     <Abanico T={T} x={860} y={Y - 5} s={0.5} rot={12} crece={kprog(T, t0 + 1.4, t0 + 2.0)} />
     <Abanico T={T} x={640} y={Y + 50} s={0.5} rot={180} abajo crece={kprog(T, t0 + 1.6, t0 + 2.2)} />
-    <Rotulo T={T} at={t0 + 2.4} x={50} y={808} texto={TX.schizo} tam={28} it anchor="start" color={KC.gold2} zc={zc} />
+    <Rotulo T={T} at={t0 + 2.4} x={120} y={808} texto={TX.schizo} tam={28} it anchor="start" color={KC.gold2} zc={zc} />
     <EtqW T={T} at={t0 + 3.0} x={700} y={1080} texto={TX.laminas} lado="der" linea={50} ang={10} tam={24} zc={zc} />
     <BarraW T={T} at={t0 + 1.4} x={60} y={1070} largo={53} texto="1 cm" zc={zc} />
+    </g>
   </g>;
 }
 function ParadaRa({ T, K, zc }) {
   const t0 = K.Ra, cre = kprog(T, t0 + 2.0, t0 + 5.6, kEase.suave);
   const COL = [[-70, -40, 1], [60, 30, 2], [-20, 80, 3], [80, -70, 4], [-100, 50, 5], [10, -100, 6], [110, 90, 7]];
   return <g transform={enParada(P.ra)}>
+    <g transform="translate(540 1000) scale(1.08) translate(-540 -880)">   {/* belleza: dibujo más grande y al centro */}
     <Aparecer T={T} at={t0 + 0.5}>
       <Petri x={280} y={860} r={190} medio="#f3e2a6">
         {COL.slice(0, 4).map(([cx, cy, sd], i) => <Colonia key={i} cx={cx} cy={cy} r={klerp(6, 26, cre)} color="#1b1410" seed={sd} />)}
@@ -535,6 +552,7 @@ function ParadaRa({ T, K, zc }) {
     <Rotulo T={T} at={t0 + 0.8} x={280} y={1100} texto={TX.sinRad} tam={28} zc={zc} />
     <Rotulo T={T} at={t0 + 1.0} x={790} y={1100} texto={TX.conRad} tam={28} zc={zc} color={KC.yellow} />
     <BarraW T={T} at={t0 + 1.0} x={514} y={1080} largo={42} texto="1 cm" zc={zc} />
+    </g>
   </g>;
 }
 
@@ -545,23 +563,23 @@ function Mundo({ T, K, zc, cierre }) {
   const glow = cierre;
   return <svg width={2400} height={8400} viewBox="0 0 2400 8400" style={{ position: 'absolute', left: 0, top: 0, overflow: 'visible' }}>
     <defs>
-      <linearGradient id="cieloG" x1="0" y1="-3000" x2="0" y2={SEA} gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#7fe8ff" /><stop offset=".7" stopColor="#38d3ff" /><stop offset="1" stopColor="#a6f1ff" /></linearGradient>
+      <linearGradient id="cieloG" x1="0" y1="-3000" x2="0" y2={SEA} gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#0b1424" /><stop offset=".7" stopColor="#16304a" /><stop offset="1" stopColor="#24506a" /></linearGradient>
       <linearGradient id="aguaG" x1="0" y1={SEA} x2="0" y2="8400" gradientUnits="userSpaceOnUse">
         {AGUA.map((c, i) => <stop key={i} offset={((BANDAS[i] + (BANDAS[i + 1] - BANDAS[i]) * 0.5 - SEA) / (8400 - SEA)).toFixed(3)} stopColor={c} />)}
       </linearGradient>
       <linearGradient id="hieloG" x1="0" y1={SEA} x2="0" y2="7900" gradientUnits="userSpaceOnUse">
         {HIELO.map((c, i) => <stop key={i} offset={((BANDAS[i] + (BANDAS[i + 1] - BANDAS[i]) * 0.5 - SEA) / (7900 - SEA)).toFixed(3)} stopColor={c} />)}
       </linearGradient>
-      <linearGradient id="hieloTop" x1="0" y1="1050" x2="0" y2={SEA} gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#ffffff" /><stop offset="1" stopColor="#e2f6ff" /></linearGradient>
+      <linearGradient id="hieloTop" x1="0" y1="1050" x2="0" y2={SEA} gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#a9c9da" /><stop offset="1" stopColor="#86b0c8" /></linearGradient>
       <clipPath id="bajoAgua"><rect x={-3200} y={SEA} width={9000} height={8000} /></clipPath>
       <clipPath id="sobreAgua"><rect x={-3200} y={-4000} width={9000} height={4000 + SEA} /></clipPath>
       <clipPath id="iceClip"><path d={ICE_D} /></clipPath>
     </defs>
     {/* cielo y mar */}
     <rect x={-3200} y={-4000} width={9000} height={4000 + SEA} fill="url(#cieloG)" />
-    <circle cx={1900} cy={600} r={120} fill="#fff6a8" stroke={KC.ink} strokeWidth={8} />
+    <circle cx={1900} cy={600} r={120} fill="#e9e2b8" stroke={KC.ink} strokeWidth={8} opacity=".85" />
     {[[420, 520, 1], [1700, 380, 0.8], [-300, 760, 1.1], [2700, 900, 1]].map(([nx, ny, k], i) => <g key={i} transform={`translate(${nx + Math.sin(T * 0.2 + i) * 20} ${ny}) scale(${k})`}>
-      <path d="M -120 30 Q -130 -20 -70 -20 Q -50 -70 10 -55 Q 60 -90 100 -40 Q 150 -40 140 30 Z" fill="#fff" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" /></g>)}
+      <path d="M -120 30 Q -130 -20 -70 -20 Q -50 -70 10 -55 Q 60 -90 100 -40 Q 150 -40 140 30 Z" fill="#4a6078" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" /></g>)}
     <rect x={-3200} y={SEA} width={9000} height={8000} fill="url(#aguaG)" />
     {/* fondo del mar */}
     <path d="M -3200 8150 Q -1500 8020 0 8100 Q 1200 8180 2400 8080 Q 4000 8000 5800 8120 L 5800 9000 L -3200 9000 Z" fill="#07080b" stroke="#1b2030" strokeWidth={8} />
@@ -571,7 +589,7 @@ function Mundo({ T, K, zc, cierre }) {
     <path d={ICE_D} fill="url(#hieloG)" />
     <g clipPath="url(#iceClip)">
       <rect x={-200} y={800} width={2800} height={SEA - 800} fill="url(#hieloTop)" />
-      {FACETAS.map((d, i) => <path key={i} d={d} fill="#ffffff" opacity={i < 3 ? 0.55 : 0.18} />)}
+      {FACETAS.map((d, i) => <path key={i} d={d} fill="#ffffff" opacity={i < 3 ? 0.22 : 0.1} />)}
       {GRIETAS.map((d, i) => <path key={i} d={d} stroke={i < 2 ? '#8fc3dc' : '#0b1222'} strokeWidth={6} fill="none" opacity=".6" strokeLinecap="round" />)}
       {/* micelio adentro del hielo */}
       {MICELIO.map(([mx, my, e, sd, r], i) => <g key={i} opacity={(i === 0 ? 0.45 + 0.4 * red : my < 4000 ? 0.18 : 0.3) + 0.5 * glow}>
@@ -582,8 +600,8 @@ function Mundo({ T, K, zc, cierre }) {
     </g>
     <path d={ICE_D} fill="none" stroke={KC.ink} strokeWidth={16} strokeLinejoin="round" />
     {/* superficie del mar (por delante del hielo, transparente) */}
-    <path d={ola(0)} stroke="#ffffff" strokeWidth={10} fill="none" opacity=".9" />
-    <path d={ola(1.6) + ' L 5800 ' + (SEA + 90) + ' L -3200 ' + (SEA + 90) + ' Z'} fill="#46d8df" opacity=".28" />
+    <path d={ola(0)} stroke="#cfe6f0" strokeWidth={10} fill="none" opacity=".7" />
+    <path d={ola(1.6) + ' L 5800 ' + (SEA + 90) + ' L -3200 ' + (SEA + 90) + ' Z'} fill="#2b8fa0" opacity=".28" />
     {/* salpicaduras junto al iceberg */}
     {[[790, -1], [1290, 1]].map(([sx, d], j) => Array.from({ length: 6 }, (_, i) => { const ph = ((T + 0.15 + i * 0.05 + j * 0.7) % 2.2) / 0.9; if (ph > 1) return null;
       const x = sx + d * (20 + i * 22) * ph, y = SEA - Math.sin(ph * Math.PI) * (70 + i * 18); return <circle key={j + '-' + i} cx={x} cy={y} r={10 - i} fill="#ffffff" stroke="#1b6f9a" strokeWidth={3} />; }))}
@@ -601,7 +619,7 @@ function Mundo({ T, K, zc, cierre }) {
       <path d="M 1500 560 L 1300 560 M 1350 500 L 1290 560 L 1350 620" stroke={KC.ink} strokeWidth={22} fill="none" strokeLinecap="round" strokeLinejoin="round" />
     </g>}
     {/* luces detrás de cada dibujo al final (encendidos) */}
-    {glow > 0 && [P.n1, P.pe, P.qu, P.br, P.ar, P.ho, P.la, P.se, P.ra].map((pp, i) => <circle key={i} cx={pp.x} cy={pp.y - 80} r={520} fill="#fff6c8" opacity={glow * 0.1 * (0.8 + 0.2 * Math.sin(T * 3 + i))} />)}
+    {glow > 0 && [P.n1, P.pe, P.qu, P.br, P.ar, P.ho, P.la, P.se, P.ra].map((pp, i) => <circle key={i} cx={pp.x} cy={pp.y + 60} r={560} fill="#fff6c8" opacity={glow * 0.2 * (0.8 + 0.2 * Math.sin(T * 3 + i))} />)}
     <ParadaGancho T={T} K={K} zc={zc} />
     <ParadaN1 T={T} K={K} zc={zc} />
     <ParadaPe T={T} K={K} zc={zc} />
@@ -645,20 +663,20 @@ function IcebergShot() {
 
       {/* re-gancho: la cámara se hunde */}
       {T > K.Pr + 0.5 && T < K.Ho + 0.6 && <div style={{ position: 'absolute', inset: 0, zIndex: 30, opacity: kprog(T, K.Pr + 0.5, K.Pr + 1.0) * (1 - kprog(T, K.Ho, K.Ho + 0.6)) }}>
-        {fsvg(<Interrogacion T={T} x={290} y={1080} tam={460} color={KC.lilac} />, 30)}
+        {fsvg(<Interrogacion T={T} x={540} y={1060} tam={150} color={KC.texto} />, 30)}
       </div>}
 
       {/* textos en pantalla (la cámara está quieta en cada uno) */}
-      <NumeroGigante T={T} at={K.Br + 2.0} until={K.Ar - 0.3} valor={TX.brillanN} dur={1.2} prefijo={TX.brillanPre} x={760} y={640} tam={150} color="#b9ff8a" />
-      <Chip T={T} at={K.Br + 2.6} until={K.Ar - 0.3} texto={TX.brillanChip} x={740} y={760} tam={32} borde="#5dff6a" />
-      <Chip T={T} at={K.Br + 3.4} until={K.Ar - 0.3} texto={TX.brillanNota} x={740} y={840} tam={24} borde={KC.lilac} mono />
-      <TarjetaEstudio T={T} at={K.Ar + 0.2} until={K.Ar + 3.2} anio={TX.armAnio} quien={TX.armQuien} revista={TX.armRevista} x={340} y={480} />
-      <Chip T={T} at={K.Ar + 3.4} until={K.Pr - 0.2} texto={TX.armArea} x={360} y={560} tam={38} borde={KC.gold} />
-      <NumeroGigante T={T} at={K.Se + 4.0} until={K.Ra - 0.3} valor={TX.sexosN} dur={1.4} prefijo={TX.sexosPre} x={340} y={610} tam={120} color={KC.orange} />
-      <Chip T={T} at={K.Se + 4.6} until={K.Ra - 0.3} texto={TX.sexosChip} x={360} y={712} tam={28} borde={KC.orange} />
-      <TarjetaEstudio T={T} at={K.Ra + 0.2} until={K.Ra + 2.2} anio={TX.radAnio} quien={TX.radQuien} revista={TX.radRevista} x={540} y={470} />
-      <Chip T={T} at={K.Ra + 2.4} until={K.Ra + 5.3} texto={TX.negros} x={420} y={590} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Ra + 5.6} until={K.Ci - 0.2} texto={TX.hipotesis} x={375} y={590} tam={28} borde={KC.yellow} />
+      <NumeroGigante T={T} at={K.Br + 2.0} until={K.Ar - 0.3} valor={TX.brillanN} dur={1.2} prefijo={TX.brillanPre} x={760} y={680} tam={150} color="#b9ff8a" />
+      <Chip T={T} at={K.Br + 2.6} until={K.Ar - 0.3} texto={TX.brillanChip} x={740} y={810} tam={32} borde="#5dff6a" />
+      <Chip T={T} at={K.Br + 3.4} until={K.Ar - 0.3} texto={TX.brillanNota} x={740} y={870} tam={24} borde={KC.lilac} mono />
+      <TarjetaEstudio T={T} at={K.Ar + 0.2} until={K.Ar + 3.2} anio={TX.armAnio} quien={TX.armQuien} revista={TX.armRevista} x={540} y={540} />
+      <Chip T={T} at={K.Ar + 3.4} until={K.Pr - 0.2} texto={TX.armArea} x={540} y={700} tam={38} borde={KC.gold} />
+      <NumeroGigante T={T} at={K.Se + 4.0} until={K.Ra - 0.3} valor={TX.sexosN} dur={1.4} prefijo={TX.sexosPre} x={340} y={700} tam={120} color={KC.orange} />
+      <Chip T={T} at={K.Se + 4.6} until={K.Ra - 0.3} texto={TX.sexosChip} x={360} y={810} tam={28} borde={KC.orange} />
+      <TarjetaEstudio T={T} at={K.Ra + 0.2} until={K.Ra + 2.2} anio={TX.radAnio} quien={TX.radQuien} revista={TX.radRevista} x={540} y={480} />
+      <Chip T={T} at={K.Ra + 2.4} until={K.Ra + 5.3} texto={TX.negros} x={420} y={640} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Ra + 5.6} until={K.Ci - 0.2} texto={TX.hipotesis} x={375} y={640} tam={28} borde={KC.yellow} />
 
       {/* barras de escala de pantalla (las demás van pegadas a cada dibujo) */}
       <BarraEscala T={T} at={K.G} until={K.G + 2.6} texto="champiñón · 5 cm" largo={150} y={1430} />
