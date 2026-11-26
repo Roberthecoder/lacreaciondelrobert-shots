@@ -14,42 +14,37 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese champiñón no es el hongo: es solo la punta del iceberg. Bajemos. | Cielo cian y mar. Un champiñón sale del agua en la punta de un iceberg (cuadro 0: ya se mece y salpica una ola). Bajo el agua, la masa del iceberg con hilos de micelio adentro. Letrero «LA PUNTA». La cámara empieza a bajar. |
-| 1 | Nivel1 | Nivel uno, lo que todos saben: los hongos no son plantas, y la levadura del pan es un hongo. | Agua turquesa clara. Placa «NIVEL 1 · LO QUE TODOS SABEN». Una plantita con ✗ («no son plantas») y una hogaza que se infla con burbujas; *Saccharomyces cerevisiae* con su yema en una lupita. |
-| 2 | Penicilina | Nivel dos: la penicilina salió de un moho. | Agua azul. Placa «NIVEL 2 · LO QUE POCOS SABEN». Placa de Petri: colonia verde-azul de *Penicillium* con un halo donde no crecen las bacterias. |
-| 3 | Quitina | Y sus paredes tienen quitina, el mismo material del caparazón de un escarabajo. | Una hifa en corte con la pared resaltada y un escarabajo con el caparazón brillando; una cadena de anillos «quitina» los une. |
-| 4 | Brillan | Nivel tres: hay más de cien especies de hongos que brillan en la oscuridad. | Agua azul profundo (casi oscuro). Placa «NIVEL 3 · PROFUNDO». Hongitos que se encienden en verde sobre un tronco; contador «+100 especies». |
-| 5 | Armillaria | Un estudio de 2003 en Oregón halló un solo hongo Armillaria: casi diez kilómetros cuadrados bajo el bosque. | Un bosque en corte; bajo él, el micelio de *Armillaria* pasa de raíz en raíz (raíces que se tocan), con algunos cordones negros cortos; tarjeta «2003 · Oregón, EE. UU.» y chip «≈ 9.65 km² (965 ha)». |
-| 6 | Pregunta | ¿Crees que ya es raro? Falta lo oscuro. | **Re-gancho.** La cámara se hunde; el agua se vuelve azul noche. Robert grande, pensativo. |
-| 7 | Hormiga | Nivel cuatro: un hongo obliga a una hormiga a morder una hoja, y ya muerta, le brota de la nuca. | Placa «NIVEL 4 · EL ABISMO». Hormiga mordiendo la vena de una hoja; ya muerta, le sale un tallo largo de la nuca (*Ophiocordyceps*). |
-| 8 | Lazos | Otro arma lazos que se inflan y atrapan gusanitos nematodos. | Fondo oscuro, «AL MICROSCOPIO»: un nematodo entra a un anillo de 3 células que se inflan y lo aprietan. |
-| 9 | Sexos | Nivel cinco, el fondo: se calcula que el hongo Schizophyllum tiene más de veintitrés mil tipos de apareamiento. | Casi negro. Placa «NIVEL 5 · EL FONDO». Un hongo en abanico (*Schizophyllum commune*) y un contador que sube a «≈ 23,000 tipos de apareamiento (estimados)». |
-| 10 | Radiacion | Y en 2007, en laboratorio, hongos negros como los de Chernóbil crecieron más rápido con radiación. ¿Se alimentan de ella? Es hipótesis. | Tarjeta «2007 · laboratorio». Dos placas: con y sin radiación; las células negras (melanina) crecen más en la de radiación. Chip «¿la usan como energía? hipótesis». |
-| 11 | Cierre | Y todo empezó con ese champiñón: la punta del iceberg. | La cámara se aleja hasta ver el iceberg entero, con los 5 niveles y sus dibujos encendidos, y el champiñón arriba (la imagen del inicio, ya llena). |
+| 0 | Gancho | Ese champiñón no es el hongo: es solo la punta del iceberg. Bajemos. | Cuadro 0: el champiñón (*Agaricus bisporus*) a pantalla completa sobre la punta del iceberg, atardecer apagado, olas con espuma y salpicaduras; un hilo de micelio brilla dentro del hielo. La cámara se aleja y se hunde: antes del segundo 3 se ve el iceberg enorme bajo el agua con el micelio encendiéndose hacia abajo. Etiqueta *Agaricus bisporus*; barra «5 cm». |
+| 1 | Nivel1 | Nivel uno, lo que todos saben: los hongos no son plantas, y la levadura del pan es un hongo. | La cámara entra al hielo (marcador «NIVEL 1 · LO QUE TODOS SABEN»). Un bloque de tierra congelado: plántula con raíces y champiñón con sus hifas que brillan; una línea fina los separa y la planta se aleja y se apaga («NO SON PLANTAS»). Bajamos a una hogaza partida (miga con alveolos que se inflan) y entramos a la miga: levaduras *Saccharomyces cerevisiae* en línea luminosa, una con yema que crece, soltando burbujitas. |
+| 2 | Penicilina | Nivel dos: la penicilina salió de un moho. | «NIVEL 2 · LO QUE POCOS SABEN». Placa de Petri de vidrio: colonia aterciopelada azul verdosa de *Penicillium* con borde blanco; a su alrededor un halo donde las colonias de bacterias se ven translúcidas y deshechas. Barra «1 cm». |
+| 3 | Quitina | Y sus paredes tienen quitina, el mismo material del caparazón de un escarabajo. | Corte de una hifa en línea luminosa sobre oscuro: pared en capas y la capa de quitina como cadena de anillos que se encienden («QUITINA»); los anillos viajan y se funden en el caparazón tornasol de un escarabajo detallado (élitros, patas segmentadas, antenas) («CAPARAZÓN»). |
+| 4 | Brillan | Nivel tres: hay más de cien especies de hongos que brillan en la oscuridad. | «NIVEL 3 · PROFUNDO». Tronco podrido con musgo; hongos de sombrerito acampanado que se encienden uno a uno en verde, con bokeh verde. «+100» y abajo «especies que brillan · 132 conocidas (2024)». |
+| 5 | Armillaria | Un estudio de 2003 en Oregón halló un solo hongo Armillaria: casi diez kilómetros cuadrados bajo el bosque. | Corte de bosque: coníferas arriba; bajo tierra, raíces que se tocan y el micelio de *Armillaria* (línea ámbar) que pasa de raíz en raíz, con pocos cordones negros. Tarjeta chica «2003 · estudio · Oregón, EE. UU.»; después «≈ 9.65 km²» con «965 ha · Oregón, EE. UU. · estudio de 2003». |
+| 6 | Pregunta | ¿Crees que ya es raro? Falta lo oscuro. | **Re-gancho.** La cámara se hunde; el agua se oscurece y un nudo de micelio late en lo oscuro; abajo se insinúa la silueta de una hoja con algo colgando. |
+| 7 | Hormiga | Nivel cuatro: un hongo obliga a una hormiga a morder una hoja, y ya muerta, le brota de la nuca. | «NIVEL 4 · EL ABISMO». Hoja grande con nervaduras; la hormiga colgada por debajo clava las mandíbulas en la vena («MUERDE LA VENA»), se queda quieta y se apaga (muerta) y después le brota de la nuca un tallo largo con un engrosamiento a media altura (*Ophiocordyceps*). |
+| 8 | Lazos | Otro arma lazos que se inflan y atrapan gusanitos nematodos. | «AL MICROSCOPIO»: un nematodo translúcido en línea luminosa entra al anillo de 3 células (con su tallito de 2) que se inflan hacia adentro y lo atrapan («ANILLO DE 3 CÉLULAS»). Barra «20 µm». |
+| 9 | Sexos | Nivel cinco, el fondo: se calcula que el hongo Schizophyllum tiene más de veintitrés mil tipos de apareamiento. | «NIVEL 5 · EL FONDO». Rama con abanicos blancos y peludos de *Schizophyllum commune*; los grandes vistos por debajo con las láminas partidas («LÁMINAS PARTIDAS»). «≈ 23,000» con «tipos de apareamiento (estimados)». |
+| 10 | Radiacion | Y en 2007, en laboratorio, hongos negros como los de Chernóbil crecieron más rápido con radiación. ¿Se alimentan de ella? Es hipótesis. | Laboratorio en penumbra: dos placas, «sin radiación» y «con radiación» (símbolo chico y partículas); colonias negras de melanina que crecen más en la segunda. Tarjeta chica «2007 · laboratorio», etiqueta «hongos negros · melanina» y después «¿la usan como energía? · hipótesis». |
+| 11 | Cierre | Y todo empezó con ese champiñón: la punta del iceberg. | La cámara se aleja hasta ver el iceberg entero con todo el micelio encendido y cada escena como un brillo a su profundidad, con el champiñón arriba: la imagen del inicio, transformada. Barra «iceberg esquemático». |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-**Música:** cama grave y continua que se va oscureciendo conforme baja la cámara (cada nivel medio tono más grave y más tapada),
-y se abre al alejarse en el cierre. Efectos en el mismo cuadro: ola y salpicadura, «plunk» al cruzar cada nivel, burbujas de la
-masa, brillo de los hongos, crujido de la mordida, apretón de los lazos, tics del contador, chasquido de radiación.
+**Modo cine (rehecho el 26 nov 2026, pedido de Robert: «mucho más detallado… aplica el nuevo estilo cinematográfico»):** un solo
+mundo continuo con paralaje (hielo con burbujas y grietas, micelio que brilla, rayos de luz que se apagan con la profundidad, nieve marina
+y bokeh al frente), sin subtítulo quemado, logo chico arriba a la izquierda, marcador de nivel tipo profundímetro y barra de escala abajo a
+la izquierda. Animación: `iceberg.jsx` + piezas reutilizables en `iceberg-cine.jsx`.
+
+**Música:** la «cama luminosa» del modo cine (`pad()` → `motor/kit/cama-luminosa.mjs`) y encima solo efectos suaves en el mismo cuadro:
+olas y salpicaduras, burbujas, notas de luz cuando se enciende el micelio y cada hongo, tics de los anillos de quitina y de los contadores,
+crujido de la mordida, el anillo que se infla, chasquido Geiger suave. Medido: centro de energía ≈ 612 Hz con una voz de Robert de
+referencia (sin voz, 796 Hz); sin líneas fijas en el espectrograma.
 
 ## Robert en pantalla
 
-Tiempos de la base (61.8 s) (con la voz real se recorren solos).
+Modo cine (22 nov 2026): Robert no aparece durante el video; solo en la tarjeta de cierre.
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «no es el hongo: es la punta del iceberg» (cuadro 0) |
-| 2 | 5.2 | 9.5 | 02_apuntando_camara | `arriba-der` | «lo que todos saben» |
-| 3 | 13.4 | 16.9 | 04_bajando_lentes | `arriba-der` | «el mismo material del caparazón de un escarabajo» |
-| 4 | 22.5 | 27.8 | 11_sorprendido | `arriba-der` | «casi diez kilómetros cuadrados» |
-| 5 | 28.35 | 31.1 | 07_pensativo_puno | `grande` | «¿Crees que ya es raro?» |
-| 6 | 31.6 | 36.3 | 10_serio_molesto | `arriba-der` | «y ya muerta, le brota de la nuca» |
-| 7 | 41.3 | 46.8 | 06_pensativo_menton | `arriba-der` | «más de veintitrés mil» |
-| 8 | 50.5 | 54.9 | 12_perfil_serio | `arriba-der` | «¿Se alimentan de ella? Es hipótesis.» |
-| 9 | 55.4 | 58.5 | 13_senalando_arriba | `arriba-der` | «empezó con ese champiñón» (señala la punta) |
 | — | 58.6 | 61.8 | 13_senalando_arriba | CierreMarca | cierre |
-
-Apariciones 9 · **≈ 36.5 s** en pantalla (+ cierre) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes
 
