@@ -47,6 +47,9 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
   voces/fungi-g07, Release borradores-voces-fungi-g07, ya en main y en la Sala). Quedan 140 créditos. FALTAN #149–#155 (Iceberg
   incluido): tras la renovación del 28 nov. La Sala está llena (1 GB, ~0.5 MB libres): #144–#148 van a 540×960 crf 34; para
   #149–#155 habrá que borrar antes su sin voz y subir igual de comprimido.
+- HECHO (26 nov): Robert compró 20,000 créditos. #149–#155 con pase de belleza cine + voz eleven_v4 (rama voces/fungi-g07b, ya en
+  main), render final en borradores-voces-v4 (68–74 s), agregados a publicar/finales.txt y en la Sala (540×960 crf 34; sus sin voz
+  borrados). Ya no falta ningún shot con voz (salvo 002-moho-pan, viejo, y libre-01, mudo a propósito).
 - HECHO (6–7 nov): extra de Fungi Mati martes y sábado a las 9:07 am, junto con el diario (7 nov, Robert: mismas alarmas; antes 1:07 pm); desde el 9 nov, si ese día ya sale un Fungi Mati o es festivo, el extra se recorre al día siguiente (8 nov, Robert) (calendario/fecha.py, comando «horas»; la publicación diaria
   solo publica cada shot cuando ya llegó su hora). Sin alarma nueva: lo cubren las de cron-job.org de siempre.
 - Falta: regresar el repo a privado (Robert, en Settings; se le dio el enlace el 7 nov).
