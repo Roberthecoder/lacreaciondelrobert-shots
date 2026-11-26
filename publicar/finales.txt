@@ -459,3 +459,10 @@ fun-139-potter
 fun-148-tintes-hongos
 ia-53-respuestas-medicas
 ia-54-nobel-fisica
+fun-149-yesca-otzi
+fun-150-saca-estomago
+fun-151-trehalosa
+fun-152-cerveza-brota
+fun-153-ergotioneina
+fun-154-antifungicos
+fun-155-iceberg-hongos
