@@ -3330,5 +3330,65 @@
   "unipost_id": "ad0bbc62-f9e5-449f-9d03-0fdf48572b4f",
   "nota": "publicado en TikTok con UniPost como «Todos»",
   "url": "https://www.tiktok.com/@lacreaciondelrobert"
+ },
+ {
+  "clave": "per-01-cumbre-bevisioneers",
+  "red": "facebook",
+  "modo": "real",
+  "fecha": "2026-11-26T01:51:52Z",
+  "run": "45738421317",
+  "autorizo": "Chat de Claude Code del 25 nov 2026, Robert: «Apruebo todo. Publica todo en todas las redes sociales va?»",
+  "ok": true,
+  "id": "1854804042324521",
+  "url": "https://www.facebook.com/reel/1854804042324521",
+  "nota": "ready"
+ },
+ {
+  "clave": "per-01-cumbre-bevisioneers",
+  "red": "instagram",
+  "modo": "real",
+  "fecha": "2026-11-26T01:52:38Z",
+  "run": "45738421317",
+  "autorizo": "Chat de Claude Code del 25 nov 2026, Robert: «Apruebo todo. Publica todo en todas las redes sociales va?»",
+  "ok": true,
+  "id": "18025280609763182",
+  "url": "https://www.instagram.com/reel/DgL-KQDBm0Y/"
+ },
+ {
+  "clave": "per-01-cumbre-bevisioneers",
+  "red": "threads",
+  "modo": "real",
+  "fecha": "2026-11-26T01:54:54Z",
+  "run": "45738421317",
+  "autorizo": "Chat de Claude Code del 25 nov 2026, Robert: «Apruebo todo. Publica todo en todas las redes sociales va?»",
+  "ok": true,
+  "id": "18177176899455317",
+  "url": "https://www.threads.com/@lacreaciondelrobert/post/DgL-RAaCrTw"
+ },
+ {
+  "clave": "per-01-cumbre-bevisioneers",
+  "red": "youtube",
+  "modo": "real",
+  "fecha": "2026-11-26T01:55:35Z",
+  "run": "45738421317",
+  "autorizo": "Chat de Claude Code del 25 nov 2026, Robert: «Apruebo todo. Publica todo en todas las redes sociales va?»",
+  "ok": true,
+  "id": "ocWhx330bVM",
+  "url": "https://youtube.com/shorts/ocWhx330bVM",
+  "nota": "public"
+ },
+ {
+  "clave": "per-01-cumbre-bevisioneers",
+  "red": "tiktok",
+  "modo": "real",
+  "fecha": "2026-11-26T01:55:37Z",
+  "run": "45738421317",
+  "autorizo": "Chat de Claude Code del 25 nov 2026, Robert: «Apruebo todo. Publica todo en todas las redes sociales va?»",
+  "ok": true,
+  "id": "v_pub_file~v2-1.7712292305608362036",
+  "via": "unipost",
+  "unipost_id": "90ab68ba-b206-4118-bdd2-8814460445bf",
+  "nota": "publicado en TikTok con UniPost como «Todos»",
+  "url": "https://www.tiktok.com/@lacreaciondelrobert"
  }
 ]
