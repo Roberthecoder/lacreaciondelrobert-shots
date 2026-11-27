@@ -3536,5 +3536,76 @@
   "unipost_id": "d880d9c9-690d-45de-8835-574a097f4824",
   "nota": "publicado en TikTok con UniPost como «Todos»",
   "url": "https://www.tiktok.com/@lacreaciondelrobert"
+ },
+ {
+  "clave": "fun-11-moho-cortar",
+  "red": "facebook",
+  "modo": "real",
+  "fecha": "2026-11-27T15:21:55Z",
+  "run": "46024070575",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "2392559061278878",
+  "url": "https://www.facebook.com/reel/2392559061278878",
+  "nota": "ready"
+ },
+ {
+  "clave": "fun-11-moho-cortar",
+  "red": "instagram",
+  "modo": "real",
+  "fecha": "2026-11-27T15:22:37Z",
+  "run": "46024070575",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "18047729159837436",
+  "url": "https://www.instagram.com/reel/DgP_l3esMjH/"
+ },
+ {
+  "clave": "fun-11-moho-cortar",
+  "red": "threads",
+  "modo": "real",
+  "fecha": "2026-11-27T15:24:29Z",
+  "run": "46024070575",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "18118670036011240",
+  "url": "https://www.threads.com/@lacreaciondelrobert/post/DgP_tEDTkzO"
+ },
+ {
+  "clave": "fun-11-moho-cortar",
+  "red": "youtube",
+  "modo": "real",
+  "fecha": "2026-11-27T15:25:27Z",
+  "run": "46024070575",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "njdJ3j7a7iI",
+  "url": "https://youtube.com/shorts/njdJ3j7a7iI",
+  "nota": "public"
+ },
+ {
+  "clave": "fun-11-moho-cortar",
+  "red": "linkedin",
+  "modo": "real",
+  "fecha": "2026-11-27T15:25:30Z",
+  "run": "46024070575",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "urn:li:ugcPost:7532102404461412352",
+  "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7532102404461412352/"
+ },
+ {
+  "clave": "fun-11-moho-cortar",
+  "red": "tiktok",
+  "modo": "real",
+  "fecha": "2026-11-27T15:25:53Z",
+  "run": "46024070575",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "v_pub_file~v2-1.7712872686301317172",
+  "via": "unipost",
+  "unipost_id": "94f058ef-eaba-4d40-94e1-55fea590be28",
+  "nota": "publicado en TikTok con UniPost como «Todos»",
+  "url": "https://www.tiktok.com/@lacreaciondelrobert"
  }
 ]
